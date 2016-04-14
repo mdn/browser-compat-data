@@ -405,7 +405,7 @@
                     "support": "Unknown"
                 }, 
                 "Firefox": {
-                    "support": "No"
+                    "support": "48.0"
                 }
             }
         }, 
@@ -810,6 +810,7 @@
                     "support": "Unknown"
                 }, 
                 "Firefox": {
+                    "notes": "Firefox does not support nacl_arch.", 
                     "support": "45.0"
                 }
             }
@@ -2304,7 +2305,6 @@
                     "support": "Unknown"
                 }, 
                 "Firefox": {
-                    "notes": "Highlighting multiple tabs is not supported in Firefox.For this reason, tabs.onHighlighted will only fire when the active tab in a window changes, and the tabIds property of highlightInfo will always be an array of length one, with the tabId referring to the active tab.", 
                     "support": "45.0"
                 }
             }
@@ -2683,6 +2683,7 @@
                     "support": "Unknown"
                 }, 
                 "Firefox": {
+                    "notes": "It's not possible to update the \"highlighted\" and \"selected\" properties.", 
                     "support": "45.0"
                 }
             }
@@ -4417,7 +4418,7 @@
                     "support": "Unknown"
                 }, 
                 "Firefox": {
-                    "support": "No"
+                    "support": "45.0"
                 }
             }
         }, 
@@ -4585,6 +4586,60 @@
                 }
             }
         }, 
+        "StorageArea.set": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "StorageArea.getBytesInUse": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
         "sync": {
             "mobile_browsers": {
                 "Edge": {
@@ -4609,6 +4664,33 @@
                 }, 
                 "Firefox": {
                     "support": "No"
+                }
+            }
+        }, 
+        "StorageArea.remove": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
                 }
             }
         }, 
@@ -4666,7 +4748,61 @@
                 }
             }
         }, 
+        "StorageArea.get": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
         "StorageChange": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "StorageArea.clear": {
             "mobile_browsers": {
                 "Edge": {
                     "support": "No"
@@ -4942,277 +5078,7 @@
         }
     }, 
     "webRequest": {
-        "OnAuthRequiredOptions": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "handlerBehaviorChanged": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "onErrorOccurred": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "onCompleted": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "OnSendHeadersOptions": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "onBeforeRedirect": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "46.0"
-                }
-            }
-        }, 
-        "OnHeadersReceivedOptions": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "BlockingResponse": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "HttpHeaders": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "OnBeforeSendHeadersOptions": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "OnBeforeRedirectOptions": {
+        "onSendHeaders": {
             "mobile_browsers": {
                 "Edge": {
                     "support": "No"
@@ -5266,7 +5132,7 @@
                 }
             }
         }, 
-        "OnResponseStartedOptions": {
+        "UploadData": {
             "mobile_browsers": {
                 "Edge": {
                     "support": "No"
@@ -5293,7 +5159,89 @@
                 }
             }
         }, 
-        "onSendHeaders": {
+        "handlerBehaviorChanged": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "onCompleted": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "RequestFilter": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "notes": "Firefox does not support windowId or tabId.", 
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "onHeadersReceived": {
             "mobile_browsers": {
                 "Edge": {
                     "support": "No"
@@ -5347,7 +5295,142 @@
                 }
             }
         }, 
+        "onBeforeRedirect": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "46.0"
+                }
+            }
+        }, 
+        "onAuthRequired": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }
+            }
+        }, 
+        "onBeforeSendHeaders": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "onErrorOccurred": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
         "onResponseStarted": {
+            "mobile_browsers": {
+                "Edge": {
+                    "support": "No"
+                }, 
+                "Firefox": {
+                    "support": "No"
+                }, 
+                "Firefox OS": {
+                    "support": "No"
+                }
+            }, 
+            "desktop_browsers": {
+                "Chrome": {
+                    "support": "Yes"
+                }, 
+                "Opera": {
+                    "support": "33"
+                }, 
+                "Edge": {
+                    "support": "Unknown"
+                }, 
+                "Firefox": {
+                    "support": "45.0"
+                }
+            }
+        }, 
+        "BlockingResponse": {
             "mobile_browsers": {
                 "Edge": {
                     "support": "No"
@@ -5397,173 +5480,12 @@
                     "support": "Unknown"
                 }, 
                 "Firefox": {
+                    "notes": "Firefox does not support the \"requestBody\" option.", 
                     "support": "46.0"
                 }
             }
         }, 
-        "OnBeforeRequestOptions": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "RequestFilter": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "onHeadersReceived": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "UploadData": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "onBeforeSendHeaders": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "45.0"
-                }
-            }
-        }, 
-        "onAuthRequired": {
-            "mobile_browsers": {
-                "Edge": {
-                    "support": "No"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }, 
-                "Firefox OS": {
-                    "support": "No"
-                }
-            }, 
-            "desktop_browsers": {
-                "Chrome": {
-                    "support": "Yes"
-                }, 
-                "Opera": {
-                    "support": "33"
-                }, 
-                "Edge": {
-                    "support": "Unknown"
-                }, 
-                "Firefox": {
-                    "support": "No"
-                }
-            }
-        }, 
-        "OnCompletedOptions": {
+        "HttpHeaders": {
             "mobile_browsers": {
                 "Edge": {
                     "support": "No"
