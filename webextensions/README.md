@@ -33,4 +33,4 @@ It's a JSON file, structured as follows:
         * "Unknown"
         * a version string
 
-    * one optional property `"notes"`, which is an array of strings. This adds any extra information about support in this browser. It's a good idea to use different strings to comment on different aspects of support. For example: `["does not support 'byUser'", "explodes randomly"]`.
+  * one optional property `"notes"`, which is an array of strings. This adds any extra information about support in this browser. It's a good idea to use different strings to comment on different aspects of support. For example: `["does not support 'byUser'", "explodes randomly"]`.
