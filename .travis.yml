@@ -1,0 +1,7 @@
+language: node_js
+before_script:
+  - npm install jsonlint -g
+script:
+  - jsonlint webextensions/browser-compat-data.json
+notifications:
+email: false
