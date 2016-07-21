@@ -157,7 +157,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes": ["Always returns the same default cookie store with ID 0. All cookies belong to this store."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -238,7 +239,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes": ["If no URL is provided, cookies are retrieved only for URLs in currently opened tabs. In Chrome, this gets all cookies on a user’s machine."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -618,7 +620,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes":["'MessageSender.tlsChannelId' is not supported."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -793,7 +796,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox does not support nacl_arch."],
+                    "notes": ["'nacl_arch' is not supported."],
                     "support": "48.0"
                 },
                 "Firefox OS": {
@@ -811,7 +814,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox does not support nacl_arch."],
+                    "notes": ["'nacl_arch' is not supported."],
                     "support": "45.0"
                 }
             }
@@ -1295,7 +1298,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes": ["The 'options' parameter is not supported."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -1773,7 +1777,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox only supports: type, iconUrl, title, message."],
+                    "notes": ["Only 'type', 'iconUrl', 'title', and 'message' are supported."],
                     "support": "48.0"
                 },
                 "Firefox OS": {
@@ -1791,7 +1795,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox only supports: type, iconUrl, title, message."],
+                    "notes": ["Only 'type', 'iconUrl', 'title', and 'message' are supported."],
                     "support": "45.0"
                 }
             }
@@ -1840,7 +1844,7 @@
                     "support": "Yes"
                 },
                 "Opera": {
-                    "notes": ["In Opera update() does not work on Macs."],
+                    "notes": ["Not supported on Macs."],
                     "support": "33"
                 },
                 "Edge": {
@@ -1884,7 +1888,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox only supports the \"basic\" type."],
+                    "notes": ["Only the 'basic' type is supported."],
                     "support": "48.0"
                 },
                 "Firefox OS": {
@@ -1896,14 +1900,14 @@
                     "support": "Yes"
                 },
                 "Opera": {
-                    "notes": ["Opera only supports the \"basic\" type."],
+                    "notes": ["Only the 'basic' type is supported."],
                     "support": "33"
                 },
                 "Edge": {
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox only supports the \"basic\" type."],
+                    "notes": ["Only the 'basic' type is supported."],
                     "support": "45.0"
                 }
             }
@@ -2015,7 +2019,7 @@
                 },
                 "Firefox": {
                     "support": "43.0",
-                    "notes": ["Firefox does not support 'matchAboutBlank'"]
+                    "notes": ["'matchAboutBlank' is not supported."]
                 }
             }
         },
@@ -2174,7 +2178,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes":["'highlighted' is not supported.", "The 'panel', 'app', and 'devtools' values for 'WindowType' are not supported."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -2282,10 +2287,11 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes": ["'selected', 'pinned', or 'openerTabId' are not supported."]
                 },
                 "Firefox": {
-                    "notes": ["The 'selected' option is deprecated and not supported in Firefox. Use 'active' instead."],
+                    "notes": ["'selected' is deprecated and not supported. Use 'active' instead."],
                     "support": "45.0"
                 }
             }
@@ -2449,7 +2455,7 @@
                 },
                 "Firefox": {
                     "support": "47.0",
-                    "notes": ["Firefox does not support 'matchAboutBlank'"]
+                    "notes": ["'matchAboutBlank' is not supported."]
                 }
             }
         },
@@ -2689,11 +2695,12 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes":["'highlighted' and 'selected' are not supported."]
                 },
                 "Firefox": {
-                    "notes": ["It's not possible to update the \"highlighted\" and \"selected\" properties."],
-                    "support": "45.0"
+                    "support": "45.0",
+                    "notes":["'highlighted' and 'selected' are not supported."]
                 }
             }
         },
@@ -3095,7 +3102,9 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes":["'highlighted', 'selected', and 'openerTabId' are not supported."]
+
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -3394,7 +3403,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes":["ImageData is not supported."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -3697,7 +3707,7 @@
                 },
                 "Firefox": {
                     "support": "47.0",
-                    "notes":["Firefox does not support the 'saveAs' option.","Firefox only supports 'GET' for the 'method' option."]
+                    "notes":["'saveAs' is not supported.","'GET' is the only supported option for 'method'."]
                 }
             }
         },
@@ -4589,7 +4599,8 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes": ["storage is limited to 1MB per value."]
                 },
                 "Firefox": {
                     "support": "45.0"
@@ -4836,7 +4847,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox supports the storage API in content scripts from version 48."]
+                    "notes": ["The storage API is supported in content scripts from version 48."]
                 }
             }
         }
@@ -4920,7 +4931,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support 'matchAboutBlank'"]
+                    "notes": ["'matchAboutBlank' is not supported."]
                 }
             }
         },
@@ -5078,18 +5089,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5189,18 +5200,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5210,7 +5221,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox does not support windowId or tabId."],
+                    "notes": ["'windowId' and 'tabId' are not supported."],
                     "support": "48.0"
                 },
                 "Firefox OS": {
@@ -5228,7 +5239,7 @@
                     "support": "Yes"
                 },
                 "Firefox": {
-                    "notes": ["Firefox does not support windowId or tabId."],
+                    "notes": ["'windowId' and 'tabId' are not supported."],
                     "support": "45.0"
                 }
             }
@@ -5248,18 +5259,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support modification of response headers until version 47.", "Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["Modification of response headers is supported from version 47.", "'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5305,18 +5316,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "46.0",
-                    "notes": ["Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5362,18 +5373,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5392,18 +5403,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5422,18 +5433,18 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox supports the \"originUrl\" property from version 48"]
+                    "notes": ["'originUrl' is supported from version 48."]
                 }
             }
         },
@@ -5470,7 +5481,7 @@
                     "support": "No"
                 },
                 "Firefox": {
-                    "notes": ["Firefox does not support the \"requestBody\" option."],
+                    "notes": ["'requestBody' is not supported."],
                     "support": "48.0"
                 },
                 "Firefox OS": {
@@ -5480,17 +5491,17 @@
             "desktop_browsers": {
                 "Chrome": {
                     "support": "Yes",
-                    "notes": ["Chrome does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Opera": {
                     "support": "33",
-                    "notes": ["Opera does not support the \"originUrl\" property"]
+                    "notes": ["'originUrl' is not supported."]
                 },
                 "Edge": {
                     "support": "Yes"
                 },
                 "Firefox": {
-                    "notes": ["Firefox does not support the \"requestBody\" option.", "Firefox supports the \"originUrl\" property from version 48"],
+                    "notes": ["'requestBody' is not supported.", "'originUrl' is supported from version 48."],
                     "support": "46.0"
                 }
             }
@@ -5629,7 +5640,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support the 'focused' option to create()."]
+                    "notes": ["'focused' is not supported."]
                 }
             }
         },
@@ -5966,7 +5977,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported."]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -5984,7 +5995,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support filtering.","'transitionType' and 'transitionQualifiers' are supported from Firefox 48."]
+                    "notes": ["Filtering is not supported.","'transitionType' and 'transitionQualifiers' are supported from version 48."]
                 }
             }
         },
@@ -6022,7 +6033,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["In Firefox, 'link' and 'auto_subframe' are partially supported as the default transition type for top-level frames and subframes respectively. 'reload' and 'form_submit' are supported. All other properties are unsupported."]
+                    "notes": ["'link' and 'auto_subframe' are partially supported as the default transition type for top-level frames and subframes respectively. 'reload' and 'form_submit' are supported. All other properties are unsupported."]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6040,7 +6051,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["In Firefox, 'link' and 'auto_subframe' are partially supported as the default transition type for top-level frames and subframes respectively. 'reload' and 'form_submit' are supported. All other properties are unsupported."]
+                    "notes": ["'link' and 'auto_subframe' are partially supported as the default transition type for top-level frames and subframes respectively. 'reload' and 'form_submit' are supported. All other properties are unsupported."]
                 }
             }
         },
@@ -6051,7 +6062,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox has the following limitations: 'server_redirect' is limited to top-level frames, 'client_redirect' is not supplied when redirections are created by JavaScript, and 'from_address_bar' is not supported. 'forward_back' is fully supported."]
+                    "notes": ["'server_redirect' is limited to top-level frames, 'client_redirect' is not supplied when redirections are created by JavaScript, and 'from_address_bar' is not supported. 'forward_back' is fully supported."]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6069,7 +6080,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox has the following limitations: 'server_redirect' is limited to top-level frames, 'client_redirect' is not supplied when redirections are created by JavaScript, and 'from_address_bar' is not supported. 'forward_back' is fully supported."]
+                    "notes": ["'server_redirect' is limited to top-level frames, 'client_redirect' is not supplied when redirections are created by JavaScript, and 'from_address_bar' is not supported. 'forward_back' is fully supported."]
                 }
             }
         },
@@ -6080,7 +6091,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported."]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6098,7 +6109,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported."]
                 }
             }
         },
@@ -6153,7 +6164,7 @@
                 },
                 "Firefox": {
                     "support": "47.0",
-                    "notes": ["'transitionType' and 'transitionQualifiers' are supported from Firefox 48."]
+                    "notes": ["'transitionType' and 'transitionQualifiers' are supported from version 48."]
                 }
             }
         },
@@ -6218,7 +6229,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported"]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6236,7 +6247,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported"]
                 }
             }
         },
@@ -6247,7 +6258,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported"]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6265,7 +6276,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support filtering.", "'transitionType' and 'transitionQualifiers' are supported from Firefox 48."]
+                    "notes": ["Filtering is not supported", "'transitionType' and 'transitionQualifiers' are supported from version 48."]
                 }
             }
         },
@@ -6276,7 +6287,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported"]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6294,7 +6305,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support filtering."]
+                    "notes": ["Filtering is not supported"]
                 }
             }
         },
@@ -6305,7 +6316,7 @@
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support filtering.", "Firefox does not support the 'error' property."]
+                    "notes": ["Filtering is not supported", "'error' is not supported."]
                 },
                 "Firefox OS": {
                     "support": "No"
@@ -6323,7 +6334,7 @@
                 },
                 "Firefox": {
                     "support": "45.0",
-                    "notes": ["Firefox does not support filtering.", "Firefox does not support the 'error' property."]
+                    "notes": ["Filtering is not supported", "'error' is not supported."]
                 }
             }
         }
@@ -7379,11 +7390,12 @@
                     "support": "33"
                 },
                 "Edge": {
-                    "support": "Yes"
+                    "support": "Yes",
+                    "notes": ["'launcher' is not supported."]
                 },
                 "Firefox": {
                     "support": "48.0",
-                    "notes": ["Firefox does not support the 'browser_action or 'page_action' types."]
+                    "notes": ["'browser_action' and 'page_action' are not supported."]
                 }
             }
         }
