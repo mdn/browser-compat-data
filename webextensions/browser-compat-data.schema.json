@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+
+    "support_statement": {
+      "type": "object",
+      "properties": {
+        "support": { "type": "string" },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["support"],
+      "additionalProperties": false
+    },
+
+    "desktop_browsers": {
+      "type": "object",
+      "properties": {
+        "Chrome": { "$ref": "#/definitions/support_statement" },
+        "Opera": { "$ref": "#/definitions/support_statement" },
+        "Edge": { "$ref": "#/definitions/support_statement" },
+        "Firefox": { "$ref": "#/definitions/support_statement" }
+      },
+      "required": ["Chrome", "Opera", "Edge", "Firefox"],
+      "additionalProperties": false
+    },
+
+    "mobile_browsers": {
+      "type": "object",
+      "properties": {
+        "Firefox OS": { "$ref": "#/definitions/support_statement" },
+        "Edge": { "$ref": "#/definitions/support_statement" },
+        "Firefox": { "$ref": "#/definitions/support_statement" }
+      },
+      "required": ["Firefox OS", "Edge", "Firefox"],
+      "additionalProperties": false
+    },
+
+    "api_element": {
+      "type": "object",
+      "properties": {
+        "desktop_browsers": { "$ref": "#/definitions/desktop_browsers" },
+        "mobile_browsers": { "$ref": "#/definitions/mobile_browsers" }
+      },
+      "required": ["desktop_browsers", "mobile_browsers"],
+      "additionalProperties": false
+    },
+
+    "api": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/api_element" }
+    }
+
+  },
+
+  "type": "object",
+  "additionalProperties": { "$ref": "#/definitions/api" }
+
+}
