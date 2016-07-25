@@ -1,7 +1,9 @@
 language: node_js
 before_script:
   - npm install jsonlint -g
+  - npm install ajv-cli -g
 script:
-  - jsonlint webextensions/browser-compat-data.json --quiet --validate webextensions/browser-compat-data.schema.json --environment json-schema-draft-04
+  - jsonlint webextensions/browser-compat-data.json --quiet
+  - ajv validate -s webextensions/browser-compat-data.schema.json -d webextensions/browser-compat-data.json
 notifications:
   email: false
