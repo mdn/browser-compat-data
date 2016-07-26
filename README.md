@@ -41,7 +41,7 @@ The "webextensions" directory contains two files:
 The definitive description of the format used by WebExtensions is the schema file.
 But since the schema is hard to read, here's an English description of it:
 
-* the schema is a single JSON object, which has one property for each
+* the file contains a single JSON object, which has one property for each
 WebExtensions API. The name of the property is the name of the API
 (for example, "i18n", or "downloads"). The value is an `api` object.
 
@@ -57,10 +57,10 @@ are capturing support data. For WebExtensions, this is: "Chrome", "Edge",
 
 * a `support-statement` object has:
     * one mandatory property "support". This can be any of:
-        `true` (it is supported, but we don't know the version that added support)
-        `false`
-        "Unknown"
-        a version string
+        * `true` (it is supported, but we don't know the version that added support)
+        * `false`
+        * "Unknown"
+        * a version string
 
     * one optional property "notes", which is an array of strings.
     This adds any extra information about support in this browser.
