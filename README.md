@@ -10,7 +10,7 @@ usually, but not always, web browsers) support particular Web APIs.
 
 This data can be used in documentation, to build compatibility tables listing
 browser support for APIs. For example:
-[https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
+[Browser support for JavaScript APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
 
 ## Repository contents
 
@@ -35,7 +35,7 @@ are a cross-browser system for developing browser add-ons.
 The "webextensions" directory contains two files:
 
 * [browser-compat-data.json](https://github.com/mdn/browser-compat-data/blob/master/webextensions/browser-compat-data.json): contains compatibility data for all the
-[WebExtensions JavaScript APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API). This data is used in a few different places in the MDN docs for WebExtensions. For example: [https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs)
+[WebExtensions JavaScript APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API). This data is used in a few different places in the MDN docs for WebExtensions. For example: [Browser support for JavaScript APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs)
 * [browser-compat-data.schema.json](https://github.com/mdn/browser-compat-data/blob/master/webextensions/browser-compat-data.schema.json): a schema describing the format of the WebExtensions compatibility data.
 
 *Please note that we do not (yet) guarantee the stability of the data format.
