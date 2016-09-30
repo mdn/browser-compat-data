@@ -1199,6 +1199,9 @@
     }, 
     "TemplateType": {
       "Chrome": {
+        "notes": [
+          "For the 'basic' type, 'iconUrl' is mandatory."
+        ],
         "support": true
       }, 
       "Opera": {
@@ -1212,19 +1215,24 @@
       }, 
       "Firefox": {
         "notes": [
-          "Only the 'basic' type is supported."
+          "Only the 'basic' type is supported.",
+          "For the 'basic' type, 'iconUrl' is optional."
         ], 
         "support": "45.0"
       }, 
       "Firefox for Android": {
         "notes": [
-          "Only the 'basic' type is supported."
+          "Only the 'basic' type is supported.",
+          "For the 'basic' type, 'iconUrl' is optional."
         ], 
         "support": "48.0"
       }
     }, 
     "create": {
       "Chrome": {
+        "notes": [
+          "For the 'basic' type, if 'iconUrl' is present, but the URL can not be loaded, the notification will not be displayed, an error will be shown in the extension's background page console and 'runtime.lastError' will be set in the callback function."
+        ],
         "support": true
       }, 
       "Opera": {
@@ -1234,6 +1242,9 @@
         "support": false
       }, 
       "Firefox": {
+        "notes": [
+          "For the 'basic' type, if 'iconUrl' is present, but the URL can not be loaded, the notification will be displayed and 'runtime.lastError' will not be set in the callback function."
+        ],
         "support": "45.0"
       }, 
       "Firefox for Android": {
@@ -1242,6 +1253,9 @@
     }, 
     "NotificationOptions": {
       "Chrome": {
+        "notes": [
+          "For the 'basic' type, 'iconUrl' is mandatory."
+        ],
         "support": true
       }, 
       "Opera": {
@@ -1252,13 +1266,15 @@
       }, 
       "Firefox": {
         "notes": [
-          "Only 'type', 'iconUrl', 'title', and 'message' are supported."
+          "Only 'type', 'iconUrl', 'title', and 'message' are supported.",
+          "For the 'basic' type, 'iconUrl' is optional."
         ], 
         "support": "45.0"
       }, 
       "Firefox for Android": {
         "notes": [
-          "Only 'type', 'iconUrl', 'title', and 'message' are supported."
+          "Only 'type', 'iconUrl', 'title', and 'message' are supported.",
+          "For the 'basic' type, 'iconUrl' is optional."
         ], 
         "support": "48.0"
       }
