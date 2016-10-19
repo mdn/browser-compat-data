@@ -3,7 +3,7 @@ before_script:
   - npm install jsonlint -g
   - npm install ajv-cli -g
 script:
-  - jsonlint webextensions/browser-compat-data.json --quiet
-  - ajv validate -s webextensions/browser-compat-data.schema.json -d webextensions/browser-compat-data.json
+  - find . -name \*.json  | xargs -I {} jsonlint -q {}
+  - ajv validate -s compat-data.schema.json -d **/*.json
 notifications:
   email: false
