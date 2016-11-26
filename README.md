@@ -22,13 +22,13 @@ not common across all files, but we're hoping to standardize on a common format.
 ### api
 Contains experimental data for [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API).
 
-### javascript
-
-Contains experimental data for  [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
-
 ### http
 
 Contains experimental data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP).
+
+### javascript
+
+Contains experimental data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
 ### webextensions
 
