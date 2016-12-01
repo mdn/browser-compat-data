@@ -33,6 +33,13 @@
     "feature": {
       "type": "object",
       "properties": {
+        "title": { "type": "string" },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Android": { "$ref": "#/definitions/support_statement" },
         "Chrome": { "$ref": "#/definitions/support_statement" },
         "Chrome for Android": { "$ref": "#/definitions/support_statement" },
