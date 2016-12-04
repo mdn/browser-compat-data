@@ -62,11 +62,22 @@
       },
       "required": ["Basic support"],
       "additionalProperties": { "$ref": "#/definitions/feature" }
+    },
+
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "compat": { "$ref": "#/definitions/feature_set" }
+      },
+      "patternProperties":{
+        "^(?!compat).*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
     }
 
   },
 
   "type": "object",
-  "additionalProperties": { "$ref": "#/definitions/feature_set" }
+  "additionalProperties": { "$ref": "#/definitions/identifier" }
 
 }
