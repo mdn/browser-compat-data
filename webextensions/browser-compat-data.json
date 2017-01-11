@@ -1431,22 +1431,30 @@
     }, 
     "query": {
       "Chrome": {
-        "support": true
+        "support": true,
+        "notes": [
+          "'cookieStoreId' is not supported."
+        ]
       }, 
       "Opera": {
-        "support": "33"
+        "support": "33",
+        "notes": [
+          "'cookieStoreId' is not supported."
+        ]
       }, 
       "Edge": {
         "support": true, 
         "notes": [
           "'highlighted' is not supported.", 
-          "The 'panel', 'app', and 'devtools' values for 'WindowType' are not supported."
+          "The 'panel', 'app', and 'devtools' values for 'WindowType' are not supported.",
+          "'cookieStoreId' is not supported."
         ]
       }, 
       "Firefox": {
         "support": "45.0",
         "notes": [
-          "An add-on must have the 'tabs' permission if it wants to use 'url' in the 'queryInfo' parameter."
+          "An add-on must have the 'tabs' permission if it wants to use 'url' in the 'queryInfo' parameter.",
+          "'cookieStoreId' is supported from version 52."
         ]
       }, 
       "Firefox for Android": {
@@ -1489,20 +1497,28 @@
     }, 
     "create": {
       "Chrome": {
-        "support": true
+        "support": true,
+        "notes": [
+          "'cookieStoreId' is not supported."
+        ]
       }, 
       "Opera": {
-        "support": "33"
+        "support": "33",
+        "notes": [
+          "'cookieStoreId' is not supported."
+        ]
       }, 
       "Edge": {
         "support": true, 
         "notes": [
-          "'selected', 'pinned', or 'openerTabId' are not supported."
+          "'selected', 'pinned', or 'openerTabId' are not supported.",
+          "'cookieStoreId' is not supported."
         ]
       }, 
       "Firefox": {
         "notes": [
-          "'selected' is deprecated and not supported. Use 'active' instead."
+          "'selected' is deprecated and not supported. Use 'active' instead.",
+          "'cookieStoreId' is supported from version 52."
         ], 
         "support": "45.0"
       }, 
