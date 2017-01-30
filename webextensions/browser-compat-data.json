@@ -5076,21 +5076,29 @@
     }, 
     "ContextType": {
       "Chrome": {
-        "support": true
+        "support": true,
+        "notes": [
+          "'password' is not supported. Use 'editable' instead."
+        ]
       }, 
       "Opera": {
-        "support": "33"
-      }, 
+        "support": "33",
+        "notes": [
+          "'password' is not supported. Use 'editable' instead."
+        ]
+      },
       "Edge": {
         "support": true, 
         "notes": [
           "'launcher' is not supported."
         ]
-      }, 
+      },
       "Firefox": {
         "support": "48.0", 
         "notes": [
-          "'browser_action' and 'page_action' are supported from version 53."
+          "'browser_action' and 'page_action' are supported from version 53.",
+          "'password' is supported from version 53.",
+          "'The 'editable' context does not include password fields. Use the 'password' context for this."
         ]
       }, 
       "Firefox for Android": {
