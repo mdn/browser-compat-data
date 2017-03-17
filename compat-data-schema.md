@@ -172,23 +172,22 @@ contains a compat object with the information about versions, prefixes or
 alternate names, as well as notes.
 
 The currently accepted browser identifiers are:
-* `"android_webview"`, Webview, the former stock browser on Android,
+* `"webview_android"`, Webview, the former stock browser on Android,
 * `"chrome"`, Google Chrome (on desktops),
-* `"android_chrome"`, Google Chrome (on Android),
+* `"chrome_android"`, Google Chrome (on Android),
 * `"edge"`, MS Edge (on Windows),
-* `"mobile_edge"`, MS Edge, the mobile version,
+* `"edge_mobile"`, MS Edge, the mobile version,
 * `"firefox`", Mozilla Firefox (on desktops),
-* `"android_firefox"`, Firefox for Android, sometimes nicknamed Fennec,
-* `"mobile_ie"`, Microsoft Internet Explorer, the mobile version,
+* `"firefox_android"`, Firefox for Android, sometimes nicknamed Fennec,
+* `"ie_mobile"`, Microsoft Internet Explorer, the mobile version,
 * `"ie"`, Microsoft Internet Explorer (discontinued)
 * `"opera"`, the Opera browser (desktop), based on Blink since Opera 15,
-* `"android_opera"`, the Opera browser (Android version)
+* `"opera_android"`, the Opera browser (Android version)
 * `"safari"`, Apple Safari, on Mac OS,
-* `"ios_safari"`, Apple Safari, on iOS,
+* `"safari_ios"`, Apple Safari, on iOS,
 * `"servo"`, the experimental Mozilla engine.
 
-The following values are mandatory: `"chrome"`, `"opera"`, `"edge"`,
-`"firefox"`, and `"android_firefox"`.
+No value is mandatory.
 
 Each of these properties contains a `support-statement` object with the
 practical compatibility information for this sub-feature and this browser.
@@ -371,4 +370,4 @@ The plan is:
 4. Create a second script to export gettext-formatted files to a JSON data structure.
 5. Implement a gettext-like translation in KumaScript (I'm pretty sure this is already done, and multiple times).
 
-Entry 1. is done in this document.
+1. is done in this document.
