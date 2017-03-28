@@ -194,37 +194,37 @@ practical compatibility information for this sub-feature and this browser.
 
 ### The `support-statement` object
 This object is the key element of each browser compat information. It is a
-support-statement object .It can either be an object of type
-simple-support, or an array of simple-support objects, to cover more complex
-cases.
+support-statement object. It is an array of `support` objects, but if there
+are only one of them, the array can be ommitted
 
-Example of a simple-support compat object:
 
-    {
-      "support": { "version": "6.0" }
-    }
-
-Example of an advanced-support compat object:
+Example of an `support` compat object (with 2 entries):
 
     {
       "support": [
         {
-          "version": "6.0"
+          "version_added": "6.0"
         },
         {
           "prefix": "-moz-",
-          "version": "3.5",
-          "end_version": "9.0"
+          "version_added": "3.5",
+          "version_removed": "9.0"
         }
 
       ]
     }
 
-### Simple compat information: `"support"`
-Compatibility information is stored in a support object. It may consist of the
+Example of a `support` compat object (with 1 entry, array ommitted):
+
+    {
+      "support": { "version_added": "6.0" }
+    }
+
+### Compat information in a `"support"` field.
+Compatibility information is stored in a `"support"` field. It may consist of the
 following properties:
 
-#### `"version"`
+#### `"version_added"`
 Contains a string with the version number the sub-feature has
 been added (and is therefore supported), the Boolean values to indicate the
 sub-feature is supported (`true`, with the additional meaning that the we don't
@@ -234,46 +234,46 @@ don't have support information for it.
 * Support from version 3.5 (included)
 
       {
-        "version": "3.5"
+        "version_added": "3.5"
       }
 
 * Support, but version unknown
 
       {
-        "version": true
+        "version_added": true
       }
 
 * No support
 
       {
-        "version": false
+        "version_added": false
       }
 
 * Support unknown (default value)
 
       {
-        "version" : null
+        "version_added" : null
       }
 
-#### `"end_version"`
+#### `"version_removed"`
 Contains a string with the version number the sub-feature
 stopped to be supported. It may be a Boolean value of (`true` or `false`), or the
-`null` value. If `"version"` is set to a Boolean or a `string`, `"end_version"`
-default value is `false`; if it is `null`, the default value of `"end-version"`
+`null` value. If `"version_added"` is set to a Boolean or a `string`, `"version_removed"`
+default value is `false`; if it is `null`, the default value of `"version_removed"`
 is `null` too.
 
 * Removed in version 10 (start in 3.5):
 
       {
-        "version": "3.5",
-        "end_version": "10"
+        "version_added": "3.5",
+        "version_removed": "10"
       }
 
-* Not removed (default if `"version"` is not `null`):
+* Not removed (default if `"version_added"` is not `null`):
 
      {
-       "version": "3.5",
-       "end_version": false
+       "version_added": "3.5",
+       "version_removed": false
      }
 
 
@@ -285,7 +285,7 @@ string). Note that leading and trailing `-` must be included.
 
       {
         "prefix": "-moz-",
-        "version": "3.5"
+        "version_added": "3.5"
       }
 
 #### `"alternative_name"`
@@ -296,18 +296,39 @@ sub-feature may have a completely different name in some older version.
 
       {
         "alternative_name": "mozRequestFullScreen",
-        "version": "9.0"
+        "version_added": "true",
+        "version_removed": "9.0"
       }
+
+#### `"flags"`
+Is a specific object indicating what kind of flags must be set for this feature
+to work. It consists of three values:
+* `"type"`, an enum that indicates what kind of flag it is: `"preference"` represents
+a flag that the user can set himself on its browser, like in `about:config` on Firefox;
+or `"compile_flag"` that is a flag that has to be set before the compilation of the browser.
+* `"name"`, a `string` representing the flag or preference to modify.
+* `"value_to_set"` representing the actual to set the flag to. It is a string, that may be
+converted to the right type (that is `true` or `false` for Boolean value, or `4` for an
+integer valuie).
 
 #### `"notes"`
 Is an `array` of zero or more translatable `string` containing
-additional pertinent information
+additional pertinent information. If there are only 1 entry in the array,
+the array can be ommitted
 
 * Indication of an experimental support behind a flag
 
       {
-        "version" : false,
-        "notes": [ "Experimental implementation available when <code>layout.css.text-align</code> is set to <code>true</code>." ]
+        "version_added" : false,
+        "notes": "Experimental implementation available when <code>layout.css.text-align</code> is set to <code>true</code>."
+      }
+
+* Linking to a bug and indicating a restriction
+
+      {
+        "version_added": "3.5",
+        "notes": ["See <a href='https://bugzil.la/123456'>bug 123456</a>.",
+                  "Do not work on {{cssxref('::first-letter)}} pseudo-elements."]
       }
 
 Each `string` that contains a human-readable description of the sub-feature. As
@@ -317,42 +338,18 @@ short. the `<code>` and `<a>`, as well as the macros `{{cssxref}}`,
 localization section below for an explanation about how this string will be
 localized.
 
-### Advanced compat information: array of `"support"`
-Not all compatibility information can be described by one single value. Quite
-often compatibility first appeared prefixed, before being unprefixed, and
-finally having the prefix dropped. Even more complex cases, like initial
-support, drop support, then reenabling support can happen.
-
-To handle these case, an alternative to simple compat information has been
-introduced: an `array` of these simple compat information can be given.
-
-* Prefix support dropped a few versions after the full support was made
-available:
-
-      [
-        {
-          "prefix": "-moz-",
-          "version": "3.5",
-          "end_version": "23"
-        },
-        {
-          "version": "12"
-        }
-      ]
-
-
 ### Status information
 The status indicates the stability of the feature. It is an object named
 `"status"` and has four mandatory properties:
 * `"experimental"`, a `boolean` value that indicates this functionality is
-intended to be an additon to the Web platform. Some features are added to
-conduct tests.
-* `"standardized"`, a `boolean` value indicating if the feature is in a
+intended to be an addition to the Web platform. Some features are added to
+conduct tests. Set to `false`, it means the functionality is mature, and no
+significant incompatible changes is expected in the future.
+* `"standard_track"`, a `boolean` value indicating if the feature is in a
 standard track.
-* `"stable"`, a `boolean` value that indicates is the functionality is mature
-enough, and if no significant incompatible changes is expected in the future.
 * `"obsolete`", a `"boolean"` value that indicates if the functionality is only
-kept for compatibility purpose and shouldn't be used anymore.
+kept for compatibility purpose and shouldn't be used anymore. It may be removed
+from the Web platform in the future.
 
 ## Localization
 There is no localization happening inside the .json files themselves; l10n is
