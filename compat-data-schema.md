@@ -311,6 +311,12 @@ or `"compile_flag"` that is a flag that has to be set before the compilation of 
 converted to the right type (that is `true` or `false` for Boolean value, or `4` for an
 integer valuie).
 
+#### `partial_implementation`
+Is a `boolean` value indicating if the implementation of the subfeature follows the current
+spec close enough not to create major interoperability problem. It defaults to `false` (no
+interoperability problem expected). If set `true`, it is recommended to add a note indicating
+how it diverges from the standard (implement an old version of the standard, …)
+
 #### `"notes"`
 Is an `array` of zero or more translatable `string` containing
 additional pertinent information. If there are only 1 entry in the array,
@@ -331,12 +337,10 @@ the array can be ommitted
                   "Do not work on {{cssxref('::first-letter)}} pseudo-elements."]
       }
 
-Each `string` that contains a human-readable description of the sub-feature. As
-it is intended to be used as a kind of caption or title for the feature, keep it
-short. the `<code>` and `<a>`, as well as the macros `{{cssxref}}`,
-`{{HTMLElement}}`, `{{htmlattrxref}}`, and `{{domxref}}` can be used. See the
-localization section below for an explanation about how this string will be
-localized.
+Each `string` that contains a human-readable description of the sub-feature. The
+`<code>` and `<a>`, as well as the macros `{{cssxref}}`, `{{HTMLElement}}`,
+`{{htmlattrxref}}`, and `{{domxref}}` can be used. See the localization section
+below for an explanation about how this string will be localized.
 
 ### Status information
 The status indicates the stability of the feature. It is an object named
