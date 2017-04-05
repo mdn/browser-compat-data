@@ -22,13 +22,22 @@
                 },
                 {
                   "version_added": "47.0",
-                  "notes": "From version 35, available when Enable Experimental Web Platform Features flag is set in chrome://flags"
                 }
               ],
-              "chrome_android": {
-                "version_added": "47.0",
-                "notes": "From version 35, available when Enable Experimental Web Platform Features flag is set in chrome://flags"
-              },
+              "chrome_android": [
+                {
+                  "version_added": "35.0",
+                  "version_removed": "47.0",
+                  "flag": {
+                    "type": "preference",
+                    "name": "Enable Experimental Web Platform Features",
+                    "value_to_set": "true"
+                  }
+                },
+                {
+                  "version_added": "47.0",
+                }
+              ],
               "edge": {
                 "version_added": true
               },
