@@ -10,11 +10,17 @@
               "webview_android": {
                 "version_added": "2.3"
               },
-              "chrome":  {
-                "version_added": "3.0",
-                "notes": ["Version 1.0 and later also implement this property prefixed with <code>-webkit</code>.",
-                          "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."]
-              },
+              "chrome":  [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1.0",
+                  "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+                },
+                {
+                  "version_added": "3.0",
+                  "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+                }
+              ],
               "chrome_android": {
                 "version_added": true
               },
@@ -24,35 +30,61 @@
               "edge_mobile": {
                 "version_added": true
               },
-              "firefox": {
-                "version_added": "4.0",
-                "notes": ["Firefox 3.6 and later also implement this property prefixed with <code>-moz</code>.",
-                          "Firefox 49 and later also implement this property prefixed with <code>-webkit</code>."]
-              },
-              "firefox_android": {
-                "version_added": "4.0",
-                "notes": ["Firefox for Android 1.0 and later also implement this property prefixed with <code>-moz</code>.",
-                          "Firefox for Android 49 and later also implement this property prefixed with <code>-webkit</code>."]
-              },
+              "firefox": [
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3.6"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "version_added": "4.0"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "prefix": "-moz-",
+                  "version_added": "1.0"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "version_added": "4.0"
+                }
+              ],
               "ie": {
                 "version_added": "9.0"
               },
               "ie_mobile": {
                 "version_added": true
               },
-              "opera": {
-                "version_added": "10",
-                "notes": ["Opera 9.5 and later also implement this property prefixed with <code>-o</code>.",
-                          "Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds. Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical clipping dimension. This has been fixed in Opera 10."]
-              },
+              "opera": [
+                {
+                  "prefix": "-o-",
+                  "version_added": "9.5",
+                  "notes": "Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds. Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical clipping dimension. This has been fixed in Opera 10."
+                },
+                {
+                  "version_added": "10"
+                }
+              ],
               "opera_android": {
                 "version_added": true
               },
-              "safari": {
-                "version_added": "4.1",
-                "notes": ["Version 3.0 and later also implement this property prefixed with <code>-webkit</code>.",
-                          "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."]
-              },
+              "safari": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "3.0",
+                  "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+                },
+                {
+                  "version_added": "4.1"
+                }
+              ],
               "safari_ios": {
                 "version_added": true
               },
