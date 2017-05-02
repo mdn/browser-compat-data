@@ -13,7 +13,8 @@
             "type": { "type": "string", "enum": ["preference", "compile_flag"] },
             "name": { "type": "string" },
             "value_to_set": { "type": "string"}
-          }
+          },
+          "additionalProperties": false
         },
         "partial_implementation": { "type": "boolean" },
         "version_added": { "type": ["string", "boolean", "null"] },
@@ -47,7 +48,7 @@
       "anyOf": [
         { "$ref": "#/definitions/simple_support_statement" },
         { "$ref": "#/definitions/array_support_statement" }
-      ]
+      ],
     },
 
 
@@ -68,7 +69,8 @@
         "desc": { "type": ["string"] },
         "support": { "$ref": "#/definitions/compat_block" },
         "status": { "$ref": "#/definitions/status_statement" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "compat_block": {
@@ -127,6 +129,6 @@
     "version": { "type": "string"},
     "data": { "$ref" : "#/definitions/compat_data" }
   },
-  "required": ["version"],
-  "additionalProperties": { "$ref": "#/definitions/identifier" }
+  "required": ["version", "data"],
+  "additionalProperties": false
 }
