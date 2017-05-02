@@ -1444,10 +1444,7 @@
               }, 
               "firefox": {
                 "notes": [
-                  "'browser_action' and 'page_action' are supported from version 53.", 
-                  "'password' is supported from version 53.", 
-                  "'The 'editable' context does not include password fields. Use the 'password' context for this.", 
-                  "'tab' is supported from version 53."
+                  "'The 'editable' context does not include password fields. Use the 'password' context for this."
                 ], 
                 "version_added": "48.0"
               }, 
@@ -1458,7 +1455,48 @@
                 "version_added": "33"
               }
             }
-          }, 
+          },
+          "browser_action": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": {
+                "notes": [
+                  "'The 'editable' context does not include password fields. Use the 'password' context for this."
+                ], 
+                "version_added": "53.0"
+              }, 
+              "firefox_android": {
+                "version_added": false
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "page_action": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": { 
+                "version_added": "53.0"
+              }, 
+              "firefox_android": {
+                "version_added": false
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },      
           "launcher": {
             "support": {
               "chrome": {
@@ -1484,10 +1522,10 @@
                 "version_added": false
               }, 
               "edge": {
-                "version_added": true
+                "version_added": false
               }, 
               "firefox": {
-                "version_added": "48.0"
+                "version_added": "53.0"
               }, 
               "firefox_android": {
                 "version_added": false
@@ -1503,10 +1541,10 @@
                 "version_added": false
               }, 
               "edge": {
-                "version_added": true
+                "version_added": false
               }, 
               "firefox": {
-                "version_added": "48.0"
+                "version_added": "53.0"
               }, 
               "firefox_android": {
                 "version_added": false
@@ -1552,9 +1590,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'modifiers' is supported from version 54."
-                ], 
                 "version_added": "48.0"
               }, 
               "firefox_android": {
@@ -1574,7 +1609,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "48.0"
+                "version_added": "54.0"
               }, 
               "firefox_android": {
                 "version_added": false
@@ -1604,7 +1639,6 @@
               }, 
               "firefox": {
                 "notes": [
-                  "documentUrlPatterns is supported from Firefox 50.", 
                   "From version 53, items that don't specify 'contexts' will inherit contexts from their parents."
                 ], 
                 "version_added": "48.0"
@@ -1702,9 +1736,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "documentUrlPatterns is supported from Firefox 50."
-                ], 
                 "version_added": "48.0"
               }, 
               "firefox_android": {
@@ -2546,18 +2577,48 @@
                 "version_added": false
               }, 
               "firefox": {
-                "notes": [
-                  "'saveAs' is supported from version 52 onwards.", 
-                  "'POST' is supported as a value of 'method' from version 52 onwards."
-                ], 
                 "version_added": "47.0"
               }, 
               "firefox_android": {
-                "notes": [
-                  "'saveAs' is supported from version 52 onwards.", 
-                  "'POST' is supported as a value of 'method' from version 52 onwards."
-                ], 
                 "version_added": "48.0"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "saveAs": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": false
+              }, 
+              "firefox": {
+                "version_added": "52.0"
+              }, 
+              "firefox_android": {
+                "version_added": "52.0"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "POST": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": false
+              }, 
+              "firefox": {
+                "version_added": "52.0"
+              }, 
+              "firefox_android": {
+                "version_added": "52.0"
               }, 
               "opera": {
                 "version_added": "33"
@@ -5398,9 +5459,6 @@
           "basic_support": {
             "support": {
               "chrome": {
-                "notes": [
-                  "'Port.error' is not supported. Use 'runtime.lastError' instead."
-                ], 
                 "version_added": true
               }, 
               "edge": {
@@ -5410,15 +5468,9 @@
                 "version_added": "45.0"
               }, 
               "firefox_android": {
-                "notes": [
-                  "'Port.error' is supported from Firefox 52 onwards."
-                ], 
                 "version_added": "48.0"
               }, 
               "opera": {
-                "notes": [
-                  "'Port.error' is not supported. Use 'runtime.lastError' instead."
-                ], 
                 "version_added": "33"
               }
             }
@@ -6761,15 +6813,47 @@
                 "version_added": true
               }, 
               "edge": {
-                "notes": [
-                  "'highlighted' and 'selected' are not supported."
-                ], 
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'cookieStoreId' is supported from version 52."
-                ], 
+                "version_added": "45.0"
+              }, 
+              "firefox_android": {
+                "version_added": "54"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "highlighted": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": { 
+                "version_added": false
+              }, 
+              "firefox": {
+                "version_added": "45.0"
+              }, 
+              "firefox_android": {
+                "version_added": "54"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "selected": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": false
+              }, 
+              "firefox": {
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -6789,7 +6873,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "52.0"
               }, 
               "firefox_android": {
                 "version_added": false
@@ -6992,9 +7076,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'cookieStoreId' is supported from version 52."
-                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -7014,7 +7095,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "52.0"
               }, 
               "firefox_android": {
                 "version_added": false
@@ -7350,9 +7431,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'cssOrigin' is supported from version 53."
-                ], 
                 "version_added": "47.0"
               }, 
               "firefox_android": {
@@ -7372,10 +7450,10 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "47.0"
+                "version_added": "53.0"
               }, 
               "firefox_android": {
-                "version_added": "54"
+                "version_added": "54.0"
               }, 
               "opera": {
                 "version_added": false
@@ -7696,10 +7774,26 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'changeInfo.title' is supported from version 53."
-                ], 
                 "version_added": "45.0"
+              }, 
+              "firefox_android": {
+                "version_added": "54"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "changeInfo.title": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": {
+                "version_added": "53.0"
               }, 
               "firefox_android": {
                 "version_added": "54"
@@ -7749,9 +7843,7 @@
               }, 
               "firefox": {
                 "notes": [
-                  "An add-on must have the 'tabs' permission if it wants to use 'url' in the 'queryInfo' parameter.", 
-                  "'cookieStoreId' is supported from version 52."
-                ], 
+                  "An add-on must have the 'tabs' permission if it wants to use 'url' in the 'queryInfo' parameter."                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -7774,7 +7866,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "52.0"
               }, 
               "firefox_android": {
                 "version_added": false
@@ -8146,15 +8238,34 @@
               }, 
               "firefox": {
                 "notes": [
-                  "'server_redirect' is limited to top-level frames, 'client_redirect' is not supplied when redirections are created by JavaScript, and 'from_address_bar' is not supported. 'forward_back' is fully supported."
+                  "'server_redirect' is limited to top-level frames and 'client_redirect' is not supplied when redirections are created by JavaScript."
                 ], 
                 "version_added": "48.0"
               }, 
               "firefox_android": {
                 "notes": [
-                  "'server_redirect' is limited to top-level frames, 'client_redirect' is not supplied when redirections are created by JavaScript, and 'from_address_bar' is not supported. 'forward_back' is fully supported."
+                  "'server_redirect' is limited to top-level frames and 'client_redirect' is not supplied when redirections are created by JavaScript."
                 ], 
                 "version_added": "48.0"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "from_address_bar": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": false
+              }, 
+              "firefox": {
+                "version_added": false
+              }, 
+              "firefox_android": {
+                "version_added": false
               }, 
               "opera": {
                 "version_added": "33"
@@ -8297,8 +8408,7 @@
               "firefox": {
                 "notes": [
                   "Filtering is supported from version 50.", 
-                  "If the filter parameter is empty, Firefox raises an exception.", 
-                  "'transitionType' and 'transitionQualifiers' are supported from version 48."
+                  "If the filter parameter is empty, Firefox raises an exception."
                 ], 
                 "version_added": "45.0"
               }, 
@@ -8326,7 +8436,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8345,7 +8455,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8504,16 +8614,14 @@
               "firefox": {
                 "notes": [
                   "Filtering is supported from version 50.", 
-                  "If the filter parameter is empty, Firefox raises an exception.", 
-                  "'error' is not supported."
+                  "If the filter parameter is empty, Firefox raises an exception."
                 ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
                 "notes": [
                   "Filtering is supported from version 50.", 
-                  "If the filter parameter is empty, Firefox raises an exception.", 
-                  "'error' is not supported."
+                  "If the filter parameter is empty, Firefox raises an exception."
                 ], 
                 "version_added": "48.0"
               }, 
@@ -8521,6 +8629,25 @@
                 "notes": [
                   "If the filter parameter is empty, Opera matches all URLs."
                 ], 
+                "version_added": "33"
+              }
+            }
+          },
+          "error": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": {
+                "version_added": false
+              }, 
+              "firefox_android": {
+                "version_added": false
+              }, 
+              "opera": {
                 "version_added": "33"
               }
             }
@@ -8541,9 +8668,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'transitionType' and 'transitionQualifiers' are supported from version 48."
-                ], 
                 "version_added": "47.0"
               }, 
               "firefox_android": {
@@ -8563,7 +8687,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "47.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8582,7 +8706,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "47.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8613,8 +8737,7 @@
               "firefox": {
                 "notes": [
                   "Filtering is supported from version 50.", 
-                  "If the filter parameter is empty, Firefox raises an exception.", 
-                  "'transitionType' and 'transitionQualifiers' are supported from version 48."
+                  "If the filter parameter is empty, Firefox raises an exception."
                 ], 
                 "version_added": "45.0"
               }, 
@@ -8642,7 +8765,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8661,7 +8784,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8784,16 +8907,48 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'windowId' and 'tabId' are supported from version 53."
-                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
-                "notes": [
-                  "'windowId' and 'tabId' are supported from version 53."
-                ], 
                 "version_added": "48.0"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "windowId": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": {
+                "version_added": "53.0"
+              }, 
+              "firefox_android": {
+                "version_added": "53.0"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
+          "tabId": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": {
+                "version_added": "53.0"
+              }, 
+              "firefox_android": {
+                "version_added": "53.0"
               }, 
               "opera": {
                 "version_added": "33"
@@ -8930,9 +9085,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'originUrl' is supported from version 48."
-                ], 
                 "version_added": "46.0"
               }, 
               "firefox_android": {
@@ -8952,7 +9104,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "46.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -8982,19 +9134,16 @@
               }, 
               "firefox": {
                 "notes": [
-                  "'originUrl' is supported from version 48.", 
-                  "'requestBody' is supported from version 50 in Nightly and Developer Edition builds, and in all builds from version 53.", 
                   "Asynchronous event listeners are supported from version 52."
                 ], 
                 "version_added": "46.0"
               }, 
               "firefox_android": {
                 "notes": [
-                  "'requestBody' is supported from version 50 in Nightly and Developer Edition builds, and in all builds from version 53.", 
                   "Asynchronous event listeners are supported from version 52."
                 ], 
                 "version_added": "48.0"
-              }, 
+              },
               "opera": {
                 "notes": [
                   "Asynchronous event listeners are not supported."
@@ -9002,7 +9151,26 @@
                 "version_added": "33"
               }
             }
-          }, 
+          },
+          "requestBody": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              }, 
+              "edge": {
+                "version_added": true
+              }, 
+              "firefox": {
+                "version_added": "53.0"
+              }, 
+              "firefox_android": {
+                "version_added": "53.0"
+              }, 
+              "opera": {
+                "version_added": "33"
+              }
+            }
+          },
           "originUrl": {
             "support": {
               "chrome": {
@@ -9012,7 +9180,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "46.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -9042,7 +9210,6 @@
               }, 
               "firefox": {
                 "notes": [
-                  "'originUrl' is supported from version 48.", 
                   "Asynchronous event listeners are supported from version 52."
                 ], 
                 "version_added": "45.0"
@@ -9070,7 +9237,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -9093,9 +9260,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'originUrl' is supported from version 48."
-                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -9115,7 +9279,7 @@
                 "version_added": true
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -9138,9 +9302,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'originUrl' is supported from version 48."
-                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -9160,7 +9321,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -9242,9 +9403,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'originUrl' is supported from version 48."
-                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -9264,7 +9422,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
@@ -9287,9 +9445,6 @@
                 "version_added": true
               }, 
               "firefox": {
-                "notes": [
-                  "'originUrl' is supported from version 48."
-                ], 
                 "version_added": "45.0"
               }, 
               "firefox_android": {
@@ -9309,7 +9464,7 @@
                 "version_added": false
               }, 
               "firefox": {
-                "version_added": "45.0"
+                "version_added": "48.0"
               }, 
               "firefox_android": {
                 "version_added": "48.0"
