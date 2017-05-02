@@ -37,27 +37,18 @@ the version of schema used inside the file.
 
     {
       "version": "1.0.0",
-      …
+      "data": {
+        …
+      }
     }
 
 We are using semantic versioning, so the version is a `string` containing three
 integers separate by a dot (`.`). No whitespace or additional characters are
-allowed.
+allowed. To see detail of the meaing fo the 3 integers, see the
+[Semantic Versioning 2.0.0 specification](http://semver.org/).
 
-* __1st digit change.__ We introduced a breaking change: some old values will no
-longer validate.
-* __2nd digit change.__ We introduced some novelty that are backward compatible:  
-Old values still validate but some new values are now allowed.
-* __3rd digit change.__ Bug fix that still allows old values to validate,
-without introducing new ones: We optimized our schema to make it simpler and/or
-faster and/or more readable without introducing new values nor breaking existing
-ones, …
-
-This versioning allows to transition to new schema without breaking
-third-parties. The new schema is introduced, with some test schemas, third-party
-tools (like MDN macros) are updated to support both the old and new schemas,
-browser compat data is updated to the new schema, and finally the third-party
-support for the old schema is removed.
+The "data" contains a list of _features_, with their identifier, their description,
+their support status, and thir status.
 
 __Note:__ You cannot mix two schemas in the same file. `"version"` is unique in
 a given file.
@@ -88,7 +79,7 @@ not translatable.
 
 In JSON, this gives:
 
-    {
+    "data": {
       "css": {
         "properties": {
           "text-align": {…},
@@ -109,7 +100,7 @@ In JSON, this gives:
 
  _Note: this list will evolve as we migrate our data_
 
-     {
+     "data": {
        "css": {
          "properties": {…}
          "pseudo-classes": {…}
