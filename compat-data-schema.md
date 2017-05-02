@@ -136,19 +136,19 @@ In this compat property, you'll find the list of sub-features associated to the
 feature.
 
 A feature has at least one sub-feature, representing the basic support. It is
-always named `"basic"`.
+always named `"basic_support"`.
 
 The basic support feature represents the minimal set of functionality included
 when a feature is qualified of 'supported'. What this represents depends of the
 evolution of the feature over time, both in term of specification and of browser
-support. Another way of seeing it is to consider `"support"` as representing all
+support. Another way of seeing it is to consider `"basic_support"` as representing all
 the functionality of the feature that doesn't have its own sub-feature(s).
 
 ### Sub-feature
 
 A sub-feature is the basic entity having browser compatibility information. As
 explained in the previous paragraph, any feature has at least one sub-feature
-called `'support'`, but it may many more.
+called `'basic_support'`, but it may many more.
 
 A sub-feature may have three properties.
 

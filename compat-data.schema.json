@@ -95,7 +95,7 @@
     "subfeature_set": {
       "type": "object",
       "properties": {
-        "support": { "$ref": "#/definitions/subfeature" }
+        "basic_support": { "$ref": "#/definitions/subfeature" }
       },
       "required": ["basic_support"],
       "additionalProperties": { "$ref": "#/definitions/subfeature" }
@@ -110,15 +110,23 @@
         "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
+    },
+
+    "compat_data": {
+      "type": "object",
+      "patternProperties": {
+        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
     }
 
   },
 
   "type": "object",
   "properties": {
-    "version": { "type": "string"}
+    "version": { "type": "string"},
+    "data": { "$ref" : "#/definitions/compat_data" }
   },
   "required": ["version"],
   "additionalProperties": { "$ref": "#/definitions/identifier" }
-
 }
