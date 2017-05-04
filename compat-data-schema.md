@@ -140,8 +140,7 @@ A sub-feature may have three properties.
 * __Sub-feature description__ contained in the `"desc"` property. It is a
 `string` that contains a human-readable description of the sub-feature. As it is
 intended to be used as a kind of caption or title for the feature, keep it short.
-the `<code>` and `<a>`, as well as the macros `{{cssxref}}`, `{{HTMLElement}}`,
-`{{htmlattrxref}}`, and `{{domxref}}` can be used. See the localization section
+the `<code>` and `<a>`. See the localization section
 below for an explanation about how this string will be localized.
 * __Compat information__ contained in the `"support"` property. It contains an
 object listing the compat information for each browser. (See the description
