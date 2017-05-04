@@ -15,12 +15,6 @@ This document describes the format in lay-man terms so that a human can create
 a JSON browser-compat-data file without having to decrypt the schema from
 scratch.
 
-__Note:__ The schema tries to capture as many constraints and rules about the
-browser-compat-data JSON format. Nevertheless there are constraints that cannot
-be described inside a schema, and won't be checked by automated tests. We tried
-to mark such cases in the following text with a __Not enforced by the
-schema__ notice.
-
 ## The JSON format
 
 ### Division in files
