@@ -140,7 +140,7 @@ A sub-feature may have three properties.
 * __Sub-feature description__ contained in the `"desc"` property. It is a
 `string` that contains a human-readable description of the sub-feature. As it is
 intended to be used as a kind of caption or title for the feature, keep it short.
-the `<code>` and `<a>`. See the localization section
+The `<code>` and `<a>` HTML elements can be used. See the localization section
 below for an explanation about how this string will be localized.
 * __Compat information__ contained in the `"support"` property. It contains an
 object listing the compat information for each browser. (See the description
@@ -152,7 +152,7 @@ is standard? Is it stable? Has it been deprecated and shouldn't be used anymore
 
 ### The `"support"` object
 Each sub-feature has support information. For each browser identifier, it
-contains a compat object with the information about versions, prefixes or
+contains a "`support_statement`" object with the information about versions, prefixes or
 alternate names, as well as notes.
 
 The currently accepted browser identifiers are:
@@ -176,16 +176,16 @@ No value is mandatory.
 Each of these properties contains a `support-statement` object with the
 practical compatibility information for this sub-feature and this browser.
 
-### The `support-statement` object
+### The `"support-statement"` object
 This object is the key element of each browser compat information. It is a
-support-statement object. It is an array of `support` objects, but if there
+support-statement object. It is an array of `simple_support_statement` objects, but if there
 are only one of them, the array can be ommitted
 
 
-Example of an `support` compat object (with 2 entries):
+Example of an `simple_support_statement` compat object (with 2 entries):
 
     {
-      "support": [
+      "firefox": [
         {
           "version_added": "6.0"
         },
@@ -201,15 +201,15 @@ Example of an `support` compat object (with 2 entries):
 Example of a `support` compat object (with 1 entry, array ommitted):
 
     {
-      "support": { "version_added": "6.0" }
+      "ie": { "version_added": "6.0" }
     }
 
-### Compat information in a `"support"` field.
-Compatibility information is stored in a `"support"` field. It may consist of the
+### Compat information in a `"simple_support_statement"` field.
+Compatibility information is stored in a `"simple_support_statement"` field. It may consist of the
 following properties:
 
 #### `"version_added"`
-Contains a string with the version number the sub-feature has
+This is the only mandatory property and it contains a string with the version number the sub-feature has
 been added (and is therefore supported), the Boolean values to indicate the
 sub-feature is supported (`true`, with the additional meaning that the we don't
 know in which version) or not (`false`). A value of `null` indicates that we
@@ -322,8 +322,7 @@ the array can be ommitted
       }
 
 Each `string` that contains a human-readable description of the sub-feature. The
-`<code>` and `<a>`, as well as the macros `{{cssxref}}`, `{{HTMLElement}}`,
-`{{htmlattrxref}}`, and `{{domxref}}` can be used. See the localization section
+`<code>` and `<a>` HTML elements can be used. See the localization section
 below for an explanation about how this string will be localized.
 
 ### Status information
