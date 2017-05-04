@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+
+  "definitions": {
+
+    "simple_support_statement": {
+      "type": "object",
+      "properties": {
+        "prefix": { "type": "string" },
+        "alternative_name": { "type": "string" },
+        "flag": { "type": "object",
+          "properties": {
+            "type": { "type": "string", "enum": ["preference", "compile_flag"] },
+            "name": { "type": "string" },
+            "value_to_set": { "type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "partial_implementation": { "type": "boolean" },
+        "version_added": { "type": ["string", "boolean", "null"] },
+        "version_removed": { "type": ["string", "boolean", "null"] },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "required": ["version_added"],
+      "additionalProperties": false
+    },
+
+    "array_support_statement": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/simple_support_statement"
+      }
+    },
+
+    "support_statement": {
+      "anyOf": [
+        { "$ref": "#/definitions/simple_support_statement" },
+        { "$ref": "#/definitions/array_support_statement" }
+      ]
+    },
+
+    "status_statement": {
+      "type": "object",
+      "properties": {
+        "experimental": { "type": ["string", "boolean"] },
+        "standard_track": { "type": ["string", "boolean"] },
+        "obsolete": { "type": ["string", "boolean"] }
+      },
+      "required": ["experimental", "standard_track", "obsolete"],
+      "additionalProperties": false
+    },
+
+    "subfeature": {
+      "type": "object",
+      "properties": {
+        "desc": { "type": ["string"] },
+        "support": { "$ref": "#/definitions/compat_block" },
+        "status": { "$ref": "#/definitions/status_statement" }
+      },
+      "additionalProperties": false
+    },
+
+    "compat_block": {
+      "type": "object",
+      "properties": {
+        "webview_android": { "$ref": "#/definitions/support_statement" },
+        "chrome": { "$ref": "#/definitions/support_statement" },
+        "chrome_android": { "$ref": "#/definitions/support_statement" },
+        "edge": { "$ref": "#/definitions/support_statement" },
+        "edge_mobile": { "$ref": "#/definitions/support_statement" },
+        "firefox": { "$ref": "#/definitions/support_statement" },
+        "firefox_android": { "$ref": "#/definitions/support_statement" },
+        "ie_mobile": { "$ref": "#/definitions/support_statement" },
+        "ie": { "$ref": "#/definitions/support_statement" },
+        "opera": { "$ref": "#/definitions/support_statement" },
+        "opera_android": { "$ref": "#/definitions/support_statement" },
+        "safari": { "$ref": "#/definitions/support_statement" },
+        "safari_ios": { "$ref": "#/definitions/support_statement" },
+        "servo": { "$ref": "#/definitions/support_statement" }
+      },
+      "additionalProperties": true
+    },
+
+    "subfeature_set": {
+      "type": "object",
+      "properties": {
+        "basic_support": { "$ref": "#/definitions/subfeature" }
+      },
+      "required": ["basic_support"],
+      "additionalProperties": { "$ref": "#/definitions/subfeature" }
+    },
+
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/subfeature_set" }
+      },
+      "patternProperties":{
+        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
+    },
+
+    "compat_data": {
+      "type": "object",
+      "patternProperties": {
+        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
+    }
+
+  },
+
+  "type": "object",
+  "properties": {
+    "version": { "type": "string"},
+    "data": { "$ref" : "#/definitions/compat_data" }
+  },
+  "required": ["version", "data"],
+  "additionalProperties": false
+}
