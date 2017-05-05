@@ -1,72 +1,134 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/schema#",
 
   "definitions": {
 
-    "support_statement": {
+    "simple_support_statement": {
       "type": "object",
       "properties": {
-        "support": { "type": ["string", "boolean", "null"] },
+        "prefix": { "type": "string" },
+        "alternative_name": { "type": "string" },
+        "flag": { "type": "object",
+          "properties": {
+            "type": { "type": "string", "enum": ["preference", "compile_flag"] },
+            "name": { "type": "string" },
+            "value_to_set": { "type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "partial_implementation": { "type": "boolean" },
+        "version_added": { "type": ["string", "boolean", "null"] },
+        "version_removed": { "type": ["string", "boolean", "null"] },
         "notes": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
         }
       },
-      "required": ["support"],
+      "required": ["version_added"],
       "additionalProperties": false
+    },
+
+    "array_support_statement": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/simple_support_statement"
+      }
+    },
+
+    "support_statement": {
+      "anyOf": [
+        { "$ref": "#/definitions/simple_support_statement" },
+        { "$ref": "#/definitions/array_support_statement" }
+      ]
     },
 
     "status_statement": {
       "type": "object",
       "properties": {
         "experimental": { "type": ["string", "boolean"] },
-        "standardized": { "type": ["string", "boolean"] },
-        "stable": { "type": ["string", "boolean"] },
+        "standard_track": { "type": ["string", "boolean"] },
         "obsolete": { "type": ["string", "boolean"] }
       },
-      "required": ["experimental", "standardized", "stable", "obsolete"],
+      "required": ["experimental", "standard_track", "obsolete"],
       "additionalProperties": false
     },
 
-    "feature": {
+    "compat_block": {
       "type": "object",
       "properties": {
-        "Android": { "$ref": "#/definitions/support_statement" },
-        "Android Webview": { "$ref": "#/definitions/support_statement" },
-        "Chrome": { "$ref": "#/definitions/support_statement" },
-        "Chrome for Android": { "$ref": "#/definitions/support_statement" },
-        "Edge": { "$ref": "#/definitions/support_statement" },
-        "Edge Mobile": { "$ref": "#/definitions/support_statement" },
-        "Firefox": { "$ref": "#/definitions/support_statement" },
-        "Firefox for Android": { "$ref": "#/definitions/support_statement" },
-        "IE Mobile": { "$ref": "#/definitions/support_statement" },
-        "Internet Explorer": { "$ref": "#/definitions/support_statement" },
-        "Node.js": { "$ref": "#/definitions/support_statement" },
-        "Opera": { "$ref": "#/definitions/support_statement" },
-        "Opera Mobile": { "$ref": "#/definitions/support_statement" },
-        "Safari": { "$ref": "#/definitions/support_statement" },
-        "Safari Mobile": { "$ref": "#/definitions/support_statement" },
-        "Servo": { "$ref": "#/definitions/support_statement" },
+        "webview_android": { "$ref": "#/definitions/support_statement" },
+        "chrome": { "$ref": "#/definitions/support_statement" },
+        "chrome_android": { "$ref": "#/definitions/support_statement" },
+        "edge": { "$ref": "#/definitions/support_statement" },
+        "edge_mobile": { "$ref": "#/definitions/support_statement" },
+        "firefox": { "$ref": "#/definitions/support_statement" },
+        "firefox_android": { "$ref": "#/definitions/support_statement" },
+        "ie_mobile": { "$ref": "#/definitions/support_statement" },
+        "ie": { "$ref": "#/definitions/support_statement" },
+        "opera": { "$ref": "#/definitions/support_statement" },
+        "opera_android": { "$ref": "#/definitions/support_statement" },
+        "safari": { "$ref": "#/definitions/support_statement" },
+        "safari_ios": { "$ref": "#/definitions/support_statement" },
+        "servo": { "$ref": "#/definitions/support_statement" }
+      },
+      "additionalProperties": true
+    },
+
+    "subfeature": {
+      "type": "object",
+      "properties": {
+        "desc": { "type": ["string"] },
+        "support": { "$ref": "#/definitions/compat_block" },
         "status": { "$ref": "#/definitions/status_statement" }
       },
-      "required": ["Chrome", "Opera", "Edge", "Firefox", "Firefox for Android"],
+      "required": ["support"],
       "additionalProperties": false
     },
 
-    "feature_set": {
+    "subfeature_set": {
       "type": "object",
       "properties": {
-        "Basic support": { "$ref": "#/definitions/feature" }
+        "basic_support": { "$ref": "#/definitions/subfeature" }
       },
-      "required": ["Basic support"],
-      "additionalProperties": { "$ref": "#/definitions/feature" }
+      "required": ["basic_support"],
+      "additionalProperties": { "$ref": "#/definitions/subfeature" }
+    },
+
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/subfeature_set" }
+      },
+      "patternProperties":{
+        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
+    },
+
+    "compat_data": {
+      "type": "object",
+      "patternProperties": {
+        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
     }
 
   },
 
   "type": "object",
-  "additionalProperties": { "$ref": "#/definitions/feature_set" }
-
+  "properties": {
+    "version": { "type": "string"},
+    "data": { "$ref" : "#/definitions/compat_data" }
+  },
+  "required": ["version", "data"],
+  "additionalProperties": false
 }

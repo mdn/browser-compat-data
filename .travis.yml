@@ -4,7 +4,11 @@ before_script:
   - npm install ajv-cli -g
 script:
   - find . -name \*.json  | xargs -I {} jsonlint -q {}
-  - ajv validate -s compat-data.schema.json -d "{api/**/*.json,css/**/*.json,http/**/*.json,javascript/**/*.json}"
+  - ajv validate -s compat-data.schema.old.json -d "{api/**/*.json}"
+  - ajv validate -s compat-data.schema.old.json -d "{css/**/*.json}"
+  - ajv validate -s compat-data.schema.old.json -d "{http/**/*.json}"
+  - ajv validate -s compat-data.schema.old.json -d "{javascript/**/*.json}"
   - ajv validate -s webextensions/browser-compat-data.schema.json -d webextensions/browser-compat-data.json
+  - ajv validate -s compat-data.schema.json -d webextensions/javascript-apis.json
 notifications:
   email: false
