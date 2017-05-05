@@ -62,16 +62,6 @@
       "additionalProperties": false
     },
 
-    "subfeature": {
-      "type": "object",
-      "properties": {
-        "desc": { "type": ["string"] },
-        "support": { "$ref": "#/definitions/compat_block" },
-        "status": { "$ref": "#/definitions/status_statement" }
-      },
-      "additionalProperties": false
-    },
-
     "compat_block": {
       "type": "object",
       "properties": {
@@ -91,6 +81,17 @@
         "servo": { "$ref": "#/definitions/support_statement" }
       },
       "additionalProperties": true
+    },
+
+    "subfeature": {
+      "type": "object",
+      "properties": {
+        "desc": { "type": ["string"] },
+        "support": { "$ref": "#/definitions/compat_block" },
+        "status": { "$ref": "#/definitions/status_statement" }
+      },
+      "required": ["support"],
+      "additionalProperties": false
     },
 
     "subfeature_set": {
