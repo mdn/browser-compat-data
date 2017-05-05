@@ -26,8 +26,9 @@ The division in separate files, themselves in different directories is guided
 by making it easy to maintain by humans.
 
 ### Schema versioning
-There one single information that is tied to each file, and is mandatory. It is
-the version of schema used inside the file.
+There are two top-level properties that are mandatory. It is
+the version of schema used inside the file, and the `"data"` property containing
+the actual information:
 
     {
       "version": "1.0.0",
@@ -90,30 +91,6 @@ In JSON, this gives:
  The hierarchy of identifiers is not defined inside the schema. It is a
  convention of the project using the schema.
 
- In the MDN browser-compat case, it is:
-
- _Note: this list will evolve as we migrate our data_
-
-     "data": {
-       "css": {
-         "properties": {…}
-         "pseudo-classes": {…}
-         "pseudo-elements": {…}
-         "at-rules": {…}
-       },
-       "html": {
-         "elements": {
-           …,
-           "<element-name>": {
-             …,
-             "<attribute-name>": {…},
-             …
-           }
-         }
-         "global_attributes": {…}  
-       }
-     }
-
 ### Feature description
 
 A feature is represented by an identifier containing the `"__compat"` property.
@@ -137,15 +114,15 @@ called `'basic_support'`, but it may many more.
 
 A sub-feature may have three properties.
 
-* __Sub-feature description__ contained in the `"desc"` property. It is a
+* An optional __Sub-feature description__ contained in the `"desc"` property. It is a
 `string` that contains a human-readable description of the sub-feature. As it is
 intended to be used as a kind of caption or title for the feature, keep it short.
 The `<code>` and `<a>` HTML elements can be used. See the localization section
 below for an explanation about how this string will be localized.
-* __Compat information__ contained in the `"support"` property. It contains an
+* A mandatory __Compat information__ contained in the `"support"` property. It contains an
 object listing the compat information for each browser. (See the description
 below.)
-* __Status information__ contained in the `"status"` object. It contains the
+* An optional __Status information__ contained in the `"status"` object. It contains the
 information about the stability of the sub-feature: Is it a functionality that
 is standard? Is it stable? Has it been deprecated and shouldn't be used anymore
 (See the description below.)
