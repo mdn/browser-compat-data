@@ -5,7 +5,7 @@ before_script:
 script:
   - find . -name \*.json  | xargs -I {} jsonlint -q {}
   - ajv validate -s compat-data.schema.old.json -d "{api/**/*.json}"
-  - ajv validate -s compat-data.schema.old.json -d "{css/**/*.json}"
+  - ajv validate -s compat-data.schema.json -d "{css/**/*.json}"
   - ajv validate -s compat-data.schema.old.json -d "{http/**/*.json}"
   - ajv validate -s compat-data.schema.old.json -d "{javascript/**/*.json}"
   - ajv validate -s webextensions/browser-compat-data.schema.json -d webextensions/browser-compat-data.json
