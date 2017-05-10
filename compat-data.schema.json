@@ -96,11 +96,11 @@
 
     "subfeature_set": {
       "type": "object",
-      "properties": {
-        "basic_support": { "$ref": "#/definitions/subfeature" }
+      "patternProperties": {
+        "^(?!__compat).*$" : { "$ref": "#/definitions/subfeature" }
       },
       "required": ["basic_support"],
-      "additionalProperties": { "$ref": "#/definitions/subfeature" }
+      "additionalProperties": false
     },
 
     "identifier": {
@@ -109,7 +109,7 @@
         "__compat": { "$ref": "#/definitions/subfeature_set" }
       },
       "patternProperties":{
-        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+        "^(?!__compat|.*\\.).*$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     },
@@ -117,7 +117,7 @@
     "compat_data": {
       "type": "object",
       "patternProperties": {
-        "^(?!__compat).*$" : { "$ref": "#/definitions/identifier" }
+        "^(?!__compat|.*\\.).*$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     }
