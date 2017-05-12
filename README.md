@@ -16,8 +16,7 @@ browser support for APIs. For example:
 
 There's a top-level directory for each broad area covered: for example, "http",
 "javascript", "webextensions". Inside each of these directories is one or more
-JSON files containing the compatibility data. At the moment the format used is
-not common across all files, but we're hoping to standardize on a common format.
+JSON files containing the compatibility data.
 
 ### api
 Contains experimental data for [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API).
@@ -35,18 +34,11 @@ Contains experimental data for [JavaScript](https://developer.mozilla.org/en-US/
 
 ### webextensions
 
-[WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions)
-are a cross-browser system for developing browser add-ons.
-
-The "webextensions" directory contains two files:
-
-* [browser-compat-data.json](https://github.com/mdn/browser-compat-data/blob/master/webextensions/browser-compat-data.json): contains compatibility data for all the
-[WebExtensions JavaScript APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API). This data is used in a few different places in the MDN docs for WebExtensions. For example: [Browser support for JavaScript APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs)
-* [browser-compat-data.schema.json](https://github.com/mdn/browser-compat-data/blob/master/webextensions/browser-compat-data.schema.json): a schema describing the format of the WebExtensions compatibility data.
+Contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
 
 ## Format of the browser compat json files
-The definitive description of the format used by WebExtensions is the [schema file](ttps://github.com/mdn/browser-compat-data/blob/master/compat-data.schema.json).
-But since the schema is hard to read, we have created a [human-readable description](https://github.com/mdn/browser-compat-data/blob/master/compat-data-schema.md) of it
+The definitive description of the format used to represent compatibility data is the [schema file](https://github.com/mdn/browser-compat-data/blob/master/compat-data.schema.json).
+But since the schema is hard to read, we have created a [human-readable description](https://github.com/mdn/browser-compat-data/blob/master/compat-data-schema.md) of it.
 
 *Please note that we do not (yet) guarantee the stability of the data format.
 You're welcome to use the data, but its structure is subject to change without notice.*
@@ -58,6 +50,6 @@ If you find a problem, please [file a bug](https://github.com/mdn/browser-compat
 ## Contributing
 
 We're very happy to accept contributions to this data. Please familiarize yourself
-with the schema for the data you're editing, and send us a pull request.
+with the schema and send us a pull request.
 
 [![Build Status](https://travis-ci.org/mdn/browser-compat-data.svg?branch=master)](https://travis-ci.org/mdn/browser-compat-data)
