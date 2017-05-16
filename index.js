@@ -1,42 +1,34 @@
 var fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    extend = require('extend');
 
-function load(dir, result) {
-    var duplicates = [],
-        result = result || {};
+function load() {
+    // Recursively load one or more directories passed as arguments.
 
-    dir = path.normalize(dir);
+    var dir, result = {};
 
     function processFilename(fn) {
-        // If the given filename is a directory, recursively load it.
         var fp = path.join(dir, fn),
-            basename = path.parse(fn).name;
+            // If the given filename is a directory, recursively load it.
+            extra = fs.statSync(fp).isDirectory() ? load(fp) : require(fp);
 
-        if (result.hasOwnProperty(basename)) {
-            // Keep track of the duplicates and throw error later.
-            duplicates.push(fp);
-        } else if (fs.statSync(fp).isDirectory()) {
-            result[basename] = {};
-            load(fp, result[basename]);
-        } else {
-            result[basename] = require(fp);
-        }
+        // The JSON data is independent of the actual file
+        // hierarchy, so it is essential to extend "deeply".
+        result = extend(true, result, extra);
     }
 
-    fs.readdirSync(dir).forEach(processFilename);
-
-    if (duplicates.length > 0) {
-        // Duplicate template names
-        throw new Error("duplicates:\n" + duplicates.join("\n"));
+    for (dir of arguments) {
+        dir = path.resolve(dir);
+        fs.readdirSync(dir).forEach(processFilename);
     }
 
     return result;
 }
 
-module.exports = {
-  api: load('./api'),
-  css: load('./css'),
-  http: load('./http'),
-  javascript: load('./javascript'),
-  webextensions: load('./webextensions'),
-}
+module.exports = load(
+    'api',
+    'css',
+    'http',
+    'javascript',
+    'webextensions'
+);
