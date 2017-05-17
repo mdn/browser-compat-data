@@ -18,7 +18,7 @@ function load() {
     }
 
     for (dir of arguments) {
-        dir = path.resolve(dir);
+        dir = path.resolve(__dirname, dir);
         fs.readdirSync(dir).forEach(processFilename);
     }
 
@@ -26,9 +26,9 @@ function load() {
 }
 
 module.exports = load(
-    'api',
+    // 'api',
     'css',
-    'http',
-    'javascript',
+    // 'http',
+    // 'javascript',
     'webextensions'
 );
