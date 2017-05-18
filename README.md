@@ -22,7 +22,7 @@ JSON files containing the compatibility data.
 Contains experimental data for [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API).
 
 ### css
-Contains experimental data for [Web APIs](https://developer.mozilla.org/en-US/docs/Web/CSS).
+Contains experimental data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
 ### http
 
