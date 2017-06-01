@@ -75,6 +75,7 @@
         "firefox_android": { "$ref": "#/definitions/support_statement" },
         "ie_mobile": { "$ref": "#/definitions/support_statement" },
         "ie": { "$ref": "#/definitions/support_statement" },
+        "nodejs": { "$ref": "#/definitions/support_statement" },
         "opera": { "$ref": "#/definitions/support_statement" },
         "opera_android": { "$ref": "#/definitions/support_statement" },
         "safari": { "$ref": "#/definitions/support_statement" },
@@ -98,7 +99,7 @@
     "subfeature_set": {
       "type": "object",
       "patternProperties": {
-        "^(?!__compat).*$" : { "$ref": "#/definitions/subfeature" }
+        "^(?!__compat).+$" : { "$ref": "#/definitions/subfeature" }
       },
       "required": ["basic_support"],
       "additionalProperties": false
@@ -110,7 +111,7 @@
         "__compat": { "$ref": "#/definitions/subfeature_set" }
       },
       "patternProperties":{
-        "^(?!__compat|.*\\.).*$" : { "$ref": "#/definitions/identifier" }
+        "^(?!__compat|.*\\.).+$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     },
@@ -118,7 +119,7 @@
     "compat_data": {
       "type": "object",
       "patternProperties": {
-        "^(?!__compat|.*\\.).*$" : { "$ref": "#/definitions/identifier" }
+        "^(?!__compat|.*\\.).+$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     }
