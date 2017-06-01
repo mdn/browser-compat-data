@@ -28,7 +28,7 @@ function load() {
 module.exports = load(
     // 'api',
     'css',
-    // 'http',
+    'http',
     'javascript',
     'webextensions'
 );
