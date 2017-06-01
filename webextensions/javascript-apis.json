@@ -244,33 +244,10 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": {
-                    "version_added": "33"
-                  }
-                }
-              }
-            }
-          },
-          "export": {
-            "__compat": {
-              "basic_support": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": false
-                  },
-                  "firefox": {
-                    "version_added": false
                   },
                   "firefox_android": {
                     "version_added": false
@@ -382,33 +359,10 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": {
-                    "version_added": "33"
-                  }
-                }
-              }
-            }
-          },
-          "import": {
-            "__compat": {
-              "basic_support": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": false
-                  },
-                  "firefox": {
-                    "version_added": false
                   },
                   "firefox_android": {
                     "version_added": false
@@ -428,7 +382,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -612,7 +566,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -635,7 +589,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "47.0"
@@ -681,7 +635,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -867,7 +821,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -1005,7 +959,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -1653,6 +1607,25 @@
                       "Items that don't specify 'contexts' do not inherit contexts from their parents."
                     ],
                     "version_added": "33"
+                  }
+                }
+              },
+              "command": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
                   }
                 }
               }
@@ -4009,7 +3982,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "notes": [
@@ -4057,7 +4030,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "51"
@@ -5125,48 +5098,6 @@
           }
         },
         "privacy": {
-          "BrowserSetting": {
-            "__compat": {
-              "basic_support": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": false
-                  },
-                  "firefox": {
-                    "version_added": "54"
-                  },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
-                  "opera": {
-                    "version_added": true
-                  }
-                }
-              },
-              "onChange": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": false
-                  },
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": {
-                    "version_added": true
-                  }
-                }
-              }
-            }
-          },
           "network": {
             "__compat": {
               "basic_support": {
@@ -5271,13 +5202,61 @@
             }
           }
         },
+        "proxy": {
+          "onProxyError": {
+            "__compat": {
+              "basic_support": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": "55"
+                  },
+                  "opera": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          },
+          "registerProxyScript": {
+            "__compat": {
+              "basic_support": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": "55"
+                  },
+                  "opera": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          }
+        },
         "runtime": {
           "MessageSender": {
             "__compat": {
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
                     "version_added": true
@@ -5295,7 +5274,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5318,7 +5297,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5341,7 +5320,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5364,7 +5343,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5387,7 +5366,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               },
@@ -5406,7 +5385,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5429,7 +5408,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5452,7 +5431,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5463,10 +5442,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -5475,7 +5454,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               },
@@ -5517,7 +5496,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5528,10 +5507,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": true
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -5540,7 +5519,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5551,10 +5530,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "29"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "50.0"
@@ -5563,7 +5542,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "16"
                   }
                 }
               }
@@ -5574,7 +5553,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": true
@@ -5586,7 +5565,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5620,7 +5599,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": true
@@ -5632,7 +5611,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5643,7 +5622,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "29"
                   },
                   "edge": {
                     "version_added": false
@@ -5655,7 +5634,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "16"
                   }
                 }
               }
@@ -5666,7 +5645,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "29"
                   },
                   "edge": {
                     "version_added": false
@@ -5678,7 +5657,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "16"
                   }
                 }
               }
@@ -5689,7 +5668,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": true
@@ -5701,7 +5680,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5712,7 +5691,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": true
@@ -5724,7 +5703,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5753,7 +5732,7 @@
                     "notes": [
                       "lastError is not an Error object. Instead, it is a plain Object with the error text as the string value of the 'message' property."
                     ],
-                    "version_added": "33"
+                    "version_added": true
                   }
                 }
               }
@@ -5764,7 +5743,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "27"
                   },
                   "edge": {
                     "version_added": false
@@ -5776,7 +5755,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5787,10 +5766,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": true
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -5799,7 +5778,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5810,7 +5789,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
                     "version_added": false
@@ -5822,7 +5801,7 @@
                     "version_added": "54"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5833,7 +5812,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": true
@@ -5851,7 +5830,7 @@
                     "version_added": "52.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5862,7 +5841,7 @@
               "MessageSender.tlsChannelId": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "32"
                   },
                   "edge": {
                     "version_added": false
@@ -5874,14 +5853,14 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "19"
                   }
                 }
               },
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
                     "version_added": true
@@ -5893,7 +5872,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5904,7 +5883,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
                     "version_added": false
@@ -5916,7 +5895,7 @@
                     "version_added": "54"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5927,7 +5906,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "29"
                   },
                   "edge": {
                     "version_added": false
@@ -5939,7 +5918,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "16"
                   }
                 }
               }
@@ -5950,7 +5929,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "23"
                   },
                   "edge": {
                     "version_added": false
@@ -5962,7 +5941,7 @@
                     "version_added": "52.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5973,7 +5952,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": false
@@ -5985,7 +5964,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -5996,7 +5975,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "22"
                   },
                   "edge": {
                     "version_added": false
@@ -6008,7 +5987,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -6019,7 +5998,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "25"
                   },
                   "edge": {
                     "version_added": false
@@ -6031,7 +6010,7 @@
                     "version_added": "51.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -6042,7 +6021,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "42"
                   },
                   "edge": {
                     "version_added": false
@@ -6054,7 +6033,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "29"
                   }
                 }
               }
@@ -6065,10 +6044,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "25"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "51.0"
@@ -6077,7 +6056,7 @@
                     "version_added": "51.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -6088,7 +6067,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "25"
                   },
                   "edge": {
                     "version_added": false
@@ -6100,7 +6079,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               }
@@ -6111,7 +6090,7 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "26"
                   },
                   "edge": {
                     "version_added": true
@@ -6123,11 +6102,11 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "15"
                   }
                 }
               },
-              "options": {
+              "options.includeTlsChannelId": {
                 "support": {
                   "chrome": {
                     "version_added": true
@@ -6142,7 +6121,26 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": true
+                  }
+                }
+              },
+              "options.toProxyScript": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": "55"
+                  },
+                  "opera": {
+                    "version_added": false
                   }
                 }
               }
@@ -6153,10 +6151,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "29"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "50.0"
@@ -6165,7 +6163,7 @@
                     "version_added": false
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "16"
                   }
                 }
               }
@@ -6176,10 +6174,10 @@
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "41"
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "47.0"
@@ -6188,7 +6186,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": "33"
+                    "version_added": "28"
                   }
                 }
               }
@@ -6723,7 +6721,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "53.0"
@@ -7031,7 +7029,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "47.0"
@@ -7562,7 +7560,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -7608,7 +7606,7 @@
                     "version_added": true
                   },
                   "edge": {
-                    "version_added": false
+                    "version_added": "15"
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -8223,6 +8221,50 @@
                   },
                   "opera": {
                     "version_added": "33"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "types": {
+          "BrowserSetting": {
+            "__compat": {
+              "basic_support": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "54"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
+                }
+              },
+              "onChange": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": true
                   }
                 }
               }
