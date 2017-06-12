@@ -1,14 +1,7 @@
 language: node_js
-before_script:
-  - npm install jsonlint -g
-  - npm install ajv-cli -g
-script:
-  - find . -name \*.json  | xargs -I {} jsonlint -q {}
-  - ajv validate -s compat-data.schema.json -d "api/**/*.json"
-  - ajv validate -s compat-data.schema.json -d "css/**/*.json"
-  - ajv validate -s compat-data.schema.json -d "http/**/*.json"
-  - ajv validate -s compat-data.schema.json -d "javascript/**/*.json"
-  - ajv validate -s compat-data.schema.json -d "webextensions/**/*.json"
-  - ajv validate -s compat-data.schema.json -d "test/sample-data.json"
+node_js:
+- '7'
+sudo: false
+script: "npm run travis"
 notifications:
   email: false
