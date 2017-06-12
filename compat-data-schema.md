@@ -146,41 +146,41 @@ The currently accepted browser identifiers are:
 No browser identifier is mandatory.
 
 #### The `support_statement` object
-This object is the key element for each browser.
+The `support_statement` object describes the support provided by a single browser type for the given subfeature.
 It is an array of `simple_support_statement` objects, but if there
 is only one of them, the array can be omitted.
 
 
-Example of an `array_support_statement` compat object (with 2 entries):
+Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
 ```json
 "support": {
   "firefox": [
     {
-      "version_added": "6.0"
+      "version_added": "6"
     },
     {
       "prefix": "-moz-",
       "version_added": "3.5",
-      "version_removed": "9.0"
+      "version_removed": "9"
     }
   ]
 }
 ```
 
-Example of a `simple_support_statement` compat object (with 1 entry, array omitted):
+Example of a `support` compat object (with 1 entry, array omitted):
 ```json
 "support": {
   "ie": { "version_added": "6.0" }
 }
 ```
 
-### Compat data in `simple_support_statement` objects
-This is the core object containing the compatibility information for a browser.
+### Compat data in support statements
+The `simple_support_statement` object is the core object containing the compatibility information for a browser.
 It consist of the following properties:
 
 #### `version_added`
 This is the only mandatory property and it contains a string with the version
-number indicating when a sub-feature ha been added (and is therefore supported).
+number indicating when a sub-feature has been added (and is therefore supported).
 The Boolean values indicate that a sub-feature is supported (`true`, with the
 additional meaning that it is unknown in which version support was added) or
 not supported (`false`). A value of `null` indicates that support information is
@@ -214,8 +214,13 @@ entirely unknown. Examples:
 #### `version_removed`
 Contains a string with the version number the sub-feature is
 removed in. It may also be a Boolean value of (`true` or `false`), or the
-`null` value. If `version_added` is set to a Boolean or a `string`, `version_removed`
-default value is `false`; if it is `null`, the default value of `version_removed` is `null` too. Examples:
+`null` value.
+
+Default values:
+* If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
+* if `version_added` is set to `null`, the default value of `version_removed` is also `null`.
+
+Examples:
 
 * Removed in version 10 (added in 3.5):
 ```json
@@ -245,7 +250,7 @@ Note that leading and trailing `-` must be included. Example:
 ```
 
 #### `alternative_name`
-In some cases features are named entirely different and not just prefixed. Example:
+In some cases features are named entirely differently and not just prefixed. Example:
 
 * Prefixed version had a different capitalization
 ```json
@@ -264,9 +269,9 @@ It consists of three properties:
 a flag that the user can set (like in `about:config` in Firefox)
   * `compile_flag` a flag that has to be set before compiling the browser.
 * `name` (mandatory): a `string` representing the flag or preference to modify.
-* `value_to_set` (optional): representing the actual to set the flag to.
+* `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
-(that is `true` or `false` for Boolean value, or `4` for an integer value).
+(that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
@@ -286,7 +291,7 @@ the array can be a just a string. Example:
   "version_added": "3.5",
   "notes": [
     "Does not work on ::first-letter pseudo-elements.",
-    "See bug 1234567"
+    "Has not been updated to the latest specification, see <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1234567\">bug 1234567</a>."
   ]
 }
 ```
@@ -304,3 +309,8 @@ active specification or specification process.
 * `obsolete`: a `"boolean"` value that indicates if the functionality is only
 kept for compatibility purpose and shouldn't be used anymore. It may be removed
 from the Web platform in the future.
+
+### Localization
+We are planning localize some of this data (e.g. notes, descriptions).
+At this point we haven't decided how and when we are going to do that.
+See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
