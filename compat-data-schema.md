@@ -1,334 +1,316 @@
-# The browser-compat-data JSON format
+# The mdn-browser-compat-data JSON schema
 
-Maintained by the [MDN team at Mozilla](https://wiki.mozilla.org/MDN).
+This document helps you to understand how mdn-browser-compat-data is organized and structured.
 
-## Browser compatibility information
-MDN needs the compatibility information for each feature of the Web platform. In
-order to make it easier to maintain and easy to reuse by third-party tool, we
-decided to store this data into a set of JSON files, stored in a git repository.
+## Where to find compat data
+### The folder structure
 
-In order to ensure the coherence of the data, we define a JSON schema that
-describes the content of the JSON files storing the info. Before accepting a
-PR, we validate the changes against this schema with _travis-ci_.
+Compatibility data is organized in top-level directories for each broad area covered: for example, "http",
+"javascript", "webextensions". Inside each of these directories is one or more
+JSON file containing the compatibility data.
 
-This document describes the format in lay-man terms so that a human can create
-a JSON browser-compat-data file without having to decrypt the schema from
-scratch.
+- [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
-## The JSON format
+- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors and at-rules.
 
-### Division in files
-The browser-compat-data schema has been designed so the division in files doesn't
-convey any meaning. That means that browser compatibility information about features
-can be stored in one single large files or being divided in smaller files.
+- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses and methods.
 
-The division in separate files, themselves in different directories is guided
-by making it easy to maintain by humans.
+- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators and or other ECMAScript language features.
 
-### Schema versioning
-There are two top-level properties that are mandatory. It is
-the version of schema used inside the file, and the `"data"` property containing
-the actual information:
+- [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-    {
-      "version": "1.0.0",
-      "data": {
-        …
+### File and folder breakdown
+The JSON files contain [feature identifiers](#feature-identifiers),
+which are relevant for accessing the data. Except for the top-level directories,
+the file and sub folder hierarchies aren't of any meaning for the exports.
+Compatibility data can be stored in a single large file or might be divided in
+smaller files and put into sub folders.
+
+## Understanding the schema
+
+### Schema versions
+There are two top-level properties that are mandatory. First, `version`
+indicating which schema version is used inside the file, and `data` containing
+the actual compatibility data.
+```json
+{
+  "version": "1.0.0",
+  "data": { }
+}
+```
+The `version` property must be a string following the `MAJOR.MINOR.PATCH` format
+of the [Semantic Versioning 2.0.0 specification](http://semver.org/).
+You cannot add more than one schema versions, `version` is unique in a given file.
+
+The `data` property contains feature identifier objects which then contain the
+actual compatibility data.
+
+### Feature identifiers
+
+#### Features and sub-features
+A _feature_ is a functionality of the platform. It is an entity that can be used
+independently. A _sub-feature_ is a specific value or behavior of a feature.
+This division is a bit arbitrary, but matches the way developers perceive features of a platform.
+
+* For CSS: an entity like a property, a pseudo-class, a pseudo-element,
+an at-rule, or a descriptor is a feature. A value, a new syntax, or a specific
+behavior (like if a property applies to a set of elements or another) are sub-features.
+
+* For HTML: an element or an attribute are features, while specific values of
+an attribute are sub-features.
+
+* For Web APIs or JavaScript: an interface, a method, a property, a constructor
+are features, while arguments or special values of an enumerated type are sub-features.
+
+#### Hierarchies
+
+Each feature is identified by a unique hierarchy of strings.
+E.g the `text-align` property is identified by `css.properties.text-align`.
+
+In the JSON file it looks like this:
+```json
+{
+  "version": "1.0.0",
+  "data": {
+    "css": {
+      "properties": {
+        "text-align":{},
       }
     }
+  }
+}
+```
 
-We are using semantic versioning, so the version is a `string` containing three
-integers separate by a dot (`.`). No whitespace or additional characters are
-allowed. To see detail of the meaing fo the 3 integers, see the
-[Semantic Versioning 2.0.0 specification](http://semver.org/).
+Each feature is uniquely accessible, independently of the file it is defined in.
 
-The "data" contains a list of _features_, with their identifier, their description,
-their support status, and thir status.
+The hierarchy of identifiers is not defined by the schema and is a convention of
+the project using the schema.
 
-__Note:__ You cannot mix two schemas in the same file. `"version"` is unique in
-a given file.
+### Features
 
-### Feature identifier
-A _feature_ is a functionality of the platform. It is an entity that can be used
-independently. A _sub-feature_ is a specific value or behavior of a feature. The
-division is a bit arbitrary, but matches the way developers perceive features of
-a platform
+A feature is described by an identifier containing the `__compat` property.
+It lists the sub-features associated to the feature.
 
-* For CSS, an entity like a property, a pseudo-class, a pseudo-element, an
-at-rule, or a descriptor is a feature. A value, a new syntax change, or a
-specific behavior, like if a property applies to a set of elements or another
-are sub-features.
+A feature has at least one sub-feature, representing basic support.
+It is always named `basic_support`.
 
-* For HTML, an element or an attribute are features, while specific values of an
-attribute are sub-features.
+Basic support indicates that a minimal implementation of a functionality is included.
+What it represents exactly depends of the evolution of the feature over time,
+both in terms of specifications and of browser support. Another way of seeing it
+is to consider `basic_support` as representing all the functionality of the
+feature that doesn't have its own sub-feature(s).
 
-* For Web APIs or JavaScript, an interface, a method, a property, a constructor
-are features, while arguments or special values of an enumerated type are
-sub-features.
+### Sub-features
 
-Each feature is identified by a unique hierarchy of strings. E.g the
-`text-align` property is identified by `css.properties.text-align`.
-
-The strings of an identifier are not intended to be displayed and are therefore
-not translatable.
-
-In JSON, this gives:
-
-    "data": {
-      "css": {
-        "properties": {
-          "text-align": {…},
-          …
-        },
-        …
-      },
-      …
-    }
-
- That way, each feature is uniquely identifier, independently of the file it is
- defined in.
-
- The hierarchy of identifiers is not defined inside the schema. It is a
- convention of the project using the schema.
-
-### Feature description
-
-A feature is represented by an identifier containing the `"__compat"` property.
-In this compat property, you'll find the list of sub-features associated to the
-feature.
-
-A feature has at least one sub-feature, representing the basic support. It is
-always named `"basic_support"`.
-
-The basic support feature represents the minimal set of functionality included
-when a feature is qualified of 'supported'. What this represents depends of the
-evolution of the feature over time, both in term of specification and of browser
-support. Another way of seeing it is to consider `"basic_support"` as representing all
-the functionality of the feature that doesn't have its own sub-feature(s).
-
-### Sub-feature
-
-A sub-feature is the basic entity having browser compatibility information. As
-explained in the previous paragraph, any feature has at least one sub-feature
-called `'basic_support'`, but it may many more.
+A sub-feature is the basic entity containing browser compatibility information. As
+explained in the previous section, any feature has at least one sub-feature
+called `basic_support`, but it may have many more.
 
 A sub-feature may have three properties.
+* A mandatory `support` property for __compat information__.
+An object listing the compatibility information for each browser ([see below](#the-support-object)).
 
-* An optional __Sub-feature description__ contained in the `"desc"` property. It is a
-`string` that contains a human-readable description of the sub-feature. As it is
-intended to be used as a kind of caption or title for the feature, keep it short.
-The `<code>` and `<a>` HTML elements can be used. See the localization section
-below for an explanation about how this string will be localized.
-* A mandatory __Compat information__ contained in the `"support"` property. It contains an
-object listing the compat information for each browser. (See the description
-below.)
-* An optional __Status information__ contained in the `"status"` object. It contains the
-information about the stability of the sub-feature: Is it a functionality that
-is standard? Is it stable? Has it been deprecated and shouldn't be used anymore
-(See the description below.)
+* An optional `desc` property for __sub-feature description__.
+A string containing a human-readable description of the sub-feature.
+It is intended to be used as a caption or title and should be kept short.
+The `<code>` and `<a>` HTML elements can be used.
 
-### The `"support"` object
-Each sub-feature has support information. For each browser identifier, it
-contains a "`support_statement`" object with the information about versions, prefixes or
-alternate names, as well as notes.
+* An optional `status` property for __status information__.
+An object containing information about the stability of the sub-feature:
+Is it a functionality that is standard? Is it stable? Has it been deprecated
+and shouldn't be used anymore ([see below](#status-information)).
+
+### The `support` object
+Each sub-feature has support information. For each browser identifier,
+it contains a [`support_statement`](#the-support_statement-object) object with
+information about versions, prefixes or alternate names, as well as notes.
+
+#### Browser identifiers
 
 The currently accepted browser identifiers are:
-* `"webview_android"`, Webview, the former stock browser on Android,
-* `"chrome"`, Google Chrome (on desktops),
-* `"chrome_android"`, Google Chrome (on Android),
-* `"edge"`, MS Edge (on Windows),
-* `"edge_mobile"`, MS Edge, the mobile version,
-* `"firefox`", Mozilla Firefox (on desktops),
-* `"firefox_android"`, Firefox for Android, sometimes nicknamed Fennec,
-* `"ie_mobile"`, Microsoft Internet Explorer, the mobile version,
-* `"ie"`, Microsoft Internet Explorer (discontinued)
-* `"opera"`, the Opera browser (desktop), based on Blink since Opera 15,
-* `"opera_android"`, the Opera browser (Android version)
-* `"safari"`, Apple Safari, on Mac OS,
-* `"safari_ios"`, Apple Safari, on iOS,
-* `"servo"`, the experimental Mozilla engine.
+* `webview_android`, Webview, the former stock browser on Android,
+* `chrome`, Google Chrome (on desktops),
+* `chrome_android`, Google Chrome (on Android),
+* `edge`, MS Edge (on Windows),
+* `edge_mobile`, MS Edge, the mobile version,
+* `firefox`, Mozilla Firefox (on desktops),
+* `firefox_android`, Firefox for Android, sometimes nicknamed Fennec,
+* `ie_mobile`, Microsoft Internet Explorer, the mobile version,
+* `ie`, Microsoft Internet Explorer (discontinued),
+* `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine,
+* `opera`, the Opera browser (desktop), based on Blink since Opera 15,
+* `opera_android`, the Opera browser (Android version),
+* `safari`, Apple Safari, on Mac OS,
+* `safari_ios`, Apple Safari, on iOS.
 
-No value is mandatory.
+No browser identifier is mandatory.
 
-Each of these properties contains a `support-statement` object with the
-practical compatibility information for this sub-feature and this browser.
-
-### The `"support-statement"` object
-This object is the key element of each browser compat information. It is a
-support-statement object. It is an array of `simple_support_statement` objects, but if there
-are only one of them, the array can be ommitted
+#### The `support_statement` object
+The `support_statement` object describes the support provided by a single browser type for the given subfeature.
+It is an array of `simple_support_statement` objects, but if there
+is only one of them, the array can be omitted.
 
 
-Example of an `simple_support_statement` compat object (with 2 entries):
-
+Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
+```json
+"support": {
+  "firefox": [
     {
-      "firefox": [
-        {
-          "version_added": "6.0"
-        },
-        {
-          "prefix": "-moz-",
-          "version_added": "3.5",
-          "version_removed": "9.0"
-        }
-
-      ]
-    }
-
-Example of a `support` compat object (with 1 entry, array ommitted):
-
+      "version_added": "6"
+    },
     {
-      "ie": { "version_added": "6.0" }
+      "prefix": "-moz-",
+      "version_added": "3.5",
+      "version_removed": "9"
     }
+  ]
+}
+```
 
-### Compat information in a `"simple_support_statement"` field.
-Compatibility information is stored in a `"simple_support_statement"` field. It may consist of the
-following properties:
+Example of a `support` compat object (with 1 entry, array omitted):
+```json
+"support": {
+  "ie": { "version_added": "6.0" }
+}
+```
 
-#### `"version_added"`
-This is the only mandatory property and it contains a string with the version number the sub-feature has
-been added (and is therefore supported), the Boolean values to indicate the
-sub-feature is supported (`true`, with the additional meaning that the we don't
-know in which version) or not (`false`). A value of `null` indicates that we
-don't have support information for it.
+### Compat data in support statements
+The `simple_support_statement` object is the core object containing the compatibility information for a browser.
+It consist of the following properties:
 
-* Support from version 3.5 (included)
+#### `version_added`
+This is the only mandatory property and it contains a string with the version
+number indicating when a sub-feature has been added (and is therefore supported).
+The Boolean values indicate that a sub-feature is supported (`true`, with the
+additional meaning that it is unknown in which version support was added) or
+not supported (`false`). A value of `null` indicates that support information is
+entirely unknown. Examples:
 
-      {
-        "version_added": "3.5"
-      }
+* Support from version 3.5 (inclusive):
+```json
+{
+ "version_added": "3.5"
+}
+```
+* Supported, but version unknown:
+```json
+{
+  "version_added": true
+}
+```
+* No support:
+```json
+{
+  "version_added": false
+}
+```
+* Support unknown (default value, if browser omitted):
+```json
+{
+  "version_added" : null
+}
+```
 
-* Support, but version unknown
+#### `version_removed`
+Contains a string with the version number the sub-feature is
+removed in. It may also be a Boolean value of (`true` or `false`), or the
+`null` value.
 
-      {
-        "version_added": true
-      }
+Default values:
+* If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
+* if `version_added` is set to `null`, the default value of `version_removed` is also `null`.
 
-* No support
+Examples:
 
-      {
-        "version_added": false
-      }
+* Removed in version 10 (added in 3.5):
+```json
+{
+  "version_added": "3.5",
+  "version_removed": "10"
+}
+```
+* Not removed (default if `version_added` is not `null`):
+```json
+{
+  "version_added": "3.5",
+  "version_removed": false
+}
+```
 
-* Support unknown (default value)
-
-      {
-        "version_added" : null
-      }
-
-#### `"version_removed"`
-Contains a string with the version number the sub-feature
-stopped to be supported. It may be a Boolean value of (`true` or `false`), or the
-`null` value. If `"version_added"` is set to a Boolean or a `string`, `"version_removed"`
-default value is `false`; if it is `null`, the default value of `"version_removed"`
-is `null` too.
-
-* Removed in version 10 (start in 3.5):
-
-      {
-        "version_added": "3.5",
-        "version_removed": "10"
-      }
-
-* Not removed (default if `"version_added"` is not `null`):
-
-     {
-       "version_added": "3.5",
-       "version_removed": false
-     }
-
-
-#### `"prefix"`
-Contains the prefix to add to the sub-feature name (default to the empty
-string). Note that leading and trailing `-` must be included.
+#### `prefix`
+A prefix to add to the sub-feature name (defaults to empty string).
+Note that leading and trailing `-` must be included. Example:
 
 * Prefixed sub-feature:
+```json
+{
+  "prefix": "-moz-",
+  "version_added": "3.5"
+}
+```
 
-      {
-        "prefix": "-moz-",
-        "version_added": "3.5"
-      }
-
-#### `"alternative_name"`
-For the cases when prefixing is not enough, contains the whole name of the sub-feature. ( A
-sub-feature may have a completely different name in some older version.
+#### `alternative_name`
+In some cases features are named entirely differently and not just prefixed. Example:
 
 * Prefixed version had a different capitalization
+```json
+{
+  "alternative_name": "mozRequestFullScreen",
+  "version_added": "true",
+  "version_removed": "9.0"
+}
+```
 
-      {
-        "alternative_name": "mozRequestFullScreen",
-        "version_added": "true",
-        "version_removed": "9.0"
-      }
-
-#### `"flags"`
-Is a specific object indicating what kind of flags must be set for this feature
-to work. It consists of three values:
-* `"type"`, an enum that indicates what kind of flag it is: `"preference"` represents
-a flag that the user can set himself on its browser, like in `about:config` on Firefox;
-or `"compile_flag"` that is a flag that has to be set before the compilation of the browser.
-* `"name"`, a `string` representing the flag or preference to modify.
-* `"value_to_set"` representing the actual to set the flag to. It is a string, that may be
-converted to the right type (that is `true` or `false` for Boolean value, or `4` for an
-integer valuie).
+#### `flags`
+An optional object indicating what kind of flags must be set for this feature to work.
+It consists of three properties:
+* `type` (mandatory): an enum that indicates the flag type:
+  * `preference` represents
+a flag that the user can set (like in `about:config` in Firefox)
+  * `compile_flag` a flag that has to be set before compiling the browser.
+* `name` (mandatory): a `string` representing the flag or preference to modify.
+* `value_to_set` (optional): representing the actual value to set the flag to.
+It is a string, that may be converted to the right type
+(that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
 
 #### `partial_implementation`
-Is a `boolean` value indicating if the implementation of the subfeature follows the current
-spec close enough not to create major interoperability problem. It defaults to `false` (no
-interoperability problem expected). If set `true`, it is recommended to add a note indicating
-how it diverges from the standard (implement an old version of the standard, …)
+A `boolean` value indicating whether or not the implementation of the sub-feature
+follows the current specification close enough to not create major interoperability problems.
+It defaults to `false` (no interoperability problem expected).
+If set to `true`, it is recommended to add a note indicating how it diverges from
+the standard (implements an old version of the standard, for example).
 
-#### `"notes"`
-Is an `array` of zero or more translatable `string` containing
-additional pertinent information. If there are only 1 entry in the array,
-the array can be ommitted
+#### `notes`
+An `array` of zero or more strings containing
+additional information. If there is only one entry in the array,
+the array can be a just a string. Example:
 
-* Indication of an experimental support behind a flag
-
-      {
-        "version_added" : false,
-        "notes": "Experimental implementation available when <code>layout.css.text-align</code> is set to <code>true</code>."
-      }
-
-* Linking to a bug and indicating a restriction
-
-      {
-        "version_added": "3.5",
-        "notes": ["See <a href='https://bugzil.la/123456'>bug 123456</a>.",
-                  "Do not work on {{cssxref('::first-letter)}} pseudo-elements."]
-      }
-
-Each `string` that contains a human-readable description of the sub-feature. The
-`<code>` and `<a>` HTML elements can be used. See the localization section
-below for an explanation about how this string will be localized.
+* Indicating a restriction:
+```json
+{
+  "version_added": "3.5",
+  "notes": [
+    "Does not work on ::first-letter pseudo-elements.",
+    "Has not been updated to the latest specification, see <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1234567\">bug 1234567</a>."
+  ]
+}
+```
+The `<code>` and `<a>` HTML elements can be used.
 
 ### Status information
-The status indicates the stability of the feature. It is an object named
-`"status"` and has four mandatory properties:
-* `"experimental"`, a `boolean` value that indicates this functionality is
+The status property informs about stability of the feature. It is an optional object named
+`status` and has four mandatory properties:
+* `experimental`: a `boolean` value that indicates this functionality is
 intended to be an addition to the Web platform. Some features are added to
 conduct tests. Set to `false`, it means the functionality is mature, and no
-significant incompatible changes is expected in the future.
-* `"standard_track"`, a `boolean` value indicating if the feature is in a
-standard track.
-* `"obsolete`", a `"boolean"` value that indicates if the functionality is only
+significant incompatible changes are expected in the future.
+* `standard_track`: a `boolean` value indicating if the feature is part of an
+active specification or specification process.
+* `obsolete`: a `"boolean"` value that indicates if the functionality is only
 kept for compatibility purpose and shouldn't be used anymore. It may be removed
 from the Web platform in the future.
 
-## Localization
-There is no localization happening inside the .json files themselves; l10n is
-handled separately in order to take advantage of existing toolchains.
-
-In the case of MDN, .po files with the translated string will be created. We
-will work on them once the prototype validating the structure of the json will
-be done.
-
-The plan is:
-
-1. Define all source strings as English in the spec, as well as which data elements are plain text, HTML, etc.  Avoiding HTML is a good idea, but being clear about it is necessary if you can't avoid it.
-2. Create a script to extract strings into the standard gettext format
-3. Manage translation using gettext conventions, like Kuma, perhaps even using Pontoon to translate the strings. With gettext, you get fuzzy translations, notifications of changed strings, etc. etc. for free.
-4. Create a second script to export gettext-formatted files to a JSON data structure.
-5. Implement a gettext-like translation in KumaScript (I'm pretty sure this is already done, and multiple times).
-
-1. is done in this document.
+### Localization
+We are planning localize some of this data (e.g. notes, descriptions).
+At this point we haven't decided how and when we are going to do that.
+See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
