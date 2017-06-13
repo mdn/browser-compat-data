@@ -13,12 +13,8 @@ or maybe you found your own.
 Let us know if these look good to you.
 
 ## Validating the data
-You can use [`ajv`](http://epoberezkin.github.io/ajv/) to validate data against the schema. For example, to validate the css folder:
-
-```js
-ajv validate -s compat-data.schema.json -d "css/**/*.json"
-```
-We are planning to add proper test runner soon. Stay tuned!
+You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --dev`.
+The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
 ## Checklist
 Not everything is enforced or validated by the schema. A few things to pay attention to:
