@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var Ajv = require('ajv');
-var ajv = new Ajv({ $data: true, allErrors: true });
+var ajv = new Ajv({ allErrors: true });
 var hasErrors = false;
 
 function jsonDiff(actual, expected) {
@@ -24,26 +24,33 @@ function checkStyle(filename) {
   var expected = JSON.stringify(JSON.parse(actual), null, 2);
 
   if (actual === expected) {
-    console.log('\x1b[32m','  Style – OK', '\x1b[0m');
+    console.log('\x1b[32m');
+    console.log('  Style – OK');
+    console.log('\x1b[0m');
   } else {
     hasErrors = true;
-    console.log('\x1b[31m', '  Style – Error on line ' + jsonDiff(actual, expected));
+    console.log('\x1b[31m');
+    console.log('  Style – Error on line ' + jsonDiff(actual, expected));
   }
 }
 
 function checkSchema(dataFilename) {
-  var schemaFilename = "../compat-data.schema.json";
+  var schemaFilename = '../compat-data.schema.json';
   var valid = ajv.validate(
     require(schemaFilename),
     require(dataFilename)
   );
 
   if (valid) {
-    console.log('\x1b[32m','  JSON Schema – OK', '\x1b[0m');
+    console.log('\x1b[32m');
+    console.log('  JSON schema – OK');
+    console.log('\x1b[0m');
   } else {
     hasErrors = true;
-    console.log('\x1b[31m', '  JSON Schema – ' + ajv.errors.length + ' error(s)\n   ' + '\x1b[0m' +
-      ajv.errorsText(ajv.errors, {
+    console.log('\x1b[31m');
+    console.log('  JSON schema – ' + ajv.errors.length + ' error(s)');
+    console.log('\x1b[0m');
+    console.log('   ' + ajv.errorsText(ajv.errors, {
         separator: '\n    ',
         dataVar: 'item'
       })
