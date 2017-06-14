@@ -24,13 +24,10 @@ function checkStyle(filename) {
   var expected = JSON.stringify(JSON.parse(actual), null, 2);
 
   if (actual === expected) {
-    console.log('\x1b[32m');
-    console.log('  Style – OK');
-    console.log('\x1b[0m');
+    console.log('\x1b[32m  Style – OK\x1b[0m');
   } else {
     hasErrors = true;
-    console.log('\x1b[31m');
-    console.log('  Style – Error on line ' + jsonDiff(actual, expected));
+    console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 }
 
@@ -42,39 +39,35 @@ function checkSchema(dataFilename) {
   );
 
   if (valid) {
-    console.log('\x1b[32m');
-    console.log('  JSON schema – OK');
-    console.log('\x1b[0m');
+    console.log('\x1b[32m  JSON schema – OK\x1b[0m');
   } else {
     hasErrors = true;
-    console.log('\x1b[31m');
-    console.log('  JSON schema – ' + ajv.errors.length + ' error(s)');
-    console.log('\x1b[0m');
+    console.log('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
     console.log('   ' + ajv.errorsText(ajv.errors, {
-        separator: '\n    ',
-        dataVar: 'item'
-      })
-    );
-  }
+      separator: '\n    ',
+      dataVar: 'item'
+    })
+  );
+}
 }
 
 
 function load() {
-  var dirAbs, dirRel = '';
+  var dirAbs;
 
   function processFilename(fn) {
-    var fp = path.join(dirAbs, fn),
+    var fp = path.join(dirAbs, fn);
     // If the given filename is a directory, recursively load it.
-    extra = fs.statSync(fp).isDirectory() ? load(fp) : require(fp);
-
-    if (path.extname(fn) === '.json') {
+    if (fs.statSync(fp).isDirectory()) {
+      load(fp);
+    } else if (path.extname(fn) === '.json') {
       console.log(dirRel.replace('../', '') + '/' + fn);
       checkStyle(fp)
       checkSchema(fp);
     }
   }
 
-  for (dir of arguments) {
+  for (const dir of arguments) {
     dirRel = path.relative(__dirname, dir);
     dirAbs = path.resolve(__dirname, '../', dir);
     fs.readdirSync(dirAbs).forEach(processFilename);
