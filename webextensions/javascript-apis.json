@@ -3439,57 +3439,15 @@
               }
             }
           },
-          "InjectDetails": {
-            "__compat": {
-              "matchAboutBlank": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": true
-                  },
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": {
-                    "version_added": "48.0"
-                  },
-                  "opera": {
-                    "version_added": true
-                  }
-                }
-              },
-              "basic_support": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": true
-                  },
-                  "firefox": {
-                    "version_added": "45.0"
-                  },
-                  "firefox_android": {
-                    "version_added": "48.0"
-                  },
-                  "opera": {
-                    "version_added": true
-                  }
-                }
-              }
-            }
-          },
           "RunAt": {
             "__compat": {
               "basic_support": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "20"
                   },
                   "edge": {
-                    "version_added": true
+                    "version_added": false
                   },
                   "firefox": {
                     "version_added": "45.0"
@@ -3498,7 +3456,7 @@
                     "version_added": "48.0"
                   },
                   "opera": {
-                    "version_added": true
+                    "version_added": "15"
                   }
                 }
               }
@@ -7601,16 +7559,12 @@
                     "version_added": true
                   },
                   "firefox": {
+                    "version_added": "43",
                     "notes": [
-                      "'allFrames' and 'frameId' can't both be set at the same time.",
                       "Before version 50, Firefox would pass a single result value into its callback rather than an array, unless 'allFrames' had been set."
-                    ],
-                    "version_added": "43.0"
+                    ]
                   },
                   "firefox_android": {
-                    "notes": [
-                      "'allFrames' and 'frameId' can't both be set at the same time."
-                    ],
                     "version_added": "54"
                   },
                   "opera": {
@@ -7618,22 +7572,66 @@
                   }
                 }
               },
+              "runAt": {
+                "support": {
+                  "chrome": {
+                    "version_added": "20"
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "43"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": "15"
+                  }
+                }
+              },
+              "frameId": {
+                "support": {
+                  "chrome": {
+                    "version_added": "39"
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "43",
+                    "notes": [
+                      "'allFrames' and 'frameId' can't both be set at the same time."
+                    ]
+                  },
+                  "firefox_android": {
+                    "version_added": "54",
+                    "notes": [
+                      "'allFrames' and 'frameId' can't both be set at the same time."
+                    ]
+                  },
+                  "opera": {
+                    "version_added": "26"
+                  }
+                }
+              },
               "matchAboutBlank": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "39"
                   },
                   "edge": {
                     "version_added": true
                   },
                   "firefox": {
-                    "version_added": false
+                    "version_added": "53"
                   },
                   "firefox_android": {
-                    "version_added": false
+                    "version_added": "54"
                   },
                   "opera": {
-                    "version_added": true
+                    "version_added": "26"
                   }
                 }
               }
@@ -7821,13 +7819,70 @@
                     "version_added": true
                   },
                   "firefox": {
-                    "version_added": "47.0"
+                    "version_added": "47"
                   },
                   "firefox_android": {
                     "version_added": "54"
                   },
                   "opera": {
                     "version_added": true
+                  }
+                }
+              },
+              "runAt": {
+                "support": {
+                  "chrome": {
+                    "version_added": "20"
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "47"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": "15"
+                  }
+                }
+              },
+              "frameId": {
+                "support": {
+                  "chrome": {
+                    "version_added": "39"
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "47"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": "26"
+                  }
+                }
+              },
+              "matchAboutBlank": {
+                "support": {
+                  "chrome": {
+                    "version_added": "39"
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": "26"
                   }
                 }
               },
@@ -7840,32 +7895,13 @@
                     "version_added": false
                   },
                   "firefox": {
-                    "version_added": "53.0"
+                    "version_added": "53"
                   },
                   "firefox_android": {
-                    "version_added": "54.0"
+                    "version_added": "54"
                   },
                   "opera": {
                     "version_added": false
-                  }
-                }
-              },
-              "matchAboutBlank": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": true
-                  },
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": {
-                    "version_added": true
                   }
                 }
               }
@@ -8361,25 +8397,6 @@
                   },
                   "firefox": {
                     "version_added": "49.0"
-                  },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
-                  "opera": {
-                    "version_added": false
-                  }
-                }
-              },
-              "matchAboutBlank": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": {
-                    "version_added": false
-                  },
-                  "firefox": {
-                    "version_added": false
                   },
                   "firefox_android": {
                     "version_added": "54"
