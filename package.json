@@ -23,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/mdn/browser-compat-data/issues"
   },
-  "homepage": "https://github.com/mdn/browser-compat-data#readme"
+  "homepage": "https://github.com/mdn/browser-compat-data#readme",
+  "devDependencies": {
+    "ajv": "^5.0.1"
+  },
+  "scripts": {
+    "lint": "node test/lint",
+    "travis": "npm test",
+    "test": "npm run lint"
+  }
 }
