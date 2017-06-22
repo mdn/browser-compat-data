@@ -306,9 +306,8 @@ conduct tests. Set to `false`, it means the functionality is mature, and no
 significant incompatible changes are expected in the future.
 * `standard_track`: a `boolean` value indicating if the feature is part of an
 active specification or specification process.
-* `obsolete`: a `"boolean"` value that indicates if the functionality is only
-kept for compatibility purpose and shouldn't be used anymore. It may be removed
-from the Web platform in the future.
+* `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
+It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
 ### Localization
 We are planning localize some of this data (e.g. notes, descriptions).
