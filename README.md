@@ -41,6 +41,9 @@ JSON file containing the compatibility data.
 
 - [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors and at-rules.
 
+- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for
+[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes and global attributes.
+
 - [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses and methods.
 
 - [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators and or other ECMAScript language features.

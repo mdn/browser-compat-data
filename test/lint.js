@@ -81,6 +81,7 @@ if (process.argv[2]) {
   load(
     'api',
     'css',
+    'html',
     'http',
     'javascript',
     'test',
