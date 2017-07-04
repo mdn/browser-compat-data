@@ -51,8 +51,8 @@ function checkSchema(dataFilename) {
 }
 
 
-function load() {
-  for (let file of arguments) {
+function load(...files) {
+  for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
     }
@@ -67,9 +67,11 @@ function load() {
       continue;
     }
 
-    load.apply(null, fs.readdirSync(file).map((subfile) => {
+    let subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
-    }));
+    });
+
+    load(...subFiles);
   }
 }
 
