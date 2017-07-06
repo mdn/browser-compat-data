@@ -46,42 +46,47 @@ function checkSchema(dataFilename) {
     console.log('   ' + ajv.errorsText(ajv.errors, {
       separator: '\n    ',
       dataVar: 'item'
-    })
+    }));
+  }
+}
+
+
+function load(...files) {
+  for (let file of files) {
+    if (file.indexOf(__dirname) !== 0) {
+      file = path.resolve(__dirname, '..', file);
+    }
+
+    if (fs.statSync(file).isFile()) {
+      if (path.extname(file) === '.json') {
+        console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
+        checkStyle(file)
+        checkSchema(file);
+      }
+
+      continue;
+    }
+
+    let subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
+
+    load(...subFiles);
+  }
+}
+
+if (process.argv[2]) {
+  load(process.argv[2])
+} else {
+  load(
+    'api',
+    'css',
+    'http',
+    'javascript',
+    'test',
+    'webextensions'
   );
 }
-}
-
-
-function load() {
-  var dirAbs;
-
-  function processFilename(fn) {
-    var fp = path.join(dirAbs, fn);
-    // If the given filename is a directory, recursively load it.
-    if (fs.statSync(fp).isDirectory()) {
-      load(fp);
-    } else if (path.extname(fn) === '.json') {
-      console.log(dirRel.replace('../', '') + '/' + fn);
-      checkStyle(fp)
-      checkSchema(fp);
-    }
-  }
-
-  for (const dir of arguments) {
-    dirRel = path.relative(__dirname, dir);
-    dirAbs = path.resolve(__dirname, '../', dir);
-    fs.readdirSync(dirAbs).forEach(processFilename);
-  }
-}
-
-load(
-  'api',
-  'css',
-  'http',
-  'javascript',
-  'test',
-  'webextensions'
-);
 
 if (hasErrors) {
   process.exit(1);
