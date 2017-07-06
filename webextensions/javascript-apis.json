@@ -9396,6 +9396,9 @@
               "basic_support": {
                 "support": {
                   "chrome": {
+                    "notes": [
+                      "If a blocked popup is unblocked by the user, the event is still not sent."
+                    ],
                     "version_added": true
                   },
                   "edge": {
@@ -9403,17 +9406,23 @@
                   },
                   "firefox": {
                     "notes": [
-                      "If the filter parameter is empty, Firefox raises an exception."
+                      "If the filter parameter is empty, Firefox raises an exception.",
+                      "If a blocked popup is unblocked by the user, the event is then sent."
                     ],
                     "version_added": "54"
                   },
                   "firefox_android": {
                     "notes": [
-                      "If the filter parameter is empty, Firefox raises an exception."
+                      "If the filter parameter is empty, Firefox raises an exception.",
+                      "If a blocked popup is unblocked by the user, the event is then sent.",
+                      "This event is only sent in the 'window.open()' case."
                     ],
                     "version_added": "54"
                   },
                   "opera": {
+                    "notes": [
+                      "If a blocked popup is unblocked by the user, the event is still not sent."
+                    ],
                     "version_added": "17"
                   }
                 }
