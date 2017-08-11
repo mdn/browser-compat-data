@@ -30,7 +30,7 @@ function checkStyle(filename) {
   }
 
   if (actual === expected) {
-    console.log('\x1b[32m  Style – OK\x1b[0m');
+    console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
@@ -45,7 +45,7 @@ function checkSchema(dataFilename) {
   );
 
   if (valid) {
-    console.log('\x1b[32m  JSON schema – OK\x1b[0m');
+    console.log('\x1b[32m  JSON schema – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
