@@ -293,7 +293,7 @@ the array can be a just a string. Example:
   "version_added": "3.5",
   "notes": [
     "Does not work on ::first-letter pseudo-elements.",
-    "Has not been updated to the latest specification, see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1234567'>bug 1234567</a>."
+    "Has not been updated to the latest specification, see <a href='https://bugzil.la/1234567'>bug 1234567</a>."
   ]
 }
 ```
