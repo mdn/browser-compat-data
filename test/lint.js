@@ -29,6 +29,16 @@ function checkStyle(filename) {
     hasErrors = true;
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
+
+  if (actual.includes("//bugzilla.mozilla.org/show_bug.cgi?id=") // like https://bugzil.la/1000000
+    || actual.includes("//bugs.chromium.org/")) { // like https://crbug.com/100000
+    hasErrors = true;
+    console.log('\x1b[33m  Found shortenable url.\x1b[0m');
+  }
+  if (actual.includes("href=\\\"")) {
+    hasErrors = true;
+    console.log('\x1b[33m  You can replace \\\" with \' for <a> tag.\x1b[0m');
+  }
 }
 
 function checkSchema(dataFilename) {
