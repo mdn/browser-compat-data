@@ -29,7 +29,18 @@ function checkStyle(filename) {
     hasErrors = true;
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
-}
+
+  if (actual.includes("//bugzilla.mozilla.org/show_bug.cgi?id=")
+      // use https://bugzil.la/1000000 instead
+    || actual.includes("//bugs.chromium.org/")) {
+      // use https://crbug.com/100000 instead
+    hasErrors = true;
+    console.log('\x1b[33m  Style – Use shortenable URL (bugzil.la or crbug.com).\x1b[0m');
+  }
+  if (actual.includes("href=\\\"")) {
+    hasErrors = true;
+    console.log('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
+  }}
 
 function checkSchema(dataFilename) {
   var schemaFilename = '../compat-data.schema.json';
