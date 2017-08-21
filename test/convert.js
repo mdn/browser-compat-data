@@ -7,14 +7,14 @@ function convert(file, filePath) {
   delete file.version;
 
   function traverse(obj) {
-    for (i in obj) {
+    for (let i in obj) {
       if (!!obj[i] && typeof(obj[i])=="object") {
         // log structures that aren't nested properly and contain a dot.
         // Need to fix these manually or come up with a script here
         if (i.includes(".")) {
           console.log(i);
         }
-        // there is __compat, but sub features follow, "support" should always be the next key
+        //  Don't process objects that have been converted already
         if (obj[i].hasOwnProperty("__compat") && !obj[i].__compat.support) {
           let newObj = {};
           for (let feature of Object.keys(obj[i].__compat)) {
