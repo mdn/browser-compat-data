@@ -84,10 +84,10 @@
       "additionalProperties": false
     },
 
-    "subfeature": {
+    "compat_statement": {
       "type": "object",
       "properties": {
-        "desc": { "type": ["string"] },
+        "description": { "type": "string" },
         "support": { "$ref": "#/definitions/compat_block" },
         "status": { "$ref": "#/definitions/status_statement" }
       },
@@ -95,41 +95,21 @@
       "additionalProperties": false
     },
 
-    "subfeature_set": {
-      "type": "object",
-      "patternProperties": {
-        "^(?!__compat).+$" : { "$ref": "#/definitions/subfeature" }
-      },
-      "required": ["basic_support"],
-      "additionalProperties": false
-    },
-
     "identifier": {
       "type": "object",
       "properties": {
-        "__compat": { "$ref": "#/definitions/subfeature_set" }
+        "__compat": { "$ref": "#/definitions/compat_statement" }
       },
       "patternProperties":{
         "^(?!__compat|.*\\.).+$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
-    },
-
-    "compat_data": {
-      "type": "object",
-      "patternProperties": {
-        "^(?!__compat|.*\\.).+$" : { "$ref": "#/definitions/identifier" }
-      },
-      "additionalProperties": false
     }
-
   },
 
   "type": "object",
-  "properties": {
-    "version": { "type": "string"},
-    "data": { "$ref" : "#/definitions/compat_data" }
+  "patternProperties": {
+    "^(?!__compat|.*\\.).+$": { "$ref": "#/definitions/identifier" }
   },
-  "required": ["version", "data"],
   "additionalProperties": false
 }
