@@ -30,41 +30,7 @@ smaller files and put into sub folders.
 
 ## Understanding the schema
 
-### Schema versions
-There are two top-level properties that are mandatory. First, `version`
-indicating which schema version is used inside the file, and `data` containing
-the actual compatibility data.
-```json
-{
-  "version": "1.0.0",
-  "data": { }
-}
-```
-The `version` property must be a string following the `MAJOR.MINOR.PATCH` format
-of the [Semantic Versioning 2.0.0 specification](http://semver.org/).
-You cannot add more than one schema versions, `version` is unique in a given file.
-
-The `data` property contains feature identifier objects which then contain the
-actual compatibility data.
-
-### Feature identifiers
-
-#### Features and sub-features
-A _feature_ is a functionality of the platform. It is an entity that can be used
-independently. A _sub-feature_ is a specific value or behavior of a feature.
-This division is a bit arbitrary, but matches the way developers perceive features of a platform.
-
-* For CSS: an entity like a property, a pseudo-class, a pseudo-element,
-an at-rule, or a descriptor is a feature. A value, a new syntax, or a specific
-behavior (like if a property applies to a set of elements or another) are sub-features.
-
-* For HTML: an element or an attribute are features, while specific values of
-an attribute are sub-features.
-
-* For Web APIs or JavaScript: an interface, a method, a property, a constructor
-are features, while arguments or special values of an enumerated type are sub-features.
-
-#### Hierarchies
+#### Feature hierarchies
 
 Each feature is identified by a unique hierarchy of strings.
 E.g the `text-align` property is identified by `css.properties.text-align`.
@@ -72,12 +38,17 @@ E.g the `text-align` property is identified by `css.properties.text-align`.
 In the JSON file it looks like this:
 ```json
 {
-  "version": "1.0.0",
-  "data": {
-    "css": {
-      "properties": {
-        "text-align":{},
-      }
+  "css": {
+    "properties": {
+      "text-align": {
+        "__compat": {},
+        "start": {
+          "__compat": {}
+        },
+        "end": {
+          "__compat": {}
+        }
+      },
     }
   }
 }
@@ -88,43 +59,37 @@ Each feature is uniquely accessible, independently of the file it is defined in.
 The hierarchy of identifiers is not defined by the schema and is a convention of
 the project using the schema.
 
-### Features
+#### Features
 
-A feature is described by an identifier containing the `__compat` property.
-It lists the sub-features associated to the feature.
+A feature is described by an identifier containing the `__compat` property. In other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.
 
-A feature has at least one sub-feature, representing basic support.
-It is always named `basic_support`.
+When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.
+What it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.
 
-Basic support indicates that a minimal implementation of a functionality is included.
-What it represents exactly depends of the evolution of the feature over time,
-both in terms of specifications and of browser support. Another way of seeing it
-is to consider `basic_support` as representing all the functionality of the
-feature that doesn't have its own sub-feature(s).
+#### Sub-features
 
-### Sub-features
+To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-A sub-feature is the basic entity containing browser compatibility information. As
-explained in the previous section, any feature has at least one sub-feature
-called `basic_support`, but it may have many more.
+### The `__compat` object
+The `__compat` object consists of the following:
 
-A sub-feature may have three properties.
 * A mandatory `support` property for __compat information__.
 An object listing the compatibility information for each browser ([see below](#the-support-object)).
 
-* An optional `desc` property for __sub-feature description__.
-A string containing a human-readable description of the sub-feature.
+* An optional `description` property to __describe the feature__.
+A string containing a human-readable description of the feature.
 It is intended to be used as a caption or title and should be kept short.
 The `<code>` and `<a>` HTML elements can be used.
 
 * An optional `status` property for __status information__.
-An object containing information about the stability of the sub-feature:
-Is it a functionality that is standard? Is it stable? Has it been deprecated
-and shouldn't be used anymore ([see below](#status-information)).
+An object containing information about the stability of the feature:
+Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore ([see below](#status-information)).
+
+* An optional `mdn_url` property which __points to an MDN reference page documenting the feature__.
+It needs to be a valid URL.
 
 ### The `support` object
-Each sub-feature has support information. For each browser identifier,
-it contains a [`support_statement`](#the-support_statement-object) object with
+Each `__compat` object contains support information. For each browser identifier, it contains a [`support_statement`](#the-support_statement-object) object with
 information about versions, prefixes or alternate names, as well as notes.
 
 #### Browser identifiers
