@@ -25,7 +25,7 @@ npm install mdn-browser-compat-data
 ## Usage
 ```js
 const bcd = require('mdn-browser-compat-data');
-bcd.data.css.properties.background;
+bcd.css.properties.background;
 // returns a compat data object (see schema)
 ```
 
