@@ -301,7 +301,7 @@ The `<code>` and `<a>` HTML elements can be used.
 
 ### Status information
 The status property informs about stability of the feature. It is an optional object named
-`status` and has four mandatory properties:
+`status` and has three mandatory properties:
 * `experimental`: a `boolean` value that indicates this functionality is
 intended to be an addition to the Web platform. Some features are added to
 conduct tests. Set to `false`, it means the functionality is mature, and no
