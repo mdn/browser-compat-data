@@ -23,8 +23,14 @@ function checkStyle(filename) {
   var actual = fs.readFileSync(filename, 'utf-8').trim();
   var expected = JSON.stringify(JSON.parse(actual), null, 2);
 
+  var platform = require("os").platform;
+  if (platform() == "win32") { // prevent false positives from git.core.autocrlf on Windows
+    actual = actual.replace(/\r/g, "");
+    expected = expected.replace(/\r/g, "");
+  }
+
   if (actual === expected) {
-    console.log('\x1b[32m  Style – OK\x1b[0m');
+    console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
@@ -50,7 +56,7 @@ function checkSchema(dataFilename) {
   );
 
   if (valid) {
-    console.log('\x1b[32m  JSON schema – OK\x1b[0m');
+    console.log('\x1b[32m  JSON schema – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
