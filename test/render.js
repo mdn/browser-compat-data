@@ -406,7 +406,7 @@ function traverseFeatures(obj, depth, identifier) {
             for (let subfeatureName of featureNames) {
               // if this is actually a subfeature (i.e. it is not a __compat object)
               // and the subfeature has a __compat object
-              if ((subfeatureName !== '__compat') &&  (obj[i][subfeatureName].__compat)) {
+              if ((subfeatureName !== '__compat') && (obj[i][subfeatureName].__compat)) {
                 let browserNames = Object.keys(obj[i].__compat.support);
                 for (let browser of browserNames) {
                   if (obj[i].__compat.support[browser].version_added !=
