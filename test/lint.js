@@ -23,13 +23,30 @@ function checkStyle(filename) {
   var actual = fs.readFileSync(filename, 'utf-8').trim();
   var expected = JSON.stringify(JSON.parse(actual), null, 2);
 
+  var platform = require("os").platform;
+  if (platform() == "win32") { // prevent false positives from git.core.autocrlf on Windows
+    actual = actual.replace(/\r/g, "");
+    expected = expected.replace(/\r/g, "");
+  }
+
   if (actual === expected) {
-    console.log('\x1b[32m  Style – OK\x1b[0m');
+    console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
-}
+
+  if (actual.includes("//bugzilla.mozilla.org/show_bug.cgi?id=")
+      // use https://bugzil.la/1000000 instead
+    || actual.includes("//bugs.chromium.org/")) {
+      // use https://crbug.com/100000 instead
+    hasErrors = true;
+    console.log('\x1b[33m  Style – Use shortenable URL (bugzil.la or crbug.com).\x1b[0m');
+  }
+  if (actual.includes("href=\\\"")) {
+    hasErrors = true;
+    console.log('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
+  }}
 
 function checkSchema(dataFilename) {
   var schemaFilename = '../compat-data.schema.json';
@@ -39,7 +56,7 @@ function checkSchema(dataFilename) {
   );
 
   if (valid) {
-    console.log('\x1b[32m  JSON schema – OK\x1b[0m');
+    console.log('\x1b[32m  JSON schema – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
@@ -81,6 +98,7 @@ if (process.argv[2]) {
   load(
     'api',
     'css',
+    'html',
     'http',
     'javascript',
     'test',

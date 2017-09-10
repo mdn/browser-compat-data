@@ -1,6 +1,6 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Browser compatibility data provided by the Mozilla Developer Network",
   "main": "index.js",
   "dependencies": {
@@ -28,8 +28,9 @@
     "ajv": "^5.0.1"
   },
   "scripts": {
+    "convert": "node test/convert",
     "lint": "node test/lint",
-    "travis": "npm test",
+    "render": "node test/render",
     "test": "npm run lint"
   }
 }
