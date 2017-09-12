@@ -38,3 +38,5 @@ module.exports = load(
   'javascript',
   'webextensions'
 );
+
+module.exports.browsers = require('browsers/browsers.json');
