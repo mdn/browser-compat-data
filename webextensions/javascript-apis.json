@@ -8665,19 +8665,42 @@
                 "version_added": true
               },
               "firefox": {
-                "notes": [
-                  "An add-on must have the 'tabs' permission if it wants to use 'url' in the 'queryInfo' parameter."
-                ],
                 "version_added": "45"
               },
               "firefox_android": {
-                "notes": [
-                  "An add-on must have the 'tabs' permission if it wants to use 'url' in the 'queryInfo' parameter."
-                ],
                 "version_added": "54"
               },
               "opera": {
                 "version_added": true
+              }
+            }
+          },
+          "url": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": "45",
+                  "notes": [
+                    "Fails if the extension doesn't have the 'tabs' permission.",
+                    "Before Firefox 56, moz-extension:// URLs were not allowed."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": "54",
+                  "notes": [
+                    "Fails if the extension doesn't have the 'tabs' permission.",
+                    "Before Firefox 56, moz-extension:// URLs were not allowed."
+                  ]
+                },
+                "opera": {
+                  "version_added": true
+                }
               }
             }
           },
@@ -10104,6 +10127,33 @@
               },
               "opera": {
                 "version_added": true
+              }
+            }
+          },
+          "urls": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": "45",
+                  "notes": [
+                    "Before Firefox 56, moz-extension:// URLs were not allowed."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": "48",
+                  "notes": [
+                    "Before Firefox 56, moz-extension:// URLs were not allowed."
+                  ]
+                },
+                "opera": {
+                  "version_added": true
+                }
               }
             }
           },
