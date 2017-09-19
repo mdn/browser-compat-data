@@ -237,7 +237,7 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
     let noteAnchors = [];
 
     // Generate notes, if any
-    if (compatNotes && supportData.notes) {
+    if (supportData.notes) {
       if (Array.isArray(supportData.notes)) {
         for (let note of supportData.notes) {
           let noteIndex = compatNotes.indexOf(note);
@@ -250,7 +250,7 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
     }
 
     // there is a flag and it needs a note, too
-    if (compatNotes && supportData.flag) {
+    if (supportData.flag) {
       let flagNote = writeFlagsNote(supportData, browserId);
       let noteIndex = compatNotes.indexOf(flagNote);
       noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
