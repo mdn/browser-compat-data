@@ -304,9 +304,9 @@ function collectCompatNotes() {
     }
     // collect alternative names
     if (supportEntry.hasOwnProperty('alternative_name')) {
-      let flagNote = writeAlternativeNameNote(supportEntry.alternative_name);
-      if (notesArray.indexOf(flagNote) === -1) {
-        notesArray.push(flagNote);
+      let altNameNote = writeAlternativeNameNote(supportEntry.alternative_name);
+      if (notesArray.indexOf(altNameNote) === -1) {
+        notesArray.push(altNameNote);
       }
     }
   }
