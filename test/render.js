@@ -189,6 +189,12 @@ function writeFlagsNote(supportData, browserId) {
   return output;
 }
 
+/*
+Generate the note to add when a feature is given an alternative name.
+*/
+function writeAlternativeNameNote(alternativeName) {
+  return `Supported as <code>${alternativeName}</code>.`;
+}
 
 /*
 Main function responsible for the contents of a support cell in the table.
@@ -225,18 +231,13 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
       </a></span>`;
     }
 
-    // Add alternative name
-    if (supportData.alternative_name) {
-      output += ` (as <code>${supportData.alternative_name}</code>)`;
-    }
-
     // Add note anchors
-    // There are two types of notes (notes, and flag notes).
+    // There are three types of notes (notes, flag notes, and alternative names).
     // Collect them and order them, before adding them to the cell
     let noteAnchors = [];
 
     // Generate notes, if any
-    if (compatNotes && supportData.notes) {
+    if (supportData.notes) {
       if (Array.isArray(supportData.notes)) {
         for (let note of supportData.notes) {
           let noteIndex = compatNotes.indexOf(note);
@@ -249,11 +250,19 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
     }
 
     // there is a flag and it needs a note, too
-    if (compatNotes && supportData.flag) {
+    if (supportData.flag) {
       let flagNote = writeFlagsNote(supportData, browserId);
       let noteIndex = compatNotes.indexOf(flagNote);
       noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
     }
+
+    // add a link to the alternative name note, if there is one
+    if (supportData.alternative_name) {
+      let altNameNote = writeAlternativeNameNote(supportData.alternative_name);
+      let noteIndex = compatNotes.indexOf(altNameNote);
+      noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
+    }
+
     noteAnchors = noteAnchors.sort();
     if ((supportData.partial_support || noteAnchors.length > 0) && aggregateMode) {
       output += ' *';
@@ -291,6 +300,13 @@ function collectCompatNotes() {
       let flagNote = writeFlagsNote(supportEntry, browserName);
       if (notesArray.indexOf(flagNote) === -1) {
         notesArray.push(flagNote);
+      }
+    }
+    // collect alternative names
+    if (supportEntry.hasOwnProperty('alternative_name')) {
+      let altNameNote = writeAlternativeNameNote(supportEntry.alternative_name);
+      if (notesArray.indexOf(altNameNote) === -1) {
+        notesArray.push(altNameNote);
       }
     }
   }
