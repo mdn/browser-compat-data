@@ -24,7 +24,7 @@
               "version_added": "4"
             },
             "firefox_android": {
-              "version_added": "1"
+              "version_added": "4"
             },
             "ie": {
               "version_added": "10"
@@ -60,15 +60,15 @@
             "support": {
               "webview_android": {
                 "version_added": true,
-                "notes": "-1 and similar are not considered as indexed properties and therefore return the value of the prototype property."
+                "notes": "Negative integers are not considered as indexed properties and therefore return the value of the prototype property."
               },
               "chrome": {
                 "version_added": true,
-                "notes": "-1 and similar are not considered as indexed properties and therefore return the value of the prototype property."
+                "notes": "Negative integers are not considered as indexed properties and therefore return the value of the prototype property."
               },
               "chrome_android": {
                 "version_added": true,
-                "notes": "-1 and similar are not considered as indexed properties and therefore return the value of the prototype property."
+                "notes": "Negative integers are not considered as indexed properties and therefore return the value of the prototype property."
               },
               "edge": {
                 "version_added": null
@@ -384,7 +384,7 @@
         },
         "name": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/names",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/name",
             "support": {
               "webview_android": {
                 "version_added": "4"
@@ -1320,10 +1320,12 @@
                 "version_added": true
               },
               "firefox": {
-                "version_added": "37"
+                "version_added": "37",
+                "notes": "Starting with Firefox 47, this method will no longer return <code>-0</code>. For example, <code>new Uint8Array([0]).indexOf(0, -0)</code> will now always return <code>+0</code>."
               },
               "firefox_android": {
-                "version_added": "37"
+                "version_added": "37",
+                "notes": "Starting with Firefox 47, this method will no longer return <code>-0</code>. For example, <code>new Uint8Array([0]).indexOf(0, -0)</code> will now always return <code>+0</code>."
               },
               "ie": {
                 "version_added": false
@@ -1482,10 +1484,12 @@
                 "version_added": true
               },
               "firefox": {
-                "version_added": "37"
+                "version_added": "37",
+                "notes": "Starting with Firefox 47, this method will no longer return <code>-0</code>. For example, <code>new Uint8Array([0]).lastIndexOf(0, -0)</code> will now always return <code>+0</code>."
               },
               "firefox_android": {
-                "version_added": "37"
+                "version_added": "37",
+                "notes": "Starting with Firefox 47, this method will no longer return <code>-0</code>. For example, <code>new Uint8Array([0]).lastIndexOf(0, -0)</code> will now always return <code>+0</code>."
               },
               "ie": {
                 "version_added": false
