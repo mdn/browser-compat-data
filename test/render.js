@@ -146,20 +146,24 @@ function writeFlagsNote(supportData, browserId) {
   const chromePrefs = 'To change preferences in Chrome, visit chrome://flags.';
 
   if (typeof(supportData.version_added) === 'string') {
-    output = 'From version ' + supportData.version_added;
+    output = `From version ${supportData.version_added}`;
   }
 
   if (typeof(supportData.version_removed) === 'string') {
     if (output) {
-      output += ' until version '+ supportData.version_removed + ' (exclusive): ';
+      output += ` until version ${supportData.version_removed} (exclusive)`;
     } else {
-      output = 'Until version ' + supportData.version_removed + ' (exclusive): ';
+      output = `Until version ${supportData.version_removed} (exclusive)`;
     }
-  } else {
-    output += ', ';
   }
 
-  let flagText = `this feature is behind the <code>${supportData.flag.name}</code>`;
+  let flagTextStart = 'This';
+  if (output) {
+    output += ':';
+    flagTextStart = ' this';
+  }
+
+  let flagText = `${flagTextStart} feature is behind the <code>${supportData.flag.name}</code>`;
 
   // value_to_set is optional
   let valueToSet = '';
