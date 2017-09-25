@@ -365,19 +365,21 @@ function writeTable(browserPlatformType) {
   output += '<tbody>';
   for (let row of features) {
     let feature = Object.keys(row).map((k) => row[k])[0];
-    let desc = `<code>${Object.keys(row)[0]}</code>`;
-    if (feature.mdn_url) {
-      desc = `<a href="${feature.mdn_url}"><code>${Object.keys(row)[0]}</code></a>`;
-    }
+    let desc = '';
     if (feature.description) {
       let label = Object.keys(row)[0];
       // Basic support or unnested features need no prefixing
       if (label.indexOf('.') === -1) {
-        desc = feature.description;
+        desc += feature.description;
         // otherwise add a prefix so that we know where this belongs to (e.g. "parse: ISO 8601 format")
       } else {
-        desc = `<code>${label.slice(0, label.lastIndexOf('.'))}</code>: ${feature.description}`;
+        desc += `<code>${label.slice(0, label.lastIndexOf('.'))}</code>: ${feature.description}`;
       }
+    } else {
+      desc += `<code>${Object.keys(row)[0]}</code>`;
+    }
+    if (feature.mdn_url) {
+      desc = `<a href="${feature.mdn_url}">${desc}</a>`;
     }
     output += `<tr><td>${desc}</td>`;
     output += `${writeSupportCells(feature.support, compatNotes, browserPlatformType)}</tr>`;
