@@ -36,13 +36,22 @@ function checkStyle(filename) {
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
-  if (actual.includes("//bugzilla.mozilla.org/show_bug.cgi?id=")
-      // use https://bugzil.la/1000000 instead
-    || actual.includes("//bugs.chromium.org/")) {
-      // use https://crbug.com/100000 instead
+  let bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
+  if (bugzillaMatch) {
+    // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.log('\x1b[33m  Style – Use shortenable URL (bugzil.la or crbug.com).\x1b[0m');
+    console.log('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
+      bugzillaMatch[1]);
   }
+
+  let crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);
+  if (crbugMatch) {
+    // use https://crbug.com/100000 instead
+    hasErrors = true;
+    console.log('\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m', crbugMatch[0],
+      crbugMatch[1]);
+  }
+
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
     console.log('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
