@@ -362,7 +362,6 @@ function writeTable(browserPlatformType) {
   for (let row of features) {
     let feature = Object.keys(row).map((k) => row[k])[0];
     let desc = '';
-    if (feature.mdn_url) { desc += `<a href="${feature.mdn_url}">`; }
     if (feature.description) {
       let label = Object.keys(row)[0];
       // Basic support or unnested features need no prefixing
@@ -375,7 +374,9 @@ function writeTable(browserPlatformType) {
     } else {
       desc += `<code>${Object.keys(row)[0]}</code>`;
     }
-    if (feature.mdn_url) { desc += '</a>'; }
+    if (feature.mdn_url) {
+      desc = `<a href="${feature.mdn_url}">${desc}</a>`;
+    }
     output += `<tr><td>${desc}</td>`;
     output += `${writeSupportCells(feature.support, compatNotes, browserPlatformType)}</tr>`;
   }
