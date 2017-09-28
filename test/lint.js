@@ -52,6 +52,15 @@ function checkStyle(filename) {
       crbugMatch[1]);
   }
 
+  let mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`)
+  if (mdnUrlMatch) {
+    hasErrors = true;
+    console.log(
+      '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
+      mdnUrlMatch[0],
+      mdnUrlMatch[2]);
+  }
+
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
     console.log('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
