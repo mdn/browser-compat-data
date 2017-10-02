@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
           "support": {
             "webview_android": {
-              "version_added": "56"
+              "version_added": "49"
             },
             "chrome": {
               "version_added": "49"
@@ -18,7 +18,7 @@
               "version_added": "12"
             },
             "edge_mobile": {
-              "version_added": "13"
+              "version_added": true
             },
             "firefox": {
               "version_added": "18"
@@ -114,7 +114,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -126,7 +126,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -168,7 +168,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/construct",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -180,7 +180,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -222,7 +222,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/defineProperty",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -234,7 +234,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -276,7 +276,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/deleteProperty",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -288,7 +288,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -346,11 +346,11 @@
                 },
                 "firefox": {
                   "version_added": "37",
-                  "version_removed": "46"
+                  "version_removed": "47"
                 },
                 "firefox_android": {
                   "version_added": "37",
-                  "version_removed": "46"
+                  "version_removed": "47"
                 },
                 "ie": {
                   "version_added": false
@@ -386,7 +386,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -398,7 +398,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -440,7 +440,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -452,7 +452,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -548,7 +548,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/has",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -560,7 +560,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
@@ -656,7 +656,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/ownKeys",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -668,13 +668,15 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
-                  "version_added": "18"
+                  "version_added": "18",
+                  "notes": "In Firefox 42, the implementation got updated to reflect the final ES2015 specification: The result is now checked if it is an array and if the array elements are either of type string or of type symbol. Enumerating duplicate own property names is not a failure anymore."
                 },
                 "firefox_android": {
-                  "version_added": "18"
+                  "version_added": "18",
+                  "notes": "In Firefox 42, the implementation got updated to reflect the final ES2015 specification: The result is now checked if it is an array and if the array elements are either of type string or of type symbol. Enumerating duplicate own property names is not a failure anymore."
                 },
                 "ie": {
                   "version_added": false
@@ -710,7 +712,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/preventExtensions",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -722,7 +724,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "22"
@@ -764,7 +766,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/set",
               "support": {
                 "webview_android": {
-                  "version_added": "56"
+                  "version_added": "49"
                 },
                 "chrome": {
                   "version_added": "49"
@@ -776,7 +778,7 @@
                   "version_added": "12"
                 },
                 "edge_mobile": {
-                  "version_added": "13"
+                  "version_added": true
                 },
                 "firefox": {
                   "version_added": "18"
