@@ -48,9 +48,7 @@ if (process.argv[2]) {
 }
 
 console.log('browsers/browsers.json');
-testStyle(__dirname + '/../browsers/browsers.json');
-testSchema(__dirname + '/../browsers/browsers.schema.json', __dirname + '/../browsers/browsers.json');
-
+testSchema('./../browsers/browsers.json', './../browsers/browsers.schema.json');
 
 if (hasErrors) {
   process.exit(1);

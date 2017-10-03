@@ -2,10 +2,7 @@ var browsers = require('./../browsers/browsers.json');
 
 var validBrowserVersions = {};
 for (let browser of Object.keys(browsers)) {
-  validBrowserVersions[browser] = [];
-  for (let release of browsers[browser].releases) {
-     validBrowserVersions[browser].push(release.version);
-  }
+  validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
 }
 
 

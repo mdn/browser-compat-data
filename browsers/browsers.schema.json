@@ -7,10 +7,8 @@
       "type": "object",
       "properties": {
         "releases": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/release_statement"
-          }
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/release_statement" }
         }
       },
       "required": ["releases"],
@@ -20,13 +18,14 @@
     "release_statement": {
       "type": "object",
       "properties": {
-        "version": { "type": "string" },
         "release_date": { "type": "string", "format": "date" },
         "release_notes": { "type": "string", "format": "uri" },
-        "status": { "type": "string", "enum": ["retired", "current", "beta", "nightly", "esr", "planned"] }
+        "status": {
+          "type": "string",
+          "enum": ["retired", "current", "beta", "nightly", "esr", "planned"]
+        }
       },
-      "required": ["version"],
-      "additionalProperties": false
+      "required": ["status"]
     }
 
   },
