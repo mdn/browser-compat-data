@@ -1,10 +1,99 @@
 {
   "api": {
     "AudioContext": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext",
+        "support": {
+          "webview_android": {
+            "version_added": true
+          },
+          "chrome": [
+            {
+              "version_added": "35"
+            },
+            {
+              "version_added": "14",
+              "version_removed": "34",
+              "prefix": "webkit"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "35"
+            },
+            {
+              "version_added": "14",
+              "version_removed": "34",
+              "prefix": "webkit"
+            }
+          ],
+          "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
+            "version_added": true
+          },
+          "firefox": {
+            "version_added": "25"
+          },
+          "firefox_android": {
+            "version_added": "26"
+          },
+          "ie": {
+            "version_added": false
+          },
+          "ie_mobile": {
+            "version_added": false
+          },
+          "opera": [
+            {
+              "version_added": "22"
+            },
+            {
+              "version_added": "15",
+              "version_removed": "21",
+              "prefix": "webkit"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "22"
+            },
+            {
+              "version_added": "15",
+              "version_removed": "21",
+              "prefix": "webkit"
+            }
+          ],
+          "safari": {
+            "version_added": "6",
+            "prefix": "webkit"
+          },
+          "safari_ios": {
+            "version_added": null
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
       "AudioContext": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
+          "description": "<code>AudioContext()</code> constructor",
           "support": {
+            "webview_android": [
+              {
+                "version_added": "60",
+                "notes": "Support for <code>options</code> parameter added."
+              },
+              {
+                "version_added": "55",
+                "version_removed": "59"
+              }
+            ],
             "chrome": [
               {
                 "version_added": "60",
@@ -15,7 +104,20 @@
                 "version_removed": "59"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "60",
+                "notes": "Support for <code>options</code> parameter added."
+              },
+              {
+                "version_added": "55",
+                "version_removed": "59"
+              }
+            ],
             "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
               "version_added": null
             },
             "firefox": [
@@ -28,7 +130,20 @@
                 "notes": "Non-standard constructor implemented, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
               }
             ],
+            "firefox_android": [
+              {
+                "version_added": false
+              },
+              {
+                "version_added": "31",
+                "version_removed": "54",
+                "notes": "Non-standard constructor implemented, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
+              }
+            ],
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": [
@@ -41,35 +156,6 @@
                 "version_removed": "46"
               }
             ],
-            "safari": {
-              "version_added": null
-            },
-            "webview_android": [
-              {
-                "version_added": "60",
-                "notes": "Support for <code>options</code> parameter added."
-              },
-              {
-                "version_added": "55",
-                "version_removed": "59"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": false
-              },
-              {
-                "version_added": "31",
-                "version_removed": "54",
-                "notes": "Non-standard constructor implemented, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
-              }
-            ],
-            "edge_mobile": {
-              "version_added": null
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": [
               {
                 "version_added": "47",
@@ -80,19 +166,12 @@
                 "version_removed": "46"
               }
             ],
-            "safari_ios": {
+            "safari": {
               "version_added": null
             },
-            "chrome_android": [
-              {
-                "version_added": "60",
-                "notes": "Support for <code>options</code> parameter added."
-              },
-              {
-                "version_added": "55",
-                "version_removed": "59"
-              }
-            ]
+            "safari_ios": {
+              "version_added": null
+            }
           },
           "status": {
             "experimental": false,
@@ -105,44 +184,44 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
           "support": {
+            "webview_android": {
+              "version_added": true
+            },
             "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
               "version_added": true
             },
             "edge": {
               "version_added": null
             },
+            "edge_mobile": {
+              "version_added": null
+            },
             "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
               "version_added": false
             },
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
+              "version_added": true
+            },
+            "opera_android": {
               "version_added": true
             },
             "safari": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": true
-            },
             "safari_ios": {
               "version_added": null
-            },
-            "chrome_android": {
-              "version_added": true
             }
           },
           "status": {
@@ -156,44 +235,44 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
           "support": {
+            "webview_android": {
+              "version_added": "43"
+            },
             "chrome": {
+              "version_added": "43"
+            },
+            "chrome_android": {
               "version_added": "43"
             },
             "edge": {
               "version_added": null
             },
+            "edge_mobile": {
+              "version_added": null
+            },
             "firefox": {
+              "version_added": "40"
+            },
+            "firefox_android": {
               "version_added": "40"
             },
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
+              "version_added": true
+            },
+            "opera_android": {
               "version_added": true
             },
             "safari": {
               "version_added": null
             },
-            "webview_android": {
-              "version_added": "43"
-            },
-            "firefox_android": {
-              "version_added": "40"
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": true
-            },
             "safari_ios": {
               "version_added": null
-            },
-            "chrome_android": {
-              "version_added": "43"
             }
           },
           "status": {
@@ -207,6 +286,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
           "support": {
+            "webview_android": {
+              "version_added": true
+            },
             "chrome": [
               {
                 "version_added": "35"
@@ -214,16 +296,35 @@
               {
                 "version_added": "14",
                 "version_removed": "34",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "34",
+                "prefix": "webkit"
               }
             ],
             "edge": {
               "version_added": true
             },
+            "edge_mobile": {
+              "version_added": true
+            },
             "firefox": {
               "version_added": "25"
             },
+            "firefox_android": {
+              "version_added": "26"
+            },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": [
@@ -233,26 +334,9 @@
               {
                 "version_added": "15",
                 "version_removed": "21",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "prefix": "-webkit-",
-              "notes": "Reported as buggy."
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": "26"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": [
               {
                 "version_added": "22"
@@ -260,23 +344,16 @@
               {
                 "version_added": "15",
                 "version_removed": "21",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
               }
             ],
-            "safari_ios": {
-              "version_added": null,
-              "notes": "Reported as buggy"
+            "safari": {
+              "version_added": "6",
+              "prefix": "webkit"
             },
-            "chrome_android": [
-              {
-                "version_added": "35"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "34",
-                "prefix": "-webkit-"
-              }
-            ]
+            "safari_ios": {
+              "version_added": null
+            }
           },
           "status": {
             "experimental": false,
@@ -289,6 +366,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
           "support": {
+            "webview_android": {
+              "version_added": true
+            },
             "chrome": [
               {
                 "version_added": "35"
@@ -296,16 +376,35 @@
               {
                 "version_added": "14",
                 "version_removed": "34",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "34",
+                "prefix": "webkit"
               }
             ],
             "edge": {
               "version_added": true
             },
+            "edge_mobile": {
+              "version_added": true
+            },
             "firefox": {
               "version_added": "25"
             },
+            "firefox_android": {
+              "version_added": "26"
+            },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": [
@@ -315,25 +414,9 @@
               {
                 "version_added": "15",
                 "version_removed": "21",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "prefix": "-webkit-"
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": "26"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": [
               {
                 "version_added": "22"
@@ -341,22 +424,16 @@
               {
                 "version_added": "15",
                 "version_removed": "21",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
               }
             ],
+            "safari": {
+              "version_added": "6",
+              "prefix": "webkit"
+            },
             "safari_ios": {
               "version_added": null
-            },
-            "chrome_android": [
-              {
-                "version_added": "35"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "34",
-                "prefix": "-webkit-"
-              }
-            ]
+            }
           },
           "status": {
             "experimental": false,
@@ -369,6 +446,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination",
           "support": {
+            "webview_android": {
+              "version_added": true
+            },
             "chrome": [
               {
                 "version_added": "35"
@@ -376,16 +456,35 @@
               {
                 "version_added": "14",
                 "version_removed": "34",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "34",
+                "prefix": "webkit"
               }
             ],
             "edge": {
               "version_added": true
             },
+            "edge_mobile": {
+              "version_added": true
+            },
             "firefox": {
               "version_added": "25"
             },
+            "firefox_android": {
+              "version_added": "26"
+            },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": [
@@ -395,25 +494,9 @@
               {
                 "version_added": "15",
                 "version_removed": "21",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "prefix": "-webkit-"
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": "26"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": [
               {
                 "version_added": "22"
@@ -421,22 +504,16 @@
               {
                 "version_added": "15",
                 "version_removed": "21",
-                "prefix": "-webkit-"
+                "prefix": "webkit"
               }
             ],
+            "safari": {
+              "version_added": "6",
+              "prefix": "webkit"
+            },
             "safari_ios": {
               "version_added": null
-            },
-            "chrome_android": [
-              {
-                "version_added": "35"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "34",
-                "prefix": "-webkit-"
-              }
-            ]
+            }
           },
           "status": {
             "experimental": false,
@@ -449,44 +526,44 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
           "support": {
+            "webview_android": {
+              "version_added": null
+            },
             "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
               "version_added": null
             },
             "edge": {
               "version_added": null
             },
+            "edge_mobile": {
+              "version_added": null
+            },
             "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
               "version_added": false
             },
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
+              "version_added": null
+            },
+            "opera_android": {
               "version_added": null
             },
             "safari": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": null
-            },
             "safari_ios": {
               "version_added": false
-            },
-            "chrome_android": {
-              "version_added": null
             }
           },
           "status": {
@@ -500,44 +577,44 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/suspend",
           "support": {
+            "webview_android": {
+              "version_added": "43"
+            },
             "chrome": {
+              "version_added": "43"
+            },
+            "chrome_android": {
               "version_added": "43"
             },
             "edge": {
               "version_added": null
             },
+            "edge_mobile": {
+              "version_added": null
+            },
             "firefox": {
+              "version_added": "40"
+            },
+            "firefox_android": {
               "version_added": "40"
             },
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
+              "version_added": true
+            },
+            "opera_android": {
               "version_added": true
             },
             "safari": {
               "version_added": null
             },
-            "webview_android": {
-              "version_added": "43"
-            },
-            "firefox_android": {
-              "version_added": "40"
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": true
-            },
             "safari_ios": {
               "version_added": null
-            },
-            "chrome_android": {
-              "version_added": "43"
             }
           },
           "status": {
