@@ -12073,6 +12073,27 @@
             }
           }
         },
+        "filterResponseData": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "57"
+              },
+              "firefox_android": {
+                "version_added": "57"
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
         "handlerBehaviorChanged": {
           "__compat": {
             "support": {
@@ -12152,9 +12173,15 @@
                     "version_added": true
                   },
                   "firefox": {
+                    "notes": [
+                      "Before version 57, on a proxied connection, the <code>challenger.host</code> property contains the hostname for the requested URL rather than the hostname for the proxy."
+                    ],
                     "version_added": "54"
                   },
                   "firefox_android": {
+                    "notes": [
+                      "Before version 57, on a proxied connection, the <code>challenger.host</code> property contains the hostname for the requested URL rather than the hostname for the proxy."
+                    ],
                     "version_added": "54"
                   },
                   "opera": {
