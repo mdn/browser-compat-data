@@ -9462,10 +9462,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true,
-                "notes": [
-                  "If the `url` has the `ms-browser-extension://` protocol it is mistakenly considered a relative URL and the prefix is added redundantly, causing tab to fail loading."
-                ]
+                "version_added": true
               },
               "firefox": {
                 "version_added": "45"
@@ -9478,91 +9475,180 @@
               }
             }
           },
-          "pinned": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "45"
-                },
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": true
+          "createProperties": {
+            "active": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
                 }
               }
-            }
-          },
-          "cookieStoreId": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "52"
-                },
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false
+            },
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "52"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  }
                 }
               }
-            }
-          },
-          "selected": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": true
+            },
+            "index": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
                 }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": false,
-                "deprecated": true
               }
-            }
-          },
-          "openerTabId": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": "18"
+            },
+            "openerTabId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18"
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": "15"
+                  }
+                }
+              }
+            },
+            "pinned": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
+                }
+              }
+            },
+            "selected": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
                 },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": "15"
+                "status": {
+                  "experimental": false,
+                  "standard_track": false,
+                  "deprecated": true
+                }
+              }
+            },
+            "url": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "notes": [
+                      "If the <code>url</code> has the 'ms-browser-extension://' protocol it is mistakenly considered a relative URL and the prefix is added redundantly, causing tab to fail loading."
+                    ],
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
+                }
+              }
+            },
+            "windowId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "54"
+                  },
+                  "opera": {
+                    "version_added": true
+                  }
                 }
               }
             }
