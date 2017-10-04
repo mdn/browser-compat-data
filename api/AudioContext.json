@@ -7,12 +7,26 @@
           "webview_android": {
             "version_added": true
           },
-          "chrome": {
-            "version_added": "14"
-          },
-          "chrome_android": {
-            "version_added": "14"
-          },
+          "chrome": [
+            {
+              "version_added": "35"
+            },
+            {
+             "version_added": "14",
+             "version_removed": "34",
+             "prefix": "webkit"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "35"
+            },
+            {
+             "version_added": "14",
+             "version_removed": "34",
+             "prefix": "webkit"
+            }
+          ],
           "edge": {
             "version_added": true
           },
@@ -31,14 +45,29 @@
           "ie_mobile": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "15"
-          },
-          "opera_android": {
-            "version_added": "15"
-          },
+          "opera": [
+            {
+              "version_added": "22"
+            },
+            {
+             "version_added": "15",
+             "version_removed": "21",
+             "prefix": "webkit"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "22"
+            },
+            {
+             "version_added": "15",
+             "version_removed": "21",
+             "prefix": "webkit"
+            }
+          ],
           "safari": {
-            "version_added": "6"
+            "version_added": "6",
+            "prefix": "webkit"
           },
           "safari_ios": {
             "version_added": null
@@ -55,62 +84,32 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
           "description": "<code>AudioContext()</code> constructor",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "60",
-                "notes": "Support for <code>options</code> parameter added."
-              },
-              {
-                "version_added": "55",
-                "version_removed": "59"
-              }
-            ],
-            "chrome": [
-              {
-                "version_added": "60",
-                "notes": "Support for <code>options</code> parameter added."
-              },
-              {
-                "version_added": "55",
-                "version_removed": "59"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "60",
-                "notes": "Support for <code>options</code> parameter added."
-              },
-              {
-                "version_added": "55",
-                "version_removed": "59"
-              }
-            ],
+            "webview_android": {
+              "version_added": "55",
+              "notes": "Support for <code>options</code> parameter added in version 60."
+            },
+            "chrome": {
+              "version_added": "55",
+              "notes": "Support for <code>options</code> parameter added in version 60."
+            },
+            "chrome_android": {
+              "version_added": "55",
+              "notes": "Support for <code>options</code> parameter added in version 60."
+            },
             "edge": {
               "version_added": null
             },
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": [
-              {
-                "version_added": false
-              },
-              {
-                "version_added": "31",
-                "version_removed": "54",
-                "notes": "Non-standard constructor implemented, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": false
-              },
-              {
-                "version_added": "31",
-                "version_removed": "54",
-                "notes": "Non-standard constructor implemented, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
-              }
-            ],
+            "firefox": {
+              "version_added": false,
+              "notes": "Firefox versions 31 to 53 included a non-standard constructor, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
+            },
+            "firefox_android": {
+              "version_added": false,
+              "notes": "Firefox versions 31 to 53 included a non-standard constructor, which accepted as input a string identifying the purpose for which the channel was being used. This was removed as it was causing code that used the <code>options</code> parameter to throw an exception. Correct support will arrive in the future."
+            },
             "ie": {
               "version_added": false
             },
