@@ -51,8 +51,16 @@
               },
               {
                 "prefix": "-webkit-",
+                "version_added": "49"
+              },
+              {
+                "prefix": "-webkit-",
                 "version_added": "44",
-                "notes": "From Firefox 44 to 48, the <code>-webkit-</code> prefix was available with the <code>layout.css.prefixes.webkit</code> preference. Starting with Firefox 49, the preference defaults to <code>true</code>."
+                "flag": {
+                  "type": "preference",
+                  "name": "layout.css.prefixes.webkit",
+                  "value_to_set": "true"
+                }
               }
             ],
             "firefox_android": [
@@ -64,9 +72,17 @@
                 "version_added": "5"
               },
               {
-                "prefix": "-webkit-",
+                "version_added": "49",
+                "prefix": "-webkit-"
+              },
+              {
                 "version_added": "44",
-                "notes": "From Firefox 44 to 48, the <code>-webkit-</code> prefix was available with the <code>layout.css.prefixes.webkit</code> preference. Starting with Firefox 49, the preference defaults to <code>true</code>."
+                "prefix": "-webkit-",
+                "flag": {
+                  "type": "preference",
+                  "name": "layout.css.prefixes.webkit",
+                  "value_to_set": "true"
+                }
               }
             ],
             "ie": {
