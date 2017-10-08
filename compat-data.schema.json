@@ -18,8 +18,8 @@
           "required": ["type", "name"]
         },
         "partial_implementation": { "type": "boolean" },
-        "version_added": { "type": ["string", "boolean", "null"] },
-        "version_removed": { "type": ["string", "boolean", "null"] },
+        "version_added": { "$ref": "#/definitions/version_value" },
+        "version_removed": { "$ref": "#/definitions/version_value" },
         "notes": {
           "anyOf": [
             {
@@ -109,6 +109,13 @@
         "^(?!__compat|.*\\.).+$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
+    },
+
+    "version_value": {
+      "allOf": [
+        { "type": ["string", "boolean", "null"] },
+        { "not": { "enum": ["true", "false", "null"] } }
+      ]
     }
   },
 
