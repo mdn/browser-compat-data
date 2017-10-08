@@ -5,12 +5,16 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/animation",
           "support": {
-            "webview_android": {
-              "prefix": "-webkit-",
-              "partial_implementation": true,
-              "version_added": "2.1",
-              "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode'><code>animation-fill-mode</code></a> property is not supported in Android browsers below 2.3."
-            },
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "2.1",
+                "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode'><code>animation-fill-mode</code></a> property is not supported in Android browsers below 2.3."
+              }
+            ],
             "chrome": [
               {
                 "version_added": "43"
@@ -20,9 +24,15 @@
                 "version_added": true
               }
             ],
-            "chrome_android": {
-              "version_added": null
-            },
+            "chrome_android": [
+              {
+                "version_added": "43"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ],
             "edge": [
               {
                 "version_added": true
@@ -46,10 +56,6 @@
                 "version_added": "16"
               },
               {
-                "prefix": "-moz-",
-                "version_added": "5"
-              },
-              {
                 "prefix": "-webkit-",
                 "version_added": "49"
               },
@@ -61,15 +67,15 @@
                   "name": "layout.css.prefixes.webkit",
                   "value_to_set": "true"
                 }
+              },
+              {
+                "prefix": "-moz-",
+                "version_added": "5"
               }
             ],
             "firefox_android": [
               {
                 "version_added": "16"
-              },
-              {
-                "prefix": "-moz-",
-                "version_added": "5"
               },
               {
                 "version_added": "49",
@@ -83,6 +89,10 @@
                   "name": "layout.css.prefixes.webkit",
                   "value_to_set": "true"
                 }
+              },
+              {
+                "prefix": "-moz-",
+                "version_added": "5"
               }
             ],
             "ie": {
@@ -99,14 +109,24 @@
                 "notes": "See the <a href='http://my.opera.com/ODIN/blog/2012/08/03/a-hot-opera-12-50-summer-time-snapshot'>Opera 12.50 release notes</a>."
               }
             ],
-            "safari": {
-              "prefix": "-webkit-",
-              "version_added": "4"
-            },
-            "safari_ios": {
-              "prefix": "-webkit-",
-              "version_added": true
-            }
+            "safari": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "4"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -118,9 +138,15 @@
           "__compat": {
             "description": "<code>frames</code> timing function",
             "support": {
+              "webview_android": {
+                "version_added": false
+              },
               "chrome": {
                 "version_added": false,
                 "notes": "The name of the <code>frames()</code> timing function is <a href='https://github.com/w3c/csswg-drafts/issues/1301'>under discussion</a>, so it is disabled in browser release versions until a final decision is reached. It is enabled in Nightly/Canary only."
+              },
+              "chrome_android": {
+                "version_added": false
               },
               "firefox": {
                 "version_added": false,
@@ -134,12 +160,27 @@
                 "version_added": false
               },
               "ie_mobile": {
-                "version_added": null
+                "version_added": false
               },
               "opera": {
                 "version_added": false,
                 "notes": "The name of the <code>frames()</code> timing function is <a href='https://github.com/w3c/csswg-drafts/issues/1301'>under discussion</a>, so it is disabled in browser release versions until a final decision is reached. It is enabled in Nightly/Canary only."
+              },
+              "opera_android": {
+                "version_added": false,
+                "notes": "The name of the <code>frames()</code> timing function is <a href='https://github.com/w3c/csswg-drafts/issues/1301'>under discussion</a>, so it is disabled in browser release versions until a final decision is reached. It is enabled in Nightly/Canary only."
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
               }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }
