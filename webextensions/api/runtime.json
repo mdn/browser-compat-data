@@ -1,0 +1,1037 @@
+{
+  "webextensions": {
+    "api": {
+      "runtime": {
+        "MessageSender": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          },
+          "url": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "28"
+                },
+                "edge": {
+                  "version_added": true,
+                  "notes": [
+                    "The `url` is missing when the message was sent by an extension view."
+                  ]
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "tlsChannelId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "32"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "19"
+                }
+              }
+            }
+          },
+          "frameId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "41"
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "28"
+                }
+              }
+            }
+          }
+        },
+        "OnInstalledReason": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true,
+                "notes": [
+                  "Uses 'chrome_update' instead of 'browser_update'."
+                ]
+              },
+              "edge": {
+                "version_added": true,
+                "notes": [
+                  "Only supports 'install' and 'update'."
+                ]
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true,
+                "notes": [
+                  "Uses 'chrome_update' instead of 'browser_update'."
+                ]
+              }
+            }
+          }
+        },
+        "OnRestartRequiredReason": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "PlatformArch": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "PlatformInfo": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          },
+          "nacl_arch": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                }
+              }
+            }
+          }
+        },
+        "PlatformNaclArch": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "PlatformOs": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "Port": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          },
+          "error": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "52"
+                },
+                "firefox_android": {
+                  "version_added": "52"
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "RequestUpdateCheckStatus": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "connect": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "connectNative": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "29"
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "50"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "16"
+              }
+            }
+          }
+        },
+        "getBackgroundPage": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "getBrowserInfo": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "51"
+              },
+              "firefox_android": {
+                "version_added": "51"
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "getManifest": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "getPackageDirectoryEntry": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "29"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "16"
+              }
+            }
+          }
+        },
+        "getPlatformInfo": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "29"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "16"
+              }
+            }
+          }
+        },
+        "getURL": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "id": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "lastError": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "notes": [
+                  "lastError is not an Error object. Instead, it is a plain Object with the error text as the string value of the 'message' property."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "lastError is not an Error object. Instead, it is a plain Object with the error text as the string value of the 'message' property."
+                ],
+                "version_added": true
+              }
+            }
+          }
+        },
+        "onBrowserUpdateAvailable": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "27"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "onConnect": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onConnectExternal": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "54"
+              },
+              "firefox_android": {
+                "version_added": "54"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onInstalled": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Before version 55, this event is not triggered for temporarily installed add-ons."
+                ],
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Before version 55, this event is not triggered for temporarily installed add-ons."
+                ],
+                "version_added": "52"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          },
+          "details": {
+            "id": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "22"
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": "15"
+                  }
+                }
+              }
+            },
+            "previousVersion": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "22"
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": "55"
+                  },
+                  "opera": {
+                    "version_added": "15"
+                  }
+                }
+              }
+            },
+            "reason": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "22"
+                  },
+                  "edge": {
+                    "version_added": true
+                  },
+                  "firefox": {
+                    "version_added": "52"
+                  },
+                  "firefox_android": {
+                    "version_added": "52"
+                  },
+                  "opera": {
+                    "version_added": "15"
+                  }
+                }
+              }
+            },
+            "temporary": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": "55"
+                  },
+                  "opera": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "onMessage": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onMessageExternal": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "54"
+              },
+              "firefox_android": {
+                "version_added": "54"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onRestartRequired": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "29"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "16"
+              }
+            }
+          }
+        },
+        "onStartup": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "23"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": "52"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onSuspend": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onSuspendCanceled": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "22"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onUpdateAvailable": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "25"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "51"
+              },
+              "firefox_android": {
+                "version_added": "51"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "openOptionsPage": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "42"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "57"
+              },
+              "opera": {
+                "version_added": "29"
+              }
+            }
+          }
+        },
+        "reload": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "25"
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "51"
+              },
+              "firefox_android": {
+                "version_added": "51"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "requestUpdateCheck": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "25"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "sendMessage": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "edge": {
+                "version_added": true,
+                "notes": [
+                  "`runtime.onMessage` listeners in extension views receive the messages they sent."
+                ]
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          },
+          "options": {
+            "includeTlsChannelId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "32"
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "48"
+                  },
+                  "opera": {
+                    "version_added": "19"
+                  }
+                }
+              }
+            },
+            "toProxyScript": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": "55"
+                  },
+                  "opera": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sendNativeMessage": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "29"
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "50"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "16"
+              }
+            }
+          }
+        },
+        "setUninstallURL": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "41"
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "28"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
