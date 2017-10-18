@@ -39,4 +39,4 @@ module.exports = load(
   'webextensions'
 );
 
-module.exports.browsers = require('browsers/browsers.json');
+module.exports.browsers = require('./browsers/browsers.json');
