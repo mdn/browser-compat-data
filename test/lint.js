@@ -23,20 +23,44 @@ function checkStyle(filename) {
   var actual = fs.readFileSync(filename, 'utf-8').trim();
   var expected = JSON.stringify(JSON.parse(actual), null, 2);
 
+  var platform = require("os").platform;
+  if (platform() == "win32") { // prevent false positives from git.core.autocrlf on Windows
+    actual = actual.replace(/\r/g, "");
+    expected = expected.replace(/\r/g, "");
+  }
+
   if (actual === expected) {
-    console.log('\x1b[32m  Style – OK\x1b[0m');
+    console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
-  if (actual.includes("//bugzilla.mozilla.org/show_bug.cgi?id=")
-      // use https://bugzil.la/1000000 instead
-    || actual.includes("//bugs.chromium.org/")) {
-      // use https://crbug.com/100000 instead
+  let bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
+  if (bugzillaMatch) {
+    // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.log('\x1b[33m  Style – Use shortenable URL (bugzil.la or crbug.com).\x1b[0m');
+    console.log('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
+      bugzillaMatch[1]);
   }
+
+  let crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);
+  if (crbugMatch) {
+    // use https://crbug.com/100000 instead
+    hasErrors = true;
+    console.log('\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m', crbugMatch[0],
+      crbugMatch[1]);
+  }
+
+  let mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`)
+  if (mdnUrlMatch) {
+    hasErrors = true;
+    console.log(
+      '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
+      mdnUrlMatch[0],
+      mdnUrlMatch[2]);
+  }
+
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
     console.log('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
@@ -50,7 +74,7 @@ function checkSchema(dataFilename) {
   );
 
   if (valid) {
-    console.log('\x1b[32m  JSON schema – OK\x1b[0m');
+    console.log('\x1b[32m  JSON schema – OK \x1b[0m');
   } else {
     hasErrors = true;
     console.log('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');

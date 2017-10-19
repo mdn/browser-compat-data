@@ -146,20 +146,24 @@ function writeFlagsNote(supportData, browserId) {
   const chromePrefs = 'To change preferences in Chrome, visit chrome://flags.';
 
   if (typeof(supportData.version_added) === 'string') {
-    output = 'From version ' + supportData.version_added;
+    output = `From version ${supportData.version_added}`;
   }
 
   if (typeof(supportData.version_removed) === 'string') {
     if (output) {
-      output += ' until version '+ supportData.version_removed + ' (exclusive): ';
+      output += ` until version ${supportData.version_removed} (exclusive)`;
     } else {
-      output = 'Until version ' + supportData.version_removed + ' (exclusive): ';
+      output = `Until version ${supportData.version_removed} (exclusive)`;
     }
-  } else {
-    output += ', ';
   }
 
-  let flagText = `this feature is behind the <code>${supportData.flag.name}</code>`;
+  let flagTextStart = 'This';
+  if (output) {
+    output += ':';
+    flagTextStart = ' this';
+  }
+
+  let flagText = `${flagTextStart} feature is behind the <code>${supportData.flag.name}</code>`;
 
   // value_to_set is optional
   let valueToSet = '';
@@ -189,6 +193,12 @@ function writeFlagsNote(supportData, browserId) {
   return output;
 }
 
+/*
+Generate the note to add when a feature is given an alternative name.
+*/
+function writeAlternativeNameNote(alternativeName) {
+  return `Supported as <code>${alternativeName}</code>.`;
+}
 
 /*
 Main function responsible for the contents of a support cell in the table.
@@ -225,18 +235,13 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
       </a></span>`;
     }
 
-    // Add alternative name
-    if (supportData.alternative_name) {
-      output += ` (as <code>${supportData.alternative_name}</code>)`;
-    }
-
     // Add note anchors
-    // There are two types of notes (notes, and flag notes).
+    // There are three types of notes (notes, flag notes, and alternative names).
     // Collect them and order them, before adding them to the cell
     let noteAnchors = [];
 
     // Generate notes, if any
-    if (compatNotes && supportData.notes) {
+    if (supportData.notes) {
       if (Array.isArray(supportData.notes)) {
         for (let note of supportData.notes) {
           let noteIndex = compatNotes.indexOf(note);
@@ -249,11 +254,19 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
     }
 
     // there is a flag and it needs a note, too
-    if (compatNotes && supportData.flag) {
+    if (supportData.flag) {
       let flagNote = writeFlagsNote(supportData, browserId);
       let noteIndex = compatNotes.indexOf(flagNote);
       noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
     }
+
+    // add a link to the alternative name note, if there is one
+    if (supportData.alternative_name) {
+      let altNameNote = writeAlternativeNameNote(supportData.alternative_name);
+      let noteIndex = compatNotes.indexOf(altNameNote);
+      noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
+    }
+
     noteAnchors = noteAnchors.sort();
     if ((supportData.partial_support || noteAnchors.length > 0) && aggregateMode) {
       output += ' *';
@@ -291,6 +304,13 @@ function collectCompatNotes() {
       let flagNote = writeFlagsNote(supportEntry, browserName);
       if (notesArray.indexOf(flagNote) === -1) {
         notesArray.push(flagNote);
+      }
+    }
+    // collect alternative names
+    if (supportEntry.hasOwnProperty('alternative_name')) {
+      let altNameNote = writeAlternativeNameNote(supportEntry.alternative_name);
+      if (notesArray.indexOf(altNameNote) === -1) {
+        notesArray.push(altNameNote);
       }
     }
   }
@@ -345,19 +365,21 @@ function writeTable(browserPlatformType) {
   output += '<tbody>';
   for (let row of features) {
     let feature = Object.keys(row).map((k) => row[k])[0];
-    let desc = `<code>${Object.keys(row)[0]}</code>`;
-    if (feature.mdn_url) {
-      desc = `<a href="${feature.mdn_url}"><code>${Object.keys(row)[0]}</code></a>`;
-    }
+    let desc = '';
     if (feature.description) {
       let label = Object.keys(row)[0];
       // Basic support or unnested features need no prefixing
       if (label.indexOf('.') === -1) {
-        desc = feature.description;
+        desc += feature.description;
         // otherwise add a prefix so that we know where this belongs to (e.g. "parse: ISO 8601 format")
       } else {
-        desc = `<code>${label.slice(0, label.lastIndexOf('.'))}</code>: ${feature.description}`;
+        desc += `<code>${label.slice(0, label.lastIndexOf('.'))}</code>: ${feature.description}`;
       }
+    } else {
+      desc += `<code>${Object.keys(row)[0]}</code>`;
+    }
+    if (feature.mdn_url) {
+      desc = `<a href="${feature.mdn_url}">${desc}</a>`;
     }
     output += `<tr><td>${desc}</td>`;
     output += `${writeSupportCells(feature.support, compatNotes, browserPlatformType)}</tr>`;
@@ -404,7 +426,9 @@ function traverseFeatures(obj, depth, identifier) {
             // there are sub features below this node,
             // so we need to identify partial support for the main feature
             for (let subfeatureName of featureNames) {
-              if (subfeatureName !== '__compat') {
+              // if this is actually a subfeature (i.e. it is not a __compat object)
+              // and the subfeature has a __compat object
+              if ((subfeatureName !== '__compat') && (obj[i][subfeatureName].__compat)) {
                 let browserNames = Object.keys(obj[i].__compat.support);
                 for (let browser of browserNames) {
                   if (obj[i].__compat.support[browser].version_added !=

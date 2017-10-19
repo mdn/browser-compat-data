@@ -1,8 +1,50 @@
 {
   "api": {
     "VRDisplay": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay",
+        "support": {
+          "chrome": {
+            "version_added": true,
+            "flag": {
+              "type": "preference",
+              "name": "WebVR"
+            },
+            "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+          },
+          "edge": {
+            "version_added": true
+          },
+          "firefox": {
+            "version_added": "55",
+            "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
+          },
+          "ie": {
+            "version_added": false
+          },
+          "webview_android": {
+            "version_added": false
+          },
+          "edge_mobile": {
+            "version_added": null
+          },
+          "ie_mobile": {
+            "version_added": false
+          },
+          "chrome_android": {
+            "version_added": true,
+            "notes": "Currently supported only by Google Daydream."
+          }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
       "cancelAnimationFrame": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/cancelAnimationFrame",
           "support": {
             "chrome": {
               "version_added": true,
@@ -35,11 +77,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "capabilities": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/capabilities",
           "support": {
             "chrome": {
               "version_added": true,
@@ -72,11 +120,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "depthFar": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/depthFar",
           "support": {
             "chrome": {
               "version_added": true,
@@ -109,11 +163,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "depthNear": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/depthNear",
           "support": {
             "chrome": {
               "version_added": true,
@@ -146,11 +206,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "displayId": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/displayId",
           "support": {
             "chrome": {
               "version_added": true,
@@ -183,11 +249,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "displayName": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/displayName",
           "support": {
             "chrome": {
               "version_added": true,
@@ -220,11 +292,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "exitPresent": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/exitPresent",
           "support": {
             "chrome": {
               "version_added": true,
@@ -257,11 +335,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "getEyeParameters": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getEyeParameters",
           "support": {
             "chrome": {
               "version_added": true,
@@ -294,11 +378,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "getFrameData": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getFrameData",
           "support": {
             "chrome": {
               "version_added": true,
@@ -331,11 +421,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "getLayers": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getLayers",
           "support": {
             "chrome": {
               "version_added": true,
@@ -368,16 +464,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "getImmediatePose": {
         "__compat": {
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          },
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getImmediatePose",
           "support": {
             "chrome": {
               "version_added": false
@@ -403,16 +500,17 @@
             "chrome_android": {
               "version_added": false
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "getPose": {
         "__compat": {
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": true
-          },
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getPose",
           "support": {
             "chrome": {
               "version_added": true,
@@ -445,16 +543,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": true
           }
         }
       },
       "hardwareUnitId": {
         "__compat": {
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          },
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/hardwareUnitId",
           "support": {
             "chrome": {
               "version_added": false
@@ -480,11 +579,17 @@
             "chrome_android": {
               "version_added": false
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "isConnected": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/isConnected",
           "support": {
             "chrome": {
               "version_added": true,
@@ -517,11 +622,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "isPresenting": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/isPresenting",
           "support": {
             "chrome": {
               "version_added": true,
@@ -554,11 +665,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "requestAnimationFrame": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/requestAnimationFrame",
           "support": {
             "chrome": {
               "version_added": true,
@@ -591,11 +708,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "resetPose": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/resetPose",
           "support": {
             "chrome": {
               "version_added": true,
@@ -628,11 +751,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "requestPresent": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/requestPresent",
           "support": {
             "chrome": {
               "version_added": true,
@@ -665,11 +794,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "stageParameters": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/stageParameters",
           "support": {
             "chrome": {
               "version_added": true,
@@ -702,11 +837,17 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "submitFrame": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/submitFrame",
           "support": {
             "chrome": {
               "version_added": true,
@@ -739,6 +880,11 @@
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }

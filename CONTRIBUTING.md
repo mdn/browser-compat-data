@@ -16,11 +16,17 @@ Let us know if these look good to you.
 You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --dev`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
+## Test rendering
+You can use `npm run render $query $dept $aggregateMode` to output the table HTML as it would be rendered on MDN.
+The parameters are the same as the [`{{compat}}` macro](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs).
+
+Paste the generated HTML into the MDN editor (source mode). You can use a new page, for example: https://developer.mozilla.org/en-US/docs/new and verify if the output looks correct.
+
 ## Checklist
 Not everything is enforced or validated by the schema. A few things to pay attention to:
 
 * Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
-* Distinction between [features and sub-features](https://github.com/mdn/browser-compat-data/blob/master/compat-data-schema.md#features-and-sub-features) makes sense.
+* Nesting of feature identifiers should make sense.
 * Notes use correct grammar and spelling. They should be complete sentences ending with a period.
 * Browser versions are valid (planned be validated automatically in the future, see [issue 168](https://github.com/mdn/browser-compat-data/issues/168) which tracks adding tests and docs about browser versions).
 
