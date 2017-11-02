@@ -22,7 +22,7 @@ function testStyle(filename) {
   var expected = JSON.stringify(JSON.parse(actual), null, 2);
 
   var platform = require("os").platform;
-  if (platform() == "win32") { // prevent false positives from git.core.autocrlf on Windows
+  if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
     actual = actual.replace(/\r/g, "");
     expected = expected.replace(/\r/g, "");
   }

@@ -34,7 +34,7 @@ function testVersions(dataFilename) {
         checkVersions(data[prop]);
       }
       var sub = data[prop];
-      if (typeof(sub) == "object") {
+      if (typeof(sub) === "object") {
         findSupport(sub);
       }
     }
