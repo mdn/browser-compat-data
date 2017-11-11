@@ -705,20 +705,14 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/formatToParts",
               "support": {
                 "webview_android": {
-                  "version_added": false
+                  "version_added": true
                 },
                 "chrome": {
-                  {
-                    "version_added": "57"
-                  },
-                  {
-                    "version_added": "55",
-                    "version_removed": "60",
-                    "flag": {
-                      "type": "preference",
-                      "name": "--datetime-format-to-parts"
-                    }
-                  },
+                  "version_added": "55",
+                  "flag": {
+                    "type": "runtime_flag",
+                    "name": "--datetime-format-to-parts"
+		  },
                   "notes": "Enabled by default in 57. The flag was removed in 60"
                 },
                 "chrome_android": {
@@ -743,10 +737,10 @@
                   "version_added": false
                 },
                 "nodejs": {
-                  "version_added": false
+                  "version_added": true
                 },
                 "opera": {
-                  "version_added": false
+                  "version_added": true
                 },
                 "opera_android": {
                   "version_added": false
@@ -1099,18 +1093,18 @@
                 "chrome": {
                   "version_added": "63",
                   "flag": {
-                    "type": "preference",
+                    "type": "runtime_flag",
                     "name": "harmony-number-format-to-parts"
                   },
-                  "notes": "Need to set the flag on the commandline via --js-flag"
+                  "notes": "Need to set the flag on the commandline via --js-flags"
                 },
                 "chrome_android": {
                   "version_added": "63",
                   "flag": {
-                    "type": "preference",
+                    "type": "runtime_flag",
                     "name": "harmony-number-format-to-parts"
                   },
-                  "notes": "Need to set the flag on the commandline via --js-flag"
+                  "notes": "Need to set the flag on the commandline via --js-flags"
                 },
                 "edge": {
                   "version_added": null
