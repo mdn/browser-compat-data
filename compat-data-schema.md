@@ -94,7 +94,7 @@ information about versions, prefixes or alternate names, as well as notes.
 
 #### Browser identifiers
 
-The currently accepted browser identifiers are:
+The currently accepted browser identifiers should be declared in the following order:
 * `webview_android`, Webview, the former stock browser on Android,
 * `chrome`, Google Chrome (on desktops),
 * `chrome_android`, Google Chrome (on Android),
