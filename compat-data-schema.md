@@ -276,7 +276,7 @@ active specification or specification process.
 * `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
 It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
-```jsdom
+```json
 "__compat": {
   "status": {
     "experimental": true,
