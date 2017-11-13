@@ -276,6 +276,16 @@ active specification or specification process.
 * `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
 It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
+```json
+"__compat": {
+  "status": {
+    "experimental": true,
+    "standard_track": true,
+    "deprecated": false
+  }
+}
+```
+
 ### Localization
 We are planning localize some of this data (e.g. notes, descriptions).
 At this point we haven't decided how and when we are going to do that.
