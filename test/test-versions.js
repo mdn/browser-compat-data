@@ -21,13 +21,23 @@ function testVersions(dataFilename) {
     var browsersToCheck = Object.keys(supportData);
     for (let browser of browsersToCheck) {
       if (validBrowserVersions[browser]) {
-        if (!isValidVersion(browser, supportData[browser].version_added)) {
-          console.log('\x1b[31m  version_added: "' + supportData[browser].version_added + '" is not a valid version number for ' + browser);
-          hasErrors = true;
+
+        let supportStatements = [];
+        if (Array.isArray(supportData[browser])) {
+          Array.prototype.push.apply(supportStatements, supportData[browser]);
+        } else {
+          supportStatements.push(supportData[browser]);
         }
-        if (!isValidVersion(browser, supportData[browser].version_removed)) {
-          console.log('\x1b[31m  version_removed: "' + supportData[browser].version_removed + '" is not a valid version number for ' + browser);
-          hasErrors = true;
+
+        for (let statement of supportStatements) {
+          if (!isValidVersion(browser, statement.version_added)) {
+            console.log('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number for ' + browser);
+            hasErrors = true;
+          }
+          if (!isValidVersion(browser, statement.version_removed)) {
+            console.log('\x1b[31m  version_removed: "' + statement.version_removed + '" is not a valid version number for ' + browser);
+            hasErrors = true;
+          }
         }
       }
     }
