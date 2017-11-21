@@ -232,9 +232,9 @@ In some cases features are named entirely differently and not just prefixed. Exa
 An optional object indicating what kind of flags must be set for this feature to work.
 It consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
-  * `preference` represents
-a flag that the user can set (like in `about:config` in Firefox)
-  * `compile_flag` a flag that has to be set before compiling the browser.
+  * `preference` a flag the user can set (like in `about:config` in Firefox).
+  * `compile_flag` a flag to be set before compiling the browser.
+  * `runtime_flag` a flag to be set before starting the browser.
 * `name` (mandatory): a `string` representing the flag or preference to modify.
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
