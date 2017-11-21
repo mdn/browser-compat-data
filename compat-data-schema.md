@@ -228,7 +228,7 @@ In some cases features are named entirely differently and not just prefixed. Exa
 }
 ```
 
-#### `flags`
+#### `flag`
 An optional object indicating what kind of flags must be set for this feature to work.
 It consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
@@ -239,6 +239,16 @@ It consists of three properties:
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
 (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
+```json
+{
+  "version_added": true,
+  "flag": {
+    "type": "preference",
+    "name": "browser.flag.name",
+    "value_to_set": "true"
+  }
+}
+```
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
