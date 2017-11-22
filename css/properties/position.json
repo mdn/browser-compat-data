@@ -22,14 +22,10 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": [
-                "Since Firefox 30, Firefox allows <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tr'><code>&lt;tr&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/thead'><code>&lt;thead&gt;</code></a>, and <a  href='https://developer.mozilla.org/docs/Web/HTML/Element/tfoot'><code>&lt;tfoot&gt;</code></a> elements with a <code>position: relative;</code> style to act as absolute positioning containers. This means that a <code>position: absolute;</code> styled element inside the table can be positioned relative to these elements. In other browsers and in older versions of Firefox, setting <code>position: relative;</code> on a table row or row group has no effect. Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Relative positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;",
-                "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>)."
-              ]
+              "notes": "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>)."
             },
             "firefox_android": {
-              "version_added": "4",
-              "notes": "Since Firefox 30, Firefox allows <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tr'><code>&lt;tr&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/thead'><code>&lt;thead&gt;</code></a>, and <a  href='https://developer.mozilla.org/docs/Web/HTML/Element/tfoot'><code>&lt;tfoot&gt;</code></a> elements with a <code>position: relative;</code> style to act as absolute positioning containers. This means that a <code>position: absolute;</code> styled element inside the table can be positioned relative to these elements. In other browsers and in older versions of Firefox, setting <code>position: relative;</code> on a table row or row group has no effect. Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Relative positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+              "version_added": "4"
             },
             "ie": {
               "version_added": "4",
@@ -160,6 +156,59 @@
               "safari": {
                 "prefix": "-webkit-",
                 "version_added": "6.1"
+              },
+              "safari_ios": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "position_relative_table_elements": {
+          "__compat": {
+            "description": "Table elements as absolute positioning containers",
+            "support": {
+              "webview_android": {
+                "version_added": null
+              },
+              "chrome": {
+                "version_added": null
+              },
+              "chrome_android": {
+                "version_added": null
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "30",
+                "notes": "Firefox later helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Relative positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+              },
+              "firefox_android": {
+                "version_added": "30",
+                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Relative positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+              },
+              "ie": {
+                "version_added": null
+              },
+              "ie_mobile": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
               },
               "safari_ios": {
                 "version_added": null
