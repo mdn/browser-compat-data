@@ -31,14 +31,15 @@ function testStyle(filename) {
     console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
-    console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
+    console.error('\x1b[31m  File : ' + filename);
+    console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
   let bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.log('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
+    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
       bugzillaMatch[1]);
   }
 
@@ -46,14 +47,14 @@ function testStyle(filename) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    console.log('\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m', crbugMatch[0],
+    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m', crbugMatch[0],
       crbugMatch[1]);
   }
 
   let mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`)
   if (mdnUrlMatch) {
     hasErrors = true;
-    console.log(
+    console.error(
       '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
       mdnUrlMatch[0],
       mdnUrlMatch[2]);
@@ -61,7 +62,7 @@ function testStyle(filename) {
 
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
-    console.log('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
+    console.error('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
   }
 
   return hasErrors;
