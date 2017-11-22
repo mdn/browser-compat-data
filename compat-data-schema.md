@@ -94,7 +94,7 @@ information about versions, prefixes or alternate names, as well as notes.
 
 #### Browser identifiers
 
-The currently accepted browser identifiers are:
+The currently accepted browser identifiers should be declared in the following order:
 * `webview_android`, Webview, the former stock browser on Android,
 * `chrome`, Google Chrome (on desktops),
 * `chrome_android`, Google Chrome (on Android),
@@ -228,17 +228,27 @@ In some cases features are named entirely differently and not just prefixed. Exa
 }
 ```
 
-#### `flags`
+#### `flag`
 An optional object indicating what kind of flags must be set for this feature to work.
 It consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
-  * `preference` represents
-a flag that the user can set (like in `about:config` in Firefox)
-  * `compile_flag` a flag that has to be set before compiling the browser.
+  * `preference` a flag the user can set (like in `about:config` in Firefox).
+  * `compile_flag` a flag to be set before compiling the browser.
+  * `runtime_flag` a flag to be set before starting the browser.
 * `name` (mandatory): a `string` representing the flag or preference to modify.
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
 (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
+```json
+{
+  "version_added": true,
+  "flag": {
+    "type": "preference",
+    "name": "browser.flag.name",
+    "value_to_set": "true"
+  }
+}
+```
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
@@ -275,6 +285,16 @@ significant incompatible changes are expected in the future.
 active specification or specification process.
 * `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
 It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+
+```json
+"__compat": {
+  "status": {
+    "experimental": true,
+    "standard_track": true,
+    "deprecated": false
+  }
+}
+```
 
 ### Localization
 We are planning localize some of this data (e.g. notes, descriptions).
