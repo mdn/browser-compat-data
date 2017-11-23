@@ -108,7 +108,8 @@ The currently accepted browser identifiers should be declared in the following o
 * `opera`, the Opera browser (desktop), based on Blink since Opera 15,
 * `opera_android`, the Opera browser (Android version),
 * `safari`, Apple Safari, on Mac OS,
-* `safari_ios`, Apple Safari, on iOS.
+* `safari_ios`, Apple Safari, on iOS,
+* `samsunginternet_android`, the Samsung Internet browser (Android version).
 
 No browser identifier is mandatory.
 
