@@ -16,6 +16,7 @@ function testSchema(dataFilename, schemaFilename = '../compat-data.schema.json')
       separator: '\n    ',
       dataVar: 'item'
     }));
+    console.log(ajv.errors);
     return true;
   }
 }
