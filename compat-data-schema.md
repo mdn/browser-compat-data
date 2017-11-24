@@ -116,7 +116,7 @@ No browser identifier is mandatory.
 #### The `support_statement` object
 The `support_statement` object describes the support provided by a single browser type for the given subfeature.
 It is an array of `simple_support_statement` objects, but if there
-is only one of them, the array can be omitted.
+is only one of them, the array must be omitted.
 
 
 Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
