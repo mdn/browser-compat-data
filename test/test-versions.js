@@ -32,10 +32,12 @@ function testVersions(dataFilename) {
         for (let statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
             console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number for ' + browser);
+            console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
             hasErrors = true;
           }
           if (!isValidVersion(browser, statement.version_removed)) {
             console.error('\x1b[31m  version_removed: "' + statement.version_removed + '" is not a valid version number for ' + browser);
+            console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
             hasErrors = true;
           }
         }
@@ -57,7 +59,7 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error('\x1b[31m  File : ' + filename); 
+    console.error('\x1b[31m  File : ' + dataFilename);
     console.error('\x1b[31m  Browser version error(s)\x1b[0m');
     return true;
   } else {
