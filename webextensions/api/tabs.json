@@ -1021,6 +1021,37 @@
             }
           }
         },
+        "discard": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "54",
+                "notes": [
+                  "Only accepts a single tab ID as a parameter, not an array.",
+                  "The tab ID argument is optional: if it is omitted, the browser discards the least important tab.",
+                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded."
+                ]
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "58"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true,
+                "notes": [
+                  "Only accepts a single tab ID as a parameter, not an array.",
+                  "The tab ID argument is optional: if it is omitted, the browser discards the least important tab.",
+                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded."
+                ]
+              }
+            }
+          }
+        },
         "duplicate": {
           "__compat": {
             "support": {
