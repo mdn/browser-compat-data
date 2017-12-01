@@ -707,14 +707,19 @@
                 "webview_android": {
                   "version_added": true
                 },
-                "chrome": {
-                  "version_added": "55",
-                  "flag": {
-                    "type": "runtime_flag",
-                    "name": "--datetime-format-to-parts"
-		  },
-                  "notes": "Enabled by default in 57. The flag was removed in 60"
-                },
+                "chrome": [
+                  {
+                    "version_added": "57"
+                  },
+                  {
+                    "version_added": "55",
+                    "version_removed": "60",
+                    "flag": {
+                      "type": "runtime_flag",
+                      "name": "--datetime-format-to-parts"
+                    }
+                  }
+                ],
                 "chrome_android": {
                   "version_added": "57"
                 },
@@ -1113,7 +1118,7 @@
                   "version_added": null
                 },
                 "firefox": {
-                  "version_added": null
+                  "version_added": "58"
                 },
                 "firefox_android": {
                   "version_added": null
