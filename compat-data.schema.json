@@ -8,14 +8,19 @@
       "properties": {
         "prefix": { "type": "string" },
         "alternative_name": { "type": "string" },
-        "flag": { "type": "object",
-          "properties": {
-            "type": { "type": "string", "enum": ["preference", "compile_flag", "runtime_flag"] },
-            "name": { "type": "string" },
-            "value_to_set": { "type": "string"}
-          },
-          "additionalProperties": false,
-          "required": ["type", "name"]
+        "flags": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["preference", "compile_flag", "runtime_flag"] },
+              "name": { "type": "string" },
+              "value_to_set": { "type": "string"}
+            },
+            "additionalProperties": false,
+            "required": ["type", "name"]
+          }
         },
         "partial_implementation": { "type": "boolean" },
         "version_added": { "$ref": "#/definitions/version_value" },
