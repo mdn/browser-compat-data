@@ -1043,7 +1043,8 @@
                 "notes": [
                   "Only accepts a single tab ID as a parameter, not an array.",
                   "The tab ID argument is optional: if it is omitted, the browser discards the least important tab.",
-                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded."
+                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded.",
+                  "Tabs whose document contains a <a href='https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent'><code>beforeunload</code></a> listener that displays a prompt will be discarded."
                 ]
               },
               "edge": {
@@ -1060,7 +1061,8 @@
                 "notes": [
                   "Only accepts a single tab ID as a parameter, not an array.",
                   "The tab ID argument is optional: if it is omitted, the browser discards the least important tab.",
-                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded."
+                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded.",
+                  "Tabs whose document contains a <a href='https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent'><code>beforeunload</code></a> listener that displays a prompt will be discarded."
                 ]
               }
             }
