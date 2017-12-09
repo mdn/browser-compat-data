@@ -53,7 +53,7 @@
       ]
     },
 
-    "status_statement": {
+    "status_block": {
       "type": "object",
       "properties": {
         "experimental": { "type": "boolean" },
@@ -64,7 +64,7 @@
       "additionalProperties": false
     },
 
-    "compat_block": {
+    "support_block": {
       "type": "object",
       "properties": {
         "webview_android": { "$ref": "#/definitions/support_statement" },
@@ -95,8 +95,8 @@
           "format": "uri",
           "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
         },
-        "support": { "$ref": "#/definitions/compat_block" },
-        "status": { "$ref": "#/definitions/status_statement" }
+        "support": { "$ref": "#/definitions/support_block" },
+        "status": { "$ref": "#/definitions/status_block" }
       },
       "required": ["support"],
       "additionalProperties": false
