@@ -6,27 +6,44 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics",
           "support": {
             "webview_android": {
-              "version_added": "60"
+              "version_added": "60",
+              "version_removed": "64",
+              "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
             },
             "chrome": {
-              "version_added": "60"
+              "version_added": "60",
+              "version_removed": "64",
+              "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
             },
             "chrome_android": {
-              "version_added": "60"
+              "version_added": "60",
+              "version_removed": "64",
+              "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
             },
             "edge": {
-              "version_added": "16"
+              "version_added": false,
+              "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
             },
             "edge_mobile": {
               "version_added": null
             },
             "firefox": [
               {
-                "version_added": "55"
+                "version_added": "57",
+                "flag": {
+                  "type": "preference",
+                  "name": "javascript.options.shared_memory",
+                  "value_to_set": "true"
+                },
+                "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+              },
+              {
+                "version_added": "55",
+                "version_removed": "57"
               },
               {
                 "version_added": "46",
-                "version_removed": "54",
+                "version_removed": "55",
                 "flag": {
                   "type": "preference",
                   "name": "javascript.options.shared_memory",
@@ -36,11 +53,21 @@
             ],
             "firefox_android": [
               {
-                "version_added": "55"
+                "version_added": "57",
+                "flag": {
+                  "type": "preference",
+                  "name": "javascript.options.shared_memory",
+                  "value_to_set": "true"
+                },
+                "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+              },
+              {
+                "version_added": "55",
+                "version_removed": "57"
               },
               {
                 "version_added": "46",
-                "version_removed": "54",
+                "version_removed": "55",
                 "flag": {
                   "type": "preference",
                   "name": "javascript.options.shared_memory",
@@ -64,7 +91,8 @@
               "version_added": false
             },
             "safari": {
-              "version_added": "10.1"
+              "version_added": "10.1",
+              "version_removed": true
             },
             "safari_ios": {
               "version_added": false
@@ -81,27 +109,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/add",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -111,11 +156,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -139,7 +194,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -157,27 +213,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/and",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -187,11 +260,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -215,7 +298,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -233,27 +317,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -263,11 +364,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -291,7 +402,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -309,27 +421,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/exchange",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -339,11 +468,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -367,7 +506,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -385,27 +525,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/isLockFree",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -415,11 +572,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -443,7 +610,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -461,27 +629,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/load",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -491,11 +676,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -519,7 +714,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -537,27 +733,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/or",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -567,11 +780,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -595,7 +818,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -613,27 +837,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/store",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -643,11 +884,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -671,7 +922,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -689,27 +941,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/sub",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -719,11 +988,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -747,7 +1026,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -765,48 +1045,73 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
-                },
-                {
-                  "version_added": "46",
-                  "version_removed": "54",
+                  "version_added": "57",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
                     "value_to_set": "true"
                   },
-                  "notes": " In versions 46 and 47, this method was named <code>Atomics.futexWait()</code> and the properties <code>Atomics.OK</code>, <code>Atomics.TIMEDOUT</code>, <code>Atomics.NOTEQUAL</code> were returned instead of the strings."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
+                },
+                {
+                  "version_added": "46",
+                  "version_removed": "55",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  }
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
-                },
-                {
-                  "version_added": "46",
-                  "version_removed": "54",
+                  "version_added": "57",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
                     "value_to_set": "true"
                   },
-                  "notes": " In versions 46 and 47, this method was named <code>Atomics.futexWait()</code> and the properties <code>Atomics.OK</code>, <code>Atomics.TIMEDOUT</code>, <code>Atomics.NOTEQUAL</code> were returned instead of the strings."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
+                },
+                {
+                  "version_added": "46",
+                  "version_removed": "55",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  }
                 }
               ],
               "ie": {
@@ -825,7 +1130,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -843,49 +1149,73 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wake",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
                 "version_added": "60",
-                "notes": "The <code>count</code> parameter defaults to <code>0</code>, instead of <code>+Infinity</code>."
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
-                },
-                {
-                  "version_added": "46",
-                  "version_removed": "54",
+                  "version_added": "57",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
                     "value_to_set": "true"
                   },
-                  "notes": " In versions 46 and 47, this method was named <code>Atomics.futexWake()</code> and the <code>count</code> parameter defaulted to <code>0</code>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
+                },
+                {
+                  "version_added": "46",
+                  "version_removed": "55",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  }
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
-                },
-                {
-                  "version_added": "46",
-                  "version_removed": "54",
+                  "version_added": "57",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
                     "value_to_set": "true"
                   },
-                  "notes": " In versions 46 and 47, this method was named <code>Atomics.futexWake()</code> and the <code>count</code> parameter defaulted to <code>0</code>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
+                },
+                {
+                  "version_added": "46",
+                  "version_removed": "55",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  }
                 }
               ],
               "ie": {
@@ -904,7 +1234,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
@@ -922,27 +1253,44 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/xor",
             "support": {
               "webview_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": "60",
+                "version_removed": "64",
+                "notes": "Support was removed to mitigate <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative execution side-channel attacks (Chromium project)</a>."
               },
               "edge": {
-                "version_added": "16"
+                "version_added": false,
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -952,11 +1300,21 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "55"
+                  "version_added": "57",
+                  "flag": {
+                    "type": "preference",
+                    "name": "javascript.options.shared_memory",
+                    "value_to_set": "true"
+                  },
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "57"
                 },
                 {
                   "version_added": "46",
-                  "version_removed": "54",
+                  "version_removed": "55",
                   "flag": {
                     "type": "preference",
                     "name": "javascript.options.shared_memory",
@@ -980,7 +1338,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "10.1"
+                "version_added": "10.1",
+                "version_removed": true
               },
               "safari_ios": {
                 "version_added": false
