@@ -102,7 +102,6 @@ The currently accepted browser identifiers should be declared in the following o
 * `edge_mobile`, MS Edge, the mobile version,
 * `firefox`, Mozilla Firefox (on desktops),
 * `firefox_android`, Firefox for Android, sometimes nicknamed Fennec,
-* `ie_mobile`, Microsoft Internet Explorer, the mobile version,
 * `ie`, Microsoft Internet Explorer (discontinued),
 * `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine,
 * `opera`, the Opera browser (desktop), based on Blink since Opera 15,
