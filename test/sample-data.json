@@ -134,11 +134,13 @@
                 {
                   "version_added": "35",
                   "version_removed": "47",
-                  "flag": {
-                    "type": "preference",
-                    "name": "Enable Experimental Web Platform Features",
-                    "value_to_set": "true"
-                  }
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable Experimental Web Platform Features",
+                      "value_to_set": "true"
+                    }
+                  ]
                 },
                 {
                   "version_added": "47",
@@ -153,11 +155,17 @@
                     "First note for a flag",
                     "Second note for a flag"
                   ],
-                  "flag": {
-                    "type": "preference",
-                    "name": "Enable Experimental Web Platform Features",
-                    "value_to_set": "true"
-                  }
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable Experimental Web Platform Features",
+                      "value_to_set": "true"
+                    },
+                    {
+                      "type": "runtime_flag",
+                      "name": "--js-enable-cookies"
+                    }
+                  ]
                 },
                 {
                   "version_added": "47"

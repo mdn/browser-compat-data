@@ -228,9 +228,9 @@ In some cases features are named entirely differently and not just prefixed. Exa
 }
 ```
 
-#### `flag`
-An optional object indicating what kind of flags must be set for this feature to work.
-It consists of three properties:
+#### `flags`
+An optional array of objects indicating what kind of flags must be set for this feature to work. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature.
+An object in the `flags` array consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
   * `preference` a flag the user can set (like in `about:config` in Firefox).
   * `compile_flag` a flag to be set before compiling the browser.
@@ -239,14 +239,36 @@ It consists of three properties:
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
 (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
+
+Example for one flag required:
 ```json
 {
   "version_added": true,
-  "flag": {
-    "type": "preference",
-    "name": "browser.flag.name",
-    "value_to_set": "true"
-  }
+  "flags": [
+    {
+      "type": "preference",
+      "name": "browser.flag.name",
+      "value_to_set": "true"
+    }
+  ]
+}
+```
+Example for two flags required:
+```json
+{
+  "version_added": true,
+  "flags": [
+    {
+      "type": "preference",
+      "name": "dom.streams.enabled",
+      "value_to_set": "true"
+    },
+    {
+      "type": "preference",
+      "name": "javascript.options.streams",
+      "value_to_set": "true"
+    },
+  ]
 }
 ```
 
