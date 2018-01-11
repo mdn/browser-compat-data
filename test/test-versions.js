@@ -1,4 +1,4 @@
-var browsers = require('./../browsers/browsers.json');
+var browsers = require('..').browsers;
 
 var validBrowserVersions = {};
 for (let browser of Object.keys(browsers)) {

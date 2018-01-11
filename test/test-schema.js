@@ -1,7 +1,7 @@
 var Ajv = require('ajv');
 var ajv = new Ajv({ allErrors: true });
 
-function testSchema(dataFilename, schemaFilename = '../compat-data.schema.json') {
+function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.schema.json') {
   var valid = ajv.validate(
     require(schemaFilename),
     require(dataFilename)

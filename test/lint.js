@@ -14,9 +14,13 @@ function load(...files) {
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
         console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
-        hasStyleErrors = testStyle(file);
-        hasSchemaErrors = testSchema(file);
-        hasVersionErrors =  testVersions(file);
+        if (file.indexOf('browsers/') !== -1) {
+          hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
+        } else {
+          hasSchemaErrors = testSchema(file);
+          hasStyleErrors = testStyle(file);
+          hasVersionErrors =  testVersions(file);
+        }
         if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
           hasErrors = true;
         }
@@ -38,6 +42,7 @@ if (process.argv[2]) {
 } else {
   load(
     'api',
+    'browsers',
     'css',
     'html',
     'http',
@@ -46,9 +51,6 @@ if (process.argv[2]) {
     'webextensions'
   );
 }
-
-console.log('browsers/browsers.json');
-testSchema('./../browsers/browsers.json', './../browsers/browsers.schema.json');
 
 if (hasErrors) {
   process.exit(1);
