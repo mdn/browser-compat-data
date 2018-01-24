@@ -104,7 +104,12 @@
             },
             "chrome": {
               "version_added": true,
-              "notes": "This feature is deactivated by default. Enable the <code>ExperimentalCanvasFeatures</code> flag to test it."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -145,8 +150,9 @@
             "deprecated": false
           }
         },
-        "Returns a DOMMatrix": {
+        "DOMMatrix_return_value": {
           "__compat": {
+            "description": "Returns a <code>DOMMatrix</code>",
             "support": {
               "webview_android": {
                 "version_added": false,
@@ -170,7 +176,7 @@
                 "version_added": null
               },
               "firefox_android": {
-                "version_added": "31"
+                "version_added": null
               },
               "ie": {
                 "version_added": false
@@ -201,7 +207,12 @@
             },
             "chrome": {
               "version_added": true,
-              "notes": "This feature is deactivated by default. Enable the <code>ExperimentalCanvasFeatures</code> flag to test it."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": true
@@ -308,14 +319,38 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "49",
-              "notes": "The <code>filter</code> property was deactivated by default in versions 35-48. Set the flag <code>canvas.filters.enabled</code> to <code>true</code> in these versions. Starting with Firefox 41, the initial value is none, see (bug(1163124))."
-            },
-            "firefox_android": {
-              "version_added": "49",
-              "notes": "The <code>filter</code> property was deactivated by default in versions 35-48. Set the flag <code>canvas.filters.enabled</code> to <code>true</code> in these versions. Starting with Firefox 41, the initial value is none, see (bug(1163124))."
-            },
+            "firefox": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.filters.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.filters.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -381,7 +416,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -429,7 +464,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -490,10 +525,16 @@
             "webview_android": {
               "version_added": "30"
             },
-            "chrome": {
-              "version_added": "30",
-              "notes": "Supported with a <code>webkit</code> prefix until version 29."
-            },
+            "chrome": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": true,
+                "version_removed": "30",
+                "prefix": "webkit"
+              }
+            ],
             "chrome_android": {
               "version_added": null
             },
@@ -503,12 +544,26 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": "51"
-            },
-            "firefox_android": {
-              "version_added": "51"
-            },
+            "firefox": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": true,
+                "version_removed": "51",
+                "prefix": "moz"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": true,
+                "version_removed": "51",
+                "prefix": "moz"
+              }
+            ],
             "ie": {
               "version_added": true
             },
@@ -537,7 +592,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "54"
             },
             "chrome": {
               "version_added": "54"
@@ -1177,7 +1232,12 @@
             },
             "chrome": {
               "version_added": true,
-              "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -1190,10 +1250,21 @@
             },
             "firefox": {
               "version_added": "30",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "canvas.hitregions.enabled"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "30"
+              "version_added": "30",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "canvas.hitregions.enabled"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -1225,7 +1296,12 @@
               },
               "chrome": {
                 "version_added": true,
-                "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "ExperimentalCanvasFeatures"
+                  }
+                ]
               },
               "chrome_android": {
                 "version_added": false
@@ -1238,7 +1314,12 @@
               },
               "firefox": {
                 "version_added": "30",
-                "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.hitregions.enabled"
+                  }
+                ]
               },
               "firefox_android": {
                 "version_added": "30"
@@ -1269,7 +1350,12 @@
               },
               "chrome": {
                 "version_added": true,
-                "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.hitregions.enabled"
+                  }
+                ]
               },
               "chrome_android": {
                 "version_added": false
@@ -1282,7 +1368,12 @@
               },
               "firefox": {
                 "version_added": "30",
-                "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.hitregions.enabled"
+                  }
+                ]
               },
               "firefox_android": {
                 "version_added": "30"
@@ -1313,7 +1404,12 @@
               },
               "chrome": {
                 "version_added": true,
-                "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "ExperimentalCanvasFeatures"
+                  }
+                ]
               },
               "chrome_android": {
                 "version_added": false
@@ -1326,7 +1422,12 @@
               },
               "firefox": {
                 "version_added": "39",
-                "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.hitregions.enabled"
+                  }
+                ]
               },
               "firefox_android": {
                 "version_added": "30"
@@ -1357,7 +1458,12 @@
               },
               "chrome": {
                 "version_added": true,
-                "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "ExperimentalCanvasFeatures"
+                  }
+                ]
               },
               "chrome_android": {
                 "version_added": false
@@ -1392,8 +1498,9 @@
             }
           }
         },
-        "other hit region options": {
+        "other_hit_region_options": {
           "__compat": {
+            "description": "other hit region options",
             "support": {
               "webview_android": {
                 "version_added": false
@@ -1636,7 +1743,12 @@
             },
             "chrome": {
               "version_added": true,
-              "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -1773,8 +1885,9 @@
             "deprecated": false
           }
         },
-        "Path parameter": {
+        "Path_parameter": {
           "__compat": {
+            "description": "<code>Path</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": null
@@ -2077,22 +2190,38 @@
             },
             "firefox": [
               {
-                "version_added": "29",
-                "notes": "In Firefox 28 this method was implemented as <code>drawSystemFocusRing</code>, but has been renamed to the standard <code>drawFocusIfNeeded</coded> in Firefox 29."
+                "version_added": "32"
               },
               {
-                "version_added": "32",
-                "notes": "Prior to Firefox 32 this method was deactivated by default behind the flag <code>canvas.focusring.enabled</code>."
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.focusring.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "28",
+                "alternative_name": "drawSystemFocusRing"
               }
             ],
             "firefox_android": [
               {
-                "version_added": "29",
-                "notes": "In Firefox 28 this method was implemented as <code>drawSystemFocusRing</code>, but has been renamed to the standard <code>drawFocusIfNeeded</coded> in Firefox 29."
+                "version_added": "32"
               },
               {
-                "version_added": "32",
-                "notes": "Prior to Firefox 32 this method was deactivated by default behind the flag <code>canvas.focusring.enabled</code>."
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.focusring.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "28",
+                "alternative_name": "drawSystemFocusRing"
               }
             ],
             "ie": {
@@ -2117,8 +2246,9 @@
             "deprecated": false
           }
         },
-        "Path parameter": {
+        "Path_parameter": {
           "__compat": {
+            "description": "<code>Path</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": true
@@ -2207,8 +2337,9 @@
             "deprecated": false
           }
         },
-        "ImageBitmap as source image": {
+        "ImageBitmap_source_image": {
           "__compat": {
+            "description": "ImageBitmap as source image",
             "support": {
               "webview_android": {
                 "version_added": true
@@ -2249,8 +2380,9 @@
             }
           }
         },
-        "SVGImageElement as source image": {
+        "SVGImageElement_source_image": {
           "__compat": {
+            "description": "SVGImageElement as source image",
             "support": {
               "webview_android": {
                 "version_added": "59"
@@ -2291,8 +2423,9 @@
             }
           }
         },
-        "Smoothing when downscaling": {
+        "Smoothing_downscaling": {
           "__compat": {
+            "description": "Smoothing when downscaling",
             "support": {
               "webview_android": {
                 "version_added": true
@@ -2527,8 +2660,9 @@
             "deprecated": false
           }
         },
-        "Path parameter": {
+        "Path_parameter": {
           "__compat": {
+            "description": "<code>Path</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": null
@@ -2618,9 +2752,9 @@
           }
         }
       },
-      "getImage": {
+      "getImageData": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImage",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData",
           "support": {
             "webview_android": {
               "version_added": true
@@ -2637,14 +2771,24 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": true,
-              "notes": "Starting with Firefox 5.0, <code>getImageData</code> now correctly accepts rectangles that extend beyond the bounds of the canvas; pixels outside the canvas are returned as transparent black and now also returns at least one pixel's worth of image data if a rectangle smaller than one pixel is specified."
-            },
-            "firefox_android": {
-              "version_added": true,
-              "notes": "Starting with Firefox 5.0, <code>getImageData</code> now correctly accepts rectangles that extend beyond the bounds of the canvas; pixels outside the canvas are returned as transparent black and now also returns at least one pixel's worth of image data if a rectangle smaller than one pixel is specified."
-            },
+            "firefox": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": "5",
+                "notes": "<code>getImageData</code> now correctly accepts rectangles that extend beyond the bounds of the canvas; pixels outside the canvas are returned as transparent black and now also returns at least one pixel's worth of image data if a rectangle smaller than one pixel is specified."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": "5",
+                "notes": "<code>getImageData</code> now correctly accepts rectangles that extend beyond the bounds of the canvas; pixels outside the canvas are returned as transparent black and now also returns at least one pixel's worth of image data if a rectangle smaller than one pixel is specified."
+              }
+            ],
             "ie": {
               "version_added": true
             },
@@ -2763,8 +2907,9 @@
             "deprecated": false
           }
         },
-        "Path parameter": {
+        "Path_parameter": {
           "__compat": {
+            "description": "<code>Path</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": null
@@ -2853,8 +2998,9 @@
             "deprecated": false
           }
         },
-        "Path parameter": {
+        "Path_parameter": {
           "__compat": {
+            "description": "<code>Path</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": null
@@ -3193,7 +3339,12 @@
             },
             "chrome": {
               "version_added": true,
-              "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -3206,11 +3357,21 @@
             },
             "firefox": {
               "version_added": "30",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "canvas.hitregions.enabled"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "30",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "canvas.hitregions.enabled"
+                }
+              ]
             },
             "ie": {
               "version_added": true
@@ -3436,7 +3597,12 @@
             },
             "chrome": {
               "version_added": true,
-              "notes": "This feature is behind a feature flag. Set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code> to enable it."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": true
@@ -3619,8 +3785,9 @@
             "deprecated": false
           }
         },
-        "Path parameter": {
+        "Path_parameter": {
           "__compat": {
+            "description": "<code>Path</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": null
