@@ -89,7 +89,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
             "deprecated": false
           }
@@ -1761,11 +1761,21 @@
             },
             "firefox": {
               "version_added": "38",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "canvas.hitregions.enabled"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "38",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>canvas.hitregions.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "canvas.hitregions.enabled"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -2752,6 +2762,54 @@
           }
         }
       },
+      "fillText": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText",
+          "support": {
+            "webview_android": {
+              "version_added": true
+            },
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "3.5"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "getImageData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData",
@@ -3543,6 +3601,54 @@
       "save": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/save",
+          "support": {
+            "webview_android": {
+              "version_added": true
+            },
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "scale": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scale",
           "support": {
             "webview_android": {
               "version_added": true
