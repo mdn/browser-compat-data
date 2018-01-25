@@ -239,54 +239,113 @@
             "standard_track": false,
             "deprecated": false
           }
+        }
+      },
+      "getContext": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext",
+          "support": {
+            "webview_android": {
+              "version_added": true
+            },
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "3.6"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": "9"
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "3.1"
+            },
+            "safari_ios": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         },
-        "webgl context": {
+        "webgl_context": {
           "__compat": {
+            "description": "webgl context",
             "support": {
               "webview_android": {
                 "version_added": null
               },
-              "chrome": {
-                "version_added": "9",
-                "notes": "Chrome 9 and Firefox 3.6 initially implemented this as <code>experimental-webgl</code>. Since Chrome 33 and Firfox 24 it is implemented as the standard <code>webgl</code>."
-              },
+              "chrome": [
+                {
+                  "version_added": "33"
+                },
+                {
+                  "version_added": "9",
+                  "alternative_name": "experimental-webgl"
+                }
+              ],
               "chrome_android": {
                 "version_added": null
               },
               "edge": {
                 "version_added": true,
-                "notes": "Edge, Internet Explorer 11, WebKit 5.1 and Firefox Mobile implemented this as <code>experimental-webgl</code>."
+                "alternative_name": "experimental-webgl"
               },
               "edge_mobile": {
                 "version_added": true
               },
               "firefox": [
                 {
-                  "version_added": "3.6",
-                  "notes": "Chrome 9 and Firefox 3.6 initially implemented this as <code>experimental-webgl</code>. Since Chrome 33 and Firfox 24 it is implemented as the standard <code>webgl</code>."
+                  "version_added": "24",
+                  "alternative_name": "experimental-webgl"
                 },
                 {
-                  "version_added": "24"
+                  "version_added": "3.6"
                 }
               ],
               "firefox_android": {
                 "version_added": true,
-                "notes": "Edge, Internet Explorer 11, WebKit 5.1 and Firefox Mobile implemented this as <code>experimental-webgl</code>."
+                "alternative_name": "experimental-webgl"
               },
               "ie": {
                 "version_added": "11",
-                "notes": "Edge, Internet Explorer 11, WebKit 5.1 and Firefox Mobile implemented this as <code>experimental-webgl</code>."
+                "alternative_name": "experimental-webgl"
               },
-              "opera": {
-                "version_added": "9",
-                "notes": "Opera 9 implemented this as <code>experimental-webgl</code>, behind a user preference, in version 15.0 the user preference got removed."
-              },
+              "opera": [
+                {
+                  "version_added": "15"
+                },
+                {
+                  "version_added": "9",
+                  "alternative_name": "experimental-webgl"
+                }
+              ],
               "opera_android": {
                 "version_added": null
               },
               "safari": {
                 "version_added": "5.1",
-                "notes": "Edge, Internet Explorer 11, WebKit 5.1 and Firefox Mobile implemented this as <code>experimental-webgl</code>."
+                "alternative_name": "experimental-webgl"
               },
               "safari_ios": {
                 "version_added": null
@@ -294,8 +353,9 @@
             }
           }
         },
-        "webgl2 context": {
+        "webgl2_context": {
           "__compat": {
+            "description": "webgl2 context",
             "support": {
               "webview_android": {
                 "version_added": null
@@ -338,8 +398,9 @@
             }
           }
         },
-        "2d alpha context attribute": {
+        "2d_alpha_context": {
           "__compat": {
+            "description": "2d alpha context attribute",
             "support": {
               "webview_android": {
                 "version_added": false
@@ -380,8 +441,9 @@
             }
           }
         },
-        "failIfMajorPerformanceCaveat attribute": {
+        "failIfMajorPerformanceCaveat": {
           "__compat": {
+            "description": "failIfMajorPerformanceCaveat attribute",
             "support": {
               "webview_android": {
                 "version_added": false
@@ -422,8 +484,9 @@
             }
           }
         },
-        "bitmaprenderer context": {
+        "bitmaprenderer_context": {
           "__compat": {
+            "description": "bitmaprenderer context",
             "support": {
               "webview_android": {
                 "version_added": false
@@ -608,7 +671,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         },
         "Image quality parameter": {
@@ -698,7 +761,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -723,11 +786,21 @@
             },
             "firefox": {
               "version_added": "44",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>gfx.offscreencanvas.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "gfx.offscreencanvas.enabled"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "This feature is behind a feature preference setting. In about:config, set <code>gfx.offscreencanvas.enabled</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "gfx.offscreencanvas.enabled"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -748,7 +821,7 @@
           "status": {
             "experimental": true,
             "standard_track": false,
-            "deprecated": true
+            "deprecated": false
           }
         }
       }
