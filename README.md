@@ -51,8 +51,8 @@ JSON file containing the compatibility data.
 - [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
 ## Format of the browser compat json files
-The definitive description of the format used to represent compatibility data is the [schema file](https://github.com/mdn/browser-compat-data/blob/master/compat-data.schema.json).
-You can also have a look at the [schema documentation](https://github.com/mdn/browser-compat-data/blob/master/compat-data-schema.md).
+The definitive description of the format used to represent compatibility data is the [schema file](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json).
+You can also have a look at the [schema documentation](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md).
 
 *Please note that we do not (yet) guarantee the stability of the data format.
 You're welcome to use the data, but its structure is subject to change without notice.*

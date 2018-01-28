@@ -32,11 +32,10 @@ function load() {
 
 module.exports = load(
   'api',
+  'browsers',
   'css',
   'html',
   'http',
   'javascript',
   'webextensions'
 );
-
-module.exports.browsers = require('./browsers/browsers.json');
