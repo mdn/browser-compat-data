@@ -95,15 +95,21 @@
           }
         }
       },
-      "actualBoundingBoxLeft, actualBoundingBoxRight, fontBoundingBoxAscent, fontBoundingBoxDescent, actualBoundingBoxAscent, actualBoundingBoxDescent, emHeightAscent, emHeightDescent, hangingBaseline, alphabeticBaseline, ideographicBaseline": {
+      "advanced_text_metrics": {
         "__compat": {
+          "description": "Advanced text metrics properties",
           "support": {
             "webview_android": {
               "version_added": null
             },
             "chrome": {
               "version_added": true,
-              "notes": "To turn on advanced text metrics, set the flag <code>ExperimentalCanvasFeatures</code> to <code>true</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ExperimentalCanvasFeatures"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": null
