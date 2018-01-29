@@ -112,7 +112,7 @@
         "__compat": { "$ref": "#/definitions/compat_statement" }
       },
       "patternProperties":{
-        "^(?!__compat|.*\\.).+$" : { "$ref": "#/definitions/identifier" }
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     },
@@ -127,7 +127,7 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat|.*\\.).+$": { "$ref": "#/definitions/identifier" }
+    "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
   },
   "additionalProperties": false
 }
