@@ -161,9 +161,9 @@
             }
           }
         },
-        "position_relative_table_elements": {
+        "position_absolute_table_elements": {
           "__compat": {
-            "description": "Table elements as absolute positioning containers",
+            "description": "Table elements as <code>absolute</code> positioning containers",
             "support": {
               "webview_android": {
                 "version_added": null
@@ -182,11 +182,11 @@
               },
               "firefox": {
                 "version_added": "30",
-                "notes": "Firefox later helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Relative positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
               },
               "firefox_android": {
                 "version_added": "30",
-                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Relative positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
               },
               "ie": {
                 "version_added": null
@@ -196,6 +196,54 @@
               },
               "opera_android": {
                 "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "position_sticky_table_elements": {
+          "__compat": {
+            "description": "Table elements as <code>sticky</code> positioning containers",
+            "support": {
+              "webview_android": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": {
+                "version_added": "59"
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
               },
               "safari": {
                 "version_added": null
