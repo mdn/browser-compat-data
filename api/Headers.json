@@ -1,0 +1,908 @@
+{
+  "api": {
+    "Headers": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers",
+        "support": {
+          "webview_android": {
+            "version_added": "40"
+          },
+          "chrome": {
+            "version_added": "52"
+          },
+          "chrome_android": {
+            "version_added": "40"
+          },
+          "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
+            "version_added": null
+          },
+          "firefox": [
+            {
+              "version_added": "52",
+              "notes": "Prior to Firefox 52, <code>get()</code> only returned the first value in the specified header, with <code>getAll()</code> returning all values. From 52 onwards, <code>get()</code> now returns all values and <code>getAll()</code> has been deleted."
+            },
+            {
+              "version_added": "39"
+            },
+            {
+              "version_added": "34",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": ""
+                }
+              ]
+            }
+          ],
+          "firefox_android": {
+            "version_added": "44"
+          },
+          "ie": {
+            "version_added": false
+          },
+          "opera": {
+            "version_added": "29"
+          },
+          "opera_android": {
+            "version_added": "29"
+          },
+          "safari": {
+            "version_added": "10.1"
+          },
+          "safari_ios": {
+            "version_added": false
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "advanced_header_methods": {
+        "__compat": {
+          "description": "advanced Header methods",
+          "support": {
+            "webview_android": {
+              "version_added": true,
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "chrome": {
+              "version_added": true,
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "edge": {
+              "version_added": "16",
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "44",
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "firefox_android": {
+              "version_added": "44",
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true,
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "opera_android": {
+              "version_added": true,
+              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            }
+          }
+        }
+      },
+      "lexicographical_sorting": {
+        "__compat": {
+          "description": "Lexicographical sorting, and values from duplicate header names combined when iterated.",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "42"
+            },
+            "chrome_android": {
+              "version_added": "44"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "24"
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "getall_removed": {
+        "__compat": {
+          "description": "getAll() removed",
+          "support": {
+            "webview_android": {
+              "version_added": "60"
+            },
+            "chrome": {
+              "version_added": "60"
+            },
+            "chrome_android": {
+              "version_added": "60"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": "45"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "47"
+            },
+            "opera_android": {
+              "version_added": "47"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
+      "headers": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/Headers",
+          "description": "<code>Headers()</code> constructor",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "append": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/append",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "delete": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/delete",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "entries": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/entries",
+          "support": {
+            "webview_android": {
+              "version_added": "45"
+            },
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "get": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/get",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "52",
+                "notes": "Prior to Firefox 52, <code>get()</code> only returned the first value in the specified header, with <code>getAll()</code> returning all values. From 52 onwards, <code>get()</code> now returns all values and <code>getAll()</code> has been deleted."
+              },
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getAll": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/getAll",
+          "support": {
+            "webview_android": {
+              "version_added": "42",
+              "version_removed": "60"
+            },
+            "chrome": {
+              "version_added": "42",
+              "version_removed": "60"
+            },
+            "chrome_android": {
+              "version_added": "42",
+              "version_removed": "60"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "29",
+              "version_removed": "47"
+            },
+            "opera_android": {
+              "version_added": "29",
+              "version_removed": "47"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
+      "has": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/get",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "keys": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/keys",
+          "support": {
+            "webview_android": {
+              "version_added": "45"
+            },
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "set": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/set",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "39"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": ""
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "values": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/values",
+          "support": {
+            "webview_android": {
+              "version_added": "45"
+            },
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}
