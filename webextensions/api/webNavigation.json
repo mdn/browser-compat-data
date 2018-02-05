@@ -1,0 +1,642 @@
+{
+  "webextensions": {
+    "api": {
+      "webNavigation": {
+        "TransitionQualifier": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/TransitionQualifier",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "notes": [
+                  "'server_redirect' is limited to top-level frames and 'client_redirect' is not supplied when redirections are created by JavaScript."
+                ],
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "notes": [
+                  "'server_redirect' is limited to top-level frames and 'client_redirect' is not supplied when redirections are created by JavaScript."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "17"
+              }
+            }
+          },
+          "from_address_bar": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          }
+        },
+        "TransitionType": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/TransitionType",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "notes": [
+                  "'link' and 'auto_subframe' are partially supported as the default transition type for top-level frames and subframes respectively. 'reload' and 'form_submit' are supported. All other properties are unsupported."
+                ],
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "notes": [
+                  "'link' and 'auto_subframe' are partially supported as the default transition type for top-level frames and subframes respectively. 'reload' and 'form_submit' are supported. All other properties are unsupported."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "17"
+              }
+            }
+          }
+        },
+        "getAllFrames": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getAllFrames",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "17"
+              }
+            }
+          }
+        },
+        "getFrame": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "17"
+              }
+            }
+          }
+        },
+        "onBeforeNavigate": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If the filter parameter is empty, Chrome matches all URLs."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "If the filter parameter is empty, Opera matches all URLs."
+                ],
+                "version_added": "17"
+              }
+            }
+          }
+        },
+        "onCommitted": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If the filter parameter is empty, Chrome matches all URLs."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "If the filter parameter is empty, Opera matches all URLs."
+                ],
+                "version_added": "17"
+              }
+            }
+          },
+          "transitionQualifiers": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          },
+          "transitionType": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          }
+        },
+        "onCompleted": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If the filter parameter is empty, Chrome matches all URLs."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "If the filter parameter is empty, Opera matches all URLs."
+                ],
+                "version_added": "17"
+              }
+            }
+          }
+        },
+        "onCreatedNavigationTarget": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If a blocked popup is unblocked by the user, the event is still not sent."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "If the filter parameter is empty, Firefox raises an exception.",
+                  "If a blocked popup is unblocked by the user, the event is then sent."
+                ],
+                "version_added": "54"
+              },
+              "firefox_android": {
+                "notes": [
+                  "If the filter parameter is empty, Firefox raises an exception.",
+                  "If a blocked popup is unblocked by the user, the event is then sent.",
+                  "This event is only sent in the 'window.open()' case."
+                ],
+                "version_added": "54"
+              },
+              "opera": {
+                "notes": [
+                  "If a blocked popup is unblocked by the user, the event is still not sent."
+                ],
+                "version_added": "17"
+              }
+            }
+          },
+          "sourceProcessId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          },
+          "windowId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": "54"
+                },
+                "firefox_android": {
+                  "version_added": "54"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          }
+        },
+        "onDOMContentLoaded": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If the filter parameter is empty, Chrome matches all URLs."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "If the filter parameter is empty, Opera matches all URLs."
+                ],
+                "version_added": "17"
+              }
+            }
+          }
+        },
+        "onErrorOccurred": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If the filter parameter is empty, Chrome matches all URLs."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported"
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "If the filter parameter is empty, Opera matches all URLs."
+                ],
+                "version_added": "17"
+              }
+            }
+          },
+          "error": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          }
+        },
+        "onHistoryStateUpdated": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "17"
+              }
+            }
+          },
+          "transitionQualifiers": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          },
+          "transitionType": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          }
+        },
+        "onReferenceFragmentUpdated": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated",
+            "support": {
+              "chrome": {
+                "notes": [
+                  "If the filter parameter is empty, Chrome matches all URLs."
+                ],
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Filtering is not supported."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Filtering is supported from version 50.",
+                  "If the filter parameter is empty, Firefox raises an exception."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "notes": [
+                  "If the filter parameter is empty, Opera matches all URLs."
+                ],
+                "version_added": "17"
+              }
+            }
+          },
+          "transitionQualifiers": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          },
+          "transitionType": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": {
+                  "version_added": "17"
+                }
+              }
+            }
+          }
+        },
+        "onTabReplaced": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "17"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

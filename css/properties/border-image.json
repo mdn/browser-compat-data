@@ -1,0 +1,227 @@
+{
+  "css": {
+    "properties": {
+      "border-image": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/border-image",
+          "support": {
+            "webview_android": {
+              "prefix": "-webkit-",
+              "version_added": "2.1"
+            },
+            "chrome": [
+              {
+                "version_added": "16"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "7"
+              }
+            ],
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ],
+            "edge_mobile": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "15",
+                "notes": [
+                  "Small SVGs are incorrectly stretched, because percentages in <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-slice'><code>border-image-slice</code></a> are computed to integers instead of floats (<a href='https://bugzil.la/1284797'>bug 1284797</a>).",
+                  "Until Firefox 47, SVGs without viewport were not sliced correctly (<a href='https://bugzil.la/619500'>bug 619500</a>).",
+                  "From Firefox 48 until Firefox 49, SVGs without viewport are displayed the same as SVGs with viewport, but if the slices are not exactly 50%, they are incorrectly stretched (<a href='https://bugzil.la/1264809' >bug 1264809</a>).",
+                  "Until Firefox 57, an issue persisted for SVGs without viewport when <a href='https://wiki.mozilla.org/Electrolysis'>e10s</a> was disabled (<a href='https://bugzil.la/1290782'>bug 1290782</a>)."
+                ]
+              },
+              {
+                "version_added": "3.5",
+                "prefix": "-moz-",
+                "notes": "An earlier version of the specification was implemented, prefixed, in Firefox versions prior to 15."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "44",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.prefixes.webkit",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "15",
+                "notes": [
+                  "Small SVGs are incorrectly stretched, because percentages in <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-slice'><code>border-image-slice</code></a> are computed to integers instead of floats (<a href='https://bugzil.la/1284797'>bug 1284797</a>).",
+                  "Until Firefox 47, SVGs without viewport were not sliced correctly (<a href='https://bugzil.la/619500'>bug 619500</a>).",
+                  "From Firefox 48 until Firefox 49, SVGs without viewport are displayed the same as SVGs with viewport, but if the slices are not exactly 50%, they are incorrectly stretched (<a href='https://bugzil.la/1264809' >bug 1264809</a>).",
+                  "Until Firefox 57, an issue persisted for SVGs without viewport when <a href='https://wiki.mozilla.org/Electrolysis'>e10s</a> was disabled (<a href='https://bugzil.la/1290782'>bug 1290782</a>)."
+                ]
+              },
+              {
+                "version_added": "4",
+                "prefix": "-moz-",
+                "notes": "An earlier version of the specification was implemented, prefixed, in Firefox versions prior to 15."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "44",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.prefixes.webkit",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": "11"
+            },
+            "opera": [
+              {
+                "version_added": "10.5"
+              },
+              {
+                "prefix": "-o-",
+                "version_added": "11"
+              }
+            ],
+            "opera_android": {
+              "prefix": "-o-",
+              "version_added": "11"
+            },
+            "safari": [
+              {
+                "version_added": "6"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "3"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "6"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "3.2"
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "optional_border_image_slice": {
+          "__compat": {
+            "description": "optional <code>&lt;border-image-slice&gt;</code>",
+            "support": {
+              "firefox": {
+                "version_added": "15"
+              },
+              "firefox_android": {
+                "version_added": "15"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "fill_keyword": {
+          "__compat": {
+            "description": "<code>fill</code> keyword",
+            "support": {
+              "webview_android": {
+                "version_added": "18"
+              },
+              "chrome": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "15"
+              },
+              "firefox_android": {
+                "version_added": "15"
+              },
+              "safari": {
+                "version_added": "6"
+              },
+              "safari_ios": {
+                "version_added": "6"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "gradient": {
+          "__compat": {
+            "description": "<code>&lt;gradient&gt;</code>",
+            "support": {
+              "webview_android": {
+                "version_added": true
+              },
+              "chrome": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "29"
+              },
+              "firefox_android": {
+                "version_added": "29"
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

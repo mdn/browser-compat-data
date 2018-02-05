@@ -1,55 +1,9 @@
 var fs = require('fs');
 var path = require('path');
-var Ajv = require('ajv');
-var ajv = new Ajv({ allErrors: true });
-var hasErrors = false;
-
-function jsonDiff(actual, expected) {
-  var actualLines = actual.split(/\n/);
-  var expectedLines = expected.split(/\n/);
-
-  for (var i = 0; i < actualLines.length; i++) {
-    if (actualLines[i] !== expectedLines[i]) {
-      return [
-        '#' + i + '\x1b[0m',
-        '    Actual:   ' + actualLines[i],
-        '    Expected: ' + expectedLines[i]
-      ].join('\n');
-    }
-  }
-}
-
-function checkStyle(filename) {
-  var actual = fs.readFileSync(filename, 'utf-8').trim();
-  var expected = JSON.stringify(JSON.parse(actual), null, 2);
-
-  if (actual === expected) {
-    console.log('\x1b[32m  Style – OK\x1b[0m');
-  } else {
-    hasErrors = true;
-    console.log('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
-  }
-}
-
-function checkSchema(dataFilename) {
-  var schemaFilename = '../compat-data.schema.json';
-  var valid = ajv.validate(
-    require(schemaFilename),
-    require(dataFilename)
-  );
-
-  if (valid) {
-    console.log('\x1b[32m  JSON schema – OK\x1b[0m');
-  } else {
-    hasErrors = true;
-    console.log('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
-    console.log('   ' + ajv.errorsText(ajv.errors, {
-      separator: '\n    ',
-      dataVar: 'item'
-    }));
-  }
-}
-
+var {testStyle} = require('./test-style');
+var {testSchema} = require('./test-schema');
+var {testVersions} = require('./test-versions');
+var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
 
 function load(...files) {
   for (let file of files) {
@@ -60,8 +14,16 @@ function load(...files) {
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
         console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
-        checkStyle(file)
-        checkSchema(file);
+        if (file.indexOf('browsers/') !== -1) {
+          hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
+        } else {
+          hasSchemaErrors = testSchema(file);
+          hasStyleErrors = testStyle(file);
+          hasVersionErrors =  testVersions(file);
+        }
+        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
+          hasErrors = true;
+        }
       }
 
       continue;
@@ -80,7 +42,9 @@ if (process.argv[2]) {
 } else {
   load(
     'api',
+    'browsers',
     'css',
+    'html',
     'http',
     'javascript',
     'test',

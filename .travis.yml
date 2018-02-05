@@ -1,7 +1,12 @@
 language: node_js
-node_js:
-- '7'
+node_js: stable
 sudo: false
-script: "npm run travis"
 notifications:
   email: false
+deploy:
+  provider: npm
+  email: mdn-npm@mozilla.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
+    repo: mdn/browser-compat-data

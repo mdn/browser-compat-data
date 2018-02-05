@@ -1,0 +1,125 @@
+{
+  "webextensions": {
+    "api": {
+      "i18n": {
+        "LanguageCode": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/LanguageCode",
+            "support": {
+              "chrome": {
+                "version_added": "47"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "34"
+              }
+            }
+          }
+        },
+        "detectLanguage": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/detectLanguage",
+            "support": {
+              "chrome": {
+                "version_added": "47"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "34"
+              }
+            }
+          }
+        },
+        "getAcceptLanguages": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages",
+            "support": {
+              "chrome": {
+                "version_added": "47"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "34"
+              }
+            }
+          }
+        },
+        "getMessage": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getMessage",
+            "support": {
+              "chrome": {
+                "version_added": "17"
+              },
+              "edge": {
+                "version_added": true,
+                "notes": [
+                  "Throws an exception instead returning an empty string if the message does not exist.",
+                  "Expects substitutions to be strings, while other browsers allow any value which is then converted to a string."
+                ]
+              },
+              "firefox": {
+                "version_added": "45",
+                "notes": [
+                  "Firefox 47 and earlier returns \"??\" instead of \"\" if the message is not found in _locales, <a href='https://bugzil.la/1258199'>bug 1258199</a> changed this act to match Chrome, landed on Firefox 48."
+                ]
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "getUILanguage": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getUILanguage",
+            "support": {
+              "chrome": {
+                "version_added": "35"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

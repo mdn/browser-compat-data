@@ -1,0 +1,222 @@
+{
+  "css": {
+    "properties": {
+      "border-radius": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/border-radius",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "4",
+                "notes": "Current Chrome and Safari versions ignore border-radius on <code>&lt;select&gt;</code> elements unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "1"
+              }
+            ],
+            "webview_android": {
+              "version_added": "2.1",
+              "prefix": "-webkit-"
+            },
+            "edge": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ],
+            "edge_mobile": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "4",
+                "notes": [
+                  "Prior to Firefox 50, border styles of rounded corners (with <code>border-radius</code>) were always rendered as if <code>border-style</code> was <code>solid</code>. This has been fixed in Firefox 50.",
+                  "To conform to the CSS3 standard, Firefox 4 changes the handling of <a href='https://developer.mozilla.org/docs/Web/CSS/percentage'><code>&lt;percentage&gt;</code></a> values to match the specification. You can specify an ellipse as a border on an arbitrary sized element with <code>border-radius: 50%;</code>. Firefox 4 also makes rounded corners clip content and images if <a href='https://developer.mozilla.org/docs/Web/CSS/overflow'><code>overflow</code></a><code>: visible</code> is not set."
+                ]
+              },
+              {
+                "prefix": "-moz-",
+                "version_added": "1",
+                "version_removed": "12"
+              }
+            ],
+            "firefox_android": {
+              "version_added": true,
+              "notes": "Prior to Firefox 50, border styles of rounded corners (with <code>border-radius</code>) were always rendered as if <code>border-style</code> was <code>solid</code>. This has been fixed in Firefox 50."
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": "10.5",
+              "notes": "In Opera prior to version 11.60, replaced elements with <code>border-radius</code> will not have rounded corners."
+            },
+            "opera_android": {
+              "version_added": ""
+            },
+            "safari": [
+              {
+                "version_added": "5",
+                "notes": "Current Chrome and Safari versions ignore border-radius on <code>&lt;select&gt;</code> elements unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "3"
+              }
+            ],
+            "safari_ios": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "elliptical_borders": {
+          "__compat": {
+            "description": "Elliptical borders",
+            "support": {
+              "chrome": {
+                "version_added": true,
+                "notes": "Prior to Chrome 4, the slash <code>/</code> notation is unsupported. If two values are specified, an elliptical border is drawn on all four corners. <code>-webkit-border-radius: 40px 10px;</code> is equivalent to <code>border-radius: 40px/10px;</code>."
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": true,
+                "notes": "Prior to Safari 4.1, the slash <code>/</code> notation is unsupported. If two values are specified, an elliptical border is drawn on all four corners. <code>-webkit-border-radius: 40px 10px;</code> is equivalent to <code>border-radius: 40px/10px;</code>."
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "4_values_for_4_corners": {
+          "__compat": {
+            "description": "4 values for 4 corners",
+            "support": {
+              "chrome": {
+                "version_added": "4"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "5"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "percentages": {
+          "__compat": {
+            "description": "Percentages",
+            "support": {
+              "chrome": {
+                "version_added": true,
+                "notes": "<code>&lt;percentage&gt;</code> values are not supported in older Chrome and Safari versions (it was <a href='http://trac.webkit.org/changeset/66615'>fixed in Sepember 2010</a>)."
+              },
+              "webview_android": {
+                "version_added": true,
+                "notes": "<code>&lt;percentage&gt;</code> values are not supported in older Chrome and Safari versions (it was <a href='http://trac.webkit.org/changeset/66615'>fixed in Sepember 2010</a>)."
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "4",
+                "notes": "<code>&lt;percentage&gt;</code> values are implemented in a non-standard way prior to Firefox 4. Both horizontal and vertical radii were relative to the width of the border box."
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "11.5",
+                "notes": "The implementation of <code>&lt;percentage&gt;</code> values was buggy in Opera prior to 11.50."
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "5.1",
+                "notes": "<code>&lt;percentage&gt;</code> values are not supported in older Chrome and Safari versions (it was <a href='http://trac.webkit.org/changeset/66615'>fixed in Sepember 2010</a>)."
+              },
+              "safari_ios": {
+                "version_added": true,
+                "notes": "<code>&lt;percentage&gt;</code> values are not supported in older Chrome and Safari versions (it was <a href='http://trac.webkit.org/changeset/66615'>fixed in Sepember 2010</a>)."
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

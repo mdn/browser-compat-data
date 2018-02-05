@@ -1,0 +1,233 @@
+{
+  "webextensions": {
+    "api": {
+      "cookies": {
+        "Cookie": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/Cookie",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "CookieStore": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/CookieStore",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "OnChangedCause": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/OnChangedCause",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "get": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Provides access to cookies from private browsing mode and container tabs since version 52."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "getAll": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "If no URL is provided, cookies are retrieved only for URLs in currently opened tabs. In Chrome, this gets all cookies on a user's machine."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "getAllCookieStores": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAllCookieStores",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "notes": [
+                  "Always returns the same default cookie store with ID 0. All cookies belong to this store."
+                ],
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Before version 52, only the default cookie store was visible. From version 52 onwards, the cookie stores for private browsing mode and container tabs are also readable."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "onChanged": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "remove": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "set": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "notes": [
+                  "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                ],
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "notes": [
+                  "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                ],
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
