@@ -4,15 +4,48 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers",
         "support": {
-          "webview_android": {
-            "version_added": "42"
-          },
-          "chrome": {
-            "version_added": "42"
-          },
-          "chrome_android": {
-            "version_added": "42"
-          },
+          "webview_android": [
+            {
+              "version_added": "42"
+            },
+            {
+              "version_added": "41",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
+          "chrome": [
+            {
+              "version_added": "42"
+            },
+            {
+              "version_added": "41",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "42"
+            },
+            {
+              "version_added": "41",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
           "edge": {
             "version_added": true
           },
@@ -21,10 +54,6 @@
           },
           "firefox": [
             {
-              "version_added": "52",
-              "notes": "Prior to Firefox 52, <code>get()</code> only returned the first value in the specified header, with <code>getAll()</code> returning all values. From 52 onwards, <code>get()</code> now returns all values and <code>getAll()</code> has been deleted."
-            },
-            {
               "version_added": "39"
             },
             {
@@ -32,7 +61,7 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": ""
+                  "name": "dom.fetch.enabled"
                 }
               ]
             }
@@ -43,12 +72,34 @@
           "ie": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "29"
-          },
-          "opera_android": {
-            "version_added": "29"
-          },
+          "opera": [
+            {
+              "version_added": "29"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "29"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -60,57 +111,6 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
-      },
-      "advanced_header_methods": {
-        "__compat": {
-          "description": "advanced Header methods",
-          "support": {
-            "webview_android": {
-              "version_added": true,
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "chrome": {
-              "version_added": true,
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "edge": {
-              "version_added": "16",
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "firefox_android": {
-              "version_added": "44",
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": true,
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "opera_android": {
-              "version_added": true,
-              "notes": "<code>entries()</code>, <code>keys()</code>, <code>values()</code>, and support of <code>for...of</code>"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            }
-          }
         }
       },
       "lexicographical_sorting": {
@@ -156,54 +156,6 @@
           }
         }
       },
-      "getall_removed": {
-        "__compat": {
-          "description": "getAll() removed",
-          "support": {
-            "webview_android": {
-              "version_added": "60"
-            },
-            "chrome": {
-              "version_added": "60"
-            },
-            "chrome_android": {
-              "version_added": "60"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": "45"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": "47"
-            },
-            "opera_android": {
-              "version_added": "47"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "headers": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/Headers",
@@ -218,7 +170,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -232,7 +184,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -246,7 +198,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -266,7 +218,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -286,7 +238,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -332,7 +284,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -346,7 +298,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -360,7 +312,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -380,7 +332,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -400,7 +352,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -414,7 +366,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -446,7 +398,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -460,7 +412,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -474,7 +426,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -494,7 +446,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -514,7 +466,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -528,7 +480,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -608,7 +560,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -622,7 +574,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -636,7 +588,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -660,7 +612,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -680,7 +632,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -694,7 +646,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -737,14 +689,15 @@
             },
             "firefox": [
               {
-                "version_added": "39"
+                "version_added": "39",
+                "version_removed": "52"
               },
               {
                 "version_added": "34",
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -790,7 +743,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -804,7 +757,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -818,7 +771,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -838,7 +791,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -858,7 +811,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -872,7 +825,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -952,7 +905,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -966,7 +919,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -980,7 +933,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -1000,7 +953,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "dom.fetch.enabled"
                   }
                 ]
               }
@@ -1020,7 +973,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
@@ -1034,7 +987,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": ""
+                    "name": "Experimental Web Platform Features"
                   }
                 ]
               }
