@@ -4,18 +4,36 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation",
         "support": {
-          "webview_android": {
-            "version_added": "39",
-            "notes": "Before Chrome 44, implemented as <code>AnimationPlayer</code> (interface name in an early version of the spec)."
-          },
-          "chrome": {
-            "version_added": "39",
-            "notes": "Before Chrome 44, implemented as <code>AnimationPlayer</code> (interface name in an early version of the spec)."
-          },
-          "chrome_android": {
-            "version_added": "39",
-            "notes": "Before Chrome 44, implemented as <code>AnimationPlayer</code> (interface name in an early version of the spec)."
-          },
+          "webview_android": [
+            {
+              "version_added": "44"
+            },
+            {
+              "alternate_name": "AnimationPlayer",
+              "version_added": "39",
+              "version_removed": "44"
+            }
+          ],
+          "chrome": [
+            {
+              "version_added": "44"
+            },
+            {
+              "alternate_name": "AnimationPlayer",
+              "version_added": "39",
+              "version_removed": "44"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "44"
+            },
+            {
+              "alternate_name": "AnimationPlayer",
+              "version_added": "39",
+              "version_removed": "44"
+            }
+          ],
           "edge": {
             "version_added": null
           },
@@ -29,6 +47,9 @@
             "version_added": "48"
           },
           "ie": {
+            "version_added": false
+          },
+          "ie_mobile": {
             "version_added": false
           },
           "opera": {
@@ -81,6 +102,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": null
             },
@@ -129,6 +153,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -175,6 +202,9 @@
               "version_added": "48"
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -233,6 +263,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": false
             },
@@ -281,6 +314,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -322,13 +358,28 @@
             },
             "firefox": {
               "version_added": "48",
-              "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "48",
-              "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -379,6 +430,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "37"
             },
@@ -425,6 +479,9 @@
               "version_added": "48"
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -475,6 +532,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -523,6 +583,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -564,13 +627,16 @@
             },
             "firefox": {
               "version_added": "59",
-              "notes": "Prior to version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href='/docs/Web/API/Animation/playState'><code>Animation.playState</code></a>."
+              "notes": "Prior to version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href=\"/docs/Web/API/Animation/playState\"><code>Animation.playState</code></a>."
             },
             "firefox_android": {
               "version_added": "59",
-              "notes": "Prior to version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href='/docs/Web/API/Animation/playState'><code>Animation.playState</code></a>."
+              "notes": "Prior to version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href=\"/docs/Web/API/Animation/playState\"><code>Animation.playState</code></a>."
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -621,6 +687,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -669,6 +738,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -713,13 +785,16 @@
             },
             "firefox": {
               "version_added": "48",
-              "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
+              "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href=\"/docs/Web/API/Animation/pending\"><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
             },
             "firefox_android": {
               "version_added": "48",
-              "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
+              "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href=\"/docs/Web/API/Animation/pending\"><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -765,13 +840,28 @@
             },
             "firefox": {
               "version_added": "48",
-              "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "48",
-              "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -822,6 +912,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -870,6 +963,9 @@
             "ie": {
               "version_added": false
             },
+            "ie_mobile": {
+              "version_added": false
+            },
             "opera": {
               "version_added": "26"
             },
@@ -911,13 +1007,28 @@
             },
             "firefox": {
               "version_added": "48",
-              "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "48",
-              "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
+              "version_added": false
+            },
+            "ie_mobile": {
               "version_added": false
             },
             "opera": {
