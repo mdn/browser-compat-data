@@ -25,7 +25,7 @@
             "notes": "A version of <code>slice()</code> taking the length as second argument was implemented in <a href='https://hg.mozilla.org/mozilla-central/rev/1b3947ed93c6'>Firefox 4</a>. However, since that syntax differed from <a href='/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'><code>Array.slice()</code></a> and <a href='/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice'><code>String.slice()</code></a>, Gecko removed support and added support for the new syntax as <code>mozSlice()</code>."
           },
           "firefox_android": {
-            "version_added": "13"
+            "version_added": "14"
           },
           "ie": {
             "version_added": "10"
@@ -76,7 +76,7 @@
               "notes": "Before Firefox 16, the second parameter, when set to <code>null</code> or <code>undefined</code>, leads to an error instead of being handled as an empty dictionary."
             },
             "firefox_android": {
-              "version_added": "13",
+              "version_added": "14",
               "notes": "Before Firefox 16, the second parameter, when set to <code>null</code> or <code>undefined</code>, leads to an error instead of being handled as an empty dictionary."
             },
             "ie": {
@@ -211,6 +211,7 @@
               },
               {
                 "version_added": "5",
+                "version_removed": "21",
                 "prefix": "webkit",
                 "notes": "The <code>slice()</code> method had initially taken <code>length</code> as the second argument to indicate the number of bytes to include in the new <code>Blob</code>. If you specified values such that <code>start + length</code> exceeded the size of the source <code>Blob</code>, the returned <code>Blob</code> contained data from the start index to the end of the source <code>Blob</code>.&nbsp;That version of the <code>slice()</code> was implemented in <a href='https://hg.mozilla.org/mozilla-central/rev/1b3947ed93c6'>Firefox 4</a>, <a href='http://trac.webkit.org/changeset/55670'>WebKit</a>, and <a href='http://www.opera.com/docs/specs/presto28/file/#blob'>Opera 11.10</a>. However, since that syntax is differed from <a href='/en-US/JavaScript/Reference/Global_Objects/Array/slice'><code>Array.slice()</code></a> and <a href='/en-US/JavaScript/Reference/Global_Objects/String/slice'><code>String.slice()</code></a>, Gecko and WebKit removed support and added support for the new syntax as <code>Blob.slice()</code>/<a href='http://trac.webkit.org/changeset/83873'><code>Blob.webkitSlice</code></a>."
               }
@@ -231,12 +232,13 @@
               },
               {
                 "version_added": "5",
+                "version_removed": "13",
                 "prefix": "moz",
                 "notes": "The <code>slice()</code> method had initially taken <code>length</code> as the second argument to indicate the number of bytes to include in the new <code>Blob</code>. If you specified values such that <code>start + length</code> exceeded the size of the source <code>Blob</code>, the returned <code>Blob</code> contained data from the start index to the end of the source <code>Blob</code>.&nbsp;That version of the <code>slice()</code> was implemented in <a href='https://hg.mozilla.org/mozilla-central/rev/1b3947ed93c6'>Firefox 4</a>, <a href='http://trac.webkit.org/changeset/55670'>WebKit</a>, and <a href='http://www.opera.com/docs/specs/presto28/file/#blob'>Opera 11.10</a>. However, since that syntax is differed from <a href='/en-US/JavaScript/Reference/Global_Objects/Array/slice'><code>Array.slice()</code></a> and <a href='/en-US/JavaScript/Reference/Global_Objects/String/slice'><code>String.slice()</code></a>, Gecko and WebKit removed support and added support for the new syntax as <code>Blob.slice()</code>/<a href='http://trac.webkit.org/changeset/83873'><code>Blob.webkitSlice</code></a>."
               }
             ],
             "firefox_android": {
-              "version_added": "13"
+              "version_added": "14"
             },
             "ie": {
               "version_added": "10"
