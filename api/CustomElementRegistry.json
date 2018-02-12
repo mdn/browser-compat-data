@@ -4,36 +4,15 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomElementRegistry",
         "support": {
-          "webview_android": [
-            {
-              "version_added": "66",
-              "notes": "Support for 'Customized built-in elements' as well."
-            },
-            {
-              "version_added": "54",
-              "notes": "Support for 'Autonomous custom elements' only."
-            }
-          ],
-          "chrome": [
-            {
-              "version_added": "66",
-              "notes": "Support for 'Customized built-in elements' as well."
-            },
-            {
-              "version_added": "54",
-              "notes": "Support for 'Autonomous custom elements' only."
-            }
-          ],
-          "chrome_android": [
-            {
-              "version_added": "66",
-              "notes": "Support for 'Customized built-in elements' as well."
-            },
-            {
-              "version_added": "54",
-              "notes": "Support for 'Autonomous custom elements' only."
-            }
-          ],
+          "webview_android": {
+            "version_added": "54"
+          },
+          "chrome": {
+            "version_added": "54"
+          },
+          "chrome_android": {
+            "version_added": "54"
+          },
           "edge": {
             "version_added": false,
             "notes": "Under consideration"
@@ -75,39 +54,95 @@
           "ie": {
             "version_added": false
           },
-          "opera": [
-            {
-              "version_added": "53",
-              "notes": "Support for 'Customized built-in elements' as well."
-            },
-            {
-              "version_added": "41",
-              "notes": "Support for 'Autonomous custom elements' only."
-            }
-          ],
-          "opera_android": [
-            {
-              "version_added": "53",
-              "notes": "Support for 'Customized built-in elements' as well."
-            },
-            {
-              "version_added": "41",
-              "notes": "Support for 'Autonomous custom elements' only."
-            }
-          ],
+          "opera": {
+            "version_added": "41"
+          },
+          "opera_android": {
+            "version_added": "41"
+          },
           "safari": {
-            "version_added": "10.1",
-            "notes": "Supports 'Autonomous custom elements' but not 'Customized built-in elements'"
+            "version_added": "10.1"
           },
           "safari_ios": {
-            "version_added": "10.1",
-            "notes": "Supports 'Autonomous custom elements' but not 'Customized built-in elements'"
+            "version_added": "10.1"
           }
         },
         "status": {
           "experimental": true,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "builtin": {
+        "__compat": {
+          "description": "Support for Customized built-in elements",
+          "support": {
+            "webview_android": {
+              "version_added": "66"
+            },
+            "chrome": {
+              "version_added": "66"
+            },
+            "chrome_android": {
+              "version_added": "66"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": true,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.customelements.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": true,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.customelements.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "53"
+            },
+            "opera_android": {
+              "version_added": "53"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "define": {
