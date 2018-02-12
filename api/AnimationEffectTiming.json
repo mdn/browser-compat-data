@@ -21,11 +21,21 @@
           },
           "firefox": {
             "version_added": "48",
-            "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in beta and release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+            "notes": "The preference is set to <code>true</code> by default on Firefox Nightly and on Firefox Developer Edition, but not on the official release.",
+            "flags": [{
+              "type": "preference",
+              "name": "dom.animations-api.core.enabled",
+              "value_to_set": "true"
+            }]
           },
           "firefox_android": {
             "version_added": "48",
-            "notes": "The Web Animations API is only enabled by default in Firefox Developer Edition and Nightly builds. You can enable it in beta and release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>."
+            "notes": "The preference is set to <code>true</code> by default on Firefox Nightly and on Firefox Developer Edition, but not on the official release.",
+            "flags": [{
+              "type": "preference",
+              "name": "dom.animations-api.core.enabled",
+              "value_to_set": "true"
+            }]
           },
           "ie": {
             "version_added": false
