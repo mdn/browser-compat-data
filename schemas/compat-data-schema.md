@@ -110,6 +110,7 @@ The currently accepted browser identifiers should be declared in the following o
 * `safari_ios`, Apple Safari, on iOS,
 * `samsunginternet_android`, the Samsung Internet browser (Android version).
 * `uc_android`, UC Browser (Android version).
+* `uc_chinese_android`, UC Browser (Chinese Android version).
 
 No browser identifier is mandatory.
 
