@@ -277,7 +277,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients/openWindow",
           "support": {
             "webview_android": {
-              "version_added": false
+              "version_added": {
+                "version_added": "51",
+                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
+              }
             },
             "chrome": [
               {
@@ -287,6 +290,10 @@
               {
                 "version_added": "43",
                 "notes": "Can open any URL. "
+              },
+              {
+                "version_added": "51",
+                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
               }
             ],
             "chrome_android": [
@@ -303,7 +310,7 @@
               },
               {
                 "version_added": "51",
-                "notes": " URLs may open inside an existing browsing context provided by a standalone web app"
+                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
               }
             ],
             "edge": {
