@@ -65,3 +65,9 @@ If you find a problem, please [file a bug](https://github.com/mdn/browser-compat
 
 We're very happy to accept contributions to this data. Please familiarize yourself
 with the schema and send us a pull request. See also the [Contributing file](https://github.com/mdn/browser-compat-data/blob/master/CONTRIBUTING.md) for more information.
+
+## Projects using the data
+Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
+
+* [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
+* [mdncomp](https://github.com/epistemex/mdncomp) - View compatibility data on the command line.
