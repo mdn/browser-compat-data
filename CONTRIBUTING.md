@@ -13,7 +13,7 @@ or maybe you found your own.
 Let us know if these look good to you.
 
 ## Validating the data
-You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --dev`.
+You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --only=dev`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
 ## Test rendering
