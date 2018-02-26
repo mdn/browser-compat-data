@@ -98,6 +98,48 @@
               }
             }
           },
+          "button_background_active": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "button_background_hover": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
           "frame": {
             "__compat": {
               "support": {
@@ -335,6 +377,27 @@
               }
             }
           },
+          "tab_loading": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
           "tab_text": {
             "__compat": {
               "support": {
@@ -554,7 +617,7 @@
               }
             }
           },
-          "toolbar_vertical_separator": {
+          "toolbar_field_separator": {
             "__compat": {
               "support": {
                 "chrome": {
@@ -563,12 +626,19 @@
                 "edge": {
                   "version_added": false
                 },
-                "firefox": {
-                  "version_added": "58",
-                  "notes": [
-                    "Before version 59, the RGB array form was not supported for this property."
-                  ]
-                },
+                "firefox": [
+                  {
+                    "version_added": "59"
+                  },
+                  {
+                    "alternative_name": "toolbar_vertical_separator",
+                    "version_added": "58",
+                    "version_removed": "59",
+                    "notes": [
+                      "Before version 59, the RGB array form was not supported for this property."
+                    ]
+                  }
+                ],
                 "firefox_android": {
                   "version_added": false
                 },

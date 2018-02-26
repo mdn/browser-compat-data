@@ -9,7 +9,7 @@ function jsonDiff(actual, expected) {
   for (var i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
       return [
-        '#' + i + '\x1b[0m',
+        '#' + (i + 1) + '\x1b[0m',
         '    Actual:   ' + actualLines[i],
         '    Expected: ' + expectedLines[i]
       ].join('\n');

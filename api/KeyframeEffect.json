@@ -1,37 +1,31 @@
 {
   "api": {
-    "GamepadHapticActuator": {
+    "KeyframeEffect": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect",
         "support": {
           "webview_android": {
-            "version_added": false
+            "version_added": true
           },
           "chrome": {
-            "version_added": false
+            "version_added": true
           },
           "chrome_android": {
-            "version_added": false
+            "version_added": true
           },
           "edge": {
-            "version_added": false
+            "version_added": null
           },
           "edge_mobile": {
-            "version_added": false
+            "version_added": null
           },
           "firefox": {
-            "version_added": true,
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.gamepad-extensions.enabled",
-                "value_to_set": "true"
-              }
-            ],
-            "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+            "notes": "The Web Animations API is only enabled by default in Firefox Nightly builds. It was enabled in Developer Edition until 58, when it is no longer enabled by default. You can enable it in beta and release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>.",
+            "version_added": "48"
           },
           "firefox_android": {
-            "version_added": false
+            "notes": "The Web Animations API is only enabled by default in Firefox Nightly builds. It was enabled in Developer Edition until 58, when it is no longer enabled by default. You can enable it in beta and release builds by setting the preference <code>dom.animations-api.core.enabled</code> to <code>true</code>, and can disable it in any Firefox version by setting this preference to <code>false</code>.",
+            "version_added": "48"
           },
           "ie": {
             "version_added": false
@@ -55,43 +49,38 @@
           "deprecated": false
         }
       },
-      "pulse": {
+      "KeyframeEffect": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/pulse",
+          "description": "Clone constructor (2nd type of constructor)",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/KeyframeEffect",
           "support": {
             "webview_android": {
-              "version_added": false
+              "version_added": true
             },
             "chrome": {
-              "version_added": false
+              "version_added": true
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": true
             },
             "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
+              "version_added": null
             },
             "firefox": {
-              "version_added": true,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.gamepad-extensions.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
-            },
-            "firefox_android": {
+              "notes": "Only enabled in Firefox 52 and later Nightly edition. Turned off in Beta/release.",
               "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "notes": "Only enabled in Firefox 52 and later Nightly edition. Turned off in Beta/release.",
               "version_added": false
             },
             "opera_android": {
@@ -111,9 +100,9 @@
           }
         }
       },
-      "type": {
+      "setKeyframes": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/type",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/setKeyframes",
           "support": {
             "webview_android": {
               "version_added": false
@@ -124,30 +113,22 @@
             "chrome_android": {
               "version_added": false
             },
-            "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
-              "version_added": true,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.gamepad-extensions.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
-            },
-            "firefox_android": {
               "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox_android": {
               "version_added": false
             },
             "opera_android": {
