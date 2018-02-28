@@ -70,4 +70,5 @@ with the schema and send us a pull request. See also the [Contributing file](htt
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
 
 * [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
+* [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
 * [mdncomp](https://github.com/epistemex/mdncomp) - View compatibility data on the command line.
