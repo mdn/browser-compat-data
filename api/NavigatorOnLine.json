@@ -95,15 +95,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorLanguage/onLine",
           "support": {
             "webview_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
             },
             "chrome": {
               "version_added": true,
               "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, Mac: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='http://crbug.com/7469'>crbug.com/7469</a>"
             },
             "chrome_android": {
-              "version_added": "2.2",
-              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
+              "version_added": true
             },
             "edge": {
               "version_added": true
