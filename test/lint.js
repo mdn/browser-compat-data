@@ -3,7 +3,8 @@ var path = require('path');
 var {testStyle} = require('./test-style');
 var {testSchema} = require('./test-schema');
 var {testVersions} = require('./test-versions');
-var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
+var {testHierarchy} = require('./test-hierarchy');
+var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors, hasHierarchiesErrors = false;
 
 function load(...files) {
   for (let file of files) {
@@ -17,11 +18,12 @@ function load(...files) {
         if (file.indexOf('browsers/') !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
         } else {
-          hasSchemaErrors = testSchema(file);
-          hasStyleErrors = testStyle(file);
-          hasVersionErrors =  testVersions(file);
+          // hasSchemaErrors = testSchema(file);
+          // hasStyleErrors = testStyle(file);
+          // hasVersionErrors =  testVersions(file);
+          hasHierarchiesErrors = testHierarchy(file);
         }
-        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
+        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors || hasHierarchiesErrors) {
           hasErrors = true;
         }
       }
