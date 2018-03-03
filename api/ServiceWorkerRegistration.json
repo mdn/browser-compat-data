@@ -1165,10 +1165,18 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "27"
+              "version_added": "32",
+              "notes": [
+                "Starting with Opera 33, update() returns a promise that resolves with 'undefined' if the operation completed successfully or there was no update, and rejects if update failed. If the new worker ran but installation failed, the promise still resolves. Formerly, it raised an exception.",
+                "Before Opera 35, this method always bypassed the browser cache. Starting with Opera 35, it only bypasses the cache when the previous service worker check was more than twenty-four hours ago."
+              ]
             },
             "opera_android": {
-              "version_added": "27"
+              "version_added": "32",
+              "notes": [
+                "Starting with Opera 33, update() returns a promise that resolves with 'undefined' if the operation completed successfully or there was no update, and rejects if update failed. If the new worker ran but installation failed, the promise still resolves. Formerly, it raised an exception.",
+                "Before Opera 35, this method always bypassed the browser cache. Starting with Opera 35, it only bypasses the cache when the previous service worker check was more than twenty-four hours ago."
+              ]
             },
             "safari": {
               "version_added": false
