@@ -18,9 +18,9 @@ function load(...files) {
         if (file.indexOf('browsers/') !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
         } else {
-          // hasSchemaErrors = testSchema(file);
-          // hasStyleErrors = testStyle(file);
-          // hasVersionErrors =  testVersions(file);
+          hasSchemaErrors = testSchema(file);
+          hasStyleErrors = testStyle(file);
+          hasVersionErrors =  testVersions(file);
           hasHierarchiesErrors = testHierarchy(file);
         }
         if (hasStyleErrors || hasSchemaErrors || hasVersionErrors || hasHierarchiesErrors) {

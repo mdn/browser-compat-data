@@ -9,7 +9,7 @@ function testHierarchy(dataFilename) {
 
   var hasErrors = false;
 
-  // HTTP is the only folder that have non matching capitalization
+  // HTTP is the only folder that has non matching capitalization
   // between the file name and the compat data content.
   if (levels[0] !== "http") {
 
