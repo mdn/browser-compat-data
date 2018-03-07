@@ -1,5 +1,11 @@
 /* eslint-env node */
 
+/*
+  This sorts arrays of version objects under __compat.support['whatever_browser]. Highest first.
+
+  Example usage: npm run sort-versions api/URL.json
+*/
+
 const fs = require('fs');
 
 const fileName = process.argv.slice(2)[0];
