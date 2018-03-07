@@ -15,7 +15,7 @@ console.log(`Sorting version arrays in ${fileName}`);
 const data = fs.readFileSync(fileName);
 const compatData = JSON.parse(data.toString());
 
-const apiName = Object.keys(compatData.api);
+const apiName = Object.keys(compatData.api)[0];
 const methods = Object.keys(compatData.api[apiName]);
 
 const api = compatData.api[apiName];
