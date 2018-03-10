@@ -98,7 +98,6 @@
       },
       "all": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/all",
           "support": {
             "webview_android": {
               "version_added": null
@@ -197,46 +196,51 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/body",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": true
             },
             "chrome": {
-              "version_added": null
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "2",
+              "notes": "The <code>body</code> property was implemented on the {{domxref(\"HTMLDocument\")}} interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element&nbsp; if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "The <code>body</code> property was implemented on the {{domxref(\"HTMLDocument\")}} interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element&nbsp; if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
             },
             "ie": {
-              "version_added": null
+              "version_added": "6"
             },
             "opera": {
-              "version_added": null
+              "version_added": "9.6",
+              "notes": "Possibly earlier"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": "4",
+              "notes": "Possibly earlier"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "5",
+              "notes": "Possibly earlier"
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -244,95 +248,86 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/characterSet",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
+            "webview_android": [
+              {
+                "version_added": "45"
+              },
+              {
+                "alternative_name": "charset",
+                "version_added": null
+              }
+            ],
+            "chrome": [
+              {
+                "version_added": "45"
+              },
+              {
+                "alternative_name": "charset",
+                "version_added": "45",
+                "notes": "<code>charset</code> alias was made read-only in 45"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "45"
+              },
+              {
+                "alternative_name": "charset",
+                "version_added": null
+              }
+            ],
             "edge": {
-              "version_added": null
+              "alternative_name": "charset",
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "alternative_name": "charset",
+              "version_added": true
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": true
+              },
+              {
+                "alternative_name": "charset",
+                "version_added": "44"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": true
+              },
+              {
+                "alternative_name": "charset",
+                "version_added": "44"
+              }
+            ],
             "ie": {
+              "alternative_name": "charset",
               "version_added": null
             },
             "opera": {
+              "alternative_name": "charset",
               "version_added": null
             },
             "opera_android": {
+              "alternative_name": "charset",
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "alternative_name": "charset",
+              "version_added": "9",
+              "notes": "Possibly earlier"
             },
             "safari_ios": {
+              "alternative_name": "charset",
               "version_added": null
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "charset": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/charset",
-          "support": {
-            "webview_android": {
-              "version_added": null
-            },
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
