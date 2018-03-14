@@ -2820,11 +2820,16 @@
             "firefox_android": {
               "version_added": "4"
             },
-            "ie": {
-              "version_added": "8",
-              "notes": "Only support 'complete'",
-              "notes": "Internet Explorer 9 and 10 have bugs where the 'interactive' state can be fired too early before the document has finished parsing"
-            },
+            "ie": [
+              {
+                "version_added": "9",
+                "notes": "Internet Explorer 9 and 10 have bugs where the 'interactive' state can be fired too early before the document has finished parsing"
+              },
+              {
+                "version_added": "8",
+                "notes": "Only support 'complete'"
+              }
+            ],
             "opera": {
               "version_added": "11",
               "notes": "Opera Presto fires 'complete' late after the 'load' event (in an incorrect order as per HTML5 standard specification)"
