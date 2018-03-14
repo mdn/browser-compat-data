@@ -46,6 +46,7 @@ if (process.argv[2]) {
     'css',
     'html',
     'http',
+    'svg',
     'javascript',
     'test',
     'webextensions'
