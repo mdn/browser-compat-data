@@ -40,3 +40,5 @@ module.exports = load(
   'svg',
   'webextensions'
 );
+module.exports.render = require('./render.js');
+module.exports.renderers = require('./renderers/index.js');

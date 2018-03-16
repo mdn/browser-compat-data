@@ -280,7 +280,7 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
 Iterate into all "support" objects, and all browsers under them,
 and collect all notes in an array, without duplicates.
 */
-function collectCompatNotes() {
+function collectCompatNotes(features) {
 
   function pushNotes(supportEntry, browserName) {
     // collect notes
@@ -358,8 +358,8 @@ return output;
 /*
 Write compat table
 */
-function writeTable(browserPlatformType) {
-  let compatNotes = collectCompatNotes();
+function writeTable(browserPlatformType, features) {
+  let compatNotes = collectCompatNotes(features);
   let output = writeTableHead(browserPlatformType);
   output += '<tbody>';
   for (let row of features) {
@@ -390,9 +390,9 @@ function writeTable(browserPlatformType) {
 /*
 Write each compat note, with an `id` so it will be linked from the table.
 */
-function writeNotes() {
+function writeNotes(features) {
   let output = '';
-  let compatNotes = collectCompatNotes();
+  let compatNotes = collectCompatNotes(features);
   for (let note of compatNotes) {
     let noteIndex = compatNotes.indexOf(note);
     output += `<p id=compatNote_${noteIndex+1}>${noteIndex+1}. ${note}</p>`;
@@ -413,7 +413,7 @@ function getData(queryString, obj) {
 Get features that should be displayed according to the query and the depth setting
 Flatten them into a features array
 */
-function traverseFeatures(obj, depth, identifier) {
+function traverseFeatures(obj, depth, identifier, features) {
   depth--;
   if (depth >= 0) {
     for (let i in obj) {
@@ -448,45 +448,51 @@ function traverseFeatures(obj, depth, identifier) {
   }
 }
 
-var compatData = getData(query, bcd);
-var features = [];
-var identifier = query.split(".").pop();
-var isWebExtensions = query.split(".")[0] === "webextensions";
+const defaultConfiguration = {}
 
-if (!compatData) {
-  output = s_no_data_found;
-} else if (compatData.__compat) {
-  // get optional main feature, add it to the feature list
-  // call it "Basic support" if not aggregating
-  if (!aggregateMode) {
-    compatData.__compat.description = 'Basic support';
-  }
-  features.push({[identifier]: compatData.__compat});
-}
+function render(compatData, configuration = defaultConfiguration) {
+    let query = configuration.query || '';
+    let features = [];
+    let identifier = query.split(".").pop();
+    let isWebExtensions = query.split(".")[0] === "webextensions";
 
-traverseFeatures(compatData, depth, '');
+    if (!compatData) {
+        output = s_no_data_found;
+    } else if (compatData.__compat) {
+    // get optional main feature, add it to the feature list
+    // call it "Basic support" if not aggregating
+        if (!aggregateMode) {
+            compatData.__compat.description = 'Basic support';
+        }
+        features.push({[identifier]: compatData.__compat});
+    }
 
-if (features.length > 0) {
-  if (isWebExtensions) {
-    output += writeTable('webextensions');
-    if (!aggregateMode) { output += writeNotes(); }
-  } else {
-    output = `<div class="htab">
+    traverseFeatures(compatData, depth, '', features);
+
+    if (features.length > 0) {
+        if (isWebExtensions) {
+            output += writeTable('webextensions', features);
+            if (!aggregateMode) { output += writeNotes(features); }
+        } else {
+            output = `<div class="htab">
     <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a>
     <ul>
-    <li class="selected">
-    <a href="javascript:;">Desktop</a>
-    </li>
-    <li>
-    <a href="javascript:;">Mobile</a>
-    </li>
+        <li class="selected">
+            <a href="javascript:;">Desktop</a>
+        </li>
+        <li>
+            <a href="javascript:;">Mobile</a>
+        </li>
     </ul>
-    </div>`;
-    output += writeTable('desktop');
-    output += writeTable('mobile');
-    if (!aggregateMode) { output += writeNotes(); }
-  }
-} else {
-  output = s_no_data_found;
+</div>`;
+            output += '\n' + writeTable('desktop', features);
+            output += '\n' + writeTable('mobile', features);
+            if (!aggregateMode) { output += '\n' + writeNotes(features); }
+        }
+    } else {
+        output = s_no_data_found;
+    }
+    return output;
 }
-console.log(output);
+
+module.exports = render;
