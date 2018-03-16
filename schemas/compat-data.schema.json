@@ -108,7 +108,15 @@
       "required": ["support"],
       "additionalProperties": false
     },
-
+    "primary_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
     "identifier": {
       "type": "object",
       "properties": {
@@ -130,7 +138,9 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
+    "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "maxProperties": 1,
+  "minProperties": 1
 }
