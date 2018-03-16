@@ -258,18 +258,32 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": true,
-              "notes": [
-                "Prior to Firefox 7 the <code>label</code> property incorrectly returned an empty string if not defined instead of returning the element's text content."
-              ]
-            },
-            "firefox_android": {
-              "version_added": true,
-              "notes": [
-                "Prior to Firefox 7 the <code>label</code> property incorrectly returned an empty string if not defined instead of returning the element's text content."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "7"
+              },
+              {
+                "version_added": true,
+                "version_removed": "7",
+                "partial_implementation": true,
+                "notes": [
+                  "Prior to Firefox 7 the <code>label</code> property incorrectly returned an empty string if not defined instead of returning the element's text content."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "7"
+              },
+              {
+                "version_added": true,
+                "version_removed": "7",
+                "partial_implementation": true,
+                "notes": [
+                  "Prior to Firefox 7 the <code>label</code> property incorrectly returned an empty string if not defined instead of returning the element's text content."
+                ]
+              }
+            ],
             "ie": {
               "version_added": true
             },
