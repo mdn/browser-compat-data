@@ -49,6 +49,7 @@ if (process.argv[2]) {
     'svg',
     'javascript',
     'test',
+    'webdriver',
     'webextensions'
   );
 }
