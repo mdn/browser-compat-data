@@ -442,7 +442,7 @@ function traverseFeatures(obj, depth, identifier, features) {
 
           features.push({[identifier + i]: obj[i].__compat});
         }
-        traverseFeatures(obj[i], depth, i + '.');
+        traverseFeatures(obj[i], depth, i + '.', features);
       }
     }
   }
