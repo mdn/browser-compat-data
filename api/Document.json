@@ -5667,40 +5667,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/querySelector",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": true
             },
             "chrome": {
-              "version_added": null
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": "8"
             },
             "opera": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "10"
             },
             "safari": {
-              "version_added": null
+              "version_added": "3.2"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "3.2"
             }
           },
           "status": {
@@ -5715,41 +5715,101 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": true
             },
-            "chrome": {
-              "version_added": null
-            },
+            "chrome": [
+              {
+                "version_added": "1"
+              },
+              {
+                "version_added": true,
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ],
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            }
+            "firefox": [
+              {
+                "version_added": "3.5"
+              },
+              {
+                "version_added": "32",
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": "32",
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ],
+            "ie": [
+              {
+                "version_added": "8"
+              },
+              {
+                "version_added": false,
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ],
+            "opera": [
+              {
+                "version_added": "10"
+              },
+              {
+                "version_added": "15",
+                "notes": "<code>:scope</code> pseudo-class by enabling one of the two flags",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable <style scoped>",
+                    "value_to_set": "true"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "10"
+              },
+              {
+                "version_added": false,
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "3.2"
+              },
+              {
+                "version_added": "7",
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": "7",
+                "notes": "<code>:scope</code> pseudo-class"
+              }
+            ]
           },
           "status": {
             "experimental": false,
