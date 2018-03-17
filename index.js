@@ -41,3 +41,5 @@ module.exports = load(
   'webdriver',
   'webextensions'
 );
+module.exports.render = require('./render.js');
+module.exports.renderers = require('./renderers/index.js');
