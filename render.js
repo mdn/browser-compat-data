@@ -7,7 +7,10 @@ function render(dataOrString, renderer, configuration) {
         const dataParts = dataOrString.split('.');
         data = require('.');
         dataParts.forEach((elem) => {
-            data = data[elem] || {};
+            if (!data.hasOwnProperty(elem)) {
+                throw new Error(`Unable to find data for "${dataOrString}" at "${elem}".`);
+            }
+            data = data[elem];
         });
     } else {
         data = dataOrString;
