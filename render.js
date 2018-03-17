@@ -28,14 +28,13 @@ Options:
 
  featurePath: Dotted path to feature
  depth: Traversal depth
- aggregateMode: skip "Basic Support" row
 
 Examples:
 
  npm run render webextensions.api.alarms
  npm run --silent render webextensions.api.alarms > test.html
  npm run render http.status.404
- npm run render webextensions.api.alarms 3 true
+ npm run render webextensions.api.alarms 3
 `;
     console.log(usageString);
 }
@@ -45,7 +44,6 @@ function main() {
     const bcd = require('.');
     const query = process.argv[2];
     const depth = process.argv[3] || 1;
-    const aggregateMode = process.argv[4] || false;
 
     if (query === undefined) {
         usage();
@@ -58,7 +56,6 @@ function main() {
         {
             'query': query,
             'depth': depth,
-            'aggregateMode': aggregateMode,
         });
     console.log(html);
 }
