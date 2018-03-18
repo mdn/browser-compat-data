@@ -1,8 +1,8 @@
 {
   "api": {
-    "Performance": {
+    "PerformanceEntry": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEntry",
         "support": {
           "webview_android": {
             "version_added": null
@@ -50,9 +50,9 @@
           "deprecated": false
         }
       },
-      "timeOrigin": {
+      "duration": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/timeOrigin",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEntry/duration",
           "support": {
             "webview_android": {
               "version_added": null
@@ -101,9 +101,111 @@
           }
         }
       },
-      "now": {
+      "entryType": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/now",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "name": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEntry/name",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "startTime": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEntry/startTime",
           "support": {
             "webview_android": {
               "version_added": null
@@ -154,160 +256,7 @@
       },
       "toJSON": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/toJSON",
-          "support": {
-            "webview_android": {
-              "version_added": null
-            },
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getEntries": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/getEntries",
-          "support": {
-            "webview_android": {
-              "version_added": null
-            },
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getEntriesByName": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName",
-          "support": {
-            "webview_android": {
-              "version_added": null
-            },
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getEntriesByType": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON",
           "support": {
             "webview_android": {
               "version_added": null
