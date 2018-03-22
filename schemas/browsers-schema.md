@@ -37,6 +37,7 @@ The release objects consist of the following properties:
 * A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
   * `retired`: This release is no longer supported (EOL)
   * `current`: This release is the official latest release.
+  * `limited`: This is a limited release (for example on a flagship device), not generally available.
   * `beta`: This release will the next official release.
   * `nightly`: This release is the current alpha / experimental release (like Firefox Nightly, Chrome Canary).
   * `esr`: This release is an Extended Support Release.
