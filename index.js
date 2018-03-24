@@ -2,6 +2,41 @@ var fs = require('fs'),
     path = require('path'),
     extend = require('extend');
 
+function processRefs(obj, fullObj) {
+  for (let key in obj) {
+    let val = obj[key];
+    if (val && val.$ref) {
+      val = obj[key] = resolveRefs(fullObj, val);
+    }
+    if (typeof val === 'object') {
+      processRefs(val, fullObj);
+    }
+  }
+  return obj;
+}
+
+function resolveRefs(obj, fragmentObj) {
+  let fragment = fragmentObj.$ref
+  delete fragmentObj.$ref
+
+  if (fragment) {
+    let keyPath = fragment.split('.');
+    while (keyPath.length) {
+      let val = obj[keyPath.shift()];
+      if (val) {
+        obj =  Object.assign({}, val);
+      } else {
+        obj = fragment;
+        break
+      }
+    }
+  }
+
+  Object.assign(obj, fragmentObj)
+
+  return obj;
+}
+
 function load() {
   // Recursively load one or more directories passed as arguments.
   var dir, result = {};
@@ -27,7 +62,7 @@ function load() {
     fs.readdirSync(dir).forEach(processFilename);
   }
 
-  return result;
+  return processRefs(result, result);
 }
 
 module.exports = load(
