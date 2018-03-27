@@ -14,7 +14,7 @@ function load(...files) {
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
         console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
-        if (file.indexOf('browsers/') !== -1) {
+        if (file.indexOf('browsers' + path.sep) !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
         } else {
           hasSchemaErrors = testSchema(file);
@@ -49,6 +49,7 @@ if (process.argv[2]) {
     'svg',
     'javascript',
     'test',
+    'webdriver',
     'webextensions'
   );
 }
