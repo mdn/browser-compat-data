@@ -1,8 +1,8 @@
 {
   "api": {
-    "PaymentRequestEvent": {
+    "PaymentInstruments": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments",
         "support": {
           "chrome": {
             "version_added": "61",
@@ -15,7 +15,7 @@
             ]
           },
           "chrome_android": {
-            "version_added": "57",
+            "version_added": "60",
             "flags": [
               {
                 "type": "preference",
@@ -61,72 +61,9 @@
           "deprecated": false
         }
       },
-      "PaymentRequestEvent": {
+      "delete": {
         "__compat": {
-          "description": "<code>PaymentRequestEvent()</code> constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/PaymentRequestEvent",
-          "support": {
-            "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "instrumentKey": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/instrumentKey",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments/delete",
           "support": {
             "chrome": {
               "version_added": "61",
@@ -186,9 +123,71 @@
           }
         }
       },
-      "methodData": {
+      "get": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/methodData",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments/get",
+          "support": {
+            "chrome": {
+              "version_added": "64",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "web-payments",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": "64",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "web-payments",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "keys": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments/keys",
           "support": {
             "chrome": {
               "version_added": "61",
@@ -248,9 +247,9 @@
           }
         }
       },
-      "modifiers": {
+      "has": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/modifiers",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments/has",
           "support": {
             "chrome": {
               "version_added": "61",
@@ -310,71 +309,9 @@
           }
         }
       },
-      "openWindow": {
+      "set": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/openWindow",
-          "support": {
-            "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "paymentRequestId": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/paymentRequestId",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments/set",
           "support": {
             "chrome": {
               "version_added": "61",
@@ -434,195 +371,9 @@
           }
         }
       },
-      "paymentRequestOrigin": {
+      "clear": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/paymentRequestOrigin",
-          "support": {
-            "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "60",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "respondWith": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/respondWith",
-          "support": {
-            "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "57",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "topLevelOrigin": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/topLevelOrigin",
-          "support": {
-            "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "60",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "total": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestEvent/total",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentInstruments/clear",
           "support": {
             "chrome": {
               "version_added": "61",
