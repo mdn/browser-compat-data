@@ -16,6 +16,22 @@ Let us know if these look good to you.
 You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --only=dev`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
+### Optional: Validate/cross-reference against web API confluence dashboard
+You can cross-reference data against the [Web API Confluence Dashboard](https://web-confluence.appspot.com/) using the `confluence` npm script. This script will overwrite data in your current working tree according to data from the dashboard.
+
+Examples:
+
+```shell
+# Load confluence data for ServiceWorker
+npm run confluence -- --interfaces=ServiceWorker
+
+# Fill in missing/ambiguous Firefox data on known interfaces
+npm run confluence -- --browsers=firefox --fill-only
+
+# Print documentation on full list of options
+npm run confluence -- --help
+```
+
 ## Test rendering
 You can use `npm run render $query $dept $aggregateMode` to output the table HTML as it would be rendered on MDN.
 The parameters are the same as the [`{{compat}}` macro](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs).
