@@ -17,7 +17,7 @@ You can use `npm test` to validate data against the schema. You might need to in
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
 ### Optional: Validate/cross-reference against web API confluence dashboard
-You can cross-reference data against the [Web API Confluence Dashboard](https://web-confluence.appspot.com/) using the `confluence` npm script. This script will overwrite data in your current working tree according to data from the dashboard.
+If the feature you're interested is a JavaScript API you can cross-reference data against the [Web API Confluence Dashboard](https://web-confluence.appspot.com/) using the `confluence` npm script. This script will overwrite data in your current working tree according to data from the dashboard.
 
 Examples:
 
