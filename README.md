@@ -79,7 +79,7 @@ It takes 1-2 weeks for changes in this data to be reflected in MDN's browser com
 1. A pull request is reviewed and merged to master.
 2. A new release of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) is created by MDN staff. This happens every 4-14 days.
 3. A new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, is built and deployed to production. This happens within a day of the npm package release.
-4. The MDN page using the data is regenerated. For newly converted pages, a staff member switches to the [{{Compat}](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs) macro, and re-checks the conversion. For updates to converted pages, a logged-in MDN user [force-refreshes the page](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache#Bypassing_cache) to regenerate it.
+4. The MDN page using the data is regenerated. For newly converted pages, a staff member switches to the [{{Compat}}](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs) macro, and re-checks the conversion. For updates to converted pages, a logged-in MDN user [force-refreshes the page](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache#Bypassing_cache) to regenerate it.
 
 ## Projects using the data
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
