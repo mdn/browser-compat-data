@@ -856,9 +856,23 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "6",
+                "notes": "Added in <a href='https://github.com/nodejs/node/pull/4106'>PR #4106</a>."
+              },
+              {
+                "version_added": "4",
+                "version_removed": "6",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony-rest-parameters"
+                  }
+                ],
+                "notes": "Added in <a href='https://github.com/nodejs/node/pull/2022'>PR #2022</a>. Removed in <a href='https://github.com/nodejs/node/pull/4722'>PR #4722</a>"
+              }
+            ],
             "opera": {
               "version_added": "34"
             },
