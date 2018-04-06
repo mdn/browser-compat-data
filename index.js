@@ -37,6 +37,7 @@ module.exports = load(
   'html',
   'http',
   'javascript',
+  'mathml',
   'svg',
   'webdriver',
   'webextensions'
