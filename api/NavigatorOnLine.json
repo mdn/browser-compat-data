@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorOnLine",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": {
             "version_added": true
           },
@@ -39,6 +36,9 @@
           },
           "safari_ios": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": true
           }
         },
         "status": {
@@ -47,13 +47,10 @@
           "deprecated": false
         }
       },
-      "on_workernavigator": {
+      "worker_support": {
         "__compat": {
-          "description": "on WorkerNavigator",
+          "description": "Support on <code>WorkerNavigator</code>",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -86,6 +83,9 @@
             },
             "safari_ios": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           }
         }
@@ -94,13 +94,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorLanguage/onLine",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
-            },
             "chrome": {
               "version_added": true,
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, Mac: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='http://crbug.com/7469'>crbug.com/7469</a>"
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, Mac: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='http://crbug.com/7469'>crbug.com/7469</a>."
             },
             "chrome_android": {
               "version_added": true
@@ -140,55 +136,16 @@
             },
             "safari_ios": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "on_workernavigator": {
-          "__compat": {
-            "description": "on WorkerNavigator",
-            "support": {
-              "webview_android": {
-                "version_added": null
-              },
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": null
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": "29"
-              },
-              "firefox_android": {
-                "version_added": "29"
-              },
-              "ie": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              }
-            }
           }
         }
       }
