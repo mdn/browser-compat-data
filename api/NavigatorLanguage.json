@@ -47,13 +47,10 @@
           "deprecated": false
         }
       },
-      "on_workernavigator": {
+      "worker_support": {
         "__compat": {
-          "description": "on WorkerNavigator",
+          "description": "Support on <code>WorkerNavigator</code>",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -86,6 +83,9 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": null
             }
           }
         }
@@ -94,10 +94,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorLanguage/language",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "notes": "Returns the browser UI language, not the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
-            },
             "chrome": {
               "version_added": true,
               "notes": "Returns the browser UI language, not the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
@@ -140,6 +136,10 @@
             },
             "safari_ios": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Returns the browser UI language, not the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
             }
           },
           "status": {
@@ -147,59 +147,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "on_workernavigator": {
-          "__compat": {
-            "description": "on WorkerNavigator",
-            "support": {
-              "webview_android": {
-                "version_added": null
-              },
-              "chrome": {
-                "version_added": null
-              },
-              "chrome_android": {
-                "version_added": null
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": "35"
-              },
-              "firefox_android": {
-                "version_added": "35"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              }
-            }
-          }
         }
       },
       "languages": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorLanguage/languages",
           "support": {
-            "webview_android": {
-              "version_added": "32",
-              "notes": "In Chrome, <code>navigator.language</code> is the language of the browser UI, and is not guaranteed to be equal to <code>navigator.languages[0]</code>."
-            },
             "chrome": {
               "version_added": "32",
               "notes": "In Chrome, <code>navigator.language</code> is the language of the browser UI, and is not guaranteed to be equal to <code>navigator.languages[0]</code>."
@@ -209,8 +162,7 @@
               "notes": "In Chrome, <code>navigator.language</code> is the language of the browser UI, and is not guaranteed to be equal to <code>navigator.languages[0]</code>."
             },
             "edge": {
-              "version_added": null,
-              "notes": "Will ship in Windows 10 Fall Creators Update <a href='https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/17230931-add-support-for-navigator-languages'>uservoice</a>"
+              "version_added": true,
             },
             "edge_mobile": {
               "version_added": true
@@ -220,75 +172,34 @@
               "notes": "In Firefox, the <code>navigator.languages</code> property's value is taken from the <code>intl.accept_languages</code> preference."
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "4",
+              "notes": "In Firefox, the <code>navigator.languages</code> property's value is taken from the <code>intl.accept_languages</code> preference."
             },
             "ie": {
               "version_added": "11",
               "notes": "Closest available (non-standard) properties are <code>userLanguage</code> and <code>browserLanguage</code>."
             },
             "opera": {
-              "version_added": "24",
-              "notes": "<a href='https://dev.opera.com/blog/opera-24/'>Opera 24 release notes</a>"
+              "version_added": "24"
             },
             "opera_android": {
-              "version_added": "24",
-              "notes": "<a href='https://dev.opera.com/blog/opera-24/'>Opera 24 release notes</a>"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "11",
-              "notes": "implemented in Safari Technology Preview 16 (10.2) <a href='https://bugs.webkit.org/show_bug.cgi?id=163220'>Bug 163220</a> ; <a href='https://developer.apple.com/safari/technology-preview/release-notes/'>Release Notes</a>"
+              "version_added": "11"
             },
             "safari_ios": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "32",
+              "notes": "In Chrome, <code>navigator.language</code> is the language of the browser UI, and is not guaranteed to be equal to <code>navigator.languages[0]</code>."
             }
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "on_workernavigator": {
-          "__compat": {
-            "description": "on WorkerNavigator",
-            "support": {
-              "webview_android": {
-                "version_added": null
-              },
-              "chrome": {
-                "version_added": null
-              },
-              "chrome_android": {
-                "version_added": null
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": "35"
-              },
-              "firefox_android": {
-                "version_added": "35"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              }
-            }
           }
         }
       }
