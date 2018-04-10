@@ -1,0 +1,1223 @@
+{
+  "api": {
+    "MediaRecorder": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder",
+        "support": {
+          "webview_android": {
+            "version_added": "47"
+          },
+          "chrome": {
+            "version_added": "47"
+          },
+          "chrome_android": {
+            "version_added": "47"
+          },
+          "edge": {
+            "version_added": null
+          },
+          "edge_mobile": {
+            "version_added": null
+          },
+          "firefox": {
+            "version_added": "25",
+            "notes": "Prior to Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
+          },
+          "firefox_android": {
+            "version_added": "25",
+            "notes": "Prior to Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
+          },
+          "ie": {
+            "version_added": null
+          },
+          "opera": {
+            "version_added": null
+          },
+          "opera_android": {
+            "version_added": null
+          },
+          "safari": {
+            "version_added": null
+          },
+          "safari_ios": {
+            "version_added": null
+          },
+          "samsunginternet_android": {
+            "version_added": "5.0"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "MediaRecorder": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/MediaRecorder",
+          "description": "<code>MediaRecorder()</code> constructor",
+          "support": {
+            "webview_android": {
+              "version_added": "47"
+            },
+            "chrome": {
+              "version_added": "47"
+            },
+            "chrome_android": {
+              "version_added": "47"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "options": {
+          "__compat": {
+            "description": "<code>options</code> object",
+            "support": {
+              "webview_android": {
+                "version_added": null
+              },
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "43"
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "mimeType": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/mimeType",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": {
+              "version_added": "47",
+              "notes": "Currently only video is supported, not audio.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "state": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/state",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": {
+              "version_added": "47",
+              "notes": "Currently only video is supported, not audio.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "stream": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream",
+          "support": {
+            "webview_android": {
+              "version_added": false
+            },
+            "chrome": {
+              "version_added": "47",
+              "notes": "Currently only video is supported, not audio.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ignoreMutedMedia": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/ignoreMutedMedia",
+          "support": {
+            "webview_android": {
+              "version_added": "49"
+            },
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "videoBitsPerSecond": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/videoBitsPerSecond",
+          "support": {
+            "webview_android": {
+              "version_added": "49"
+            },
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "audioBitsPerSecond": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/audioBitsPerSecond",
+          "support": {
+            "webview_android": {
+              "version_added": "49"
+            },
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "isTypeSupported": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/isTypeSupported",
+          "support": {
+            "webview_android": {
+              "version_added": "47"
+            },
+            "chrome": {
+              "version_added": "47"
+            },
+            "chrome_android": {
+              "version_added": "47"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pause": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "requestData": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "resume": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "start": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/start",
+          "support": {
+            "webview_android": {
+              "version_added": "47"
+            },
+            "chrome": {
+              "version_added": "47"
+            },
+            "chrome_android": {
+              "version_added": "47"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "stop": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ondataavailable": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/ondataavailable",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onerror": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onerror",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onpause": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onpause",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onresume": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onresume",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onstart": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onstart",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onstop": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onstop",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onwarning": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onwarning",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": "47",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      }
+    }
+  }
+}
