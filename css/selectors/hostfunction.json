@@ -16,16 +16,40 @@
               "version_added": true
             },
             "edge": {
-              "version_added": false
+              "version_added": false,
+              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>"
             },
             "edge_mobile": {
-              "version_added": false
+              "version_added": false,
+              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "61",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.shadowdom.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": [
+                "See <a href='https://bugzil.la/1205323'>bug 1205323</a>",
+                "See <a href='https://bugzil.la/1452640'>bug 1452640</a>"
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "61",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.shadowdom.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": [
+                "See <a href='https://bugzil.la/1205323'>bug 1205323</a>",
+                "See <a href='https://bugzil.la/1452640'>bug 1452640</a>"
+              ]
             },
             "ie": {
               "version_added": false
