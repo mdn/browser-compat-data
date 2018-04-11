@@ -904,9 +904,21 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "6",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony-rest-parameters"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "34"
             },
