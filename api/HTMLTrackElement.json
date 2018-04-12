@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement",
         "support": {
-          "webview_android": {
-            "version_added": "23"
-          },
           "chrome": {
             "version_added": "23"
           },
@@ -67,6 +64,9 @@
           },
           "safari_ios": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": "23"
           }
         },
         "status": {
@@ -75,13 +75,84 @@
           "deprecated": false
         }
       },
+      "default": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "23"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "31"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "30",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webvtt.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "31"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "30",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webvtt.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "12"
+            },
+            "opera_android": {
+              "version_added": "12"
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "23"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "kind": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/kind",
           "support": {
-            "webview_android": {
-              "version_added": "23"
-            },
             "chrome": {
               "version_added": "23"
             },
@@ -96,8 +167,7 @@
             },
             "firefox": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -113,8 +183,7 @@
             ],
             "firefox_android": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -142,158 +211,9 @@
             },
             "safari_ios": {
               "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "src": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src",
-          "support": {
+            },
             "webview_android": {
               "version_added": "23"
-            },
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "23"
-            },
-            "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document. In addition, setting the <code>src</code> property did not work properly in versions prior to 50."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "12"
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "srclang": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang",
-          "support": {
-            "webview_android": {
-              "version_added": "23"
-            },
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "23"
-            },
-            "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "12"
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
             }
           },
           "status": {
@@ -307,9 +227,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/label",
           "support": {
-            "webview_android": {
-              "version_added": "23"
-            },
             "chrome": {
               "version_added": "23"
             },
@@ -324,8 +241,7 @@
             },
             "firefox": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -341,8 +257,7 @@
             ],
             "firefox_android": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -370,82 +285,9 @@
             },
             "safari_ios": {
               "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "default": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default",
-          "support": {
+            },
             "webview_android": {
               "version_added": "23"
-            },
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "23"
-            },
-            "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "12"
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
             }
           },
           "status": {
@@ -459,9 +301,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState",
           "support": {
-            "webview_android": {
-              "version_added": "23"
-            },
             "chrome": {
               "version_added": "23"
             },
@@ -476,8 +315,7 @@
             },
             "firefox": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -493,8 +331,7 @@
             ],
             "firefox_android": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -522,6 +359,159 @@
             },
             "safari_ios": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "23"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "src": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "23"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "31",
+                "notes": "Setting the <code>src</code> property did not work properly in versions prior to 50."
+              },
+              {
+                "version_added": "24",
+                "version_removed": "30",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webvtt.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "31",
+                "notes": "Setting the <code>src</code> property did not work properly in versions prior to 50."
+              },
+              {
+                "version_added": "24",
+                "version_removed": "30",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webvtt.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "12"
+            },
+            "opera_android": {
+              "version_added": "12"
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "23"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "srclang": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "23"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "31"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "30",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webvtt.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "31"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "30",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webvtt.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "12"
+            },
+            "opera_android": {
+              "version_added": "12"
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "23"
             }
           },
           "status": {
@@ -535,9 +525,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/track",
           "support": {
-            "webview_android": {
-              "version_added": "23"
-            },
             "chrome": {
               "version_added": "23"
             },
@@ -552,8 +539,7 @@
             },
             "firefox": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -569,8 +555,7 @@
             ],
             "firefox_android": [
               {
-                "version_added": "31",
-                "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
+                "version_added": "31"
               },
               {
                 "version_added": "24",
@@ -598,6 +583,9 @@
             },
             "safari_ios": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "23"
             }
           },
           "status": {
