@@ -1,0 +1,154 @@
+{
+  "api": {
+    "NavigatorOnLine": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorOnLine",
+        "support": {
+          "chrome": {
+            "version_added": true
+          },
+          "chrome_android": {
+            "version_added": true
+          },
+          "edge": {
+            "version_added": null
+          },
+          "edge_mobile": {
+            "version_added": null
+          },
+          "firefox": {
+            "version_added": true
+          },
+          "firefox_android": {
+            "version_added": true
+          },
+          "ie": {
+            "version_added": true
+          },
+          "opera": {
+            "version_added": true
+          },
+          "opera_android": {
+            "version_added": true
+          },
+          "safari": {
+            "version_added": true
+          },
+          "safari_ios": {
+            "version_added": true
+          },
+          "webview_android": {
+            "version_added": true
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Support on <code>WorkerNavigator</code>",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": "29"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "29"
+            },
+            "firefox_android": {
+              "version_added": "35"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          }
+        }
+      },
+      "onLine": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorLanguage/onLine",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, Mac: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='http://crbug.com/7469'>crbug.com/7469</a>."
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "3.5",
+                "notes": "Since Firefox 4 the browser returns <code>true</code> when 'Work Offline' mode is disabled and <code>false</code> when it is enabled, regardless of actual connectivity."
+              },
+              {
+                "version_added": "4",
+                "notes": "Since Firefox 41, on OS X and Windows, the returned values follow the actual network connectivity, unless 'Work offline' mode is selected (where it will always return <code>false</code>)."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "8",
+              "notes": "in Internet Explorer 8 'online' and 'offline' events are raised on the <code>document.body</code>; under IE 9 they are raised on both <code>document.body</code> and <code>window</code>."
+            },
+            "opera": {
+              "version_added": false,
+              "notes": "Since Opera 11.10, the browser returns <code>true</code> when 'Work Offline' mode is disabled and <code>false</code> when it is enabled, regardless of actual connectivity."
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "5"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}
