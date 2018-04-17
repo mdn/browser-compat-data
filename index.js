@@ -2,6 +2,8 @@ var fs = require('fs'),
     path = require('path'),
     extend = require('extend');
 
+const resolveImports = require('./process-imports').resolveImports;
+
 function load() {
   // Recursively load one or more directories passed as arguments.
   var dir, result = {};
@@ -30,7 +32,7 @@ function load() {
   return result;
 }
 
-module.exports = load(
+module.exports = resolveImports(load(
   'api',
   'browsers',
   'css',
@@ -41,4 +43,4 @@ module.exports = load(
   'svg',
   'webdriver',
   'webextensions'
-);
+));

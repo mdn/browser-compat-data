@@ -109,13 +109,37 @@
       "additionalProperties": false
     },
 
-    "identifier": {
+    "import_statement": {
       "type": "object",
       "properties": {
+        "__as": {
+          "type": "string",
+          "pattern": "^(?!__as)(?!__compat)[a-zA-Z_0-9-$@]*$"
+        },
         "__compat": { "$ref": "#/definitions/compat_statement" }
       },
       "patternProperties":{
-        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
+        "^(?!__as)(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
+    },
+
+    "import_block": {
+      "type": "object",
+      "patternProperties":{
+        "^[a-zA-Z_0-9-$@.]*$" : { "$ref": "#/definitions/import_statement" }
+      },
+      "additionalProperties": false
+    },
+
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "__import": { "$ref": "#/definitions/import_block" },
+        "__compat": { "$ref": "#/definitions/compat_statement" }
+      },
+      "patternProperties":{
+        "^(?!__compat)(?!__import)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     },
