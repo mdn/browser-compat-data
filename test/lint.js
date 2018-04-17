@@ -3,7 +3,8 @@ var path = require('path');
 var {testStyle} = require('./test-style');
 var {testSchema} = require('./test-schema');
 var {testVersions} = require('./test-versions');
-var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
+var {testImports} = require('./test-imports');
+var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors, hasImportErrors = false;
 
 function load(...files) {
   for (let file of files) {
@@ -13,7 +14,7 @@ function load(...files) {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
+        console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''),'\x1b[0m');
         if (file.indexOf('browsers' + path.sep) !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
         } else {
@@ -38,7 +39,14 @@ function load(...files) {
 }
 
 if (process.argv[2]) {
-  load(process.argv[2])
+  load(process.argv[2]);
+
+  console.log('Imports');
+  // Ignore import errors when testing a signle file,
+  // as imports require loading the whole tree.
+  hasImportErrors = testImports(
+    process.argv[2]
+  );
 } else {
   load(
     'api',
@@ -53,6 +61,29 @@ if (process.argv[2]) {
     'webdriver',
     'webextensions'
   );
+
+  console.log('Imports');
+  // Imports require loading the whole tree into memory.
+  // TODO: Figure out a way to test this better.
+  hasErrors |= hasImportErrors = testImports(
+    'api',
+    'browsers',
+    'css',
+    'html',
+    'http',
+    'svg',
+    'javascript',
+    'mathml',
+    'test',
+    'webdriver',
+    'webextensions'
+  );
+}
+
+if (!hasImportErrors) {
+  console.log('\x1b[32m  OK \x1b[0m');
+} else {
+  console.error('\x1b[31m  Error \x1b[0m');
 }
 
 if (hasErrors) {
