@@ -40,6 +40,13 @@ function testVersions(dataFilename) {
             console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
             hasErrors = true;
           }
+          if ("version_removed" in statement && "version_added" in statement) {
+            if (typeof statement.version_added !== "string" && statement.version_added !== true) {
+              console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number when version_removed is present');
+              console.error('  Valid', browser, 'versions are:', validBrowserVersions[browser].length > 0 ? 'true, ' + validBrowserVersions[browser].join(', ') : 'true');
+              hasErrors = true;
+            }
+          }
         }
       }
     }

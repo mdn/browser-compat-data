@@ -46,10 +46,11 @@
         "release_notes": { "type": "string", "format": "uri" },
         "status": {
           "type": "string",
-          "enum": ["retired", "current", "beta", "nightly", "esr", "planned"]
+          "enum": ["retired", "current", "limited", "beta", "nightly", "esr", "planned"]
         }
       },
-      "required": ["status"]
+      "required": ["status"],
+      "additionalProperties": false
     }
 
   },
