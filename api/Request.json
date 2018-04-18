@@ -135,13 +135,73 @@
             "deprecated": false
           }
         },
-        "accept_readablestream": {
+        "reponse_body_readablestream": {
           "__compat": {
-            "description": "<code>body</code> can be a <code>ReadableStream</code>",
+            "description": "Consume response body as a <code>ReadableStream</code>",
             "support": {
-              "webview_android": {
+              "chrome": {
+                "version_added": "43"
+              },
+              "chrome_android": {
+                "version_added": "43"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.streams"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.streams"
+                  }
+                ]
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
                 "version_added": false
               },
+              "safari_ios": {
+                "version_added": "10.3"
+              },
+              "webview_android": {
+                "version_added": "43"
+              }
+            }
+          }
+        },
+        "readablestream_request_body": {
+          "__compat": {
+            "description": "Send <code>ReadableStream</code> in request body",
+            "support": {
               "chrome": {
                 "version_added": false
               },
@@ -173,7 +233,10 @@
                 "version_added": false
               },
               "safari_ios": {
-                "version_added": "10.3"
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             }
           }
