@@ -237,6 +237,8 @@ In some cases features are named entirely differently and not just prefixed. Exa
 }
 ```
 
+Note that you can’t have both `prefix` and `alternative_name`.
+
 #### `flags`
 An optional array of objects indicating what kind of flags must be set for this feature to work. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature.
 An object in the `flags` array consists of three properties:
