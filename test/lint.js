@@ -48,6 +48,7 @@ if (process.argv[2]) {
     'http',
     'svg',
     'javascript',
+    'mathml',
     'test',
     'webdriver',
     'webextensions'
