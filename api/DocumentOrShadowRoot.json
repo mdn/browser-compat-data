@@ -415,23 +415,51 @@
               "version_added": "53"
             },
             "chrome": {
-              "version_added": "53"
+              "version_added": "53",
+              "alternative_name": "webkitFullscreenElement"
             },
             "chrome_android": {
               "version_added": "53"
             },
             "edge": {
-              "version_added": true
+              "version_added": true,
+              "alternative_name": "msFullscreenElement"
             },
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
+            "firefox": [
+              {
+                "alternative_name": "mozFullscreenElement",
+                "version_added": "9"
+              },
+              {
+                "version_added": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "alternative_name": "mozFullscreenElement",
+                "version_added": "9"
+              },
+              {
+                "version_added": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": true
             },
