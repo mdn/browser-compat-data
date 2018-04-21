@@ -281,21 +281,35 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker",
           "support": {
+            "webview_android": {
+              "version_added": "40"
+            },
             "chrome": {
               "version_added": "40"
             },
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": {
-              "version_added": "17"
-            },
+            "edge": [
+              {
+                "version_added": "16",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable service workers"
+                  }
+                ]
+              },
+              {
+                "version_added": "17"
+              }
+            ],
             "edge_mobile": {
-              "version_added": "17"
+              "version_added": null
             },
             "firefox": {
               "version_added": "44",
-              "notes": "Service Workers have been disabled in the <a href='https://www.mozilla.org/firefox/organizations/'>Firefox 45 and 52 Extended Support Releases</a>"
+              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
             },
             "firefox_android": {
               "version_added": "44"
@@ -309,9 +323,6 @@
             "opera_android": {
               "version_added": "27"
             },
-            "qq_android": {
-              "version_added": null
-            },
             "safari": {
               "version_added": "11.1"
             },
@@ -320,15 +331,6 @@
             },
             "samsunginternet_android": {
               "version_added": null
-            },
-            "uc_android": {
-              "version_added": null
-            },
-            "uc_chinese_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "40"
             }
           },
           "status": {
