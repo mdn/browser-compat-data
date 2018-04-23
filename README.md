@@ -17,7 +17,7 @@ browser support for APIs. For example:
 Maintained by the [MDN team at Mozilla](https://wiki.mozilla.org/MDN).
 
 ## Installation
-You can install mdn-browser-compat-data as a node package ([tutorial](https://www.npmjs.com/package/mdn-browser-compat-data/tutorial)).
+You can install mdn-browser-compat-data as a node package.
 ```
 npm install mdn-browser-compat-data
 ```
