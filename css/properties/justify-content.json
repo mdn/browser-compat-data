@@ -5,10 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-content",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "notes": "Older versions of the specification treat absolutely positioned children as though they are 0 by 0 flex items. Later versions of the specification take them out of the flow and set their positions based on align and justify properties. Versions 52 and later implement the new behavior."
-            },
             "chrome": [
               {
                 "version_added": "52"
@@ -107,7 +103,21 @@
             },
             "samsunginternet_android": {
               "version_added": true
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "29",
+                "partial_implementation": true,
+                "notes": "Older versions of the specification treat absolute positioned children as though they are a 0 by 0 flex item. Later specification versions take the children out of the flow and set their positions based on align and justify properties. Chrome implements the new behavior beginning with Chrome 52."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "21"
+              }
+            ]
           },
           "status": {
             "experimental": false,
