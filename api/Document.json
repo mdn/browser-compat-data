@@ -2628,131 +2628,153 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/documentURI",
           "support": {
-            "chrome": [
-              {
-                "version_added": true,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": "43",
-                "notes": "Read-only behavior"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": true,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": "43",
-                "notes": "Read-only behavior"
-              }
-            ],
-            "edge": [
-              {
-                "version_added": null,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": null,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "edge_mobile": [
-              {
-                "version_added": null,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": null,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": true,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": true,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": true,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": true,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "ie": [
-              {
-                "version_added": true,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": false,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "opera": [
-              {
-                "version_added": null,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": null,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": null,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": null,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "safari": [
-              {
-                "version_added": true,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": false,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": null,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": null,
-                "notes": "Read-only behavior"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": null,
-                "notes": "Read-write behavior"
-              },
-              {
-                "version_added": true,
-                "notes": "Read-only behavior"
-              }
-            ]
+            "chrome": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior are both supported."
+            },
+            "firefox_android": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior are both supported."
+            },
+            "ie": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "opera": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "opera_android": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "safari": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "safari_ios": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Read-write and readonly behavior support differ. See <a href='https://developer.mozilla.org/docs/Web/API/Document/documentURI#Browser_compatibility'>subfeature</a> for details."
+            }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "read-write_support": {
+          "__compat": {
+            "description": "Read-write behavior",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "read-only_support": {
+          "__compat": {
+            "description": "Read-only behavior",
+            "support": {
+              "chrome": {
+                "version_added": "43"
+              },
+              "chrome_android": {
+                "version_added": "43"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
