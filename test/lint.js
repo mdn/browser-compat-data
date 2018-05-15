@@ -51,7 +51,8 @@ if (process.argv[2]) {
     'mathml',
     'test',
     'webdriver',
-    'webextensions'
+    'webextensions',
+    'xslt',
   );
 }
 
