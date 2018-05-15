@@ -1001,49 +1001,133 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/postMessage",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "8",
+                "notes": "Supports sending <code>File<code> and <code>FileList<code> objects between windows. This is only allowed if the recipient's principal is contained within the sender's principal for security reasons."
+              },
+              {
+                "version_added": "6",
+                "notes": "The <code>message</code> parameter is serialized using the <a href='https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm'>structured clone algorithm</a>. This means you can pass a broad variety of data objects safely to the destination window without having to serialize them yourself."
+              },
+              {
+                "version_added": true,
+                "version_removed": "6",
+                "notes": "The <code>message</code> parameter must be a string."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "8",
+                "notes": "Supports sending <code>File<code> and <code>FileList<code> objects between windows. This is only allowed if the recipient's principal is contained within the sender's principal for security reasons."
+              },
+              {
+                "version_added": "6",
+                "notes": "The <code>message</code> parameter is serialized using the <a href='https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm'>structured clone algorithm</a>. This means you can pass a broad variety of data objects safely to the destination window without having to serialize them yourself."
+              },
+              {
+                "version_added": true,
+                "version_removed": "6",
+                "notes": "The <code>message</code> parameter must be a string."
+              }
+            ],
+            "ie": [
+              {
+                "version_added": "10",
+                "notes": "IE10 had important limitation: see this <a href='https://stackoverflow.com/questions/16226924/is-cross-origin-postmessage-broken-in-ie10'>article</a> for details."
+              },
+              {
+                "version_added": "8",
+                "version_removed": "10",
+                "notes": "Support only for <code>&lt;frame&gt;</code> and <code>&lt;iframe&gt;</code>."
+              }
+            ],
             "opera": {
-              "version_added": null
+              "version_added": "9.5"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Due to security reasons, to work properly on Safari, use construction with <code>document.getElementById('your-frame').contentWindow</code>"
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "transfer_argument_support": {
+          "__compat": {
+            "description": "<code>transfer</code> argument",
+            "support": {
+              "chrome": {
+                "version_added": null
+              },
+              "chrome_android": {
+                "version_added": null
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "20"
+              },
+              "firefox_android": {
+                "version_added": "20"
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -1195,8 +1279,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
