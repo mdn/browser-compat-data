@@ -238,43 +238,44 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondevicelight",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "22",
+              "notes": "Works on Mac OSX. Support for Windows 7 <a href='https://bugzil.la/754199'in progress</a>."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "15"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
@@ -289,22 +290,24 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/convertPointFromNodeToPage",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Constructor supported. ------------- lucian95: What does that mean? See reference page. ------------"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Constructor supported. ------------- lucian95: What does that mean? See reference page. ------------"
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "6"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "ie": {
               "version_added": null
@@ -313,7 +316,7 @@
               "version_added": null
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": true,
@@ -326,7 +329,8 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Constructor supported. ------------- lucian95: What does that mean? See reference page. ------------"
             }
           },
           "status": {
@@ -340,24 +344,60 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/convertPointFromPageToNode",
           "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
+            "chrome": [
+              {
+                "version_added": "50",
+                "notes": [
+                  "For absolute values, use <code>ondeviceorientationabsolute</code>",
+                  "Constructor supported. ------------- lucian95: What does that mean? See reference page. ------------"
+                ]
+              },
+              {
+                "version_added": "7",
+                "version_removed": "50",
+                "notes": "Provided absolute values, not relative."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "50",
+                "notes": [
+                  "For absolute values, use <code>ondeviceorientationabsolute</code>",
+                  "Constructor supported. ------------- lucian95: What does that mean? See reference page. ------------"
+                ]
+              },
+              {
+                "version_added": true,
+                "version_removed": "50",
+                "notes": "Provided absolute values, not relative."
+              }
+            ],
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": "3.6",
+                "version_removed": "6",
+                "alternative_name": "onmozorientation"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "6",
+                "alternative_name": "onmozorientation"
+              }
+            ],
             "ie": {
               "version_added": null
             },
@@ -365,7 +405,7 @@
               "version_added": null
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": true,
@@ -377,9 +417,20 @@
             "samsunginternet_android": {
               "version_added": null
             },
-            "webview_android": {
-              "version_added": null
-            }
+            "webview_android": [
+              {
+                "version_added": "50",
+                "notes": [
+                  "For absolute values, use <code>ondeviceorientationabsolute</code>",
+                  "Constructor supported. ------------- lucian95: What does that mean? See reference page. ------------"
+                ]
+              },
+              {
+                "version_added": true,
+                "version_removed": "50",
+                "notes": "Provided absolute values, not relative."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -393,10 +444,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondeviceorientationabsolute",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "50"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "50"
             },
             "edge": {
               "version_added": null
@@ -429,12 +480,12 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "50"
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
