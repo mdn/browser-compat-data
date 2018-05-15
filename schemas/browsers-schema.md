@@ -16,6 +16,7 @@ The file `firefox.json` is structured like this:
 {
   "browsers": {
     "firefox": {
+      "name": "Firefox",
       "releases": {
         "1.5": {
           "release_date": "2005-11-29",
@@ -30,6 +31,10 @@ The file `firefox.json` is structured like this:
 It contains an object with the property `browsers` which then contains an object with the browser identifier as the property name (`firefox`).
 
 Underneath, there is a `releases` object which will hold the various releases of a given browser by their release version number (`"1.5"`).
+
+### `name`
+
+The `name` string is an optional property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
 
 ### Release objects
 The release objects consist of the following properties:
