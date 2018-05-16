@@ -2319,11 +2319,26 @@
                     "version_added": false
                   },
                   "firefox": {
+                    "notes": [
+                      "Treated as an alias for <code>queryInfo.active</code>."
+                    ],
                     "version_added": "60"
                   },
-                  "firefox_android": {
-                    "version_added": "60"
-                  },
+                  "firefox_android": [
+                    {
+                      "notes": [
+                        "Treated as an alias for <code>queryInfo.active</code>."
+                      ],
+                      "version_added": "61"
+                    },
+                    {
+                      "notes": [
+                        "Treated as an alias for <code>queryInfo.active</code> except when an extension has a popup open. In this situation, <code>queryInfo.highlighted</code> will return the popup, while <code>queryInfo.active</code> will return the tab that was selected before the popup opened."
+                      ],
+                      "version_added": "60",
+                      "version_removed": "61"
+                    }
+                  ],
                   "opera": {
                     "version_added": true
                   }
