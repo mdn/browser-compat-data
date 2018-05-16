@@ -30,13 +30,13 @@
     "browser_statement": {
       "type": "object",
       "properties": {
+        "name": { "type": "string" },
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" }
-        },
-        "name": { "type": "string" }
+        }
       },
-      "required": ["releases"],
+      "required": ["name", "releases"],
       "additionalProperties": false
     },
 
