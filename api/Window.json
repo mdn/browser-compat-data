@@ -1288,50 +1288,155 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/requestAnimationFrame",
           "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
+            "chrome": [
+              {
+                "version_added": "24",
+                "notes": "The correct call in Chrome to cancel the request is currently <code>window.cancelAnimationFrame()</code>. For older versions, use <code>window.webkitCancelAnimationFrame()</code> & <code>window.webkitCancelRequestAnimationFrame()</code>; they have been deprecated but are still supported for now."
+              },
+              {
+                "version_added": "10",
+                "prefix": "webkit"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "25",
+                "notes": "The correct call in Chrome to cancel the request is currently <code>window.cancelAnimationFrame()</code>. For older versions, use <code>window.webkitCancelAnimationFrame()</code> & <code>window.webkitCancelRequestAnimationFrame()</code>; they have been deprecated but are still supported for now."
+              },
+              {
+                "version_added": "18",
+                "prefix": "webkit"
+              }
+            ],
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "23",
+                "notes": "Callback parameter is a <code>DOMHighResTimestamp</code>. This means ten microsecond precision and zero time as <code>performace.now()</code>."
+              },
+              {
+                "version_added": "11",
+                "version_removed": "42",
+                "prefix": "moz",
+                "notes": "Callback parameter is a <code>DOMTimestamp</code>. This means millisecond precision and zero time as <code>Date.now()</code>."
+              },
+              {
+                "version_added": "4",
+                "version_removed": "11",
+                "prefix": "moz",
+                "notes": "Could be called with no input parameters."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "23"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "42",
+                "prefix": "moz"
+              }
+            ],
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
-            "opera": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "15"
+              },
+              {
+                "version_added": true,
+                "prefix": "o"
+              }
+            ],
             "opera_android": {
-              "version_added": null
+              "version_added": "15"
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "6.1"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "7.1"
+              },
+              {
+                "version_added": "6.1",
+                "prefix": "webkit"
+              }
+            ],
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "return_value": {
+          "__compat": {
+            "description": "Return value",
+            "support": {
+              "chrome": {
+                "version_added": "23"
+              },
+              "chrome_android": {
+                "version_added": "25"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "11"
+              },
+              "firefox_android": {
+                "version_added": "11"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "15"
+              },
+              "safari": {
+                "version_added": "6.1"
+              },
+              "safari_ios": {
+                "version_added": "6.1"
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
