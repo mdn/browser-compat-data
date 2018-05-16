@@ -1917,48 +1917,48 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/setImmediate",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -2009,7 +2009,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -2030,11 +2030,18 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": "20",
+                "notes": "The mimimal size is clamped to prevent the window from being too small for the user to interact with."
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "This method has no effect as a page is always in a tab."
             },
             "ie": {
               "version_added": null
@@ -2060,7 +2067,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -2088,7 +2095,7 @@
               "version_added": null
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": null
@@ -2162,7 +2169,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
