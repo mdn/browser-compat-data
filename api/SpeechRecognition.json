@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition",
         "support": {
-          "webview_android": {
-            "version_added": null
-          },
           "chrome": {
             "prefix": "webkit",
             "version_added": "33",
@@ -24,17 +21,10 @@
             "version_added": null
           },
           "firefox": {
-            "version_added": "44",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "media.webspeech.recognition.enable"
-              }
-            ],
-            "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+            "version_added": false
           },
           "firefox_android": {
-            "version_added": null
+            "version_added": false
           },
           "ie": {
             "version_added": false
@@ -50,6 +40,9 @@
           },
           "safari_ios": {
             "version_added": false
+          },
+          "webview_android": {
+            "version_added": null
           }
         },
         "status": {
@@ -63,9 +56,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition",
           "description": "<code>SpeechRecognition</code> constructor",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -83,14 +73,7 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
               "version_added": false
@@ -109,7 +92,64 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": null
             }
+          }
+        }
+      },
+      "abort": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/abort",
+          "support": {
+            "chrome": {
+              "prefix": "webkit",
+              "version_added": "33",
+              "notes": "You'll need to serve your code through a web server for recognition to work."
+            },
+            "chrome_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -117,11 +157,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/continuous",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -158,6 +193,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -171,11 +211,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/grammars",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -193,17 +228,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -219,6 +247,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -232,11 +265,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/interimResults",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -254,17 +282,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -280,6 +301,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -293,11 +319,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/lang",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -315,17 +336,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -341,6 +355,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -354,11 +373,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/maxAlternatives",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -376,17 +390,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -402,6 +409,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -415,11 +427,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onaudioend",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -437,17 +444,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -463,6 +463,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -476,11 +481,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onaudiostart",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -498,17 +498,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -524,6 +517,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -537,11 +535,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onend",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -559,17 +552,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -585,6 +571,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -598,11 +589,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onerror",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -620,17 +606,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -646,6 +625,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -659,11 +643,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onnomatch",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -681,17 +660,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -707,6 +679,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -720,11 +697,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onresult",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -742,17 +714,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -768,6 +733,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -781,11 +751,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onsoundend",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -803,17 +768,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -829,6 +787,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -842,11 +805,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onsoundstart",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -864,17 +822,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -890,6 +841,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -903,11 +859,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onspeechend",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -925,17 +876,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -951,6 +895,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -964,11 +913,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onspeechstart",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -986,17 +930,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1012,6 +949,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -1025,11 +967,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onstart",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -1047,17 +984,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1073,6 +1003,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -1086,11 +1021,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/serviceURI",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -1108,17 +1038,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1134,67 +1057,11 @@
             },
             "safari_ios": {
               "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "abort": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/abort",
-          "support": {
+            },
             "webview_android": {
               "prefix": "webkit",
               "version_added": true,
               "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
             }
           },
           "status": {
@@ -1208,11 +1075,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/start",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -1230,17 +1092,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1256,6 +1111,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
@@ -1269,11 +1129,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/stop",
           "support": {
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
             "chrome": {
               "prefix": "webkit",
               "version_added": "33",
@@ -1291,17 +1146,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable"
-                }
-              ],
-              "notes": "currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out."
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1317,6 +1165,11 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "prefix": "webkit",
+              "version_added": true,
+              "notes": "You'll need to serve your code through a web server for recognition to work."
             }
           },
           "status": {
