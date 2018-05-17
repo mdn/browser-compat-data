@@ -22,12 +22,13 @@ The file `firefox.json` is structured like this:
           "release_date": "2005-11-29",
           "release_notes": "https://developer.mozilla.org/Firefox/Releases/1.5",
           "status": "retired"
-        },
+        }
       }
     }
   }
 }
 ```
+
 It contains an object with the property `browsers` which then contains an object with the browser identifier as the property name (`firefox`).
 
 Underneath, there is a `releases` object which will hold the various releases of a given browser by their release version number (`"1.5"`).
@@ -40,7 +41,7 @@ The `name` string is an optional property which should use the browser brand nam
 The release objects consist of the following properties:
 
 * A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
-  * `retired`: This release is no longer supported (EOL)
+  * `retired`: This release is no longer supported (EOL).
   * `current`: This release is the official latest release.
   * `limited`: This is a limited release (for example on a flagship device), not generally available.
   * `beta`: This release will the next official release.
