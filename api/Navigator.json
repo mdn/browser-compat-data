@@ -287,10 +287,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "2"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
               "version_added": null
@@ -316,7 +316,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -377,10 +377,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/connection",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "61"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "38"
             },
             "edge": {
               "version_added": null
@@ -389,35 +389,37 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true,
+              "notes": "The Network API is enabled by default. Can be disabled using the <code>dom.netinfo.enabled</code> preference."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "14",
+              "notes": "The Network API is enabled by default. Can be disabled using the <code>dom.netinfo.enabled</code> preference."
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": null
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "37"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "50"
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -428,43 +430,45 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "59"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "59"
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "1",
+              "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "4",
+              "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
             },
             "ie": {
-              "version_added": null
+              "version_added": true
             },
             "opera": {
-              "version_added": null
+              "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "59"
             }
           },
           "status": {
@@ -479,10 +483,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/credentials",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "51"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "51"
             },
             "edge": {
               "version_added": null
@@ -515,11 +519,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "51"
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
