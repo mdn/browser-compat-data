@@ -55,47 +55,50 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/activeVRDisplays",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false,
+              "notes": "API Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Currently supported only by Google Daydream."
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
-              "version_added": null
+              "version_added": "55",
+              "notes": "Currently only Windows support is enabled by default. Mac support is available in Firefox Nightly."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "55"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -175,10 +178,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/battery",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "38"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "38"
             },
             "edge": {
               "version_added": null
@@ -186,26 +189,72 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "50",
+                "notes": [
+                  "Removed in favor of <code>navigator.getBattery()</code>.",
+                  "The Battery API was supported on Android, Windows, and Linux with UPower installed. Support for MacOS was available starting with Firefox 18."
+                ]
+              },
+              {
+                "version_added": "11",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "16",
+                "version_removed": "50",
+                "notes": [
+                  "Removed in favor of <code>navigator.getBattery()</code>.",
+                  "The Battery API was supported on Android, Windows, and Linux with UPower installed. Support for MacOS was available starting with Firefox 18."
+                ]
+              },
+              {
+                "version_added": "11",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
