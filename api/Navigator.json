@@ -534,10 +534,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "63"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "63"
             },
             "edge": {
               "version_added": null
@@ -555,10 +555,10 @@
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": "50"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "50"
             },
             "safari": {
               "version_added": null
@@ -570,11 +570,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "63"
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -585,25 +585,32 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/doNotTrack",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "23"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": false,
+              "notes": "Use <code>window.doNotTrack</code> instead."
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": false,
+              "notes": "Use <code>window.doNotTrack</code> instead."
             },
             "firefox": {
-              "version_added": null
+              "version_added": "9",
+              "notes": "Prior to Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "9",
+              "notes": "Prior to Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
             },
             "ie": {
-              "version_added": null
+              "version_added": "9",
+              "version_removed": "11",
+              "prefix": "ms",
+              "notes": "For IE11 and subsequent versions, use <code>window.doNotTrack</code>"
             },
             "opera": {
               "version_added": null
@@ -612,7 +619,8 @@
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": "5.1",
+              "notes": "Safari 7.1.3+ uses <code>window.doNotTrack</code> rather than <code>navigator.doNotTrack</code>."
             },
             "safari_ios": {
               "version_added": null
@@ -621,11 +629,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
