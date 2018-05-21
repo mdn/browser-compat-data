@@ -1236,10 +1236,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/oscpu",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
               "version_added": null
@@ -1248,10 +1248,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
               "version_added": null
@@ -1272,12 +1272,12 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -1287,10 +1287,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "43"
             },
             "edge": {
               "version_added": null
@@ -1299,10 +1299,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "46"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "46"
             },
             "ie": {
               "version_added": null
@@ -1323,11 +1323,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "43"
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1338,10 +1338,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/presentation",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": true
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
               "version_added": null
@@ -1350,10 +1350,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": null
@@ -1374,7 +1374,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
@@ -1389,10 +1389,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/productSub",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Always returns <code>20030107</code>."
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Always returns <code>20030107</code>."
             },
             "edge": {
               "version_added": null
@@ -1401,13 +1403,14 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Always returns <code>undefined</code>."
             },
             "opera": {
               "version_added": null
@@ -1416,10 +1419,12 @@
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Always returns <code>20030107</code>."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Always returns <code>20030107</code>."
             },
             "samsunginternet_android": {
               "version_added": null
@@ -1430,7 +1435,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -1452,7 +1457,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "2",
+              "version_removed": "59"
             },
             "firefox_android": {
               "version_added": null
@@ -1481,8 +1487,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -1491,7 +1497,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "13",
+              "notes": "Protocol whitelist includes <code>mailto</code>, <code>mms</code>, <code>nntp</code>, <code>rtsp</code>, and <code>webcal</code>. Custom protocols must be prefixed with <code>web+</code>."
             },
             "chrome_android": {
               "version_added": null
@@ -1503,16 +1510,16 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "3"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "4"
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": "11.6"
             },
             "opera_android": {
               "version_added": null
