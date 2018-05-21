@@ -2053,10 +2053,14 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vibrate",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "32",
+              "notes": [
+                "Beginning in Chrome 55, this is not supported in cross-origin iframes.",
+                "Beginning in Chrome 60, this method requires a user gesture. Otherwise it returns <code>false</code>."
+              ]
             },
             "edge": {
               "version_added": null
@@ -2064,32 +2068,57 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "notes": [
+                  "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning <code>false</code> (<a href='https://bugzil.la/884935'>bug 884935</a>).",
+                  "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns <code>true</code> but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>)."
+                ]
+              },
+              {
+                "version_added": "11",
+                "prefix": "moz"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "16",
+                "notes": [
+                  "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning <code>false</code> (<a href='https://bugzil.la/884935'>bug 884935</a>).",
+                  "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns <code>true</code> but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>)."
+                ]
+              },
+              {
+                "version_added": "14",
+                "prefix": "moz"
+              }
+            ],
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Beginning in Opera 47, this method requires a user gesture. Otherwise it returns <code>false</code>."
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "32",
+              "notes": [
+                "Beginning in version 55, this is not supported in cross-origin iframes.",
+                "Beginning in version 60, this method requires a user gesture. Otherwise it returns <code>false</code>."
+              ]
             }
           },
           "status": {
@@ -2145,7 +2174,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -2196,7 +2225,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
