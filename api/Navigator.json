@@ -1549,31 +1549,57 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "42",
+              "notes": [
+                "The spec requires that the passed <code>supportedConfigurations</code> option contain at least one of <code>audioCapabilities</code> or <code>videoCapabilities</code>, and that said parameters include a codec string.",
+                "The function does not exist in insecure contexts. This was not enforced until Chrome 58."
+              ]
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "42",
+              "notes": [
+                "The spec requires that the passed <code>supportedConfigurations</code> option contain at least one of <code>audioCapabilities</code> or <code>videoCapabilities</code>, and that said parameters include a codec string.",
+                "The function does not exist in insecure contexts. This was not enforced until Chrome 58."
+              ]
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": true,
+              "notes": [
+                "Starting in Firefox 55, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in <code>supportedConfigurations</code>, a warning is output to the web console.",
+                "In addition, starting in Firefox 55,  if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a </code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
+                "In the future, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in the <code>supportedConfigurations</code>, a <code>NotSupported</code> exception will be thrown."
+              ]
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": [
+                "Starting in Firefox 55, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in <code>supportedConfigurations</code>, a warning is output to the web console.",
+                "In addition, starting in Firefox 55,  if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a </code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
+                "In the future, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in the <code>supportedConfigurations</code>, a <code>NotSupported</code> exception will be thrown."
+              ]
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": "29",
+              "notes": [
+                "The spec requires that the passed <code>supportedConfigurations</code> option contain at least one of <code>audioCapabilities</code> or <code>videoCapabilities</code>, and that said parameters include a codec string.",
+                "The function does not exist in insecure contexts. This was not enforced until Opera 45."
+              ]
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "29",
+              "notes": [
+                "The spec requires that the passed <code>supportedConfigurations</code> option contain at least one of <code>audioCapabilities</code> or <code>videoCapabilities</code>, and that said parameters include a codec string.",
+                "The function does not exist in insecure contexts. This was not enforced until Opera 45."
+              ]
             },
             "safari": {
               "version_added": null
@@ -1585,7 +1611,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "43",
+              "notes": [
+                "The spec requires that the passed <code>supportedConfigurations</code> option contain at least one of <code>audioCapabilities</code> or <code>videoCapabilities</code>, and that said parameters include a codec string.",
+                "The function does not exist in insecure contexts. This was not enforced until version 58."
+              ]
             }
           },
           "status": {
