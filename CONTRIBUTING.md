@@ -47,7 +47,6 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 * Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
 * Nesting of feature identifiers should make sense.
 * Notes use correct grammar and spelling. They should be complete sentences ending with a period.
-* Browser versions are valid (planned be validated automatically in the future, see [issue 168](https://github.com/mdn/browser-compat-data/issues/168) which tracks adding tests and docs about browser versions).
 
 ## Code style
 
