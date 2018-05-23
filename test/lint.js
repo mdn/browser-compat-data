@@ -61,7 +61,7 @@ if (process.argv[2]) {
 if (hasErrors) {
   console.log("");
   console.log(`Problems in ${Object.keys(filesWithErrors).length} files:`);
-  for (var file in filesWithErrors) {
+  for (let file in filesWithErrors) {
     console.log(file);
     testSchema(filesWithErrors[file]);
     testStyle(filesWithErrors[file]);
