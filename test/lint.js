@@ -4,6 +4,7 @@ var {testStyle} = require('./test-style');
 var {testSchema} = require('./test-schema');
 var {testVersions} = require('./test-versions');
 var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
+var filesWithErrors = {};
 
 function load(...files) {
   for (let file of files) {
@@ -19,10 +20,12 @@ function load(...files) {
         } else {
           hasSchemaErrors = testSchema(file);
           hasStyleErrors = testStyle(file);
-          hasVersionErrors =  testVersions(file);
+          hasVersionErrors = testVersions(file);
         }
         if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
           hasErrors = true;
+          fileName = file.replace(path.resolve(__dirname, '..') + path.sep, '');
+          filesWithErrors[fileName] = file;
         }
       }
 
@@ -56,5 +59,13 @@ if (process.argv[2]) {
 }
 
 if (hasErrors) {
+  console.log("");
+  console.log(`Problems in ${Object.keys(filesWithErrors).length} files:`);
+  for (var file in filesWithErrors) {
+    console.log(file);
+    testSchema(filesWithErrors[file]);
+    testStyle(filesWithErrors[file]);
+    testVersions(filesWithErrors[file]);
+  }
   process.exit(1);
 }
