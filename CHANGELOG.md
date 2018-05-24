@@ -44,4 +44,4 @@ No schema changes.
 [0.0.33]: https://github.com/mdn/browser-compat-data/compare/v0.0.32...v0.0.33
 [0.0.32]: https://github.com/mdn/browser-compat-data/compare/v0.0.31...v0.0.32
 [0.0.31]: https://github.com/mdn/browser-compat-data/compare/v0.0.30...v0.0.31
-[0.0.31]: https://github.com/mdn/browser-compat-data/compare/v0.0.29...v0.0.30
+[0.0.30]: https://github.com/mdn/browser-compat-data/compare/v0.0.29...v0.0.30
