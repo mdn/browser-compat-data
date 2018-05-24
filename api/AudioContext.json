@@ -97,15 +97,15 @@
             "chrome": {
               "version_added": "55",
               "notes": [
-                "Each tab is limited to 6 audio contexts because each context spawns a new thread. Attempting to create more than 6 <code>AudioContext</code>s per tab will cause Chrome to throw a <code>DOMException</code> with the message \"The number of hardware contexts provided (6) is greater than or equal to the maximum bound (6).\" Try to reuse contexts rather than creating a new one for every sound, and be sure to call <code>AudioContext.close()</code> when you no longer need a context; once its returned <code>Promise</code> is resolved, it's safe to create a new context.",
-                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception with the message \"The provided value '...' is not a valid enum value of type AudioContextLatencyCategory\"."
+                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
               ]
             },
             "chrome_android": {
               "version_added": "55",
               "notes": [
-                "Each tab is limited to 6 audio contexts because each context spawns a new thread. Attempting to create more than 6 <code>AudioContext</code>s per tab will cause Chrome to throw a <code>DOMException</code> with the message \"The number of hardware contexts provided (6) is greater than or equal to the maximum bound (6).\" Try to reuse contexts rather than creating a new one for every sound, and be sure to call <code>AudioContext.close()</code> when you no longer need a context; once its returned <code>Promise</code> is resolved, it's safe to create a new context.",
-                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception with the message \"The provided value '...' is not a valid enum value of type AudioContextLatencyCategory\"."
+                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
               ]
             },
             "edge": {
