@@ -7,6 +7,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Added
 - 
 
+## [0.0.36] - 2018-05-24
+No schema changes.
+
 ## [0.0.35] - 2018-05-17
 ### Added
 - Add a required `name` property to the browser schema. ([#2025])
@@ -34,7 +37,8 @@ No schema changes.
 [#1790]: https://github.com/mdn/browser-compat-data/pull/1790
 [#1740]: https://github.com/mdn/browser-compat-data/pull/1740
 
-[Unreleased]: https://github.com/mdn/browser-compat-data/compare/v0.0.35...HEAD
+[Unreleased]: https://github.com/mdn/browser-compat-data/compare/v0.0.36...HEAD
+[0.0.36]: https://github.com/mdn/browser-compat-data/compare/v0.0.35...v0.0.36
 [0.0.35]: https://github.com/mdn/browser-compat-data/compare/v0.0.34...v0.0.35
 [0.0.34]: https://github.com/mdn/browser-compat-data/compare/v0.0.33...v0.0.34
 [0.0.33]: https://github.com/mdn/browser-compat-data/compare/v0.0.32...v0.0.33
