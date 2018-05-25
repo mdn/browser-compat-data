@@ -1,11 +1,22 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const yargs = require('yargs');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
 /** @type {Map<string,string>} */
 const filesWithErrors = new Map();
+
+const argv = yargs.alias('version','v')
+  .usage('$0 [[--] files...]', false, (yargs) => {
+    yargs.positional('files...', {
+      description: 'The files to lint',
+      type: 'string'
+    })
+  })
+  .help().alias('help','h').alias('help','?')
+  .parse(process.argv.slice(2));
 
 let hasErrors = false;
 
@@ -13,6 +24,9 @@ let hasErrors = false;
  * @param {string[]} files
  */
 function load(...files) {
+  if (files.length === 1 && files[0] instanceof Array) {
+    files = files[0];
+  }
   for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -51,8 +65,8 @@ function load(...files) {
   }
 }
 
-if (process.argv[2]) {
-  load(process.argv[2]);
+if (argv.files) {
+  load(argv.files);
 } else {
   load(
     'api',
