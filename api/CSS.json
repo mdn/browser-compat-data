@@ -19,16 +19,36 @@
           "edge_mobile": {
             "version_added": true
           },
-          "firefox": {
-            "version_added": "22",
-            "notes": "Was available behind the <code>layout.css.supports-rule.enabled</code> preference since Gecko 20."
-          },
-          "firefox_android": {
-            "version_added": "22",
-            "notes": "Was available behind the <code>layout.css.supports-rule.enabled</code> preference since Gecko 20."
-          },
+          "firefox": [
+            {
+              "version_added": "22"
+            },
+            {
+              "version_added": "20",
+              "flags": [
+                {
+                  "name": "layout.css.supports-rule.enabled",
+                  "type": "preference"
+                }
+              ]
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "22"
+            },
+            {
+              "version_added": "20",
+              "flags": [
+                {
+                  "name": "layout.css.supports-rule.enabled",
+                  "type": "preference"
+                }
+              ]
+            }
+          ],
           "ie": {
-            "version_added": "6"
+            "version_added": false
           },
           "opera": {
             "version_added": "12.1"
@@ -60,33 +80,31 @@
               "version_added": true
             },
             "chrome": {
-              "version_added": "28"
+              "version_added": "65"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": true
+              "version_added": false
             },
             "firefox": {
-              "version_added": "22",
-              "notes": "Was available behind the <code>layout.css.supports-rule.enabled</code> preference since Gecko 20."
+              "version_added": null
             },
             "firefox_android": {
-              "version_added": "22",
-              "notes": "Was available behind the <code>layout.css.supports-rule.enabled</code> preference since Gecko 20."
+              "version_added": null
             },
             "ie": {
-              "version_added": "6"
+              "version_added": false
             },
             "opera": {
-              "version_added": "12.1"
+              "version_added": "52"
             },
             "opera_android": {
-              "version_added": "12.1"
+              "version_added": "52"
             },
             "safari": {
               "version_added": false
@@ -124,16 +142,36 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": "22",
-              "notes": "Was available behind the <code>layout.css.supports-rule.enabled</code> preference since Gecko 20."
-            },
-            "firefox_android": {
-              "version_added": "22",
-              "notes": "Was available behind the <code>layout.css.supports-rule.enabled</code> preference since Gecko 20."
-            },
+            "firefox": [
+              {
+                "version_added": "22"
+              },
+              {
+                "version_added": "20",
+                "flags": [
+                  {
+                    "name": "layout.css.supports-rule.enabled",
+                    "type": "preference"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "version_added": "20",
+                "flags": [
+                  {
+                    "name": "layout.css.supports-rule.enabled",
+                    "type": "preference"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "6"
+              "version_added": false
             },
             "opera": {
               "version_added": "12.1"
