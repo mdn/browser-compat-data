@@ -95,10 +95,18 @@
               "version_added": "55"
             },
             "chrome": {
-              "version_added": "55"
+              "version_added": "55",
+              "notes": [
+                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+              ]
             },
             "chrome_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "notes": [
+                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+              ]
             },
             "edge": {
               "version_added": true
