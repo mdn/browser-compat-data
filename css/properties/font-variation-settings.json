@@ -22,26 +22,38 @@
               "version_added": false,
               "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/fontvariationpropertieswithopentypevariablefontsupport/'>In development</a>."
             },
-            "firefox": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.font-variations.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.font-variations.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "61",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.font-variations.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "61",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.font-variations.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
