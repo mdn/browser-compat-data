@@ -2,6 +2,30 @@
   "webextensions": {
     "api": {
       "proxy": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Chrome implements its own proxy API, which is incompatible with the one in Firefox."
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "opera": {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Opera implements Chrome's proxy API, which is incompatible with the one in Firefox."
+            }
+          }
+        },
         "onError": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
