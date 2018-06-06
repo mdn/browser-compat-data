@@ -4,7 +4,7 @@ var {testStyle} = require('./test-style');
 var {testSchema} = require('./test-schema');
 var {testVersions} = require('./test-versions');
 var {testHierarchy} = require('./test-hierarchy');
-var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false, hasHierarchiesErrors = false;
+var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
 var filesWithErrors = {};
 
 function load(...files) {
