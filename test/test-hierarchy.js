@@ -17,11 +17,11 @@ function testHierarchy(dataFilename) {
   if (whitelistedFiles.every(file => localFilePath.indexOf(file) === -1)) {
     var levels = localFilePath.replace(".json", "").split("/");
 
-  var hasErrors = false;
+    var hasErrors = false;
 
-  // HTTP is the only folder that has non matching capitalization
-  // between the file name and the compat data content.
-  if (levels[0] !== "http") {
+    // HTTP is the only folder that has non matching capitalization
+    // between the file name and the compat data content.
+    if (levels[0] !== "http") {
 
       hasErrors = !hierarchyExists(data, levels);
 
