@@ -5,13 +5,13 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams",
         "support": {
           "webview_android": {
-            "version_added": null
+            "version_added": "49"
           },
           "chrome": {
-            "version_added": null
+            "version_added": "49"
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": "49"
           },
           "edge": {
             "version_added": "17"
@@ -19,26 +19,40 @@
           "edge_mobile": {
             "version_added": "17"
           },
-          "firefox": {
-            "version_added": null
-          },
-          "firefox_android": {
-            "version_added": null
-          },
+          "firefox": [
+            {
+              "version_added": "57"
+            },
+            {
+              "version_added": "29",
+              "version_removed": "57",
+              "notes": "Had a bug whereby single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>Bug 1386683</a>)."
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "57"
+            },
+            {
+              "version_added": "29",
+              "version_removed": "57",
+              "notes": "Had a bug whereby single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>Bug 1386683</a>)."
+            }
+          ],
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": null
+            "version_added": "36"
           },
           "opera_android": {
-            "version_added": null
+            "version_added": "36"
           },
           "safari": {
-            "version_added": null
+            "version_added": "10.1"
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": false
           },
           "samsunginternet_android": {
             "version_added": null
@@ -50,18 +64,136 @@
           "deprecated": false
         }
       },
+      "URLSearchParams": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/URLSearchParams",
+          "description": "<code>URLSearchParams</code> constructor",
+          "support": {
+            "webview_android": [
+              {
+                "version_added": "61",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "49",
+                "version_removed": "61",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code> or <code>URLSearchParams</code>."
+              }
+            ],
+            "chrome": [
+              {
+                "version_added": "61",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "36",
+                "version_removed": "61",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code> or <code>URLSearchParams</code>."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "61",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "36",
+                "version_removed": "61",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code> or <code>URLSearchParams</code>."
+              }
+            ],
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "61",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "53",
+                "version_removed": "54",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "29",
+                "version_removed": "53",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "61",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "53",
+                "version_removed": "54",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "29",
+                "version_removed": "53",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code>."
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "48",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "36",
+                "version_removed": "48",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code> or <code>URLSearchParams</code>."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "48",
+                "notes": "Takes <code>init</code> parameter as <code>&lt;sequence&lt;USVString>></code> or <code>record&lt;USVString, USVString></code> or <code>USVString</code>."
+              },
+              {
+                "version_added": "36",
+                "version_removed": "48",
+                "notes": "Takes <code>init</code> parameter as <code>USVString</code> or <code>URLSearchParams</code>."
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "append": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/append",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "edge": {
               "version_added": "17"
@@ -70,19 +202,19 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "29"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "29"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
@@ -106,13 +238,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/delete",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "edge": {
               "version_added": "17"
@@ -121,19 +253,19 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "29"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "29"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
@@ -157,13 +289,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/get",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "edge": {
               "version_added": "17"
@@ -172,19 +304,19 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "26"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "26"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
@@ -208,13 +340,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/getAll",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "edge": {
               "version_added": "17"
@@ -223,19 +355,19 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "26"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "26"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
@@ -259,13 +391,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/has",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "edge": {
               "version_added": "17"
@@ -274,19 +406,19 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "26"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "26"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
@@ -310,13 +442,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/set",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "edge": {
               "version_added": "17"
@@ -325,19 +457,19 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "26"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "26"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
@@ -361,13 +493,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "61"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "61"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "61"
             },
             "edge": {
               "version_added": "17"
@@ -376,19 +508,121 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "54"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "54"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "48"
             },
             "opera_android": {
+              "version_added": "48"
+            },
+            "safari": {
               "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "iterable": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/iterable",
+          "support": {
+            "webview_android": {
+              "version_added": "49"
+            },
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "stringifier": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/stringifier",
+          "support": {
+            "webview_android": {
+              "version_added": "49"
+            },
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "29"
+            },
+            "firefox_android": {
+              "version_added": "29"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
             },
             "safari": {
               "version_added": null
