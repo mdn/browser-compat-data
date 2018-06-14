@@ -266,7 +266,76 @@ interface StatusBlock {
 }
 
 interface CompatData extends Record<Exclude<string, 'browsers'>, Identifier> {
+  /**
+   * Contains data for each known browser.
+   */
   browsers: Browsers;
+
+  /**
+   * Contains data for each [Web API](https://developer.mozilla.org/docs/Web/API)
+   * interface.
+   */
+  api: Identifier;
+
+  /**
+   * Contains data for [CSS](https://developer.mozilla.org/docs/Web/CSS)
+   * properties, selectors, and at-rules.
+   */
+  css: Identifier;
+
+  /**
+   * Contains data for [HTML](https://developer.mozilla.org/docs/Web/HTML)
+   * elements, attributes, and global attributes.
+   */
+  html: Identifier;
+
+  /**
+   * Contains data for [HTTP](https://developer.mozilla.org/docs/Web/HTTP)
+   * headers, statuses, and methods.
+   */
+  http: Identifier;
+
+  /**
+   * Contains data for [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript)
+   * built-in Objects, statement, operators, and other ECMAScript language features.
+   */
+  javascript: Identifier;
+
+  /**
+   * Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML)
+   * elements, attributes, and global attributes.
+   */
+  mathml: Identifier;
+
+  /**
+   * Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG)
+   * elements, attributes, and global attributes.
+   */
+  svg: Identifier;
+
+  /**
+   * Contains data for [WebDriver](https://developer.mozilla.org/docs/Web/WebDriver)
+   * commands.
+   */
+  webdriver: Identifier;
+
+  /**
+   * Contains data for [WebExtensions](https://developer.mozilla.org/Add-ons/WebExtensions)
+   * JavaScript APIs and manifest keys.
+   */
+  webextensions: Identifier;
+
+  /**
+   * Contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath)
+   * axes, and functions.
+   */
+  xpath: Identifier;
+
+  /**
+   * Contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT)
+   * elements, attributes, and global attributes.
+   */
+  xslt: Identifier;
 }
 
 export = ({} as CompatData);
