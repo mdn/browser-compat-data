@@ -3,6 +3,7 @@ var path = require('path');
 var {testStyle} = require('./test-style');
 var {testSchema} = require('./test-schema');
 var {testVersions} = require('./test-versions');
+var {testHierarchy} = require('./test-hierarchy');
 var hasErrors, hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
 var filesWithErrors = {};
 
@@ -20,9 +21,10 @@ function load(...files) {
         } else {
           hasSchemaErrors = testSchema(file);
           hasStyleErrors = testStyle(file);
-          hasVersionErrors = testVersions(file);
+          hasVersionErrors =  testVersions(file);
+          hasHierarchiesErrors = testHierarchy(file);
         }
-        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
+        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors || hasHierarchiesErrors) {
           hasErrors = true;
           fileName = file.replace(path.resolve(__dirname, '..') + path.sep, '');
           filesWithErrors[fileName] = file;
