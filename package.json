@@ -26,10 +26,10 @@
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
     "ajv": "^5.0.1",
-    "mdn-confluence": "0.0.3"
+    "mdn-confluence": "0.0.7"
   },
   "scripts": {
-    "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=.",
+    "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "lint": "node test/lint",
     "render": "node test/render",
     "show-errors": "npm test 1> /dev/null",
