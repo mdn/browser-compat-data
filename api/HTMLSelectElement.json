@@ -24,8 +24,7 @@
             "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the <code>&lt;option&gt;</code> element to the parent <a href='https://developer.mozilla.org/docs/Web/HTML/Element/select' title='The HTML <select> element represents a control that provides a menu of options:'><code>&lt;select&gt;</code></a> element. This doesn't happen in Chrome, however, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode and the <code>&lt;select&gt;</code> element is displayed as a drop-down list. The behavior is unchanged if the <code>&lt;select&gt;</code> is presented inline and it has either the <code>multiple</code> attribute defined or a <code>size</code> attribute set to more than 1. Rather than watching <code>&lt;option&gt;</code> elements for events, you should watch for <a href='https://developer.mozilla.org/docs/Web/Events/change' title='The change event'>change</a> events on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/select' title='The HTML <select> element represents a control that provides a menu of options:'><code>&lt;select&gt;</code></a>. See <a href='https://bugzil.la/1090602' title='[e10s] <option> events do not bubble up through parent <select>' >bug&nbsp;1090602</a> for details."
           },
           "firefox_android": {
-            "version_added": "4",
-            "notes": "Implemented in <a href='https://bugzil.la/556743' title='FIXED: Implement the labels attribute'>bug&nbsp;556743</a>."
+            "version_added": "4"
           },
           "ie": {
             "version_added": "1"
@@ -213,12 +212,10 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "56",
-              "notes": " Implemented in <a href='https://bugzil.la/556743' title='FIXED: Implement the labels attribute'>bug&nbsp;556743</a>."
+              "version_added": "56"
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": " Implemented in <a href='https://bugzil.la/556743' title='FIXED: Implement the labels attribute'>bug&nbsp;556743</a>."
+              "version_added": "56"
             },
             "ie": {
               "version_added": false
@@ -916,7 +913,7 @@
         },
         "index_before_parameter": {
           "__compat": {
-            "description": "index as <code>before</code> parameter",
+            "description": "Index as <code>before</code> parameter",
             "support": {
               "webview_android": {
                 "version_added": true
@@ -1170,7 +1167,7 @@
             },
             "edge": {
               "version_added": true,
-              "notes": "Does not appear to take the <code>name</code> attribute into account (only the <code>id</code> attribute) on Internet Explorer and Edge. There is a <a href='https://connect.microsoft.com/IE/feedbackdetail/view/2414092/'>bug report</a> to Microsoft about this."
+              "notes": "<code>namedItem</code> does not appear to take the <code>name</code> attribute into account (only the <code>id</code> attribute) on Internet Explorer and Edge. There is a <a href='https://connect.microsoft.com/IE/feedbackdetail/view/2414092/'>bug report</a> to Microsoft about this."
             },
             "edge_mobile": {
               "version_added": true
@@ -1183,7 +1180,7 @@
             },
             "ie": {
               "version_added": true,
-              "notes": "namedItem does not appear to take the <code>name</code> attribute into account (only the <code>id</code> attribute) on Internet Explorer and Edge. There is a <a href='https://connect.microsoft.com/IE/feedbackdetail/view/2414092/'>bug report</a> to Microsoft about this."
+              "notes": "<code>namedItem</code> does not appear to take the <code>name</code> attribute into account (only the <code>id</code> attribute) on Internet Explorer and Edge. There is a <a href='https://connect.microsoft.com/IE/feedbackdetail/view/2414092/'>bug report</a> to Microsoft about this."
             },
             "opera": {
               "version_added": true
