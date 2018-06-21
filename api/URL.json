@@ -633,12 +633,26 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
+            "firefox": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
             "ie": {
               "version_added": null
             },
@@ -727,7 +741,7 @@
               "version_added": true
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
               "version_added": "13"
@@ -736,10 +750,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "22"
             },
             "ie": {
               "version_added": null
@@ -760,11 +774,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -829,7 +843,7 @@
               "version_added": true
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
               "version_added": "13"
@@ -837,12 +851,26 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
             "ie": {
               "version_added": null
             },
@@ -862,11 +890,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
