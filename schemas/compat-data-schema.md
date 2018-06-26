@@ -76,6 +76,44 @@ What it represents exactly depends of the evolution of the feature over time, bo
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
+#### API-specific subfeatures
+
+Worker support for a given feature in `api/` should be in a subfeature titled `worker_support`. It should also have the description `Available in workers`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "ImageData": {
+        "__compat": {
+          "description": "<code>ImageData()</code> constructor",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
 ### The `__compat` object
 The `__compat` object consists of the following:
 
