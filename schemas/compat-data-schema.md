@@ -78,6 +78,8 @@ To add a sub-feature, a new identifier is added below the main feature at the le
 
 #### API-specific subfeatures
 
+The following conventions apply to compatibility data in the `api/` directory.
+
 Worker support for a given feature in `api/` should be in a subfeature titled `worker_support`. It should also have the description `Available in workers`.
 
 ```json
