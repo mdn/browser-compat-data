@@ -1817,15 +1817,61 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let",
           "support": {
-            "webview_android": {
-              "version_added": "41"
-            },
-            "chrome": {
-              "version_added": "41"
-            },
-            "chrome_android": {
-              "version_added": "41"
-            },
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "41",
+                "version_removed": "49",
+                "partial_implementation": true,
+                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+              }
+            ],
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "48",
+                "version_removed": "49",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental JavaScript Features"
+                  }
+                ],
+                "notes": "Support outside of <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>strict mode</a>."
+              },
+              {
+                "version_added": "41",
+                "version_removed": "49",
+                "partial_implementation": true,
+                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "48",
+                "version_removed": "49",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental JavaScript Features"
+                  }
+                ],
+                "notes": "Support outside of <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>strict mode</a>."
+              },
+              {
+                "version_added": "41",
+                "version_removed": "49",
+                "partial_implementation": true,
+                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
