@@ -1,28 +1,25 @@
 {
   "api": {
-    "PaymentRequestUpdateEvent": {
+    "AbortPaymentEvent": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortPaymentEvent",
         "support": {
-          "webview_android": {
-            "version_added": false
-          },
           "chrome": {
             "version_added": "61",
             "flags": [
               {
                 "type": "preference",
-                "name": "#web-payments",
+                "name": "#service-worker-payment-apps",
                 "value_to_set": "Enabled"
               }
             ]
           },
           "chrome_android": {
-            "version_added": "53",
+            "version_added": "61",
             "flags": [
               {
                 "type": "preference",
-                "name": "#web-payments",
+                "name": "#service-worker-payment-apps",
                 "value_to_set": "Enabled"
               }
             ]
@@ -34,27 +31,13 @@
             "version_added": null
           },
           "firefox": {
-            "version_added": "56",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.payments.request.enabled",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": null
           },
           "firefox_android": {
-            "version_added": "56",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.payments.request.enabled",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": null
           },
           "ie": {
-            "version_added": false
+            "version_added": null
           },
           "opera": {
             "version_added": false
@@ -68,40 +51,37 @@
           "safari_ios": {
             "version_added": null
           },
-          "samsunginternet_android": {
-            "version_added": "6.0"
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
           "experimental": true,
-          "standard_track": true,
+          "standard_track": false,
           "deprecated": false
         }
       },
-      "PaymentRequestUpdateEvent": {
+      "AbortPaymentEvent": {
         "__compat": {
-          "description": "<code>PaymentRequestUpdateEvent()</code> constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/PaymentRequestUpdateEvent",
+          "description": "<code>AbortPaymentEvent()</code> constructor",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortPaymentEvent/AbortPaymentEvent",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": "61",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#web-payments",
+                  "name": "#service-worker-payment-apps",
                   "value_to_set": "Enabled"
                 }
               ]
             },
             "chrome_android": {
-              "version_added": "53",
+              "version_added": "61",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#web-payments",
+                  "name": "#service-worker-payment-apps",
                   "value_to_set": "Enabled"
                 }
               ]
@@ -113,27 +93,13 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": null
             },
             "firefox_android": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": null
             },
             "ie": {
-              "version_added": false
+              "version_added": null
             },
             "opera": {
               "version_added": false
@@ -147,72 +113,55 @@
             "safari_ios": {
               "version_added": null
             },
-            "samsunginternet_android": {
-              "version_added": "6.0"
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
       },
-      "updateWith": {
+      "respondWith": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortPaymentEvent/respondWith",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": "61",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#web-payments",
+                  "name": "#service-worker-payment-apps",
                   "value_to_set": "Enabled"
                 }
               ]
             },
             "chrome_android": {
-              "version_added": "53",
+              "version_added": "61",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#web-payments",
+                  "name": "#service-worker-payment-apps",
                   "value_to_set": "Enabled"
                 }
               ]
             },
             "edge": {
-              "version_added": "15"
+              "version_added": null
             },
             "edge_mobile": {
               "version_added": null
             },
             "firefox": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": null
             },
             "firefox_android": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": null
             },
             "ie": {
-              "version_added": false
+              "version_added": null
             },
             "opera": {
               "version_added": false
@@ -226,13 +175,13 @@
             "safari_ios": {
               "version_added": null
             },
-            "samsunginternet_android": {
-              "version_added": "6.0"
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
