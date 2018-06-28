@@ -116,6 +116,22 @@
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
+      "required": ["support", "status"],
+      "additionalProperties": false
+    },
+
+    "webextensions_compat_statement": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "mdn_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
+        },
+        "support": { "$ref": "#/definitions/support_block" },
+        "status": { "$ref": "#/definitions/status_block" }
+      },
       "required": ["support"],
       "additionalProperties": false
     },
@@ -131,6 +147,17 @@
       "additionalProperties": false
     },
 
+    "webextensions_identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/webextensions_compat_statement" }
+      },
+      "patternProperties":{
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/webextensions_identifier" }
+      },
+      "additionalProperties": false
+    },
+
     "version_value": {
       "allOf": [
         { "type": ["string", "boolean", "null"] },
@@ -141,7 +168,8 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
+    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" },
+    "^webextensions*$": { "$ref": "#/definitions/webextensions_identifier" }
   },
   "additionalProperties": false
 }
