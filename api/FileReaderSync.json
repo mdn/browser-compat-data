@@ -47,18 +47,17 @@
           "deprecated": false
         }
       },
-      "web_workers_support_removed": {
+      "service_workers_support": {
         "__compat": {
-          "description": "Service worker support removed",
+          "description": "Service workers support",
           "support": {
-            "webview_android": {
-              "version_added": "59"
-            },
             "chrome": {
-              "version_added": "59"
+              "version_added": true,
+              "version_removed": "59"
             },
             "chrome_android": {
-              "version_added": "59"
+              "version_added": true,
+              "version_removed": "59"
             },
             "edge": {
               "version_added": null
@@ -67,26 +66,39 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "61"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "61"
             },
             "ie": {
-              "version_added": true
+              "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "46"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "46"
             },
             "safari": {
-              "version_added": true
+              "version_added": false
             },
             "safari_ios": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "version_removed": "59"
             }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       }
