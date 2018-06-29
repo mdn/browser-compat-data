@@ -75,12 +75,14 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false,
-              "notes": "While the <code>createWriter()</code> method exists in Firefox 50, it is not supported, and immediately reports an <code>NS_ERROR_DOM_SECURITY_ERR</code> error to the error callback. The method was removed entirely in Firefox 52."
+              "version_added": "50",
+              "version_removed": "52",
+              "notes": "While the <code>createWriter()</code> method existed, it immediately called <code>errorCallback</code> with the <code>NS_ERROR_DOM_SECURITY_ERR</code> error."
             },
             "firefox_android": {
-              "version_added": false,
-              "notes": "While the <code>createWriter()</code> method exists in Firefox 50, it is not supported, and immediately reports an <code>NS_ERROR_DOM_SECURITY_ERR</code> error to the error callback. The method was removed entirely in Firefox 52."
+              "version_added": "50",
+              "version_removed": "52",
+              "notes": "While the <code>createWriter()</code> method existed, it immediately called <code>errorCallback</code> with the <code>NS_ERROR_DOM_SECURITY_ERR</code> error."
             },
             "ie": {
               "version_added": false
