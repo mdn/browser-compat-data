@@ -77,12 +77,14 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false,
-              "notes": "While the <code><a href='https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/removeRecursively'>removeRecursively()</a></code> method exists in Firefox 50, all it does is immediately call the error callback with <code>NS_ERROR_DOM_SECURITY_ERR</code>. It has been removed altogether as of Firefox 52, and has been removed from the spec."
+              "version_added": "50",
+              "version_removed": "52",
+              "notes": "While the <code><a href='https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/removeRecursively'>removeRecursively()</a></code> method existed, it immediately called the error callback with <code>NS_ERROR_DOM_SECURITY_ERR</code>."
             },
             "firefox_android": {
-              "version_added": false,
-              "notes": "While the <code><a href='https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/removeRecursively'>removeRecursively()</a></code> method exists in Firefox 50, all it does is immediately call the error callback with <code>NS_ERROR_DOM_SECURITY_ERR</code>. It has been removed altogether as of Firefox 52, and has been removed from the spec."
+              "version_added": "50",
+              "version_removed": "52",
+              "notes": "While the <code><a href='https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/removeRecursively'>removeRecursively()</a></code> method existed, it immediately called the error callback with <code>NS_ERROR_DOM_SECURITY_ERR</code>."
             },
             "ie": {
               "version_added": false
@@ -99,6 +101,11 @@
             "safari_ios": {
               "version_added": false
             }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
