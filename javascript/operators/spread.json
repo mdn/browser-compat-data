@@ -195,10 +195,21 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "8",
-                "notes": "Available since Node.js 8.3.0 (was a staged feature available with --harmony flag since Node.js 8.0.0)"
-              },
+              "nodejs": [
+                {
+                  "version_added": "8.3.0"
+                },
+                {
+                  "version_added": "8.0.0",
+                  "version_removed": "8.3.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": null
               },
