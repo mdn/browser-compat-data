@@ -5,32 +5,32 @@ This document helps you to understand how mdn-browser-compat-data is organized a
 ## Where to find compat data
 ### The folder structure
 
-Compatibility data is organized in top-level directories for each broad area covered: for example, "http",
-"javascript", "webextensions". Inside each of these directories is one or more
-JSON file containing the compatibility data.
+Compatibility data is organized in top-level directories for each broad area covered: for example, `http`,
+`javascript`, and `webextensions`. Inside each of these directories is one or more
+JSON files containing the compatibility data.
 
 - [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
-- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors and at-rules.
+- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
 
-- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes and global attributes.
+- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
 
-- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses and methods.
+- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
 
-- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators and or other ECMAScript language features.
+- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
 
-- [mathml/](https://github.com/mdn/browser-compat-data/tree/master/mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes and global attributes.
+- [mathml/](https://github.com/mdn/browser-compat-data/tree/master/mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
+
+- [svg/](https://github.com/mdn/browser-compat-data/tree/master/svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
 
 - [webdriver/](https://github.com/mdn/browser-compat-data/tree/master/webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
 
 - [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-- [svg/](https://github.com/mdn/browser-compat-data/tree/master/svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes and global attributes.
-
 ### File and folder breakdown
 The JSON files contain [feature identifiers](#feature-identifiers),
 which are relevant for accessing the data. Except for the top-level directories,
-the file and sub folder hierarchies aren't of any meaning for the exports.
+the file and sub-folder hierarchies aren't of any meaning for the exports.
 Compatibility data can be stored in a single large file or might be divided in
 smaller files and put into sub folders.
 
@@ -54,7 +54,7 @@ In the JSON file it looks like this:
         "end": {
           "__compat": {}
         }
-      },
+      }
     }
   }
 }
@@ -76,6 +76,46 @@ What it represents exactly depends of the evolution of the feature over time, bo
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
+#### API-specific subfeatures
+
+The following conventions apply to compatibility data in the `api/` directory.
+
+Worker support for a given feature in `api/` should be in a subfeature titled `worker_support`. It should also have the description `Available in workers`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "ImageData": {
+        "__compat": {
+          "description": "<code>ImageData()</code> constructor",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
 ### The `__compat` object
 The `__compat` object consists of the following:
 
@@ -89,35 +129,35 @@ The `<code>` and `<a>` HTML elements can be used.
 
 * An optional `status` property for __status information__.
 An object containing information about the stability of the feature:
-Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore ([see below](#status-information)).
+Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
 
 * An optional `mdn_url` property which __points to an MDN reference page documenting the feature__.
-It needs to be a valid URL.
+It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 ### The `support` object
 Each `__compat` object contains support information. For each browser identifier, it contains a [`support_statement`](#the-support_statement-object) object with
-information about versions, prefixes or alternate names, as well as notes.
+information about versions, prefixes, or alternate names, as well as notes.
 
 #### Browser identifiers
 
-The currently accepted browser identifiers should be declared in the following order:
-* `webview_android`, Webview, the former stock browser on Android,
-* `chrome`, Google Chrome (on desktops),
-* `chrome_android`, Google Chrome (on Android),
-* `edge`, MS Edge (on Windows),
-* `edge_mobile`, MS Edge, the mobile version,
-* `firefox`, Mozilla Firefox (on desktops),
-* `firefox_android`, Firefox for Android, sometimes nicknamed Fennec,
-* `ie`, Microsoft Internet Explorer (discontinued),
-* `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine,
-* `opera`, the Opera browser (desktop), based on Blink since Opera 15,
-* `opera_android`, the Opera browser (Android version),
-* `qq_android`, the QQ browser (Android version),
-* `safari`, Apple Safari, on Mac OS,
-* `safari_ios`, Apple Safari, on iOS,
-* `samsunginternet_android`, the Samsung Internet browser (Android version).
-* `uc_android`, UC Browser (Android version).
-* `uc_chinese_android`, UC Browser (Chinese Android version).
+The currently accepted browser identifiers should be declared in alphabetical order:
+* `chrome`, Google Chrome (on desktops)
+* `chrome_android`, Google Chrome (on Android)
+* `edge`, MS Edge (on Windows)
+* `edge_mobile`, MS Edge, the mobile version
+* `firefox`, Mozilla Firefox (on desktops)
+* `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
+* `ie`, Microsoft Internet Explorer (discontinued)
+* `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
+* `opera`, the Opera browser (desktop), based on Blink since Opera 15
+* `opera_android`, the Opera browser (Android version)
+* `qq_android`, the QQ browser (Android version)
+* `safari`, Safari on macOS
+* `safari_ios`, Safari on iOS
+* `samsunginternet_android`, the Samsung Internet browser (Android version)
+* `uc_android`, UC Browser (Android version)
+* `uc_chinese_android`, UC Browser (Chinese Android version)
+* `webview_android`, Webview, the former stock browser on Android
 
 No browser identifier is mandatory.
 
@@ -125,7 +165,6 @@ No browser identifier is mandatory.
 The `support_statement` object describes the support provided by a single browser type for the given subfeature.
 It is an array of `simple_support_statement` objects, but if there
 is only one of them, the array must be omitted.
-
 
 Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
 ```json
@@ -183,12 +222,12 @@ entirely unknown. Examples:
 * Support unknown (default value, if browser omitted):
 ```json
 {
-  "version_added" : null
+  "version_added": null
 }
 ```
 
 #### `version_removed`
-Contains a string with the version number the sub-feature is
+Contains a string with the version number the sub-feature was
 removed in. It may also be a Boolean value of (`true` or `false`), or the
 `null` value.
 
@@ -278,14 +317,14 @@ Example for two flags required:
       "type": "preference",
       "name": "javascript.options.streams",
       "value_to_set": "true"
-    },
+    }
   ]
 }
 ```
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
-follows the current specification close enough to not create major interoperability problems.
+follows the current specification closely enough to not create major interoperability problems.
 It defaults to `false` (no interoperability problem expected).
 If set to `true`, it is recommended to add a note indicating how it diverges from
 the standard (implements an old version of the standard, for example).
@@ -308,8 +347,8 @@ the array can be a just a string. Example:
 The `<code>` and `<a>` HTML elements can be used.
 
 ### Status information
-The status property informs about stability of the feature. It is an optional object named
-`status` and has three mandatory properties:
+The status property contains information about stability of the feature. It is
+an optional object named `status` and has three mandatory properties:
 * `experimental`: a `boolean` value that indicates this functionality is
 intended to be an addition to the Web platform. Some features are added to
 conduct tests. Set to `false`, it means the functionality is mature, and no
@@ -330,6 +369,6 @@ It might be removed in the future or might only be kept for compatibility purpos
 ```
 
 ### Localization
-We are planning localize some of this data (e.g. notes, descriptions).
-At this point we haven't decided how and when we are going to do that.
+We are planning to localize some of this data (e.g. notes, descriptions).
+At this point we haven't decided how or when we are going to do that.
 See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
