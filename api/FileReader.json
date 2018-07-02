@@ -18,7 +18,7 @@
           },
           "firefox": {
             "version_added": "3.6",
-            "notes": "Prior to Firefox 4.0 beta 7, all Blob parameters below were File parameters; this has since been updated to match the specification correctly. Prior to Firefox 13.0 the FileReader.error property returned a `FileError` object. This interface has been removed and `FileReader.error` is now returning the `DOMError` object as defined in the latest FileAPI draft."
+            "notes": "Prior to Firefox 4, <code>Blob</code> parameters were <code>File</code> parameters."
           },
           "firefox_android": {
             "version_added": "32"
@@ -113,12 +113,6 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": "58"
-            },
-            "firefox_android": {
-              "version_added": "58"
-            },
             "ie": {
               "version_added": false
             },
@@ -158,10 +152,18 @@
             },
             "firefox": {
               "version_added": "3.6",
-              "notes": "Prior to Firefox 4.0 beta 7, all Blob parameters below were File parameters; this has since been updated to match the specification correctly. Prior to Firefox 13.0 the FileReader.error property returned a `FileError` object. This interface has been removed and `FileReader.error` is now returning the `DOMError` object as defined in the latest FileAPI draft."
+              "notes": [
+                "Prior to Firefox 13, the <code>error</code> property returned a <code>FileError</code> object.",
+                "From Firefox 13 to Firefox 58, the <code>error</code> property returned a <code>DOMError</code> object.",
+                "From Firefox 58, the <code>error</code> property returned a <code>DOMException</code> object."
+              ]
             },
             "firefox_android": {
-              "version_added": "32"
+              "version_added": "32",
+              "notes": [
+                "From Firefox 32 to Firefox 58, the <code>error</code> property returned a <code>DOMError</code> object.",
+                "From Firefox 58, the <code>error</code> property returned a <code>DOMException</code> object."
+              ]
             },
             "ie": {
               "version_added": "10",
@@ -360,8 +362,7 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": "3.6",
-              "notes": "Prior to Firefox 4.0 beta 7, all Blob parameters below were File parameters; this has since been updated to match the specification correctly. Prior to Firefox 13.0 the FileReader.error property returned a `FileError` object. This interface has been removed and `FileReader.error` is now returning the `DOMError` object as defined in the latest FileAPI draft."
+              "version_added": "3.6"
             },
             "firefox_android": {
               "version_added": "32"
