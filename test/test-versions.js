@@ -1,7 +1,8 @@
-var browsers = require('..').browsers;
+'use strict';
+const {browsers} = require('..');
 
-var validBrowserVersions = {};
-for (let browser of Object.keys(browsers)) {
+const validBrowserVersions = {};
+for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
 }
 
@@ -14,22 +15,22 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 function testVersions(dataFilename) {
-  var hasErrors = false;
-  var data = require(dataFilename);
+  const data = require(dataFilename);
+  let hasErrors = false;
 
   function checkVersions(supportData) {
-    var browsersToCheck = Object.keys(supportData);
-    for (let browser of browsersToCheck) {
+    const browsersToCheck = Object.keys(supportData);
+    for (const browser of browsersToCheck) {
       if (validBrowserVersions[browser]) {
 
-        let supportStatements = [];
+        const supportStatements = [];
         if (Array.isArray(supportData[browser])) {
           Array.prototype.push.apply(supportStatements, supportData[browser]);
         } else {
           supportStatements.push(supportData[browser]);
         }
 
-        for (let statement of supportStatements) {
+        for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
             console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number for ' + browser);
             console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
@@ -40,17 +41,24 @@ function testVersions(dataFilename) {
             console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
             hasErrors = true;
           }
+          if ("version_removed" in statement && "version_added" in statement) {
+            if (typeof statement.version_added !== "string" && statement.version_added !== true) {
+              console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number when version_removed is present');
+              console.error('  Valid', browser, 'versions are:', validBrowserVersions[browser].length > 0 ? 'true, ' + validBrowserVersions[browser].join(', ') : 'true');
+              hasErrors = true;
+            }
+          }
         }
       }
     }
   }
 
   function findSupport(data) {
-    for (var prop in data) {
+    for (const prop in data) {
       if (prop === 'support') {
         checkVersions(data[prop]);
       }
-      var sub = data[prop];
+      const sub = data[prop];
       if (typeof(sub) === "object") {
         findSupport(sub);
       }

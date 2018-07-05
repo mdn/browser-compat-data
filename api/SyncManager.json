@@ -4,29 +4,26 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SyncManager",
         "support": {
-          "webview_android": {
-            "version_added": "61"
-          },
           "chrome": {
-            "version_added": "61"
+            "version_added": "49"
           },
           "chrome_android": {
-            "version_added": "61"
+            "version_added": "49"
           },
           "edge": {
-            "version_added": true
+            "version_added": false
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": false
           },
           "firefox": {
-            "version_added": null
+            "version_added": false
           },
           "firefox_android": {
-            "version_added": null
+            "version_added": false
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
             "version_added": false
@@ -35,10 +32,16 @@
             "version_added": false
           },
           "safari": {
-            "version_added": null
+            "version_added": false
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": false
+          },
+          "samsunginternet_android": {
+            "version_added": false
+          },
+          "webview_android": {
+            "version_added": "49"
           }
         },
         "status": {
@@ -47,33 +50,44 @@
           "deprecated": false
         }
       },
-      "register": {
+      "worker_support": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SyncManager/register",
+          "description": "Available in workers",
           "support": {
-            "webview_android": {
-              "version_added": "61"
-            },
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
+            "chrome": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "49",
+                "partial_implementation": true,
+                "notes": "Only available in the <code>Window</code> and <code>ServiceWorker</code> global scopes."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "49",
+                "partial_implementation": true,
+                "notes": "Only available in the <code>Window</code> and <code>ServiceWorker</code> global scopes."
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": false
@@ -82,10 +96,74 @@
               "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "49",
+                "partial_implementation": true,
+                "notes": "Only available in the <code>Window</code> and <code>ServiceWorker</code> global scopes."
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "register": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SyncManager/register",
+          "support": {
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "49"
             }
           },
           "status": {
@@ -99,41 +177,44 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SyncManager/getTags",
           "support": {
-            "webview_android": {
-              "version_added": "61"
-            },
             "chrome": {
-              "version_added": "61"
+              "version_added": "49"
             },
             "chrome_android": {
-              "version_added": "61"
+              "version_added": "49"
             },
             "edge": {
-              "version_added": true
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": null
             },
             "opera_android": {
-              "version_added": false
+              "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "49"
             }
           },
           "status": {
