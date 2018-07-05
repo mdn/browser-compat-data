@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad",
         "support": {
-          "webview_android": {
-            "version_added": false
-          },
           "chrome": [
             {
               "version_added": "35"
@@ -17,9 +14,16 @@
               "version_removed": "34"
             }
           ],
-          "chrome_android": {
-            "version_added": true
-          },
+          "chrome_android": [
+            {
+              "version_added": "35"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "21",
+              "version_removed": "34"
+            }
+          ],
           "edge": {
             "version_added": true
           },
@@ -58,13 +62,26 @@
               "version_removed": "21"
             }
           ],
-          "opera_android": {
-            "version_added": false
-          },
+          "opera_android": [
+            {
+              "version_added": "22"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "15",
+              "version_removed": "21"
+            }
+          ],
           "safari": {
             "version_added": false
           },
           "safari_ios": {
+            "version_added": false
+          },
+          "samsunginternet_android": {
+            "version_added": true
+          },
+          "webview_android": {
             "version_added": false
           }
         },
@@ -74,13 +91,75 @@
           "deprecated": false
         }
       },
+      "Gamepad": {
+        "__compat": {
+          "description": "<code>Gamepad()</code> constructor",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/Gamepad",
+          "support": {
+            "chrome": {
+              "version_added": "35"
+            },
+            "chrome_android": {
+              "version_added": "35"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": "32"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "22"
+            },
+            "opera_android": {
+              "version_added": "22"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "axes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/axes",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -91,11 +170,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -132,13 +218,26 @@
                 "version_removed": "21"
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -153,9 +252,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/buttons",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -166,11 +262,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -207,13 +310,26 @@
                 "version_removed": "21"
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -228,9 +344,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/connected",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -241,11 +354,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -282,13 +402,26 @@
                 "version_removed": "21"
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -303,9 +436,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/displayId",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": true,
               "flags": [
@@ -321,7 +451,7 @@
               "notes": "Currently supported only by Google Daydream."
             },
             "edge": {
-              "version_added": true
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
@@ -331,6 +461,12 @@
               "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
             },
             "ie": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -345,9 +481,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/hand",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -355,7 +488,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": false
@@ -387,6 +520,12 @@
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -401,9 +540,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/hapticActuators",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -411,7 +547,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": false
@@ -443,6 +579,12 @@
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -457,9 +599,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/id",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -470,11 +609,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -518,6 +664,12 @@
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -532,9 +684,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/index",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -545,11 +694,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -593,6 +749,12 @@
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -607,9 +769,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/mapping",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -620,11 +779,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -661,13 +827,26 @@
                 "version_removed": "21"
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -682,9 +861,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/pose",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -692,7 +868,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": false
@@ -725,6 +901,12 @@
             },
             "safari_ios": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -738,9 +920,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/timestamp",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": [
               {
                 "version_added": "35"
@@ -751,11 +930,18 @@
                 "version_removed": "34"
               }
             ],
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "21",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -792,13 +978,26 @@
                 "version_removed": "21"
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": false
             }
           },

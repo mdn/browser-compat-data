@@ -40,6 +40,17 @@
         }
       },
       "required": ["version_added"],
+      "anyOf": [
+        {
+          "not": {"required": ["prefix","alternative_name"]}
+        },
+        {
+          "oneOf": [
+            {"required": ["prefix"]},
+            {"required": ["alternative_name"]}
+          ]
+        }
+      ],
       "additionalProperties": false
     },
 

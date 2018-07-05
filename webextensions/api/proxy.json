@@ -2,9 +2,43 @@
   "webextensions": {
     "api": {
       "proxy": {
-        "onProxyError": {
+        "onError": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onProxyError",
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "onProxyError",
+                  "version_added": "55"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "onProxyError",
+                  "version_added": "55"
+                }
+              ],
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onRequest": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onRequest",
             "support": {
               "chrome": {
                 "version_added": false
@@ -13,10 +47,54 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": "55"
+                "version_added": "60"
               },
               "firefox_android": {
-                "version_added": "55"
+                "version_added": "60"
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "ProxyInfo": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/ProxyInfo",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "60"
+              },
+              "firefox_android": {
+                "version_added": "60"
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "RequestDetails": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/RequestDetails",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "60"
+              },
+              "firefox_android": {
+                "version_added": "60"
               },
               "opera": {
                 "version_added": false
@@ -43,8 +121,42 @@
                   "version_added": "55"
                 }
               ],
+              "firefox_android": [
+                {
+                  "version_added": "56"
+                },
+                {
+                  "alternative_name": "registerProxyScript",
+                  "version_added": "55"
+                }
+              ],
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "settings": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/settings",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "notes": [
+                  "In version 59, this property was listed as <code>proxyConfig</code> in the <code>browserSettings</code> namespace, but had a bug that made it mostly unusable."
+                ],
+                "version_added": "60"
+              },
               "firefox_android": {
-                "version_added": "55"
+                "notes": [
+                  "In version 59, this property was listed as <code>proxyConfig</code> in the <code>browserSettings</code> namespace, but had a bug that made it mostly unusable."
+                ],
+                "version_added": "60"
               },
               "opera": {
                 "version_added": false
