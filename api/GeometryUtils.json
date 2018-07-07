@@ -20,12 +20,12 @@
             "version_added": null
           },
           "firefox": {
-            "version_added": false,
-            "notes": "Firefox currently only implements the <code>getBoxQuads()</code> method behind the preference <code>layout.css.getBoxQuads.enabled</code>, defaulting to <code>true</code> in Firefox Nightly and to <code>false</code> in all other versions."
+            "version_added": "31",
+            "partial_implementation": true
           },
           "firefox_android": {
-            "version_added": false,
-            "notes": "Firefox currently only implements the <code>getBoxQuads()</code> method behind the preference <code>layout.css.getBoxQuads.enabled</code>, defaulting to <code>true</code> in Firefox Nightly and to <code>false</code> in all other versions."
+            "version_added": "31",
+            "partial_implementation": true
           },
           "ie": {
             "version_added": null
@@ -50,6 +50,71 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "getBoxQuads": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeometryUtils/getBoxQuads",
+          "support": {
+            "webview_android": {
+              "version_added": null
+            },
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "31",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.getBoxQuads.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": "31",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.getBoxQuads.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       }
     }
