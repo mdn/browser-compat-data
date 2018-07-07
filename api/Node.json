@@ -1207,17 +1207,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Node/cloneNode",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "notes": "<code>deep</code> optional parameter, default value is <code>false</code>"
-            },
             "chrome": {
-              "version_added": true,
-              "notes": "<code>deep</code> optional parameter, default value is <code>false</code>"
+              "version_added": true
             },
             "chrome_android": {
-              "version_added": true,
-              "notes": "<code>deep</code> optional parameter, default value is <code>false</code>"
+              "version_added": true
             },
             "edge": {
               "version_added": true
@@ -1225,76 +1219,107 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": [
-              {
-                "version_added": "29",
-                "notes": "<code>deep</code> defaults to <code>false</code>."
-              },
-              {
-                "version_added": "13",
-                "version_removed": "29",
-                "partial_implementation": true,
-                "notes": "<code>deep</code> defaults to <code>true</code>."
-              },
-              {
-                "version_added": true,
-                "version_removed": "13",
-                "partial_implementation": true,
-                "notes": "<code>deep</code> is a required parameter."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "29",
-                "notes": "<code>deep</code> defaults to <code>false</code>."
-              },
-              {
-                "version_added": "14",
-                "version_removed": "29",
-                "partial_implementation": true,
-                "notes": "<code>deep</code> defaults to <code>true</code>."
-              },
-              {
-                "version_added": true,
-                "version_removed": "14",
-                "partial_implementation": true,
-                "notes": "<code>deep</code> is a required parameter."
-              }
-            ],
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
             "ie": {
               "version_added": true
             },
-            "opera": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": null,
-                "notes": "<code>deep</code> as an optional parameter"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": null,
-                "notes": "<code>deep</code> as an optional parameter"
-              }
-            ],
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
             "safari": {
-              "version_added": true,
-              "notes": "<code>deep</code> optional parameter, default value is <code>false</code>"
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": true,
-              "notes": "<code>deep</code> optional parameter, default value is <code>false</code>"
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "deep_defaults_to_false": {
+          "__compat": {
+            "description": "<code>deep</code> defaults to <code>false</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": [
+                {
+                  "version_added": "29"
+                },
+                {
+                  "version_added": "13",
+                  "version_removed": "29",
+                  "notes": "<code>deep</code> defaults to <code>true</code>."
+                },
+                {
+                  "version_added": true,
+                  "version_removed": "13",
+                  "notes": "<code>deep</code> is a required parameter."
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "29"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "29",
+                  "notes": "<code>deep</code> defaults to <code>true</code>."
+                },
+                {
+                  "version_added": true,
+                  "version_removed": "14",
+                  "notes": "<code>deep</code> is a required parameter."
+                }
+              ],
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -1372,8 +1397,7 @@
               "version_added": "9"
             },
             "ie": {
-              "version_added": "5",
-              "notes": "Only supports <code>contains</code> for elements"
+              "version_added": "5"
             },
             "opera": {
               "version_added": true
@@ -1382,8 +1406,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": "3",
-              "notes": "Safari version 2.x implemented <code>contains</code> incorrectly"
+              "version_added": true
             },
             "safari_ios": {
               "version_added": true
@@ -2005,13 +2028,11 @@
             },
             "firefox": {
               "version_added": "1",
-              "version_removed": "22",
-              "notes": "The method is still available from chrome scripts"
+              "version_removed": "22"
             },
             "firefox_android": {
               "version_added": "4",
-              "version_removed": "22",
-              "notes": "The method is still available from chrome scripts"
+              "version_removed": "22"
             },
             "ie": {
               "version_added": null
@@ -2155,13 +2176,11 @@
             },
             "firefox": {
               "version_added": "1",
-              "version_removed": "22",
-              "notes": "The method is still available from chrome scripts"
+              "version_removed": "22"
             },
             "firefox_android": {
               "version_added": "4",
-              "version_removed": "22",
-              "notes": "The method is still available from chrome scripts"
+              "version_removed": "22"
             },
             "ie": {
               "version_added": null
