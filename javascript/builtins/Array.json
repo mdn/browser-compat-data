@@ -734,9 +734,21 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "6"
-              },
+              "nodejs": [
+                {
+                  "version_added": "6.0.0"
+                },
+                {
+                  "version_added": "5.0.0",
+                  "version_removed": "6.0.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": "34"
               },
