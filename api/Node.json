@@ -1344,20 +1344,38 @@
             },
             "firefox": [
               {
-                "version_added": true
+                "version_added": "29",
+                 "notes": "<code>deep</code> defaults to <code>false</code>."
               },
               {
                 "version_added": "14",
-                "notes": "<code>deep</code> as an optional parameter"
+                "version_removed": "29",
+                "partial_implementation": true,
+                "notes": "<code>deep</code> defaults to <code>true</code>."
+              },
+              {
+                "version_added": true,
+                "version_removed": "14",
+                "partial_implementation": true,
+                "notes": "<code>deep</code> is a required parameter."
               }
             ],
             "firefox_android": [
               {
-                "version_added": true
+                "version_added": "29",
+                "notes": "<code>deep</code> defaults to <code>false</code>."
               },
               {
-                "version_added": "13",
-                "notes": "<code>deep</code> as an optional parameter"
+                "version_added": "14",
+                "version_removed": "29",
+                "partial_implementation": true,
+                "notes": "<code>deep</code> defaults to <code>true</code>."
+              },
+              {
+                "version_added": true,
+                "version_removed": "14",
+                "partial_implementation": true,
+                "notes": "<code>deep</code> is a required parameter."
               }
             ],
             "ie": {
@@ -1495,54 +1513,6 @@
           }
         }
       },
-      "getRootNode": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Node/getRootNode",
-          "support": {
-            "webview_android": {
-              "version_added": "54"
-            },
-            "chrome": {
-              "version_added": "54"
-            },
-            "chrome_android": {
-              "version_added": "54"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "53"
-            },
-            "firefox_android": {
-              "version_added": "53"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": "41"
-            },
-            "opera_android": {
-              "version_added": "41"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "hasChildNodes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Node/hasChildNodes",
@@ -1596,13 +1566,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Node/insertBefore",
           "support": {
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome": {
               "version_added": true
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "1"
             },
             "edge": {
               "version_added": true
@@ -1710,7 +1680,7 @@
               "version_added": "2"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -1992,13 +1962,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Node/replaceChild",
           "support": {
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "1"
             },
             "edge": {
               "version_added": true
@@ -2010,7 +1980,7 @@
               "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "6"
