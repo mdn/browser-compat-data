@@ -87,9 +87,20 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": null
-            },
+            "nodejs": [
+              {
+                "version_added": "7.6.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "42"
             },
@@ -1674,13 +1685,14 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "8",
+              "version_added": "8.5.0",
               "flags": [
                 {
                   "name": "--experimental-modules",
                   "type": "runtime_flag"
                 }
-              ]
+              ],
+              "notes": "files must have suffix .mjs, not .js"
             },
             "opera": {
               "version_added": "47"
