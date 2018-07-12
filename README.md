@@ -88,3 +88,4 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 * [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
 * [mdncomp](https://github.com/epistemex/mdncomp) - View compatibility data on the command line.
 * [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.
+* [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
