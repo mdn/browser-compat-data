@@ -1,6 +1,6 @@
-var fs = require('fs');
-var path = require('path');
-var hasErrors = false;
+'use strict';
+const fs = require('fs');
+let hasErrors = false;
 
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
@@ -18,10 +18,10 @@ function jsonDiff(actual, expected) {
 }
 
 function testStyle(filename) {
-  var actual = fs.readFileSync(filename, 'utf-8').trim();
-  var expected = JSON.stringify(JSON.parse(actual), null, 2);
+  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(JSON.parse(actual), null, 2);
 
-  var platform = require("os").platform;
+  const {platform} = require("os");
   if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
     actual = actual.replace(/\r/g, "");
     expected = expected.replace(/\r/g, "");
@@ -35,7 +35,7 @@ function testStyle(filename) {
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
-  let bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
+  const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
@@ -43,7 +43,7 @@ function testStyle(filename) {
       bugzillaMatch[1]);
   }
 
-  let crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);
+  const crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
@@ -51,7 +51,7 @@ function testStyle(filename) {
       crbugMatch[1]);
   }
 
-  let mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`)
+  const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
     console.error(
@@ -62,7 +62,7 @@ function testStyle(filename) {
 
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
-    console.error('\x1b[33m  Style – Found \\\" but expected \' for <a href>.\x1b[0m');
+    console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
   }
 
   return hasErrors;
