@@ -1,6 +1,5 @@
 'use strict';
 const fs = require('fs');
-let hasErrors = false;
 
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
@@ -18,6 +17,7 @@ function jsonDiff(actual, expected) {
 }
 
 function testStyle(filename) {
+  let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual), null, 2);
 
