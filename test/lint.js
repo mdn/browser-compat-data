@@ -4,6 +4,7 @@ const path = require('path');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
+const {testConsistency} = require('./test-consistency');
 /** @type {Map<string,string>} */
 const filesWithErrors = new Map();
 
@@ -24,7 +25,7 @@ function load(...files) {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        let hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
+        let hasStyleErrors, hasSchemaErrors, hasVersionErrors, hasConsistencyErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
         console.log(relativeFilePath);
         if (file.indexOf('browsers' + path.sep) !== -1) {
@@ -33,8 +34,9 @@ function load(...files) {
           hasSchemaErrors = testSchema(file);
           hasStyleErrors = testStyle(file);
           hasVersionErrors = testVersions(file);
+          hasConsistencyErrors = testConsistency(file);
         }
-        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
+        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors || hasConsistencyErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
         }
@@ -79,6 +81,7 @@ if (hasErrors) {
     testSchema(file);
     testStyle(file);
     testVersions(file);
+    testConsistency(file);
   }
   process.exit(1);
 }
