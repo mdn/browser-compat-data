@@ -21,7 +21,10 @@
           },
           "firefox": {
             "version_added": "8",
-            "notes": "Prior to Firefox 8, the WebSocket close event was sent to the listener as a simple event. Prior to Firefox 12, the close code CLOSE_NORMAL was used when the channel was closed due to an unexpected error or unspecified error conditoin."
+            "notes": [
+              "Prior to Firefox 12, the close code <code>CLOSE_NORMAL</code> was used when the channel was closed due to an unexpected error or unspecified error condition.",
+              "Prior to Firefox 8, the <code>WebSocket</code> close event was sent to the listener as a simple event."
+            ]
           },
           "firefox_android": {
             "version_added": "8"
