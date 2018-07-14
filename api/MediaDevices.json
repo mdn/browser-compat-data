@@ -5,40 +5,40 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices",
         "support": {
           "webview_android": {
-            "version_added": null
+            "version_added": "47"
           },
           "chrome": {
-            "version_added": null
+            "version_added": "47"
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": "47"
           },
           "edge": {
-            "version_added": null
+            "version_added": true
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": true
           },
           "firefox": {
-            "version_added": null
+            "version_added": "36"
           },
           "firefox_android": {
-            "version_added": null
+            "version_added": "36"
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": null
+            "version_added": "30"
           },
           "opera_android": {
-            "version_added": null
+            "version_added": "30"
           },
           "safari": {
-            "version_added": null
+            "version_added": false
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": false
           },
           "samsunginternet_android": {
             "version_added": null
@@ -55,13 +55,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/ondevicechange",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": false
             },
             "chrome": {
-              "version_added": null
+              "version_added": "57"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
               "version_added": null
@@ -70,7 +70,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "51",
+              "notes": [
+                "Support for the devicechange event and for MediaDevices.ondevicechange landed in Firefox 51, but only for Mac, and disabled by default. It can be enabled by setting the preference media.ondevicechange.enabled to true. Support for this event was added for Linux and Windows—and it was enabled by default—starting in Firefox 52."
+              ]
             },
             "firefox_android": {
               "version_added": null
@@ -79,10 +82,10 @@
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "34"
             },
             "safari": {
               "version_added": null
@@ -106,40 +109,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "47"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "39"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "39"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "34"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
@@ -157,13 +160,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "53"
             },
             "chrome": {
-              "version_added": null
+              "version_added": "53"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "52"
             },
             "edge": {
               "version_added": null
@@ -172,25 +175,25 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "44"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "50"
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": "40"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "40"
             },
             "safari": {
-              "version_added": null
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": null
@@ -208,40 +211,65 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": "53",
+              "notes": [
+                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator.",
+                "Chrome throws error if the page serving the script is loaded from insecure origin (i.e. HTTP)."
+              ]
             },
             "chrome": {
-              "version_added": null
+              "version_added": "53",
+              "notes": [
+                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator.",
+                "Chrome throws error if the page serving the script is loaded from insecure origin (i.e. HTTP)."
+              ]
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "53",
+              "notes": [
+                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator.",
+                "Chrome throws error if the page serving the script is loaded from insecure origin (i.e. HTTP)."
+              ]
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "36",
+              "notes": [
+                "Older versions of Firefox implement navigator.mozGetUserMedia(), the prefixed version of the legacy navigator.getUserMedia method.",
+                "Prior to Firefox 55, getUserMedia() incorrectly returns NotSupportedError when the list of constraints specified is empty, or has all constraints set to false. Starting in Firefox 55, this situation now correctly calls the failure handler with a TypeError."
+              ]
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "36",
+              "notes": [
+                "Older versions of Firefox implement navigator.mozGetUserMedia(), the prefixed version of the legacy navigator.getUserMedia method."
+              ]
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "40",
+              "notes": [
+                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator."
+              ]
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "40",
+              "notes": [
+                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator."
+              ]
             },
             "safari": {
-              "version_added": null
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": null
@@ -252,6 +280,57 @@
             "standard_track": true,
             "deprecated": false
           }
+        }
+      }
+    },
+    "enumerateDevices": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
+        "support": {
+          "webview_android": {
+            "version_added": "47"
+          },
+          "chrome": {
+            "version_added": "47"
+          },
+          "chrome_android": {
+            "version_added": "47"
+          },
+          "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
+            "version_added": true
+          },
+          "firefox": {
+            "version_added": "39"
+          },
+          "firefox_android": {
+            "version_added": "39"
+          },
+          "ie": {
+            "version_added": false
+          },
+          "opera": {
+            "version_added": "34"
+          },
+          "opera_android": {
+            "version_added": "34"
+          },
+          "safari": {
+            "version_added": false
+          },
+          "safari_ios": {
+            "version_added": false
+          },
+          "samsunginternet_android": {
+            "version_added": null
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
         }
       }
     }
