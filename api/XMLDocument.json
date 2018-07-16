@@ -14,16 +14,16 @@
             "version_added": false
           },
           "edge": {
-            "version_added": null
+            "version_added": true
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": true
           },
           "firefox": {
-            "version_added": true
+            "version_added": "1"
           },
           "firefox_android": {
-            "version_added": true
+            "version_added": "4"
           },
           "ie": {
             "version_added": false
@@ -64,16 +64,25 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
-            "firefox": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "3",
+                "notes": "See <a href='https://bugzil.la/332175' title='Drop document.load() support'>bug 332175</a> for removal."
+              },
+              {
+                "version_added": "1",
+                "version_removed": "3",
+                "notes": "Before version 3, Firefox supported cross‑origin loads, even in cases where this would violate CORS."
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": "4",
+              "notes": "See <a href='https://bugzil.la/332175' title='Drop document.load() support'>bug 332175</a> for removal."
             },
             "ie": {
               "version_added": false
@@ -95,7 +104,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
             "deprecated": true
           }
