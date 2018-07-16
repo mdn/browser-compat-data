@@ -60,6 +60,16 @@ function testStyle(filename) {
       mdnUrlMatch[2]);
   }
 
+  let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
+  if (constructorMatch) {
+    hasErrors = true;
+    console.error(
+      '\x1b[33m  Style – Use parentheses in constructor description: %s → %s()\x1b[0m',
+      constructorMatch[1],
+      constructorMatch[1]
+    );
+  }
+
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
     console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
