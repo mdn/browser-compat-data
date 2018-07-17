@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices",
         "support": {
-          "webview_android": {
-            "version_added": "47"
-          },
           "chrome": {
             "version_added": "47"
           },
@@ -42,6 +39,9 @@
           },
           "samsunginternet_android": {
             "version_added": null
+          },
+          "webview_android": {
+            "version_added": "47"
           }
         },
         "status": {
@@ -54,9 +54,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/ondevicechange",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": "57"
             },
@@ -69,12 +66,25 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "51",
-              "notes": [
-                "Support for the devicechange event and for MediaDevices.ondevicechange landed in Firefox 51, but only for Mac, and disabled by default. It can be enabled by setting the preference media.ondevicechange.enabled to true. Support for this event was added for Linux and Windows—and it was enabled by default—starting in Firefox 52."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "51",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.ondevicechange.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": null
             },
@@ -95,6 +105,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -108,9 +121,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
           "support": {
-            "webview_android": {
-              "version_added": "47"
-            },
             "chrome": {
               "version_added": "47"
             },
@@ -146,6 +156,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "47"
             }
           },
           "status": {
@@ -159,9 +172,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "53"
             },
@@ -197,6 +207,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
             }
           },
           "status": {
@@ -210,27 +223,44 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia",
           "support": {
-            "webview_android": {
-              "version_added": "53",
-              "notes": [
-                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator.",
-                "Chrome throws error if the page serving the script is loaded from insecure origin (i.e. HTTP)."
-              ]
-            },
-            "chrome": {
-              "version_added": "53",
-              "notes": [
-                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator.",
-                "Chrome throws error if the page serving the script is loaded from insecure origin (i.e. HTTP)."
-              ]
-            },
-            "chrome_android": {
-              "version_added": "53",
-              "notes": [
-                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator.",
-                "Chrome throws error if the page serving the script is loaded from insecure origin (i.e. HTTP)."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
             "edge": {
               "version_added": true
             },
@@ -240,31 +270,57 @@
             "firefox": {
               "version_added": "36",
               "notes": [
-                "Older versions of Firefox implement navigator.mozGetUserMedia(), the prefixed version of the legacy navigator.getUserMedia method.",
-                "Prior to Firefox 55, getUserMedia() incorrectly returns NotSupportedError when the list of constraints specified is empty, or has all constraints set to false. Starting in Firefox 55, this situation now correctly calls the failure handler with a TypeError."
+                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API.",
+                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>."
               ]
             },
             "firefox_android": {
               "version_added": "36",
               "notes": [
-                "Older versions of Firefox implement navigator.mozGetUserMedia(), the prefixed version of the legacy navigator.getUserMedia method."
+                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
               ]
             },
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "40",
-              "notes": [
-                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator."
-              ]
-            },
-            "opera_android": {
-              "version_added": "40",
-              "notes": [
-                "Older versions of Chrome and Opera implement navigator.webkitGetUserMedia, the prefixed version of the legacy navigator.getUserMedia method. From version 47 to 52, the promise-based interface was only available through the adapter.js polyfill, or using the flag chrome://flags/#enable-experimental-web-platform-features. Starting with version 53, the promise-based interface is on by default, though that interface is still not available through navigator."
-              ]
-            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "34",
+                "version_removed": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "34",
+                "version_removed": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
             "safari": {
               "version_added": "11"
             },
@@ -273,6 +329,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
             }
           },
           "status": {
@@ -280,57 +339,107 @@
             "standard_track": true,
             "deprecated": false
           }
-        }
-      }
-    },
-    "enumerateDevices": {
-      "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
-        "support": {
-          "webview_android": {
-            "version_added": "47"
-          },
-          "chrome": {
-            "version_added": "47"
-          },
-          "chrome_android": {
-            "version_added": "47"
-          },
-          "edge": {
-            "version_added": true
-          },
-          "edge_mobile": {
-            "version_added": true
-          },
-          "firefox": {
-            "version_added": "39"
-          },
-          "firefox_android": {
-            "version_added": "39"
-          },
-          "ie": {
-            "version_added": false
-          },
-          "opera": {
-            "version_added": "34"
-          },
-          "opera_android": {
-            "version_added": "34"
-          },
-          "safari": {
-            "version_added": false
-          },
-          "safari_ios": {
-            "version_added": false
-          },
-          "samsunginternet_android": {
-            "version_added": null
-          }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": true,
-          "deprecated": false
+        "secure_context_required": {
+          "__compat": {
+            "description": "Secure context required",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": null
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "Stereo-audio-capture": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       }
     }
