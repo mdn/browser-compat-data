@@ -4,6 +4,7 @@ const path = require('path');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
+const {testBrowsers} = require('./test-browsers');
 /** @type {Map<string,string>} */
 const filesWithErrors = new Map();
 
@@ -24,7 +25,10 @@ function load(...files) {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        let hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
+        let hasStyleErrors = false;
+        let hasSchemaErrors = false;
+        let hasVersionErrors = false;
+        let hasBrowserErrors = false;
         console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
         if (file.indexOf('browsers' + path.sep) !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
@@ -32,8 +36,9 @@ function load(...files) {
           hasSchemaErrors = testSchema(file);
           hasStyleErrors = testStyle(file);
           hasVersionErrors = testVersions(file);
+          hasBrowserErrors = testBrowsers(file);
         }
-        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
+        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors || hasBrowserErrors) {
           hasErrors = true;
           const fileName = file.replace(path.resolve(__dirname, '..') + path.sep, '');
           filesWithErrors.set(fileName, file);
@@ -77,6 +82,7 @@ if (hasErrors) {
     testSchema(file);
     testStyle(file);
     testVersions(file);
+    testBrowsers(file);
   }
   process.exit(1);
 }
