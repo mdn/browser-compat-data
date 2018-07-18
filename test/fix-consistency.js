@@ -63,7 +63,11 @@ const path = require('path');
 
       const support = data[subfeature].__compat.support;
       for (let browser of browsers) {
-        if (typeof support[browser] === null) {
+        if (typeof support[browser] === 'undefined') {
+          support[browser] = {
+            version_added: false
+          };
+        } else if (typeof support[browser] === 'object' && support[browser].version_added === null) {
           support[browser].version_added = false;
         }
       };
