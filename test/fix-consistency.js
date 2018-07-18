@@ -63,12 +63,8 @@ const path = require('path');
 
       const support = data[subfeature].__compat.support;
       for (let browser of browsers) {
-        if (typeof support[browser] === 'object') {
+        if (typeof support[browser] === null) {
           support[browser].version_added = false;
-        } else {
-          support[browser] = {
-            version_added: false
-          };
         }
       };
     }
@@ -89,7 +85,7 @@ const path = require('path');
    * @returns {Array<string>}
    */
   extractUnsupportedBrowsers(compatData) {
-    return this.extractBrowsers(compatData, data => data.version_added === false);;
+    return this.extractBrowsers(compatData, data => data.version_added === false || typeof data.version_removed !== 'undefined' && data.version_removed !== false);
   }
   
   /**
@@ -130,7 +126,7 @@ function fixConsistency(filename) {
 
   console.log("Fixed consistency: " + path.relative(path.resolve(__dirname, '..'), filename));
 
-  const json = JSON.stringify(fixedData, null, 2);
+  const json = JSON.stringify(fixedData, null, 2) + "\n";
   fs.writeFileSync(filename, json, 'utf8');
 }
 

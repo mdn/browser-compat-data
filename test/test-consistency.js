@@ -103,7 +103,7 @@ const path = require('path');
    * @returns {Array<string>}
    */
   extractUnsupportedBrowsers(compatData) {
-    return this.extractBrowsers(compatData, data => data.version_added === false);;
+    return this.extractBrowsers(compatData, data => data.version_added === false || typeof data.version_removed !== 'undefined' && data.version_removed !== false);
   }
   
   /**
