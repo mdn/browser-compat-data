@@ -20,26 +20,38 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.shape-outside.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.shape-outside.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "62"
+              },
+              {
+                "version_added": "61",
+                "version_removed": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.shape-outside.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62"
+              },
+              {
+                "version_added": "61",
+                "version_removed": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.shape-outside.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
