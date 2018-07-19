@@ -1,12 +1,9 @@
 {
   "api": {
-    "CSSCounterStyleRule": {
+    "CSSKeyframesRule": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": {
             "version_added": true
           },
@@ -19,14 +16,24 @@
           "edge_mobile": {
             "version_added": true
           },
-          "firefox": {
-            "version_added": "48",
-            "prefix": "-moz-"
-          },
-          "firefox_android": {
-            "version_added": true,
-            "prefix": "-moz-"
-          },
+          "firefox": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "5",
+              "prefix": "moz"
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "5",
+              "prefix": "moz"
+            }
+          ],
           "ie": {
             "version_added": "10"
           },
@@ -43,6 +50,9 @@
           },
           "safari_ios": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": true
           }
         },
         "status": {
@@ -53,19 +63,101 @@
       },
       "appendRule": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/appendRule",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "notes": "The non-standard name insertRule() was removed in Chrome 45."
+            "chrome": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "version_removed": "45",
+                "alternative_name": "insertRule"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "version_removed": "45",
+                "alternative_name": "insertRule"
+              }
+            ],
+            "edge": {
+              "version_added": null
             },
-            "chrome": {
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "22"
+              },
+              {
+                "version_added": "5",
+                "version_removed": "22",
+                "alternative_name": "insertRule"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "version_added": "5",
+                "version_removed": "22",
+                "alternative_name": "insertRule"
+              }
+            ],
+            "ie": {
+              "version_added": "10",
+              "alternative_name": "insertRule"
+            },
+            "opera": {
               "version_added": true,
-              "notes": "The non-standard name insertRule() was removed in Chrome 45."
+              "alternative_name": "insertRule"
+            },
+            "opera_android": {
+              "version_added": true,
+              "alternative_name": "insertRule"
+            },
+            "safari": {
+              "version_added": true,
+              "alternative_name": "insertRule"
+            },
+            "safari_ios": {
+              "version_added": true,
+              "alternative_name": "insertRule"
+            },
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "version_removed": "45",
+                "alternative_name": "insertRule"
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "cssRules": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/cssRules",
+          "support": {
+            "chrome": {
+              "version_added": null
             },
             "chrome_android": {
-              "version_added": true,
-              "notes": "The non-standard name insertRule() was removed in Chrome 45."
+              "version_added": null
             },
             "edge": {
               "version_added": null
@@ -74,30 +166,172 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": null
             },
             "firefox_android": {
-              "version_added": "22"
+              "version_added": null
             },
             "ie": {
-              "version_added": "10",
-              "notes": "Internet Explorer 10, Safari and Opera implement this with the non-standard name insertRule()."
+              "version_added": null
             },
             "opera": {
-              "version_added": true,
-              "notes": "Internet Explorer 10, Safari and Opera implement this with the non-standard name insertRule()."
+              "version_added": null
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Internet Explorer 10, Safari and Opera implement this with the non-standard name insertRule()."
+              "version_added": null
             },
             "safari": {
-              "version_added": true,
-              "notes": "Internet Explorer 10, Safari and Opera implement this with the non-standard name insertRule()."
+              "version_added": null
             },
             "safari_ios": {
-              "version_added": true,
-              "notes": "Internet Explorer 10, Safari and Opera implement this with the non-standard name insertRule()."
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "deleteRule": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/deleteRule",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "findRule": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/findRule",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "name": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/name",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
