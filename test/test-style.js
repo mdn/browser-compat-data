@@ -1,5 +1,6 @@
 'use strict';
 const fs = require('fs');
+const path = require('path');
 
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
@@ -31,7 +32,7 @@ function testStyle(filename) {
     console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + filename);
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
