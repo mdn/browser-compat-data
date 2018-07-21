@@ -13,7 +13,14 @@
           "edge": {
             "version_added": true
           },
+          "edge_mobile": {
+            "version_added": true
+          },
           "firefox": {
+            "version_added": true,
+            "notes": "The <a href='https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectionchange'><code>GlobalEventHandlers.onselectionchange</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectstart'><code>GlobalEventHandlers.onselectstart</code></a> event handlers are supported as of Firefox 52."
+          },
+          "firefox_android": {
             "version_added": true,
             "notes": "The <a href='https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectionchange'><code>GlobalEventHandlers.onselectionchange</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectstart'><code>GlobalEventHandlers.onselectstart</code></a> event handlers are supported as of Firefox 52."
           },
@@ -23,23 +30,16 @@
           "opera": {
             "version_added": true
           },
-          "safari": {
-            "version_added": true
-          },
-          "webview_android": {
-            "version_added": true
-          },
-          "edge_mobile": {
-            "version_added": true
-          },
-          "firefox_android": {
-            "version_added": true,
-            "notes": "The <a href='https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectionchange'><code>GlobalEventHandlers.onselectionchange</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectstart'><code>GlobalEventHandlers.onselectstart</code></a> event handlers are supported as of Firefox 52."
-          },
           "opera_android": {
             "version_added": true
           },
+          "safari": {
+            "version_added": true
+          },
           "safari_ios": {
+            "version_added": true
+          },
+          "webview_android": {
             "version_added": true
           }
         },
@@ -49,57 +49,153 @@
           "deprecated": false
         }
       },
-      "modify": {
+      "addRange": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/modify",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/addRange",
           "support": {
             "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
               "version_added": null
             },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
             "firefox": {
-              "version_added": "4"
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": null
             },
-            "firefox_android": {
-              "version_added": "4"
-            },
             "opera_android": {
-              "version_added": true
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "setBaseAndExtent": {
+      "anchorNode": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/setBaseAndExtent",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/anchorNode",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "anchorOffset": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "collapse": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/collapse",
           "support": {
             "chrome": {
               "version_added": true
@@ -108,34 +204,281 @@
               "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
             },
             "firefox": {
-              "version_added": "53"
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "params": {
+          "__compat": {
+            "description": "<code>node</code> parameter is nullable; <code>offset</code> parameter is optional",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "55"
+              },
+              "firefox_android": {
+                "version_added": "55"
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "collapseToStart": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/collapseToStart",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": true
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
             },
             "safari": {
               "version_added": null
             },
+            "safari_ios": {
+              "version_added": null
+            },
             "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "collapseToEnd": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/collapseToEnd",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
               "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": "53"
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "containsNode": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/containsNode",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "4",
+              "notes": "Before Firefox 35, the method didn't throw if <code>node</code> was <code>null</code>."
+            },
+            "firefox_android": {
+              "version_added": "4",
+              "notes": "Before Firefox 35, the method didn't throw if <code>node</code> was <code>null</code>."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
             },
             "opera_android": {
               "version_added": true
             },
+            "safari": {
+              "version_added": true
+            },
             "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "partialContainment": {
+          "__compat": {
+            "description": "<code>partialContainment</code> parameter is optional",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "55"
+              },
+              "firefox_android": {
+                "version_added": "55"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }
@@ -153,7 +496,13 @@
             "edge": {
               "version_added": true
             },
+            "edge_mobile": {
+              "version_added": true
+            },
             "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
               "version_added": "55"
             },
             "ie": {
@@ -162,29 +511,29 @@
             "opera": {
               "version_added": true
             },
-            "safari": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": "55"
-            },
             "opera_android": {
               "version_added": true
             },
             "safari_ios": {
               "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "empty": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges",
           "description": "<code>empty()</code> as alias of <code>removeAllRanges()</code>",
           "support": {
             "chrome": {
@@ -196,7 +545,13 @@
             "edge": {
               "version_added": null
             },
+            "edge_mobile": {
+              "version_added": null
+            },
             "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
               "version_added": "55"
             },
             "ie": {
@@ -205,29 +560,603 @@
             "opera": {
               "version_added": true
             },
-            "safari": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": "55"
-            },
             "opera_android": {
+              "version_added": true
+            },
+            "safari": {
               "version_added": true
             },
             "safari_ios": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "extend": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/extend",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "offset": {
+          "__compat": {
+            "description": "<code>offset</code> parameter is optional",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "55"
+              },
+              "firefox_android": {
+                "version_added": "55"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "focusNode": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "3.6"
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": "10"
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "5.1"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "focusOffset": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getRangeAt": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/getRangeAt",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "isCollapsed": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "modify": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/modify",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "4"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "rangeCount": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/rangeCount",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "removeRange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/removeRange",
+          "support": {
+            "chrome": {
+              "version_added": "58"
+            },
+            "chrome_android": {
+              "version_added": "58"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "45"
+            },
+            "opera_android": {
+              "version_added": "45"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "58"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "removeAllRanges": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "selectAllChildren": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/selectAllChildren",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setBaseAndExtent": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/setBaseAndExtent",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "53"
+            },
+            "firefox_android": {
+              "version_added": "53"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "setPosition": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Selection/collapse",
           "description": "<code>setPosition()</code> as alias of <code>collapse()</code>",
           "support": {
             "chrome": {
@@ -239,7 +1168,13 @@
             "edge": {
               "version_added": null
             },
+            "edge_mobile": {
+              "version_added": null
+            },
             "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
               "version_added": "55"
             },
             "ie": {
@@ -248,24 +1183,23 @@
             "opera": {
               "version_added": true
             },
-            "safari": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": "55"
-            },
             "opera_android": {
+              "version_added": true
+            },
+            "safari": {
               "version_added": true
             },
             "safari_ios": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -282,7 +1216,13 @@
             "edge": {
               "version_added": true
             },
+            "edge_mobile": {
+              "version_added": true
+            },
             "firefox": {
+              "version_added": "57"
+            },
+            "firefox_android": {
               "version_added": "57"
             },
             "ie": {
@@ -291,24 +1231,23 @@
             "opera": {
               "version_added": true
             },
+            "opera_android": {
+              "version_added": true
+            },
             "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
               "version_added": null
             },
             "webview_android": {
               "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": null
             }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }
