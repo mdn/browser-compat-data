@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 const {browsers} = require('..');
 
 const validBrowserVersions = {};
@@ -67,7 +68,7 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error('\x1b[31m  File : ' + dataFilename);
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), dataFilename));
     console.error('\x1b[31m  Browser version error(s)\x1b[0m');
     return true;
   } else {

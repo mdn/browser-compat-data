@@ -1,6 +1,6 @@
 'use strict';
 const fs = require('fs');
-let hasErrors = false;
+const path = require('path');
 
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
@@ -18,6 +18,7 @@ function jsonDiff(actual, expected) {
 }
 
 function testStyle(filename) {
+  let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual), null, 2);
 
@@ -31,7 +32,7 @@ function testStyle(filename) {
     console.log('\x1b[32m  Style – OK \x1b[0m');
   } else {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + filename);
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
@@ -58,6 +59,16 @@ function testStyle(filename) {
       '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
       mdnUrlMatch[0],
       mdnUrlMatch[2]);
+  }
+
+  let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
+  if (constructorMatch) {
+    hasErrors = true;
+    console.error(
+      '\x1b[33m  Style – Use parentheses in constructor description: %s → %s()\x1b[0m',
+      constructorMatch[1],
+      constructorMatch[1]
+    );
   }
 
   if (actual.includes("href=\\\"")) {
