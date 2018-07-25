@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const ora = require('ora');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
@@ -26,7 +27,16 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         let hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
-        console.log(relativeFilePath);
+
+        const spinner = ora(relativeFilePath);
+
+        const console_error = console.error;
+        console.error = (...args) => {
+          spinner.fail();
+          console.error = console_error;
+          console.error(...args);
+        }
+
         if (file.indexOf('browsers' + path.sep) !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
         } else {
@@ -37,7 +47,11 @@ function load(...files) {
         if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
+        } else {
+          console.error = console_error;
+          spinner.succeed();
         }
+
       }
 
       continue;
