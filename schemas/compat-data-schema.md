@@ -258,13 +258,23 @@ Examples:
 
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
-Note that leading and trailing `-` must be included. Example:
+If applicable, leading and trailing `-` must be included.
 
-* Prefixed sub-feature:
+Example:
+
+* Prefixed CSS sub-feature:
 ```json
 {
   "prefix": "-moz-",
   "version_added": "3.5"
+}
+```
+
+* Prefixed API sub-feature:
+```json
+{
+  "prefix": "webkit",
+  "version_added": "9"
 }
 ```
 
