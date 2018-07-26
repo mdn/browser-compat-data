@@ -260,7 +260,7 @@ Examples:
 A prefix to add to the sub-feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
 
-Example:
+Examples:
 
 * Prefixed CSS sub-feature:
 ```json
