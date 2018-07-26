@@ -28,11 +28,15 @@ function load(...files) {
         let hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
-        const spinner = ora(relativeFilePath);
+        const spinner = ora({
+          stream: process.stdout,
+          text: relativeFilePath
+        });
 
         const console_error = console.error;
         console.error = (...args) => {
-          spinner.fail();
+          spinner.stream = process.stderr;
+          spinner.fail(relativeFilePath);
           console.error = console_error;
           console.error(...args);
         }
