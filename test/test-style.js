@@ -44,6 +44,39 @@ function testStyle(filename) {
       bugzillaMatch[1]);
   }
 
+  {
+    // Bugzil.la links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the begin of notes/sentences).
+    const regexp = new RegExp("(....)<a href='(https?)://bugzil.la/(\\d+)'>(.*?)</a>", 'g');
+    let match;
+    do {
+      match = regexp.exec(actual);
+      if (match) {
+        const before = match[1];
+        const protocol = match[2];
+        const bugId = match[3];
+        const linkText = match[4];
+
+        if (protocol !== 'https') {
+          hasErrors = true;
+          console.error(`\x1b[33m  Style – Use HTTPS URL (http://bugzil.la/${bugId} → https://bugzil.la/${bugId}).\x1b[0m`);
+        }
+
+        if (/^bug $/.test(before)) {
+          hasErrors = true;
+          console.error(`\x1b[33m  Style – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
+        } else if (linkText === `Bug ${bugId}`) {
+          if (!/(\. |")$/.test(before)) {
+            hasErrors = true;
+            console.error(`\x1b[33m  Style – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
+          }
+        } else if (linkText !== `bug ${bugId}`) {
+          hasErrors = true;
+          console.error(`\x1b[33m  Style – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
+        }
+      }
+    } while (match != null);
+  }
+
   const crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
