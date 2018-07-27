@@ -262,7 +262,7 @@ If applicable, leading and trailing `-` must be included.
 
 Examples:
 
-* Prefixed CSS sub-feature:
+* A CSS property with a standard name of `prop-name` and a vendor-prefixed name of `-moz-prop-name`:
 ```json
 {
   "prefix": "-moz-",
@@ -270,7 +270,7 @@ Examples:
 }
 ```
 
-* Prefixed API sub-feature:
+* An API with a standard name of `FeatureName` and a vendor-prefixed name of `webkitFeatureName`:
 ```json
 {
   "prefix": "webkit",
