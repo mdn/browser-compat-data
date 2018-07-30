@@ -779,7 +779,13 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "API Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getVRDisplays'><code>Navigator.getVRDisplays()</code></a> is invoked)."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": true,
@@ -834,11 +840,20 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "API Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getVRDisplays'><code>Navigator.getVRDisplays()</code></a> is invoked)."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": {
-              "version_added": true,
-              "notes": "Currently only supported by Google Daydream."
+              "version_added": "56",
+              "notes": [
+                "Chrome for Android 56 supports only Google Daydream View.",
+                "Chrome for Android 57 adds support for Google Cardboard."
+              ]
             },
             "edge": {
               "version_added": null
@@ -1092,8 +1107,14 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplaypresentchange",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "API Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getVRDisplays'><code>Navigator.getVRDisplays()</code></a> is invoked)."
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": {
               "version_added": true,
