@@ -258,13 +258,23 @@ Examples:
 
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
-Note that leading and trailing `-` must be included. Example:
+If applicable, leading and trailing `-` must be included.
 
-* Prefixed sub-feature:
+Examples:
+
+* A CSS property with a standard name of `prop-name` and a vendor-prefixed name of `-moz-prop-name`:
 ```json
 {
   "prefix": "-moz-",
   "version_added": "3.5"
+}
+```
+
+* An API with a standard name of `FeatureName` and a vendor-prefixed name of `webkitFeatureName`:
+```json
+{
+  "prefix": "webkit",
+  "version_added": "9"
 }
 ```
 
