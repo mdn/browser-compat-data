@@ -191,7 +191,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "6.0.0"
               },
               "opera": {
                 "version_added": true
@@ -708,7 +708,7 @@
         },
         "lookbehind_assertion": {
           "__compat": {
-            "description": "lookbehind assertions (<code>(?&gt;= )</code> and <code>(?&gt;! )</code>)",
+            "description": "lookbehind assertions (<code>(?&lt;= )</code> and <code>(?&lt;! )</code>)",
             "support": {
               "webview_android": {
                 "version_added": "62"
@@ -1925,9 +1925,20 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": true
-              },
+              "nodejs": [
+                {
+                  "version_added": "6.5.0"
+                },
+                {
+                  "version_added": "6.0.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": true
               },
