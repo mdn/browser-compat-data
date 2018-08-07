@@ -166,6 +166,10 @@ The `support_statement` object describes the support provided by a single browse
 It is an array of `simple_support_statement` objects, but if there
 is only one of them, the array must be omitted.
 
+If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first.
+In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without.
+If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
+
 Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
 ```json
 "support": {
@@ -254,13 +258,23 @@ Examples:
 
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
-Note that leading and trailing `-` must be included. Example:
+If applicable, leading and trailing `-` must be included.
 
-* Prefixed sub-feature:
+Examples:
+
+* A CSS property with a standard name of `prop-name` and a vendor-prefixed name of `-moz-prop-name`:
 ```json
 {
   "prefix": "-moz-",
   "version_added": "3.5"
+}
+```
+
+* An API with a standard name of `FeatureName` and a vendor-prefixed name of `webkitFeatureName`:
+```json
+{
+  "prefix": "webkit",
+  "version_added": "9"
 }
 ```
 
