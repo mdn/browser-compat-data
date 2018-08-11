@@ -1329,10 +1329,10 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": "45"
+                "version_added": false
               },
               "firefox_android": {
-                "version_added": "54"
+                "version_added": false
               },
               "opera": {
                 "version_added": false
@@ -1448,16 +1448,22 @@
               "edge": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "extensions.webextensions.tabhide.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "61"
+                },
+                {
+                  "version_added": "59",
+                  "version_removed": "61",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "extensions.webextensions.tabhide.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
                 "version_added": false
               },
@@ -2069,6 +2075,27 @@
                 }
               }
             }
+          },
+          "extraParameters": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": "61"
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
           }
         },
         "onZoomChange": {
@@ -2298,11 +2325,26 @@
                     "version_added": false
                   },
                   "firefox": {
+                    "notes": [
+                      "Treated as an alias for <code>queryInfo.active</code>."
+                    ],
                     "version_added": "60"
                   },
-                  "firefox_android": {
-                    "version_added": "60"
-                  },
+                  "firefox_android": [
+                    {
+                      "notes": [
+                        "Treated as an alias for <code>queryInfo.active</code>."
+                      ],
+                      "version_added": "61"
+                    },
+                    {
+                      "notes": [
+                        "Treated as an alias for <code>queryInfo.active</code> except when an extension has a popup open. In this situation, <code>queryInfo.highlighted</code> will return the popup, while <code>queryInfo.active</code> will return the tab that was selected before the popup opened."
+                      ],
+                      "version_added": "60",
+                      "version_removed": "61"
+                    }
+                  ],
                   "opera": {
                     "version_added": true
                   }
@@ -2537,7 +2579,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "17"
               },
               "firefox": {
                 "version_added": "45"
@@ -2749,16 +2791,22 @@
               "edge": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "extensions.webextensions.tabhide.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "61"
+                },
+                {
+                  "version_added": "59",
+                  "version_removed": "61",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "extensions.webextensions.tabhide.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
                 "version_added": false
               },
