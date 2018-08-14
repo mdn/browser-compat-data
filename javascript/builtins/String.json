@@ -2,6 +2,58 @@
   "javascript": {
     "builtins": {
       "String": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "support": {
+            "webview_android": {
+              "version_added": true
+            },
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": true
+            },
+            "nodejs": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
         "@@iterator": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator",
@@ -84,9 +136,9 @@
             }
           }
         },
-        "String": {
+        "unicode_code_point_escapes": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
+            "description": "Unicode code point escapes \\u{xxxxxx}",
             "support": {
               "webview_android": {
                 "version_added": true
@@ -98,19 +150,19 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true
+                "version_added": null
               },
               "edge_mobile": {
-                "version_added": true
+                "version_added": null
               },
               "firefox": {
-                "version_added": "1"
+                "version_added": "40"
               },
               "firefox_android": {
-                "version_added": "4"
+                "version_added": "40"
               },
               "ie": {
-                "version_added": true
+                "version_added": null
               },
               "nodejs": {
                 "version_added": true
@@ -135,60 +187,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          },
-          "unicode_code_point_escapes": {
-            "__compat": {
-              "description": "Unicode code point escapes \\u{xxxxxx}",
-              "support": {
-                "webview_android": {
-                  "version_added": true
-                },
-                "chrome": {
-                  "version_added": true
-                },
-                "chrome_android": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": null
-                },
-                "edge_mobile": {
-                  "version_added": null
-                },
-                "firefox": {
-                  "version_added": "40"
-                },
-                "firefox_android": {
-                  "version_added": "40"
-                },
-                "ie": {
-                  "version_added": null
-                },
-                "nodejs": {
-                  "version_added": true
-                },
-                "opera": {
-                  "version_added": true
-                },
-                "opera_android": {
-                  "version_added": true
-                },
-                "safari": {
-                  "version_added": true
-                },
-                "safari_ios": {
-                  "version_added": true
-                },
-                "samsunginternet_android": {
-                  "version_added": true
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
             }
           }
         },
@@ -923,9 +921,20 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "4.0.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "4.0.0"
+                },
+                {
+                  "version_added": "0.12",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": "28"
               },
