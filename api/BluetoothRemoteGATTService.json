@@ -1,325 +1,84 @@
 {
   "api": {
-    "TextDecoder": {
+    "BluetoothRemoteGATTService": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService",
         "support": {
-          "chrome": {
-            "version_added": "38"
-          },
-          "chrome_android": {
-            "version_added": "38"
-          },
+          "chrome": [
+            {
+              "version_added": "53",
+              "notes": "Mac support added and <a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
+            },
+            {
+              "version_added": "51",
+              "notes": "Linux support."
+            },
+            {
+              "version_added": "45",
+              "version_removed": "53",
+              "notes": "Behind a preference flag in Chrome OS."
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "53",
+              "notes": "<a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
+            },
+            {
+              "version_added": "45",
+              "version_removed": "53",
+              "notes": "Behind a preference flag."
+            }
+          ],
           "edge": {
             "version_added": null
           },
           "edge_mobile": {
             "version_added": null
           },
-          "firefox": [
-            {
-              "version_added": "19"
-            },
-            {
-              "version_added": "18",
-              "notes": "Implemented a slightly different version of the spec.",
-              "partial_implementation": true
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "19"
-            },
-            {
-              "version_added": "18",
-              "notes": "Implemented a slightly different version of the spec.",
-              "partial_implementation": true
-            }
-          ],
+          "firefox": {
+            "version_added": null
+          },
+          "firefox_android": {
+            "version_added": null
+          },
           "ie": {
-            "version_added": false
+            "version_added": null
           },
           "opera": {
-            "version_added": "25"
+            "version_added": null
           },
           "opera_android": {
             "version_added": null
           },
           "safari": {
-            "version_added": "10.1"
+            "version_added": null
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": null
           },
           "samsunginternet_android": {
             "version_added": null
           },
           "webview_android": {
-            "version_added": "38"
+            "version_added": false
           }
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "worker_support": {
+      "device": {
         "__compat": {
-          "description": "Available in workers",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/device",
           "support": {
             "chrome": {
-              "version_added": "38"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "20"
-            },
-            "firefox_android": {
-              "version_added": "20"
-            },
-            "ie": {
               "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "TextDecoder": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/TextDecoder",
-          "description": "<code>TextDecoder()</code> constructor",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "decode": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/decode",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "encoding": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/encoding",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "fatal": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/fatal",
-          "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
             },
             "edge": {
               "version_added": null
@@ -352,22 +111,300 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "ignoreBOM": {
+      "getCharacteristic": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/ignoreBOM",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/getCharacteristic",
           "support": {
             "chrome": {
+              "version_added": "45",
+              "notes": "Behind a preference flag in Chrome OS."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
               "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getCharacteristics": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/getCharacteristics",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getIncludedService": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/getIncludedService",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getIncludedServices": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/getIncludedServices",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "53",
+                "notes": "Mac support added and <a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
+              },
+              {
+                "version_added": "51",
+                "version_removed": "53",
+                "notes": "Linux support."
+              },
+              {
+                "version_added": "45",
+                "version_removed": "53",
+                "notes": "Behind a preference flag in Chrome OS."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "53",
+                "notes": "<a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
+              },
+              {
+                "version_added": "45",
+                "version_removed": "53",
+                "notes": "Behind a preference flag."
+              }
+            ],
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "isPrimary": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/isPrimary",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "uuid": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/uuid",
+          "support": {
+            "chrome": {
+              "version_added": "45",
+              "notes": "Behind a preference flag in Chrome OS."
             },
             "chrome_android": {
               "version_added": null
@@ -403,11 +440,11 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

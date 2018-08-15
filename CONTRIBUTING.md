@@ -14,7 +14,7 @@ Let us know if these look good to you.
 * **Publishing a new package (staff only):** A new npm package should be published regularly, [see below](#publishing-a-new-package-version) for details.
 
 ## Validating the data
-You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --only=dev`.
+You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
 ### Optional: Validate/cross-reference against Web API Confluence Dashboard
