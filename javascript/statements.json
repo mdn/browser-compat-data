@@ -87,9 +87,20 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": null
-            },
+            "nodejs": [
+              {
+                "version_added": "7.6.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "42"
             },
@@ -250,7 +261,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": null
+              "version_added": "6.0.0"
             },
             "opera": {
               "version_added": null
@@ -1312,7 +1323,7 @@
                 "version_added": null
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "8.0.0"
               },
               "opera": {
                 "version_added": "45"
@@ -1367,9 +1378,20 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "4.0.0"
+              },
+              {
+                "version_added": "0.12",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "26"
             },
@@ -1529,7 +1551,7 @@
                 "version_added": null
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "8.0.0"
               },
               "opera": {
                 "version_added": true
@@ -1674,13 +1696,14 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "8",
+              "version_added": "8.5.0",
               "flags": [
                 {
                   "name": "--experimental-modules",
                   "type": "runtime_flag"
                 }
-              ]
+              ],
+              "notes": "files must have suffix .mjs, not .js"
             },
             "opera": {
               "version_added": "47"
@@ -1693,6 +1716,102 @@
             },
             "safari_ios": {
               "version_added": "10.1"
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "dynamic_import": {
+          "__compat": {
+            "description": "Dynamic import",
+            "support": {
+              "webview_android": {
+                "version_added": "63"
+              },
+              "chrome": {
+                "version_added": "63"
+              },
+              "chrome_android": {
+                "version_added": "63"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1342012'>bug 1342012</a>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1342012'>bug 1342012</a>."
+              },
+              "ie": {
+                "version_added": null
+              },
+              "nodejs": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": "50"
+              },
+              "opera_android": {
+                "version_added": "50"
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "import_meta": {
+        "__compat": {
+          "description": "<code>import.meta</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import.meta",
+          "support": {
+            "chrome": {
+              "version_added": "64"
+            },
+            "chrome_android": {
+              "version_added": "64"
+            },
+            "firefox": {
+              "version_added": "62"
+            },
+            "firefox_android": {
+              "version_added": "62"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "51"
+            },
+            "opera_android": {
+              "version_added": "51"
+            },
+            "webview_android": {
+              "version_added": "64"
             },
             "samsunginternet_android": {
               "version_added": false
@@ -1763,15 +1882,61 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let",
           "support": {
-            "webview_android": {
-              "version_added": "41"
-            },
-            "chrome": {
-              "version_added": "41"
-            },
-            "chrome_android": {
-              "version_added": "41"
-            },
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "41",
+                "version_removed": "49",
+                "partial_implementation": true,
+                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+              }
+            ],
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "48",
+                "version_removed": "49",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental JavaScript Features"
+                  }
+                ],
+                "notes": "Support outside of <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>strict mode</a>."
+              },
+              {
+                "version_added": "41",
+                "version_removed": "49",
+                "partial_implementation": true,
+                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "48",
+                "version_removed": "49",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental JavaScript Features"
+                  }
+                ],
+                "notes": "Support outside of <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>strict mode</a>."
+              },
+              {
+                "version_added": "41",
+                "version_removed": "49",
+                "partial_implementation": true,
+                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -1798,7 +1963,7 @@
               "version_added": "11"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "6.0.0"
             },
             "opera": {
               "version_added": "17"
