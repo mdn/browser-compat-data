@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": {
             "version_added": true
           },
@@ -42,6 +39,9 @@
           },
           "samsunginternet_android": {
             "version_added": null
+          },
+          "webview_android": {
+            "version_added": true
           }
         },
         "status": {
@@ -55,9 +55,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/UIEvent",
           "description": "<code>UIEvent()</code> constructor",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -93,6 +90,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -106,9 +106,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/cancelBubble",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -144,6 +141,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -154,11 +154,8 @@
         },
         "implemented_on_event": {
           "__compat": {
-            "description": "Implemented on <code>Event</code>.",
+            "description": "Implemented on <code>Event</code>",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": null
               },
@@ -194,6 +191,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -208,9 +208,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/detail",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -246,6 +243,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -255,13 +255,61 @@
           }
         }
       },
+      "initUIEvent": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/initUIEvent",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
       "isChar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/isChar",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -300,6 +348,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -314,9 +365,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/layerX",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -352,6 +400,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -365,9 +416,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/layerY",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -403,6 +451,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -416,19 +467,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/pageX",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "version_removed": "45",
-              "notes": "Replaced by <code>MouseEvent.pageX</code> in version 45."
-            },
             "chrome": {
               "version_added": true,
-              "version_removed": "45",
+              "version_removed": "44",
               "notes": "Replaced by <code>MouseEvent.pageX</code> in version 45."
             },
             "chrome_android": {
               "version_added": true,
-              "version_removed": "45",
+              "version_removed": "44",
               "notes": "Replaced by <code>MouseEvent.pageX</code> in version 45."
             },
             "edge": {
@@ -460,6 +506,11 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true,
+              "version_removed": "44",
+              "notes": "Replaced by <code>MouseEvent.pageX</code> in version 45."
             }
           },
           "status": {
@@ -473,19 +524,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/pageY",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "version_removed": "45",
-              "notes": "Replaced by <code>MouseEvent.pageY</code> in version 45."
-            },
             "chrome": {
               "version_added": true,
-              "version_removed": "45",
+              "version_removed": "44",
               "notes": "Replaced by <code>MouseEvent.pageY</code> in version 45."
             },
             "chrome_android": {
               "version_added": true,
-              "version_removed": "45",
+              "version_removed": "44",
               "notes": "Replaced by <code>MouseEvent.pageY</code> in version 45."
             },
             "edge": {
@@ -517,6 +563,11 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true,
+              "version_removed": "44",
+              "notes": "Replaced by <code>MouseEvent.pageY</code> in version 45."
             }
           },
           "status": {
@@ -530,9 +581,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/sourceCapabilities",
           "support": {
-            "webview_android": {
-              "version_added": "47"
-            },
             "chrome": {
               "version_added": "47"
             },
@@ -568,6 +616,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "47"
             }
           },
           "status": {
@@ -581,9 +632,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/view",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -619,6 +667,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -632,9 +683,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/which",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -670,63 +718,15 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "initUIEvent": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/UIEvent/initUIEvent",
-          "support": {
-            "webview_android": {
-              "version_added": true
-            },
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       }
