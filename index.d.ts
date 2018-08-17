@@ -1,3 +1,5 @@
+/* Any copyright is dedicated to the Public Domain.
+ * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 /**
  * The names of the known browsers.
@@ -338,4 +340,6 @@ interface CompatData extends Record<Exclude<string, 'browsers'>, Identifier> {
   xslt: Identifier;
 }
 
+// This is necessary to have intellisense in projects which
+// import data from this package.
 export = ({} as CompatData);
