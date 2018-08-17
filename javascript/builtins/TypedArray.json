@@ -80,7 +80,7 @@
                 "version_added": "55"
               },
               "ie": {
-                "version_added": null
+                "version_added": "10"
               },
               "nodejs": {
                 "version_added": null
@@ -137,11 +137,12 @@
                 "version_added": "25"
               },
               "ie": {
-                "version_added": null
+                "version_added": "10",
+                "notes": "Negative integers are not considered as indexed properties and therefore return the value of the prototype property."
               },
               "nodejs": {
                 "version_added": null,
-                "notes": "-1 and similar are not considered as indexed properties and therefore return the value of the prototype property."
+                "notes": "Negative integers are not considered as indexed properties and therefore return the value of the prototype property."
               },
               "opera": {
                 "version_added": null
@@ -192,10 +193,10 @@
                 "version_added": "52"
               },
               "ie": {
-                "version_added": null
+                "version_added": "10"
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": null
@@ -246,7 +247,7 @@
                 "version_added": "30"
               },
               "ie": {
-                "version_added": null
+                "version_added": "10"
               },
               "nodejs": {
                 "version_added": null
@@ -300,10 +301,10 @@
                 "version_added": "44"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "0.12"
               },
               "opera": {
                 "version_added": null
@@ -573,7 +574,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "36"
@@ -627,7 +628,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "0.12"
               },
               "opera": {
                 "version_added": "36"
@@ -681,7 +682,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "36"
@@ -735,7 +736,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "36"
@@ -789,7 +790,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -822,7 +823,7 @@
                 "version_added": false
               },
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "chrome_android": {
                 "version_added": false
@@ -843,7 +844,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -876,7 +877,7 @@
                 "version_added": false
               },
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "chrome_android": {
                 "version_added": false
@@ -897,7 +898,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -951,7 +952,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": null
@@ -1005,7 +1006,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -1058,9 +1059,20 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": null
-              },
+              "nodejs": [
+                {
+                  "version_added": "6.0.0"
+                },
+                {
+                  "version_added": "5.0.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": "34"
               },
@@ -1115,7 +1127,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "32"
@@ -1169,7 +1181,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -1223,7 +1235,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "0.12"
               },
               "opera": {
                 "version_added": false
@@ -1279,7 +1291,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": true
@@ -1387,7 +1399,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -1553,7 +1565,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": false
@@ -1661,7 +1673,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "32"
@@ -1715,7 +1727,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "32"
@@ -1769,7 +1781,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "32"
@@ -1877,7 +1889,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": null
@@ -1931,7 +1943,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "32"
@@ -1985,7 +1997,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": true
@@ -2090,7 +2102,7 @@
                 "version_added": "51"
               },
               "ie": {
-                "version_added": true
+                "version_added": "10"
               },
               "nodejs": {
                 "version_added": null
@@ -2201,7 +2213,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "0.12"
               },
               "opera": {
                 "version_added": "26"
@@ -2280,10 +2292,10 @@
                 }
               ],
               "ie": {
-                "version_added": true
+                "version_added": false
               },
               "nodejs": {
-                "version_added": null
+                "version_added": "0.12"
               },
               "opera": {
                 "version_added": true
@@ -2316,7 +2328,7 @@
                 "version_added": null
               },
               "chrome": {
-                "version_added": null
+                "version_added": true
               },
               "chrome_android": {
                 "version_added": null
@@ -2334,11 +2346,22 @@
                 "version_added": "48"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
-              "nodejs": {
-                "version_added": null
-              },
+              "nodejs": [
+                {
+                  "version_added": "6.5.0"
+                },
+                {
+                  "version_added": "6.0.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": null
               },
