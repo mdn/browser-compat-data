@@ -82,7 +82,7 @@ interface ReleaseStatement {
 
 /**
  * The `support_statement` object describes the support provided
- * by a single browser type for the given subfeature.
+ * by a single browser type for the given sub-feature.
  *
  * It is an array of `simple_support_statement` objects, but if there
  * is only one of them, the array must be omitted.
@@ -97,7 +97,7 @@ interface SimpleSupportStatement {
   /** The version indicating when a sub-feature has been added (and is therefore supported).
    *
    * The `boolean` values indicate that a sub-feature is supported
-   * (`true`, with the dditional meaning that it is unknown in which version support was added)
+   * (`true`, with the additional meaning that it is unknown in which version support was added)
    * or not supported (`false`).
    *
    * A value of `null` indicates that support information is entirely unknown.
