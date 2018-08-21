@@ -3,11 +3,8 @@
     "NonDocumentTypeChildNode": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/NonDocumentTypeChildNode",
-        "description": "Basic Support (on <code>Element</code>)",
+        "description": "Basic support (on <code>Element</code>)",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": {
             "version_added": "1"
           },
@@ -40,6 +37,9 @@
           },
           "safari_ios": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": true
           }
         },
         "status": {
@@ -48,13 +48,10 @@
           "deprecated": false
         }
       },
-      "support_on_CharacterData": {
+      "CharacterData_support": {
         "__compat": {
           "description": "Support (on <code>CharacterData</code>)",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -67,28 +64,12 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": [
-              {
-                "version_added": "28",
-                "notes": "Two properties moved to this new interface"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "28",
-                "notes": "Added the two properties on <code>DocumentType</code> but it led to some compatibility problems"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "28",
-                "notes": "Two properties moved to this new interface"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "28",
-                "notes": "Added the two properties on <code>DocumentType</code> but it led to some compatibility problems"
-              }
-            ],
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
             "ie": {
               "version_added": "9"
             },
@@ -102,6 +83,57 @@
               "version_added": "4"
             },
             "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "nextElementSibling": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling",
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "3.5"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": "10"
+            },
+            "opera_android": {
+              "version_added": "10"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -116,9 +148,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "4"
             },
@@ -151,188 +180,15 @@
             },
             "safari_ios": {
               "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        },
-        "support_on_CharacterData": {
-          "__compat": {
-            "description": "Support (on <code>CharacterData</code>)",
-            "support": {
-              "webview_android": {
-                "version_added": true
-              },
-              "chrome": {
-                "version_added": "29"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": [
-                {
-                  "version_added": "28",
-                  "notes": "This property was moved to this new interface"
-                },
-                {
-                  "version_added": "25",
-                  "version_removed": "28",
-                  "notes": "Added this property on <code>DocumentType</code> but it led to some compatibility problems"
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "28",
-                  "notes": "This property was moved to this new interface"
-                },
-                {
-                  "version_added": "25",
-                  "version_removed": "28",
-                  "notes": "Added this property on <code>DocumentType</code> but it led to some compatibility problems"
-                }
-              ],
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "16"
-              },
-              "opera_android": {
-                "version_added": "16"
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              }
             },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        }
-      },
-      "nextElementSibling": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling",
-          "support": {
             "webview_android": {
               "version_added": true
-            },
-            "chrome": {
-              "version_added": "4"
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "3.5"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "9"
-            },
-            "opera": {
-              "version_added": "10"
-            },
-            "opera_android": {
-              "version_added": "10"
-            },
-            "safari": {
-              "version_added": "4"
-            },
-            "safari_ios": {
-              "version_added": true
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "support_on_CharacterData": {
-          "__compat": {
-            "description": "Support (on <code>CharacterData</code>)",
-            "support": {
-              "webview_android": {
-                "version_added": true
-              },
-              "chrome": {
-                "version_added": "29"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": [
-                {
-                  "version_added": "28",
-                  "notes": "This property was moved to this new interface"
-                },
-                {
-                  "version_added": "25",
-                  "version_removed": "28",
-                  "notes": "Added this property on <code>DocumentType</code> but it led to some compatibility problems"
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "28",
-                  "notes": "This property was moved to this new interface"
-                },
-                {
-                  "version_added": "25",
-                  "version_removed": "28",
-                  "notes": "Added this property on <code>DocumentType</code> but it led to some compatibility problems"
-                }
-              ],
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "16"
-              },
-              "opera_android": {
-                "version_added": "16"
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       }
