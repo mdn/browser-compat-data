@@ -1,0 +1,697 @@
+{
+  "api": {
+    "HTMLHyperlinkElementUtils": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils",
+        "support": {
+          "chrome": {
+            "version_added": true,
+            "notes": "Starting in Chrome 52, the members of this interface were moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+          },
+          "chrome_android": {
+            "version_added": true,
+            "notes": "Starting in Chrome 52, the members of this interface were moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+          },
+          "firefox": {
+            "version_added": "22",
+            "notes": [
+              "This mixin was called <code>URLUtils</code> before Firefox 45, and was also implemented to other by other interfaces, like <a href='https://developer.mozilla.org/docs/Web/API/Location'><code>Location</code></a>. From Firefox 45, the other interfaces implement their own version of the properties and methods they need.",
+              "Firefox was a bug whereby single contained in URLs are escaped when accessed via URL APIs (<a href='https://bugzil.la/1386683'>bug 1386683</a>). This has been as of Firefox 57."
+            ]
+          },
+          "firefox_android": {
+            "version_added": "22",
+            "notes": [
+              "This mixin was called <code>URLUtils</code> before Firefox 45, and was also implemented to other by other interfaces, like <a href='https://developer.mozilla.org/docs/Web/API/Location'><code>Location</code></a>. From Firefox 45, the other interfaces implement their own version of the properties and methods they need.",
+              "Firefox was a bug whereby single contained in URLs are escaped when accessed via URL APIs (<a href='https://bugzil.la/1386683'>bug 1386683</a>). This has been as of Firefox 57."
+            ]
+          },
+          "ie": {
+            "version_added": false
+          },
+          "opera": {
+            "version_added": false
+          },
+          "opera_android": {
+            "version_added": false
+          },
+          "safari": {
+            "version_added": false
+          },
+          "safari_ios": {
+            "version_added": false
+          },
+          "webview_android": {
+            "version_added": true,
+            "notes": "Starting in Chrome 52, the members of this interface were moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+          }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "hash": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/hash",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface. Also, from Firefox 29 to Firefox 40, the returned value was incorrectly percent-decoded."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface. Also, from Firefox 29 to Firefox 40, the returned value was incorrectly percent-decoded."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "host": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/host",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false,
+              "notes": "In Internet Explorer 9, the host of an <a href='https://developer.mozilla.org/docs/Web/HTML/Element/a'><code><a></code></a> always include the port (e.g. <code>developer.mozilla.org:443</code>), even if there is no explicit port in the <code>href</code> attribute value."
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "hostname": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/hostname",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "href": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/href",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "origin": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/origin",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "26",
+              "notes": [
+                "From Firefox 26 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.",
+                "Before Firefox 49, results for URL using the <code>blob</code> scheme incorrectly returned <code>null</code>."
+              ]
+            },
+            "firefox_android": {
+              "version_added": "26",
+              "notes": [
+                "From Firefox 26 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.",
+                "Before Firefox 49, results for URL using the <code>blob</code> scheme incorrectly returned <code>null</code>."
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "password": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/password",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "firefox": {
+              "version_added": "26",
+              "notes": "From Firefox 26 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "26",
+              "notes": "From Firefox 26 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pathname": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/pathname",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": [
+                "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.",
+                "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return <code>'/x?a=true&b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&b=false'</code> respectively. This has now been fixed."
+              ]
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": [
+                "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.",
+                "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return <code>'/x?a=true&b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&b=false'</code> respectively. This has now been fixed."
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "port": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/port",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "protocol": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/protocol",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "search": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/search",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": [
+                "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.",
+                "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return <code>'/x?a=true&b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&b=false'</code> respectively. This has now been fixed."
+              ]
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": [
+                "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.",
+                "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return <code>'/x?a=true&b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&b=false'</code> respectively. This has now been fixed."
+              ]
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "toString": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/toString",
+          "support": {
+            "chrome": {
+              "version_added": "52"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "From Firefox 22 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "52"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "username": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLHyperlinkElementUtils/username",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            },
+            "firefox": {
+              "version_added": "26",
+              "notes": "From Firefox 26 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "firefox_android": {
+              "version_added": "26",
+              "notes": "From Firefox 26 to Firefox 44, this property was on the <code>URLUtils</code> mixin. It has been moved either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true,
+              "notes": "Starting in Chrome 52, this property was moved to <a href='https://developer.mozilla.org/docs/Web/API/URL'>URL</a>"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}
