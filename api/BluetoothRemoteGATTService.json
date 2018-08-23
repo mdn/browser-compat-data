@@ -6,30 +6,28 @@
         "support": {
           "chrome": [
             {
-              "version_added": "53",
-              "notes": "Mac support added and <a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
+              "version_added": "56",
+              "notes": "macOS only."
             },
             {
-              "version_added": "51",
-              "notes": "Linux support."
+              "version_added": "56",
+              "notes": "Linux and versions of Windows earlier than 10.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
             },
             {
-              "version_added": "45",
-              "version_removed": "53",
-              "notes": "Behind a preference flag in Chrome OS."
+              "version_added": "70",
+              "notes": "Windows 10."
             }
           ],
-          "chrome_android": [
-            {
-              "version_added": "53",
-              "notes": "<a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
-            },
-            {
-              "version_added": "45",
-              "version_removed": "53",
-              "notes": "Behind a preference flag."
-            }
-          ],
+          "chrome_android": {
+            "version_added": "56"
+          },
           "edge": {
             "version_added": null
           },
@@ -45,11 +43,29 @@
           "ie": {
             "version_added": null
           },
-          "opera": {
-            "version_added": null
-          },
+          "opera": [
+            {
+              "version_added": "43",
+              "notes": "macOS only."
+            },
+            {
+              "version_added": "43",
+              "notes": "Linux and versions of Windows earlier than 10.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            },
+            {
+              "version_added": "57",
+              "notes": "Windows 10."
+            }
+          ],
           "opera_android": {
-            "version_added": null
+            "version_added": "43"
           },
           "safari": {
             "version_added": null
@@ -95,11 +111,29 @@
             "ie": {
               "version_added": null
             },
-            "opera": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "macOS only."
+              },
+              {
+                "version_added": "43",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "57",
+                "notes": "Windows 10."
+              }
+            ],
             "opera_android": {
-              "version_added": null
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -125,12 +159,29 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/getCharacteristic",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Behind a preference flag in Chrome OS."
-            },
+            "chrome": [
+              {
+                "version_added": "56",
+                "notes": "macOS only."
+              },
+              {
+                "version_added": "56",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "70",
+                "notes": "Windows 10."
+              }
+            ],
             "chrome_android": {
-              "version_added": false
+              "version_added": "56"
             },
             "edge": {
               "version_added": null
@@ -147,11 +198,29 @@
             "ie": {
               "version_added": null
             },
-            "opera": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "macOS only."
+              },
+              {
+                "version_added": "43",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "57",
+                "notes": "Windows 10."
+              }
+            ],
             "opera_android": {
-              "version_added": null
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -281,31 +350,28 @@
           "support": {
             "chrome": [
               {
-                "version_added": "53",
-                "notes": "Mac support added and <a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
+                "version_added": "56",
+                "notes": "macOS only."
               },
               {
-                "version_added": "51",
-                "version_removed": "53",
-                "notes": "Linux support."
+                "version_added": "56",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               {
-                "version_added": "45",
-                "version_removed": "53",
-                "notes": "Behind a preference flag in Chrome OS."
+                "version_added": "70",
+                "notes": "Windows 10."
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "53",
-                "notes": "<a href='https://github.com/jpchase/OriginTrials/blob/gh-pages/explainer.md'>Origin Trial</a>."
-              },
-              {
-                "version_added": "45",
-                "version_removed": "53",
-                "notes": "Behind a preference flag."
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": null
             },
@@ -321,11 +387,29 @@
             "ie": {
               "version_added": null
             },
-            "opera": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "macOS only."
+              },
+              {
+                "version_added": "43",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "57",
+                "notes": "Windows 10."
+              }
+            ],
             "opera_android": {
-              "version_added": null
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -402,12 +486,29 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTService/uuid",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Behind a preference flag in Chrome OS."
-            },
+            "chrome":[
+              {
+                "version_added": "56",
+                "notes": "macOS only."
+              },
+              {
+                "version_added": "56",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "70",
+                "notes": "Windows 10."
+              }
+            ],
             "chrome_android": {
-              "version_added": null
+              "version_added": "56"
             },
             "edge": {
               "version_added": null
@@ -424,11 +525,29 @@
             "ie": {
               "version_added": null
             },
-            "opera": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "macOS only."
+              },
+              {
+                "version_added": "43",
+                "notes": "Linux and versions of Windows earlier than 10.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "57",
+                "notes": "Windows 10."
+              }
+            ],
             "opera_android": {
-              "version_added": null
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
