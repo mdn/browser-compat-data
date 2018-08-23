@@ -4,6 +4,24 @@ All notable schema changes for this project will be documented in this file. Cha
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
+
+## [0.0.48] - 2018-08-23
+No schema changes.
+
+## [0.0.47] - 2018-08-16
+No schema changes.
+
+## [0.0.46] - 2018-08-09
+No schema changes.
+
+## [0.0.45] - 2018-08-02
+### Changed
+- Standardize bugzilla bug link format. ([#2511])
+
+## [0.0.44] - 2018-07-26
+No schema changes.
+
+## [0.0.43] - 2018-07-19
 ### Changed
 - Require `status` block for all data categories except `webextensions`. ([#2382])
 
@@ -51,6 +69,7 @@ No schema changes.
 ## [0.0.30] - 2018-04-05
 No schema changes.
 
+[#2511]: https://github.com/mdn/browser-compat-data/pull/2511
 [#2382]: https://github.com/mdn/browser-compat-data/pull/2382
 [#2362]: https://github.com/mdn/browser-compat-data/pull/2362
 [#2025]: https://github.com/mdn/browser-compat-data/pull/2025
@@ -58,7 +77,13 @@ No schema changes.
 [#1790]: https://github.com/mdn/browser-compat-data/pull/1790
 [#1740]: https://github.com/mdn/browser-compat-data/pull/1740
 
-[Unreleased]: https://github.com/mdn/browser-compat-data/compare/v0.0.42...HEAD
+[Unreleased]: https://github.com/mdn/browser-compat-data/compare/v0.0.48...HEAD
+[0.0.48]: https://github.com/mdn/browser-compat-data/compare/v0.0.47...v0.0.48
+[0.0.47]: https://github.com/mdn/browser-compat-data/compare/v0.0.46...v0.0.47
+[0.0.46]: https://github.com/mdn/browser-compat-data/compare/v0.0.45...v0.0.46
+[0.0.45]: https://github.com/mdn/browser-compat-data/compare/v0.0.44...v0.0.45
+[0.0.44]: https://github.com/mdn/browser-compat-data/compare/v0.0.43...v0.0.44
+[0.0.43]: https://github.com/mdn/browser-compat-data/compare/v0.0.42...v0.0.43
 [0.0.42]: https://github.com/mdn/browser-compat-data/compare/v0.0.41...v0.0.42
 [0.0.41]: https://github.com/mdn/browser-compat-data/compare/v0.0.40...v0.0.41
 [0.0.40]: https://github.com/mdn/browser-compat-data/compare/v0.0.39...v0.0.40
