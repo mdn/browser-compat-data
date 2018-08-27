@@ -66,6 +66,7 @@ if (process.argv[2]) {
     'test',
     'webdriver',
     'webextensions',
+    'xpath',
     'xslt',
   );
 }
