@@ -136,6 +136,26 @@
       "additionalProperties": false
     },
 
+    "primary_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
+
+    "primary_webextensions_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/webextensions_identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
+
     "identifier": {
       "type": "object",
       "properties": {
@@ -168,8 +188,10 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" },
-    "^webextensions*$": { "$ref": "#/definitions/webextensions_identifier" }
+    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" },
+    "^webextensions*$": { "$ref": "#/definitions/primary_webextensions_identifier" }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "maxProperties": 1,
+  "minProperties": 1
 }
