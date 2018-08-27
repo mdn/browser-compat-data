@@ -1,0 +1,454 @@
+{
+  "api": {
+    "MediaDevices": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices",
+        "support": {
+          "chrome": {
+            "version_added": "47"
+          },
+          "chrome_android": {
+            "version_added": "47"
+          },
+          "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
+            "version_added": true
+          },
+          "firefox": {
+            "version_added": "36"
+          },
+          "firefox_android": {
+            "version_added": "36"
+          },
+          "ie": {
+            "version_added": false
+          },
+          "opera": {
+            "version_added": "30"
+          },
+          "opera_android": {
+            "version_added": "30"
+          },
+          "safari": {
+            "version_added": false
+          },
+          "safari_ios": {
+            "version_added": false
+          },
+          "samsunginternet_android": {
+            "version_added": null
+          },
+          "webview_android": {
+            "version_added": "47"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "ondevicechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/ondevicechange",
+          "support": {
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "51",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.ondevicechange.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "34"
+            },
+            "opera_android": {
+              "version_added": "34"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "enumerateDevices": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
+          "support": {
+            "chrome": {
+              "version_added": "47"
+            },
+            "chrome_android": {
+              "version_added": "47"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "63",
+                "notes": "Prior to Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included."
+              },
+              {
+                "version_added": "39"
+              }
+            ],
+            "firefox_android": {
+              "version_added": "39"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "34"
+            },
+            "opera_android": {
+              "version_added": "34"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "47"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getSupportedConstraints": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "50"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "40"
+            },
+            "opera_android": {
+              "version_added": "40"
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getUserMedia": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "36",
+              "notes": [
+                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API.",
+                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>."
+              ]
+            },
+            "firefox_android": {
+              "version_added": "36",
+              "notes": [
+                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "34",
+                "version_removed": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "34",
+                "version_removed": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": [
+                  "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                ]
+              }
+            ],
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "secure_context_required": {
+          "__compat": {
+            "description": "Secure context required",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": null
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "stereo_audio_capture": {
+        "__compat": {
+          "description": "Stereo audio capture",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}

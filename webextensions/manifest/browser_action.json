@@ -6,10 +6,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": true,
+              "notes": [
+                "If an extension defines a browser action, it is not allowed to define a page action as well."
+              ]
             },
             "edge": {
-              "version_added": true
+              "version_added": "14"
             },
             "firefox": {
               "version_added": "48"
@@ -18,7 +21,10 @@
               "version_added": "55"
             },
             "opera": {
-              "version_added": true
+              "version_added": true,
+              "notes": [
+                "If an extension defines a browser action, it is not allowed to define a page action as well."
+              ]
             }
           }
         },
@@ -50,7 +56,8 @@
                 "version_added": false
               },
               "edge": {
-                "version_added": false
+                "version_added": false,
+                "notes": "Microsoft Edge instead uses the <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/applications#Microsoft_Edge_properties'><code>browser_action_next_to_addressbar</code> property</a> of the <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/applications'><code>browser_specific_settings</code> manifest key</a>"
               },
               "firefox": {
                 "version_added": "54"
@@ -74,7 +81,7 @@
                 ]
               },
               "edge": {
-                "version_added": true,
+                "version_added": "14",
                 "notes": [
                   "SVG icons are not supported.",
                   "'default_icon' must be an object, with explicit sizes."
@@ -87,7 +94,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": true,
+                "notes": [
+                  "SVG icons are not supported."
+                ]
               }
             }
           }
@@ -99,7 +109,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": {
                 "version_added": "48"
@@ -120,7 +130,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": {
                 "version_added": "48"

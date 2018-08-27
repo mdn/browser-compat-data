@@ -40,6 +40,17 @@
         }
       },
       "required": ["version_added"],
+      "anyOf": [
+        {
+          "not": {"required": ["prefix","alternative_name"]}
+        },
+        {
+          "oneOf": [
+            {"required": ["prefix"]},
+            {"required": ["alternative_name"]}
+          ]
+        }
+      ],
       "additionalProperties": false
     },
 
@@ -105,9 +116,26 @@
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
+      "required": ["support", "status"],
+      "additionalProperties": false
+    },
+
+    "webextensions_compat_statement": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "mdn_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
+        },
+        "support": { "$ref": "#/definitions/support_block" },
+        "status": { "$ref": "#/definitions/status_block" }
+      },
       "required": ["support"],
       "additionalProperties": false
     },
+
     "primary_identifier": {
       "allOf": [
         { "$ref": "#/definitions/identifier" },
@@ -117,6 +145,17 @@
         }
       ]
     },
+
+    "primary_webextensions_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/webextensions_identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
+
     "identifier": {
       "type": "object",
       "properties": {
@@ -124,6 +163,17 @@
       },
       "patternProperties":{
         "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
+    },
+
+    "webextensions_identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/webextensions_compat_statement" }
+      },
+      "patternProperties":{
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/webextensions_identifier" }
       },
       "additionalProperties": false
     },
@@ -138,7 +188,8 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" }
+    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" },
+    "^webextensions*$": { "$ref": "#/definitions/primary_webextensions_identifier" }
   },
   "additionalProperties": false,
   "maxProperties": 1,

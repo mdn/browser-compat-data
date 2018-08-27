@@ -1,8 +1,9 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "0.0.28",
+  "version": "0.0.48",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "extend": "3.0.1"
   },
@@ -25,9 +26,11 @@
   },
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
-    "ajv": "^5.0.1"
+    "ajv": "^5.0.1",
+    "mdn-confluence": "0.0.7"
   },
   "scripts": {
+    "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "lint": "node test/lint",
     "render": "node test/render",
     "show-errors": "npm test 1> /dev/null",

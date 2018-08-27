@@ -5,14 +5,21 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/page_action",
           "support": {
-            "chrome": {
-              "version_added": true,
-              "notes": [
-                "SVG icons are not supported."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": true,
+                "notes": [
+                  "SVG icons are not supported.",
+                  "If an extension defines a page action, it is not allowed to define a browser action as well."
+                ]
+              },
+              {
+                "version_added": "49",
+                "notes": "Since Chrome 49, page actions are displayed on the toolbar, rather than in the address bar."
+              }
+            ],
             "edge": {
-              "version_added": true,
+              "version_added": "14",
               "notes": [
                 "SVG icons are not supported.",
                 "'default_icon' must be an object, with explicit sizes."
@@ -25,7 +32,11 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": true,
+              "notes": [
+                "SVG icons are not supported.",
+                "If an extension defines a page action, it is not allowed to define a browser action as well."
+              ]
             }
           }
         },
