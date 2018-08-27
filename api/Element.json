@@ -3328,43 +3328,51 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollHeight",
           "support": {
             "webview_android": {
-              "version_added": null
+              "version_added": true
             },
             "chrome": {
-              "version_added": null
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": true
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
-            "firefox": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "21"
+              },
+              {
+                "version_added": "3",
+                "version_removed": "21",
+                "partial_implementation": true,
+                "notes": "In Firefox versions prior to 21, when an element's content does not generate a vertical scrollbar, then its <code>scrollHeight</code> property is equal to its <code>clientHeight</code> property. This can mean either the content is too short to require a scrollbar or that the element has a CSS style <code>overflow</code> value of <code>visible</code> (non-scrollable)."
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": "8"
             },
             "opera": {
-              "version_added": null
+              "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "4"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
