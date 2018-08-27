@@ -525,7 +525,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "6.0.0"
             },
             "opera": {
               "version_added": "36"
@@ -794,9 +794,20 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": null
-              },
+              "nodejs": [
+                {
+                  "version_added": "7.6.0"
+                },
+                {
+                  "version_added": "7.0.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": null
               },
@@ -848,9 +859,20 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": null
-              },
+              "nodejs": [
+                {
+                  "version_added": "10.0.0"
+                },
+                {
+                  "version_added": "8.10.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": null
               },
@@ -906,15 +928,14 @@
             },
             "nodejs": [
               {
-                "version_added": "6"
+                "version_added": "6.0.0"
               },
               {
-                "version_added": "4",
-                "version_removed": "6",
+                "version_added": "4.0.0",
                 "flags": [
                   {
                     "type": "runtime_flag",
-                    "name": "--harmony-rest-parameters"
+                    "name": "--harmony"
                   }
                 ]
               }

@@ -1,13 +1,14 @@
-var fs = require('fs'),
-    path = require('path'),
-    extend = require('extend');
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const extend = require('extend');
 
 function load() {
   // Recursively load one or more directories passed as arguments.
-  var dir, result = {};
+  let dir, result = {};
 
   function processFilename(fn) {
-    let fp = path.join(dir, fn);
+    const fp = path.join(dir, fn);
     let extra;
 
     // If the given filename is a directory, recursively load it.
@@ -42,4 +43,5 @@ module.exports = load(
   'webdriver',
   'webextensions',
   'xpath',
+  'xslt',
 );
