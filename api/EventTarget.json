@@ -150,8 +150,9 @@
               },
               {
                 "alternative_name": "attachEvent",
-                "version_added": true,
-                "notes": "Older versions of IE supported an equivalent, proprietary, <code>EventTarget.attachEvent()</code> method."
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.attachEvent()</code> method."
               }
             ],
             "opera": {
@@ -514,8 +515,9 @@
               },
               {
                 "alternative_name": "fireEvent",
-                "version_added": true,
-                "notes": "Older versions of IE supported an equivalent, proprietary, <code>EventTarget.fireEvent()</code> method."
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.fireEvent()</code> method."
               }
             ],
             "opera": {
@@ -566,9 +568,17 @@
             "firefox_android": {
               "version_added": "4"
             },
-            "ie": {
-              "version_added": "9"
-            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "detachEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.detachEvent()</code> method."
+              }
+            ],
             "opera": {
               "version_added": "7"
             },
