@@ -90,10 +90,10 @@ if (process.argv[2]) {
 }
 
 if (hasErrors) {
-  console.log("");
+  console.warn("");
   console.warn(`Problems in ${filesWithErrors.size} file${filesWithErrors.size > 1 ? 's' : ''}:`);
   for (const [fileName, file] of filesWithErrors) {
-    console.log(fileName);
+    console.warn(fileName);
     testSchema(file);
     testStyle(file);
     testVersions(file);
