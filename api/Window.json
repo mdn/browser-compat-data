@@ -1784,10 +1784,12 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Note: In Firefox before version 62 this function returned <code>null</code> when called on a Window with no presentation, such as an iframe with <code>display: none;</code> set on it. This was since changed in <a href='https://bugzil.la/1467722'>bug 1467722</a> — it now returns a <code>CSSStyleDeclaration</code> object which has 0 for the <code>length</code> property and an empty string for every declaration. More work is being done to further improve this situation in <a href='https://bugzil.la/1471231'>bug 1471231</a>."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Note: In Firefox before version 62 this function returned <code>null</code> when called on a Window with no presentation, such as an iframe with <code>display: none;</code> set on it. This was since changed in <a href='https://bugzil.la/1467722'>bug 1467722</a> — it now returns a <code>CSSStyleDeclaration</code> object which has 0 for the <code>length</code> property and an empty string for every declaration. More work is being done to further improve this situation in <a href='https://bugzil.la/1471231'>bug 1471231</a>."
             },
             "ie": {
               "version_added": "9"
