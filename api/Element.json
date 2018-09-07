@@ -3414,7 +3414,7 @@
               "version_added": true
             },
             "chrome": {
-              "version_added": true
+              "version_added": "29"
             },
             "chrome_android": {
               "version_added": true
@@ -3426,34 +3426,115 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "1"
             },
             "ie": {
-              "version_added": null
+              "version_added": "8",
+              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
             },
             "opera_android": {
               "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": "5",
+              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "5",
+              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
             },
             "samsunginternet_android": {
               "version_added": null
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "scrollIntoViewOptions": {
+          "__compat": {
+            "description": "<code>scrollIntoViewOptions</code>",
+            "support": {
+              "webview_android": {
+                "version_added": "61",
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+              },
+              "chrome": {
+                "version_added": "61",
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+              },
+              "chrome_android": {
+                "version_added": "61",
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": [
+                {
+                  "version_added": "58",
+                  "notes": "No support for <code>inline</code> option."
+                },
+                {
+                  "version_added": "36",
+                  "version_removed": "58",
+                  "notes": [
+                    "No support for <code>inline</code> option.",
+                    "No support for <code>nearest</code> or <code>center</code> values for <code>block</code> option. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "58",
+                  "notes": "No support for <code>inline</code> option."
+                },
+                {
+                  "version_added": "36",
+                  "version_removed": "58",
+                  "notes": [
+                    "No support for <code>inline</code> option.",
+                    "No support for <code>nearest</code> or <code>center</code> values for <code>block</code> option. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
+                  ]
+                }
+              ],
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "48",
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+              },
+              "opera_android": {
+                "version_added": "48",
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
