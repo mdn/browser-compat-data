@@ -20,10 +20,26 @@
             "version_added": false
           },
           "firefox": {
-            "version_added": true
+            "version_added": "52",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.worklet.enabled",
+                "value_to_set": "true"
+              }
+            ],
+            "notes": "Available only in Firefox Nightly."
           },
           "firefox_android": {
-            "version_added": true
+            "version_added": "52",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.worklet.enabled",
+                "value_to_set": "true"
+              }
+            ],
+            "notes": "Available only in Firefox Nightly."
           },
           "ie": {
             "version_added": false
@@ -69,12 +85,26 @@
             "edge_mobile": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "63"
-            },
-            "firefox_android": {
-              "version_added": "63"
-            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "52",
+                "version_removed": "63",
+                "alternative_name": "import"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "52",
+                "version_removed": "63",
+                "alternative_name": "import"
+              }
+            ],
             "ie": {
               "version_added": false
             },
