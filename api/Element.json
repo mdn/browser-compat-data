@@ -1487,7 +1487,7 @@
                 "version_added": true
               },
               "opera_android": {
-                "version_added": null
+                "version_added": true
               },
               "safari": {
                 "version_added": true
@@ -1511,13 +1511,13 @@
             "description": "<code>x</code> and <code>y</code> properties",
             "support": {
               "webview_android": {
-                "version_added": null
+                "version_added": true
               },
               "chrome": {
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true
               },
               "edge": {
                 "version_added": false,
@@ -1537,10 +1537,10 @@
                 "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
               },
               "opera": {
-                "version_added": null
+                "version_added": true
               },
               "opera_android": {
-                "version_added": null
+                "version_added": true
               },
               "safari": {
                 "version_added": false
@@ -3264,15 +3264,15 @@
           "support": {
             "webview_android": {
               "version_added": true,
-              "alternative_name": "webkitRequestFullscreen"
+              "prefix": "webkit"
             },
             "chrome": {
-              "version_added": true,
-              "alternative_name": "webkitRequestFullscreen"
+              "version_added": "15",
+              "prefix": "webkit"
             },
             "chrome_android": {
               "version_added": true,
-              "alternative_name": "webkitRequestFullscreen"
+              "prefix": "webkit"
             },
             "edge": {
               "version_added": true
@@ -3315,14 +3315,30 @@
             ],
             "ie": {
               "version_added": "11",
-              "alternative_name": "msRequestFullscreen"
+              "prefix": "ms"
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
+            "opera": [
+              {
+                "version_added": "15",
+                "prefix": "webkit"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "15",
+                "prefix": "o"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "14",
+                "prefix": "webkit"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "14",
+                "prefix": "o"
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -3586,34 +3602,20 @@
               "edge_mobile": {
                 "version_added": null
               },
-              "firefox": [
-                {
-                  "version_added": "58",
-                  "notes": "No support for <code>inline</code> option."
-                },
-                {
-                  "version_added": "36",
-                  "version_removed": "58",
-                  "notes": [
-                    "No support for <code>inline</code> option.",
-                    "No support for <code>nearest</code> or <code>center</code> values for <code>block</code> option. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "58",
-                  "notes": "No support for <code>inline</code> option."
-                },
-                {
-                  "version_added": "36",
-                  "version_removed": "58",
-                  "notes": [
-                    "No support for <code>inline</code> option.",
-                    "No support for <code>nearest</code> or <code>center</code> values for <code>block</code> option. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "36",
+                "notes": [
+                  "No support for <code>inline</code> option.",
+                  "Before Firefox 58, <code>nearest</code> and <code>center</code> values for the <code>block</code> option was unsupported. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
+                ]
+              },
+              "firefox_android": {
+                "version_added": "36",
+                "notes": [
+                  "No support for <code>inline</code> option.",
+                  "Before Firefox 58, <code>nearest</code> and <code>center</code> values for the <code>block</code> option was unsupported. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
+                ]
+              },
               "ie": {
                 "version_added": false
               },
