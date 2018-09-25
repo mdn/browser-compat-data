@@ -1529,10 +1529,10 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": null
+              "version_added": "63"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "63"
             },
             "ie": {
               "version_added": true
@@ -1558,7 +1558,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -1785,15 +1785,11 @@
             },
             "firefox": {
               "version_added": true,
-              "notes": [
-                "Before version 62 this function returns <code>null</code> when called on a <code>Window</code> which has no presentation, such as an <code>iframe</code> with <code>display: none;</code>."
-              ]
+              "notes": "Before version 62 this function returned <code>null</code> when called on a Window with no presentation (e.g. an iframe with <code>display: none;</code> set). Since 62 it returns a <code>CSSStyleDeclaration</code> object with <code>length</code> 0, containing empty strings (<a href='https://bugzil.la/1467722'>bug 1467722</a>; also see <a href='https://bugzil.la/1471231'>bug 1471231</a> for further work)."
             },
             "firefox_android": {
               "version_added": true,
-              "notes": [
-                "Before version 62 this function returns <code>null</code> when called on a <code>Window</code> which has no presentation, such as an <code>iframe</code> with <code>display: none;</code>."
-              ]
+              "notes": "Before version 62 this function returned <code>null</code> when called on a Window with no presentation (e.g. an iframe with <code>display: none;</code> set). Since 62 it returns a <code>CSSStyleDeclaration</code> object with <code>length</code> 0, containing empty strings (<a href='https://bugzil.la/1467722'>bug 1467722</a>; also see <a href='https://bugzil.la/1471231'>bug 1471231</a> for further work)."
             },
             "ie": {
               "version_added": "9"
@@ -6658,10 +6654,24 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.visualviewport.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.visualviewport.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": null

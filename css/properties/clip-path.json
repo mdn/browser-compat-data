@@ -201,18 +201,18 @@
             }
           }
         },
-        "inset": {
+        "path": {
           "__compat": {
-            "description": "<code>inset()</code>",
+            "description": "<code>path()</code>",
             "support": {
               "webview_android": {
-                "version_added": "55"
+                "version_added": false
               },
               "chrome": {
-                "version_added": "55"
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": "55"
+                "version_added": false
               },
               "edge": {
                 "version_added": false
@@ -220,44 +220,34 @@
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": [
-                {
-                  "version_added": "54"
-                },
-                {
-                  "version_added": "47",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.clip-path-shapes.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "54"
-                },
-                {
-                  "version_added": "47",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.clip-path-shapes.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.clip-path-path.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.clip-path-path.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": "42"
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "42"
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -266,7 +256,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": "6.0"
+                "version_added": false
               }
             },
             "status": {
