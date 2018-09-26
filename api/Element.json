@@ -1455,18 +1455,17 @@
             "deprecated": false
           }
         },
-        "width_and_height": {
+        "width": {
           "__compat": {
-            "description": "<code>width</code> and <code>height</code> properties",
             "support": {
               "webview_android": {
-                "version_added": null
+                "version_added": true
               },
               "chrome": {
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true
               },
               "edge": {
                 "version_added": true
@@ -1506,9 +1505,110 @@
             }
           }
         },
-        "x_and_y": {
+        "height": {
           "__compat": {
-            "description": "<code>x</code> and <code>y</code> properties",
+            "support": {
+              "webview_android": {
+                "version_added": true
+              },
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "x": {
+          "__compat": {
+            "support": {
+              "webview_android": {
+                "version_added": true
+              },
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false,
+                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": false,
+                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "y": {
+          "__compat": {
             "support": {
               "webview_android": {
                 "version_added": true
