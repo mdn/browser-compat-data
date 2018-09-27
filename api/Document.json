@@ -3501,10 +3501,22 @@
             "edge_mobile": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "41",
-              "notes": "First implemented in Firefox 35 behind the flag <code>layout.css.font-loading-api.enabled</code>. Enabled by default in Firefox 41."
-            },
+            "firefox": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.font-loading-api.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": true
             },
