@@ -684,6 +684,254 @@
                 }
               }
             }
+          },
+          "repeating-radial-gradient": {
+            "__compat": {
+              "description": "<code>repeating-radial-gradient()</code>",
+              "support": {
+                "webview_android": {
+                  "version_added": "4.4"
+                },
+                "chrome": [
+                  {
+                    "version_added": "26"
+                  },
+                  {
+                    "prefix": "-webkit-",
+                    "version_added": "10"
+                  }
+                ],
+                "chrome_android": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "edge_mobile": {
+                  "version_added": true
+                },
+                "firefox": [
+                  {
+                    "version_added": "16",
+                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                  },
+                  {
+                    "prefix": "-moz-",
+                    "version_added": "3.6",
+                    "notes": [
+                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
+                    ]
+                  },
+                  {
+                    "prefix": "-webkit-",
+                    "version_added": "49"
+                  },
+                  {
+                    "prefix": "-webkit-",
+                    "version_added": "44",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.prefixes.webkit",
+                        "value_to_set": "true"
+                      }
+                    ]
+                  }
+                ],
+                "firefox_android": {
+                  "version_added": "46"
+                },
+                "ie": {
+                  "version_added": "10"
+                },
+                "opera": [
+                  {
+                    "version_added": "12.1"
+                  },
+                  {
+                    "prefix": "-o",
+                    "version_added": "12",
+                    "version_removed": "15"
+                  },
+                  {
+                    "prefix": "-webkit",
+                    "version_added": "15"
+                  }
+                ],
+                "opera_android": [
+                  {
+                    "version_added": "12.1"
+                  },
+                  {
+                    "prefix": "-webkit",
+                    "version_added": "15"
+                  }
+                ],
+                "safari": [
+                  {
+                    "version_added": "6.1"
+                  },
+                  {
+                    "prefix": "-webkit-",
+                    "version_added": "5.1",
+                    "notes": [
+                      "Safari 4 was supporting an experimental <code><a href='http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(radial,…)</a></code> function. This old outdated syntax is still supported for compatibility purposes."
+                    ]
+                  }
+                ],
+                "safari_ios": {
+                  "version_added": "7.1"
+                },
+                "samsunginternet_android": {
+                  "version_added": true
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            },
+            "at": {
+              "__compat": {
+                "description": "<code>at</code> syntax",
+                "support": {
+                  "webview_android": {
+                    "version_added": true
+                  },
+                  "chrome": {
+                    "version_added": "26"
+                  },
+                  "chrome_android": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "edge_mobile": {
+                    "version_added": true
+                  },
+                  "firefox": [
+                    {
+                      "version_added": "16",
+                      "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                    },
+                    {
+                      "prefix": "-moz-",
+                      "version_added": "10",
+                      "notes": [
+                        "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
+                      ]
+                    },
+                    {
+                      "prefix": "-webkit-",
+                      "version_added": "49"
+                    },
+                    {
+                      "prefix": "-webkit-",
+                      "version_added": "44",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.prefixes.webkit",
+                          "value_to_set": "true"
+                        }
+                      ]
+                    }
+                  ],
+                  "firefox_android": [
+                    {
+                      "version_added": "16"
+                    },
+                    {
+                      "prefix": "-moz-",
+                      "version_added": "10"
+                    }
+                  ],
+                  "ie": {
+                    "version_added": "10"
+                  },
+                  "opera": [
+                    {
+                      "version_added": "15"
+                    },
+                    {
+                      "prefix": "-o",
+                      "version_added": "11.6",
+                      "version_removed": "15"
+                    }
+                  ],
+                  "opera_android": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  },
+                  "samsunginternet_android": {
+                    "version_added": true
+                  }
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_hints": {
+              "__compat": {
+                "description": "Interpolation Hints / Gradient Midpoints",
+                "support": {
+                  "webview_android": {
+                    "version_added": "40"
+                  },
+                  "chrome": {
+                    "version_added": "40"
+                  },
+                  "chrome_android": {
+                    "version_added": "40"
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "edge_mobile": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "36"
+                  },
+                  "firefox_android": {
+                    "version_added": "36"
+                  },
+                  "ie": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": "27"
+                  },
+                  "opera_android": {
+                    "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "6.1"
+                  },
+                  "safari_ios": {
+                    "version_added": true
+                  },
+                  "samsunginternet_android": {
+                    "version_added": true
+                  }
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            }
           }
         },
         "element": {
