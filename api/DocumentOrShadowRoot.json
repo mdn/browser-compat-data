@@ -311,22 +311,23 @@
           "support": {
             "chrome": {
               "version_added": "53",
-              "alternative_name": "webkitFullscreenElement"
+              "prefix": "webkit"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "53",
+              "prefix": "webkit"
             },
             "edge": {
               "version_added": true,
-              "alternative_name": "msFullscreenElement"
+              "prefix": "webkit"
             },
             "edge_mobile": {
-              "version_added": true
+              "version_added": true,
+              "prefix": "webkit"
             },
             "firefox": [
               {
-                "alternative_name": "mozFullScreenElement",
-                "version_added": "9"
+                "version_added": "64"
               },
               {
                 "version_added": "47",
@@ -337,12 +338,15 @@
                     "value_to_set": "true"
                   }
                 ]
+              },
+              {
+                "version_added": "9",
+                "alternative_name": "mozFullScreenElement"
               }
             ],
             "firefox_android": [
               {
-                "alternative_name": "mozFullScreenElement",
-                "version_added": "9"
+                "version_added": "64"
               },
               {
                 "version_added": "47",
@@ -353,32 +357,43 @@
                     "value_to_set": "true"
                   }
                 ]
+              },
+              {
+                "version_added": "9",
+                "alternative_name": "mozFullScreenElement"
               }
             ],
             "ie": {
-              "version_added": true
+              "version_added": true,
+              "prefix": "ms"
             },
             "opera": {
-              "version_added": "40"
+              "version_added": "40",
+              "prefix": "webkit"
             },
             "opera_android": {
-              "version_added": "40"
+              "version_added": "40",
+              "prefix": "webkit"
             },
             "safari": {
-              "version_added": true
+              "version_added": true,
+              "prefix": "webkit"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": true,
+              "prefix": "webkit"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "6.0",
+              "prefix": "webkit"
             },
             "webview_android": {
-              "version_added": "53"
+              "version_added": "53",
+              "prefix": "webkit"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

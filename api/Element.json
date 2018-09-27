@@ -3362,10 +3362,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen",
           "support": {
-            "webview_android": {
-              "version_added": true,
-              "prefix": "webkit"
-            },
             "chrome": {
               "version_added": "15",
               "prefix": "webkit"
@@ -3375,15 +3371,19 @@
               "prefix": "webkit"
             },
             "edge": {
-              "version_added": true
+              "version_added": true,
+              "prefix": "webkit"
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": true,
+              "prefix": "webkit"
             },
             "firefox": [
               {
+                "version_added": "64"
+              },
+              {
                 "version_added": "47",
-                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or an <code>&lt;object&gt;</code> to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code><code>&lt;iframe&gt;</code></code> with the <code>allowfullscreen</code> attribute can be displayed fullscreen.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3394,11 +3394,15 @@
               },
               {
                 "version_added": "9",
-                "alternative_name": "mozRequestFullScreen"
+                "alternative_name": "mozRequestFullScreen",
+                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or an <code>&lt;object&gt;</code> to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code><code>&lt;iframe&gt;</code></code> with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
               }
             ],
             "firefox_android": [
               {
+                "version_added": "64"
+              },
+              {
                 "version_added": "47",
                 "flags": [
                   {
@@ -3410,7 +3414,8 @@
               },
               {
                 "version_added": "9",
-                "alternative_name": "mozRequestFullScreen"
+                "alternative_name": "mozRequestFullScreen",
+                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or an <code>&lt;object&gt;</code> to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code><code>&lt;iframe&gt;</code></code> with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
               }
             ],
             "ie": {
@@ -3440,13 +3445,20 @@
               }
             ],
             "safari": {
-              "version_added": null
+              "version_added": true,
+              "prefix": "webkit"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true,
+              "prefix": "webkit"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true,
+              "prefix": "webkit"
+            },
+            "webview_android": {
+              "version_added": true,
+              "prefix": "webkit"
             }
           },
           "status": {
@@ -3459,9 +3471,6 @@
           "__compat": {
             "description": "Returns a <code>Promise</code>",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -3475,10 +3484,10 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "version_added": "64"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "64"
               },
               "ie": {
                 "version_added": false
@@ -3496,6 +3505,9 @@
                 "version_added": false
               },
               "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },
