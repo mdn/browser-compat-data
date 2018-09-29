@@ -2,6 +2,26 @@
 const fs = require('fs');
 const path = require('path');
 
+function orderSupportBlock(name, val) {
+    if (name == 'support') {
+        /*
+        Return a new "support_block" object whose first-level properties
+        (browser names) have been ordered according to Array.prototype.sort,
+        and so will be stringified in that order as well. This relies on
+        guaranteed "own" property ordering, which is insertion order for
+        non-integer keys (which is our case). See:
+
+        http://2ality.com/2015/10/property-traversal-order-es6.html
+        http://node.green/#ES2015-misc-own-property-order
+        */
+        return Object.keys(val).sort().reduce(function(result, key) {
+            result[key] = val[key];
+            return result;
+        }, {});
+    }
+    return val;
+}
+
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
   var expectedLines = expected.split(/\n/);
@@ -20,7 +40,7 @@ function jsonDiff(actual, expected) {
 function testStyle(filename) {
   let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual), null, 2);
+  let expected = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
 
   const {platform} = require("os");
   if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
