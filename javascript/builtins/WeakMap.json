@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
           "support": {
-            "webview_android": {
-              "version_added": "37"
-            },
             "chrome": {
               "version_added": "36"
             },
@@ -34,13 +31,13 @@
                 "version_added": "0.12"
               },
               {
-                "version_added": "0.10",
                 "flags": [
                   {
-                    "type": "runtime_flag",
-                    "name": "--harmony"
+                    "name": "--harmony",
+                    "type": "runtime_flag"
                   }
-                ]
+                ],
+                "version_added": "0.10"
               }
             ],
             "opera": {
@@ -57,6 +54,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -69,9 +69,6 @@
           "__compat": {
             "description": "<code>new WeakMap(iterable)</code>",
             "support": {
-              "webview_android": {
-                "version_added": "38"
-              },
               "chrome": {
                 "version_added": "38"
               },
@@ -110,6 +107,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "38"
               }
             },
             "status": {
@@ -123,9 +123,6 @@
           "__compat": {
             "description": "<code>new WeakMap(null)</code>",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -152,13 +149,13 @@
                   "version_added": "0.12"
                 },
                 {
-                  "version_added": "0.10",
                   "flags": [
                     {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
+                      "name": "--harmony",
+                      "type": "runtime_flag"
                     }
-                  ]
+                  ],
+                  "version_added": "0.10"
                 }
               ],
               "opera": {
@@ -174,6 +171,9 @@
                 "version_added": "8"
               },
               "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -188,9 +188,6 @@
           "__compat": {
             "description": "<code>WeakMap()</code> without <code>new</code> throws",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -229,6 +226,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -242,10 +242,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/clear",
             "support": {
-              "webview_android": {
-                "version_added": "37",
-                "version_removed": "43"
-              },
               "chrome": {
                 "version_added": "36",
                 "version_removed": "43"
@@ -292,6 +288,10 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37",
+                "version_removed": "43"
               }
             },
             "status": {
@@ -305,9 +305,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/delete",
             "support": {
-              "webview_android": {
-                "version_added": "37"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -321,12 +318,12 @@
                 "version_added": true
               },
               "firefox": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard.",
+                "version_added": "6"
               },
               "firefox_android": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard.",
+                "version_added": "6"
               },
               "ie": {
                 "version_added": "11"
@@ -336,13 +333,13 @@
                   "version_added": "0.12"
                 },
                 {
-                  "version_added": "0.10",
                   "flags": [
                     {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
+                      "name": "--harmony",
+                      "type": "runtime_flag"
                     }
-                  ]
+                  ],
+                  "version_added": "0.10"
                 }
               ],
               "opera": {
@@ -359,6 +356,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
@@ -372,9 +372,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/get",
             "support": {
-              "webview_android": {
-                "version_added": "37"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -388,12 +385,12 @@
                 "version_added": true
               },
               "firefox": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher.",
+                "version_added": "6"
               },
               "firefox_android": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher.",
+                "version_added": "6"
               },
               "ie": {
                 "version_added": "11"
@@ -403,13 +400,13 @@
                   "version_added": "0.12"
                 },
                 {
-                  "version_added": "0.10",
                   "flags": [
                     {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
+                      "name": "--harmony",
+                      "type": "runtime_flag"
                     }
-                  ]
+                  ],
+                  "version_added": "0.10"
                 }
               ],
               "opera": {
@@ -426,6 +423,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
@@ -439,9 +439,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/has",
             "support": {
-              "webview_android": {
-                "version_added": "37"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -455,12 +452,12 @@
                 "version_added": true
               },
               "firefox": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard.",
+                "version_added": "6"
               },
               "firefox_android": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard.",
+                "version_added": "6"
               },
               "ie": {
                 "version_added": "11"
@@ -470,13 +467,13 @@
                   "version_added": "0.12"
                 },
                 {
-                  "version_added": "0.10",
                   "flags": [
                     {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
+                      "name": "--harmony",
+                      "type": "runtime_flag"
                     }
-                  ]
+                  ],
+                  "version_added": "0.10"
                 }
               ],
               "opera": {
@@ -493,6 +490,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
@@ -506,9 +506,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/prototype",
             "support": {
-              "webview_android": {
-                "version_added": "37"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -535,13 +532,13 @@
                   "version_added": "0.12"
                 },
                 {
-                  "version_added": "0.10",
                   "flags": [
                     {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
+                      "name": "--harmony",
+                      "type": "runtime_flag"
                     }
-                  ]
+                  ],
+                  "version_added": "0.10"
                 }
               ],
               "opera": {
@@ -558,6 +555,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
@@ -571,9 +571,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/set",
             "support": {
-              "webview_android": {
-                "version_added": "37"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -587,30 +584,30 @@
                 "version_added": true
               },
               "firefox": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard.",
+                "version_added": "6"
               },
               "firefox_android": {
-                "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard.",
+                "version_added": "6"
               },
               "ie": {
-                "version_added": "11",
+                "notes": "Returns 'undefined' instead of the 'Map' object.",
                 "partial_implementation": true,
-                "notes": "Returns 'undefined' instead of the 'Map' object."
+                "version_added": "11"
               },
               "nodejs": [
                 {
                   "version_added": "0.12"
                 },
                 {
-                  "version_added": "0.10",
                   "flags": [
                     {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
+                      "name": "--harmony",
+                      "type": "runtime_flag"
                     }
-                  ]
+                  ],
+                  "version_added": "0.10"
                 }
               ],
               "opera": {
@@ -627,6 +624,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
