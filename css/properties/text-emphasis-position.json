@@ -5,15 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position",
           "support": {
-            "webview_android": [
-              {
-                "version_added": true
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "4.4"
-              }
-            ],
             "chrome": [
               {
                 "version_added": true
@@ -37,15 +28,15 @@
                 "version_added": "46"
               },
               {
-                "version_added": "45",
-                "version_removed": "49",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.text-emphasis.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "45",
+                "version_removed": "49"
               }
             ],
             "firefox_android": [
@@ -53,15 +44,15 @@
                 "version_added": "46"
               },
               {
-                "version_added": "45",
-                "version_removed": "49",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.text-emphasis.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "45",
+                "version_removed": "49"
               }
             ],
             "ie": {
@@ -99,7 +90,16 @@
             },
             "samsunginternet_android": {
               "version_added": true
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "4.4"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -111,9 +111,6 @@
           "__compat": {
             "description": "<code>left</code> and <code>right</code>",
             "support": {
-              "webview_android": {
-                "version_added": "62"
-              },
               "chrome": {
                 "version_added": "62"
               },
@@ -149,6 +146,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": "62"
               }
             },
             "status": {

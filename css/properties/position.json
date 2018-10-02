@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/position",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -21,15 +18,15 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": "1",
-              "notes": "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>)."
+              "notes": "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>).",
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
             },
             "ie": {
-              "version_added": "4",
-              "notes": "In Internet Explorer, fixed positioning doesn't work if the document is in <a href='http://msdn.microsoft.com/en-us/library/ie/ms531140(v=vs.85).aspx'>quirks mode</a>."
+              "notes": "In Internet Explorer, fixed positioning doesn't work if the document is in <a href='http://msdn.microsoft.com/en-us/library/ie/ms531140(v=vs.85).aspx'>quirks mode</a>.",
+              "version_added": "4"
             },
             "opera": {
               "version_added": "4"
@@ -45,6 +42,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -57,9 +57,6 @@
           "__compat": {
             "description": "<code>fixed</code>",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "1"
               },
@@ -73,8 +70,8 @@
                 "version_added": null
               },
               "firefox": {
-                "version_added": "1",
-                "notes": "Before Firefox 44, <code>position: fixed</code> didn't create a stacking context in most cases. Firefox and the specification have been modified to mimic Chrome and Safari's long-time behavior."
+                "notes": "Before Firefox 44, <code>position: fixed</code> didn't create a stacking context in most cases. Firefox and the specification have been modified to mimic Chrome and Safari's long-time behavior.",
+                "version_added": "1"
               },
               "firefox_android": {
                 "version_added": null
@@ -96,6 +93,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -109,9 +109,6 @@
           "__compat": {
             "description": "<code>sticky</code>",
             "support": {
-              "webview_android": {
-                "version_added": "56"
-              },
               "chrome": {
                 "version_added": "56"
               },
@@ -129,15 +126,15 @@
                   "version_added": "32"
                 },
                 {
-                  "version_added": "26",
-                  "version_removed": "48",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "layout.css.sticky.enabled",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "26",
+                  "version_removed": "48"
                 }
               ],
               "firefox_android": {
@@ -161,6 +158,9 @@
               },
               "samsunginternet_android": {
                 "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "56"
               }
             },
             "status": {
@@ -174,9 +174,6 @@
           "__compat": {
             "description": "Table elements as <code>absolute</code> positioning containers",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": null
               },
@@ -190,12 +187,12 @@
                 "version_added": null
               },
               "firefox": {
-                "version_added": "30",
-                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;",
+                "version_added": "30"
               },
               "firefox_android": {
-                "version_added": "30",
-                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
+                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;",
+                "version_added": "30"
               },
               "ie": {
                 "version_added": null
@@ -213,6 +210,9 @@
                 "version_added": null
               },
               "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
                 "version_added": null
               }
             },
@@ -227,9 +227,6 @@
           "__compat": {
             "description": "Table elements as <code>sticky</code> positioning containers",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -264,6 +261,9 @@
                 "version_added": null
               },
               "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },

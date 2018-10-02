@@ -5,87 +5,82 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer",
           "support": {
-            "webview_android": {
-              "version_added": "60",
-              "version_removed": "63",
-              "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
-            },
             "chrome": [
               {
                 "version_added": "68"
               },
               {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place.",
                 "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
+                "version_removed": "63"
               }
             ],
             "chrome_android": {
+              "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
               "version_added": "60",
-              "version_removed": "63",
-              "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+              "version_removed": "63"
             },
             "edge": {
-              "version_added": false,
-              "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>.",
+              "version_added": false
             },
             "edge_mobile": {
               "version_added": null
             },
             "firefox": [
               {
-                "version_added": "57",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "javascript.options.shared_memory",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                "version_added": "57"
               },
               {
                 "version_added": "55",
                 "version_removed": "57"
               },
               {
-                "version_added": "46",
-                "version_removed": "55",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "javascript.options.shared_memory",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "46",
+                "version_removed": "55"
               }
             ],
             "firefox_android": [
               {
-                "version_added": "57",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "javascript.options.shared_memory",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                "version_added": "57"
               },
               {
                 "version_added": "55",
                 "version_removed": "57"
               },
               {
-                "version_added": "46",
-                "version_removed": "55",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "javascript.options.shared_memory",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "46",
+                "version_removed": "55"
               }
             ],
             "ie": {
@@ -109,6 +104,11 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
+              "version_added": "60",
+              "version_removed": "63"
             }
           },
           "status": {
@@ -121,87 +121,82 @@
           "__compat": {
             "description": "<code>SharedArrayBuffer</code> in <code>DataView</code>",
             "support": {
-              "webview_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
-              },
               "chrome": [
                 {
                   "version_added": "68"
                 },
                 {
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place.",
                   "version_added": "60",
-                  "version_removed": "63",
-                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
+                  "version_removed": "63"
                 }
               ],
               "chrome_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
                 "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_removed": "63"
               },
               "edge": {
-                "version_added": false,
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>.",
+                "version_added": false
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "ie": {
@@ -225,6 +220,11 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
+                "version_added": "60",
+                "version_removed": "63"
               }
             },
             "status": {
@@ -238,87 +238,82 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/prototype",
             "support": {
-              "webview_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
-              },
               "chrome": [
                 {
                   "version_added": "68"
                 },
                 {
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place.",
                   "version_added": "60",
-                  "version_removed": "63",
-                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
+                  "version_removed": "63"
                 }
               ],
               "chrome_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
                 "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_removed": "63"
               },
               "edge": {
-                "version_added": false,
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>.",
+                "version_added": false
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "ie": {
@@ -342,6 +337,11 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
+                "version_added": "60",
+                "version_removed": "63"
               }
             },
             "status": {
@@ -355,87 +355,82 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/byteLength",
             "support": {
-              "webview_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
-              },
               "chrome": [
                 {
                   "version_added": "68"
                 },
                 {
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place.",
                   "version_added": "60",
-                  "version_removed": "63",
-                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
+                  "version_removed": "63"
                 }
               ],
               "chrome_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
                 "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_removed": "63"
               },
               "edge": {
-                "version_added": "16",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>.",
+                "version_added": "16"
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "ie": {
@@ -459,6 +454,11 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
+                "version_added": "60",
+                "version_removed": "63"
               }
             },
             "status": {
@@ -472,87 +472,82 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/slice",
             "support": {
-              "webview_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
-              },
               "chrome": [
                 {
                   "version_added": "68"
                 },
                 {
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place.",
                   "version_added": "60",
-                  "version_removed": "63",
-                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
+                  "version_removed": "63"
                 }
               ],
               "chrome_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
                 "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_removed": "63"
               },
               "edge": {
-                "version_added": "16",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>.",
+                "version_added": "16"
               },
               "edge_mobile": {
                 "version_added": null
               },
               "firefox": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "57",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
                   ],
-                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>.",
+                  "version_added": "57"
                 },
                 {
                   "version_added": "55",
                   "version_removed": "57"
                 },
                 {
-                  "version_added": "46",
-                  "version_removed": "55",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "javascript.options.shared_memory",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "46",
+                  "version_removed": "55"
                 }
               ],
               "ie": {
@@ -576,6 +571,11 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place.",
+                "version_added": "60",
+                "version_removed": "63"
               }
             },
             "status": {

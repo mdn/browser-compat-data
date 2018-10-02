@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": {
             "version_added": "1"
           },
@@ -42,6 +39,9 @@
           },
           "samsunginternet_android": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": true
           }
         },
         "status": {
@@ -54,17 +54,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/accessKey",
           "support": {
-            "webview_android": {
-              "version_added": false,
-              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>."
-            },
             "chrome": {
-              "version_added": false,
-              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>."
+              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>.",
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>."
+              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>.",
+              "version_added": false
             },
             "edge": {
               "version_added": null
@@ -82,12 +78,12 @@
               "version_added": null
             },
             "opera": {
-              "version_added": false,
-              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>."
+              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>.",
+              "version_added": false
             },
             "opera_android": {
-              "version_added": false,
-              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>."
+              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>.",
+              "version_added": false
             },
             "safari": {
               "version_added": null
@@ -97,6 +93,10 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "notes": "Implemented on <a href='/docs/Web/API/HTMLElement'>HTMLElement</a>.",
+              "version_added": false
             }
           },
           "status": {
@@ -110,9 +110,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animate",
           "support": {
-            "webview_android": {
-              "version_added": "37"
-            },
             "chrome": {
               "version_added": "36"
             },
@@ -148,6 +145,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -160,9 +160,6 @@
           "__compat": {
             "description": "<code>id</code> option",
             "support": {
-              "webview_android": {
-                "version_added": "50"
-              },
               "chrome": {
                 "version_added": "50"
               },
@@ -198,6 +195,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": "50"
               }
             },
             "status": {
@@ -211,9 +211,6 @@
           "__compat": {
             "description": "<code>composite</code>, <code>iterationComposite</code>, and <code>spacing</code> options",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -248,6 +245,9 @@
                 "version_added": false
               },
               "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },
@@ -263,9 +263,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/attachShadow",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "53"
             },
@@ -273,27 +270,27 @@
               "version_added": "53"
             },
             "edge": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>"
+              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>",
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>"
+              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>",
+              "version_added": false
             },
             "firefox": [
               {
                 "version_added": "63"
               },
               {
-                "version_added": "59",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.webcomponents.shadowdom.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>"
+                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>",
+                "version_added": "59"
               }
             ],
             "firefox_android": [
@@ -301,15 +298,15 @@
                 "version_added": "63"
               },
               {
-                "version_added": "59",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.webcomponents.shadowdom.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>"
+                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>",
+                "version_added": "59"
               }
             ],
             "ie": {
@@ -329,6 +326,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
             }
           },
           "status": {
@@ -342,9 +342,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/attributes",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "26"
             },
@@ -380,6 +377,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -393,9 +393,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/classList",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "8"
             },
@@ -407,9 +404,9 @@
                 "version_added": "16"
               },
               {
-                "version_added": "12",
                 "notes": "Not supported for SVG elements.",
-                "partial_implementation": true
+                "partial_implementation": true,
+                "version_added": "12"
               }
             ],
             "edge_mobile": {
@@ -438,6 +435,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -450,9 +450,6 @@
           "__compat": {
             "description": "<code>toggle()</code> method's second argument",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "24"
               },
@@ -488,6 +485,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -501,9 +501,6 @@
           "__compat": {
             "description": "Multiple arguments for <code>add()</code> & <code>remove()</code>",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "24"
               },
@@ -539,6 +536,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -552,9 +552,6 @@
           "__compat": {
             "description": "<code>replace()</code>",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": "61"
               },
@@ -589,6 +586,9 @@
                 "version_added": false
               },
               "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
                 "version_added": null
               }
             },
@@ -604,9 +604,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/className",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -641,6 +638,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -655,9 +655,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientHeight",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -692,6 +689,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -706,9 +706,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientLeft",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -744,6 +741,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -757,9 +757,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientTop",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -795,6 +792,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -808,9 +808,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientWidth",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -846,6 +843,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -859,9 +859,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/closest",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": "41"
             },
@@ -897,6 +894,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -910,9 +910,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/computedStyleMap",
           "support": {
-            "webview_android": {
-              "version_added": "66"
-            },
             "chrome": {
               "version_added": "66"
             },
@@ -948,6 +945,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "66"
             }
           },
           "status": {
@@ -1101,9 +1101,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/currentStyle",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -1139,6 +1136,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -1152,9 +1152,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttribute",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": "29"
             },
@@ -1190,6 +1187,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -1203,9 +1203,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNS",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -1219,8 +1216,8 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true,
-              "notes": "Starting in Firefox 13, <code>null</code> is always returned instead of the empty string, as per the DOM4 specification. Previously, there were cases in which an empty string could be returned."
+              "notes": "Starting in Firefox 13, <code>null</code> is always returned instead of the empty string, as per the DOM4 specification. Previously, there were cases in which an empty string could be returned.",
+              "version_added": true
             },
             "firefox_android": {
               "version_added": true
@@ -1242,6 +1239,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -1255,9 +1255,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNames",
           "support": {
-            "webview_android": {
-              "version_added": "61"
-            },
             "chrome": {
               "version_added": "61"
             },
@@ -1293,6 +1290,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "61"
             }
           },
           "status": {
@@ -1306,9 +1306,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -1344,6 +1341,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -1357,9 +1357,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -1395,6 +1392,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -1408,9 +1408,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -1442,11 +1439,14 @@
               "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "4",
-              "notes": "Safari for iOS will modify the effective viewport based on the user zoom. This results in incorrect values whenever the user has zoomed."
+              "notes": "Safari for iOS will modify the effective viewport based on the user zoom. This results in incorrect values whenever the user has zoomed.",
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -1458,9 +1458,6 @@
         "width": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -1496,6 +1493,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -1508,9 +1508,6 @@
         "height": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -1546,6 +1543,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -1558,9 +1558,6 @@
         "x": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -1568,8 +1565,8 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false,
-                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects.",
+                "version_added": false
               },
               "edge_mobile": {
                 "version_added": null
@@ -1581,8 +1578,8 @@
                 "version_added": null
               },
               "ie": {
-                "version_added": false,
-                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects.",
+                "version_added": false
               },
               "opera": {
                 "version_added": true
@@ -1598,6 +1595,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -1610,9 +1610,6 @@
         "y": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -1620,8 +1617,8 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false,
-                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects.",
+                "version_added": false
               },
               "edge_mobile": {
                 "version_added": null
@@ -1633,8 +1630,8 @@
                 "version_added": null
               },
               "ie": {
-                "version_added": false,
-                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects.",
+                "version_added": false
               },
               "opera": {
                 "version_added": true
@@ -1650,6 +1647,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -1664,9 +1664,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getClientRects",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -1702,6 +1699,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -1715,9 +1715,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": true
             },
@@ -1731,8 +1728,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true,
-              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec."
+              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec.",
+              "version_added": true
             },
             "firefox_android": {
               "version_added": null
@@ -1747,13 +1744,16 @@
               "version_added": null
             },
             "safari": {
-              "version_added": true,
-              "notes": "Safari on iOS 8 and OS X 10.10 returns a <code>NodeList</code>."
+              "notes": "Safari on iOS 8 and OS X 10.10 returns a <code>NodeList</code>.",
+              "version_added": true
             },
             "safari_ios": {
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -1768,12 +1768,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
-              "version_added": "1",
-              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
+              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change.",
+              "version_added": "1"
             },
             "chrome_android": {
               "version_added": null
@@ -1785,31 +1782,34 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true,
-              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec."
+              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec.",
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": true,
-              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec."
+              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec.",
+              "version_added": true
             },
             "ie": {
               "version_added": "5.5"
             },
             "opera": {
-              "version_added": true,
-              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
+              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change.",
+              "version_added": true
             },
             "opera_android": {
               "version_added": true
             },
             "safari": {
-              "version_added": true,
-              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
+              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change.",
+              "version_added": true
             },
             "safari_ios": {
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -1823,9 +1823,6 @@
           "__compat": {
             "description": "getElementsByTagName(*)",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "1"
               },
@@ -1842,8 +1839,8 @@
                 "version_added": true
               },
               "firefox_android": {
-                "version_added": true,
-                "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec."
+                "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec.",
+                "version_added": true
               },
               "ie": {
                 "version_added": "6"
@@ -1862,6 +1859,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -1876,12 +1876,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagNameNS",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
-              "version_added": "1",
-              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
+              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change.",
+              "version_added": "1"
             },
             "chrome_android": {
               "version_added": null
@@ -1893,38 +1890,41 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true,
               "notes": [
                 "The behavior of <code>element.getElementsByTagNameNS</code> changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the <a href='https://bugzil.la/542185#c5'>comment from Henri Sivonen about the change</a>. You can also look at the <a href='https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names'>relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't.</a>",
                 "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
-              ]
+              ],
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": true,
               "notes": [
                 "The behavior of <code>element.getElementsByTagNameNS</code> changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the <a href='https://bugzil.la/542185#c5'>comment from Henri Sivonen about the change</a>. You can also look at the <a href='https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names'>relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't.</a>",
                 "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
-              ]
+              ],
+              "version_added": true
             },
             "ie": {
               "version_added": "5.5"
             },
             "opera": {
-              "version_added": true,
-              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
+              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change.",
+              "version_added": true
             },
             "opera_android": {
               "version_added": true
             },
             "safari": {
-              "version_added": true,
-              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
+              "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change.",
+              "version_added": true
             },
             "safari_ios": {
               "version_added": true
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -1968,9 +1968,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasAttribute",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -2005,6 +2002,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -2019,9 +2019,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasAttributeNS",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -2057,6 +2054,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -2070,9 +2070,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasAttributes",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": true
             },
@@ -2086,8 +2083,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true,
-              "notes": "[1] Before Firefox 35, it was implemented on the <code>Node</code> interface."
+              "notes": "[1] Before Firefox 35, it was implemented on the <code>Node</code> interface.",
+              "version_added": true
             },
             "firefox_android": {
               "version_added": null
@@ -2109,6 +2106,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -2122,9 +2122,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/id",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -2159,6 +2156,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -2378,12 +2378,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/localName",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
-              "version_added": "46",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "46"
             },
             "chrome_android": {
               "version_added": null
@@ -2395,12 +2392,12 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "48",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "48"
             },
             "firefox_android": {
-              "version_added": "48",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "48"
             },
             "ie": {
               "version_added": null
@@ -2418,6 +2415,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -2587,9 +2587,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/name",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -2625,6 +2622,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -2638,12 +2638,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/namespaceURI",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
-              "version_added": "46",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "46"
             },
             "chrome_android": {
               "version_added": null
@@ -2655,8 +2652,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "48",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "48"
             },
             "firefox_android": {
               "version_added": true
@@ -2665,8 +2662,8 @@
               "version_added": null
             },
             "opera": {
-              "version_added": true,
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": true
             },
             "opera_android": {
               "version_added": null
@@ -2678,6 +2675,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -2745,9 +2745,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ongotpointercapture",
           "support": {
-            "webview_android": {
-              "version_added": "55"
-            },
             "chrome": {
               "version_added": "55"
             },
@@ -2765,14 +2762,14 @@
                 "version_added": "59"
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "firefox_android": [
@@ -2780,14 +2777,14 @@
                 "version_added": false
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "ie": [
@@ -2795,8 +2792,8 @@
                 "version_added": "11"
               },
               {
-                "version_added": "10",
-                "prefix": "ms"
+                "prefix": "ms",
+                "version_added": "10"
               }
             ],
             "opera": {
@@ -2813,6 +2810,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {
@@ -2826,9 +2826,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onlostpointercapture",
           "support": {
-            "webview_android": {
-              "version_added": "55"
-            },
             "chrome": {
               "version_added": "55"
             },
@@ -2846,14 +2843,14 @@
                 "version_added": "59"
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "firefox_android": [
@@ -2861,14 +2858,14 @@
                 "version_added": false
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "ie": [
@@ -2876,8 +2873,8 @@
                 "version_added": "11"
               },
               {
-                "version_added": "10",
-                "prefix": "ms"
+                "prefix": "ms",
+                "version_added": "10"
               }
             ],
             "opera": {
@@ -2894,6 +2891,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {
@@ -2907,9 +2907,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/outerHTML",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -2945,6 +2942,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -2958,12 +2958,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/prefix",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
-              "version_added": "46",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "46"
             },
             "chrome_android": {
               "version_added": null
@@ -2975,12 +2972,12 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": "48",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "48"
             },
             "firefox_android": {
-              "version_added": "48",
-              "notes": "This API was previously available on the<code>Node</code> API."
+              "notes": "This API was previously available on the<code>Node</code> API.",
+              "version_added": "48"
             },
             "ie": {
               "version_added": null
@@ -2999,6 +2996,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -3012,9 +3012,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/querySelector",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -3038,9 +3035,9 @@
                 "version_added": "9"
               },
               {
-                "version_added": "8",
+                "notes": "<code>querySelector()</code> is supported, but only for CSS 2.1 selectors.",
                 "partial_implementation": true,
-                "notes": "<code>querySelector()</code> is supported, but only for CSS 2.1 selectors."
+                "version_added": "8"
               }
             ],
             "opera": {
@@ -3057,6 +3054,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3070,9 +3070,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/querySelectorAll",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -3096,9 +3093,9 @@
                 "version_added": "9"
               },
               {
-                "version_added": "8",
+                "notes": "<code>querySelectorAll()</code> is supported, but only for CSS 2.1 selectors.",
                 "partial_implementation": true,
-                "notes": "<code>querySelectorAll()</code> is supported, but only for CSS 2.1 selectors."
+                "version_added": "8"
               }
             ],
             "opera": {
@@ -3115,6 +3112,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3128,9 +3128,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture",
           "support": {
-            "webview_android": {
-              "version_added": "55"
-            },
             "chrome": {
               "version_added": "55"
             },
@@ -3148,14 +3145,14 @@
                 "version_added": "59"
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "firefox_android": [
@@ -3163,14 +3160,14 @@
                 "version_added": false
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "ie": [
@@ -3178,8 +3175,8 @@
                 "version_added": "11"
               },
               {
-                "version_added": "10",
-                "prefix": "ms"
+                "prefix": "ms",
+                "version_added": "10"
               }
             ],
             "opera": {
@@ -3196,6 +3193,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {
@@ -3209,9 +3209,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/removeAttribute",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -3247,6 +3244,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3260,9 +3260,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNS",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -3298,6 +3295,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3311,9 +3311,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -3349,6 +3346,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3523,22 +3523,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock",
           "support": {
-            "webview_android": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": true,
-                "prefix": "webkit"
-              }
-            ],
             "chrome": [
               {
                 "version_added": true
               },
               {
-                "version_added": true,
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": true
               }
             ],
             "chrome_android": {
@@ -3555,8 +3546,8 @@
                 "version_added": "50"
               },
               {
-                "version_added": true,
-                "prefix": "moz"
+                "prefix": "moz",
+                "version_added": true
               }
             ],
             "firefox_android": {
@@ -3579,7 +3570,16 @@
             },
             "samsunginternet_android": {
               "version_added": null
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "prefix": "webkit",
+                "version_added": true
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -3592,9 +3592,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/runtimeStyle",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -3630,6 +3627,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -3643,9 +3643,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "29"
             },
@@ -3665,8 +3662,8 @@
               "version_added": "4"
             },
             "ie": {
-              "version_added": "8",
-              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
+              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options.",
+              "version_added": "8"
             },
             "opera": {
               "version_added": "38"
@@ -3675,15 +3672,18 @@
               "version_added": true
             },
             "safari": {
-              "version_added": "5",
-              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
+              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options.",
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5",
-              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
+              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options.",
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3696,17 +3696,13 @@
           "__compat": {
             "description": "<code>scrollIntoViewOptions</code>",
             "support": {
-              "webview_android": {
-                "version_added": "61",
-                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
-              },
               "chrome": {
-                "version_added": "61",
-                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>.",
+                "version_added": "61"
               },
               "chrome_android": {
-                "version_added": "61",
-                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>.",
+                "version_added": "61"
               },
               "edge": {
                 "version_added": null
@@ -3715,29 +3711,29 @@
                 "version_added": null
               },
               "firefox": {
-                "version_added": "36",
                 "notes": [
                   "No support for <code>inline</code> option.",
                   "Before Firefox 58, <code>nearest</code> and <code>center</code> values for the <code>block</code> option was unsupported. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
-                ]
+                ],
+                "version_added": "36"
               },
               "firefox_android": {
-                "version_added": "36",
                 "notes": [
                   "No support for <code>inline</code> option.",
                   "Before Firefox 58, <code>nearest</code> and <code>center</code> values for the <code>block</code> option was unsupported. See <a href='https://bugzil.la/1389274'>bug 1389274</a>."
-                ]
+                ],
+                "version_added": "36"
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": "48",
-                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>.",
+                "version_added": "48"
               },
               "opera_android": {
-                "version_added": "48",
-                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>."
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>.",
+                "version_added": "48"
               },
               "safari": {
                 "version_added": false
@@ -3747,6 +3743,10 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "notes": "The <code>block</code> and <code>inline</code> options support the values <code>start</code>, <code>center</code>, <code>end</code>, <code>nearest</code>.",
+                "version_added": "61"
               }
             },
             "status": {
@@ -3761,9 +3761,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollIntoViewIfNeeded",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -3799,6 +3796,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3812,9 +3812,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollHeight",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "4"
             },
@@ -3832,10 +3829,10 @@
                 "version_added": "21"
               },
               {
-                "version_added": "3",
-                "version_removed": "21",
+                "notes": "In Firefox versions prior to 21, when an element's content does not generate a vertical scrollbar, then its <code>scrollHeight</code> property is equal to its <code>clientHeight</code> property. This can mean either the content is too short to require a scrollbar or that the element has a CSS style <code>overflow</code> value of <code>visible</code> (non-scrollable).",
                 "partial_implementation": true,
-                "notes": "In Firefox versions prior to 21, when an element's content does not generate a vertical scrollbar, then its <code>scrollHeight</code> property is equal to its <code>clientHeight</code> property. This can mean either the content is too short to require a scrollbar or that the element has a CSS style <code>overflow</code> value of <code>visible</code> (non-scrollable)."
+                "version_added": "3",
+                "version_removed": "21"
               }
             ],
             "firefox_android": {
@@ -3858,6 +3855,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -3871,9 +3871,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollLeft",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -3908,6 +3905,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -3922,9 +3922,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollLeftMax",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -3959,6 +3956,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -3973,9 +3973,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollTop",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -4010,6 +4007,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -4024,9 +4024,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollTopMax",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -4061,6 +4058,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -4075,9 +4075,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollWidth",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -4113,6 +4110,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -4126,9 +4126,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttribute",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -4164,6 +4161,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -4177,9 +4177,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttributeNS",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -4215,6 +4212,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -4228,9 +4228,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttributeNode",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -4266,6 +4263,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -4279,9 +4279,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -4289,8 +4286,8 @@
               "version_added": null
             },
             "edge": {
-              "version_added": true,
-              "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+              "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects.",
+              "version_added": true
             },
             "edge_mobile": {
               "version_added": null
@@ -4302,8 +4299,8 @@
               "version_added": null
             },
             "ie": {
-              "version_added": true,
-              "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
+              "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects.",
+              "version_added": true
             },
             "opera": {
               "version_added": null
@@ -4318,6 +4315,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -4332,9 +4332,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setCapture",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -4370,6 +4367,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -4383,9 +4383,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture",
           "support": {
-            "webview_android": {
-              "version_added": "55"
-            },
             "chrome": {
               "version_added": "55"
             },
@@ -4403,14 +4400,14 @@
                 "version_added": "59"
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "firefox_android": [
@@ -4418,14 +4415,14 @@
                 "version_added": false
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.w3c_pointer_events.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               }
             ],
             "ie": [
@@ -4433,8 +4430,8 @@
                 "version_added": "11"
               },
               {
-                "version_added": "10",
-                "prefix": "ms"
+                "prefix": "ms",
+                "version_added": "10"
               }
             ],
             "opera": {
@@ -4451,6 +4448,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {
@@ -4464,9 +4464,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/shadowRoot",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "53"
             },
@@ -4474,27 +4471,27 @@
               "version_added": "53"
             },
             "edge": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>"
+              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>",
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>"
+              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>Under consideration</a>",
+              "version_added": false
             },
             "firefox": [
               {
                 "version_added": "63"
               },
               {
-                "version_added": "59",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.webcomponents.shadowdom.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>"
+                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>",
+                "version_added": "59"
               }
             ],
             "firefox_android": [
@@ -4502,15 +4499,15 @@
                 "version_added": "63"
               },
               {
-                "version_added": "59",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "dom.webcomponents.shadowdom.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>"
+                "notes": "See <a href='https://bugzil.la/1205323'>bug 1205323</a>",
+                "version_added": "59"
               }
             ],
             "ie": {
@@ -4530,6 +4527,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
             }
           },
           "status": {
@@ -4543,9 +4543,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/slot",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "53"
             },
@@ -4581,6 +4578,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "53"
             }
           },
           "status": {
@@ -4594,9 +4594,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/tabStop",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": "43"
             },
@@ -4631,6 +4628,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -4645,9 +4645,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/tagName",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": true
             },
@@ -4682,6 +4679,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -4696,9 +4696,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/toggleAttribute",
           "support": {
-            "webview_android": {
-              "version_added": "69"
-            },
             "chrome": {
               "version_added": "69"
             },
@@ -4734,6 +4731,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "69"
             }
           },
           "status": {

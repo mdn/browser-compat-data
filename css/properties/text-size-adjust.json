@@ -5,17 +5,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-size-adjust",
           "support": {
-            "webview_android": {
-              "version_added": "54"
-            },
             "chrome": [
               {
                 "version_added": "54"
               },
               {
+                "notes": "Instead of ignoring the <code>-webkit-text-size-adjust</code> property, a bug prevents desktop Chrome users from zooming in or out. The bug was fixed after Chrome 26.",
                 "prefix": "-webkit-",
-                "version_added": false,
-                "notes": "Instead of ignoring the <code>-webkit-text-size-adjust</code> property, a bug prevents desktop Chrome users from zooming in or out. The bug was fixed after Chrome 26."
+                "version_added": false
               }
             ],
             "chrome_android": {
@@ -48,15 +45,15 @@
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.prefixes.webkit",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "prefix": "-webkit-",
+                "version_added": "44"
               }
             ],
             "ie": {
@@ -73,9 +70,9 @@
                 "version_added": false
               },
               {
+                "notes": "Instead of ignoring the <code>-webkit-text-size-adjust</code> property, a bug prevents desktop Safari users from zooming in or out. The bug was fixed after Safari 5.",
                 "prefix": "-webkit-",
-                "version_added": false,
-                "notes": "Instead of ignoring the <code>-webkit-text-size-adjust</code> property, a bug prevents desktop Safari users from zooming in or out. The bug was fixed after Safari 5."
+                "version_added": false
               }
             ],
             "safari_ios": {
@@ -84,6 +81,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "54"
             }
           },
           "status": {
@@ -96,9 +96,6 @@
           "__compat": {
             "description": "<code>&lt;percentage&gt;</code>",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": null
               },
@@ -133,6 +130,9 @@
                 "version_added": true
               },
               "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
                 "version_added": null
               }
             },

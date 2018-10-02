@@ -4,17 +4,14 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": [
             {
               "version_added": "35"
             },
             {
+              "prefix": "webkit",
               "version_added": "14",
-              "version_removed": "57",
-              "prefix": "webkit"
+              "version_removed": "57"
             }
           ],
           "chrome_android": [
@@ -22,9 +19,9 @@
               "version_added": "35"
             },
             {
+              "prefix": "webkit",
               "version_added": "18",
-              "version_removed": "57",
-              "prefix": "webkit"
+              "version_removed": "57"
             }
           ],
           "edge": {
@@ -47,9 +44,9 @@
               "version_added": "22"
             },
             {
+              "prefix": "webkit",
               "version_added": "15",
-              "version_removed": "44",
-              "prefix": "webkit"
+              "version_removed": "44"
             }
           ],
           "opera_android": [
@@ -57,14 +54,14 @@
               "version_added": "22"
             },
             {
+              "prefix": "webkit",
               "version_added": "15",
-              "version_removed": "44",
-              "prefix": "webkit"
+              "version_removed": "44"
             }
           ],
           "safari": {
-            "version_added": "6",
-            "prefix": "webkit"
+            "prefix": "webkit",
+            "version_added": "6"
           },
           "safari_ios": {
             "version_added": null
@@ -74,11 +71,14 @@
               "version_added": true
             },
             {
-              "version_removed": "7.0",
               "prefix": "webkit",
-              "version_added": true
+              "version_added": true,
+              "version_removed": "7.0"
             }
-          ]
+          ],
+          "webview_android": {
+            "version_added": true
+          }
         },
         "status": {
           "experimental": false,
@@ -91,22 +91,19 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
           "description": "<code>AudioContext()</code> constructor",
           "support": {
-            "webview_android": {
+            "chrome": {
+              "notes": [
+                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+              ],
               "version_added": "55"
             },
-            "chrome": {
-              "version_added": "55",
-              "notes": [
-                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
-                "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
-              ]
-            },
             "chrome_android": {
-              "version_added": "55",
               "notes": [
                 "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                 "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
-              ]
+              ],
+              "version_added": "55"
             },
             "edge": {
               "version_added": true
@@ -133,14 +130,17 @@
               "version_added": "42"
             },
             "safari": {
-              "version_added": true,
-              "prefix": "webkit"
+              "prefix": "webkit",
+              "version_added": true
             },
             "safari_ios": {
               "version_added": null
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {
@@ -153,9 +153,6 @@
           "__compat": {
             "description": "<code>latencyHint</code> option",
             "support": {
-              "webview_android": {
-                "version_added": "60"
-              },
               "chrome": {
                 "version_added": "60"
               },
@@ -194,6 +191,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": "60"
               }
             },
             "status": {
@@ -207,12 +207,9 @@
           "__compat": {
             "description": "<code>sampleRate</code> option",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/432248' title='Issue 432248 - AudioContext needs to support optional sample rate parameter.'>issue 432248</a> for Chrome support."
+                "notes": "See <a href='https://crbug.com/432248' title='Issue 432248 - AudioContext needs to support optional sample rate parameter.'>issue 432248</a> for Chrome support.",
+                "version_added": false
               },
               "chrome_android": {
                 "version_added": null
@@ -249,6 +246,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -263,9 +263,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency",
           "support": {
-            "webview_android": {
-              "version_added": "58"
-            },
             "chrome": {
               "version_added": "58"
             },
@@ -301,6 +298,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": "58"
             }
           },
           "status": {
@@ -314,9 +314,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -351,6 +348,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -365,9 +365,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
           "support": {
-            "webview_android": {
-              "version_added": "43"
-            },
             "chrome": {
               "version_added": "42"
             },
@@ -403,6 +400,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "43"
             }
           },
           "status": {
@@ -416,9 +416,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "14"
             },
@@ -453,6 +450,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -467,9 +467,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "14"
             },
@@ -505,6 +502,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -518,9 +518,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "14"
             },
@@ -556,6 +553,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -569,9 +569,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -607,6 +604,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -620,9 +620,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp",
           "support": {
-            "webview_android": {
-              "version_added": "57"
-            },
             "chrome": {
               "version_added": "57"
             },
@@ -658,6 +655,9 @@
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "57"
             }
           },
           "status": {
@@ -671,9 +671,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/suspend",
           "support": {
-            "webview_android": {
-              "version_added": "43"
-            },
             "chrome": {
               "version_added": "43"
             },
@@ -709,6 +706,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "43"
             }
           },
           "status": {

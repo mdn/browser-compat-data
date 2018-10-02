@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLDocument",
         "support": {
-          "webview_android": {
-            "version_added": false
-          },
           "chrome": {
             "version_added": false
           },
@@ -42,6 +39,9 @@
           },
           "samsunginternet_android": {
             "version_added": false
+          },
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
@@ -54,9 +54,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLDocument/load",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -71,18 +68,18 @@
             },
             "firefox": [
               {
-                "version_added": "3",
-                "notes": "See <a href='https://bugzil.la/332175' title='Drop document.load() support'>bug 332175</a> for removal."
+                "notes": "See <a href='https://bugzil.la/332175' title='Drop document.load() support'>bug 332175</a> for removal.",
+                "version_added": "3"
               },
               {
+                "notes": "Before version 3, Firefox supported cross‑origin loads, even in cases where this would violate CORS.",
                 "version_added": "1",
-                "version_removed": "3",
-                "notes": "Before version 3, Firefox supported cross‑origin loads, even in cases where this would violate CORS."
+                "version_removed": "3"
               }
             ],
             "firefox_android": {
-              "version_added": "4",
-              "notes": "See <a href='https://bugzil.la/332175' title='Drop document.load() support'>bug 332175</a> for removal."
+              "notes": "See <a href='https://bugzil.la/332175' title='Drop document.load() support'>bug 332175</a> for removal.",
+              "version_added": "4"
             },
             "ie": {
               "version_added": false
@@ -100,6 +97,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },

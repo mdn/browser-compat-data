@@ -5,25 +5,16 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/mask",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "2"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": true
-              }
-            ],
             "chrome": [
               {
-                "version_added": "1",
+                "notes": "While the property is recognized, values applied to it don't have any effect.",
                 "partial_implementation": true,
-                "notes": "While the property is recognized, values applied to it don't have any effect."
+                "version_added": "1"
               },
               {
+                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property.",
                 "prefix": "-webkit-",
-                "version_added": true,
-                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
+                "version_added": true
               }
             ],
             "chrome_android": {
@@ -36,8 +27,8 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true,
-              "notes": "From Firefox 10, the default color space when handling masks is sRGB. Previously, the default and only supported color space was linear RGB. This changes the appearance of mask effects, but brings Firefox into compliance with the second edition of the SVG 1.1 specification."
+              "notes": "From Firefox 10, the default color space when handling masks is sRGB. Previously, the default and only supported color space was linear RGB. This changes the appearance of mask effects, but brings Firefox into compliance with the second edition of the SVG 1.1 specification.",
+              "version_added": true
             },
             "firefox_android": {
               "version_added": true
@@ -47,14 +38,14 @@
             },
             "opera": [
               {
-                "version_added": true,
+                "notes": "While the property is recognized, values applied to it don't have any effect.",
                 "partial_implementation": true,
-                "notes": "While the property is recognized, values applied to it don't have any effect."
+                "version_added": true
               },
               {
+                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property.",
                 "prefix": "-webkit-",
-                "version_added": true,
-                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
+                "version_added": true
               }
             ],
             "opera_android": {
@@ -62,14 +53,14 @@
             },
             "safari": [
               {
-                "version_added": "4",
+                "notes": "While the property is recognized, values applied to it don't have any effect.",
                 "partial_implementation": true,
-                "notes": "While the property is recognized, values applied to it don't have any effect."
+                "version_added": "4"
               },
               {
+                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property.",
                 "prefix": "-webkit-",
-                "version_added": true,
-                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
+                "version_added": true
               }
             ],
             "safari_ios": {
@@ -78,7 +69,16 @@
             },
             "samsunginternet_android": {
               "version_added": null
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "2"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -90,9 +90,6 @@
           "__compat": {
             "description": "Applies to HTML elements",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "prefix": "-webkit-",
                 "version_added": true
@@ -130,6 +127,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -143,9 +143,6 @@
           "__compat": {
             "description": "Shorthand for <code>mask-*</code> properties",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "prefix": "-webkit-",
                 "version_added": true
@@ -182,6 +179,9 @@
                 "version_added": null
               },
               "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
                 "version_added": null
               }
             },

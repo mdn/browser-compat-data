@@ -4,16 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection",
         "support": {
-          "webview_android": [
-            {
-              "version_added": "56"
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "51",
-              "version_removed": "56"
-            }
-          ],
           "chrome": [
             {
               "version_added": "56"
@@ -58,8 +48,8 @@
           },
           "opera": [
             {
-              "version_added": "43",
-              "notes": "Promise based version."
+              "notes": "Promise based version.",
+              "version_added": "43"
             },
             {
               "version_added": "37",
@@ -68,8 +58,8 @@
           ],
           "opera_android": [
             {
-              "version_added": "43",
-              "notes": "Promise based version."
+              "notes": "Promise based version.",
+              "version_added": "43"
             },
             {
               "version_added": "37",
@@ -88,8 +78,18 @@
             },
             {
               "prefix": "webkit",
-              "version_removed": "6.0",
-              "version_added": "5.0"
+              "version_added": "5.0",
+              "version_removed": "6.0"
+            }
+          ],
+          "webview_android": [
+            {
+              "version_added": "56"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "51",
+              "version_removed": "56"
             }
           ]
         },
@@ -104,23 +104,17 @@
           "description": "RTCPeerConnection()",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/RTCPeerConnection",
           "support": {
-            "webview_android": {
-              "version_added": "56",
-              "notes": [
-                "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
-              ]
-            },
             "chrome": {
-              "version_added": "56",
               "notes": [
                 "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
-              ]
+              ],
+              "version_added": "56"
             },
             "chrome_android": {
-              "version_added": "56",
               "notes": [
                 "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
-              ]
+              ],
+              "version_added": "56"
             },
             "edge": {
               "version_added": true
@@ -139,8 +133,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -149,8 +143,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -165,6 +159,12 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "notes": [
+                "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
+              ],
+              "version_added": "56"
             }
           },
           "status": {
@@ -178,9 +178,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/canTrickleIceCandidates",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -216,6 +213,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -229,9 +229,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionState",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -266,6 +263,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -280,9 +280,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/currentLocalDescription",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -306,8 +303,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -316,8 +313,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -332,6 +329,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -345,9 +345,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/currentRemoteDescription",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -383,6 +380,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -396,9 +396,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/defaultIceServers",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -422,8 +419,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -432,8 +429,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -448,6 +445,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -461,10 +461,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceConnectionState",
           "support": {
-            "webview_android": {
-              "notes": "disconnected",
-              "version_added": "48"
-            },
             "chrome": {
               "notes": "disconnected",
               "version_added": "48"
@@ -489,8 +485,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -499,8 +495,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -515,6 +511,10 @@
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "notes": "disconnected",
+              "version_added": "48"
             }
           },
           "status": {
@@ -528,9 +528,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceGatheringState",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -554,8 +551,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -564,8 +561,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -580,6 +577,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -593,9 +593,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/localDescription",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -619,8 +616,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -629,8 +626,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -645,6 +642,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -658,9 +658,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/peerIdentity",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -684,8 +681,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -694,8 +691,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -710,6 +707,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -723,9 +723,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingLocalDescription",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -749,8 +746,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -759,8 +756,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -775,6 +772,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -788,9 +788,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingRemoteDescription",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -814,8 +811,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -824,8 +821,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -840,6 +837,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -853,9 +853,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/remoteDescription",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -879,23 +876,23 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "43"
               },
               {
-                "version_added": "38",
                 "notes": "Promise based version.",
+                "version_added": "38",
                 "version_removed": "43"
               }
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "43"
               },
               {
-                "version_added": "38",
                 "notes": "Promise based version.",
+                "version_added": "38",
                 "version_removed": "43"
               }
             ],
@@ -907,6 +904,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -920,9 +920,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/sctp",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -946,8 +943,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -956,8 +953,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -972,6 +969,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -985,9 +985,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingState",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1011,8 +1008,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1021,8 +1018,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1037,6 +1034,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1050,9 +1050,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onaddstream",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1076,8 +1073,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1086,8 +1083,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1102,6 +1099,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1115,9 +1115,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onconnectionstatechange",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -1153,6 +1150,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -1166,9 +1166,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/ondatachannel",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1192,8 +1189,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1202,8 +1199,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1218,6 +1215,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1231,9 +1231,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onicecandidate",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1257,8 +1254,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1267,8 +1264,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1283,6 +1280,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1296,9 +1296,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/oniceconnectionstatechange",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1322,8 +1319,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1332,8 +1329,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1348,6 +1345,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1361,9 +1361,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onicegatheringstatechange",
           "support": {
-            "webview_android": {
-              "version_added": "59"
-            },
             "chrome": {
               "version_added": "59"
             },
@@ -1387,8 +1384,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1397,8 +1394,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1413,6 +1410,9 @@
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "59"
             }
           },
           "status": {
@@ -1426,9 +1426,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidentityresult",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1452,8 +1449,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1462,8 +1459,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1478,6 +1475,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1491,9 +1491,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpassertionerror",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1517,8 +1514,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1527,8 +1524,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1543,6 +1540,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1556,9 +1556,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpvalidationerror",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1582,8 +1579,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1592,8 +1589,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1608,6 +1605,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1621,9 +1621,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onnegotiationneeded",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1647,8 +1644,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1657,8 +1654,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1673,6 +1670,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1686,9 +1686,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onpeeridentity",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1712,8 +1709,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1722,8 +1719,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1738,6 +1735,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1751,9 +1751,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onremovestream",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1779,8 +1776,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1789,8 +1786,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1805,6 +1802,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1818,9 +1818,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onsignalingstatechange",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1844,8 +1841,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1854,8 +1851,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1870,6 +1867,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1883,9 +1883,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/ontrack",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1909,8 +1906,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1919,8 +1916,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -1935,6 +1932,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1948,36 +1948,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
-              },
-              {
-                "version_added": "50",
-                "notes": "Promise based version.",
-                "version_removed": "56"
-              }
-            ],
             "chrome": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
             "chrome_android": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
@@ -1998,8 +1987,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2008,8 +1997,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2029,8 +2018,19 @@
               },
               {
                 "notes": "Promise based version.",
-                "version_removed": "6.0",
-                "version_added": "5.0"
+                "version_added": "5.0",
+                "version_removed": "6.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_added": "50",
+                "version_removed": "56"
               }
             ]
           },
@@ -2045,9 +2045,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addStream",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2071,8 +2068,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2081,8 +2078,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2097,6 +2094,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2110,9 +2110,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTrack",
           "support": {
-            "webview_android": {
-              "version_added": "64"
-            },
             "chrome": {
               "version_added": "64"
             },
@@ -2148,6 +2145,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "64"
             }
           },
           "status": {
@@ -2161,9 +2161,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -2198,6 +2195,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -2212,36 +2212,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
-              },
-              {
-                "version_added": "50",
-                "notes": "Promise based version.",
-                "version_removed": "56"
-              }
-            ],
             "chrome": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
             "chrome_android": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
@@ -2262,8 +2251,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2272,8 +2261,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2293,8 +2282,19 @@
               },
               {
                 "notes": "Promise based version.",
-                "version_removed": "6.0",
-                "version_added": "5.0"
+                "version_added": "5.0",
+                "version_removed": "6.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_added": "50",
+                "version_removed": "56"
               }
             ]
           },
@@ -2309,9 +2309,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2335,8 +2332,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2345,8 +2342,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2361,6 +2358,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2374,36 +2374,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
-              },
-              {
-                "version_added": "50",
-                "notes": "Promise based version.",
-                "version_removed": "56"
-              }
-            ],
             "chrome": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
             "chrome_android": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
@@ -2424,8 +2413,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2434,8 +2423,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2455,8 +2444,19 @@
               },
               {
                 "notes": "Promise based version.",
-                "version_removed": "6.0",
-                "version_added": "5.0"
+                "version_added": "5.0",
+                "version_removed": "6.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_added": "50",
+                "version_removed": "56"
               }
             ]
           },
@@ -2471,9 +2471,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2497,8 +2494,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2507,8 +2504,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2523,6 +2520,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2536,9 +2536,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getConfiguration",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2562,8 +2559,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2572,8 +2569,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2588,6 +2585,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2601,9 +2601,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getIdentityAssertion",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2627,8 +2624,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2637,8 +2634,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2653,6 +2650,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2666,9 +2666,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getLocalStreams",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2692,8 +2689,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2702,8 +2699,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2718,6 +2715,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2731,9 +2731,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getReceivers",
           "support": {
-            "webview_android": {
-              "version_added": "59"
-            },
             "chrome": {
               "version_added": "59"
             },
@@ -2769,6 +2766,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "59"
             }
           },
           "status": {
@@ -2782,9 +2782,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getRemoteStreams",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2808,8 +2805,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2818,8 +2815,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2834,6 +2831,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2847,9 +2847,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getSenders",
           "support": {
-            "webview_android": {
-              "version_added": "64"
-            },
             "chrome": {
               "version_added": "64"
             },
@@ -2885,6 +2882,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "64"
             }
           },
           "status": {
@@ -2898,9 +2898,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStreamById",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2924,8 +2921,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2934,8 +2931,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2950,6 +2947,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -2963,9 +2963,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeStream",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -2989,8 +2986,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -2999,8 +2996,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3015,6 +3012,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -3028,9 +3028,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeTrack",
           "support": {
-            "webview_android": {
-              "version_added": "64"
-            },
             "chrome": {
               "version_added": "64"
             },
@@ -3066,6 +3063,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "64"
             }
           },
           "status": {
@@ -3079,9 +3079,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -3105,8 +3102,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3115,8 +3112,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3131,6 +3128,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -3144,9 +3144,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setIdentityProvider",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -3170,8 +3167,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3180,8 +3177,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3196,6 +3193,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -3209,36 +3209,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
-              },
-              {
-                "version_added": "50",
-                "notes": "Promise based version.",
-                "version_removed": "56"
-              }
-            ],
             "chrome": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
             "chrome_android": [
               {
-                "version_added": "56",
-                "notes": "Promise based version and unprefixed."
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
               },
               {
-                "version_added": "50",
                 "notes": "Promise based version.",
+                "version_added": "50",
                 "version_removed": "56"
               }
             ],
@@ -3259,8 +3248,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3269,8 +3258,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3290,8 +3279,19 @@
               },
               {
                 "notes": "Promise based version.",
-                "version_removed": "6.0",
-                "version_added": "5.0"
+                "version_added": "5.0",
+                "version_removed": "6.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "56"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_added": "50",
+                "version_removed": "56"
               }
             ]
           },
@@ -3306,9 +3306,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -3332,8 +3329,8 @@
             },
             "opera": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3342,8 +3339,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3358,6 +3355,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -3371,9 +3371,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDTMFSender",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -3401,14 +3398,14 @@
                 "version_removed": "43"
               },
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               }
             ],
             "opera_android": [
               {
-                "version_added": "43",
-                "notes": "Promise based version."
+                "notes": "Promise based version.",
+                "version_added": "43"
               },
               {
                 "version_added": "37",
@@ -3423,6 +3420,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -3436,9 +3436,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onicecandidateerror",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -3473,6 +3470,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -3487,9 +3487,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/close",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -3525,6 +3522,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -3538,9 +3538,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getDefaultIceServers",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -3575,6 +3572,9 @@
               "version_added": null
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },

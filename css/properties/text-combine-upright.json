@@ -5,18 +5,15 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-combine-upright",
           "support": {
-            "webview_android": {
-              "version_added": "48"
-            },
             "chrome": [
               {
                 "version_added": "48"
               },
               {
-                "partial_implementation": true,
                 "alternative_name": "-webkit-text-combine",
-                "version_added": true,
-                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>."
+                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>.",
+                "partial_implementation": true,
+                "version_added": true
               }
             ],
             "chrome_android": {
@@ -30,111 +27,114 @@
             },
             "firefox": [
               {
-                "version_added": "48",
-                "notes": "Before version 48, Firefox did not implement layout support for tate-chū-yoko."
+                "notes": "Before version 48, Firefox did not implement layout support for tate-chū-yoko.",
+                "version_added": "48"
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.text-combine-upright.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               },
               {
-                "version_added": "31",
-                "version_removed": true,
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.vertical-text.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "31",
+                "version_removed": true
               },
               {
-                "version_added": "26",
-                "version_removed": "31",
                 "alternative_name": "text-combine-horizontal",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.vertical-text.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "26",
+                "version_removed": "31"
               }
             ],
             "firefox_android": [
               {
-                "version_added": "48",
-                "notes": "Before version 48, Firefox did not implement layout support for tate-chū-yoko."
+                "notes": "Before version 48, Firefox did not implement layout support for tate-chū-yoko.",
+                "version_added": "48"
               },
               {
-                "version_added": "41",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.text-combine-upright.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "41"
               },
               {
-                "version_added": "31",
-                "version_removed": true,
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.vertical-text.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "31",
+                "version_removed": true
               },
               {
-                "version_added": "26",
-                "version_removed": "31",
                 "alternative_name": "text-combine-horizontal",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.vertical-text.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "26",
+                "version_removed": "31"
               }
             ],
             "ie": {
-              "version_added": "11",
-              "alternative_name": "-ms-text-combine-horizontal"
+              "alternative_name": "-ms-text-combine-horizontal",
+              "version_added": "11"
             },
             "opera": [
               {
                 "version_added": true
               },
               {
-                "partial_implementation": true,
                 "alternative_name": "-webkit-text-combine",
-                "version_added": true,
-                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
+                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits.",
+                "partial_implementation": true,
+                "version_added": true
               }
             ],
             "opera_android": {
               "version_added": false
             },
             "safari": {
-              "partial_implementation": true,
               "alternative_name": "-webkit-text-combine",
-              "version_added": true,
-              "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
+              "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits.",
+              "partial_implementation": true,
+              "version_added": true
             },
             "safari_ios": {
               "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "48"
             }
           },
           "status": {
@@ -147,9 +147,6 @@
           "__compat": {
             "description": "<code>digits</code>",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": false
               },
@@ -163,26 +160,26 @@
                 "version_added": null
               },
               "firefox": {
-                "version_added": "48",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.text-combine-upright-digits.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Firefox recognizes this value but does not yet implement layout support for tate-chū-yoko (see <a href='https://bugzil.la/1258635'>bug 1258635</a>)."
+                "notes": "Firefox recognizes this value but does not yet implement layout support for tate-chū-yoko (see <a href='https://bugzil.la/1258635'>bug 1258635</a>).",
+                "version_added": "48"
               },
               "firefox_android": {
-                "version_added": "48",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.text-combine-upright-digits.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Firefox recognizes this value but does not yet implement layout support for tate-chū-yoko (see <a href='https://bugzil.la/1258635'>bug 1258635</a>)."
+                "notes": "Firefox recognizes this value but does not yet implement layout support for tate-chū-yoko (see <a href='https://bugzil.la/1258635'>bug 1258635</a>).",
+                "version_added": "48"
               },
               "ie": {
                 "version_added": true
@@ -201,6 +198,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {

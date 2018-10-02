@@ -5,36 +5,20 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-align-last",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "47"
-              },
-              {
-                "version_added": "37",
-                "version_removed": "47",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable Experimental Web Platform Features",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
             "chrome": [
               {
                 "version_added": "47"
               },
               {
-                "version_added": "35",
-                "version_removed": "47",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "Enable Experimental Web Platform Features",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "35",
+                "version_removed": "47"
               }
             ],
             "chrome_android": [
@@ -42,15 +26,15 @@
                 "version_added": "47"
               },
               {
-                "version_added": "35",
-                "version_removed": "47",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "Enable Experimental Web Platform Features",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "35",
+                "version_removed": "47"
               }
             ],
             "edge": {
@@ -80,12 +64,12 @@
               }
             ],
             "ie": {
-              "version_added": true,
-              "partial_implementation": true,
               "notes": [
                 "IE only supports <code>text-align-last</code> when <code>text-align</code> is set to <code>justify</code>.",
                 "The <code>start</code> and <code>end</code> values are not supported."
-              ]
+              ],
+              "partial_implementation": true,
+              "version_added": true
             },
             "opera": {
               "version_added": true
@@ -94,16 +78,32 @@
               "version_added": true
             },
             "safari": {
-              "version_added": false,
-              "notes": "See WebKit <a href='https://bugs.webkit.org/show_bug.cgi?id=76173'>bug 76173</a>."
+              "notes": "See WebKit <a href='https://bugs.webkit.org/show_bug.cgi?id=76173'>bug 76173</a>.",
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": false,
-              "notes": "See WebKit <a href='https://bugs.webkit.org/show_bug.cgi?id=76173'>bug 76173</a>."
+              "notes": "See WebKit <a href='https://bugs.webkit.org/show_bug.cgi?id=76173'>bug 76173</a>.",
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "5.0"
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "flags": [
+                  {
+                    "name": "Enable Experimental Web Platform Features",
+                    "type": "preference",
+                    "value_to_set": "true"
+                  }
+                ],
+                "version_added": "37",
+                "version_removed": "47"
+              }
+            ]
           },
           "status": {
             "experimental": true,
