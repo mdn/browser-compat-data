@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget",
         "support": {
-          "webview_android": {
-            "version_added": "1"
-          },
           "chrome": {
             "version_added": "1"
           },
@@ -39,9 +36,9 @@
               "version_added": "10.1"
             },
             {
+              "notes": "<code>Window.EventTarget</code> did not exist on versions of Safari before 10.1.",
               "version_added": "1",
-              "version_removed": "10.1",
-              "notes": "<code>Window.EventTarget</code> did not exist on versions of Safari before 10.1."
+              "version_removed": "10.1"
             }
           ],
           "safari_ios": [
@@ -49,13 +46,16 @@
               "version_added": "10.1"
             },
             {
+              "notes": "<code>Window.EventTarget</code> did not exist on versions of Safari iOS before 10.1.",
               "version_added": "1",
-              "version_removed": "10.1",
-              "notes": "<code>Window.EventTarget</code> did not exist on versions of Safari iOS before 10.1."
+              "version_removed": "10.1"
             }
           ],
           "samsunginternet_android": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": "1"
           }
         },
         "status": {
@@ -69,9 +69,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/EventTarget",
           "description": "<code>EventTarget()</code> constructor",
           "support": {
-            "webview_android": {
-              "version_added": "64"
-            },
             "chrome": {
               "version_added": "64"
             },
@@ -107,6 +104,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": "64"
             }
           },
           "status": {
@@ -120,17 +120,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener",
           "support": {
-            "webview_android": {
-              "version_added": "1",
-              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
-            },
             "chrome": {
-              "version_added": "1",
-              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional.",
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "18",
-              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional.",
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -150,9 +146,9 @@
               },
               {
                 "alternative_name": "attachEvent",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.attachEvent()</code> method.",
                 "version_added": "6",
-                "version_removed": "11",
-                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.attachEvent()</code> method."
+                "version_removed": "11"
               }
             ],
             "opera": {
@@ -169,6 +165,10 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional.",
+              "version_added": "1"
             }
           },
           "status": {
@@ -181,9 +181,6 @@
           "__compat": {
             "description": "<code>useCapture</code> parameter made optional",
             "support": {
-              "webview_android": {
-                "version_added": "1"
-              },
               "chrome": {
                 "version_added": "1"
               },
@@ -219,6 +216,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
               }
             },
             "status": {
@@ -232,9 +232,6 @@
           "__compat": {
             "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
             "support": {
-              "webview_android": {
-                "version_added": "49"
-              },
               "chrome": {
                 "version_added": "49"
               },
@@ -270,6 +267,9 @@
               },
               "samsunginternet_android": {
                 "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "49"
               }
             },
             "status": {
@@ -282,9 +282,6 @@
             "__compat": {
               "description": "<code>capture</code> option",
               "support": {
-                "webview_android": {
-                  "version_added": "52"
-                },
                 "chrome": {
                   "version_added": "52"
                 },
@@ -320,6 +317,9 @@
                 },
                 "samsunginternet_android": {
                   "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "52"
                 }
               },
               "status": {
@@ -333,9 +333,6 @@
             "__compat": {
               "description": "<code>once</code> option",
               "support": {
-                "webview_android": {
-                  "version_added": "55"
-                },
                 "chrome": {
                   "version_added": "55"
                 },
@@ -371,6 +368,9 @@
                 },
                 "samsunginternet_android": {
                   "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "55"
                 }
               },
               "status": {
@@ -384,9 +384,6 @@
             "__compat": {
               "description": "<code>passive</code> option",
               "support": {
-                "webview_android": {
-                  "version_added": "51"
-                },
                 "chrome": {
                   "version_added": "51"
                 },
@@ -422,6 +419,9 @@
                 },
                 "samsunginternet_android": {
                   "version_added": "5.0"
+                },
+                "webview_android": {
+                  "version_added": "51"
                 }
               },
               "status": {
@@ -435,9 +435,6 @@
             "__compat": {
               "description": "<code>passive</code> option defaults to <code>true</code> for <code>touchstart</code> and <code>touchmove</code> events",
               "support": {
-                "webview_android": {
-                  "version_added": "55"
-                },
                 "chrome": {
                   "version_added": "55"
                 },
@@ -473,6 +470,9 @@
                 },
                 "samsunginternet_android": {
                   "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "55"
                 }
               },
               "status": {
@@ -488,9 +488,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent",
           "support": {
-            "webview_android": {
-              "version_added": "4"
-            },
             "chrome": {
               "version_added": "4"
             },
@@ -515,9 +512,9 @@
               },
               {
                 "alternative_name": "fireEvent",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.fireEvent()</code> method.",
                 "version_added": "6",
-                "version_removed": "11",
-                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.fireEvent()</code> method."
+                "version_removed": "11"
               }
             ],
             "opera": {
@@ -534,6 +531,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "4"
             }
           },
           "status": {
@@ -547,9 +547,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener",
           "support": {
-            "webview_android": {
-              "version_added": "1"
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -574,9 +571,9 @@
               },
               {
                 "alternative_name": "detachEvent",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.detachEvent()</code> method.",
                 "version_added": "6",
-                "version_removed": "11",
-                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.detachEvent()</code> method."
+                "version_removed": "11"
               }
             ],
             "opera": {
@@ -593,6 +590,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "1"
             }
           },
           "status": {
@@ -605,9 +605,6 @@
           "__compat": {
             "description": "<code>useCapture</code> parameter optional",
             "support": {
-              "webview_android": {
-                "version_added": "1"
-              },
               "chrome": {
                 "version_added": "1"
               },
@@ -643,6 +640,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
               }
             },
             "status": {
@@ -656,10 +656,6 @@
           "__compat": {
             "description": "<code>type</code> and <code>listener</code> parameters optional.",
             "support": {
-              "webview_android": {
-                "version_added": "1",
-                "version_removed": "49"
-              },
               "chrome": {
                 "version_added": "1",
                 "version_removed": "49"
@@ -697,6 +693,10 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1",
+                "version_removed": "49"
               }
             },
             "status": {
@@ -710,9 +710,6 @@
           "__compat": {
             "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
             "support": {
-              "webview_android": {
-                "version_added": "49"
-              },
               "chrome": {
                 "version_added": "49"
               },
@@ -748,6 +745,9 @@
               },
               "samsunginternet_android": {
                 "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "49"
               }
             },
             "status": {
