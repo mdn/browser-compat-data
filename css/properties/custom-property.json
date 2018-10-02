@@ -6,9 +6,6 @@
           "description": "--*",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/--*",
           "support": {
-            "webview_android": {
-              "version_added": "49"
-            },
             "chrome": {
               "version_added": "49"
             },
@@ -44,6 +41,9 @@
             },
             "samsunginternet_android": {
               "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "49"
             }
           },
           "status": {
@@ -57,21 +57,18 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/var",
             "description": "<code>var()</code>",
             "support": {
-              "webview_android": {
-                "version_added": "50"
-              },
               "chrome": [
                 {
                   "version_added": "49"
                 },
                 {
-                  "version_added": "48",
                   "flags": [
                     {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
+                      "name": "Enable experimental Web Platform features",
+                      "type": "preference"
                     }
-                  ]
+                  ],
+                  "version_added": "48"
                 }
               ],
               "chrome_android": {
@@ -88,16 +85,16 @@
                   "version_added": "31"
                 },
                 {
-                  "version_added": "29",
-                  "version_removed": "55",
-                  "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "layout.css.variables.enabled",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
+                  "version_added": "29",
+                  "version_removed": "55"
                 }
               ],
               "firefox_android": [
@@ -105,16 +102,16 @@
                   "version_added": "31"
                 },
                 {
-                  "version_added": "29",
-                  "version_removed": "55",
-                  "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "layout.css.variables.enabled",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
+                  "version_added": "29",
+                  "version_removed": "55"
                 }
               ],
               "ie": {
@@ -134,6 +131,9 @@
               },
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "version_added": "50"
               }
             },
             "status": {

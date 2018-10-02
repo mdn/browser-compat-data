@@ -5,15 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/animation-delay",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "43"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": true
-              }
-            ],
             "chrome": [
               {
                 "version_added": "43"
@@ -40,23 +31,23 @@
             ],
             "firefox": [
               {
-                "version_added": "16",
-                "notes": "Before Firefox 57, Firefox does not repaint elements outside the viewport that are animated into the viewport with a delay. This bug affects only some platforms, such as Windows."
+                "notes": "Before Firefox 57, Firefox does not repaint elements outside the viewport that are animated into the viewport with a delay. This bug affects only some platforms, such as Windows.",
+                "version_added": "16"
               },
               {
-                "version_added": "49",
-                "prefix": "-webkit-"
-              },
-              {
-                "version_added": "44",
                 "prefix": "-webkit-",
+                "version_added": "49"
+              },
+              {
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.prefixes.webkit",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "prefix": "-webkit-",
+                "version_added": "44"
               },
               {
                 "prefix": "-moz-",
@@ -72,15 +63,15 @@
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.prefixes.webkit",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "prefix": "-webkit-",
+                "version_added": "44"
               },
               {
                 "prefix": "-moz-",
@@ -146,7 +137,16 @@
             ],
             "samsunginternet_android": {
               "version_added": null
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "43"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ]
           },
           "status": {
             "experimental": false,

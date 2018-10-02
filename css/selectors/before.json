@@ -6,15 +6,6 @@
           "description": "<code>::before</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::before",
           "support": {
-            "webview_android": [
-              {
-                "version_added": true
-              },
-              {
-                "alternative_name": ":before",
-                "version_added": true
-              }
-            ],
             "chrome": [
               {
                 "version_added": true
@@ -53,11 +44,11 @@
             ],
             "firefox": [
               {
-                "version_added": "1.5",
                 "notes": [
                   "Before Firefox 57, Firefox had a bug where <code>::before</code> pseudo-elements were still generated, even if the <a href='https://developer.mozilla.org/docs/Web/CSS/content'><code>content</code></a> property value were set to <code>normal</code> or <code>none</code>.",
                   "Before Firefox 3.5, only the CSS level 2 behavior of <code>:before</code> was supported, which disallowed <a href='https://developer.mozilla.org/docs/Web/CSS/position'><code>position</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/float'><code>float</code></a>, <code>list-style-*</code> and some <code>display</code> properties."
-                ]
+                ],
+                "version_added": "1.5"
               },
               {
                 "alternative_name": ":before",
@@ -108,7 +99,16 @@
             },
             "samsunginternet_android": {
               "version_added": true
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "alternative_name": ":before",
+                "version_added": true
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -120,9 +120,6 @@
           "__compat": {
             "description": "Animation and transition support",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "26"
               },
@@ -157,6 +154,9 @@
                 "version_added": false
               },
               "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },

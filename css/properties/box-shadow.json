@@ -5,15 +5,10 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/box-shadow",
           "support": {
-            "webview_android": {
-              "prefix": "-webkit-",
-              "version_added": true,
-              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
-            },
             "chrome": [
               {
-                "version_added": "10",
-                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+                "version_added": "10"
               },
               {
                 "prefix": "-webkit-",
@@ -31,8 +26,8 @@
             },
             "firefox": [
               {
-                "version_added": "4",
-                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+                "version_added": "4"
               },
               {
                 "prefix": "-moz-",
@@ -44,39 +39,39 @@
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.prefixes.webkit",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "prefix": "-webkit-",
+                "version_added": "44"
               }
             ],
             "firefox_android": {
               "version_added": null
             },
             "ie": {
-              "version_added": "9",
               "notes": [
                 "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>.",
                 "Since version 5.5, Internet Explorer supports Microsoft's <a href='http://msdn.microsoft.com/en-us/library/ms532985%28VS.85,loband%29.aspx'>DropShadow</a> and <a href='http://msdn.microsoft.com/en-us/library/ms533086%28VS.85,loband%29.aspx'>Shadow Filter</a>. You can use this proprietary extension to cast a drop shadow (though the syntax and the effect are different from CSS3)"
-              ]
+              ],
+              "version_added": "9"
             },
             "opera": {
-              "version_added": "10.5",
-              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+              "version_added": "10.5"
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+              "version_added": true
             },
             "safari": [
               {
-                "version_added": "5.1",
-                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+                "version_added": "5.1"
               },
               {
                 "prefix": "-webkit-",
@@ -85,8 +80,8 @@
             ],
             "safari_ios": [
               {
-                "version_added": "5",
-                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+                "version_added": "5"
               },
               {
                 "prefix": "-webkit-",
@@ -95,6 +90,11 @@
             ],
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar.",
+              "prefix": "-webkit-",
+              "version_added": true
             }
           },
           "status": {
@@ -107,10 +107,6 @@
           "__compat": {
             "description": "Multiple shadows",
             "support": {
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": true
-              },
               "chrome": [
                 {
                   "version_added": "10"
@@ -143,8 +139,8 @@
                 "version_added": null
               },
               "ie": {
-                "version_added": "9",
-                "notes": "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>."
+                "notes": "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>.",
+                "version_added": "9"
               },
               "opera": {
                 "version_added": "10.5"
@@ -172,6 +168,10 @@
               ],
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": true
               }
             },
             "status": {
@@ -185,10 +185,6 @@
           "__compat": {
             "description": "<code>inset</code>",
             "support": {
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": true
-              },
               "chrome": [
                 {
                   "version_added": "10"
@@ -221,8 +217,8 @@
                 "version_added": null
               },
               "ie": {
-                "version_added": "9",
-                "notes": "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>."
+                "notes": "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>.",
+                "version_added": "9"
               },
               "opera": {
                 "version_added": "10.5"
@@ -250,6 +246,10 @@
               ],
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": true
               }
             },
             "status": {
@@ -263,10 +263,6 @@
           "__compat": {
             "description": "Spread radius",
             "support": {
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": true
-              },
               "chrome": [
                 {
                   "version_added": "10"
@@ -299,8 +295,8 @@
                 "version_added": null
               },
               "ie": {
-                "version_added": "9",
-                "notes": "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>."
+                "notes": "To use <code>box-shadow</code> in Internet Explorer 9 or later, you must set <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> to <code>separate</code>.",
+                "version_added": "9"
               },
               "opera": {
                 "version_added": "10.5"
@@ -328,6 +324,10 @@
               ],
               "samsunginternet_android": {
                 "version_added": null
+              },
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": true
               }
             },
             "status": {

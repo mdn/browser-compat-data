@@ -6,9 +6,6 @@
           "description": "<code>@font-face</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "4"
             },
@@ -44,6 +41,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -56,9 +56,6 @@
           "__compat": {
             "description": "WOFF",
             "support": {
-              "webview_android": {
-                "version_added": "4.4"
-              },
               "chrome": {
                 "version_added": "6"
               },
@@ -94,6 +91,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "4.4"
               }
             },
             "status": {
@@ -107,9 +107,6 @@
           "__compat": {
             "description": "WOFF 2",
             "support": {
-              "webview_android": {
-                "version_added": "37"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -127,14 +124,14 @@
                   "version_added": "39"
                 },
                 {
-                  "version_added": "35",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "gfx.downloadable_fonts.woff2.enabled",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "35"
                 }
               ],
               "firefox_android": [
@@ -142,14 +139,14 @@
                   "version_added": "39"
                 },
                 {
-                  "version_added": "35",
                   "flags": [
                     {
-                      "type": "preference",
                       "name": "gfx.downloadable_fonts.woff2.enabled",
+                      "type": "preference",
                       "value_to_set": "true"
                     }
-                  ]
+                  ],
+                  "version_added": "35"
                 }
               ],
               "ie": {
@@ -162,14 +159,17 @@
                 "version_added": "23"
               },
               "safari": {
-                "version_added": "10",
-                "notes": "Supported only on macOS 10.12 (Sierra) and later."
+                "notes": "Supported only on macOS 10.12 (Sierra) and later.",
+                "version_added": "10"
               },
               "safari_ios": {
                 "version_added": "10"
               },
               "samsunginternet_android": {
                 "version_added": "3.0"
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
@@ -183,9 +183,6 @@
           "__compat": {
             "description": "SVG fonts",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -220,6 +217,9 @@
                 "version_added": true
               },
               "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },
@@ -234,9 +234,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display",
             "support": {
-              "webview_android": {
-                "version_added": "60"
-              },
               "chrome": {
                 "version_added": "60"
               },
@@ -272,6 +269,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": "60"
               }
             },
             "status": {
@@ -285,9 +285,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-family",
             "support": {
-              "webview_android": {
-                "version_added": "2.2"
-              },
               "chrome": {
                 "version_added": "4"
               },
@@ -323,6 +320,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "2.2"
               }
             },
             "status": {
@@ -335,9 +335,6 @@
         "font-feature-settings": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -352,28 +349,28 @@
               },
               "firefox": [
                 {
-                  "version_added": "34",
                   "notes": [
                     "The <a href='http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition' >ISO/IEC CD 14496-22 3rd edition</a> suggests using the <code>ssty</code> feature to provide glyph variants more suitable for use in scripts (for example primes used as superscripts). Starting with Firefox 29, this is done automatically by the <a href='https://developer.mozilla.org/docs/Web/MathML'>MathML</a> rendering engine. The ISO/IEC CD 14496-22 3rd edition also suggests applying the <code>dtls</code> feature to letters when placing mathematical accents to get dotless forms (for example dotless i, j with a hat). Starting with Firefox 35, this is done automatically by the MathML rendering engine. You can override the default values determined by the MathML rendering engine with CSS."
-                  ]
+                  ],
+                  "version_added": "34"
                 },
                 {
+                  "notes": "From Firefox 4 to Firefox 14 (inclusive), Firefox supported an older, slightly different syntax. See <a href='http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/'>OpenType Font Feature support in Firefox 4</a>.",
                   "prefix": "-moz-",
-                  "version_added": "15",
-                  "notes": "From Firefox 4 to Firefox 14 (inclusive), Firefox supported an older, slightly different syntax. See <a href='http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/'>OpenType Font Feature support in Firefox 4</a>."
+                  "version_added": "15"
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "34",
                   "notes": [
                     "The <a href='http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition' >ISO/IEC CD 14496-22 3rd edition</a> suggests using the <code>ssty</code> feature to provide glyph variants more suitable for use in scripts (for example primes used as superscripts). Starting with Firefox 29, this is done automatically by the <a href='https://developer.mozilla.org/docs/Web/MathML'>MathML</a> rendering engine. The ISO/IEC CD 14496-22 3rd edition also suggests applying the <code>dtls</code> feature to letters when placing mathematical accents to get dotless forms (for example dotless i, j with a hat). Starting with Firefox 35, this is done automatically by the MathML rendering engine. You can override the default values determined by the MathML rendering engine with CSS."
-                  ]
+                  ],
+                  "version_added": "34"
                 },
                 {
+                  "notes": "From Firefox 4 to Firefox 14 (inclusive), Firefox supported an older, slightly different syntax. See <a href='http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/'>OpenType Font Feature support in Firefox 4</a>.",
                   "prefix": "-moz-",
-                  "version_added": "15",
-                  "notes": "From Firefox 4 to Firefox 14 (inclusive), Firefox supported an older, slightly different syntax. See <a href='http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/'>OpenType Font Feature support in Firefox 4</a>."
+                  "version_added": "15"
                 }
               ],
               "ie": {
@@ -393,6 +390,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -406,9 +406,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-variation-settings",
             "support": {
-              "webview_android": {
-                "version_added": "62"
-              },
               "chrome": {
                 "version_added": "62"
               },
@@ -422,24 +419,24 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": "60",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.font-variations.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "60"
               },
               "firefox_android": {
-                "version_added": "60",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.font-variations.enabled",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "version_added": "60"
               },
               "ie": {
                 "version_added": false
@@ -458,6 +455,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": "62"
               }
             },
             "status": {
@@ -471,9 +471,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-style",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "4"
               },
@@ -508,6 +505,9 @@
                 "version_added": true
               },
               "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -521,9 +521,6 @@
         "font-weight": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "4"
               },
@@ -558,6 +555,9 @@
                 "version_added": true
               },
               "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -572,9 +572,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/src",
             "support": {
-              "webview_android": {
-                "version_added": "2.2"
-              },
               "chrome": {
                 "version_added": "4"
               },
@@ -610,6 +607,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "2.2"
               }
             },
             "status": {
@@ -623,9 +623,6 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": true
               },
@@ -661,6 +658,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {

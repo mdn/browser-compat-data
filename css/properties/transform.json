@@ -5,11 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform",
           "support": {
-            "webview_android": {
-              "prefix": "-webkit-",
-              "version_added": "2",
-              "notes": "Android 2.3 has a bug where input forms will \"jump\" when typing, if any container element has a <code>-webkit-transform</code>."
-            },
             "chrome": [
               {
                 "version_added": "36"
@@ -40,15 +35,15 @@
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.prefixes.webkit",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "prefix": "-webkit-",
+                "version_added": "44"
               }
             ],
             "firefox_android": [
@@ -60,30 +55,30 @@
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
                 "flags": [
                   {
-                    "type": "preference",
                     "name": "layout.css.prefixes.webkit",
+                    "type": "preference",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "prefix": "-webkit-",
+                "version_added": "44"
               }
             ],
             "ie": [
               {
-                "version_added": "10",
-                "notes": "Internet Explorer does not support the global values <code>initial</code> and <code>unset</code>."
+                "notes": "Internet Explorer does not support the global values <code>initial</code> and <code>unset</code>.",
+                "version_added": "10"
               },
               {
                 "prefix": "-webkit-",
                 "version_added": "11"
               },
               {
+                "notes": "Internet Explorer 5.5 or later supports a proprietary <a href='https://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx'>Matrix Filter</a> which can be used to achieve a similar effect.",
                 "prefix": "-ms-",
-                "version_added": "9",
-                "notes": "Internet Explorer 5.5 or later supports a proprietary <a href='https://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx'>Matrix Filter</a> which can be used to achieve a similar effect."
+                "version_added": "9"
               }
             ],
             "opera": [
@@ -124,6 +119,11 @@
             ],
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "notes": "Android 2.3 has a bug where input forms will \"jump\" when typing, if any container element has a <code>-webkit-transform</code>.",
+              "prefix": "-webkit-",
+              "version_added": "2"
             }
           },
           "status": {
@@ -136,10 +136,6 @@
           "__compat": {
             "description": "3D support",
             "support": {
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": "3"
-              },
               "chrome": {
                 "version_added": "12"
               },
@@ -159,8 +155,8 @@
                 "version_added": true
               },
               "ie": {
-                "version_added": "10",
-                "notes": "Internet Explorer 9.0 or earlier has no support for 3D transforms. Mixing 3D and 2D transform functions, such as <code>-ms-transform:rotate(10deg) translateZ(0);</code>, will prevent the entire property from being applied."
+                "notes": "Internet Explorer 9.0 or earlier has no support for 3D transforms. Mixing 3D and 2D transform functions, such as <code>-ms-transform:rotate(10deg) translateZ(0);</code>, will prevent the entire property from being applied.",
+                "version_added": "10"
               },
               "opera": {
                 "version_added": "15"
@@ -176,6 +172,10 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": "3"
               }
             },
             "status": {
