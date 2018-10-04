@@ -98,7 +98,7 @@ const compareVersions = require('compare-versions');
 
     subfeatures.forEach(subfeature => {
       supportInParent.forEach(browser => {
-        if (data[subfeature].__compat.support[browser] != undefined && this.isVersionGreater(data[subfeature].__compat.support[browser], data.__compat.support[browser])) {
+        if (data[subfeature].__compat.support[browser] != undefined && this.isVersionAddedGreater(data[subfeature].__compat.support[browser], data.__compat.support[browser])) {
           inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
           inconsistentSubfeaturesByBrowser[browser].push(subfeature);
         }
@@ -149,11 +149,11 @@ const compareVersions = require('compare-versions');
    * @param {string} b
    * @returns {boolean}
    */
-  isVersionGreater(a, b) {
+  isVersionAddedGreater(a, b) {
     // XXX Only works with regular dictionaries that contain a version_added string -- needs to check against arrays
-    // XXX Should check against version_removed
 
-    if (typeof(a.version_added) === 'string' && typeof(b.version_added) === 'string') return compareVersions(a.version_added, b.version_added) == -1;
+    if (typeof(a.version_added) === 'string' && typeof(b.version_added) === 'string')
+      return compareVersions(a.version_added, b.version_added) == -1;
     return false;
   }
   
