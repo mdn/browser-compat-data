@@ -6,26 +6,47 @@
     "simple_support_statement": {
       "type": "object",
       "properties": {
-        "prefix": { "type": "string" },
-        "alternative_name": { "type": "string" },
+        "prefix": {
+          "type": "string",
+          "description": "A prefix to add to the sub-feature name (defaults to empty string). If applicable, leading and trailing '-' must be included."
+        },
+        "alternative_name": {
+          "type": "string",
+          "description": "An alternative name for the feature, for cases where a feature is implemented under an entirely different name and not just prefixed."
+        },
         "flags": {
           "type": "array",
+          "description": "An optional array of objects indicating what kind of flags must be set for this feature to work.",
           "minItems": 1,
           "items": {
             "type": "object",
             "properties": {
-              "type": { "type": "string", "enum": ["preference", "compile_flag", "runtime_flag"] },
-              "name": { "type": "string" },
-              "value_to_set": { "type": "string"}
+              "type": {
+                "type": "string",
+                "description": "An enum that indicates the flag type.",
+                "enum": ["preference", "compile_flag", "runtime_flag"]
+              },
+              "name": {
+                "type": "string",
+                "description": "A string representing the flag or preference to modify."
+              },
+              "value_to_set": {
+                "type": "string",
+                "description": "A string representing the actual value to set the flag to."
+              }
             },
             "additionalProperties": false,
             "required": ["type", "name"]
           }
         },
-        "partial_implementation": { "type": "boolean" },
+        "partial_implementation": {
+          "type": "boolean",
+          "description": "A boolean value indicating whether or not the implementation of the sub-feature follows the current specification closely enough to not create major interoperability problems. It defaults to false (no interoperability problem expected). If set to true, it is recommended to add a note indicating how it diverges from the standard (implements an old version of the standard, for example)."
+        },
         "version_added": { "$ref": "#/definitions/version_value" },
         "version_removed": { "$ref": "#/definitions/version_value" },
         "notes": {
+          "description": "An array of zero or more strings containing additional information.",
           "anyOf": [
             {
               "type": "string"
@@ -72,9 +93,18 @@
     "status_block": {
       "type": "object",
       "properties": {
-        "experimental": { "type": "boolean" },
-        "standard_track": { "type": "boolean" },
-        "deprecated": { "type": "boolean" }
+        "experimental": {
+          "type": "boolean",
+          "description": "A boolean value that indicates whether this functionality is intended to be an addition to the Web platform. Set to false, it means the functionality is mature, and no significant incompatible changes are expected in the future."
+        },
+        "standard_track": {
+          "type": "boolean",
+          "description": "A boolean value indicating whether the feature is part of an active specification or specification process."
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "A boolean value that indicates whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
+        }
       },
       "required": ["experimental", "standard_track", "deprecated"],
       "additionalProperties": false
@@ -107,11 +137,15 @@
     "compat_statement": {
       "type": "object",
       "properties": {
-        "description": { "type": "string" },
+        "description": {
+          "type": "string",
+          "description": "A string containing a human-readable description of the feature."
+        },
         "mdn_url": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
@@ -123,11 +157,15 @@
     "webextensions_compat_statement": {
       "type": "object",
       "properties": {
-        "description": { "type": "string" },
+        "description": {
+          "type": "string",
+          "description": "A string containing a human-readable description of the feature."
+        },
         "mdn_url": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
