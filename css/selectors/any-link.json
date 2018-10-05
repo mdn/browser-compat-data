@@ -5,10 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:any-link",
           "support": {
-            "webview_android": {
-              "prefix": "-webkit-",
-              "version_added": true
-            },
             "chrome": {
               "prefix": "-webkit-",
               "version_added": true
@@ -25,20 +21,22 @@
             },
             "firefox": [
               {
-                "prefix": "-moz-",
-                "version_added": true
+                "version_added": "50"
               },
               {
-                "version_added": "50"
+                "version_added": "1",
+                "version_removed": true,
+                "prefix": "-moz-"
               }
             ],
             "firefox_android": [
               {
-                "prefix": "-moz-",
-                "version_added": true
+                "version_added": "50"
               },
               {
-                "version_added": "50"
+                "version_added": "4",
+                "version_removed": true,
+                "prefix": "-moz-"
               }
             ],
             "ie": {
@@ -61,6 +59,10 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "prefix": "-webkit-",
               "version_added": true
             }
           },
