@@ -1555,21 +1555,33 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/supports",
           "support": {
-            "chrome": {
-              "version_added": "28"
-            },
+            "chrome": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "28",
+                "notes": "Version 60 or older didn't support parentheses-less one-argument version"
+              }
+            ],
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Edge doesn't support parentheses-less one-argument version"
             },
             "edge_mobile": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Edge doesn't support parentheses-less one-argument version"
             },
             "firefox": [
               {
-                "version_added": "22"
+                "version_added": "55"
+              },
+              {
+                "version_added": "22",
+                "notes": "Version 54 or older didn't support parentheses-less one-argument version"
               },
               {
                 "version_added": "20",
@@ -1583,7 +1595,11 @@
             ],
             "firefox_android": [
               {
-                "version_added": "22"
+                "version_added": "55"
+              },
+              {
+                "version_added": "22",
+                "notes": "Version 54 or older didn't support parentheses-less one-argument version"
               },
               {
                 "version_added": "20",
