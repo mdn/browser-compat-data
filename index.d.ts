@@ -286,6 +286,12 @@ interface CompatData extends Record<Exclude<string, 'browsers'>, Identifier> {
   css: Identifier;
 
   /**
+   * Contains data for [EXSLT](https://developer.mozilla.org/docs/Web/EXSLT)
+   * functions.
+   */
+  exslt: Identifier;
+
+  /**
    * Contains data for [HTML](https://developer.mozilla.org/docs/Web/HTML)
    * elements, attributes, and global attributes.
    */

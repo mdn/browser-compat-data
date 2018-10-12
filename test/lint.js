@@ -58,6 +58,7 @@ if (process.argv[2]) {
     'api',
     'browsers',
     'css',
+    'exslt',
     'html',
     'http',
     'svg',

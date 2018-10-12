@@ -41,6 +41,8 @@ JSON file containing the compatibility data.
 
 - [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
 
+- [exslt/](https://github.com/mdn/browser-compat-data/tree/master/exslt) contains data for [EXSLT](https://developer.mozilla.org/docs/Web/EXSLT) functions.
+
 - [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
 
