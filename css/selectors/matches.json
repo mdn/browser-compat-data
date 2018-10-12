@@ -73,20 +73,50 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": true,
-              "alternative_name": ":-webkit-any",
-              "notes": [
-                "Doesn't support combinators."
-              ]
-            },
-            "opera_android": {
-              "version_added": true,
-              "alternative_name": ":-webkit-any",
-              "notes": [
-                "Doesn't support combinators."
-              ]
-            },
+            "opera": [
+              {
+                "version_added": true,
+                "alternative_name": ":-webkit-any",
+                "notes": [
+                  "Doesn't support combinators."
+                ]
+              },
+              {
+                "version_added": "53",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features",
+                    "value_to_set": "enabled"
+                  }
+                ],
+                "notes": [
+                  "Has issues with combinators (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": true,
+                "alternative_name": ":-webkit-any",
+                "notes": [
+                  "Doesn't support combinators."
+                ]
+              },
+              {
+                "version_added": "53",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features",
+                    "value_to_set": "enabled"
+                  }
+                ],
+                "notes": [
+                  "Has issues with combinators (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+                ]
+              }
+            ],
             "safari": [
               {
                 "version_added": "9"
