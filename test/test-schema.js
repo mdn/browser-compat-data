@@ -10,7 +10,6 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
   );
 
   if (valid) {
-    console.log('\x1b[32m  JSON schema – OK \x1b[0m');
     return false;
   } else {
     console.error('\x1b[31m  File : ' + path.relative(process.cwd(), dataFilename));
