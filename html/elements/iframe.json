@@ -939,70 +939,6 @@
               }
             }
           },
-          "allow-storage-access-by-user-activation": {
-            "__compat": {
-              "description": "<code>allow-storage-access-by-user-activation</code>",
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "chrome_android": {
-                  "version_added": false
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "edge_mobile": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "65",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.storage_access.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                "firefox_android": {
-                  "version_added": "65",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.storage_access.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false
-                },
-                "opera_android": {
-                  "version_added": false
-                },
-                "safari": {
-                  "version_added": "11.1",
-                  "notes": "Currently only available on macOS High Sierra 10.13.4 beta, and in Safari Technology Preview 47+"
-                },
-                "safari_ios": {
-                  "version_added": "11.1",
-                  "notes": "Currently only available on iOS 11.3 beta"
-                },
-                "webview_android": {
-                  "version_added": false
-                }
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": false,
-                "deprecated": false
-              }
-            }
-          },
           "sandbox-allow-top-navigation-by-user-activation": {
             "__compat": {
               "description": "<code>sandbox='allow-top-navigation-by-user-activation'</code>",
@@ -1052,6 +988,70 @@
                 "standard_track": true,
                 "deprecated": false
               }
+            }
+          }
+        },
+        "sandbox-allow-storage-access-by-user-activation": {
+          "__compat": {
+            "description": "<code>sandbox=\"allow-storage-access-by-user-activation\"</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "edge_mobile": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.storage_access.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.storage_access.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "11.1",
+                "notes": "Currently only available on macOS High Sierra 10.13.4 beta, and in Safari Technology Preview 47+."
+              },
+              "safari_ios": {
+                "version_added": "11.1",
+                "notes": "Currently only available on iOS 11.3 beta."
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
             }
           }
         },
