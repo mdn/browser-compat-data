@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const ora = require('ora');
 const yargs = require('yargs');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
@@ -24,7 +25,7 @@ let hasErrors = false;
  * @param {string[]} files
  */
 function load(...files) {
-  if (files.length === 1 && files[0] instanceof Array) {
+  if (files.length === 1 && Array.isArray(files[0])) {
     files = files[0];
   }
   for (let file of files) {
@@ -39,7 +40,21 @@ function load(...files) {
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
         let hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
-        console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
+        const relativeFilePath = path.relative(process.cwd(), file);
+
+        const spinner = ora({
+          stream: process.stdout,
+          text: relativeFilePath
+        });
+
+        const console_error = console.error;
+        console.error = (...args) => {
+          spinner.stream = process.stderr;
+          spinner.fail(relativeFilePath);
+          console.error = console_error;
+          console.error(...args);
+        }
+
         if (file.indexOf('browsers' + path.sep) !== -1) {
           hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
         } else {
@@ -49,8 +64,10 @@ function load(...files) {
         }
         if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
           hasErrors = true;
-          const fileName = file.replace(path.resolve(__dirname, '..') + path.sep, '');
-          filesWithErrors.set(fileName, file);
+          filesWithErrors.set(relativeFilePath, file);
+        } else {
+          console.error = console_error;
+          spinner.succeed();
         }
       }
 
@@ -79,15 +96,17 @@ if (argv.files) {
     'mathml',
     'test',
     'webdriver',
-    'webextensions'
+    'webextensions',
+    'xpath',
+    'xslt',
   );
 }
 
 if (hasErrors) {
-  console.log("");
+  console.warn("");
   console.warn(`Problems in ${filesWithErrors.size} file${filesWithErrors.size > 1 ? 's' : ''}:`);
   for (const [fileName, file] of filesWithErrors) {
-    console.log(fileName);
+    console.warn(fileName);
     testSchema(file);
     testStyle(file);
     testVersions(file);

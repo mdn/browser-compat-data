@@ -5,14 +5,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/style",
           "support": {
-            "webview_android": {
-              "version_added": "1"
-            },
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "1"
+              "version_added": "18"
             },
             "edge": {
               "version_added": true
@@ -43,6 +40,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "1"
             }
           },
           "status": {
@@ -54,14 +54,11 @@
         "type": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "1"
-              },
               "chrome": {
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": "1"
+                "version_added": "18"
               },
               "edge": {
                 "version_added": true
@@ -92,6 +89,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
               }
             },
             "status": {
@@ -104,14 +104,11 @@
         "media": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "1"
-              },
               "chrome": {
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": "1"
+                "version_added": "18"
               },
               "edge": {
                 "version_added": true
@@ -142,6 +139,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
               }
             },
             "status": {
@@ -154,14 +154,11 @@
         "title": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "1"
-              },
               "chrome": {
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": "1"
+                "version_added": "18"
               },
               "edge": {
                 "version_added": true
@@ -192,6 +189,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
               }
             },
             "status": {
@@ -204,9 +204,6 @@
         "scoped": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": "19",
                 "version_removed": "35",
@@ -227,12 +224,42 @@
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "21"
-              },
-              "firefox_android": {
-                "version_added": "21"
-              },
+              "firefox": [
+                {
+                  "version_added": "55",
+                  "version_removed": "61",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.scoped-style.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "notes": "This attribute was hidden behind a pref because no other browsers support it (See <a href='https://bugzil.la/1291515'>bug 1291515</a>)."
+                },
+                {
+                  "version_added": "21",
+                  "version_removed": "55"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "55",
+                  "version_removed": "61",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.scoped-style.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "notes": "This attribute was hidden behind a pref because no other browsers support it (See <a href='https://bugzil.la/1291515'>bug 1291515</a>)."
+                },
+                {
+                  "version_added": "21",
+                  "version_removed": "55"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -249,6 +276,9 @@
                 "version_added": false
               },
               "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },

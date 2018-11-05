@@ -4,14 +4,11 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard",
         "support": {
-          "webview_android": {
-            "version_added": false
-          },
           "chrome": {
-            "version_added": false
+            "version_added": "66"
           },
           "chrome_android": {
-            "version_added": false
+            "version_added": "66"
           },
           "edge": {
             "version_added": null
@@ -20,19 +17,19 @@
             "version_added": null
           },
           "firefox": {
-            "version_added": false
+            "version_added": "63"
           },
           "firefox_android": {
-            "version_added": false
+            "version_added": "63"
           },
           "ie": {
             "version_added": null
           },
           "opera": {
-            "version_added": false
+            "version_added": "53"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "53"
           },
           "safari": {
             "version_added": null
@@ -42,6 +39,9 @@
           },
           "samsunginternet_android": {
             "version_added": null
+          },
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
@@ -54,9 +54,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -70,10 +67,26 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.events.asyncClipboard.dataTransfer",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Currently works just like <code>readText()</code>; non-text content is not currently supported."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.events.asyncClipboard.dataTransfer",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Currently works just like <code>readText()</code>; non-text content is not currently supported."
             },
             "ie": {
               "version_added": null
@@ -92,6 +105,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -105,14 +121,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/readText",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": false
+              "version_added": "66"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "66"
             },
             "edge": {
               "version_added": null
@@ -121,19 +134,21 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "63",
+              "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "63",
+              "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": false
+              "version_added": "53"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "53"
             },
             "safari": {
               "version_added": null
@@ -143,6 +158,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -156,9 +174,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/write",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -172,10 +187,26 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.events.asyncClipboard.dataTransfer",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Currently works exactly like <code>writeText()</code>, including the availability limitations currently imposed by Firefox."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.events.asyncClipboard.dataTransfer",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Currently works exactly like <code>writeText()</code>, including the availability limitations currently imposed by Firefox."
             },
             "ie": {
               "version_added": null
@@ -194,6 +225,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -207,14 +241,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/writeText",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": false
+              "version_added": "66"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "66"
             },
             "edge": {
               "version_added": null
@@ -223,19 +254,21 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "63",
+              "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "63",
+              "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
             },
             "ie": {
               "version_added": null
             },
             "opera": {
-              "version_added": false
+              "version_added": "53"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "53"
             },
             "safari": {
               "version_added": null
@@ -245,6 +278,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {

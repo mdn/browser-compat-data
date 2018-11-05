@@ -41,5 +41,7 @@ module.exports = load(
   'mathml',
   'svg',
   'webdriver',
-  'webextensions'
+  'webextensions',
+  'xpath',
+  'xslt',
 );
