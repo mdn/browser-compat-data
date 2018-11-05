@@ -1,11 +1,11 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "0.0.52",
+  "version": "0.0.57",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "extend": "3.0.1"
+    "extend": "3.0.2"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
     "ajv": "^5.0.1",
-    "mdn-confluence": "0.0.7"
+    "mdn-confluence": "0.0.7",
+    "ora": "^3.0.0"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",

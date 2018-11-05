@@ -50,9 +50,7 @@ function testStyle(filename) {
     expected = expected.replace(/\r/g, "");
   }
 
-  if (actual === expected) {
-    console.log('\x1b[32m  Style – OK \x1b[0m');
-  } else {
+  if (actual !== expected) {
     hasErrors = true;
     console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));

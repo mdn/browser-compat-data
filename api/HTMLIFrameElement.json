@@ -1762,16 +1762,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy",
           "support": {
             "chrome": {
-              "version_added": "53"
+              "version_added": "51"
             },
             "chrome_android": {
               "version_added": "51"
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
               "version_added": "50"
@@ -1780,7 +1780,7 @@
               "version_added": "50"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "38"
@@ -1789,17 +1789,17 @@
               "version_added": "38"
             },
             "safari": {
-              "version_added": null
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": "51"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1907,10 +1907,12 @@
         "__compat": {
           "support": {
             "chrome": {
-              "version_added": "43"
+              "version_added": "43",
+              "notes": "Before Chrome 50, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             },
             "chrome_android": {
-              "version_added": "18"
+              "version_added": "18",
+              "notes": "Before Chrome 50, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             },
             "edge": {
               "version_added": true
@@ -1930,10 +1932,12 @@
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Before Opera 37, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Before Opera 37, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             },
             "safari": {
               "version_added": "6"
@@ -1942,7 +1946,8 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Before Chrome 50, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             }
           },
           "status": {
@@ -2117,6 +2122,55 @@
             "firefox": {
               "version_added": "47",
               "notes": "Supported in chrome code only."
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "setNfcFocus": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/setNfcFocus",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false,
+              "notes": "Supported in chrome code only since Firefox version 47."
             },
             "firefox_android": {
               "version_added": false

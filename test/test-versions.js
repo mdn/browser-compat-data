@@ -72,7 +72,6 @@ function testVersions(dataFilename) {
     console.error('\x1b[31m  Browser version error(s)\x1b[0m');
     return true;
   } else {
-    console.log('\x1b[32m  Browser versions – OK \x1b[0m');
     return false;
   }
 }

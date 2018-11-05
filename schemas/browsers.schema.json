@@ -30,7 +30,10 @@
     "browser_statement": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
+        "name": {
+          "type": "string",
+          "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
+        },
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" }
@@ -43,16 +46,24 @@
     "release_statement": {
       "type": "object",
       "properties": {
-        "release_date": { "type": "string", "format": "date" },
-        "release_notes": { "type": "string", "format": "uri" },
+        "release_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Release date"
+        },
+        "release_notes": {
+          "type": "string",
+          "format": "uri",
+          "description": "A link to the release notes or changelog for a given release."
+        },
         "status": {
           "type": "string",
-          "enum": ["retired", "current", "exclusive", "beta", "nightly", "esr", "planned"]
+          "enum": ["retired", "current", "exclusive", "beta", "nightly", "esr", "planned"],
+          "description": "The status of the given browser release (e.g. current, retired, beta, nightly)."
         }
       },
       "additionalProperties": false
     }
-
   },
 
   "type": "object",
