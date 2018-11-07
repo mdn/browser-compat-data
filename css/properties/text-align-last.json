@@ -5,22 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-align-last",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "47"
-              },
-              {
-                "version_added": "35",
-                "version_removed": "47",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable Experimental Web Platform Features",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
             "chrome": [
               {
                 "version_added": "47"
@@ -80,7 +64,12 @@
               }
             ],
             "ie": {
-              "version_added": false
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": [
+                "IE only supports <code>text-align-last</code> when <code>text-align</code> is set to <code>justify</code>.",
+                "The <code>start</code> and <code>end</code> values are not supported."
+              ]
             },
             "opera": {
               "version_added": true
@@ -98,7 +87,23 @@
             },
             "samsunginternet_android": {
               "version_added": "5.0"
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "37",
+                "version_removed": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental Web Platform Features",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ]
           },
           "status": {
             "experimental": true,

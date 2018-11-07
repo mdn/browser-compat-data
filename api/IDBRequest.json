@@ -4,32 +4,22 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest",
         "support": {
-          "webview_android": [
-            {
-              "version_added": "24"
-            },
-            {
-              "version_added": "23",
-              "version_removed": "57",
-              "prefix": "webkit"
-            }
-          ],
           "chrome": [
             {
               "version_added": "24"
             },
             {
-              "version_added": "23",
+              "version_added": "2",
               "version_removed": "57",
               "prefix": "webkit"
             }
           ],
           "chrome_android": [
             {
-              "version_added": "24"
+              "version_added": "25"
             },
             {
-              "version_added": "23",
+              "version_added": "25",
               "version_removed": "57",
               "prefix": "webkit"
             }
@@ -78,6 +68,16 @@
               "prefix": "webkit",
               "version_added": true
             }
+          ],
+          "webview_android": [
+            {
+              "version_added": true
+            },
+            {
+              "version_added": true,
+              "version_removed": "57",
+              "prefix": "webkit"
+            }
           ]
         },
         "status": {
@@ -86,13 +86,10 @@
           "deprecated": false
         }
       },
-      "available_in_workers": {
+      "worker_support": {
         "__compat": {
           "description": "Available in workers",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -128,7 +125,15 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -136,16 +141,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/error",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "24"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "57",
-                "prefix": "webkit"
-              }
-            ],
             "chrome": [
               {
                 "version_added": "24"
@@ -158,10 +153,10 @@
             ],
             "chrome_android": [
               {
-                "version_added": "24"
+                "version_added": "25"
               },
               {
-                "version_added": "23",
+                "version_added": "25",
                 "version_removed": "57",
                 "prefix": "webkit"
               }
@@ -210,6 +205,16 @@
                 "prefix": "webkit",
                 "version_added": true
               }
+            ],
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "version_removed": "57",
+                "prefix": "webkit"
+              }
             ]
           },
           "status": {
@@ -222,9 +227,6 @@
           "__compat": {
             "description": "<code>DOMException</code> value instead of <code>DOMError</code>",
             "support": {
-              "webview_android": {
-                "version_added": "48"
-              },
               "chrome": {
                 "version_added": "48"
               },
@@ -260,7 +262,15 @@
               },
               "samsunginternet_android": {
                 "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "48"
               }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }
@@ -269,9 +279,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/onerror",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -320,6 +327,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -334,9 +344,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/onsuccess",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -385,6 +392,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -399,9 +409,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/readyState",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -450,6 +457,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -464,9 +474,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/result",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -515,6 +522,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -529,9 +539,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/source",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -580,6 +587,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -594,9 +604,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/transaction",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -645,6 +652,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },

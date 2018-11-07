@@ -4,16 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase",
         "support": {
-          "webview_android": [
-            {
-              "version_added": "24"
-            },
-            {
-              "version_added": "23",
-              "version_removed": "57",
-              "prefix": "webkit"
-            }
-          ],
           "chrome": [
             {
               "version_added": "24"
@@ -26,10 +16,10 @@
           ],
           "chrome_android": [
             {
-              "version_added": "24"
+              "version_added": "25"
             },
             {
-              "version_added": "23",
+              "version_added": "25",
               "version_removed": "57",
               "prefix": "webkit"
             }
@@ -78,6 +68,16 @@
               "prefix": "webkit",
               "version_added": true
             }
+          ],
+          "webview_android": [
+            {
+              "version_added": true
+            },
+            {
+              "version_added": true,
+              "version_removed": "57",
+              "prefix": "webkit"
+            }
           ]
         },
         "status": {
@@ -86,20 +86,10 @@
           "deprecated": false
         }
       },
-      "available_in_workers": {
+      "worker_support": {
         "__compat": {
           "description": "Available in workers",
           "support": {
-            "webview_android": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": "23",
-                "version_removed": "57",
-                "prefix": "webkit"
-              }
-            ],
             "chrome": [
               {
                 "version_added": true
@@ -115,7 +105,7 @@
                 "version_added": true
               },
               {
-                "version_added": "23",
+                "version_added": "25",
                 "version_removed": "57",
                 "prefix": "webkit"
               }
@@ -156,7 +146,22 @@
                 "prefix": "webkit",
                 "version_added": true
               }
+            ],
+            "webview_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "version_removed": "57",
+                "prefix": "webkit"
+              }
             ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -164,9 +169,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/name",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -216,6 +218,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -230,9 +235,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -282,6 +284,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -296,9 +301,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onabort",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -349,6 +351,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -362,9 +367,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onclose",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "31",
               "notes": "approx"
@@ -394,12 +396,15 @@
               "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10.1"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -414,9 +419,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onerror",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -466,6 +468,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -480,9 +485,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onversionchange",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -532,6 +534,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -546,9 +551,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/version",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -598,6 +600,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -612,9 +617,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/close",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -664,6 +666,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -678,9 +683,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/createObjectStore",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -730,6 +732,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -744,9 +749,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/deleteObjectStore",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -796,6 +798,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -810,9 +815,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/transaction",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": [
               {
                 "version_added": "24"
@@ -862,6 +864,9 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },

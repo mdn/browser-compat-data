@@ -1,7 +1,9 @@
-var browsers = require('..').browsers;
+'use strict';
+const path = require('path');
+const {browsers} = require('..');
 
-var validBrowserVersions = {};
-for (let browser of Object.keys(browsers)) {
+const validBrowserVersions = {};
+for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
 }
 
@@ -14,22 +16,22 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 function testVersions(dataFilename) {
-  var hasErrors = false;
-  var data = require(dataFilename);
+  const data = require(dataFilename);
+  let hasErrors = false;
 
   function checkVersions(supportData) {
-    var browsersToCheck = Object.keys(supportData);
-    for (let browser of browsersToCheck) {
+    const browsersToCheck = Object.keys(supportData);
+    for (const browser of browsersToCheck) {
       if (validBrowserVersions[browser]) {
 
-        let supportStatements = [];
+        const supportStatements = [];
         if (Array.isArray(supportData[browser])) {
           Array.prototype.push.apply(supportStatements, supportData[browser]);
         } else {
           supportStatements.push(supportData[browser]);
         }
 
-        for (let statement of supportStatements) {
+        for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
             console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number for ' + browser);
             console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
@@ -53,11 +55,11 @@ function testVersions(dataFilename) {
   }
 
   function findSupport(data) {
-    for (var prop in data) {
+    for (const prop in data) {
       if (prop === 'support') {
         checkVersions(data[prop]);
       }
-      var sub = data[prop];
+      const sub = data[prop];
       if (typeof(sub) === "object") {
         findSupport(sub);
       }
@@ -66,11 +68,10 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error('\x1b[31m  File : ' + dataFilename);
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), dataFilename));
     console.error('\x1b[31m  Browser version error(s)\x1b[0m');
     return true;
   } else {
-    console.log('\x1b[32m  Browser versions – OK \x1b[0m');
     return false;
   }
 }

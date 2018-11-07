@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomElementRegistry",
         "support": {
-          "webview_android": {
-            "version_added": "54"
-          },
           "chrome": {
             "version_added": "54"
           },
@@ -15,13 +12,16 @@
           },
           "edge": {
             "version_added": false,
-            "notes": "Under consideration"
+            "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
           },
           "edge_mobile": {
             "version_added": false,
-            "notes": "Under consideration"
+            "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
           },
           "firefox": [
+            {
+              "version_added": "63"
+            },
             {
               "version_added": "59",
               "flags": [
@@ -50,6 +50,9 @@
             }
           ],
           "firefox_android": [
+            {
+              "version_added": "63"
+            },
             {
               "version_added": "59",
               "flags": [
@@ -94,6 +97,9 @@
           },
           "samsunginternet_android": {
             "version_added": "6.0"
+          },
+          "webview_android": {
+            "version_added": "54"
           }
         },
         "status": {
@@ -104,11 +110,8 @@
       },
       "builtin": {
         "__compat": {
-          "description": "Support for Customized built-in elements",
+          "description": "Customized built-in element support",
           "support": {
-            "webview_android": {
-              "version_added": "66"
-            },
             "chrome": {
               "version_added": "66"
             },
@@ -122,6 +125,9 @@
               "version_added": false
             },
             "firefox": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -150,6 +156,9 @@
               }
             ],
             "firefox_android": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -194,6 +203,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": "66"
             }
           },
           "status": {
@@ -207,16 +219,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "66",
-                "notes": "Support for 'Customized built-in elements' as well."
-              },
-              {
-                "version_added": "54",
-                "notes": "Support for 'Autonomous custom elements' only."
-              }
-            ],
             "chrome": [
               {
                 "version_added": "66",
@@ -239,13 +241,16 @@
             ],
             "edge": {
               "version_added": false,
-              "notes": "Under consideration"
+              "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
             },
             "edge_mobile": {
               "version_added": false,
-              "notes": "Under consideration"
+              "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
             },
             "firefox": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -274,6 +279,9 @@
               }
             ],
             "firefox_android": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -335,7 +343,17 @@
             "samsunginternet_android": {
               "notes": "Support for 'Autonomous custom elements' only.",
               "version_added": "6.0"
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "66",
+                "notes": "Support for 'Customized built-in elements' as well."
+              },
+              {
+                "version_added": "54",
+                "notes": "Support for 'Autonomous custom elements' only."
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -348,16 +366,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "66",
-                "notes": "Support for 'Customized built-in elements' as well."
-              },
-              {
-                "version_added": "54",
-                "notes": "Support for 'Autonomous custom elements' only."
-              }
-            ],
             "chrome": [
               {
                 "version_added": "66",
@@ -380,13 +388,16 @@
             ],
             "edge": {
               "version_added": false,
-              "notes": "Under consideration"
+              "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
             },
             "edge_mobile": {
               "version_added": false,
-              "notes": "Under consideration"
+              "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
             },
             "firefox": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -415,6 +426,9 @@
               }
             ],
             "firefox_android": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -476,6 +490,67 @@
             "samsunginternet_android": {
               "notes": "Support for 'Autonomous custom elements' only.",
               "version_added": "6.0"
+            },
+            "webview_android": [
+              {
+                "version_added": "66",
+                "notes": "Support for 'Customized built-in elements' as well."
+              },
+              {
+                "version_added": "54",
+                "notes": "Support for 'Autonomous custom elements' only."
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "upgrade": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade",
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "68"
             }
           },
           "status": {
@@ -489,16 +564,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined",
           "support": {
-            "webview_android": [
-              {
-                "version_added": "66",
-                "notes": "Support for 'Customized built-in elements' as well."
-              },
-              {
-                "version_added": "54",
-                "notes": "Support for 'Autonomous custom elements' only."
-              }
-            ],
             "chrome": [
               {
                 "version_added": "66",
@@ -521,13 +586,16 @@
             ],
             "edge": {
               "version_added": false,
-              "notes": "Under consideration"
+              "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
             },
             "edge_mobile": {
               "version_added": false,
-              "notes": "Under consideration"
+              "notes": "<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/customelements/'>In Development</a>"
             },
             "firefox": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -556,6 +624,9 @@
               }
             ],
             "firefox_android": [
+              {
+                "version_added": "63"
+              },
               {
                 "version_added": "59",
                 "flags": [
@@ -617,7 +688,17 @@
             "samsunginternet_android": {
               "notes": "Support for 'Autonomous custom elements' only.",
               "version_added": "6.0"
-            }
+            },
+            "webview_android": [
+              {
+                "version_added": "66",
+                "notes": "Support for 'Customized built-in elements' as well."
+              },
+              {
+                "version_added": "54",
+                "notes": "Support for 'Autonomous custom elements' only."
+              }
+            ]
           },
           "status": {
             "experimental": true,
