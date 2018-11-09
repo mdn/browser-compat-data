@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold",
           "support": {
-            "webview_android": {
-              "version_added": "37"
-            },
             "chrome": {
               "version_added": "37"
             },
@@ -20,26 +17,38 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.shape-outside.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.shape-outside.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "62"
+              },
+              {
+                "version_added": "61",
+                "version_removed": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.shape-outside.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62"
+              },
+              {
+                "version_added": "61",
+                "version_removed": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.shape-outside.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -57,6 +66,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {

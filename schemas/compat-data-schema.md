@@ -27,6 +27,10 @@ JSON files containing the compatibility data.
 
 - [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
+- [xpath/](https://github.com/mdn/browser-compat-data/tree/master/xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
+
+- [xslt/](https://github.com/mdn/browser-compat-data/tree/master/xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
+
 ### File and folder breakdown
 The JSON files contain [feature identifiers](#feature-identifiers),
 which are relevant for accessing the data. Except for the top-level directories,
@@ -75,6 +79,46 @@ What it represents exactly depends of the evolution of the feature over time, bo
 #### Sub-features
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
+
+#### API-specific subfeatures
+
+The following conventions apply to compatibility data in the `api/` directory.
+
+Worker support for a given feature in `api/` should be in a subfeature titled `worker_support`. It should also have the description `Available in workers`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "ImageData": {
+        "__compat": {
+          "description": "<code>ImageData()</code> constructor",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
 
 ### The `__compat` object
 The `__compat` object consists of the following:
@@ -125,6 +169,10 @@ No browser identifier is mandatory.
 The `support_statement` object describes the support provided by a single browser type for the given subfeature.
 It is an array of `simple_support_statement` objects, but if there
 is only one of them, the array must be omitted.
+
+If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first.
+In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without.
+If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
 
 Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
 ```json
@@ -214,13 +262,23 @@ Examples:
 
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
-Note that leading and trailing `-` must be included. Example:
+If applicable, leading and trailing `-` must be included.
 
-* Prefixed sub-feature:
+Examples:
+
+* A CSS property with a standard name of `prop-name` and a vendor-prefixed name of `-moz-prop-name`:
 ```json
 {
   "prefix": "-moz-",
   "version_added": "3.5"
+}
+```
+
+* An API with a standard name of `FeatureName` and a vendor-prefixed name of `webkitFeatureName`:
+```json
+{
+  "prefix": "webkit",
+  "version_added": "9"
 }
 ```
 

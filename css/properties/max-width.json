@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/max-width",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -45,6 +42,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -57,12 +57,9 @@
           "__compat": {
             "description": "<code>fit-content</code>, <code>max-content</code>, and <code>min-content</code>",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": false,
-                "notes": "Chrome implements an earlier proposal for setting width to an intrinsic width: the keywords <code>intrinsic</code> (instead of <code>max-content</code>), and <code>min-intrinsic</code> (instead of <code>min-content</code>). There is no equivalent for <code>fill-available</code> or <code>fit-content</code>."
+                "notes": "Chrome implements an earlier proposal for setting width to an intrinsic width: the keywords <code>intrinsic</code> (instead of <code>max-content</code>), and <code>min-intrinsic</code> (instead of <code>min-content</code>). There is no equivalent for <code>stretch</code> or <code>fit-content</code>."
               },
               "chrome_android": {
                 "version_added": null
@@ -92,13 +89,16 @@
               },
               "safari": {
                 "version_added": false,
-                "notes": "Safari implements an earlier proposal for setting width to an intrinsic width: the keywords <code>intrinsic</code> (instead of <code>max-content</code>), and <code>min-intrinsic</code> (instead of <code>min-content</code>). There is no equivalent for <code>fill-available</code> or <code>fit-content</code>."
+                "notes": "Safari implements an earlier proposal for setting width to an intrinsic width: the keywords <code>intrinsic</code> (instead of <code>max-content</code>), and <code>min-intrinsic</code> (instead of <code>min-content</code>). There is no equivalent for <code>stretch</code> or <code>fit-content</code>."
               },
               "safari_ios": {
                 "version_added": null
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -108,18 +108,17 @@
             }
           }
         },
-        "fill-availble": {
+        "stretch": {
           "__compat": {
-            "description": "<code>fill-available</code>",
+            "description": "<code>stretch</code>",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "22"
               },
               "chrome_android": {
-                "version_added": null
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "25"
               },
               "edge": {
                 "version_added": false
@@ -150,6 +149,10 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "37"
               }
             },
             "status": {
