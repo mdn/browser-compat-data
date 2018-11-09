@@ -2118,6 +2118,81 @@
           }
         }
       },
+      "hasPointerCapture": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasPointerCapture",
+          "support": {
+            "webview_android": {
+              "version_added": "55"
+            },
+            "chrome": {
+              "version_added": "55"
+            },
+            "chrome_android": {
+              "version_added": "55"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": false
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "42"
+            },
+            "opera_android": {
+              "version_added": "42"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "id": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/id",
@@ -2828,168 +2903,6 @@
             },
             "webview_android": {
               "version_added": "57"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ongotpointercapture": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ongotpointercapture",
-          "support": {
-            "chrome": {
-              "version_added": "55"
-            },
-            "chrome_android": {
-              "version_added": "55"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": false
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": [
-              {
-                "version_added": "11"
-              },
-              {
-                "version_added": "10",
-                "prefix": "ms"
-              }
-            ],
-            "opera": {
-              "version_added": "42"
-            },
-            "opera_android": {
-              "version_added": "42"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "55"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onlostpointercapture": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onlostpointercapture",
-          "support": {
-            "chrome": {
-              "version_added": "55"
-            },
-            "chrome_android": {
-              "version_added": "55"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": false
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": [
-              {
-                "version_added": "11"
-              },
-              {
-                "version_added": "10",
-                "prefix": "ms"
-              }
-            ],
-            "opera": {
-              "version_added": "42"
-            },
-            "opera_android": {
-              "version_added": "42"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "55"
             }
           },
           "status": {
@@ -3791,10 +3704,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scroll",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "45"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "45"
             },
             "edge": {
               "version_added": false
@@ -3812,10 +3725,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "32"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "safari": {
               "version_added": false
@@ -3827,7 +3740,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "45"
             }
           },
           "status": {
@@ -3841,10 +3754,10 @@
             "description": "<code>ScrollToOptions</code> parameter",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "45"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "45"
               },
               "edge": {
                 "version_added": false
@@ -3862,10 +3775,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": "32"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "32"
               },
               "safari": {
                 "version_added": false
@@ -3877,7 +3790,7 @@
                 "version_added": true
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "45"
               }
             },
             "status": {
@@ -3893,10 +3806,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollBy",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "45"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "45"
             },
             "edge": {
               "version_added": false
@@ -3914,10 +3827,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "32"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "safari": {
               "version_added": false
@@ -3929,7 +3842,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "45"
             }
           },
           "status": {
@@ -3943,10 +3856,10 @@
             "description": "<code>ScrollToOptions</code> parameter",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "45"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "45"
               },
               "edge": {
                 "version_added": false
@@ -3964,10 +3877,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": "32"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "32"
               },
               "safari": {
                 "version_added": false
@@ -3979,7 +3892,7 @@
                 "version_added": true
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "45"
               }
             },
             "status": {
@@ -4326,10 +4239,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollTo",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "45"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "45"
             },
             "edge": {
               "version_added": false
@@ -4347,10 +4260,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "32"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "safari": {
               "version_added": false
@@ -4362,7 +4275,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "45"
             }
           },
           "status": {
@@ -4376,10 +4289,10 @@
             "description": "<code>ScrollToOptions</code> parameter",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "45"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "45"
               },
               "edge": {
                 "version_added": false
@@ -4397,10 +4310,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": "32"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "32"
               },
               "safari": {
                 "version_added": false
@@ -4412,7 +4325,7 @@
                 "version_added": true
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "45"
               }
             },
             "status": {
