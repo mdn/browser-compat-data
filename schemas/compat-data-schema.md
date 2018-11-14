@@ -350,7 +350,7 @@ the standard (implements an old version of the standard, for example).
 #### `notes`
 An `array` of zero or more strings containing
 additional information. If there is only one entry in the array,
-the array can be a just a string. Example:
+the array must be omitted. Example:
 
 * Indicating a restriction:
 ```json
