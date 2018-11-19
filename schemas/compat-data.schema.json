@@ -16,7 +16,7 @@
         },
         "flags": {
           "type": "array",
-          "description": "An optional array of objects indicating what kind of flags must be set for this feature to work.",
+          "description": "An optional array of objects describing flags that must be configured for this browser to support this feature.",
           "minItems": 1,
           "items": {
             "type": "object",
@@ -28,11 +28,11 @@
               },
               "name": {
                 "type": "string",
-                "description": "A string representing the flag or preference to modify."
+                "description": "A string giving the name of the flag or preference that must be configured."
               },
               "value_to_set": {
                 "type": "string",
-                "description": "A string representing the actual value to set the flag to."
+                "description": "A string giving the value which the specified flag must be set to for this feature to work."
               }
             },
             "additionalProperties": false,
@@ -41,12 +41,12 @@
         },
         "partial_implementation": {
           "type": "boolean",
-          "description": "A boolean value indicating whether or not the implementation of the sub-feature follows the current specification closely enough to not create major interoperability problems. It defaults to false (no interoperability problem expected). If set to true, it is recommended to add a note indicating how it diverges from the standard (implements an old version of the standard, for example)."
+          "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
         },
         "version_added": { "$ref": "#/definitions/version_value" },
         "version_removed": { "$ref": "#/definitions/version_value" },
         "notes": {
-          "description": "An array of zero or more strings containing additional information.",
+          "description": "A string or array of strings containing additional information.",
           "anyOf": [
             {
               "type": "string"
