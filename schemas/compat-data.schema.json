@@ -45,6 +45,11 @@
         },
         "version_added": { "$ref": "#/definitions/version_value" },
         "version_removed": { "$ref": "#/definitions/version_value" },
+        "restriction": {
+          "type": "string",
+          "enum": ["exclusive", "beta", "nightly"],
+          "description": "A release type restriction (beta, nightly, exclusive only)."
+        },
         "notes": {
           "description": "An array of zero or more strings containing additional information.",
           "anyOf": [

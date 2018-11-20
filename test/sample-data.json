@@ -241,6 +241,80 @@
               "deprecated": false
             }
           }
+        },
+        "featureWithRestrictions": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "65",
+                "restriction": "beta"
+              },
+              "chrome_android": {
+                "version_added": "65"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "edge_mobile": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "60",
+                "restriction": "nightly",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.feature.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": [
+                {
+                  "version_added": "63"
+                },
+                {
+                  "version_added": "60",
+                  "restriction": "nightly",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.feature.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "ie": {
+                "version_added": "11",
+                "restriction": "exclusive",
+                "notes": "Available only if built with the -X-FOOBAR compiler flag."
+              },
+              "opera": {
+                "version_added": "52"
+              },
+              "opera_android": {
+                "version_added": "52"
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": "65"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       }
     }

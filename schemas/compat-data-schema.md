@@ -340,6 +340,30 @@ Example for two flags required:
 }
 ```
 
+### `restriction`
+A string value which indicates a release channel restriction for this sub-feature; this
+supports features which are only compiled into nightly builds, for example. Possible
+values are:
+
+* `beta`: only built into beta (and nightly) builds
+* `nightly`: only built into nightly builds
+* `exclusive`: only available in specialized builds; use the `notes` field to explain; this should be used sparingly
+
+To describe a feature which is only compiled into nightly builds starting with version 55,
+but is disabled by default behind a preference, you could do this:
+
+```json
+{
+  "version_added": "55",
+  "restriction": "nightly",
+  "flags": [
+    "type": "preference",
+    "name": "dom.feature.enabled",
+    "value_to_set": "true"
+  ]
+}
+```
+
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
 follows the current specification closely enough to not create major interoperability problems.
@@ -367,6 +391,7 @@ The `<code>` and `<a>` HTML elements can be used.
 ### Status information
 The status property contains information about stability of the feature. It is
 an optional object named `status` and has three mandatory properties:
+
 * `experimental`: a `boolean` value that indicates this functionality is
 intended to be an addition to the Web platform. Some features are added to
 conduct tests. Set to `false`, it means the functionality is mature, and no
