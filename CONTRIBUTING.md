@@ -21,7 +21,7 @@ The JSON data is validated against the schema using [`ajv`](http://epoberezkin.g
 If the feature you're interested in is a JavaScript API, you can cross-reference data against the [Web API Confluence Dashboard](https://web-confluence.appspot.com/) using the `confluence` npm script. This script will overwrite data in your current working tree according to data from the dashboard.
 
 **Note: Web API Confluence Dashboard data should not be regarded as perfect knowledge of JavaScript APIs.**
-The dashboard derives its data from the JavaScript object graph on a sample page loaded in each browser. For example, an own property named `URL` on `Document.prototype` implies the "`Document` interface has a member named `URL`. For various reasons, not all APIs are exposed on JavaScript prototypes, even when the API is available in the browser.
+The dashboard derives its data from the JavaScript object graph on a sample page loaded in each browser. For example, an own property named `URL` on `Document.prototype` implies the `Document` interface has a member named `URL`. For various reasons, not all APIs are exposed on JavaScript prototypes, even when the API is available in the browser.
 
 Examples:
 
