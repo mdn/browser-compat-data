@@ -66,6 +66,20 @@ Regularly, a new release of [mdn-browser-compat-data](https://www.npmjs.com/pack
  This step will trigger Travis to publish to npm automatically (see our [.travis.yml file](https://github.com/mdn/browser-compat-data/blob/master/.travis.yml)).
  6. Check [Travis CI](https://travis-ci.org/mdn/browser-compat-data) again for the v0.0.43 build and also check [mdn-browser-compat-data on npm](https://www.npmjs.com/package/mdn-browser-compat-data) to see if `0.0.43` shows up correctly once Travis has finished its work.
  7. Notify the [#mdndev](irc://irc.mozilla.org/mdndev) IRC channel on irc.mozilla.org about the new release and coordinate with jwhitlock or rjohnson a deployment of the new package to the MDN site.
+ 8. Create a [new release on GitHub](https://github.com/mdn/browser-compat-data/releases) and write down release notes. Mention notable changes if non-data updates happened (schema, test, or infrastructure changes). Also record current statistics such as total number of contributors and stargazers, as well as the total number of features by running this node command in the main dir:
+ `node -p "bcd=require('.');i=0;JSON.parse(JSON.stringify(bcd),function(k,v){if(k==='__compat'){i++;}return i;})"`
+
+ Release notes template:
+ ```
+Notable changes:
+- [TK text]
+
+Statistics:
+- [TK number] contributors have changed [TK number] files with [TK number] additions and [TK number] deletions in [TK number] commits [TK link to diff between version tags]
+- [TK number] total contributors
+- [TK number] total stargazers
+- [TK number] total features
+```
 
 ## Licensing
 
