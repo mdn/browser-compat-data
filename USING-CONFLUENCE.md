@@ -1,6 +1,6 @@
 # Using Confluence
 
-The confluence command uses the [Web API Confluence Dashboard](http://web-confluence.appspot.com/#!/) to generate new or improved browser compatibility data ready for submission in pull requests. The Web API Confluence Dashboard provides metrics and support data about web platform features across multiple browsers. The MDN Browser Compatibility Database provides a command for using Confluence to generate new and updated JSON files. This page explains how to do this.
+[Web API Confluence Dashboard](http://web-confluence.appspot.com/#!/) provides metrics and support data about web platform features across multiple browsers. The `npm run confluence` command uses Web API Confluence to generate new or improved browser compatibility data ready for submission in pull requests. This page explains how to do this.
 
 ## Prerequisites
 
