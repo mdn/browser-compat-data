@@ -17,7 +17,7 @@ Before using the confluence command make sure you have done all of the items bel
 1. Create a new branch using `git checkout -b my-new-branch-name`.
 1. Run the `confluence` command, passing in the name of web platform interface. For example:
 
-`npm run confluence -- --interfaces=ServiceWorker`
+   `npm run confluence -- --interfaces=ServiceWorker`
 
 If the confluence command finds any differences between existing browser compatibility data and Web API Confluence, it will write a new file. Confirm that it did so by running `git status`.
 1. Open the file that changed and manually copy values from `chrome` to `chrome_android` and `webview_android`. See [Only Desktop Data is Available](#only-desktop-data-is-available) for an explanation. Save the file.
