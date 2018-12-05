@@ -54,7 +54,7 @@ Although it is a useful and, to date, the most automated source of web platform 
 
 Web Platform APIs generally refer to features you would use in JavaScript that are not JavaScript itself. You can only use Confluence to verify data in the repo's [api/](https://github.com/mdn/browser-compat-data/tree/master/api) directory.
 
-## Only Prototype-Exposed Interfaces are Available
+## Only prototype-exposed interfaces are available
 
 The dashboard derives its data from the JavaScript object graph on a sample page loaded in each browser. For example, an own-property named `URL` on `Document.prototype` implies the `Document` interface has a member named `URL`. For various reasons, not all APIs are exposed on JavaScript prototypes, even when the API is available in the browser.
 
