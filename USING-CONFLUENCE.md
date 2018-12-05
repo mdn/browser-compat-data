@@ -15,7 +15,7 @@ Before using the confluence command make sure you have done all of the items bel
 
 1. On your local `master` branch run `git pull` to update your local data.
 1. Create a new branch using `git checkout -b my-new-branch-name`.
-1. Call the confluence command, passing in the name of web platform interface. For example:
+1. Run the `confluence` command, passing in the name of web platform interface. For example:
 
 `npm run confluence -- --interfaces=ServiceWorker`
 
