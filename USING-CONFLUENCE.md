@@ -50,7 +50,7 @@ The following example does this for Firefox only.
 
 Although it is a useful and, to date, the most automated source of web platform compatibility data, it has limitations you must understand before using it as a source for pull requests. Those limitations are described below.
 
-## Only Web Platform API are Available
+## Only Web Platform APIs are available
 
 Web Platform APIs generally refer to features you would use in JavaScript that are not JavaScript itself. You can only use Confluence to verify data in the repo's [api/](https://github.com/mdn/browser-compat-data/tree/master/api) directory.
 
