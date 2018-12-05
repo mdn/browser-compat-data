@@ -64,6 +64,6 @@ This means that non-desktop data must be set by hand. For example a page generat
 
 These values are usually the same, but not always. You can check this by looking for the feature on [chromestatus.com](https://www.chromestatus.com/features). Although we don't recommend this site as a primary source for compatibility data, it is generally reliable with regards to parity between desktop and Android.
 
-## No Data Before Chrome 40
+## No data before Chrome 40
 
 This means that if a feature landed before Chrome 40, then `40` is what will be in the JSON file.
