@@ -18,7 +18,7 @@ You can use `npm test` to validate data against the schema. You might need to in
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
 ## Generating data using the Web API Confluence Dashboard
-If the feature you're interested in is a JavaScript API, you can cross-reference data against the [Web API Confluence Dashboard](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](USING-CONFLUENCE.md) for instructions.
+If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](USING-CONFLUENCE.md) for instructions.
 
 ## Test rendering
 You can use `npm run render $query $dept $aggregateMode` to output the table HTML as it would be rendered on MDN.
