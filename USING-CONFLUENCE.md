@@ -11,7 +11,7 @@ Before using the `confluence` command make sure you have done the following:
 * In the root of your clone, run `npm install`.
 * Configure a Git [difftool](https://git-scm.com/docs/git-difftool).
 
-## Basic Procedure
+## Basic procedure
 
 1. On your local `master` branch run `git pull` to update your local data.
 1. Create a new branch using `git checkout -b my-new-branch-name`.
