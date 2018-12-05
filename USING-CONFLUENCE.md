@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-Before using the confluence command make sure you have done all of the items below.
+Before using the `confluence` command make sure you have done the following:
 
 * On GitHub fork this repo.
 * In this repo, add your fork as a remote repo: `git remote add fork-name path-to-fork`
