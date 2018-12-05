@@ -46,6 +46,10 @@ npm run confluence -- --interfaces=ServiceWorker,CacheStorage
 
 The following example does this for Firefox only.
 
+```
+npm run confluence -- --browsers=firefox
+```
+
 # Limitations
 
 Although it is a useful and, to date, the most automated source of web platform compatibility data, it has limitations you must understand before using it as a source for pull requests. Those limitations are described below.
