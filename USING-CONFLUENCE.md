@@ -20,7 +20,7 @@ Before using the confluence command make sure you have done all of the items bel
    `npm run confluence -- --interfaces=ServiceWorker`
 
    If the confluence command finds any differences between existing browser compatibility data and Web API Confluence, it will write a new file. Confirm that it did so by running `git status`.
-1. Open the file that changed and manually copy values from `chrome` to `chrome_android` and `webview_android`. See [Only Desktop Data is Available](#only-desktop-data-is-available) for an explanation. Save the file.
+1. Open the file that changed and manually copy values from `chrome` to `chrome_android` and `webview_android`. Read [Only Desktop Data is Available](#only-desktop-data-is-available) for an explanation. Save the file.
 1. To review changes made to a JSON file, run `git difftool`. Save the file.
 1. Commit your changes using `git add .` then `git commit`.
 1. Push the branch containing your changes to your repo fork: `git push --set-upstream remote-name branch-name`.
