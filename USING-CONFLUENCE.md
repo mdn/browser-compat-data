@@ -23,7 +23,7 @@ Before using the confluence command make sure you have done all of the items bel
 1. Open the file that changed and manually copy values from `chrome` to `chrome_android` and `webview_android`. Read [Only Desktop Data is Available](#only-desktop-data-is-available) for an explanation. Save the file.
 1. To review changes made to a JSON file, run `git difftool`. Save the file.
 1. Commit your changes using `git add .` then `git commit`.
-1. Push the branch containing your changes to your repo fork: `git push --set-upstream remote-name branch-name`.
+1. Push the branch containing your changes to your fork: `git push --set-upstream origin branch-name`.
 1. On GitHub open a pull request from your fork to mdn/browswer-compat-data.
 
 ## Displaying help
