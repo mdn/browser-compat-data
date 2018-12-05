@@ -6,7 +6,7 @@
 
 Before using the `confluence` command make sure you have done the following:
 
-* On GitHub fork this repo.
+* On GitHub fork [mdn/browser-compat-data](https://github.com/mdn/browser-compat-data/).
 * In this repo, add your fork as a remote repo: `git remote add fork-name path-to-fork`
 * In the root of your clone, run `npm install`.
 * Configure a Git [difftool](https://git-scm.com/docs/git-difftool).
