@@ -32,7 +32,7 @@ Before using the `confluence` command make sure you have done the following:
 npm run confluence -- --help
 ```
 
-## Advanced Procedures
+## Advanced procedures
 
 **Generating data from more than one interface**
 
