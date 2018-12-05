@@ -9,7 +9,7 @@ Before using the confluence command make sure you have done all of the items bel
 * On GitHub fork this repo.
 * In this repo, add your fork as a remote repo: `git remote add fork-name path-to-fork`
 * In the root of your clone, run `npm install`.
-* Configure a git [difftool](https://git-scm.com/docs/git-difftool).
+* Configure a Git [difftool](https://git-scm.com/docs/git-difftool).
 
 ## Basic Procedure
 
