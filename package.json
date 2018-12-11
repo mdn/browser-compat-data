@@ -27,6 +27,7 @@
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
     "ajv": "^5.0.1",
+    "inquirer": "^6.2.1",
     "mdn-confluence": "0.0.7",
     "ora": "^3.0.0",
     "yargs": "^11.1.0"
@@ -34,6 +35,7 @@
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "lint": "node test/lint",
+    "release-notes": "node test/release-notes",
     "render": "node test/render",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run lint"
