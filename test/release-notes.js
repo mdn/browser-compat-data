@@ -1,6 +1,7 @@
 const { execSync } = require('child_process');
 const http = require('https');
 
+const bcd = require('..');
 const inquirer = require('inquirer');
 
 const { argv } = require('yargs')
@@ -72,6 +73,17 @@ const notableChanges = async () => {
   return 'REPLACE ME WITH ACTUAL RELEASE NOTES';
 };
 
+const countFeatures = () => {
+  let count = 0;
+  JSON.parse(JSON.stringify(bcd), (k) => {
+    if (k === '__compat' ) {
+      count++;
+    }
+    return count;
+  });
+  return count;
+};
+
 const makeURL = (version, body) => {
   const baseURL = 'https://github.com/mdn/browser-compat-data/releases/new';
 
@@ -90,12 +102,14 @@ const main = async () => {
   const { releaseContributors, totalContributors } = await contributors(version, previousVersion);
   const changeMessage = await notableChanges();
   const stars = await stargazers();
+  const features = countFeatures();
 
   const body = `\
 **Notable changes**
 - ${changeMessage}
 
 **Statistics**
+- ${features} total features
 - ${releaseContributors} contributors have changed ${changed} files with ${insertions} additons and ${deletions} deletions in ${commits} commits (https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version})
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
