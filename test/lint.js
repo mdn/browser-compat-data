@@ -97,6 +97,7 @@ if (argv.files) {
     'test',
     'webdriver',
     'webextensions',
+    'xml',
     'xpath',
     'xslt',
   );
