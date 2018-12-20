@@ -110,7 +110,7 @@ const main = async () => {
 
 **Statistics**
 - ${features} total features
-- ${releaseContributors} contributors have changed ${changed} files with ${insertions} additons and ${deletions} deletions in ${commits} commits (https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version})
+- ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits (https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version})
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
 
