@@ -1,10 +1,11 @@
-# mdn-browser-compat-data
+# mdn-browser-compat-data — plus spec data
 
+This repo is a fork of
 [https://github.com/mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)
+that adds spec URLs in the `*.json` sources for all features that have an
+`mdn_url` for an article with a *Specifications* table.
 
-This repository contains compatibility data for Web technologies.
-Browser compatibility data describes which platforms (where "platforms" are
-usually, but not always, web browsers) support particular Web APIs.
+To (re)generate the additional data for all features:
 
 This data can be used in documentation, to build compatibility tables listing
 browser support for APIs. For example:
@@ -21,38 +22,11 @@ You can install mdn-browser-compat-data as a node package.
 ```
 npm install mdn-browser-compat-data
 ```
-
-## Usage
-```js
-const bcd = require('mdn-browser-compat-data');
-bcd.css.properties.background;
-// returns a compat data object (see schema)
+time python -u ./add-specs.py fullupdate 2>&1 | tee LOG
 ```
 
-## Repository contents
-
-There's a top-level directory for each broad area covered: for example, "http",
-"javascript", "webextensions". Inside each of these directories is one or more
-JSON file containing the compatibility data.
-
-*Please note that we have not (yet) migrated all compatibility data from the MDN wiki pages into this repository.*
-
-- [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
-
-- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
-
-- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for
-[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
-
-- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
-
-- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
-
-- [mathml/](https://github.com/mdn/browser-compat-data/tree/master/mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
-
-- [svg/](https://github.com/mdn/browser-compat-data/tree/master/svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
-
-- [webdriver/](https://github.com/mdn/browser-compat-data/tree/master/webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
+To (re)generate the additional data only for features that don’t already
+have spec URLs in the `*.json` sources:
 
 - [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
