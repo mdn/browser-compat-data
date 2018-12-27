@@ -4,44 +4,84 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto",
         "support": {
-          "webview_android": {
-            "version_added": "53"
-          },
           "chrome": {
             "version_added": "37"
           },
           "chrome_android": {
-            "version_added": "53"
+            "version_added": "37"
           },
           "edge": {
-            "version_added": "12"
+            "version_added": "12",
+            "partial_implementation": true
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": "12"
           },
-          "firefox": {
-            "version_added": "34"
-          },
-          "firefox_android": {
-            "version_added": "34"
-          },
+          "firefox": [
+            {
+              "version_added": "34"
+            },
+            {
+              "version_added": "32",
+              "version_removed": "34",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcrypto.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "34"
+            },
+            {
+              "version_added": "32",
+              "version_removed": "34",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcrypto.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "ie": {
-            "version_added": "11"
+            "version_added": "11",
+            "partial_implementation": true
           },
           "opera": {
             "version_added": "24"
           },
           "opera_android": {
-            "version_added": "37"
+            "version_added": "24"
           },
-          "safari": {
-            "version_added": "8"
-          },
-          "safari_ios": {
-            "version_added": null
-          },
+          "safari": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "version_added": "7",
+              "prefix": "WebKit"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "version_added": "7",
+              "prefix": "WebKit"
+            }
+          ],
           "samsunginternet_android": {
             "version_added": "6.0"
+          },
+          "webview_android": {
+            "version_added": "37"
           }
         },
         "status": {
@@ -54,44 +94,76 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: AES-CTR."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -105,44 +177,76 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: AES-CTR."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -156,44 +260,76 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: RSA-PSS, ECDSA."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -207,44 +343,76 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: RSA-PSS, ECDSA."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -258,44 +426,76 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: SHA-1."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -309,44 +509,77 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: RSA-PSS, ECDSA, ECDH.",
+                "Not supported: AES-CTR."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -360,44 +593,75 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: ECDH.",
+                "Not supported: HKDF, PBKDF2."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": false
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -411,44 +675,75 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: ECDH.",
+                "Not supported: HKDF, PBKDF2."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": false
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -462,44 +757,77 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: RSA-PSS, ECDSA, ECDH.",
+                "Not supported: AES-CTR, HKDF, PBKDF2."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -513,44 +841,77 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: RSA-PSS, ECDSA, ECDH.",
+                "Not supported: AES-CTR."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -564,44 +925,76 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: AES-CTR."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -615,44 +1008,91 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "37"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "37"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": [
+                "Not supported: AES-CTR."
+              ]
             },
             "edge_mobile": {
-              "version_added": null
+              "version_added": "12"
             },
-            "firefox": {
-              "version_added": "34"
-            },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcrypto.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
             },
             "opera": {
               "version_added": "24"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "48"
             }
           },
           "status": {

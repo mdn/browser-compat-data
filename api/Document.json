@@ -346,7 +346,7 @@
               "version_added": true
             },
             "edge": {
-              "version_added": null
+              "version_added": "18"
             },
             "edge_mobile": {
               "version_added": null
@@ -1263,7 +1263,7 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": true
             },
             "opera": {
               "version_added": null
@@ -1272,7 +1272,7 @@
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": null
@@ -1944,7 +1944,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "22",
+                "version_added": "25",
                 "version_removed": "66"
               },
               {
@@ -1983,7 +1983,7 @@
             },
             "webview_android": [
               {
-                "version_added": "22",
+                "version_added": true,
                 "version_removed": "66"
               },
               {
@@ -2007,7 +2007,7 @@
               "version_added": "22"
             },
             "chrome_android": {
-              "version_added": "22"
+              "version_added": "25"
             },
             "edge": {
               "version_added": true
@@ -2037,7 +2037,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": "22"
+              "version_added": true
             }
           },
           "status": {
@@ -2696,10 +2696,12 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "From Firefox 62, if the domain cannot be identified, <code>domain</code> returns an empty string instead of <code>null</code>. See <a href='https://bugzil.la/819475'>bug 819475</a>."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "From Firefox 62, if the domain cannot be identified, <code>domain</code> returns an empty string instead of <code>null</code>. See <a href='https://bugzil.la/819475'>bug 819475</a>."
             },
             "ie": {
               "version_added": null
@@ -3236,15 +3238,14 @@
               }
             ],
             "edge": {
-              "version_added": null
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": null
             },
             "firefox": [
               {
-                "alternative_name": "mozCancelFullScreen",
-                "version_added": "9"
+                "version_added": "64"
               },
               {
                 "version_added": "49",
@@ -3255,12 +3256,15 @@
                     "value_to_set": "true"
                   }
                 ]
+              },
+              {
+                "version_added": "9",
+                "alternative_name": "mozCancelFullScreen"
               }
             ],
             "firefox_android": [
               {
-                "alternative_name": "mozCancelFullScreen",
-                "version_added": "9"
+                "version_added": "64"
               },
               {
                 "version_added": "49",
@@ -3271,22 +3275,29 @@
                     "value_to_set": "true"
                   }
                 ]
+              },
+              {
+                "version_added": "9",
+                "alternative_name": "mozCancelFullScreen"
               }
             ],
             "ie": {
-              "version_added": null
+              "version_added": "11",
+              "alternative_name": "msExitFullscreen"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "prefix": "webkit"
             },
             "opera_android": {
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": "5.1",
+              "prefix": "webkit"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": [
               {
@@ -3299,9 +3310,60 @@
             ]
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "returns_a_promise": {
+          "__compat": {
+            "description": "Returns a <code>Promise</code>",
+            "support": {
+              "chrome": {
+                "version_added": "71"
+              },
+              "chrome_android": {
+                "version_added": "71"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "edge_mobile": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": {
+                "version_added": "64"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": "71"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -3480,6 +3542,70 @@
           }
         }
       },
+      "fonts": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fonts",
+          "support": {
+            "chrome": {
+              "version_added": "60"
+            },
+            "chrome_android": {
+              "version_added": "60"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.font-loading-api.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "47"
+            },
+            "opera_android": {
+              "version_added": "47"
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": "10.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "60"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "forms": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/forms",
@@ -3548,8 +3674,7 @@
             },
             "firefox": [
               {
-                "alternative_name": "mozFullScreen",
-                "version_added": "9"
+                "version_added": "64"
               },
               {
                 "version_added": "49",
@@ -3560,12 +3685,15 @@
                     "value_to_set": "true"
                   }
                 ]
+              },
+              {
+                "version_added": "9",
+                "alternative_name": "mozFullScreen"
               }
             ],
             "firefox_android": [
               {
-                "alternative_name": "mozFullSreen",
-                "version_added": "9"
+                "version_added": "64"
               },
               {
                 "version_added": "49",
@@ -3576,6 +3704,10 @@
                     "value_to_set": "true"
                   }
                 ]
+              },
+              {
+                "version_added": "9",
+                "alternative_name": "mozFullScreen"
               }
             ],
             "ie": {
@@ -3615,7 +3747,7 @@
               },
               {
                 "version_added": true,
-                "prefix": "-webkit"
+                "prefix": "webkit"
               }
             ],
             "chrome_android": [
@@ -3624,7 +3756,7 @@
               },
               {
                 "version_added": true,
-                "prefix": "-webkit"
+                "prefix": "webkit"
               }
             ],
             "edge": {
@@ -3635,6 +3767,9 @@
             },
             "firefox": [
               {
+                "version_added": "64"
+              },
+              {
                 "version_added": "47",
                 "flags": [
                   {
@@ -3646,11 +3781,14 @@
               },
               {
                 "version_added": "10",
-                "prefix": "moz"
+                "alternative_name": "mozFullScreenEnabled"
               }
             ],
             "firefox_android": [
               {
+                "version_added": "64"
+              },
+              {
                 "version_added": "47",
                 "flags": [
                   {
@@ -3662,11 +3800,12 @@
               },
               {
                 "version_added": "10",
-                "prefix": "moz"
+                "alternative_name": "mozFullScreenEnabled"
               }
             ],
             "ie": {
-              "version_added": null
+              "version_added": "11",
+              "alternative_name": "msFullScreenEnabled"
             },
             "opera": {
               "version_added": null
@@ -3686,7 +3825,7 @@
               },
               {
                 "version_added": true,
-                "prefix": "-webkit"
+                "prefix": "webkit"
               }
             ]
           },
@@ -3803,7 +3942,7 @@
               "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "1"
+              "version_added": "18"
             },
             "edge": {
               "version_added": true
@@ -3902,10 +4041,12 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Returns an <code>HTMLCollection</code>, not a <code>NodeList</code>"
             },
             "edge_mobile": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Returns an <code>HTMLCollection</code>, not a <code>NodeList</code>"
             },
             "firefox": {
               "version_added": true
@@ -3914,7 +4055,8 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Returns an <code>HTMLCollection</code>, not a <code>NodeList</code>"
             },
             "opera": {
               "version_added": true
@@ -4061,10 +4203,10 @@
               "version_added": "6"
             },
             "opera": {
-              "version_added": false
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": true
             },
             "safari": {
               "version_added": true
@@ -4079,6 +4221,70 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "hasStorageAccess": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.storage_access.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.storage_access.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "11.1",
+              "notes": "Currently only available on macOS High Sierra 10.13.4 beta, and in Safari Technology Preview 47+."
+            },
+            "safari_ios": {
+              "version_added": "11.1",
+              "notes": "Currently only available on iOS 11.3 beta."
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -4652,6 +4858,7 @@
             "firefox": [
               {
                 "version_added": "61",
+                "version_removed": "63",
                 "flags": [
                   {
                     "type": "compile_flag",
@@ -5087,6 +5294,54 @@
           }
         }
       },
+      "onfreeze": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfreeze",
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "68"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "onfullscreenchange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfullscreenchange",
@@ -5103,28 +5358,39 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "47",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "full-screen-api.unprefix.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "47",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "full-screen-api.unprefix.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": null
+              "version_added": "11",
+              "alternative_name": "onMSFullscreenChange"
             },
             "opera": {
               "version_added": null
@@ -5165,28 +5431,39 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "47",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "full-screen-api.unprefix.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "47",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "full-screen-api.unprefix.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": null
+              "version_added": "11",
+              "alternative_name": "onMSFullscreenError"
             },
             "opera": {
               "version_added": null
@@ -5402,6 +5679,54 @@
           }
         }
       },
+      "onresume": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onresume",
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "68"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "onselectionchange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onselectionchange",
@@ -5512,7 +5837,7 @@
               "version_added": "7"
             },
             "webview_android": {
-              "version_added": "33"
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -5661,6 +5986,89 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "policy": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/policy",
+          "support": {
+            "chrome": {
+              "version_added": "69",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-productivity-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": "69",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-productivity-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "56",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-productivity-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "opera_android": {
+              "version_added": "56",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-productivity-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "69",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-productivity-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -6286,6 +6694,80 @@
           }
         }
       },
+      "registerElement": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/registerElement",
+          "support": {
+            "chrome": {
+              "version_added": "35"
+            },
+            "chrome_android": {
+              "version_added": "35"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "31",
+              "version_removed": "59",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.customelements.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": "31",
+              "version_removed": "59",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "dom.webcomponents.customelements.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
       "releaseCapture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/releaseCapture",
@@ -6379,6 +6861,70 @@
             "experimental": false,
             "standard_track": false,
             "deprecated": true
+          }
+        }
+      },
+      "requestStorageAccess": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.storage_access.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.storage_access.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "11.1",
+              "notes": "Currently only available on macOS High Sierra 10.13.4 beta, and in Safari Technology Preview 47+."
+            },
+            "safari_ios": {
+              "version_added": "11.1",
+              "notes": "Currently only available on iOS 11.3 beta."
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
           }
         }
       },
@@ -6889,7 +7435,7 @@
               "version_added": "7"
             },
             "webview_android": {
-              "version_added": "33"
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -6992,6 +7538,54 @@
             "experimental": false,
             "standard_track": false,
             "deprecated": true
+          }
+        }
+      },
+      "wasDiscarded": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/width",
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "68"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },

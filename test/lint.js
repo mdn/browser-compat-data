@@ -1,11 +1,23 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const ora = require('ora');
+const yargs = require('yargs');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
 /** @type {Map<string,string>} */
 const filesWithErrors = new Map();
+
+const argv = yargs.alias('version','v')
+  .usage('$0 [[--] files...]', false, (yargs) => {
+    yargs.positional('files...', {
+      description: 'The files to lint',
+      type: 'string'
+    })
+  })
+  .help().alias('help','h').alias('help','?')
+  .parse(process.argv.slice(2));
 
 let hasErrors = false;
 
@@ -13,13 +25,16 @@ let hasErrors = false;
  * @param {string[]} files
  */
 function load(...files) {
-  files.forEach(file => {
+  if (files.length === 1 && Array.isArray(files[0])) {
+    files = files[0];
+  }
+  for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
-      return; // Ignore non-existent files
+      continue; // Ignore non-existent files
     }
 
     if (fs.statSync(file).isFile()) {
@@ -28,7 +43,21 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasVersionErrors = false;
-        console.log(file.replace(path.resolve(__dirname, '..') + path.sep, ''));
+        const relativeFilePath = path.relative(process.cwd(), file);
+
+        const spinner = ora({
+          stream: process.stdout,
+          text: relativeFilePath
+        });
+
+        const console_error = console.error;
+        console.error = (...args) => {
+          spinner.stream = process.stderr;
+          spinner.fail(relativeFilePath);
+          console.error = console_error;
+          console.error(...args);
+        }
+
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
@@ -43,8 +72,10 @@ function load(...files) {
         }
         if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasVersionErrors) {
           hasErrors = true;
-          const fileName = file.replace(path.resolve(__dirname, '..') + path.sep, '');
-          filesWithErrors.set(fileName, file);
+          filesWithErrors.set(relativeFilePath, file);
+        } else {
+          console.error = console_error;
+          spinner.succeed();
         }
       }
 
@@ -56,11 +87,11 @@ function load(...files) {
     });
 
     load(...subFiles);
-  });
+  }
 }
 
-if (process.argv[2]) {
-  load(process.argv[2]);
+if (argv.files) {
+  load(argv.files);
 } else {
   load(
     'api',
@@ -73,15 +104,17 @@ if (process.argv[2]) {
     'mathml',
     'test',
     'webdriver',
-    'webextensions'
+    'webextensions',
+    'xpath',
+    'xslt',
   );
 }
 
 if (hasErrors) {
-  console.log("");
+  console.warn("");
   console.warn(`Problems in ${filesWithErrors.size} file${filesWithErrors.size > 1 ? 's' : ''}:`);
   for (const [fileName, file] of filesWithErrors) {
-    console.log(fileName);
+    console.warn(fileName);
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../schemas/browsers.schema.json');

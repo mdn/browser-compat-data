@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await",
           "support": {
-            "webview_android": {
-              "version_added": "55"
-            },
             "chrome": {
               "version_added": "55"
             },
@@ -29,9 +26,20 @@
             "ie": {
               "version_added": null
             },
-            "nodejs": {
-              "version_added": "7"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.6.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "42"
             },
@@ -46,6 +54,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {

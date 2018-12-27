@@ -6,9 +6,6 @@
           "description": "Array literals (<code>[1, 2, 3]</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Array_literals",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -46,6 +43,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -61,9 +61,6 @@
           "description": "Binary numeric literals (<code>0b</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Binary",
           "support": {
-            "webview_android": {
-              "version_added": "41"
-            },
             "chrome": {
               "version_added": "41"
             },
@@ -85,9 +82,20 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "4.0.0"
+              },
+              {
+                "version_added": "0.12",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "28"
             },
@@ -102,6 +110,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "41"
             }
           },
           "status": {
@@ -116,9 +127,6 @@
           "description": "Boolean literals (<code>true</code>/<code>false</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Boolean_literal",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -156,6 +164,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -171,9 +182,6 @@
           "description": "Decimal numeric literals (<code>1234567890</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Decimal",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -211,6 +219,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -226,9 +237,6 @@
           "description": "Hexadecimal escape sequences (<code>'\\0xA9'</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Hexadecimal_escape_sequences",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -266,6 +274,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -281,9 +292,6 @@
           "description": "Hexadecimal numeric literals (<code>0xAF</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Hexadecimal",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -321,6 +329,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -336,9 +347,6 @@
           "description": "Null literal (<code>null</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Null_literal",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -376,6 +384,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -391,9 +402,6 @@
           "description": "Octal numeric literals (<code>0o</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Octal",
           "support": {
-            "webview_android": {
-              "version_added": "41"
-            },
             "chrome": {
               "version_added": "41"
             },
@@ -432,6 +440,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "41"
             }
           },
           "status": {
@@ -446,9 +457,6 @@
           "description": "Regular expression literals (<code>/ab+c/g</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Regular_expression_literals",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -486,6 +494,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -501,9 +512,6 @@
           "description": "String literals (<code>'Hello world'</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#String_literals",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -541,6 +549,9 @@
               "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -556,9 +567,6 @@
           "description": "Unicode escape sequences (<code>'\\u00A9'</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Unicode_escape_sequences",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -597,6 +605,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -611,9 +622,6 @@
           "description": "Unicode point escapes (<code>\\u{}</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Unicode_code_point_escapes",
           "support": {
-            "webview_android": {
-              "version_added": "44"
-            },
             "chrome": {
               "version_added": "44"
             },
@@ -652,6 +660,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "44"
             }
           },
           "status": {
@@ -665,9 +676,6 @@
         "__compat": {
           "description": "Shorthand notation for object literals",
           "support": {
-            "webview_android": {
-              "version_added": "43"
-            },
             "chrome": {
               "version_added": "43"
             },
@@ -706,6 +714,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "43"
             }
           },
           "status": {
@@ -720,9 +731,6 @@
           "description": "Template literals",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals",
           "support": {
-            "webview_android": {
-              "version_added": "41"
-            },
             "chrome": {
               "version_added": "41"
             },
@@ -745,7 +753,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "4.0.0"
             },
             "opera": {
               "version_added": "28"
@@ -761,6 +769,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "41"
             }
           },
           "status": {
@@ -773,9 +784,6 @@
           "__compat": {
             "description": "Escape sequences allowed in tagged template literals",
             "support": {
-              "webview_android": {
-                "version_added": "62"
-              },
               "chrome": {
                 "version_added": "62"
               },
@@ -814,6 +822,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": "62"
               }
             },
             "status": {
@@ -829,9 +840,6 @@
           "description": "Trailing commas",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Trailing_commas",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -870,6 +878,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -882,9 +893,6 @@
           "__compat": {
             "description": "Trailing comma in object literals",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -923,6 +931,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -936,9 +947,6 @@
           "__compat": {
             "description": "Trailing comma in functions",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": "58"
               },
@@ -961,7 +969,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "8.0.0"
               },
               "opera": {
                 "version_added": false
@@ -977,6 +985,9 @@
               },
               "samsunginternet_android": {
                 "version_added": "7.0"
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
