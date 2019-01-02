@@ -3,7 +3,15 @@ const fs = require('fs');
 const path = require('path');
 
 function escapeInvisibles(str) {
-  const invisibles = [['\b', '\\b'], ['\f', '\\f'], ['\n', '\\n'], ['\r', '\\r'], ['\v', '\\v'], ['\0', '\\0']];
+  const invisibles = [
+    ['\b', '\\b'],
+    ['\f', '\\f'],
+    ['\n', '\\n'],
+    ['\r', '\\r'],
+    ['\v', '\\v'],
+    ['\t', '\\t'],
+    ['\0', '\\0'],
+  ];
   let finalString = str;
 
   invisibles.forEach(([invisible, replacement]) => {
