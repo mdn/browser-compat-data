@@ -4,6 +4,7 @@
       "menus": {
         "ACTION_MENU_TOP_LEVEL_LIMIT": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ACTION_MENU_TOP_LEVEL_LIMIT",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT",
@@ -11,7 +12,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -34,6 +35,7 @@
         },
         "ContextType": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ContextType",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.ContextType",
@@ -41,7 +43,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.ContextType",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -64,6 +66,27 @@
               }
             }
           },
+          "bookmark": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "59"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
           "browser_action": {
             "__compat": {
               "support": {
@@ -71,33 +94,12 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": true
+                  "version_added": "14"
                 },
                 "firefox": {
                   "notes": [
                     "'The 'editable' context does not include password fields. Use the 'password' context for this."
                   ],
-                  "version_added": "53"
-                },
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": true
-                }
-              }
-            }
-          },
-          "page_action": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": true
-                },
-                "firefox": {
                   "version_added": "53"
                 },
                 "firefox_android": {
@@ -120,6 +122,27 @@
                 },
                 "firefox": {
                   "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                }
+              }
+            }
+          },
+          "page_action": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "53"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -199,6 +222,7 @@
         },
         "ItemType": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ItemType",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.ItemType",
@@ -206,7 +230,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.ItemType",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -229,6 +253,7 @@
         },
         "OnClickData": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/OnClickData",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.OnClickData",
@@ -236,7 +261,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.OnClickData",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -253,6 +278,50 @@
               "opera": {
                 "alternative_name": "contextMenus.OnClickData",
                 "version_added": true
+              }
+            }
+          },
+          "bookmarkId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "59"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "frameId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "alternative_name": "contextMenus.OnClickData.frameId",
+                  "version_added": "35"
+                },
+                "edge": {
+                  "version_added": null
+                },
+                "firefox": {
+                  "version_added": "55"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "alternative_name": "contextMenus.OnClickData.frameId",
+                  "version_added": true
+                }
               }
             }
           },
@@ -297,10 +366,32 @@
                 }
               }
             }
+          },
+          "targetElementId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
           }
         },
         "create": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/create",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.create",
@@ -314,7 +405,7 @@
                 "notes": [
                   "Items that don't specify 'contexts' do not inherit contexts from their parents."
                 ],
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -337,6 +428,28 @@
                   "Items that don't specify 'contexts' do not inherit contexts from their parents."
                 ],
                 "version_added": true
+              }
+            }
+          },
+          "accessKey": {
+            "__compat": {
+              "description": "<code>&</code> in <code>title</code> sets access key",
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": null
+                },
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                }
               }
             }
           },
@@ -381,10 +494,54 @@
                 }
               }
             }
+          },
+          "visible": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "62"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "49"
+                }
+              }
+            }
+          }
+        },
+        "getTargetElement": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/getTargetElement",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "63"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
           }
         },
         "onClicked": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/onClicked",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.onClicked",
@@ -392,7 +549,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.onClicked",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -413,8 +570,93 @@
             }
           }
         },
+        "onHidden": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/onHidden",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "contextMenus.onHidden",
+                  "version_added": "60"
+                }
+              ],
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onShown": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/onShown",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "contextMenus.onShown",
+                  "version_added": "60"
+                }
+              ],
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "refresh": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/refresh",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "contextMenus.refresh",
+                  "version_added": "60"
+                }
+              ],
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
         "remove": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/remove",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.remove",
@@ -422,7 +664,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.remove",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -445,6 +687,7 @@
         },
         "removeAll": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/removeAll",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.removeAll",
@@ -452,7 +695,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.removeAll",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {
@@ -475,6 +718,7 @@
         },
         "update": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/update",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.update",
@@ -482,7 +726,7 @@
               },
               "edge": {
                 "alternative_name": "contextMenus.update",
-                "version_added": true
+                "version_added": "14"
               },
               "firefox": [
                 {

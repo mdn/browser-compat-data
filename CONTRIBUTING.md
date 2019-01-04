@@ -5,16 +5,20 @@ This file lists some general guidelines to help you contributing effectively.
 
 There are many ways you can help improve this repository! For example:
 
-* **Adding new compat data**: familiarize yourself with the [schema](https://github.com/mdn/browser-compat-data/blob/master/compat-data.schema.json) and read the [schema docs](https://github.com/mdn/browser-compat-data/blob/master/compat-data-schema.md) to add new files.
+* **Adding new compat data**: familiarize yourself with the [schema](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json) and read the [schema docs](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md) to add new files.
 * **Fixing existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
 * **Fixing a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues),
 or maybe you found your own.
 * **Reviewing a pull request:** there is a list of [PRs](https://github.com/mdn/browser-compat-data/pulls).
 Let us know if these look good to you.
+* **Publishing a new package (staff only):** A new npm package should be published regularly, [see below](#publishing-a-new-package-version) for details.
 
 ## Validating the data
-You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install --dev`.
+You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
+
+## Generating data using the Web API Confluence Dashboard
+If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](USING-CONFLUENCE.md) for instructions.
 
 ## Test rendering
 You can use `npm run render $query $dept $aggregateMode` to output the table HTML as it would be rendered on MDN.
@@ -28,11 +32,38 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 * Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
 * Nesting of feature identifiers should make sense.
 * Notes use correct grammar and spelling. They should be complete sentences ending with a period.
-* Browser versions are valid (planned be validated automatically in the future, see [issue 168](https://github.com/mdn/browser-compat-data/issues/168) which tracks adding tests and docs about browser versions).
 
 ## Code style
 
 The JSON files should be formatted according to the [.editorconfig](https://github.com/mdn/browser-compat-data/blob/master/.editorconfig) file.
+
+
+## Publishing a new package version
+
+Regularly, a new release of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) is created by MDN staff and will then be [deployed to the MDN site](https://github.com/mdn/browser-compat-data#browser-compatibility-tables-on-mdn). Usually this is done every Thursday (MDN never deploys to production on Fridays). Releases should be coordinated with the project owner [Florian Scholz](https://github.com/Elchi3), but anyone with merge permissions on the mdn/browser-compat-data repository has the ability to run the following steps which will create a new package version:
+
+ 1. Figure out the new version number by looking at [past releases](https://github.com/mdn/browser-compat-data/releases). The project is in alpha, so we're using only patch versions. Lets assume the next version should be `0.0.43`.
+ 2. On your updated and clean master branch, run `npm version patch -m "43rd alpha version"`. Locally, this updates `package.json`, creates a new commit, and creates a new release tag (see also the docs for [npm version](https://docs.npmjs.com/cli/version)).
+ 3. Push the commit to master: `git push origin master`.
+ 4. Check if the commit passes fine on [Travis CI](https://travis-ci.org/mdn/browser-compat-data).
+ 5. If Travis is alright, push the git tag as well: `git push origin v0.0.43`.
+ This step will trigger Travis to publish to npm automatically (see our [.travis.yml file](https://github.com/mdn/browser-compat-data/blob/master/.travis.yml)).
+ 6. Check [Travis CI](https://travis-ci.org/mdn/browser-compat-data) again for the v0.0.43 build and also check [mdn-browser-compat-data on npm](https://www.npmjs.com/package/mdn-browser-compat-data) to see if `0.0.43` shows up correctly once Travis has finished its work.
+ 7. Notify the [#mdndev](irc://irc.mozilla.org/mdndev) IRC channel on irc.mozilla.org about the new release and coordinate with jwhitlock or rjohnson a deployment of the new package to the MDN site.
+ 8. Create a [new release on GitHub](https://github.com/mdn/browser-compat-data/releases) and write down release notes. Mention notable changes if non-data updates happened (schema, test, or infrastructure changes). Also record current statistics such as total number of contributors and stargazers, as well as the total number of features by running this node command in the main dir:
+ `node -p "bcd=require('.');i=0;JSON.parse(JSON.stringify(bcd),function(k,v){if(k==='__compat'){i++;}return i;})"`
+
+ Release notes template:
+ ```
+Notable changes:
+- [TK text]
+
+Statistics:
+- [TK number] contributors have changed [TK number] files with [TK number] additions and [TK number] deletions in [TK number] commits [TK link to diff between version tags]
+- [TK number] total contributors
+- [TK number] total stargazers
+- [TK number] total features
+```
 
 ## Licensing
 

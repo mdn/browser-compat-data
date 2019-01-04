@@ -4,6 +4,7 @@
       "commands": {
         "Command": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/Command",
             "support": {
               "chrome": {
                 "version_added": true
@@ -25,6 +26,7 @@
         },
         "getAll": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll",
             "support": {
               "chrome": {
                 "version_added": true
@@ -46,6 +48,7 @@
         },
         "onCommand": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/onCommand",
             "support": {
               "chrome": {
                 "version_added": true
@@ -54,13 +57,58 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "Before version 63, the <code>onCommand</code> listener was not treated as a <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/User_actions'>handler for a user action</a>."
               },
               "firefox_android": {
                 "version_added": false
               },
               "opera": {
                 "version_added": true
+              }
+            }
+          }
+        },
+        "reset": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/reset",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "60"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "update": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/update",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "60"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
               }
             }
           }

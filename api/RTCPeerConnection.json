@@ -1,0 +1,3694 @@
+{
+  "api": {
+    "RTCPeerConnection": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection",
+        "support": {
+          "chrome": [
+            {
+              "version_added": "56"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "51",
+              "version_removed": "56"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "56"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "51",
+              "version_removed": "56"
+            }
+          ],
+          "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
+            "version_added": true
+          },
+          "firefox": {
+            "version_added": "22"
+          },
+          "firefox_android": [
+            {
+              "version_added": "44"
+            },
+            {
+              "prefix": "moz",
+              "version_added": "22",
+              "version_removed": "44"
+            }
+          ],
+          "ie": {
+            "version_added": null
+          },
+          "opera": [
+            {
+              "version_added": "43",
+              "notes": "Promise based version."
+            },
+            {
+              "version_added": "37",
+              "version_removed": "43"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "43",
+              "notes": "Promise based version."
+            },
+            {
+              "version_added": "37",
+              "version_removed": "43"
+            }
+          ],
+          "safari": {
+            "version_added": null
+          },
+          "safari_ios": {
+            "version_added": null
+          },
+          "samsunginternet_android": [
+            {
+              "version_added": "6.0"
+            },
+            {
+              "prefix": "webkit",
+              "version_removed": "6.0",
+              "version_added": "5.0"
+            }
+          ],
+          "webview_android": [
+            {
+              "version_added": "56"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "51",
+              "version_removed": "56"
+            }
+          ]
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "RTCPeerConnection": {
+        "__compat": {
+          "description": "RTCPeerConnection()",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/RTCPeerConnection",
+          "support": {
+            "chrome": {
+              "version_added": "56",
+              "notes": [
+                "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
+              ]
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
+              ]
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56",
+              "notes": [
+                "Before Chrome 63 the default value for the <code>RTCConfiguration.rtcpMuxPolicy</code> parameter was <code>&quot;negotiate&quot</code>"
+              ]
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "canTrickleIceCandidates": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/canTrickleIceCandidates",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "connectionState": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionState",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "currentLocalDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/currentLocalDescription",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "currentRemoteDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/currentRemoteDescription",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "56"
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "defaultIceServers": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/defaultIceServers",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "iceConnectionState": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceConnectionState",
+          "support": {
+            "chrome": {
+              "notes": "disconnected",
+              "version_added": "48"
+            },
+            "chrome_android": {
+              "version_added": "57"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "52"
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "7.0"
+            },
+            "webview_android": {
+              "notes": "disconnected",
+              "version_added": "48"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "iceGatheringState": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceGatheringState",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "localDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/localDescription",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "peerIdentity": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/peerIdentity",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pendingLocalDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingLocalDescription",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pendingRemoteDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingRemoteDescription",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "remoteDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/remoteDescription",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "38",
+                "notes": "Promise based version.",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "38",
+                "notes": "Promise based version.",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sctp": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/sctp",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "signalingState": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingState",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onaddstream": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onaddstream",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "onconnectionstatechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onconnectionstatechange",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ondatachannel": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/ondatachannel",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onicecandidate": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onicecandidate",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "oniceconnectionstatechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/oniceconnectionstatechange",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onicegatheringstatechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onicegatheringstatechange",
+          "support": {
+            "chrome": {
+              "version_added": "59"
+            },
+            "chrome_android": {
+              "version_added": "59"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "59"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onidentityresult": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidentityresult",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onidpassertionerror": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpassertionerror",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onidpvalidationerror": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpvalidationerror",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onnegotiationneeded": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onnegotiationneeded",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onpeeridentity": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onpeeridentity",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onremovestream": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onremovestream",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22",
+              "version_removed": "60"
+            },
+            "firefox_android": {
+              "version_added": "44",
+              "version_removed": "60"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "onsignalingstatechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onsignalingstatechange",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ontrack": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/ontrack",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "addIceCandidate": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "6.0"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_removed": "6.0",
+                "version_added": "5.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "addStream": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addStream",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "addTrack": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTrack",
+          "support": {
+            "chrome": {
+              "version_added": "64"
+            },
+            "chrome_android": {
+              "version_added": "64"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "51"
+            },
+            "opera_android": {
+              "version_added": "51"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "64"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "addTransceiver": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "59"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "createAnswer": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "6.0"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_removed": "6.0",
+                "version_added": "5.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "createDataChannel": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "createOffer": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "6.0"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_removed": "6.0",
+                "version_added": "5.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "generateCertificate": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getConfiguration": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getConfiguration",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getIdentityAssertion": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getIdentityAssertion",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getLocalStreams": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getLocalStreams",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getReceivers": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getReceivers",
+          "support": {
+            "chrome": {
+              "version_added": "59"
+            },
+            "chrome_android": {
+              "version_added": "59"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "46"
+            },
+            "opera_android": {
+              "version_added": "46"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "59"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getRemoteStreams": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getRemoteStreams",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getSenders": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getSenders",
+          "support": {
+            "chrome": {
+              "version_added": "64"
+            },
+            "chrome_android": {
+              "version_added": "64"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "51"
+            },
+            "opera_android": {
+              "version_added": "51"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "64"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getStats": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats",
+          "support": {
+            "chrome": {
+              "version_added": "58"
+            },
+            "chrome_android": {
+              "version_added": "58"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "45"
+            },
+            "opera_android": {
+              "version_added": "45"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "58"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "MediaStreamTrack_argument": {
+          "__compat": {
+            "description": "Optional <code>MediaStreamTrack</code> argument",
+            "support": {
+              "chrome": {
+                "version_added": "67"
+              },
+              "chrome_android": {
+                "version_added": "67"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": null
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": "54"
+              },
+              "opera_android": {
+                "version_added": "54"
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": "67"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "getStreamById": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStreamById",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "removeStream": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeStream",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": "11",
+              "version_removed": "12"
+            },
+            "safari_ios": {
+              "version_added": "11",
+              "version_removed": "12"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "removeTrack": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeTrack",
+          "support": {
+            "chrome": {
+              "version_added": "64"
+            },
+            "chrome_android": {
+              "version_added": "64"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "51"
+            },
+            "opera_android": {
+              "version_added": "51"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "64"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setConfiguration": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setIdentityProvider": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setIdentityProvider",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setLocalDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ],
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": [
+              {
+                "notes": "Promise based version and unprefixed.",
+                "version_added": "6.0"
+              },
+              {
+                "notes": "Promise based version.",
+                "version_removed": "6.0",
+                "version_added": "5.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "56",
+                "notes": "Promise based version and unprefixed."
+              },
+              {
+                "version_added": "50",
+                "notes": "Promise based version.",
+                "version_removed": "56"
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setRemoteDescription": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "createDTMFSender": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDTMFSender",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": [
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              },
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "43",
+                "notes": "Promise based version."
+              },
+              {
+                "version_added": "37",
+                "version_removed": "43"
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "onicecandidateerror": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onicecandidateerror",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "close": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/close",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getDefaultIceServers": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getDefaultIceServers",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}

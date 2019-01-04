@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/slot",
           "support": {
-            "webview_android": {
-              "version_added": "53"
-            },
             "chrome": {
               "version_added": "53"
             },
@@ -20,16 +17,71 @@
             "edge_mobile": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "59",
+                "version_removed": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.shadowdom.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": true,
+                "version_removed": "59",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.enabled",
+                    "value_to_set": "true"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.shadowdom.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "59",
+                "version_removed": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.shadowdom.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": true,
+                "version_removed": "59",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.enabled",
+                    "value_to_set": "true"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.shadowdom.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": false
-            },
-            "ie_mobile": {
               "version_added": false
             },
             "opera": {
@@ -43,6 +95,12 @@
             },
             "safari_ios": {
               "version_added": "10.1"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "53"
             }
           },
           "status": {
@@ -54,9 +112,6 @@
         "name": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "53"
-              },
               "chrome": {
                 "version_added": "53"
               },
@@ -69,16 +124,71 @@
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox": [
+                {
+                  "version_added": "63"
+                },
+                {
+                  "version_added": "59",
+                  "version_removed": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.webcomponents.shadowdom.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "version_added": true,
+                  "version_removed": "59",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.webcomponents.enabled",
+                      "value_to_set": "true"
+                    },
+                    {
+                      "type": "preference",
+                      "name": "dom.webcomponents.shadowdom.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "63"
+                },
+                {
+                  "version_added": "59",
+                  "version_removed": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.webcomponents.shadowdom.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "version_added": true,
+                  "version_removed": "59",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.webcomponents.enabled",
+                      "value_to_set": "true"
+                    },
+                    {
+                      "type": "preference",
+                      "name": "dom.webcomponents.shadowdom.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
-                "version_added": false
-              },
-              "ie_mobile": {
                 "version_added": false
               },
               "opera": {
@@ -92,6 +202,12 @@
               },
               "safari_ios": {
                 "version_added": "10.1"
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "53"
               }
             },
             "status": {

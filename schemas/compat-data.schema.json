@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+
+  "definitions": {
+
+    "simple_support_statement": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "type": "string",
+          "description": "A prefix to add to the sub-feature name (defaults to empty string). If applicable, leading and trailing '-' must be included."
+        },
+        "alternative_name": {
+          "type": "string",
+          "description": "An alternative name for the feature, for cases where a feature is implemented under an entirely different name and not just prefixed."
+        },
+        "flags": {
+          "type": "array",
+          "description": "An optional array of objects indicating what kind of flags must be set for this feature to work.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "An enum that indicates the flag type.",
+                "enum": ["preference", "compile_flag", "runtime_flag"]
+              },
+              "name": {
+                "type": "string",
+                "description": "A string representing the flag or preference to modify."
+              },
+              "value_to_set": {
+                "type": "string",
+                "description": "A string representing the actual value to set the flag to."
+              }
+            },
+            "additionalProperties": false,
+            "required": ["type", "name"]
+          }
+        },
+        "partial_implementation": {
+          "type": "boolean",
+          "description": "A boolean value indicating whether or not the implementation of the sub-feature follows the current specification closely enough to not create major interoperability problems. It defaults to false (no interoperability problem expected). If set to true, it is recommended to add a note indicating how it diverges from the standard (implements an old version of the standard, for example)."
+        },
+        "version_added": { "$ref": "#/definitions/version_value" },
+        "version_removed": { "$ref": "#/definitions/version_value" },
+        "notes": {
+          "description": "An array of zero or more strings containing additional information.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "required": ["version_added"],
+      "anyOf": [
+        {
+          "not": {"required": ["prefix","alternative_name"]}
+        },
+        {
+          "oneOf": [
+            {"required": ["prefix"]},
+            {"required": ["alternative_name"]}
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+
+    "array_support_statement": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/definitions/simple_support_statement"
+      }
+    },
+
+    "support_statement": {
+      "anyOf": [
+        { "$ref": "#/definitions/simple_support_statement" },
+        { "$ref": "#/definitions/array_support_statement" }
+      ]
+    },
+
+    "status_block": {
+      "type": "object",
+      "properties": {
+        "experimental": {
+          "type": "boolean",
+          "description": "A boolean value that indicates whether this functionality is intended to be an addition to the Web platform. Set to false, it means the functionality is mature, and no significant incompatible changes are expected in the future."
+        },
+        "standard_track": {
+          "type": "boolean",
+          "description": "A boolean value indicating whether the feature is part of an active specification or specification process."
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "A boolean value that indicates whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
+        }
+      },
+      "required": ["experimental", "standard_track", "deprecated"],
+      "additionalProperties": false
+    },
+
+    "support_block": {
+      "type": "object",
+      "properties": {
+        "webview_android": { "$ref": "#/definitions/support_statement" },
+        "chrome": { "$ref": "#/definitions/support_statement" },
+        "chrome_android": { "$ref": "#/definitions/support_statement" },
+        "edge": { "$ref": "#/definitions/support_statement" },
+        "edge_mobile": { "$ref": "#/definitions/support_statement" },
+        "firefox": { "$ref": "#/definitions/support_statement" },
+        "firefox_android": { "$ref": "#/definitions/support_statement" },
+        "ie": { "$ref": "#/definitions/support_statement" },
+        "nodejs": { "$ref": "#/definitions/support_statement" },
+        "opera": { "$ref": "#/definitions/support_statement" },
+        "opera_android": { "$ref": "#/definitions/support_statement" },
+        "qq_android": { "$ref": "#/definitions/support_statement" },
+        "safari": { "$ref": "#/definitions/support_statement" },
+        "safari_ios": { "$ref": "#/definitions/support_statement" },
+        "samsunginternet_android": { "$ref": "#/definitions/support_statement" },
+        "uc_android": { "$ref": "#/definitions/support_statement" },
+        "uc_chinese_android": { "$ref": "#/definitions/support_statement" }
+      },
+      "additionalProperties": false
+    },
+
+    "compat_statement": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A string containing a human-readable description of the feature."
+        },
+        "mdn_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
+        },
+        "support": { "$ref": "#/definitions/support_block" },
+        "status": { "$ref": "#/definitions/status_block" }
+      },
+      "required": ["support", "status"],
+      "additionalProperties": false
+    },
+
+    "webextensions_compat_statement": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A string containing a human-readable description of the feature."
+        },
+        "mdn_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
+        },
+        "support": { "$ref": "#/definitions/support_block" },
+        "status": { "$ref": "#/definitions/status_block" }
+      },
+      "required": ["support"],
+      "additionalProperties": false
+    },
+
+    "primary_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
+
+    "primary_webextensions_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/webextensions_identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
+
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/compat_statement" }
+      },
+      "patternProperties":{
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false
+    },
+
+    "webextensions_identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/webextensions_compat_statement" }
+      },
+      "patternProperties":{
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/webextensions_identifier" }
+      },
+      "additionalProperties": false
+    },
+
+    "version_value": {
+      "allOf": [
+        { "type": ["string", "boolean", "null"] },
+        { "not": { "enum": ["true", "false", "null"] } }
+      ]
+    }
+  },
+
+  "type": "object",
+  "patternProperties": {
+    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" },
+    "^webextensions*$": { "$ref": "#/definitions/primary_webextensions_identifier" }
+  },
+  "additionalProperties": false,
+  "maxProperties": 1,
+  "minProperties": 1
+}

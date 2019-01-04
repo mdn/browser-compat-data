@@ -3,6 +3,7 @@
     "manifest": {
       "theme": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme",
           "support": {
             "chrome": {
               "version_added": true
@@ -21,8 +22,57 @@
             }
           }
         },
-        "colors": {
-          "accentcolor": {
+        "images": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme#images",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "55",
+                "notes": "Mandatory before Firefox 60"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          },
+          "headerURL": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "alternative_name": "theme_frame"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": [
+                  {
+                    "version_added": "55"
+                  },
+                  {
+                    "version_added": "55",
+                    "alternative_name": "theme_frame"
+                  }
+                ],
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "additional_backgrounds": {
             "__compat": {
               "support": {
                 "chrome": {
@@ -33,6 +83,122 @@
                 },
                 "firefox": {
                   "version_added": "55"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "colors": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme#colors",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "55"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          },
+          "accentcolor": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "55",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property.",
+                    "Before version 63, this property was mandatory."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "bookmark_text": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "58",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "button_background_active": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "button_background_hover": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -47,13 +213,421 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
                 },
                 "edge": {
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "55"
+                  "version_added": "55",
+                  "notes": [
+                    "Before version 59, the CSS color form was not supported for this property."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "frame_inactive": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "frame_incognito": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "frame_incognito_inactive": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "icons": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "icons_attention": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "ntp_background": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "ntp_header": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "ntp_link": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "ntp_text": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "popup": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "popup_highlight": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "popup_highlight_text": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "popup_text": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "tab_background_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "tab_background_text": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "59"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "tab_line": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "tab_loading": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "tab_selected": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "60"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -68,13 +642,19 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
                 },
                 "edge": {
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "55"
+                  "version_added": "55",
+                  "notes": [
+                    "Before version 59, the CSS color form was not supported for this property."
+                  ]
                 },
                 "firefox_android": {
                   "version_added": false
@@ -95,7 +675,11 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "55"
+                  "version_added": "55",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property.",
+                    "Before version 63, this property was mandatory."
+                  ]
                 },
                 "firefox_android": {
                   "version_added": false
@@ -110,13 +694,44 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": true,
+                  "notes": [
+                    "The CSS color form is not supported for this property."
+                  ]
                 },
                 "edge": {
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "57"
+                  "version_added": "57",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property.",
+                    "Before version 61, this did not set the \"Find\" bar's color."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_bottom_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "58",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property."
+                  ]
                 },
                 "firefox_android": {
                   "version_added": false
@@ -137,8 +752,109 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "57"
+                  "version_added": "57",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property.",
+                    "Before version 61, this did not set the \"Find\" field's background color."
+                  ]
                 },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_border": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "59",
+                  "notes": [
+                    "Before version 61, this did not set the \"Find\" field's border color."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_border_focus": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_focus": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": [
+                  {
+                    "version_added": "59"
+                  },
+                  {
+                    "alternative_name": "toolbar_vertical_separator",
+                    "version_added": "58",
+                    "version_removed": "59",
+                    "notes": [
+                      "Before version 59, the RGB array form was not supported for this property."
+                    ]
+                  }
+                ],
                 "firefox_android": {
                   "version_added": false
                 },
@@ -158,7 +874,32 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "57"
+                  "version_added": "57",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property.",
+                    "Before version 61, this did not set the \"Find\" field's text color."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_text_focus": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -179,7 +920,11 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "57"
+                  "version_added": "57",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property.",
+                    "Before version 61, this did not set the \"Find\" bar's text color."
+                  ]
                 },
                 "firefox_android": {
                   "version_added": false
@@ -187,6 +932,76 @@
                 "opera": {
                   "version_added": false
                 }
+              }
+            }
+          },
+          "toolbar_top_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "58",
+                  "notes": [
+                    "Before version 59, the RGB array form was not supported for this property."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_vertical_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "58",
+                  "notes": [
+                    "Before version 59, this had the same meaning as <code>toolbar_field_separator</code>."
+                  ]
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "properties": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme#properties",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "55"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
               }
             }
           }

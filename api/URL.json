@@ -1,0 +1,1068 @@
+{
+  "api": {
+    "URL": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL",
+        "support": {
+          "chrome": [
+            {
+              "version_added": "32"
+            },
+            {
+              "version_added": "2",
+              "prefix": "webkit"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "32"
+            },
+            {
+              "version_added": "18",
+              "prefix": "webkit"
+            }
+          ],
+          "edge": {
+            "version_added": "12"
+          },
+          "edge_mobile": {
+            "version_added": "12"
+          },
+          "firefox": [
+            {
+              "version_added": "19",
+              "notes": [
+                "Firefox had a bug whereby single quotes contained in URLs are escaped when accessed via URL APIs (see <a href='https://bugzil.la/1386683'>bug 1386683</a>). This has been fixed as of Firefox 57.",
+                "To use it from chrome code, JSM and Bootstrap scope, you have to import it with <code>Cu.importGlobalProperties(['URL']);</code>."
+              ]
+            },
+            {
+              "version_added": "4",
+              "version_removed": "18",
+              "notes": "This interface was supported with the non-standard <code>nsIDOMMozURLProperty</code> internal type. However this didn't make any difference in practice, as the only way to access such an object was through <code>window.URL</code>."
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "19",
+              "notes": [
+                "Firefox had a bug whereby single quotes contained in URLs are escaped when accessed via URL APIs (see <a href='https://bugzil.la/1386683'>bug 1386683</a>). This has been fixed as of Firefox 57.",
+                "To use it from chrome code, JSM and Bootstrap scope, you have to import it with <code>Cu.importGlobalProperties(['URL']);</code>."
+              ]
+            },
+            {
+              "version_added": "14",
+              "version_removed": "18",
+              "notes": "This interface was supported with the non-standard <code>nsIDOMMozURLProperty</code> internal type. However this didn't make any difference in practice, as the only way to access such an object was through <code>window.URL</code>."
+            }
+          ],
+          "ie": {
+            "version_added": null
+          },
+          "opera": [
+            {
+              "version_added": "19"
+            },
+            {
+              "version_added": "15",
+              "prefix": "webkit"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "19"
+            },
+            {
+              "version_added": "15",
+              "prefix": "webkit"
+            }
+          ],
+          "safari": [
+            {
+              "version_added": "7"
+            },
+            {
+              "version_added": "6",
+              "prefix": "webkit"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "7"
+            },
+            {
+              "version_added": "6",
+              "prefix": "webkit"
+            }
+          ],
+          "samsunginternet_android": {
+            "version_added": null
+          },
+          "webview_android": [
+            {
+              "version_added": "4.4"
+            },
+            {
+              "version_added": "4",
+              "prefix": "webkit"
+            }
+          ]
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "URL": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/URL",
+          "description": "<code>URL()</code> constructor",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "26"
+            },
+            "firefox_android": {
+              "version_added": "26"
+            },
+            "ie": {
+              "version_added": true,
+              "version_removed": "11"
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "createObjectURL": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/createObjectURL",
+          "support": {
+            "chrome": {
+              "version_added": "8"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "4",
+              "notes": "<code>createObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
+            },
+            "firefox_android": {
+              "version_added": "4",
+              "notes": "<code>createObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
+            },
+            "ie": {
+              "version_added": "10"
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "15"
+            },
+            "safari": {
+              "version_added": "6"
+            },
+            "safari_ios": {
+              "version_added": "6"
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "no_MediaStream_argument": {
+          "__compat": {
+            "description": "No longer accepts <code>MediaStream</code> object",
+            "support": {
+              "chrome": {
+                "version_added": null,
+                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+              },
+              "chrome_android": {
+                "version_added": null,
+                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "62"
+              },
+              "firefox_android": {
+                "version_added": "62"
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": null,
+                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+              },
+              "opera_android": {
+                "version_added": null,
+                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+              },
+              "safari": {
+                "version_added": null,
+                "notes": "See <a href='https://bugs.webkit.org/show_bug.cgi?id=167518'>here</a> for progress on deprecation."
+              },
+              "safari_ios": {
+                "version_added": null,
+                "notes": "See <a href='https://bugs.webkit.org/show_bug.cgi?id=167518'>here</a> for progress on deprecation."
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "hash": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/hash",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "host": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/host",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "hostname": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/hostname",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "href": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/href",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "origin": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/origin",
+          "support": {
+            "chrome": {
+              "version_added": "52"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": "12",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "edge_mobile": {
+              "version_added": "12",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "firefox": [
+              {
+                "version_added": "26"
+              },
+              {
+                "version_added": "26",
+                "version_removed": "44",
+                "notes": "This property was on the <code>URLUtils</code> mixin. It has been moved either to the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+              },
+              {
+                "version_added": "26",
+                "version_removed": "49",
+                "notes": "Results for <code>URL</code> using the <code>blob</code> scheme incorrectly returned <code>null</code>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "26"
+              },
+              {
+                "version_added": "26",
+                "version_removed": "44",
+                "notes": "This property was on the <code>URLUtils</code> mixin. It has been moved either to the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
+              },
+              {
+                "version_added": "26",
+                "version_removed": "49",
+                "notes": "Results for <code>URL</code> using the <code>blob</code> scheme incorrectly returned <code>null</code>."
+              }
+            ],
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "opera_android": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "safari": {
+              "version_added": "10",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "safari_ios": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "52"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "password": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/password",
+          "support": {
+            "chrome": {
+              "version_added": "52"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": "12",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "edge_mobile": {
+              "version_added": "12",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "firefox": {
+              "version_added": "26"
+            },
+            "firefox_android": {
+              "version_added": "26"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "opera_android": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "safari": {
+              "version_added": "10",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "safari_ios": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "52"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pathname": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/pathname",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "port": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/port",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "protocol": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/protocol",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "revokeObjectURL": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/revokeObjectURL",
+          "support": {
+            "chrome": {
+              "version_added": "8"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "4",
+              "notes": "<code>revokeObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
+            },
+            "firefox_android": {
+              "version_added": "4",
+              "notes": "<code>revokeObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
+            },
+            "ie": {
+              "version_added": "10"
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "15"
+            },
+            "safari": {
+              "version_added": "6"
+            },
+            "safari_ios": {
+              "version_added": "6"
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "search": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/search",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "22",
+                "version_removed": "53",
+                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
+              }
+            ],
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "searchParams": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/searchParams",
+          "support": {
+            "chrome": {
+              "version_added": "51"
+            },
+            "chrome_android": {
+              "version_added": "51"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "52"
+            },
+            "firefox_android": {
+              "version_added": "52"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "51"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "toJSON": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/toJSON",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "54"
+            },
+            "firefox_android": {
+              "version_added": "54"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "username": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/username",
+          "support": {
+            "chrome": {
+              "version_added": "52"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": "12",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "edge_mobile": {
+              "version_added": "12",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "firefox": {
+              "version_added": "26"
+            },
+            "firefox_android": {
+              "version_added": "26"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "opera_android": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "safari": {
+              "version_added": "10",
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "safari_ios": {
+              "version_added": true,
+              "notes": "Defined in another interface but available to use from <code>URL</code>."
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "52"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}

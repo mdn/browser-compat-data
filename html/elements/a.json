@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/a",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -31,9 +28,6 @@
             "ie": {
               "version_added": true
             },
-            "ie_mobile": {
-              "version_added": true
-            },
             "opera": {
               "version_added": true
             },
@@ -44,6 +38,12 @@
               "version_added": true
             },
             "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -56,9 +56,6 @@
         "charset": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -80,9 +77,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -93,6 +87,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -106,44 +106,48 @@
         "coords": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
-                "version_added": true
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": false
               },
               "edge": {
-                "version_added": true
+                "version_added": false
               },
               "edge_mobile": {
-                "version_added": true
+                "version_added": false
               },
               "firefox": {
-                "version_added": true
+                "version_added": true,
+                "version_removed": "58",
+                "notes": "You can no longer nest an <code>&lt;a&gt;</code> element inside a <code>&lt;map&gt;</code> element to create a hotspot region — <code>coords</code> and <code>shape</code> attribute support removed."
               },
               "firefox_android": {
-                "version_added": true
+                "version_added": true,
+                "version_removed": "58",
+                "notes": "You can no longer nest an <code>&lt;a&gt;</code> element inside a <code>&lt;map&gt;</code> element to create a hotspot region — <code>coords</code> and <code>shape</code> attribute support removed."
               },
               "ie": {
-                "version_added": true
-              },
-              "ie_mobile": {
-                "version_added": true
+                "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": false
               },
               "opera_android": {
-                "version_added": true
+                "version_added": false
               },
               "safari": {
-                "version_added": true
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -156,19 +160,25 @@
         "download": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": "14"
               },
               "chrome_android": {
                 "version_added": null
               },
-              "edge": {
-                "version_added": "13",
-                "notes": "Until Edge 14 (build 14357), attempting to download data URIs caused Edge to crash."
-              },
+              "edge": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "13",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Until Edge 14 (build 14357), attempting to download data URIs caused Edge to crash (<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7160092/'>bug 7160092</a>).",
+                    "Edge 17 or older didn't follow the attributes' value to determine filename (<a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7260192/'>bug 7260192</a>)."
+                  ]
+                }
+              ],
               "edge_mobile": {
                 "version_added": true
               },
@@ -179,9 +189,6 @@
                 "version_added": "20"
               },
               "ie": {
-                "version_added": false
-              },
-              "ie_mobile": {
                 "version_added": false
               },
               "opera": {
@@ -195,6 +202,12 @@
               },
               "safari_ios": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -207,9 +220,6 @@
         "href": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -231,9 +241,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -244,6 +251,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -257,9 +270,6 @@
             "__compat": {
               "description": "<code>href = '#top'</code>",
               "support": {
-                "webview_android": {
-                  "version_added": true
-                },
                 "chrome": {
                   "version_added": true
                 },
@@ -281,9 +291,6 @@
                 "ie": {
                   "version_added": true
                 },
-                "ie_mobile": {
-                  "version_added": true
-                },
                 "opera": {
                   "version_added": true
                 },
@@ -294,6 +301,12 @@
                   "version_added": true
                 },
                 "safari_ios": {
+                  "version_added": true
+                },
+                "samsunginternet_android": {
+                  "version_added": true
+                },
+                "webview_android": {
                   "version_added": true
                 }
               },
@@ -308,9 +321,6 @@
         "hreflang": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -332,9 +342,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -345,6 +352,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -358,9 +371,6 @@
         "name": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -382,9 +392,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -395,6 +402,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -408,9 +421,6 @@
         "ping": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": true
               },
@@ -425,24 +435,25 @@
               },
               "firefox": {
                 "version_added": true,
-                "flag": {
-                  "type": "preference",
-                  "name": "browser.send_pings",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "browser.send_pings",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": {
                 "version_added": true,
-                "flag": {
-                  "type": "preference",
-                  "name": "browser.send_pings",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "browser.send_pings",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "ie": {
-                "version_added": false
-              },
-              "ie_mobile": {
                 "version_added": false
               },
               "opera": {
@@ -456,6 +467,12 @@
               },
               "safari_ios": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -468,9 +485,6 @@
         "referrerpolicy": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "51"
-              },
               "chrome": {
                 "version_added": "51"
               },
@@ -492,20 +506,23 @@
               "ie": {
                 "version_added": false
               },
-              "ie_mobile": {
-                "version_added": false
-              },
               "opera": {
-                "version_added": false
+                "version_added": "38"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "38"
               },
               "safari": {
-                "version_added": false
+                "version_added": "11.1"
               },
               "safari_ios": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "7.2"
+              },
+              "webview_android": {
+                "version_added": "51"
               }
             },
             "status": {
@@ -518,9 +535,6 @@
         "rel": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -542,9 +556,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -555,6 +566,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -568,9 +585,6 @@
         "rev": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -592,9 +606,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -605,6 +616,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -618,44 +635,48 @@
         "shape": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
-                "version_added": true
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": false
               },
               "edge": {
-                "version_added": true
+                "version_added": false
               },
               "edge_mobile": {
-                "version_added": true
+                "version_added": false
               },
               "firefox": {
-                "version_added": true
+                "version_added": true,
+                "version_removed": "58",
+                "notes": "You can no longer nest an <code>&lt;a&gt;</code> element inside a <code>&lt;map&gt;</code> element to create a hotspot region — <code>coords</code> and <code>shape</code> attribute support removed."
               },
               "firefox_android": {
-                "version_added": true
+                "version_added": true,
+                "version_removed": "58",
+                "notes": "You can no longer nest an <code>&lt;a&gt;</code> element inside a <code>&lt;map&gt;</code> element to create a hotspot region — <code>coords</code> and <code>shape</code> attribute support removed."
               },
               "ie": {
-                "version_added": true
-              },
-              "ie_mobile": {
-                "version_added": true
+                "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": false
               },
               "opera_android": {
-                "version_added": true
+                "version_added": false
               },
               "safari": {
-                "version_added": true
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -668,9 +689,6 @@
         "target": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -692,9 +710,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -705,6 +720,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },
@@ -718,9 +739,6 @@
         "type": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -742,9 +760,6 @@
               "ie": {
                 "version_added": true
               },
-              "ie_mobile": {
-                "version_added": true
-              },
               "opera": {
                 "version_added": true
               },
@@ -755,6 +770,12 @@
                 "version_added": true
               },
               "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },

@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": true
             },
@@ -15,23 +12,49 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Not sent with <code>POST</code> requests, see <a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/10482384/'>bug 10482384</a>."
             },
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": true,
-              "notes": "Not sent with <code>POST</code> requests, see <a href='https://bugzil.la/446344'>bug 446344</a>."
-            },
-            "firefox_android": {
-              "version_added": true,
-              "notes": "Not sent with <code>POST</code> requests, see <a href='https://bugzil.la/446344'>bug 446344</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "59",
+                "flags": [
+                  {
+                    "name": "network.http.sendOriginHeader",
+                    "type": "preference",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Sent with non-CORS requests since Fx59, unless they are <code>GET</code> or <code>HEAD</code>."
+              },
+              {
+                "version_added": true,
+                "partial_implementation": true,
+                "notes": "Not sent with <code>POST</code> requests until Firefox 58, see <a href='https://bugzil.la/446344'>bug 446344</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "59",
+                "flags": [
+                  {
+                    "name": "network.http.sendOriginHeader",
+                    "type": "preference",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Sent with non-CORS requests since Fx59, unless they are <code>GET</code> or <code>HEAD</code>."
+              },
+              {
+                "version_added": true,
+                "partial_implementation": true,
+                "notes": "Not sent with <code>POST</code> requests until Firefox 58, see <a href='https://bugzil.la/446344'>bug 446344</a>."
+              }
+            ],
             "ie": {
-              "version_added": true
-            },
-            "ie_mobile": {
               "version_added": true
             },
             "opera": {
@@ -44,6 +67,12 @@
               "version_added": true
             },
             "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },

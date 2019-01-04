@@ -6,9 +6,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/touch-action",
           "description": "Level 1 values",
           "support": {
-            "webview_android": {
-              "version_added": "36"
-            },
             "chrome": {
               "version_added": "36"
             },
@@ -16,7 +13,7 @@
               "version_added": "36"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -28,11 +25,13 @@
               },
               {
                 "version_added": "29",
-                "flag": {
-                  "type": "preference",
-                  "name": "layout.css.touch_action.enabled",
-                  "value_to_set": "true"
-                },
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.touch_action.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
                 "notes": "Not applicable to Firefox platforms that support neither pointer nor touch events."
               }
             ],
@@ -42,23 +41,16 @@
               },
               {
                 "version_added": "29",
-                "flag": {
-                  "type": "preference",
-                  "name": "layout.css.touch_action.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.touch_action.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
             "ie": [
-              {
-                "version_added": "11"
-              },
-              {
-                "version_added": "10",
-                "prefix": "-ms-"
-              }
-            ],
-            "ie_mobile": [
               {
                 "version_added": "11"
               },
@@ -80,6 +72,12 @@
             "safari_ios": {
               "version_added": false,
               "notes": "See <a href='https://bugs.webkit.org/show_bug.cgi?id=133112'>WebKit bug 133112</a>."
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -91,9 +89,6 @@
         "manipulation": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "36"
-              },
               "chrome": {
                 "version_added": "36"
               },
@@ -101,7 +96,7 @@
                 "version_added": "36"
               },
               "edge": {
-                "version_added": true
+                "version_added": "12"
               },
               "edge_mobile": {
                 "version_added": true
@@ -113,11 +108,13 @@
                 },
                 {
                   "version_added": "29",
-                  "flag": {
-                    "type": "preference",
-                    "name": "layout.css.touch_action.enabled",
-                    "value_to_set": "true"
-                  },
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.touch_action.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
                   "notes": "Not applicable to Firefox platforms that support neither pointer nor touch events."
                 }
               ],
@@ -127,23 +124,16 @@
                 },
                 {
                   "version_added": "29",
-                  "flag": {
-                    "type": "preference",
-                    "name": "layout.css.touch_action.enabled",
-                    "value_to_set": "true"
-                  }
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.touch_action.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
                 }
               ],
               "ie": [
-                {
-                  "version_added": "11"
-                },
-                {
-                  "version_added": "10",
-                  "prefix": "-ms-"
-                }
-              ],
-              "ie_mobile": [
                 {
                   "version_added": "11"
                 },
@@ -163,6 +153,12 @@
               },
               "safari_ios": {
                 "version_added": "9.1"
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {
@@ -175,9 +171,6 @@
         "double-tap-zoom": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -185,7 +178,7 @@
                 "version_added": false
               },
               "edge": {
-                "version_added": true
+                "version_added": "12"
               },
               "edge_mobile": {
                 "version_added": true
@@ -205,15 +198,6 @@
                   "prefix": "-ms-"
                 }
               ],
-              "ie_mobile": [
-                {
-                  "version_added": "11"
-                },
-                {
-                  "version_added": "10",
-                  "prefix": "-ms-"
-                }
-              ],
               "opera": {
                 "version_added": false
               },
@@ -224,6 +208,12 @@
                 "version_added": false
               },
               "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },
@@ -237,9 +227,6 @@
         "pinch-zoom": {
           "__compat": {
             "support": {
-              "webview_android": {
-                "version_added": "56"
-              },
               "chrome": {
                 "version_added": "56"
               },
@@ -247,7 +234,7 @@
                 "version_added": "56"
               },
               "edge": {
-                "version_added": true
+                "version_added": "12"
               },
               "edge_mobile": {
                 "version_added": true
@@ -269,15 +256,6 @@
                   "prefix": "-ms-"
                 }
               ],
-              "ie_mobile": [
-                {
-                  "version_added": "11"
-                },
-                {
-                  "version_added": "10",
-                  "prefix": "-ms-"
-                }
-              ],
               "opera": {
                 "version_added": "43"
               },
@@ -289,6 +267,12 @@
               },
               "safari_ios": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "56"
               }
             },
             "status": {
@@ -302,9 +286,6 @@
           "__compat": {
             "description": "<code>pan-up</code>, <code>pan-down</code>, <code>pan-left</code> and <code>pan-right</code>",
             "support": {
-              "webview_android": {
-                "version_added": "55"
-              },
               "chrome": {
                 "version_added": "55"
               },
@@ -328,9 +309,6 @@
               "ie": {
                 "version_added": false
               },
-              "ie_mobile": {
-                "version_added": false
-              },
               "opera": {
                 "version_added": "42"
               },
@@ -342,6 +320,12 @@
               },
               "safari_ios": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "55"
               }
             },
             "status": {

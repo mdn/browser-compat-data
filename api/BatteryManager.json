@@ -1,0 +1,913 @@
+{
+  "api": {
+    "BatteryManager": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager",
+        "support": {
+          "chrome": {
+            "version_added": "38"
+          },
+          "chrome_android": {
+            "version_added": "38",
+            "notes": [
+              "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+            ]
+          },
+          "edge_mobile": {
+            "version_added": false
+          },
+          "firefox": [
+            {
+              "version_added": "16",
+              "version_removed": "52"
+            },
+            {
+              "version_added": "10",
+              "version_removed": "16",
+              "prefix": "moz"
+            },
+            {
+              "version_added": "52",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.battery.enabled"
+                }
+              ],
+              "notes": [
+                "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+              ]
+            },
+            {
+              "version_added": "52",
+              "notes": [
+                "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+              ]
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "10",
+              "version_removed": "16",
+              "prefix": "moz"
+            },
+            {
+              "version_added": "16",
+              "version_removed": "52",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.battery.enabled"
+                }
+              ],
+              "notes": [
+                "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+              ]
+            },
+            {
+              "version_added": "52",
+              "notes": [
+                "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+              ]
+            }
+          ],
+          "ie": {
+            "version_added": false
+          },
+          "opera": {
+            "version_added": "25"
+          },
+          "opera_android": {
+            "version_added": "25"
+          },
+          "safari": {
+            "version_added": false
+          },
+          "safari_ios": {
+            "version_added": true,
+            "version_removed": true
+          },
+          "samsunginternet_android": {
+            "version_added": true
+          },
+          "webview_android": {
+            "version_added": "40"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": true
+        }
+      },
+      "charging": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/charging",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "chargingTime": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "dischargingTime": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "level": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/level",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "onchargingchange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/onchargingchange",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "onchargingtimechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/onchargingtimechange",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "ondischargingtimechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/ondischargingtimechange",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "onlevelchange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/onlevelchange",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": [
+                "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime' title='Indicates the amount of time, in seconds, that remain until the battery is fully charged.'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime' title='Indicates the amount of time, in seconds, that remains until the battery is fully discharged.'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              ]
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "16",
+                "version_removed": "52"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "prefix": "moz"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.battery.enabled"
+                  }
+                ],
+                "notes": [
+                  "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provide support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery' title='The battery read-only property returns a BatteryManager provides information about the system's battery charge level; provides also some new events you can handle to monitor the battery status. This implements the Battery Status API; see that documentation for additional details, a guide to using the API, and sample code.'><code>navigator.battery</code></a>."
+                ]
+              },
+              {
+                "version_added": "52",
+                "notes": [
+                  "From this version onwards, the Battery Status API is only available in chrome/privileged code."
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": true,
+              "version_removed": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      }
+    }
+  }
+}

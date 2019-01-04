@@ -1,0 +1,577 @@
+{
+  "css": {
+    "properties": {
+      "justify-content": {
+        "flex_context": {
+          "__compat": {
+            "description": "Supported in Flex Layout",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-content",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "52"
+                },
+                {
+                  "version_added": "29",
+                  "partial_implementation": true,
+                  "notes": "Older versions of the specification treat absolute positioned children as though they are a 0 by 0 flex item. Later specification versions take the children out of the flow and set their positions based on align and justify properties. Chrome implements the new behavior beginning with Chrome 52."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "21"
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "52"
+                },
+                {
+                  "version_added": "29",
+                  "partial_implementation": true,
+                  "notes": "Older versions of the specification treat absolute positioned children as though they are a 0 by 0 flex item. Later specification versions take the children out of the flow and set their positions based on align and justify properties. Chrome implements the new behavior beginning with Chrome 52."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "25"
+                }
+              ],
+              "edge": [
+                {
+                  "version_added": "12"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "12"
+                }
+              ],
+              "edge_mobile": [
+                {
+                  "version_added": true
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": true
+                }
+              ],
+              "firefox": [
+                {
+                  "version_added": "20",
+                  "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": true,
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.flexbox.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "48",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.prefixes.webkit",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "opera": {
+                "version_added": "12.1"
+              },
+              "opera_android": {
+                "version_added": "12.1"
+              },
+              "safari": {
+                "version_added": "9"
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": [
+                {
+                  "version_added": "52"
+                },
+                {
+                  "version_added": "4.4",
+                  "partial_implementation": true,
+                  "notes": "Older versions of the specification treat absolute positioned children as though they are a 0 by 0 flex item. Later specification versions take the children out of the flow and set their positions based on align and justify properties. Chrome implements the new behavior beginning with Chrome 52."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": true
+                }
+              ]
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "space-evenly": {
+            "__compat": {
+              "description": "<code>space-evenly</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "60"
+                },
+                "chrome_android": {
+                  "version_added": "60"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "52"
+                },
+                "firefox_android": {
+                  "version_added": "52"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "47"
+                },
+                "opera_android": {
+                  "version_added": "47"
+                },
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": {
+                  "version_added": "11"
+                },
+                "samsunginternet_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": "60"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "start_end": {
+            "__compat": {
+              "description": "<code>start</code> and <code>end</code>",
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect."
+                },
+                "chrome_android": {
+                  "version_added": null
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": null
+                },
+                "firefox": {
+                  "version_added": true
+                },
+                "firefox_android": {
+                  "version_added": null
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true,
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect."
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": null
+                },
+                "webview_android": {
+                  "version_added": null
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "left_right": {
+            "__compat": {
+              "description": "<code>left</code> and <code>right</code>",
+              "support": {
+                "chrome": {
+                  "version_added": true,
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect."
+                },
+                "chrome_android": {
+                  "version_added": null
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": null
+                },
+                "firefox": [
+                  {
+                    "version_added": "52"
+                  },
+                  {
+                    "version_added": true,
+                    "version_removed": "52",
+                    "partial_implementation": true,
+                    "notes": "This value is recognized, but has no effect."
+                  }
+                ],
+                "firefox_android": [
+                  {
+                    "version_added": "52"
+                  },
+                  {
+                    "version_added": true,
+                    "version_removed": "52",
+                    "partial_implementation": true,
+                    "notes": "This value is recognized, but has no effect."
+                  }
+                ],
+                "ie": {
+                  "version_added": true,
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect."
+                },
+                "opera": {
+                  "version_added": true,
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect."
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": null
+                },
+                "webview_android": {
+                  "version_added": null
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "baseline": {
+            "__compat": {
+              "description": "<code>baseline</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "57"
+                },
+                "chrome_android": {
+                  "version_added": null
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": true,
+                  "version_removed": "60",
+                  "notes": "<code>justify-content</code> no longer accepts baseline values"
+                },
+                "firefox_android": {
+                  "version_added": true,
+                  "version_removed": "60",
+                  "notes": "<code>justify-content</code> no longer accepts baseline values"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": null
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": null
+                },
+                "webview_android": {
+                  "version_added": null
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "first_last_baseline": {
+            "__compat": {
+              "description": "<code>first baseline</code> and <code>last baseline</code>",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": {
+                  "version_added": null
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "52",
+                  "version_removed": "60",
+                  "notes": "<code>justify-content</code> no longer accepts baseline values"
+                },
+                "firefox_android": {
+                  "version_added": "52",
+                  "version_removed": "60",
+                  "notes": "<code>justify-content</code> no longer accepts baseline values"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": null
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "stretch": {
+            "__compat": {
+              "description": "<code>stretch</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "57"
+                },
+                "chrome_android": {
+                  "version_added": null
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "52"
+                },
+                "firefox_android": {
+                  "version_added": "52"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "44"
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": null
+                },
+                "webview_android": {
+                  "version_added": null
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "safe_unsafe": {
+            "__compat": {
+              "description": "<code>safe</code> and <code>unsafe</code>",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": {
+                  "version_added": null
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": "63"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": null
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "grid_context": {
+          "__compat": {
+            "description": "Supported in Grid Layout",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-content",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": {
+                "version_added": "52"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": "52"
+              },
+              "opera": {
+                "version_added": "44"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": "44"
+              },
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": {
+                "version_added": "10.3"
+              },
+              "samsunginternet_android": {
+                "version_added": "6.2"
+              },
+              "webview_android": {
+                "version_added": "57"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

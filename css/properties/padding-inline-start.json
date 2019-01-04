@@ -5,18 +5,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/padding-inline-start",
           "support": {
-            "webview_android": {
-              "alternative_name": "-webkit-padding-end",
-              "version_added": true
-            },
-            "chrome": {
-              "alternative_name": "-webkit-padding-start",
-              "version_added": "2"
-            },
-            "chrome_android": {
-              "alternative_name": "-webkit-padding-end",
-              "version_added": true
-            },
+            "chrome": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "2",
+                "alternative_name": "-webkit-padding-start"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "18",
+                "alternative_name": "-webkit-padding-start"
+              }
+            ],
             "edge": {
               "version_added": false
             },
@@ -30,15 +36,17 @@
               {
                 "version_added": "38",
                 "version_removed": "51",
-                "flag": {
-                  "type": "preference",
-                  "name": "layout.css.vertical-text.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.vertical-text.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               {
-                "alternative_name": "-moz-padding-start",
-                "version_added": "3"
+                "version_added": "3",
+                "alternative_name": "-moz-padding-start"
               }
             ],
             "firefox_android": [
@@ -48,39 +56,61 @@
               {
                 "version_added": "38",
                 "version_removed": "51",
-                "flag": {
-                  "type": "preference",
-                  "name": "layout.css.vertical-text.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.vertical-text.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               {
-                "alternative_name": "-moz-padding-start",
-                "version_added": "3"
+                "version_added": "4",
+                "alternative_name": "-moz-padding-start"
               }
             ],
             "ie": {
               "version_added": false
             },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera": {
-              "alternative_name": "-webkit-padding-end",
-              "version_added": true
-            },
-            "opera_android": {
-              "alternative_name": "-webkit-padding-end",
-              "version_added": true
-            },
+            "opera": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "15",
+                "alternative_name": "-webkit-padding-start"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "14",
+                "alternative_name": "-webkit-padding-start"
+              }
+            ],
             "safari": {
-              "alternative_name": "-webkit-padding-start",
-              "version_added": "3"
+              "version_added": "3",
+              "alternative_name": "-webkit-padding-start"
             },
             "safari_ios": {
-              "alternative_name": "-webkit-padding-end",
-              "version_added": true
-            }
+              "version_added": "3",
+              "alternative_name": "-webkit-padding-start"
+            },
+            "samsunginternet_android": {
+              "version_added": true,
+              "alternative_name": "-webkit-padding-start"
+            },
+            "webview_android": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "2",
+                "alternative_name": "-webkit-padding-start"
+              }
+            ]
           },
           "status": {
             "experimental": true,

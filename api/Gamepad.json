@@ -14,7 +14,20 @@
               "version_removed": "34"
             }
           ],
+          "chrome_android": [
+            {
+              "version_added": "35"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "25",
+              "version_removed": "34"
+            }
+          ],
           "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
             "version_added": true
           },
           "firefox": [
@@ -24,13 +37,18 @@
             {
               "version_added": "24",
               "version_removed": "28",
-              "flag": {
-                "type": "preference",
-                "name": "dom.gamepad.enabled",
-                "value_to_set": "true"
-              }
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.gamepad.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             }
           ],
+          "firefox_android": {
+            "version_added": "32"
+          },
           "ie": {
             "version_added": false
           },
@@ -44,35 +62,98 @@
               "version_removed": "21"
             }
           ],
+          "opera_android": [
+            {
+              "version_added": "22"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "15",
+              "version_removed": "21"
+            }
+          ],
           "safari": {
-            "version_added": false
-          },
-          "webview_android": {
-            "version_added": false
-          },
-          "firefox_android": {
-            "version_added": "32"
-          },
-          "edge_mobile": {
-            "version_added": true
-          },
-          "ie_mobile": {
-            "version_added": false
-          },
-          "opera_android": {
             "version_added": false
           },
           "safari_ios": {
             "version_added": false
           },
-          "chrome_android": {
+          "samsunginternet_android": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
           "experimental": false,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "Gamepad": {
+        "__compat": {
+          "description": "<code>Gamepad()</code> constructor",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/Gamepad",
+          "support": {
+            "chrome": {
+              "version_added": "35"
+            },
+            "chrome_android": {
+              "version_added": "35"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": "32"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "22"
+            },
+            "opera_android": {
+              "version_added": "22"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "axes": {
@@ -89,7 +170,20 @@
                 "version_removed": "34"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -99,13 +193,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -119,29 +218,27 @@
                 "version_removed": "21"
               }
             ],
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -165,7 +262,20 @@
                 "version_removed": "34"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -175,13 +285,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -195,29 +310,27 @@
                 "version_removed": "21"
               }
             ],
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -237,11 +350,24 @@
               },
               {
                 "prefix": "webkit",
-                "version_added": "21",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
                 "version_removed": "34"
               }
             ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -251,13 +377,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -271,29 +402,27 @@
                 "version_removed": "21"
               }
             ],
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -309,34 +438,45 @@
           "support": {
             "chrome": {
               "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ],
               "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
-            },
-            "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "56",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "ie_mobile": {
-              "version_added": false
             },
             "chrome_android": {
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -353,17 +493,28 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
               "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "dom.gamepad-extensions.enabled",
-                "value_to_set": "true"
-              },
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.gamepad-extensions.enabled",
+                  "value_to_set": "true"
+                }
+              ],
               "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+            },
+            "firefox_android": {
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -371,28 +522,19 @@
             "opera": {
               "version_added": false
             },
-            "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": {
+              "version_added": false
+            },
+            "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -410,17 +552,28 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
               "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "dom.gamepad-extensions.enabled",
-                "value_to_set": "true"
-              },
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.gamepad-extensions.enabled",
+                  "value_to_set": "true"
+                }
+              ],
               "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+            },
+            "firefox_android": {
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -428,28 +581,19 @@
             "opera": {
               "version_added": false
             },
-            "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": {
+              "version_added": false
+            },
+            "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -474,7 +618,20 @@
                 "version_removed": "34"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -484,13 +641,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -504,29 +666,20 @@
                 "version_removed": "21"
               }
             ],
-            "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": {
+              "version_added": false
+            },
+            "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -550,7 +703,20 @@
                 "version_removed": "34"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -560,13 +726,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -580,29 +751,20 @@
                 "version_removed": "21"
               }
             ],
-            "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": {
+              "version_added": false
+            },
+            "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -626,7 +788,20 @@
                 "version_removed": "34"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -636,13 +811,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -656,29 +836,27 @@
                 "version_removed": "21"
               }
             ],
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -695,17 +873,28 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
               "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "dom.gamepad-extensions.enabled",
-                "value_to_set": "true"
-              },
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.gamepad-extensions.enabled",
+                  "value_to_set": "true"
+                }
+              ],
               "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+            },
+            "firefox_android": {
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -713,28 +902,19 @@
             "opera": {
               "version_added": false
             },
-            "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
             "opera_android": {
+              "version_added": false
+            },
+            "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -759,7 +939,20 @@
                 "version_removed": "34"
               }
             ],
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "25",
+                "version_removed": "34"
+              }
+            ],
             "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -769,13 +962,18 @@
               {
                 "version_added": "24",
                 "version_removed": "28",
-                "flag": {
-                  "type": "preference",
-                  "name": "dom.gamepad.enabled",
-                  "value_to_set": "true"
-                }
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.gamepad.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
+            "firefox_android": {
+              "version_added": "32"
+            },
             "ie": {
               "version_added": false
             },
@@ -789,29 +987,27 @@
                 "version_removed": "21"
               }
             ],
+            "opera_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "15",
+                "version_removed": "21"
+              }
+            ],
             "safari": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "32"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "opera_android": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "chrome_android": {
+            "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {

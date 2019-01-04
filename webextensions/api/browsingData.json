@@ -139,7 +139,7 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": false
+                  "version_added": "57"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -163,7 +163,7 @@
                   "version_added": "57"
                 },
                 "firefox_android": {
-                  "version_added": "57"
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": true
@@ -184,7 +184,7 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": true
@@ -205,7 +205,7 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": true
@@ -247,7 +247,7 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": true
@@ -270,7 +270,7 @@
                   "version_added": "56"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": false
@@ -371,6 +371,7 @@
         },
         "remove": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/remove",
             "support": {
               "chrome": {
                 "version_added": true
@@ -380,13 +381,13 @@
               },
               "firefox": {
                 "notes": [
-                  "Specifying <code>dataTypes.history</code> will also remove download history."
+                  "Specifying <code>dataTypes.history</code> will also remove download history and service workers."
                 ],
                 "version_added": "53"
               },
               "firefox_android": {
                 "notes": [
-                  "Specifying <code>dataTypes.history</code> will also remove download history."
+                  "Specifying <code>dataTypes.history</code> will also remove download history and service workers."
                 ],
                 "version_added": "57"
               },
@@ -398,6 +399,7 @@
         },
         "removeCache": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeCache",
             "support": {
               "chrome": {
                 "version_added": true
@@ -406,9 +408,15 @@
                 "version_added": false
               },
               "firefox": {
+                "notes": [
+                  "<code>removalOptions.since</code> is not supported."
+                ],
                 "version_added": "53"
               },
               "firefox_android": {
+                "notes": [
+                  "<code>removalOptions.since</code> is not supported."
+                ],
                 "version_added": "57"
               },
               "opera": {
@@ -419,6 +427,7 @@
         },
         "removeCookies": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeCookies",
             "support": {
               "chrome": {
                 "version_added": true
@@ -440,6 +449,7 @@
         },
         "removeDownloads": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeDownloads",
             "support": {
               "chrome": {
                 "version_added": true
@@ -461,6 +471,7 @@
         },
         "removeFormData": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeFormData",
             "support": {
               "chrome": {
                 "version_added": true
@@ -482,6 +493,7 @@
         },
         "removeHistory": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeHistory",
             "support": {
               "chrome": {
                 "version_added": true
@@ -491,11 +503,14 @@
               },
               "firefox": {
                 "notes": [
-                  "This function also removes download history."
+                  "This function also removes download history and service workers."
                 ],
                 "version_added": "53"
               },
               "firefox_android": {
+                "notes": [
+                  "See <a href='https://bugzil.la/1363010'>bug 1363010</a>. <a href='https://developer.mozilla.org/Add-ons/WebExtensions/API/browsingData/remove'><code>browser.history.remove(options, {history:true})</code></a> can be used instead."
+                ],
                 "version_added": false
               },
               "opera": {
@@ -506,6 +521,7 @@
         },
         "removeLocalStorage": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeLocalStorage",
             "support": {
               "chrome": {
                 "version_added": true
@@ -514,19 +530,47 @@
                 "version_added": false
               },
               "firefox": {
+                "notes": [
+                  "<code>removalOptions.since</code> is not supported."
+                ],
                 "version_added": "57"
               },
               "firefox_android": {
-                "version_added": "57"
+                "notes": "The method is defined but returns a rejected promise.",
+                "version_added": false
               },
               "opera": {
                 "version_added": true
+              }
+            }
+          },
+          "removalOptions": {
+            "hostnames": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "58"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  }
+                }
               }
             }
           }
         },
         "removePasswords": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removePasswords",
             "support": {
               "chrome": {
                 "version_added": true
@@ -538,6 +582,7 @@
                 "version_added": "53"
               },
               "firefox_android": {
+                "notes": "See <a href='https://bugzil.la/1363012'>bug 1363012</a>.",
                 "version_added": false
               },
               "opera": {
@@ -548,6 +593,7 @@
         },
         "removePluginData": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removePluginData",
             "support": {
               "chrome": {
                 "version_added": true
@@ -569,6 +615,7 @@
         },
         "settings": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings",
             "support": {
               "chrome": {
                 "version_added": true

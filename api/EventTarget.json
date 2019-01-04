@@ -1,0 +1,763 @@
+{
+  "api": {
+    "EventTarget": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget",
+        "support": {
+          "chrome": {
+            "version_added": "1"
+          },
+          "chrome_android": {
+            "version_added": "18"
+          },
+          "edge": {
+            "version_added": true
+          },
+          "edge_mobile": {
+            "version_added": true
+          },
+          "firefox": {
+            "version_added": "1"
+          },
+          "firefox_android": {
+            "version_added": "4"
+          },
+          "ie": {
+            "version_added": "9"
+          },
+          "opera": {
+            "version_added": "7"
+          },
+          "opera_android": {
+            "version_added": "7"
+          },
+          "safari": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "version_added": "1",
+              "version_removed": "10.1",
+              "notes": "<code>Window.EventTarget</code> did not exist on versions of Safari before 10.1."
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "version_added": "1",
+              "version_removed": "10.1",
+              "notes": "<code>Window.EventTarget</code> did not exist on versions of Safari iOS before 10.1."
+            }
+          ],
+          "samsunginternet_android": {
+            "version_added": true
+          },
+          "webview_android": {
+            "version_added": "1"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "EventTarget": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/EventTarget",
+          "description": "<code>EventTarget()</code> constructor",
+          "support": {
+            "chrome": {
+              "version_added": "64"
+            },
+            "chrome_android": {
+              "version_added": "64"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "59"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "51"
+            },
+            "opera_android": {
+              "version_added": "51"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "64"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "addEventListener": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener",
+          "support": {
+            "chrome": {
+              "version_added": "1",
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+            },
+            "chrome_android": {
+              "version_added": "18",
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "attachEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.attachEvent()</code> method."
+              }
+            ],
+            "opera": {
+              "version_added": "7"
+            },
+            "opera_android": {
+              "version_added": "7"
+            },
+            "safari": {
+              "version_added": "1"
+            },
+            "safari_ios": {
+              "version_added": "1"
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "1",
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "optional_usecapture": {
+          "__compat": {
+            "description": "<code>useCapture</code> parameter made optional",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "6"
+              },
+              "firefox_android": {
+                "version_added": "6"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "11.6"
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options": {
+          "__compat": {
+            "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
+            "support": {
+              "chrome": {
+                "version_added": "49"
+              },
+              "chrome_android": {
+                "version_added": "49"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": {
+                "version_added": "49"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": {
+                "version_added": "10"
+              },
+              "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "49"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "capture": {
+            "__compat": {
+              "description": "<code>capture</code> option",
+              "support": {
+                "chrome": {
+                  "version_added": "52"
+                },
+                "chrome_android": {
+                  "version_added": "52"
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "edge_mobile": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": true
+                },
+                "firefox_android": {
+                  "version_added": true
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "opera_android": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": true
+                },
+                "safari_ios": {
+                  "version_added": true
+                },
+                "samsunginternet_android": {
+                  "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "52"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "once": {
+            "__compat": {
+              "description": "<code>once</code> option",
+              "support": {
+                "chrome": {
+                  "version_added": "55"
+                },
+                "chrome_android": {
+                  "version_added": "55"
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "edge_mobile": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": "50"
+                },
+                "firefox_android": {
+                  "version_added": "50"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "42"
+                },
+                "opera_android": {
+                  "version_added": "42"
+                },
+                "safari": {
+                  "version_added": true
+                },
+                "safari_ios": {
+                  "version_added": true
+                },
+                "samsunginternet_android": {
+                  "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "55"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "passive": {
+            "__compat": {
+              "description": "<code>passive</code> option",
+              "support": {
+                "chrome": {
+                  "version_added": "51"
+                },
+                "chrome_android": {
+                  "version_added": "51"
+                },
+                "edge": {
+                  "version_added": true
+                },
+                "edge_mobile": {
+                  "version_added": true
+                },
+                "firefox": {
+                  "version_added": true
+                },
+                "firefox_android": {
+                  "version_added": true
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "opera_android": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": true
+                },
+                "safari_ios": {
+                  "version_added": true
+                },
+                "samsunginternet_android": {
+                  "version_added": "5.0"
+                },
+                "webview_android": {
+                  "version_added": "51"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "passive_true_touch": {
+            "__compat": {
+              "description": "<code>passive</code> option defaults to <code>true</code> for <code>touchstart</code> and <code>touchmove</code> events",
+              "support": {
+                "chrome": {
+                  "version_added": "55"
+                },
+                "chrome_android": {
+                  "version_added": "55"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": "61"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": null
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "55"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        }
+      },
+      "dispatchEvent": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent",
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "2"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "fireEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.fireEvent()</code> method."
+              }
+            ],
+            "opera": {
+              "version_added": "9"
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "3.2"
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "removeEventListener": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "detachEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.detachEvent()</code> method."
+              }
+            ],
+            "opera": {
+              "version_added": "7"
+            },
+            "opera_android": {
+              "version_added": "7"
+            },
+            "safari": {
+              "version_added": "1"
+            },
+            "safari_ios": {
+              "version_added": "1"
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "optional_usecapture": {
+          "__compat": {
+            "description": "<code>useCapture</code> parameter optional",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "6"
+              },
+              "firefox_android": {
+                "version_added": "6"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "11.6"
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "optional_type_listener": {
+          "__compat": {
+            "description": "<code>type</code> and <code>listener</code> parameters optional.",
+            "support": {
+              "chrome": {
+                "version_added": "1",
+                "version_removed": "49"
+              },
+              "chrome_android": {
+                "version_added": "18",
+                "version_removed": "49"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": "1",
+                "version_removed": "49"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options": {
+          "__compat": {
+            "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
+            "support": {
+              "chrome": {
+                "version_added": "49"
+              },
+              "chrome_android": {
+                "version_added": "49"
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": {
+                "version_added": "49"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": {
+                "version_added": "10"
+              },
+              "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "49"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

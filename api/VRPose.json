@@ -5,35 +5,49 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose",
         "support": {
           "chrome": {
-            "version_added": true,
-            "flag": {
-              "type": "preference",
-              "name": "WebVR"
-            },
-            "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+            "version_added": false
+          },
+          "chrome_android": {
+            "version_added": "56",
+            "notes": [
+              "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+              "Daydream View supported in Chrome 56.",
+              "Google Cardboard supported in Chrome 57."
+            ],
+            "flags": [
+              {
+                "type": "preference",
+                "name": "WebVR"
+              }
+            ]
           },
           "edge": {
             "version_added": true
           },
-          "firefox": {
-            "version_added": "55",
-            "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
+          "edge_mobile": {
+            "version_added": null
+          },
+          "firefox": [
+            {
+              "version_added": "55",
+              "notes": "Windows support was enabled in Firefox 55."
+            },
+            {
+              "version_added": "64",
+              "notes": "macOS support was enabled in Firefox 64."
+            }
+          ],
+          "firefox_android": {
+            "version_added": "55"
           },
           "ie": {
             "version_added": false
           },
+          "samsunginternet_android": {
+            "version_added": "6.0"
+          },
           "webview_android": {
             "version_added": false
-          },
-          "edge_mobile": {
-            "version_added": null
-          },
-          "ie_mobile": {
-            "version_added": false
-          },
-          "chrome_android": {
-            "version_added": true,
-            "notes": "Currently supported only by Google Daydream."
           }
         },
         "status": {
@@ -47,35 +61,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose/angularAcceleration",
           "support": {
             "chrome": {
-              "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
-              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
             },
             "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
-            "ie_mobile": {
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "Currently supported only by Google Daydream."
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -90,35 +118,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose/angularVelocity",
           "support": {
             "chrome": {
-              "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
-              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
             },
             "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
-            "ie_mobile": {
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "Currently supported only by Google Daydream."
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -135,7 +177,13 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
@@ -144,16 +192,10 @@
             "ie": {
               "version_added": false
             },
+            "samsunginternet_android": {
+              "version_added": false
+            },
             "webview_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "chrome_android": {
               "version_added": false
             }
           },
@@ -171,7 +213,13 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
@@ -180,16 +228,10 @@
             "ie": {
               "version_added": false
             },
+            "samsunginternet_android": {
+              "version_added": false
+            },
             "webview_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "chrome_android": {
               "version_added": false
             }
           },
@@ -205,35 +247,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose/linearAcceleration",
           "support": {
             "chrome": {
-              "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
-              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
             },
             "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
-            "ie_mobile": {
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "Currently supported only by Google Daydream."
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -248,35 +304,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose/linearVelocity",
           "support": {
             "chrome": {
-              "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
-              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
             },
             "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
-            "ie_mobile": {
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "Currently supported only by Google Daydream."
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -291,35 +361,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose/position",
           "support": {
             "chrome": {
-              "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
-              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
             },
             "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
-            "ie_mobile": {
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "Currently supported only by Google Daydream."
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -334,35 +418,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRPose/orientation",
           "support": {
             "chrome": {
-              "version_added": true,
-              "flag": {
-                "type": "preference",
-                "name": "WebVR"
-              },
-              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
             },
             "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
-            "ie_mobile": {
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": true,
-              "notes": "Currently supported only by Google Daydream."
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -379,7 +477,13 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
+              "version_added": "15"
+            },
+            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
@@ -388,16 +492,10 @@
             "ie": {
               "version_added": false
             },
+            "samsunginternet_android": {
+              "version_added": false
+            },
             "webview_android": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "ie_mobile": {
-              "version_added": false
-            },
-            "chrome_android": {
               "version_added": false
             }
           },

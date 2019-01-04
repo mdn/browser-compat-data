@@ -1,0 +1,173 @@
+{
+  "css": {
+    "properties": {
+      "text-rendering": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-rendering",
+          "support": {
+            "chrome": {
+              "version_added": "4",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "Initial versions had bugs on Windows and Linux that broke <a href='http://crbug.com/114719'>font substitition</a>, <a href='http://crbug.com/51973'>small-caps</a>, <a href='http://crbug.com/55458'>letter-spacing</a> or caused <a href='http://crbug.com/149548'>text to overlap</a>."
+              ]
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "3",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "The <code>optimizeSpeed</code> option has no effect on Firefox 4 because the standard code for text rendering is already fast and there is not a faster code path at this time. See <a href='https://bugzil.la/595688'>bug 595688</a> for details."
+              ]
+            },
+            "firefox_android": {
+              "version_added": "46"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": "5"
+            },
+            "safari_ios": {
+              "version_added": "4.3"
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "3",
+              "notes": "From version 3 to 4.3, there is a serious bug where <code>text-rendering: optimizeLegibility</code> causes custom web fonts to not render. This was fixed in version 4.4."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": false
+          }
+        },
+        "auto": {
+          "__compat": {
+            "description": "<code>auto</code>",
+            "support": {
+              "chrome": {
+                "version_added": true,
+                "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
+              },
+              "chrome_android": {
+                "version_added": null
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": true,
+                "notes": "If the font size is 20 pixels or higher, Firefox treats <code>auto</code> as <code>optimizeLegibility</code>. For smaller text, Firefox treats <code>auto</code> as <code>optimizeSpeed</code>. The 20-pixel threshold can be changed with the <code>browser.display.auto_quality_min_font_size</code> preference."
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": true,
+                "notes": "Safari treats <code>auto</code> as <code>optimizeSpeed</code>. See <a href='https://bugs.webkit.org/show_bug.cgi?id=41363'>WebKit bug 41363</a>."
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "geometricPrecision": {
+          "__compat": {
+            "description": "<code>geometricPrecision</code>",
+            "support": {
+              "chrome": {
+                "version_added": "13",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
+              },
+              "chrome_android": {
+                "version_added": null
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": true,
+                "notes": "Firefox treats <code>geometricPrecision</code> the same as <code>optimizeLegibility</code>."
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+
+  "definitions": {
+
+    "browsers": {
+      "type": "object",
+      "properties": {
+        "webview_android": { "$ref": "#/definitions/browser_statement" },
+        "chrome": { "$ref": "#/definitions/browser_statement" },
+        "chrome_android": { "$ref": "#/definitions/browser_statement" },
+        "edge": { "$ref": "#/definitions/browser_statement" },
+        "edge_mobile": { "$ref": "#/definitions/browser_statement" },
+        "firefox": { "$ref": "#/definitions/browser_statement" },
+        "firefox_android": { "$ref": "#/definitions/browser_statement" },
+        "ie": { "$ref": "#/definitions/browser_statement" },
+        "nodejs": { "$ref": "#/definitions/browser_statement" },
+        "opera": { "$ref": "#/definitions/browser_statement" },
+        "opera_android": { "$ref": "#/definitions/browser_statement" },
+        "qq_android": { "$ref": "#/definitions/browser_statement" },
+        "safari": { "$ref": "#/definitions/browser_statement" },
+        "safari_ios": { "$ref": "#/definitions/browser_statement" },
+        "samsunginternet_android": { "$ref": "#/definitions/browser_statement" },
+        "uc_android": { "$ref": "#/definitions/browser_statement" },
+        "uc_chinese_android": { "$ref": "#/definitions/browser_statement" }
+      },
+      "additionalProperties": false
+    },
+
+    "browser_statement": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
+        },
+        "releases": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/release_statement" }
+        }
+      },
+      "required": ["name", "releases"],
+      "additionalProperties": false
+    },
+
+    "release_statement": {
+      "type": "object",
+      "properties": {
+        "release_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Release date"
+        },
+        "release_notes": {
+          "type": "string",
+          "format": "uri",
+          "description": "A link to the release notes or changelog for a given release."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["retired", "current", "exclusive", "beta", "nightly", "esr", "planned"],
+          "description": "The status of the given browser release (e.g. current, retired, beta, nightly)."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "type": "object",
+    "properties": {
+      "browsers": { "$ref": "#/definitions/browsers" }
+    },
+    "additionalProperties": false
+}
