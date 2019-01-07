@@ -79,7 +79,7 @@ function load(...files) {
         }
       }
 
-      return;
+      continue;
     }
 
     const subFiles = fs.readdirSync(file).map((subfile) => {
