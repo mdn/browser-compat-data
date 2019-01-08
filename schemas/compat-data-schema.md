@@ -297,13 +297,14 @@ In some cases features are named entirely differently and not just prefixed. Exa
 Note that you can’t have both `prefix` and `alternative_name`.
 
 #### `flags`
-An optional array of objects indicating what kind of flags must be set for this feature to work. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature.
+An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this
+array will have one item, but there are cases where two or more flags can be required to activate a feature.
 An object in the `flags` array consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
   * `preference` a flag the user can set (like in `about:config` in Firefox).
   * `compile_flag` a flag to be set before compiling the browser.
   * `runtime_flag` a flag to be set before starting the browser.
-* `name` (mandatory): a `string` representing the flag or preference to modify.
+* `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
 (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
@@ -347,10 +348,17 @@ It defaults to `false` (no interoperability problem expected).
 If set to `true`, it is recommended to add a note indicating how it diverges from
 the standard (implements an old version of the standard, for example).
 
+A `boolean` value indicating whether or not the implementation of the sub-feature
+deviates from the specification in a way that may cause compatibility problems. It
+defaults to `false` (no interoperability problems expected). If set to `true`, it is
+recommended that you add a note explaining how it diverges from the standard (such as
+that it implements an old version of the standard, for example).
+
 #### `notes`
-An `array` of zero or more strings containing
-additional information. If there is only one entry in the array,
-the array must be omitted. Example:
+A string or `array` of strings containing additional information. If there is only one
+entry, the value of `notes` must simply be a string instead of an array.
+
+Example:
 
 * Indicating a restriction:
 ```json

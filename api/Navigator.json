@@ -68,10 +68,16 @@
             "edge_mobile": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is available in Firefox Nightly."
-            },
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
             "firefox_android": {
               "version_added": "55"
             },
@@ -286,12 +292,24 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "2"
-            },
-            "firefox_android": {
-              "version_added": true
-            },
+            "firefox": [
+              {
+                "version_added": "64",
+                "notes": "Returns a fixed timestamp as a privacy measure — <code>20181001000000</code>."
+              },
+              {
+                "version_added": "2"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64",
+                "notes": "Returns a fixed timestamp as a privacy measure — <code>20181001000000</code>."
+              },
+              {
+                "version_added": true
+              }
+            ],
             "ie": {
               "version_added": null
             },
@@ -956,10 +974,16 @@
             "edge_mobile": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Currently only Windows support is enabled by default. Mac support is <a href='https://hacks.mozilla.org/2017/06/announcing-webvr-on-mac/'>available in Firefox Nightly</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
             "firefox_android": {
               "version_added": "55"
             },
@@ -1412,7 +1436,7 @@
               "version_added": null
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
@@ -1469,7 +1493,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": "43"
+              "version_added": false
             }
           },
           "status": {
@@ -1520,7 +1544,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": true
+              "version_added": false
             }
           },
           "status": {
@@ -1647,7 +1671,7 @@
               "notes": "Protocol whitelist includes <code>mailto</code>, <code>mms</code>, <code>nntp</code>, <code>rtsp</code>, and <code>webcal</code>. Custom protocols must be prefixed with <code>web+</code>."
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": true
             },
             "edge": {
               "version_added": null
@@ -1680,7 +1704,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
@@ -1982,7 +2006,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": "61"
+              "version_added": false
             }
           },
           "status": {
