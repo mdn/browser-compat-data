@@ -147,6 +147,25 @@
           "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
           "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
+        "spec_url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^http(s)?:\/\/[^#]+#.+"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^http(s)?:\/\/[^#]+#.+"
+              }
+            }
+          ],
+          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier."
+        },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
