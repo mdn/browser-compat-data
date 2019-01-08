@@ -66,6 +66,9 @@ function testBrowsers(filename) {
 
   let bcCategory = 'web';
   let displayBrowers = [...browsers['desktop'], ...browsers['mobile']];
+  if (category === 'api') {
+    displayBrowers.push('nodejs');
+  }
   if (category === 'javascript') {
     bcCategory = 'js';
     displayBrowers.push(...browsers['server']);
