@@ -15,7 +15,9 @@ function load() {
     if (fs.statSync(fp).isDirectory()) {
       extra = load(fp);
     } else if (path.extname(fp) === '.json') {
-      extra = require(fp);
+      try {
+        extra = require(fp);
+      } catch (e) {}
     }
 
     // The JSON data is independent of the actual file
@@ -41,5 +43,7 @@ module.exports = load(
   'mathml',
   'svg',
   'webdriver',
-  'webextensions'
+  'webextensions',
+  'xpath',
+  'xslt',
 );

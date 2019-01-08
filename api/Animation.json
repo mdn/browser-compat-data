@@ -4,16 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation",
         "support": {
-          "webview_android": [
-            {
-              "version_added": "44"
-            },
-            {
-              "alternative_name": "AnimationPlayer",
-              "version_added": "39",
-              "version_removed": "44"
-            }
-          ],
           "chrome": [
             {
               "version_added": "44"
@@ -63,7 +53,17 @@
           },
           "samsunginternet_android": {
             "version_added": "4.0"
-          }
+          },
+          "webview_android": [
+            {
+              "version_added": "44"
+            },
+            {
+              "alternative_name": "AnimationPlayer",
+              "version_added": "39",
+              "version_removed": "44"
+            }
+          ]
         },
         "status": {
           "experimental": true,
@@ -76,9 +76,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/Animation",
           "description": "<code>Animation()</code> constructor",
           "support": {
-            "webview_android": {
-              "version_added": "61"
-            },
             "chrome": {
               "version_added": "61"
             },
@@ -140,6 +137,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": "61"
             }
           },
           "status": {
@@ -153,9 +153,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/cancel",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -217,6 +214,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -230,9 +230,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/currentTime",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -294,6 +291,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -307,9 +307,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/effect",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -322,28 +319,38 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 51."
-            },
-            "firefox_android": {
-              "version_added": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 51."
-            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 51."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 51."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -360,6 +367,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -374,9 +384,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/finish",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -438,6 +445,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -451,9 +461,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/finished",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -466,26 +473,36 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "40",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "40",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -502,6 +519,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -516,9 +536,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/id",
           "support": {
-            "webview_android": {
-              "version_added": "50"
-            },
             "chrome": {
               "version_added": "50"
             },
@@ -580,6 +597,9 @@
             },
             "samsunginternet_android": {
               "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "50"
             }
           },
           "status": {
@@ -593,9 +613,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/oncancel",
           "support": {
-            "webview_android": {
-              "version_added": "50"
-            },
             "chrome": {
               "version_added": "50"
             },
@@ -657,6 +674,9 @@
             },
             "samsunginternet_android": {
               "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "50"
             }
           },
           "status": {
@@ -670,9 +690,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/onfinish",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -734,6 +751,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -747,9 +767,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/pause",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -811,6 +828,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -824,9 +844,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/pending",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -863,6 +880,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -877,9 +897,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/play",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -941,6 +958,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -954,9 +974,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/playbackRate",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -1018,6 +1035,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -1031,10 +1051,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/playState",
           "support": {
-            "webview_android": {
-              "version_added": "39",
-              "notes": "Before Chrome 50/Opera 37, this property returned <code>idle</code> for an animation that had not yet started. Starting with Chrome 50/Opera 37, it shows <code>paused</code>."
-            },
             "chrome": {
               "version_added": "39",
               "notes": "Before Chrome 50/Opera 37, this property returned <code>idle</code> for an animation that had not yet started. Starting with Chrome 50/Opera 37, it shows <code>paused</code>."
@@ -1102,6 +1118,10 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39",
+              "notes": "Before Chrome 50/Opera 37, this property returned <code>idle</code> for an animation that had not yet started. Starting with Chrome 50/Opera 37, it shows <code>paused</code>."
             }
           },
           "status": {
@@ -1115,9 +1135,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/ready",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -1130,26 +1147,36 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "37",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "37",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "37",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "37",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -1166,6 +1193,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -1180,9 +1210,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/reverse",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -1244,6 +1271,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -1257,9 +1287,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/startTime",
           "support": {
-            "webview_android": {
-              "version_added": "39"
-            },
             "chrome": {
               "version_added": "39"
             },
@@ -1321,6 +1348,9 @@
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "39"
             }
           },
           "status": {
@@ -1334,9 +1364,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/timeline",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -1349,28 +1376,54 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 49."
-            },
-            "firefox_android": {
-              "version_added": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 49."
-            },
+            "firefox": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "48",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 49."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "48",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 49."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -1387,6 +1440,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -1401,9 +1457,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -1438,6 +1491,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },

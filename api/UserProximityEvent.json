@@ -18,8 +18,7 @@
           },
           "firefox": [
             {
-              "version_added": "60",
-              "version_removed": "62",
+              "version_added": "62",
               "flags": [
                 {
                   "type": "preference",
@@ -27,17 +26,16 @@
                   "value_to_set": "true"
                 }
               ],
-              "notes": "See <a href='https://bugzil.la/1359076'>bug 1359076</a> and <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
             },
             {
               "version_added": true,
-              "version_removed": "60"
+              "version_removed": "61"
             }
           ],
           "firefox_android": [
             {
-              "version_added": "60",
-              "version_removed": "62",
+              "version_added": "62",
               "flags": [
                 {
                   "type": "preference",
@@ -45,11 +43,11 @@
                   "value_to_set": "true"
                 }
               ],
-              "notes": "See <a href='https://bugzil.la/1359076'>bug 1359076</a> and <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
             },
             {
-              "version_added": "15",
-              "version_removed": "60"
+              "version_added": true,
+              "version_removed": "61"
             }
           ],
           "ie": {
@@ -73,7 +71,7 @@
         },
         "status": {
           "experimental": true,
-          "standard_track": true,
+          "standard_track": false,
           "deprecated": false
         }
       },
@@ -93,14 +91,40 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": true,
-              "version_removed": "62"
-            },
-            "firefox_android": {
-              "version_added": "15",
-              "version_removed": "62"
-            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": true,
+                "version_removed": "61"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -125,7 +149,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }

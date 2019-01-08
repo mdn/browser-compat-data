@@ -1,5 +1,25 @@
 'use strict';
 const fs = require('fs');
+const path = require('path');
+
+function escapeInvisibles(str) {
+  const invisibles = [
+    ['\b', '\\b'],
+    ['\f', '\\f'],
+    ['\n', '\\n'],
+    ['\r', '\\r'],
+    ['\v', '\\v'],
+    ['\t', '\\t'],
+    ['\0', '\\0'],
+  ];
+  let finalString = str;
+
+  invisibles.forEach(([invisible, replacement]) => {
+    finalString = finalString.replace(invisible, replacement);
+  });
+
+  return finalString;
+}
 
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
@@ -9,8 +29,8 @@ function jsonDiff(actual, expected) {
     if (actualLines[i] !== expectedLines[i]) {
       return [
         '#' + (i + 1) + '\x1b[0m',
-        '    Actual:   ' + actualLines[i],
-        '    Expected: ' + expectedLines[i]
+        '    Actual:   ' + escapeInvisibles(actualLines[i]),
+        '    Expected: ' + escapeInvisibles(expectedLines[i]),
       ].join('\n');
     }
   }
@@ -27,11 +47,9 @@ function testStyle(filename) {
     expected = expected.replace(/\r/g, "");
   }
 
-  if (actual === expected) {
-    console.log('\x1b[32m  Style – OK \x1b[0m');
-  } else {
+  if (actual !== expected) {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + filename);
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
   }
 
@@ -41,6 +59,39 @@ function testStyle(filename) {
     hasErrors = true;
     console.error('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
       bugzillaMatch[1]);
+  }
+
+  {
+    // Bugzil.la links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the begin of notes/sentences).
+    const regexp = new RegExp("(....)<a href='(https?)://bugzil.la/(\\d+)'>(.*?)</a>", 'g');
+    let match;
+    do {
+      match = regexp.exec(actual);
+      if (match) {
+        const before = match[1];
+        const protocol = match[2];
+        const bugId = match[3];
+        const linkText = match[4];
+
+        if (protocol !== 'https') {
+          hasErrors = true;
+          console.error(`\x1b[33m  Style – Use HTTPS URL (http://bugzil.la/${bugId} → https://bugzil.la/${bugId}).\x1b[0m`);
+        }
+
+        if (/^bug $/.test(before)) {
+          hasErrors = true;
+          console.error(`\x1b[33m  Style – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
+        } else if (linkText === `Bug ${bugId}`) {
+          if (!/(\. |")$/.test(before)) {
+            hasErrors = true;
+            console.error(`\x1b[33m  Style – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
+          }
+        } else if (linkText !== `bug ${bugId}`) {
+          hasErrors = true;
+          console.error(`\x1b[33m  Style – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
+        }
+      }
+    } while (match != null);
   }
 
   const crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);

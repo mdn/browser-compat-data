@@ -32,11 +32,9 @@ const browsers = {
     'edge',
     'firefox',
     'opera',
-    'thunderbird',
   ],
   'webextensions-mobile': [
     'firefox_android',
-    'firefox_ios',
   ],
 };
 
@@ -85,7 +83,6 @@ function testBrowsers(filename) {
   }
 
   if (!processData(data, displayBrowers, bcCategory === 'web' ? bcCategory : category, logger)) {
-    console.log('\x1b[32m  Browsers – OK\x1b[0m');
     return false;
   } else {
     console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');

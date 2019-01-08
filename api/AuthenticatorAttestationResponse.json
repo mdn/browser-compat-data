@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse",
         "support": {
-          "webview_android": {
-            "version_added": null
-          },
           "chrome": {
             "version_added": "65",
             "notes": "Only support USB U2F tokens",
@@ -19,10 +16,18 @@
             ]
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": "65",
+            "notes": "Only support USB U2F tokens",
+            "flags": [
+              {
+                "type": "preference",
+                "value_to_set": "true",
+                "name": "Web Authentication API"
+              }
+            ]
           },
           "edge": {
-            "version_added": null
+            "version_added": "18"
           },
           "edge_mobile": {
             "version_added": null
@@ -51,6 +56,9 @@
           },
           "samsunginternet_android": {
             "version_added": null
+          },
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
@@ -63,9 +71,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/attestationObject",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": "65",
               "notes": "Only support USB U2F tokens",
@@ -78,10 +83,18 @@
               ]
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "65",
+              "notes": "Only support USB U2F tokens",
+              "flags": [
+                {
+                  "type": "preference",
+                  "value_to_set": "true",
+                  "name": "Web Authentication API"
+                }
+              ]
             },
             "edge": {
-              "version_added": null
+              "version_added": "18"
             },
             "edge_mobile": {
               "version_added": null
@@ -110,6 +123,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {

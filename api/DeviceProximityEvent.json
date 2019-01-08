@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceProximityEvent",
         "support": {
-          "webview_android": {
-            "version_added": false
-          },
           "chrome": {
             "version_added": false
           },
@@ -21,8 +18,7 @@
           },
           "firefox": [
             {
-              "version_added": "60",
-              "version_removed": "62",
+              "version_added": "62",
               "flags": [
                 {
                   "type": "preference",
@@ -30,16 +26,16 @@
                   "value_to_set": "true"
                 }
               ],
-              "notes": "See <a href='https://bugzil.la/1359076'>bug 1359076</a> and <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
             },
             {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "61"
             }
           ],
           "firefox_android": [
             {
-              "version_added": "60",
-              "version_removed": "62",
+              "version_added": "62",
               "flags": [
                 {
                   "type": "preference",
@@ -47,10 +43,11 @@
                   "value_to_set": "true"
                 }
               ],
-              "notes": "See <a href='https://bugzil.la/1359076'>bug 1359076</a> and <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
             },
             {
-              "version_added": "15"
+              "version_added": "15",
+              "version_removed": "61"
             }
           ],
           "ie": {
@@ -70,11 +67,14 @@
           },
           "samsunginternet_android": {
             "version_added": null
+          },
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
           "experimental": true,
-          "standard_track": true,
+          "standard_track": false,
           "deprecated": false
         }
       },
@@ -82,9 +82,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceProximityEvent/max",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -97,14 +94,40 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": true,
-              "version_removed": "62"
-            },
-            "firefox_android": {
-              "version_added": "15",
-              "version_removed": "62"
-            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": true,
+                "version_removed": "61"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -122,11 +145,14 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -135,9 +161,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceProximityEvent/min",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -150,14 +173,40 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": true,
-              "version_removed": "62"
-            },
-            "firefox_android": {
-              "version_added": "15",
-              "version_removed": "62"
-            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": true,
+                "version_removed": "61"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -175,11 +224,14 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -188,9 +240,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceProximityEvent/value",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -203,14 +252,40 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": true,
-              "version_removed": "62"
-            },
-            "firefox_android": {
-              "version_added": "15",
-              "version_removed": "62"
-            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": true,
+                "version_removed": "61"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -228,11 +303,14 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }

@@ -27,6 +27,10 @@ JSON files containing the compatibility data.
 
 - [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
+- [xpath/](https://github.com/mdn/browser-compat-data/tree/master/xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
+
+- [xslt/](https://github.com/mdn/browser-compat-data/tree/master/xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
+
 ### File and folder breakdown
 The JSON files contain [feature identifiers](#feature-identifiers),
 which are relevant for accessing the data. Except for the top-level directories,
@@ -258,13 +262,23 @@ Examples:
 
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
-Note that leading and trailing `-` must be included. Example:
+If applicable, leading and trailing `-` must be included.
 
-* Prefixed sub-feature:
+Examples:
+
+* A CSS property with a standard name of `prop-name` and a vendor-prefixed name of `-moz-prop-name`:
 ```json
 {
   "prefix": "-moz-",
   "version_added": "3.5"
+}
+```
+
+* An API with a standard name of `FeatureName` and a vendor-prefixed name of `webkitFeatureName`:
+```json
+{
+  "prefix": "webkit",
+  "version_added": "9"
 }
 ```
 
@@ -283,13 +297,14 @@ In some cases features are named entirely differently and not just prefixed. Exa
 Note that you can’t have both `prefix` and `alternative_name`.
 
 #### `flags`
-An optional array of objects indicating what kind of flags must be set for this feature to work. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature.
+An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this
+array will have one item, but there are cases where two or more flags can be required to activate a feature.
 An object in the `flags` array consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
   * `preference` a flag the user can set (like in `about:config` in Firefox).
   * `compile_flag` a flag to be set before compiling the browser.
   * `runtime_flag` a flag to be set before starting the browser.
-* `name` (mandatory): a `string` representing the flag or preference to modify.
+* `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
 (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
@@ -333,10 +348,15 @@ It defaults to `false` (no interoperability problem expected).
 If set to `true`, it is recommended to add a note indicating how it diverges from
 the standard (implements an old version of the standard, for example).
 
+A `boolean` value indicating whether or not the implementation of the sub-feature
+deviates from the specification in a way that may cause compatibility problems. It
+defaults to `false` (no interoperability problems expected). If set to `true`, it is
+recommended that you add a note explaining how it diverges from the standard (such as
+that it implements an old version of the standard, for example).
+
 #### `notes`
-An `array` of zero or more strings containing
-additional information. If there is only one entry in the array,
-the array can be a just a string. Example:
+An `array` of zero or more strings containing additional information. If there is only one
+entry in the array, the value of `notes` can simply be a string instead of an array. Example:
 
 * Indicating a restriction:
 ```json

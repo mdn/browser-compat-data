@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentTimeline",
         "support": {
-          "webview_android": {
-            "version_added": "54"
-          },
           "chrome": {
             "version_added": "54"
           },
@@ -19,12 +16,52 @@
           "edge_mobile": {
             "version_added": null
           },
-          "firefox": {
-            "version_added": false
-          },
-          "firefox_android": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.timelines.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            {
+              "version_added": "50",
+              "version_removed": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.timelines.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            {
+              "version_added": "50",
+              "version_removed": "63",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "ie": {
             "version_added": false
           },
@@ -42,6 +79,9 @@
           },
           "samsunginternet_android": {
             "version_added": "6.0"
+          },
+          "webview_android": {
+            "version_added": "54"
           }
         },
         "status": {
@@ -55,9 +95,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentTimeline/DocumentTimeline",
           "description": "<code>DocumentTimeline()</code> constructor",
           "support": {
-            "webview_android": {
-              "version_added": "61"
-            },
             "chrome": {
               "version_added": "61"
             },
@@ -70,12 +107,52 @@
             "edge_mobile": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "50"
-            },
-            "firefox_android": {
-              "version_added": "50"
-            },
+            "firefox": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "50",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "50",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -93,6 +170,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": "61"
             }
           },
           "status": {

@@ -6,26 +6,47 @@
     "simple_support_statement": {
       "type": "object",
       "properties": {
-        "prefix": { "type": "string" },
-        "alternative_name": { "type": "string" },
+        "prefix": {
+          "type": "string",
+          "description": "A prefix to add to the sub-feature name (defaults to empty string). If applicable, leading and trailing '-' must be included."
+        },
+        "alternative_name": {
+          "type": "string",
+          "description": "An alternative name for the feature, for cases where a feature is implemented under an entirely different name and not just prefixed."
+        },
         "flags": {
           "type": "array",
+          "description": "An optional array of objects describing flags that must be configured for this browser to support this feature.",
           "minItems": 1,
           "items": {
             "type": "object",
             "properties": {
-              "type": { "type": "string", "enum": ["preference", "compile_flag", "runtime_flag"] },
-              "name": { "type": "string" },
-              "value_to_set": { "type": "string"}
+              "type": {
+                "type": "string",
+                "description": "An enum that indicates the flag type.",
+                "enum": ["preference", "compile_flag", "runtime_flag"]
+              },
+              "name": {
+                "type": "string",
+                "description": "A string giving the name of the flag or preference that must be configured."
+              },
+              "value_to_set": {
+                "type": "string",
+                "description": "A string giving the value which the specified flag must be set to for this feature to work."
+              }
             },
             "additionalProperties": false,
             "required": ["type", "name"]
           }
         },
-        "partial_implementation": { "type": "boolean" },
+        "partial_implementation": {
+          "type": "boolean",
+          "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
+        },
         "version_added": { "$ref": "#/definitions/version_value" },
         "version_removed": { "$ref": "#/definitions/version_value" },
         "notes": {
+          "description": "A string or array of strings containing additional information.",
           "anyOf": [
             {
               "type": "string"
@@ -72,9 +93,18 @@
     "status_block": {
       "type": "object",
       "properties": {
-        "experimental": { "type": "boolean" },
-        "standard_track": { "type": "boolean" },
-        "deprecated": { "type": "boolean" }
+        "experimental": {
+          "type": "boolean",
+          "description": "A boolean value that indicates whether this functionality is intended to be an addition to the Web platform. Set to false, it means the functionality is mature, and no significant incompatible changes are expected in the future."
+        },
+        "standard_track": {
+          "type": "boolean",
+          "description": "A boolean value indicating whether the feature is part of an active specification or specification process."
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "A boolean value that indicates whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
+        }
       },
       "required": ["experimental", "standard_track", "deprecated"],
       "additionalProperties": false
@@ -107,11 +137,15 @@
     "compat_statement": {
       "type": "object",
       "properties": {
-        "description": { "type": "string" },
+        "description": {
+          "type": "string",
+          "description": "A string containing a human-readable description of the feature."
+        },
         "mdn_url": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
@@ -123,17 +157,41 @@
     "webextensions_compat_statement": {
       "type": "object",
       "properties": {
-        "description": { "type": "string" },
+        "description": {
+          "type": "string",
+          "description": "A string containing a human-readable description of the feature."
+        },
         "mdn_url": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/"
+          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
       "required": ["support"],
       "additionalProperties": false
+    },
+
+    "primary_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
+    },
+
+    "primary_webextensions_identifier": {
+      "allOf": [
+        { "$ref": "#/definitions/webextensions_identifier" },
+        {
+          "maxProperties": 1,
+          "minProperties": 1
+        }
+      ]
     },
 
     "identifier": {
@@ -168,8 +226,10 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" },
-    "^webextensions*$": { "$ref": "#/definitions/webextensions_identifier" }
+    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" },
+    "^webextensions*$": { "$ref": "#/definitions/primary_webextensions_identifier" }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "maxProperties": 1,
+  "minProperties": 1
 }
