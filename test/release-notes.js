@@ -1,8 +1,8 @@
 const { execSync } = require('child_process');
 const http = require('https');
+const readline = require('readline');
 
 const bcd = require('..');
-const inquirer = require('inquirer');
 
 const { argv } = require('yargs')
   .command('$0 <version-tag>', 'Initiate a release of this package on GitHub', (yargs) => {
@@ -22,6 +22,29 @@ const getJSON = (url) => new Promise((resolve, reject) => http.get(url, { header
     resolve(JSON.parse(body));
   });
 }));
+
+const question = (query) => {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  return new Promise(resolve => rl.question(query, resolve))
+    .then((response) => {
+      rl.close();
+      return response;
+    });
+}
+
+const confirm = (str) => !['n', 'no'].includes(str.toLowerCase());
+
+const prompt = async (questions) => {
+  const results = {};
+  for (const q of questions) {
+    const options = q.type === confirm ? '(Y/n) ' : '';
+    results[q.name] = await question(`${q.message} ${options}`).then(q.type);
+  }
+  return results;
+};
 
 const stargazers = () => getJSON('https://api.github.com/repos/mdn/browser-compat-data').then(json => json.stargazers_count);
 
@@ -45,25 +68,25 @@ const stats = (version, previousVersion) => {
   };
 };
 
-const contributors = (version, previousVersion) => inquirer.prompt([
+const contributors = (version, previousVersion) => prompt([
   {
     name: 'releaseContributors',
     type: Number,
-    message: `Find "contributors" at https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version}\n  How many people have contributed to this release?`,
+    message: `Find "contributors" at https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version}\nHow many people have contributed to this release?`,
   },
   {
     name: 'totalContributors',
     type: Number,
-    message: 'Find "contributors" at https://github.com/mdn/browser-compat-data/\n  How many people have contributed to browser-compat-data overall?',
+    message: 'Find "contributors" at https://github.com/mdn/browser-compat-data/\nHow many people have contributed to browser-compat-data overall?',
   },
 ]);
 
 const notableChanges = async () => {
-  const { result } = await inquirer.prompt([
+  const { result } = await prompt([
     {
       name: 'result',
       message: 'Does this release contain any schema, test, or infrastructure changes?',
-      type: 'confirm',
+      type: confirm,
     },
   ]);
 
