@@ -88,9 +88,9 @@ It takes 1-2 weeks for changes in this data to be reflected in MDN's browser com
 ## Projects using the data
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
 
+* [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
+* [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.
 * [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
 * [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
-* [mdncomp](https://github.com/epistemex/mdncomp) - View compatibility data on the command line.
-* [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.
 * [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
-* [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
+* [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
