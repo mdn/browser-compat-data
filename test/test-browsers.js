@@ -43,7 +43,7 @@ function processData(data, browsers, category, logger, path = '') {
   if (data.__compat && data.__compat.support) {
     const invalidEntries = Object.keys(data.__compat.support).filter(value => !browsers.includes(value));
     if (invalidEntries.length > 0) {
-      logger.error(`'${path}' has the following browesers, which are invalid for ${category}: ${invalidEntries.join(', ')}`);
+      logger.error(`'${path}' has the following browesers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
       hasErrors = true;
     }
   }
@@ -56,28 +56,25 @@ function processData(data, browsers, category, logger, path = '') {
 
 function testBrowsers(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
-  const category = (/^(?:\.[\/\\])?([^\/\\]+)/.exec(relativePath) || [])[1];
+  const category = (relativePath.split(path.sep) || [])[0];
   const data = require(filename);
 
-  if (!category) {
-    console.log('\x1b[1;30m  Browsers – Unknown \x1b[0m');
+  if (!category || category === "test") {
+    console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
     return false;
   }
 
-  let bcCategory = 'web';
-  let displayBrowers = [...browsers['desktop'], ...browsers['mobile']];
+  let displayBrowsers = [...browsers['desktop'], ...browsers['mobile']];
   if (category === 'api') {
-    displayBrowers.push('nodejs');
+    displayBrowsers.push('nodejs');
   }
   if (category === 'javascript') {
-    bcCategory = 'js';
-    displayBrowers.push(...browsers['server']);
+    displayBrowsers.push(...browsers['server']);
   }
   if (category === 'webextensions') {
-    bcCategory = 'ext';
-    displayBrowers = [...browsers['webextensions-desktop'], ...browsers['webextensions-mobile']];
+    displayBrowsers = [...browsers['webextensions-desktop'], ...browsers['webextensions-mobile']];
   }
-  displayBrowers.sort();
+  displayBrowsers.sort();
 
   /** @type {string[]} */
   const errors = [];
@@ -85,7 +82,7 @@ function testBrowsers(filename) {
     error: (message) => {errors.push(message);}
   }
 
-  if (!processData(data, displayBrowers, bcCategory === 'web' ? bcCategory : category, logger)) {
+  if (!processData(data, displayBrowsers, category, logger)) {
     return false;
   } else {
     console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');
