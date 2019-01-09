@@ -39,7 +39,10 @@ function load(...files) {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        let hasStyleErrors, hasSchemaErrors, hasVersionErrors = false;
+        let hasSyntaxErrors = false,
+          hasSchemaErrors = false,
+          hasStyleErrors = false,
+          hasVersionErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -55,14 +58,19 @@ function load(...files) {
           console.error(...args);
         }
 
-        if (file.indexOf('browsers' + path.sep) !== -1) {
-          hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
-        } else {
-          hasSchemaErrors = testSchema(file);
-          hasStyleErrors = testStyle(file);
-          hasVersionErrors = testVersions(file);
+        try {
+          if (file.indexOf('browsers' + path.sep) !== -1) {
+            hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
+          } else {
+            hasSchemaErrors = testSchema(file);
+            hasStyleErrors = testStyle(file);
+            hasVersionErrors = testVersions(file);
+          }
+        } catch (e) {
+          hasSyntaxErrors = true;
+          console.error(e);
         }
-        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors) {
+        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasVersionErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
         } else {
@@ -107,9 +115,17 @@ if (hasErrors) {
   console.warn(`Problems in ${filesWithErrors.size} file${filesWithErrors.size > 1 ? 's' : ''}:`);
   for (const [fileName, file] of filesWithErrors) {
     console.warn(fileName);
-    testSchema(file);
-    testStyle(file);
-    testVersions(file);
+    try {
+      if (file.indexOf('browsers' + path.sep) !== -1) {
+        testSchema(file, './../schemas/browsers.schema.json');
+      } else {
+        testSchema(file);
+        testStyle(file);
+        testVersions(file);
+      }
+    } catch (e) {
+      console.error(e);
+    }
   }
   process.exit(1);
 }
