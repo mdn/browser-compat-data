@@ -355,8 +355,10 @@ recommended that you add a note explaining how it diverges from the standard (su
 that it implements an old version of the standard, for example).
 
 #### `notes`
-An `array` of zero or more strings containing additional information. If there is only one
-entry in the array, the value of `notes` can simply be a string instead of an array. Example:
+A string or `array` of strings containing additional information. If there is only one
+entry, the value of `notes` must simply be a string instead of an array.
+
+Example:
 
 * Indicating a restriction:
 ```json
