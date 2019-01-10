@@ -328,6 +328,12 @@ interface CompatData extends Record<Exclude<string, 'browsers'>, Identifier> {
   webextensions: Identifier;
 
   /**
+   * Contains data for [XML](https://developer.mozilla.org/docs/Web/XML)
+   * attributes.
+   */
+  xml: Identifier;
+
+  /**
    * Contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath)
    * axes, and functions.
    */
