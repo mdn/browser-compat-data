@@ -6,7 +6,8 @@ const yargs = require('yargs');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
-/** @type {Map<string,string>} */
+const testBrowsers = require('./test-browsers');
+/** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
 const argv = yargs.alias('version','v')
@@ -42,6 +43,7 @@ function load(...files) {
         let hasSyntaxErrors = false,
           hasSchemaErrors = false,
           hasStyleErrors = false,
+          hasBrowserErrors = false,
           hasVersionErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
@@ -64,13 +66,14 @@ function load(...files) {
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
+            hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
           console.error(e);
         }
-        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasVersionErrors) {
+        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
         } else {
@@ -122,6 +125,7 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testVersions(file);
+        testBrowsers(file);
       }
     } catch (e) {
       console.error(e);
