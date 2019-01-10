@@ -71,3 +71,7 @@ These values are usually the same, but not always. You can check this by looking
 ## No data before Chrome 40
 
 This means that if a feature landed before Chrome 40, then `40` is what will be in the JSON file.
+
+## Chrome 43 contains false-positives
+
+Because of a change in internal architecture, Chrome 43 shows features being added in that version that have been supported much longer. If Confluence says something landed in Chrome 43, you should confirm them in [Chrome's commit history](https://cs.chromium.org/chromium/src/third_party/blink/renderer/). If you're uncomfortable with that, contact jmedley@google.com.
