@@ -6,8 +6,8 @@ const yargs = require('yargs');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
-const {testBrowsers} = require('./test-browsers');
-/** @type {Map<string,string>} */
+const testBrowsers = require('./test-browsers');
+/** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
 const argv = yargs.alias('version','v')

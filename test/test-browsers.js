@@ -1,5 +1,4 @@
 'use strict';
-const fs = require('fs');
 const path = require('path');
 
 /** @type {Record<string, string[]>} */
@@ -38,12 +37,20 @@ const browsers = {
   ],
 };
 
+/**
+ * @param {*} data
+ * @param {string[]} browsers
+ * @param {string} category
+ * @param {{error:function(string):void}} logger
+ * @param {string} [path]
+ * @returns {boolean}
+ */
 function processData(data, browsers, category, logger, path = '') {
   let hasErrors = false;
   if (data.__compat && data.__compat.support) {
     const invalidEntries = Object.keys(data.__compat.support).filter(value => !browsers.includes(value));
     if (invalidEntries.length > 0) {
-      logger.error(`'${path}' has the following browesers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
+      logger.error(`'${path}' has the following browsers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
       hasErrors = true;
     }
   }
@@ -54,9 +61,13 @@ function processData(data, browsers, category, logger, path = '') {
   return hasErrors;
 }
 
+/**
+ * @param {string} filename
+ * @returns {boolean} If the file contains errors
+ */
 function testBrowsers(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
-  const category = (relativePath.split(path.sep) || [])[0];
+  const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   const data = require(filename);
 
   if (!category || category === "test") {
@@ -92,4 +103,4 @@ function testBrowsers(filename) {
   }
 }
 
-module.exports.testBrowsers = testBrowsers;
+module.exports = testBrowsers;
