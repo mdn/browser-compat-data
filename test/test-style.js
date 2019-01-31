@@ -22,6 +22,24 @@ function orderSupportBlock(key, value) {
     }, {});
   }
   return value;
+
+function escapeInvisibles(str) {
+  const invisibles = [
+    ['\b', '\\b'],
+    ['\f', '\\f'],
+    ['\n', '\\n'],
+    ['\r', '\\r'],
+    ['\v', '\\v'],
+    ['\t', '\\t'],
+    ['\0', '\\0'],
+  ];
+  let finalString = str;
+
+  invisibles.forEach(([invisible, replacement]) => {
+    finalString = finalString.replace(invisible, replacement);
+  });
+
+  return finalString;
 }
 
 function jsonDiff(actual, expected) {
@@ -32,8 +50,8 @@ function jsonDiff(actual, expected) {
     if (actualLines[i] !== expectedLines[i]) {
       return [
         '#' + (i + 1) + '\x1b[0m',
-        '    Actual:   ' + actualLines[i],
-        '    Expected: ' + expectedLines[i]
+        '    Actual:   ' + escapeInvisibles(actualLines[i]),
+        '    Expected: ' + escapeInvisibles(expectedLines[i]),
       ].join('\n');
     }
   }
