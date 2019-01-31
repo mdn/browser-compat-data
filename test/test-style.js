@@ -22,6 +22,7 @@ function orderSupportBlock(key, value) {
     }, {});
   }
   return value;
+}
 
 function escapeInvisibles(str) {
   const invisibles = [
