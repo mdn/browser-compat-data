@@ -61,7 +61,7 @@ function jsonDiff(actual, expected) {
 function testStyle(filename) {
   let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
+  let expected = JSON.stringify(JSON.parse(actual), null, 2);
 
   const {platform} = require("os");
   if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
@@ -73,6 +73,13 @@ function testStyle(filename) {
     hasErrors = true;
     console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
+  }
+
+  let expectedSorting = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
+  if (actual !== expectedSorting) {
+    hasErrors = true;
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
+    console.error('\x1b[31m  Browser name sorting – Error on line ' + jsonDiff(actual, expectedSorting));
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
