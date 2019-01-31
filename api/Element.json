@@ -2842,12 +2842,26 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "64"
-            },
-            "firefox_android": {
-              "version_added": "64"
-            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "65",
+                "alternative_name": "onmozfullscreenchange"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "65",
+                "alternative_name": "onmozfullscreenchange"
+              }
+            ],
             "ie": {
               "version_added": null
             },
@@ -2874,7 +2888,7 @@
           }
         }
       },
-      "onfullscreenerror": {
+      "onerror": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onfullscreenerror",
           "support": {
@@ -2890,12 +2904,26 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "64"
-            },
-            "firefox_android": {
-              "version_added": "64"
-            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "65",
+                "alternative_name": "onmozfullscreenerror"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "65",
+                "alternative_name": "onmozfullscreenerror"
+              }
+            ],
             "ie": {
               "version_added": null
             },
@@ -3418,6 +3446,7 @@
               },
               {
                 "version_added": "47",
+                "version_removed": "65",
                 "flags": [
                   {
                     "type": "preference",
@@ -3428,8 +3457,9 @@
               },
               {
                 "version_added": "9",
+                "version_removed": "65",
                 "alternative_name": "mozRequestFullScreen",
-                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or an <code>&lt;object&gt;</code> to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code><code>&lt;iframe&gt;</code></code> with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
+                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or <code>&lt;object&gt;</code> element to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code>&lt;iframe&gt;</code> element with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
               }
             ],
             "firefox_android": [
@@ -3438,6 +3468,7 @@
               },
               {
                 "version_added": "47",
+                "version_removed": "65",
                 "flags": [
                   {
                     "type": "preference",
@@ -3448,6 +3479,7 @@
               },
               {
                 "version_added": "9",
+                "version_removed": "65",
                 "alternative_name": "mozRequestFullScreen",
                 "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or an <code>&lt;object&gt;</code> to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code><code>&lt;iframe&gt;</code></code> with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
               }
