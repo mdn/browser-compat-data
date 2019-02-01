@@ -2,6 +2,28 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Return a new "support_block" object whose first-level properties
+ * (browser names) have been ordered according to Array.prototype.sort,
+ * and so will be stringified in that order as well. This relies on
+ * guaranteed "own" property ordering, which is insertion order for
+ * non-integer keys (which is our case).
+ *
+ * @param {string} key The key in the object
+ * @param {*} value The value of the key
+ *
+ * @returns {*} The new value
+ */
+function orderSupportBlock(key, value) {
+  if (key === '__compat') {
+    value.support = Object.keys(value.support).sort().reduce((result, key) => {
+      result[key] = value.support[key];
+      return result;
+    }, {});
+  }
+  return value;
+}
+
 function escapeInvisibles(str) {
   const invisibles = [
     ['\b', '\\b'],
@@ -51,6 +73,13 @@ function testStyle(filename) {
     hasErrors = true;
     console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
+  }
+
+  let expectedSorting = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
+  if (actual !== expectedSorting) {
+    hasErrors = true;
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
+    console.error('\x1b[31m  Browser name sorting – Error on line ' + jsonDiff(actual, expectedSorting));
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
