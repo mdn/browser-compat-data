@@ -145,15 +145,29 @@ const compareVersions = require('compare-versions');
   }
 
   /*
+   * @param {object} compatData
+   * @returns {string}
+   */
+  getVersionAdded(compatData) {
+    var version_added = null;
+
+    if (typeof(compatData.version_added) === 'string')
+      return compatData.version_added;
+    
+    return version_added;
+  }
+
+  /*
    * @param {string} a
    * @param {string} b
    * @returns {boolean}
    */
   isVersionAddedGreater(a, b) {
-    // XXX Only works with regular dictionaries that contain a version_added string -- needs to check against arrays
+    var a_version_added = this.getVersionAdded(a);
+    var b_version_added = this.getVersionAdded(b);
 
-    if (typeof(a.version_added) === 'string' && typeof(b.version_added) === 'string')
-      return compareVersions(a.version_added, b.version_added) == -1;
+    if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string')
+      return compareVersions(a_version_added, b_version_added) == -1;
     return false;
   }
   
