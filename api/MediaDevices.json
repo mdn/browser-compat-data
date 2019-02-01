@@ -80,9 +80,7 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": [
-                  "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
-                ]
+                "notes": "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
               }
             ],
             "firefox_android": {
@@ -225,6 +223,134 @@
           }
         }
       },
+      "getDisplayMedia": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia",
+          "description": "<code>getDisplayMedia()</code>",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "72"
+              },
+              {
+                "version_added": "70",
+                "version_removed": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Available as a member of <code>Navigator</code> instead of <code>MediaDevices</code> in Chrome 70 and 71."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "17",
+              "notes": "Available as a member of <code>Navigator</code> instead of <code>MediaDevices</code>."
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "66"
+              },
+              {
+                "version_added": "33",
+                "version_removed": "66",
+                "notes": "Since Firefox 33 you can capture screen data using <code><a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>getUserMedia()</a></code>, with a <code>video</code> constraint called <code>mediaSource</code>. Prior to 52 it relied on a client-configurable whitelist."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false,
+              "notes": "API is available, but will always fail with <code>NotAllowedError</code>."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false,
+              "notes": "API is available, but will always fail with <code>NotAllowedError</code>."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "audio-capture-support": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen_Capture_API/Using_Screen_Capture#Capturing_shared_audio",
+            "description": "Audio capture support",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": null
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
       "getUserMedia": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia",
@@ -243,9 +369,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": [
-                  "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
-                ]
+                "notes": "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
               }
             ],
             "chrome_android": [
@@ -262,9 +386,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": [
-                  "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
-                ]
+                "notes": "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
               }
             ],
             "edge": {
@@ -282,9 +404,7 @@
             },
             "firefox_android": {
               "version_added": "36",
-              "notes": [
-                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
-              ]
+              "notes": "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
             },
             "ie": {
               "version_added": false
@@ -303,9 +423,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": [
-                  "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
-                ]
+                "notes": "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
               }
             ],
             "opera_android": [
@@ -322,9 +440,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": [
-                  "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
-                ]
+                "notes": "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
               }
             ],
             "safari": {
