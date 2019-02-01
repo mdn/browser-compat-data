@@ -6,8 +6,9 @@ const yargs = require('yargs');
 const {testStyle} = require('./test-style');
 const {testSchema} = require('./test-schema');
 const {testVersions} = require('./test-versions');
+const testBrowsers = require('./test-browsers');
 const {testConsistency} = require('./test-consistency');
-/** @type {Map<string,string>} */
+/** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
 const argv = yargs.alias('version','v')
@@ -40,7 +41,12 @@ function load(...files) {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        let hasStyleErrors, hasSchemaErrors, hasVersionErrors, hasConsistencyErrors = false;
+        let hasSyntaxErrors = false,
+          hasSchemaErrors = false,
+          hasStyleErrors = false,
+          hasBrowserErrors = false,
+          hasVersionErrors = false,
+          hasConsistencyErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -56,15 +62,21 @@ function load(...files) {
           console.error(...args);
         }
 
-        if (file.indexOf('browsers' + path.sep) !== -1) {
-          hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
-        } else {
-          hasSchemaErrors = testSchema(file);
-          hasStyleErrors = testStyle(file);
-          hasVersionErrors = testVersions(file);
-          hasConsistencyErrors = testConsistency(file);
+        try {
+          if (file.indexOf('browsers' + path.sep) !== -1) {
+            hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
+          } else {
+            hasSchemaErrors = testSchema(file);
+            hasStyleErrors = testStyle(file);
+            hasBrowserErrors = testBrowsers(file);
+            hasVersionErrors = testVersions(file);
+            hasConsistencyErrors = testConsistency(file);
+          }
+        } catch (e) {
+          hasSyntaxErrors = true;
+          console.error(e);
         }
-        if (hasStyleErrors || hasSchemaErrors || hasVersionErrors || hasConsistencyErrors) {
+        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasConsistencyErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
         } else {
@@ -109,10 +121,19 @@ if (hasErrors) {
   console.warn(`Problems in ${filesWithErrors.size} file${filesWithErrors.size > 1 ? 's' : ''}:`);
   for (const [fileName, file] of filesWithErrors) {
     console.warn(fileName);
-    testSchema(file);
-    testStyle(file);
-    testVersions(file);
-    testConsistency(file);
+    try {
+      if (file.indexOf('browsers' + path.sep) !== -1) {
+        testSchema(file, './../schemas/browsers.schema.json');
+      } else {
+        testSchema(file);
+        testStyle(file);
+        testVersions(file);
+        testBrowsers(file);
+        testConsistency(file);
+      }
+    } catch (e) {
+      console.error(e);
+    }
   }
   process.exit(1);
 }
