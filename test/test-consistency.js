@@ -108,7 +108,7 @@ const compareVersions = require('compare-versions');
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-      const errortype = 'version_mismatch';
+      const errortype = 'subfeature_earlier_implementation';
 
       errors.push({
         errortype,
@@ -193,7 +193,7 @@ function testConsistency(filename) {
       errors.forEach(({ errortype, browser, subfeatures }) => {
         if (errortype == "unsupported") {
           console.error(`\x1b[34m    → No support in \x1b[1m${browser}\x1b[0m\x1b[34m, but this is not declared for sub-feature(s): \x1b[1m${subfeatures.join(', ')}\x1b[0m`);
-        } else if (errortype == "version_mismatch") {
+        } else if (errortype == "subfeature_earlier_implementation") {
           console.error(`\x1b[34m    → Basic support in \x1b[1m${browser}\x1b[0m\x1b[34m was declared implemented in a later version than the following sub-feature(s): \x1b[1m${subfeatures.join(', ')}\x1b[0m`);
         }
       });
