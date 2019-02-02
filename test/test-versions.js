@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path');
 const {browsers} = require('..');
+const compareVersions = require('compare-versions');
 
 const validBrowserVersions = {};
 for (const browser of Object.keys(browsers)) {
@@ -46,6 +47,9 @@ function testVersions(dataFilename) {
             if (typeof statement.version_added !== "string" && statement.version_added !== true) {
               console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number when version_removed is present');
               console.error('  Valid', browser, 'versions are:', validBrowserVersions[browser].length > 0 ? 'true, ' + validBrowserVersions[browser].join(', ') : 'true');
+              hasErrors = true;
+            } else if (typeof statement.version_added === "string" && typeof statement.version_removed === "string" && compareVersions(statement.version_added, statement.version_removed) == 1) {
+              console.error('\x1b[31m  version_added: "' + statement.version_added + '" cannot be higher than version_removed: "' + statement.version_removed + '"');
               hasErrors = true;
             }
           }
