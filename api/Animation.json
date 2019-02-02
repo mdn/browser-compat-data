@@ -30,12 +30,38 @@
           "edge_mobile": {
             "version_added": null
           },
-          "firefox": {
-            "version_added": "48"
-          },
-          "firefox_android": {
-            "version_added": "48"
-          },
+          "firefox": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "46",
+              "version_removed": "48",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "46",
+              "version_removed": "48",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.core.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "ie": {
             "version_added": false
           },
@@ -170,7 +196,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -186,7 +212,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -247,7 +273,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -263,7 +289,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -401,7 +427,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -417,7 +443,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -478,7 +504,7 @@
                 "version_added": "63"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "flags": [
                   {
                     "type": "preference",
@@ -493,7 +519,7 @@
                 "version_added": "63"
               },
               {
-                "version_added": "40",
+                "version_added": "46",
                 "flags": [
                   {
                     "type": "preference",
@@ -630,7 +656,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -646,7 +672,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -707,7 +733,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -723,7 +749,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -784,7 +810,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "36",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -800,7 +826,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "36",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -914,7 +940,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "36",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -930,7 +956,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "36",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -991,7 +1017,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1007,7 +1033,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1071,7 +1097,7 @@
                 "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
               },
               {
-                "version_added": "36",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1088,7 +1114,7 @@
                 "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
               },
               {
-                "version_added": "36",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1152,7 +1178,7 @@
                 "version_added": "63"
               },
               {
-                "version_added": "37",
+                "version_added": "46",
                 "flags": [
                   {
                     "type": "preference",
@@ -1167,7 +1193,7 @@
                 "version_added": "63"
               },
               {
-                "version_added": "37",
+                "version_added": "46",
                 "flags": [
                   {
                     "type": "preference",
@@ -1227,7 +1253,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1243,7 +1269,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "42",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1304,7 +1330,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "39",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
@@ -1320,7 +1346,7 @@
                 "version_added": "48"
               },
               {
-                "version_added": "39",
+                "version_added": "46",
                 "version_removed": "48",
                 "flags": [
                   {
