@@ -131,6 +131,14 @@ function testStyle(filename) {
       crbugMatch[1]);
   }
 
+  const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
+  if (webkitMatch) {
+    // use https://webkit.org/b/100000 instead
+    hasErrors = true;
+    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m', webkitMatch[0],
+      webkitMatch[1]);
+  }
+
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
