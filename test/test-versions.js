@@ -48,7 +48,7 @@ function testVersions(dataFilename) {
               console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number when version_removed is present');
               console.error('  Valid', browser, 'versions are:', validBrowserVersions[browser].length > 0 ? 'true, ' + validBrowserVersions[browser].join(', ') : 'true');
               hasErrors = true;
-            } else if (typeof statement.version_added === "string" && typeof statement.version_removed === "string" && compareVersions(statement.version_added, statement.version_removed) == 1) {
+            } else if (typeof statement.version_added === "string" && typeof statement.version_removed === "string" && compareVersions(statement.version_added, statement.version_removed) > 0) {
               console.error('\x1b[31m  version_added: "' + statement.version_added + '" cannot be higher than version_removed: "' + statement.version_removed + '"');
               hasErrors = true;
             }
