@@ -157,7 +157,7 @@ const compareVersions = require('compare-versions');
     if (compatData.constructor === Array) {
       for (var i = compatData.length - 1; i >= 0; i--) {
         var va = compatData[i].version_added;
-        if (typeof(va) === 'string' && (version_added == null || compareVersions(version_added, va) == -1))
+        if (typeof(va) === 'string' && (version_added == null || compareVersions(version_added, va) == 1))
           version_added = va;
       }
     }
