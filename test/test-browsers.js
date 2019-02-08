@@ -39,24 +39,30 @@ const browsers = {
 
 /**
  * @param {*} data
- * @param {string[]} browsers
+ * @param {string[]} displayBrowsers
+ * @param {string[]} requiredBrowsers
  * @param {string} category
  * @param {{error:function(string):void}} logger
  * @param {string} [path]
  * @returns {boolean}
  */
-function processData(data, browsers, category, logger, path = '') {
+function processData(data, displayBrowsers, requiredBrowsers, category, logger, path = '') {
   let hasErrors = false;
   if (data.__compat && data.__compat.support) {
-    const invalidEntries = Object.keys(data.__compat.support).filter(value => !browsers.includes(value));
+    const invalidEntries = Object.keys(data.__compat.support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(`'${path}' has the following browsers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
+      hasErrors = true;
+    }
+    const missingEntries = requiredBrowsers.filter(value => !(value in data.__compat.support));
+    if (missingEntries.length > 0) {
+      logger.error(`'${path}' is missing the following browsers, which are required for ${category} compat data: ${missingEntries.join(', ')}`);
       hasErrors = true;
     }
   }
   for (const key in data) {
     if (key === "__compat") continue;
-    hasErrors |= processData(data[key], browsers, category, logger, (path && path.length > 0) ? `${path}.${key}` : key);
+    hasErrors |= processData(data[key], displayBrowsers, requiredBrowsers, category, logger, (path && path.length > 0) ? `${path}.${key}` : key);
   }
   return hasErrors;
 }
@@ -76,6 +82,7 @@ function testBrowsers(filename) {
   }
 
   let displayBrowsers = [...browsers['desktop'], ...browsers['mobile']];
+  let requiredBrowsers = browsers['desktop'];
   if (category === 'api') {
     displayBrowsers.push('nodejs');
   }
@@ -84,8 +91,10 @@ function testBrowsers(filename) {
   }
   if (category === 'webextensions') {
     displayBrowsers = [...browsers['webextensions-desktop'], ...browsers['webextensions-mobile']];
+    requiredBrowsers = browsers['webextensions-desktop'];
   }
   displayBrowsers.sort();
+  requiredBrowsers.sort();
 
   /** @type {string[]} */
   const errors = [];
@@ -93,7 +102,7 @@ function testBrowsers(filename) {
     error: (message) => {errors.push(message);}
   }
 
-  if (!processData(data, displayBrowsers, category, logger)) {
+  if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
     return false;
   } else {
     console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');
