@@ -163,7 +163,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 * `uc_chinese_android`, UC Browser (Chinese Android version)
 * `webview_android`, Webview, the former stock browser on Android
 
-No browser identifier is mandatory.
+Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
 #### The `support_statement` object
 The `support_statement` object describes the support provided by a single browser type for the given subfeature.
