@@ -31,6 +31,30 @@ function orderSupportBlock(key, value) {
 }
 
 /**
+ * Return a new feature object whose first-level properties have been
+ * ordered according to Array.prototype.sort, and so will be
+ * stringified in that order as well. This relies on guaranteed "own"
+ * property ordering, which is insertion order for non-integer keys
+ * (which is our case).
+ *
+ * @param {string} key The key in the object
+ * @param {*} value The value of the key
+ *
+ * @returns {*} The new value
+ */
+function orderFeatures(key, value) {
+  if (value instanceof Object && '__compat' in value) {
+    value = Object.keys(value).sort((a, b) => {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    }).reduce((result, key) => {
+      result[key] = value[key];
+      return result;
+    }, {});
+  }
+  return value;
+}
+
+/**
  * @param {string} str
  */
 function escapeInvisibles(str) {
@@ -153,6 +177,13 @@ function processData(filename, logger) {
   if (expected !== expectedSorting) {
     hasErrors = true;
     logger.error(chalk`{red Browser sorting error on }{red.bold line ${jsonDiff(expected, expectedSorting)}}`);
+  }
+
+  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
+  if (actual !== expectedFeatureSorting) {
+    hasErrors = true;
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
+    console.error('\x1b[31m  Feature sorting – Error on line ' + jsonDiff(actual, expectedFeatureSorting));
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
