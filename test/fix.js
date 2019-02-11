@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const {fixBrowserOrder} = require('./fix-browser-order');
 const {fixFeatureOrder} = require('./fix-feature-order');
 
 
@@ -21,6 +22,7 @@ function load(...files) {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
+        fixBrowserOrder(file);
         fixFeatureOrder(file);
       }
 
