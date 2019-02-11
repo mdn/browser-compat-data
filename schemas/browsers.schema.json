@@ -34,6 +34,11 @@
           "type": "string",
           "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
         },
+        "status_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Official browser feature support tracking webpage."
+        },
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" }

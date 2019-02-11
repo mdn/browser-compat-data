@@ -17,6 +17,7 @@ The file `firefox.json` is structured like this:
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "status_url": "https://platform-status.mozilla.org",
       "releases": {
         "1.5": {
           "release_date": "2005-11-29",
@@ -35,7 +36,11 @@ Underneath, there is a `releases` object which will hold the various releases of
 
 ### `name`
 
-The `name` string is an optional property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+
+### `status_url`
+
+The `status_url` string is an optional property that links to the browser's official feature tracking page, for example `https://platform-status.mozilla.org` for Firefox.
 
 ### Release objects
 The release objects consist of the following properties:
