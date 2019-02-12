@@ -166,4 +166,4 @@ function testStyle(filename) {
   return hasErrors;
 }
 
-module.exports.testStyle = testStyle;
+module.exports = testStyle;
