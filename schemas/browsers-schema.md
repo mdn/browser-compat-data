@@ -40,7 +40,7 @@ The `name` string is a required property which should use the browser brand name
 
 ### `pref_url`
 
-An optional string containg the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
 
 ### Release objects
 The release objects consist of the following properties:
