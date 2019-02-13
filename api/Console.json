@@ -342,7 +342,7 @@
             "support": {
               "chrome": {
                 "version_added": true,
-                "notes": "In version 28, if a negative value is passed to %d, it will be rounded down to the closest negative integer, so -0.1 becomes -1."
+                "notes": "In version 28, if a negative value is passed to <code>%d</code>, it will be rounded down to the closest negative integer. For example, -0.1 becomes -1."
               },
               "chrome_android": {
                 "version_added": null
@@ -361,7 +361,10 @@
               },
               "ie": {
                 "version_added": "10",
-                "notes": "%c is not supported, %d will render as 0 when it is not a number"
+                "notes": [
+                  "<code>%c</code> is not supported.",
+                  "<code>%d</code> outputs a 0 if the specified value isn't a number."
+                ]
               },
               "opera": {
                 "version_added": null
