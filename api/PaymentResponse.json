@@ -4,29 +4,25 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse",
         "support": {
-          "webview_android": {
-            "version_added": false
-          },
           "chrome": {
-            "version_added": "61",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "#web-payments",
-                "value_to_set": "Enabled"
-              }
-            ]
+            "version_added": "56"
           },
-          "chrome_android": {
-            "version_added": "53",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "#web-payments",
-                "value_to_set": "Enabled"
-              }
-            ]
-          },
+          "chrome_android": [
+            {
+              "version_added": "56"
+            },
+            {
+              "version_added": "51",
+              "version_removed": "56",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#web-payments",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            }
+          ],
           "edge": {
             "version_added": true
           },
@@ -34,22 +30,34 @@
             "version_added": true
           },
           "firefox": {
-            "version_added": "56",
+            "version_added": "55",
+            "notes": "Available only in nightly builds.",
             "flags": [
               {
                 "type": "preference",
                 "name": "dom.payments.request.enabled",
                 "value_to_set": "true"
+              },
+              {
+                "name": "dom.payments.request.supportedRegions",
+                "type": "preference",
+                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>."
               }
             ]
           },
           "firefox_android": {
-            "version_added": "56",
+            "version_added": "55",
+            "notes": "Available only in nightly builds.",
             "flags": [
               {
                 "type": "preference",
                 "name": "dom.payments.request.enabled",
                 "value_to_set": "true"
+              },
+              {
+                "name": "dom.payments.request.supportedRegions",
+                "type": "preference",
+                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>."
               }
             ]
           },
@@ -70,10 +78,13 @@
           },
           "samsunginternet_android": {
             "version_added": "6.0"
+          },
+          "webview_android": {
+            "version_added": false
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -82,29 +93,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/details",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -113,6 +120,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -123,6 +131,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -148,10 +157,13 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -161,29 +173,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/methodName",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -192,6 +200,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -202,6 +211,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -227,10 +237,13 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -240,29 +253,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerEmail",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -271,6 +280,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -281,6 +291,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -306,10 +317,13 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -319,28 +333,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerName",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
             "chrome_android": {
-              "version_added": "58",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "58"
             },
             "edge": {
               "version_added": "15"
@@ -350,6 +347,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -360,6 +358,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -385,10 +384,13 @@
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -398,29 +400,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerPhone",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -429,6 +427,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -439,6 +438,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -464,10 +464,66 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "retry": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry",
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": {
+              "version_added": "69"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "64",
+              "notes": "Available only in nightly builds."
+            },
+            "firefox_android": {
+              "version_added": "64",
+              "notes": "Available only in nightly builds."
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -477,28 +533,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/requestId",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
             "chrome_android": {
-              "version_added": "60",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "60"
             },
             "edge": {
               "version_added": "16"
@@ -508,6 +547,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -518,6 +558,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -543,10 +584,13 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -556,29 +600,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingAddress",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -587,6 +627,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -597,6 +638,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -622,10 +664,13 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -635,29 +680,25 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingOption",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -666,6 +707,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -676,6 +718,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -701,10 +744,13 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -713,30 +759,27 @@
       "complete": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete",
+          "description": "<code>complete()</code>",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "53",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "15"
             },
@@ -745,6 +788,7 @@
             },
             "firefox": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -755,6 +799,7 @@
             },
             "firefox_android": {
               "version_added": "56",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -780,10 +825,13 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -792,41 +840,40 @@
       "toJSON": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON",
+          "description": "<code>toJSON()</code>",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "61"
             },
-            "chrome_android": {
-              "version_added": "55",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "56"
+              },
+              {
+                "version_added": "55",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-payments",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
-              "version_added": null
+              "version_added": "15"
             },
             "edge_mobile": {
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "62",
+              "notes": "Available only in nightly builds."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "62",
+              "notes": "Available only in nightly builds."
             },
             "ie": {
               "version_added": null
@@ -845,6 +892,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {

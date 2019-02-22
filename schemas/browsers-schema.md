@@ -17,6 +17,7 @@ The file `firefox.json` is structured like this:
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "pref_url": "about:config",
       "releases": {
         "1.5": {
           "release_date": "2005-11-29",
@@ -35,7 +36,11 @@ Underneath, there is a `releases` object which will hold the various releases of
 
 ### `name`
 
-The `name` string is an optional property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+
+### `pref_url`
+
+An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
 
 ### Release objects
 The release objects consist of the following properties:

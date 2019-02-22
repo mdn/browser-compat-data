@@ -5,9 +5,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/background-image",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "1"
             },
@@ -22,9 +19,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": [
-                "If the <code>browser.display.use_document_colors</code> user preference in <code>about:config</code> is set to <code>false</code>, background images will not be displayed."
-              ]
+              "notes": "If the <code>browser.display.use_document_colors</code> user preference in <code>about:config</code> is set to <code>false</code>, background images will not be displayed."
             },
             "firefox_android": {
               "version_added": true
@@ -46,6 +41,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -58,9 +56,6 @@
           "__compat": {
             "description": "Multiple backgrounds",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "1"
               },
@@ -96,6 +91,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -107,11 +105,9 @@
         },
         "gradients": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
             "description": "Gradients",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": "1",
                 "notes": "Some versions support only experimental gradients prefixed with <code>-webkit</code>."
@@ -155,6 +151,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
               }
             },
             "status": {
@@ -168,9 +167,6 @@
           "__compat": {
             "description": "SVG images",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": "8"
               },
@@ -208,6 +204,9 @@
               },
               "samsunginternet_android": {
                 "version_added": true
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -221,9 +220,6 @@
           "__compat": {
             "description": "<code>element()</code>",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -260,6 +256,9 @@
                 "version_added": false
               },
               "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
                 "version_added": false
               }
             },
@@ -272,11 +271,9 @@
         },
         "image-rect": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect",
             "description": "<code>image-rect()</code>",
             "support": {
-              "webview_android": {
-                "version_added": false
-              },
               "chrome": {
                 "version_added": false
               },
@@ -316,6 +313,75 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "image-set": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set",
+            "description": "<code>image-set()</code>",
+            "support": {
+              "chrome": {
+                "prefix": "-webkit-",
+                "version_added": "21"
+              },
+              "chrome_android": {
+                "prefix": "-webkit-",
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "edge_mobile": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "prefix": "-webkit-",
+                "version_added": "15"
+              },
+              "opera_android": {
+                "prefix": "-webkit-",
+                "version_added": "15"
+              },
+              "safari": {
+                "prefix": "-webkit-",
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit. See <a href='https://webkit.org/b/160934'>bug 160934</a>."
+              },
+              "safari_ios": {
+                "prefix": "-webkit-",
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit. See <a href='https://webkit.org/b/160934'>bug 160934</a>."
+              },
+              "samsunginternet_android": {
+                "prefix": "-webkit-",
+                "version_added": "4.0"
+              },
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": "4.4"
               }
             },
             "status": {
@@ -329,9 +395,6 @@
           "__compat": {
             "description": "Any <code>&lt;image&gt;</code> value",
             "support": {
-              "webview_android": {
-                "version_added": true
-              },
               "chrome": {
                 "version_added": true
               },
@@ -366,6 +429,9 @@
                 "version_added": null
               },
               "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
                 "version_added": true
               }
             },

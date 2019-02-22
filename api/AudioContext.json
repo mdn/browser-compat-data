@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext",
         "support": {
-          "webview_android": {
-            "version_added": true
-          },
           "chrome": [
             {
               "version_added": "35"
@@ -67,7 +64,8 @@
             "prefix": "webkit"
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": true,
+            "prefix": "webkit"
           },
           "samsunginternet_android": [
             {
@@ -78,7 +76,10 @@
               "prefix": "webkit",
               "version_added": true
             }
-          ]
+          ],
+          "webview_android": {
+            "version_added": true
+          }
         },
         "status": {
           "experimental": false,
@@ -91,9 +92,6 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
           "description": "<code>AudioContext()</code> constructor",
           "support": {
-            "webview_android": {
-              "version_added": "55"
-            },
             "chrome": {
               "version_added": "55",
               "notes": [
@@ -123,9 +121,6 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": false
-            },
             "opera": {
               "version_added": "42"
             },
@@ -137,10 +132,14 @@
               "prefix": "webkit"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true,
+              "prefix": "webkit"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {
@@ -153,9 +152,6 @@
           "__compat": {
             "description": "<code>latencyHint</code> option",
             "support": {
-              "webview_android": {
-                "version_added": "60"
-              },
               "chrome": {
                 "version_added": "60"
               },
@@ -177,9 +173,6 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": false
-              },
               "opera": {
                 "version_added": "47"
               },
@@ -194,6 +187,9 @@
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": "60"
               }
             },
             "status": {
@@ -207,9 +203,6 @@
           "__compat": {
             "description": "<code>sampleRate</code> option",
             "support": {
-              "webview_android": {
-                "version_added": null
-              },
               "chrome": {
                 "version_added": false,
                 "notes": "See <a href='https://crbug.com/432248' title='Issue 432248 - AudioContext needs to support optional sample rate parameter.'>issue 432248</a> for Chrome support."
@@ -232,9 +225,6 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": false
-              },
               "opera": {
                 "version_added": false
               },
@@ -242,13 +232,16 @@
                 "version_added": null
               },
               "safari": {
-                "version_added": null
+                "version_added": true
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": true
               },
               "samsunginternet_android": {
                 "version_added": false
+              },
+              "webview_android": {
+                "version_added": null
               }
             },
             "status": {
@@ -263,9 +256,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency",
           "support": {
-            "webview_android": {
-              "version_added": "58"
-            },
             "chrome": {
               "version_added": "58"
             },
@@ -301,6 +291,9 @@
             },
             "samsunginternet_android": {
               "version_added": false
+            },
+            "webview_android": {
+              "version_added": "58"
             }
           },
           "status": {
@@ -314,9 +307,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
           "support": {
-            "webview_android": {
-              "version_added": false
-            },
             "chrome": {
               "version_added": false
             },
@@ -348,9 +338,12 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -365,9 +358,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
           "support": {
-            "webview_android": {
-              "version_added": "43"
-            },
             "chrome": {
               "version_added": "42"
             },
@@ -375,7 +365,7 @@
               "version_added": "43"
             },
             "edge": {
-              "version_added": null
+              "version_added": "14"
             },
             "edge_mobile": {
               "version_added": null
@@ -396,13 +386,16 @@
               "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "43"
             }
           },
           "status": {
@@ -416,9 +409,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "14"
             },
@@ -450,9 +440,12 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -467,9 +460,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "14"
             },
@@ -501,9 +491,12 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -518,9 +511,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination",
           "support": {
-            "webview_android": {
-              "version_added": true
-            },
             "chrome": {
               "version_added": "14"
             },
@@ -552,9 +542,12 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
               "version_added": true
             }
           },
@@ -569,9 +562,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
               "version_added": null
             },
@@ -607,6 +597,9 @@
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
             }
           },
           "status": {
@@ -620,9 +613,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp",
           "support": {
-            "webview_android": {
-              "version_added": "57"
-            },
             "chrome": {
               "version_added": "57"
             },
@@ -658,6 +648,9 @@
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "57"
             }
           },
           "status": {
@@ -667,13 +660,61 @@
           }
         }
       },
+      "resume": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/resume",
+          "support": {
+            "chrome": {
+              "version_added": "41"
+            },
+            "chrome_android": {
+              "version_added": "41"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "40"
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "suspend": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/suspend",
           "support": {
-            "webview_android": {
-              "version_added": "43"
-            },
             "chrome": {
               "version_added": "43"
             },
@@ -681,7 +722,7 @@
               "version_added": "43"
             },
             "edge": {
-              "version_added": null
+              "version_added": "14"
             },
             "edge_mobile": {
               "version_added": null
@@ -702,13 +743,16 @@
               "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
               "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "43"
             }
           },
           "status": {
