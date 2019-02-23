@@ -23,4 +23,4 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
   }
 }
 
-module.exports.testSchema = testSchema;
+module.exports = testSchema;
