@@ -319,31 +319,43 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/onupdatefound",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "40"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "40"
             },
-            "edge": {
-              "version_added": "17"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "16",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable service workers"
+                  }
+                ]
+              }
+            ],
             "edge_mobile": {
               "version_added": false
             },
             "firefox": {
-              "version_added": true
+              "version_added": "44",
+              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "27"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "27"
             },
             "safari": {
               "version_added": "11.1"
@@ -352,10 +364,10 @@
               "version_added": "11.1"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "40"
             }
           },
           "status": {
@@ -440,17 +452,29 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": {
-              "version_added": null
-            },
+            "edge": [
+              {
+                "version_added": "16",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable service workers"
+                  }
+                ]
+              },
+              {
+                "version_added": "17"
+              }
+            ],
             "edge_mobile": {
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "44",
+              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
