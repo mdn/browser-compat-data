@@ -7,6 +7,18 @@ browsers.forEach(browser => {
   stats[browser] = { all: 0, true: 0, null: 0, real: 0 }
 });
 
+const checkSupport = (supportData, type) => {
+ if (Array.isArray(supportData)) {
+  supportData.forEach(item => {
+    if (item.version_added === type || item.version_removed === type) {
+      return true;
+     }
+  });
+ } else if (supportData.version_added === type || supportData.version_removed === type) {
+  return true;
+ }
+}
+
 const processData = (data) => {
   if (data.support) {
     browsers.forEach(function(browser) {
@@ -18,12 +30,12 @@ const processData = (data) => {
         stats.total.null++;
         real_value = false;
       } else {
-        if (JSON.stringify(data.support[browser]).includes('null')) {
+        if (checkSupport(data.support[browser], null)) {
           stats[browser].null++;
           stats.total.null++;
           real_value = false;
         }
-        if (JSON.stringify(data.support[browser]).includes('true')) {
+        if (checkSupport(data.support[browser], true)) {
           stats[browser].true++;
           stats.total.true++;
           real_value = false;
