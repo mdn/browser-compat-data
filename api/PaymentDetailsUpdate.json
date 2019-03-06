@@ -18,21 +18,33 @@
           },
           "firefox": {
             "version_added": "55",
+            "notes": "Available only in nightly builds.",
             "flags": [
               {
                 "type": "preference",
                 "name": "dom.payments.request.enabled",
                 "value_to_set": "true"
+              },
+              {
+                "name": "dom.payments.request.supportedRegions",
+                "type": "preference",
+                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>."
               }
             ]
           },
           "firefox_android": {
             "version_added": "55",
+            "notes": "Available only in nightly builds.",
             "flags": [
               {
                 "type": "preference",
                 "name": "dom.payments.request.enabled",
                 "value_to_set": "true"
+              },
+              {
+                "name": "dom.payments.request.supportedRegions",
+                "type": "preference",
+                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>."
               }
             ]
           },
@@ -59,7 +71,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -82,6 +94,7 @@
             },
             "firefox": {
               "version_added": "55",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -92,6 +105,7 @@
             },
             "firefox_android": {
               "version_added": "55",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -123,7 +137,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -147,6 +161,7 @@
             },
             "firefox": {
               "version_added": "55",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -157,6 +172,7 @@
             },
             "firefox_android": {
               "version_added": "55",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -188,7 +204,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -212,6 +228,7 @@
             },
             "firefox": {
               "version_added": "55",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -222,6 +239,7 @@
             },
             "firefox_android": {
               "version_added": "55",
+              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -253,7 +271,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

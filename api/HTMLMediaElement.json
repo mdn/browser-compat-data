@@ -4,12 +4,24 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement",
         "support": {
-          "chrome": {
-            "version_added": true
-          },
-          "chrome_android": {
-            "version_added": true
-          },
+          "chrome": [
+            {
+              "version_added": "42"
+            },
+            {
+              "version_added": "26",
+              "prefix": "webkit"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "42"
+            },
+            {
+              "version_added": "32",
+              "prefix": "webkit"
+            }
+          ],
           "edge": {
             "version_added": true
           },
@@ -37,9 +49,15 @@
           "safari_ios": {
             "version_added": true
           },
-          "webview_android": {
-            "version_added": true
-          }
+          "webview_android": [
+            {
+              "version_added": "42"
+            },
+            {
+              "version_added": true,
+              "prefix": "webkit"
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -50,7 +68,62 @@
       "addTextTrack": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack",
-          "support": {},
+          "support": {
+            "chrome": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "26",
+                "prefix": "webkit"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "32",
+                "prefix": "webkit"
+              }
+            ],
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": true,
+                "prefix": "webkit"
+              }
+            ]
+          },
           "status": {
             "experimental": false,
             "standard_track": true,
@@ -62,8 +135,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/audioTracks",
           "support": {
-            "edge": {
+            "chrome": {
               "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -87,6 +166,24 @@
                   "value_to_set": "true"
                 }
               ]
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -101,13 +198,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/autoplay",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -122,19 +219,19 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -149,13 +246,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/buffered",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -176,13 +273,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -203,7 +300,7 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -224,7 +321,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -245,10 +342,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/captureStream",
           "support": {
             "chrome": {
-              "version_added": "53"
+              "version_added": "62"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": "62"
             },
             "edge": {
               "version_added": false
@@ -267,6 +364,12 @@
             "ie": {
               "version_added": false
             },
+            "opera": {
+              "version_added": "49"
+            },
+            "opera_android": {
+              "version_added": "49"
+            },
             "safari": {
               "version_added": false
             },
@@ -274,7 +377,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "53"
+              "version_added": "62"
             }
           },
           "status": {
@@ -288,6 +391,12 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controller",
           "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
               "version_added": false
             },
@@ -296,15 +405,29 @@
             },
             "firefox": {
               "version_added": false,
-              "notes": [
-                "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
-              ]
+              "notes": "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
             },
             "firefox_android": {
               "version_added": false,
-              "notes": [
-                "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
-              ]
+              "notes": "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -319,13 +442,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controls",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -346,13 +469,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -372,11 +495,23 @@
             "chrome_android": {
               "version_added": "58"
             },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
             "opera": {
               "version_added": "45"
             },
             "opera_android": {
               "version_added": "42"
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": "58"
@@ -394,13 +529,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "13"
             },
             "edge_mobile": {
               "version_added": true
@@ -428,13 +563,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "10"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -449,13 +584,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentSrc",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -476,13 +611,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -497,13 +632,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentTime",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -524,13 +659,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -545,13 +680,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -562,6 +697,9 @@
             "firefox_android": {
               "version_added": "14"
             },
+            "ie": {
+              "version_added": null
+            },
             "opera": {
               "version_added": true
             },
@@ -569,13 +707,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -590,13 +728,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultPlaybackRate",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -610,8 +748,14 @@
             "ie": {
               "version_added": "9"
             },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -674,13 +818,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/duration",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -701,13 +845,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -722,13 +866,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -749,13 +893,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -770,13 +914,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -797,13 +941,13 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "43"
             }
           },
           "status": {
@@ -817,6 +961,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
             "edge": {
               "version_added": false
             },
@@ -828,6 +975,15 @@
             },
             "firefox_android": {
               "version_added": "31"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -841,6 +997,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/initialTime",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
             "edge": {
               "version_added": false
             },
@@ -854,6 +1013,15 @@
             "firefox_android": {
               "version_added": "9",
               "version_removed": "23"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -895,7 +1063,7 @@
               "version_added": null
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -916,13 +1084,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loop",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -935,6 +1103,12 @@
             },
             "ie": {
               "version_added": "9"
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": true
@@ -951,6 +1125,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mediaGroup",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
             "edge": {
               "version_added": false
             },
@@ -959,15 +1136,20 @@
             },
             "firefox": {
               "version_added": false,
-              "notes": [
-                "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
-              ]
+              "notes": "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
             },
             "firefox_android": {
               "version_added": false,
-              "notes": [
-                "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
-              ]
+              "notes": "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -980,7 +1162,26 @@
       "mediaKeys": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mediaKeys",
-          "support": {},
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            }
+          },
           "status": {
             "experimental": false,
             "standard_track": true,
@@ -991,7 +1192,26 @@
       "mozAudioCaptured": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mozAudioCaptured",
-          "support": {},
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            }
+          },
           "status": {
             "experimental": false,
             "standard_track": false,
@@ -1002,7 +1222,26 @@
       "mozCaptureStreamUntilEnded": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mozCaptureStreamUntilEnded",
-          "support": {},
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            }
+          },
           "status": {
             "experimental": false,
             "standard_track": false,
@@ -1061,7 +1300,26 @@
       "mozFragmentEnd": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mozFragmentEnd",
-          "support": {},
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            }
+          },
           "status": {
             "experimental": false,
             "standard_track": false,
@@ -1268,13 +1526,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/muted",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1295,7 +1553,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1316,22 +1574,20 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/networkState",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
             },
             "firefox": {
               "version_added": "3.5",
-              "notes": [
-                "The <code>NETWORK_LOADED</code> state was removed to align with the HTML spec in Firefox 4."
-              ]
+              "notes": "The <code>NETWORK_LOADED</code> state was removed to align with the HTML spec in Firefox 4."
             },
             "firefox_android": {
               "version_added": true
@@ -1346,7 +1602,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1413,7 +1669,26 @@
       "onencrypted": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/onencrypted",
-          "support": {},
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            }
+          },
           "status": {
             "experimental": false,
             "standard_track": true,
@@ -1425,6 +1700,12 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/onmozinterruptbegin",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
             "firefox": {
               "version_added": true,
               "version_removed": "55"
@@ -1432,6 +1713,15 @@
             "firefox_android": {
               "version_added": true,
               "version_removed": "55"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -1445,6 +1735,12 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/onmozinterruptend",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
             "firefox": {
               "version_added": true,
               "version_removed": "55"
@@ -1452,6 +1748,15 @@
             "firefox_android": {
               "version_added": true,
               "version_removed": "55"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -1477,11 +1782,20 @@
             "edge_mobile": {
               "version_added": false
             },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
             "opera": {
               "version_added": "42"
             },
             "opera_android": {
               "version_added": "42"
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": "55"
@@ -1505,7 +1819,7 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1526,7 +1840,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1547,13 +1861,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/paused",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1574,7 +1888,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1601,7 +1915,7 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1622,7 +1936,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1643,13 +1957,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playbackRate",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1662,6 +1976,12 @@
             },
             "ie": {
               "version_added": "9"
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": true
@@ -1679,13 +1999,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1698,6 +2018,12 @@
             },
             "ie": {
               "version_added": "9"
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": true
@@ -1715,13 +2041,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preload",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1734,6 +2060,12 @@
             },
             "ie": {
               "version_added": "9"
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": true
@@ -1801,13 +2133,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1828,7 +2160,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1848,6 +2180,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekToNextFrame",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
             "edge": {
               "version_added": false
             },
@@ -1873,6 +2208,15 @@
                   "value_to_set": "true"
                 }
               ]
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -1887,13 +2231,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekable",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1906,6 +2250,12 @@
             },
             "ie": {
               "version_added": "9"
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": true
@@ -1923,13 +2273,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -1950,7 +2300,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -1969,7 +2319,26 @@
       "setMediaKeys": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys",
-          "support": {},
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            }
+          },
           "status": {
             "experimental": false,
             "standard_track": true,
@@ -1991,7 +2360,42 @@
               "version_added": "17"
             },
             "edge_mobile": {
-              "version_added": "17"
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "64",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.setsinkid.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": "64",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.setsinkid.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": "49"
@@ -2018,7 +2422,19 @@
               "version_added": "17"
             },
             "edge_mobile": {
-              "version_added": "17"
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": "49"
@@ -2036,13 +2452,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -2063,7 +2479,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
@@ -2094,7 +2510,7 @@
               "notes": "Currently only supports <code>MediaStream</code> objects."
             },
             "edge": {
-              "version_added": true,
+              "version_added": "12",
               "partial_implementation": true,
               "notes": "Currently only supports <code>MediaStream</code> objects."
             },
@@ -2127,6 +2543,9 @@
                 "prefix": "moz"
               }
             ],
+            "ie": {
+              "version_added": null
+            },
             "opera": {
               "version_added": "39",
               "partial_implementation": true,
@@ -2136,6 +2555,9 @@
               "version_added": "39",
               "partial_implementation": true,
               "notes": "Currently only supports <code>MediaStream</code> objects."
+            },
+            "safari": {
+              "version_added": null
             },
             "webview_android": {
               "version_added": "52",
@@ -2154,11 +2576,26 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
             "edge": {
-              "version_added": false
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": false
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -2172,8 +2609,11 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/videoTracks",
           "support": {
+            "chrome": {
+              "version_added": null
+            },
             "edge": {
-              "version_added": false
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -2197,6 +2637,15 @@
                   "value_to_set": "true"
                 }
               ]
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
             }
           },
           "status": {
@@ -2211,13 +2660,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "43"
             },
             "chrome_android": {
               "version_added": true
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "edge_mobile": {
               "version_added": true
@@ -2238,7 +2687,7 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
