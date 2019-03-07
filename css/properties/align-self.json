@@ -79,9 +79,38 @@
                   ]
                 }
               ],
-              "firefox_android": {
-                "version_added": true
-              },
+              "firefox_android": [
+                {
+                  "version_added": "20",
+                  "notes": "Before Firefox 27, only single-line flexbox is supported."
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "20",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.flexbox.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "48",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.prefixes.webkit",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": "11"
               },
@@ -138,10 +167,10 @@
                   "version_added": null
                 },
                 "firefox": {
-                  "version_added": true
+                  "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": null
+                  "version_added": "45"
                 },
                 "ie": {
                   "version_added": null
@@ -240,10 +269,10 @@
                   "version_added": null
                 },
                 "firefox": {
-                  "version_added": true
+                  "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": true
+                  "version_added": "45"
                 },
                 "ie": {
                   "version_added": null

@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path');
-const {browsers} = require('..');
+const browsers = require('..').browsers;
 const compareVersions = require('compare-versions');
 
 const validBrowserVersions = {};
@@ -80,4 +80,4 @@ function testVersions(dataFilename) {
   }
 }
 
-module.exports.testVersions = testVersions;
+module.exports = testVersions;
