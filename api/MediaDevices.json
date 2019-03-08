@@ -399,12 +399,17 @@
               "version_added": "36",
               "notes": [
                 "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API.",
-                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>."
+                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>.",
+                "Starting in Firefox 66, <code>getUserMedia()</code> can no longer be used in sandboxed <code>&lt;iframe&gt;</code>s or <code>data</code> URLs entered in the address bar by the user."
               ]
             },
             "firefox_android": {
               "version_added": "36",
-              "notes": "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+              "notes": [
+                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API.",
+                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>.",
+                "Starting in Firefox 66, <code>getUserMedia()</code> can no longer be used in sandboxed <code>&lt;iframe&gt;</code>s or <code>data</code> URLs entered in the address bar by the user."
+              ]
             },
             "ie": {
               "version_added": false
