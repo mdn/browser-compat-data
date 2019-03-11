@@ -2,6 +2,12 @@ const assert = require('assert');
 
 const bcd = require('..');
 
+function lookup(dottedFeature) {
+  const x = dottedFeature.split('.');
+  const feature = x.reduce((prev, current) => prev[current], bcd);
+  return feature;
+}
+
 function testToken(feature, matches, misses) {
   const str = feature.__compat.matches.regex_token || feature.__compat.matches.regex_value;
   const regexp = new RegExp(str);
@@ -13,7 +19,7 @@ function testToken(feature, matches, misses) {
 const tests = [
   {
     features: [
-      bcd.css.properties.color.alpha_hexadecimal_notation
+      'css.properties.color.alpha_hexadecimal_notation'
     ],
     matches: [
       '#003399ff',
@@ -28,7 +34,7 @@ const tests = [
   },
   {
     features: [
-      css.properties['transform-origin'].three_value_syntax
+      'css.properties.transform-origin.three_value_syntax'
     ],
     matches: [
       '2px 30% 10px',  // length, percentage, length
@@ -44,5 +50,5 @@ const tests = [
 ];
 
 tests.forEach(({features, matches, misses}) => {
-  features.forEach(feature => testToken(feature, matches, misses));
+  features.forEach(feature => testToken(lookup(feature), matches, misses));
 });
