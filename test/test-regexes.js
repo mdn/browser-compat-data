@@ -3,7 +3,9 @@ const assert = require('assert');
 const bcd = require('..');
 
 function testToken(feature, matches, misses) {
-  const regexp = new RegExp(feature.__compat.matches.regex_token);
+  const str = feature.__compat.matches.regex_token || feature.__compat.matches.regex_value;
+  const regexp = new RegExp(str);
+
   matches.forEach(match => assert.ok(regexp.test(match), `${regexp} did not match ${match}`));
   misses.forEach(miss => assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`));
 }
@@ -22,6 +24,21 @@ const tests = [
       '#0af',
       'green',
       '#greenish',
+    ]
+  },
+  {
+    features: [
+      css.properties['transform-origin'].three_value_syntax
+    ],
+    matches: [
+      '2px 30% 10px',  // length, percentage, length
+      'right bottom -2cm',  // two keywords and length
+      'calc(50px - 25%) 2px 1px'  // lengths with calc
+    ],
+    misses: [
+      'center',  // one value syntax
+      'left 5px',  // two value syntax
+      'left calc(10px - 50%)'  // two value syntax with calc
     ]
   }
 ];
