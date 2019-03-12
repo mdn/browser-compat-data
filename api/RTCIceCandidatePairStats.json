@@ -5,10 +5,10 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidatePairStats",
         "support": {
           "chrome": {
-            "version_added": null
+            "version_added": true
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": true
           },
           "edge": {
             "version_added": null
@@ -411,12 +411,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidatePairStats/currentRoundTripTime",
           "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "currentRtt"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "currentRtt"
+              }
+            ],
             "edge": {
               "version_added": null
             },
@@ -1329,12 +1341,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidatePairStats/totalRoundTripTime",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "totalRtt"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "totalRtt"
+              }
+            ],
             "edge": {
               "version_added": null
             },
