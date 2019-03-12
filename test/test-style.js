@@ -163,6 +163,14 @@ function testStyle(filename) {
     console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
   }
 
+  let relativeUrlMatch = actual.match(String.raw`<a href='(?!www\.|(?:http)s?:\/\/|[A-Za-z]:\\|\/\/)(.*)'>`);
+  if (relativeUrlMatch) {
+    hasErrors = true;
+    console.error(
+      '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org%s\x1b[0m', relativeUrlMatch[1], relativeUrlMatch[1]
+    );
+  }
+
   return hasErrors;
 }
 
