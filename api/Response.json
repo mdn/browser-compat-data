@@ -38,21 +38,54 @@
           "edge_mobile": {
             "version_added": true
           },
-          "firefox": {
-            "version_added": "39"
-          },
+          "firefox": [
+            {
+              "version_added": "39"
+            },
+            {
+              "version_added": "34",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.fetch.enabled"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
             "version_added": true
           },
           "ie": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "29"
-          },
-          "opera_android": {
-            "version_added": "29"
-          },
+          "opera": [
+            {
+              "version_added": "29"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "29"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -1162,7 +1195,7 @@
               "version_added": null
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": null
