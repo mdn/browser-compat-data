@@ -8,18 +8,10 @@ browsers.forEach(browser => {
 });
 
 const checkSupport = (supportData, type) => {
-  let foundType = false;
-  if (Array.isArray(supportData)) {
-    supportData.forEach(item => {
-      // if 'type' occurs once in the array, mark it as found
-      if (item.version_added === type || item.version_removed === type) {
-        foundType = true;
-      }
-    });
-  } else {
-    foundType = (supportData.version_added === type || supportData.version_removed === type);
+  if (!Array.isArray(supportData)) {
+    supportData = [supportData];
   }
-  return foundType;
+  return supportData.some(item => item.version_added === type || item.version_removed === type)
 };
 
 const processData = (data) => {
@@ -54,7 +46,7 @@ const processData = (data) => {
 
 const iterateData = (data) => {
   for (let key in data) {
-    if (key == '__compat') {
+    if (key === '__compat') {
       processData(data[key]);
     } else {
       iterateData(data[key]);
