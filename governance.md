@@ -1,0 +1,137 @@
+# Governance
+
+[mdn-browser-compat-data](https://github.com/mdn/browser-compat-data) (also often referred to as "BCD") is an open source project that depends on contributions from the community. Anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the mdn-browser-compat-data project.
+
+## Roles and Responsibilities
+
+### Everyone
+Everyone who is involved in any form with the project must abide by the project’s [Contribution Guidelines](https://github.com/mdn/browser-compat-data/blob/master/CODE_OF_CONDUCT.md). Everyone is expected to be respectful of every community member and to work collaboratively in the spirit of inclusion.
+
+### Users
+Users are community members who have a need for the project. They are typically consumers of the compat data. Anyone can be a User; there are no special requirements and the data is licensed under [CC0](https://github.com/mdn/browser-compat-data/blob/master/LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
+
+Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#Contributors), as described in the next section.
+
+### Contributors
+Contributors are community members who contribute in concrete ways to the project, most often in the form of data updates, code and/or documentation. Anyone can become a Contributor, and contributions can take many forms. There is no expectation of commitment to the project, no specific skill requirements, and no selection process.
+
+Contributors have read-only access to source code and therefore can submit changes via pull requests. Contributor pull requests have their contribution reviewed and merged by a [Peer](#Peers) or [Owner](#Owners). Owners and Peers work with Contributors to review their code and prepare it for merging.
+
+Contributors may also review pull requests. This can be helpful, but their approval or disapproval is not decisive for merging or not merging PRs.
+
+As Contributors gain experience and familiarity with the project, their profile within, and commitment to, the community will increase. At some stage, they may find themselves being nominated for committership by an existing Peer or Owner.
+
+### Peers
+Peers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Peers are given push/write access to the project’s GitHub repos.
+
+Peers:
+
+- Are expected to work on public branches of their forks and submit pull requests to the master branch.
+- Must submit pull requests for all their changes.
+- May label and close issues.
+- May merge compat data update pull requests only.
+- Have their non-data update work reviewed by [Owners](#Owners) before acceptance into the repository. Non-data pull requests are PRs that change the schema, update project meta-docs, the linter. or other infrastructure changes.
+- Should ask for super-review from other Peers or Owners on PRs that are disruptive or controversial.
+
+To become a Peer:
+
+- One must have shown a willingness and ability to participate in the project as a team player. Typically, a potential Peer will need to show that they have an understanding of and alignment with the project, its objectives, and its strategy.
+- Have contributed a significant amount of work to the project (e.g. in the form of PRs or PR reviews), thereby demonstrating their trustworthiness and commitment to the project.
+
+New Peers can be nominated by any existing Peers. Once they have been nominated, there will be a vote by the Owners.
+
+It is important to recognize that being a Peer is a privilege, not a right. That privilege must be earned and once earned it can be removed by the Owners. However, under normal circumstances committership exists for as long as the Peer wishes to continue engaging with the project. Inactive Peers might be marked as inactive or removed by the Owners and may re-enter when they choose to contribute again.
+
+#### List of peers
+- Rachel Andrew (@rachelandrew)
+- Daniel Beck (@ddbeck)
+- Ryan Johnson (@escattone), Mozilla
+- Jean-Yves Perrier (@teoli2003), Mozilla
+- Eric Shepherd (@a2sheppy), Mozilla
+- Irene Smith (@irenesmith), Mozilla
+- Estelle Weyl (@estelle), Mozilla
+- John Whitlock (@jwhitlock), Mozilla
+
+Some Peers are also [MDN Content Curators](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Documentation_topics_and_curators) and have thus earned the privilege to be a mdn-browser-compat-data peer, so that their expertise in a given content area (like CSS or HTML, etc.) can help improve the compat data for that same content area. Such peers are marked in the relevant folders using GitHub’s Code Owner mechanism.
+
+Peers might also be representatives of browser vendors and have expertise and/or access to browser-specific information within their company. Their company name is listed in the peer list.
+
+A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
+
+### Owners
+The mdn-browser-compat-data project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-owners). They are collectively responsible for high-level guidance of the project.
+
+The [Owner group](#list-of-owners) has final authority over this project including:
+
+- Technical direction of the project, especially infrastructure PRs and linting and/or schema decisions.
+- Project governance and process (including this policy).
+- Contribution policy.
+- GitHub repository hosting.
+
+Being an Owner is not time-limited. There is no fixed size of the Owner group. The Owner group should be of such a size as to ensure adequate coverage of important areas of expertise balanced with the ability to make decisions efficiently.
+An Owner may be removed from the Owner group by voluntary resignation, or by a standard Owner group motion.
+
+Changes to the Owner group should be posted in the agenda, and may be suggested as any other agenda item (see [Project Meetings](#project-meetings) below).
+
+Owners have additional responsibilities over and above those of a Peer. These responsibilities ensure the smooth running of the project. Owners are expected to review code contributions, approve changes to this document, manage the copyrights within the project outputs, and participate in the project discussions and meetings.
+
+Owners fulfill all requirements of Peers, and also:
+
+- Manage and merge non-data pull requests. Such as schema, linter or infrastructure changes.
+- May merge their own pull requests once they have collected the feedback they deem necessary. (No pull request should be merged without at least one peer or owner comment stating they’ve looked at the PR.)
+- Release a new npm version of the project and a regular (weekly) basis.
+
+To become an Owner one must fulfill at least the following items and commit to being a part of the community for the long-term.
+
+- Work in a helpful and collaborative way with the MDN community.
+- Have given good feedback on others’ submissions and displayed an overall understanding of the code quality standards for the project.
+- Ability to drive the project forward, manage requirements from users, and taking on responsibility for the overall health of the project.
+
+An individual is invited to become an Owner by existing Owners. A nomination will result in discussion and then a decision by the Owner group.
+
+#### List of Owners
+- Florian Scholz (@Elchi3), Mozilla, BCD project lead
+- Will Bamberg (@wbamberg), Mozilla
+- Chris David Mills (@chrisdavidmills), Mozilla
+- Kadir Topal (@atopal), Mozilla
+
+The owners are also listed as top-level owners in GitHub’s code owner file.
+
+## Project Meetings
+There are no recurrent project meetings, they are scheduled when required, at a time that works for the owners, and using tools that enable participation by the community. The meeting is run by a designated moderator approved by the owners group.
+Items are added to the agenda which are considered contentious or are modifications of governance, contribution policy, owner membership, or release process.
+
+The intention of the agenda is not to approve or review all patches. That should happen continuously on GitHub and be handled by the larger group of Peers. The exception to this is when defining how the schema should look like (or when proposing an update), there is not an initial agreement in the GitHub discussion, and action needs to be taken.
+
+Any community member or Peer can ask that something be added to the next meeting’s agenda by logging a GitHub Issue. Peers can add the item to the agenda by adding the “meeting agenda” tag to the issue and Contributors can ask Peers to add the label for them.
+
+Prior to each project meeting, the moderator will share the agenda with the owners. Owners can add any items they like to the agenda at the beginning of each meeting. The moderator and the owners cannot veto or remove items.
+
+The Owners may invite persons or representatives from certain projects to participate in a non-voting capacity.
+
+The moderator is responsible for summarizing the discussion of each agenda item and adding it to the repository's wiki after the meeting.
+
+### Consensus Seeking Process
+Owners follow a [Consensus-seeking decision-making](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) model.
+
+When an agenda item has appeared to reach a consensus, the moderator will ask “Does anyone object?” as a final call for dissent from the consensus.
+
+If an agenda item cannot reach a consensus, an owner  can call for either a closing vote or a vote to table the issue to the next meeting. The call for a vote must be approved by a majority of the owners or else the discussion will continue. Simple majority wins.
+
+## Privileges and responsibilities matrix
+
+| Privilege / responsibility | Everyone / Users | Contributors | Peers | Owners |
+| --- | --- | --- | --- | --- |
+| Abide to Code of Conduct | • | • | • | • |
+| Evangelize the project | • | • | • | • |
+| Make use of the data, fork it, repackage it, etc. | • | • | • | • |
+| Open pull requests or issues |  | • | • | • |
+| Review pull requests or comment on issues |  | • | • | • |
+| Label issues and PRs |  |  | • | • |
+| Merge compat data PRs |  |  | • | • |
+| Merge schema, linter, infrastructure or policy changes |  |  |  | • |
+| Release new npm package versions |  |  |  | • |
+| Merge to branches directly (without pull requests)  |  |  |  | • |
+
+## Credits
+This work is a derivative of [ESLint Governance](https://github.com/eslint/eslint.github.io/blob/master/docs/maintainer-guide/governance.md), [YUI Contributor Model](https://github.com/yui/yui3/wiki/Contributor-Model), and the [JS Foundation TAC Charter](https://github.com/JSFoundation/TAC).
