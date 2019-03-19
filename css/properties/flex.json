@@ -81,6 +81,46 @@
                 ]
               }
             ],
+            "firefox_android": [
+              {
+                "version_added": "20",
+                "notes": [
+                  "Since Firefox 28, multi-line flexbox is supported.",
+                  "Before Firefox 32, Firefox wasn't able to animate values starting or stopping at <code>0</code>."
+                ]
+              },
+              {
+                "version_added": "20",
+                "version_removed": "61",
+                "notes": "Flex items that are sized according to their content are sized using <a href='https://drafts.csswg.org/css-sizing-3/#column-sizing'>fit-content, not max-content</a>."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "49"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "44",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.prefixes.webkit",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "18",
+                "version_removed": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.flexbox.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11",
