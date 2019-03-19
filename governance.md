@@ -79,7 +79,7 @@ Owners fulfill all requirements of Peers, and also:
 
 - Manage and merge non-data pull requests. Such as schema, linter or infrastructure changes.
 - May merge their own pull requests once they have collected the feedback they deem necessary. (No pull request should be merged without at least one peer or owner comment stating they’ve looked at the PR.)
-- Release a new npm version of the project and a regular (weekly) basis.
+- Release a new npm version of the project on a regular (weekly) basis.
 
 To become an Owner one must fulfill at least the following items and commit to being a part of the community for the long-term.
 
