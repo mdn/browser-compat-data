@@ -28,34 +28,20 @@
           "edge_mobile": {
             "version_added": "12"
           },
-          "firefox": [
-            {
-              "version_added": "19",
-              "notes": [
-                "Firefox had a bug whereby single quotes contained in URLs are escaped when accessed via URL APIs (see <a href='https://bugzil.la/1386683'>bug 1386683</a>). This has been fixed as of Firefox 57.",
-                "To use it from chrome code, JSM and Bootstrap scope, you have to import it with <code>Cu.importGlobalProperties(['URL']);</code>."
-              ]
-            },
-            {
-              "version_added": "4",
-              "version_removed": "18",
-              "notes": "This interface was supported with the non-standard <code>nsIDOMMozURLProperty</code> internal type. However this didn't make any difference in practice, as the only way to access such an object was through <code>window.URL</code>."
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "19",
-              "notes": [
-                "Firefox had a bug whereby single quotes contained in URLs are escaped when accessed via URL APIs (see <a href='https://bugzil.la/1386683'>bug 1386683</a>). This has been fixed as of Firefox 57.",
-                "To use it from chrome code, JSM and Bootstrap scope, you have to import it with <code>Cu.importGlobalProperties(['URL']);</code>."
-              ]
-            },
-            {
-              "version_added": "14",
-              "version_removed": "18",
-              "notes": "This interface was supported with the non-standard <code>nsIDOMMozURLProperty</code> internal type. However this didn't make any difference in practice, as the only way to access such an object was through <code>window.URL</code>."
-            }
-          ],
+          "firefox": {
+            "version_added": "19",
+            "notes": [
+              "Before version 57, Firefox had a bug whereby single quotes contained in URLs are escaped when accessed via URL APIs (see <a href='https://bugzil.la/1386683'>bug 1386683</a>).",
+              "To use it from chrome code, JSM and Bootstrap scope, you have to import it with <code>Cu.importGlobalProperties(['URL']);</code>."
+            ]
+          },
+          "firefox_android": {
+            "version_added": "19",
+            "notes": [
+              "Before version 57, Firefox had a bug whereby single quotes contained in URLs are escaped when accessed via URL APIs (see <a href='https://bugzil.la/1386683'>bug 1386683</a>).",
+              "To use it from chrome code, JSM and Bootstrap scope, you have to import it with <code>Cu.importGlobalProperties(['URL']);</code>."
+            ]
+          },
           "ie": {
             "version_added": null
           },
@@ -96,7 +82,7 @@
             }
           ],
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": true
           },
           "webview_android": [
             {
@@ -154,7 +140,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -184,11 +170,11 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "4",
+              "version_added": "19",
               "notes": "<code>createObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
             },
             "firefox_android": {
-              "version_added": "4",
+              "version_added": "19",
               "notes": "<code>createObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
             },
             "ie": {
@@ -207,10 +193,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
@@ -256,11 +242,11 @@
               },
               "safari": {
                 "version_added": null,
-                "notes": "See <a href='https://bugs.webkit.org/show_bug.cgi?id=167518'>here</a> for progress on deprecation."
+                "notes": "See <a href='https://webkit.org/b/167518'>here</a> for progress on deprecation."
               },
               "safari_ios": {
                 "version_added": null,
-                "notes": "See <a href='https://bugs.webkit.org/show_bug.cgi?id=167518'>here</a> for progress on deprecation."
+                "notes": "See <a href='https://webkit.org/b/167518'>here</a> for progress on deprecation."
               },
               "samsunginternet_android": {
                 "version_added": null
@@ -300,7 +286,7 @@
               "version_added": "22"
             },
             "ie": {
-              "version_added": true
+              "version_added": null
             },
             "opera": {
               "version_added": true
@@ -312,10 +298,10 @@
               "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -357,16 +343,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -408,16 +394,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -459,16 +445,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -492,21 +478,14 @@
               "version_added": "52"
             },
             "edge": {
-              "version_added": "12",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "12"
             },
             "edge_mobile": {
-              "version_added": "12",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "12"
             },
             "firefox": [
               {
                 "version_added": "26"
-              },
-              {
-                "version_added": "26",
-                "version_removed": "44",
-                "notes": "This property was on the <code>URLUtils</code> mixin. It has been moved either to the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
               },
               {
                 "version_added": "26",
@@ -520,11 +499,6 @@
               },
               {
                 "version_added": "26",
-                "version_removed": "44",
-                "notes": "This property was on the <code>URLUtils</code> mixin. It has been moved either to the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface."
-              },
-              {
-                "version_added": "26",
                 "version_removed": "49",
                 "notes": "Results for <code>URL</code> using the <code>blob</code> scheme incorrectly returned <code>null</code>."
               }
@@ -533,23 +507,19 @@
               "version_added": null
             },
             "opera": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "safari": {
-              "version_added": "10",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "52"
@@ -573,12 +543,10 @@
               "version_added": "52"
             },
             "edge": {
-              "version_added": "12",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "12"
             },
             "edge_mobile": {
-              "version_added": "12",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "26"
@@ -590,23 +558,19 @@
               "version_added": null
             },
             "opera": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "safari": {
-              "version_added": "10",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "52"
@@ -662,16 +626,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -713,16 +677,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -764,16 +728,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -803,11 +767,11 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "4",
+              "version_added": "19",
               "notes": "<code>revokeObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
             },
             "firefox_android": {
-              "version_added": "4",
+              "version_added": "19",
               "notes": "<code>revokeObjectURL()</code> is no longer available within the context of a <code>ServiceWorker</code>."
             },
             "ie": {
@@ -826,10 +790,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
-              "version_added": null
+              "version_added": true
             }
           },
           "status": {
@@ -888,10 +852,10 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -921,10 +885,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "52"
+              "version_added": "29"
             },
             "firefox_android": {
-              "version_added": "52"
+              "version_added": "29"
             },
             "ie": {
               "version_added": false
@@ -933,16 +897,16 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "51"
@@ -960,10 +924,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/toJSON",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "71"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "71"
             },
             "edge": {
               "version_added": "17"
@@ -978,25 +942,76 @@
               "version_added": "54"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
+              "version_added": "71"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "toString": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/toString",
+          "support": {
+            "chrome": {
+              "version_added": "52"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "edge_mobile": {
               "version_added": null
+            },
+            "firefox": {
+              "version_added": "54"
+            },
+            "firefox_android": {
+              "version_added": "54"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "52"
             }
           },
           "status": {
@@ -1017,12 +1032,10 @@
               "version_added": "52"
             },
             "edge": {
-              "version_added": "12",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "12"
             },
             "edge_mobile": {
-              "version_added": "12",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "26"
@@ -1034,23 +1047,19 @@
               "version_added": null
             },
             "opera": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "safari": {
-              "version_added": "10",
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true,
-              "notes": "Defined in another interface but available to use from <code>URL</code>."
+              "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "52"

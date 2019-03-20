@@ -2,6 +2,47 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Return a new "support_block" object whose first-level properties
+ * (browser names) have been ordered according to Array.prototype.sort,
+ * and so will be stringified in that order as well. This relies on
+ * guaranteed "own" property ordering, which is insertion order for
+ * non-integer keys (which is our case).
+ *
+ * @param {string} key The key in the object
+ * @param {*} value The value of the key
+ *
+ * @returns {*} The new value
+ */
+function orderSupportBlock(key, value) {
+  if (key === '__compat') {
+    value.support = Object.keys(value.support).sort().reduce((result, key) => {
+      result[key] = value.support[key];
+      return result;
+    }, {});
+  }
+  return value;
+}
+
+function escapeInvisibles(str) {
+  const invisibles = [
+    ['\b', '\\b'],
+    ['\f', '\\f'],
+    ['\n', '\\n'],
+    ['\r', '\\r'],
+    ['\v', '\\v'],
+    ['\t', '\\t'],
+    ['\0', '\\0'],
+  ];
+  let finalString = str;
+
+  invisibles.forEach(([invisible, replacement]) => {
+    finalString = finalString.replace(invisible, replacement);
+  });
+
+  return finalString;
+}
+
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
   var expectedLines = expected.split(/\n/);
@@ -10,8 +51,8 @@ function jsonDiff(actual, expected) {
     if (actualLines[i] !== expectedLines[i]) {
       return [
         '#' + (i + 1) + '\x1b[0m',
-        '    Actual:   ' + actualLines[i],
-        '    Expected: ' + expectedLines[i]
+        '    Actual:   ' + escapeInvisibles(actualLines[i]),
+        '    Expected: ' + escapeInvisibles(expectedLines[i]),
       ].join('\n');
     }
   }
@@ -32,6 +73,13 @@ function testStyle(filename) {
     hasErrors = true;
     console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
+  }
+
+  let expectedSorting = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
+  if (actual !== expectedSorting) {
+    hasErrors = true;
+    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
+    console.error('\x1b[31m  Browser name sorting – Error on line ' + jsonDiff(actual, expectedSorting));
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
@@ -83,6 +131,14 @@ function testStyle(filename) {
       crbugMatch[1]);
   }
 
+  const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
+  if (webkitMatch) {
+    // use https://webkit.org/b/100000 instead
+    hasErrors = true;
+    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m', webkitMatch[0],
+      webkitMatch[1]);
+  }
+
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
@@ -110,4 +166,4 @@ function testStyle(filename) {
   return hasErrors;
 }
 
-module.exports.testStyle = testStyle;
+module.exports = testStyle;

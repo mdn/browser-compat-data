@@ -25,9 +25,7 @@
           "ie": {
             "version_added": "8",
             "partial_implementation": true,
-            "notes": [
-              "Only functions when developer tools are opened. Otherwise, the 'console' object is undefined."
-            ]
+            "notes": "Only functions when developer tools are opened. Otherwise, the 'console' object is undefined."
           },
           "opera": {
             "version_added": "10.1"
@@ -291,6 +289,107 @@
           }
         }
       },
+      "debug": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/debug",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "4"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "substitution_strings": {
+          "__compat": {
+            "description": "Substitution strings",
+            "support": {
+              "chrome": {
+                "version_added": true,
+                "notes": "In version 28, if a negative value is passed to <code>%d</code>, it will be rounded down to the closest negative integer. For example, -0.1 becomes -1."
+              },
+              "chrome_android": {
+                "version_added": null
+              },
+              "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "9"
+              },
+              "firefox_android": {
+                "version_added": "9"
+              },
+              "ie": {
+                "version_added": "10",
+                "notes": [
+                  "<code>%c</code> is not supported.",
+                  "<code>%d</code> outputs a 0 if the specified value isn't a number."
+                ]
+              },
+              "opera": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": null
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
       "dir": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/dir",
@@ -458,9 +557,7 @@
               },
               "ie": {
                 "version_added": "10",
-                "notes": [
-                  "%c is not supported, %d will render as 0 when it is not a number"
-                ]
+                "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "opera": {
                 "version_added": null
@@ -489,7 +586,7 @@
       "exception": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/exception",
-          "description": "Alias for Console.error",
+          "description": "<code>exception</code> (an alias for <code>error</code>)",
           "support": {
             "chrome": {
               "version_added": false
@@ -539,7 +636,7 @@
             "description": "Substitution strings",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": false
               },
               "chrome_android": {
                 "version_added": false
@@ -588,7 +685,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/group",
           "support": {
             "chrome": {
-              "version_added": "2"
+              "version_added": "4"
             },
             "chrome_android": {
               "version_added": null
@@ -684,7 +781,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/groupEnd",
           "support": {
             "chrome": {
-              "version_added": "2"
+              "version_added": "4"
             },
             "chrome_android": {
               "version_added": null
@@ -757,9 +854,7 @@
             },
             "safari": {
               "version_added": true,
-              "notes": [
-                "No information icon"
-              ]
+              "notes": "No information icon"
             },
             "safari_ios": {
               "version_added": null
@@ -801,9 +896,7 @@
               },
               "ie": {
                 "version_added": "10",
-                "notes": [
-                  "%c is not supported, %d will render as 0 when it is not a number"
-                ]
+                "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "opera": {
                 "version_added": null
@@ -882,9 +975,7 @@
             "support": {
               "chrome": {
                 "version_added": true,
-                "notes": [
-                  "In version 28, if a negative value is passed to %d, it will be rounded down to the closest negative integer, so -0.1 becomes -1."
-                ]
+                "notes": "In version 28, if a negative value is passed to %d, it will be rounded down to the closest negative integer, so -0.1 becomes -1."
               },
               "chrome_android": {
                 "version_added": null
@@ -903,9 +994,7 @@
               },
               "ie": {
                 "version_added": "10",
-                "notes": [
-                  "%c is not supported, %d will render as 0 when it is not a number"
-                ]
+                "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "opera": {
                 "version_added": null
@@ -1080,7 +1169,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/time",
           "support": {
             "chrome": {
-              "version_added": "2"
+              "version_added": "4"
             },
             "chrome_android": {
               "version_added": null
@@ -1128,7 +1217,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/timeEnd",
           "support": {
             "chrome": {
-              "version_added": "2"
+              "version_added": "4"
             },
             "chrome_android": {
               "version_added": null
@@ -1202,7 +1291,7 @@
             },
             "safari": {
               "version_added": false,
-              "notes": "See <a href='https://bugs.webkit.org/show_bug.cgi?id=186833'>bug 186833</a>."
+              "notes": "See <a href='https://webkit.org/b/186833'>bug 186833</a>."
             },
             "safari_ios": {
               "version_added": false
@@ -1388,9 +1477,7 @@
               },
               "ie": {
                 "version_added": "10",
-                "notes": [
-                  "%c is not supported, %d will render as 0 when it is not a number"
-                ]
+                "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "opera": {
                 "version_added": null

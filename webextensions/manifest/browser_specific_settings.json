@@ -1,24 +1,24 @@
 {
   "webextensions": {
     "manifest": {
-      "applications": {
+      "browser_specific_settings": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/applications",
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings",
           "support": {
             "chrome": {
               "version_added": false
             },
             "edge": {
-              "version_added": "15",
-              "alternative_name": "browser_specific_settings"
+              "version_added": "15"
             },
             "firefox": [
               {
                 "version_added": "48"
               },
               {
-                "version_added": "48",
-                "alternative_name": "browser_specific_settings"
+                "version_added": "42",
+                "alternative_name": "applications",
+                "notes": "Mandatory before Firefox 48."
               }
             ],
             "firefox_android": [
@@ -26,8 +26,9 @@
                 "version_added": "48"
               },
               {
-                "version_added": "48",
-                "alternative_name": "browser_specific_settings"
+                "version_added": "42",
+                "alternative_name": "applications",
+                "notes": "Mandatory before Firefox 48."
               }
             ],
             "opera": {

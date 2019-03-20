@@ -4,6 +4,7 @@
       "Atomics": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-atomics-object",
           "support": {
             "chrome": [
               {
@@ -21,7 +22,8 @@
               "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
             },
             "edge": {
-              "version_added": false,
+              "version_added": "16",
+              "version_removed": "17",
               "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
             },
             "edge_mobile": {
@@ -87,7 +89,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "8.10.0"
             },
             "opera": {
               "version_added": false
@@ -120,6 +122,7 @@
         "add": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/add",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.add",
             "support": {
               "chrome": [
                 {
@@ -138,6 +141,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -237,6 +241,7 @@
         "and": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/and",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.and",
             "support": {
               "chrome": [
                 {
@@ -255,6 +260,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -354,6 +360,7 @@
         "compareExchange": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.compareexchange",
             "support": {
               "chrome": [
                 {
@@ -372,6 +379,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -471,6 +479,7 @@
         "exchange": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/exchange",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.exchange",
             "support": {
               "chrome": [
                 {
@@ -489,6 +498,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -588,6 +598,7 @@
         "isLockFree": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/isLockFree",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.islockfree",
             "support": {
               "chrome": [
                 {
@@ -606,6 +617,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -705,6 +717,7 @@
         "load": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/load",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.load",
             "support": {
               "chrome": [
                 {
@@ -723,6 +736,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -822,6 +836,7 @@
         "notify": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/notify",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.notify",
             "support": {
               "chrome": [
                 {
@@ -841,7 +856,7 @@
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
               "edge": {
-                "version_added": "16",
+                "version_added": false,
                 "alternative_name": "wake",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
@@ -995,6 +1010,7 @@
         "or": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/or",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.or",
             "support": {
               "chrome": [
                 {
@@ -1013,6 +1029,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -1112,6 +1129,7 @@
         "store": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/store",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.store",
             "support": {
               "chrome": [
                 {
@@ -1130,6 +1148,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -1229,6 +1248,7 @@
         "sub": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/sub",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.sub",
             "support": {
               "chrome": [
                 {
@@ -1247,6 +1267,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -1346,6 +1367,7 @@
         "wait": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.wait",
             "support": {
               "chrome": [
                 {
@@ -1364,6 +1386,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
@@ -1489,6 +1512,7 @@
         "xor": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/xor",
+            "spec_url": "https://tc39.github.io/ecma262/#sec-atomics.xor",
             "support": {
               "chrome": [
                 {
@@ -1507,6 +1531,7 @@
               },
               "edge": {
                 "version_added": "16",
+                "version_removed": "17",
                 "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
               },
               "edge_mobile": {
