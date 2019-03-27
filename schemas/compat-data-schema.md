@@ -131,6 +131,9 @@ A string containing a human-readable description of the feature.
 It is intended to be used as a caption or title and should be kept short.
 The `<code>` and `<a>` HTML elements can be used.
 
+* An optional `matches` property to __help match the feature to source code__ ([see below](#the-matches-object))
+An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
+
 * An optional `status` property for __status information__.
 An object containing information about the stability of the feature:
 Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
@@ -371,6 +374,33 @@ Example:
 }
 ```
 The `<code>` and `<a>` HTML elements can be used.
+
+### The `matches` object
+
+A `matches` object contains hints to help automatically detect whether source code corresponds to a feature, such as a list of keywords or a regular expression. A `matches` object may have one of the following properties (in order of preference):
+
+* `keywords`: an array of one or more literal strings that correspond to the feature.
+
+  Examples:
+
+  - In CSS selector features, they can be literal selectors. See [`css.selectors.backdrop`](../css/selectors/backdrop.json)).
+  - In CSS property subfeatures, they can be data type keywords or function keywords. See [`css.properties.transform.3d`](../css/properties/transform.json)).
+
+* `regex_token`: a string containing a regular expression that matches a single token (i.e., text delimited by characters that are excluded from the text to be matched) corresponding to the feature.
+
+  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
+
+  Examples:
+
+  - In CSS property subfeatures, they can be regular expressions that match component value types. See [`css.properties.color.alpha_hexadecimal_notation`](../css/properties/color.json) and corresponding tests.
+
+* `regex_value`: a string containing a regular expression that matches a complete value corresponding to the feature.
+
+  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
+
+  Examples:
+
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
 
 ### Status information
 The status property contains information about stability of the feature. It is
