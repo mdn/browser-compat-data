@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -161,6 +162,18 @@ function testStyle(filename) {
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
     console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
+  }
+
+  const regexp = new RegExp("<a href='([^'>]+)'>((?:.(?!\<\/a\>))*.)</a>", 'g');
+  let match = regexp.exec(actual);
+  if (match) {
+    var a_url = url.parse(match[1]);
+    if (a_url.hostname === null) {
+      hasErrors = true;
+      console.error(
+        '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m', match[1], match[1]
+      );
+    }
   }
 
   return hasErrors;
