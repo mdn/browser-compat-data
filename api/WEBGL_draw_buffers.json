@@ -33,9 +33,23 @@
               "version_added": "28"
             }
           ],
-          "firefox_android": {
-            "version_added": null
-          },
+          "firefox_android": [
+            {
+              "prefix": "MOZ_",
+              "version_added": true,
+              "version_removed": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "webgl.enable-draft-extensions",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            {
+              "version_added": "28"
+            }
+          ],
           "ie": {
             "version_added": null
           },
@@ -97,9 +111,23 @@
                 "version_added": "28"
               }
             ],
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox_android": [
+              {
+                "prefix": "MOZ_",
+                "version_added": true,
+                "version_removed": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "webgl.enable-draft-extensions",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "28"
+              }
+            ],
             "ie": {
               "version_added": null
             },
