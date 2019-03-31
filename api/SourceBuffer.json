@@ -331,21 +331,60 @@
             "ie": {
               "version_added": null
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "56",
+                "version_removed": "57",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "MediaSourceExperimental",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "56",
+                "version_removed": "57",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "MediaSourceExperimental",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": null
             },
             "safari_ios": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": null
-            }
+            "webview_android": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "70",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "MediaSourceExperimental",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ]
           },
           "status": {
             "experimental": false,

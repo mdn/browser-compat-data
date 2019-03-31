@@ -41,7 +41,7 @@
             "version_added": "25"
           },
           "opera_android": {
-            "version_added": null
+            "version_added": "25"
           },
           "safari": {
             "version_added": "10.1"
@@ -50,7 +50,7 @@
             "version_added": "10.1"
           },
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": true
           },
           "webview_android": {
             "version_added": "38"
@@ -91,7 +91,7 @@
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"
@@ -100,7 +100,7 @@
               "version_added": "10.1"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "38"
@@ -184,18 +184,34 @@
             "opera": {
               "version_added": "25"
             },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "40",
+                "notes": "Does not accept parameters. Supports only <code>utf-8</code> encoding."
+              },
+              {
+                "version_added": "25",
+                "version_removed": "40",
+                "notes": "Throws <code>RangeError</code> exception for unknown encoding types."
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
             "safari_ios": {
               "version_added": "10.1"
             },
-            "samsunginternet_android": {
-              "version_added": null
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": true,
+                "notes": "Does not accept parameters. Supports only <code>utf-8</code> encoding."
+              },
+              {
+                "version_added": true,
+                "version_removed": true,
+                "notes": "Throws <code>RangeError</code> exception for unknown encoding types."
+              }
+            ],
             "webview_android": {
               "version_added": "38"
             }
@@ -248,7 +264,7 @@
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"
@@ -257,7 +273,7 @@
               "version_added": "10.1"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "38"
@@ -311,7 +327,7 @@
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"
@@ -320,7 +336,7 @@
               "version_added": "10.1"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "38"

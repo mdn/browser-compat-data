@@ -134,7 +134,8 @@
               "notes": "Since Opera 11.10, the browser returns <code>true</code> when 'Work Offline' mode is disabled and <code>false</code> when it is enabled, regardless of actual connectivity."
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Earlier versions of Opera incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, Mac: 14, Opera OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='http://crbug.com/7469'>crbug.com/7469</a>."
             },
             "safari": {
               "version_added": "5"
