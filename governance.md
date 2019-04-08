@@ -36,7 +36,8 @@ Peers:
 
 To become a Peer one must:
 
-- Have shown a willingness and ability to participate in the project as a team player. Typically, a potential Peer will need to show that they have an understanding of and alignment with the project, its objectives, and its strategy.
+- Have shown a willingness and ability to participate in the project in a helpful and collaborative way with the MDN community.
+- Typically, a potential Peer will need to show that they have an understanding of and alignment with the project, its objectives, and its strategy.
 - Have contributed a significant amount of work to the project (e.g. in the form of PRs or PR reviews), thereby demonstrating their trustworthiness and commitment to the project.
 - Read and agree to abide by the [Mozilla Commit Access Requirements](https://www.mozilla.org/en-US/about/governance/policies/commit/requirements/).
 - File an issue in the [mdn/mdn](https://github.com/mdn/mdn) repository and record “I have read, and agree to abide by, the Mozilla Commit Access Requirements.”
@@ -106,6 +107,19 @@ Peers might also be representatives of browser vendors and have expertise and/or
 ## Owner-delegate rule
 Owners may, at their discretion, nominate an owner-delegate to carry out a task or make a decision ordinarily carried out by an Owner. Delegation should be limited in duration or scope, or both; delegation may be withdrawn by any Owner at any time. For example, an Owner may nominate an owner-delegate to approve an infrastructure PR or to publish npm packages for a set time or number of releases.
 
+## Decision Making
+Decision making generally follows a [Consensus-seeking decision-making](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) model.
+
+When an agenda item has appeared to reach a consensus, the moderator will ask “Does anyone object?” as a final call for dissent from the consensus.
+
+If an agenda item cannot reach a consensus, an owner can call for either a closing vote or a vote to table the issue to the next meeting. The call for a vote must be approved by a majority of the owners or else the discussion will continue. Simple majority wins.
+
+## Licensing
+
+Please note that this project is made available using the
+[CC0 license](https://github.com/mdn/browser-compat-data/blob/master/LICENSE),
+so anyone contributing should only submit data if they know they have the right to submit it under CC0. If you're not sure about that, just ask.
+
 ## Project Meetings
 There are no recurrent project meetings; they are scheduled when required at a time that works for the owners, and using tools that enable participation by the community. The meeting is run by a designated moderator approved by the owners group.
 Meetings will typically be held when there are particularly important items to review, such as  modifications of governance, contribution policy, owner membership, or release process.
@@ -119,13 +133,6 @@ Prior to each project meeting, the moderator will share the agenda with the owne
 The Owners may invite persons or representatives from certain projects to participate in a non-voting capacity.
 
 The moderator is responsible for summarizing the discussion of each agenda item and adding it to the [repository's wiki](https://github.com/mdn/browser-compat-data/wiki/Project-meetings) after the meeting.
-
-### Consensus Seeking Process
-Meetings follow a [Consensus-seeking decision-making](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) model.
-
-When an agenda item has appeared to reach a consensus, the moderator will ask “Does anyone object?” as a final call for dissent from the consensus.
-
-If an agenda item cannot reach a consensus, an owner can call for either a closing vote or a vote to table the issue to the next meeting. The call for a vote must be approved by a majority of the owners or else the discussion will continue. Simple majority wins.
 
 ## Privileges and responsibilities matrix
 
