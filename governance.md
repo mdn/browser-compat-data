@@ -53,7 +53,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Eric Shepherd (@a2sheppy), Mozilla
 - Irene Smith (@irenesmith), Mozilla
 - Estelle Weyl (@estelle), Mozilla
-- John Whitlock (@jwhitlock), Mozilla
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
@@ -111,13 +110,13 @@ Items are added to the agenda which are considered contentious or are modificati
 
 The intention of the agenda is not to approve or review all patches. That should happen continuously on GitHub and be handled by the larger group of Peers. The exception to this is when defining how the schema should look (or when proposing an update), or when a PR discussion has stalled due to disagreement or inaction, and progress needs to be unblocked.
 
-Any community member or Peer can ask that something be added to the next meeting’s agenda by logging a GitHub Issue. Peers can add the item to the agenda by adding the “meeting agenda” tag to the issue and Contributors can ask Peers to add the label for them.
+Any community member or Peer can ask that something be added to the next meeting’s agenda by logging a GitHub Issue. Peers can add the item to the agenda by adding the [meeting-agenda](https://github.com/mdn/browser-compat-data/labels/meeting-agenda) label to the issue and Contributors can ask Peers to add the label for them.
 
 Prior to each project meeting, the moderator will share the agenda with the owners. Owners can add any items they like to the agenda at the beginning of each meeting. The moderator and the owners cannot veto or remove items.
 
 The Owners may invite persons or representatives from certain projects to participate in a non-voting capacity.
 
-The moderator is responsible for summarizing the discussion of each agenda item and adding it to the repository's wiki after the meeting.
+The moderator is responsible for summarizing the discussion of each agenda item and adding it to the [repository's wiki](https://github.com/mdn/browser-compat-data/wiki/Project-meetings) after the meeting.
 
 ### Consensus Seeking Process
 Meetings follow a [Consensus-seeking decision-making](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) model.
