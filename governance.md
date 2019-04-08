@@ -1,11 +1,11 @@
 # Governance
 
-[mdn-browser-compat-data](https://github.com/mdn/browser-compat-data) (also often referred to as "BCD") is an open source project that depends on contributions from the community. Anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the mdn-browser-compat-data project.
+[mdn-browser-compat-data](https://github.com/mdn/browser-compat-data) (also often referred to as "BCD") is an open source project that depends on contributions from the community. As long as they abide by the project’s Contribution Guidelines, anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the mdn-browser-compat-data project and how decisions are made.
 
 ## Roles and Responsibilities
 
-### Everyone
-Everyone who is involved in any form with the project must abide by the project’s [Contribution Guidelines](https://github.com/mdn/browser-compat-data/blob/master/CODE_OF_CONDUCT.md). Everyone is expected to be respectful of fellow community members and to work collaboratively in the spirit of inclusion.
+### Community members
+_Everyone_ who is involved in any form with the project must abide by the project’s [Contribution Guidelines](https://github.com/mdn/browser-compat-data/blob/master/CODE_OF_CONDUCT.md) and Commit Access Guidelines. Everyone is expected to be respectful of fellow community members and to work collaboratively respective of the Code of Conduct (CPG). Consequences for not adhering to these Guidelines are listed in their respective documents.
 
 ### Users
 Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](https://github.com/mdn/browser-compat-data#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](https://github.com/mdn/browser-compat-data/blob/master/LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
@@ -13,7 +13,7 @@ Users are community members who have a need for the project. They are typically 
 Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#Contributors), as described in the next section.
 
 ### Contributors
-Contributors are community members who contribute in concrete ways to the project, most often in the form of data updates, code and/or documentation. Anyone can become a Contributor, and contributions can take many forms. There is no expectation of commitment to the project, no specific skill requirements, and no selection process.
+Contributors are community members who contribute in concrete ways to the project, most often in the form of data updates, code and/or documentation. Anyone can become a Contributor, and contributions can take many forms. There is no expectation of commitment to the project, no specific skill requirements, and no selection process. We do expect contributors to follow Mozilla’s Contribution Guidelines.
 
 Contributors:
 - Have read-only access to source code and therefore can submit changes via pull requests.
@@ -45,7 +45,7 @@ New Peers can be nominated by any existing Peers. Once they have been nominated,
 
 It is important to recognize that being a Peer is a privilege, not a right. That privilege must be earned and once earned it can be removed by the Owners. However, under normal circumstances the Peer status exists for as long as the Peer wishes to continue engaging with the project. Inactive Peers (no activity on the project for longer for a few months or more) might be marked as inactive or removed by the Owners and may re-enter when they choose to contribute again.
 
-#### List of peers
+#### List of current peers
 - Rachel Andrew (@rachelandrew)
 - Daniel Beck (@ddbeck)
 - Ryan Johnson (@escattone), Mozilla
@@ -62,19 +62,21 @@ The mdn-browser-compat-data project is jointly governed by the [Mozilla MDN staf
 The [Owner group](#list-of-owners) has final authority over this project including:
 
 - Technical direction of the project, especially infrastructure PRs and linting and/or schema decisions.
-- Project governance and process (including this policy).
+- Project governance and process (including this policy and any updates).
 - Contribution policy.
 - GitHub repository hosting.
+- Confirming Peers.
 
 Being an Owner is not time-limited. There is no fixed size of the Owner group. The Owner group should be of such a size as to ensure adequate coverage of important areas of expertise balanced with the ability to make decisions efficiently.
-An Owner may be removed from the Owner group by voluntary resignation, or by a standard Owner group motion.
+An Owner may be removed from the Owner group by voluntary resignation, or by a standard Owner group motion, including for violations of Contribution and/or Commit Access Guidelines.
 
 Changes to the Owner group should be posted in the agenda, and may be suggested as any other agenda item (see [Project Meetings](#project-meetings) below).
 
-Owners have additional responsibilities over and above those of a Peer. These responsibilities ensure the smooth running of the project. Owners are expected to review code contributions, approve changes to this document, manage the copyrights within the project outputs, and participate in the project discussions and meetings.
-
 Owners fulfill all requirements of Peers, and also:
 
+- Ensure the smooth running of the project.
+- Review code contributions, approve changes to this document, manage the copyrights within the project outputs.
+- Participate in the project discussions and meetings.
 - Manage and merge non-data pull requests such as schema, linter, or infrastructure changes.
 - May merge their own pull requests once they have collected the feedback they deem necessary. (No pull request should be merged without at least one peer or owner comment stating they’ve looked at the PR.)
 - Release a new npm version of the project on a regular (weekly) basis.
@@ -87,7 +89,7 @@ To become an Owner one must fulfill at least the following conditions and commit
 
 An individual is invited to become an Owner by existing Owners. A nomination will result in discussion and then a decision by the Owner group.
 
-#### List of Owners
+#### List of current Owners
 - Florian Scholz (@Elchi3), Mozilla, BCD project lead
 - Will Bamberg (@wbamberg), Mozilla
 - Chris David Mills (@chrisdavidmills), Mozilla
@@ -106,11 +108,11 @@ Owners may, at their discretion, nominate an owner-delegate to carry out a task 
 
 ## Project Meetings
 There are no recurrent project meetings; they are scheduled when required at a time that works for the owners, and using tools that enable participation by the community. The meeting is run by a designated moderator approved by the owners group.
-Items are added to the agenda which are considered contentious or are modifications of governance, contribution policy, owner membership, or release process.
-
-The intention of the agenda is not to approve or review all patches. That should happen continuously on GitHub and be handled by the larger group of Peers. The exception to this is when defining how the schema should look (or when proposing an update), or when a PR discussion has stalled due to disagreement or inaction, and progress needs to be unblocked.
+Meetings will typically be held when there are particularly important items to review, such as  modifications of governance, contribution policy, owner membership, or release process.
 
 Any community member or Peer can ask that something be added to the next meeting’s agenda by logging a GitHub Issue. Peers can add the item to the agenda by adding the [meeting-agenda](https://github.com/mdn/browser-compat-data/labels/meeting-agenda) label to the issue and Contributors can ask Peers to add the label for them.
+
+The intention of the agenda is not to approve or review all patches. That should happen continuously on GitHub and be handled by the larger group of Peers. The exception to this is when defining how the schema should look (or when proposing an update), or when a PR discussion has stalled due to disagreement or inaction, and progress needs to be unblocked.
 
 Prior to each project meeting, the moderator will share the agenda with the owners. Owners can add any items they like to the agenda at the beginning of each meeting. The moderator and the owners cannot veto or remove items.
 
