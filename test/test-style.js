@@ -44,6 +44,11 @@ function escapeInvisibles(str) {
   return finalString;
 }
 
+/**
+ * @param {string} actual
+ * @param {string} expected
+ * @return {string}
+ */
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
   var expectedLines = expected.split(/\n/);
@@ -59,6 +64,9 @@ function jsonDiff(actual, expected) {
   }
 }
 
+/**
+ * @param {string} filename
+ */
 function testStyle(filename) {
   let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
