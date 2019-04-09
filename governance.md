@@ -50,6 +50,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Rachel Andrew (@rachelandrew)
 - Daniel Beck (@ddbeck)
 - Ryan Johnson (@escattone), Mozilla
+- Joe Medley (@jpmedley), Google
 - Jean-Yves Perrier (@teoli2003), Mozilla
 - Eric Shepherd (@a2sheppy), Mozilla
 - Irene Smith (@irenesmith), Mozilla
