@@ -58,9 +58,9 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
 ### Owners
-The mdn-browser-compat-data project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-owners). They are collectively responsible for high-level guidance of the project.
+The mdn-browser-compat-data project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
 
-The [Owner group](#list-of-owners) has final authority over this project including:
+The [Owner group](#list-of-current-owners) has final authority over this project including:
 
 - Technical direction of the project, especially infrastructure PRs and linting and/or schema decisions.
 - Project governance and process (including this policy and any updates).
