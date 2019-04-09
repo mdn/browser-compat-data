@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
-const browsers = require('..').browsers;
 const compareVersions = require('compare-versions');
+const browsers = require('../browsers');
 
 const validBrowserVersions = {};
 for (const browser of Object.keys(browsers)) {
