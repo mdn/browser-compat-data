@@ -49,6 +49,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 #### List of current peers
 - Rachel Andrew (@rachelandrew)
 - Daniel Beck (@ddbeck)
+- Vinyl Darkscratch (@vinyldarkscratch)
 - Ryan Johnson (@escattone), Mozilla
 - Joe Medley (@jpmedley), Google
 - Jean-Yves Perrier (@teoli2003), Mozilla
