@@ -185,10 +185,6 @@ function writeFlagsNote(supportData, browserId) {
     output += `${flagText} preference${valueToSet}. ${prefSettings}`;
   }
 
-  if (supportData.flag.type === 'compile_flag') {
-    output += `${flagText} compile flag${valueToSet}.`;
-  }
-
   return output;
 }
 
