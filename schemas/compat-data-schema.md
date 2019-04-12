@@ -102,7 +102,27 @@ Worker support for a given feature in `api/` should be in a subfeature titled `w
 }
 ```
 
-A feature in `api/` that requires a secure context (HTTPS) should be in a subfeature titled `secure_context_required`. It should also have the description `Secure context required`.
+A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "ImageData": {
+        "__compat": {
+          "description": "<code>ImageData()</code> constructor",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+#### Secure Context Required
+
+A feature that requires HTTPS should contain a subfeature titled `secure_context_required`, which describes how different browsers handle the secure context requirement. This new subfeature should also have the description `Secure context required`.
 
 ```json
 {
@@ -120,17 +140,27 @@ A feature in `api/` that requires a secure context (HTTPS) should be in a subfea
 }
 ```
 
-A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
+For example, if the `ImageData` feature requires a secure context from version 60 in Chrome, version 55 in Firefox, and not at all in Safari, we could represent that as follows:
 
 ```json
 {
   "api": {
     "ImageData": {
       "__compat": {},
-      "ImageData": {
+      "secure_context_required": {
         "__compat": {
-          "description": "<code>ImageData()</code> constructor",
-          "support": {}
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "60"
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            }
+          }
         }
       }
     }
