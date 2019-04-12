@@ -473,7 +473,14 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": true,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ],
+              "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Opera</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
             },
             "safari": {
               "version_added": false
