@@ -102,6 +102,24 @@ Worker support for a given feature in `api/` should be in a subfeature titled `w
 }
 ```
 
+A feature in `api/` that requires a secure context (HTTPS) should be in a subfeature titled `secure_context_required`. It should also have the description `Secure context required`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
 A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
 
 ```json
