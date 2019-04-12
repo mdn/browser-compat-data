@@ -120,7 +120,7 @@ A constructor for a given feature in `api/` should have the same name as the par
 }
 ```
 
-#### Secure Context Required
+#### Secure context required
 
 A feature that requires HTTPS should contain a subfeature titled `secure_context_required`, which describes how different browsers handle the secure context requirement. This new subfeature should also have the description `Secure context required`.
 
