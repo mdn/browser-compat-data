@@ -305,7 +305,6 @@ array will have one item, but there are cases where two or more flags can be req
 An object in the `flags` array consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
   * `preference` a flag the user can set (like in `about:config` in Firefox).
-  * `compile_flag` a flag to be set before compiling the browser.
   * `runtime_flag` a flag to be set before starting the browser.
 * `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
 * `value_to_set` (optional): representing the actual value to set the flag to.

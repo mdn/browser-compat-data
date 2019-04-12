@@ -919,8 +919,8 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null,
-              "notes": "Before IE 10, the value of XMLHttpRequest.responseText could be read only once the request was complete."
+              "version_added": true,
+              "notes": "Before IE 10, the value of <code>XMLHttpRequest.responseText</code> could be read only once the request was complete."
             },
             "opera": {
               "version_added": true
@@ -1249,7 +1249,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -1875,9 +1875,15 @@
                 "version_removed": "16"
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "16"
+              }
+            ],
             "safari": {
               "version_added": true
             },
@@ -1975,7 +1981,7 @@
             },
             "ie": {
               "version_added": "10",
-              "notes": "Internet Explorer versions 8 and 9 supported cross-domain requests (CORS) using <a href='https://msdn.microsoft.com/en-us/library/cc288060%28VS.85%29.aspx'>XDomainRequest</a>"
+              "notes": "Internet Explorer versions 8 and 9 supported cross-domain requests (CORS) using <a href='https://developer.mozilla.org/docs/Web/API/XDomainRequest'><code>XDomainRequest</code></a>."
             },
             "opera": {
               "version_added": "12"
