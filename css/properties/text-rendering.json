@@ -13,7 +13,11 @@
               ]
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "18",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "Initial versions had bugs on Windows and Linux that broke <a href='http://crbug.com/114719'>font substitition</a>, <a href='http://crbug.com/51973'>small-caps</a>, <a href='http://crbug.com/55458'>letter-spacing</a> or caused <a href='http://crbug.com/149548'>text to overlap</a>."
+              ]
             },
             "edge": {
               "version_added": false
@@ -69,7 +73,8 @@
                 "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true,
+                "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "edge": {
                 "version_added": null
@@ -123,7 +128,8 @@
                 "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "18",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "edge": {
                 "version_added": null
