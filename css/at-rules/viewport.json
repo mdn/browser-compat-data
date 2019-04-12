@@ -75,9 +75,26 @@
                 "version_removed": "15"
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "16",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--enable-experimental-webkit-features"
+                  },
+                  {
+                    "type": "runtime_flag",
+                    "name": "--enable-viewport"
+                  }
+                ]
+              },
+              {
+                "prefix": "-o-",
+                "version_added": "11.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
               "version_added": false,
               "notes": "See WebKit <a href='https://webkit.org/b/95959'>bug 95959</a>."
@@ -450,9 +467,15 @@
                   "version_removed": "15"
                 }
               ],
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": [
+                {
+                  "version_added": "16"
+                },
+                {
+                  "version_added": "11.1",
+                  "version_removed": "14"
+                }
+              ],
               "safari": {
                 "version_added": false
               },
@@ -559,8 +582,9 @@
                 "version_added": false
               },
               "opera_android": {
-                "prefix": "-o-",
-                "version_added": "8"
+                "version_added": "11",
+                "version_removed": "14",
+                "prefix": "-o-"
               },
               "safari": {
                 "version_added": false
@@ -770,7 +794,7 @@
                 "version_added": "16"
               },
               "opera_android": {
-                "version_added": "37"
+                "version_added": "16"
               },
               "safari": {
                 "version_added": false
