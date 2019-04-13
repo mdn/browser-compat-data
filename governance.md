@@ -96,8 +96,6 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 - Chris David Mills (@chrisdavidmills), Mozilla
 - Kadir Topal (@atopal), Mozilla
 
-The owners are also listed as top-level owners in GitHub’s code owner file.
-
 ## Additional paths to becoming a Peer or Owner
 
 Some Owners or Peers are also [MDN Content Curators](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Documentation_topics_and_curators) and have thus earned the privilege to be a mdn-browser-compat-data Peer, so that their expertise in a given content area (CSS, HTML, etc.) can help improve the compat data for that same content area. Such Peers are marked in the relevant folders using GitHub’s Code Owner mechanism.
