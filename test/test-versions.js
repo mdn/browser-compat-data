@@ -23,6 +23,9 @@ for (const browser of Object.keys(browsers)) {
  */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === 'string') {
+    if (version.startsWith('<=')) {
+      version = version.substring(2);
+    }
     return validBrowserVersions[browserIdentifier].includes(version);
   } else {
     return true;
