@@ -265,12 +265,14 @@ entirely unknown. Examples:
  "version_added": "3.5"
 }
 ```
-* Supported, but version unknown:
+* Supported, but earliest version unknown:
+  The version in the version range is the version at the time of commit.
 ```json
 {
-  "version_added": true
+  "version_added": "<=60"
 }
 ```
+  It’s also possible to use `true`, but this is deprecated in favour of version ranges.
 * No support:
 ```json
 {
