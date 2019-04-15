@@ -1,7 +1,12 @@
 'use strict';
 const path = require('path');
 const compareVersions = require('compare-versions');
-/** @typedef {import('../types')} bcd */
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../types').SupportBlock} SupportBlock
+ * @typedef {import('../types').VersionValue} VersionValue
+ */
 const browsers = require('..').browsers;
 
 /** @type {Object<string, string[]>} */
@@ -12,7 +17,7 @@ for (const browser of Object.keys(browsers)) {
 
 /**
  * @param {string} browserIdentifier
- * @param {bcd.VersionValue} version
+ * @param {VersionValue} version
  */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === "string") {
@@ -30,13 +35,13 @@ function testVersions(dataFilename) {
   let hasErrors = false;
 
   /**
-   * @param {bcd.SupportBlock} supportData
+   * @param {SupportBlock} supportData
    */
   function checkVersions(supportData) {
     const browsersToCheck = Object.keys(supportData);
     for (const browser of browsersToCheck) {
       if (validBrowserVersions[browser]) {
-        /** @type {bcd.SimpleSupportStatement[]} */
+        /** @type {SimpleSupportStatement[]} */
         const supportStatements = [];
         if (Array.isArray(supportData[browser])) {
           Array.prototype.push.apply(supportStatements, supportData[browser]);
@@ -71,7 +76,7 @@ function testVersions(dataFilename) {
   }
 
   /**
-   * @param {bcd.Identifier} data
+   * @param {Identifier} data
    */
   function findSupport(data) {
     for (const prop in data) {
