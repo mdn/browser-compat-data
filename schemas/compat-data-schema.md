@@ -120,6 +120,54 @@ A constructor for a given feature in `api/` should have the same name as the par
 }
 ```
 
+#### Secure context required
+
+A feature that requires HTTPS should contain a subfeature titled `secure_context_required`, which describes how different browsers handle the secure context requirement. This new subfeature should also have the description `Secure context required`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+For example, if the `ImageData` feature requires a secure context from version 60 in Chrome, version 55 in Firefox, and not at all in Safari, we could represent that as follows:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "60"
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### The `__compat` object
 The `__compat` object consists of the following:
 
