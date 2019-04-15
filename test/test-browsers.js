@@ -76,8 +76,10 @@ function testBrowsers(filename) {
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   const data = require(filename);
 
-  if (!category || category === "test") {
+  if (!category) {
     console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
+    return false;
+  } else if (category === "test") {
     return false;
   }
 
