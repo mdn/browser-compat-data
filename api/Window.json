@@ -1303,14 +1303,26 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": "6",
-              "notes": "Firefox 3.6 supported <code>mozOrientation</code> versus the standard <code>deviceOorientation</code> event."
-            },
-            "firefox_android": {
-              "version_added": "6",
-              "notes": "Firefox 4 supported <code>mozOrientation</code> versus the standard <code>deviceOorientation</code> event."
-            },
+            "firefox": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": "3.6",
+                "version_removed": "6",
+                "alternative_name": "mozOrientation"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "6",
+                "alternative_name": "mozOrientation"
+              }
+            ],
             "ie": {
               "version_added": null
             },
