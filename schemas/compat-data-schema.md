@@ -198,8 +198,8 @@ information about versions, prefixes, or alternate names, as well as notes.
 The currently accepted browser identifiers should be declared in alphabetical order:
 * `chrome`, Google Chrome (on desktops)
 * `chrome_android`, Google Chrome (on Android)
-* `edge`, MS Edge (on Windows)
-* `edge_mobile`, MS Edge, the mobile version
+* `edge`, MS Edge (on Windows), based on the EdgeHTML version
+* `edge_mobile`, MS Edge, the mobile version, based on the EdgeHTML version
 * `firefox`, Mozilla Firefox (on desktops)
 * `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 * `ie`, Microsoft Internet Explorer (discontinued)
@@ -208,7 +208,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 * `opera_android`, the Opera browser (Android version)
 * `qq_android`, the QQ browser (Android version)
 * `safari`, Safari on macOS
-* `safari_ios`, Safari on iOS
+* `safari_ios`, Safari on iOS, based on the iOS version
 * `samsunginternet_android`, the Samsung Internet browser (Android version)
 * `uc_android`, UC Browser (Android version)
 * `uc_chinese_android`, UC Browser (Chinese Android version)
