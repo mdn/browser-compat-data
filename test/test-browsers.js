@@ -1,10 +1,6 @@
 'use strict';
 const path = require('path');
 
-/**
- * @typedef {import('../types').Identifier} Identifier
- */
-
 /** @type {Record<string, string[]>} */
 const browsers = {
   desktop: [
@@ -42,7 +38,7 @@ const browsers = {
 };
 
 /**
- * @param {Identifier} data
+ * @param {*} data
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
@@ -78,7 +74,6 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
 function testBrowsers(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
-  /** @type {Identifier} */
   const data = require(filename);
 
   if (!category || category === "test") {
