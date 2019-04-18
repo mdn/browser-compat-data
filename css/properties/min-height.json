@@ -70,12 +70,24 @@
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "66"
-              },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": "3",
+                  "prefix": "-moz-"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": true,
+                  "prefix": "-moz-"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -83,7 +95,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": {
                 "version_added": true
@@ -121,12 +133,24 @@
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "66"
-              },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": "3",
+                  "prefix": "-moz-"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": true,
+                  "prefix": "-moz-"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -134,7 +158,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": {
                 "version_added": true
@@ -204,7 +228,7 @@
               },
               "webview_android": {
                 "alternative_name": "-webkit-fill-available",
-                "version_added": "37"
+                "version_added": "4.4"
               }
             },
             "status": {
@@ -237,7 +261,9 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "prefix": "-moz-",
+                "version_added": "3",
+                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "firefox_android": {
                 "version_added": false
@@ -249,7 +275,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": [
                 {

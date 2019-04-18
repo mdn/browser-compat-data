@@ -1,8 +1,6 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
-export as namespace bcd;
-
 /**
  * The names of the known browsers.
  */
@@ -160,10 +158,9 @@ export interface SimpleSupportStatement {
     /**
      * An enum that indicates the flag type:
      * - `preference` a flag the user can set (like in `about:config` in Firefox).
-     * - `compile_flag` a flag to be set before compiling the browser.
      * - `runtime_flag` a flag to be set before starting the browser.
      */
-    type: 'preference' | 'compile_flag' | 'runtime_flag';
+    type: 'preference' | 'runtime_flag';
 
     /**
      * A `string` representing the flag or preference to modify.
@@ -241,6 +238,8 @@ export interface CompatStatement {
    */
   mdn_url?: string;
 
+  matches?: MatchesBlock;
+
   /**
    * Each `__compat` object contains support information.
    *
@@ -261,6 +260,12 @@ export interface CompatStatement {
 export interface SupportBlock
   extends Partial<Record<BrowserNames, SupportStatement>>,
     Partial<Record<string, SupportStatement>> {}
+
+export interface MatchesBlock {
+  keywords?: string[];
+  regex_token?: string;
+  regex_value?: string;
+}
 
 /**
  * The status property contains information about stability of the feature.
