@@ -199,7 +199,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 * `chrome`, Google Chrome (on desktops)
 * `chrome_android`, Google Chrome (on Android)
 * `edge`, MS Edge (on Windows), based on the EdgeHTML version
-* `edge_mobile`, MS Edge, the mobile version, based on the EdgeHTML version
+* `edge_mobile`, MS Edge, the Windows Mobile version, based on the EdgeHTML version
 * `firefox`, Mozilla Firefox (on desktops)
 * `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 * `ie`, Microsoft Internet Explorer (discontinued)
