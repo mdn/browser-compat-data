@@ -44,6 +44,11 @@ function escapeInvisibles(str) {
   return finalString;
 }
 
+/**
+ * @param {string} actual
+ * @param {string} expected
+ * @return {string}
+ */
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
   var expectedLines = expected.split(/\n/);
@@ -59,6 +64,9 @@ function jsonDiff(actual, expected) {
   }
 }
 
+/**
+ * @param {string} filename
+ */
 function testStyle(filename) {
   let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -93,19 +101,27 @@ function testStyle(filename) {
 
   {
     // Bugzil.la links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the begin of notes/sentences).
-    const regexp = new RegExp("(....)<a href='(https?)://bugzil.la/(\\d+)'>(.*?)</a>", 'g');
+    const regexp = new RegExp(String.raw`(....)<a href='(https?)://(bugzil\.la|crbug\.com|webkit\.org/b)/(\d+)'>(.*?)</a>`, 'g');
+    /** @type {RegExpExecArray} */
     let match;
     do {
       match = regexp.exec(actual);
       if (match) {
-        const before = match[1];
-        const protocol = match[2];
-        const bugId = match[3];
-        const linkText = match[4];
+        const [,
+          before,
+          protocol,
+          domain,
+          bugId,
+          linkText,
+        ] = match;
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Use HTTPS URL (http://bugzil.la/${bugId} → https://bugzil.la/${bugId}).\x1b[0m`);
+          console.error(`\x1b[33m  Style – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
+        }
+
+        if (domain !== 'bugzil.la') {
+          continue;
         }
 
         if (/^bug $/.test(before)) {
