@@ -1,13 +1,31 @@
 const assert = require('assert');
 
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ *
+ * @typedef {object} TestCase
+ * @property {string[]} features
+ * @property {string[]} matches
+ * @property {string[]} misses
+ */
+
+/** @type {Identifier} */
 const bcd = require('..');
 
+/**
+ * @param {string} dottedFeature
+ */
 function lookup(dottedFeature) {
   const x = dottedFeature.split('.');
   const feature = x.reduce((prev, current) => prev[current], bcd);
   return feature;
 }
 
+/**
+ * @param {Identifier} feature
+ * @param {string[]} matches
+ * @param {string[]} misses
+ */
 function testToken(feature, matches, misses) {
   const str = feature.__compat.matches.regex_token || feature.__compat.matches.regex_value;
   const regexp = new RegExp(str);
@@ -16,6 +34,7 @@ function testToken(feature, matches, misses) {
   misses.forEach(miss => assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`));
 }
 
+/** @type {TestCase[]} */
 const tests = [
   {
     features: [

@@ -1,8 +1,6 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
-export as namespace bcd;
-
 /**
  * The names of the known browsers.
  */
@@ -240,6 +238,8 @@ export interface CompatStatement {
    */
   mdn_url?: string;
 
+  matches?: MatchesBlock;
+
   /**
    * Each `__compat` object contains support information.
    *
@@ -260,6 +260,12 @@ export interface CompatStatement {
 export interface SupportBlock
   extends Partial<Record<BrowserNames, SupportStatement>>,
     Partial<Record<string, SupportStatement>> {}
+
+export interface MatchesBlock {
+  keywords?: string[];
+  regex_token?: string;
+  regex_value?: string;
+}
 
 /**
  * The status property contains information about stability of the feature.

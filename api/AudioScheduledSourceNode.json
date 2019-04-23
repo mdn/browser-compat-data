@@ -10,7 +10,7 @@
             },
             {
               "version_added": "14",
-              "version_removed": "56",
+              "version_removed": "57",
               "alternative_name": "AudioSourceNode"
             }
           ],
@@ -20,7 +20,7 @@
             },
             {
               "version_added": "18",
-              "version_removed": "56",
+              "version_removed": "57",
               "alternative_name": "AudioSourceNode"
             }
           ],
@@ -36,7 +36,7 @@
             },
             {
               "version_added": "25",
-              "version_removed": "52",
+              "version_removed": "53",
               "alternative_name": "AudioSourceNode"
             }
           ],
@@ -46,7 +46,7 @@
             },
             {
               "version_added": "25",
-              "version_removed": "52",
+              "version_removed": "53",
               "alternative_name": "AudioSourceNode"
             }
           ],
@@ -59,17 +59,17 @@
             },
             {
               "version_added": "15",
-              "version_removed": "43",
+              "version_removed": "44",
               "alternative_name": "AudioSourceNode"
             }
           ],
           "opera_android": [
             {
-              "version_added": "43"
+              "version_added": "44"
             },
             {
               "version_added": "14",
-              "version_removed": "43",
+              "version_removed": "44",
               "alternative_name": "AudioSourceNode"
             }
           ],
@@ -88,7 +88,7 @@
             },
             {
               "version_added": true,
-              "version_removed": "56",
+              "version_removed": "57",
               "alternative_name": "AudioSourceNode"
             }
           ]
@@ -99,9 +99,10 @@
           "deprecated": false
         }
       },
-      "onended": {
+      "ended_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/onended",
+          "description": "<code>ended</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event",
           "support": {
             "chrome": [
               {
@@ -109,8 +110,8 @@
               },
               {
                 "version_added": "14",
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ],
             "chrome_android": [
@@ -119,8 +120,8 @@
               },
               {
                 "version_added": "18",
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ],
             "edge": {
@@ -138,12 +139,26 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -159,8 +174,94 @@
               },
               {
                 "version_added": true,
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onended": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/onended",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "53"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": true,
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ]
           },
@@ -181,8 +282,8 @@
               },
               {
                 "version_added": "14",
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ],
             "chrome_android": [
@@ -191,8 +292,8 @@
               },
               {
                 "version_added": "18",
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ],
             "edge": {
@@ -210,12 +311,26 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -231,8 +346,8 @@
               },
               {
                 "version_added": true,
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ]
           },
@@ -253,8 +368,8 @@
               },
               {
                 "version_added": "14",
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ],
             "chrome_android": [
@@ -263,8 +378,8 @@
               },
               {
                 "version_added": "18",
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ],
             "edge": {
@@ -282,12 +397,26 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "44"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "44",
+                "notes": "Before version 44, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -303,8 +432,8 @@
               },
               {
                 "version_added": true,
-                "version_removed": "56",
-                "notes": "Before version 57, this event was implemented on  AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
+                "version_removed": "57",
+                "notes": "Before version 57, this event was implemented on AudioBufferSourceNode, OscillatorNode, and ConstantSourceNode, which are now children of this class."
               }
             ]
           },
