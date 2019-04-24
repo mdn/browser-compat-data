@@ -9144,25 +9144,52 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "52"
-            },
-            "firefox_android": {
-              "version_added": "52"
-            },
+            "firefox": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "43",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.select_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "43",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.select_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
-              "version_added": null
+              "version_added": true
             },
             "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
               "version_added": null
             },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "1.3"
+            },
             "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
@@ -9170,7 +9197,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
