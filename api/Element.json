@@ -50,6 +50,62 @@
           "deprecated": false
         }
       },
+      "keypress_event": {
+        "__compat": {
+          "description": "<code>keypress</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/keypress_event",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Chrome does not fire the <code>keypress</code> event for <a href='https://crbug.com/13891#c50'>known keyboard shortcuts</a>. Which keyboard shortcuts are known depends on the user's system. Use the <code>keydown</code> event to implement keyboard shortcuts."
+            },
+            "chrome_android": {
+              "version_added": true,
+              "notes": "Chrome does not fire the <code>keypress</code> event for <a href='https://crbug.com/13891#c50'>known keyboard shortcuts</a>. Which keyboard shortcuts are known depends on the user's system. Use the <code>keydown</code> event to implement keyboard shortcuts."
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true,
+              "notes": "As of Firefox 65, the <code>keypress</code> event is no longer fired for <a href='https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keyCode#Non-printable_keys_(function_keys)'>non-printable keys</a>, except for the Enter key, and the Shift + Enter and Ctrl + Enter key combinations (these were kept for cross-browser compatibility purposes)."
+            },
+            "firefox_android": {
+              "version_added": true,
+              "notes": "As of Firefox 65, the <code>keypress</code> event is no longer fired for <a href='https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keyCode#Non-printable_keys_(function_keys)'>non-printable keys</a>, except for the Enter key, and the Shift + Enter and Ctrl + Enter key combinations (these were kept for cross-browser compatibility purposes)."
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
       "MSGestureChange_event": {
         "__compat": {
           "description": "<code>MSGestureChange</code> event",
