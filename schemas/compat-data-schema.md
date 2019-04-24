@@ -266,7 +266,8 @@ entirely unknown. Examples:
 }
 ```
 * Supported, but earliest version unknown:
-  The version in the version range is the version at the time of commit.
+  The version specified should be the earliest version was noticed in.
+  This is usually the current version of the browser.
 ```json
 {
   "version_added": "<=60"
