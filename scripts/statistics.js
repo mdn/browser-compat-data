@@ -11,7 +11,18 @@ const checkSupport = (supportData, type) => {
   if (!Array.isArray(supportData)) {
     supportData = [supportData];
   }
-  return supportData.some(item => item.version_added === type || item.version_removed === type)
+  if (type == '<=') {
+    return supportData.some(
+      item =>
+        (typeof item.version_added == 'string' &&
+          item.version_added.startsWith('<=')) ||
+        (typeof item.version_removed == 'string' &&
+          item.version_removed.startsWith('<='))
+    );
+  }
+  return supportData.some(
+    item => item.version_added === type || item.version_removed === type
+  );
 };
 
 const processData = (data) => {
@@ -30,7 +41,10 @@ const processData = (data) => {
           stats.total.null++;
           real_value = false;
         }
-        if (checkSupport(data.support[browser], true)) {
+        if (
+          checkSupport(data.support[browser], true) ||
+          checkSupport(data.support[browser], '<=')
+        ) {
           stats[browser].true++;
           stats.total.true++;
           real_value = false;
