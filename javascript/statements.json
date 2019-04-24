@@ -1010,10 +1010,22 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "10",
-              "notes": "Available in v9.2+ behind --harmony-async-iteration"
-            },
+            "nodejs": [
+              {
+                "version_added": "10.0.0"
+              },
+              {
+                "version_added": "9.2.0",
+                "version_removed": "10.0.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony-async-iteration"
+                  }
+                ]
+              }
+            ]
+            
             "opera": {
               "version_added": "50"
             },
