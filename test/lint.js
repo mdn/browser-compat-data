@@ -20,19 +20,18 @@ const argv = yargs.alias('version','v')
   .help().alias('help','h').alias('help','?')
   .parse(process.argv.slice(2));
 
-let hasErrors = false;
-
 /**
  * @param {string[]} files
+ * @return {boolean}
  */
 function load(...files) {
-  for (let file of files) {
+  return files.reduce((hasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
-      continue; // Ignore non-existent files
+      return hasErrors; // Ignore non-existent files
     }
 
     if (fs.statSync(file).isFile()) {
@@ -46,7 +45,7 @@ function load(...files) {
 
         const spinner = ora({
           stream: process.stdout,
-          text: relativeFilePath
+          text: relativeFilePath,
         });
 
         const console_error = console.error;
@@ -79,21 +78,21 @@ function load(...files) {
         }
       }
 
-      continue;
+      return hasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
+    const subFiles = fs.readdirSync(file).map(subfile => {
       return path.join(file, subfile);
     });
 
-    load(...subFiles);
-  }
+    return load(...subFiles) || hasErrors;
+  }, /** @type {boolean} */ (false));
 }
 
-if (argv.files) {
-  load.apply(undefined, argv.files);
-} else {
-  load(
+/** @type {boolean} */
+const hasErrors = argv.files
+  ? load.apply(undefined, argv.files)
+  : load(
     'api',
     'browsers',
     'css',
@@ -107,7 +106,6 @@ if (argv.files) {
     'xpath',
     'xslt',
   );
-}
 
 if (hasErrors) {
   console.warn("");
