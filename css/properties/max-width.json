@@ -53,52 +53,228 @@
             "deprecated": false
           }
         },
-        "sizing_values": {
+        "fit-content": {
           "__compat": {
-            "description": "<code>fit-content</code>, <code>max-content</code>, and <code>min-content</code>",
+            "description": "<code>fit-content</code>",
             "support": {
-              "chrome": {
-                "version_added": false,
-                "notes": "Chrome implements an earlier proposal for setting width to an intrinsic width: the keywords <code>intrinsic</code> (instead of <code>max-content</code>), and <code>min-intrinsic</code> (instead of <code>min-content</code>). There is no equivalent for <code>stretch</code> or <code>fit-content</code>."
-              },
+              "chrome": [
+                {
+                  "version_added": "46"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "25"
+                }
+              ],
               "chrome_android": {
-                "version_added": null
+                "version_added": "46"
               },
               "edge": {
                 "version_added": false
               },
               "edge_mobile": {
-                "version_added": null
+                "version_added": false
               },
               "firefox": {
+                "partial_implementation": true,
                 "prefix": "-moz-",
                 "version_added": "3",
                 "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": null
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "44"
               },
               "opera_android": {
-                "version_added": null
+                "version_added": "43"
               },
-              "safari": {
-                "version_added": false,
-                "notes": "Safari implements an earlier proposal for setting width to an intrinsic width: the keywords <code>intrinsic</code> (instead of <code>max-content</code>), and <code>min-intrinsic</code> (instead of <code>min-content</code>). There is no equivalent for <code>stretch</code> or <code>fit-content</code>."
-              },
+              "safari": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "6.1"
+                },
+                {
+                  "alternative_name": "intrinsic",
+                  "version_added": "2"
+                }
+              ],
               "safari_ios": {
                 "version_added": null
               },
               "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": [
+                {
+                  "version_added": "46"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": true
+                }
+              ]
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "max-content": {
+          "__compat": {
+            "description": "<code>max-content</code>",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "46"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "22"
+                }
+              ],
+              "chrome_android": {
+                "version_added": "46"
+              },
+              "edge": {
                 "version_added": false
               },
-              "webview_android": {
+              "edge_mobile": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": "3",
+                  "prefix": "-moz-"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": true,
+                  "prefix": "-moz-"
+                }
+              ],
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "44"
+              },
+              "opera_android": {
+                "version_added": "43"
+              },
+              "safari": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "6.1"
+                },
+                {
+                  "alternative_name": "intrinsic",
+                  "version_added": "2"
+                }
+              ],
+              "safari_ios": {
                 "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": [
+                {
+                  "version_added": "46"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": true
+                }
+              ]
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "min-content": {
+          "__compat": {
+            "description": "<code>min-content</code>",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "46"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "25"
+                }
+              ],
+              "chrome_android": {
+                "version_added": "46"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "edge_mobile": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": "3",
+                  "prefix": "-moz-"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "66"
+                },
+                {
+                  "version_added": true,
+                  "prefix": "-moz-"
+                }
+              ],
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "44"
+              },
+              "opera_android": {
+                "version_added": "43"
+              },
+              "safari": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "6.1"
+                },
+                {
+                  "alternative_name": "intrinsic",
+                  "version_added": "2"
+                }
+              ],
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "46"
               }
             },
             "status": {
@@ -152,7 +328,7 @@
               },
               "webview_android": {
                 "alternative_name": "-webkit-fill-available",
-                "version_added": "37"
+                "version_added": "4.4"
               }
             },
             "status": {

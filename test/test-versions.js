@@ -1,13 +1,24 @@
 'use strict';
 const path = require('path');
-const browsers = require('..').browsers;
 const compareVersions = require('compare-versions');
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../types').SupportBlock} SupportBlock
+ * @typedef {import('../types').VersionValue} VersionValue
+ */
+const browsers = require('..').browsers;
 
+/** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
 }
 
+/**
+ * @param {string} browserIdentifier
+ * @param {VersionValue} version
+ */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === "string") {
     return validBrowserVersions[browserIdentifier].includes(version);
@@ -16,15 +27,21 @@ function isValidVersion(browserIdentifier, version) {
   }
 }
 
+/**
+ * @param {string} dataFilename
+ */
 function testVersions(dataFilename) {
   const data = require(dataFilename);
   let hasErrors = false;
 
+  /**
+   * @param {SupportBlock} supportData
+   */
   function checkVersions(supportData) {
     const browsersToCheck = Object.keys(supportData);
     for (const browser of browsersToCheck) {
       if (validBrowserVersions[browser]) {
-
+        /** @type {SimpleSupportStatement[]} */
         const supportStatements = [];
         if (Array.isArray(supportData[browser])) {
           Array.prototype.push.apply(supportStatements, supportData[browser]);
@@ -48,8 +65,8 @@ function testVersions(dataFilename) {
               console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number when version_removed is present');
               console.error('  Valid', browser, 'versions are:', validBrowserVersions[browser].length > 0 ? 'true, ' + validBrowserVersions[browser].join(', ') : 'true');
               hasErrors = true;
-            } else if (typeof statement.version_added === "string" && typeof statement.version_removed === "string" && compareVersions(statement.version_added, statement.version_removed) > 0) {
-              console.error('\x1b[31m  version_added: "' + statement.version_added + '" cannot be higher than version_removed: "' + statement.version_removed + '"');
+            } else if (typeof statement.version_added === "string" && typeof statement.version_removed === "string" && compareVersions(statement.version_added, statement.version_removed) >= 0) {
+              console.error('\x1b[31m  version_removed: "' + statement.version_removed + '" must be greater than version_added: "' + statement.version_added + '"');
               hasErrors = true;
             }
           }
@@ -58,10 +75,13 @@ function testVersions(dataFilename) {
     }
   }
 
+  /**
+   * @param {Identifier} data
+   */
   function findSupport(data) {
     for (const prop in data) {
-      if (prop === 'support') {
-        checkVersions(data[prop]);
+      if (prop === '__compat' && data[prop].support) {
+        checkVersions(data[prop].support);
       }
       const sub = data[prop];
       if (typeof(sub) === "object") {
