@@ -876,6 +876,58 @@
           }
         }
       },
+      "clipboardchange_event": {
+        "__compat": {
+          "description": "<code>clipboardchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/clipboardchange_event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "confirm": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/confirm",
@@ -2198,6 +2250,110 @@
           }
         }
       },
+      "offline_event": {
+        "__compat": {
+          "description": "<code>offline</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/offline_event",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "online_event": {
+        "__compat": {
+          "description": "<code>online</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/online_event",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "onpaint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onpaint",
@@ -2267,11 +2423,11 @@
             },
             "firefox": {
               "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
             },
             "ie": {
               "version_added": false
@@ -6788,11 +6944,11 @@
             },
             "firefox": {
               "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
             },
             "ie": {
               "version_added": false
