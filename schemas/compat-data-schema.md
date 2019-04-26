@@ -120,6 +120,54 @@ A constructor for a given feature in `api/` should have the same name as the par
 }
 ```
 
+#### Secure context required
+
+A feature that requires HTTPS should contain a subfeature titled `secure_context_required`, which describes how different browsers handle the secure context requirement. This new subfeature should also have the description `Secure context required`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+For example, if the `ImageData` feature requires a secure context from version 60 in Chrome, version 55 in Firefox, and not at all in Safari, we could represent that as follows:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "60"
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### The `__compat` object
 The `__compat` object consists of the following:
 
@@ -150,8 +198,8 @@ information about versions, prefixes, or alternate names, as well as notes.
 The currently accepted browser identifiers should be declared in alphabetical order:
 * `chrome`, Google Chrome (on desktops)
 * `chrome_android`, Google Chrome (on Android)
-* `edge`, MS Edge (on Windows)
-* `edge_mobile`, MS Edge, the mobile version
+* `edge`, MS Edge (on Windows), based on the EdgeHTML version
+* `edge_mobile`, MS Edge (on Windows Mobile), based on the EdgeHTML version
 * `firefox`, Mozilla Firefox (on desktops)
 * `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 * `ie`, Microsoft Internet Explorer (discontinued)
@@ -160,7 +208,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 * `opera_android`, the Opera browser (Android version)
 * `qq_android`, the QQ browser (Android version)
 * `safari`, Safari on macOS
-* `safari_ios`, Safari on iOS
+* `safari_ios`, Safari on iOS, based on the iOS version
 * `samsunginternet_android`, the Samsung Internet browser (Android version)
 * `uc_android`, UC Browser (Android version)
 * `uc_chinese_android`, UC Browser (Chinese Android version)
