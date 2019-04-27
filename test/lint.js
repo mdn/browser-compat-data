@@ -102,7 +102,6 @@ if (argv.files) {
     'svg',
     'javascript',
     'mathml',
-    'test',
     'webdriver',
     'webextensions',
     'xpath',
