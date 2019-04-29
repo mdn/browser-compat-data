@@ -81,7 +81,7 @@ function testBrowsers(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  if (!category || category === "test") {
+  if (!category) {
     console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
     return false;
   }
