@@ -165,6 +165,15 @@ function testStyle(filename) {
       mdnUrlMatch[2]);
   }
 
+  const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
+  if (msdevUrlMatch) {
+    hasErrors = true;
+    console.error(
+      '\x1b[33m  Style – Use non-localized Microsoft Developer URL (%s → https://developer.microsoft.com/%s).\x1b[0m',
+      msdevUrlMatch[0],
+      msdevUrlMatch[2]);
+  }
+
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
