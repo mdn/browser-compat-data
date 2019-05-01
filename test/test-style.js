@@ -25,6 +25,9 @@ function orderSupportBlock(key, value) {
   return value;
 }
 
+/**
+ * @param {string} str
+ */
 function escapeInvisibles(str) {
   const invisibles = [
     ['\b', '\\b'],
@@ -42,6 +45,48 @@ function escapeInvisibles(str) {
   });
 
   return finalString;
+}
+
+/**
+ * Gets the row and column matching the index in a string.
+ *
+ * @param {string} str
+ * @param {number} index
+ * @return {[number, number] | [null, null]}
+ */
+function indexToPos(str, index) {
+  let line = 1, col = 1;
+  let prevChar = null;
+
+  if (
+    typeof str !== 'string' ||
+    typeof index !== 'number' ||
+    index > str.length
+  ) {
+    return [null, null];
+  }
+
+  for (let i = 0; i < index; i++) {
+    let char = str[i];
+    switch (char) {
+      case '\n':
+        if (prevChar === '\r') break;
+      case '\r':
+        line++;
+        col = 1;
+        break;
+      case '\t':
+        // Use JSON `tab_size` value from `.editorconfig`
+        col += 2;
+        break;
+      default:
+        col++;
+        break;
+    }
+    prevChar = char;
+  }
+
+  return [line, col];
 }
 
 /**
@@ -89,6 +134,80 @@ function testStyle(filename) {
     hasErrors = true;
     console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
     console.error('\x1b[31m  Browser name sorting – Error on line ' + jsonDiff(actual, expectedSorting));
+  }
+
+  {
+    // TODO: Lint other elements.
+    const regexp = new RegExp(String.raw`<(a)(?: (.*?))?>(.*?)</a>`, 'g');
+    /** @type {RegExpExecArray | null} */ let match;
+    /** @type {RegExpExecArray | null} */ let attrMatch;
+    while (!!(match = regexp.exec(actual))) {
+      const attrRegexp = /([^\x00-\x20\x7F-\x9F"'>/=\uFDD0-\uFDEF\uFFFE\uFFFF\u{1FFFE}\u{1FFFF}\u{2FFFE}\u{2FFFF}\u{3FFFE}\u{3FFFF}\u{4FFFE}\u{4FFFF}\u{5FFFE}\u{5FFFF}\u{6FFFE}\u{6FFFF}\u{7FFFE}\u{7FFFF}\u{8FFFE}\u{8FFFF}\u{9FFFE}\u{9FFFF}\u{AFFFE}\u{AFFFF}\u{BFFFE}\u{BFFFF}\u{CFFFE}\u{CFFFF}\u{DFFFE}\u{DFFFF}\u{EFFFE}\u{EFFFF}\u{FFFFE}\u{FFFFF}\u{10FFFE}\u{10FFFF}]+)(?: *= *('[^']*'|\\"[^"]*\\"|[^\x09\x0A\x0C\x0D\x20"'=<>`]+))?/ug;
+      const [
+        anchorLinkActual,
+        elementName,
+        attributesActual,
+        text,
+      ] = match;
+      /** @type {Array<{name:string,nameStart:number,nameEnd:number,value?:string,valueEnd?:number}>} */
+      const badAttributes = [];
+      /** @type {string | null} */
+      let pos = null;
+
+      if (elementName !== elementName.toLowerCase()) {
+        hasErrors = true;
+        console.error(
+          `\x1b[33m  Style %s - Use lowercase element name <%s>.\x1b[0m`,
+          (pos = indexToPos(match.input, match.index).join(':')),
+          elementName.toLowerCase(),
+        )
+      }
+
+      while(!!(attrMatch = attrRegexp.exec(attributesActual))) {
+        const [
+          attrFull,
+          attrName,
+          attrValue,
+        ] = attrMatch;
+        const attrStart = attrMatch.index;
+        /** @type {{name:string,nameStart:number,nameEnd:number,value?:string,valueEnd?:number}} */
+        let attrDescriptor = {
+          name: attrName,
+          nameStart: attrStart,
+          nameEnd: attrStart + attrName.length,
+        };
+        if (attrValue !== undefined) {
+          attrDescriptor.value = attrValue;
+          attrDescriptor.valueEnd = attrStart + attrFull.length;
+        }
+        if (attrName !== 'href') {
+          // Disallow non-href attributes on <a> links
+          badAttributes.push(attrDescriptor);
+        }
+      }
+
+      if (badAttributes.length > 0) {
+        hasErrors = true;
+        console.error(
+          `\x1b[33m  Style %s - Valid attributes for element <%s> are: href\x1b[0m`,
+          (pos || (pos = indexToPos(match.input, match.index).join(':'))),
+          elementName.toLowerCase(),
+        )
+        console.error(
+          `\x1b[33m  Style %s - Element <%s> has disallowed attributes: %s\x1b[0m`,
+          (pos || (pos = indexToPos(match.input, match.index).join(':'))),
+          elementName.toLowerCase(),
+          badAttributes.reduce((badAttrs, {name, value}) => {
+            let result = name;
+            if (typeof value === 'string') {
+              result += '=' + value;
+            }
+            badAttrs.push(result);
+            return badAttrs;
+          }, /** @type {string[]} */ ([])).join(', '),
+        );
+      }
+    }
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
