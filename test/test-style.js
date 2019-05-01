@@ -80,23 +80,26 @@ function testStyle(filename) {
 
   if (actual !== expected) {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
-    console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
+    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
+    console.error(`\x1b[31m  Style – Error on line ${jsonDiff(actual, expected)}`);
   }
 
   let expectedSorting = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
   if (actual !== expectedSorting) {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
-    console.error('\x1b[31m  Browser name sorting – Error on line ' + jsonDiff(actual, expectedSorting));
+    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
+    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(actual, expected)}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
-      bugzillaMatch[1]);
+    console.error(
+      '\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m',
+      bugzillaMatch[0],
+      bugzillaMatch[1],
+    );
   }
 
   {
@@ -144,16 +147,22 @@ function testStyle(filename) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m', crbugMatch[0],
-      crbugMatch[1]);
+    console.error(
+      '\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m',
+      crbugMatch[0],
+      crbugMatch[1],
+    );
   }
 
   const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m', webkitMatch[0],
-      webkitMatch[1]);
+    console.error(
+      '\x1b[33m  Style – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m',
+      webkitMatch[0],
+      webkitMatch[1],
+    );
   }
 
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
@@ -162,7 +171,8 @@ function testStyle(filename) {
     console.error(
       '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
       mdnUrlMatch[0],
-      mdnUrlMatch[2]);
+      mdnUrlMatch[2],
+    );
   }
 
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
@@ -171,7 +181,8 @@ function testStyle(filename) {
     console.error(
       '\x1b[33m  Style – Use non-localized Microsoft Developer URL (%s → https://developer.microsoft.com/%s).\x1b[0m',
       msdevUrlMatch[0],
-      msdevUrlMatch[2]);
+      msdevUrlMatch[2],
+    );
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
@@ -180,7 +191,7 @@ function testStyle(filename) {
     console.error(
       '\x1b[33m  Style – Use parentheses in constructor description: %s → %s()\x1b[0m',
       constructorMatch[1],
-      constructorMatch[1]
+      constructorMatch[1],
     );
   }
 
@@ -196,7 +207,9 @@ function testStyle(filename) {
     if (a_url.hostname === null) {
       hasErrors = true;
       console.error(
-        '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m', match[1], match[1]
+        '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m',
+        match[1],
+        match[1],
       );
     }
   }
