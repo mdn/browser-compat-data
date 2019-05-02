@@ -1,3 +1,4 @@
+'use strict';
 path = require('path');
 
 function checkPrefix(data, category, errors, prefix, path="") {
