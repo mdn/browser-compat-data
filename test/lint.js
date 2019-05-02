@@ -7,6 +7,7 @@ const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
 const testBrowsers = require('./test-browsers');
+const testPrefix = require('./test-prefix.js');
 const {testConsistency} = require('./test-consistency');
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -43,7 +44,8 @@ function load(...files) {
           hasStyleErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
-          hasConsistencyErrors = false;
+          hasConsistencyErrors = false,
+          hasApiErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -68,12 +70,13 @@ function load(...files) {
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
+            hasApiErrors = testPrefix(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
           console.error(e);
         }
-        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasConsistencyErrors) {
+        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasConsistencyErrors || hasApiErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
         } else {
