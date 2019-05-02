@@ -14,7 +14,7 @@ browser support for APIs. For example:
 [![Build Status](https://travis-ci.org/mdn/browser-compat-data.svg?branch=master)](https://travis-ci.org/mdn/browser-compat-data)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mozdevnet.svg?style=social&label=Follow&style=plastic)](https://twitter.com/MozDevNet)
 
-Maintained by the [MDN team at Mozilla](https://wiki.mozilla.org/MDN).
+Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/governance.md).
 
 ## Installation
 You can install mdn-browser-compat-data as a node package.
@@ -94,3 +94,4 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 * [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
 * [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
 * [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
+* [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.

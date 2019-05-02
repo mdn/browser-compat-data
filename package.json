@@ -1,6 +1,6 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "0.0.70",
+  "version": "0.0.77",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,7 +8,7 @@
     "extend": "3.0.2"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
@@ -34,11 +34,12 @@
     "compare-versions": "^3.4.0",
     "mdn-confluence": "^1.0.3",
     "ora": "^3.0.0",
-    "yargs": "^11.1.0"
+    "yargs": "^13.2.2"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "lint": "node test/lint",
+    "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
     "render": "node scripts/render",
     "show-errors": "npm test 1> /dev/null",

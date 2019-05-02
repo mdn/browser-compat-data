@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -43,6 +44,11 @@ function escapeInvisibles(str) {
   return finalString;
 }
 
+/**
+ * @param {string} actual
+ * @param {string} expected
+ * @return {string}
+ */
 function jsonDiff(actual, expected) {
   var actualLines = actual.split(/\n/);
   var expectedLines = expected.split(/\n/);
@@ -58,6 +64,9 @@ function jsonDiff(actual, expected) {
   }
 }
 
+/**
+ * @param {string} filename
+ */
 function testStyle(filename) {
   let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -92,19 +101,27 @@ function testStyle(filename) {
 
   {
     // Bugzil.la links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the begin of notes/sentences).
-    const regexp = new RegExp("(....)<a href='(https?)://bugzil.la/(\\d+)'>(.*?)</a>", 'g');
+    const regexp = new RegExp(String.raw`(....)<a href='(https?)://(bugzil\.la|crbug\.com|webkit\.org/b)/(\d+)'>(.*?)</a>`, 'g');
+    /** @type {RegExpExecArray} */
     let match;
     do {
       match = regexp.exec(actual);
       if (match) {
-        const before = match[1];
-        const protocol = match[2];
-        const bugId = match[3];
-        const linkText = match[4];
+        const [,
+          before,
+          protocol,
+          domain,
+          bugId,
+          linkText,
+        ] = match;
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Use HTTPS URL (http://bugzil.la/${bugId} → https://bugzil.la/${bugId}).\x1b[0m`);
+          console.error(`\x1b[33m  Style – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
+        }
+
+        if (domain !== 'bugzil.la') {
+          continue;
         }
 
         if (/^bug $/.test(before)) {
@@ -148,6 +165,15 @@ function testStyle(filename) {
       mdnUrlMatch[2]);
   }
 
+  const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
+  if (msdevUrlMatch) {
+    hasErrors = true;
+    console.error(
+      '\x1b[33m  Style – Use non-localized Microsoft Developer URL (%s → https://developer.microsoft.com/%s).\x1b[0m',
+      msdevUrlMatch[0],
+      msdevUrlMatch[2]);
+  }
+
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
@@ -161,6 +187,18 @@ function testStyle(filename) {
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
     console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
+  }
+
+  const regexp = new RegExp("<a href='([^'>]+)'>((?:.(?!\<\/a\>))*.)</a>", 'g');
+  let match = regexp.exec(actual);
+  if (match) {
+    var a_url = url.parse(match[1]);
+    if (a_url.hostname === null) {
+      hasErrors = true;
+      console.error(
+        '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m', match[1], match[1]
+      );
+    }
   }
 
   return hasErrors;

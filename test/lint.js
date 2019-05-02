@@ -7,13 +7,14 @@ const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
 const testBrowsers = require('./test-browsers');
+const testPrefix = require('./test-prefix.js');
 const {testConsistency} = require('./test-consistency');
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
 const argv = yargs.alias('version','v')
-  .usage('$0 [[--] files...]', false, (yargs) => {
-    yargs.positional('files...', {
+  .usage('$0 [[--] files...]', false, yargs => {
+    return yargs.positional('files...', {
       description: 'The files to lint',
       type: 'string'
     })
@@ -27,9 +28,6 @@ let hasErrors = false;
  * @param {string[]} files
  */
 function load(...files) {
-  if (files.length === 1 && Array.isArray(files[0])) {
-    files = files[0];
-  }
   for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -46,7 +44,8 @@ function load(...files) {
           hasStyleErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
-          hasConsistencyErrors = false;
+          hasConsistencyErrors = false,
+          hasApiErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -56,7 +55,7 @@ function load(...files) {
 
         const console_error = console.error;
         console.error = (...args) => {
-          spinner.stream = process.stderr;
+          spinner['stream'] = process.stderr;
           spinner.fail(relativeFilePath);
           console.error = console_error;
           console.error(...args);
@@ -71,12 +70,13 @@ function load(...files) {
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
+            hasApiErrors = testPrefix(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
           console.error(e);
         }
-        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasConsistencyErrors) {
+        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasConsistencyErrors || hasApiErrors) {
           hasErrors = true;
           filesWithErrors.set(relativeFilePath, file);
         } else {
@@ -97,7 +97,7 @@ function load(...files) {
 }
 
 if (argv.files) {
-  load(argv.files);
+  load.apply(undefined, argv.files);
 } else {
   load(
     'api',
@@ -108,7 +108,6 @@ if (argv.files) {
     'svg',
     'javascript',
     'mathml',
-    'test',
     'webdriver',
     'webextensions',
     'xpath',
