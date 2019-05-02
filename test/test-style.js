@@ -25,7 +25,11 @@ function orderSupportBlock(key, value) {
   return value;
 }
 
+/**
+ * @param {string} str
+ */
 function escapeInvisibles(str) {
+  /** @type {Array<[string, string]>} */
   const invisibles = [
     ['\b', '\\b'],
     ['\f', '\\f'],
@@ -88,7 +92,7 @@ function testStyle(filename) {
   if (actual !== expectedSorting) {
     hasErrors = true;
     console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
-    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(actual, expected)}`);
+    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(actual, expectedSorting)}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
