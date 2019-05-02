@@ -49,7 +49,7 @@ function load(...files) {
         const spinner = ora({
           stream: process.stdout,
           text: relativeFilePath
-        });
+        }).start();
 
         const console_error = console.error;
         console.error = (...args) => {
