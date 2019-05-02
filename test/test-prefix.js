@@ -1,5 +1,5 @@
 'use strict';
-path = require('path');
+const path = require('path');
 
 function checkPrefix(data, category, errors, prefix, path="") {
   for (var key in data) {
@@ -16,8 +16,8 @@ function checkPrefix(data, category, errors, prefix, path="") {
       }
     } else {
       if (typeof data[key] === "object") {
-        curr_path = (path.length > 0) ? `${path}.${key}` : key;
-        result = checkPrefix(data[key], category, errors, prefix, curr_path);
+        var curr_path = (path.length > 0) ? `${path}.${key}` : key;
+        var result = checkPrefix(data[key], category, errors, prefix, curr_path);
       }
     }
   }
