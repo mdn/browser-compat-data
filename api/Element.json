@@ -3764,16 +3764,29 @@
         },
         "all_elements_selector": {
           "__compat": {
-            "description": "getElementsByTagName(*)",
+            "description": "getElementsByTagNameNS(*)",
             "support": {
               "chrome": {
                 "version_added": "1"
               },
+              "chrome_android": {
+                "version_added": true
+              },
               "edge": {
+                "version_added": true
+              },
+              "edge_mobile": {
                 "version_added": true
               },
               "firefox": {
                 "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true,
+                "notes": [
+                  "The behavior of <code>element.getElementsByTagNameNS</code> changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the <a href='https://bugzil.la/542185#c5'>comment from Henri Sivonen about the change</a>. You can also look at the <a href='https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names'>relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't.</a>",
+                  "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
+                ]
               },
               "ie": {
                 "version_added": "6"
@@ -3781,7 +3794,16 @@
               "opera": {
                 "version_added": true
               },
+              "opera_android": {
+                "version_added": true
+              },
               "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
                 "version_added": true
               },
               "webview_android": {
@@ -4859,13 +4881,13 @@
           }
         }
       },
-      "mousewheel": {
+      "mousewheel_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mousewheel_event",
           "description": "<code>mousewheel</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "31"
             },
             "chrome_android": {
               "version_added": null
