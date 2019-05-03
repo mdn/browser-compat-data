@@ -49,7 +49,11 @@ function load(...files) {
         const spinner = ora({
           stream: process.stdout,
           text: relativeFilePath
-        }).start();
+        });
+
+        if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
+          spinner.start();
+        }
 
         const console_error = console.error;
         console.error = (...args) => {
