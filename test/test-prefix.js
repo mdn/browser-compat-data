@@ -16,7 +16,7 @@ function checkPrefix(data, category, errors, prefix, path="") {
       }
     } else {
       if (typeof data[key] === "object") {
-        const curr_path = (path.length > 0) ? `${path}.${key}` : key;
+        var curr_path = (path.length > 0) ? `${path}.${key}` : key;
         checkPrefix(data[key], category, errors, prefix, curr_path);
       }
     }
