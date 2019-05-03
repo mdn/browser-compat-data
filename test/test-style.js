@@ -49,6 +49,48 @@ function escapeInvisibles(str) {
 }
 
 /**
+ * Gets the row and column matching the index in a string.
+ *
+ * @param {string} str
+ * @param {number} index
+ * @return {[number, number] | [null, null]}
+ */
+function indexToPos(str, index) {
+  let line = 1, col = 1;
+  let prevChar = null;
+
+  if (
+    typeof str !== 'string' ||
+    typeof index !== 'number' ||
+    index > str.length
+  ) {
+    return [null, null];
+  }
+
+  for (let i = 0; i < index; i++) {
+    let char = str[i];
+    switch (char) {
+      case '\n':
+        if (prevChar === '\r') break;
+      case '\r':
+        line++;
+        col = 1;
+        break;
+      case '\t':
+        // Use JSON `tab_size` value from `.editorconfig`
+        col += 2;
+        break;
+      default:
+        col++;
+        break;
+    }
+    prevChar = char;
+  }
+
+  return [line, col];
+}
+
+/**
  * @param {string} actual
  * @param {string} expected
  * @return {string}
@@ -124,7 +166,9 @@ function testStyle(filename) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
+          console.error(`\x1b[33m  Style ${
+            indexToPos(actual, match.index)
+          } – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
         }
 
         if (domain !== 'bugzil.la') {
@@ -133,15 +177,21 @@ function testStyle(filename) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
+          console.error(`\x1b[33m  Style ${
+            indexToPos(actual, match.index)
+          } – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            console.error(`\x1b[33m  Style – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
+            console.error(`\x1b[33m  Style ${
+              indexToPos(actual, match.index)
+            } – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
+          console.error(`\x1b[33m  Style ${
+            indexToPos(actual, match.index)
+          } – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
         }
       }
     } while (match != null);
@@ -152,7 +202,8 @@ function testStyle(filename) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m',
+      '\x1b[33m  Style %s – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m',
+      indexToPos(actual, crbugMatch.index),
       crbugMatch[0],
       crbugMatch[1],
     );
@@ -163,7 +214,8 @@ function testStyle(filename) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m',
+      '\x1b[33m  Style %s – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m',
+      indexToPos(actual, webkitMatch.index),
       webkitMatch[0],
       webkitMatch[1],
     );
@@ -173,7 +225,8 @@ function testStyle(filename) {
   if (mdnUrlMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
+      '\x1b[33m  Style %s – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
+      indexToPos(actual, mdnUrlMatch.index),
       mdnUrlMatch[0],
       mdnUrlMatch[2],
     );
@@ -183,7 +236,8 @@ function testStyle(filename) {
   if (msdevUrlMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use non-localized Microsoft Developer URL (%s → https://developer.microsoft.com/%s).\x1b[0m',
+      '\x1b[33m  Style %s – Use non-localized Microsoft Developer URL (%s → https://developer.microsoft.com/%s).\x1b[0m',
+      indexToPos(actual, msdevUrlMatch.index),
       msdevUrlMatch[0],
       msdevUrlMatch[2],
     );
@@ -193,7 +247,8 @@ function testStyle(filename) {
   if (constructorMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use parentheses in constructor description: %s → %s()\x1b[0m',
+      '\x1b[33m  Style %s – Use parentheses in constructor description: %s → %s()\x1b[0m',
+      indexToPos(actual, constructorMatch.index),
       constructorMatch[1],
       constructorMatch[1],
     );
@@ -211,7 +266,8 @@ function testStyle(filename) {
     if (a_url.hostname === null) {
       hasErrors = true;
       console.error(
-        '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m',
+        '\x1b[33m  Style %s – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m',
+        indexToPos(actual, match.index),
         match[1],
         match[1],
       );
