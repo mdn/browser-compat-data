@@ -7,7 +7,7 @@ const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
 const testBrowsers = require('./test-browsers');
-const testPrefix = require('./test-prefix.js');
+const testPrefix = require('./test-prefix');
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
