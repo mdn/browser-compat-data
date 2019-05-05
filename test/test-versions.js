@@ -1,13 +1,24 @@
 'use strict';
 const path = require('path');
-const browsers = require('..').browsers;
 const compareVersions = require('compare-versions');
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../types').SupportBlock} SupportBlock
+ * @typedef {import('../types').VersionValue} VersionValue
+ */
+const browsers = require('..').browsers;
 
+/** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
 }
 
+/**
+ * @param {string} browserIdentifier
+ * @param {VersionValue} version
+ */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === "string") {
     return validBrowserVersions[browserIdentifier].includes(version);
@@ -16,15 +27,21 @@ function isValidVersion(browserIdentifier, version) {
   }
 }
 
+/**
+ * @param {string} dataFilename
+ */
 function testVersions(dataFilename) {
   const data = require(dataFilename);
   let hasErrors = false;
 
+  /**
+   * @param {SupportBlock} supportData
+   */
   function checkVersions(supportData) {
     const browsersToCheck = Object.keys(supportData);
     for (const browser of browsersToCheck) {
       if (validBrowserVersions[browser]) {
-
+        /** @type {SimpleSupportStatement[]} */
         const supportStatements = [];
         if (Array.isArray(supportData[browser])) {
           Array.prototype.push.apply(supportStatements, supportData[browser]);
@@ -58,10 +75,13 @@ function testVersions(dataFilename) {
     }
   }
 
+  /**
+   * @param {Identifier} data
+   */
   function findSupport(data) {
     for (const prop in data) {
-      if (prop === 'support') {
-        checkVersions(data[prop]);
+      if (prop === '__compat' && data[prop].support) {
+        checkVersions(data[prop].support);
       }
       const sub = data[prop];
       if (typeof(sub) === "object") {
