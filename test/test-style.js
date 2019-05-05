@@ -166,9 +166,10 @@ function testStyle(filename) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(`\x1b[33m  Style ${
-            indexToPos(actual, match.index)
-          } – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
+          console.error(`\x1b[33m  Style ${indexToPos(
+            actual,
+            match.index,
+          )} – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
         }
 
         if (domain !== 'bugzil.la') {
@@ -177,21 +178,24 @@ function testStyle(filename) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style ${
-            indexToPos(actual, match.index)
-          } – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
+          console.error(`\x1b[33m  Style ${indexToPos(
+            actual,
+            match.index,
+          )} – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            console.error(`\x1b[33m  Style ${
-              indexToPos(actual, match.index)
-            } – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
+            console.error(`\x1b[33m  Style ${indexToPos(
+              actual,
+              match.index,
+            )} – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style ${
-            indexToPos(actual, match.index)
-          } – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
+          console.error(`\x1b[33m  Style ${indexToPos(
+            actual,
+            match.index,
+          )} – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
         }
       }
     } while (match != null);
@@ -202,10 +206,12 @@ function testStyle(filename) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style %s – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m',
-      indexToPos(actual, crbugMatch.index),
-      crbugMatch[0],
-      crbugMatch[1],
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        crbugMatch.index,
+      )} – Use shortenable URL (${
+        crbugMatch[0]
+      } → https://crbug.com/${crbugMatch[1]}).\x1b[0m`,
     );
   }
 
@@ -214,10 +220,12 @@ function testStyle(filename) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style %s – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m',
-      indexToPos(actual, webkitMatch.index),
-      webkitMatch[0],
-      webkitMatch[1],
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        webkitMatch.index,
+      )} – Use shortenable URL (${
+        webkitMatch[0]
+      } → https://webkit.org/b/${webkitMatch[1]}).\x1b[0m`,
     );
   }
 
@@ -225,10 +233,12 @@ function testStyle(filename) {
   if (mdnUrlMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style %s – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
-      indexToPos(actual, mdnUrlMatch.index),
-      mdnUrlMatch[0],
-      mdnUrlMatch[2],
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        mdnUrlMatch.index,
+      )} – Use non-localized MDN URL (${
+        mdnUrlMatch[0]
+      } → https://developer.mozilla.org/${mdnUrlMatch[2]}).\x1b[0m`,
     );
   }
 
@@ -236,10 +246,12 @@ function testStyle(filename) {
   if (msdevUrlMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style %s – Use non-localized Microsoft Developer URL (%s → https://developer.microsoft.com/%s).\x1b[0m',
-      indexToPos(actual, msdevUrlMatch.index),
-      msdevUrlMatch[0],
-      msdevUrlMatch[2],
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        msdevUrlMatch.index,
+      )} – Use non-localized Microsoft Developer URL (${
+        msdevUrlMatch[0]
+      } → https://developer.microsoft.com${msdevUrlMatch[2]}).\x1b[0m`,
     );
   }
 
@@ -247,10 +259,12 @@ function testStyle(filename) {
   if (constructorMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style %s – Use parentheses in constructor description: %s → %s()\x1b[0m',
-      indexToPos(actual, constructorMatch.index),
-      constructorMatch[1],
-      constructorMatch[1],
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        constructorMatch.index,
+      )} – Use parentheses in constructor description: ${
+        constructorMatch[1]
+      } → ${constructorMatch[1]}()\x1b[0m`,
     );
   }
 
@@ -259,17 +273,19 @@ function testStyle(filename) {
     console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
   }
 
-  const regexp = new RegExp("<a href='([^'>]+)'>((?:.(?!\<\/a\>))*.)</a>", 'g');
+  const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
   let match = regexp.exec(actual);
   if (match) {
     var a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
       console.error(
-        '\x1b[33m  Style %s – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m',
-        indexToPos(actual, match.index),
-        match[1],
-        match[1],
+        `\x1b[33m  Style ${indexToPos(
+          actual,
+          match.index,
+        )} – Include hostname in URL: ${
+          match[1]
+        } → https://developer.mozilla.org/${match[1]}\x1b[0m`,
       );
     }
   }
