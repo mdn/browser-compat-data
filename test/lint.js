@@ -7,7 +7,7 @@ const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
 const testBrowsers = require('./test-browsers');
-const testPrefix = require('./test-prefix.js');
+const testPrefix = require('./test-prefix');
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
@@ -50,6 +50,10 @@ function load(...files) {
           stream: process.stdout,
           text: relativeFilePath
         });
+
+        if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
+          spinner.start();
+        }
 
         const console_error = console.error;
         console.error = (...args) => {
