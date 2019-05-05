@@ -1,12 +1,13 @@
 const { execSync } = require('child_process');
 const http = require('https');
 const readline = require('readline');
+const chalk = require('chalk');
 
 const bcd = require('..');
 
 const { argv } = require('yargs')
   .command('$0 <version-tag>', 'Initiate a release of this package on GitHub', (yargs) => {
-    yargs.positional('version-tag', {
+    return yargs.positional('version-tag', {
       describe: 'the version tag to generate release notes for',
       type: 'string',
     });
@@ -137,7 +138,7 @@ const main = async () => {
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
 
-  console.log('\n\x1b[1mOpen this URL in a browser:\x1b[0m');
+  console.log(chalk.bold('\nOpen this URL in a browser:'));
   console.log(makeURL(version, body));
 };
 

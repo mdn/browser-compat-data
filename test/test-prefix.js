@@ -1,11 +1,12 @@
 'use strict';
 const path = require('path');
+const chalk = require('chalk');
 
 function checkPrefix(data, category, errors, prefix, path="") {
   for (var key in data) {
     if (key === "prefix" && typeof(data[key]) === "string") {
       if (data[key].includes(prefix)) {
-        var error = `\x1b[31m${prefix} prefix is wrong for key: ${path}\x1b[0m`;
+        var error = chalk.red(`${prefix} prefix is wrong for key: ${path}`);
         var rules = [
           category == "api" && !data[key].startsWith(prefix),
           category == "css" && !data[key].startsWith(`-${prefix}`)
@@ -48,9 +49,11 @@ function testPrefix(filename) {
   var errors = processData(data, category);
 
   if (errors.length) {
-    console.error(`\x1b[31m  Prefix – ${errors.length} ${
-      errors.length === 1 ? 'error' : 'errors'
-    }:`);
+    console.error(chalk.red(
+      `  Prefix – ${errors.length} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:`
+    ));
     for (const error of errors) {
       console.error(`    ${error}`);
     }
