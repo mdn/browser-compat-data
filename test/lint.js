@@ -21,35 +21,40 @@ const argv = yargs.alias('version','v')
   .help().alias('help','h').alias('help','?')
   .parse(process.argv.slice(2));
 
-let hasErrors = false;
-
 /**
  * @param {string[]} files
+ * @return {boolean}
  */
 function load(...files) {
-  for (let file of files) {
+  return files.reduce((prevHasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
-      continue; // Ignore non-existent files
+      return prevHasErrors; // Ignore non-existent files
     }
 
     if (fs.statSync(file).isFile()) {
+      let fileHasErrors = false;
+
       if (path.extname(file) === '.json') {
         let hasSyntaxErrors = false,
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
-          hasApiErrors = false;
+          hasPrefixErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
           stream: process.stdout,
-          text: relativeFilePath
-        }).start();
+          text: relativeFilePath,
+        });
+
+        if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
+          spinner.start();
+        }
 
         const console_error = console.error;
         console.error = (...args) => {
@@ -67,14 +72,23 @@ function load(...files) {
             hasStyleErrors = testStyle(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
-            hasApiErrors = testPrefix(file);
+            hasPrefixErrors = testPrefix(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
           console.error(e);
         }
-        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasApiErrors) {
-          hasErrors = true;
+
+        fileHasErrors = [
+          hasSyntaxErrors,
+          hasSchemaErrors,
+          hasStyleErrors,
+          hasBrowserErrors,
+          hasVersionErrors,
+          hasPrefixErrors,
+        ].some(x => !!x);
+
+        if (fileHasErrors) {
           filesWithErrors.set(relativeFilePath, file);
         } else {
           console.error = console_error;
@@ -82,21 +96,21 @@ function load(...files) {
         }
       }
 
-      continue;
+      return prevHasErrors || fileHasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
+    const subFiles = fs.readdirSync(file).map(subfile => {
       return path.join(file, subfile);
     });
 
-    load(...subFiles);
-  }
+    return load(...subFiles) || prevHasErrors;
+  }, false);
 }
 
-if (argv.files) {
-  load.apply(undefined, argv.files);
-} else {
-  load(
+/** @type {boolean} */
+const hasErrors = argv.files
+  ? load.apply(undefined, argv.files)
+  : load(
     'api',
     'browsers',
     'css',
@@ -110,7 +124,6 @@ if (argv.files) {
     'xpath',
     'xslt',
   );
-}
 
 if (hasErrors) {
   console.warn('');
@@ -129,6 +142,7 @@ if (hasErrors) {
         testStyle(file);
         testVersions(file);
         testBrowsers(file);
+        testPrefix(file);
       }
     } catch (e) {
       console.error(e);

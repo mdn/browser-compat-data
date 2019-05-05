@@ -66,6 +66,13 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
   }
   for (const key in data) {
     if (key === "__compat") continue;
+    // Note that doing `hasErrors |= processData(…)` would convert
+    // `hasErrors` into a number, which could potentially lead
+    // to unexpected issues down the line.
+
+    // We can't use the ESNext `hasErrors ||= processData(…)` here either,
+    // as that would prevent printing nested browser issues, making testing
+    // and fixing issues longer, as nested issues wouldn't be logged.
     hasErrors = processData(
       data[key],
       displayBrowsers,
@@ -74,7 +81,7 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
       logger,
       (path && path.length > 0)
         ? `${path}.${key}`
-        : key
+        : key,
     ) || hasErrors;
   }
   return hasErrors;
