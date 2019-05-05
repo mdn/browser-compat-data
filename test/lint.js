@@ -126,8 +126,12 @@ const hasErrors = argv.files
   );
 
 if (hasErrors) {
-  console.warn("");
-  console.warn(`Problems in ${filesWithErrors.size} file${filesWithErrors.size > 1 ? 's' : ''}:`);
+  console.warn('');
+  console.warn(
+    `Problems in ${filesWithErrors.size} ${
+      filesWithErrors.size === 1 ? 'file' : 'files'
+    }:`,
+  );
   for (const [fileName, file] of filesWithErrors) {
     console.warn(fileName);
     try {

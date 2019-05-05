@@ -17,7 +17,7 @@ function checkPrefix(data, category, errors, prefix, path="") {
     } else {
       if (typeof data[key] === "object") {
         var curr_path = (path.length > 0) ? `${path}.${key}` : key;
-        var result = checkPrefix(data[key], category, errors, prefix, curr_path);
+        checkPrefix(data[key], category, errors, prefix, curr_path);
       }
     }
   }
@@ -48,8 +48,10 @@ function testPrefix(filename) {
   var errors = processData(data, category);
 
   if (errors.length) {
-    console.error('\x1b[31m  Prefix –', errors.length, 'error(s):\x1b[0m');
-    for (let error of errors) {
+    console.error(`\x1b[31m  Prefix – ${errors.length} ${
+      errors.length === 1 ? 'error' : 'errors'
+    }:`);
+    for (const error of errors) {
       console.error(`    ${error}`);
     }
     return true;

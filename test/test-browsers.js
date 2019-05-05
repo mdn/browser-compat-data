@@ -46,7 +46,7 @@ const browsers = {
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
- * @param {{error:function(string):void}} logger
+ * @param {{error:function(...unknown):void}} logger
  * @param {string} [path]
  * @returns {boolean}
  */
@@ -120,15 +120,23 @@ function testBrowsers(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    error: (message) => {errors.push(message);}
-  }
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
 
   if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
     return false;
   } else {
-    console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');
-    for (let error of errors)
+    console.error(
+      `\x1b[  Browsers – ${errors.length} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:`,
+    );
+    for (const error of errors) {
       console.error(`    ${error}`);
+    }
     return true;
   }
 }
