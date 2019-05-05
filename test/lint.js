@@ -21,22 +21,23 @@ const argv = yargs.alias('version','v')
   .help().alias('help','h').alias('help','?')
   .parse(process.argv.slice(2));
 
-let hasErrors = false;
-
 /**
  * @param {string[]} files
+ * @return {boolean}
  */
 function load(...files) {
-  for (let file of files) {
+  return files.reduce((prevHasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
-      continue; // Ignore non-existent files
+      return prevHasErrors; // Ignore non-existent files
     }
 
     if (fs.statSync(file).isFile()) {
+      let fileHasErrors = false;
+
       if (path.extname(file) === '.json') {
         let hasSyntaxErrors = false,
           hasSchemaErrors = false,
@@ -48,7 +49,7 @@ function load(...files) {
 
         const spinner = ora({
           stream: process.stdout,
-          text: relativeFilePath
+          text: relativeFilePath,
         });
 
         if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
@@ -77,8 +78,17 @@ function load(...files) {
           hasSyntaxErrors = true;
           console.error(e);
         }
-        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasPrefixErrors) {
-          hasErrors = true;
+
+        fileHasErrors = [
+          hasSyntaxErrors,
+          hasSchemaErrors,
+          hasStyleErrors,
+          hasBrowserErrors,
+          hasVersionErrors,
+          hasPrefixErrors,
+        ].some(x => !!x);
+
+        if (fileHasErrors) {
           filesWithErrors.set(relativeFilePath, file);
         } else {
           console.error = console_error;
@@ -86,21 +96,21 @@ function load(...files) {
         }
       }
 
-      continue;
+      return prevHasErrors || fileHasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
+    const subFiles = fs.readdirSync(file).map(subfile => {
       return path.join(file, subfile);
     });
 
-    load(...subFiles);
-  }
+    return load(...subFiles) || prevHasErrors;
+  }, false);
 }
 
-if (argv.files) {
-  load.apply(undefined, argv.files);
-} else {
-  load(
+/** @type {boolean} */
+const hasErrors = argv.files
+  ? load.apply(undefined, argv.files)
+  : load(
     'api',
     'browsers',
     'css',
@@ -114,7 +124,6 @@ if (argv.files) {
     'xpath',
     'xslt',
   );
-}
 
 if (hasErrors) {
   console.warn("");
