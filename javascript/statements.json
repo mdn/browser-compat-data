@@ -1005,14 +1005,26 @@
               "version_added": "57"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "57"
             },
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": null
-            },
+            "nodejs": [
+              {
+                "version_added": "10.0.0"
+              },
+              {
+                "version_added": "8.10.0",
+                "version_removed": "10.0.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony-async-iteration"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "50"
             },
@@ -1026,7 +1038,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "63"
@@ -1250,7 +1262,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": true
               },
               "webview_android": {
                 "version_added": "63"
@@ -1380,7 +1392,7 @@
                 "version_added": "49"
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "49"
               },
               "edge": {
                 "version_added": null
@@ -1413,10 +1425,10 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": true
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "49"
               }
             },
             "status": {
@@ -1877,7 +1889,7 @@
               },
               "edge": {
                 "version_added": false,
-                "notes": "See <a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/javascriptmoduleimport/'>development status</a>."
+                "notes": "See <a href='https://developer.microsoft.com/microsoft-edge/platform/status/javascriptmoduleimport/'>development status</a>."
               },
               "edge_mobile": {
                 "version_added": false
