@@ -20,7 +20,7 @@ for (const browser of Object.keys(browsers)) {
  * @param {VersionValue} version
  */
 function isValidVersion(browserIdentifier, version) {
-  if (typeof version === "string") {
+  if (typeof version === 'string') {
     return validBrowserVersions[browserIdentifier].includes(version);
   } else {
     return true;
@@ -49,24 +49,59 @@ function testVersions(dataFilename) {
           supportStatements.push(supportData[browser]);
         }
 
+        const validBrowserVersionsString =
+          'true, false, null' +
+          (validBrowserVersions[browser].length > 0
+            ? ', ' + validBrowserVersions[browser].join(', ')
+            : '');
+        const validBrowserVersionsTruthy =
+          validBrowserVersions[browser].length > 0
+            ? 'true, ' + validBrowserVersions[browser].join(', ')
+            : 'true';
+
         for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
-            console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number for ' + browser);
-            console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
+            console.error(
+              `\x1b[31m  version_added: "${
+                statement.version_added
+              }" is not a valid version number for ${browser}`,
+            );
+            console.error(`\x1b[31m  Valid ${browser} versions are: ${validBrowserVersionsString}`);
             hasErrors = true;
           }
           if (!isValidVersion(browser, statement.version_removed)) {
-            console.error('\x1b[31m  version_removed: "' + statement.version_removed + '" is not a valid version number for ' + browser);
-            console.error('  Valid ' + browser + ' versions are: ' + validBrowserVersions[browser].join(', '));
+            console.error(
+              `\x1b[31m  version_removed: "${
+                statement.version_removed
+              }" is not a valid version number for ${browser}`,
+            );
+            console.error(`\x1b[31m  Valid ${browser} versions are: ${validBrowserVersionsString}`);
             hasErrors = true;
           }
-          if ("version_removed" in statement && "version_added" in statement) {
-            if (typeof statement.version_added !== "string" && statement.version_added !== true) {
-              console.error('\x1b[31m  version_added: "' + statement.version_added + '" is not a valid version number when version_removed is present');
-              console.error('  Valid', browser, 'versions are:', validBrowserVersions[browser].length > 0 ? 'true, ' + validBrowserVersions[browser].join(', ') : 'true');
+          if ('version_removed' in statement && 'version_added' in statement) {
+            if (
+              typeof statement.version_added !== 'string' &&
+              statement.version_added !== true
+            ) {
+              console.error(
+                `\x1b[31m  version_added: "${
+                  statement.version_added
+                }" is not a valid version number when version_removed is present`,
+              );
+              console.error(`\x1b[31m  Valid ${browser} versions are: ${validBrowserVersionsTruthy}`);
               hasErrors = true;
-            } else if (typeof statement.version_added === "string" && typeof statement.version_removed === "string" && compareVersions(statement.version_added, statement.version_removed) >= 0) {
-              console.error('\x1b[31m  version_removed: "' + statement.version_removed + '" must be greater than version_added: "' + statement.version_added + '"');
+            } else if (
+              typeof statement.version_added === 'string' &&
+              typeof statement.version_removed === 'string' &&
+              compareVersions(statement.version_added, statement.version_removed) >= 0
+            ) {
+              console.error(
+                `\x1b[31m  version_removed: "${
+                  statement.version_removed
+                }" must be greater than version_added: "${
+                  statement.version_added
+                }"`,
+              );
               hasErrors = true;
             }
           }
@@ -84,7 +119,7 @@ function testVersions(dataFilename) {
         checkVersions(data[prop].support);
       }
       const sub = data[prop];
-      if (typeof(sub) === "object") {
+      if (typeof sub === 'object') {
         findSupport(sub);
       }
     }
@@ -92,7 +127,7 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), dataFilename));
+    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), dataFilename)}`);
     console.error('\x1b[31m  Browser version error(s)\x1b[0m');
     return true;
   } else {

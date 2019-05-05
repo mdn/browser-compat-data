@@ -25,7 +25,11 @@ function orderSupportBlock(key, value) {
   return value;
 }
 
+/**
+ * @param {string} str
+ */
 function escapeInvisibles(str) {
+  /** @type {Array<[string, string]>} */
   const invisibles = [
     ['\b', '\\b'],
     ['\f', '\\f'],
@@ -42,6 +46,60 @@ function escapeInvisibles(str) {
   });
 
   return finalString;
+}
+
+/**
+ * Gets the row and column matching the index in a string.
+ *
+ * @param {string} str
+ * @param {number} index
+ * @return {[number, number] | [null, null]}
+ */
+function indexToPosRaw(str, index) {
+  let line = 1, col = 1;
+  let prevChar = null;
+
+  if (
+    typeof str !== 'string' ||
+    typeof index !== 'number' ||
+    index > str.length
+  ) {
+    return [null, null];
+  }
+
+  for (let i = 0; i < index; i++) {
+    let char = str[i];
+    switch (char) {
+      case '\n':
+        if (prevChar === '\r') break;
+      case '\r':
+        line++;
+        col = 1;
+        break;
+      case '\t':
+        // Use JSON `tab_size` value from `.editorconfig`
+        col += 2;
+        break;
+      default:
+        col++;
+        break;
+    }
+    prevChar = char;
+  }
+
+  return [line, col];
+}
+
+/**
+ * Gets the row and column matching the index in a string and formats it.
+ *
+ * @param {string} str
+ * @param {number} index
+ * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
+ */
+function indexToPos(str, index) {
+  const [line, col] = indexToPosRaw(str, index);
+  return `(Ln ${line}, Col ${col})`;
 }
 
 /**
@@ -80,23 +138,29 @@ function testStyle(filename) {
 
   if (actual !== expected) {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
-    console.error('\x1b[31m  Style – Error on line ' + jsonDiff(actual, expected));
+    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
+    console.error(`\x1b[31m  Style – Error on line ${jsonDiff(actual, expected)}`);
   }
 
   let expectedSorting = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
   if (actual !== expectedSorting) {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
-    console.error('\x1b[31m  Browser name sorting – Error on line ' + jsonDiff(actual, expectedSorting));
+    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
+    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(actual, expectedSorting)}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m', bugzillaMatch[0],
-      bugzillaMatch[1]);
+    console.error(
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        bugzillaMatch.index,
+      )} – Use shortenable URL (${
+        bugzillaMatch[0]
+      } → https://bugzil.la/${bugzillaMatch[1]}).\x1b[0m`,
+    );
   }
 
   {
@@ -117,7 +181,10 @@ function testStyle(filename) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
+          console.error(`\x1b[33m  Style ${indexToPos(
+            actual,
+            match.index,
+          )} – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
         }
 
         if (domain !== 'bugzil.la') {
@@ -126,15 +193,24 @@ function testStyle(filename) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
+          console.error(`\x1b[33m  Style ${indexToPos(
+            actual,
+            match.index,
+          )} – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            console.error(`\x1b[33m  Style – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
+            console.error(`\x1b[33m  Style ${indexToPos(
+              actual,
+              match.index,
+            )} – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
+          console.error(`\x1b[33m  Style ${indexToPos(
+            actual,
+            match.index,
+          )} – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
         }
       }
     } while (match != null);
@@ -144,34 +220,66 @@ function testStyle(filename) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://crbug.com/%s).\x1b[0m', crbugMatch[0],
-      crbugMatch[1]);
+    console.error(
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        crbugMatch.index,
+      )} – Use shortenable URL (${
+        crbugMatch[0]
+      } → https://crbug.com/${crbugMatch[1]}).\x1b[0m`,
+    );
   }
 
   const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    console.error('\x1b[33m  Style – Use shortenable URL (%s → https://webkit.org/b/%s).\x1b[0m', webkitMatch[0],
-      webkitMatch[1]);
+    console.error(
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        webkitMatch.index,
+      )} – Use shortenable URL (${
+        webkitMatch[0]
+      } → https://webkit.org/b/${webkitMatch[1]}).\x1b[0m`,
+    );
   }
 
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use non-localized MDN URL (%s → https://developer.mozilla.org/%s).\x1b[0m',
-      mdnUrlMatch[0],
-      mdnUrlMatch[2]);
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        mdnUrlMatch.index,
+      )} – Use non-localized MDN URL (${
+        mdnUrlMatch[0]
+      } → https://developer.mozilla.org/${mdnUrlMatch[2]}).\x1b[0m`,
+    );
+  }
+
+  const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
+  if (msdevUrlMatch) {
+    hasErrors = true;
+    console.error(
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        msdevUrlMatch.index,
+      )} – Use non-localized Microsoft Developer URL (${
+        msdevUrlMatch[0]
+      } → https://developer.microsoft.com${msdevUrlMatch[2]}).\x1b[0m`,
+    );
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use parentheses in constructor description: %s → %s()\x1b[0m',
-      constructorMatch[1],
-      constructorMatch[1]
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        constructorMatch.index,
+      )} – Use parentheses in constructor description: ${
+        constructorMatch[1]
+      } → ${constructorMatch[1]}()\x1b[0m`,
     );
   }
 
@@ -180,14 +288,19 @@ function testStyle(filename) {
     console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
   }
 
-  const regexp = new RegExp("<a href='([^'>]+)'>((?:.(?!\<\/a\>))*.)</a>", 'g');
+  const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
   let match = regexp.exec(actual);
   if (match) {
     var a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
       console.error(
-        '\x1b[33m  Style – Include hostname in URL: %s → https://developer.mozilla.org/%s\x1b[0m', match[1], match[1]
+        `\x1b[33m  Style ${indexToPos(
+          actual,
+          match.index,
+        )} – Include hostname in URL: ${
+          match[1]
+        } → https://developer.mozilla.org/${match[1]}\x1b[0m`,
       );
     }
   }
