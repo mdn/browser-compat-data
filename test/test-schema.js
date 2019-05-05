@@ -18,8 +18,14 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
   if (valid) {
     return false;
   } else {
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), dataFilename));
-    console.error('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
+    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), dataFilename)}`);
+    console.error(
+      `\x1b[31m  JSON schema – ${ajv.errors.length} ${
+        ajv.errors.length === 1 ? 'error' : 'errors'
+      }:\x1b[0m`,
+    );
+    // Output messages by one since better-ajv-errors wrongly joins messages
+    // (see https://github.com/atlassian/better-ajv-errors/pull/21)
     ajv.errors.forEach(e => {
       console.error(betterAjvErrors(schema, data, [e], {indent: 2}));
     });

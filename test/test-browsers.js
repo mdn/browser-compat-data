@@ -46,7 +46,7 @@ const browsers = {
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
- * @param {{error:function(string):void}} logger
+ * @param {{error:function(...unknown):void}} logger
  * @param {string} [path]
  * @returns {boolean}
  */
@@ -66,7 +66,23 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
   }
   for (const key in data) {
     if (key === "__compat") continue;
-    hasErrors |= processData(data[key], displayBrowsers, requiredBrowsers, category, logger, (path && path.length > 0) ? `${path}.${key}` : key);
+    // Note that doing `hasErrors |= processData(…)` would convert
+    // `hasErrors` into a number, which could potentially lead
+    // to unexpected issues down the line.
+
+    // We can't use the ESNext `hasErrors ||= processData(…)` here either,
+    // as that would prevent printing nested browser issues, making testing
+    // and fixing issues longer, as nested issues wouldn't be logged.
+    hasErrors = processData(
+      data[key],
+      displayBrowsers,
+      requiredBrowsers,
+      category,
+      logger,
+      (path && path.length > 0)
+        ? `${path}.${key}`
+        : key,
+    ) || hasErrors;
   }
   return hasErrors;
 }
@@ -104,15 +120,23 @@ function testBrowsers(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    error: (message) => {errors.push(message);}
-  }
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
 
   if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
     return false;
   } else {
-    console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');
-    for (let error of errors)
+    console.error(
+      `\x1b[  Browsers – ${errors.length} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:`,
+    );
+    for (const error of errors) {
       console.error(`    ${error}`);
+    }
     return true;
   }
 }
