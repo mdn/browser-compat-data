@@ -44,7 +44,7 @@
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "lint": "node test/lint",
+    "lint": "./node_modules/.bin/eslint test/ scripts/ index.js && node test/lint",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
     "render": "node scripts/render",
