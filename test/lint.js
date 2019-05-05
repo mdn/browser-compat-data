@@ -26,16 +26,18 @@ const argv = yargs.alias('version','v')
  * @return {boolean}
  */
 function load(...files) {
-  return files.reduce((hasErrors, file) => {
+  return files.reduce((prevHasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
-      return hasErrors; // Ignore non-existent files
+      return prevHasErrors; // Ignore non-existent files
     }
 
     if (fs.statSync(file).isFile()) {
+      let fileHasErrors = false;
+
       if (path.extname(file) === '.json') {
         let hasSyntaxErrors = false,
           hasSchemaErrors = false,
@@ -76,8 +78,17 @@ function load(...files) {
           hasSyntaxErrors = true;
           console.error(e);
         }
-        if (hasSyntaxErrors || hasSchemaErrors || hasStyleErrors || hasBrowserErrors || hasVersionErrors || hasPrefixErrors) {
-          hasErrors = true;
+
+        fileHasErrors = [
+          hasSyntaxErrors,
+          hasSchemaErrors,
+          hasStyleErrors,
+          hasBrowserErrors,
+          hasVersionErrors,
+          hasPrefixErrors,
+        ].some(x => !!x);
+
+        if (fileHasErrors) {
           filesWithErrors.set(relativeFilePath, file);
         } else {
           console.error = console_error;
@@ -85,15 +96,15 @@ function load(...files) {
         }
       }
 
-      return hasErrors;
+      return prevHasErrors || fileHasErrors;
     }
 
     const subFiles = fs.readdirSync(file).map(subfile => {
       return path.join(file, subfile);
     });
 
-    return load(...subFiles) || hasErrors;
-  }, /** @type {boolean} */ (false));
+    return load(...subFiles) || prevHasErrors;
+  }, false);
 }
 
 /** @type {boolean} */

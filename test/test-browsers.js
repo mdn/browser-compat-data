@@ -66,7 +66,16 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
   }
   for (const key in data) {
     if (key === "__compat") continue;
-    hasErrors |= processData(data[key], displayBrowsers, requiredBrowsers, category, logger, (path && path.length > 0) ? `${path}.${key}` : key);
+    hasErrors = processData(
+      data[key],
+      displayBrowsers,
+      requiredBrowsers,
+      category,
+      logger,
+      (path && path.length > 0)
+        ? `${path}.${key}`
+        : key,
+    ) || hasErrors;
   }
   return hasErrors;
 }
