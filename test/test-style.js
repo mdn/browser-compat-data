@@ -55,7 +55,7 @@ function escapeInvisibles(str) {
  * @param {number} index
  * @return {[number, number] | [null, null]}
  */
-function indexToPos(str, index) {
+function indexToPosRaw(str, index) {
   let line = 1, col = 1;
   let prevChar = null;
 
@@ -88,6 +88,18 @@ function indexToPos(str, index) {
   }
 
   return [line, col];
+}
+
+/**
+ * Gets the row and column matching the index in a string and formats it.
+ *
+ * @param {string} str
+ * @param {number} index
+ * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
+ */
+function indexToPos(str, index) {
+  const [line, col] = indexToPosRaw(str, index);
+  return `(Ln ${line}, Col ${col})`;
 }
 
 /**
@@ -142,9 +154,12 @@ function testStyle(filename) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
     console.error(
-      '\x1b[33m  Style – Use shortenable URL (%s → https://bugzil.la/%s).\x1b[0m',
-      bugzillaMatch[0],
-      bugzillaMatch[1],
+      `\x1b[33m  Style ${indexToPos(
+        actual,
+        bugzillaMatch.index,
+      )} – Use shortenable URL (${
+        bugzillaMatch[0]
+      } → https://bugzil.la/${bugzillaMatch[1]}).\x1b[0m`,
     );
   }
 
