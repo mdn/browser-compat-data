@@ -48,8 +48,9 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 #### List of current peers
 - Rachel Andrew (@rachelandrew)
-- Daniel Beck (@ddbeck)
+- Vinyl Darkscratch (@vinyldarkscratch)
 - Ryan Johnson (@escattone), Mozilla
+- Joe Medley (@jpmedley), Google
 - Jean-Yves Perrier (@teoli2003), Mozilla
 - Eric Shepherd (@a2sheppy), Mozilla
 - Irene Smith (@irenesmith), Mozilla
@@ -92,11 +93,10 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 #### List of current Owners
 - Florian Scholz (@Elchi3), Mozilla, BCD project lead
+- Daniel Beck (@ddbeck)
 - Will Bamberg (@wbamberg), Mozilla
 - Chris David Mills (@chrisdavidmills), Mozilla
 - Kadir Topal (@atopal), Mozilla
-
-The owners are also listed as top-level owners in GitHub’s code owner file.
 
 ## Additional paths to becoming a Peer or Owner
 
