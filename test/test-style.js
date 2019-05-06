@@ -190,10 +190,9 @@ function testStyle(filename) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(chalk.yellow(`  Style ${indexToPos(
-            actual,
-            match.index,
-          )} – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).`));
+          console.error(chalk.yellow(`  Style ${
+            indexToPos(actual, match.index)
+          } – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).`));
         }
 
         if (domain !== 'bugzil.la') {
@@ -202,24 +201,21 @@ function testStyle(filename) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          console.error(chalk.yellow(`  Style ${indexToPos(
-            actual,
-            match.index,
-          )} – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").`));
+          console.error(chalk.yellow(`  Style ${
+            indexToPos(actual, match.index)
+          } – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").`));
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            console.error(chalk.yellow(`  Style ${indexToPos(
-              actual,
-              match.index,
-            )} – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").`));
+            console.error(chalk.yellow(`  Style ${
+              indexToPos(actual, match.index)
+            } – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").`));
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          console.error(chalk.yellow(`  Style ${indexToPos(
-            actual,
-            match.index,
-          )} – Use standard link text ("${linkText}" → "bug ${bugId}").`));
+          console.error(chalk.yellow(`  Style ${
+            indexToPos(actual, match.index)
+          } – Use standard link text ("${linkText}" → "bug ${bugId}").`));
         }
       }
     } while (match != null);
@@ -230,10 +226,9 @@ function testStyle(filename) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
     console.error(chalk.yellow(
-      `  Style ${indexToPos(
-        actual,
-        crbugMatch.index,
-      )} – Use shortenable URL (${
+      `  Style ${
+        indexToPos(actual, crbugMatch.index)
+      } – Use shortenable URL (${
         crbugMatch[0]
       } → https://crbug.com/${crbugMatch[1]}).`,
     ));
@@ -244,10 +239,9 @@ function testStyle(filename) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
     console.error(chalk.yellow(
-      `  Style ${indexToPos(
-        actual,
-        webkitMatch.index,
-      )} – Use shortenable URL (${
+      `  Style ${
+        indexToPos(actual, webkitMatch.index)
+      } – Use shortenable URL (${
         webkitMatch[0]
       } → https://webkit.org/b/${webkitMatch[1]}).`,
     ));
@@ -257,10 +251,9 @@ function testStyle(filename) {
   if (mdnUrlMatch) {
     hasErrors = true;
     console.error(chalk.yellow(
-      `  Style ${indexToPos(
-        actual,
-        mdnUrlMatch.index,
-      )} – Use non-localized MDN URL (${
+      `  Style ${
+        indexToPos(actual, mdnUrlMatch.index)
+      } – Use non-localized MDN URL (${
         mdnUrlMatch[0]
       } → https://developer.mozilla.org/${mdnUrlMatch[2]}).`,
     ));
@@ -270,10 +263,9 @@ function testStyle(filename) {
   if (msdevUrlMatch) {
     hasErrors = true;
     console.error(chalk.yellow(
-      `  Style ${indexToPos(
-        actual,
-        msdevUrlMatch.index,
-      )} – Use non-localized Microsoft Developer URL (${
+      `  Style ${
+        indexToPos(actual, msdevUrlMatch.index)
+      } – Use non-localized Microsoft Developer URL (${
         msdevUrlMatch[0]
       } → https://developer.microsoft.com${msdevUrlMatch[2]}).`,
     ));
@@ -283,10 +275,9 @@ function testStyle(filename) {
   if (constructorMatch) {
     hasErrors = true;
     console.error(chalk.yellow(
-      `  Style ${indexToPos(
-        actual,
-        constructorMatch.index,
-      )} – Use parentheses in constructor description: ${
+      `  Style ${
+        indexToPos(actual, constructorMatch.index)
+      } – Use parentheses in constructor description: ${
         constructorMatch[1]
       } → ${constructorMatch[1]}()`,
     ));
@@ -304,10 +295,9 @@ function testStyle(filename) {
     if (a_url.hostname === null) {
       hasErrors = true;
       console.error(chalk.yellow(
-        `  Style ${indexToPos(
-          actual,
-          match.index,
-        )} – Include hostname in URL: ${
+        `  Style ${
+          indexToPos(actual, match.index)
+        } – Include hostname in URL: ${
           match[1]
         } → https://developer.mozilla.org/${match[1]}`,
       ));
