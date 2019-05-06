@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
+const chalk = require('chalk');
 const { platform } = require('os');
 
 /** Determines if the OS is Windows */
@@ -117,9 +118,9 @@ function jsonDiff(actual, expected) {
 
   for (var i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return `#${i + 1}\x1b[0m
+      return chalk`#${i + 1}{reset
     Actual:   ${escapeInvisibles(actualLines[i])}
-    Expected: ${escapeInvisibles(expectedLines[i])}`;
+    Expected: ${escapeInvisibles(expectedLines[i])}}`;
     }
   }
 }
@@ -144,31 +145,31 @@ function testStyle(filename) {
 
   if (actual !== expected) {
     hasErrors = true;
-    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
-    console.error(`\x1b[31m  Style – Error on line ${jsonDiff(actual, expected)}`);
+    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
+    console.error(chalk.red(`  Style – Error on line ${jsonDiff(actual, expected)}`));
   }
 
   if (expected !== expectedSorting) {
     hasErrors = true;
-    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
-    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(
+    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
+    console.error(chalk.red(`  Browser name sorting – Error on line ${jsonDiff(
       expected,
       expectedSorting,
-    )}`);
+    )}`));
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.error(
-      `\x1b[33m  Style ${indexToPos(
+    console.error(chalk.yellow(
+      `  Style ${indexToPos(
         actual,
         bugzillaMatch.index,
       )} – Use shortenable URL (${
         bugzillaMatch[0]
-      } → https://bugzil.la/${bugzillaMatch[1]}).\x1b[0m`,
-    );
+      } → https://bugzil.la/${bugzillaMatch[1]}).`,
+    ));
   }
 
   {
@@ -189,10 +190,10 @@ function testStyle(filename) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(`\x1b[33m  Style ${indexToPos(
+          console.error(chalk.yellow(`  Style ${indexToPos(
             actual,
             match.index,
-          )} – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).\x1b[0m`);
+          )} – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).`));
         }
 
         if (domain !== 'bugzil.la') {
@@ -201,24 +202,24 @@ function testStyle(filename) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style ${indexToPos(
+          console.error(chalk.yellow(`  Style ${indexToPos(
             actual,
             match.index,
-          )} – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").\x1b[0m`);
+          )} – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").`));
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            console.error(`\x1b[33m  Style ${indexToPos(
+            console.error(chalk.yellow(`  Style ${indexToPos(
               actual,
               match.index,
-            )} – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").\x1b[0m`);
+            )} – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").`));
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          console.error(`\x1b[33m  Style ${indexToPos(
+          console.error(chalk.yellow(`  Style ${indexToPos(
             actual,
             match.index,
-          )} – Use standard link text ("${linkText}" → "bug ${bugId}").\x1b[0m`);
+          )} – Use standard link text ("${linkText}" → "bug ${bugId}").`));
         }
       }
     } while (match != null);
@@ -228,72 +229,72 @@ function testStyle(filename) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    console.error(
-      `\x1b[33m  Style ${indexToPos(
+    console.error(chalk.yellow(
+      `  Style ${indexToPos(
         actual,
         crbugMatch.index,
       )} – Use shortenable URL (${
         crbugMatch[0]
-      } → https://crbug.com/${crbugMatch[1]}).\x1b[0m`,
-    );
+      } → https://crbug.com/${crbugMatch[1]}).`,
+    ));
   }
 
   const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    console.error(
-      `\x1b[33m  Style ${indexToPos(
+    console.error(chalk.yellow(
+      `  Style ${indexToPos(
         actual,
         webkitMatch.index,
       )} – Use shortenable URL (${
         webkitMatch[0]
-      } → https://webkit.org/b/${webkitMatch[1]}).\x1b[0m`,
-    );
+      } → https://webkit.org/b/${webkitMatch[1]}).`,
+    ));
   }
 
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
-    console.error(
-      `\x1b[33m  Style ${indexToPos(
+    console.error(chalk.yellow(
+      `  Style ${indexToPos(
         actual,
         mdnUrlMatch.index,
       )} – Use non-localized MDN URL (${
         mdnUrlMatch[0]
-      } → https://developer.mozilla.org/${mdnUrlMatch[2]}).\x1b[0m`,
-    );
+      } → https://developer.mozilla.org/${mdnUrlMatch[2]}).`,
+    ));
   }
 
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (msdevUrlMatch) {
     hasErrors = true;
-    console.error(
-      `\x1b[33m  Style ${indexToPos(
+    console.error(chalk.yellow(
+      `  Style ${indexToPos(
         actual,
         msdevUrlMatch.index,
       )} – Use non-localized Microsoft Developer URL (${
         msdevUrlMatch[0]
-      } → https://developer.microsoft.com${msdevUrlMatch[2]}).\x1b[0m`,
-    );
+      } → https://developer.microsoft.com${msdevUrlMatch[2]}).`,
+    ));
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
-    console.error(
-      `\x1b[33m  Style ${indexToPos(
+    console.error(chalk.yellow(
+      `  Style ${indexToPos(
         actual,
         constructorMatch.index,
       )} – Use parentheses in constructor description: ${
         constructorMatch[1]
-      } → ${constructorMatch[1]}()\x1b[0m`,
-    );
+      } → ${constructorMatch[1]}()`,
+    ));
   }
 
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
-    console.error('\x1b[33m  Style – Found \\" but expected \' for <a href>.\x1b[0m');
+    console.error(chalk.yellow('  Style – Found \\" but expected \' for <a href>.'));
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
@@ -302,14 +303,14 @@ function testStyle(filename) {
     var a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
-      console.error(
-        `\x1b[33m  Style ${indexToPos(
+      console.error(chalk.yellow(
+        `  Style ${indexToPos(
           actual,
           match.index,
         )} – Include hostname in URL: ${
           match[1]
-        } → https://developer.mozilla.org/${match[1]}\x1b[0m`,
-      );
+        } → https://developer.mozilla.org/${match[1]}`,
+      ));
     }
   }
 

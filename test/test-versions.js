@@ -1,6 +1,8 @@
 'use strict';
 const path = require('path');
 const compareVersions = require('compare-versions');
+const chalk = require('chalk');
+
 /**
  * @typedef {import('../types').Identifier} Identifier
  * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
@@ -61,21 +63,21 @@ function testVersions(dataFilename) {
 
         for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
-            console.error(
-              `\x1b[31m  version_added: "${
+            console.error(chalk.red(
+              `  version_added: "${
                 statement.version_added
               }" is not a valid version number for ${browser}`,
-            );
-            console.error(`\x1b[31m  Valid ${browser} versions are: ${validBrowserVersionsString}`);
+            ));
+            console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
             hasErrors = true;
           }
           if (!isValidVersion(browser, statement.version_removed)) {
-            console.error(
-              `\x1b[31m  version_removed: "${
+            console.error(chalk.red(
+              `  version_removed: "${
                 statement.version_removed
               }" is not a valid version number for ${browser}`,
-            );
-            console.error(`\x1b[31m  Valid ${browser} versions are: ${validBrowserVersionsString}`);
+            ));
+            console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
             hasErrors = true;
           }
           if ('version_removed' in statement && 'version_added' in statement) {
@@ -83,25 +85,25 @@ function testVersions(dataFilename) {
               typeof statement.version_added !== 'string' &&
               statement.version_added !== true
             ) {
-              console.error(
-                `\x1b[31m  version_added: "${
+              console.error(chalk.red(
+                `  version_added: "${
                   statement.version_added
                 }" is not a valid version number when version_removed is present`,
-              );
-              console.error(`\x1b[31m  Valid ${browser} versions are: ${validBrowserVersionsTruthy}`);
+              ));
+              console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsTruthy}`));
               hasErrors = true;
             } else if (
               typeof statement.version_added === 'string' &&
               typeof statement.version_removed === 'string' &&
               compareVersions(statement.version_added, statement.version_removed) >= 0
             ) {
-              console.error(
-                `\x1b[31m  version_removed: "${
+              console.error(chalk.red(
+                `  version_removed: "${
                   statement.version_removed
                 }" must be greater than version_added: "${
                   statement.version_added
                 }"`,
-              );
+              ));
               hasErrors = true;
             }
           }
@@ -127,8 +129,8 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error(`\x1b[31m  File : ${path.relative(process.cwd(), dataFilename)}`);
-    console.error('\x1b[31m  Browser version error(s)\x1b[0m');
+    console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
+    console.error(chalk.red('  Browser version error(s)'));
     return true;
   } else {
     return false;
