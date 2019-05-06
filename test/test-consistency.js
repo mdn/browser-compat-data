@@ -259,7 +259,7 @@ function testConsistency(filename) {
         if (errortype == "unsupported") {
           console.error(chalk`{red     → No support in }{red.bold ${browser}}{red , but this is not declared for sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         } else if (errortype == "support_unknown") {
-          console.error(`\x1b[34m    → No support known in \x1b[1m${browser}\x1b[0m\x1b[34m, but support declared in the following sub-feature(s): \x1b[1m${subfeatures.join(', ')}\x1b[0m`);
+          console.error(chalk`{red     → No support known in }{red.bold ${browser}}{red , but support declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         } else if (errortype == "subfeature_earlier_implementation") {
           console.error(chalk`{red     → Basic support in }{red.bold ${browser}}{red  was declared implemented in a later version than the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         }
