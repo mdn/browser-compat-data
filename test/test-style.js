@@ -113,11 +113,9 @@ function jsonDiff(actual, expected) {
 
   for (var i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return [
-        '#' + (i + 1) + '\x1b[0m',
-        '    Actual:   ' + escapeInvisibles(actualLines[i]),
-        '    Expected: ' + escapeInvisibles(expectedLines[i]),
-      ].join('\n');
+      return `#${i + 1}\x1b[0m
+    Actual:   ${escapeInvisibles(actualLines[i])}
+    Expected: ${escapeInvisibles(expectedLines[i])}`;
     }
   }
 }
@@ -128,12 +126,17 @@ function jsonDiff(actual, expected) {
 function testStyle(filename) {
   let hasErrors = false;
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual), null, 2);
+  /** @type {import('../types').CompatData} */
+  let dataObject = JSON.parse(actual);
+  let expected = JSON.stringify(dataObject, null, 2);
+  let expectedSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
 
-  const {platform} = require("os");
-  if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
-    actual = actual.replace(/\r/g, "");
-    expected = expected.replace(/\r/g, "");
+  const { platform } = require('os');
+  // prevent false positives from git.core.autocrlf on Windows
+  if (platform() === 'win32') {
+    actual = actual.replace(/\r/g, '');
+    expected = expected.replace(/\r/g, '');
+    expectedSorting = expectedSorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -142,11 +145,13 @@ function testStyle(filename) {
     console.error(`\x1b[31m  Style – Error on line ${jsonDiff(actual, expected)}`);
   }
 
-  let expectedSorting = JSON.stringify(JSON.parse(actual), orderSupportBlock, 2);
-  if (actual !== expectedSorting) {
+  if (expected !== expectedSorting) {
     hasErrors = true;
     console.error(`\x1b[31m  File : ${path.relative(process.cwd(), filename)}`);
-    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(actual, expectedSorting)}`);
+    console.error(`\x1b[31m  Browser name sorting – Error on line ${jsonDiff(
+      expected,
+      expectedSorting,
+    )}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
