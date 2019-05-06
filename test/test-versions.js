@@ -51,16 +51,9 @@ function testVersions(dataFilename) {
           supportStatements.push(supportData[browser]);
         }
 
-        const validBrowserVersionsString =
-          'true, false, null' +
-          (validBrowserVersions[browser].length > 0
-            ? ', ' + validBrowserVersions[browser].join(', ')
-            : '');
-        const validBrowserVersionsTruthy =
-          validBrowserVersions[browser].length > 0
-            ? 'true, ' + validBrowserVersions[browser].join(', ')
-            : 'true';
-
+        const validBrowserVersionsString = 'true, false, null, ' + validBrowserVersions[browser].join(', ');
+        const validBrowserVersionsTruthy = 'true, ' + validBrowserVersions[browser].join(', ');
+        
         for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
             console.error(chalk.red(
