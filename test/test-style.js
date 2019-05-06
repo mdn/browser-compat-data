@@ -3,6 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 const chalk = require('chalk');
+const { platform } = require('os');
+
+/** Determines if the OS is Windows */
+const IS_WINDOWS = platform() === 'win32';
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -132,11 +136,11 @@ function testStyle(filename) {
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
 
-  const {platform} = require("os");
-  if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
-    actual = actual.replace(/\r/g, "");
-    expected = expected.replace(/\r/g, "");
-    expectedSorting = expectedSorting.replace(/\r/g, "");
+  // prevent false positives from git.core.autocrlf on Windows
+  if (IS_WINDOWS) {
+    actual = actual.replace(/\r/g, '');
+    expected = expected.replace(/\r/g, '');
+    expectedSorting = expectedSorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -148,7 +152,10 @@ function testStyle(filename) {
   if (expected !== expectedSorting) {
     hasErrors = true;
     console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
-    console.error(chalk.red(`  Browser name sorting – Error on line ${jsonDiff(expected, expectedSorting)}`));
+    console.error(chalk.red(`  Browser name sorting – Error on line ${jsonDiff(
+      expected,
+      expectedSorting,
+    )}`));
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
