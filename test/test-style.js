@@ -2,6 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
+const { platform } = require('os');
+
+/** Determines if the OS is Windows */
+const IS_WINDOWS = platform() === 'win32';
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -131,9 +135,8 @@ function testStyle(filename) {
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
 
-  const { platform } = require('os');
   // prevent false positives from git.core.autocrlf on Windows
-  if (platform() === 'win32') {
+  if (IS_WINDOWS) {
     actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
     expectedSorting = expectedSorting.replace(/\r/g, '');
