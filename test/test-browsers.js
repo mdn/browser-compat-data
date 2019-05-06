@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const chalk = require('chalk');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -98,7 +99,7 @@ function testBrowsers(filename) {
   const data = require(filename);
 
   if (!category) {
-    console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
+    console.warn(chalk.blackBright('  Browsers – Unknown category'));
     return false;
   }
 
@@ -129,11 +130,11 @@ function testBrowsers(filename) {
   if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
     return false;
   } else {
-    console.error(
-      `\x1b[  Browsers – ${errors.length} ${
+    console.error(chalk.red(
+      `  Browsers – ${errors.length} ${
         errors.length === 1 ? 'error' : 'errors'
       }:`,
-    );
+    ));
     for (const error of errors) {
       console.error(`    ${error}`);
     }
