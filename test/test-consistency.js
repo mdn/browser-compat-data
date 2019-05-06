@@ -92,6 +92,34 @@ const chalk = require('chalk')
       });
     });
 
+    // Test whether sub-features are supported when basic support is not implemented
+    // For all unsupported browsers (basic support == false), sub-features should be set to false
+    const supportUnknownInParent = this.extractSupportUnknownBrowsers(data.__compat);
+    var inconsistentSubfeaturesByBrowser = {};
+
+    subfeatures.forEach(subfeature => {
+      const supportUnknownInChild = this.extractSupportNotTrueBrowsers(data[subfeature].__compat);
+
+      const browsers = supportUnknownInParent.filter(x => !supportUnknownInChild.includes(x));
+
+      browsers.forEach(browser => {
+        inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
+        inconsistentSubfeaturesByBrowser[browser].push(subfeature);
+      });
+    });
+
+    // Add errors
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
+      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
+      const errortype = 'support_unknown';
+
+      errors.push({
+        errortype,
+        browser,
+        subfeatures
+      });
+    });
+
     // Test whether sub-features are supported at an earlier version than basic support
     const supportInParent = this.extractSupportedBrowsersWithVersion(data.__compat);
     inconsistentSubfeaturesByBrowser = {};
@@ -136,6 +164,21 @@ const chalk = require('chalk')
     return this.extractBrowsers(compatData, data => data.version_added === false || typeof data.version_removed !== 'undefined' && data.version_removed !== false);
   }
 
+  /**
+   * @param {object} compatData
+   * @returns {Array<string>}
+   */
+  extractSupportUnknownBrowsers(compatData) {
+    return this.extractBrowsers(compatData, data => data.version_added === null);
+  }
+
+  /**
+   * @param {object} compatData
+   * @returns {Array<string>}
+   */
+  extractSupportNotTrueBrowsers(compatData) {
+    return this.extractBrowsers(compatData, data => (data.version_added === false || data.version_added === null) || typeof data.version_removed !== 'undefined' && data.version_removed !== false);
+  }
   /**
    * @param {object} compatData
    * @returns {Array<string>}
@@ -215,6 +258,8 @@ function testConsistency(filename) {
       errors.forEach(({ errortype, browser, subfeatures }) => {
         if (errortype == "unsupported") {
           console.error(chalk`{red     → No support in }{red.bold ${browser}}{red , but this is not declared for sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
+        } else if (errortype == "support_unknown") {
+          console.error(chalk`{red     → No support known in }{red.bold ${browser}}{red , but support declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         } else if (errortype == "subfeature_earlier_implementation") {
           console.error(chalk`{red     → Basic support in }{red.bold ${browser}}{red  was declared implemented in a later version than the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         }
