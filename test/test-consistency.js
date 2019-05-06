@@ -1,7 +1,7 @@
 'use strict';
-
 const path = require('path');
 const compareVersions = require('compare-versions');
+const chalk = require('chalk')
 
 /**
  * Consistency check.
@@ -209,14 +209,14 @@ function testConsistency(filename) {
   
   if (errors.length) {
     const relativeFilename = path.relative(process.cwd(), filename);
-    console.error(`\x1b[34m  Found \x1b[1m${errors.length}\x1b[0m\x1b[34m inconsistent feature(s) in \x1b[3m${relativeFilename}:\x1b[0m`);
+    console.error(chalk`{red   Found }{red.bold ${errors.length}}{red  inconsistent feature(s) in }{red.bold ${relativeFilename}}`);
     errors.forEach(({ feature, path, errors }) =>  {
-      console.error(`\x1b[34m  → \x1b[1m${errors.length}\x1b[0m\x1b[34m × \x1b[1m${feature}\x1b[0m\x1b[34m [\x1b[3m${path.join('.')}\x1b[0m\x1b[34m]: `);
+      console.error(chalk`{red   → }{red.bold ${errors.length}}{red  × }{red.bold ${feature}}{red  [${path.join('.')}]: }`);
       errors.forEach(({ errortype, browser, subfeatures }) => {
         if (errortype == "unsupported") {
-          console.error(`\x1b[34m    → No support in \x1b[1m${browser}\x1b[0m\x1b[34m, but this is not declared for sub-feature(s): \x1b[1m${subfeatures.join(', ')}\x1b[0m`);
+          console.error(chalk`{red     → No support in }{red.bold ${browser}}{red , but this is not declared for sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         } else if (errortype == "subfeature_earlier_implementation") {
-          console.error(`\x1b[34m    → Basic support in \x1b[1m${browser}\x1b[0m\x1b[34m was declared implemented in a later version than the following sub-feature(s): \x1b[1m${subfeatures.join(', ')}\x1b[0m`);
+          console.error(chalk`{red     → Basic support in }{red.bold ${browser}}{red  was declared implemented in a later version than the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         }
       });
     })
