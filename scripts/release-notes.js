@@ -7,7 +7,7 @@ const bcd = require('..');
 
 const { argv } = require('yargs')
   .command('$0 <version-tag>', 'Initiate a release of this package on GitHub', (yargs) => {
-    return yargs.positional('version-tag', {
+    yargs.positional('version-tag', {
       describe: 'the version tag to generate release notes for',
       type: 'string',
     });
