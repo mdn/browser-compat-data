@@ -51,9 +51,9 @@ function testVersions(dataFilename) {
           supportStatements.push(supportData[browser]);
         }
 
-        const validBrowserVersionsString = 'true, false, null, ' + validBrowserVersions[browser].join(', ');
-        const validBrowserVersionsTruthy = 'true, ' + validBrowserVersions[browser].join(', ');
-        
+        const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[browser].join(', ')}`;
+        const validBrowserVersionsTruthy = `true, ${validBrowserVersions[browser].join(', ')}`;
+
         for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
             console.error(chalk.red(
