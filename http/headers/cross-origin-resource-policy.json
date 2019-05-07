@@ -5,12 +5,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy",
           "support": {
-            "chrome": {
-              "version_added": "73"
-            },
-            "chrome_android": {
-              "version_added": "73"
-            },
+            "chrome": [
+              {
+                "version_added": "76"
+              },
+              {
+                "version_added": "73",
+                "notes": "Broken per https://bugs.chromium.org/p/chromium/issues/detail?id=952834"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "76"
+              },
+              {
+                "version_added": "73",
+                "notes": "Broken per https://bugs.chromium.org/p/chromium/issues/detail?id=952834"
+              }
+            ],
             "edge": {
               "version_added": false
             },
