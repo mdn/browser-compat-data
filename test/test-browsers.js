@@ -130,11 +130,7 @@ function testBrowsers(filename) {
   if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
     return false;
   } else {
-    console.error(chalk.red(
-      `  Browsers – ${errors.length} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:`,
-    ));
+    console.error(chalk`{red   Browsers – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
       console.error(`    ${error}`);
     }
