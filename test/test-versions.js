@@ -147,9 +147,8 @@ function testVersions(filename) {
       console.error(`    ${error}`);
     }
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 module.exports = testVersions;
