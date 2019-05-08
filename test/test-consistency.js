@@ -266,9 +266,8 @@ function testConsistency(filename) {
       });
     })
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 module.exports.testConsistency = testConsistency;
