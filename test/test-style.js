@@ -220,13 +220,13 @@ function testStyle(filename) {
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
-    console.error(chalk`{yellow   Style ${indexToPos(actual, mdnUrlMatch.index)} – Use non-localized MDN URL (}{red ${mdnUrlMatch[0]}}{yellow  → }{green.bold https://developer.mozilla.org/}{green ${mdnUrlMatch[2]}}{yellow ).}`);
+    console.error(chalk`{yellow   Style ${indexToPos(actual, mdnUrlMatch.index)} – Use non-localized MDN URL (}{red ${mdnUrlMatch[0]}}{yellow  → }{green https://developer.mozilla.org/${mdnUrlMatch[2]}}{yellow ).}`);
   }
 
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (msdevUrlMatch) {
     hasErrors = true;
-    console.error(chalk`{yellow   Style ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL (}{red ${msdevUrlMatch[0]}}{yellow  → }{green.bold https://developer.microsoft.com/}{green ${msdevUrlMatch[2]}}{yellow ).}`);
+    console.error(chalk`{yellow   Style ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL (}{red ${msdevUrlMatch[0]}}{yellow  → }{green https://developer.microsoft.com/${msdevUrlMatch[2]}}{yellow ).}`);
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
