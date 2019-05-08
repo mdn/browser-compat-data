@@ -118,9 +118,9 @@ function jsonDiff(actual, expected) {
 
   for (var i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return chalk`#${i + 1}{reset
+      return `#${i + 1}
     Actual:   ${escapeInvisibles(actualLines[i])}
-    Expected: ${escapeInvisibles(expectedLines[i])}}`;
+    Expected: ${escapeInvisibles(expectedLines[i])}`;
     }
   }
 }
@@ -146,16 +146,13 @@ function testStyle(filename) {
   if (actual !== expected) {
     hasErrors = true;
     console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
-    console.error(chalk.red(`  Style – Error on line ${jsonDiff(actual, expected)}`));
+    console.error(chalk`{red   Style – Error on }{red.bold line ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedSorting) {
     hasErrors = true;
     console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
-    console.error(chalk.red(`  Browser name sorting – Error on line ${jsonDiff(
-      expected,
-      expectedSorting,
-    )}`));
+    console.error(chalk`{red   Browser name sorting – Error on }{red.bold line ${jsonDiff(expected, expectedSorting)}}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
