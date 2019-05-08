@@ -137,7 +137,6 @@ function testVersions(filename) {
   findSupport(data);
 
   if (errors.length) {
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
     console.error(chalk.red(
       `  Versions – ${errors.length} ${
         errors.length === 1 ? 'error' : 'errors'
