@@ -127,9 +127,11 @@ function jsonDiff(actual, expected) {
 
 /**
  * @param {string} filename
+ * @param {{error:function(...unknown):void}} logger
  */
-function testStyle(filename) {
+function processData(filename, logger) {
   let hasErrors = false;
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../types').CompatData} */
   let dataObject = JSON.parse(actual);
@@ -145,14 +147,14 @@ function testStyle(filename) {
 
   if (actual !== expected) {
     hasErrors = true;
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
-    console.error(chalk.red(`  Style – Error on line ${jsonDiff(actual, expected)}`));
+    logger.error(chalk.red(`File : ${path.relative(process.cwd(), filename)}`));
+    logger.error(chalk.red(`Formatting error on line ${jsonDiff(actual, expected)}`));
   }
 
   if (expected !== expectedSorting) {
     hasErrors = true;
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
-    console.error(chalk.red(`  Browser name sorting – Error on line ${jsonDiff(
+    logger.error(chalk.red(`File : ${path.relative(process.cwd(), filename)}`));
+    logger.error(chalk.red(`Browser name sorting error on line ${jsonDiff(
       expected,
       expectedSorting,
     )}`));
@@ -162,8 +164,8 @@ function testStyle(filename) {
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    console.error(chalk.yellow(
-      `  Style ${indexToPos(
+    logger.error(chalk.yellow(
+      `${indexToPos(
         actual,
         bugzillaMatch.index,
       )} – Use shortenable URL (${
@@ -190,7 +192,7 @@ function testStyle(filename) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          console.error(chalk.yellow(`  Style ${indexToPos(
+          logger.error(chalk.yellow(`${indexToPos(
             actual,
             match.index,
           )} – Use HTTPS URL (http://${domain}/${bugId} → https://${domain}/${bugId}).`));
@@ -202,21 +204,21 @@ function testStyle(filename) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          console.error(chalk.yellow(`  Style ${indexToPos(
+          logger.error(chalk.yellow(`${indexToPos(
             actual,
             match.index,
           )} – Move word "bug" into link text ("${before}<a href='...'>${linkText}</a>" → "<a href='...'>${before}${bugId}</a>").`));
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            console.error(chalk.yellow(`  Style ${indexToPos(
+            logger.error(chalk.yellow(`${indexToPos(
               actual,
               match.index,
             )} – Use lowercase "bug" word within sentence ("Bug ${bugId}" → "bug ${bugId}").`));
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          console.error(chalk.yellow(`  Style ${indexToPos(
+          logger.error(chalk.yellow(`${indexToPos(
             actual,
             match.index,
           )} – Use standard link text ("${linkText}" → "bug ${bugId}").`));
@@ -229,8 +231,8 @@ function testStyle(filename) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    console.error(chalk.yellow(
-      `  Style ${indexToPos(
+    logger.error(chalk.yellow(
+      `${indexToPos(
         actual,
         crbugMatch.index,
       )} – Use shortenable URL (${
@@ -243,8 +245,8 @@ function testStyle(filename) {
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    console.error(chalk.yellow(
-      `  Style ${indexToPos(
+    logger.error(chalk.yellow(
+      `${indexToPos(
         actual,
         webkitMatch.index,
       )} – Use shortenable URL (${
@@ -256,8 +258,8 @@ function testStyle(filename) {
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
-    console.error(chalk.yellow(
-      `  Style ${indexToPos(
+    logger.error(chalk.yellow(
+      `${indexToPos(
         actual,
         mdnUrlMatch.index,
       )} – Use non-localized MDN URL (${
@@ -269,8 +271,8 @@ function testStyle(filename) {
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (msdevUrlMatch) {
     hasErrors = true;
-    console.error(chalk.yellow(
-      `  Style ${indexToPos(
+    logger.error(chalk.yellow(
+      `${indexToPos(
         actual,
         msdevUrlMatch.index,
       )} – Use non-localized Microsoft Developer URL (${
@@ -282,8 +284,8 @@ function testStyle(filename) {
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
-    console.error(chalk.yellow(
-      `  Style ${indexToPos(
+    logger.error(chalk.yellow(
+      `${indexToPos(
         actual,
         constructorMatch.index,
       )} – Use parentheses in constructor description: ${
@@ -294,7 +296,7 @@ function testStyle(filename) {
 
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
-    console.error(chalk.yellow('  Style – Found \\" but expected \' for <a href>.'));
+    logger.error(chalk.yellow('  Style – Found \\" but expected \' for <a href>.'));
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
@@ -303,8 +305,8 @@ function testStyle(filename) {
     var a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
-      console.error(chalk.yellow(
-        `  Style ${indexToPos(
+      logger.error(chalk.yellow(
+        `${indexToPos(
           actual,
           match.index,
         )} – Include hostname in URL: ${
@@ -315,6 +317,32 @@ function testStyle(filename) {
   }
 
   return hasErrors;
+}
+
+function testStyle(filename) {
+  /** @type {string[]} */
+  const errors = [];
+  const logger = {
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
+
+  processData(filename, logger);
+
+  if (errors.length) {
+    console.error(chalk.red(
+      `  Style – ${errors.length} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:`
+    ));
+    for (const error of errors) {
+      console.error(`    ${error}`);
+    }
+    return true;
+  }
+  return false;
 }
 
 module.exports = testStyle;
