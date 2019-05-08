@@ -127,9 +127,9 @@ function testBrowsers(filename) {
     },
   };
 
-  if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
-    return false;
-  } else {
+  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+
+  if (errors.length) {
     console.error(chalk.red(
       `  Browsers – ${errors.length} ${
         errors.length === 1 ? 'error' : 'errors'
@@ -140,6 +140,7 @@ function testBrowsers(filename) {
     }
     return true;
   }
+  return false;
 }
 
 module.exports = testBrowsers;

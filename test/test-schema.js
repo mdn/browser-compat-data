@@ -16,9 +16,7 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
 
   const valid = ajv.validate(schema, data);
 
-  if (valid) {
-    return false;
-  } else {
+  if (!valid) {
     console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
     console.error(chalk.red(
       `  JSON schema – ${ajv.errors.length} ${
@@ -32,6 +30,7 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
     });
     return true;
   }
+  return false;
 }
 
 module.exports = testSchema;
