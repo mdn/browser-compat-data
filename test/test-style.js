@@ -145,13 +145,11 @@ function testStyle(filename) {
 
   if (actual !== expected) {
     hasErrors = true;
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
     console.error(chalk.red(`  Style – Error on line ${jsonDiff(actual, expected)}`));
   }
 
   if (expected !== expectedSorting) {
     hasErrors = true;
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
     console.error(chalk.red(`  Browser name sorting – Error on line ${jsonDiff(
       expected,
       expectedSorting,
