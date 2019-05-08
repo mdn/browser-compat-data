@@ -19,7 +19,6 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
   if (valid) {
     return false;
   } else {
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
     console.error(chalk.red(
       `  JSON schema – ${ajv.errors.length} ${
         ajv.errors.length === 1 ? 'error' : 'errors'
