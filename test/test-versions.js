@@ -30,80 +30,95 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 /**
- * @param {string} dataFilename
+ * @param {SupportBlock} supportData
+ * @param {{error:function(...unknown):void}} logger
  */
-function testVersions(dataFilename) {
-  const data = require(dataFilename);
+function checkVersions(supportData, logger) {
   let hasErrors = false;
+  const browsersToCheck = Object.keys(supportData);
+  for (const browser of browsersToCheck) {
+    if (validBrowserVersions[browser]) {
+      /** @type {SimpleSupportStatement[]} */
+      const supportStatements = [];
+      if (Array.isArray(supportData[browser])) {
+        Array.prototype.push.apply(supportStatements, supportData[browser]);
+      } else {
+        supportStatements.push(supportData[browser]);
+      }
 
-  /**
-   * @param {SupportBlock} supportData
-   */
-  function checkVersions(supportData) {
-    const browsersToCheck = Object.keys(supportData);
-    for (const browser of browsersToCheck) {
-      if (validBrowserVersions[browser]) {
-        /** @type {SimpleSupportStatement[]} */
-        const supportStatements = [];
-        if (Array.isArray(supportData[browser])) {
-          Array.prototype.push.apply(supportStatements, supportData[browser]);
-        } else {
-          supportStatements.push(supportData[browser]);
+      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[browser].join(', ')}`;
+      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[browser].join(', ')}`;
+
+      for (const statement of supportStatements) {
+        if (!isValidVersion(browser, statement.version_added)) {
+          logger.error(chalk.red(
+            `version_added: "${
+              statement.version_added
+            }" is not a valid version number for ${browser}`,
+          ));
+          logger.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
+          hasErrors = true;
         }
-
-        const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[browser].join(', ')}`;
-        const validBrowserVersionsTruthy = `true, ${validBrowserVersions[browser].join(', ')}`;
-
-        for (const statement of supportStatements) {
-          if (!isValidVersion(browser, statement.version_added)) {
-            console.error(chalk.red(
-              `  version_added: "${
+        if (!isValidVersion(browser, statement.version_removed)) {
+          logger.error(chalk.red(
+            `version_removed: "${
+              statement.version_removed
+            }" is not a valid version number for ${browser}`,
+          ));
+          logger.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
+          hasErrors = true;
+        }
+        if ('version_removed' in statement && 'version_added' in statement) {
+          if (
+            typeof statement.version_added !== 'string' &&
+            statement.version_added !== true
+          ) {
+            logger.error(chalk.red(
+              `version_added: "${
                 statement.version_added
-              }" is not a valid version number for ${browser}`,
+              }" is not a valid version number when version_removed is present`,
             ));
-            console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
+            logger.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsTruthy}`));
             hasErrors = true;
-          }
-          if (!isValidVersion(browser, statement.version_removed)) {
-            console.error(chalk.red(
-              `  version_removed: "${
+          } else if (
+            typeof statement.version_added === 'string' &&
+            typeof statement.version_removed === 'string' &&
+            compareVersions(statement.version_added, statement.version_removed) >= 0
+          ) {
+            logger.error(chalk.red(
+              `version_removed: "${
                 statement.version_removed
-              }" is not a valid version number for ${browser}`,
+              }" must be greater than version_added: "${
+                statement.version_added
+              }"`,
             ));
-            console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
             hasErrors = true;
-          }
-          if ('version_removed' in statement && 'version_added' in statement) {
-            if (
-              typeof statement.version_added !== 'string' &&
-              statement.version_added !== true
-            ) {
-              console.error(chalk.red(
-                `  version_added: "${
-                  statement.version_added
-                }" is not a valid version number when version_removed is present`,
-              ));
-              console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsTruthy}`));
-              hasErrors = true;
-            } else if (
-              typeof statement.version_added === 'string' &&
-              typeof statement.version_removed === 'string' &&
-              compareVersions(statement.version_added, statement.version_removed) >= 0
-            ) {
-              console.error(chalk.red(
-                `  version_removed: "${
-                  statement.version_removed
-                }" must be greater than version_added: "${
-                  statement.version_added
-                }"`,
-              ));
-              hasErrors = true;
-            }
           }
         }
       }
     }
   }
+
+  return hasErrors;
+}
+
+/**
+ * @param {string} filename
+ */
+function testVersions(filename) {
+  const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
+  const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
+  /** @type {Identifier} */
+  const data = require(filename);
+
+  /** @type {string[]} */
+  const errors = [];
+  const logger = {
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
 
   /**
    * @param {Identifier} data
@@ -111,7 +126,7 @@ function testVersions(dataFilename) {
   function findSupport(data) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support);
+        checkVersions(data[prop].support, logger);
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
@@ -121,9 +136,16 @@ function testVersions(dataFilename) {
   }
   findSupport(data);
 
-  if (hasErrors) {
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
-    console.error(chalk.red('  Browser version error(s)'));
+  if (errors.length) {
+    console.error(chalk.red(`  File : ${path.relative(process.cwd(), filename)}`));
+    console.error(chalk.red(
+      `  Versions – ${errors.length} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:`,
+    ));
+    for (const error of errors) {
+      console.error(`    ${error}`);
+    }
     return true;
   } else {
     return false;
