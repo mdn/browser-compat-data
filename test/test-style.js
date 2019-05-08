@@ -147,13 +147,11 @@ function processData(filename, logger) {
 
   if (actual !== expected) {
     hasErrors = true;
-    logger.error(chalk.red(`File : ${path.relative(process.cwd(), filename)}`));
     logger.error(chalk.red(`Formatting error on line ${jsonDiff(actual, expected)}`));
   }
 
   if (expected !== expectedSorting) {
     hasErrors = true;
-    logger.error(chalk.red(`File : ${path.relative(process.cwd(), filename)}`));
     logger.error(chalk.red(`Browser name sorting error on line ${jsonDiff(
       expected,
       expectedSorting,
