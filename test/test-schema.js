@@ -19,7 +19,6 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
   if (valid) {
     return false;
   } else {
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
     console.error(chalk`{red   JSON Schema – }{red.bold ${ajv.errors.length}}{red  ${ajv.errors.length === 1 ? 'error' : 'errors'}:}`);
     // Output messages by one since better-ajv-errors wrongly joins messages
     // (see https://github.com/atlassian/better-ajv-errors/pull/21)

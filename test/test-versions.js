@@ -104,7 +104,6 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
     console.error(chalk.red('  Browser version error(s)'));
     return true;
   } else {
