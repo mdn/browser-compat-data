@@ -51,13 +51,11 @@ function checkVersions(supportData, logger) {
 
       for (const statement of supportStatements) {
         if (!isValidVersion(browser, statement.version_added)) {
-          logger.error(chalk`{red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}`);
-          logger.error(chalk`{red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
+          logger.error(chalk`{red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
           hasErrors = true;
         }
         if (!isValidVersion(browser, statement.version_removed)) {
-          logger.error(chalk`{red.bold version_removed: "${statement.version_removed}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}`);
-          logger.error(chalk`{red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
+          logger.error(chalk`{red.bold version_removed: "${statement.version_removed}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
           hasErrors = true;
         }
         if ('version_removed' in statement && 'version_added' in statement) {
@@ -65,8 +63,7 @@ function checkVersions(supportData, logger) {
             typeof statement.version_added !== 'string' &&
             statement.version_added !== true
           ) {
-            logger.error(chalk`{red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}{red  when }{red.bold version_removed}{red  is present}`);
-            logger.error(chalk`{red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsTruthy}}`);
+            logger.error(chalk`{red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}{red  when }{red.bold version_removed}{red  is present}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsTruthy}}`);
             hasErrors = true;
           } else if (
             typeof statement.version_added === 'string' &&
@@ -119,7 +116,7 @@ function testVersions(filename) {
   findSupport(data);
 
   if (errors.length) {
-    console.error(chalk.red(`  Versions – ${errors.length} ${errors.length === 1 ? 'error' : 'errors'}:`));
+    console.error(chalk`{red   Versions – }{red.bold ${errors.length} }{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
       console.error(`    ${error}`);
     }
