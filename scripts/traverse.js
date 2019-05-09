@@ -1,8 +1,16 @@
 'use strict';
 const bcd = require('..');
 
-var values_to_test = [null];
-var browser_to_test = 'chrome';
+const { argv } = require('yargs').command('$0 <browser> [value]', 'Test for specified values in any specified browser', (yargs) => {
+  yargs.positional('browser', {
+    describe: 'The browser to test for',
+    type: 'string'
+  }).positional('value', {
+    describe: 'The value(s) to test against',
+    type: 'array',
+    default: [null, true]
+  });
+});
 
 function traverseFeatures(obj, depth, identifier) {
   depth--;
@@ -11,12 +19,12 @@ function traverseFeatures(obj, depth, identifier) {
       if (!!obj[i] && typeof(obj[i]) == "object" && i !== '__compat') {
          if (obj[i].__compat) {
            let comp = obj[i].__compat.support;
-           let browser = comp[browser_to_test];
+           let browser = comp[argv.browser];
            if (!Array.isArray(browser)) {
               browser = [browser];
             }
             for (let range in browser) {
-              if (values_to_test.includes(browser[range].version_added) || values_to_test.includes(browser[range].version_removed)) {
+              if (argv.value.includes(browser[range].version_added) || argv.value.includes(browser[range].version_removed)) {
                 features.push(identifier + i);
               }
            }
