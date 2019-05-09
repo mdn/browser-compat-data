@@ -116,7 +116,7 @@ function testVersions(filename) {
   findSupport(data);
 
   if (errors.length) {
-    console.error(chalk`{red   Versions – }{red.bold ${errors.length} }{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(chalk`{red   Versions – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
       console.error(`    ${error}`);
     }
