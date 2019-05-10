@@ -22,7 +22,9 @@ const path = require('path');
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value).sort((a, b) => {
-      return a.toLowerCase().localeCompare(b.toLowerCase());
+      if(a === '__compat') return -1;
+      return (b.toLowerCase().localeCompare("a") >= 0) - (a.toLowerCase().localeCompare("a") >= 0)
+             || a.toLowerCase().localeCompare(b.toLowerCase());
     }).reduce((result, key) => {
       result[key] = value[key];
       return result;
