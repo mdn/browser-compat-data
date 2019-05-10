@@ -87,7 +87,6 @@ function checkVersions(supportData, relPath, logger) {
  */
 function testVersions(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
-  const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
 
