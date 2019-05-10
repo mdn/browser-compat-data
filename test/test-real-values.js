@@ -87,7 +87,7 @@ function testRealValues(filename) {
       }
     }
   }
-  findSupport(data, "");
+  findSupport(data);
 
   if (errors.length) {
     console.error(chalk`{red   Real values – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
