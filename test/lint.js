@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const ora = require('ora');
 const yargs = require('yargs');
+const chalk = require('chalk');
 const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
@@ -59,7 +60,7 @@ function load(...files) {
         const console_error = console.error;
         console.error = (...args) => {
           spinner['stream'] = process.stderr;
-          spinner.fail(relativeFilePath);
+          spinner.fail(chalk.red.bold(relativeFilePath));
           console.error = console_error;
           console.error(...args);
         }
@@ -127,13 +128,10 @@ const hasErrors = argv.files
 
 if (hasErrors) {
   console.warn('');
-  console.warn(
-    `Problems in ${filesWithErrors.size} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:`,
+  console.warn(chalk`{red Problems in }{red.bold ${filesWithErrors.size}}{red  ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
-    console.warn(fileName);
+    console.warn(chalk`{red.bold ✖ ${fileName}}`);
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../schemas/browsers.schema.json');
