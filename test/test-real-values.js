@@ -20,9 +20,10 @@ const blockList = {
 /**
  * @param {SupportBlock} supportData
  * @param {string[]} blockList
+ * @param {string} relPath
  * @param {{error:function(...unknown):void}} logger
  */
-function checkRealValues(supportData, blockList, logger) {
+function checkRealValues(supportData, blockList, relPath, logger) {
   let hasErrors = false;
   for (const browser of blockList) {
     /** @type {SimpleSupportStatement[]} */
@@ -35,15 +36,15 @@ function checkRealValues(supportData, blockList, logger) {
 
     for (const statement of supportStatements) {
       if (statement === undefined) {
-        logger.error(chalk`{red.bold ${browser}} {red must be defined for} {red.bold XXX}`);
+        logger.error(chalk`{red.bold ${browser}} {red must be defined for} {red.bold ${relPath}}`);
           hasErrors = true;
       } else {
         if ([true, null].includes(statement.version_added)) {
-          logger.error(chalk`{red.bold ${browser}} {red no longer accepts} {red.bold ${statement.version_added}} {red as a value}`);
+          logger.error(chalk`{red.bold ${relPath}} {red -} {red.bold ${browser}} {red no longer accepts} {red.bold ${statement.version_added}} {red as a value}`);
           hasErrors = true;
         }
         if ([true, null].includes(statement.version_removed)) {
-          logger.error(chalk`{red.bold ${browser}} {red no longer accepts} {red.bold ${statement.version_removed}} {red as a value}`);
+          logger.error(chalk`{red.bold ${relPath}} {red -} {red.bold ${browser}} {red no longer accepts} {red.bold ${statement.version_removed}} {red as a value}`);
           hasErrors = true;
         }
       }
@@ -73,19 +74,20 @@ function testRealValues(filename) {
 
   /**
    * @param {Identifier} data
+   * @param {string} relPath
    */
-  function findSupport(data) {
+  function findSupport(data, relPath) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0) checkRealValues(data[prop].support, blockList[category], logger);
+        if (blockList[category] && blockList[category].length > 0) checkRealValues(data[prop].support, blockList[category], relPath, logger);
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
-        findSupport(sub);
+        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
       }
     }
   }
-  findSupport(data);
+  findSupport(data, "");
 
   if (errors.length) {
     console.error(chalk`{red   Real values – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
