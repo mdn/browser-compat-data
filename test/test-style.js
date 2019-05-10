@@ -183,7 +183,7 @@ function processData(filename, logger) {
 
   if (actual !== expectedFeatureSorting) {
     hasErrors = true;
-    console.error(chalk`{red   Feature sorting – Error on }{red.bold line ${jsonDiff(expected, expectedFeatureSorting)}}`);
+    logger.error(chalk`{red   Feature sorting error on }{red.bold line ${jsonDiff(expected, expectedFeatureSorting)}}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
