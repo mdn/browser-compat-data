@@ -10,7 +10,7 @@ const testVersions = require('./test-versions');
 const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
-const {testConsistency} = require('./test-consistency');
+const testConsistency = require('./test-consistency');
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 

@@ -270,4 +270,4 @@ function testConsistency(filename) {
   return false;
 }
 
-module.exports.testConsistency = testConsistency;
+module.exports = testConsistency;
