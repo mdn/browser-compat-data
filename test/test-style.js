@@ -160,13 +160,15 @@ function processData(filename, logger) {
   /** @type {import('../types').CompatData} */
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
-  let expectedSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
+  let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
+  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
     actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
-    expectedSorting = expectedSorting.replace(/\r/g, '');
+    expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
+    expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -174,16 +176,14 @@ function processData(filename, logger) {
     logger.error(chalk`{red Error on }{red.bold line ${jsonDiff(actual, expected)}}`);
   }
 
-  if (expected !== expectedSorting) {
+  if (expected !== expectedBrowserSorting) {
     hasErrors = true;
     logger.error(chalk`{red Browser sorting error on }{red.bold line ${jsonDiff(expected, expectedSorting)}}`);
   }
 
-  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
   if (actual !== expectedFeatureSorting) {
     hasErrors = true;
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), filename));
-    console.error('\x1b[31m  Feature sorting – Error on line ' + jsonDiff(actual, expectedFeatureSorting));
+    console.error(chalk`{red   Feature sorting – Error on }{red.bold line ${jsonDiff(expected, expectedFeatureSorting)}}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
