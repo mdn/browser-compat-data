@@ -31,9 +31,10 @@ function isValidVersion(browserIdentifier, version) {
 
 /**
  * @param {SupportBlock} supportData
+ * @param {string} relPath
  * @param {{error:function(...unknown):void}} logger
  */
-function checkVersions(supportData, logger) {
+function checkVersions(supportData, relPath, logger) {
   let hasErrors = false;
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
@@ -51,11 +52,11 @@ function checkVersions(supportData, logger) {
 
       for (const statement of supportStatements) {
         if (!isValidVersion(browser, statement.version_added)) {
-          logger.error(chalk`{red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
+          logger.error(chalk`{red.bold ${relPath}} {red -} {red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
           hasErrors = true;
         }
         if (!isValidVersion(browser, statement.version_removed)) {
-          logger.error(chalk`{red.bold version_removed: "${statement.version_removed}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
+          logger.error(chalk`{red.bold ${relPath}} {red -} {red.bold version_removed: "${statement.version_removed}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
           hasErrors = true;
         }
         if ('version_removed' in statement && 'version_added' in statement) {
@@ -63,14 +64,14 @@ function checkVersions(supportData, logger) {
             typeof statement.version_added !== 'string' &&
             statement.version_added !== true
           ) {
-            logger.error(chalk`{red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}{red  when }{red.bold version_removed}{red  is present}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsTruthy}}`);
+            logger.error(chalk`{red.bold ${relPath}} {red -} {red.bold version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}{red  when }{red.bold version_removed}{red  is present}\n    {red Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsTruthy}}`);
             hasErrors = true;
           } else if (
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string' &&
             compareVersions(statement.version_added, statement.version_removed) >= 0
           ) {
-            logger.error(chalk`{red.bold version_removed: "${statement.version_removed}"}{red  must be greater than }{red.bold version_added: "${statement.version_added}"}`);
+            logger.error(chalk`{red.bold ${relPath}} {red -} {red.bold version_removed: "${statement.version_removed}"}{red  must be greater than }{red.bold version_added: "${statement.version_added}"}`);
             hasErrors = true;
           }
         }
@@ -101,15 +102,16 @@ function testVersions(filename) {
 
   /**
    * @param {Identifier} data
+   * @param {string} relPath
    */
-  function findSupport(data) {
+  function findSupport(data, relPath) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, logger);
+        checkVersions(data[prop].support, relPath, logger);
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
-        findSupport(sub);
+        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
       }
     }
   }
