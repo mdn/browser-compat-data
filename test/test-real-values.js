@@ -2,6 +2,22 @@
 const path = require('path');
 const chalk = require('chalk');
 
+/** @type {string[]} */
+const blockMany = [
+  'chrome',
+  'chrome_android',
+  'edge',
+  'edge_mobile',
+  'firefox',
+  'firefox_android',
+  'ie',
+  'opera',
+  'opera_android',
+  'safari',
+  'safari_ios',
+  'webview_android'
+];
+
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
@@ -10,8 +26,8 @@ const blockList = {
   http: [],
   svg: [],
   javascript: [],
-  mathml: [],
-  webdriver: [],
+  mathml: blockMany,
+  webdriver: blockMany.concat(['samsunginternet_android']),
   webextensions: [],
   xpath: [],
   xslt: []
