@@ -51,33 +51,18 @@ function testVersions(dataFilename) {
           supportStatements.push(supportData[browser]);
         }
 
-        const validBrowserVersionsString =
-          'true, false, null' +
-          (validBrowserVersions[browser].length > 0
-            ? ', ' + validBrowserVersions[browser].join(', ')
-            : '');
-        const validBrowserVersionsTruthy =
-          validBrowserVersions[browser].length > 0
-            ? 'true, ' + validBrowserVersions[browser].join(', ')
-            : 'true';
+        const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[browser].join(', ')}`;
+        const validBrowserVersionsTruthy = `true, ${validBrowserVersions[browser].join(', ')}`;
 
         for (const statement of supportStatements) {
           if (!isValidVersion(browser, statement.version_added)) {
-            console.error(chalk.red(
-              `  version_added: "${
-                statement.version_added
-              }" is not a valid version number for ${browser}`,
-            ));
-            console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
+            console.error(chalk`{red.bold   version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}`);
+            console.error(chalk`{red   Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
             hasErrors = true;
           }
           if (!isValidVersion(browser, statement.version_removed)) {
-            console.error(chalk.red(
-              `  version_removed: "${
-                statement.version_removed
-              }" is not a valid version number for ${browser}`,
-            ));
-            console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsString}`));
+            console.error(chalk`{red.bold   version_removed: "${statement.version_removed}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}`);
+            console.error(chalk`{red   Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsString}}`);
             hasErrors = true;
           }
           if ('version_removed' in statement && 'version_added' in statement) {
@@ -85,25 +70,15 @@ function testVersions(dataFilename) {
               typeof statement.version_added !== 'string' &&
               statement.version_added !== true
             ) {
-              console.error(chalk.red(
-                `  version_added: "${
-                  statement.version_added
-                }" is not a valid version number when version_removed is present`,
-              ));
-              console.error(chalk.red(`  Valid ${browser} versions are: ${validBrowserVersionsTruthy}`));
+              console.error(chalk`{red.bold   version_added: "${statement.version_added}"}{red  is }{red.bold NOT}{red  a valid version number for }{red.bold ${browser}}{red  when }{red.bold version_removed}{red  is present}`);
+              console.error(chalk`{red   Valid }{red.bold ${browser}}{red  versions are: ${validBrowserVersionsTruthy}}`);
               hasErrors = true;
             } else if (
               typeof statement.version_added === 'string' &&
               typeof statement.version_removed === 'string' &&
               compareVersions(statement.version_added, statement.version_removed) >= 0
             ) {
-              console.error(chalk.red(
-                `  version_removed: "${
-                  statement.version_removed
-                }" must be greater than version_added: "${
-                  statement.version_added
-                }"`,
-              ));
+              console.error(chalk`{red.bold   version_removed: "${statement.version_removed}"}{red  must be greater than }{red.bold version_added: "${statement.version_added}"}`);
               hasErrors = true;
             }
           }
@@ -129,7 +104,6 @@ function testVersions(dataFilename) {
   findSupport(data);
 
   if (hasErrors) {
-    console.error(chalk.red(`  File : ${path.relative(process.cwd(), dataFilename)}`));
     console.error(chalk.red('  Browser version error(s)'));
     return true;
   } else {
