@@ -159,7 +159,7 @@ function processData(filename, logger) {
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    logger.error(chalk`{yellow ${indexToPos(actual, bugzillaMatch.index)} – Use shortenable URL (}{red ${bugzillaMatch[0]}}{yellow  → }{green.bold https://bugzil.la/}{green ${bugzillaMatch[1]}}{yellow ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, bugzillaMatch.index)} – Use shortenable URL (}{yellow ${bugzillaMatch[0]}}{red  → }{green.bold https://bugzil.la/}{green ${bugzillaMatch[1]}}{red ).}`);
   }
 
   {
@@ -180,7 +180,7 @@ function processData(filename, logger) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          logger.error(chalk`{yellow ${indexToPos(actual, match.index)} – Use HTTPS URL (}{red http://${domain}/${bugId}}{yellow  → }{green http}{green.bold s}{green ://${domain}/${bugId}}{yellow ).}`);
+          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use HTTPS URL (}{yellow http://${domain}/${bugId}}{red  → }{green http}{green.bold s}{green ://${domain}/${bugId}}{red ).}`);
         }
 
         if (domain !== 'bugzil.la') {
@@ -189,15 +189,15 @@ function processData(filename, logger) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          logger.error(chalk`{yellow ${indexToPos(actual, match.index)} – Move word "bug" into link text (}{red "${before}<a href='...'>${linkText}</a>"}{yellow  → }{green "<a href='...'>}{green.bold ${before}}{green ${bugId}</a>"}{yellow ).}`);
+          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Move word "bug" into link text (}{yellow "${before}<a href='...'>${linkText}</a>"}{red  → }{green "<a href='...'>}{green.bold ${before}}{green ${bugId}</a>"}{red ).}`);
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            logger.error(chalk`{yellow ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence (}{red "Bug ${bugId}"}{yellow  → }{green "}{green.bold bug}{green  ${bugId}"}{yellow ).}`);
+            logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence (}{yellow "Bug ${bugId}"}{red  → }{green "}{green.bold bug}{green  ${bugId}"}{red ).}`);
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          logger.error(chalk`{yellow ${indexToPos(actual, match.index)} – Use standard link text (}{red "${linkText}"}{yellow  → }{green "bug ${bugId}"}{yellow ).}`);
+          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use standard link text (}{yellow "${linkText}"}{red  → }{green "bug ${bugId}"}{red ).}`);
         }
       }
     } while (match != null);
@@ -207,37 +207,37 @@ function processData(filename, logger) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    logger.error(chalk`{yellow ${indexToPos(actual, crbugMatch.index)} – Use shortenable URL (}{red ${crbugMatch[0]}}{yellow  → }{green.bold https://crbug.com/}{green ${crbugMatch[1]}}{yellow ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, crbugMatch.index)} – Use shortenable URL (}{yellow ${crbugMatch[0]}}{red  → }{green.bold https://crbug.com/}{green ${crbugMatch[1]}}{red ).}`);
   }
 
   const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    logger.error(chalk`{yellow ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL (}{red ${webkitMatch[0]}}{yellow  → }{green.bold https://webkit.org/b/}{green ${webkitMatch[1]}}{yellow ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL (}{yellow ${webkitMatch[0]}}{red  → }{green.bold https://webkit.org/b/}{green ${webkitMatch[1]}}{red ).}`);
   }
 
   const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (mdnUrlMatch) {
     hasErrors = true;
-    logger.error(chalk`{yellow ${indexToPos(actual, mdnUrlMatch.index)} – Use non-localized MDN URL (}{red ${mdnUrlMatch[0]}}{yellow  → }{green https://developer.mozilla.org/${mdnUrlMatch[2]}}{yellow ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, mdnUrlMatch.index)} – Use non-localized MDN URL (}{yellow ${mdnUrlMatch[0]}}{red  → }{green https://developer.mozilla.org/${mdnUrlMatch[2]}}{red ).}`);
   }
 
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (msdevUrlMatch) {
     hasErrors = true;
-    logger.error(chalk`{yellow ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL (}{red ${msdevUrlMatch[0]}}{yellow  → }{green https://developer.microsoft.com/${msdevUrlMatch[2]}}{yellow ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL (}{yellow ${msdevUrlMatch[0]}}{red  → }{green https://developer.microsoft.com/${msdevUrlMatch[2]}}{red ).}`);
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
-    logger.error(chalk`{yellow ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description (}{red ${constructorMatch[1]}}{yellow  → }{green ${constructorMatch[1]}}{green.bold ()}{yellow ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description (}{yellow ${constructorMatch[1]}}{red  → }{green ${constructorMatch[1]}}{green.bold ()}{red ).}`);
   }
 
   if (actual.includes("href=\\\"")) {
     hasErrors = true;
-    logger.error(chalk`{yellow Found }{red \\"}{yellow  but expected }{green \'}{yellow  for <a href>.}`);
+    logger.error(chalk`{red Found }{yellow \\"}{red  but expected }{green \'}{red  for <a href>.}`);
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
@@ -246,7 +246,7 @@ function processData(filename, logger) {
     var a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
-      logger.error(chalk`{yellow ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL (}{red ${match[1]}}{yellow  → }{green.bold https://developer.mozilla.org/}{green ${match[1]}}{yellow ).}`);
+      logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL (}{yellow ${match[1]}}{red  → }{green.bold https://developer.mozilla.org/}{green ${match[1]}}{red ).}`);
     }
   }
 
