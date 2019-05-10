@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const chalk = require('chalk');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -55,12 +56,12 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
   if (data.__compat && data.__compat.support) {
     const invalidEntries = Object.keys(data.__compat.support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
-      logger.error(`'${path}' has the following browsers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
+      logger.error(chalk`{red.bold ${path}}{red  has the following browsers, which are invalid for }{red.bold ${category}}{red  compat data: }{red.bold ${invalidEntries.join(', ')}}`);
       hasErrors = true;
     }
     const missingEntries = requiredBrowsers.filter(value => !(value in data.__compat.support));
     if (missingEntries.length > 0) {
-      logger.error(`'${path}' is missing the following browsers, which are required for ${category} compat data: ${missingEntries.join(', ')}`);
+      logger.error(chalk`{red.bold ${path}}{red  is missing the following browsers, which are required for }{red.bold ${category}}{red  compat data: }{red.bold ${missingEntries.join(', ')}}`);
       hasErrors = true;
     }
   }
@@ -98,7 +99,7 @@ function testBrowsers(filename) {
   const data = require(filename);
 
   if (!category) {
-    console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
+    console.warn(chalk.blackBright('  Browsers – Unknown category'));
     return false;
   }
 
@@ -126,19 +127,16 @@ function testBrowsers(filename) {
     },
   };
 
-  if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
-    return false;
-  } else {
-    console.error(
-      `\x1b[  Browsers – ${errors.length} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:`,
-    );
+  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+
+  if (errors.length) {
+    console.error(chalk`{red   Browsers – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
       console.error(`    ${error}`);
     }
     return true;
   }
+  return false;
 }
 
 module.exports = testBrowsers;
