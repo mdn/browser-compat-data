@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 /** @type {Record<string, string[]>} */
-const browsers = {
+const blockList = {
   api: [],
   css: ['ie'],
   html: [],
@@ -19,22 +19,25 @@ const browsers = {
 
 /**
  * @param {SupportBlock} supportData
+ * @param {string[]} blockList
  * @param {{error:function(...unknown):void}} logger
  */
-function checkRealValues(supportData, browsers, logger) {
+function checkRealValues(supportData, blockList, logger) {
   let hasErrors = false;
-  const browsersToCheck = Object.keys(supportData);
-  for (const browser of browsersToCheck) {
-    if (browsers.includes(browser)) {
-      /** @type {SimpleSupportStatement[]} */
-      const supportStatements = [];
-      if (Array.isArray(supportData[browser])) {
-        Array.prototype.push.apply(supportStatements, supportData[browser]);
-      } else {
-        supportStatements.push(supportData[browser]);
-      }
+  for (const browser of blockList) {
+    /** @type {SimpleSupportStatement[]} */
+    const supportStatements = [];
+    if (Array.isArray(supportData[browser])) {
+      Array.prototype.push.apply(supportStatements, supportData[browser]);
+    } else {
+      supportStatements.push(supportData[browser]);
+    }
 
-      for (const statement of supportStatements) {
+    for (const statement of supportStatements) {
+      if (statement === undefined) {
+        logger.error(chalk`{red.bold ${browser}} {red must be defined for} {red.bold XXX}`);
+          hasErrors = true;
+      } else {
         if ([true, null].includes(statement.version_added)) {
           logger.error(chalk`{red.bold ${browser}} {red no longer accepts} {red.bold ${statement.version_added}} {red as a value}`);
           hasErrors = true;
@@ -74,7 +77,7 @@ function testRealValues(filename) {
   function findSupport(data) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        if (browsers[category] && browsers[category].length > 0) checkRealValues(data[prop].support, browsers[category], logger);
+        if (blockList[category] && blockList[category].length > 0) checkRealValues(data[prop].support, blockList[category], logger);
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
