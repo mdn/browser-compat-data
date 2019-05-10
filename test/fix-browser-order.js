@@ -47,4 +47,4 @@ const fixBrowserOrder = (filename) => {
 	}
 }
 
-module.exports.fixBrowserOrder = fixBrowserOrder;
+module.exports = fixBrowserOrder;

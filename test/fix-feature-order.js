@@ -49,4 +49,4 @@ const fixFeatureOrder = (filename) => {
 	}
 }
 
-module.exports.fixFeatureOrder = fixFeatureOrder;
+module.exports = fixFeatureOrder;

@@ -1,8 +1,8 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const {fixBrowserOrder} = require('./fix-browser-order');
-const {fixFeatureOrder} = require('./fix-feature-order');
+const fixBrowserOrder = require('./fix-browser-order');
+const fixFeatureOrder = require('./fix-feature-order');
 
 
 const promises = [];
