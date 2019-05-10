@@ -3,9 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const ora = require('ora');
 const yargs = require('yargs');
+const chalk = require('chalk');
 const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
+const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
 const {testConsistency} = require('./test-consistency');
@@ -46,6 +48,7 @@ function load(...files) {
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
+          hasRealValueErrors = false,
           hasPrefixErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
@@ -61,7 +64,7 @@ function load(...files) {
         const console_error = console.error;
         console.error = (...args) => {
           spinner['stream'] = process.stderr;
-          spinner.fail(relativeFilePath);
+          spinner.fail(chalk.red.bold(relativeFilePath));
           console.error = console_error;
           console.error(...args);
         }
@@ -75,6 +78,7 @@ function load(...files) {
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
+            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
           }
         } catch (e) {
@@ -89,6 +93,7 @@ function load(...files) {
           hasBrowserErrors,
           hasVersionErrors,
           hasConsistencyErrors,
+          hasRealValueErrors,
           hasPrefixErrors,
         ].some(x => !!x);
 
@@ -131,13 +136,10 @@ const hasErrors = argv.files
 
 if (hasErrors) {
   console.warn('');
-  console.warn(
-    `Problems in ${filesWithErrors.size} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:`,
+  console.warn(chalk`{red Problems in }{red.bold ${filesWithErrors.size}}{red  ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
-    console.warn(fileName);
+    console.warn(chalk`{red.bold ✖ ${fileName}}`);
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../schemas/browsers.schema.json');
@@ -145,6 +147,7 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testVersions(file);
+        testRealValues(file);
         testBrowsers(file);
         testConsistency(file);
         testPrefix(file);
