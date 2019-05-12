@@ -6,9 +6,9 @@ const { argv } = require('yargs').command('$0 <browser> [folder] [value]', 'Test
     describe: 'The browser to test for',
     type: 'string'
   }).positional('folder', {
-    describe: 'The folder to test',
-    type: 'string',
-    default: ''
+    describe: 'The folder(s) to test',
+    type: 'array',
+    default: ['api', 'css', 'html', 'http', 'svg', 'javascript', 'mathml', 'webdriver', 'xpath', 'xslt']
   }).positional('value', {
     describe: 'The value(s) to test against',
     type: 'array',
@@ -41,6 +41,5 @@ function traverseFeatures(obj, depth, identifier) {
 }
 
 let features = [];
-if (argv.folder == '') traverseFeatures(bcd, 100, '');
-else traverseFeatures(bcd[argv.folder], 100, `${argv.folder}.`);
+for (let folder in argv.folder) traverseFeatures(bcd[folder], 100, `${folder}.`);
 console.log(features.join("\n"));
