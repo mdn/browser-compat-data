@@ -25,7 +25,8 @@ function traverseFeatures(obj, depth, identifier) {
             }
             for (let range in browser) {
               if (argv.value.includes(browser[range].version_added) || argv.value.includes(browser[range].version_removed)) {
-                features.push(identifier + i);
+                if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
+                else features.push(`${identifier}${i}`);
               }
            }
          }
