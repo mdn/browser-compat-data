@@ -29,9 +29,9 @@ function traverseFeatures(obj, depth, identifier) {
             }
             for (let range in browser) {
               if (browser[range] === undefined) {
-                if (argv.value.includes(null)) features.push(`${identifier}${i}`);
+                if (values.includes(null)) features.push(`${identifier}${i}`);
               }
-              else if (argv.value.includes(browser[range].version_added) || argv.value.includes(browser[range].version_removed)) {
+              else if (values.includes(browser[range].version_added) || values.includes(browser[range].version_removed)) {
                 if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
                 else features.push(`${identifier}${i}`);
               }
@@ -44,5 +44,9 @@ function traverseFeatures(obj, depth, identifier) {
 }
 
 let features = [];
-for (let folder in argv.folder) traverseFeatures(bcd[folder], 100, `${folder}.`);
+let folders = typeof argv.folder === 'string' ? [argv.folder] : argv.folder;
+let values = typeof argv.value === 'string' ? [argv.value] : argv.value;
+
+for (let folder in folders) traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
+
 console.log(features.join("\n"));
