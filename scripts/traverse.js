@@ -44,8 +44,8 @@ function traverseFeatures(obj, depth, identifier) {
 }
 
 let features = [];
-let folders = typeof argv.folder === 'string' ? [argv.folder] : argv.folder;
-let values = typeof argv.value === 'string' ? [argv.value] : argv.value;
+let folders = Array.isArray(argv.folder) ? argv.folder : [argv.folder];
+let values = Array.isArray(argv.value) ? argv.value : [argv.value];
 
 for (let folder in folders) traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
 
