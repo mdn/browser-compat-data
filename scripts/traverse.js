@@ -1,10 +1,14 @@
 'use strict';
 const bcd = require('..');
 
-const { argv } = require('yargs').command('$0 <browser> [value]', 'Test for specified values in any specified browser', (yargs) => {
+const { argv } = require('yargs').command('$0 <browser> [folder] [value]', 'Test for specified values in any specified browser', (yargs) => {
   yargs.positional('browser', {
     describe: 'The browser to test for',
     type: 'string'
+  }).positional('folder', {
+    describe: 'The folder to test',
+    type: 'string',
+    default: ''
   }).positional('value', {
     describe: 'The value(s) to test against',
     type: 'array',
@@ -37,5 +41,6 @@ function traverseFeatures(obj, depth, identifier) {
 }
 
 let features = [];
-traverseFeatures(bcd.css, 100, 'css.');
+if (argv.folder == '') traverseFeatures(bcd, 100, '');
+else traverseFeatures(bcd[argv.folder], 100, `${argv.folder}.`);
 console.log(features.join("\n"));
