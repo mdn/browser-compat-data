@@ -28,8 +28,8 @@ function traverseFeatures(obj, depth, identifier) {
               browser = [browser];
             }
             for (let range in browser) {
-              if (argv.value.includes(browser[range].version_added) || argv.value.includes(browser[range].version_removed)) {
-                if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
+              if (browser[range] === undefined || argv.value.includes(browser[range].version_added) || argv.value.includes(browser[range].version_removed)) {
+                if (browser[range] !== undefined && browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
                 else features.push(`${identifier}${i}`);
               }
            }
