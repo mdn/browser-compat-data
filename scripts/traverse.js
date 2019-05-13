@@ -12,7 +12,7 @@ const { argv } = require('yargs').command('$0 <browser> [folder] [value]', 'Test
   }).positional('value', {
     describe: 'The value(s) to test against',
     type: 'array',
-    default: [null, true]
+    default: ["null", "true"]
   });
 });
 
@@ -29,9 +29,10 @@ function traverseFeatures(obj, depth, identifier) {
             }
             for (let range in browser) {
               if (browser[range] === undefined) {
-                if (values.includes(null)) features.push(`${identifier}${i}`);
+                if (values.includes("null")) features.push(`${identifier}${i}`);
               }
-              else if (values.includes(browser[range].version_added) || values.includes(browser[range].version_removed)) {
+             else if (values.includes(String(browser[range].version_added)) ||
+                        values.includes(String(browser[range].version_removed))) {
                 if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
                 else features.push(`${identifier}${i}`);
               }
@@ -45,8 +46,9 @@ function traverseFeatures(obj, depth, identifier) {
 
 let features = [];
 let folders = Array.isArray(argv.folder) ? argv.folder : argv.folder.split(",");
-let values = Array.isArray(argv.value) ? argv.value : argv.value.split(",");
+let values = Array.isArray(argv.value) ? argv.value : argv.value.toString().split(",");
 
 for (let folder in folders) traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
 
 console.log(features.join("\n"));
+console.log(features.length);
