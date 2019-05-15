@@ -2,6 +2,13 @@
 
 We're really happy to accept contributions to the mdn-browser-compat-data repository!
 
+
+## Before you begin
+
+Please note that the compatibility data is made available under the
+[CC0 license](https://github.com/mdn/browser-compat-data/blob/master/LICENSE),
+so any contributions must be compatible with that license. If you're not sure about that, just ask.
+
 ## Ways to contribute
 
 There are many ways you can help improve this repository! For example:
