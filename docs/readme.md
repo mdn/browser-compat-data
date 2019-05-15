@@ -21,3 +21,11 @@ It takes 1-2 weeks for changes in this data to be reflected in MDN's browser com
 2. A new release of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) is created by MDN staff. This happens every 4-14 days.
 3. A new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, is built and deployed to production. This happens within a day of the npm package release.
 4. The MDN page using the data is regenerated. For newly converted pages, a staff member switches to the [{{Compat}}](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs) macro, and re-checks the conversion. For updates to converted pages, a logged-in MDN user [force-refreshes the page](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache#Bypassing_cache) to regenerate it.
+
+## Opening issues and pull requests
+
+Not everything is enforced or validated by the schema. A few things to pay attention to:
+
+* Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
+* Nesting of feature identifiers should make sense.
+* Notes use correct grammar and spelling. They should be complete sentences ending with a period.

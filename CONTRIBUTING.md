@@ -1,13 +1,6 @@
 ## Generating data using the Web API Confluence Dashboard
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](USING-CONFLUENCE.md) for instructions.
 
-## Checklist
-Not everything is enforced or validated by the schema. A few things to pay attention to:
-
-* Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
-* Nesting of feature identifiers should make sense.
-* Notes use correct grammar and spelling. They should be complete sentences ending with a period.
-
 ## Publishing a new package version
 
 Regularly, a new release of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) is created by MDN staff and will then be [deployed to the MDN site](https://github.com/mdn/browser-compat-data#browser-compatibility-tables-on-mdn). Usually this is done every Thursday (MDN never deploys to production on Fridays). Releases should be coordinated with the project owner [Florian Scholz](https://github.com/Elchi3), but anyone with owner permissions on the mdn/browser-compat-data repository has the ability to run the following steps which will create a new package version:
