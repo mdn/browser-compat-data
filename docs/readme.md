@@ -29,3 +29,8 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 * Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
 * Nesting of feature identifiers should make sense.
 * Notes use correct grammar and spelling. They should be complete sentences ending with a period.
+
+## Getting help
+
+If you need help with this repository or have any questions, contact the MDN team
+in the [#mdn](irc://irc.mozilla.org/mdn) IRC channel on irc.mozilla.org or write us on [discourse](https://discourse.mozilla-community.org/c/mdn).

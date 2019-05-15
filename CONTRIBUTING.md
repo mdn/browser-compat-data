@@ -6,8 +6,3 @@ If the feature you're interested in is a JavaScript API, you can cross-reference
 Please note that the compatibility data is made available under the
 [CC0 license](https://github.com/mdn/browser-compat-data/blob/master/LICENSE),
 so any contributions must be compatible with that license. If you're not sure about that, just ask.
-
-## Getting help
-
-If you need help with this repository or have any questions, contact the MDN team
-in the [#mdn](irc://irc.mozilla.org/mdn) IRC channel on irc.mozilla.org or write us on [discourse](https://discourse.mozilla-community.org/c/mdn).
