@@ -1,18 +1,3 @@
-We're really happy to accept contributions to the mdn-browser-compat-data repository!
-This file lists some general guidelines to help you contributing effectively.
-
-## Types of contribution
-
-There are many ways you can help improve this repository! For example:
-
-* **Adding new compat data**: familiarize yourself with the [schema](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json) and read the [schema docs](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md) to add new files.
-* **Fixing existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
-* **Fixing a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues),
-or maybe you found your own.
-* **Reviewing a pull request:** there is a list of [PRs](https://github.com/mdn/browser-compat-data/pulls).
-Let us know if these look good to you.
-* **Publishing a new package (staff only):** A new npm package should be published regularly, [see below](#publishing-a-new-package-version) for details.
-
 ## Validating the data
 You can use `npm test` to validate data against the schema. You might need to install the devDependencies using `npm install`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
