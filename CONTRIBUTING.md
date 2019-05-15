@@ -18,11 +18,6 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 * Nesting of feature identifiers should make sense.
 * Notes use correct grammar and spelling. They should be complete sentences ending with a period.
 
-## Code style
-
-The JSON files should be formatted according to the [.editorconfig](https://github.com/mdn/browser-compat-data/blob/master/.editorconfig) file.
-
-
 ## Publishing a new package version
 
 Regularly, a new release of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) is created by MDN staff and will then be [deployed to the MDN site](https://github.com/mdn/browser-compat-data#browser-compatibility-tables-on-mdn). Usually this is done every Thursday (MDN never deploys to production on Fridays). Releases should be coordinated with the project owner [Florian Scholz](https://github.com/Elchi3), but anyone with owner permissions on the mdn/browser-compat-data repository has the ability to run the following steps which will create a new package version:
