@@ -4,6 +4,10 @@
 
 The JSON files should be formatted according to the [.editorconfig](https://github.com/mdn/browser-compat-data/blob/master/.editorconfig) file.
 
+## Validating the data
+You can use `npm test` to validate data against the schema. You might need to install the `devDependencies` using `npm install`.
+The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
+
 ## Rendering
 
 You can use `npm run render $query $depth $aggregateMode` to output an HTML like it would be rendered on MDN.
