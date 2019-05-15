@@ -5,12 +5,6 @@ The JSON data is validated against the schema using [`ajv`](http://epoberezkin.g
 ## Generating data using the Web API Confluence Dashboard
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](USING-CONFLUENCE.md) for instructions.
 
-## Test rendering
-You can use `npm run render $query $dept $aggregateMode` to output the table HTML as it would be rendered on MDN.
-The parameters are the same as the [`{{compat}}` macro](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs).
-
-Paste the generated HTML into the MDN editor (source mode). You can use a new page, for example: https://developer.mozilla.org/en-US/docs/new and verify if the output looks correct.
-
 ## Checklist
 Not everything is enforced or validated by the schema. A few things to pay attention to:
 
