@@ -2,6 +2,14 @@
 
 We're really happy to accept contributions to the mdn-browser-compat-data repository!
 
+## Table of contents
+
+1. [Before you begin](#before-you-begin)
+2. [Ways to contribute](#ways-to-contribute)
+3. [Updating compatibility tables on MDN](#updating-compatibility-tables-on-mdn)
+4. [Opening issues and pull requests](#opening-issues-and-pull-requests)
+   1. [Generating data using the Web API Confluence Dashboard](#generating-data-using-the-web-api-confluence-dashboard)
+5. [Getting help](#getting-help)
 
 ## Before you begin
 
