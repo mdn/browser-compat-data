@@ -13,9 +13,13 @@ We're really happy to accept contributions to the mdn-browser-compat-data reposi
 
 ## Before you begin
 
-Please note that the compatibility data is made available under the
-[CC0 license](https://github.com/mdn/browser-compat-data/blob/master/LICENSE),
-so any contributions must be compatible with that license. If you're not sure about that, just ask.
+The browser-compat-data project (BCD) welcomes contributors of all kinds, but we ask that you keep these guidelines in mind when you're contributing.
+
+The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](/CODE_OF_CONDUCT.md).
+
+This project has [a formal governance document](/GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
+
+The repository is made available under the terms the [Creative Commons CC0 Public Domain Dedication](/LICENSE). Any contributions must be compatible with its terms. If you're not sure about that, [please ask](#getting-help).
 
 ## Ways to contribute
 
