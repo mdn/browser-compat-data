@@ -39,6 +39,8 @@ It takes 1-2 weeks for changes in this data to be reflected in MDN's browser com
 
 ## Opening issues and pull requests
 
+Before submitting your pull request, [validate your new data against the schema](testing.md).
+
 Not everything is enforced or validated by the schema. A few things to pay attention to:
 
 * Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
