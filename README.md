@@ -73,7 +73,7 @@ If you find a problem, please [file a bug](https://github.com/mdn/browser-compat
 
 ## Contributing
 
-We're very happy to accept contributions to this data. See the [Contributing to browser-compat-data](/docs/contributing.md) for more information.
+We're very happy to accept contributions to this data. See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
 
 ## Projects using the data
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
