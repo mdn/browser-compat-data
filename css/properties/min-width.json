@@ -22,7 +22,8 @@
               "notes": "CSS 2.1 leaves the behavior of <code>min-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Firefox supports applying <code>min-width</code> to <code>table</code> elements."
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "4",
+              "notes": "CSS 2.1 leaves the behavior of <code>min-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Firefox supports applying <code>min-width</code> to <code>table</code> elements."
             },
             "ie": {
               "version_added": "7"
@@ -32,7 +33,7 @@
               "notes": "CSS 2.1 leaves the behavior of <code>min-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Opera supports applying <code>min-width</code> to <code>table</code> elements."
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "1"
@@ -242,7 +243,7 @@
                 "version_added": false
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": false
               },
               "ie": {
                 "version_added": false
@@ -302,7 +303,9 @@
                 "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "firefox_android": {
-                "version_added": null
+                "prefix": "-moz-",
+                "version_added": "4",
+                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "ie": {
                 "version_added": false
@@ -376,9 +379,16 @@
                   "notes": "Firefox 18 and later (until the value was removed), used <code>auto</code> as the initial value for <code>min-width</code>."
                 }
               ],
-              "firefox_android": {
-                "version_added": null
-              },
+              "firefox_android": [
+                {
+                  "version_added": "34"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "22",
+                  "notes": "Firefox 18 and later (until the value was removed), used <code>auto</code> as the initial value for <code>min-width</code>."
+                }
+              ],
               "ie": {
                 "version_added": false
               },
