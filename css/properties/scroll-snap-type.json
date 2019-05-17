@@ -21,24 +21,24 @@
               "prefix": "-ms-",
               "notes": "Edge supports an earlier draft of CSS Scroll Snap without axis values."
             },
-            "firefox": {
-              "version_added": "39",
-              "notes": "Firefox supports an earlier draft of CSS Scroll Snap without axis values."
-            },
+            "firefox": [
+              {
+                "version_added": "39",
+                "version_removed": "68",
+                "notes": "An earlier draft of CSS Scroll Snap without axis values."
+              },
+              {
+                "version_added": "68"
+              }
+            ],
             "firefox_android": [
               {
                 "version_added": "46",
-                "notes": "Firefox supports an earlier draft of CSS Scroll Snap without axis values."
+                "version_removed": "68",
+                "notes": "An earlier draft of CSS Scroll Snap without axis values."
               },
               {
-                "version_added": "39",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scroll-snap.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "68"
               }
             ],
             "ie": {
