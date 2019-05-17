@@ -25,7 +25,7 @@ const blockList = {
   html: [],
   http: [],
   svg: [],
-  javascript: [],
+  javascript: ['firefox', 'firefox_android'],
   mathml: blockMany,
   webdriver: blockMany.concat(['samsunginternet_android']),
   webextensions: [],
