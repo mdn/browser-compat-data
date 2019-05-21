@@ -583,7 +583,7 @@
             },
             "ie": {
               "version_added": true,
-              "notes": "Calling location.reload() inside a nested cross-origin frame reloads the top frame, if the top frame address was added to Trusted websites."
+              "notes": "If a page added to <em>Trusted Sites</em> contains a cross-origin iframe, then calling <code>reload()</code> from within the iframe reloads the trusted page (in other words, the top page reloads, not the iframe)."
             },
             "opera": {
               "version_added": true
