@@ -119,7 +119,6 @@ const hasErrors = argv.files
     'api',
     'browsers',
     'css',
-    'exslt',
     'html',
     'http',
     'svg',

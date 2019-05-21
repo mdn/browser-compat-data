@@ -37,7 +37,6 @@ module.exports = load(
   'api',
   'browsers',
   'css',
-  'exslt',
   'html',
   'http',
   'javascript',
