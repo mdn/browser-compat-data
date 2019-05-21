@@ -22,7 +22,7 @@
             },
             "firefox": {
               "prefix": "-moz-",
-              "version_added": true,
+              "version_added": "1",
               "partial_implementation": true,
               "notes": [
                 "While the CSS property is parsed and accepted, it does not have any effect.",
@@ -31,7 +31,7 @@
             },
             "firefox_android": {
               "prefix": "-moz-",
-              "version_added": true,
+              "version_added": "4",
               "partial_implementation": true,
               "notes": [
                 "While the CSS property is parsed and accepted, it does not have any effect.",
@@ -49,22 +49,25 @@
             },
             "safari": [
               {
-                "prefix": "-khtml-",
-                "version_added": "2"
+                "version_added": "3",
+                "prefix": "-webkit-"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "3"
+                "version_added": "2",
+                "version_removed": "3",
+                "prefix": "-khtml-"
               }
             ],
             "safari_ios": {
-              "version_added": null
+              "version_added": "5",
+              "prefix": "-webkit-"
             },
             "samsunginternet_android": {
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "prefix": "-webkit-",
+              "version_added": "37"
             }
           },
           "status": {
@@ -113,7 +116,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "37"
               }
             },
             "status": {

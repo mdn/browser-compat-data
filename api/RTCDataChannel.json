@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel",
         "support": {
-          "webview_android": {
-            "version_added": "4.4"
-          },
           "chrome": {
             "version_added": true
           },
@@ -49,13 +46,16 @@
             "version_added": true
           },
           "safari": {
-            "version_added": null
+            "version_added": true
           },
           "safari_ios": {
             "version_added": false
           },
           "samsunginternet_android": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": "4.4"
           }
         },
         "status": {
@@ -68,9 +68,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/binaryType",
           "support": {
-            "webview_android": {
-              "version_added": "4.4"
-            },
             "chrome": {
               "version_added": true
             },
@@ -99,13 +96,16 @@
               "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": true
             },
             "safari_ios": {
               "version_added": false
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -119,9 +119,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmount",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -153,10 +150,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -170,9 +170,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -186,7 +183,7 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": true
             },
             "firefox_android": {
               "version_added": false
@@ -201,13 +198,16 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -217,13 +217,67 @@
           }
         }
       },
+      "bufferedamountlow_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event",
+          "description": "<code>bufferedamountlow</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "57",
+              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+            },
+            "chrome_android": {
+              "version_added": "57",
+              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "44",
+              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+            },
+            "opera_android": {
+              "version_added": "43",
+              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "57",
+              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -255,10 +309,117 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "close_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event",
+          "description": "<code>close</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "error_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event",
+          "description": "<code>error</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -272,9 +433,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/id",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -306,10 +464,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -323,9 +484,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/label",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -357,10 +515,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -374,9 +535,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxPacketLifeTime",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -390,10 +548,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "62"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "62"
             },
             "ie": {
               "version_added": false
@@ -408,10 +566,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -425,9 +586,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxRetransmits",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -441,10 +599,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": false
+              "version_added": "62"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "62"
             },
             "ie": {
               "version_added": false
@@ -459,14 +617,69 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "message_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event",
+          "description": "<code>message</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -476,9 +689,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/negotiated",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -510,10 +720,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -523,13 +736,62 @@
           }
         }
       },
+      "open_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event",
+          "description": "<code>open</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "ordered": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/ordered",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -561,10 +823,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -578,9 +843,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/protocol",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -612,10 +874,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -629,23 +894,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onbufferedamountlow",
           "support": {
-            "webview_android": {
-              "version_added": "57",
-              "notes": [
-                "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-              ]
-            },
             "chrome": {
               "version_added": "57",
-              "notes": [
-                "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-              ]
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "chrome_android": {
               "version_added": "57",
-              "notes": [
-                "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-              ]
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "edge": {
               "version_added": null
@@ -654,34 +909,34 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "44",
-              "notes": [
-                "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-              ]
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "opera_android": {
-              "version_added": "44",
-              "notes": [
-                "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-              ]
+              "version_added": "43",
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "safari": {
-              "version_added": null
+              "version_added": true
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "57",
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             }
           },
           "status": {
@@ -695,9 +950,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onclose",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -729,10 +981,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -746,9 +1001,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onerror",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -780,10 +1032,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -797,9 +1052,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onmessage",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -831,10 +1083,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -848,9 +1103,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onopen",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -882,10 +1134,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -899,11 +1154,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/priority",
           "support": {
-            "webview_android": {
-              "version_added": null
-            },
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
               "version_added": null
@@ -921,7 +1173,7 @@
               "version_added": null
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": null
@@ -933,9 +1185,12 @@
               "version_added": null
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
               "version_added": null
             }
           },
@@ -950,9 +1205,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/readyState",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -984,10 +1236,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1001,9 +1256,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/reliable",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1035,10 +1287,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1052,9 +1307,6 @@
         "__compat": {
           "description": "Support for sctp-sdp-21 format",
           "support": {
-            "webview_android": {
-              "version_added": "58"
-            },
             "chrome": {
               "version_added": "58"
             },
@@ -1086,10 +1338,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": null
+            },
+            "webview_android": {
+              "version_added": "58"
             }
           },
           "status": {
@@ -1103,9 +1358,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/send",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1137,10 +1389,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
@@ -1154,9 +1409,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/stream",
           "support": {
-            "webview_android": {
-              "version_added": "56"
-            },
             "chrome": {
               "version_added": "56"
             },
@@ -1188,10 +1440,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {

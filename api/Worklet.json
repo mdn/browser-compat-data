@@ -4,9 +4,6 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worklet",
         "support": {
-          "webview_android": {
-            "version_added": "65"
-          },
           "chrome": {
             "version_added": "65"
           },
@@ -20,10 +17,26 @@
             "version_added": false
           },
           "firefox": {
-            "version_added": true
+            "version_added": false,
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.worklet.enabled",
+                "value_to_set": "true"
+              }
+            ],
+            "notes": "Available only in Firefox Nightly."
           },
           "firefox_android": {
-            "version_added": true
+            "version_added": false,
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.worklet.enabled",
+                "value_to_set": "true"
+              }
+            ],
+            "notes": "Available only in Firefox Nightly."
           },
           "ie": {
             "version_added": false
@@ -32,7 +45,7 @@
             "version_added": "52"
           },
           "opera_android": {
-            "version_added": "52"
+            "version_added": "47"
           },
           "safari": {
             "version_added": false
@@ -42,6 +55,9 @@
           },
           "samsunginternet_android": {
             "version_added": true
+          },
+          "webview_android": {
+            "version_added": "65"
           }
         },
         "status": {
@@ -54,9 +70,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worklet/addModule",
           "support": {
-            "webview_android": {
-              "version_added": "65"
-            },
             "chrome": {
               "version_added": "65"
             },
@@ -70,10 +83,26 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "63"
+              "version_added": false,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.worklet.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Available only in Firefox Nightly."
             },
             "firefox_android": {
-              "version_added": "63"
+              "version_added": false,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.worklet.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Available only in Firefox Nightly."
             },
             "ie": {
               "version_added": false
@@ -82,7 +111,7 @@
               "version_added": "52"
             },
             "opera_android": {
-              "version_added": "52"
+              "version_added": "47"
             },
             "safari": {
               "version_added": false
@@ -92,6 +121,9 @@
             },
             "samsunginternet_android": {
               "version_added": true
+            },
+            "webview_android": {
+              "version_added": "65"
             }
           },
           "status": {

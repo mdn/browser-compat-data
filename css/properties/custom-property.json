@@ -6,9 +6,20 @@
           "description": "--*",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/--*",
           "support": {
-            "chrome": {
-              "version_added": "49"
-            },
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_added": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
             "chrome_android": {
               "version_added": "49"
             },
@@ -18,12 +29,42 @@
             "edge_mobile": {
               "version_added": "15"
             },
-            "firefox": {
-              "version_added": "29"
-            },
-            "firefox_android": {
-              "version_added": "29"
-            },
+            "firefox": [
+              {
+                "version_added": "31"
+              },
+              {
+                "version_added": "29",
+                "version_removed": "55",
+                "partial_implementation": true,
+                "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.variables.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "31"
+              },
+              {
+                "version_added": "29",
+                "version_removed": "55",
+                "partial_implementation": true,
+                "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.variables.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -71,9 +112,20 @@
                   ]
                 }
               ],
-              "chrome_android": {
-                "version_added": null
-              },
+              "chrome_android": [
+                {
+                  "version_added": "49"
+                },
+                {
+                  "version_added": "48",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
               "edge": {
                 "version_added": "15"
               },
@@ -87,7 +139,6 @@
                 {
                   "version_added": "29",
                   "version_removed": "55",
-                  "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
                   "flags": [
                     {
                       "type": "preference",
@@ -104,7 +155,6 @@
                 {
                   "version_added": "29",
                   "version_removed": "55",
-                  "notes": "From Firefox 29 until Firefox 31, this feature was implemented by the <code>var-variablename</code> syntax.",
                   "flags": [
                     {
                       "type": "preference",
@@ -121,7 +171,7 @@
                 "version_added": "36"
               },
               "opera_android": {
-                "version_added": "37"
+                "version_added": "36"
               },
               "safari": {
                 "version_added": true
@@ -149,10 +199,25 @@
             "description": "<code>env()</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "69"
               },
               "chrome_android": {
                 "version_added": "69"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "65"
+              },
+              "firefox_android": {
+                "version_added": "65"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "56"
               },
               "safari": [
                 {
@@ -160,7 +225,7 @@
                 },
                 {
                   "version_added": "11",
-                  "version_removed": "11",
+                  "version_removed": "11.1",
                   "alternative_name": "constant"
                 }
               ],
@@ -170,7 +235,7 @@
                 },
                 {
                   "version_added": "11",
-                  "version_removed": "11",
+                  "version_removed": "11.1",
                   "alternative_name": "constant"
                 }
               ]

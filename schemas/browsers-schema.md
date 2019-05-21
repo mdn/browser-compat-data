@@ -17,11 +17,14 @@ The file `firefox.json` is structured like this:
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "pref_url": "about:config",
       "releases": {
         "1.5": {
           "release_date": "2005-11-29",
           "release_notes": "https://developer.mozilla.org/Firefox/Releases/1.5",
-          "status": "retired"
+          "status": "retired",
+          "engine": "Gecko",
+          "engine_version": "1.8"
         }
       }
     }
@@ -35,7 +38,11 @@ Underneath, there is a `releases` object which will hold the various releases of
 
 ### `name`
 
-The `name` string is an optional property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+
+### `pref_url`
+
+An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
 
 ### Release objects
 The release objects consist of the following properties:
@@ -52,6 +59,10 @@ The release objects consist of the following properties:
 * An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
 
 * An optional `release_notes` property which points to release notes. It needs to be a valid URL.
+
+* An optional `engine` property which is the name of the browser's engine.
+
+* An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
 
 ### Exports
 

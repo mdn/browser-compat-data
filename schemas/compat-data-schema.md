@@ -122,6 +122,54 @@ A constructor for a given feature in `api/` should have the same name as the par
 }
 ```
 
+#### Secure context required
+
+A feature that requires HTTPS should contain a subfeature titled `secure_context_required`, which describes how different browsers handle the secure context requirement. This new subfeature should also have the description `Secure context required`.
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+For example, if the `ImageData` feature requires a secure context from version 60 in Chrome, version 55 in Firefox, and not at all in Safari, we could represent that as follows:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "60"
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### The `__compat` object
 The `__compat` object consists of the following:
 
@@ -132,6 +180,9 @@ An object listing the compatibility information for each browser ([see below](#t
 A string containing a human-readable description of the feature.
 It is intended to be used as a caption or title and should be kept short.
 The `<code>` and `<a>` HTML elements can be used.
+
+* An optional `matches` property to __help match the feature to source code__ ([see below](#the-matches-object))
+An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
 
 * An optional `status` property for __status information__.
 An object containing information about the stability of the feature:
@@ -149,8 +200,8 @@ information about versions, prefixes, or alternate names, as well as notes.
 The currently accepted browser identifiers should be declared in alphabetical order:
 * `chrome`, Google Chrome (on desktops)
 * `chrome_android`, Google Chrome (on Android)
-* `edge`, MS Edge (on Windows)
-* `edge_mobile`, MS Edge, the mobile version
+* `edge`, MS Edge (on Windows), based on the EdgeHTML version
+* `edge_mobile`, MS Edge (on Windows Mobile), based on the EdgeHTML version
 * `firefox`, Mozilla Firefox (on desktops)
 * `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 * `ie`, Microsoft Internet Explorer (discontinued)
@@ -159,13 +210,13 @@ The currently accepted browser identifiers should be declared in alphabetical or
 * `opera_android`, the Opera browser (Android version)
 * `qq_android`, the QQ browser (Android version)
 * `safari`, Safari on macOS
-* `safari_ios`, Safari on iOS
+* `safari_ios`, Safari on iOS, based on the iOS version
 * `samsunginternet_android`, the Samsung Internet browser (Android version)
 * `uc_android`, UC Browser (Android version)
 * `uc_chinese_android`, UC Browser (Chinese Android version)
 * `webview_android`, Webview, the former stock browser on Android
 
-No browser identifier is mandatory.
+Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
 #### The `support_statement` object
 The `support_statement` object describes the support provided by a single browser type for the given subfeature.
@@ -299,13 +350,13 @@ In some cases features are named entirely differently and not just prefixed. Exa
 Note that you can’t have both `prefix` and `alternative_name`.
 
 #### `flags`
-An optional array of objects indicating what kind of flags must be set for this feature to work. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature.
+An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this
+array will have one item, but there are cases where two or more flags can be required to activate a feature.
 An object in the `flags` array consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
   * `preference` a flag the user can set (like in `about:config` in Firefox).
-  * `compile_flag` a flag to be set before compiling the browser.
   * `runtime_flag` a flag to be set before starting the browser.
-* `name` (mandatory): a `string` representing the flag or preference to modify.
+* `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
 * `value_to_set` (optional): representing the actual value to set the flag to.
 It is a string, that may be converted to the right type
 (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
@@ -349,10 +400,17 @@ It defaults to `false` (no interoperability problem expected).
 If set to `true`, it is recommended to add a note indicating how it diverges from
 the standard (implements an old version of the standard, for example).
 
+A `boolean` value indicating whether or not the implementation of the sub-feature
+deviates from the specification in a way that may cause compatibility problems. It
+defaults to `false` (no interoperability problems expected). If set to `true`, it is
+recommended that you add a note explaining how it diverges from the standard (such as
+that it implements an old version of the standard, for example).
+
 #### `notes`
-An `array` of zero or more strings containing
-additional information. If there is only one entry in the array,
-the array can be a just a string. Example:
+A string or `array` of strings containing additional information. If there is only one
+entry, the value of `notes` must simply be a string instead of an array.
+
+Example:
 
 * Indicating a restriction:
 ```json
@@ -365,6 +423,33 @@ the array can be a just a string. Example:
 }
 ```
 The `<code>` and `<a>` HTML elements can be used.
+
+### The `matches` object
+
+A `matches` object contains hints to help automatically detect whether source code corresponds to a feature, such as a list of keywords or a regular expression. A `matches` object may have one of the following properties (in order of preference):
+
+* `keywords`: an array of one or more literal strings that correspond to the feature.
+
+  Examples:
+
+  - In CSS selector features, they can be literal selectors. See [`css.selectors.backdrop`](../css/selectors/backdrop.json)).
+  - In CSS property subfeatures, they can be data type keywords or function keywords. See [`css.properties.transform.3d`](../css/properties/transform.json)).
+
+* `regex_token`: a string containing a regular expression that matches a single token (i.e., text delimited by characters that are excluded from the text to be matched) corresponding to the feature.
+
+  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
+
+  Examples:
+
+  - In CSS property subfeatures, they can be regular expressions that match component value types. See [`css.properties.color.alpha_hexadecimal_notation`](../css/properties/color.json) and corresponding tests.
+
+* `regex_value`: a string containing a regular expression that matches a complete value corresponding to the feature.
+
+  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
+
+  Examples:
+
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
 
 ### Status information
 The status property contains information about stability of the feature. It is

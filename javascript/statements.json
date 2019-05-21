@@ -62,6 +62,7 @@
         "__compat": {
           "description": "<code>async function</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-async-function-definitions",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -127,6 +128,7 @@
       "block": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/block",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-block",
           "support": {
             "chrome": {
               "version_added": true
@@ -181,6 +183,7 @@
       "break": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/break",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-break-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -235,12 +238,15 @@
       "class": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/class",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-class-definitions",
           "support": {
             "chrome": {
-              "version_added": "42"
+              "version_added": "49",
+              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             },
             "chrome_android": {
-              "version_added": "42"
+              "version_added": "49",
+              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             },
             "edge": {
               "version_added": true
@@ -261,7 +267,7 @@
               "version_added": "6.0.0"
             },
             "opera": {
-              "version_added": null
+              "version_added": "36"
             },
             "opera_android": {
               "version_added": null
@@ -276,7 +282,8 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "42"
+              "version_added": "49",
+              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             }
           },
           "status": {
@@ -284,119 +291,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "array_subclassing": {
-          "__compat": {
-            "description": "Array subclassing",
-            "support": {
-              "chrome": {
-                "version_added": "43"
-              },
-              "chrome_android": {
-                "version_added": "43"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "4.0"
-              },
-              "webview_android": {
-                "version_added": "43"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "allow_in_sloppy_mode": {
-          "__compat": {
-            "description": "Allowed in sloppy mode",
-            "support": {
-              "chrome": {
-                "version_added": "49"
-              },
-              "chrome_android": {
-                "version_added": "49"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": "49"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "const": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-let-and-const-declarations",
           "support": {
             "chrome": {
               "version_added": "21"
@@ -459,6 +359,7 @@
       "continue": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/continue",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-continue-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -513,6 +414,7 @@
       "debugger": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/debugger",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-debugger-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -569,6 +471,10 @@
           "__compat": {
             "description": "<code>default</code> keyword in <code>switch</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/default",
+            "spec_url": [
+              "https://tc39.github.io/ecma262/#sec-switch-statement",
+              "https://tc39.github.io/ecma262/#sec-exports"
+            ],
             "support": {
               "chrome": {
                 "version_added": true
@@ -624,6 +530,10 @@
           "__compat": {
             "description": "<code>default</code> keyword with <code>export</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/default",
+            "spec_url": [
+              "https://tc39.github.io/ecma262/#sec-switch-statement",
+              "https://tc39.github.io/ecma262/#sec-exports"
+            ],
             "support": {
               "chrome": {
                 "version_added": "61"
@@ -688,7 +598,7 @@
                 "version_added": "47"
               },
               "opera_android": {
-                "version_added": "47"
+                "version_added": "44"
               },
               "safari": {
                 "version_added": "10.1"
@@ -715,6 +625,7 @@
         "__compat": {
           "description": "<code>do...while</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/do...while",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-do-while-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -770,6 +681,7 @@
         "__compat": {
           "description": "Empty statement (<code>;</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/Empty",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-empty-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -824,6 +736,7 @@
       "export": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-exports",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -888,7 +801,7 @@
               "version_added": "47"
             },
             "opera_android": {
-              "version_added": "47"
+              "version_added": "44"
             },
             "safari": {
               "version_added": "10.1"
@@ -913,6 +826,7 @@
       "for": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-for-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -959,6 +873,74 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "for_await_of": {
+        "__compat": {
+          "description": "<code>for await...of</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-for-in-and-for-of-statements",
+          "support": {
+            "chrome": {
+              "version_added": "63"
+            },
+            "chrome_android": {
+              "version_added": "63"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "57"
+            },
+            "firefox_android": {
+              "version_added": "57"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": [
+              {
+                "version_added": "10.0.0"
+              },
+              {
+                "version_added": "8.10.0",
+                "version_removed": "10.0.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony-async-iteration"
+                  }
+                ]
+              }
+            ],
+            "opera": {
+              "version_added": "50"
+            },
+            "opera_android": {
+              "version_added": "46"
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "63"
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1025,6 +1007,7 @@
         "__compat": {
           "description": "<code>for...in</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...in",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-for-in-and-for-of-statements",
           "support": {
             "chrome": {
               "version_added": true
@@ -1080,6 +1063,7 @@
         "__compat": {
           "description": "<code>for...of</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-for-in-and-for-of-statements",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -1155,7 +1139,7 @@
                 "version_added": "57"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "nodejs": {
                 "version_added": null
@@ -1164,7 +1148,7 @@
                 "version_added": "50"
               },
               "opera_android": {
-                "version_added": "50"
+                "version_added": "46"
               },
               "safari": {
                 "version_added": null
@@ -1173,7 +1157,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": true
               },
               "webview_android": {
                 "version_added": "63"
@@ -1244,6 +1228,7 @@
       "function": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-function-definitions",
           "support": {
             "chrome": {
               "version_added": true
@@ -1294,60 +1279,6 @@
             "deprecated": false
           }
         },
-        "allow_in_sloppy_mode": {
-          "__compat": {
-            "description": "Allowed in sloppy mode",
-            "support": {
-              "chrome": {
-                "version_added": "49"
-              },
-              "chrome_android": {
-                "version_added": null
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": null
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": null
-              },
-              "webview_android": {
-                "version_added": null
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "trailing_comma_in_parameters": {
           "__compat": {
             "description": "Trailing comma in parameters",
@@ -1380,7 +1311,7 @@
                 "version_added": "45"
               },
               "opera_android": {
-                "version_added": "45"
+                "version_added": "43"
               },
               "safari": {
                 "version_added": null
@@ -1407,6 +1338,7 @@
         "__compat": {
           "description": "<code>function*</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function*",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-generator-function-definitions",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -1599,7 +1531,7 @@
                 "version_added": "52"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "nodejs": {
                 "version_added": "8.0.0"
@@ -1635,6 +1567,7 @@
         "__compat": {
           "description": "<code>if...else</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/if...else",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-if-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -1689,6 +1622,10 @@
       "import": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import",
+          "spec_url": [
+            "https://github.com/tc39/proposal-dynamic-import/#import",
+            "https://tc39.github.io/ecma262/#sec-imports"
+          ],
           "support": {
             "chrome": {
               "version_added": "61"
@@ -1760,7 +1697,7 @@
               "version_added": "47"
             },
             "opera_android": {
-              "version_added": "47"
+              "version_added": "44"
             },
             "safari": {
               "version_added": "10.1"
@@ -1772,7 +1709,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "61"
             }
           },
           "status": {
@@ -1793,19 +1730,43 @@
               },
               "edge": {
                 "version_added": false,
-                "notes": "See <a href='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/javascriptmoduleimport/'>development status</a>."
+                "notes": "See <a href='https://developer.microsoft.com/microsoft-edge/platform/status/javascriptmoduleimport/'>development status</a>."
               },
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1342012'>bug 1342012</a>."
-              },
-              "firefox_android": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1342012'>bug 1342012</a>."
-              },
+              "firefox": [
+                {
+                  "version_added": "67"
+                },
+                {
+                  "version_added": "66",
+                  "version_removed": "67",
+                  "flags": [
+                    {
+                      "name": "javascript.options.dynamicImport",
+                      "type": "preference",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "67"
+                },
+                {
+                  "version_added": "66",
+                  "version_removed": "67",
+                  "flags": [
+                    {
+                      "name": "javascript.options.dynamicImport",
+                      "type": "preference",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -1816,7 +1777,7 @@
                 "version_added": "50"
               },
               "opera_android": {
-                "version_added": "50"
+                "version_added": "46"
               },
               "safari": {
                 "version_added": "11.1"
@@ -1825,7 +1786,7 @@
                 "version_added": "11.1"
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": false
               },
               "webview_android": {
                 "version_added": "63"
@@ -1843,12 +1804,19 @@
         "__compat": {
           "description": "<code>import.meta</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import.meta",
+          "spec_url": [
+            "https://github.com/tc39/proposal-import-meta/#importmeta",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#hostgetimportmetaproperties"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
             },
             "chrome_android": {
               "version_added": "64"
+            },
+            "edge": {
+              "version_added": null
             },
             "firefox": {
               "version_added": "62"
@@ -1863,7 +1831,13 @@
               "version_added": "51"
             },
             "opera_android": {
-              "version_added": "51"
+              "version_added": "47"
+            },
+            "safari": {
+              "version_added": "11.1"
+            },
+            "safari_ios": {
+              "version_added": "12"
             },
             "samsunginternet_android": {
               "version_added": false
@@ -1882,6 +1856,7 @@
       "label": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/label",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-labelled-statements",
           "support": {
             "chrome": {
               "version_added": true
@@ -1936,6 +1911,7 @@
       "let": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-let-and-const-declarations",
           "support": {
             "chrome": [
               {
@@ -2013,7 +1989,7 @@
               "version_added": "17"
             },
             "opera_android": {
-              "version_added": "17"
+              "version_added": "18"
             },
             "safari": {
               "version_added": "10"
@@ -2046,6 +2022,7 @@
       "return": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/return",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-return-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -2100,6 +2077,7 @@
       "switch": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/switch",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-switch-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -2154,6 +2132,7 @@
       "throw": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/throw",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-throw-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -2209,6 +2188,7 @@
         "__compat": {
           "description": "<code>try...catch</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-try-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -2341,13 +2321,13 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "10.0.0"
               },
               "opera": {
                 "version_added": "53"
               },
               "opera_android": {
-                "version_added": "53"
+                "version_added": "47"
               },
               "safari": {
                 "version_added": false
@@ -2373,6 +2353,7 @@
       "var": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/var",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-variable-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -2427,6 +2408,7 @@
       "while": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/while",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-while-statement",
           "support": {
             "chrome": {
               "version_added": true
@@ -2481,6 +2463,7 @@
       "with": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/with",
+          "spec_url": "https://tc39.github.io/ecma262/#sec-with-statement",
           "support": {
             "chrome": {
               "version_added": true
