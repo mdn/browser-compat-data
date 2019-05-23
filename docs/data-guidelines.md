@@ -3,6 +3,7 @@
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
 - [Data guidelines](#data-guidelines)
+  * [Secure context required](#secure-context-required)
   * [Naming event features: `eventname_event`](#naming-event-features---eventname-event-)
   * [Defined names without behaviors imply `partial_implementation`](#defined-names-without-behaviors-imply--partial-implementation-)
   * [Release lines and backported features](#release-lines-and-backported-features)
@@ -18,6 +19,57 @@ A description of what to do, preferable in the imperative. If applicable, includ
 If it's helpful to understanding the rule, summarize the rationale. Definitely cite the issue or pull request where this was decided (it may be the PR that merges the policy).
 
 -- END TEMPLATE -->
+
+## Secure context required
+
+An API that requires HTTPS should contain a subfeature named `secure_context_required` and have a description with the text `Secure context required`, like this:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+For example, if the `ImageData` feature requires a secure context from version 60 in Chrome, version 55 in Firefox, and not at all in Safari, we could represent that as follows:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "60"
+            },
+            "firefox": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Discussed in more detail in [#190](https://github.com/mdn/browser-compat-data/issues/190).
+
 
 ## Naming event features: `eventname_event`
 
