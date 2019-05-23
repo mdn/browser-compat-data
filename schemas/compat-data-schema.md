@@ -80,6 +80,8 @@ What it represents exactly depends of the evolution of the feature over time, bo
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
+See [Data guidelines](/docs/data-guidelines.md) for more information about feature naming conventions and other best practices.
+
 ### The `__compat` object
 The `__compat` object consists of the following:
 
