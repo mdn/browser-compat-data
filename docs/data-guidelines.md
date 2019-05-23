@@ -20,6 +20,30 @@ If it's helpful to understanding the rule, summarize the rationale. Definitely c
 
 -- END TEMPLATE -->
 
+## Worker support
+
+Data for an API's support for Web Workers should be in a subfeature named `worker_support` and have a description with the text `Available in workers`.
+
+For example, if the `ImageData` API has worker support, then it would be recorded like this:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
+
 ## Secure context required
 
 An API that requires HTTPS should contain a subfeature named `secure_context_required` and have a description with the text `Secure context required`, like this:
