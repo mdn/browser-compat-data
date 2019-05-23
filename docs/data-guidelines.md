@@ -20,6 +20,28 @@ If it's helpful to understanding the rule, summarize the rationale. Definitely c
 
 -- END TEMPLATE -->
 
+## Constructor features
+
+A constructor for an API feature should have the same name as the parent feature (unless the constructor doesn't share the name of its parent feature) and have a description with text in the form of `<code>Name()</code> constructor`.
+
+For example, the `ImageData` constructor, `ImageData()`, is represented as `api.ImageData.ImageData`. It has the description `<code>ImageData()</code> constructor`, like this:
+
+```json
+{
+  "api": {
+    "ImageData": {
+      "__compat": {},
+      "ImageData": {
+        "__compat": {
+          "description": "<code>ImageData()</code> constructor",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
 ## Worker support
 
 Data for an API's support for Web Workers should be in a subfeature named `worker_support` and have a description with the text `Available in workers`.
