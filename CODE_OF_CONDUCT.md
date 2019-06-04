@@ -9,4 +9,4 @@ For more information on how to report violations of the Community Participation 
 
 ## Project Specific Etiquette
 
-For more specific information about how and by whom this project is governed, please see the BCD [governance](https://github.com/mdn/browser-compat-data/blob/master/governance.md) doc.
+For more specific information about how and by whom this project is governed, please see the BCD [governance](GOVERNANCE.md) doc.

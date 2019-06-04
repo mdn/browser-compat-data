@@ -658,54 +658,6 @@
           }
         }
       },
-      "async": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/async",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "bgColor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/bgColor",
@@ -2000,7 +1952,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "From version 67, creating touch events using this method is no longer supported."
             },
             "firefox_android": {
               "version_added": true
@@ -2350,7 +2303,8 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": "18"
+              "version_added": "18",
+              "version_removed": "67"
             },
             "firefox_android": {
               "version_added": "6"
@@ -2409,7 +2363,8 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": "18"
+              "version_added": "18",
+              "version_removed": "67"
             },
             "firefox_android": {
               "version_added": "6"
@@ -2962,7 +2917,7 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": "5"
             },
             "opera": {
               "version_added": true
@@ -4674,6 +4629,92 @@
           }
         }
       },
+      "fullscreenchange_event": {
+        "__compat": {
+          "description": "<code>fullscreenchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event",
+          "support": {
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "64",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenchange"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "64",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenchange"
+              }
+            ],
+            "ie": {
+              "version_added": "11",
+              "alternative_name": "MSFullscreenChange"
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "45"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "fullscreenEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenEnabled",
@@ -4769,6 +4810,92 @@
                 "prefix": "webkit"
               }
             ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "fullscreenerror_event": {
+        "__compat": {
+          "description": "<code>fullscreenerror</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event",
+          "support": {
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "64",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenerror"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "64",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "full-screen-api.unprefix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "10",
+                "version_removed": "65",
+                "alternative_name": "mozfullscreenerror"
+              }
+            ],
+            "ie": {
+              "version_added": "11",
+              "alternative_name": "MSFullscreenError"
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "45"
+            }
           },
           "status": {
             "experimental": false,
@@ -9191,6 +9318,58 @@
           }
         }
       },
+      "scroll_event": {
+        "__compat": {
+          "description": "<code>scroll</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scroll_event",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "scrollingElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scrollingElement",
@@ -10328,6 +10507,58 @@
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "wheel_event": {
+        "__compat": {
+          "description": "<code>wheel</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/wheel_event",
+          "support": {
+            "chrome": {
+              "version_added": "61"
+            },
+            "chrome_android": {
+              "version_added": "61"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "edge_mobile": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": "48"
+            },
+            "opera_android": {
+              "version_added": "45"
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "61"
+            }
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
