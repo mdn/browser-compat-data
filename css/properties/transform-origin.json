@@ -150,7 +150,7 @@
                 "version_added": "10"
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "10"
               },
               "ie": {
                 "version_added": "9"
@@ -192,10 +192,10 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
+                "version_added": "17"
               },
               "edge_mobile": {
-                "version_added": null
+                "version_added": false
               },
               "firefox": [
                 {
@@ -204,7 +204,7 @@
                 },
                 {
                   "version_added": "41",
-                  "version_removed": true,
+                  "version_removed": "43",
                   "flags": [
                     {
                       "type": "preference",
@@ -215,9 +215,24 @@
                   "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
                 }
               ],
-              "firefox_android": {
-                "version_added": null
-              },
+              "firefox_android": [
+                {
+                  "version_added": "43",
+                  "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
+                },
+                {
+                  "version_added": "41",
+                  "version_removed": "43",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "svg.transform-origin.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
+                }
+              ],
               "ie": {
                 "version_added": false
               },
