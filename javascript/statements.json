@@ -241,10 +241,12 @@
           "spec_url": "https://tc39.github.io/ecma262/#sec-class-definitions",
           "support": {
             "chrome": {
-              "version_added": "42"
+              "version_added": "49",
+              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             },
             "chrome_android": {
-              "version_added": "42"
+              "version_added": "49",
+              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             },
             "edge": {
               "version_added": true
@@ -280,121 +282,14 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "42"
+              "version_added": "49",
+              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "array_subclassing": {
-          "__compat": {
-            "description": "Array subclassing",
-            "support": {
-              "chrome": {
-                "version_added": "43"
-              },
-              "chrome_android": {
-                "version_added": "43"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": "36"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "4.0"
-              },
-              "webview_android": {
-                "version_added": "43"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "allow_in_sloppy_mode": {
-          "__compat": {
-            "description": "Allowed in sloppy mode",
-            "support": {
-              "chrome": {
-                "version_added": "49"
-              },
-              "chrome_android": {
-                "version_added": "49"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": "36"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": "49"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
@@ -1384,60 +1279,6 @@
             "deprecated": false
           }
         },
-        "allow_in_sloppy_mode": {
-          "__compat": {
-            "description": "Allowed in sloppy mode",
-            "support": {
-              "chrome": {
-                "version_added": "49"
-              },
-              "chrome_android": {
-                "version_added": "49"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": null
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": "49"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "trailing_comma_in_parameters": {
           "__compat": {
             "description": "Trailing comma in parameters",
@@ -1894,28 +1735,38 @@
               "edge_mobile": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "66",
-                "flags": [
-                  {
-                    "name": "javascript.options.dynamicImport",
-                    "type": "preference",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "See <a href='https://bugzil.la/1517546'>bug 1517546</a>. This flag is enabled by default on nightly builds from Nightly 67. See <a href='https://bugzil.la/1522491'>bug 1522491</a>."
-              },
-              "firefox_android": {
-                "version_added": "66",
-                "flags": [
-                  {
-                    "name": "javascript.options.dynamicImport",
-                    "type": "preference",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "See <a href='https://bugzil.la/1517546'>bug 1517546</a>. This flag is enabled by default on nightly builds from Nightly 67. See <a href='https://bugzil.la/1522491'>bug 1522491</a>."
-              },
+              "firefox": [
+                {
+                  "version_added": "67"
+                },
+                {
+                  "version_added": "66",
+                  "version_removed": "67",
+                  "flags": [
+                    {
+                      "name": "javascript.options.dynamicImport",
+                      "type": "preference",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "67"
+                },
+                {
+                  "version_added": "66",
+                  "version_removed": "67",
+                  "flags": [
+                    {
+                      "name": "javascript.options.dynamicImport",
+                      "type": "preference",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -2470,7 +2321,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "10.0.0"
               },
               "opera": {
                 "version_added": "53"
