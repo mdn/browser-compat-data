@@ -10,6 +10,10 @@ const testVersions = require('./test-versions');
 const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
+
+/** Used to check if the process is running in a CI environment. */
+const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
@@ -55,7 +59,10 @@ function load(...files) {
           text: relativeFilePath,
         });
 
-        if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
+        if (!IS_CI) {
+          // Continuous integration environments don't allow overwriting
+          // previous lines using VT escape sequences, which is how
+          // the spinner animation is implemented.
           spinner.start();
         }
 
