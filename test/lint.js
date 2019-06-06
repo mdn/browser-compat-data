@@ -10,6 +10,7 @@ const testVersions = require('./test-versions');
 const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
+const testHTML = require('./test-html');
 
 /** Used to check if the process is running in a CI environment. */
 const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
@@ -51,7 +52,8 @@ function load(...files) {
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasRealValueErrors = false,
-          hasPrefixErrors = false;
+          hasPrefixErrors = false,
+          hasHTMLErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -84,6 +86,7 @@ function load(...files) {
             hasVersionErrors = testVersions(file);
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
+            hasHTMLErrors = testHTML(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -98,6 +101,7 @@ function load(...files) {
           hasVersionErrors,
           hasRealValueErrors,
           hasPrefixErrors,
+          hasHTMLErrors,
         ].some(x => !!x);
 
         if (fileHasErrors) {
@@ -139,7 +143,7 @@ const hasErrors = argv.files
 
 if (hasErrors) {
   console.warn('');
-  console.warn(chalk`{red Problems in }{red.bold ${filesWithErrors.size}}{red  ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
+  console.warn(chalk`{red Problems in {bold ${filesWithErrors.size}} ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
@@ -153,6 +157,7 @@ if (hasErrors) {
         testRealValues(file);
         testBrowsers(file);
         testPrefix(file);
+        testHTML(file);
       }
     } catch (e) {
       console.error(e);
