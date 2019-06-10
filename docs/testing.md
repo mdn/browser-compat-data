@@ -17,3 +17,7 @@ You can use `npm run render $query $depth $aggregateMode` to output an HTML like
 The parameters are the same as the [`{{compat}}` macro](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs).
 
 Paste the generated HTML into the MDN editor (source mode). You can use a new page, for example: https://developer.mozilla.org/en-US/docs/new and verify if the output looks correct.
+
+## Statistics
+
+To see how changes will affect the statistics of real, true, and null values, you can run `npm run stats`.  This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on.
