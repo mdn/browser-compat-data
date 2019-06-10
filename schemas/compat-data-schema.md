@@ -177,7 +177,7 @@ An object listing the compatibility information for each browser ([see below](#t
 * An optional `description` property to __describe the feature__.
 A string containing a human-readable description of the feature.
 It is intended to be used as a caption or title and should be kept short.
-The `<code>` and `<a>` HTML elements can be used.
+The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used for styling.
 
 * An optional `matches` property to __help match the feature to source code__ ([see below](#the-matches-object))
 An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
@@ -420,7 +420,7 @@ Example:
   ]
 }
 ```
-The `<code>` and `<a>` HTML elements can be used.
+The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used for styling.  In addition, `<a>` tags may be used, such as to link to a browser's bug report, or MDN documentation.
 
 ### The `matches` object
 
