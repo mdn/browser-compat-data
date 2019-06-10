@@ -143,7 +143,7 @@ const hasErrors = argv.files
 
 if (hasErrors) {
   console.warn('');
-  console.warn(chalk`{red Problems in {bold ${filesWithErrors.size}} ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
+  console.warn(chalk`{red Problems in }{red.bold ${filesWithErrors.size}}{red  ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
