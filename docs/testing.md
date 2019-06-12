@@ -22,4 +22,4 @@ Paste the generated HTML into the MDN editor (source mode). You can use a new pa
 
 To see how changes will affect the statistics of real, true, and null values, you can run `npm run stats`.  This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on.
 
-* "Real" values are values of which are either "false" or a version number, as defined in [#3555](https://github.com/mdn/browser-compat-data/issues/3555).
+* _Real_ values are values of which are either `false` or a version number, as defined in [#3555](https://github.com/mdn/browser-compat-data/issues/3555).
