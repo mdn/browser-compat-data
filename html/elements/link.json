@@ -146,19 +146,23 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true,
+                "notes": "Chrome does not include stylesheets which have the HTML <code>disabled</code> attribute in <code>document.styleSheets</code>."
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": true,
+                "notes": "Chrome does not include stylesheets which have the HTML <code>disabled</code> attribute in <code>document.styleSheets</code>."
               },
               "edge": {
                 "version_added": true
               },
               "firefox": {
-                "version_added": false
+                "version_added": "68",
+                "notes": "Prior to Firefox 68, the HTML <code>disabled</code> attribute worked but could not be changed using JavaScript code."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "68",
+                "notes": "Prior to Firefox 68, the HTML <code>disabled</code> attribute worked but could not be changed using JavaScript code."
               },
               "ie": {
                 "version_added": true
@@ -179,7 +183,8 @@
                 "version_added": false
               },
               "webview_android": {
-                "version_added": false
+                "version_added": true,
+                "notes": "Chrome does not include stylesheets which have the HTML <code>disabled</code> attribute in <code>document.styleSheets</code>."
               }
             },
             "status": {
