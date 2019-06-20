@@ -13,7 +13,11 @@
               ]
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "18",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "Initial versions had bugs on Windows and Linux that broke <a href='https://crbug.com/114719'>font substitition</a>, <a href='https://crbug.com/51973'>small-caps</a>, <a href='https://crbug.com/55458'>letter-spacing</a> or caused <a href='https://crbug.com/149548'>text to overlap</a>."
+              ]
             },
             "edge": {
               "version_added": false
@@ -69,7 +73,8 @@
                 "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true,
+                "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "edge": {
                 "version_added": false
@@ -82,13 +87,15 @@
                 "notes": "If the font size is 20 pixels or higher, Firefox treats <code>auto</code> as <code>optimizeLegibility</code>. For smaller text, Firefox treats <code>auto</code> as <code>optimizeSpeed</code>. The 20-pixel threshold can be changed with the <code>browser.display.auto_quality_min_font_size</code> preference."
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "4",
+                "notes": "If the font size is 20 pixels or higher, Firefox treats <code>auto</code> as <code>optimizeLegibility</code>. For smaller text, Firefox treats <code>auto</code> as <code>optimizeSpeed</code>. The 20-pixel threshold can be changed with the <code>browser.display.auto_quality_min_font_size</code> preference."
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": true,
+                "notes": "Opera treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "opera_android": {
                 "version_added": null
@@ -104,7 +111,8 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true,
+                "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               }
             },
             "status": {
@@ -123,7 +131,8 @@
                 "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "18",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "edge": {
                 "version_added": false
@@ -136,13 +145,15 @@
                 "notes": "Firefox treats <code>geometricPrecision</code> the same as <code>optimizeLegibility</code>."
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "4",
+                "notes": "Firefox treats <code>geometricPrecision</code> the same as <code>optimizeLegibility</code>."
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": "15",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "opera_android": {
                 "version_added": null
@@ -157,7 +168,8 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "37",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               }
             },
             "status": {
