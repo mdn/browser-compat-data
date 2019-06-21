@@ -1086,7 +1086,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "53"
+              "version_added": "53",
+              "notes": "Starting in Firefox 68, the <code>auxclick</code> event is used to trigger the <em>new tab on middle-click</em> action; previously, this had been done with the <code>click</code> event. Apps can prevent middle-click from opening new tabs (or middle-click to paste, if that feature is enabled) by intercepting <code>auxclick</code> on links, and <code>auxclick</code> event handlers can now open popups without triggering the popup blocker."
             },
             "firefox_android": {
               "version_added": "53"
@@ -1508,7 +1509,8 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Beginning in Firefox 68, Firefox no longer incorrectly sends a <code>click</code> event for buttons other than the primary mouse button; previouly, there were circumstances in which this would occur. One example: middle-clicking a link would send a <code>click</code> to the document's <code>&lt;html&gt;</code> element."
             },
             "firefox_android": {
               "version_added": true
@@ -2520,7 +2522,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Starting in Firefox 68, <code>dblclick</code> events are only sent for the primary mouse button, per the specification."
             },
             "firefox_android": {
               "version_added": null
