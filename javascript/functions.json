@@ -102,6 +102,61 @@
             "deprecated": false
           }
         },
+        "@@iterator": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments/@@iterator",
+            "spec_url": [
+              "https://tc39.es/ecma262/#sec-createunmappedargumentsobject",
+              "https://tc39.es/ecma262/#sec-createmappedargumentsobject"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "52"
+              },
+              "chrome_android": {
+                "version_added": "52"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "46"
+              },
+              "firefox_android": {
+                "version_added": "46"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "9"
+              },
+              "safari_ios": {
+                "version_added": "9"
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "52"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "callee": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments/callee",
@@ -249,61 +304,6 @@
               },
               "webview_android": {
                 "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "@@iterator": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments/@@iterator",
-            "spec_url": [
-              "https://tc39.es/ecma262/#sec-createunmappedargumentsobject",
-              "https://tc39.es/ecma262/#sec-createmappedargumentsobject"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "52"
-              },
-              "chrome_android": {
-                "version_added": "52"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": "46"
-              },
-              "firefox_android": {
-                "version_added": "46"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": "6.0"
-              },
-              "webview_android": {
-                "version_added": "52"
               }
             },
             "status": {
@@ -529,6 +529,57 @@
             "deprecated": false
           }
         },
+        "destructured_parameter_with_default_value_assignment": {
+          "__compat": {
+            "description": "Destructured parameter with default value assignment",
+            "support": {
+              "chrome": {
+                "version_added": "49"
+              },
+              "chrome_android": {
+                "version_added": "49"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "41"
+              },
+              "firefox_android": {
+                "version_added": "41"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "36"
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": "49"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "parameters_without_defaults_after_default_parameters": {
           "__compat": {
             "description": "Parameters without defaults after default parameters",
@@ -579,25 +630,77 @@
               "deprecated": false
             }
           }
+        }
+      },
+      "get": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/get",
+          "spec_url": "https://tc39.es/ecma262/#sec-method-definitions",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "2"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "nodejs": {
+              "version_added": true
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "3"
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         },
-        "destructured_parameter_with_default_value_assignment": {
+        "computed_property_names": {
           "__compat": {
-            "description": "Destructured parameter with default value assignment",
+            "description": "Computed property names",
             "support": {
               "chrome": {
-                "version_added": "49"
+                "version_added": "46"
               },
               "chrome_android": {
-                "version_added": "49"
+                "version_added": "46"
               },
               "edge": {
-                "version_added": null
+                "version_added": true
               },
               "firefox": {
-                "version_added": "41"
+                "version_added": "34"
               },
               "firefox_android": {
-                "version_added": "41"
+                "version_added": "34"
               },
               "ie": {
                 "version_added": false
@@ -606,22 +709,22 @@
                 "version_added": true
               },
               "opera": {
-                "version_added": "36"
+                "version_added": "47"
               },
               "opera_android": {
-                "version_added": null
+                "version_added": true
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "49"
+                "version_added": "46"
               }
             },
             "status": {
@@ -684,9 +787,9 @@
             "deprecated": false
           }
         },
-        "generator_methods_not_constructable": {
+        "async_generator_methods": {
           "__compat": {
-            "description": "Generator methods are not constructable (ES2016)",
+            "description": "Async generator methods",
             "support": {
               "chrome": {
                 "version_added": null
@@ -698,17 +801,28 @@
                 "version_added": null
               },
               "firefox": {
-                "version_added": "43"
+                "version_added": "55"
               },
               "firefox_android": {
-                "version_added": "43"
+                "version_added": "55"
               },
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": null
-              },
+              "nodejs": [
+                {
+                  "version_added": "10.0.0"
+                },
+                {
+                  "version_added": "8.10.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": null
               },
@@ -797,9 +911,9 @@
             }
           }
         },
-        "async_generator_methods": {
+        "generator_methods_not_constructable": {
           "__compat": {
-            "description": "Async generator methods",
+            "description": "Generator methods are not constructable (ES2016)",
             "support": {
               "chrome": {
                 "version_added": null
@@ -811,28 +925,17 @@
                 "version_added": null
               },
               "firefox": {
-                "version_added": "55"
+                "version_added": "43"
               },
               "firefox_android": {
-                "version_added": "55"
+                "version_added": "43"
               },
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "10.0.0"
-                },
-                {
-                  "version_added": "8.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": null
+              },
               "opera": {
                 "version_added": null
               },
@@ -965,109 +1068,6 @@
               },
               "webview_android": {
                 "version_added": "49"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        }
-      },
-      "get": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/get",
-          "spec_url": "https://tc39.es/ecma262/#sec-method-definitions",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "2"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "9"
-            },
-            "nodejs": {
-              "version_added": true
-            },
-            "opera": {
-              "version_added": "9.5"
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        },
-        "computed_property_names": {
-          "__compat": {
-            "description": "Computed property names",
-            "support": {
-              "chrome": {
-                "version_added": "46"
-              },
-              "chrome_android": {
-                "version_added": "46"
-              },
-              "edge": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "34"
-              },
-              "firefox_android": {
-                "version_added": "34"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "47"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": "46"
               }
             },
             "status": {
