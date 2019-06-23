@@ -3,11 +3,17 @@ const fs = require('fs');
 const path = require('path');
 const ora = require('ora');
 const yargs = require('yargs');
+const chalk = require('chalk');
 const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
+const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
+
+/** Used to check if the process is running in a CI environment. */
+const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
@@ -44,6 +50,7 @@ function load(...files) {
           hasStyleErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
+          hasRealValueErrors = false,
           hasPrefixErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
@@ -52,14 +59,17 @@ function load(...files) {
           text: relativeFilePath,
         });
 
-        if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
+        if (!IS_CI) {
+          // Continuous integration environments don't allow overwriting
+          // previous lines using VT escape sequences, which is how
+          // the spinner animation is implemented.
           spinner.start();
         }
 
         const console_error = console.error;
         console.error = (...args) => {
           spinner['stream'] = process.stderr;
-          spinner.fail(relativeFilePath);
+          spinner.fail(chalk.red.bold(relativeFilePath));
           console.error = console_error;
           console.error(...args);
         }
@@ -72,6 +82,7 @@ function load(...files) {
             hasStyleErrors = testStyle(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
+            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
           }
         } catch (e) {
@@ -85,6 +96,7 @@ function load(...files) {
           hasStyleErrors,
           hasBrowserErrors,
           hasVersionErrors,
+          hasRealValueErrors,
           hasPrefixErrors,
         ].some(x => !!x);
 
@@ -127,13 +139,10 @@ const hasErrors = argv.files
 
 if (hasErrors) {
   console.warn('');
-  console.warn(
-    `Problems in ${filesWithErrors.size} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:`,
+  console.warn(chalk`{red Problems in }{red.bold ${filesWithErrors.size}}{red  ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
-    console.warn(fileName);
+    console.warn(chalk`{red.bold ✖ ${fileName}}`);
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../schemas/browsers.schema.json');
@@ -141,6 +150,7 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testVersions(file);
+        testRealValues(file);
         testBrowsers(file);
         testPrefix(file);
       }
