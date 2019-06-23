@@ -7,7 +7,6 @@ const blockMany = [
   'chrome',
   'chrome_android',
   'edge',
-  'edge_mobile',
   'firefox',
   'firefox_android',
   'ie',
@@ -21,11 +20,11 @@ const blockMany = [
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
-  css: ['ie'],
+  css: ['edge', 'firefox', 'firefox_android', 'ie'],
   html: [],
   http: [],
   svg: [],
-  javascript: [],
+  javascript: ['firefox', 'firefox_android'],
   mathml: blockMany,
   webdriver: blockMany.concat(['samsunginternet_android']),
   webextensions: [],
