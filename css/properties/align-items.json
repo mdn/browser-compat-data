@@ -135,9 +135,20 @@
                 "prefix": "-webkit-",
                 "version_added": "7"
               },
-              "samsunginternet_android": {
-                "version_added": null
-              },
+              "samsunginternet_android": [
+                {
+                  "version_added": "6.0"
+                },
+                {
+                  "version_added": "2.0",
+                  "partial_implementation": true,
+                  "notes": "Older versions of the specification treat absolute positioned children as though they are a 0 by 0 flex item. Later specification versions take the children out of the flow and set their positions based on align and justify properties. Chrome implements the new behavior beginning with Samsung Internet 6.0."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1.5"
+                }
+              ],
               "webview_android": [
                 {
                   "version_added": "52"
