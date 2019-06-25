@@ -44,23 +44,6 @@ const ALLOWED_ELEMENT_ATTRIBUTES = {
 };
 
 /**
- * Calls a defined callback function on each element of an array, and returns an array that contains the results.
- * @template T, U
- * @param {T[]} array The array to process.
- * @param {(value: T, index: number, array: T[]) => U | U[]} callbackfn A function that accepts up to three arguments. The flatMap method calls the callbackfn function one time for each element in the array.
- * @param {unknown} [thisArg] An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
- * @return {U[]}
- */
-function flatMapArray(array, callbackfn, thisArg = this) {
-  /** @type {U[]} */
-  let result = [];
-  for (let i = 0; i < array.length; i++) {
-    result.concat(callbackfn.call(thisArg, array[i], i, array));
-  }
-  return result;
-}
-
-/**
  * Checks all properties that may contain HTML in the `CompatStatement`.
  *
  * @param {CompatStatement} compat The browser compatibility statement.
@@ -73,20 +56,12 @@ function checkCompatStatement(compat, path, logger) {
     lintHTMLString(
       compat.description,
       'description',
-      `${path}.__compat.description`,
+      path,
       logger,
       // Allow `<a>` when `mdn_url` is not specified:
       compat.mdn_url ? undefined : ['a'],
     );
   }
-
-  flatMapArray(
-    flatMapArray(
-      Object.keys(compat.support).map(b => compat.support[b]),
-      v => v,
-    ).filter(o => o.notes),
-    v => v.notes,
-  ).forEach(note => lintHTMLString(note, 'notes', path, logger));
 
   for (const browser in compat.support) {
     /** @type {SimpleSupportStatement[]} */
@@ -103,12 +78,7 @@ function checkCompatStatement(compat, path, logger) {
         : [statement.notes];
 
       for (const note of notes) {
-        lintHTMLString(
-          note,
-          'notes',
-          `${path}.__compat.support.${browser}..notes`,
-          logger,
-        );
+        lintHTMLString(note, 'notes', `${path} (${browser})`, logger);
       }
     }
   }
@@ -195,21 +165,22 @@ function lintHTMLString(html, property, path, logger, specialElements) {
     }
 
     if (badAttributes.length > 0) {
+      const badAttributesString = badAttributes
+        .reduce(
+          (badAttrs, { name, value }) => {
+            let result = name;
+            if (typeof value === 'string') {
+              result += '=' + value.includes("'") ? `"${value}"` : `'${value}'`;
+            }
+            badAttrs.push(result);
+            return badAttrs;
+          },
+          /** @type {string[]} */ ([]),
+        )
+        .join(', ');
+
       logger.error(
-        chalk`{red {bold ${path}} - Element <${realElementName}> has disallowed attributes: ${badAttributes
-          .reduce(
-            (badAttrs, { name, value }) => {
-              let result = name;
-              if (typeof value === 'string') {
-                result +=
-                  '=' + value.includes("'") ? `"${value}"` : `'${value}'`;
-              }
-              badAttrs.push(result);
-              return badAttrs;
-            },
-            /** @type {string[]} */ ([]),
-          )
-          .join(', ')}}`,
+        chalk`{red {bold ${path}} - Element <${realElementName}> has disallowed attributes: ${badAttributesString}}`,
       );
       if (allowedAttributes.length > 0) {
         logger.error(
