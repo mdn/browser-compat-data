@@ -1,5 +1,10 @@
 'use strict';
 const path = require('path');
+const chalk = require('chalk');
+
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ */
 
 /** @type {Record<string, string[]>} */
 const browsers = {
@@ -38,11 +43,11 @@ const browsers = {
 };
 
 /**
- * @param {*} data
+ * @param {Identifier} data
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
- * @param {{error:function(string):void}} logger
+ * @param {{error:function(...unknown):void}} logger
  * @param {string} [path]
  * @returns {boolean}
  */
@@ -51,18 +56,34 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
   if (data.__compat && data.__compat.support) {
     const invalidEntries = Object.keys(data.__compat.support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
-      logger.error(`'${path}' has the following browsers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
+      logger.error(chalk`{red.bold ${path}}{red  has the following browsers, which are invalid for }{red.bold ${category}}{red  compat data: }{red.bold ${invalidEntries.join(', ')}}`);
       hasErrors = true;
     }
     const missingEntries = requiredBrowsers.filter(value => !(value in data.__compat.support));
     if (missingEntries.length > 0) {
-      logger.error(`'${path}' is missing the following browsers, which are required for ${category} compat data: ${missingEntries.join(', ')}`);
+      logger.error(chalk`{red.bold ${path}}{red  is missing the following browsers, which are required for }{red.bold ${category}}{red  compat data: }{red.bold ${missingEntries.join(', ')}}`);
       hasErrors = true;
     }
   }
   for (const key in data) {
     if (key === "__compat") continue;
-    hasErrors |= processData(data[key], displayBrowsers, requiredBrowsers, category, logger, (path && path.length > 0) ? `${path}.${key}` : key);
+    // Note that doing `hasErrors |= processData(…)` would convert
+    // `hasErrors` into a number, which could potentially lead
+    // to unexpected issues down the line.
+
+    // We can't use the ESNext `hasErrors ||= processData(…)` here either,
+    // as that would prevent printing nested browser issues, making testing
+    // and fixing issues longer, as nested issues wouldn't be logged.
+    hasErrors = processData(
+      data[key],
+      displayBrowsers,
+      requiredBrowsers,
+      category,
+      logger,
+      (path && path.length > 0)
+        ? `${path}.${key}`
+        : key,
+    ) || hasErrors;
   }
   return hasErrors;
 }
@@ -74,10 +95,11 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
 function testBrowsers(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
+  /** @type {Identifier} */
   const data = require(filename);
 
-  if (!category || category === "test") {
-    console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
+  if (!category) {
+    console.warn(chalk.blackBright('  Browsers – Unknown category'));
     return false;
   }
 
@@ -99,17 +121,22 @@ function testBrowsers(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    error: (message) => {errors.push(message);}
-  }
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
 
-  if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
-    return false;
-  } else {
-    console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');
-    for (let error of errors)
+  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+
+  if (errors.length) {
+    console.error(chalk`{red   Browsers – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    for (const error of errors) {
       console.error(`    ${error}`);
+    }
     return true;
   }
+  return false;
 }
 
 module.exports = testBrowsers;
