@@ -14,7 +14,7 @@ browser support for APIs. For example:
 [![Build Status](https://travis-ci.org/mdn/browser-compat-data.svg?branch=master)](https://travis-ci.org/mdn/browser-compat-data)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mozdevnet.svg?style=social&label=Follow&style=plastic)](https://twitter.com/MozDevNet)
 
-Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/governance.md).
+Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md).
 
 ## Installation
 You can install mdn-browser-compat-data as a node package.
