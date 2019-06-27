@@ -955,7 +955,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true
               }
             },
             "status": {
@@ -1086,7 +1086,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": "53"
+              "version_added": "53",
+              "notes": "Starting in Firefox 68, the <code>auxclick</code> event is used to trigger the <em>new tab on middle-click</em> action; previously, this had been done with the <code>click</code> event. Apps can prevent middle-click from opening new tabs (or middle-click to paste, if that feature is enabled) by intercepting <code>auxclick</code> on links, and <code>auxclick</code> event handlers can now open popups without triggering the popup blocker."
             },
             "firefox_android": {
               "version_added": "53"
@@ -1428,7 +1429,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "61"
               }
             },
             "status": {
@@ -1508,7 +1509,8 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Beginning in Firefox 68, Firefox no longer incorrectly sends a <code>click</code> event for buttons other than the primary mouse button; previouly, there were circumstances in which this would occur. One example: middle-clicking a link would send a <code>click</code> to the document's <code>&lt;html&gt;</code> element."
             },
             "firefox_android": {
               "version_added": true
@@ -2520,7 +2522,8 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Starting in Firefox 68, <code>dblclick</code> events are only sent for the primary mouse button, per the specification."
             },
             "firefox_android": {
               "version_added": null
@@ -2821,6 +2824,132 @@
           }
         }
       },
+      "fullscreenchange_event": {
+        "__compat": {
+          "description": "<code>fullscreenchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event",
+          "support": {
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": {
+              "version_added": "57"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenchange"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenchange"
+              }
+            ],
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "44"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "57"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "fullscreenerror_event": {
+        "__compat": {
+          "description": "<code>fullscreenerror</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event",
+          "support": {
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": {
+              "version_added": "57"
+            },
+            "edge": {
+              "version_added": null
+            },
+            "edge_mobile": {
+              "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenerror"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "64",
+                "alternative_name": "mozfullscreenerror"
+              }
+            ],
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": "44"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "57"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "gesturechange_event": {
         "__compat": {
           "description": "<code>gesturechange</code> event",
@@ -2973,6 +3102,57 @@
           "status": {
             "experimental": false,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "getAnimations": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAnimations",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "edge_mobile": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -7164,7 +7344,8 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": "5",
+              "notes": "In Internet Explorer 7 and earlier, <code>setAttribute</code> doesn't set styles and removes events when you try to set them."
             },
             "opera": {
               "version_added": true
@@ -7703,7 +7884,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "43"
             }
           },
           "status": {
