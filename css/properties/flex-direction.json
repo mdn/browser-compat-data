@@ -73,6 +73,38 @@
                 ]
               }
             ],
+            "firefox_android": [
+              {
+                "version_added": "20",
+                "notes": "Since Firefox 28, multi-line flexbox is supported."
+              },
+              {
+                "version_added": "18",
+                "version_removed": "20",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.flexbox.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "49"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "44",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.prefixes.webkit",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -109,9 +141,15 @@
                 "version_added": "7"
               }
             ],
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari_ios": [
+              {
+                "version_added": "9"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": true
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "4.4"

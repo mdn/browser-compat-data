@@ -7,8 +7,13 @@ const chalk = require('chalk');
 const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
+const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
+
+/** Used to check if the process is running in a CI environment. */
+const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
@@ -45,6 +50,7 @@ function load(...files) {
           hasStyleErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
+          hasRealValueErrors = false,
           hasPrefixErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
@@ -53,7 +59,10 @@ function load(...files) {
           text: relativeFilePath,
         });
 
-        if (!process.env.CI || String(process.env.CI).toLowerCase() !== 'true') {
+        if (!IS_CI) {
+          // Continuous integration environments don't allow overwriting
+          // previous lines using VT escape sequences, which is how
+          // the spinner animation is implemented.
           spinner.start();
         }
 
@@ -73,6 +82,7 @@ function load(...files) {
             hasStyleErrors = testStyle(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
+            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
           }
         } catch (e) {
@@ -86,6 +96,7 @@ function load(...files) {
           hasStyleErrors,
           hasBrowserErrors,
           hasVersionErrors,
+          hasRealValueErrors,
           hasPrefixErrors,
         ].some(x => !!x);
 
@@ -139,6 +150,7 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testVersions(file);
+        testRealValues(file);
         testBrowsers(file);
         testPrefix(file);
       }
