@@ -1,5 +1,13 @@
-# See governance.md for more about this repository's owners and this project's
+# See GOVERNANCE.md for more about this repository's owners and this project's
 # governance.
 
-webextensions/ @irenesmith
-!*.json @Elchi3
+/webextensions/ @irenesmith
+
+# Schema, linter and infrastructure changes must be reviewed by an owner:
+# ======================================================================
+/test/    @Elchi3
+/schemas/ @Elchi3
+/.github/ @Elchi3
+
+## This pattern will only match files in the root directory:
+/*        @Elchi3

@@ -543,7 +543,7 @@
               "version_added": "49"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "49"
             },
             "edge": {
               "version_added": null
@@ -551,31 +551,77 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "55",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This event handler was added in Firefox 55 but was disabled since it wasn't fully implemented. It was fully implemented in Firefox 68 and enabled by default in Firefox 69."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "55",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This event handler was added in Firefox 55 but was disabled since it wasn't fully implemented. It was fully implemented in Firefox 68 but not enabled by default."
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "36"
             },
             "opera_android": {
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
+            },
+            "samsunginternet_android": {
+              "version_added": null
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "49"
             }
           },
           "status": {
@@ -641,39 +687,85 @@
               "version_added": "49"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "49"
             },
             "edge": {
-              "version_added": true
+              "version_added": null
             },
             "edge_mobile": {
-              "version_added": true
+              "version_added": null
             },
-            "firefox": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to about:config and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "55",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This event handler was added in Firefox 55 but was disabled since it wasn't fully implemented. It was fully implemented in Firefox 68 and enabled by default in Firefox 69."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "55",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "This event handler was added in Firefox 55 but was disabled since it wasn't fully implemented. It was fully implemented in Firefox 68 but not enabled by default."
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "36"
             },
             "opera_android": {
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
+            },
+            "samsunginternet_android": {
+              "version_added": null
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "49"
             }
           },
           "status": {
