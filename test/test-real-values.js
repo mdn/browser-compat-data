@@ -7,7 +7,6 @@ const blockMany = [
   'chrome',
   'chrome_android',
   'edge',
-  'edge_mobile',
   'firefox',
   'firefox_android',
   'ie',
@@ -21,7 +20,7 @@ const blockMany = [
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
-  css: ['firefox', 'firefox_android', 'ie'],
+  css: ['edge', 'firefox', 'firefox_android', 'ie'],
   html: [],
   http: [],
   svg: [],
