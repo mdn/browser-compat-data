@@ -52,137 +52,6 @@
             "deprecated": false
           }
         },
-        "@@iterator": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator",
-            "spec_url": "https://tc39.es/ecma262/#sec-string.prototype-@@iterator",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": true
-              },
-              "firefox": [
-                {
-                  "version_added": "36"
-                },
-                {
-                  "alternative_name": "@@iterator",
-                  "version_added": "27",
-                  "version_removed": "36",
-                  "notes": "A placeholder property named <code>@@iterator</code> is used."
-                },
-                {
-                  "alternative_name": "iterator",
-                  "version_added": "17",
-                  "version_removed": "27",
-                  "notes": "A placeholder property named <code>iterator</code> is used."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "36"
-                },
-                {
-                  "alternative_name": "@@iterator",
-                  "version_added": "27",
-                  "version_removed": "36",
-                  "notes": "A placeholder property named <code>@@iterator</code> is used."
-                },
-                {
-                  "alternative_name": "iterator",
-                  "version_added": "17",
-                  "version_removed": "27",
-                  "notes": "A placeholder property named <code>iterator</code> is used."
-                }
-              ],
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "unicode_code_point_escapes": {
-          "__compat": {
-            "description": "Unicode code point escapes \\u{xxxxxx}",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": "40"
-              },
-              "firefox_android": {
-                "version_added": "40"
-              },
-              "ie": {
-                "version_added": null
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "anchor": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/anchor",
@@ -3182,9 +3051,15 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "10.0.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "10.0.0"
+                },
+                {
+                  "version_added": "0.12",
+                  "alternative_name": "trimRight"
+                }
+              ],
               "opera": {
                 "version_added": "53"
               },
@@ -3270,9 +3145,15 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "10.0.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "10.0.0"
+                },
+                {
+                  "version_added": "0.12",
+                  "alternative_name": "trimLeft"
+                }
+              ],
               "opera": {
                 "version_added": "53"
               },
@@ -3333,6 +3214,137 @@
               },
               "ie": {
                 "version_added": true
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "@@iterator": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator",
+            "spec_url": "https://tc39.es/ecma262/#sec-string.prototype-@@iterator",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": [
+                {
+                  "version_added": "36"
+                },
+                {
+                  "alternative_name": "@@iterator",
+                  "version_added": "27",
+                  "version_removed": "36",
+                  "notes": "A placeholder property named <code>@@iterator</code> is used."
+                },
+                {
+                  "alternative_name": "iterator",
+                  "version_added": "17",
+                  "version_removed": "27",
+                  "notes": "A placeholder property named <code>iterator</code> is used."
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "36"
+                },
+                {
+                  "alternative_name": "@@iterator",
+                  "version_added": "27",
+                  "version_removed": "36",
+                  "notes": "A placeholder property named <code>@@iterator</code> is used."
+                },
+                {
+                  "alternative_name": "iterator",
+                  "version_added": "17",
+                  "version_removed": "27",
+                  "notes": "A placeholder property named <code>iterator</code> is used."
+                }
+              ],
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "0.12"
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "unicode_code_point_escapes": {
+          "__compat": {
+            "description": "Unicode code point escapes \\u{xxxxxx}",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": "40"
+              },
+              "firefox_android": {
+                "version_added": "40"
+              },
+              "ie": {
+                "version_added": null
               },
               "nodejs": {
                 "version_added": true
