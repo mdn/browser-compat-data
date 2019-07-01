@@ -192,12 +192,12 @@ function processData(filename, logger) {
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on }{red.bold line ${jsonDiff(expected, expectedBrowserSorting)}}`);
+    logger.error(chalk`{red Browser sorting error on }{red.bold line ${jsonDiff(expected, expectedBrowserSorting)}}\n{blue     Tip: Run }{cyan.bold npm run fix }{blue to fix sorting automatically}`);
   }
 
   if (actual !== expectedFeatureSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Feature sorting error on }{red.bold line ${jsonDiff(expected, expectedFeatureSorting)}}`);
+    logger.error(chalk`{red Feature sorting error on }{red.bold line ${jsonDiff(expected, expectedFeatureSorting)}}\n{blue     Tip: Run }{cyan.bold npm run fix }{blue to fix sorting automatically}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
