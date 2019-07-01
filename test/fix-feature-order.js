@@ -20,6 +20,9 @@ const fs = require('fs');
 const path = require('path');
 
 const compareFeatures = (a,b) => {
+  if (a == '__compat') return -1;
+  if (b == '__compat') return 1;
+
   const wordA = /^[a-zA-Z]+$/.test(a);
   const wordB = /^[a-zA-Z]+$/.test(b);
   const wordNumA = /^[a-zA-Z0-9]+$/.test(a);
