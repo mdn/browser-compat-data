@@ -1,6 +1,6 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "0.0.78",
+  "version": "0.0.85",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "ajv": "^6.10.0",
     "better-ajv-errors": "^0.6.4",
+    "chalk": "^2.4.2",
     "compare-versions": "^3.4.0",
     "mdn-confluence": "^1.0.3",
     "ora": "^3.4.0",
@@ -43,6 +44,7 @@
     "release-notes": "node scripts/release-notes",
     "render": "node scripts/render",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "traverse": "node scripts/traverse"
   }
 }

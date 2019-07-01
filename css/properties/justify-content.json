@@ -60,7 +60,7 @@
                 },
                 {
                   "version_added": "18",
-                  "version_removed": true,
+                  "version_removed": "20",
                   "flags": [
                     {
                       "type": "preference",
@@ -85,9 +85,38 @@
                   ]
                 }
               ],
-              "firefox_android": {
-                "version_added": null
-              },
+              "firefox_android": [
+                {
+                  "version_added": "20",
+                  "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "20",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.flexbox.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "48",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.prefixes.webkit",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": "11"
               },
@@ -97,12 +126,24 @@
               "opera_android": {
                 "version_added": "12.1"
               },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": null
-              },
+              "safari": [
+                {
+                  "version_added": "9"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": true
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "9"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": true
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": true
               },
@@ -125,6 +166,112 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "baseline": {
+            "__compat": {
+              "description": "<code>baseline</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "57"
+                },
+                "chrome_android": {
+                  "version_added": "57"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "45",
+                  "version_removed": "60",
+                  "notes": "<code>justify-content</code> no longer accepts baseline values"
+                },
+                "firefox_android": {
+                  "version_added": "45",
+                  "version_removed": "60",
+                  "notes": "<code>justify-content</code> no longer accepts baseline values"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "44"
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": null
+                },
+                "webview_android": {
+                  "version_added": "57"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "stretch": {
+            "__compat": {
+              "description": "<code>stretch</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "57"
+                },
+                "chrome_android": {
+                  "version_added": "57"
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "edge_mobile": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "52"
+                },
+                "firefox_android": {
+                  "version_added": "52"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "44"
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": null
+                },
+                "safari_ios": {
+                  "version_added": null
+                },
+                "samsunginternet_android": {
+                  "version_added": null
+                },
+                "webview_android": {
+                  "version_added": "57"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           },
           "space-evenly": {
@@ -293,61 +440,6 @@
               }
             }
           },
-          "baseline": {
-            "__compat": {
-              "description": "<code>baseline</code>",
-              "support": {
-                "chrome": {
-                  "version_added": "57"
-                },
-                "chrome_android": {
-                  "version_added": "57"
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "edge_mobile": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "45",
-                  "version_removed": "60",
-                  "notes": "<code>justify-content</code> no longer accepts baseline values"
-                },
-                "firefox_android": {
-                  "version_added": "45",
-                  "version_removed": "60",
-                  "notes": "<code>justify-content</code> no longer accepts baseline values"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": "44"
-                },
-                "opera_android": {
-                  "version_added": null
-                },
-                "safari": {
-                  "version_added": null
-                },
-                "safari_ios": {
-                  "version_added": null
-                },
-                "samsunginternet_android": {
-                  "version_added": null
-                },
-                "webview_android": {
-                  "version_added": "57"
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "first_last_baseline": {
             "__compat": {
               "description": "<code>first baseline</code> and <code>last baseline</code>",
@@ -394,57 +486,6 @@
                 },
                 "webview_android": {
                   "version_added": false
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "stretch": {
-            "__compat": {
-              "description": "<code>stretch</code>",
-              "support": {
-                "chrome": {
-                  "version_added": "57"
-                },
-                "chrome_android": {
-                  "version_added": "57"
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "edge_mobile": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "52"
-                },
-                "firefox_android": {
-                  "version_added": "52"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": "44"
-                },
-                "opera_android": {
-                  "version_added": null
-                },
-                "safari": {
-                  "version_added": null
-                },
-                "safari_ios": {
-                  "version_added": null
-                },
-                "samsunginternet_android": {
-                  "version_added": null
-                },
-                "webview_android": {
-                  "version_added": "57"
                 }
               },
               "status": {
