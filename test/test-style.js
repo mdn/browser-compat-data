@@ -30,6 +30,19 @@ function orderSupportBlock(key, value) {
   return value;
 }
 
+const compareFeatures = (a,b) => {
+  const wordA = /^[a-zA-Z]+$/.test(a);
+  const wordB = /^[a-zA-Z]+$/.test(b);
+  const wordNumA = /^[a-zA-Z0-9]+$/.test(a);
+  const wordNumB = /^[a-zA-Z0-9]+$/.test(b);
+
+  if(wordA && wordB) return a.localeCompare(b, 'en');
+  if(wordA || wordB) return (wordA && -1) || 1;
+  if(wordNumA && wordNumB) return a.localeCompare(b, 'en');
+  if(wordNumA || wordNumB) return (wordNumA && -1) || 1;
+  return 1;
+}
+
 /**
  * Return a new feature object whose first-level properties have been
  * ordered according to Array.prototype.sort, and so will be
@@ -44,9 +57,7 @@ function orderSupportBlock(key, value) {
  */
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
-    value = Object.keys(value).sort((a, b) => {
-      return a.toLowerCase().localeCompare(b.toLowerCase());
-    }).reduce((result, key) => {
+    value = Object.keys(value).sort(compareFeatures).reduce((result, key) => {
       result[key] = value[key];
       return result;
     }, {});
