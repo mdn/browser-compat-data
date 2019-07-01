@@ -1241,7 +1241,7 @@
               "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
               "version_added": "12"
@@ -2252,9 +2252,16 @@
                 "prefix": "webkit"
               }
             ],
-            "chrome_android": {
-              "version_added": null
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "35",
+                "prefix": "webkit"
+              }
+            ],
             "edge": {
               "version_added": true
             },
@@ -2300,7 +2307,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "37"
             }
           },
           "status": {
@@ -2324,9 +2331,16 @@
                 "prefix": "webkit"
               }
             ],
-            "chrome_android": {
-              "version_added": null
-            },
+            "chrome_android": [
+              {
+                "version_added": "35"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "35",
+                "prefix": "webkit"
+              }
+            ],
             "edge": {
               "version_added": true
             },
@@ -2553,13 +2567,30 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "version_added": "68",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.promise_rejection_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -2603,13 +2634,30 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> preference to <code>true</code>. However, Firefox doesn't yet actually send <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> preference to <code>true</code>. However, Firefox doesn't yet actually send <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "version_added": "68",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.promise_rejection_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -2858,7 +2906,14 @@
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             }
           },
           "status": {
@@ -2986,7 +3041,14 @@
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             }
           },
           "status": {
@@ -3107,7 +3169,14 @@
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             }
           },
           "status": {
@@ -3847,7 +3916,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
@@ -4019,7 +4088,7 @@
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true
               },
               "edge": {
                 "version_added": null
@@ -4052,7 +4121,7 @@
                 "version_added": true
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true
               }
             },
             "status": {
@@ -4917,7 +4986,7 @@
                 "version_added": "31"
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "31"
               },
               "edge": {
                 "version_added": true
@@ -4950,7 +5019,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "37"
               }
             },
             "status": {
@@ -7129,13 +7198,30 @@
             "edge_mobile": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> pref to <code>true</code>. However, Firefox doesn't yet actually send the <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "version_added": "68",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.promise_rejection_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -7419,7 +7505,8 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "37",
+              "prefix": "webkit"
             }
           },
           "status": {
@@ -7569,11 +7656,11 @@
             },
             "firefox": {
               "version_added": true,
-              "notes": "Firefox emits a <code>resize</code> event on page load."
+              "notes": "Prior to Firefox 68, Firefox emitted a <code>resize</code> event on page load. This is no longer the case."
             },
             "firefox_android": {
               "version_added": true,
-              "notes": "Firefox emits a <code>resize</code> event on page load."
+              "notes": "Prior to Firefox 68, Firefox emitted a <code>resize</code> event on page load. This is no longer the case."
             },
             "ie": {
               "version_added": true
@@ -9455,7 +9542,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "37"
             }
           },
           "status": {
@@ -9995,13 +10082,30 @@
             "edge_mobile": {
               "version_added": true
             },
-            "firefox": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> preference to <code>true</code>. However, Firefox doesn't yet actually send <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "68",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.promise_rejection_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false,
-              "notes": "Firefox implements the <code>PromiseRejectionEvent</code> interface if you go to <code>about:config</code> and set the <code>dom.promise_rejection_events.enabled</code> preference to <code>true</code>. However, Firefox doesn't yet actually send <code>unhandledrejection</code> or understand <code>rejectionhandled</code> events. Completing the implementation will be addressed in <a href='https://bugzil.la/1362272'>bug 1362272</a>."
+              "version_added": "68",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.promise_rejection_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -10369,7 +10473,14 @@
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             }
           },
           "status": {
@@ -10499,7 +10610,14 @@
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             }
           },
           "status": {
@@ -10622,7 +10740,14 @@
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR",
+                  "value_to_set": "Enabled"
+                }
+              ]
             }
           },
           "status": {
