@@ -15,15 +15,6 @@
             "edge": {
               "version_added": "16"
             },
-            "edge_mobile": {
-              "version_added": true,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental JavaScript Features"
-                }
-              ]
-            },
             "firefox": {
               "version_added": "52",
               "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -63,13 +54,10 @@
             "deprecated": false
           }
         },
-        "CompileError": {
+        "compile": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/CompileError",
-            "spec_url": [
-              "https://webassembly.github.io/spec/js-api/#constructor-properties-of-the-webassembly-object",
-              "https://tc39.github.io/ecma262/#sec-native-error-types-used-in-this-standard"
-            ],
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compile",
+            "spec_url": "https://webassembly.github.io/spec/js-api/#webassemblycompile",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -80,14 +68,62 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
+              "firefox": {
+                "version_added": "52",
+                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
+              },
+              "firefox_android": {
+                "version_added": "52",
+                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "8.0.0"
+              },
+              "opera": {
+                "version_added": "44"
+              },
+              "opera_android": {
+                "version_added": "43"
+              },
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": {
+                "version_added": "11"
+              },
+              "samsunginternet_android": {
+                "version_added": "7.0"
+              },
+              "webview_android": {
+                "version_added": "57"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "CompileError": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/CompileError",
+            "spec_url": [
+              "https://webassembly.github.io/spec/js-api/#constructor-properties-of-the-webassembly-object",
+              "https://tc39.es/ecma262/#sec-native-error-types-used-in-this-standard"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "16"
               },
               "firefox": {
                 "version_added": "52",
@@ -129,6 +165,58 @@
             }
           }
         },
+        "compileStreaming": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming",
+            "spec_url": "https://github.com/WebAssembly/design/blob/master/Web.md#webassemblycompilestreaming",
+            "support": {
+              "chrome": {
+                "version_added": "61"
+              },
+              "chrome_android": {
+                "version_added": "61"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "firefox": {
+                "version_added": "58"
+              },
+              "firefox_android": {
+                "version_added": "58"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "47"
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "61"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "Global": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Global",
@@ -141,9 +229,6 @@
                 "version_added": "69"
               },
               "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
                 "version_added": false
               },
               "firefox": {
@@ -196,9 +281,6 @@
                 "edge": {
                   "version_added": false
                 },
-                "edge_mobile": {
-                  "version_added": false
-                },
                 "firefox": {
                   "version_added": "62"
                 },
@@ -248,9 +330,6 @@
                   "version_added": "69"
                 },
                 "edge": {
-                  "version_added": false
-                },
-                "edge_mobile": {
                   "version_added": false
                 },
                 "firefox": {
@@ -306,15 +385,6 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
-              },
               "firefox": {
                 "version_added": "52",
                 "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -367,15 +437,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -431,15 +492,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -481,13 +533,10 @@
             }
           }
         },
-        "LinkError": {
+        "instantiate": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError",
-            "spec_url": [
-              "https://webassembly.github.io/spec/js-api/#constructor-properties-of-the-webassembly-object",
-              "https://tc39.github.io/ecma262/#sec-native-error-types-used-in-this-standard"
-            ],
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiate",
+            "spec_url": "https://webassembly.github.io/spec/js-api/#webassemblyinstantiate",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -498,14 +547,114 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
+              "firefox": {
+                "version_added": "52",
+                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
+              },
+              "firefox_android": {
+                "version_added": "52",
+                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "8.0.0"
+              },
+              "opera": {
+                "version_added": "44"
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": {
+                "version_added": "11"
+              },
+              "samsunginternet_android": {
+                "version_added": "7.0"
+              },
+              "webview_android": {
+                "version_added": "57"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "instantiateStreaming": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming",
+            "spec_url": "https://github.com/WebAssembly/design/blob/master/Web.md#webassemblyinstantiatestreaming",
+            "support": {
+              "chrome": {
+                "version_added": "61"
+              },
+              "chrome_android": {
+                "version_added": "61"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "firefox": {
+                "version_added": "58"
+              },
+              "firefox_android": {
+                "version_added": "58"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "47"
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "61"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "LinkError": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError",
+            "spec_url": [
+              "https://webassembly.github.io/spec/js-api/#constructor-properties-of-the-webassembly-object",
+              "https://tc39.es/ecma262/#sec-native-error-types-used-in-this-standard"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "16"
               },
               "firefox": {
                 "version_added": "52",
@@ -561,15 +710,6 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
-              },
               "firefox": {
                 "version_added": "52",
                 "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -622,15 +762,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -686,15 +817,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -748,15 +870,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -813,15 +926,6 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
-              },
               "firefox": {
                 "version_added": "52",
                 "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -874,15 +978,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -938,15 +1033,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -1000,15 +1086,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -1064,15 +1141,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -1119,7 +1187,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/RuntimeError",
             "spec_url": [
               "https://webassembly.github.io/spec/js-api/#constructor-properties-of-the-webassembly-object",
-              "https://tc39.github.io/ecma262/#sec-native-error-types-used-in-this-standard"
+              "https://tc39.es/ecma262/#sec-native-error-types-used-in-this-standard"
             ],
             "support": {
               "chrome": {
@@ -1130,15 +1198,6 @@
               },
               "edge": {
                 "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
               },
               "firefox": {
                 "version_added": "52",
@@ -1194,15 +1253,6 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
-              },
               "firefox": {
                 "version_added": "52",
                 "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -1255,15 +1305,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -1319,15 +1360,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -1381,15 +1413,6 @@
                 },
                 "edge": {
                   "version_added": "16"
-                },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
                 },
                 "firefox": {
                   "version_added": "52",
@@ -1445,15 +1468,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -1508,15 +1522,6 @@
                 "edge": {
                   "version_added": "16"
                 },
-                "edge_mobile": {
-                  "version_added": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Experimental JavaScript Features"
-                    }
-                  ]
-                },
                 "firefox": {
                   "version_added": "52",
                   "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
@@ -1558,242 +1563,6 @@
             }
           }
         },
-        "compile": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compile",
-            "spec_url": "https://webassembly.github.io/spec/js-api/#webassemblycompile",
-            "support": {
-              "chrome": {
-                "version_added": "57"
-              },
-              "chrome_android": {
-                "version_added": "57"
-              },
-              "edge": {
-                "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
-              },
-              "firefox": {
-                "version_added": "52",
-                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
-              },
-              "firefox_android": {
-                "version_added": "52",
-                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "8.0.0"
-              },
-              "opera": {
-                "version_added": "44"
-              },
-              "opera_android": {
-                "version_added": "43"
-              },
-              "safari": {
-                "version_added": "11"
-              },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "7.0"
-              },
-              "webview_android": {
-                "version_added": "57"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "compileStreaming": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming",
-            "spec_url": "https://github.com/WebAssembly/design/blob/master/Web.md#webassemblycompilestreaming",
-            "support": {
-              "chrome": {
-                "version_added": "61"
-              },
-              "chrome_android": {
-                "version_added": "61"
-              },
-              "edge": {
-                "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "58"
-              },
-              "firefox_android": {
-                "version_added": "58"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "47"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": "61"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "instantiate": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiate",
-            "spec_url": "https://webassembly.github.io/spec/js-api/#webassemblyinstantiate",
-            "support": {
-              "chrome": {
-                "version_added": "57"
-              },
-              "chrome_android": {
-                "version_added": "57"
-              },
-              "edge": {
-                "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
-              },
-              "firefox": {
-                "version_added": "52",
-                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
-              },
-              "firefox_android": {
-                "version_added": "52",
-                "notes": "Disabled in the Firefox 52 Extended Support Release (ESR)."
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "8.0.0"
-              },
-              "opera": {
-                "version_added": "44"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": "11"
-              },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "7.0"
-              },
-              "webview_android": {
-                "version_added": "57"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "instantiateStreaming": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming",
-            "spec_url": "https://github.com/WebAssembly/design/blob/master/Web.md#webassemblyinstantiatestreaming",
-            "support": {
-              "chrome": {
-                "version_added": "61"
-              },
-              "chrome_android": {
-                "version_added": "61"
-              },
-              "edge": {
-                "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "58"
-              },
-              "firefox_android": {
-                "version_added": "58"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "47"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": "61"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "validate": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/validate",
@@ -1807,15 +1576,6 @@
               },
               "edge": {
                 "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript Features"
-                  }
-                ]
               },
               "firefox": {
                 "version_added": "52",
