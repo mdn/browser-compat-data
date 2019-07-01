@@ -255,7 +255,9 @@
               "notes": "Before Chrome 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "alternative_name": "msElementsFromPoint",
+              "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
             },
             "firefox": {
               "version_added": "63"
