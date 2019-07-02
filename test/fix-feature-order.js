@@ -22,16 +22,12 @@ const path = require('path');
 const compareFeatures = (a,b) => {
   if (a == '__compat') return -1;
   if (b == '__compat') return 1;
-
-  const wordA = /^[a-zA-Z]+$/.test(a);
-  const wordB = /^[a-zA-Z]+$/.test(b);
-  const wordNumA = /^[a-zA-Z0-9]+$/.test(a);
-  const wordNumB = /^[a-zA-Z0-9]+$/.test(b);
+  
+  const wordA = /^[a-zA-Z0-9]+$/.test(a);
+  const wordB = /^[a-zA-Z0-9]+$/.test(b);
 
   if(wordA && wordB) return a.localeCompare(b, 'en');
   if(wordA || wordB) return (wordA && -1) || 1;
-  if(wordNumA && wordNumB) return a.localeCompare(b, 'en');
-  if(wordNumA || wordNumB) return (wordNumA && -1) || 1;
   return 1;
 }
 
