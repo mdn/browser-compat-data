@@ -49,6 +49,166 @@
             "deprecated": false
           }
         },
+        "cross-fade": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade",
+            "description": "<code>cross-fade()</code>",
+            "support": {
+              "chrome": {
+                "prefix": "-webkit-",
+                "version_added": "17",
+                "notes": "Supports the original dual-image with percentage implementation only."
+              },
+              "chrome_android": {
+                "prefix": "-webkit-",
+                "version_added": true,
+                "notes": "Supports the original dual-image with percentage implementation only."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "prefix": "-webkit-",
+                "version_added": "15",
+                "notes": "Supports the original dual-image with percentage implementation only."
+              },
+              "opera_android": {
+                "prefix": "-webkit-",
+                "version_added": "14",
+                "notes": "Supports the original dual-image with percentage implementation only."
+              },
+              "safari": [
+                {
+                  "version_added": "10",
+                  "notes": "Supports the original dual-image with percentage implementation only."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "5.1",
+                  "notes": "Supports the original dual-image with percentage implementation only."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "9.3",
+                  "notes": "Support for the original dual-image with percentage implementation only."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "5",
+                  "notes": "Supports the original dual-image with percentage implementation only."
+                }
+              ],
+              "samsunginternet_android": {
+                "prefix": "-webkit-",
+                "version_added": true,
+                "notes": "Support for the original dual-image with percentage implementation only."
+              },
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": true,
+                "notes": "Supports the original dual-image with percentage implementation only."
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "element": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
+            "description": "<code>element()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": [
+                {
+                  "prefix": "-moz-",
+                  "version_added": "57"
+                },
+                {
+                  "prefix": "-moz-",
+                  "partial_implementation": true,
+                  "version_added": "29",
+                  "version_removed": "57",
+                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
+                },
+                {
+                  "prefix": "-moz-",
+                  "partial_implementation": true,
+                  "version_added": "4",
+                  "version_removed": "29",
+                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
+                }
+              ],
+              "firefox_android": [
+                {
+                  "prefix": "-moz-",
+                  "version_added": "60"
+                },
+                {
+                  "prefix": "-moz-",
+                  "partial_implementation": true,
+                  "version_added": "29",
+                  "version_removed": "60",
+                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
+                },
+                {
+                  "prefix": "-moz-",
+                  "partial_implementation": true,
+                  "version_added": "4",
+                  "version_removed": "29",
+                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
+                }
+              ],
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "gradient": {
           "__compat": {
             "description": "<code>&lt;gradient&gt;</code>",
@@ -388,54 +548,6 @@
                 "deprecated": false
               }
             },
-            "to": {
-              "__compat": {
-                "description": "<code>to</code> keyword",
-                "support": {
-                  "chrome": {
-                    "version_added": "26"
-                  },
-                  "chrome_android": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": "12"
-                  },
-                  "firefox": {
-                    "version_added": "10"
-                  },
-                  "firefox_android": {
-                    "version_added": "10"
-                  },
-                  "ie": {
-                    "version_added": "10"
-                  },
-                  "opera": {
-                    "version_added": "12.1"
-                  },
-                  "opera_android": {
-                    "version_added": true
-                  },
-                  "safari": {
-                    "version_added": "6.1"
-                  },
-                  "safari_ios": {
-                    "version_added": true
-                  },
-                  "samsunginternet_android": {
-                    "version_added": true
-                  },
-                  "webview_android": {
-                    "version_added": true
-                  }
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
-            },
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
@@ -525,6 +637,54 @@
                   },
                   "webview_android": {
                     "version_added": "40"
+                  }
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "to": {
+              "__compat": {
+                "description": "<code>to</code> keyword",
+                "support": {
+                  "chrome": {
+                    "version_added": "26"
+                  },
+                  "chrome_android": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "10"
+                  },
+                  "firefox_android": {
+                    "version_added": "10"
+                  },
+                  "ie": {
+                    "version_added": "10"
+                  },
+                  "opera": {
+                    "version_added": "12.1"
+                  },
+                  "opera_android": {
+                    "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "6.1"
+                  },
+                  "safari_ios": {
+                    "version_added": true
+                  },
+                  "samsunginternet_android": {
+                    "version_added": true
+                  },
+                  "webview_android": {
+                    "version_added": true
                   }
                 },
                 "status": {
@@ -1084,54 +1244,6 @@
               },
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeating-linear-gradient"
             },
-            "to": {
-              "__compat": {
-                "description": "<code>to</code> keyword",
-                "support": {
-                  "chrome": {
-                    "version_added": "26"
-                  },
-                  "chrome_android": {
-                    "version_added": true
-                  },
-                  "edge": {
-                    "version_added": "12"
-                  },
-                  "firefox": {
-                    "version_added": "10"
-                  },
-                  "firefox_android": {
-                    "version_added": "10"
-                  },
-                  "ie": {
-                    "version_added": "10"
-                  },
-                  "opera": {
-                    "version_added": "12.1"
-                  },
-                  "opera_android": {
-                    "version_added": true
-                  },
-                  "safari": {
-                    "version_added": "6.1"
-                  },
-                  "safari_ios": {
-                    "version_added": true
-                  },
-                  "samsunginternet_android": {
-                    "version_added": true
-                  },
-                  "webview_android": {
-                    "version_added": true
-                  }
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
-            },
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
@@ -1221,6 +1333,54 @@
                   },
                   "webview_android": {
                     "version_added": "40"
+                  }
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "to": {
+              "__compat": {
+                "description": "<code>to</code> keyword",
+                "support": {
+                  "chrome": {
+                    "version_added": "26"
+                  },
+                  "chrome_android": {
+                    "version_added": true
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "10"
+                  },
+                  "firefox_android": {
+                    "version_added": "10"
+                  },
+                  "ie": {
+                    "version_added": "10"
+                  },
+                  "opera": {
+                    "version_added": "12.1"
+                  },
+                  "opera_android": {
+                    "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "6.1"
+                  },
+                  "safari_ios": {
+                    "version_added": true
+                  },
+                  "samsunginternet_android": {
+                    "version_added": true
+                  },
+                  "webview_android": {
+                    "version_added": true
                   }
                 },
                 "status": {
@@ -1642,89 +1802,6 @@
             }
           }
         },
-        "element": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
-            "description": "<code>element()</code>",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": [
-                {
-                  "prefix": "-moz-",
-                  "version_added": "57"
-                },
-                {
-                  "prefix": "-moz-",
-                  "partial_implementation": true,
-                  "version_added": "29",
-                  "version_removed": "57",
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
-                },
-                {
-                  "prefix": "-moz-",
-                  "partial_implementation": true,
-                  "version_added": "4",
-                  "version_removed": "29",
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "prefix": "-moz-",
-                  "version_added": "60"
-                },
-                {
-                  "prefix": "-moz-",
-                  "partial_implementation": true,
-                  "version_added": "29",
-                  "version_removed": "60",
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
-                },
-                {
-                  "prefix": "-moz-",
-                  "partial_implementation": true,
-                  "version_added": "4",
-                  "version_removed": "29",
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
-                }
-              ],
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "image": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/imagefunction",
@@ -1830,83 +1907,6 @@
               "webview_android": {
                 "prefix": "-webkit-",
                 "version_added": "4.4"
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "cross-fade": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade",
-            "description": "<code>cross-fade()</code>",
-            "support": {
-              "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "17",
-                "notes": "Supports the original dual-image with percentage implementation only."
-              },
-              "chrome_android": {
-                "prefix": "-webkit-",
-                "version_added": true,
-                "notes": "Supports the original dual-image with percentage implementation only."
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "prefix": "-webkit-",
-                "version_added": "15",
-                "notes": "Supports the original dual-image with percentage implementation only."
-              },
-              "opera_android": {
-                "prefix": "-webkit-",
-                "version_added": "14",
-                "notes": "Supports the original dual-image with percentage implementation only."
-              },
-              "safari": [
-                {
-                  "version_added": "10",
-                  "notes": "Supports the original dual-image with percentage implementation only."
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "5.1",
-                  "notes": "Supports the original dual-image with percentage implementation only."
-                }
-              ],
-              "safari_ios": [
-                {
-                  "version_added": "9.3",
-                  "notes": "Support for the original dual-image with percentage implementation only."
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "5",
-                  "notes": "Supports the original dual-image with percentage implementation only."
-                }
-              ],
-              "samsunginternet_android": {
-                "prefix": "-webkit-",
-                "version_added": true,
-                "notes": "Support for the original dual-image with percentage implementation only."
-              },
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": true,
-                "notes": "Supports the original dual-image with percentage implementation only."
               }
             },
             "status": {
