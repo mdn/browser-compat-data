@@ -18,7 +18,6 @@ const browsers = {
   ],
   mobile: [
     'chrome_android',
-    'edge_mobile',
     'firefox_android',
     'opera_android',
     'qq_android',
