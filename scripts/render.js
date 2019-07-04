@@ -31,7 +31,6 @@ const browsers = {
   "mobile": {
     webview_android: 'Android',
     chrome_android: s_chrome_android,
-    edge_mobile: 'Edge mobile',
     firefox_android: s_firefox_android,
     opera_android: 'Opera Android',
     safari_ios: 'iOS Safari',

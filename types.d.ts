@@ -8,7 +8,6 @@ export type BrowserNames =
   | 'chrome'
   | 'chrome_android'
   | 'edge'
-  | 'edge_mobile'
   | 'firefox'
   | 'firefox_android'
   | 'ie'
