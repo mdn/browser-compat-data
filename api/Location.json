@@ -406,7 +406,8 @@
               "notes": "Before Firefox 53, the <code>pathname</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&b=false, <code>pathname</code> would return \"/x?a=true&b=false\" rather than \"/x\"."
             },
             "ie": {
-              "version_added": true
+              "version_added": true,
+              "notes": "Internet Explorer does not provide the leading slash character in the <code>pathname</code> (<code>docs/Web/API/Location</code> instead of <code>/docs/Web/API/Location</code>)."
             },
             "opera": {
               "version_added": true
