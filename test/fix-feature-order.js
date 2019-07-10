@@ -23,8 +23,8 @@ const compareFeatures = (a,b) => {
   if (a == '__compat') return -1;
   if (b == '__compat') return 1;
   
-  const wordA = /^\w(\w|-)+$/.test(a);
-  const wordB = /^\w(\w|-)+$/.test(b);
+  const wordA = /^\w(\w|-|_)*$/.test(a);
+  const wordB = /^\w(\w|-|_)*$/.test(b);
 
   if(wordA && wordB) return a.localeCompare(b, 'en');
   if(wordA || wordB) return (wordA && -1) || 1;
