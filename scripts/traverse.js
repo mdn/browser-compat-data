@@ -21,27 +21,27 @@ function traverseFeatures(obj, depth, identifier) {
   if (depth >= 0) {
     for (let i in obj) {
       if (!!obj[i] && typeof(obj[i]) == "object" && i !== '__compat') {
-         if (obj[i].__compat) {
-           let comp = obj[i].__compat.support;
-           let browser = comp[argv.browser];
-           if (!Array.isArray(browser)) {
-              browser = [browser];
+        if (obj[i].__compat) {
+          let comp = obj[i].__compat.support;
+          let browser = comp[argv.browser];
+          if (!Array.isArray(browser)) {
+            browser = [browser];
+          }
+          for (let range in browser) {
+            if (browser[range] === undefined) {
+              if (values.includes("null")) features.push(`${identifier}${i}`);
             }
-            for (let range in browser) {
-              if (browser[range] === undefined) {
-                if (values.includes("null")) features.push(`${identifier}${i}`);
-              }
-             else if (values.includes(String(browser[range].version_added)) ||
-                        values.includes(String(browser[range].version_removed))) {
-                if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
-                else features.push(`${identifier}${i}`);
-              }
-           }
-         }
-         traverseFeatures(obj[i], depth, identifier + i + '.');
-       }
-     }
-   }
+            else if (values.includes(String(browser[range].version_added)) ||
+                     values.includes(String(browser[range].version_removed))) {
+              if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
+              else features.push(`${identifier}${i}`);
+            }
+          }
+        }
+        traverseFeatures(obj[i], depth, identifier + i + '.');
+      }
+    }
+  }
 }
 
 let features = [];
