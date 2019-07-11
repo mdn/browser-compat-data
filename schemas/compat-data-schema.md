@@ -265,15 +265,12 @@ entirely unknown. Examples:
  "version_added": "3.5"
 }
 ```
-* Supported, but earliest version unknown:
-  The version specified should be the earliest version was noticed in.
-  This is usually the current version of the browser.
+* Supported, but version unknown:
 ```json
 {
-  "version_added": "<=60"
+  "version_added": true
 }
 ```
-  It’s also possible to use `true`, but this is deprecated in favour of version ranges.
 * No support:
 ```json
 {
