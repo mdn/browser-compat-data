@@ -26,8 +26,8 @@ const compareFeatures = (a,b) => {
   const wordA = /^[a-zA-Z](\w|-)*$/.test(a);
   const wordB = /^[a-zA-Z](\w|-)*$/.test(b);
 
-  if(wordA && wordB) return a.localeCompare(b, 'en');
-  if(wordA || wordB) return (wordA && -1) || 1;
+  if (wordA && wordB) return a.localeCompare(b, 'en');
+  if (wordA || wordB) return (wordA && -1) || 1;
   return 1;
 }
 
