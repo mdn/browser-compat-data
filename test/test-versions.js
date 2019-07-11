@@ -17,14 +17,22 @@ for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
 }
 
+/** @type {Object<string, string[]>} */
+const VERSION_RANGE_BROWSERS = {
+  webview_android: ['37'],
+};
+
 /**
  * @param {string} browserIdentifier
  * @param {VersionValue} version
  */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === 'string') {
-    if (version.startsWith('<=')) {
-      version = version.substring(2);
+    if (VERSION_RANGE_BROWSERS[browserIdentifier] && version.startsWith('<=')) {
+      let realVersion = version.substring(2);
+      if (VERSION_RANGE_BROWSERS[browserIdentifier].includes(realVersion)) {
+        version = realVersion;
+      }
     }
     return validBrowserVersions[browserIdentifier].includes(version);
   } else {
