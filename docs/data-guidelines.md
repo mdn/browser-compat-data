@@ -56,7 +56,6 @@ For example, the feature for a `focus` event would be named `focus_event` with t
   "api": {
     "Element": {
       "__compat": {},
-      ...
       "focus_event": {
         "__compat": {
           "description": "<code>focus</code> event",
