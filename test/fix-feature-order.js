@@ -28,7 +28,7 @@ const compareFeatures = (a,b) => {
 
   if (wordA && wordB) return a.localeCompare(b, 'en');
   if (wordA || wordB) return (wordA && -1) || 1;
-  return 1;
+  return a.localeCompare(b, 'en');
 }
 
 function orderFeatures(key, value) {
