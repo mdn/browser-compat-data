@@ -90,5 +90,5 @@ const printTable = () => {
   console.log(table);
 }
 
-console.log('Status as of version 0.0.xx (released on xx/xx/2019) for web platform features: \n')
+console.log('Status as of version 0.0.xx (released on 2019-MM-DD) for web platform features: \n')
 printTable();
