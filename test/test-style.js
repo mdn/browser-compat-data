@@ -147,19 +147,19 @@ function processData(filename, logger) {
 
   if (actual !== expected) {
     hasErrors = true;
-    logger.error(chalk`{red Error on }{red.bold line ${jsonDiff(actual, expected)}}`);
+    logger.error(chalk`{red Error on {bold line ${jsonDiff(actual, expected)}}}`);
   }
 
   if (expected !== expectedSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on }{red.bold line ${jsonDiff(expected, expectedSorting)}}`);
+    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedSorting)}}}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
   if (bugzillaMatch) {
     // use https://bugzil.la/1000000 instead
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, bugzillaMatch.index)} – Use shortenable URL (}{yellow ${bugzillaMatch[0]}}{red  → }{green.bold https://bugzil.la/}{green ${bugzillaMatch[1]}}{red ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, bugzillaMatch.index)} – Use shortenable URL ({yellow ${bugzillaMatch[0]} → {green {bold https://bugzil.la/}${bugzillaMatch[1]}}).}`);
   }
 
   {
@@ -180,7 +180,7 @@ function processData(filename, logger) {
 
         if (protocol !== 'https') {
           hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use HTTPS URL (}{yellow http://${domain}/${bugId}}{red  → }{green http}{green.bold s}{green ://${domain}/${bugId}}{red ).}`);
+          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use HTTPS URL ({yellow http://${domain}/${bugId}} → {green http{bold s}://${domain}/${bugId}}).}`);
         }
 
         if (domain !== 'bugzil.la') {
@@ -189,15 +189,15 @@ function processData(filename, logger) {
 
         if (/^bug $/.test(before)) {
           hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Move word "bug" into link text (}{yellow "${before}<a href='...'>${linkText}</a>"}{red  → }{green "<a href='...'>}{green.bold ${before}}{green ${bugId}</a>"}{red ).}`);
+          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Move word "bug" into link text ({yellow "${before}<a href='...'>${linkText}</a>"} → {green "<a href='...'>{bold ${before}}${bugId}</a>"}).}`);
         } else if (linkText === `Bug ${bugId}`) {
           if (!/(\. |")$/.test(before)) {
             hasErrors = true;
-            logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence (}{yellow "Bug ${bugId}"}{red  → }{green "}{green.bold bug}{green  ${bugId}"}{red ).}`);
+            logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence ({yellow "Bug ${bugId}"} → {green "{bold bug} ${bugId}"}).}`);
           }
         } else if (linkText !== `bug ${bugId}`) {
           hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use standard link text (}{yellow "${linkText}"}{red  → }{green "bug ${bugId}"}{red ).}`);
+          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use standard link text ({yellow "${linkText}"} → {green "bug ${bugId}"}).}`);
         }
       }
     } while (match != null);
@@ -207,14 +207,14 @@ function processData(filename, logger) {
   if (crbugMatch) {
     // use https://crbug.com/100000 instead
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, crbugMatch.index)} – Use shortenable URL (}{yellow ${crbugMatch[0]}}{red  → }{green.bold https://crbug.com/}{green ${crbugMatch[1]}}{red ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, crbugMatch.index)} – Use shortenable URL ({yellow ${crbugMatch[0]}} → {green {bold https://crbug.com/}${crbugMatch[1]}}).}`);
   }
 
   const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL (}{yellow ${webkitMatch[0]}}{red  → }{green.bold https://webkit.org/b/}{green ${webkitMatch[1]}}{red ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL ({yellow ${webkitMatch[0]}} → }{green {bold https://webkit.org/b/}${webkitMatch[1]}}).}`);
   }
 
   {
@@ -269,18 +269,19 @@ function processData(filename, logger) {
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
   if (msdevUrlMatch) {
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL (}{yellow ${msdevUrlMatch[0]}}{red  → }{green https://developer.microsoft.com/${msdevUrlMatch[2]}}{red ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL ({yellow ${msdevUrlMatch[0]}} → {green https://developer.microsoft.com/${msdevUrlMatch[2]}}).}`);
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description (}{yellow ${constructorMatch[1]}}{red  → }{green ${constructorMatch[1]}}{green.bold ()}{red ).}`);
+    logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
   }
 
-  if (actual.includes("href=\\\"")) {
+  let hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
+  if (hrefDoubleQuoteIndex >= 0) {
     hasErrors = true;
-    logger.error(chalk`{red Found }{yellow \\"}{red  but expected }{green \'}{red  for <a href>.}`);
+    logger.error(chalk`{red ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
@@ -289,7 +290,7 @@ function processData(filename, logger) {
     var a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL (}{yellow ${match[1]}}{red  → }{green.bold https://developer.mozilla.org/}{green ${match[1]}}{red ).}`);
+      logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
     }
   }
 
@@ -309,7 +310,7 @@ function testStyle(filename) {
   processData(filename, logger);
 
   if (errors.length) {
-    console.error(chalk`{red   Style – }{red.bold ${errors.length}}{red  ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(chalk`{red   Style – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
       console.error(`    ${error}`);
     }
