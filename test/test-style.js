@@ -218,7 +218,10 @@ function processData(filename, logger) {
   }
 
   {
-    const regexp = new RegExp(String.raw`\b(https?)://developer.mozilla.org/(.*?)(?=["'\s])`, 'g');
+    const regexp = new RegExp(
+      String.raw`\b(https?)://developer.mozilla.org/(.*?)(?=["'\s])`,
+      'g',
+    );
     /** @type {RegExpExecArray} */
     let match;
     while ((match = regexp.exec(actual)) !== null) {
@@ -228,15 +231,16 @@ function processData(filename, logger) {
       if (!expectedPath.startsWith('docs/')) {
         // Convert legacy zone URLs (see https://bugzil.la/1462475):
         const [zone, index] = (/** @return {[string|null, number]} */() => {
-          const match = expectedPath.match(/\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/);
+          const match = expectedPath.match(
+            /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
+          );
           return match ? [match[1], match.index] : [null, -1];
         })();
         if (index >= 0) {
           expectedPath = expectedPath.substring(index);
-          switch(zone) {
+          switch (zone) {
             case 'Add-ons':
             case 'Firefox':
-            case 'Mozilla':
               expectedPath = 'Mozilla/' + expectedPath;
               break;
             case 'Apps':
