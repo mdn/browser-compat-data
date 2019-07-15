@@ -46,9 +46,9 @@ For example, the `ImageData` constructor, `ImageData()`, is represented as `api.
 
 ## DOM events (`eventname_event`)
 
-Name DOM event features in the form _eventname_\_event with description text `<code>eventname</code> event`.
+Name DOM event features in the form _eventname_\_event with description text `<code>eventname</code> event`. Each event's record is a member of the interface which is its target. If an event can be sent to multiple interfaces, you need to replicate the event in each of those interfaces.
 
-For example, the feature for a `focus` event would be named `focus_event` with the description text `<code>focus</code> event`, like this:
+For example, the feature for a `focus` event whose target interface is `Element` would be named `focus_event` with the description text `<code>focus</code> event`, like this:
 
 ```json
 {
