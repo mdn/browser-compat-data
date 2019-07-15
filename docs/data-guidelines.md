@@ -144,13 +144,6 @@ For example, if the current release of browser X is version 10.2, but a new feat
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
 
 
-## Node.js releases before 1.0
-
-Unlike other browsers, use pre-1.0 releases of Node.js because Node did not use major version numbers during its early history. BCD permits including any Node.js release that introduces a feature (typically, these are `major.minor.0` releases).
-
-See [#3160](https://github.com/mdn/browser-compat-data/pull/3160) for a discussion of this approach.
-
-
 ## Safari for iOS versioning
 
 For Safari for iOS, use the iOS version number, not the Safari version number or WebKit version number.
