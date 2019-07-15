@@ -9,7 +9,6 @@ This file contains recommendations to help you record data in a consistent and u
   * [Web Workers (`worker_support`)](#web-workers---worker-support--)
   * [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply--partial-implementation-)
   * [Release lines and backported features](#release-lines-and-backported-features)
-  * [Node.js releases before 1.0](#nodejs-releases-before-10)
   * [Safari for iOS versioning](#safari-for-ios-versioning)
 
 <!-- BEGIN TEMPLATE
