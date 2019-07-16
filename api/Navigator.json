@@ -13,9 +13,6 @@
           "edge": {
             "version_added": true
           },
-          "edge_mobile": {
-            "version_added": true
-          },
           "firefox": {
             "version_added": true
           },
@@ -64,9 +61,6 @@
             },
             "edge": {
               "version_added": "15"
-            },
-            "edge_mobile": {
-              "version_added": false
             },
             "firefox": [
               {
@@ -135,9 +129,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": false
             },
@@ -192,9 +183,6 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
               "version_added": false
             },
             "firefox": [
@@ -291,9 +279,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": [
               {
                 "version_added": "64",
@@ -354,9 +339,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": false
             },
@@ -405,9 +387,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": "63"
             },
@@ -454,9 +433,6 @@
               "version_added": "38"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -508,9 +484,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "1",
               "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
@@ -561,9 +534,6 @@
             "edge": {
               "version_added": "18"
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": true
             },
@@ -610,9 +580,6 @@
               "version_added": "63"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -663,10 +630,6 @@
             "edge": {
               "version_added": "17",
               "notes": "Edge prior to version 17 implemented <code>window.doNotTrack</code>."
-            },
-            "edge_mobile": {
-              "version_added": false,
-              "notes": "Use <code>window.doNotTrack</code> instead."
             },
             "firefox": {
               "version_added": "9",
@@ -722,9 +685,6 @@
             },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": {
               "version_added": "3.5"
@@ -785,9 +745,6 @@
               "edge": {
                 "version_added": null
               },
-              "edge_mobile": {
-                "version_added": null
-              },
               "firefox": {
                 "version_added": "55"
               },
@@ -813,7 +770,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "47"
               }
             },
             "status": {
@@ -835,9 +792,6 @@
               "version_added": "45"
             },
             "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
@@ -903,9 +857,6 @@
             ],
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": {
               "version_added": "29"
@@ -987,9 +938,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "17",
               "prefix": "moz",
@@ -1061,9 +1009,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": [
               {
                 "version_added": "55",
@@ -1119,9 +1064,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": false
             },
@@ -1168,9 +1110,6 @@
               "version_added": "69"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -1220,9 +1159,6 @@
             },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": null
             },
             "firefox": [
               {
@@ -1298,9 +1234,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "63"
             },
@@ -1349,9 +1282,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "36"
             },
@@ -1385,6 +1315,56 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "secure_context_required": {
+          "__compat": {
+            "description": "Secure context required",
+            "support": {
+              "chrome": {
+                "version_added": "74"
+              },
+              "chrome_android": {
+                "version_added": "74"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "Release, Beta, and Developer Edition builds of Firefox do not require a secure context by default; however, Nightly builds do."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "Release, Beta, and Developer Edition builds of Firefox do not require a secure context by default; however, Nightly builds do."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": "74"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "mediaSession": {
@@ -1398,9 +1378,6 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -1451,9 +1428,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": true,
               "version_removed": "35"
@@ -1502,10 +1476,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
               "version_added": true
@@ -1514,22 +1485,22 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -1553,9 +1524,6 @@
               "version_added": "43"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -1604,9 +1572,6 @@
               "version_added": true
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -1659,9 +1624,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": true
             },
@@ -1711,9 +1673,6 @@
               "version_added": null
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -1766,9 +1725,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": "3"
             },
@@ -1814,9 +1770,6 @@
                 "version_added": null
               },
               "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
                 "version_added": null
               },
               "firefox": {
@@ -1875,9 +1828,6 @@
             },
             "edge": {
               "version_added": "13"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": {
               "version_added": true,
@@ -1951,9 +1901,6 @@
             "edge": {
               "version_added": "14"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "31"
             },
@@ -2016,9 +1963,6 @@
                 ]
               }
             ],
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": "44",
               "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
@@ -2066,9 +2010,6 @@
               "version_added": "61"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {
@@ -2119,9 +2060,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": true
             },
@@ -2169,9 +2107,6 @@
             },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": null
             },
             "firefox": {
               "version_added": true
@@ -2223,9 +2158,6 @@
               ]
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": [
@@ -2301,9 +2233,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": true
             },
@@ -2329,7 +2258,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "63"
             }
           },
           "status": {

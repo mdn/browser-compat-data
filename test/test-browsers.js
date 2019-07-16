@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const chalk = require('chalk');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -17,7 +18,6 @@ const browsers = {
   ],
   mobile: [
     'chrome_android',
-    'edge_mobile',
     'firefox_android',
     'opera_android',
     'qq_android',
@@ -46,27 +46,66 @@ const browsers = {
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
- * @param {{error:function(string):void}} logger
+ * @param {{error:function(...unknown):void}} logger
  * @param {string} [path]
  * @returns {boolean}
  */
 function processData(data, displayBrowsers, requiredBrowsers, category, logger, path = '') {
   let hasErrors = false;
   if (data.__compat && data.__compat.support) {
-    const invalidEntries = Object.keys(data.__compat.support).filter(value => !displayBrowsers.includes(value));
+    const support = data.__compat.support;
+
+    const invalidEntries = Object.keys(support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
-      logger.error(`'${path}' has the following browsers, which are invalid for ${category} compat data: ${invalidEntries.join(', ')}`);
+      logger.error(chalk`{red {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(', ')}}}`);
       hasErrors = true;
     }
-    const missingEntries = requiredBrowsers.filter(value => !(value in data.__compat.support));
+
+    const missingEntries = requiredBrowsers.filter(value => !(value in support));
     if (missingEntries.length > 0) {
-      logger.error(`'${path}' is missing the following browsers, which are required for ${category} compat data: ${missingEntries.join(', ')}`);
+      logger.error(chalk`{red {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(', ')}}}`);
       hasErrors = true;
+    }
+
+    for (const [browser, supportStatement] of Object.entries(support)) {
+      let statementList = Array.isArray(supportStatement) ? supportStatement : [supportStatement];
+      function hasVersionAddedOnly(statement) {
+        const keys = Object.keys(statement);
+        return keys.length === 1 && keys[0] === 'version_added';
+      }
+      let sawVersionAddedOnly = false;
+      for (const statement of statementList) {
+        if (hasVersionAddedOnly(statement)) {
+          if (sawVersionAddedOnly) {
+           logger.error(`'${path}' has multiple support statement with only \`version_added\` for ${browser}`);
+            hasErrors = true;
+            break;
+          } else {
+            sawVersionAddedOnly = true;
+          }
+        }
+      }
     }
   }
   for (const key in data) {
     if (key === "__compat") continue;
-    hasErrors |= processData(data[key], displayBrowsers, requiredBrowsers, category, logger, (path && path.length > 0) ? `${path}.${key}` : key);
+    // Note that doing `hasErrors |= processData(…)` would convert
+    // `hasErrors` into a number, which could potentially lead
+    // to unexpected issues down the line.
+
+    // We can't use the ESNext `hasErrors ||= processData(…)` here either,
+    // as that would prevent printing nested browser issues, making testing
+    // and fixing issues longer, as nested issues wouldn't be logged.
+    hasErrors = processData(
+      data[key],
+      displayBrowsers,
+      requiredBrowsers,
+      category,
+      logger,
+      (path && path.length > 0)
+        ? `${path}.${key}`
+        : key,
+    ) || hasErrors;
   }
   return hasErrors;
 }
@@ -82,7 +121,7 @@ function testBrowsers(filename) {
   const data = require(filename);
 
   if (!category) {
-    console.warn('\x1b[1;30m  Browsers – Unknown category \x1b[0m');
+    console.warn(chalk.blackBright('  Browsers – Unknown category'));
     return false;
   }
 
@@ -104,17 +143,22 @@ function testBrowsers(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    error: (message) => {errors.push(message);}
-  }
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
 
-  if (!processData(data, displayBrowsers, requiredBrowsers, category, logger)) {
-    return false;
-  } else {
-    console.error('\x1b[31m  Browsers –', errors.length, 'error(s):\x1b[0m');
-    for (let error of errors)
+  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+
+  if (errors.length) {
+    console.error(chalk`{red   Browsers – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    for (const error of errors) {
       console.error(`    ${error}`);
+    }
     return true;
   }
+  return false;
 }
 
 module.exports = testBrowsers;

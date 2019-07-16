@@ -2,6 +2,7 @@
 const Ajv = require('ajv');
 const betterAjvErrors = require('better-ajv-errors');
 const path = require('path');
+const chalk = require('chalk');
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
 
@@ -15,16 +16,16 @@ function testSchema(dataFilename, schemaFilename = './../schemas/compat-data.sch
 
   const valid = ajv.validate(schema, data);
 
-  if (valid) {
-    return false;
-  } else {
-    console.error('\x1b[31m  File : ' + path.relative(process.cwd(), dataFilename));
-    console.error('\x1b[31m  JSON schema – ' + ajv.errors.length + ' error(s)\x1b[0m');
+  if (!valid) {
+    console.error(chalk`{red   {bold JSON Schema} – {bold ${ajv.errors.length}} ${ajv.errors.length === 1 ? 'error' : 'errors'}:}`);
+    // Output messages by one since better-ajv-errors wrongly joins messages
+    // (see https://github.com/atlassian/better-ajv-errors/pull/21)
     ajv.errors.forEach(e => {
       console.error(betterAjvErrors(schema, data, [e], {indent: 2}));
     });
     return true;
   }
+  return false;
 }
 
 module.exports = testSchema;
