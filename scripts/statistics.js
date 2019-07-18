@@ -1,6 +1,6 @@
 'use strict';
 const bcd = require('..');
-const { RANGE_PREFIX_LT } = require('../utils.js');
+const { RANGE_PREFIX_LTE: RANGE_PREFIX_LT } = require('../utils.js');
 
 /**
  * @typedef {object} VersionStats

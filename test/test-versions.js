@@ -2,7 +2,7 @@
 const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
-const { RANGE_PREFIX_LT } = require('../utils.js');
+const { RANGE_PREFIX_LTE: RANGE_PREFIX_LT } = require('../utils.js');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
