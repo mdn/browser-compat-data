@@ -103,7 +103,7 @@ Is it a functionality that is standard? Is it stable? Has it been deprecated and
 * An optional `mdn_url` property which __points to an MDN reference page documenting the feature__.
 It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-* An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier. (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`)
+* An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
 
 ### The `support` object
 Each `__compat` object contains support information. For each browser identifier, it contains a [`support_statement`](#the-support_statement-object) object with
