@@ -1,23 +1,34 @@
 'use strict';
 const bcd = require('..');
+const { RANGE_PREFIX_LT } = require('../utils.js');
+
+/**
+ * @typedef {object} VersionStats
+ * @property {number} all The total number of occurrences for the browser.
+ * @property {number} true The total number of `true` values for the browser.
+ * @property {number} null The total number of `null` values for the browser.
+ * @property {number} range The total number of range values for the browser.
+ * @property {number} real The total number of real values for the browser.
+ */
 
 const browsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
-let stats = { total: { all: 0, true: 0, null: 0, real: 0 } };
+/** @type {{total: VersionStats; [browser: string]: VersionStats}} */
+let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
-  stats[browser] = { all: 0, true: 0, null: 0, real: 0 }
+  stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 }
 });
 
 const checkSupport = (supportData, type) => {
   if (!Array.isArray(supportData)) {
     supportData = [supportData];
   }
-  if (type == '<=') {
+  if (type == RANGE_PREFIX_LT) {
     return supportData.some(
       item =>
         (typeof item.version_added == 'string' &&
-          item.version_added.startsWith('<=')) ||
+          item.version_added.startsWith(RANGE_PREFIX_LT)) ||
         (typeof item.version_removed == 'string' &&
-          item.version_removed.startsWith('<='))
+          item.version_removed.startsWith(RANGE_PREFIX_LT))
     );
   }
   return supportData.some(
@@ -40,13 +51,13 @@ const processData = (data) => {
           stats[browser].null++;
           stats.total.null++;
           real_value = false;
-        }
-        if (
-          checkSupport(data.support[browser], true) ||
-          checkSupport(data.support[browser], '<=')
-        ) {
+        } else if (checkSupport(data.support[browser], true)) {
           stats[browser].true++;
           stats.total.true++;
+          real_value = false;
+        } else if (checkSupport(data.support[browser], RANGE_PREFIX_LT)) {
+          stats[browser].range++;
+          stats.total.range++;
           real_value = false;
         }
       }
@@ -75,13 +86,14 @@ for (let data in bcd) {
 }
 
 const printTable = () => {
-  let table = `| browser | real values | \`true\` values | \`null\` values |
-| --- | --- | --- | --- |
+  let table = `| browser | real values | range | \`true\` values | \`null\` values |
+| --- | --- | --- | --- | --- |
 `;
 
   Object.keys(stats).forEach(entry => {
     table += `| ${entry.replace('_', ' ')} | `;
     table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
+    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(2)}% | `;
     table += `${((stats[entry].true / stats[entry].all) * 100).toFixed(2)}% | `;
     table += `${((stats[entry].null / stats[entry].all) * 100).toFixed(2)}% |
 `;
