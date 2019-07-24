@@ -80,93 +80,7 @@ What it represents exactly depends of the evolution of the feature over time, bo
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-#### API-specific subfeatures
-
-The following conventions apply to compatibility data in the `api/` directory.
-
-Worker support for a given feature in `api/` should be in a subfeature titled `worker_support`. It should also have the description `Available in workers`.
-
-```json
-{
-  "api": {
-    "ImageData": {
-      "__compat": {},
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {}
-        }
-      }
-    }
-  }
-}
-```
-
-A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
-
-```json
-{
-  "api": {
-    "ImageData": {
-      "__compat": {},
-      "ImageData": {
-        "__compat": {
-          "description": "<code>ImageData()</code> constructor",
-          "support": {}
-        }
-      }
-    }
-  }
-}
-```
-
-#### Secure context required
-
-A feature that requires HTTPS should contain a subfeature titled `secure_context_required`, which describes how different browsers handle the secure context requirement. This new subfeature should also have the description `Secure context required`.
-
-```json
-{
-  "api": {
-    "ImageData": {
-      "__compat": {},
-      "secure_context_required": {
-        "__compat": {
-          "description": "Secure context required",
-          "support": {}
-        }
-      }
-    }
-  }
-}
-```
-
-For example, if the `ImageData` feature requires a secure context from version 60 in Chrome, version 55 in Firefox, and not at all in Safari, we could represent that as follows:
-
-```json
-{
-  "api": {
-    "ImageData": {
-      "__compat": {},
-      "secure_context_required": {
-        "__compat": {
-          "description": "Secure context required",
-          "support": {
-            "chrome": {
-              "version_added": "60"
-            },
-            "firefox": {
-              "version_added": "55"
-            },
-            "safari": {
-              "version_added": false
-            }
-          }
-        }
-      }
-    }
-  }
-}
-```
+See [Data guidelines](/docs/data-guidelines.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 The `__compat` object consists of the following:
@@ -188,6 +102,8 @@ Is it a functionality that is standard? Is it stable? Has it been deprecated and
 
 * An optional `mdn_url` property which __points to an MDN reference page documenting the feature__.
 It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
+
+* An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
 
 ### The `support` object
 Each `__compat` object contains support information. For each browser identifier, it contains a [`support_statement`](#the-support_statement-object) object with
