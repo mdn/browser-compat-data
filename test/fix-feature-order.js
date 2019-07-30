@@ -19,7 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const compareFeatures = require('./compare-features.js');
+const compareFeatures = require('./compare-features');
 
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
