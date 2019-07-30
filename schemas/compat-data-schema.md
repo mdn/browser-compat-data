@@ -308,14 +308,8 @@ Example for two flags required:
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
-follows the current specification closely enough to not create major interoperability problems.
-It defaults to `false` (no interoperability problem expected).
-If set to `true`, it is recommended to add a note indicating how it diverges from
-the standard (implements an old version of the standard, for example).
-
-A `boolean` value indicating whether or not the implementation of the sub-feature
-deviates from the specification in a way that may cause compatibility problems. It
-defaults to `false` (no interoperability problems expected). If set to `true`, it is
+deviates from the specification in a way that may cause significant compatibility problems.
+It defaults to `false` (no interoperability problems expected). If set to `true`, it is
 recommended that you add a note explaining how it diverges from the standard (such as
 that it implements an old version of the standard, for example).
 
