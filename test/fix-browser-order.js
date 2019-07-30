@@ -20,31 +20,31 @@ const fs = require('fs');
 const path = require('path');
 
 const orderSupportBlock = (key, value) => {
-	if (key === "__compat") {
-		value.support = Object.keys(value.support).sort().reduce((result, key) => {
-			result[key] = value.support[key];
-			return result;
-		}, {});
-	}
-	return value;
+  if (key === "__compat") {
+    value.support = Object.keys(value.support).sort().reduce((result, key) => {
+      result[key] = value.support[key];
+      return result;
+    }, {});
+  }
+  return value;
 };
 
  /**
   * @param {Promise<void>} filename 
   */
 const fixBrowserOrder = (filename) => {
-	let actual   = fs.readFileSync(filename, 'utf-8').trim();
-	let expected = JSON.stringify(JSON.parse(actual, orderSupportBlock), null, 2);
+  let actual   = fs.readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(JSON.parse(actual, orderSupportBlock), null, 2);
 
-	const platform = require("os").platform;
-	if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
-		actual   = actual.replace(/\r/g, "");
-		expected = expected.replace(/\r/g, "");
-	}
+  const platform = require("os").platform;
+  if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
+    actual   = actual.replace(/\r/g, "");
+    expected = expected.replace(/\r/g, "");
+  }
 
-	if (actual !== expected) {
-		fs.writeFileSync(filename, expected + '\n', 'utf-8');
-	}
+  if (actual !== expected) {
+    fs.writeFileSync(filename, expected + '\n', 'utf-8');
+  }
 }
 
 module.exports = fixBrowserOrder;

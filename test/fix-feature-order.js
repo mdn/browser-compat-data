@@ -35,18 +35,18 @@ function orderFeatures(key, value) {
   * @param {Promise<void>} filename 
   */
 const fixFeatureOrder = (filename) => {
-	let actual   = fs.readFileSync(filename, 'utf-8').trim();
-	let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
+  let actual   = fs.readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
 
-	const platform = require("os").platform;
-	if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
-		actual   = actual.replace(/\r/g, "");
-		expected = expected.replace(/\r/g, "");
-	}
+  const platform = require("os").platform;
+  if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
+    actual   = actual.replace(/\r/g, "");
+    expected = expected.replace(/\r/g, "");
+  }
 
-	if (actual !== expected) {
-		fs.writeFileSync(filename, expected + '\n', 'utf-8');
-	}
+  if (actual !== expected) {
+    fs.writeFileSync(filename, expected + '\n', 'utf-8');
+  }
 }
 
 module.exports = fixFeatureOrder;
