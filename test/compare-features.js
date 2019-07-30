@@ -8,7 +8,7 @@
  *
  * Sort a list of features based upon a specific order:
  *  1. __compat is always first
- *  2. Alphanumerical features (without symbols aside from - or _)
+ *  2. Alphanumerical features starting with a letter (without symbols aside from - or _)
  *  3. All other features
  *
  */
