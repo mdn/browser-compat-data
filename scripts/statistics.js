@@ -85,7 +85,7 @@ for (let data in bcd) {
 }
 
 const printTable = () => {
-  let table = `| browser | real values | range | \`true\` values | \`null\` values |
+  let table = `| browser | real values | ranged values | \`true\` values | \`null\` values |
 | --- | --- | --- | --- | --- |
 `;
 
