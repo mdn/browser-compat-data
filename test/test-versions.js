@@ -2,7 +2,6 @@
 const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
-const { RANGE_PREFIX_LTE: RANGE_PREFIX_LT } = require('../utils.js');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -14,15 +13,18 @@ const browsers = require('..').browsers;
 
 /** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
-for (const browser of Object.keys(browsers)) {
-  validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
-}
 
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
-  webview_android: ['37'],
+  webview_android: ['≤37'],
 };
 
+for (const browser of Object.keys(browsers)) {
+  validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
+  if (VERSION_RANGE_BROWSERS[browser]) {
+    validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
+}
 
 /**
  * @param {string} browserIdentifier
@@ -30,12 +32,6 @@ const VERSION_RANGE_BROWSERS = {
  */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === 'string') {
-    if (VERSION_RANGE_BROWSERS[browserIdentifier] && version.startsWith(RANGE_PREFIX_LT)) {
-      let realVersion = version.substring(RANGE_PREFIX_LT.length);
-      if (VERSION_RANGE_BROWSERS[browserIdentifier].includes(realVersion)) {
-        version = realVersion;
-      }
-    }
     return validBrowserVersions[browserIdentifier].includes(version);
   } else {
     return true;

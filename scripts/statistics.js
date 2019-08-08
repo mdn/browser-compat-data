@@ -1,6 +1,5 @@
 'use strict';
 const bcd = require('..');
-const { RANGE_PREFIX_LTE: RANGE_PREFIX_LT } = require('../utils.js');
 
 /**
  * @typedef {object} VersionStats
@@ -22,13 +21,13 @@ const checkSupport = (supportData, type) => {
   if (!Array.isArray(supportData)) {
     supportData = [supportData];
   }
-  if (type == RANGE_PREFIX_LT) {
+  if (type == '≤') {
     return supportData.some(
       item =>
         (typeof item.version_added == 'string' &&
-          item.version_added.startsWith(RANGE_PREFIX_LT)) ||
+          item.version_added.startsWith('≤')) ||
         (typeof item.version_removed == 'string' &&
-          item.version_removed.startsWith(RANGE_PREFIX_LT))
+          item.version_removed.startsWith('≤'))
     );
   }
   return supportData.some(
@@ -55,7 +54,7 @@ const processData = (data) => {
           stats[browser].true++;
           stats.total.true++;
           real_value = false;
-        } else if (checkSupport(data.support[browser], RANGE_PREFIX_LT)) {
+        } else if (checkSupport(data.support[browser], '≤')) {
           stats[browser].range++;
           stats.total.range++;
           real_value = false;
