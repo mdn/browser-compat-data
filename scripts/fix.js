@@ -17,6 +17,7 @@ function load(...files) {
     }
 
     if (!fs.existsSync(file)) {
+      console.warn("File not found, skipping:", file);
       continue; // Ignore non-existent files
     }
 
