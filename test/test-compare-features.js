@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
-const compareFeatures = require('./compare-features');
+const compareFeatures = require('../scripts/compare-features');
 
  /**
   * A unit test for the compareFeatures() function, to ensure that features are sorted as expected.
