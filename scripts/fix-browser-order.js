@@ -18,6 +18,10 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { platform } = require('os');
+
+/** Determines if the OS is Windows */
+const IS_WINDOWS = platform() === 'win32';
 
 const orderSupportBlock = (key, value) => {
   if (key === "__compat") {
@@ -30,16 +34,15 @@ const orderSupportBlock = (key, value) => {
 };
 
  /**
-  * @param {Promise<void>} filename 
+  * @param {Promise<void>} filename
   */
 const fixBrowserOrder = (filename) => {
   let actual   = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderSupportBlock), null, 2);
 
-  const platform = require("os").platform;
-  if (platform() === "win32") { // prevent false positives from git.core.autocrlf on Windows
-    actual   = actual.replace(/\r/g, "");
-    expected = expected.replace(/\r/g, "");
+  if (IS_WINDOWS) { // prevent false positives from git.core.autocrlf on Windows
+    actual   = actual.replace(/\r/g, '');
+    expected = expected.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
