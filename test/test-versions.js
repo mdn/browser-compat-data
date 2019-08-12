@@ -13,8 +13,17 @@ const browsers = require('..').browsers;
 
 /** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
+
+/** @type {Object<string, string[]>} */
+const VERSION_RANGE_BROWSERS = {
+  webview_android: ['≤37'],
+};
+
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
+  if (VERSION_RANGE_BROWSERS[browser]) {
+    validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
 }
 
 /**
