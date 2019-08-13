@@ -78,9 +78,13 @@ const iterateData = (data) => {
   }
 };
 
-for (let data in bcd) {
-  if (!(data === 'browsers' || data === 'webextensions')) {
-    iterateData(bcd[data]);
+if (process.argv[2]) {
+  iterateData(bcd[process.argv[2]]);
+} else {
+  for (let data in bcd) {
+    if (!(data === 'browsers' || data === 'webextensions')) {
+      iterateData(bcd[data]);
+    }
   }
 }
 
@@ -101,5 +105,5 @@ const printTable = () => {
   console.log(table);
 }
 
-console.log('Status as of version 0.0.xx (released on 2019-MM-DD) for web platform features: \n')
+console.log(`Status as of version 0.0.xx (released on 2019-MM-DD) for ${process.argv[2] ? `${process.argv[2]}/ directory` : `web platform features`}: \n`);
 printTable();
