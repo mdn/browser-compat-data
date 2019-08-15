@@ -219,13 +219,13 @@ function processData(filename, logger) {
 
   {
     const regexp = new RegExp(
-      String.raw`\b(https?)://developer.mozilla.org/(.*?)(?=["'\s])`,
+      String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
       'g',
     );
     /** @type {RegExpExecArray} */
     let match;
     while ((match = regexp.exec(actual)) !== null) {
-      const [url, protocol, path] = match;
+      const [url, protocol, subdomain, path] = match;
       let [, locale, expectedPath] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
 
       if (!expectedPath.startsWith('docs/')) {
@@ -259,12 +259,19 @@ function processData(filename, logger) {
         );
       }
 
+      if (subdomain) {
+        hasErrors = true;
+        logger.error(
+          chalk`{red ${pos} - Use correct MDN domain ({yellow ${protocol}://{red ${subdomain}}developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}})}`,
+        );
+      }
+
       if (path !== expectedPath) {
         hasErrors = true;
         logger.error(
           chalk`{red ${pos} – Use ${
             locale ? 'non-localized' : 'correct'
-          } MDN URL ({yellow ${url} → }{green https://developer.mozilla.org/${expectedPath}}).}`,
+          } MDN URL ({yellow ${url}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
         );
       }
     }
