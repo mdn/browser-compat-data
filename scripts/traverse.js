@@ -33,8 +33,10 @@ function traverseFeatures(obj, depth, identifier) {
             }
             else if (values.includes(String(browser[range].version_added)) ||
                      values.includes(String(browser[range].version_removed))) {
-              if (browser[range].prefix) features.push(`${identifier}${i} (${browser[range].prefix} prefix)`);
-              else features.push(`${identifier}${i}`);
+              let f = `${identifier}${i}`;
+              if (browser[range].prefix) f += ` (${browser[range].prefix} prefix)`;
+              if (browser[range].alternative_name) f += ` (as ${browser[range].alternative_name})`;
+              features.push(f);
             }
           }
         }

@@ -2065,7 +2065,7 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
             "opera": {
               "version_added": true
@@ -7835,17 +7835,30 @@
             "edge": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "65",
-              "alternative_name": "policy",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.featurePolicy.webidl.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "69",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.featurePolicy.webidl.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "65",
+                "version_removed": "69",
+                "alternative_name": "policy",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.featurePolicy.webidl.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "65",
               "alternative_name": "policy",
@@ -7862,11 +7875,11 @@
             },
             "opera": [
               {
-                "version_added": "61"
+                "version_added": "62"
               },
               {
                 "version_added": "60",
-                "version_removed": "61",
+                "version_removed": "62",
                 "flags": [
                   {
                     "type": "preference",

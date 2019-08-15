@@ -51,7 +51,7 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 
     for (const statement of supportStatements) {
       if (statement === undefined) {
-        logger.error(chalk`{red {bold ${browser}} must be defined for {bold ${relPath}}`);
+        logger.error(chalk`{red {bold ${browser}} must be defined for {bold ${relPath}}}`);
           hasErrors = true;
       } else {
         if ([true, null].includes(statement.version_added)) {

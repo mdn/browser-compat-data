@@ -214,7 +214,7 @@ function processData(filename, logger) {
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL ({yellow ${webkitMatch[0]}} → }{green {bold https://webkit.org/b/}${webkitMatch[1]}}).}`);
+    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL ({yellow ${webkitMatch[0]}} → {green {bold https://webkit.org/b/}${webkitMatch[1]}}).}`);
   }
 
   {
