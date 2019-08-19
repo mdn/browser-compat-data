@@ -79,8 +79,11 @@ function checkVersions(supportData, relPath, logger) {
             if (
               (
                 statement.version_added.startsWith("≤") && statement.version_removed.startsWith("≤") &&
-                compareVersions(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", "")) != -1
-              ) || compareVersions(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", "")) >= 0
+                compareVersions(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", "")) == -1
+              ) || (
+                (!statement.version_added.startsWith("≤") || !statement.version_removed.startsWith("≤")) &&
+                compareVersions(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", "")) >= 0
+              )
             ) {
               logger.error(chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`);
               hasErrors = true;
