@@ -103,6 +103,8 @@ Is it a functionality that is standard? Is it stable? Has it been deprecated and
 * An optional `mdn_url` property which __points to an MDN reference page documenting the feature__.
 It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
+* An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
+
 ### The `support` object
 Each `__compat` object contains support information. For each browser identifier, it contains a [`support_statement`](#the-support_statement-object) object with
 information about versions, prefixes, or alternate names, as well as notes.
@@ -224,6 +226,17 @@ Examples:
 }
 ```
 
+### Ranged versions
+
+For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. The statement below means "supported in at least version 37 and probably in earlier versions as well".
+Currently, the only allowed ranged version is `"≤37"` for `webview_android`. There will be more ranged versions for other browsers in the future but ranged versions aren't generally allowed for every version string. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in.
+
+```json
+{
+  "version_added": "≤37",
+}
+```
+
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
@@ -306,14 +319,8 @@ Example for two flags required:
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
-follows the current specification closely enough to not create major interoperability problems.
-It defaults to `false` (no interoperability problem expected).
-If set to `true`, it is recommended to add a note indicating how it diverges from
-the standard (implements an old version of the standard, for example).
-
-A `boolean` value indicating whether or not the implementation of the sub-feature
-deviates from the specification in a way that may cause compatibility problems. It
-defaults to `false` (no interoperability problems expected). If set to `true`, it is
+deviates from the specification in a way that may cause significant compatibility problems.
+It defaults to `false` (no interoperability problems expected). If set to `true`, it is
 recommended that you add a note explaining how it diverges from the standard (such as
 that it implements an old version of the standard, for example).
 

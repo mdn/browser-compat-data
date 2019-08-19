@@ -54,9 +54,11 @@
                 },
                 "firefox": {
                   "version_added": "55",
+                  "version_removed": "70",
                   "notes": [
                     "Before version 59, the RGB array form was not supported for this property.",
-                    "Before version 63, this property was mandatory."
+                    "Before version 63, this property was mandatory.",
+                    "Use <code>frame</code> instead."
                   ]
                 },
                 "firefox_android": {
@@ -65,6 +67,11 @@
                 "opera": {
                   "version_added": false
                 }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
               }
             }
           },
@@ -576,9 +583,11 @@
                 },
                 "firefox": {
                   "version_added": "55",
+                  "version_removed": "70",
                   "notes": [
                     "Before version 59, the RGB array form was not supported for this property.",
-                    "Before version 63, this property was mandatory."
+                    "Before version 63, this property was mandatory.",
+                    "Use <code>tab_background_text<code> instead."
                   ]
                 },
                 "firefox_android": {
@@ -587,6 +596,11 @@
                 "opera": {
                   "version_added": false
                 }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
               }
             }
           },
@@ -961,24 +975,45 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true,
-                  "alternative_name": "theme_frame"
+                  "version_added": false
                 },
                 "edge": {
                   "version_added": false
                 },
-                "firefox": [
-                  {
-                    "version_added": "55"
-                  },
-                  {
-                    "version_added": "55",
-                    "alternative_name": "theme_frame"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "55",
+                  "version_removed": "70",
+                  "notes": "Use <code>theme_frame</code> instead."
+                },
                 "firefox_android": {
                   "version_added": "65",
                   "notes": "This property is required."
+                },
+                "opera": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
+              }
+            }
+          },
+          "theme_frame": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "55"
+                },
+                "firefox_android": {
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": false
