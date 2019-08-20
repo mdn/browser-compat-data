@@ -5,7 +5,7 @@ const chalk = require('chalk')
 
 /**
  * Consistency check.
- * 
+ *
  * This checker aims at improving data quality
  * by detecting inconsistent information.
  */
@@ -26,7 +26,7 @@ const chalk = require('chalk')
    */
   checkSubfeatures(data, path = []) {
     let allErrors = [];
-  
+
     // Check this feature.
     if (this.isFeature(data)) {
       const feature = path.length ? path[path.length - 1] : 'ROOT';
@@ -42,7 +42,7 @@ const chalk = require('chalk')
         });
       }
     }
-  
+
     // Check sub-features.
     const keys = Object.keys(data).filter(key => key != '__compat');
     keys.forEach(key => {
@@ -51,7 +51,7 @@ const chalk = require('chalk')
         ...this.checkSubfeatures(data[key], [...path, key])
       ];
     });
-  
+
     return allErrors;
   }
 
@@ -196,11 +196,11 @@ const chalk = require('chalk')
 
     if (typeof(compatData.version_added) === 'string')
       return compatData.version_added;
-    
+
     if (compatData.constructor === Array) {
       for (var i = compatData.length - 1; i >= 0; i--) {
         var va = compatData[i].version_added;
-        if (typeof(va) === 'string' && (version_added == null || compareVersions(version_added, va) == 1))
+        if (typeof(va) === 'string' && (version_added == null || (typeof(version_added) === 'string' && compareVersions.compare(version_added.replace("≤", ""), va.replace("≤", ""), ">"))));
           version_added = va;
       }
     }
@@ -217,13 +217,20 @@ const chalk = require('chalk')
     var a_version_added = this.getVersionAdded(a);
     var b_version_added = this.getVersionAdded(b);
 
-    if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string')
-      return compareVersions(a_version_added, b_version_added) == -1;
+    if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string') {
+      if (a_version_added.startsWith("≤") && b_version_added.startsWith("≤")) {
+        return compareVersions.compare(a_version_added.replace("≤", ""), b_version_added.replace("≤", ""), "<");
+      }
+      else if (!a_version_added.startsWith("≤") || !b_version_added.startsWith("≤")) {
+        return compareVersions.compare(a_version_added.replace("≤", ""), b_version_added.replace("≤", ""), ">=");
+      }
+    }
+
     return false;
   }
-  
+
   /**
-   * 
+   *
    * @param {object} compatData
    * @param {callback} callback
    * @returns {boolean}
@@ -232,7 +239,7 @@ const chalk = require('chalk')
   {
     return Object.keys(compatData.support).filter(browser => {
       const browserData = compatData.support[browser];
-  
+
       if (Array.isArray(browserData)) {
         return browserData.every(callback);
       } else if (typeof browserData === 'object') {
@@ -249,7 +256,7 @@ function testConsistency(filename) {
 
   const checker = new ConsistencyChecker();
   const errors = checker.check(data);
-  
+
   if (errors.length) {
     const relativeFilename = path.relative(process.cwd(), filename);
     console.error(chalk`{red   Consistency - }{red.bold ${errors.length}}{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
