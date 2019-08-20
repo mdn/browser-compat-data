@@ -96,14 +96,14 @@
           },
           "run-in": {
             "__compat": {
-              "description": "display: run-in support",
               "support": {
                 "chrome": {
-                  "version_added": true,
-                  "version_removed": "32"
+                  "version_added": "1",
+                  "version_removed": "32",
+                  "notes": "Before Chrome 4, <code>run-in</code> was not supported before inline elements."
                 },
                 "chrome_android": {
-                  "version_added": true,
+                  "version_added": "18",
                   "version_removed": "32"
                 },
                 "edge": {
@@ -119,30 +119,34 @@
                   "version_added": "8"
                 },
                 "opera": {
-                  "version_added": true,
-                  "version_removed": "19"
+                  "version_added": "7",
+                  "version_removed": "15"
                 },
                 "opera_android": {
-                  "version_added": true,
-                  "version_removed": "19"
+                  "version_added": "10.1",
+                  "version_removed": "14"
                 },
                 "safari": {
-                  "version_added": true,
-                  "version_removed": "7"
+                  "version_added": "1",
+                  "version_removed": "8",
+                  "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
                 },
                 "safari_ios": {
-                  "version_added": true,
-                  "version_removed": "7"
+                  "version_added": "1",
+                  "version_removed": "8",
+                  "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
                 },
                 "samsunginternet_android": {
-                  "version_added": true
+                  "version_added": "1.0",
+                  "version_removed": "2.0"
                 },
                 "webview_android": {
-                  "version_added": true
+                  "version_added": true,
+                  "version_removed": "4.4.3"
                 }
               },
               "status": {
-                "experimental": false,
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -932,64 +936,6 @@
               },
               "webview_android": {
                 "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "run-in": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "1",
-                "version_removed": "32",
-                "notes": "Before Chrome 4, <code>run-in</code> was not supported before inline elements."
-              },
-              "chrome_android": {
-                "version_added": "18",
-                "version_removed": "32"
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": "8"
-              },
-              "opera": {
-                "version_added": "7",
-                "version_removed": "15"
-              },
-              "opera_android": {
-                "version_added": "10.1",
-                "version_removed": "14"
-              },
-              "safari": {
-                "version_added": "1",
-                "version_removed": "8",
-                "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
-              },
-              "safari_ios": {
-                "version_added": "1",
-                "version_removed": "8",
-                "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
-              },
-              "samsunginternet_android": {
-                "version_added": "1.0",
-                "version_removed": "2.0"
-              },
-              "webview_android": {
-                "version_added": true,
-                "version_removed": "4.4.3"
               }
             },
             "status": {
