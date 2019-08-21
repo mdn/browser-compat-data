@@ -13,8 +13,17 @@ const browsers = require('..').browsers;
 
 /** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
+
+/** @type {Object<string, string[]>} */
+const VERSION_RANGE_BROWSERS = {
+  webview_android: ['≤37'],
+};
+
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
+  if (VERSION_RANGE_BROWSERS[browser]) {
+    validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
 }
 
 /**
@@ -66,13 +75,19 @@ function checkVersions(supportData, relPath, logger) {
           ) {
             logger.error(chalk`{red {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`);
             hasErrors = true;
-          } else if (
-            typeof statement.version_added === 'string' &&
-            typeof statement.version_removed === 'string' &&
-            compareVersions(statement.version_added, statement.version_removed) >= 0
-          ) {
-            logger.error(chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`);
-            hasErrors = true;
+          } else if (typeof statement.version_added === 'string' && typeof statement.version_removed === 'string') {
+            if (
+              (
+                statement.version_added.startsWith("≤") && statement.version_removed.startsWith("≤") &&
+                compareVersions.compare(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", ""), "<")
+              ) || (
+                (!statement.version_added.startsWith("≤") || !statement.version_removed.startsWith("≤")) &&
+                compareVersions.compare(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", ""), ">=")
+              )
+            ) {
+              logger.error(chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`);
+              hasErrors = true;
+            }
           }
         }
       }
