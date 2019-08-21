@@ -35,7 +35,7 @@
             "version_added": null
           },
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": "6.0"
           },
           "webview_android": {
             "version_added": "56"
@@ -178,7 +178,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -226,7 +226,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -429,9 +429,15 @@
             "safari_ios": {
               "version_added": null
             },
-            "samsunginternet_android": {
-              "version_added": null
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": false
+              },
+              {
+                "version_added": true,
+                "alternative_name": "currentRtt"
+              }
+            ],
             "webview_android": {
               "version_added": true
             }
@@ -1524,7 +1530,8 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Samsung Internet does not currently use the specification's algorithm to determine the value of <code>writable</code>; it may not match the behavior of other browsers."
             },
             "webview_android": {
               "version_added": true
