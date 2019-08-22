@@ -152,7 +152,7 @@ function processData(filename, logger) {
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}});
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
