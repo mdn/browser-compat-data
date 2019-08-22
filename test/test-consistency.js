@@ -200,7 +200,7 @@ const chalk = require('chalk')
     if (compatData.constructor === Array) {
       for (var i = compatData.length - 1; i >= 0; i--) {
         var va = compatData[i].version_added;
-        if (typeof(va) === 'string' && (typeof(version_added) !== 'string' || compareVersions.compare(version_added.replace("≤", ""), va.replace("≤", ""), ">")));
+        if (typeof(va) === 'string' && (version_added == null || (typeof(version_added) === 'string' && compareVersions.compare(version_added.replace("≤", ""), va.replace("≤", ""), ">"))));
           version_added = va;
       }
     }
