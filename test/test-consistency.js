@@ -259,7 +259,7 @@ function testConsistency(filename) {
 
   if (errors.length) {
     const relativeFilename = path.relative(process.cwd(), filename);
-    console.error(chalk`{red   Consistency - }{red.bold ${errors.length}}{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(chalk`{red   Consistency - }{red.bold ${errors.length} }{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
     errors.forEach(({ feature, path, errors }) =>  {
       console.error(chalk`{red   → }{red.bold ${errors.length}}{red  × }{red.bold ${feature}}{red  [${path.join('.')}]: }`);
       errors.forEach(({ errortype, browser, subfeatures }) => {
