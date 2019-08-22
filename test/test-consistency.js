@@ -200,8 +200,9 @@ const chalk = require('chalk')
     if (compatData.constructor === Array) {
       for (var i = compatData.length - 1; i >= 0; i--) {
         var va = compatData[i].version_added;
-        if (typeof(va) === 'string' && (version_added == null || (typeof(version_added) === 'string' && compareVersions.compare(version_added.replace("≤", ""), va.replace("≤", ""), ">"))));
+        if (typeof(va) === 'string' && (version_added == null || (typeof(version_added) === 'string' && compareVersions.compare(version_added.replace("≤", ""), va.replace("≤", ""), ">")))) {
           version_added = va;
+        }
       }
     }
 
@@ -219,10 +220,10 @@ const chalk = require('chalk')
 
     if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string') {
       if (a_version_added.startsWith("≤") && b_version_added.startsWith("≤")) {
-        return compareVersions.compare(a_version_added.replace("≤", ""), b_version_added.replace("≤", ""), "<");
+        return compareVersions.compare(a_version_added.replace("≤", ""), b_version_added.replace("≤", ""), ">=");
       }
       else if (!a_version_added.startsWith("≤") || !b_version_added.startsWith("≤")) {
-        return compareVersions.compare(a_version_added.replace("≤", ""), b_version_added.replace("≤", ""), ">=");
+        return compareVersions.compare(a_version_added.replace("≤", ""), b_version_added.replace("≤", ""), "<");
       }
     }
 
