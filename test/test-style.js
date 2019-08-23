@@ -136,13 +136,13 @@ function processData(filename, logger) {
   /** @type {import('../types').CompatData} */
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
-  let expectedSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
+  let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
     actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
-    expectedSorting = expectedSorting.replace(/\r/g, '');
+    expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -150,9 +150,9 @@ function processData(filename, logger) {
     logger.error(chalk`{red Error on {bold line ${jsonDiff(actual, expected)}}}`);
   }
 
-  if (expected !== expectedSorting) {
+  if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedSorting)}}}`);
+    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
