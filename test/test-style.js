@@ -188,7 +188,7 @@ function processData(filename, logger) {
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   if (actual !== expectedFeatureSorting) {
@@ -255,13 +255,67 @@ function processData(filename, logger) {
   if (webkitMatch) {
     // use https://webkit.org/b/100000 instead
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL ({yellow ${webkitMatch[0]}} → }{green {bold https://webkit.org/b/}${webkitMatch[1]}}).}`);
+    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL ({yellow ${webkitMatch[0]}} → {green {bold https://webkit.org/b/}${webkitMatch[1]}}).}`);
   }
 
-  const mdnUrlMatch = actual.match(String.raw`https?://developer.mozilla.org/(\w\w-\w\w)/(.*?)(?=["'\s])`);
-  if (mdnUrlMatch) {
-    hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, mdnUrlMatch.index)} – Use non-localized MDN URL ({yellow ${mdnUrlMatch[0]}} → {green https://developer.mozilla.org/${mdnUrlMatch[2]}}).}`);
+  {
+    const regexp = new RegExp(
+      String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
+      'g',
+    );
+    /** @type {RegExpExecArray} */
+    let match;
+    while ((match = regexp.exec(actual)) !== null) {
+      const [url, protocol, subdomain, path] = match;
+      let [, locale, expectedPath] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
+
+      if (!expectedPath.startsWith('docs/')) {
+        // Convert legacy zone URLs (see https://bugzil.la/1462475):
+        const [zone, index] = (/** @return {[string|null, number]} */() => {
+          const match = expectedPath.match(
+            /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
+          );
+          return match ? [match[1], match.index] : [null, -1];
+        })();
+        if (index >= 0) {
+          expectedPath = expectedPath.substring(index);
+          switch (zone) {
+            case 'Add-ons':
+            case 'Firefox':
+              expectedPath = 'Mozilla/' + expectedPath;
+              break;
+            case 'Apps':
+              expectedPath = 'Web/' + expectedPath;
+              break;
+          }
+        }
+        expectedPath = 'docs/' + expectedPath;
+      }
+      const pos = indexToPos(match.input, match.index);
+
+      if (protocol !== 'https') {
+        hasErrors = true;
+        logger.error(
+          chalk`{red ${pos} – Use HTTPS MDN URL ({yellow ${protocol}://developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
+        );
+      }
+
+      if (subdomain) {
+        hasErrors = true;
+        logger.error(
+          chalk`{red ${pos} - Use correct MDN domain ({yellow ${protocol}://{red ${subdomain}}developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}})}`,
+        );
+      }
+
+      if (path !== expectedPath) {
+        hasErrors = true;
+        logger.error(
+          chalk`{red ${pos} – Use ${
+            locale ? 'non-localized' : 'correct'
+          } MDN URL ({yellow ${url}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
+        );
+      }
+    }
   }
 
   const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);

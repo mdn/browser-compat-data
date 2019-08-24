@@ -20,6 +20,9 @@ Paste the generated HTML into the MDN editor (source mode). You can use a new pa
 
 ## Statistics
 
-To see how changes will affect the statistics of real, true, and null values, you can run `npm run stats`.  This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on.
+To see how changes will affect the statistics of real*, true, and null values, you can run `npm run stats [folder]`.  This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on.  The script also takes an optional argument regarding a specific folder (such as `api` or `javascript`), which will print statistics result for only that folder.
 
-* _Real_ values are values of which are either `false` or a version number, as defined in [#3555](https://github.com/mdn/browser-compat-data/issues/3555).
+## Traverse
+To find all the entries that are non-real, or of a specified value, you can run `npm run traverse <browser> [folder] [value]`.  The browser may be any single browser defined in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/master/browsers/).  The folder may be omitted to search through all data folders, or a comma-separated list of folders to search through.  The value may be omitted to search for all non-real values (or more specifically, `true` and `null` values), or any value accepted by `version_added` and `version_removed`.  For example, to search for all Safari entries that are non-real, run `npm run traverse safari`.  To search for all WebView entries that are marked as `true` in `api` and `javascript`, run `npm run traverse webview_android api,javascript true`.
+
+\* _Real_ values are values of which are either `false` or a version number, as defined in [#3555](https://github.com/mdn/browser-compat-data/issues/3555).

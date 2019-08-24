@@ -9,7 +9,7 @@
               "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -50,12 +50,14 @@
         },
         "display-outside": {
           "__compat": {
+            "description": "<code>&lt;display-outside&gt;</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-outside",
             "support": {
               "chrome": {
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
@@ -73,19 +75,19 @@
                 "version_added": "7"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "10.1"
               },
               "safari": {
                 "version_added": "1"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "1"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "1"
               }
             },
             "status": {
@@ -96,14 +98,14 @@
           },
           "run-in": {
             "__compat": {
-              "description": "display: run-in support",
               "support": {
                 "chrome": {
-                  "version_added": true,
-                  "version_removed": "32"
+                  "version_added": "1",
+                  "version_removed": "32",
+                  "notes": "Before Chrome 4, <code>run-in</code> was not supported before inline elements."
                 },
                 "chrome_android": {
-                  "version_added": true,
+                  "version_added": "18",
                   "version_removed": "32"
                 },
                 "edge": {
@@ -119,30 +121,34 @@
                   "version_added": "8"
                 },
                 "opera": {
-                  "version_added": true,
+                  "version_added": "7",
                   "version_removed": "19"
                 },
                 "opera_android": {
-                  "version_added": true,
+                  "version_added": "10.1",
                   "version_removed": "19"
                 },
                 "safari": {
-                  "version_added": true,
-                  "version_removed": "7"
+                  "version_added": "1",
+                  "version_removed": "8",
+                  "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
                 },
                 "safari_ios": {
-                  "version_added": true,
-                  "version_removed": "7"
+                  "version_added": "1",
+                  "version_removed": "8",
+                  "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
                 },
                 "samsunginternet_android": {
-                  "version_added": true
+                  "version_added": "1.0",
+                  "version_removed": "2.0"
                 },
                 "webview_android": {
-                  "version_added": true
+                  "version_added": true,
+                  "version_removed": "4.4.3"
                 }
               },
               "status": {
-                "experimental": false,
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -163,7 +169,7 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "version_added": "70"
               },
               "firefox_android": {
                 "version_added": false
@@ -204,7 +210,7 @@
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
@@ -248,10 +254,10 @@
               "description": "Supported on <code>&lt;legend&gt;</code>",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "71"
                 },
                 "chrome_android": {
-                  "version_added": false
+                  "version_added": "71"
                 },
                 "edge": {
                   "version_added": false
@@ -266,22 +272,22 @@
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": false
+                  "version_added": "58"
                 },
                 "opera_android": {
-                  "version_added": false
+                  "version_added": "50"
                 },
                 "safari": {
-                  "version_added": true
+                  "version_added": false
                 },
                 "safari_ios": {
-                  "version_added": true
+                  "version_added": false
                 },
                 "samsunginternet_android": {
                   "version_added": false
                 },
                 "webview_android": {
-                  "version_added": false
+                  "version_added": "71"
                 }
               },
               "status": {
@@ -299,7 +305,7 @@
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
@@ -353,7 +359,7 @@
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
@@ -401,7 +407,7 @@
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
@@ -922,73 +928,16 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
                 "version_added": false
               },
               "webview_android": {
                 "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "run-in": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "1",
-                "version_removed": "32",
-                "notes": "Before Chrome 4, <code>run-in</code> was not supported before inline elements."
-              },
-              "chrome_android": {
-                "version_added": true,
-                "version_removed": "32",
-                "notes": "Before Chrome 4, <code>run-in</code> was not supported before inline elements."
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": "8"
-              },
-              "opera": {
-                "version_added": "7",
-                "version_removed": "15"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": "1",
-                "version_removed": "8",
-                "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
-              },
-              "safari_ios": {
-                "version_added": true,
-                "version_removed": "8",
-                "notes": "Before Safari 5, <code>run-in</code> was not supported before inline elements."
-              },
-              "samsunginternet_android": {
-                "version_added": null
-              },
-              "webview_android": {
-                "version_added": true,
-                "version_removed": "4.4.3"
               }
             },
             "status": {
@@ -1063,9 +1012,21 @@
                   ]
                 }
               ],
-              "chrome_android": {
-                "version_added": "65"
-              },
+              "chrome_android": [
+                {
+                  "version_added": "65"
+                },
+                {
+                  "version_added": "58",
+                  "version_removed": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
               "edge": {
                 "version_added": false
               },
@@ -1091,12 +1052,36 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "52"
-              },
-              "opera_android": {
-                "version_added": "47"
-              },
+              "opera": [
+                {
+                  "version_added": "52"
+                },
+                {
+                  "version_added": "45",
+                  "version_removed": "52",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "47"
+                },
+                {
+                  "version_added": "43",
+                  "version_removed": "47",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
               "safari": {
                 "version_added": "11.1"
               },
@@ -1104,7 +1089,7 @@
                 "version_added": "11.1"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": true
               },
               "webview_android": {
                 "version_added": "65"
@@ -1154,7 +1139,7 @@
                   "version_added": true
                 },
                 "webview_android": {
-                  "version_added": "58"
+                  "version_added": "65"
                 }
               },
               "status": {
@@ -1169,11 +1154,11 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "1",
                 "notes": "Chrome 65 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
               },
               "chrome_android": {
-                "version_added": true,
+                "version_added": "18",
                 "notes": "Chrome 65 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
               },
               "edge": {
@@ -1189,19 +1174,21 @@
                 "version_added": "4"
               },
               "opera": {
-                "version_added": "7"
+                "version_added": "7",
+                "notes": "Opera 52 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "10.1",
+                "notes": "Opera Android 47 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
               },
               "safari": {
                 "version_added": "1"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "1"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": true,
