@@ -1012,9 +1012,21 @@
                   ]
                 }
               ],
-              "chrome_android": {
-                "version_added": "65"
-              },
+              "chrome_android": [
+                {
+                  "version_added": "65"
+                },
+                {
+                  "version_added": "58",
+                  "version_removed": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
               "edge": {
                 "version_added": false
               },
@@ -1040,12 +1052,36 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "52"
-              },
-              "opera_android": {
-                "version_added": "47"
-              },
+              "opera": [
+                {
+                  "version_added": "52"
+                },
+                {
+                  "version_added": "45",
+                  "version_removed": "52",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "47"
+                },
+                {
+                  "version_added": "43",
+                  "version_removed": "47",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
               "safari": {
                 "version_added": "11.1"
               },
@@ -1053,7 +1089,7 @@
                 "version_added": "11.1"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": true
               },
               "webview_android": {
                 "version_added": "65"
@@ -1103,7 +1139,7 @@
                   "version_added": true
                 },
                 "webview_android": {
-                  "version_added": "58"
+                  "version_added": "65"
                 }
               },
               "status": {
