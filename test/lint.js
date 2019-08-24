@@ -11,6 +11,7 @@ const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
 const testConsistency = require('./test-consistency');
+const testCompareFeatures = require('./test-compare-features');
 
 /** Used to check if the process is running in a CI environment. */
 const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
@@ -139,7 +140,7 @@ const hasErrors = argv.files
     'webextensions',
     'xpath',
     'xslt',
-  );
+  ) || testCompareFeatures();
 
 if (hasErrors) {
   console.warn('');
