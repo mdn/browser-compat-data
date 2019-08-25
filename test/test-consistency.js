@@ -215,18 +215,15 @@ const chalk = require('chalk')
    * @returns {boolean}
    */
   isVersionAddedGreater(a, b) {
-    var has_range = false;
     var a_version_added = this.getVersionAdded(a);
     var b_version_added = this.getVersionAdded(b);
 
     if (typeof(a_version_added) === 'string' && a_version_added.startsWith("≤")) {
       a_version_added = "1";
-      has_range = true;
     }
 
     if (typeof(b_version_added) === 'string' && b_version_added.startsWith("≤")) {
       b_version_added = "1";
-      has_range = true;
     }
 
     if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string') {
