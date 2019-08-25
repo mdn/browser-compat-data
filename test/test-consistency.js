@@ -218,15 +218,10 @@ const chalk = require('chalk')
     var a_version_added = this.getVersionAdded(a);
     var b_version_added = this.getVersionAdded(b);
 
-    if (typeof(a_version_added) === 'string' && a_version_added.startsWith("≤")) {
-      a_version_added = "1";
-    }
-
-    if (typeof(b_version_added) === 'string' && b_version_added.startsWith("≤")) {
-      b_version_added = "1";
-    }
-
     if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string') {
+      if (a_version_added.startsWith("≤") || b_version_added.startsWith("≤")) {
+        return false;
+      }
       return compareVersions.compare(a_version_added, b_version_added, "<");
     }
 
