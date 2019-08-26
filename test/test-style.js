@@ -4,6 +4,7 @@ const path = require('path');
 const url = require('url');
 const chalk = require('chalk');
 const { platform } = require('os');
+const { indexToPos, jsonDiff } = require('./utils.js');
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
@@ -28,101 +29,6 @@ function orderSupportBlock(key, value) {
     }, {});
   }
   return value;
-}
-
-/**
- * @param {string} str
- */
-function escapeInvisibles(str) {
-  /** @type {Array<[string, string]>} */
-  const invisibles = [
-    ['\b', '\\b'],
-    ['\f', '\\f'],
-    ['\n', '\\n'],
-    ['\r', '\\r'],
-    ['\v', '\\v'],
-    ['\t', '\\t'],
-    ['\0', '\\0'],
-  ];
-  let finalString = str;
-
-  invisibles.forEach(([invisible, replacement]) => {
-    finalString = finalString.replace(invisible, replacement);
-  });
-
-  return finalString;
-}
-
-/**
- * Gets the row and column matching the index in a string.
- *
- * @param {string} str
- * @param {number} index
- * @return {[number, number] | [null, null]}
- */
-function indexToPosRaw(str, index) {
-  let line = 1, col = 1;
-  let prevChar = null;
-
-  if (
-    typeof str !== 'string' ||
-    typeof index !== 'number' ||
-    index > str.length
-  ) {
-    return [null, null];
-  }
-
-  for (let i = 0; i < index; i++) {
-    let char = str[i];
-    switch (char) {
-      case '\n':
-        if (prevChar === '\r') break;
-      case '\r':
-        line++;
-        col = 1;
-        break;
-      case '\t':
-        // Use JSON `tab_size` value from `.editorconfig`
-        col += 2;
-        break;
-      default:
-        col++;
-        break;
-    }
-    prevChar = char;
-  }
-
-  return [line, col];
-}
-
-/**
- * Gets the row and column matching the index in a string and formats it.
- *
- * @param {string} str
- * @param {number} index
- * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
- */
-function indexToPos(str, index) {
-  const [line, col] = indexToPosRaw(str, index);
-  return `(Ln ${line}, Col ${col})`;
-}
-
-/**
- * @param {string} actual
- * @param {string} expected
- * @return {string}
- */
-function jsonDiff(actual, expected) {
-  var actualLines = actual.split(/\n/);
-  var expectedLines = expected.split(/\n/);
-
-  for (var i = 0; i < actualLines.length; i++) {
-    if (actualLines[i] !== expectedLines[i]) {
-      return `#${i + 1}
-    Actual:   ${escapeInvisibles(actualLines[i])}
-    Expected: ${escapeInvisibles(expectedLines[i])}`;
-    }
-  }
 }
 
 /**
