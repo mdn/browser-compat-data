@@ -2,6 +2,13 @@
 const path = require('path');
 const chalk = require('chalk');
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../../types').SupportBlock} SupportBlock
+ * @typedef {import('../../types').VersionValue} VersionValue
+ */
+
 /** @type {string[]} */
 const blockMany = [
   'chrome',
@@ -89,7 +96,7 @@ function testRealValues(filename) {
 
   /**
    * @param {Identifier} data
-   * @param {string} relPath
+   * @param {string} [relPath]
    */
   function findSupport(data, relPath) {
     for (const prop in data) {
