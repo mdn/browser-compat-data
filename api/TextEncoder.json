@@ -59,9 +59,9 @@
           "deprecated": false
         }
       },
-      "worker_support": {
+      "encode": {
         "__compat": {
-          "description": "Available in Web Workers",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encode",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -72,12 +72,24 @@
             "edge": {
               "version_added": null
             },
-            "firefox": {
-              "version_added": "20"
-            },
-            "firefox_android": {
-              "version_added": "20"
-            },
+            "firefox": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "18",
+                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "18",
+                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -85,7 +97,7 @@
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": "10.1"
@@ -94,7 +106,115 @@
               "version_added": "10.1"
             },
             "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "38"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "encodeInto": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encodeInto",
+          "support": {
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": {
+              "version_added": "74"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "66"
+            },
+            "firefox_android": {
+              "version_added": "66"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "74"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "encoding": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encoding",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38"
+            },
+            "edge": {
               "version_added": null
+            },
+            "firefox": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "18",
+                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "18",
+                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "10.1"
+            },
+            "samsunginternet_android": {
+              "version_added": true
             },
             "webview_android": {
               "version_added": "38"
@@ -198,9 +318,9 @@
           }
         }
       },
-      "encoding": {
+      "worker_support": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encoding",
+          "description": "Available in Web Workers",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -210,153 +330,33 @@
             },
             "edge": {
               "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.1"
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "encode": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encode",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.1"
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "encodeInto": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encodeInto",
-          "support": {
-            "chrome": {
-              "version_added": "74"
-            },
-            "chrome_android": {
-              "version_added": "74"
-            },
-            "edge": {
-              "version_added": false
             },
             "firefox": {
-              "version_added": "66"
+              "version_added": "20"
             },
             "firefox_android": {
-              "version_added": "66"
+              "version_added": "20"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "25"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": null
             },
             "safari": {
-              "version_added": false
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "10.1"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": null
             },
             "webview_android": {
-              "version_added": "74"
+              "version_added": "38"
             }
           },
           "status": {
