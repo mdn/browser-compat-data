@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 /**
- * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../../types').Identifier} Identifier
  */
 
 /** @type {Record<string, string[]>} */
@@ -115,7 +115,7 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
  * @returns {boolean} If the file contains errors
  */
 function testBrowsers(filename) {
-  const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
+  const relativePath = path.relative(path.resolve(__dirname, '..', '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);

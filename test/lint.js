@@ -4,12 +4,14 @@ const path = require('path');
 const ora = require('ora');
 const yargs = require('yargs');
 const chalk = require('chalk');
-const testStyle = require('./test-style');
-const testSchema = require('./test-schema');
-const testVersions = require('./test-versions');
-const testRealValues = require('./test-real-values');
-const testBrowsers = require('./test-browsers');
-const testPrefix = require('./test-prefix');
+const {
+  testBrowsers,
+  testPrefix,
+  testRealValues,
+  testStyle,
+  testSchema,
+  testVersions,
+} = require('./linter/index.js');
 const testCompareFeatures = require('./test-compare-features');
 
 /** Used to check if the process is running in a CI environment. */
@@ -77,7 +79,7 @@ function load(...files) {
 
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
-            hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
+            hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
