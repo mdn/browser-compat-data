@@ -147,7 +147,7 @@ if (hasErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../schemas/browsers.schema.json');
+        testSchema(file, './../../schemas/browsers.schema.json');
       } else {
         testSchema(file);
         testStyle(file);
