@@ -99,9 +99,16 @@
             "safari_ios": {
               "version_added": true
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "1.0"
+              },
+              {
+                "version_added": "1.0",
+                "prefix": "-webkit-",
+                "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "2.3"
@@ -154,7 +161,7 @@
                 "version_added": true
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "37"
