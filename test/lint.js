@@ -7,7 +7,6 @@ const chalk = require('chalk');
 const testStyle = require('./test-style');
 const testSchema = require('./test-schema');
 const testVersions = require('./test-versions');
-const testRealValues = require('./test-real-values');
 const testBrowsers = require('./test-browsers');
 const testPrefix = require('./test-prefix');
 const testCompareFeatures = require('./test-compare-features');
@@ -51,7 +50,6 @@ function load(...files) {
           hasStyleErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
-          hasRealValueErrors = false,
           hasPrefixErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
@@ -83,7 +81,6 @@ function load(...files) {
             hasStyleErrors = testStyle(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
-            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
           }
         } catch (e) {
@@ -97,7 +94,6 @@ function load(...files) {
           hasStyleErrors,
           hasBrowserErrors,
           hasVersionErrors,
-          hasRealValueErrors,
           hasPrefixErrors,
         ].some(x => !!x);
 
@@ -150,7 +146,6 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testVersions(file);
-        testRealValues(file);
         testBrowsers(file);
         testPrefix(file);
       }

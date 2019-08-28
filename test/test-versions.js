@@ -11,6 +11,36 @@ const chalk = require('chalk');
  */
 const browsers = require('..').browsers;
 
+/** @type {string[]} */
+const blockMany = [
+  'chrome',
+  'chrome_android',
+  'edge',
+  'firefox',
+  'firefox_android',
+  'ie',
+  'opera',
+  'opera_android',
+  'safari',
+  'safari_ios',
+  'webview_android'
+];
+
+/** @type {Record<string, string[]>} */
+const blockList = {
+  api: [],
+  css: ['chrome', 'edge', 'firefox', 'firefox_android', 'ie', 'safari'],
+  html: [],
+  http: [],
+  svg: [],
+  javascript: ['firefox', 'firefox_android'],
+  mathml: blockMany,
+  webdriver: blockMany.concat(['samsunginternet_android']),
+  webextensions: [],
+  xpath: [],
+  xslt: []
+};
+
 /** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
 
@@ -29,10 +59,13 @@ for (const browser of Object.keys(browsers)) {
 /**
  * @param {string} browserIdentifier
  * @param {VersionValue} version
+ * @param {boolean} realOnly
  */
-function isValidVersion(browserIdentifier, version) {
+function isValidVersion(browserIdentifier, version, realOnly) {
   if (typeof version === 'string') {
     return validBrowserVersions[browserIdentifier].includes(version);
+  } else if (realOnly && [true, null, undefined].includes(version)) {
+    return false;
   } else {
     return true;
   }
@@ -40,10 +73,11 @@ function isValidVersion(browserIdentifier, version) {
 
 /**
  * @param {SupportBlock} supportData
+ * @param {string} category
  * @param {string} relPath
  * @param {{error:function(...unknown):void}} logger
  */
-function checkVersions(supportData, relPath, logger) {
+function checkVersions(supportData, category, relPath, logger) {
   let hasErrors = false;
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
@@ -56,15 +90,21 @@ function checkVersions(supportData, relPath, logger) {
         supportStatements.push(supportData[browser]);
       }
 
-      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[browser].join(', ')}`;
-      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[browser].join(', ')}`;
+      var realOnly = blockList[category].includes(browser);
+
+      const validBrowserVersionsString = `${realOnly ? 'null, true, ' : ''}false, ${validBrowserVersions[browser].join(', ')}`;
+      const validBrowserVersionsTruthy = `${realOnly ? 'true, ' : ''}${validBrowserVersions[browser].join(', ')}`;
 
       for (const statement of supportStatements) {
-        if (!isValidVersion(browser, statement.version_added)) {
+        if (statement === undefined && realOnly) {
+          logger.error(chalk`{red {bold ${browser}} must be defined for {bold ${relPath}}}`);
+            hasErrors = true;
+        }
+        if (!isValidVersion(browser, statement.version_added, realOnly)) {
           logger.error(chalk`{red {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`);
           hasErrors = true;
         }
-        if (!isValidVersion(browser, statement.version_removed)) {
+        if (!isValidVersion(browser, statement.version_removed, statement.version_removed === undefined ? false : realOnly)) {
           logger.error(chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`);
           hasErrors = true;
         }
@@ -102,6 +142,7 @@ function checkVersions(supportData, relPath, logger) {
  */
 function testVersions(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
+  const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -121,7 +162,7 @@ function testVersions(filename) {
   function findSupport(data, relPath) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
+        checkVersions(data[prop].support, category, relPath, logger);
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
