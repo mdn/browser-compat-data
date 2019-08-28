@@ -47,55 +47,6 @@
           "deprecated": false
         }
       },
-      "MediaStream": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream",
-          "description": "<code>MediaStream()</code> constructor",
-          "support": {
-            "chrome": {
-              "version_added": "19"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "44"
-            },
-            "firefox_android": {
-              "version_added": "42"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "42"
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "active": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/active",
@@ -192,6 +143,54 @@
           }
         }
       },
+      "addTrack": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack",
+          "support": {
+            "chrome": {
+              "version_added": "26"
+            },
+            "chrome_android": {
+              "version_added": "26"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "addtrack_event": {
         "__compat": {
           "description": "<code>addtrack</code> event",
@@ -232,6 +231,54 @@
             },
             "webview_android": {
               "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "clone": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/clone",
+          "support": {
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "45"
             }
           },
           "status": {
@@ -294,6 +341,202 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": true
+          }
+        }
+      },
+      "getAudioTracks": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getAudioTracks",
+          "support": {
+            "chrome": {
+              "version_added": "26"
+            },
+            "chrome_android": {
+              "version_added": "26"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "Prior to Firefox 64, this method returned an array of <code>AudioStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "Prior to Firefox 64, this method returned an array of <code>AudioStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getTrackById": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getTrackById",
+          "support": {
+            "chrome": {
+              "version_added": "26"
+            },
+            "chrome_android": {
+              "version_added": "26"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "49"
+            },
+            "firefox_android": {
+              "version_added": "49"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getTracks": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getTracks",
+          "support": {
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "45"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getVideoTracks": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getVideoTracks",
+          "support": {
+            "chrome": {
+              "version_added": "26"
+            },
+            "chrome_android": {
+              "version_added": "26"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "22",
+              "notes": "Prior to Firefox 64, this method returned an array of <code>VideoStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "Prior to Firefox 64, this method returned an array of <code>VideoStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -389,6 +632,108 @@
             },
             "webview_android": {
               "version_added": "45"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "label": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "version_removed": "54",
+              "notes": "Deprecated in Chrome 45."
+            },
+            "chrome_android": {
+              "version_added": true,
+              "version_removed": "54",
+              "notes": "Deprecated in Chrome 45."
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true,
+              "version_removed": "54",
+              "notes": "Deprecated in Chrome 45."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
+      "MediaStream": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream",
+          "description": "<code>MediaStream()</code> constructor",
+          "support": {
+            "chrome": {
+              "version_added": "19"
+            },
+            "chrome_android": {
+              "version_added": "25"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "42"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "42"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -590,298 +935,6 @@
           }
         }
       },
-      "addTrack": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack",
-          "support": {
-            "chrome": {
-              "version_added": "26"
-            },
-            "chrome_android": {
-              "version_added": "26"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "44"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "clone": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/clone",
-          "support": {
-            "chrome": {
-              "version_added": "45"
-            },
-            "chrome_android": {
-              "version_added": "45"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "48"
-            },
-            "firefox_android": {
-              "version_added": "48"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "45"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getAudioTracks": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getAudioTracks",
-          "support": {
-            "chrome": {
-              "version_added": "26"
-            },
-            "chrome_android": {
-              "version_added": "26"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "22",
-              "notes": "Prior to Firefox 64, this method returned an array of <code>AudioStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
-            },
-            "firefox_android": {
-              "version_added": "22",
-              "notes": "Prior to Firefox 64, this method returned an array of <code>AudioStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getTrackById": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getTrackById",
-          "support": {
-            "chrome": {
-              "version_added": "26"
-            },
-            "chrome_android": {
-              "version_added": "26"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "49"
-            },
-            "firefox_android": {
-              "version_added": "49"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getTracks": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getTracks",
-          "support": {
-            "chrome": {
-              "version_added": "45"
-            },
-            "chrome_android": {
-              "version_added": "45"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "45"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getVideoTracks": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/getVideoTracks",
-          "support": {
-            "chrome": {
-              "version_added": "26"
-            },
-            "chrome_android": {
-              "version_added": "26"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "22",
-              "notes": "Prior to Firefox 64, this method returned an array of <code>VideoStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
-            },
-            "firefox_android": {
-              "version_added": "22",
-              "notes": "Prior to Firefox 64, this method returned an array of <code>VideoStreamTrack</code> objects. However, <code>MediaStreamTrack</code> has now subsumed that interface's functionality."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "removeTrack": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack",
@@ -976,59 +1029,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "label": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": true,
-              "version_removed": "54",
-              "notes": "Deprecated in Chrome 45."
-            },
-            "chrome_android": {
-              "version_added": true,
-              "version_removed": "54",
-              "notes": "Deprecated in Chrome 45."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true,
-              "version_removed": "54",
-              "notes": "Deprecated in Chrome 45."
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
