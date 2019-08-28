@@ -20,7 +20,7 @@ const blockMany = [
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
-  css: ['edge', 'firefox', 'firefox_android', 'ie'],
+  css: ['chrome', 'edge', 'firefox', 'firefox_android', 'ie', 'safari'],
   html: [],
   http: [],
   svg: [],
