@@ -40,7 +40,7 @@ function isValidVersion(browserIdentifier, version) {
 /**
  * @param {SupportBlock} supportData
  * @param {string} relPath
- * @param {{error:function(...unknown):void}} logger
+ * @param {import('../utils').Logger} logger
  */
 function checkVersions(supportData, relPath, logger) {
   let hasErrors = false;

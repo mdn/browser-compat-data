@@ -62,7 +62,7 @@ function orderFeatures(key, value) {
 
 /**
  * @param {string} filename
- * @param {{error:function(...unknown):void}} logger
+ * @param {import('../utils').Logger} logger
  */
 function processData(filename, logger) {
   let hasErrors = false;

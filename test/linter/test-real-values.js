@@ -43,7 +43,7 @@ const blockList = {
  * @param {SupportBlock} supportData
  * @param {string[]} blockList
  * @param {string} relPath
- * @param {{error:function(...unknown):void}} logger
+ * @param {import('../utils').Logger} logger
  */
 function checkRealValues(supportData, blockList, relPath, logger) {
   let hasErrors = false;
