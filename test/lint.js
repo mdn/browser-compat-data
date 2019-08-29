@@ -11,6 +11,7 @@ const {
   testStyle,
   testSchema,
   testVersions,
+  testConsistency
 } = require('./linter/index.js');
 const testCompareFeatures = require('./test-compare-features');
 
