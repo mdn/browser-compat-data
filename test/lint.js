@@ -7,7 +7,6 @@ const chalk = require('chalk');
 const {
   testBrowsers,
   testPrefix,
-  testRealValues,
   testStyle,
   testSchema,
   testVersions,
