@@ -180,7 +180,25 @@ const traverseMirrorData = (obj) => {
         let comp = obj[i].__compat.support;
         let browser = argv.browser;
 
-        newData[i].__compat.support[browser] = bumpVersion(comp[getSource(browser)], browser, getSource(browser));
+        let doBump = false;
+        if (argv.force) {
+          doBump = true;
+        } else {
+          if (Array.isArray(comp[browser])) {
+            for (var i = 0; i < comp[browser].length; i++) {
+              if ([true, null, undefined].includes(comp[browser][i].version_added)) {
+                doBump = true;
+                break;
+              }
+            }
+          } else {
+            doBump = [true, null, undefined].includes(comp[browser].version_added);
+          }
+        }
+
+        if (doBump) {
+          newData[i].__compat.support[browser] = bumpVersion(comp[getSource(browser)], browser, getSource(browser));
+        }
       }
       traverseMirrorData(obj[i]);
     }
