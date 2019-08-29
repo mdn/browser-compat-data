@@ -26,6 +26,23 @@ const { argv } = require('yargs').command('$0 <browser> [feature]', 'Mirror valu
   });
 });
 
+samsunginternet_mapping = {
+  "1": "1.0", "2": "1.0", "3": "1.0", "4": "1.0", "5": "1.0", "6": "1.0", "7": "1.0", "8": "1.0", "9": "1.0", "10": "1.0", "11": "1.0", "12": "1.0", "13": "1.0", "14": "1.0", "15": "1.0", "16": "1.0", "17": "1.0", "18": "1.0",
+  "19": "1.5", "20": "1.5", "21": "1.5", "22": "1.5", "23": "1.5", "24": "1.5", "25": "1.5", "26": "1.5", "27": "1.5", "28": "1.5",
+  "29": "2.0", "30": "2.0", "31": "2.0", "32": "2.0", "33": "2.0", "34": "2.0",
+  "35": "3.0", "36": "3.0", "37": "3.0", "38": "3.0",
+  "39": "4.0", "40": "4.0", "41": "4.0", "42": "4.0", "43": "4.0", "44": "4.0",
+  "45": "5.0", "46": "5.0", "47": "5.0", "48": "5.0", "49": "5.0", "50": "5.0", "51": "5.0",
+  "52": "6.0", "53": "6.0", "54": "6.0", "55": "6.0", "56": "6.0",
+  "57": "7.0", "58": "7.0", "59": "7.0", "59": "7.0",
+  "60": "8.0", "61": "8.0", "62": "8.0", "63": "8.0",
+  "64": "9.0", "65": "9.0", "66": "9.0", "67": "9.0"
+}
+
+const create_webview_range = (value) => {
+  return Number(value) < 37 ? "≤37" : value;
+}
+
 const getSource = (browser) => {
   if (argv.source) {
     return argv.source;
@@ -43,8 +60,114 @@ const getSource = (browser) => {
 }
 
 const bumpVersion = (data, destination, source) => {
-  data[destination] = data[source];
-  return data;
+  if (Array.isArray(data)) {
+    var newValue = [];
+    for (var i = 0; i < data.length(); i++) {
+      newValue[i] = bumpVersion[i];
+    }
+  } else {
+    var newValue = data;
+
+    if (browser == 'chrome_android') {
+      if (typeof(new_value.version_added) === 'string') {
+        new_value.version_added = Math.max(15, Number(new_value.version_added)).toString();
+      }
+
+      if (value.version_removed) {
+        if (typeof(new_value.version_removed) === 'string') {
+          new_value.version_removed = Math.max(15, Number(new_value.version_removed)).toString();
+        }
+      }
+    }
+
+    else if (browser == 'edge') {
+      if (value.version_removed && new_value.version_removed !== null) {
+        new_value.version_removed = false;
+      } else if (new_value.version_added !== null) {
+        new_value.version_added = new_value.version_added ? '12' : null;
+      }
+
+      if (value.notes) {
+        new_value.notes = new_value.notes.replace(/Internet Explorer/g, "Edge");
+      }
+    }
+
+    else if (browser == 'firefox_android') {
+      if (typeof(new_value.version_added) === 'string') {
+        new_value.version_added = Math.max(4, Number(new_value.version_added)).toString();
+      }
+
+      if (value.version_removed) {
+        if (typeof(new_value.version_removed) === 'string') {
+          new_value.version_removed = Math.max(4, Number(new_value.version_removed)).toString();
+        }
+      }
+    }
+
+    else if (browser == 'opera') {
+      if (typeof(value.version_added) === 'string') {
+        new_value.version_added = Math.max(15, Number(value.version_added) - 13).toString();
+      }
+
+      if (value.version_removed) {
+        if (typeof(value.version_removed) === 'string') {
+          new_value.version_removed = Math.max(15, Number(value.version_removed) - 13).toString();
+        }
+      }
+
+      if (typeof(value.notes) === 'string') {
+        new_value.notes = new_value.notes.replace(/Chrome/g, "Opera");
+      }
+  }
+
+    else if (browser == 'opera_android') {
+      if (typeof(value.version_added) === 'string') {
+        new_value.version_added = Math.max(14, Number(value.version_added) - 13).toString();
+      }
+
+      if (value.version_removed) {
+        if (typeof(value.version_removed) === 'string') {
+          new_value.version_removed = Math.max(14, Number(value.version_removed) - 13).toString();
+        }
+      }
+
+      if (typeof(value.notes) === 'string') {
+        new_value.notes = new_value.notes.replace(/Chrome/g, "Opera");
+      }
+  }
+
+    else if (browser == 'samsunginternet_android') {
+      if (new_value.version_added !== null) {
+        new_value.version_added = samsunginternet_mapping[new_value.version_added] || new_value.version_added;
+      }
+
+      if (value.version_removed && new_value.version_removed != null) {
+        new_value.version_removed = samsunginternet_mapping[new_value.version_removed] || new_value.version_removed;
+      }
+
+      if (typeof(value.notes) === 'string') {
+        new_value.notes = new_value.notes.replace(/Chrome/g, "Samsung Internet");
+      }
+    }
+
+    else if (browser == 'webview_android') {
+      if (typeof(new_value.version_added) === 'string') {
+        new_value.version_added = create_webview_range(new_value.version_added);
+      }
+
+      if (value.version_removed) {
+        if (typeof(new_value.version_removed) === 'string') {
+          new_value.version_removed = create_webview_range(new_value.version_removed);
+        }
+      }
+
+      if (typeof(value.notes) === 'string') {
+        new_value.notes = new_value.notes.replace(/Chrome/g, "WebView");
+      }
+    }
+  }
+
+  return newValue;
 }
 
 const traverseMirrorData = (obj) => {
@@ -52,13 +175,12 @@ const traverseMirrorData = (obj) => {
 
   for (let i in obj) {
     if (!!obj[i] && typeof(obj[i]) == "object" && i !== '__compat') {
+      newData[i] = obj[i];
       if (obj[i].__compat) {
         let comp = obj[i].__compat.support;
         let browser = argv.browser;
 
-        newData[i] = bumpVersion(comp, browser, getSource(browser));
-      } else {
-        newData[i] = obj[i];
+        newData[i].__compat.support[browser] = bumpVersion(comp[getSource(browser)], browser, getSource(browser));
       }
       traverseMirrorData(obj[i]);
     }
