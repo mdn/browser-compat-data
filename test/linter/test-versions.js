@@ -4,12 +4,12 @@ const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 
 /**
- * @typedef {import('../types').Identifier} Identifier
- * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../types').SupportBlock} SupportBlock
- * @typedef {import('../types').VersionValue} VersionValue
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../../types').SupportBlock} SupportBlock
+ * @typedef {import('../../types').VersionValue} VersionValue
  */
-const browsers = require('..').browsers;
+const browsers = require('../..').browsers;
 
 /** @type {string[]} */
 const blockMany = [
@@ -141,7 +141,7 @@ function checkVersions(supportData, category, relPath, logger) {
  * @param {string} filename
  */
 function testVersions(filename) {
-  const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
+  const relativePath = path.relative(path.resolve(__dirname, '..', '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
