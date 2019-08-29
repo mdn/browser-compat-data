@@ -185,8 +185,8 @@ const traverseMirrorData = (obj) => {
           doBump = true;
         } else {
           if (Array.isArray(comp[browser])) {
-            for (var i = 0; i < comp[browser].length; i++) {
-              if ([true, null, undefined].includes(comp[browser][i].version_added)) {
+            for (var j = 0; j < comp[browser].length; j++) {
+              if ([true, null, undefined].includes(comp[browser][j].version_added)) {
                 doBump = true;
                 break;
               }
