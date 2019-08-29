@@ -66,7 +66,10 @@ const bumpVersion = (data, destination, source) => {
       newValue[i] = bumpVersion[i];
     }
   } else {
-    var newValue = data;
+    var newValue = {};
+    for (let i in data) {
+      newValue[i] = data[i]; // Prevent shallow copy / modification of source data
+    }
 
     if (destination == 'chrome_android') {
       if (typeof(newValue.version_added) === 'string') {
