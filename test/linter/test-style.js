@@ -167,7 +167,7 @@ function processData(filename, logger) {
   let hasErrors = false;
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  /** @type {import('../types').CompatData} */
+  /** @type {import('../../types').CompatData} */
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
