@@ -166,11 +166,25 @@
             "samsunginternet_android": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": true,
-              "alternative_name": ":-webkit-any()",
-              "notes": "Doesn't support combinators."
-            }
+            "webview_android": [
+              {
+                "version_added": "66",
+                "alternative_name": ":matches()",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features",
+                    "value_to_set": "enabled"
+                  }
+                ],
+                "notes": "Has issues with combinators (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+              },
+              {
+                "version_added": "≤37",
+                "alternative_name": ":-webkit-any()",
+                "notes": "Doesn't support combinators."
+              }
+            ]
           },
           "status": {
             "experimental": false,
