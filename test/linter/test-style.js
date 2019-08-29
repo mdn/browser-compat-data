@@ -30,6 +30,40 @@ function orderSupportBlock(key, value) {
   return value;
 }
 
+const compareFeatures = (a,b) => {
+  if (a == '__compat') return -1;
+  if (b == '__compat') return 1;
+  
+  const wordA = /^[a-zA-Z](\w|-)*$/.test(a);
+  const wordB = /^[a-zA-Z](\w|-)*$/.test(b);
+
+  if (wordA && wordB) return a.localeCompare(b, 'en');
+  if (wordA || wordB) return (wordA && -1) || 1;
+  return a.localeCompare(b, 'en');
+}
+
+/**
+ * Return a new feature object whose first-level properties have been
+ * ordered according to Array.prototype.sort, and so will be
+ * stringified in that order as well. This relies on guaranteed "own"
+ * property ordering, which is insertion order for non-integer keys
+ * (which is our case).
+ *
+ * @param {string} key The key in the object
+ * @param {*} value The value of the key
+ *
+ * @returns {*} The new value
+ */
+function orderFeatures(key, value) {
+  if (value instanceof Object && '__compat' in value) {
+    value = Object.keys(value).sort(compareFeatures).reduce((result, key) => {
+      result[key] = value[key];
+      return result;
+    }, {});
+  }
+  return value;
+}
+
 /**
  * @param {string} str
  */
@@ -133,16 +167,18 @@ function processData(filename, logger) {
   let hasErrors = false;
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  /** @type {import('../types').CompatData} */
+  /** @type {import('../../types').CompatData} */
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
+  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
     actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
     expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
+    expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -153,6 +189,11 @@ function processData(filename, logger) {
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
     logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+  }
+
+  if (actual !== expectedFeatureSorting) {
+    hasErrors = true;
+    logger.error(chalk`{red Feature sorting error on {bold line ${jsonDiff(expected, expectedFeatureSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
