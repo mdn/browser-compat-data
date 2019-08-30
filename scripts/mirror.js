@@ -140,6 +140,16 @@ const bumpVersion = (data, destination, source) => {
       }
     }
 
+    else if (destination == 'safari_ios') {
+      if (newValue.version_added !== null) {
+        newValue.version_added = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_added]);
+      }
+
+      if (data.version_removed && newValue.version_removed != null) {
+        newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
+      }
+    }
+
     else if (destination == 'samsunginternet_android') {
       if (newValue.version_added !== null) {
         newValue.version_added = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_added]);
