@@ -7,12 +7,12 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
-const { argv } = require('yargs').command('$0 <browser> [feature]', 'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source', (yargs) => {
+const { argv } = require('yargs').command('$0 <browser> [file]', 'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source', (yargs) => {
   yargs.positional('browser', {
     describe: 'The destination browser',
     type: 'string'
-  }).positional('feature', {
-    describe: 'A specific feature to test against',
+  }).positional('file', {
+    describe: 'A specific file to test against',
     type: 'string',
     default: undefined
   }).option('source', {
@@ -250,8 +250,8 @@ if (require.main === module) {
     }
   }
 
-  if (argv.feature) {
-    load(argv.feature);
+  if (argv.file) {
+    load(argv.file);
   } else {
     load(
       'api',
