@@ -3,6 +3,7 @@ const fs = require('fs');
 const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
+const compareFeatures = require('../../scripts/compare-features');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -24,18 +25,6 @@ function orderSupportBlock(key, value) {
     }, {});
   }
   return value;
-}
-
-const compareFeatures = (a,b) => {
-  if (a == '__compat') return -1;
-  if (b == '__compat') return 1;
-
-  const wordA = /^[a-zA-Z](\w|-)*$/.test(a);
-  const wordB = /^[a-zA-Z](\w|-)*$/.test(b);
-
-  if (wordA && wordB) return a.localeCompare(b, 'en');
-  if (wordA || wordB) return (wordA && -1) || 1;
-  return a.localeCompare(b, 'en');
 }
 
 /**
