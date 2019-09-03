@@ -96,11 +96,21 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": false
-              },
+              "opera": [
+                {
+                  "version_added": "35"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "15",
+                  "notes": [
+                    "Avoiding using <code>-webkit-isolate</code>. It can lock up older versions of Opera (up to version 34).",
+                    "The syntax from a previous version of the specification, where the <code>isolate</code> keyword could be used together with <code>bidi-override</code>, is allowed."
+                  ]
+                }
+              ],
               "opera_android": {
-                "version_added": false
+                "version_added": "35"
               },
               "safari": {
                 "prefix": "-webkit-",
@@ -163,10 +173,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "35"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "35"
               },
               "safari": {
                 "version_added": false
@@ -233,10 +243,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "35"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "35"
               },
               "safari": {
                 "version_added": false
