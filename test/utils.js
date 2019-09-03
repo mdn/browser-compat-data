@@ -18,7 +18,6 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   })
 );
-const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
 const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
@@ -30,11 +29,18 @@ const IS_WINDOWS = platform() === 'win32';
  * @param {string} str
  */
 function escapeInvisibles(str) {
-  // This should now be O(n) instead of O(n*m),
-  // where n = string length; m = invisible characters
-  return str.replace(INVISIBLES_REGEXP, char => {
-    return INVISIBLES_MAP[char] || char;
+  const invisibles = Array.from(
+    Object.keys(INVISIBLES_MAP),
+    key => /** @type {[string, string]} */ ([key, INVISIBLES_MAP[key]])
+  );
+
+  let finalString = str;
+
+  invisibles.forEach(([invisible, replacement]) => {
+    finalString = finalString.replace(invisible, replacement);
   });
+
+  return finalString;
 }
 
 /**
