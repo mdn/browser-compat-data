@@ -3078,9 +3078,15 @@
             "chrome_android": {
               "version_added": true
             },
-            "edge": {
-              "version_added": "16"
-            },
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
+              }
+            ],
             "firefox": {
               "version_added": true,
               "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflect the change in the spec."
@@ -3089,7 +3095,8 @@
               "version_added": true
             },
             "ie": {
-              "version_added": "9"
+              "version_added": "9",
+              "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
             },
             "opera": {
               "version_added": true
@@ -3657,9 +3664,15 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "17"
-            },
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
+              }
+            ],
             "firefox": {
               "version_added": "48"
             },
@@ -3667,7 +3680,8 @@
               "version_added": "48"
             },
             "ie": {
-              "version_added": true
+              "version_added": true,
+              "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
             },
             "opera": {
               "version_added": true
@@ -3705,9 +3719,15 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "17"
-            },
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
+              }
+            ],
             "firefox": {
               "version_added": "8"
             },
@@ -3716,7 +3736,10 @@
             },
             "ie": {
               "version_added": "4",
-              "notes": "Before Internet Explorer 10, throws an \"Invalid target element for this operation.\" error when called on a <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;thead&gt;</code>, or <code>&lt;tr&gt;</code> element."
+              "notes": [
+                "Before Internet Explorer 10, throws an \"Invalid target element for this operation.\" error when called on a <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;thead&gt;</code>, or <code>&lt;tr&gt;</code> element.",
+                "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
+              ]
             },
             "opera": {
               "version_added": "7"
@@ -3754,9 +3777,15 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "17"
-            },
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
+              }
+            ],
             "firefox": {
               "version_added": "48"
             },
@@ -3764,7 +3793,8 @@
               "version_added": "48"
             },
             "ie": {
-              "version_added": true
+              "version_added": true,
+              "notes": "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function."
             },
             "opera": {
               "version_added": true
@@ -6478,10 +6508,19 @@
             "chrome_android": {
               "version_added": true
             },
-            "edge": {
-              "version_added": "17",
-              "notes": "No support for <code>smooth</code> behavior."
-            },
+            "edge": [
+              {
+                "version_added": "18",
+                "notes": "No support for <code>smooth</code> behavior."
+              },
+              {
+                "version_added": "12",
+                "notes": [
+                  "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function.",
+                  "No support for <code>smooth</code> behavior."
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "1"
             },
@@ -6490,7 +6529,10 @@
             },
             "ie": {
               "version_added": "8",
-              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
+              "notes": [
+                "This function is implemented in the <code>HTMLElement</code> API, meaning non-HTML elements (like SVG elements) cannot use this function.",
+                "No support for <code>smooth</code> behavior or <code>center</code> options."
+              ]
             },
             "opera": {
               "version_added": "38"
