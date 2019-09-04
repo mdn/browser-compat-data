@@ -46,7 +46,7 @@ const browsers = {
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
- * @param {{error:function(...unknown):void}} logger
+ * @param {import('../utils').Logger} logger
  * @param {string} [path]
  * @returns {boolean}
  */
