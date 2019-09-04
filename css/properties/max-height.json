@@ -41,7 +41,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -82,7 +82,10 @@
                 "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "firefox_android": {
-                "version_added": false
+                "partial_implementation": true,
+                "prefix": "-moz-",
+                "version_added": "4",
+                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "ie": {
                 "version_added": false
@@ -103,9 +106,16 @@
                   "version_added": "2"
                 }
               ],
-              "safari_ios": {
-                "version_added": null
-              },
+              "safari_ios": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "7"
+                },
+                {
+                  "alternative_name": "intrinsic",
+                  "version_added": "1"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": "5.0"
               },
@@ -115,7 +125,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": true
+                  "version_added": "≤37"
                 }
               ]
             },
@@ -295,16 +305,18 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "15"
               },
               "opera_android": {
-                "version_added": null
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "15"
               },
               "safari": {
                 "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
                 "version_added": false

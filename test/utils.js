@@ -1,4 +1,5 @@
 'use strict';
+const { platform } = require('os');
 
 /**
  * @typedef {object} Logger
@@ -8,24 +9,32 @@
 /** @type {{readonly [char: string]: string}} */
 const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
-    '\0': '\\0', // ␀
-    '\b': '\\b', // ␈
-    '\t': '\\t', // ␉
-    '\n': '\\n', // ␊
-    '\v': '\\v', // ␋
-    '\f': '\\f', // ␌
-    '\r': '\\r', // ␍
+    '\0': '\\0', // ␀ (0x00)
+    '\b': '\\b', // ␈ (0x08)
+    '\t': '\\t', // ␉ (0x09)
+    '\n': '\\n', // ␊ (0x0A)
+    '\v': '\\v', // ␋ (0x0B)
+    '\f': '\\f', // ␌ (0x0C)
+    '\r': '\\r', // ␍ (0x0D)
   })
 );
 const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
+/** Used to check if the process is running in a CI environment. */
+const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+
+/** Determines if the OS is Windows */
+const IS_WINDOWS = platform() === 'win32';
+
 /**
+ * Escapes common invisible characters.
+ *
  * @param {string} str
  */
 function escapeInvisibles(str) {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
-  return str.replace(INVISIBLES_REGEXP, char => {
+  return INVISIBLES_REGEXP[Symbol.replace](str, char => {
     return INVISIBLES_MAP[char] || char;
   });
 }
@@ -105,6 +114,8 @@ function jsonDiff(actual, expected) {
 
 module.exports = {
   INVISIBLES_MAP,
+  IS_CI,
+  IS_WINDOWS,
   escapeInvisibles,
   indexToPosRaw,
   indexToPos,

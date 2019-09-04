@@ -43,7 +43,7 @@ function processData(data, category) {
 }
 
 function testPrefix(filename) {
-  const relativePath = path.relative(path.resolve(__dirname, '..'), filename);
+  const relativePath = path.relative(path.resolve(__dirname, '..', '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   const data = require(filename);
   var errors = processData(data, category);

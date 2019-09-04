@@ -1,21 +1,17 @@
 'use strict';
 const fs = require('fs');
 const chalk = require('chalk');
-const { platform } = require('os');
-const { indexToPos } = require('./utils.js');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+const { IS_WINDOWS, indexToPos } = require('../utils.js');
 
 /**
  * @param {string} filename
- * @param {import('./utils').Logger} logger
+ * @param {import('../utils').Logger} logger
  */
 function processData(filename, logger) {
   let hasErrors = false;
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  /** @type {import('../types').CompatData} */
+  /** @type {import('../../types').CompatData} */
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
 

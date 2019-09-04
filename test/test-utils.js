@@ -1,10 +1,7 @@
 'use strict';
 const ora = require('ora');
 const chalk = require('chalk');
-const { escapeInvisibles } = require('./utils.js');
-
-/** Used to check if the process is running in a CI environment. */
-const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+const { IS_CI, escapeInvisibles } = require('./utils.js');
 
 it('`escapeInvisibles()` works correctly', () => {
   const EXPECTED = [
