@@ -9,20 +9,24 @@
               "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>)."
+              "notes": [
+                "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>).",
+                "Before Firefox 30, absolute positioning of table rows and row groups was not supported (<a href='https://bugzil.la/63895'>bug 63895</a>)."
+              ]
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "4",
+              "notes": [
+                "Before Firefox 57, absolute positioning did not work correctly when applied to elements inside tables that have <a href='https://developer.mozilla.org/docs/Web/CSS/border-collapse'><code>border-collapse</code></a> applied to them (<a href='https://bugzil.la/1379306'>bug 1379306</a>).",
+                "Before Firefox 30, absolute positioning of table rows and row groups was not supported (<a href='https://bugzil.la/63895'>bug 63895</a>)."
+              ]
             },
             "ie": {
               "version_added": "4"
@@ -37,19 +41,67 @@
               "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "absolutely_positioned_flex_children": {
+          "__compat": {
+            "description": "Absolutely-positioned flex children",
+            "support": {
+              "chrome": {
+                "version_added": "52"
+              },
+              "chrome_android": {
+                "version_added": "52"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": "52"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "39"
+              },
+              "opera_android": {
+                "version_added": "41"
+              },
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": {
+                "version_added": "11"
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "52"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "fixed": {
@@ -60,20 +112,18 @@
                 "version_added": "1"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": null
               },
               "firefox": {
                 "version_added": "1",
                 "notes": "Before Firefox 44, <code>position: fixed</code> didn't create a stacking context in most cases. Firefox and the specification have been modified to mimic Chrome and Safari's long-time behavior."
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "4",
+                "notes": "Before Firefox 44, <code>position: fixed</code> didn't create a stacking context in most cases. Firefox and the specification have been modified to mimic Chrome and Safari's long-time behavior."
               },
               "ie": {
                 "version_added": "7",
@@ -89,13 +139,61 @@
                 "version_added": "1"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "1"
               },
               "samsunginternet_android": {
                 "version_added": true
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "position_sticky_table_elements": {
+          "__compat": {
+            "description": "Table elements as <code>sticky</code> positioning containers",
+            "support": {
+              "chrome": {
+                "version_added": "56"
+              },
+              "chrome_android": {
+                "version_added": "56"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": {
+                "version_added": "59"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "43"
+              },
+              "opera_android": {
+                "version_added": "43"
+              },
+              "safari": {
+                "version_added": "8"
+              },
+              "safari_ios": {
+                "version_added": "8"
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "56"
               }
             },
             "status": {
@@ -118,9 +216,6 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": false
-              },
               "firefox": [
                 {
                   "version_added": "32"
@@ -137,9 +232,22 @@
                   ]
                 }
               ],
-              "firefox_android": {
-                "version_added": null
-              },
+              "firefox_android": [
+                {
+                  "version_added": "32"
+                },
+                {
+                  "version_added": "26",
+                  "version_removed": "48",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.sticky.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -154,117 +262,14 @@
                 "version_added": "6.1"
               },
               "safari_ios": {
-                "version_added": null
+                "prefix": "-webkit-",
+                "version_added": "6.1"
               },
               "samsunginternet_android": {
                 "version_added": "6.0"
               },
               "webview_android": {
                 "version_added": "56"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "position_absolute_table_elements": {
-          "__compat": {
-            "description": "Table elements as <code>absolute</code> positioning containers",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "30",
-                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
-              },
-              "firefox_android": {
-                "version_added": "30",
-                "notes": "Firefox helps developers transition to the new behavior and detect any rendering issues it may cause on their sites by printing the following warning to the JavaScript console: &quot;Absolute positioning of table rows and row groups is now supported. This site may need to be updated because it may depend on this feature having no effect.&quot;"
-              },
-              "ie": {
-                "version_added": "4"
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "position_sticky_table_elements": {
-          "__compat": {
-            "description": "Table elements as <code>sticky</code> positioning containers",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "16"
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "59"
-              },
-              "firefox_android": {
-                "version_added": "59"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
               }
             },
             "status": {

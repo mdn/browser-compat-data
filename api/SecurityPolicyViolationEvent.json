@@ -13,9 +13,6 @@
           "edge": {
             "version_added": true
           },
-          "edge_mobile": {
-            "version_added": true
-          },
           "firefox": [
             {
               "version_added": "63"
@@ -74,81 +71,6 @@
           "deprecated": false
         }
       },
-      "worker_support": {
-        "__compat": {
-          "description": "<code>SecurityPolicyViolationEvent</code> support in workers",
-          "support": {
-            "chrome": {
-              "version_added": "56"
-            },
-            "chrome_android": {
-              "version_added": "56"
-            },
-            "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "security.csp.enable_violation_events",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "security.csp.enable_violation_events",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "56"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "SecurityPolicyViolationEvent": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/SecurityPolicyViolationEvent",
@@ -161,9 +83,6 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -238,9 +157,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -313,9 +229,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -386,9 +299,6 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -463,9 +373,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -537,9 +444,6 @@
             },
             "edge": {
               "version_added": "15"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -613,9 +517,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -687,9 +588,6 @@
             },
             "edge": {
               "version_added": "15"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -763,9 +661,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -836,9 +731,6 @@
               "version_added": "59"
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -913,9 +805,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -987,9 +876,6 @@
             },
             "edge": {
               "version_added": "15"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -1063,9 +949,6 @@
             "edge": {
               "version_added": "15"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63"
@@ -1116,6 +999,78 @@
             },
             "webview_android": {
               "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "<code>SecurityPolicyViolationEvent</code> support in workers",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": true
+            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "59",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "security.csp.enable_violation_events",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "59",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "security.csp.enable_violation_events",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": true
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
