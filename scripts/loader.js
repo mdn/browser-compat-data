@@ -3,13 +3,15 @@ const fs = require('fs');
 const path = require('path');
 const extend = require('extend');
 
+const DIRNAME = path.resolve(__dirname, '..');
+
 /**
  * Recursively load one or more directories passed as arguments.
  *
  * @param {string|string[]} files
- * @returns {import('./types').CompatData}
+ * @return {import('../types').CompatData}
  */
-exports.load = function load(files) {
+function load(files) {
   /** @type {string} */
   let dir;
   /** @type {any} */
@@ -36,9 +38,10 @@ exports.load = function load(files) {
   }
 
   for (dir of files) {
-    dir = path.resolve(__dirname, dir);
+    dir = path.resolve(DIRNAME, dir);
     fs.readdirSync(dir).forEach(processFilename);
   }
 
   return result;
 }
+module.exports = load;

@@ -1,4 +1,4 @@
 'use strict';
-const utils = require('../utils.js');
+const load = require('../scripts/loader.js');
 
-module.exports = utils.load('browsers').browsers;
+module.exports = load('browsers').browsers;
