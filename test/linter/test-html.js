@@ -14,7 +14,7 @@ const chalk = require('chalk');
 /** A regular expression used to match HTML elements. */
 const ELEMENT_REGEXP = String.raw`<([a-zA-Z][^\s/>]*)(?: (.*?))?>(.*?)</\1\s*>`;
 /** A regular expression used to match HTML attributes. */
-const ATTR_REGEXP = String.raw`([^\x00-\x20\x7F-\x9F"'>/=\uFDD0-\uFDEF\uFFFE\uFFFF\u{1FFFE}\u{1FFFF}\u{2FFFE}\u{2FFFF}\u{3FFFE}\u{3FFFF}\u{4FFFE}\u{4FFFF}\u{5FFFE}\u{5FFFF}\u{6FFFE}\u{6FFFF}\u{7FFFE}\u{7FFFF}\u{8FFFE}\u{8FFFF}\u{9FFFE}\u{9FFFF}\u{AFFFE}\u{AFFFF}\u{BFFFE}\u{BFFFF}\u{CFFFE}\u{CFFFF}\u{DFFFE}\u{DFFFF}\u{EFFFE}\u{EFFFF}\u{FFFFE}\u{FFFFF}\u{10FFFE}\u{10FFFF}]+)(?: *= *('[^']*'|\\"[^"]*\\"|[^\x09\x0A\x0C\x0D\x20"'=<>\x60]+))?`;
+const ATTR_REGEXP = String.raw`([^\x00-\x20\x7F-\x9F"'>/=\uFDD0-\uFDEF]+)(?: *= *('[^']*'|\\"[^"]*\\"|[^\x09\x0A\x0C\x0D\x20"'=<>\x60]+))?`;
 
 /** Elements that are allowed in all properties. */
 const ALLOWED_GLOBAL_ELEMENTS = [
