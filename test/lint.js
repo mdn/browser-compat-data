@@ -13,10 +13,8 @@ const {
   testVersions,
   testConsistency
 } = require('./linter/index.js');
+const { IS_CI } = require('./utils.js')
 const testCompareFeatures = require('./test-compare-features');
-
-/** Used to check if the process is running in a CI environment. */
-const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
