@@ -3,11 +3,11 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 /**
- * @typedef {import('../types').Identifier} Identifier
- * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../types').CompatStatement} CompatStatement
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../../types').CompatStatement} CompatStatement
  *
- * @typedef {{error: (...message: unknown[]) => void}} Logger
+ * @typedef {import('../utils').Logger} Logger
  * @typedef {{name:string,nameStart:number,nameEnd:number,value?:string,valueEnd?:number}} AttributeDescriptor
  */
 

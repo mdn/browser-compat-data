@@ -15,9 +15,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "22"
@@ -69,7 +66,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -91,19 +88,21 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "64",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.supports-selector.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "69"
+                },
+                {
+                  "version_added": "64",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.supports-selector.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
                 "version_added": "64",
                 "flags": [

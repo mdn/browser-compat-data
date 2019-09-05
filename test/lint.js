@@ -4,16 +4,17 @@ const path = require('path');
 const ora = require('ora');
 const yargs = require('yargs');
 const chalk = require('chalk');
-const testStyle = require('./test-style');
-const testSchema = require('./test-schema');
-const testVersions = require('./test-versions');
-const testRealValues = require('./test-real-values');
-const testBrowsers = require('./test-browsers');
-const testPrefix = require('./test-prefix');
-const testHTML = require('./test-html');
-
-/** Used to check if the process is running in a CI environment. */
-const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+const {
+  testBrowsers,
+  testHTML,
+  testPrefix,
+  testRealValues,
+  testStyle,
+  testSchema,
+  testVersions,
+} = require('./linter/index.js');
+const { IS_CI } = require('./utils.js')
+const testCompareFeatures = require('./test-compare-features');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -78,7 +79,7 @@ function load(...files) {
 
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
-            hasSchemaErrors = testSchema(file, './../schemas/browsers.schema.json');
+            hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
@@ -139,17 +140,16 @@ const hasErrors = argv.files
     'webextensions',
     'xpath',
     'xslt',
-  );
+  ) || testCompareFeatures();
 
 if (hasErrors) {
   console.warn('');
-  console.warn(chalk`{red Problems in }{red.bold ${filesWithErrors.size}}{red  ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`,
-  );
+  console.warn(chalk`{red Problems in {bold ${filesWithErrors.size}} ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`);
   for (const [fileName, file] of filesWithErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../schemas/browsers.schema.json');
+        testSchema(file, './../../schemas/browsers.schema.json');
       } else {
         testSchema(file);
         testStyle(file);

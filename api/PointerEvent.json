@@ -13,9 +13,6 @@
           "edge": {
             "version_added": "12"
           },
-          "edge_mobile": {
-            "version_added": "12"
-          },
           "firefox": [
             {
               "version_added": "59"
@@ -91,9 +88,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": "12"
-            },
             "firefox": [
               {
                 "version_added": "59"
@@ -156,9 +150,65 @@
           }
         }
       },
-      "pointerId": {
+      "getCoalescedEvents": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents",
+          "support": {
+            "chrome": {
+              "version_added": "58"
+            },
+            "chrome_android": {
+              "version_added": "58"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "59",
+              "partial_implementation": true,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.w3c_pointer_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "45"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": "58"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "height": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/height",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -169,7 +219,78 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
+            "firefox": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": "41",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.w3c_pointer_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "ie": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "10",
+                "partial_implementation": true,
+                "notes": "Returns values in screen pixels instead of CSS document pixels."
+              }
+            ],
+            "opera": {
+              "version_added": "42"
+            },
+            "opera_android": {
+              "version_added": "42"
+            },
+            "safari": {
+              "version_added": "13"
+            },
+            "safari_ios": {
+              "version_added": "13"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "isPrimary": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary",
+          "support": {
+            "chrome": {
+              "version_added": "55"
+            },
+            "chrome_android": {
+              "version_added": "55"
+            },
+            "edge": {
               "version_added": "12"
             },
             "firefox": [
@@ -226,9 +347,9 @@
           }
         }
       },
-      "width": {
+      "pointerId": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/width",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -237,9 +358,6 @@
               "version_added": "55"
             },
             "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
               "version_added": "12"
             },
             "firefox": [
@@ -267,16 +385,9 @@
                 }
               ]
             },
-            "ie": [
-              {
-                "version_added": "11"
-              },
-              {
-                "version_added": "10",
-                "partial_implementation": true,
-                "notes": "Returns values in screen pixels instead of CSS document pixels."
-              }
-            ],
+            "ie": {
+              "version_added": "10"
+            },
             "opera": {
               "version_added": "42"
             },
@@ -303,9 +414,9 @@
           }
         }
       },
-      "height": {
+      "pointerType": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/height",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -314,9 +425,6 @@
               "version_added": "55"
             },
             "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
               "version_added": "12"
             },
             "firefox": [
@@ -351,7 +459,7 @@
               {
                 "version_added": "10",
                 "partial_implementation": true,
-                "notes": "Returns values in screen pixels instead of CSS document pixels."
+                "notes": "Returns an integer enumeration instead of a string."
               }
             ],
             "opera": {
@@ -377,6 +485,54 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "fractional_coordinates": {
+          "__compat": {
+            "description": "Fractional coordinates for <code>mouse</code>.",
+            "support": {
+              "chrome": {
+                "version_added": "64"
+              },
+              "chrome_android": {
+                "version_added": "64"
+              },
+              "edge": {
+                "version_added": null
+              },
+              "firefox": {
+                "version_added": null
+              },
+              "firefox_android": {
+                "version_added": null
+              },
+              "ie": {
+                "version_added": null
+              },
+              "opera": {
+                "version_added": "51"
+              },
+              "opera_android": {
+                "version_added": "47"
+              },
+              "safari": {
+                "version_added": null
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": "64"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -391,9 +547,6 @@
               "version_added": "55"
             },
             "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
               "version_added": "12"
             },
             "firefox": [
@@ -470,9 +623,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": [
               {
                 "version_added": "59"
@@ -538,9 +688,6 @@
               "version_added": "55"
             },
             "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
               "version_added": "12"
             },
             "firefox": [
@@ -610,9 +757,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": "12"
-            },
             "firefox": [
               {
                 "version_added": "59"
@@ -680,9 +824,6 @@
             "edge": {
               "version_added": "18"
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": [
               {
                 "version_added": "59"
@@ -737,9 +878,9 @@
           }
         }
       },
-      "pointerType": {
+      "width": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/width",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -748,9 +889,6 @@
               "version_added": "55"
             },
             "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
               "version_added": "12"
             },
             "firefox": [
@@ -785,7 +923,7 @@
               {
                 "version_added": "10",
                 "partial_implementation": true,
-                "notes": "Returns an integer enumeration instead of a string."
+                "notes": "Returns values in screen pixels instead of CSS document pixels."
               }
             ],
             "opera": {
@@ -809,179 +947,6 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        },
-        "fractional_coordinates": {
-          "__compat": {
-            "description": "Fractional coordinates for <code>mouse</code>.",
-            "support": {
-              "chrome": {
-                "version_added": "64"
-              },
-              "chrome_android": {
-                "version_added": "64"
-              },
-              "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
-              },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": "51"
-              },
-              "opera_android": {
-                "version_added": "47"
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": null
-              },
-              "webview_android": {
-                "version_added": "64"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        }
-      },
-      "isPrimary": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary",
-          "support": {
-            "chrome": {
-              "version_added": "55"
-            },
-            "chrome_android": {
-              "version_added": "55"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": "12"
-            },
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": "42"
-            },
-            "opera_android": {
-              "version_added": "42"
-            },
-            "safari": {
-              "version_added": "13"
-            },
-            "safari_ios": {
-              "version_added": "13"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "55"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getCoalescedEvents": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents",
-          "support": {
-            "chrome": {
-              "version_added": "58"
-            },
-            "chrome_android": {
-              "version_added": "58"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "59",
-              "version_removed": true
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "45"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "7.0"
-            },
-            "webview_android": {
-              "version_added": "58"
-            }
-          },
-          "status": {
-            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
