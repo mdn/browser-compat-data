@@ -43,8 +43,17 @@ function hasCorrectDOMEventsDescription(data, logger) {
  * @param {Identifier} data
  * @param {import('../utils').Logger} logger
  */
-function checkSecureContextRequired(data, logger) {
-
+function hasCorrectSecureContextRequiredDescription(data, logger) {
+  if (data.api) {
+    for (let apiName in data.api) {
+      const secureContext = data.api[apiName].secure_context_required;
+      if (secureContext && secureContext.__compat.description !== `Secure context required`) {
+          logger.error(chalk`{red Incorrect secure context required description for {bold ${apiName}()}
+          Actual: "${secureContext.__compat.description || ""}"
+          Expected: {bold "Secure context required"}}`);
+      }
+    }
+  }
 }
 
 /**
@@ -74,6 +83,7 @@ function testGuidelines(filename) {
 
   hasValidConstrutorDescription(data, logger);
   hasCorrectDOMEventsDescription(data, logger);
+  hasCorrectSecureContextRequiredDescription(data, logger);
 
   if (errors.length) {
     console.error(chalk`{red   Guidelines – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
