@@ -60,8 +60,17 @@ function hasCorrectSecureContextRequiredDescription(data, logger) {
  * @param {Identifier} data
  * @param {import('../utils').Logger} logger
  */
-function checkWebWorkers(data, logger) {
-
+function hasCorrectWebWorkersDescription(data, logger) {
+  if (data.api) {
+    for (let apiName in data.api) {
+      const workerSupport = data.api[apiName].worker_support;
+      if (workerSupport && workerSupport.__compat.description !== `Available in workers`) {
+          logger.error(chalk`{red Incorrect worker support description for {bold ${apiName}()}
+          Actual: "${workerSupport.__compat.description || ""}"
+          Expected: {bold "Available in workers"}}`);
+      }
+    }
+  }
 }
 
 
@@ -84,6 +93,7 @@ function testGuidelines(filename) {
   hasValidConstrutorDescription(data, logger);
   hasCorrectDOMEventsDescription(data, logger);
   hasCorrectSecureContextRequiredDescription(data, logger);
+  hasCorrectWebWorkersDescription(data, logger);
 
   if (errors.length) {
     console.error(chalk`{red   Guidelines – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
