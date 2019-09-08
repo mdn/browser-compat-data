@@ -21,8 +21,22 @@ function hasValidConstrutorDescription(data, logger) {
  * @param {Identifier} data
  * @param {import('../utils').Logger} logger
  */
-function checkDOMEvents(data, logger) {
-
+function hasCorrectDOMEventsDescription(data, logger) {
+  if (data.api) {
+    for (let apiName in data.api) {
+      for (let methodName in data.api[apiName]) {
+        if (methodName.endsWith("_event")) {
+          const event = data.api[apiName][methodName];
+          const eventName = methodName.replace("_event", "");
+          if (event.__compat.description !== `<code>${eventName}</code> event`) {
+            logger.error(chalk`{red Incorrect event description for {bold ${apiName}#${methodName}}
+            Actual: "${event.__compat.description || ""}"
+            Expected: "<code>${eventName}</code> event"}`);
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -59,6 +73,7 @@ function testGuidelines(filename) {
   };
 
   hasValidConstrutorDescription(data, logger);
+  hasCorrectDOMEventsDescription(data, logger);
 
   if (errors.length) {
     console.error(chalk`{red   Guidelines – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
