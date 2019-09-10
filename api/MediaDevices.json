@@ -13,11 +13,8 @@
           "edge": {
             "version_added": true
           },
-          "edge_mobile": {
-            "version_added": true
-          },
           "firefox": {
-            "version_added": "36"
+            "version_added": "33"
           },
           "firefox_android": {
             "version_added": "36"
@@ -32,13 +29,13 @@
             "version_added": "30"
           },
           "safari": {
-            "version_added": false
+            "version_added": "11"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "11"
           },
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": true
           },
           "webview_android": {
             "version_added": "47"
@@ -50,9 +47,10 @@
           "deprecated": false
         }
       },
-      "ondevicechange": {
+      "devicechange_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/ondevicechange",
+          "description": "<code>devicechange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event",
           "support": {
             "chrome": {
               "version_added": "57"
@@ -63,37 +61,20 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": null
+            "firefox": {
+              "version_added": "52"
             },
-            "firefox": [
-              {
-                "version_added": "52"
-              },
-              {
-                "version_added": "51",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.ondevicechange.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
-              }
-            ],
             "firefox_android": {
               "version_added": null
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "34"
             },
             "opera_android": {
-              "version_added": "34"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -128,9 +109,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "63",
@@ -159,61 +137,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "47"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getSupportedConstraints": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "chrome_android": {
-              "version_added": "52"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "44"
-            },
-            "firefox_android": {
-              "version_added": "50"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": "40"
-            },
-            "opera_android": {
-              "version_added": "40"
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": "53"
             }
           },
           "status": {
@@ -252,9 +179,6 @@
               "version_added": "17",
               "notes": "Available as a member of <code>Navigator</code> instead of <code>MediaDevices</code>."
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "66"
@@ -276,7 +200,7 @@
               "version_added": null
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": false
@@ -304,15 +228,13 @@
             "description": "Audio capture support",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "74",
+                "notes": "On Windows the entire system audio can be captured, but on Linux and Mac only the audio of a tab can be captured."
               },
               "chrome_android": {
                 "version_added": false
               },
               "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
                 "version_added": null
               },
               "firefox": {
@@ -348,6 +270,54 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "getSupportedConstraints": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "chrome_android": {
+              "version_added": "52"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "50"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "40"
+            },
+            "opera_android": {
+              "version_added": "41"
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": "53"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -392,19 +362,23 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "36",
               "notes": [
                 "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API.",
-                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>."
+                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>.",
+                "When using the Firefox-specific <code>video</code> constraint called <code>mediaSource</code> to request display capture, Firefox 66 and later consider values of <code>screen</code> and <code>window</code> to both cause a list of screens <em>and</em> windows to be shown.",
+                "Starting in Firefox 66, <code>getUserMedia()</code> can no longer be used in sandboxed <code>&lt;iframe&gt;</code>s or <code>data</code> URLs entered in the address bar by the user."
               ]
             },
             "firefox_android": {
               "version_added": "36",
-              "notes": "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+              "notes": [
+                "Older versions of Firefox implement <code>navigator.mozGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API.",
+                "Before Firefox 55, <code>getUserMedia()</code> incorrectly returns <code>NotSupportedError</code> when the list of constraints specified is empty, or has all constraints set to <code>false</code>. Starting in Firefox 55, this situation now correctly calls the failure handler with a <code>TypeError</code>.",
+                "When using the Firefox-specific <code>video</code> constraint called <code>mediaSource</code> to request display capture, Firefox 66 and later consider values of <code>screen</code> and <code>window</code> to both cause a list of screens <em>and</em> windows to be shown.",
+                "Starting in Firefox 66, <code>getUserMedia()</code> can no longer be used in sandboxed <code>&lt;iframe&gt;</code>s or <code>data</code> URLs entered in the address bar by the user."
+              ]
             },
             "ie": {
               "version_added": false
@@ -428,11 +402,11 @@
             ],
             "opera_android": [
               {
-                "version_added": "40"
+                "version_added": "41"
               },
               {
                 "version_added": "34",
-                "version_removed": "40",
+                "version_removed": "41",
                 "flags": [
                   {
                     "type": "preference",
@@ -450,7 +424,7 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "53"
@@ -473,19 +447,16 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
-              },
-              "edge_mobile": {
-                "version_added": null
+                "version_added": false
               },
               "firefox": {
-                "version_added": null
+                "version_added": "68"
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "68"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "opera": {
                 "version_added": null
@@ -503,7 +474,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true
               }
             },
             "status": {
@@ -511,6 +482,68 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "ondevicechange": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/ondevicechange",
+          "support": {
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "52"
+              },
+              {
+                "version_added": "51",
+                "version_removed": "52",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.ondevicechange.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
+              }
+            ],
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "34"
+            },
+            "opera_android": {
+              "version_added": "34"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -525,9 +558,6 @@
               "version_added": null
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": {

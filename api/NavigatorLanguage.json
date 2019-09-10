@@ -11,10 +11,7 @@
             "version_added": true
           },
           "edge": {
-            "version_added": null
-          },
-          "edge_mobile": {
-            "version_added": null
+            "version_added": true
           },
           "firefox": {
             "version_added": true
@@ -47,54 +44,6 @@
           "deprecated": false
         }
       },
-      "worker_support": {
-        "__compat": {
-          "description": "Support on <code>WorkerNavigator</code>",
-          "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "35"
-            },
-            "firefox_android": {
-              "version_added": "35"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "language": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorLanguage/language",
@@ -108,9 +57,6 @@
               "notes": "Returns the browser UI language, not the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -128,7 +74,7 @@
             },
             "ie": {
               "version_added": "11",
-              "notes": "Closest available (non-standard) properties are <code><a href='http://msdn.microsoft.com/en-us/library/ie/ms534713.aspx'>userLanguage</a></code> and <code><a href='http://msdn.microsoft.com/en-us/library/ie/ms533542.aspx'>browserLanguage</a></code>."
+              "notes": "Closest available (non-standard) properties are <code>userLanguage</code> and <code>browserLanguage</code>."
             },
             "opera": {
               "version_added": true
@@ -169,9 +115,6 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "32",
               "notes": "In Firefox, the <code>navigator.languages</code> property's value is taken from the <code>intl.accept_languages</code> preference."
@@ -203,6 +146,51 @@
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "chrome_android": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": "35"
+            },
+            "firefox_android": {
+              "version_added": "35"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": null
+            }
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

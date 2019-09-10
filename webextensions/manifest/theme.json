@@ -15,82 +15,10 @@
               "version_added": "55"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": true
             },
             "opera": {
               "version_added": false
-            }
-          }
-        },
-        "images": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme#images",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "55",
-                "notes": "Mandatory before Firefox 60"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              }
-            }
-          },
-          "headerURL": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": true,
-                  "alternative_name": "theme_frame"
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": [
-                  {
-                    "version_added": "55"
-                  },
-                  {
-                    "version_added": "55",
-                    "alternative_name": "theme_frame"
-                  }
-                ],
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false
-                }
-              }
-            }
-          },
-          "additional_backgrounds": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "55"
-                },
-                "firefox_android": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false
-                }
-              }
             }
           }
         },
@@ -108,7 +36,7 @@
                 "version_added": "55"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "65"
               },
               "opera": {
                 "version_added": false
@@ -126,17 +54,24 @@
                 },
                 "firefox": {
                   "version_added": "55",
+                  "version_removed": "70",
                   "notes": [
                     "Before version 59, the RGB array form was not supported for this property.",
-                    "Before version 63, this property was mandatory."
+                    "Before version 63, this property was mandatory.",
+                    "Use <code>frame</code> instead."
                   ]
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "65"
                 },
                 "opera": {
                   "version_added": false
                 }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
               }
             }
           },
@@ -220,7 +155,7 @@
                   "notes": "Before version 59, the CSS color form was not supported for this property."
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": true
                 },
                 "opera": {
                   "version_added": false
@@ -648,9 +583,11 @@
                 },
                 "firefox": {
                   "version_added": "55",
+                  "version_removed": "70",
                   "notes": [
                     "Before version 59, the RGB array form was not supported for this property.",
-                    "Before version 63, this property was mandatory."
+                    "Before version 63, this property was mandatory.",
+                    "Use <code>tab_background_text<code> instead."
                   ]
                 },
                 "firefox_android": {
@@ -659,6 +596,11 @@
                 "opera": {
                   "version_added": false
                 }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
               }
             }
           },
@@ -789,6 +731,48 @@
                 },
                 "firefox": {
                   "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_highlight": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "67"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "toolbar_field_highlight_text": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "67"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -933,6 +917,100 @@
                 "firefox": {
                   "version_added": "58",
                   "notes": "Before version 59, this had the same meaning as <code>toolbar_field_separator</code>."
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "images": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme#images",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "55",
+                "notes": "Mandatory before Firefox 60"
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": false
+              }
+            }
+          },
+          "additional_backgrounds": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "55"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "headerURL": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "55",
+                  "version_removed": "70",
+                  "notes": "Use <code>theme_frame</code> instead."
+                },
+                "firefox_android": {
+                  "version_added": "65",
+                  "notes": "This property is required."
+                },
+                "opera": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
+              }
+            }
+          },
+          "theme_frame": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "55"
                 },
                 "firefox_android": {
                   "version_added": false

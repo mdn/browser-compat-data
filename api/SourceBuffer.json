@@ -11,13 +11,20 @@
             {
               "version_added": "23",
               "version_removed": "31",
-              "prefix": "-webkit-"
+              "prefix": "WebKit"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "31"
+            },
+            {
+              "version_added": "25",
+              "version_removed": "31",
+              "prefix": "WebKit"
             }
           ],
           "edge": {
-            "version_added": true
-          },
-          "edge_mobile": {
             "version_added": true
           },
           "firefox": [
@@ -44,12 +51,26 @@
             "version_added": "11",
             "notes": "Only works on Windows 8+."
           },
-          "opera": {
-            "version_added": "15"
-          },
-          "opera_android": {
-            "version_added": "30"
-          },
+          "opera": [
+            {
+              "version_added": "18"
+            },
+            {
+              "version_added": "15",
+              "version_removed": "18",
+              "prefix": "WebKit"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "18"
+            },
+            {
+              "version_added": "14",
+              "version_removed": "18",
+              "prefix": "WebKit"
+            }
+          ],
           "safari": {
             "version_added": "8"
           },
@@ -66,757 +87,18 @@
           "deprecated": false
         }
       },
-      "mode": {
+      "abort": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "updating": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "buffered": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "changeType": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/changeType",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "70"
-              },
-              {
-                "version_added": "69",
-                "version_removed": "70",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "MediaSourceExperimental",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "70"
-              },
-              {
-                "version_added": "69",
-                "version_removed": "70",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "MediaSourceExperimental",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.experimental.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.experimental.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "timestampOffset": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "audioTracks": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/audioTracks",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "videoTracks": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/videoTracks",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "textTracks": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/textTracks",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "18"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "appendWindowStart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "appendWindowEnd": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "trackDefaults": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/trackDefaults",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "25"
             },
             "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onabort": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onabort",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "edge_mobile": {
-              "version_added": false
+              "version_added": "12"
             },
             "firefox": [
               {
@@ -846,247 +128,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onerror",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onupdate": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdate",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onupdatestart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdatestart",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onupdateend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdateend",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "30"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "8"
@@ -1109,21 +151,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendBuffer",
           "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -1153,7 +188,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "30"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "8"
@@ -1185,9 +220,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "62",
               "flags": [
@@ -1199,14 +231,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "62",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.mediasource.experimental.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1270,25 +295,18 @@
           }
         }
       },
-      "abort": {
+      "appendWindowEnd": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd",
           "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -1318,7 +336,616 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "30"
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "appendWindowStart": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "audioTracks": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/audioTracks",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "buffered": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "changeType": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/changeType",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "70",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "MediaSourceExperimental",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "70",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "MediaSourceExperimental",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "edge": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "63"
+              },
+              {
+                "version_added": "61",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.experimental.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "70"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "mode": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onabort": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onabort",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onerror": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onerror",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onupdate": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdate",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onupdateend": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdateend",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "onupdatestart": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdatestart",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
             },
             "safari": {
               "version_added": "8"
@@ -1341,21 +968,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/remove",
           "support": {
-            "chrome": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "31",
-                "prefix": "-webkit-"
-              }
-            ],
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -1385,7 +1005,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "30"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "8"
@@ -1417,9 +1037,6 @@
             "edge": {
               "version_added": false
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "62",
               "flags": [
@@ -1431,14 +1048,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "62",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.mediasource.experimental.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1457,6 +1067,282 @@
             },
             "webview_android": {
               "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "textTracks": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/textTracks",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "18"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "timestampOffset": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "trackDefaults": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/trackDefaults",
+          "support": {
+            "chrome": {
+              "version_added": null
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updating": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "videoTracks": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/videoTracks",
+          "support": {
+            "chrome": {
+              "version_added": "23"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediasource.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Limited support to a whitelist of sites, for example YouTube, Netflix, and other popular streaming sites. The whitelist was removed when Media Source Extensions was enabled by default in Firefox 42."
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
             }
           },
           "status": {

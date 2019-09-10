@@ -80,45 +80,7 @@ What it represents exactly depends of the evolution of the feature over time, bo
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-#### API-specific subfeatures
-
-The following conventions apply to compatibility data in the `api/` directory.
-
-Worker support for a given feature in `api/` should be in a subfeature titled `worker_support`. It should also have the description `Available in workers`.
-
-```json
-{
-  "api": {
-    "ImageData": {
-      "__compat": {},
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {}
-        }
-      }
-    }
-  }
-}
-```
-
-A constructor for a given feature in `api/` should have the same name as the parent feature (except in special cases where the constructor doesn't share the name of its parent feature). For example, the ImageData constructor, `ImageData()`, would be represented as `api.ImageData.ImageData`. It should also have the description `<code>ImageData()</code> constructor`.
-
-```json
-{
-  "api": {
-    "ImageData": {
-      "__compat": {},
-      "ImageData": {
-        "__compat": {
-          "description": "<code>ImageData()</code> constructor",
-          "support": {}
-        }
-      }
-    }
-  }
-}
-```
+See [Data guidelines](/docs/data-guidelines.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 The `__compat` object consists of the following:
@@ -131,12 +93,17 @@ A string containing a human-readable description of the feature.
 It is intended to be used as a caption or title and should be kept short.
 The `<code>` and `<a>` HTML elements can be used.
 
+* An optional `matches` property to __help match the feature to source code__ ([see below](#the-matches-object))
+An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
+
 * An optional `status` property for __status information__.
 An object containing information about the stability of the feature:
 Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
 
 * An optional `mdn_url` property which __points to an MDN reference page documenting the feature__.
 It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
+
+* An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
 
 ### The `support` object
 Each `__compat` object contains support information. For each browser identifier, it contains a [`support_statement`](#the-support_statement-object) object with
@@ -147,8 +114,7 @@ information about versions, prefixes, or alternate names, as well as notes.
 The currently accepted browser identifiers should be declared in alphabetical order:
 * `chrome`, Google Chrome (on desktops)
 * `chrome_android`, Google Chrome (on Android)
-* `edge`, MS Edge (on Windows)
-* `edge_mobile`, MS Edge, the mobile version
+* `edge`, MS Edge (on Windows), based on the EdgeHTML version
 * `firefox`, Mozilla Firefox (on desktops)
 * `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 * `ie`, Microsoft Internet Explorer (discontinued)
@@ -157,7 +123,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 * `opera_android`, the Opera browser (Android version)
 * `qq_android`, the QQ browser (Android version)
 * `safari`, Safari on macOS
-* `safari_ios`, Safari on iOS
+* `safari_ios`, Safari on iOS, based on the iOS version
 * `samsunginternet_android`, the Samsung Internet browser (Android version)
 * `uc_android`, UC Browser (Android version)
 * `uc_chinese_android`, UC Browser (Chinese Android version)
@@ -260,6 +226,17 @@ Examples:
 }
 ```
 
+### Ranged versions
+
+For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. The statement below means "supported in at least version 37 and probably in earlier versions as well".
+Currently, the only allowed ranged version is `"≤37"` for `webview_android`. There will be more ranged versions for other browsers in the future but ranged versions aren't generally allowed for every version string. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in.
+
+```json
+{
+  "version_added": "≤37",
+}
+```
+
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
@@ -302,7 +279,6 @@ array will have one item, but there are cases where two or more flags can be req
 An object in the `flags` array consists of three properties:
 * `type` (mandatory): an enum that indicates the flag type:
   * `preference` a flag the user can set (like in `about:config` in Firefox).
-  * `compile_flag` a flag to be set before compiling the browser.
   * `runtime_flag` a flag to be set before starting the browser.
 * `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
 * `value_to_set` (optional): representing the actual value to set the flag to.
@@ -343,14 +319,8 @@ Example for two flags required:
 
 #### `partial_implementation`
 A `boolean` value indicating whether or not the implementation of the sub-feature
-follows the current specification closely enough to not create major interoperability problems.
-It defaults to `false` (no interoperability problem expected).
-If set to `true`, it is recommended to add a note indicating how it diverges from
-the standard (implements an old version of the standard, for example).
-
-A `boolean` value indicating whether or not the implementation of the sub-feature
-deviates from the specification in a way that may cause compatibility problems. It
-defaults to `false` (no interoperability problems expected). If set to `true`, it is
+deviates from the specification in a way that may cause significant compatibility problems.
+It defaults to `false` (no interoperability problems expected). If set to `true`, it is
 recommended that you add a note explaining how it diverges from the standard (such as
 that it implements an old version of the standard, for example).
 
@@ -371,6 +341,33 @@ Example:
 }
 ```
 The `<code>` and `<a>` HTML elements can be used.
+
+### The `matches` object
+
+A `matches` object contains hints to help automatically detect whether source code corresponds to a feature, such as a list of keywords or a regular expression. A `matches` object may have one of the following properties (in order of preference):
+
+* `keywords`: an array of one or more literal strings that correspond to the feature.
+
+  Examples:
+
+  - In CSS selector features, they can be literal selectors. See [`css.selectors.backdrop`](../css/selectors/backdrop.json)).
+  - In CSS property subfeatures, they can be data type keywords or function keywords. See [`css.properties.transform.3d`](../css/properties/transform.json)).
+
+* `regex_token`: a string containing a regular expression that matches a single token (i.e., text delimited by characters that are excluded from the text to be matched) corresponding to the feature.
+
+  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
+
+  Examples:
+
+  - In CSS property subfeatures, they can be regular expressions that match component value types. See [`css.properties.color.alpha_hexadecimal_notation`](../css/properties/color.json) and corresponding tests.
+
+* `regex_value`: a string containing a regular expression that matches a complete value corresponding to the feature.
+
+  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
+
+  Examples:
+
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
 
 ### Status information
 The status property contains information about stability of the feature. It is

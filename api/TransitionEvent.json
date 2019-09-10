@@ -4,16 +4,27 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent",
         "support": {
-          "chrome": {
-            "version_added": true
-          },
-          "chrome_android": {
-            "version_added": true
-          },
+          "chrome": [
+            {
+              "version_added": "27"
+            },
+            {
+              "version_added": "2",
+              "version_removed": "71",
+              "prefix": "WebKit"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "27"
+            },
+            {
+              "version_added": "18",
+              "version_removed": "71",
+              "prefix": "WebKit"
+            }
+          ],
           "edge": {
-            "version_added": true
-          },
-          "edge_mobile": {
             "version_added": true
           },
           "firefox": {
@@ -37,9 +48,16 @@
           "safari_ios": {
             "version_added": true
           },
-          "webview_android": {
-            "version_added": true
-          }
+          "webview_android": [
+            {
+              "version_added": true
+            },
+            {
+              "version_added": true,
+              "version_removed": "71",
+              "prefix": "WebKit"
+            }
+          ]
         },
         "status": {
           "experimental": true,
@@ -53,15 +71,12 @@
           "description": "<code>TransitionEvent()</code> constructor",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "27"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "27"
             },
             "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
               "version_added": false
             },
             "firefox": {
@@ -101,15 +116,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/animationName",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": false
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": {
@@ -134,55 +146,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "propertyName": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/propertyName",
-          "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
@@ -197,16 +161,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "2"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": {
               "version_added": "4"
@@ -224,58 +185,10 @@
               "version_added": true
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
               "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "pseudoElement": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "23"
-            },
-            "firefox_android": {
-              "version_added": "23"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
             },
             "webview_android": {
               "version_added": true
@@ -302,9 +215,6 @@
             },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": {
               "version_added": "6",
@@ -340,6 +250,96 @@
             "experimental": false,
             "standard_track": false,
             "deprecated": true
+          }
+        }
+      },
+      "propertyName": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/propertyName",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": true
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "6"
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pseudoElement": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "23"
+            },
+            "firefox_android": {
+              "version_added": "23"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "6"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }

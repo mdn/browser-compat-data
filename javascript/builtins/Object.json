@@ -4,7 +4,7 @@
       "Object": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
-          "spec_url": "https://tc39.github.io/ecma262/#sec-object-objects",
+          "spec_url": "https://tc39.es/ecma262/#sec-object-objects",
           "support": {
             "chrome": {
               "version_added": true
@@ -13,9 +13,6 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": {
@@ -55,10 +52,62 @@
             "deprecated": false
           }
         },
-        "prototype": {
+        "assign": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.assign",
+            "support": {
+              "chrome": {
+                "version_added": "45"
+              },
+              "chrome_android": {
+                "version_added": "45"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "34"
+              },
+              "firefox_android": {
+                "version_added": "34"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "4.0.0"
+              },
+              "opera": {
+                "version_added": "32"
+              },
+              "opera_android": {
+                "version_added": "32"
+              },
+              "safari": {
+                "version_added": "9"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": "5.0"
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "constructor": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.constructor",
             "support": {
               "chrome": {
                 "version_added": true
@@ -67,10 +116,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": true
+                "version_added": "12"
               },
               "firefox": {
                 "version_added": "1"
@@ -124,7 +170,384 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "create": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/create",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.create",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "12"
+              },
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "defineGetter": {
+          "__compat": {
+            "description": "<code>__defineGetter__</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.__defineGetter__",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "1",
+                "notes": "Starting with Firefox 48, this method can no longer be called at the global scope without any object. A <code>TypeError</code> will be thrown otherwise. Previously, the global object was used in these cases automatically, but this is no longer the case."
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
+        "defineProperties": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.defineproperties",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "12"
+              },
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "defineProperty": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.defineproperty",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9",
+                "notes": "Also supported in Internet Explorer 8, but only on DOM objects and with some non-standard behaviors."
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "12"
+              },
+              "safari": {
+                "version_added": "5.1",
+                "notes": "Also supported in Safari 5, but not on DOM objects."
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "defineSetter": {
+          "__compat": {
+            "description": "<code>__defineSetter__</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.__defineSetter__",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "1",
+                "notes": "Starting with Firefox 48, this method can no longer be called at the global scope without any object. A <code>TypeError</code> will be thrown otherwise. Previously, the global object was used in these cases automatically, but this is no longer the case."
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
+        "entries": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/entries",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.entries",
+            "support": {
+              "chrome": {
+                "version_added": "54"
+              },
+              "chrome_android": {
+                "version_added": "54"
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": "47"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "7.0.0"
+                },
+                {
+                  "version_added": "6.5.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
+              "opera": {
+                "version_added": "41"
+              },
+              "opera_android": {
+                "version_added": "41"
+              },
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": {
+                "version_added": "10.3"
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "54"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "eval": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/eval",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
                 "version_added": false
               },
               "firefox": {
@@ -165,6 +588,903 @@
             }
           }
         },
+        "freeze": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.freeze",
+            "support": {
+              "chrome": {
+                "version_added": "6"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "fromEntries": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.fromentries",
+            "support": {
+              "chrome": {
+                "version_added": "73"
+              },
+              "chrome_android": {
+                "version_added": "73"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "63"
+              },
+              "firefox_android": {
+                "version_added": "63"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "12.0.0"
+              },
+              "opera": {
+                "version_added": "60"
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": {
+                "version_added": "12.2"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "73"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "getNotifier": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getNotifier",
+            "support": {
+              "chrome": {
+                "version_added": "36",
+                "version_removed": "52"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "getOwnPropertyDescriptor": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.getownpropertydescriptor",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "8"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "getOwnPropertyDescriptors": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.getownpropertydescriptors",
+            "support": {
+              "chrome": {
+                "version_added": "54"
+              },
+              "chrome_android": {
+                "version_added": "54"
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "50"
+              },
+              "firefox_android": {
+                "version_added": "50"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "7.0.0"
+                },
+                {
+                  "version_added": "6.5.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
+              "opera": {
+                "version_added": "41"
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": {
+                "version_added": null
+              },
+              "samsunginternet_android": {
+                "version_added": "6.0"
+              },
+              "webview_android": {
+                "version_added": "54"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "getOwnPropertyNames": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.getownpropertynames",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "getOwnPropertySymbols": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.getownpropertysymbols",
+            "support": {
+              "chrome": {
+                "version_added": "38"
+              },
+              "chrome_android": {
+                "version_added": "38"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "36"
+              },
+              "firefox_android": {
+                "version_added": "36"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "0.12"
+              },
+              "opera": {
+                "version_added": "25"
+              },
+              "opera_android": {
+                "version_added": "25"
+              },
+              "safari": {
+                "version_added": "9"
+              },
+              "safari_ios": {
+                "version_added": "9"
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": "38"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "getPrototypeOf": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.getprototypeof",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12.1"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "hasOwnProperty": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.hasownproperty",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": true
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "is": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/is",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.is",
+            "support": {
+              "chrome": {
+                "version_added": "30"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "22"
+              },
+              "firefox_android": {
+                "version_added": "22"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "0.10"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "9"
+              },
+              "safari_ios": {
+                "version_added": "9"
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "isExtensible": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.isextensible",
+            "support": {
+              "chrome": {
+                "version_added": "6"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "isFrozen": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.isfrozen",
+            "support": {
+              "chrome": {
+                "version_added": "6"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "isPrototypeOf": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.isprototypeof",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": true
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "isSealed": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.issealed",
+            "support": {
+              "chrome": {
+                "version_added": "6"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "keys": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/keys",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.keys",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "lookupGetter": {
+          "__compat": {
+            "description": "<code>__lookupGetter__</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.__lookupGetter__",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
+        "lookupSetter": {
+          "__compat": {
+            "description": "<code>__lookupSetter__</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.__lookupSetter__",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
         "noSuchMethod": {
           "__compat": {
             "description": "<code>__noSuchMethod__</code>",
@@ -179,9 +1499,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": false
-              },
               "firefox": {
                 "version_added": "1",
                 "version_removed": "43"
@@ -189,6 +1506,58 @@
               "firefox_android": {
                 "version_added": "4",
                 "version_removed": "43"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "observe": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/observe",
+            "support": {
+              "chrome": {
+                "version_added": "36",
+                "version_removed": "52"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
               },
               "ie": {
                 "version_added": false
@@ -236,1189 +1605,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
-        "proto": {
-          "__compat": {
-            "description": "<code>__proto__</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/proto",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-additional-properties-of-the-object.prototype-object",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
-        "constructor": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.constructor",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": true
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "assign": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.assign",
-            "support": {
-              "chrome": {
-                "version_added": "45"
-              },
-              "chrome_android": {
-                "version_added": "45"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "34"
-              },
-              "firefox_android": {
-                "version_added": "34"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "4.0.0"
-              },
-              "opera": {
-                "version_added": "32"
-              },
-              "opera_android": {
-                "version_added": "32"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "create": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/create",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.create",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "11.6"
-              },
-              "opera_android": {
-                "version_added": "11.5"
-              },
-              "safari": {
-                "version_added": "5"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "defineProperties": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.defineproperties",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "11.6"
-              },
-              "opera_android": {
-                "version_added": "11.5"
-              },
-              "safari": {
-                "version_added": "5"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "defineProperty": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.defineproperty",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9",
-                "notes": "Also supported in Internet Explorer 8, but only on DOM objects and with some non-standard behaviors."
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "11.6"
-              },
-              "opera_android": {
-                "version_added": "11.5"
-              },
-              "safari": {
-                "version_added": "5.1",
-                "notes": "Also supported in Safari 5, but not on DOM objects."
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "entries": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/entries",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.entries",
-            "support": {
-              "chrome": {
-                "version_added": "54"
-              },
-              "chrome_android": {
-                "version_added": "54"
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "47"
-              },
-              "firefox_android": {
-                "version_added": "47"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": [
-                {
-                  "version_added": "7.0.0"
-                },
-                {
-                  "version_added": "6.5.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "opera": {
-                "version_added": "41"
-              },
-              "opera_android": {
-                "version_added": "41"
-              },
-              "safari": {
-                "version_added": "10.1"
-              },
-              "safari_ios": {
-                "version_added": "10.1"
-              },
-              "samsunginternet_android": {
-                "version_added": "6.0"
-              },
-              "webview_android": {
-                "version_added": "54"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "freeze": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.freeze",
-            "support": {
-              "chrome": {
-                "version_added": "6"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5.1"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "fromEntries": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries",
-            "spec_url": "https://tc39.github.io/proposal-object-from-entries/#sec-object.fromentries",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "63"
-              },
-              "firefox_android": {
-                "version_added": "63"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "getNotifier": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getNotifier",
-            "support": {
-              "chrome": {
-                "version_added": "36",
-                "version_removed": "52"
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
-        "getOwnPropertyDescriptor": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptor",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "8"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "getOwnPropertyDescriptors": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptors",
-            "support": {
-              "chrome": {
-                "version_added": "54"
-              },
-              "chrome_android": {
-                "version_added": "54"
-              },
-              "edge": {
-                "version_added": "15"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "50"
-              },
-              "firefox_android": {
-                "version_added": "50"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": [
-                {
-                  "version_added": "7.0.0"
-                },
-                {
-                  "version_added": "6.5.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "opera": {
-                "version_added": "41"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": "10"
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "6.0"
-              },
-              "webview_android": {
-                "version_added": null
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "getOwnPropertyNames": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.getownpropertynames",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "getOwnPropertySymbols": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.getownpropertysymbols",
-            "support": {
-              "chrome": {
-                "version_added": "38"
-              },
-              "chrome_android": {
-                "version_added": "38"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "36"
-              },
-              "firefox_android": {
-                "version_added": "36"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": "25"
-              },
-              "opera_android": {
-                "version_added": "25"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": "38"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "getPrototypeOf": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.getprototypeof",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "3.5"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12.1"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "is": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/is",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.is",
-            "support": {
-              "chrome": {
-                "version_added": "30"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "22"
-              },
-              "firefox_android": {
-                "version_added": "22"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "0.10"
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "isExtensible": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.isextensible",
-            "support": {
-              "chrome": {
-                "version_added": "6"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5.1"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "isFrozen": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.isfrozen",
-            "support": {
-              "chrome": {
-                "version_added": "6"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5.1"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "isSealed": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.issealed",
-            "support": {
-              "chrome": {
-                "version_added": "6"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5.1"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "keys": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/keys",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.keys",
-            "support": {
-              "chrome": {
-                "version_added": "5"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "observe": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/observe",
-            "support": {
-              "chrome": {
-                "version_added": "36",
-                "version_removed": "52"
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
               "firefox": {
                 "version_added": false
               },
@@ -1460,7 +1646,7 @@
         "preventExtensions": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.preventextensions",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.preventextensions",
             "support": {
               "chrome": {
                 "version_added": "6"
@@ -1470,9 +1656,6 @@
               },
               "edge": {
                 "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
               },
               "firefox": {
                 "version_added": "4"
@@ -1524,9 +1707,6 @@
                 "edge": {
                   "version_added": null
                 },
-                "edge_mobile": {
-                  "version_added": null
-                },
                 "firefox": {
                   "version_added": "35"
                 },
@@ -1566,400 +1746,10 @@
             }
           }
         },
-        "defineGetter": {
-          "__compat": {
-            "description": "<code>__defineGetter__</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.__defineGetter__",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1",
-                "notes": "Starting with Firefox 48, this method can no longer be called at the global scope without any object. A <code>TypeError</code> will be thrown otherwise. Previously, the global object was used in these cases automatically, but this is no longer the case."
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
-        "defineSetter": {
-          "__compat": {
-            "description": "<code>__defineSetter__</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.__defineSetter__",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1",
-                "notes": "Starting with Firefox 48, this method can no longer be called at the global scope without any object. A <code>TypeError</code> will be thrown otherwise. Previously, the global object was used in these cases automatically, but this is no longer the case."
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
-        "lookupGetter": {
-          "__compat": {
-            "description": "<code>__lookupGetter__</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.__lookupGetter__",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
-        "lookupSetter": {
-          "__compat": {
-            "description": "<code>__lookupSetter__</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.__lookupSetter__",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
-        "eval": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/eval",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
-        "hasOwnProperty": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.hasownproperty",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": true
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "isPrototypeOf": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.isprototypeof",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": true
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "propertyIsEnumerable": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.propertyisenumerable",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.propertyisenumerable",
             "support": {
               "chrome": {
                 "version_added": true
@@ -1970,7 +1760,109 @@
               "edge": {
                 "version_added": "12"
               },
-              "edge_mobile": {
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": true
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "proto": {
+          "__compat": {
+            "description": "<code>__proto__</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/proto",
+            "spec_url": "https://tc39.es/ecma262/#sec-additional-properties-of-the-object.prototype-object",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
+        "prototype": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
                 "version_added": true
               },
               "firefox": {
@@ -1993,6 +1885,110 @@
               },
               "safari": {
                 "version_added": true
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "seal": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/seal",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.seal",
+            "support": {
+              "chrome": {
+                "version_added": "6"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "4"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": "12"
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "setPrototypeOf": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.setprototypeof",
+            "support": {
+              "chrome": {
+                "version_added": "34"
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "31"
+              },
+              "firefox_android": {
+                "version_added": "31"
+              },
+              "ie": {
+                "version_added": "11"
+              },
+              "nodejs": {
+                "version_added": "0.12"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "9"
               },
               "safari_ios": {
                 "version_added": true
@@ -2014,7 +2010,7 @@
         "toLocaleString": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.tolocalestring",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.tolocalestring",
             "support": {
               "chrome": {
                 "version_added": true
@@ -2024,9 +2020,6 @@
               },
               "edge": {
                 "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
               },
               "firefox": {
                 "version_added": "1"
@@ -2079,9 +2072,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": false
-              },
               "firefox": {
                 "version_added": "1"
               },
@@ -2123,7 +2113,7 @@
         "toString": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/toString",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.tostring",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.tostring",
             "support": {
               "chrome": {
                 "version_added": true
@@ -2133,9 +2123,6 @@
               },
               "edge": {
                 "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
               },
               "firefox": {
                 "version_added": "1"
@@ -2175,6 +2162,58 @@
             }
           }
         },
+        "unobserve": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/unobserve",
+            "support": {
+              "chrome": {
+                "version_added": "36",
+                "version_removed": "52"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
         "unwatch": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch",
@@ -2186,9 +2225,6 @@
                 "version_added": false
               },
               "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
                 "version_added": false
               },
               "firefox": {
@@ -2234,7 +2270,7 @@
         "valueOf": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.prototype.valueof",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.prototype.valueof",
             "support": {
               "chrome": {
                 "version_added": true
@@ -2244,9 +2280,6 @@
               },
               "edge": {
                 "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
               },
               "firefox": {
                 "version_added": "1"
@@ -2286,231 +2319,10 @@
             }
           }
         },
-        "watch": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/watch",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "1",
-                "version_removed": "58"
-              },
-              "firefox_android": {
-                "version_added": "4",
-                "version_removed": "58"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
-        "seal": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/seal",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.seal",
-            "support": {
-              "chrome": {
-                "version_added": "6"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "4"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "5.1"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "setPrototypeOf": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.setprototypeof",
-            "support": {
-              "chrome": {
-                "version_added": "34"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "31"
-              },
-              "firefox_android": {
-                "version_added": "31"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "unobserve": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/unobserve",
-            "support": {
-              "chrome": {
-                "version_added": "36",
-                "version_removed": "52"
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
         "values": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/values",
-            "spec_url": "https://tc39.github.io/ecma262/#sec-object.values",
+            "spec_url": "https://tc39.es/ecma262/#sec-object.values",
             "support": {
               "chrome": {
                 "version_added": "54"
@@ -2520,9 +2332,6 @@
               },
               "edge": {
                 "version_added": "14"
-              },
-              "edge_mobile": {
-                "version_added": true
               },
               "firefox": {
                 "version_added": "47"
@@ -2570,6 +2379,59 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          }
+        },
+        "watch": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/watch",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "1",
+                "version_removed": "58"
+              },
+              "firefox_android": {
+                "version_added": "4",
+                "version_removed": "58"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }

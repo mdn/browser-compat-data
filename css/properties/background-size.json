@@ -17,19 +17,16 @@
             ],
             "chrome_android": [
               {
-                "version_added": true
+                "version_added": "18"
               },
               {
-                "version_added": true,
+                "version_added": "18",
                 "prefix": "-webkit-",
                 "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
               }
             ],
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": [
               {
@@ -73,9 +70,22 @@
                 "notes": "Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds. Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical clipping dimension. This has been fixed in Opera 10."
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "14",
+                "prefix": "-webkit-",
+                "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "14",
+                "prefix": "-o-",
+                "notes": "Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds. Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical clipping dimension. This has been fixed in Opera 10."
+              }
+            ],
             "safari": [
               {
                 "version_added": "4.1"
@@ -86,9 +96,16 @@
                 "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
               }
             ],
-            "safari_ios": {
-              "version_added": true
-            },
+            "safari_ios": [
+              {
+                "version_added": "4.2"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "1",
+                "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": true
             },
@@ -97,7 +114,7 @@
                 "version_added": "2.3"
               },
               {
-                "version_added": true,
+                "version_added": "≤37",
                 "prefix": "-webkit-",
                 "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
               }
@@ -117,13 +134,10 @@
                 "version_added": "3"
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
               },
               "firefox": {
                 "version_added": "3.6"
@@ -144,64 +158,13 @@
                 "version_added": "4.1"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "4.2"
               },
               "samsunginternet_android": {
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "SVG_image_as_background": {
-          "__compat": {
-            "description": "SVG image as background",
-            "support": {
-              "chrome": {
-                "version_added": "44"
-              },
-              "chrome_android": {
-                "version_added": null
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "edge_mobile": {
-                "version_added": true
-              },
-              "firefox": {
-                "version_added": "8"
-              },
-              "firefox_android": {
-                "version_added": "8"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "opera": {
-                "version_added": "31"
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": null
-              },
-              "webview_android": {
-                "version_added": null
+                "version_added": "37"
               }
             },
             "status": {

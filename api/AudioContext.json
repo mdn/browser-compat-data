@@ -27,9 +27,6 @@
           "edge": {
             "version_added": true
           },
-          "edge_mobile": {
-            "version_added": true
-          },
           "firefox": {
             "version_added": "25"
           },
@@ -54,8 +51,8 @@
               "version_added": "22"
             },
             {
-              "version_added": "15",
-              "version_removed": "44",
+              "version_added": "14",
+              "version_removed": "43",
               "prefix": "webkit"
             }
           ],
@@ -109,14 +106,11 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": "25"
             },
             "firefox_android": {
-              "version_added": "25"
+              "version_added": "26"
             },
             "ie": {
               "version_added": false
@@ -161,9 +155,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": null
-              },
               "firefox": {
                 "version_added": false
               },
@@ -177,7 +168,7 @@
                 "version_added": "47"
               },
               "opera_android": {
-                "version_added": "47"
+                "version_added": "44"
               },
               "safari": {
                 "version_added": null
@@ -204,17 +195,13 @@
             "description": "<code>sampleRate</code> option",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/432248' title='Issue 432248 - AudioContext needs to support optional sample rate parameter.'>issue 432248</a> for Chrome support."
+                "version_added": "74"
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "74"
               },
               "edge": {
                 "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": null
               },
               "firefox": {
                 "version_added": false
@@ -241,7 +228,7 @@
                 "version_added": false
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "74"
               }
             },
             "status": {
@@ -265,9 +252,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": false
             },
@@ -281,7 +265,7 @@
               "version_added": "45"
             },
             "opera_android": {
-              "version_added": "45"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -303,57 +287,6 @@
           }
         }
       },
-      "outputLatency": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
@@ -366,9 +299,6 @@
             },
             "edge": {
               "version_added": "14"
-            },
-            "edge_mobile": {
-              "version_added": null
             },
             "firefox": {
               "version_added": "40"
@@ -405,6 +335,86 @@
           }
         }
       },
+      "createConstantSource": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createConstantSource",
+          "support": {
+            "chrome": {
+              "version_added": "14",
+              "version_removed": "56",
+              "prefix": "webkit",
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
+            },
+            "chrome_android": {
+              "version_added": "18",
+              "version_removed": "56",
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
+            },
+            "edge": {
+              "version_added": true
+            },
+            "firefox": {
+              "version_added": "25",
+              "version_removed": true,
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
+            },
+            "firefox_android": {
+              "version_added": "26",
+              "version_removed": true,
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "22",
+                "version_removed": "43",
+                "notes": "Available as a part of <code>BaseAudioContext</code>."
+              },
+              {
+                "version_added": "15",
+                "version_removed": "22",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "22",
+                "version_removed": "43",
+                "notes": "Available as a part of <code>BaseAudioContext</code>."
+              },
+              {
+                "version_added": "14",
+                "version_removed": "22",
+                "prefix": "webkit"
+              }
+            ],
+            "safari": {
+              "version_added": "6",
+              "version_removed": true,
+              "prefix": "webkit",
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": true,
+              "version_removed": "56",
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "createMediaElementSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
@@ -418,9 +428,6 @@
             "edge": {
               "version_added": "12"
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "25"
             },
@@ -434,58 +441,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "15"
-            },
-            "safari": {
-              "version_added": "6"
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "createMediaStreamSource": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
-          "support": {
-            "chrome": {
               "version_added": "14"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
-            },
-            "firefox": {
-              "version_added": "25"
-            },
-            "firefox_android": {
-              "version_added": "26"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "15"
             },
             "safari": {
               "version_added": "6"
@@ -520,8 +476,53 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "26"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "6"
+            },
+            "safari_ios": {
               "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "createMediaStreamSource": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
+          "support": {
+            "chrome": {
+              "version_added": "14"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "25"
@@ -536,7 +537,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "15"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "6"
@@ -563,31 +564,30 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "68",
+              "notes": "Firefox 68 implements the updated standard's definition of the \"first\" audio track; now the first track is the one whose ID comes first lexicographically."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "68",
+              "notes": "Firefox 68 implements the updated standard's definition of the \"first\" audio track; now the first track is the one whose ID comes first lexicographically."
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -596,14 +596,14 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -622,9 +622,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": false
             },
@@ -638,7 +635,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -660,6 +657,54 @@
           }
         }
       },
+      "outputLatency": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": null
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "resume": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/resume",
@@ -671,10 +716,7 @@
               "version_added": "41"
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
-              "version_added": null
+              "version_added": true
             },
             "firefox": {
               "version_added": "40"
@@ -689,7 +731,7 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": true
@@ -698,7 +740,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -723,9 +765,6 @@
             },
             "edge": {
               "version_added": "14"
-            },
-            "edge_mobile": {
-              "version_added": null
             },
             "firefox": {
               "version_added": "40"
