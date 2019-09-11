@@ -29,7 +29,7 @@ function processData(filename, logger) {
     match => {
       // use https://bugzil.la/1000000 instead
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]} → {green {bold https://bugzil.la/}${match[1]}}).}`);
+      logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://bugzil.la/}${match[1]}}).}`);
     }
   );
 
