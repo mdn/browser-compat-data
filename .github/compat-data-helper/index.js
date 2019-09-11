@@ -40,7 +40,9 @@ module.exports = app => {
     const filenames = fileList.map(f => f.filename)
 
     const labels = match(filenames, config)
-    await context.github.issues.addLabels({ ...prAsIssue, labels: { labels } })
-    context.log(`PR ${prString}: Added labels`, labels)
+    if (labels.length) {
+      await context.github.issues.addLabels({ ...prAsIssue, labels })
+      context.log(`PR ${prString}: Added labels`, labels)
+    }
   })
 }
