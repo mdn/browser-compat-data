@@ -1,9 +1,11 @@
 'use strict';
 const path = require('path');
 const chalk = require('chalk');
+const { walkCompatData } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../../types').CompatStatement} CompatStatement
  */
 
 /** @type {Record<string, string[]>} */
@@ -42,29 +44,25 @@ const browsers = {
 };
 
 /**
- * @param {Identifier} data
+ * @param {CompatStatement} compat
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
  * @param {import('../utils').Logger} logger
- * @param {string} [path]
- * @returns {boolean}
+ * @param {string} path
  */
-function processData(data, displayBrowsers, requiredBrowsers, category, logger, path = '') {
-  let hasErrors = false;
-  if (data.__compat && data.__compat.support) {
-    const support = data.__compat.support;
+function processData(compat, displayBrowsers, requiredBrowsers, category, logger, path) {
+  if (compat.support) {
+    const support = compat.support;
 
     const invalidEntries = Object.keys(support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(chalk`{red → {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(', ')}}}`);
-      hasErrors = true;
     }
 
     const missingEntries = requiredBrowsers.filter(value => !(value in support));
     if (missingEntries.length > 0) {
       logger.error(chalk`{red → {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(', ')}}}`);
-      hasErrors = true;
     }
 
     for (const [browser, supportStatement] of Object.entries(support)) {
@@ -77,8 +75,7 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
       for (const statement of statementList) {
         if (hasVersionAddedOnly(statement)) {
           if (sawVersionAddedOnly) {
-           logger.error(chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`);
-            hasErrors = true;
+            logger.error(chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`);
             break;
           } else {
             sawVersionAddedOnly = true;
@@ -87,27 +84,6 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
       }
     }
   }
-  for (const key in data) {
-    if (key === "__compat") continue;
-    // Note that doing `hasErrors |= processData(…)` would convert
-    // `hasErrors` into a number, which could potentially lead
-    // to unexpected issues down the line.
-
-    // We can't use the ESNext `hasErrors ||= processData(…)` here either,
-    // as that would prevent printing nested browser issues, making testing
-    // and fixing issues longer, as nested issues wouldn't be logged.
-    hasErrors = processData(
-      data[key],
-      displayBrowsers,
-      requiredBrowsers,
-      category,
-      logger,
-      (path && path.length > 0)
-        ? `${path}.${key}`
-        : key,
-    ) || hasErrors;
-  }
-  return hasErrors;
 }
 
 /**
@@ -149,7 +125,9 @@ function testBrowsers(filename) {
     },
   };
 
-  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+  walkCompatData(data, (compat, { category, path }) => {
+    processData(compat, displayBrowsers, requiredBrowsers, category, logger, path);
+  });
 
   if (errors.length) {
     console.error(chalk`{red   Browsers – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);

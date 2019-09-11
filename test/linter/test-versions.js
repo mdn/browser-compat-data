@@ -1,6 +1,7 @@
 'use strict';
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { walkCompatData } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -43,7 +44,6 @@ function isValidVersion(browserIdentifier, version) {
  * @param {import('../utils').Logger} logger
  */
 function checkVersions(supportData, relPath, logger) {
-  let hasErrors = false;
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
@@ -61,11 +61,9 @@ function checkVersions(supportData, relPath, logger) {
       for (const statement of supportStatements) {
         if (!isValidVersion(browser, statement.version_added)) {
           logger.error(chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`);
-          hasErrors = true;
         }
         if (!isValidVersion(browser, statement.version_removed)) {
           logger.error(chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`);
-          hasErrors = true;
         }
         if ('version_removed' in statement && 'version_added' in statement) {
           if (
@@ -73,7 +71,6 @@ function checkVersions(supportData, relPath, logger) {
             statement.version_added !== true
           ) {
             logger.error(chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`);
-            hasErrors = true;
           } else if (typeof statement.version_added === 'string' && typeof statement.version_removed === 'string') {
             if (
               (
@@ -85,15 +82,12 @@ function checkVersions(supportData, relPath, logger) {
               )
             ) {
               logger.error(chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`);
-              hasErrors = true;
             }
           }
         }
       }
     }
   }
-
-  return hasErrors;
 }
 
 /**
@@ -112,22 +106,11 @@ function testVersions(filename) {
     },
   };
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
+  walkCompatData(data, (compat, { category, path }) => {
+    if (compat.support) {
+      checkVersions(compat.support, path, logger);
     }
-  }
-  findSupport(data);
+  });
 
   if (errors.length) {
     console.error(chalk`{red   Versions – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
