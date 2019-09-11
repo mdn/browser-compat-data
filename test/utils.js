@@ -2,6 +2,11 @@
 const { platform } = require('os');
 
 /**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').CompatStatement} CompatStatement
+ */
+
+/**
  * @typedef {object} Logger
  * @property {(...message: unknown[]) => void} error
  */
@@ -112,6 +117,63 @@ function jsonDiff(actual, expected) {
   }
 }
 
+/**
+ * @typedef {object} DataContext
+ * @property {string} path
+ * @property {string} category
+ */
+
+/**
+ * @callback DataCallback
+ * @param {CompatStatement} compat
+ * @param {DataContext} context
+ */
+
+/**
+ * @internal
+ * @param {Identifier} data
+ * @param {DataCallback} callback
+ * @param {string} [category]
+ * @param {string} [path]
+ */
+function _walkCompatDataImpl(data, callback, category, path) {
+  for (const prop in data) {
+    if (prop === '__compat') {
+      callback(data.__compat, {
+        category,
+        path,
+      });
+      continue;
+    }
+
+    const sub = data[prop];
+
+    _walkCompatDataImpl(
+      sub,
+      callback,
+      category ? category : prop,
+      path ? `${path}.${prop}` : prop
+    );
+  }
+}
+
+/**
+ * Walks the compatibility data, invoking the passed callback
+ * for every instance of `__compat`.
+ *
+ * @param {Identifier} data
+ * @param {DataCallback} callback
+ */
+function walkCompatData(data, callback) {
+  if (data === null || typeof data !== 'object') {
+    throw new TypeError(`data must be an object, got: ${data === null ? 'null' : typeof data}`);
+  }
+  if (typeof callback !== 'function') {
+    throw new TypeError(`callback must be a function, got: ${callback === null ? 'null' : typeof callback}`);
+  }
+  _walkCompatDataImpl(data, callback);
+}
+
 module.exports = {
   INVISIBLES_MAP,
   IS_CI,
@@ -120,4 +182,5 @@ module.exports = {
   indexToPosRaw,
   indexToPos,
   jsonDiff,
+  walkCompatData,
 };
