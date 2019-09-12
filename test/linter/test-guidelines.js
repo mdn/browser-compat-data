@@ -9,8 +9,8 @@ function hasValidConstrutorDescription(apiData, apiName, logger) {
   const constructor = apiData[apiName];
   if (constructor && constructor.__compat.description !== `<code>${apiName}()</code> constructor`) {
       logger.error(chalk`{red Incorrect constructor description for {bold ${apiName}()}
-Actual: {yellow "${constructor.__compat.description || ""}"}
-Expected: {green "<code>${apiName}()</code> constructor"}}`);
+      Actual: {yellow "${constructor.__compat.description || ""}"}
+      Expected: {green "<code>${apiName}()</code> constructor"}}`);
   }
 }
 
@@ -26,8 +26,8 @@ function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
       const eventName = methodName.replace("_event", "");
       if (event.__compat.description !== `<code>${eventName}</code> event`) {
         logger.error(chalk`{red Incorrect event description for {bold ${apiName}#${methodName}}
-Actual: {yellow "${event.__compat.description || ""}"}
-Expected: {green "<code>${eventName}</code> event"}}`);
+      Actual: {yellow "${event.__compat.description || ""}"}
+      Expected: {green "<code>${eventName}</code> event"}}`);
       }
     }
   }
@@ -42,8 +42,8 @@ function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
   const secureContext = apiData.secure_context_required;
   if (secureContext && secureContext.__compat.description !== `Secure context required`) {
       logger.error(chalk`{red Incorrect secure context required description for {bold ${apiName}()}
-Actual: {yellow "${secureContext.__compat.description || ""}"}
-Expected: {green {bold "Secure context required"}}}`);
+      Actual: {yellow "${secureContext.__compat.description || ""}"}
+      Expected: {green "Secure context required"}}`);
   }
 }
 
@@ -56,8 +56,8 @@ function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
   const workerSupport = apiData.worker_support;
   if (workerSupport && workerSupport.__compat.description !== `Available in workers`) {
       logger.error(chalk`{red Incorrect worker support description for {bold ${apiName}()}
-Actual: {yellow "${workerSupport.__compat.description || ""}"}
-Expected: {green {bold "Available in workers"}}}`);
+      Actual: {yellow "${workerSupport.__compat.description || ""}"}
+      Expected: {green "Available in workers"}}`);
   }
 }
 
