@@ -29,8 +29,8 @@ const testFeatureOrder = () => {
   if (errors) {
     console.error(chalk`{red compareFeatures() – {bold 1} error:}`);
     console.error(chalk`{red   Actual and expected orders do not match}`);
-    console.error(chalk`{red     Actual: {bold ${actual}}}`);
-    console.error(chalk`{red     Expected: {bold ${expected}}}`);
+    console.error(chalk`{red     Actual: {yellow ${actual}}}`);
+    console.error(chalk`{red     Expected: {green ${expected}}}`);
     return true;
   }
   return false;
