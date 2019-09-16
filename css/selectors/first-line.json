@@ -97,15 +97,31 @@
                 "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work for <code>::first-line</code> or <code>:first-line</code> pseudo-elements. See <a href='https://webkit.org/b/3409'>WebKit bug 3409</a>."
               }
             ],
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari_ios": [
+              {
+                "version_added": "1",
+                "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work for <code>::first-line</code> or <code>:first-line</code> pseudo-elements. See <a href='https://webkit.org/b/3409'>WebKit bug 3409</a>."
+              },
+              {
+                "alternative_name": ":first-line",
+                "version_added": "1",
+                "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work for <code>::first-line</code> or <code>:first-line</code> pseudo-elements. See <a href='https://webkit.org/b/3409'>WebKit bug 3409</a>."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": null
             },
-            "webview_android": {
-              "version_added": true
-            }
+            "webview_android": [
+              {
+                "version_added": "≤37",
+                "notes": "Before WebView 62, the <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work on <code>::first-line</code> pseudo-elements. See <a href='https://crbug.com/129669'>Chromium bug 129669</a>."
+              },
+              {
+                "alternative_name": ":first-line",
+                "version_added": "≤37",
+                "notes": "Before WebView 62, the <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work on <code>::first-line</code> pseudo-elements. See <a href='https://crbug.com/129669'>Chromium bug 129669</a>."
+              }
+            ]
           },
           "status": {
             "experimental": false,

@@ -49,6 +49,8 @@ The process is:
    * For new pages, you must add the [`{{Compat}}`](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs) macro to the page.
      For instructions, see [Inserting the data into MDN pages](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Structures/Compatibility_tables#Inserting_the_data_into_MDN_pages).
 
+Large-scale changes follow a different process. See [Migrations](migrations.md) for details.
+
 ## Opening issues and pull requests
 
 Before submitting your pull request, [validate your new data against the schema](testing.md).
