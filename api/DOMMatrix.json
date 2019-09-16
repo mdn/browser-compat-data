@@ -90,10 +90,10 @@
           }
         }
       },
-      "scaleSelf": {
+      "scale3dSelf": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf",
-          "description": "<code>scaleSelf()</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf",
+          "description": "<code>scale3dSelf()</code>",
           "support": {
             "chrome": {
               "version_added": "45"
@@ -106,12 +106,11 @@
             },
             "firefox": {
               "version_added": "33",
-              "notes": "Firefox 69 introduced support for the modern six-parameter syntax for <code>scaleSelf()</code>. Previously, it only supported the older three-parameter syntax: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>."
+              "notes": "Starting in Firefox 69, the first parameter (<code>scale</code>) is now optional with a default value of 1, per the specification. Previously it was required."
             },
             "firefox_android": {
               "version_added": "33",
-              "partial_implementation": true,
-              "notes": "Firefox for Android only supports the older three-parameter syntax for <code>scaleSelf()</code>: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>, and not the six-parameter syntax."
+              "notes": "Firefox for Android requires the first parameter (<code>scale</code>)."
             },
             "ie": {
               "version_added": false
@@ -139,10 +138,10 @@
           }
         }
       },
-      "scale3dSelf": {
+      "scaleSelf": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf",
-          "description": "<code>scale3dSelf()</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf",
+          "description": "<code>scaleSelf()</code>",
           "support": {
             "chrome": {
               "version_added": "45"
@@ -155,11 +154,12 @@
             },
             "firefox": {
               "version_added": "33",
-              "notes": "Starting in Firefox 69, the first parameter (<code>scale</code>) is now optional with a default value of 1, per the specification. Previously it was required."
+              "notes": "Firefox 69 introduced support for the modern six-parameter syntax for <code>scaleSelf()</code>. Previously, it only supported the older three-parameter syntax: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>."
             },
             "firefox_android": {
               "version_added": "33",
-              "notes": "Firefox for Android requires the first parameter (<code>scale</code>)."
+              "partial_implementation": true,
+              "notes": "Firefox for Android only supports the older three-parameter syntax for <code>scaleSelf()</code>: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>, and not the six-parameter syntax."
             },
             "ie": {
               "version_added": false
