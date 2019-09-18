@@ -20,7 +20,9 @@ describe('My Probot app', () => {
   let probot
 
   beforeEach(() => {
-    probot = new Probot({})
+    probot = new Probot({
+      Octokit: require('@octokit/rest') // use bare @octokit/rest, without any plugins, to fail faster
+    })
     // Load our app into probot
     const app = probot.load(myProbotApp)
 
@@ -95,6 +97,27 @@ describe('My Probot app', () => {
     })
 
     // Assert that all of the mocks have been used
+    expect(nock.pendingMocks()).toStrictEqual([])
+  })
+
+  test('assigns no labels if no files match', async () => {
+    nock(gitHubApi)
+      .get('/repos/ddbeck/browser-compat-data/contents/.github/labels.yml')
+      .reply(200, repoConfig)
+
+    // Get a version of the file list response that never matches
+    const noMatchingFiles = JSON.parse(JSON.stringify(pullRequestFiles))
+    noMatchingFiles[0].filename = 'NEVERMATCHME'
+
+    nock(gitHubApi)
+      .get('/repos/ddbeck/browser-compat-data/pulls/2/files')
+      .reply(200, noMatchingFiles)
+
+    await probot.receive({
+      name: 'pull_request',
+      payload: pullRequestOpenedWebHook
+    })
+
     expect(nock.pendingMocks()).toStrictEqual([])
   })
 

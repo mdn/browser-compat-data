@@ -6,6 +6,7 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const {
   testBrowsers,
+  testLinks,
   testPrefix,
   testRealValues,
   testStyle,
@@ -49,6 +50,7 @@ function load(...files) {
         let hasSyntaxErrors = false,
           hasSchemaErrors = false,
           hasStyleErrors = false,
+          hasLinkErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasRealValueErrors = false,
@@ -81,6 +83,7 @@ function load(...files) {
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
+            hasLinkErrors = testLinks(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasRealValueErrors = testRealValues(file);
@@ -95,6 +98,7 @@ function load(...files) {
           hasSyntaxErrors,
           hasSchemaErrors,
           hasStyleErrors,
+          hasLinkErrors,
           hasBrowserErrors,
           hasVersionErrors,
           hasRealValueErrors,
@@ -149,6 +153,7 @@ if (hasErrors) {
       } else {
         testSchema(file);
         testStyle(file);
+        testLinks(file);
         testVersions(file);
         testRealValues(file);
         testBrowsers(file);
