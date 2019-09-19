@@ -12,7 +12,7 @@ const {
   testStyle,
   testSchema,
   testVersions,
-  testGuidelines
+  testDescriptions
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js')
 const testCompareFeatures = require('./test-compare-features');
@@ -56,7 +56,7 @@ function load(...files) {
           hasVersionErrors = false,
           hasRealValueErrors = false,
           hasPrefixErrors = false,
-          hasGuidelinesErrors = false;
+          hasDescriptionsErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -90,7 +90,7 @@ function load(...files) {
             hasVersionErrors = testVersions(file);
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
-            hasGuidelinesErrors = testGuidelines(file);
+            hasDescriptionsErrors = testDescriptions(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -106,7 +106,7 @@ function load(...files) {
           hasVersionErrors,
           hasRealValueErrors,
           hasPrefixErrors,
-          hasGuidelinesErrors
+          hasDescriptionsErrors
         ].some(x => !!x);
 
         if (fileHasErrors) {
@@ -162,7 +162,7 @@ if (hasErrors) {
         testRealValues(file);
         testBrowsers(file);
         testPrefix(file);
-        testGuidelines(file);
+        testDescriptions(file);
       }
     } catch (e) {
       console.error(e);

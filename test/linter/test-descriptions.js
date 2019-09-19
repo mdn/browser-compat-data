@@ -65,7 +65,7 @@ function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
 /**
  * @param {string} filename
  */
-function testGuidelines(filename) {
+function testDescriptions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -89,7 +89,7 @@ function testGuidelines(filename) {
   }
 
   if (errors.length) {
-    console.error(chalk`{red   Guidelines – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(chalk`{red   Descriptions – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
       console.error(`    ${error}`);
     }
@@ -98,4 +98,4 @@ function testGuidelines(filename) {
   return false;
 }
 
-module.exports = testGuidelines;
+module.exports = testDescriptions;
