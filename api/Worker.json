@@ -27,7 +27,7 @@
               "version_added": "11.7.0",
               "partial_implementation": true,
               "notes": [
-                "Is a Node EventEmitter instead of DOM EventTarget.",
+                "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>.",
                 "Worker script environment expects CommonJS modules.",
                 "Must be imported from the <code>worker_threads</code> module."
               ]
@@ -36,7 +36,7 @@
               "version_added": "10.5.0",
               "partial_implementation": true,
               "notes": [
-                "Is a Node EventEmitter instead of DOM EventTarget.",
+                "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>.",
                 "Worker script environment expects CommonJS modules.",
                 "Must be imported from the <code>worker_threads</code> module."
               ],
@@ -252,8 +252,9 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": false,
-              "notes": "Supports the event, but only via Node EventEmitter."
+              "version_added": "10.5.0",
+              "partial_implementation": true,
+              "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
             },
             "opera": {
               "version_added": "10.6"
