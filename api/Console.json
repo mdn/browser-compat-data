@@ -71,9 +71,16 @@
             "ie": {
               "version_added": true
             },
-            "nodejs": {
-              "version_added": null
-            },
+            "nodejs": [
+              {
+                "version_added": "10.0.0"
+              },
+              {
+                "version_added": "0.1.101",
+                "partial_implementation": true,
+                "notes": "Throws error when assertion fails."
+              }
+            ],
             "opera": {
               "version_added": true
             },
@@ -119,16 +126,9 @@
             "ie": {
               "version_added": true
             },
-            "nodejs": [
-              {
-                "version_added": "10.0.0"
-              },
-              {
-                "version_added": "0.1.101",
-                "partial_implementation": true,
-                "notes": "Throws error when assertion fails."
-              }
-            ],
+            "nodejs": {
+              "version_added": "8.3.0"
+            },
             "opera": {
               "version_added": true
             },
@@ -270,6 +270,15 @@
             "ie": {
               "version_added": true
             },
+            "nodejs": [
+              {
+                "version_added": "8.10.0",
+                "notes": "Alias for <code>console.log</code>"
+              },
+              {
+                "version_added": "8.0.0"
+              }
+            ],
             "opera": {
               "version_added": null
             },
@@ -319,6 +328,9 @@
                   "<code>%c</code> is not supported.",
                   "<code>%d</code> outputs a 0 if the specified value isn't a number."
                 ]
+              },
+              "nodejs": {
+                "version_added": "8.10.0"
               },
               "opera": {
                 "version_added": null
@@ -471,7 +483,8 @@
               "version_added": "8"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.1.100",
+              "alternative_name": "warn"
             },
             "opera": {
               "version_added": true
@@ -519,7 +532,7 @@
                 "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.1.100"
               },
               "opera": {
                 "version_added": null
@@ -665,7 +678,8 @@
               "version_added": "11"
             },
             "nodejs": {
-              "version_added": "8.5.0"
+              "version_added": "8.5.0",
+              "alternative_name": "groupCollapsed"
             },
             "opera": {
               "version_added": true
@@ -713,7 +727,8 @@
               "version_added": "11"
             },
             "nodejs": {
-              "version_added": "8.5.0"
+              "version_added": "8.5.0",
+              "notes": "Alias for <code>console.group</code>"
             },
             "opera": {
               "version_added": null
@@ -809,7 +824,7 @@
               "version_added": "8"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.1.100"
             },
             "opera": {
               "version_added": true
@@ -858,7 +873,8 @@
                 "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Alias for <code>console.log</code>"
               },
               "opera": {
                 "version_added": null
@@ -908,7 +924,8 @@
             },
             "nodejs": [
               {
-                "version_added": true
+                "version_added": "0.1.100",
+                "alternative_name": "info"
               },
               {
                 "version_added": "9.3.0",
@@ -963,7 +980,7 @@
                 "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.1.100"
               },
               "opera": {
                 "version_added": null
@@ -1416,7 +1433,8 @@
               "version_added": "8"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.1.100",
+              "notes": "Alias for <code>console.error</code>"
             },
             "opera": {
               "version_added": true
@@ -1464,7 +1482,7 @@
                 "notes": "%c is not supported, %d will render as 0 when it is not a number"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.1.100"
               },
               "opera": {
                 "version_added": null
@@ -1511,6 +1529,9 @@
             },
             "ie": {
               "version_added": true
+            },
+            "nodejs": {
+              "version_added": "10.5.0"
             },
             "opera": {
               "version_added": true
