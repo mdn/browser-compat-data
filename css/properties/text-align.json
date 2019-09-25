@@ -33,13 +33,13 @@
               "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -91,9 +91,16 @@
                   "version_added": "1"
                 }
               ],
-              "safari_ios": {
-                "version_added": null
-              },
+              "safari_ios": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1"
+                },
+                {
+                  "prefix": "-khtml-",
+                  "version_added": "1"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": null
               },
@@ -141,55 +148,7 @@
                 "version_added": "3.1"
               },
               "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": null
-              },
-              "webview_android": {
-                "version_added": "37"
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "match-parent": {
-          "__compat": {
-            "description": "<code>match-parent</code>",
-            "support": {
-              "chrome": {
-                "version_added": "16"
-              },
-              "chrome_android": {
-                "version_added": "18"
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "40"
-              },
-              "firefox_android": {
-                "version_added": "40"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "15"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": null
+                "version_added": "2"
               },
               "samsunginternet_android": {
                 "version_added": null
@@ -244,6 +203,54 @@
               },
               "webview_android": {
                 "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "match-parent": {
+          "__compat": {
+            "description": "<code>match-parent</code>",
+            "support": {
+              "chrome": {
+                "version_added": "16"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "40"
+              },
+              "firefox_android": {
+                "version_added": "40"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": null
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": null
+              },
+              "webview_android": {
+                "version_added": "37"
               }
             },
             "status": {

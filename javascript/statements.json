@@ -1867,9 +1867,17 @@
                 "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
               }
             ],
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "14",
+                "partial_implementation": true,
+                "notes": "In Edge 12 and 13, <code>let</code> within a <code>for</code> loop initializer does not create a separate variable for each loop iteration as defined by ES2015. Instead, it behaves as though the loop were wrapped in a scoping block with the <code>let</code> immediately before the loop."
+              }
+            ],
             "firefox": {
               "version_added": "44",
               "notes": [
@@ -1887,7 +1895,9 @@
               ]
             },
             "ie": {
-              "version_added": "11"
+              "version_added": "11",
+              "partial_implementation": true,
+              "notes": "In Internet Explorer, <code>let</code> within a <code>for</code> loop initializer does not create a separate variable for each loop iteration as defined by ES2015. Instead, it behaves as though the loop were wrapped in a scoping block with the <code>let</code> immediately before the loop."
             },
             "nodejs": {
               "version_added": "6.0.0"
