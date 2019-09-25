@@ -7,6 +7,7 @@ const testSchema = require('./test-schema.js');
 const testStyle = require('./test-style.js');
 const testVersions = require('./test-versions.js');
 const testConsistency = require('./test-consistency.js');
+const testDescriptions = require('./test-descriptions.js');
 
 module.exports = {
   testBrowsers,
@@ -17,4 +18,5 @@ module.exports = {
   testSchema,
   testVersions,
   testConsistency,
+  testDescriptions
 };
