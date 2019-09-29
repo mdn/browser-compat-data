@@ -47,54 +47,6 @@
           "deprecated": false
         }
       },
-      "arrayBuffer": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer",
-          "support": {
-            "chrome": {
-              "version_added": "76"
-            },
-            "chrome_android": {
-              "version_added": "76"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "76"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "Blob": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/Blob",
@@ -140,7 +92,56 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "arrayBuffer": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer",
+          "description": "<code>arrayBuffer()</code>",
+          "support": {
+            "chrome": {
+              "version_added": "76"
+            },
+            "chrome_android": {
+              "version_added": "76"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "69"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "76"
+            }
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -197,6 +198,7 @@
       "slice": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/slice",
+          "description": "<code>slice()</code>",
           "support": {
             "chrome": [
               {
@@ -224,7 +226,7 @@
             "firefox": [
               {
                 "version_added": "13",
-                "notes": "Prior to Gecko 12.0 (Firefox 12.0 / Thunderbird 12.0 / SeaMonkey 2.9), there was a bug that affected the behavior of <code>Blob.slice()</code>; it did not work for <code>start</code> and end positions outside the range of signed 64-bit values; it has now been fixed to support unsigned 64-bit values."
+                "notes": "Prior to Firefox 12, there was a bug that affected the behavior of <code>Blob.slice()</code>; it did not work for <code>start</code> and <code>end</code> positions outside the range of signed 64-bit values; it has now been fixed to support unsigned 64-bit values."
               },
               {
                 "version_added": "5",
@@ -268,6 +270,7 @@
       "stream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/stream",
+          "description": "<code>stream()</code>",
           "support": {
             "chrome": {
               "version_added": "76"
@@ -279,7 +282,7 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "69"
             },
             "firefox_android": {
               "version_added": false
@@ -307,7 +310,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -316,6 +319,7 @@
       "text": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/text",
+          "description": "<code>text()</code>",
           "support": {
             "chrome": {
               "version_added": "76"
@@ -327,7 +331,7 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "69"
             },
             "firefox_android": {
               "version_added": false
@@ -355,7 +359,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

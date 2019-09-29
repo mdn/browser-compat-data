@@ -6,16 +6,16 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const {
   testBrowsers,
+  testLinks,
   testPrefix,
   testRealValues,
   testStyle,
   testSchema,
   testVersions,
+  testDescriptions
 } = require('./linter/index.js');
+const { IS_CI } = require('./utils.js')
 const testCompareFeatures = require('./test-compare-features');
-
-/** Used to check if the process is running in a CI environment. */
-const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -51,10 +51,12 @@ function load(...files) {
         let hasSyntaxErrors = false,
           hasSchemaErrors = false,
           hasStyleErrors = false,
+          hasLinkErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasRealValueErrors = false,
-          hasPrefixErrors = false;
+          hasPrefixErrors = false,
+          hasDescriptionsErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -80,13 +82,16 @@ function load(...files) {
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
+            hasStyleErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
+            hasLinkErrors = testLinks(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
+            hasDescriptionsErrors = testDescriptions(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -97,10 +102,12 @@ function load(...files) {
           hasSyntaxErrors,
           hasSchemaErrors,
           hasStyleErrors,
+          hasLinkErrors,
           hasBrowserErrors,
           hasVersionErrors,
           hasRealValueErrors,
           hasPrefixErrors,
+          hasDescriptionsErrors
         ].some(x => !!x);
 
         if (fileHasErrors) {
@@ -148,13 +155,16 @@ if (hasErrors) {
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../../schemas/browsers.schema.json');
+        testLinks(file);
       } else {
         testSchema(file);
         testStyle(file);
+        testLinks(file);
         testVersions(file);
         testRealValues(file);
         testBrowsers(file);
         testPrefix(file);
+        testDescriptions(file);
       }
     } catch (e) {
       console.error(e);

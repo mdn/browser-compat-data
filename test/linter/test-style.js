@@ -1,12 +1,9 @@
 'use strict';
 const fs = require('fs');
-const path = require('path');
 const url = require('url');
 const chalk = require('chalk');
-const { platform } = require('os');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
+const compareFeatures = require('../../scripts/compare-features');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -28,18 +25,6 @@ function orderSupportBlock(key, value) {
     }, {});
   }
   return value;
-}
-
-const compareFeatures = (a,b) => {
-  if (a == '__compat') return -1;
-  if (b == '__compat') return 1;
-  
-  const wordA = /^[a-zA-Z](\w|-)*$/.test(a);
-  const wordB = /^[a-zA-Z](\w|-)*$/.test(b);
-
-  if (wordA && wordB) return a.localeCompare(b, 'en');
-  if (wordA || wordB) return (wordA && -1) || 1;
-  return a.localeCompare(b, 'en');
 }
 
 /**
@@ -65,103 +50,8 @@ function orderFeatures(key, value) {
 }
 
 /**
- * @param {string} str
- */
-function escapeInvisibles(str) {
-  /** @type {Array<[string, string]>} */
-  const invisibles = [
-    ['\b', '\\b'],
-    ['\f', '\\f'],
-    ['\n', '\\n'],
-    ['\r', '\\r'],
-    ['\v', '\\v'],
-    ['\t', '\\t'],
-    ['\0', '\\0'],
-  ];
-  let finalString = str;
-
-  invisibles.forEach(([invisible, replacement]) => {
-    finalString = finalString.replace(invisible, replacement);
-  });
-
-  return finalString;
-}
-
-/**
- * Gets the row and column matching the index in a string.
- *
- * @param {string} str
- * @param {number} index
- * @return {[number, number] | [null, null]}
- */
-function indexToPosRaw(str, index) {
-  let line = 1, col = 1;
-  let prevChar = null;
-
-  if (
-    typeof str !== 'string' ||
-    typeof index !== 'number' ||
-    index > str.length
-  ) {
-    return [null, null];
-  }
-
-  for (let i = 0; i < index; i++) {
-    let char = str[i];
-    switch (char) {
-      case '\n':
-        if (prevChar === '\r') break;
-      case '\r':
-        line++;
-        col = 1;
-        break;
-      case '\t':
-        // Use JSON `tab_size` value from `.editorconfig`
-        col += 2;
-        break;
-      default:
-        col++;
-        break;
-    }
-    prevChar = char;
-  }
-
-  return [line, col];
-}
-
-/**
- * Gets the row and column matching the index in a string and formats it.
- *
- * @param {string} str
- * @param {number} index
- * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
- */
-function indexToPos(str, index) {
-  const [line, col] = indexToPosRaw(str, index);
-  return `(Ln ${line}, Col ${col})`;
-}
-
-/**
- * @param {string} actual
- * @param {string} expected
- * @return {string}
- */
-function jsonDiff(actual, expected) {
-  var actualLines = actual.split(/\n/);
-  var expectedLines = expected.split(/\n/);
-
-  for (var i = 0; i < actualLines.length; i++) {
-    if (actualLines[i] !== expectedLines[i]) {
-      return `#${i + 1}
-    Actual:   ${escapeInvisibles(actualLines[i])}
-    Expected: ${escapeInvisibles(expectedLines[i])}`;
-    }
-  }
-}
-
-/**
  * @param {string} filename
- * @param {{error:function(...unknown):void}} logger
+ * @param {import('../utils').Logger} logger
  */
 function processData(filename, logger) {
   let hasErrors = false;
@@ -194,134 +84,6 @@ function processData(filename, logger) {
   if (actual !== expectedFeatureSorting) {
     hasErrors = true;
     logger.error(chalk`{red Feature sorting error on {bold line ${jsonDiff(expected, expectedFeatureSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
-  }
-
-  const bugzillaMatch = actual.match(String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`);
-  if (bugzillaMatch) {
-    // use https://bugzil.la/1000000 instead
-    hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, bugzillaMatch.index)} – Use shortenable URL ({yellow ${bugzillaMatch[0]} → {green {bold https://bugzil.la/}${bugzillaMatch[1]}}).}`);
-  }
-
-  {
-    // Bugzil.la links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the begin of notes/sentences).
-    const regexp = new RegExp(String.raw`(....)<a href='(https?)://(bugzil\.la|crbug\.com|webkit\.org/b)/(\d+)'>(.*?)</a>`, 'g');
-    /** @type {RegExpExecArray} */
-    let match;
-    do {
-      match = regexp.exec(actual);
-      if (match) {
-        const [,
-          before,
-          protocol,
-          domain,
-          bugId,
-          linkText,
-        ] = match;
-
-        if (protocol !== 'https') {
-          hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use HTTPS URL ({yellow http://${domain}/${bugId}} → {green http{bold s}://${domain}/${bugId}}).}`);
-        }
-
-        if (domain !== 'bugzil.la') {
-          continue;
-        }
-
-        if (/^bug $/.test(before)) {
-          hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Move word "bug" into link text ({yellow "${before}<a href='...'>${linkText}</a>"} → {green "<a href='...'>{bold ${before}}${bugId}</a>"}).}`);
-        } else if (linkText === `Bug ${bugId}`) {
-          if (!/(\. |")$/.test(before)) {
-            hasErrors = true;
-            logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence ({yellow "Bug ${bugId}"} → {green "{bold bug} ${bugId}"}).}`);
-          }
-        } else if (linkText !== `bug ${bugId}`) {
-          hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use standard link text ({yellow "${linkText}"} → {green "bug ${bugId}"}).}`);
-        }
-      }
-    } while (match != null);
-  }
-
-  const crbugMatch = actual.match(String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`);
-  if (crbugMatch) {
-    // use https://crbug.com/100000 instead
-    hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, crbugMatch.index)} – Use shortenable URL ({yellow ${crbugMatch[0]}} → {green {bold https://crbug.com/}${crbugMatch[1]}}).}`);
-  }
-
-  const webkitMatch = actual.match(String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`);
-  if (webkitMatch) {
-    // use https://webkit.org/b/100000 instead
-    hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, webkitMatch.index)} – Use shortenable URL ({yellow ${webkitMatch[0]}} → {green {bold https://webkit.org/b/}${webkitMatch[1]}}).}`);
-  }
-
-  {
-    const regexp = new RegExp(
-      String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
-      'g',
-    );
-    /** @type {RegExpExecArray} */
-    let match;
-    while ((match = regexp.exec(actual)) !== null) {
-      const [url, protocol, subdomain, path] = match;
-      let [, locale, expectedPath] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
-
-      if (!expectedPath.startsWith('docs/')) {
-        // Convert legacy zone URLs (see https://bugzil.la/1462475):
-        const [zone, index] = (/** @return {[string|null, number]} */() => {
-          const match = expectedPath.match(
-            /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
-          );
-          return match ? [match[1], match.index] : [null, -1];
-        })();
-        if (index >= 0) {
-          expectedPath = expectedPath.substring(index);
-          switch (zone) {
-            case 'Add-ons':
-            case 'Firefox':
-              expectedPath = 'Mozilla/' + expectedPath;
-              break;
-            case 'Apps':
-              expectedPath = 'Web/' + expectedPath;
-              break;
-          }
-        }
-        expectedPath = 'docs/' + expectedPath;
-      }
-      const pos = indexToPos(match.input, match.index);
-
-      if (protocol !== 'https') {
-        hasErrors = true;
-        logger.error(
-          chalk`{red ${pos} – Use HTTPS MDN URL ({yellow ${protocol}://developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
-        );
-      }
-
-      if (subdomain) {
-        hasErrors = true;
-        logger.error(
-          chalk`{red ${pos} - Use correct MDN domain ({yellow ${protocol}://{red ${subdomain}}developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}})}`,
-        );
-      }
-
-      if (path !== expectedPath) {
-        hasErrors = true;
-        logger.error(
-          chalk`{red ${pos} – Use ${
-            locale ? 'non-localized' : 'correct'
-          } MDN URL ({yellow ${url}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
-        );
-      }
-    }
-  }
-
-  const msdevUrlMatch = actual.match(String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`);
-  if (msdevUrlMatch) {
-    hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, msdevUrlMatch.index)} – Use non-localized Microsoft Developer URL ({yellow ${msdevUrlMatch[0]}} → {green https://developer.microsoft.com/${msdevUrlMatch[2]}}).}`);
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
