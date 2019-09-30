@@ -229,8 +229,10 @@ const setFeature = (data, feature, browser, source, force) => {
               break;
             }
           }
-        } else {
+        } else if (comp[browser] !== undefined) {
           doBump = [true, null, undefined].includes(comp[browser].version_added);
+        } else {
+          doBump = true;
         }
       }
 
