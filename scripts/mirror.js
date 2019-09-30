@@ -9,14 +9,13 @@ const { platform } = require('os');
 
 const browsers = require('..').browsers;
 
-const { argv } = require('yargs').command('$0 <browser> [file]', 'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source', (yargs) => {
+const { argv } = require('yargs').command('$0 <browser> <feature>', 'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source', (yargs) => {
   yargs.positional('browser', {
     describe: 'The destination browser',
     type: 'string'
-  }).positional('file', {
-    describe: 'A specific file to test against',
-    type: 'string',
-    default: undefined
+  }).positional('feature', {
+    describe: 'The feature to perform mirroring',
+    type: 'string'
   }).option('source', {
     describe: 'Use a specified source browser rather than the default',
     type: 'string',
@@ -28,10 +27,17 @@ const { argv } = require('yargs').command('$0 <browser> [file]', 'Mirror values 
   });
 });
 
+ /**
+  * @param {string} value
+  */
 const create_webview_range = (value) => {
   return Number(value) < 37 ? "≤37" : value;
 }
 
+ /**
+  * @param {string} dest_browser
+  * @param {object} source_browser_release
+  */
 const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
   var browserData = browsers[dest_browser];
   for (var r in browserData.releases) {
@@ -44,9 +50,13 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
   return false;
 }
 
-const getSource = (browser) => {
-  if (argv.source) {
-    return argv.source;
+ /**
+  * @param {string} browser
+  * @param {string} source
+  */
+const getSource = (browser, source) => {
+  if (source) {
+    return source;
   } else if (['chrome_android', 'opera'].includes(browser)) {
     return 'chrome';
   } else if (['opera_android', 'samsunginternet_android', 'webview_android'].includes(browser)) {
@@ -57,9 +67,16 @@ const getSource = (browser) => {
     return 'ie';
   } else if (browser == 'safari_ios') {
     return 'safari';
+  } else {
+    throw Error(`${browser} is a base browser and a "source" browser must be specified.`);
   }
 }
 
+ /**
+  * @param {object} data
+  * @param {string} destination
+  * @param {string} source
+  */
 const bumpVersion = (data, destination, source) => {
   if (Array.isArray(data)) {
     var newValue = [];
@@ -184,99 +201,85 @@ const bumpVersion = (data, destination, source) => {
   return newValue;
 }
 
-const traverseMirrorData = (obj) => {
-  var newData = {};
+ /**
+  * @param {object} data
+  * @param {string} feature
+  * @param {string} browser
+  * @param {string} source
+  * @param {boolean} force
+  */
+const setFeature = (data, feature, browser, source, force) => {
+  var newData = Object.assign({}, data);
 
-  for (let i in obj) {
-    if (!!obj[i] && typeof(obj[i]) == "object" && i !== '__compat') {
-      newData[i] = obj[i];
-      if (obj[i].__compat) {
-        let comp = obj[i].__compat.support;
-        let browser = argv.browser;
+  var rootPath = feature.shift();
+  if (feature.length > 0 && data[rootPath].constructor == Object) {
+    newData[rootPath] = setFeature(data[rootPath], feature, browser, source, force);
+  } else {
+    if (data[rootPath].constructor == Object || Array.isArray(data[rootPath])) {
+      let comp = data[rootPath].__compat.support;
 
-        let doBump = false;
-        if (argv.force) {
-          doBump = true;
-        } else {
-          if (Array.isArray(comp[browser])) {
-            for (var j = 0; j < comp[browser].length; j++) {
-              if ([true, null, undefined].includes(comp[browser][j].version_added)) {
-                doBump = true;
-                break;
-              }
+      let doBump = false;
+      if (force) {
+        doBump = true;
+      } else {
+        if (Array.isArray(comp[browser])) {
+          for (var i = 0; i < comp[browser].length; i++) {
+            if ([true, null, undefined].includes(comp[browser][i].version_added)) {
+              doBump = true;
+              break;
             }
-          } else {
-            doBump = [true, null, undefined].includes(comp[browser].version_added);
           }
-        }
-
-        if (doBump) {
-          newData[i].__compat.support[browser] = bumpVersion(comp[getSource(browser)], browser, getSource(browser));
+        } else {
+          doBump = [true, null, undefined].includes(comp[browser].version_added);
         }
       }
-      traverseMirrorData(obj[i]);
+
+      if (doBump) {
+        newData[rootPath].__compat.support[browser] = bumpVersion(comp[getSource(browser, source)], browser, getSource(browser, source));
+      }
     }
+  }
 
   return newData;
-  }
 }
 
  /**
-  * @param {Promise<void>} filename
+  * @param {string} browser
+  * @param {string} featureIdent
+  * @param {string} source
+  * @param {boolean} force
   */
-const mirrorData = (filename) => {
-  let data = require(filename);
-  let newData = traverseMirrorData(data);
+const mirrorData = (browser, featureIdent, source, force) => {
+  var filepath = path.resolve(__dirname, '..');
+  var feature = featureIdent.split('.');
+  var found = false;
 
-  fs.writeFileSync(filename, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
-}
-
-if (require.main === module) {
-  /**
-   * @param {string[]} files
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          mirrorData(file);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
+  for (var depth = 0; depth < feature.length; depth++) {
+    filepath = path.resolve(filepath, feature[depth]);
+    var filename = filepath + ".json";
+    if (fs.existsSync(filename) && fs.statSync(filename).isFile()) {
+      filepath = filename;
+      found = true;
+      break;
     }
   }
 
-  if (argv.file) {
-    load(argv.file);
-  } else {
-    load(
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'test',
-      'webdriver',
-      'webextensions'
-    );
+  if (!found) {
+    console.error(`Could not find feature ${feature}!`);
+    return false;
   }
+
+
+  let data = require(filepath);
+  let newData = setFeature(data, feature, browser, source, force);
+
+  fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
+
+  return true;
+}
+
+if (require.main === module) {
+  mirrorData(argv.browser, argv.feature, argv.source, argv.force);
 }
 
 module.exports = mirrorData;
