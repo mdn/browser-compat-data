@@ -226,6 +226,17 @@ Examples:
 }
 ```
 
+### Ranged versions
+
+For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. The statement below means "supported in at least version 37 and probably in earlier versions as well".
+Currently, the only allowed ranged version is `"≤37"` for `webview_android`. There will be more ranged versions for other browsers in the future but ranged versions aren't generally allowed for every version string. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in.
+
+```json
+{
+  "version_added": "≤37",
+}
+```
+
 #### `prefix`
 A prefix to add to the sub-feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.

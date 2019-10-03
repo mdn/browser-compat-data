@@ -56,7 +56,7 @@
         "status": {
           "experimental": true,
           "standard_track": true,
-          "deprecated": false
+          "deprecated": true
         }
       },
       "cancelAnimationFrame": {
@@ -115,7 +115,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -175,7 +175,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -235,7 +235,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -295,7 +295,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -355,7 +355,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -415,7 +415,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -475,7 +475,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -535,7 +535,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -595,7 +595,56 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
+          }
+        }
+      },
+      "getImmediatePose": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getImmediatePose",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -655,55 +704,6 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getImmediatePose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/getImmediatePose",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "55",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
             "deprecated": true
           }
         }
@@ -923,73 +923,13 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
       "requestAnimationFrame": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/requestAnimationFrame",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": "56",
-              "notes": [
-                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
-                "Daydream View supported in Chrome 56.",
-                "Google Cardboard supported in Chrome 57."
-              ],
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "WebVR"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": "15"
-            },
-            "firefox": [
-              {
-                "version_added": "55",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "resetPose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/resetPose",
           "support": {
             "chrome": {
               "version_added": false
@@ -1103,7 +1043,67 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
+          }
+        }
+      },
+      "resetPose": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/VRDisplay/resetPose",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": [
+                "Only works in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a>. (Other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked.)",
+                "Daydream View supported in Chrome 56.",
+                "Google Cardboard supported in Chrome 57."
+              ],
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "WebVR"
+                }
+              ]
+            },
+            "edge": {
+              "version_added": "15"
+            },
+            "firefox": [
+              {
+                "version_added": "55",
+                "notes": "Windows support was enabled in Firefox 55."
+              },
+              {
+                "version_added": "64",
+                "notes": "macOS support was enabled in Firefox 64."
+              }
+            ],
+            "firefox_android": {
+              "version_added": "55"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": true
           }
         }
       },
@@ -1163,7 +1163,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -1223,7 +1223,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       }
