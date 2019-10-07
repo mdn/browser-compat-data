@@ -95,4 +95,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = fixWebViewFlags;
+module.exports = {removeWebViewFlags, fixWebViewFlags};
