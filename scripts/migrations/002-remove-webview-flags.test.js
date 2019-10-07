@@ -5,6 +5,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const chalk = require('chalk');
 const { platform } = require('os');
 
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
@@ -61,8 +62,7 @@ const testFixWebViewFlags = (logger = console) => {
   }
 
   if (output !== expected) {
-    logger.error("Output does not match expected result!");
-    logger.error(output);
+    logger.error(chalk`WebView flags aren't removed properly!\n      Actual: {yellow ${output}}\n      Expected: {green ${expected}}`);
     return true;
   }
   return false;
