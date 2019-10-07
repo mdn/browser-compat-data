@@ -15,7 +15,7 @@ const removeWebViewFlags = (key, value) => {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
         var result = [];
-        for (var i = 0; i < value.support.webview_android.length; i++) {
+        for (let i = 0; i < value.support.webview_android.length; i++) {
           if (value.support.webview_android[i].flags === undefined) {
             result.push(value.support.webview_android[i]);
           }
