@@ -53,7 +53,7 @@ const expected = JSON.stringify({
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
-if (require.main === module) {
+const testFixWebViewFlags = () => {
   let output = JSON.stringify(JSON.parse(input, removeWebViewFlags), null, 2);
 
   if (IS_WINDOWS) { // prevent false positives from git.core.autocrlf on Windows
@@ -63,5 +63,13 @@ if (require.main === module) {
   if (output !== expected) {
     console.error("Output does not match expected result!");
     console.error(output);
+    return true;
   }
+  return false;
 }
+
+if (require.main === module) {
+  testFixWebViewFlags();
+}
+
+module.exports = testFixWebViewFlags;
