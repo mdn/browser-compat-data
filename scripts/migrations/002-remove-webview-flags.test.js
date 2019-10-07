@@ -13,7 +13,7 @@ const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 const tests = [
   [
     {
-      "test": {
+      "test1": {
         "__compat": {
           "support": {
             "webview_android": {
@@ -36,7 +36,7 @@ const tests = [
       }
     },
     {
-      "test": {
+      "test1": {
         "__compat": {
           "support": {
             "webview_android": {
@@ -75,6 +75,52 @@ const tests = [
           "support": {
             "webview_android": {
               "version_added": true
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  ],
+  [
+    {
+      "test3": {
+        "__compat": {
+          "support": {
+            "webview_android": [
+              {
+                "version_added": "40",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#service-worker-payment-apps",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "56"
+              }
+            ]
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      }
+    },
+    {
+      "test3": {
+        "__compat": {
+          "support": {
+            "webview_android": {
+              "version_added": "56"
             }
           },
           "status": {
