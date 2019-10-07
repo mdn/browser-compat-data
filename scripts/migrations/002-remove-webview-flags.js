@@ -21,7 +21,13 @@ const removeWebViewFlags = (key, value) => {
           }
         }
 
-        value.support.webview_android = result.length > 1 ? result : result[0];
+        if (result.length == 0) {
+          value.support.webview_android = {"version_added": false};
+        } else if (result.length == 1) {
+          value.support.webview_android = result[0];
+        } else {
+          value.support.webview_android = result;
+        }
       } else if (value.support.webview_android.flags !== undefined) {
         value.support.webview_android = {"version_added": false};
       }
