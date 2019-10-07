@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
-const { removeWebViewFlags } = require('002-remove-webview-flags.js');
+const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
 const input = JSON.stringify({
   "test": {
