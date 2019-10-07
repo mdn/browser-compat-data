@@ -34,8 +34,8 @@ const removeWebViewFlags = (key, value) => {
   * @param {Promise<void>} filename
   */
 const fixWebViewFlags = (filename) => {
-  let actual   = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, removeWebViewFlags), null, 2);
+  const actual   = fs.readFileSync(filename, 'utf-8').trim();
+  const expected = JSON.stringify(JSON.parse(actual, removeWebViewFlags), null, 2);
 
   if (IS_WINDOWS) { // prevent false positives from git.core.autocrlf on Windows
     actual   = actual.replace(/\r/g, '');
