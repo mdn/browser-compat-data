@@ -135,7 +135,7 @@ const tests = [
 ];
 
 const testFixWebViewFlags = (logger = console) => {
-  var hasErrors = false;
+  let hasErrors = false;
   for (let i = 0; i < tests.length; i++) {
     let expected = JSON.stringify(tests[i][1], null, 2);
     let output = JSON.stringify(JSON.parse(JSON.stringify(tests[i][0]), removeWebViewFlags), null, 2);
