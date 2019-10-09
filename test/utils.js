@@ -16,7 +16,7 @@ const INVISIBLES_MAP = Object.freeze(
     '\v': '\\v', // ␋ (0x0B)
     '\f': '\\f', // ␌ (0x0C)
     '\r': '\\r', // ␍ (0x0D)
-  })
+  }),
 );
 const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 

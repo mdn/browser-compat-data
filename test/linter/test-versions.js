@@ -55,16 +55,24 @@ function checkVersions(supportData, relPath, logger) {
         supportStatements.push(supportData[browser]);
       }
 
-      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[browser].join(', ')}`;
-      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[browser].join(', ')}`;
+      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[
+        browser
+      ].join(', ')}`;
+      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[
+        browser
+      ].join(', ')}`;
 
       for (const statement of supportStatements) {
         if (!isValidVersion(browser, statement.version_added)) {
-          logger.error(chalk`{red {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`);
+          logger.error(
+            chalk`{red {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+          );
           hasErrors = true;
         }
         if (!isValidVersion(browser, statement.version_removed)) {
-          logger.error(chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`);
+          logger.error(
+            chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+          );
           hasErrors = true;
         }
         if ('version_removed' in statement && 'version_added' in statement) {
@@ -72,19 +80,33 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_added !== 'string' &&
             statement.version_added !== true
           ) {
-            logger.error(chalk`{red {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`);
+            logger.error(
+              chalk`{red {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`,
+            );
             hasErrors = true;
-          } else if (typeof statement.version_added === 'string' && typeof statement.version_removed === 'string') {
+          } else if (
+            typeof statement.version_added === 'string' &&
+            typeof statement.version_removed === 'string'
+          ) {
             if (
-              (
-                statement.version_added.startsWith("≤") && statement.version_removed.startsWith("≤") &&
-                compareVersions.compare(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", ""), "<")
-              ) || (
-                (!statement.version_added.startsWith("≤") || !statement.version_removed.startsWith("≤")) &&
-                compareVersions.compare(statement.version_added.replace("≤", ""), statement.version_removed.replace("≤", ""), ">=")
-              )
+              (statement.version_added.startsWith('≤') &&
+                statement.version_removed.startsWith('≤') &&
+                compareVersions.compare(
+                  statement.version_added.replace('≤', ''),
+                  statement.version_removed.replace('≤', ''),
+                  '<',
+                )) ||
+              ((!statement.version_added.startsWith('≤') ||
+                !statement.version_removed.startsWith('≤')) &&
+                compareVersions.compare(
+                  statement.version_added.replace('≤', ''),
+                  statement.version_removed.replace('≤', ''),
+                  '>=',
+                ))
             ) {
-              logger.error(chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`);
+              logger.error(
+                chalk`{red {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
+              );
               hasErrors = true;
             }
           }
@@ -130,7 +152,11 @@ function testVersions(filename) {
   findSupport(data);
 
   if (errors.length) {
-    console.error(chalk`{red   Versions – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red   Versions – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (const error of errors) {
       console.error(`    ${error}`);
     }

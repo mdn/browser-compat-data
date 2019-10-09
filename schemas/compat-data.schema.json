@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/schema#",
 
   "definitions": {
-
     "simple_support_statement": {
       "type": "object",
       "properties": {
@@ -64,12 +63,12 @@
       "required": ["version_added"],
       "anyOf": [
         {
-          "not": {"required": ["prefix","alternative_name"]}
+          "not": { "required": ["prefix", "alternative_name"] }
         },
         {
           "oneOf": [
-            {"required": ["prefix"]},
-            {"required": ["alternative_name"]}
+            { "required": ["prefix"] },
+            { "required": ["alternative_name"] }
           ]
         }
       ],
@@ -149,7 +148,9 @@
         "qq_android": { "$ref": "#/definitions/support_statement" },
         "safari": { "$ref": "#/definitions/support_statement" },
         "safari_ios": { "$ref": "#/definitions/support_statement" },
-        "samsunginternet_android": { "$ref": "#/definitions/support_statement" },
+        "samsunginternet_android": {
+          "$ref": "#/definitions/support_statement"
+        },
         "uc_android": { "$ref": "#/definitions/support_statement" },
         "uc_chinese_android": { "$ref": "#/definitions/support_statement" },
         "webview_android": { "$ref": "#/definitions/support_statement" }
@@ -167,7 +168,7 @@
         "mdn_url": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "pattern": "^https://developer\\.mozilla\\.org/docs/",
           "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "spec_url": {
@@ -175,7 +176,7 @@
             {
               "type": "string",
               "format": "uri",
-              "pattern": "^http(s)?:\/\/[^#]+#.+"
+              "pattern": "^http(s)?://[^#]+#.+"
             },
             {
               "type": "array",
@@ -183,7 +184,7 @@
               "items": {
                 "type": "string",
                 "format": "uri",
-                "pattern": "^http(s)?:\/\/[^#]+#.+"
+                "pattern": "^http(s)?://[^#]+#.+"
               }
             }
           ],
@@ -207,7 +208,7 @@
         "mdn_url": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https:\/\/developer\\.mozilla\\.org\/docs\/",
+          "pattern": "^https://developer\\.mozilla\\.org/docs/",
           "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "support": { "$ref": "#/definitions/support_block" },
@@ -242,8 +243,8 @@
       "properties": {
         "__compat": { "$ref": "#/definitions/compat_statement" }
       },
-      "patternProperties":{
-        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
+      "patternProperties": {
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false
     },
@@ -253,8 +254,10 @@
       "properties": {
         "__compat": { "$ref": "#/definitions/webextensions_compat_statement" }
       },
-      "patternProperties":{
-        "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/webextensions_identifier" }
+      "patternProperties": {
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
+          "$ref": "#/definitions/webextensions_identifier"
+        }
       },
       "additionalProperties": false
     },
@@ -269,8 +272,12 @@
 
   "type": "object",
   "patternProperties": {
-    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/primary_identifier" },
-    "^webextensions*$": { "$ref": "#/definitions/primary_webextensions_identifier" }
+    "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": {
+      "$ref": "#/definitions/primary_identifier"
+    },
+    "^webextensions*$": {
+      "$ref": "#/definitions/primary_webextensions_identifier"
+    }
   },
   "additionalProperties": false,
   "maxProperties": 1,

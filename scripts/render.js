@@ -20,7 +20,7 @@ var s_firefox_android = 'Firefox for Android';
 var s_chrome_android = 'Chrome for Android';
 
 const browsers = {
-  "desktop": {
+  desktop: {
     chrome: 'Chrome',
     edge: 'Edge',
     firefox: 'Firefox',
@@ -28,20 +28,20 @@ const browsers = {
     opera: 'Opera',
     safari: 'Safari',
   },
-  "mobile": {
+  mobile: {
     webview_android: 'Android',
     chrome_android: s_chrome_android,
     firefox_android: s_firefox_android,
     opera_android: 'Opera Android',
     safari_ios: 'iOS Safari',
   },
-  "webextensions": {
-    chrome: "Chrome",
-    edge: "Edge",
-    firefox: "Firefox",
+  webextensions: {
+    chrome: 'Chrome',
+    edge: 'Edge',
+    firefox: 'Firefox',
     firefox_android: s_firefox_android,
-    opera: "Opera",
-  }
+    opera: 'Opera',
+  },
 };
 
 var notesArray = [];
@@ -55,15 +55,16 @@ function writeTableHead(browserPlatformType) {
   let browserNameKeys = Object.keys(browsers[browserPlatformType]);
   let output = '';
   if (browserPlatformType === 'webextensions') {
-    output = '<table class="webext-summary-compat-table"><thead><tr><th style="width: 40%"></th>'
-    let browserColumnWidth = 60/browserNameKeys.length;
+    output =
+      '<table class="webext-summary-compat-table"><thead><tr><th style="width: 40%"></th>';
+    let browserColumnWidth = 60 / browserNameKeys.length;
     for (let browserNameKey of browserNameKeys) {
       output += `<th style="width:${browserColumnWidth}%">${browsers[browserPlatformType][browserNameKey]}</th>`;
     }
-    output += "<tr></thead>";
+    output += '<tr></thead>';
   } else {
     output = `<div id="compat-${browserPlatformType}"><table class="compat-table"><thead><tr>`;
-    output +=  '<th>Feature</th>';
+    output += '<th>Feature</th>';
     for (let browserNameKey of browserNameKeys) {
       output += `<th>${browsers[browserPlatformType][browserNameKey]}</th>`;
     }
@@ -82,13 +83,13 @@ function getVersionString(versionInfo) {
   switch (versionInfo) {
     case null:
       return '<span title="Compatibility unknown; please update this.">?</span>';
-    break;
+      break;
     case true:
       return '<span title="Please update this with the earliest version of support.">(Yes)</span>';
-    break;
+      break;
     case false:
       return '<span title="No support">No</span>';
-    break;
+      break;
     default:
       return versionInfo;
   }
@@ -106,26 +107,28 @@ function getSupportClass(supportInfo) {
   if (Array.isArray(supportInfo)) {
     // the first entry should be the most relevant/recent and will be treated as "the truth"
     checkSupport(supportInfo[0].version_added, supportInfo[0].version_removed);
-  } else if (supportInfo) { // there is just one support statement
+  } else if (supportInfo) {
+    // there is just one support statement
     checkSupport(supportInfo.version_added, supportInfo.version_removed);
-  } else { // this browser has no info, it's unknown
-  return 'unknown-support';
-}
+  } else {
+    // this browser has no info, it's unknown
+    return 'unknown-support';
+  }
 
-function checkSupport(added, removed) {
-  if (added === null) {
-    cssClass = 'unknown-support';
-  } else if (added) {
-    cssClass = 'full-support';
-    if (removed) {
+  function checkSupport(added, removed) {
+    if (added === null) {
+      cssClass = 'unknown-support';
+    } else if (added) {
+      cssClass = 'full-support';
+      if (removed) {
+        cssClass = 'no-support';
+      }
+    } else {
       cssClass = 'no-support';
     }
-  } else {
-    cssClass = 'no-support';
   }
-}
 
-return cssClass;
+  return cssClass;
 }
 
 /*
@@ -143,11 +146,11 @@ function writeFlagsNote(supportData, browserId) {
   const firefoxPrefs = 'To change preferences in Firefox, visit about:config.';
   const chromePrefs = 'To change preferences in Chrome, visit chrome://flags.';
 
-  if (typeof(supportData.version_added) === 'string') {
+  if (typeof supportData.version_added === 'string') {
     output = `From version ${supportData.version_added}`;
   }
 
-  if (typeof(supportData.version_removed) === 'string') {
+  if (typeof supportData.version_removed === 'string') {
     if (output) {
       output += ` until version ${supportData.version_removed} (exclusive)`;
     } else {
@@ -175,11 +178,11 @@ function writeFlagsNote(supportData, browserId) {
       case 'firefox':
       case 'firefox_android':
         prefSettings = firefoxPrefs;
-      break;
+        break;
       case 'chrome':
       case 'chrome_android':
         prefSettings = chromePrefs;
-      break;
+        break;
     }
     output += `${flagText} preference${valueToSet}. ${prefSettings}`;
   }
@@ -208,15 +211,19 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
   // browsers are optional in the data, display them as "?" in our table
   if (!supportData) {
     output += getVersionString(null);
-  // we have support data, lets go
+    // we have support data, lets go
   } else {
     output += getVersionString(supportData.version_added);
 
     if (supportData.version_removed) {
       // We don't know when
-      if (typeof(supportData.version_removed) === 'boolean' && supportData.version_removed) {
-        output += '&nbsp;—?'
-      } else { // We know when
+      if (
+        typeof supportData.version_removed === 'boolean' &&
+        supportData.version_removed
+      ) {
+        output += '&nbsp;—?';
+      } else {
+        // We know when
         output += '&nbsp;— ' + supportData.version_removed;
       }
     }
@@ -239,11 +246,17 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
       if (Array.isArray(supportData.notes)) {
         for (let note of supportData.notes) {
           let noteIndex = compatNotes.indexOf(note);
-          noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
+          noteAnchors.push(
+            `<sup><a href="#compatNote_${noteIndex + 1}">${noteIndex +
+              1}</a></sup>`,
+          );
         }
       } else {
         let noteIndex = compatNotes.indexOf(supportData.notes);
-        noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
+        noteAnchors.push(
+          `<sup><a href="#compatNote_${noteIndex + 1}">${noteIndex +
+            1}</a></sup>`,
+        );
       }
     }
 
@@ -251,18 +264,27 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
     if (supportData.flag) {
       let flagNote = writeFlagsNote(supportData, browserId);
       let noteIndex = compatNotes.indexOf(flagNote);
-      noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
+      noteAnchors.push(
+        `<sup><a href="#compatNote_${noteIndex + 1}">${noteIndex +
+          1}</a></sup>`,
+      );
     }
 
     // add a link to the alternative name note, if there is one
     if (supportData.alternative_name) {
       let altNameNote = writeAlternativeNameNote(supportData.alternative_name);
       let noteIndex = compatNotes.indexOf(altNameNote);
-      noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
+      noteAnchors.push(
+        `<sup><a href="#compatNote_${noteIndex + 1}">${noteIndex +
+          1}</a></sup>`,
+      );
     }
 
     noteAnchors = noteAnchors.sort();
-    if ((supportData.partial_support || noteAnchors.length > 0) && aggregateMode) {
+    if (
+      (supportData.partial_support || noteAnchors.length > 0) &&
+      aggregateMode
+    ) {
       output += ' *';
     } else {
       output += noteAnchors.join(' ');
@@ -276,7 +298,6 @@ Iterate into all "support" objects, and all browsers under them,
 and collect all notes in an array, without duplicates.
 */
 function collectCompatNotes() {
-
   function pushNotes(supportEntry, browserName) {
     // collect notes
     if (supportEntry.hasOwnProperty('notes')) {
@@ -309,7 +330,7 @@ function collectCompatNotes() {
     }
   }
   for (let row of features) {
-    let support = Object.keys(row).map((k) => row[k])[0].support;
+    let support = Object.keys(row).map(k => row[k])[0].support;
     for (let browserName of Object.keys(support)) {
       if (Array.isArray(support[browserName])) {
         for (let entry of support[browserName]) {
@@ -338,16 +359,24 @@ function writeSupportCells(supportData, compatNotes, browserPlatformType) {
     // if supportData is an array, there are multiple support statements
     if (Array.isArray(support)) {
       for (let entry of support) {
-        supportInfo += `<p>${writeSupportInfo(entry, browserNameKey, compatNotes)}</p>`;
+        supportInfo += `<p>${writeSupportInfo(
+          entry,
+          browserNameKey,
+          compatNotes,
+        )}</p>`;
       }
-    } else if (support) { // there is just one support statement
+    } else if (support) {
+      // there is just one support statement
       supportInfo = writeSupportInfo(support, browserNameKey, compatNotes);
-    } else { // this browser has no info, it's unknown
-    supportInfo = writeSupportInfo(null);
+    } else {
+      // this browser has no info, it's unknown
+      supportInfo = writeSupportInfo(null);
+    }
+    output += `<td class="${getSupportClass(
+      supportData[browserNameKey],
+    )}">${supportInfo}</td>`;
   }
-  output += `<td class="${getSupportClass(supportData[browserNameKey])}">${supportInfo}</td>`;
-}
-return output;
+  return output;
 }
 
 /*
@@ -358,7 +387,7 @@ function writeTable(browserPlatformType) {
   let output = writeTableHead(browserPlatformType);
   output += '<tbody>';
   for (let row of features) {
-    let feature = Object.keys(row).map((k) => row[k])[0];
+    let feature = Object.keys(row).map(k => row[k])[0];
     let desc = '';
     if (feature.description) {
       let label = Object.keys(row)[0];
@@ -367,7 +396,9 @@ function writeTable(browserPlatformType) {
         desc += feature.description;
         // otherwise add a prefix so that we know where this belongs to (e.g. "parse: ISO 8601 format")
       } else {
-        desc += `<code>${label.slice(0, label.lastIndexOf('.'))}</code>: ${feature.description}`;
+        desc += `<code>${label.slice(0, label.lastIndexOf('.'))}</code>: ${
+          feature.description
+        }`;
       }
     } else {
       desc += `<code>${Object.keys(row)[0]}</code>`;
@@ -376,7 +407,11 @@ function writeTable(browserPlatformType) {
       desc = `<a href="${feature.mdn_url}">${desc}</a>`;
     }
     output += `<tr><td>${desc}</td>`;
-    output += `${writeSupportCells(feature.support, compatNotes, browserPlatformType)}</tr>`;
+    output += `${writeSupportCells(
+      feature.support,
+      compatNotes,
+      browserPlatformType,
+    )}</tr>`;
   }
   output += '</tbody></table></div>';
   return output;
@@ -390,7 +425,7 @@ function writeNotes() {
   let compatNotes = collectCompatNotes();
   for (let note of compatNotes) {
     let noteIndex = compatNotes.indexOf(note);
-    output += `<p id=compatNote_${noteIndex+1}>${noteIndex+1}. ${note}</p>`;
+    output += `<p id=compatNote_${noteIndex + 1}>${noteIndex + 1}. ${note}</p>`;
   }
   return output;
 }
@@ -400,7 +435,7 @@ Get compat data using a query string like "webextensions.api.alarms"
 */
 function getData(queryString, obj) {
   return queryString.split('.').reduce(function(prev, curr) {
-    return prev ? prev[curr] : undefined
+    return prev ? prev[curr] : undefined;
   }, obj);
 }
 
@@ -412,9 +447,8 @@ function traverseFeatures(obj, depth, identifier) {
   depth--;
   if (depth >= 0) {
     for (let i in obj) {
-      if (!!obj[i] && typeof(obj[i])=="object" && i !== '__compat') {
+      if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
-
           let featureNames = Object.keys(obj[i]);
           if (featureNames.length > 1) {
             // there are sub features below this node,
@@ -422,12 +456,18 @@ function traverseFeatures(obj, depth, identifier) {
             for (let subfeatureName of featureNames) {
               // if this is actually a subfeature (i.e. it is not a __compat object)
               // and the subfeature has a __compat object
-              if ((subfeatureName !== '__compat') && (obj[i][subfeatureName].__compat)) {
+              if (
+                subfeatureName !== '__compat' &&
+                obj[i][subfeatureName].__compat
+              ) {
                 let browserNames = Object.keys(obj[i].__compat.support);
                 for (let browser of browserNames) {
-                  if (obj[i].__compat.support[browser].version_added !=
-                      obj[i][subfeatureName].__compat.support[browser].version_added ||
-                      obj[i][subfeatureName].__compat.support[browser].notes) {
+                  if (
+                    obj[i].__compat.support[browser].version_added !=
+                      obj[i][subfeatureName].__compat.support[browser]
+                        .version_added ||
+                    obj[i][subfeatureName].__compat.support[browser].notes
+                  ) {
                     obj[i].__compat.support[browser].partial_support = true;
                   }
                 }
@@ -435,7 +475,7 @@ function traverseFeatures(obj, depth, identifier) {
             }
           }
 
-          features.push({[identifier + i]: obj[i].__compat});
+          features.push({ [identifier + i]: obj[i].__compat });
         }
         traverseFeatures(obj[i], depth, i + '.');
       }
@@ -445,8 +485,8 @@ function traverseFeatures(obj, depth, identifier) {
 
 var compatData = getData(query, bcd);
 var features = [];
-var identifier = query.split(".").pop();
-var isWebExtensions = query.split(".")[0] === "webextensions";
+var identifier = query.split('.').pop();
+var isWebExtensions = query.split('.')[0] === 'webextensions';
 
 if (!compatData) {
   output = s_no_data_found;
@@ -456,7 +496,7 @@ if (!compatData) {
   if (!aggregateMode) {
     compatData.__compat.description = 'Basic support';
   }
-  features.push({[identifier]: compatData.__compat});
+  features.push({ [identifier]: compatData.__compat });
 }
 
 traverseFeatures(compatData, depth, '');
@@ -464,7 +504,9 @@ traverseFeatures(compatData, depth, '');
 if (features.length > 0) {
   if (isWebExtensions) {
     output += writeTable('webextensions');
-    if (!aggregateMode) { output += writeNotes(); }
+    if (!aggregateMode) {
+      output += writeNotes();
+    }
   } else {
     output = `<div class="htab">
     <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a>
@@ -479,7 +521,9 @@ if (features.length > 0) {
     </div>`;
     output += writeTable('desktop');
     output += writeTable('mobile');
-    if (!aggregateMode) { output += writeNotes(); }
+    if (!aggregateMode) {
+      output += writeNotes();
+    }
   }
 } else {
   output = s_no_data_found;

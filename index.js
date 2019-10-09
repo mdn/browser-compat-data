@@ -5,7 +5,8 @@ const extend = require('extend');
 
 function load() {
   // Recursively load one or more directories passed as arguments.
-  let dir, result = {};
+  let dir,
+    result = {};
 
   function processFilename(fn) {
     const fp = path.join(dir, fn);

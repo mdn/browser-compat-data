@@ -21,14 +21,23 @@ const blockMany = [
   'opera_android',
   'safari',
   'safari_ios',
-  'webview_android'
+  'webview_android',
 ];
 
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
-  css: ['chrome', 'chrome_android', 'edge', 'firefox', 'firefox_android',
-        'ie', 'safari', 'safari_ios', 'webview_android'],
+  css: [
+    'chrome',
+    'chrome_android',
+    'edge',
+    'firefox',
+    'firefox_android',
+    'ie',
+    'safari',
+    'safari_ios',
+    'webview_android',
+  ],
   html: [],
   http: [],
   svg: [],
@@ -37,7 +46,7 @@ const blockList = {
   webdriver: blockMany.concat(['samsunginternet_android']),
   webextensions: [],
   xpath: [],
-  xslt: []
+  xslt: [],
 };
 
 /**
@@ -59,15 +68,21 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 
     for (const statement of supportStatements) {
       if (statement === undefined) {
-        logger.error(chalk`{red {bold ${browser}} must be defined for {bold ${relPath}}}`);
-          hasErrors = true;
+        logger.error(
+          chalk`{red {bold ${browser}} must be defined for {bold ${relPath}}}`,
+        );
+        hasErrors = true;
       } else {
         if ([true, null].includes(statement.version_added)) {
-          logger.error(chalk`{red {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`);
+          logger.error(
+            chalk`{red {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`,
+          );
           hasErrors = true;
         }
         if ([true, null].includes(statement.version_removed)) {
-          logger.error(chalk`{red {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`);
+          logger.error(
+            chalk`{red {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`,
+          );
           hasErrors = true;
         }
       }
@@ -81,8 +96,12 @@ function checkRealValues(supportData, blockList, relPath, logger) {
  * @param {string} filename
  */
 function testRealValues(filename) {
-  const relativePath = path.relative(path.resolve(__dirname, '..', '..'), filename);
-  const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
+  const relativePath = path.relative(
+    path.resolve(__dirname, '..', '..'),
+    filename,
+  );
+  const category =
+    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -102,7 +121,13 @@ function testRealValues(filename) {
   function findSupport(data, relPath) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0) checkRealValues(data[prop].support, blockList[category], relPath, logger);
+        if (blockList[category] && blockList[category].length > 0)
+          checkRealValues(
+            data[prop].support,
+            blockList[category],
+            relPath,
+            logger,
+          );
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
@@ -113,7 +138,11 @@ function testRealValues(filename) {
   findSupport(data);
 
   if (errors.length) {
-    console.error(chalk`{red   Real values – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red   Real values – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (const error of errors) {
       console.error(`    ${error}`);
     }

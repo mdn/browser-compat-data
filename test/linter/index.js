@@ -16,5 +16,5 @@ module.exports = {
   testStyle,
   testSchema,
   testVersions,
-  testDescriptions
+  testDescriptions,
 };

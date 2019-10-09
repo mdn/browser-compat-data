@@ -5,17 +5,21 @@
 ## Roles and Responsibilities
 
 ### Community members
+
 _Everyone_ who is involved in any form with the project must abide by the project’s [Contribution Guidelines](https://github.com/mdn/browser-compat-data/blob/master/CODE_OF_CONDUCT.md) and Commit Access Guidelines. Everyone is expected to be respectful of fellow community members and to work collaboratively respective of the Code of Conduct (CPG). Consequences for not adhering to these Guidelines are listed in their respective documents.
 
 ### Users
+
 Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](https://github.com/mdn/browser-compat-data#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](https://github.com/mdn/browser-compat-data/blob/master/LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
 
 Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#Contributors), as described in the next section.
 
 ### Contributors
+
 Contributors are community members who contribute in concrete ways to the project, most often in the form of data updates, code and/or documentation. Anyone can become a Contributor, and contributions can take many forms. There is no expectation of commitment to the project, no specific skill requirements, and no selection process. We do expect contributors to follow Mozilla’s Contribution Guidelines.
 
 Contributors:
+
 - Have read-only access to source code and therefore can submit changes via pull requests.
 - Have their contribution reviewed and merged by a [Peer](#Peers) or [Owner](#Owners). Owners and Peers work with Contributors to review their code and prepare it for merging.
 - May also review pull requests. This can be helpful, but their approval or disapproval is not decisive for merging or not merging PRs.
@@ -23,6 +27,7 @@ Contributors:
 As Contributors gain experience and familiarity with the project, their profile within, and commitment to, the community will increase. At some stage, they may find themselves being nominated for becoming a Peer by an existing Peer or Owner.
 
 ### Peers
+
 Peers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Peers are given push/write access to the project’s GitHub repos.
 
 Peers:
@@ -47,6 +52,7 @@ New Peers can be nominated by any existing Peers. Once they have been nominated,
 It is important to recognize that being a Peer is a privilege, not a right. That privilege must be earned and once earned it can be removed by the Owners. However, under normal circumstances the Peer status exists for as long as the Peer wishes to continue engaging with the project. Inactive Peers (no activity on the project for longer for a few months or more) might be marked as inactive or removed by the Owners and may re-enter when they choose to contribute again.
 
 #### List of current peers
+
 - Rachel Andrew (@rachelandrew)
 - Vinyl Darkscratch (@vinyldarkscratch)
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
@@ -60,6 +66,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
 ### Owners
+
 The mdn-browser-compat-data project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
 
 The [Owner group](#list-of-current-owners) has final authority over this project including:
@@ -93,6 +100,7 @@ To become an Owner one must fulfill at least the following conditions and commit
 An individual is invited to become an Owner by existing Owners. A nomination will result in discussion and then a decision by the Owner group.
 
 #### List of current Owners
+
 - Florian Scholz (@Elchi3), Mozilla, BCD project lead
 - Daniel Beck (@ddbeck)
 - Will Bamberg (@wbamberg), Mozilla
@@ -106,9 +114,11 @@ Some Owners or Peers are also [MDN Content Curators](https://developer.mozilla.o
 Peers might also be representatives of browser vendors and have expertise and/or access to browser-specific information within their company. Their company name is listed in the Peer list.
 
 ## Owner-delegate rule
+
 Owners may, at their discretion, nominate an owner-delegate to carry out a task or make a decision ordinarily carried out by an Owner. Delegation should be limited in duration or scope, or both; delegation may be withdrawn by any Owner at any time. For example, an Owner may nominate an owner-delegate to approve an infrastructure PR or to publish npm packages for a set time or number of releases.
 
 ## Decision Making
+
 Decision making generally follows a [Consensus-seeking decision-making](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) model.
 
 When an agenda item has appeared to reach a consensus, the moderator will ask “Does anyone object?” as a final call for dissent from the consensus.
@@ -122,8 +132,9 @@ Please note that this project is made available using the
 so anyone contributing should only submit data if they know they have the right to submit it under CC0. If you're not sure about that, just ask.
 
 ## Project Meetings
+
 There are no recurrent project meetings; they are scheduled when required at a time that works for the owners, and using tools that enable participation by the community. The meeting is run by a designated moderator approved by the owners group.
-Meetings will typically be held when there are particularly important items to review, such as  modifications of governance, contribution policy, owner membership, or release process.
+Meetings will typically be held when there are particularly important items to review, such as modifications of governance, contribution policy, owner membership, or release process.
 
 Any community member or Peer can ask that something be added to the next meeting’s agenda by logging a GitHub Issue. Peers can add the item to the agenda by adding the [meeting-agenda](https://github.com/mdn/browser-compat-data/labels/meeting-agenda) label to the issue and Contributors can ask Peers to add the label for them.
 
@@ -137,18 +148,19 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 ## Privileges and responsibilities matrix
 
-| Privilege / responsibility | Everyone / Users | Contributors | Peers | Owners |
-| --- | --- | --- | --- | --- |
-| Abide to Code of Conduct | • | • | • | • |
-| Evangelize the project | • | • | • | • |
-| Make use of the data, fork it, repackage it, etc. | • | • | • | • |
-| Open pull requests or issues |  | • | • | • |
-| Review pull requests or comment on issues |  | • | • | • |
-| Label issues and PRs |  |  | • | • |
-| Merge compat data PRs |  |  | • | • |
-| Merge schema, linter, infrastructure or policy changes |  |  |  | • |
-| Release new npm package versions |  |  |  | • |
-| Merge to branches directly (without pull requests)  |  |  |  | • |
+| Privilege / responsibility                             | Everyone / Users | Contributors | Peers | Owners |
+| ------------------------------------------------------ | ---------------- | ------------ | ----- | ------ |
+| Abide to Code of Conduct                               | •                | •            | •     | •      |
+| Evangelize the project                                 | •                | •            | •     | •      |
+| Make use of the data, fork it, repackage it, etc.      | •                | •            | •     | •      |
+| Open pull requests or issues                           |                  | •            | •     | •      |
+| Review pull requests or comment on issues              |                  | •            | •     | •      |
+| Label issues and PRs                                   |                  |              | •     | •      |
+| Merge compat data PRs                                  |                  |              | •     | •      |
+| Merge schema, linter, infrastructure or policy changes |                  |              |       | •      |
+| Release new npm package versions                       |                  |              |       | •      |
+| Merge to branches directly (without pull requests)     |                  |              |       | •      |
 
 ## Credits
+
 This work is a derivative of [ESLint Governance](https://github.com/eslint/eslint.github.io/blob/master/docs/maintainer-guide/governance.md), [YUI Contributor Model](https://github.com/yui/yui3/wiki/Contributor-Model), and the [JS Foundation TAC Charter](https://github.com/JSFoundation/TAC).

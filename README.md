@@ -17,12 +17,15 @@ browser support for APIs. For example:
 Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md).
 
 ## Installation
+
 You can install mdn-browser-compat-data as a node package.
+
 ```
 npm install mdn-browser-compat-data
 ```
 
 ## Usage
+
 ```js
 const bcd = require('mdn-browser-compat-data');
 bcd.css.properties.background;
@@ -35,14 +38,14 @@ There's a top-level directory for each broad area covered: for example, "http",
 "javascript", "webextensions". Inside each of these directories is one or more
 JSON file containing the compatibility data.
 
-*Please note that we have not (yet) migrated all compatibility data from the MDN wiki pages into this repository.*
+_Please note that we have not (yet) migrated all compatibility data from the MDN wiki pages into this repository._
 
 - [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
 - [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
 
 - [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for
-[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
+  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
 
 - [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
 
@@ -61,11 +64,12 @@ JSON file containing the compatibility data.
 - [xslt/](https://github.com/mdn/browser-compat-data/tree/master/xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
 
 ## Format of the browser compat json files
+
 The definitive description of the format used to represent compatibility data is the [schema file](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json).
 You can also have a look at the [schema documentation](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md).
 
-*Please note that we do not (yet) guarantee the stability of the data format.
-You're welcome to use the data, but its structure is subject to change without notice.*
+_Please note that we do not (yet) guarantee the stability of the data format.
+You're welcome to use the data, but its structure is subject to change without notice._
 
 ## Issues?
 
@@ -76,13 +80,14 @@ If you find a problem, please [file a bug](https://github.com/mdn/browser-compat
 We're very happy to accept contributions to this data. See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
 
 ## Projects using the data
+
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
 
-* [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
-* [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.
-* [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.
-* [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
-* [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
-* [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
-* [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
-* [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
+- [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
+- [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.
+- [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.
+- [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
+- [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
+- [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
+- [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
+- [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.

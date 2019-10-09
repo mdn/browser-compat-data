@@ -10,11 +10,20 @@ const bcd = require('..');
  * @property {number} real The total number of real values for the browser.
  */
 
-const browsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
+const browsers = [
+  'chrome',
+  'chrome_android',
+  'edge',
+  'firefox',
+  'ie',
+  'safari',
+  'safari_ios',
+  'webview_android',
+];
 /** @type {{total: VersionStats; [browser: string]: VersionStats}} */
 let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
-  stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 }
+  stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
 });
 
 const checkSupport = (supportData, type) => {
@@ -27,15 +36,15 @@ const checkSupport = (supportData, type) => {
         (typeof item.version_added == 'string' &&
           item.version_added.startsWith('≤')) ||
         (typeof item.version_removed == 'string' &&
-          item.version_removed.startsWith('≤'))
+          item.version_removed.startsWith('≤')),
     );
   }
   return supportData.some(
-    item => item.version_added === type || item.version_removed === type
+    item => item.version_added === type || item.version_removed === type,
   );
 };
 
-const processData = (data) => {
+const processData = data => {
   if (data.support) {
     browsers.forEach(function(browser) {
       stats[browser].all++;
@@ -68,7 +77,7 @@ const processData = (data) => {
   }
 };
 
-const iterateData = (data) => {
+const iterateData = data => {
   for (let key in data) {
     if (key === '__compat') {
       processData(data[key]);
@@ -96,14 +105,20 @@ const printTable = () => {
   Object.keys(stats).forEach(entry => {
     table += `| ${entry.replace('_', ' ')} | `;
     table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(2)}% | `;
+    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(
+      2,
+    )}% | `;
     table += `${((stats[entry].true / stats[entry].all) * 100).toFixed(2)}% | `;
     table += `${((stats[entry].null / stats[entry].all) * 100).toFixed(2)}% |
 `;
   });
 
   console.log(table);
-}
+};
 
-console.log(`Status as of version 0.0.xx (released on 2019-MM-DD) for ${process.argv[2] ? `${process.argv[2]}/ directory` : `web platform features`}: \n`);
+console.log(
+  `Status as of version 0.0.xx (released on 2019-MM-DD) for ${
+    process.argv[2] ? `${process.argv[2]}/ directory` : `web platform features`
+  }: \n`,
+);
 printTable();

@@ -27,30 +27,33 @@ const compareFeatures = require('./compare-features');
 
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
-    value = Object.keys(value).sort(compareFeatures).reduce((result, key) => {
-      result[key] = value[key];
-      return result;
-    }, {});
+    value = Object.keys(value)
+      .sort(compareFeatures)
+      .reduce((result, key) => {
+        result[key] = value[key];
+        return result;
+      }, {});
   }
   return value;
 }
 
- /**
-  * @param {Promise<void>} filename
-  */
-const fixFeatureOrder = (filename) => {
-  let actual   = fs.readFileSync(filename, 'utf-8').trim();
+/**
+ * @param {Promise<void>} filename
+ */
+const fixFeatureOrder = filename => {
+  let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
 
-  if (IS_WINDOWS) { // prevent false positives from git.core.autocrlf on Windows
-    actual   = actual.replace(/\r/g, '');
+  if (IS_WINDOWS) {
+    // prevent false positives from git.core.autocrlf on Windows
+    actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
     fs.writeFileSync(filename, expected + '\n', 'utf-8');
   }
-}
+};
 
 if (require.main === module) {
   /**
@@ -74,7 +77,7 @@ if (require.main === module) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map((subfile) => {
+      const subFiles = fs.readdirSync(file).map(subfile => {
         return path.join(file, subfile);
       });
 
@@ -95,7 +98,7 @@ if (require.main === module) {
       'mathml',
       'test',
       'webdriver',
-      'webextensions'
+      'webextensions',
     );
   }
 }

@@ -9,17 +9,45 @@ const chalk = require('chalk');
 
 const compareFeatures = require('../scripts/compare-features');
 
- /**
-  * A unit test for the compareFeatures() function, to ensure that features are sorted as expected.
-  * @returns {boolean} If the sorter isn't functioning properly
-  */
+/**
+ * A unit test for the compareFeatures() function, to ensure that features are sorted as expected.
+ * @returns {boolean} If the sorter isn't functioning properly
+ */
 const testFeatureOrder = () => {
-  let input = ['foobar', 'Foo', '__compat', 'toString', 'secure_context_required', 'protocol-r30', '$0', 'Bar', '_updated_spec', '43', '--variable', 'ZOO_Pals', '2-factor-auth'];
+  let input = [
+    'foobar',
+    'Foo',
+    '__compat',
+    'toString',
+    'secure_context_required',
+    'protocol-r30',
+    '$0',
+    'Bar',
+    '_updated_spec',
+    '43',
+    '--variable',
+    'ZOO_Pals',
+    '2-factor-auth',
+  ];
   let actual = input.sort(compareFeatures);
-  let expected = ["__compat", "Bar", "Foo", "ZOO_Pals", "foobar", "protocol-r30", "secure_context_required", "toString", "_updated_spec", "--variable", "$0", "2-factor-auth", "43"];
+  let expected = [
+    '__compat',
+    'Bar',
+    'Foo',
+    'ZOO_Pals',
+    'foobar',
+    'protocol-r30',
+    'secure_context_required',
+    'toString',
+    '_updated_spec',
+    '--variable',
+    '$0',
+    '2-factor-auth',
+    '43',
+  ];
 
   var errors = false;
-  for (var i = actual.length; i--;) {
+  for (var i = actual.length; i--; ) {
     if (actual[i] !== expected[i]) {
       errors = true;
       break;
@@ -34,6 +62,6 @@ const testFeatureOrder = () => {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testFeatureOrder;
