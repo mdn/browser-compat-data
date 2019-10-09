@@ -11,8 +11,8 @@ const { platform } = require('os');
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
 const tests = [
-  [
-    {
+  {
+    "input": {
       "test1": {
         "__compat": {
           "support": {
@@ -35,7 +35,7 @@ const tests = [
         }
       }
     },
-    {
+    "output": {
       "test1": {
         "__compat": {
           "support": {
@@ -51,9 +51,9 @@ const tests = [
         }
       }
     }
-  ],
-  [
-    {
+  },
+  {
+    "input": {
       "test2": {
         "__compat": {
           "support": {
@@ -69,7 +69,7 @@ const tests = [
         }
       }
     },
-    {
+    "output": {
       "test2": {
         "__compat": {
           "support": {
@@ -85,9 +85,9 @@ const tests = [
         }
       }
     }
-  ],
-  [
-    {
+  },
+  {
+    "input": {
       "test3": {
         "__compat": {
           "support": {
@@ -115,7 +115,7 @@ const tests = [
         }
       }
     },
-    {
+    "output": {
       "test3": {
         "__compat": {
           "support": {
@@ -131,14 +131,14 @@ const tests = [
         }
       }
     }
-  ]
+  }
 ];
 
 const testFixWebViewFlags = (logger = console) => {
   let hasErrors = false;
   for (let i = 0; i < tests.length; i++) {
-    let expected = JSON.stringify(tests[i][1], null, 2);
-    let output = JSON.stringify(JSON.parse(JSON.stringify(tests[i][0]), removeWebViewFlags), null, 2);
+    let expected = JSON.stringify(tests[i]["output"], null, 2);
+    let output = JSON.stringify(JSON.parse(JSON.stringify(tests[i]["input"]), removeWebViewFlags), null, 2);
 
     if (output !== expected) {
       logger.error(chalk`WebView flags aren't removed properly!\n      Actual: {yellow ${output}}\n      Expected: {green ${expected}}`);
