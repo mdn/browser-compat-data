@@ -12,7 +12,7 @@ const bcd = require('..');
 
 const browsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
 /** @type {{total: VersionStats; [browser: string]: VersionStats}} */
-let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
+const stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
   stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 }
 });
@@ -69,7 +69,7 @@ const processData = (data) => {
 };
 
 const iterateData = (data) => {
-  for (let key in data) {
+  for (const key in data) {
     if (key === '__compat') {
       processData(data[key]);
     } else {
@@ -81,7 +81,7 @@ const iterateData = (data) => {
 if (process.argv[2]) {
   iterateData(bcd[process.argv[2]]);
 } else {
-  for (let data in bcd) {
+  for (const data in bcd) {
     if (!(data === 'browsers' || data === 'webextensions')) {
       iterateData(bcd[data]);
     }

@@ -19,15 +19,15 @@ const { argv } = require('yargs').command('$0 <browser> [folder] [value]', 'Test
 function traverseFeatures(obj, depth, identifier) {
   depth--;
   if (depth >= 0) {
-    for (let i in obj) {
+    for (const i in obj) {
       if (!!obj[i] && typeof(obj[i]) == "object" && i !== '__compat') {
         if (obj[i].__compat) {
-          let comp = obj[i].__compat.support;
+          const comp = obj[i].__compat.support;
           let browser = comp[argv.browser];
           if (!Array.isArray(browser)) {
             browser = [browser];
           }
-          for (let range in browser) {
+          for (const range in browser) {
             if (browser[range] === undefined) {
               if (values.includes("null")) features.push(`${identifier}${i}`);
             }
@@ -46,11 +46,11 @@ function traverseFeatures(obj, depth, identifier) {
   }
 }
 
-let features = [];
-let folders = Array.isArray(argv.folder) ? argv.folder : argv.folder.split(",");
-let values = Array.isArray(argv.value) ? argv.value : argv.value.toString().split(",");
+const features = [];
+const folders = Array.isArray(argv.folder) ? argv.folder : argv.folder.split(",");
+const values = Array.isArray(argv.value) ? argv.value : argv.value.toString().split(",");
 
-for (let folder in folders) traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
+for (const folder in folders) traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
 
 console.log(features.join("\n"));
 console.log(features.length);
