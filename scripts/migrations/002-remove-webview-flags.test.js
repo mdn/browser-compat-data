@@ -141,7 +141,9 @@ const testFixWebViewFlags = (logger = console) => {
     let output = JSON.stringify(JSON.parse(JSON.stringify(tests[i]["input"]), removeWebViewFlags), null, 2);
 
     if (output !== expected) {
-      logger.error(chalk`WebView flags aren't removed properly!\n      Actual: {yellow ${output}}\n      Expected: {green ${expected}}`);
+      logger.error(chalk`{red WebView flags aren't removed properly!}
+      {yellow Actual: {bold ${output}}}
+      {green Expected: {bold ${expected}}}`);
       hasErrors = true;
     }
   }
