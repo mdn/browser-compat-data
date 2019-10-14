@@ -73,17 +73,17 @@ function processData(filename, logger) {
 
   if (actual !== expected) {
     hasErrors = true;
-    logger.error(chalk`{red Error on {bold line ${jsonDiff(actual, expected)}}}`);
+    logger.error(chalk`{red Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red Browser sorting error on ${jsonDiff(expected, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   if (actual !== expectedFeatureSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Feature sorting error on {bold line ${jsonDiff(expected, expectedFeatureSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red Feature sorting error on ${jsonDiff(expected, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
