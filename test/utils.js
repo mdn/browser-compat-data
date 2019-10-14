@@ -107,8 +107,8 @@ function jsonDiff(actual, expected) {
   for (var i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
       return chalk`#${i + 1}
-    Actual:   {yellow ${escapeInvisibles(actualLines[i])}}
-    Expected: {green ${escapeInvisibles(expectedLines[i])}}`;
+    {yellow Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
+    {green Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
 }
