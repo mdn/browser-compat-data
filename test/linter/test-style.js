@@ -61,7 +61,7 @@ function processData(filename, logger) {
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
-  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
+  let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
