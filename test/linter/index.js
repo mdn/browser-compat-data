@@ -6,6 +6,7 @@ const testRealValues = require('./test-real-values.js');
 const testSchema = require('./test-schema.js');
 const testStyle = require('./test-style.js');
 const testVersions = require('./test-versions.js');
+const testDescriptions = require('./test-descriptions.js');
 
 module.exports = {
   testBrowsers,
@@ -15,4 +16,5 @@ module.exports = {
   testStyle,
   testSchema,
   testVersions,
+  testDescriptions
 };
