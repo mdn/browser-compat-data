@@ -81,7 +81,7 @@ function processData(filename, logger) {
     logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(actual, expectedBrowserSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
-  if (actual !== expectedFeatureSorting) {
+  if (expected !== expectedFeatureSorting) {
     hasErrors = true;
     logger.error(chalk`{red Feature sorting error on {bold line ${jsonDiff(actual, expectedFeatureSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
