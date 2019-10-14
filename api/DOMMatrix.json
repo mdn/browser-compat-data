@@ -4,12 +4,34 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix",
         "support": {
-          "chrome": {
-            "version_added": "61"
-          },
-          "chrome_android": {
-            "version_added": "61"
-          },
+          "chrome": [
+            {
+              "version_added": "61"
+            },
+            {
+              "version_added": "45",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-blink-features=GeometryInterfaces"
+                }
+              ]
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "61"
+            },
+            {
+              "version_added": "45",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-blink-features=GeometryInterfaces"
+                }
+              ]
+            }
+          ],
           "edge": {
             "version_added": false
           },
@@ -22,12 +44,34 @@
           "ie": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "48"
-          },
-          "opera_android": {
-            "version_added": "45"
-          },
+          "opera": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "32",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-blink-features=GeometryInterfaces"
+                }
+              ]
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "32",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-blink-features=GeometryInterfaces"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "11"
           },
@@ -50,10 +94,10 @@
           "description": "<code>DOMMatrix()</code> constructor",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "45"
             },
             "chrome_android": {
-              "version_added": "61"
+              "version_added": "45"
             },
             "edge": {
               "version_added": false
@@ -68,10 +112,107 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "48"
+              "version_added": "32"
             },
             "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "webview_android": {
+              "version_added": "61"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "scale3dSelf": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf",
+          "description": "<code>scale3dSelf()</code>",
+          "support": {
+            "chrome": {
               "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "33",
+              "notes": "Starting in Firefox 69, the first parameter (<code>scale</code>) is now optional with a default value of 1, per the specification. Previously it was required."
+            },
+            "firefox_android": {
+              "version_added": "33",
+              "notes": "Firefox for Android requires the first parameter (<code>scale</code>)."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "webview_android": {
+              "version_added": "61"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "scaleSelf": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf",
+          "description": "<code>scaleSelf()</code>",
+          "support": {
+            "chrome": {
+              "version_added": "45"
+            },
+            "chrome_android": {
+              "version_added": "45"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "33",
+              "notes": "Firefox 69 introduced support for the modern six-parameter syntax for <code>scaleSelf()</code>. Previously, it only supported the older three-parameter syntax: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>."
+            },
+            "firefox_android": {
+              "version_added": "33",
+              "partial_implementation": true,
+              "notes": "Firefox for Android only supports the older three-parameter syntax for <code>scaleSelf()</code>: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>, and not the six-parameter syntax."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "32"
+            },
+            "opera_android": {
+              "version_added": "32"
             },
             "safari": {
               "version_added": "11"
@@ -95,16 +236,16 @@
           "description": "Available in workers",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "57"
             },
             "chrome_android": {
-              "version_added": "61"
+              "version_added": "57"
             },
             "edge": {
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "69"
             },
             "firefox_android": {
               "version_added": false
@@ -113,10 +254,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "48"
+              "version_added": "44"
             },
             "opera_android": {
-              "version_added": "45"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "11"
