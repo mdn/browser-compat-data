@@ -35,7 +35,7 @@
             "version_added": "11"
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "5"
           },
           "webview_android": {
             "version_added": "47"
@@ -83,7 +83,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -157,7 +157,7 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "5"
             },
             "webview_android": {
               "version_added": "47"
@@ -229,7 +229,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false,
@@ -328,7 +328,7 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "53"
@@ -443,9 +443,16 @@
             "safari_ios": {
               "version_added": "11"
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": "5",
+                "version_removed": "6",
+                "notes": "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+              }
+            ],
             "webview_android": {
               "version_added": "53"
             }
@@ -491,7 +498,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": true
               },
               "webview_android": {
                 "version_added": true
@@ -554,7 +561,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false

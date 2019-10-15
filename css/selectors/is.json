@@ -163,9 +163,19 @@
                 "notes": "Doesn't support combinators."
               }
             ],
-            "samsunginternet_android": {
-              "version_added": false
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "9",
+                "version_removed": "10",
+                "alternative_name": ":matches()",
+                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+              },
+              {
+                "version_added": true,
+                "alternative_name": ":-webkit-any()",
+                "notes": "Doesn't support combinators."
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "66",

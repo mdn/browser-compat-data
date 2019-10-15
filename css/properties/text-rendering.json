@@ -48,7 +48,11 @@
               "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": "1.0"
+              "version_added": "1.0",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "Initial versions had bugs on Windows and Linux that broke <a href='https://crbug.com/114719'>font substitition</a>, <a href='https://crbug.com/51973'>small-caps</a>, <a href='https://crbug.com/55458'>letter-spacing</a> or caused <a href='https://crbug.com/149548'>text to overlap</a>."
+              ]
             },
             "webview_android": {
               "version_added": "3",
@@ -159,7 +163,8 @@
                 "version_added": "6"
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": true,
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "webview_android": {
                 "version_added": "37",

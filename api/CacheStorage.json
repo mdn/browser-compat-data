@@ -51,7 +51,11 @@
             ]
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": true,
+            "notes": [
+              "Accessible from <code>Window</code> from version 43.",
+              "Accessible from <code>WorkerGlobalScope</code> from version 43."
+            ]
           }
         },
         "status": {
@@ -276,6 +280,16 @@
               },
               {
                 "version_added": "40",
+                "partial_implementation": true,
+                "notes": "The options parameter only supports <code>ignoreSearch</code>, and <code>cacheName</code>."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "6"
+              },
+              {
+                "version_added": true,
                 "partial_implementation": true,
                 "notes": "The options parameter only supports <code>ignoreSearch</code>, and <code>cacheName</code>."
               }

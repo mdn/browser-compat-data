@@ -86,7 +86,7 @@
               "version_added": "60"
             },
             "samsunginternet_android": {
-              "version_added": 8
+              "version_added": "8"
             }
           },
           "status": {
@@ -282,7 +282,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -341,7 +342,11 @@
               ]
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": [
+                "Starting in Chrome 65, this property is readonly.",
+                "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
+              ]
             }
           },
           "status": {
@@ -435,7 +440,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -484,7 +489,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "43"
@@ -533,7 +538,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "43"
@@ -582,7 +587,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": "43"
@@ -684,7 +689,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -785,7 +791,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -992,6 +999,20 @@
                 "alternative_name": "inputEncoding",
                 "version_added": true
               }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "5"
+              },
+              {
+                "alternative_name": "charset",
+                "version_added": true,
+                "notes": "<code>charset</code> alias was made read-only in 45."
+              },
+              {
+                "alternative_name": "inputEncoding",
+                "version_added": true
+              }
             ]
           },
           "status": {
@@ -1042,7 +1063,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -1093,7 +1115,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -1333,7 +1356,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "7"
             },
             "webview_android": {
               "version_added": "58"
@@ -1379,7 +1402,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "7"
               },
               "webview_android": {
                 "version_added": "58"
@@ -1740,7 +1763,8 @@
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": true,
+                "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               }
             },
             "status": {
@@ -1842,6 +1866,10 @@
               "webview_android": {
                 "version_added": true,
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
+              },
+              "samsunginternet_android": {
+                "version_added": false,
+                "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               }
             },
             "status": {
@@ -1887,6 +1915,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -2294,6 +2325,16 @@
                 "version_added": "59",
                 "notes": "All parameters optional"
               }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": true,
+                "version_removed": "9"
+              },
+              {
+                "version_added": "7",
+                "notes": "All parameters optional"
+              }
             ]
           },
           "status": {
@@ -2348,7 +2389,7 @@
             },
             "samsunginternet_android": {
               "version_added": true,
-              "version_removed": 10
+              "version_removed": "10"
             }
           },
           "status": {
@@ -2588,7 +2629,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "7"
             },
             "webview_android": {
               "version_added": "58"
@@ -2634,7 +2675,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "7"
               },
               "webview_android": {
                 "version_added": "58"
@@ -2737,7 +2778,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -2790,7 +2832,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -3032,6 +3075,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -3126,6 +3172,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -3578,7 +3627,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -3623,6 +3673,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -3763,6 +3816,9 @@
                 "version_added": false
               },
               "webview_android": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
                 "version_added": false
               }
             },
@@ -3905,6 +3961,9 @@
               },
               "webview_android": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -3949,6 +4008,9 @@
                 "version_added": false
               },
               "webview_android": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
                 "version_added": false
               }
             },
@@ -4001,6 +4063,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -4104,6 +4169,15 @@
                 "version_added": true,
                 "prefix": "webkit"
               }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "5"
+              },
+              {
+                "version_added": true,
+                "prefix": "webkit"
+              }
             ]
           },
           "status": {
@@ -4147,7 +4221,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "10"
               },
               "webview_android": {
                 "version_added": "71"
@@ -4222,6 +4296,15 @@
             "webview_android": [
               {
                 "version_added": "45"
+              },
+              {
+                "version_added": true,
+                "prefix": "webkit"
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "5"
               },
               {
                 "version_added": true,
@@ -4387,7 +4470,22 @@
             "webview_android": {
               "version_added": "74",
               "notes": "<a href='https://www.chromestatus.com/feature/5190687460950016'>Chrome Platform Status</a> incorrectly describes this variable as <code>document.policy</code>. It was renamed in <a href='https://crbug.com/917057'>bug 917057</a> before being shipped in <a href='https://crbug.com/703703#c22'>bug 703703</a>."
-            }
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "false",
+                "notes": "<a href='https://www.chromestatus.com/feature/5190687460950016'>Chrome Platform Status</a> incorrectly describes this variable as <code>document.policy</code>. It was renamed in <a href='https://crbug.com/917057'>bug 917057</a> before being shipped in <a href='https://crbug.com/703703#c22'>bug 703703</a>."
+              },
+              {
+                "version_added": "false",
+                "version_removed": "false"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "false",
+                "alternative_name": "policy"
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -4437,7 +4535,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -4483,6 +4582,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -4677,6 +4779,10 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "alternative_name": "webkitIsFullScreen",
+              "version_added": false
             }
           },
           "status": {
@@ -4762,7 +4868,7 @@
               "version_added": "45"
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5"
             }
           },
           "status": {
@@ -4863,6 +4969,15 @@
                 "version_added": true,
                 "prefix": "webkit"
               }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "5"
+              },
+              {
+                "version_added": true,
+                "prefix": "webkit"
+              }
             ]
           },
           "status": {
@@ -4948,7 +5063,7 @@
               "version_added": "45"
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5"
             }
           },
           "status": {
@@ -4995,6 +5110,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -5040,6 +5158,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -5328,7 +5449,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "7"
             },
             "webview_android": {
               "version_added": "57"
@@ -5379,7 +5500,7 @@
               "version_added": "45"
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5"
             }
           },
           "status": {
@@ -5431,6 +5552,9 @@
               "version_added": "11.3"
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -5525,6 +5649,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -5598,7 +5725,16 @@
             },
             "webview_android": {
               "version_added": true
-            }
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -5835,7 +5971,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -5888,7 +6024,8 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true,
+              "notes": "Chrome does not fire the <code>keypress</code> event for <a href='https://crbug.com/13891#c50'>known keyboard shortcuts</a>. Which keyboard shortcuts are known depends on the user's system. Use the <code>keydown</code> event to implement keyboard shortcuts."
             },
             "webview_android": {
               "version_added": true,
@@ -5938,7 +6075,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -6035,6 +6172,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -6085,7 +6225,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -6194,6 +6335,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -6287,7 +6431,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "7"
             },
             "webview_android": {
               "version_added": "57"
@@ -6336,6 +6480,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -6380,6 +6527,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -6426,6 +6576,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -6471,6 +6624,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -6515,6 +6671,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -6659,7 +6818,7 @@
               "version_added": "68"
             },
             "samsunginternet_android": {
-              "version_added": 10
+              "version_added": "10"
             }
           },
           "status": {
@@ -6744,7 +6903,7 @@
               "version_added": "45"
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5"
             }
           },
           "status": {
@@ -6829,7 +6988,7 @@
               "version_added": "45"
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5"
             }
           },
           "status": {
@@ -7068,7 +7227,7 @@
               "version_added": "68"
             },
             "samsunginternet_android": {
-              "version_added": 10
+              "version_added": "10"
             }
           },
           "status": {
@@ -7247,7 +7406,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -7299,7 +7459,7 @@
             },
             "samsunginternet_android": {
               "version_added": true,
-              "version_removed": 10
+              "version_removed": "10"
             }
           },
           "status": {
@@ -7345,7 +7505,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "7"
             },
             "webview_android": {
               "version_added": "58"
@@ -7391,7 +7551,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "7"
               },
               "webview_android": {
                 "version_added": "58"
@@ -7446,7 +7606,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -7517,7 +7678,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -7591,7 +7752,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -7665,7 +7826,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -7739,7 +7900,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -7801,9 +7962,16 @@
             "safari_ios": {
               "version_added": null
             },
-            "samsunginternet_android": {
-              "version_added": null
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "5"
+              },
+              {
+                "version_added": true,
+                "version_removed": "5",
+                "prefix": "webkit"
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "45"
@@ -7871,9 +8039,16 @@
             "safari_ios": {
               "version_added": null
             },
-            "samsunginternet_android": {
-              "version_added": null
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "5"
+              },
+              {
+                "version_added": true,
+                "version_removed": "5",
+                "prefix": "webkit"
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "45"
@@ -7953,7 +8128,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -8027,7 +8202,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -8101,7 +8276,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -8175,7 +8350,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "webview_android": {
               "version_added": "55"
@@ -8224,6 +8399,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -8543,6 +8721,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -8961,6 +9142,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -9011,7 +9195,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -9064,6 +9249,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -9108,6 +9296,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -9202,7 +9393,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -9265,7 +9456,7 @@
               "version_added": "44"
             },
             "samsunginternet_android": {
-              "version_added": 4
+              "version_added": "4"
             }
           },
           "status": {
@@ -9383,7 +9574,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -9456,7 +9647,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": true
             },
             "webview_android": {
               "version_added": true
@@ -9505,6 +9696,9 @@
             },
             "webview_android": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -9551,6 +9745,9 @@
               "version_added": true
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -9645,6 +9842,9 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -9887,7 +10087,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -9936,7 +10136,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -9985,7 +10185,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -10034,7 +10234,7 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -10082,6 +10282,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -10156,7 +10359,16 @@
             },
             "webview_android": {
               "version_added": "4.4.3"
-            }
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": true
+              },
+              {
+                "version_added": true,
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -10254,7 +10466,8 @@
               "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 9
+              "version_added": "9",
+              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -10302,7 +10515,7 @@
               "version_added": "68"
             },
             "samsunginternet_android": {
-              "version_added": 10
+              "version_added": "10"
             }
           },
           "status": {
@@ -10348,7 +10561,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "8"
             },
             "webview_android": {
               "version_added": "61"
@@ -10396,6 +10609,9 @@
               "version_added": null
             },
             "webview_android": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
               "version_added": false
             }
           },
@@ -10447,7 +10663,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
@@ -10498,7 +10715,8 @@
               "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             },
             "samsunginternet_android": {
-              "version_added": 5
+              "version_added": "5",
+              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
             }
           },
           "status": {
