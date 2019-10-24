@@ -261,9 +261,9 @@ function testConsistency(filename) {
       console.error(chalk`{red   → }{red.bold ${errors.length}}{red  × }{red.bold ${feature}}{red  [${path.join('.')}]: }`);
       errors.forEach(({ errortype, browser, subfeatures }) => {
         if (errortype == "unsupported") {
-          console.error(chalk`{red     → No support in }{red.bold ${browser}}{red , but this is not declared for sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
+          console.error(chalk`{red     → No support in }{red.bold ${browser}}{red , but support is declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         } else if (errortype == "support_unknown") {
-          console.error(chalk`{red     → No support known in }{red.bold ${browser}}{red , but support declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
+          console.error(chalk`{red     → Unknown support in parent for }{red.bold ${browser}}{red , but support is declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         } else if (errortype == "subfeature_earlier_implementation") {
           console.error(chalk`{red     → Basic support in }{red.bold ${browser}}{red  was declared implemented in a later version than the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
         }
