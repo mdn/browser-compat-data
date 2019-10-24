@@ -30,7 +30,6 @@ const chalk = require('chalk')
     // Check this feature.
     if (this.isFeature(data)) {
       const feature = path.length ? path[path.length - 1] : 'ROOT';
-      const featurePath = path.length ? path.slice(0, path.length - 1).join('.') : '';
 
       const errors = this.checkFeature(data);
 
@@ -257,7 +256,6 @@ function testConsistency(filename) {
   const errors = checker.check(data);
 
   if (errors.length) {
-    const relativeFilename = path.relative(process.cwd(), filename);
     console.error(chalk`{red   Consistency - }{red.bold ${errors.length} }{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
     errors.forEach(({ feature, path, errors }) =>  {
       console.error(chalk`{red   → }{red.bold ${errors.length}}{red  × }{red.bold ${feature}}{red  [${path.join('.')}]: }`);
