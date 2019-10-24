@@ -75,7 +75,7 @@ const chalk = require('chalk')
 
       browsers.forEach(browser => {
         inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
-        inconsistentSubfeaturesByBrowser[browser].push(subfeature);
+        inconsistentSubfeaturesByBrowser[browser].push([subfeature, data[subfeature].__compat.support[browser].version_added]);
       });
     });
 
@@ -103,7 +103,7 @@ const chalk = require('chalk')
 
       browsers.forEach(browser => {
         inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
-        inconsistentSubfeaturesByBrowser[browser].push(subfeature);
+        inconsistentSubfeaturesByBrowser[browser].push([subfeature, data[subfeature].__compat.support[browser].version_added]);
       });
     });
 
@@ -127,7 +127,7 @@ const chalk = require('chalk')
       supportInParent.forEach(browser => {
         if (data[subfeature].__compat.support[browser] != undefined && this.isVersionAddedGreater(data[subfeature].__compat.support[browser], data.__compat.support[browser])) {
           inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
-          inconsistentSubfeaturesByBrowser[browser].push(subfeature);
+          inconsistentSubfeaturesByBrowser[browser].push([subfeature, data[subfeature].__compat.support[browser].version_added]);
         }
       });
     });
@@ -269,7 +269,7 @@ function testConsistency(filename) {
         }
 
         subfeatures.forEach(subfeature => {
-          console.error(chalk`{red       → ${subfeature}}`);
+          console.error(chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${subfeature[1]}}`);
         });
       });
     })
