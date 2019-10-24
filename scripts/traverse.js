@@ -46,7 +46,7 @@ function traverseFeatures(obj, depth, identifier) {
   }
 }
 
-const features = [];
+let features = [];
 const folders = Array.isArray(argv.folder) ? argv.folder : argv.folder.split(",");
 const values = Array.isArray(argv.value) ? argv.value : argv.value.toString().split(",");
 

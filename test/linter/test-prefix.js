@@ -26,7 +26,7 @@ function checkPrefix(data, category, errors, prefix, path="") {
 }
 
 function processData(data, category) {
-  const errors = [];
+  let errors = [];
   let prefixes = [];
 
   if (category === "api") {

@@ -12,7 +12,7 @@ const bcd = require('..');
 
 const browsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
 /** @type {{total: VersionStats; [browser: string]: VersionStats}} */
-const stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
+let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
   stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 }
 });
