@@ -29,7 +29,7 @@ function processData(filename, logger) {
     match => {
       // use https://bugzil.la/1000000 instead
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://bugzil.la/}${match[1]}}).}`);
+      logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://bugzil.la/}${match[1]}}).}`);
     }
   );
 
@@ -38,7 +38,7 @@ function processData(filename, logger) {
     match => {
       // use https://crbug.com/100000 instead
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://crbug.com/}${match[1]}}).}`);
+      logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://crbug.com/}${match[1]}}).}`);
     }
   );
 
@@ -47,7 +47,7 @@ function processData(filename, logger) {
     match => {
       // use https://webkit.org/b/100000 instead
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://webkit.org/b/}${match[1]}}).}`);
+      logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use shortenable URL ({yellow ${match[0]}} → {green {bold https://webkit.org/b/}${match[1]}}).}`);
     }
   );
 
@@ -65,7 +65,7 @@ function processData(filename, logger) {
 
       if (protocol !== 'https') {
         hasErrors = true;
-        logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use HTTPS URL ({yellow http://${domain}/${bugId}} → {green http{bold s}://${domain}/${bugId}}).}`);
+        logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use HTTPS URL ({yellow http://${domain}/${bugId}} → {green http{bold s}://${domain}/${bugId}}).}`);
       }
 
       if (domain !== 'bugzil.la') {
@@ -74,15 +74,15 @@ function processData(filename, logger) {
 
       if (/^bug $/.test(before)) {
         hasErrors = true;
-        logger.error(chalk`{red ${indexToPos(actual, match.index)} – Move word "bug" into link text ({yellow "${before}<a href='...'>${linkText}</a>"} → {green "<a href='...'>{bold ${before}}${bugId}</a>"}).}`);
+        logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Move word "bug" into link text ({yellow "${before}<a href='...'>${linkText}</a>"} → {green "<a href='...'>{bold ${before}}${bugId}</a>"}).}`);
       } else if (linkText === `Bug ${bugId}`) {
         if (!/(\. |")$/.test(before)) {
           hasErrors = true;
-          logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence ({yellow "Bug ${bugId}"} → {green "{bold bug} ${bugId}"}).}`);
+          logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use lowercase "bug" word within sentence ({yellow "Bug ${bugId}"} → {green "{bold bug} ${bugId}"}).}`);
         }
       } else if (linkText !== `bug ${bugId}`) {
         hasErrors = true;
-        logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use standard link text ({yellow "${linkText}"} → {green "bug ${bugId}"}).}`);
+        logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use standard link text ({yellow "${linkText}"} → {green "bug ${bugId}"}).}`);
       }
     }
   )
@@ -120,21 +120,21 @@ function processData(filename, logger) {
       if (protocol !== 'https') {
         hasErrors = true;
         logger.error(
-          chalk`{red ${pos} – Use HTTPS MDN URL ({yellow ${protocol}://developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
+          chalk`{red → ${pos} – Use HTTPS MDN URL ({yellow ${protocol}://developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
         );
       }
 
       if (subdomain) {
         hasErrors = true;
         logger.error(
-          chalk`{red ${pos} - Use correct MDN domain ({yellow ${protocol}://{red ${subdomain}}developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}})}`,
+          chalk`{red → ${pos} - Use correct MDN domain ({yellow ${protocol}://{red ${subdomain}}developer.mozilla.org/${path}} → {green https://developer.mozilla.org/${expectedPath}})}`,
         );
       }
 
       if (path !== expectedPath) {
         hasErrors = true;
         logger.error(
-          chalk`{red ${pos} – Use ${
+          chalk`{red → ${pos} – Use ${
             locale ? 'non-localized' : 'correct'
           } MDN URL ({yellow ${url}} → {green https://developer.mozilla.org/${expectedPath}}).}`,
         );
@@ -146,7 +146,7 @@ function processData(filename, logger) {
     String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`,
     match => {
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, match.index)} – Use non-localized Microsoft Developer URL ({yellow ${match[0]}} → {green https://developer.microsoft.com/${match[2]}}).}`);
+      logger.error(chalk`{red → ${indexToPos(actual, match.index)} – Use non-localized Microsoft Developer URL ({yellow ${match[0]}} → {green https://developer.microsoft.com/${match[2]}}).}`);
     }
   );
 

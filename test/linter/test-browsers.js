@@ -57,13 +57,13 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
 
     const invalidEntries = Object.keys(support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
-      logger.error(chalk`{red {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(', ')}}}`);
+      logger.error(chalk`{red → {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(', ')}}}`);
       hasErrors = true;
     }
 
     const missingEntries = requiredBrowsers.filter(value => !(value in support));
     if (missingEntries.length > 0) {
-      logger.error(chalk`{red {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(', ')}}}`);
+      logger.error(chalk`{red → {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(', ')}}}`);
       hasErrors = true;
     }
 
@@ -77,7 +77,7 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
       for (const statement of statementList) {
         if (hasVersionAddedOnly(statement)) {
           if (sawVersionAddedOnly) {
-           logger.error(`'${path}' has multiple support statement with only \`version_added\` for ${browser}`);
+           logger.error(chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`);
             hasErrors = true;
             break;
           } else {

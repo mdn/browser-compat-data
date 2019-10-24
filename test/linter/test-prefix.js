@@ -6,7 +6,7 @@ function checkPrefix(data, category, errors, prefix, path="") {
   for (var key in data) {
     if (key === "prefix" && typeof(data[key]) === "string") {
       if (data[key].includes(prefix)) {
-        var error = chalk`{red {bold ${prefix}} prefix is wrong for key: {bold ${path}}}`;
+        var error = chalk`{red → {bold ${prefix}} prefix is wrong for key: {bold ${path}}}`;
         var rules = [
           category == "api" && !data[key].startsWith(prefix),
           category == "css" && !data[key].startsWith(`-${prefix}`)
