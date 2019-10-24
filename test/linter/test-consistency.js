@@ -75,7 +75,8 @@ const chalk = require('chalk')
 
       browsers.forEach(browser => {
         inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
-        inconsistentSubfeaturesByBrowser[browser].push([subfeature, data[subfeature].__compat.support[browser].version_added]);
+        const subfeature_value = data[subfeature].__compat.support[browser].version_added;
+        inconsistentSubfeaturesByBrowser[browser].push([subfeature, subfeature_value]);
       });
     });
 
@@ -83,10 +84,12 @@ const chalk = require('chalk')
     Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'unsupported';
+      const parent_value = data.__compat.support[browser].version_added;
 
       errors.push({
         errortype,
         browser,
+        parent_value,
         subfeatures
       });
     });
@@ -103,7 +106,8 @@ const chalk = require('chalk')
 
       browsers.forEach(browser => {
         inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
-        inconsistentSubfeaturesByBrowser[browser].push([subfeature, data[subfeature].__compat.support[browser].version_added]);
+        const subfeature_value = data[subfeature].__compat.support[browser].version_added;
+        inconsistentSubfeaturesByBrowser[browser].push([subfeature, subfeature_value]);
       });
     });
 
@@ -111,10 +115,12 @@ const chalk = require('chalk')
     Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'support_unknown';
+      const parent_value = data.__compat.support[browser].version_added;
 
       errors.push({
         errortype,
         browser,
+        parent_value,
         subfeatures
       });
     });
@@ -127,7 +133,8 @@ const chalk = require('chalk')
       supportInParent.forEach(browser => {
         if (data[subfeature].__compat.support[browser] != undefined && this.isVersionAddedGreater(data[subfeature].__compat.support[browser], data.__compat.support[browser])) {
           inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
-          inconsistentSubfeaturesByBrowser[browser].push([subfeature, data[subfeature].__compat.support[browser].version_added]);
+          const subfeature_value = data[subfeature].__compat.support[browser].version_added;
+          inconsistentSubfeaturesByBrowser[browser].push([subfeature, subfeature_value]);
         }
       });
     });
@@ -136,10 +143,12 @@ const chalk = require('chalk')
     Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'subfeature_earlier_implementation';
+      const parent_value = data.__compat.support[browser].version_added;
 
       errors.push({
         errortype,
         browser,
+        parent_value,
         subfeatures
       });
     });
@@ -259,13 +268,13 @@ function testConsistency(filename) {
     console.error(chalk`{red   Consistency - {bold ${errors.length} }${errors.length === 1 ? 'error' : 'errors'}:}`);
     errors.forEach(({ feature, path, errors }) =>  {
       console.error(chalk`{red   → {bold ${errors.length}} × {bold ${feature}} [${path.join('.')}]: }`);
-      errors.forEach(({ errortype, browser, subfeatures }) => {
+      errors.forEach(({ errortype, browser, parent_value, subfeatures }) => {
         if (errortype == "unsupported") {
           console.error(chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
         } else if (errortype == "support_unknown") {
           console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
         } else if (errortype == "subfeature_earlier_implementation") {
-          console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version than the following sub-feature(s):}`);
+          console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value})}) than the following sub-feature(s):}`);
         }
 
         subfeatures.forEach(subfeature => {
