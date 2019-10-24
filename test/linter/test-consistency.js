@@ -256,16 +256,16 @@ function testConsistency(filename) {
   const errors = checker.check(data);
 
   if (errors.length) {
-    console.error(chalk`{red   Consistency - }{red.bold ${errors.length} }{red ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(chalk`{red   Consistency - {bold ${errors.length} }${errors.length === 1 ? 'error' : 'errors'}:}`);
     errors.forEach(({ feature, path, errors }) =>  {
-      console.error(chalk`{red   → }{red.bold ${errors.length}}{red  × }{red.bold ${feature}}{red  [${path.join('.')}]: }`);
+      console.error(chalk`{red   → {bold ${errors.length}} × {bold ${feature}} [${path.join('.')}]: }`);
       errors.forEach(({ errortype, browser, subfeatures }) => {
         if (errortype == "unsupported") {
-          console.error(chalk`{red     → No support in }{red.bold ${browser}}{red , but support is declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
+          console.error(chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s): {bold ${subfeatures.join(', ')}}}`);
         } else if (errortype == "support_unknown") {
-          console.error(chalk`{red     → Unknown support in parent for }{red.bold ${browser}}{red , but support is declared in the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
+          console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s): {bold ${subfeatures.join(', ')}}}`);
         } else if (errortype == "subfeature_earlier_implementation") {
-          console.error(chalk`{red     → Basic support in }{red.bold ${browser}}{red  was declared implemented in a later version than the following sub-feature(s): }{red.bold ${subfeatures.join(', ')}}`);
+          console.error(chalk`{red     → Basic support in }{ ${browser}} was declared implemented in a later version than the following sub-feature(s): {bold ${subfeatures.join(', ')}}}`);
         }
       });
     })
