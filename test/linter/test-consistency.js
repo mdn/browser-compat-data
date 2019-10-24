@@ -261,12 +261,16 @@ function testConsistency(filename) {
       console.error(chalk`{red   → {bold ${errors.length}} × {bold ${feature}} [${path.join('.')}]: }`);
       errors.forEach(({ errortype, browser, subfeatures }) => {
         if (errortype == "unsupported") {
-          console.error(chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s): {bold ${subfeatures.join(', ')}}}`);
+          console.error(chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
         } else if (errortype == "support_unknown") {
-          console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s): {bold ${subfeatures.join(', ')}}}`);
+          console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
         } else if (errortype == "subfeature_earlier_implementation") {
-          console.error(chalk`{red     → Basic support in }{ ${browser}} was declared implemented in a later version than the following sub-feature(s): {bold ${subfeatures.join(', ')}}}`);
+          console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version than the following sub-feature(s):}`);
         }
+
+        subfeatures.forEach(subfeature => {
+          console.error(chalk`{red       → ${subfeature}}`);
+        });
       });
     })
     return true;
