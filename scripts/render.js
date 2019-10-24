@@ -9,15 +9,15 @@ Run as `npm run render $query $depth $aggregateMode`
 
 const bcd = require('..');
 
-const query = process.argv[2];
-const depth = process.argv[3] || 1;
-const aggregateMode = process.argv[4] || false;
+var query = process.argv[2];
+var depth = process.argv[3] || 1;
+var aggregateMode = process.argv[4] || false;
 
-let output = '';
+var output = '';
 
-const s_no_data_found = `No compatibility data found. Please contribute data for "${query}" (depth: ${depth}) to the <a href="https://github.com/mdn/browser-compat-data">MDN compatibility data repository</a>.`;
-const s_firefox_android = 'Firefox for Android';
-const s_chrome_android = 'Chrome for Android';
+var s_no_data_found = `No compatibility data found. Please contribute data for "${query}" (depth: ${depth}) to the <a href="https://github.com/mdn/browser-compat-data">MDN compatibility data repository</a>.`;
+var s_firefox_android = 'Firefox for Android';
+var s_chrome_android = 'Chrome for Android';
 
 const browsers = {
   "desktop": {
@@ -44,7 +44,7 @@ const browsers = {
   }
 };
 
-const notesArray = [];
+var notesArray = [];
 
 /*
 Write the table header.
@@ -52,19 +52,19 @@ Write the table header.
 `browserPlatformType` is either "mobile", "desktop" or "webextensions"
 */
 function writeTableHead(browserPlatformType) {
-  const browserNameKeys = Object.keys(browsers[browserPlatformType]);
+  let browserNameKeys = Object.keys(browsers[browserPlatformType]);
   let output = '';
   if (browserPlatformType === 'webextensions') {
     output = '<table class="webext-summary-compat-table"><thead><tr><th style="width: 40%"></th>'
-    const browserColumnWidth = 60/browserNameKeys.length;
-    for (const browserNameKey of browserNameKeys) {
+    let browserColumnWidth = 60/browserNameKeys.length;
+    for (let browserNameKey of browserNameKeys) {
       output += `<th style="width:${browserColumnWidth}%">${browsers[browserPlatformType][browserNameKey]}</th>`;
     }
     output += "<tr></thead>";
   } else {
     output = `<div id="compat-${browserPlatformType}"><table class="compat-table"><thead><tr>`;
     output +=  '<th>Feature</th>';
-    for (const browserNameKey of browserNameKeys) {
+    for (let browserNameKey of browserNameKeys) {
       output += `<th>${browsers[browserPlatformType][browserNameKey]}</th>`;
     }
     output += '</tr></thead>';
@@ -109,23 +109,23 @@ function getSupportClass(supportInfo) {
   } else if (supportInfo) { // there is just one support statement
     checkSupport(supportInfo.version_added, supportInfo.version_removed);
   } else { // this browser has no info, it's unknown
-    return 'unknown-support';
-  }
+  return 'unknown-support';
+}
 
-  function checkSupport(added, removed) {
-    if (added === null) {
-      cssClass = 'unknown-support';
-    } else if (added) {
-      cssClass = 'full-support';
-      if (removed) {
-        cssClass = 'no-support';
-      }
-    } else {
+function checkSupport(added, removed) {
+  if (added === null) {
+    cssClass = 'unknown-support';
+  } else if (added) {
+    cssClass = 'full-support';
+    if (removed) {
       cssClass = 'no-support';
     }
+  } else {
+    cssClass = 'no-support';
   }
+}
 
-  return cssClass;
+return cssClass;
 }
 
 /*
@@ -161,7 +161,7 @@ function writeFlagsNote(supportData, browserId) {
     flagTextStart = ' this';
   }
 
-  const flagText = `${flagTextStart} feature is behind the <code>${supportData.flag.name}</code>`;
+  let flagText = `${flagTextStart} feature is behind the <code>${supportData.flag.name}</code>`;
 
   // value_to_set is optional
   let valueToSet = '';
@@ -237,27 +237,27 @@ function writeSupportInfo(supportData, browserId, compatNotes) {
     // Generate notes, if any
     if (supportData.notes) {
       if (Array.isArray(supportData.notes)) {
-        for (const note of supportData.notes) {
-          const noteIndex = compatNotes.indexOf(note);
+        for (let note of supportData.notes) {
+          let noteIndex = compatNotes.indexOf(note);
           noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
         }
       } else {
-        const noteIndex = compatNotes.indexOf(supportData.notes);
+        let noteIndex = compatNotes.indexOf(supportData.notes);
         noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
       }
     }
 
     // there is a flag and it needs a note, too
     if (supportData.flag) {
-      const flagNote = writeFlagsNote(supportData, browserId);
-      const noteIndex = compatNotes.indexOf(flagNote);
+      let flagNote = writeFlagsNote(supportData, browserId);
+      let noteIndex = compatNotes.indexOf(flagNote);
       noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
     }
 
     // add a link to the alternative name note, if there is one
     if (supportData.alternative_name) {
-      const altNameNote = writeAlternativeNameNote(supportData.alternative_name);
-      const noteIndex = compatNotes.indexOf(altNameNote);
+      let altNameNote = writeAlternativeNameNote(supportData.alternative_name);
+      let noteIndex = compatNotes.indexOf(altNameNote);
       noteAnchors.push(`<sup><a href="#compatNote_${noteIndex+1}">${noteIndex+1}</a></sup>`);
     }
 
@@ -280,9 +280,9 @@ function collectCompatNotes() {
   function pushNotes(supportEntry, browserName) {
     // collect notes
     if (supportEntry.hasOwnProperty('notes')) {
-      const notes = supportEntry['notes'];
+      let notes = supportEntry['notes'];
       if (Array.isArray(notes)) {
-        for (const note of notes) {
+        for (let note of notes) {
           if (notesArray.indexOf(note) === -1) {
             notesArray.push(note);
           }
@@ -295,24 +295,24 @@ function collectCompatNotes() {
     }
     // collect flags
     if (supportEntry.hasOwnProperty('flag')) {
-      const flagNote = writeFlagsNote(supportEntry, browserName);
+      let flagNote = writeFlagsNote(supportEntry, browserName);
       if (notesArray.indexOf(flagNote) === -1) {
         notesArray.push(flagNote);
       }
     }
     // collect alternative names
     if (supportEntry.hasOwnProperty('alternative_name')) {
-      const altNameNote = writeAlternativeNameNote(supportEntry.alternative_name);
+      let altNameNote = writeAlternativeNameNote(supportEntry.alternative_name);
       if (notesArray.indexOf(altNameNote) === -1) {
         notesArray.push(altNameNote);
       }
     }
   }
-  for (const row of features) {
-    const support = Object.keys(row).map((k) => row[k])[0].support;
-    for (const browserName of Object.keys(support)) {
+  for (let row of features) {
+    let support = Object.keys(row).map((k) => row[k])[0].support;
+    for (let browserName of Object.keys(support)) {
       if (Array.isArray(support[browserName])) {
-        for (const entry of support[browserName]) {
+        for (let entry of support[browserName]) {
           pushNotes(entry, browserName);
         }
       } else {
@@ -332,36 +332,36 @@ an identifier for the row,  like "Basic support".
 function writeSupportCells(supportData, compatNotes, browserPlatformType) {
   let output = '';
 
-  for (const browserNameKey of Object.keys(browsers[browserPlatformType])) {
-    const support = supportData[browserNameKey];
+  for (let browserNameKey of Object.keys(browsers[browserPlatformType])) {
+    let support = supportData[browserNameKey];
     let supportInfo = '';
     // if supportData is an array, there are multiple support statements
     if (Array.isArray(support)) {
-      for (const entry of support) {
+      for (let entry of support) {
         supportInfo += `<p>${writeSupportInfo(entry, browserNameKey, compatNotes)}</p>`;
       }
     } else if (support) { // there is just one support statement
       supportInfo = writeSupportInfo(support, browserNameKey, compatNotes);
     } else { // this browser has no info, it's unknown
-      supportInfo = writeSupportInfo(null);
-    }
-    output += `<td class="${getSupportClass(supportData[browserNameKey])}">${supportInfo}</td>`;
+    supportInfo = writeSupportInfo(null);
   }
-  return output;
+  output += `<td class="${getSupportClass(supportData[browserNameKey])}">${supportInfo}</td>`;
+}
+return output;
 }
 
 /*
 Write compat table
 */
 function writeTable(browserPlatformType) {
-  const compatNotes = collectCompatNotes();
+  let compatNotes = collectCompatNotes();
   let output = writeTableHead(browserPlatformType);
   output += '<tbody>';
-  for (const row of features) {
-    const feature = Object.keys(row).map((k) => row[k])[0];
+  for (let row of features) {
+    let feature = Object.keys(row).map((k) => row[k])[0];
     let desc = '';
     if (feature.description) {
-      const label = Object.keys(row)[0];
+      let label = Object.keys(row)[0];
       // Basic support or unnested features need no prefixing
       if (label.indexOf('.') === -1) {
         desc += feature.description;
@@ -387,9 +387,9 @@ Write each compat note, with an `id` so it will be linked from the table.
 */
 function writeNotes() {
   let output = '';
-  const compatNotes = collectCompatNotes();
-  for (const note of compatNotes) {
-    const noteIndex = compatNotes.indexOf(note);
+  let compatNotes = collectCompatNotes();
+  for (let note of compatNotes) {
+    let noteIndex = compatNotes.indexOf(note);
     output += `<p id=compatNote_${noteIndex+1}>${noteIndex+1}. ${note}</p>`;
   }
   return output;
@@ -411,20 +411,20 @@ Flatten them into a features array
 function traverseFeatures(obj, depth, identifier) {
   depth--;
   if (depth >= 0) {
-    for (const i in obj) {
+    for (let i in obj) {
       if (!!obj[i] && typeof(obj[i])=="object" && i !== '__compat') {
         if (obj[i].__compat) {
 
-          const featureNames = Object.keys(obj[i]);
+          let featureNames = Object.keys(obj[i]);
           if (featureNames.length > 1) {
             // there are sub features below this node,
             // so we need to identify partial support for the main feature
-            for (const subfeatureName of featureNames) {
+            for (let subfeatureName of featureNames) {
               // if this is actually a subfeature (i.e. it is not a __compat object)
               // and the subfeature has a __compat object
               if ((subfeatureName !== '__compat') && (obj[i][subfeatureName].__compat)) {
-                const browserNames = Object.keys(obj[i].__compat.support);
-                for (const browser of browserNames) {
+                let browserNames = Object.keys(obj[i].__compat.support);
+                for (let browser of browserNames) {
                   if (obj[i].__compat.support[browser].version_added !=
                       obj[i][subfeatureName].__compat.support[browser].version_added ||
                       obj[i][subfeatureName].__compat.support[browser].notes) {
@@ -443,10 +443,10 @@ function traverseFeatures(obj, depth, identifier) {
   }
 }
 
-const compatData = getData(query, bcd);
-const features = [];
-const identifier = query.split(".").pop();
-const isWebExtensions = query.split(".")[0] === "webextensions";
+var compatData = getData(query, bcd);
+var features = [];
+var identifier = query.split(".").pop();
+var isWebExtensions = query.split(".")[0] === "webextensions";
 
 if (!compatData) {
   output = s_no_data_found;
