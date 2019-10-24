@@ -61,7 +61,7 @@ function processData(filename, logger) {
   let dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
-  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
+  let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -73,17 +73,17 @@ function processData(filename, logger) {
 
   if (actual !== expected) {
     hasErrors = true;
-    logger.error(chalk`{red Error on {bold line ${jsonDiff(actual, expected)}}}`);
+    logger.error(chalk`{red Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
-  if (actual !== expectedFeatureSorting) {
+  if (expected !== expectedFeatureSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Feature sorting error on {bold line ${jsonDiff(expected, expectedFeatureSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
