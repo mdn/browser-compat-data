@@ -10,7 +10,7 @@ const chalk = require('chalk');
 function checkError(error_type, name, method, expected, logger) {
   const actual = method.__compat.description || "";
   if (actual != expected) {
-    logger.error(chalk`{red Incorrect ${error_type} description for {bold ${name}}
+    logger.error(chalk`{red → Incorrect ${error_type} description for {bold ${name}}
       Actual: {yellow "${actual}"}
       Expected: {green "${expected}"}}`);
     return true;
@@ -65,7 +65,7 @@ function testDescriptions(filename) {
   if (errors.length) {
     console.error(chalk`{red   Descriptions – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`    ${error}`);
+      console.error(`  ${error}`);
     }
     return true;
   }
