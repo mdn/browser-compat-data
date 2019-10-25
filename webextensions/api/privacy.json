@@ -55,7 +55,8 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "54"
+                  "version_added": "54",
+                  "notes": "Starting in Firefox 70, a value of <code>disable_non_proxied_udp</code> requires a proxy if one is configured, but allows connections to go through if no proxy is set up. Previously, in this mode WebRTC could only be used if a proxy was configured and TURN over TCP was available; this behavior is now exposed as <code>proxy_only</code>."
                 },
                 "firefox_android": {
                   "version_added": "54"

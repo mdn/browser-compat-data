@@ -58,7 +58,7 @@ function processData(filename, logger) {
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
-  let dataObject = JSON.parse(actual);
+  const dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
   let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
@@ -86,22 +86,22 @@ function processData(filename, logger) {
     logger.error(chalk`{red → Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
-  let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
+  const constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
     logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
   }
 
-  let hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
+  const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     hasErrors = true;
     logger.error(chalk`{red → ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
-  let match = regexp.exec(actual);
+  const match = regexp.exec(actual);
   if (match) {
-    var a_url = url.parse(match[1]);
+    const a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
       logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
