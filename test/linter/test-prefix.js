@@ -51,7 +51,7 @@ function testPrefix(filename) {
   if (errors.length) {
     console.error(chalk`{red   Prefix – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`    ${error}`);
+      console.error(`  ${error}`);
     }
     return true;
   }
