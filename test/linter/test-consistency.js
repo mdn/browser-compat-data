@@ -274,7 +274,7 @@ function testConsistency(filename) {
         } else if (errortype == "support_unknown") {
           console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
         } else if (errortype == "subfeature_earlier_implementation") {
-          console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value})}) than the following sub-feature(s):}`);
+          console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):}`);
         }
 
         subfeatures.forEach(subfeature => {
