@@ -3,11 +3,11 @@ const path = require('path');
 const chalk = require('chalk');
 
 function checkPrefix(data, category, errors, prefix, path="") {
-  for (var key in data) {
+  for (const key in data) {
     if (key === "prefix" && typeof(data[key]) === "string") {
       if (data[key].includes(prefix)) {
-        var error = chalk`{red {bold ${prefix}} prefix is wrong for key: {bold ${path}}}`;
-        var rules = [
+        const error = chalk`{red {bold ${prefix}} prefix is wrong for key: {bold ${path}}}`;
+        const rules = [
           category == "api" && !data[key].startsWith(prefix),
           category == "css" && !data[key].startsWith(`-${prefix}`)
         ];
@@ -17,7 +17,7 @@ function checkPrefix(data, category, errors, prefix, path="") {
       }
     } else {
       if (typeof data[key] === "object") {
-        var curr_path = (path.length > 0) ? `${path}.${key}` : key;
+        const curr_path = (path.length > 0) ? `${path}.${key}` : key;
         checkPrefix(data[key], category, errors, prefix, curr_path);
       }
     }
@@ -26,8 +26,8 @@ function checkPrefix(data, category, errors, prefix, path="") {
 }
 
 function processData(data, category) {
-  var errors = [];
-  var prefixes = [];
+  let errors = [];
+  let prefixes = [];
 
   if (category === "api") {
     prefixes = ["moz", "Moz", "webkit", "WebKit", "webKit", "ms", "MS"];
@@ -36,7 +36,7 @@ function processData(data, category) {
     prefixes = ["webkit", "moz", "ms"];
   }
 
-  for (let prefix of prefixes) {
+  for (const prefix of prefixes) {
     checkPrefix(data, category, errors, prefix);
   }
   return errors;
@@ -46,7 +46,7 @@ function testPrefix(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..', '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   const data = require(filename);
-  var errors = processData(data, category);
+  const errors = processData(data, category);
 
   if (errors.length) {
     console.error(chalk`{red   Prefix – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);

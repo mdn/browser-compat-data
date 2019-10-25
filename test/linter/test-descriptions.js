@@ -54,7 +54,7 @@ function testDescriptions(filename) {
   };
 
   if (data.api) {
-    for (let apiName in data.api) {
+    for (const apiName in data.api) {
       const apiData = data.api[apiName];
       processData(apiData, apiName, logger);
     }
