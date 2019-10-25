@@ -20,7 +20,7 @@ function hasValidConstrutorDescription(apiData, apiName, logger) {
  * @param {import('../utils').Logger} logger
  */
 function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
-  for (let methodName in apiData) {
+  for (const methodName in apiData) {
     if (methodName.endsWith("_event")) {
       const event = apiData[methodName];
       const eventName = methodName.replace("_event", "");
@@ -79,7 +79,7 @@ function testDescriptions(filename) {
   };
 
   if (data.api) {
-    for (let apiName in data.api) {
+    for (const apiName in data.api) {
       const apiData = data.api[apiName];
       hasValidConstrutorDescription(apiData, apiName, logger);
       hasCorrectDOMEventsDescription(apiData, apiName, logger);
