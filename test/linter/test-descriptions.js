@@ -1,6 +1,25 @@
 const chalk = require('chalk');
 
 /**
+ * @param {String} error_type
+ * @param {String} name
+ * @param {Identifier} method
+ * @param {String} expected
+ * @param {import('../utils').Logger} logger
+ */
+function checkError(error_type, name, method, expected, logger) {
+  const actual = method.__compat.description || "";
+  if (actual != expected) {
+    logger.error(chalk`{red Incorrect ${error_type} description for {bold ${name}}
+      Actual: {yellow "${actual}"}
+      Expected: {green "${expected}"}}`);
+    return true;
+  }
+
+  return false;
+}
+
+/**
  * @param {Identifier} apiData
  * @param {String} apiName
  * @param {import('../utils').Logger} logger
@@ -9,30 +28,13 @@ function processData(apiData, apiName, logger) {
   for (let methodName in apiData) {
     const method = apiData[methodName];
     if (methodName == apiName) {
-      if (method.__compat.description !== `<code>${apiName}()</code> constructor`) {
-        logger.error(chalk`{red Incorrect constructor description for {bold ${apiName}()}
-      Actual: {yellow "${method.__compat.description || ""}"}
-      Expected: {green "<code>${apiName}()</code> constructor"}}`);
-      }
+      checkError("constructor", `${apiName}()`, method, `<code>${apiName}()</code> constructor`, logger);
     } else if (methodName.endsWith("_event")) {
-      const eventName = methodName.replace("_event", "");
-      if (method.__compat.description !== `<code>${eventName}</code> event`) {
-        logger.error(chalk`{red Incorrect event description for {bold ${apiName}.${methodName}}
-      Actual: {yellow "${method.__compat.description || ""}"}
-      Expected: {green "<code>${eventName}</code> event"}}`);
-      }
+      checkError("event", `${apiName}.${methodName}`, method, `<code>${methodName.replace("_event", "")}</code> event`, logger);
     } else if (methodName == 'secure_context_required') {
-      if (method.__compat.description !== `Secure context required`) {
-        logger.error(chalk`{red Incorrect secure context required description for {bold ${apiName}()}
-      Actual: {yellow "${method.__compat.description || ""}"}
-      Expected: {green "Secure context required"}}`);
-      }
+      checkError("secure context required", `${apiName}()`, method, "Secure context required", logger);
     } else if (methodName == 'worker_support') {
-      if (method.__compat.description !== `Available in workers`) {
-        logger.error(chalk`{red Incorrect worker support description for {bold ${apiName}()}
-      Actual: {yellow "${method.__compat.description || ""}"}
-      Expected: {green "Available in workers"}}`);
-      }
+      checkError("worker", `${apiName}()`, method, "Available in workers", logger);
     }
   }
 }
