@@ -21,6 +21,7 @@ const blockMany = [
   'opera_android',
   'safari',
   'safari_ios',
+  'samsunginternet_android',
   'webview_android'
 ];
 
@@ -34,7 +35,7 @@ const blockList = {
   svg: [],
   javascript: ['edge', 'firefox', 'firefox_android', 'ie'],
   mathml: blockMany,
-  webdriver: blockMany.concat(['samsunginternet_android']),
+  webdriver: blockMany,
   webextensions: [],
   xpath: [],
   xslt: []
