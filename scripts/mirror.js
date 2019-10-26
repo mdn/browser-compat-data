@@ -236,7 +236,10 @@ const doSetFeature = (data, newData, rootPath, browser, source, force) => {
   }
 
   if (doBump) {
-    newData[rootPath].__compat.support[browser] = bumpVersion(comp[getSource(browser, source)], browser, getSource(browser, source));
+    let newValue = bumpVersion(comp[getSource(browser, source)], browser, getSource(browser, source));
+    if (newValue !== null) {
+      newData[rootPath].__compat.support[browser] = newValue;
+    }
   }
 
   return newData;
