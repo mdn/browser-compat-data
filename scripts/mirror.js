@@ -353,7 +353,6 @@ const mirrorDataByFeature = (browser, featureIdent, source, force) => {
     return false;
   }
 
-
   let data = require(filepath);
   let newData = setFeature(data, feature, browser, source, force);
 
