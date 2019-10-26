@@ -218,6 +218,42 @@ const bumpVersion = (data, destination, source) => {
 
  /**
   * @param {object} data
+  * @param {object} newData
+  * @param {string} rootPath
+  * @param {string} browser
+  * @param {string} source
+  * @param {boolean} force
+  */
+const doSetFeature = (data, newData, rootPath, browser, source, force) => {
+  let comp = data[rootPath].__compat.support;
+
+  let doBump = false;
+  if (force) {
+    doBump = true;
+  } else {
+    if (Array.isArray(comp[browser])) {
+      for (let i = 0; i < comp[browser].length; i++) {
+        if ([true, null, undefined].includes(comp[browser][i].version_added)) {
+          doBump = true;
+          break;
+        }
+      }
+    } else if (comp[browser] !== undefined) {
+      doBump = [true, null, undefined].includes(comp[browser].version_added);
+    } else {
+      doBump = true;
+    }
+  }
+
+  if (doBump) {
+    newData[rootPath].__compat.support[browser] = bumpVersion(comp[getSource(browser, source)], browser, getSource(browser, source));
+  }
+
+  return newData;
+};
+
+ /**
+  * @param {object} data
   * @param {string} feature
   * @param {string} browser
   * @param {string} source
@@ -231,29 +267,29 @@ const setFeature = (data, feature, browser, source, force) => {
     newData[rootPath] = setFeature(data[rootPath], feature, browser, source, force);
   } else {
     if (data[rootPath].constructor == Object || Array.isArray(data[rootPath])) {
-      let comp = data[rootPath].__compat.support;
+      newData = doSetFeature(data, newData, rootPath, browser, source, force);
+    }
+  }
 
-      let doBump = false;
-      if (force) {
-        doBump = true;
-      } else {
-        if (Array.isArray(comp[browser])) {
-          for (let i = 0; i < comp[browser].length; i++) {
-            if ([true, null, undefined].includes(comp[browser][i].version_added)) {
-              doBump = true;
-              break;
-            }
-          }
-        } else if (comp[browser] !== undefined) {
-          doBump = [true, null, undefined].includes(comp[browser].version_added);
-        } else {
-          doBump = true;
-        }
-      }
+  return newData;
+}
 
-      if (doBump) {
-        newData[rootPath].__compat.support[browser] = bumpVersion(comp[getSource(browser, source)], browser, getSource(browser, source));
+ /**
+  * @param {object} data
+  * @param {string} browser
+  * @param {string} source
+  * @param {boolean} force
+  */
+const setFeatureRecursive = (data, browser, source, force) => {
+  let newData = Object.assign({}, data);
+
+  for (let i in data) {
+    if (!!data[i] && typeof(data[i]) == "object" && i !== '__compat') {
+      newData[i] = data[i];
+      if (data[i].__compat) {
+        doSetFeature(data, newData, i, browser, source, force);
       }
+      setFeatureRecursive(data[i], browser, source, force);
     }
   }
 
@@ -279,18 +315,18 @@ function mirrorDataByFile(browser, filepath, source, force) {
   if (fs.statSync(file).isFile()) {
     if (path.extname(file) === '.json') {
       let data = require(file);
-      let newData = setFeature(data, [filepath.split("/")[0]], browser, source, force);
+      let newData = setFeatureRecursive(data, browser, source, force);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
-  }
+  } else if (fs.statSync(file).isDirectory()) {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
 
-  const subFiles = fs.readdirSync(file).map((subfile) => {
-    return path.join(file, subfile);
-  });
-
-  for (let subfile of subfiles) {
-    load(browser, subfile, source, force);
+    for (let subfile of subFiles) {
+      mirrorDataByFile(browser, subfile, source, force);
+    }
   }
 
   return true;
