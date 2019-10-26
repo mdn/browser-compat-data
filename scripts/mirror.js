@@ -95,8 +95,8 @@ const bumpVersion = (data, destination, source) => {
   let newValue = null;
   if (Array.isArray(data)) {
     newValue = [];
-    for (let i = 0; i < data.length(); i++) {
-      newValue[i] = bumpVersion[i];
+    for (let i = 0; i < data.length; i++) {
+      newValue[i] = bumpVersion(data[i], destination, source);
     }
   } else {
     newValue = {};
