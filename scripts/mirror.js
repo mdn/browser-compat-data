@@ -165,21 +165,21 @@ const bumpVersion = (data, destination, source) => {
     }
 
     else if (destination == 'safari_ios') {
-      if (newValue.version_added !== null) {
+      if (typeof(data.version_added) === 'string') {
         newValue.version_added = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_added]);
       }
 
-      if (data.version_removed && newValue.version_removed != null) {
+      if (data.version_removed && typeof(data.version_removed) === 'string') {
         newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
       }
     }
 
     else if (destination == 'samsunginternet_android') {
-      if (newValue.version_added !== null) {
+      if (typeof(data.version_added) === 'string') {
         newValue.version_added = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_added]);
       }
 
-      if (data.version_removed && newValue.version_removed != null) {
+      if (data.version_removed && typeof(data.version_removed) === 'string') {
         newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
       }
 
