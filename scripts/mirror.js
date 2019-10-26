@@ -60,18 +60,29 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
 const getSource = (browser, source) => {
   if (source) {
     return source;
-  } else if (['chrome_android', 'opera'].includes(browser)) {
-    return 'chrome';
-  } else if (['opera_android', 'samsunginternet_android', 'webview_android'].includes(browser)) {
-    return 'chrome_android';
-  } else if (browser == 'firefox_android') {
-    return 'firefox';
-  } else if (browser == 'edge') {
-    return 'ie';
-  } else if (browser == 'safari_ios') {
-    return 'safari';
-  } else {
-    throw Error(`${browser} is a base browser and a "source" browser must be specified.`);
+  }
+
+  switch(browser) {
+    case "chrome_android":
+    case "opera":
+      return "chrome";
+      break;
+    case "opera_android":
+    case "samsunginternet_android":
+    case "webview_android":
+      return "chrome_android";
+      break;
+    case "firefox_android":
+      return "firefox";
+      break;
+    case "edge";
+      return "ie";
+      break;
+    case "safari_ios":
+      return "safari";
+      break;
+    default:
+      throw Error(`${browser} is a base browser and a "source" browser must be specified.`);
   }
 }
 
