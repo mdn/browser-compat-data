@@ -9,12 +9,12 @@ const { platform } = require('os');
 
 const browsers = require('..').browsers;
 
-const { argv } = require('yargs').command('$0 <browser> <feature>', 'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source', (yargs) => {
+const { argv } = require('yargs').command('$0 <browser> <feature_or_file>', 'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source', (yargs) => {
   yargs.positional('browser', {
     describe: 'The destination browser',
     type: 'string'
-  }).positional('feature', {
-    describe: 'The feature to perform mirroring',
+  }).positional('feature_or_file', {
+    describe: 'The feature, file, or folder to perform mirroring',
     type: 'string'
   }).option('source', {
     describe: 'Use a specified source browser rather than the default',
@@ -261,11 +261,47 @@ const setFeature = (data, feature, browser, source, force) => {
 
  /**
   * @param {string} browser
+  * @param {string} filepath
+  * @param {string} source
+  * @param {boolean} force
+  */
+function mirrorDataByFile(browser, filepath, source, force) {
+  let file = filepath;
+  if (file.indexOf(__dirname) !== 0) {
+    file = path.resolve(__dirname, '..', file);
+  }
+
+  if (!fs.existsSync(file)) {
+    return false;
+  }
+
+  if (fs.statSync(file).isFile()) {
+    if (path.extname(file) === '.json') {
+      let data = require(file);
+      let newData = setFeature(data, [filepath.split("/")[0]], browser, source, force);
+
+      fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
+    }
+  }
+
+  const subFiles = fs.readdirSync(file).map((subfile) => {
+    return path.join(file, subfile);
+  });
+
+  for (let subfile in subfiles) {
+    load(browser, subfile, source, force);
+  }
+
+  return true;
+}
+
+ /**
+  * @param {string} browser
   * @param {string} featureIdent
   * @param {string} source
   * @param {boolean} force
   */
-const mirrorData = (browser, featureIdent, source, force) => {
+const mirrorDataByFeature = (browser, featureIdent, source, force) => {
   var filepath = path.resolve(__dirname, '..');
   var feature = featureIdent.split('.');
   var found = false;
@@ -281,7 +317,7 @@ const mirrorData = (browser, featureIdent, source, force) => {
   }
 
   if (!found) {
-    console.error(`Could not find feature ${feature}!`);
+    console.error(`Could not find ${feature}!`);
     return false;
   }
 
@@ -294,8 +330,22 @@ const mirrorData = (browser, featureIdent, source, force) => {
   return true;
 }
 
+ /**
+  * @param {string} browser
+  * @param {string} feature_or_file
+  * @param {string} source
+  * @param {boolean} force
+  */
+const mirrorData = (browser, feature_or_file, source, force) => {
+  let doMirror = mirrorDataByFeature;
+  if (fs.existsSync(feature_or_file) && (fs.statSync(feature_or_file).isFile() || fs.statSync(feature_or_file).isDirectory()))
+    doMirror = mirrorDataByFile;
+
+  doMirror(browser, feature_or_file, source, force);
+}
+
 if (require.main === module) {
-  mirrorData(argv.browser, argv.feature, argv.source, argv.force);
+  mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.force);
 }
 
 module.exports = mirrorData;
