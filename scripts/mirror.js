@@ -39,9 +39,9 @@ const create_webview_range = (value) => {
   * @param {object} source_browser_release
   */
 const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
-  var browserData = browsers[dest_browser];
-  for (var r in browserData.releases) {
-    var release = browserData.releases[r];
+  const browserData = browsers[dest_browser];
+  for (let r in browserData.releases) {
+    const release = browserData.releases[r];
     if (
       (release.engine == source_browser_release.engine && Number(release.engine_version) >= Number(source_browser_release.engine_version)) ||
       (["opera", "opera_android"].includes(dest_browser) && release.engine == "Blink" && source_browser_release.engine == "WebKit")
@@ -93,12 +93,12 @@ const getSource = (browser, source) => {
   */
 const bumpVersion = (data, destination, source) => {
   if (Array.isArray(data)) {
-    var newValue = [];
-    for (var i = 0; i < data.length(); i++) {
+    let newValue = [];
+    for (let i = 0; i < data.length(); i++) {
       newValue[i] = bumpVersion[i];
     }
   } else {
-    var newValue = {};
+    let newValue = {};
     for (let i in data) {
       newValue[i] = data[i]; // Prevent shallow copy / modification of source data
     }
@@ -223,9 +223,9 @@ const bumpVersion = (data, destination, source) => {
   * @param {boolean} force
   */
 const setFeature = (data, feature, browser, source, force) => {
-  var newData = Object.assign({}, data);
+  let newData = Object.assign({}, data);
 
-  var rootPath = feature.shift();
+  const rootPath = feature.shift();
   if (feature.length > 0 && data[rootPath].constructor == Object) {
     newData[rootPath] = setFeature(data[rootPath], feature, browser, source, force);
   } else {
@@ -237,7 +237,7 @@ const setFeature = (data, feature, browser, source, force) => {
         doBump = true;
       } else {
         if (Array.isArray(comp[browser])) {
-          for (var i = 0; i < comp[browser].length; i++) {
+          for (let i = 0; i < comp[browser].length; i++) {
             if ([true, null, undefined].includes(comp[browser][i].version_added)) {
               doBump = true;
               break;
@@ -302,13 +302,13 @@ function mirrorDataByFile(browser, filepath, source, force) {
   * @param {boolean} force
   */
 const mirrorDataByFeature = (browser, featureIdent, source, force) => {
-  var filepath = path.resolve(__dirname, '..');
-  var feature = featureIdent.split('.');
-  var found = false;
+  let filepath = path.resolve(__dirname, '..');
+  let feature = featureIdent.split('.');
+  let found = false;
 
-  for (var depth = 0; depth < feature.length; depth++) {
+  for (let depth = 0; depth < feature.length; depth++) {
     filepath = path.resolve(filepath, feature[depth]);
-    var filename = filepath + ".json";
+    const filename = filepath + ".json";
     if (fs.existsSync(filename) && fs.statSync(filename).isFile()) {
       filepath = filename;
       found = true;
