@@ -12,7 +12,7 @@ function processData(filename, logger) {
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
-  let dataObject = JSON.parse(actual);
+  const dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
@@ -91,7 +91,8 @@ function processData(filename, logger) {
     String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
     match => {
       const [url, protocol, subdomain, path] = match;
-      let [, locale, expectedPath] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
+      const [, locale, expectedPath_] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
+      let expectedPath = expectedPath_
 
       if (!expectedPath.startsWith('docs/')) {
         // Convert legacy zone URLs (see https://bugzil.la/1462475):

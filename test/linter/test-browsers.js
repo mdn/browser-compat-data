@@ -68,7 +68,7 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
     }
 
     for (const [browser, supportStatement] of Object.entries(support)) {
-      let statementList = Array.isArray(supportStatement) ? supportStatement : [supportStatement];
+      const statementList = Array.isArray(supportStatement) ? supportStatement : [supportStatement];
       function hasVersionAddedOnly(statement) {
         const keys = Object.keys(statement);
         return keys.length === 1 && keys[0] === 'version_added';

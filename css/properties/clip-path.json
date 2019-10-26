@@ -66,7 +66,7 @@
             ],
             "safari_ios": [
               {
-                "version_added": "9.1"
+                "version_added": "9.3"
               },
               {
                 "prefix": "-webkit-",
@@ -331,16 +331,21 @@
               "edge": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.clip-path-path.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "71"
+                },
+                {
+                  "version_added": "63",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.clip-path-path.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
                 "version_added": "63",
                 "flags": [

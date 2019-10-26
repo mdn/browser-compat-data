@@ -12,6 +12,7 @@ const {
   testStyle,
   testSchema,
   testVersions,
+  testConsistency,
   testDescriptions
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js')
@@ -54,6 +55,7 @@ function load(...files) {
           hasLinkErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
+          hasConsistencyErrors = false,
           hasRealValueErrors = false,
           hasPrefixErrors = false,
           hasDescriptionsErrors = false;
@@ -89,6 +91,7 @@ function load(...files) {
             hasLinkErrors = testLinks(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
+            hasConsistencyErrors = testConsistency(file);
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
@@ -105,6 +108,7 @@ function load(...files) {
           hasLinkErrors,
           hasBrowserErrors,
           hasVersionErrors,
+          hasConsistencyErrors,
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors
@@ -163,6 +167,7 @@ if (hasErrors) {
         testVersions(file);
         testRealValues(file);
         testBrowsers(file);
+        testConsistency(file);
         testPrefix(file);
         testDescriptions(file);
       }

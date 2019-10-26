@@ -69,7 +69,7 @@ const processData = (data) => {
 };
 
 const iterateData = (data) => {
-  for (let key in data) {
+  for (const key in data) {
     if (key === '__compat') {
       processData(data[key]);
     } else {
@@ -81,7 +81,7 @@ const iterateData = (data) => {
 if (process.argv[2]) {
   iterateData(bcd[process.argv[2]]);
 } else {
-  for (let data in bcd) {
+  for (const data in bcd) {
     if (!(data === 'browsers' || data === 'webextensions')) {
       iterateData(bcd[data]);
     }

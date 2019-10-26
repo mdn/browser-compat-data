@@ -1,5 +1,6 @@
 'use strict';
 const { platform } = require('os');
+const chalk = require('chalk');
 
 /**
  * @typedef {object} Logger
@@ -60,7 +61,7 @@ function indexToPosRaw(str, index) {
   }
 
   for (let i = 0; i < index; i++) {
-    let char = str[i];
+    const char = str[i];
     switch (char) {
       case '\n':
         if (prevChar === '\r') break;
@@ -100,14 +101,14 @@ function indexToPos(str, index) {
  * @return {string}
  */
 function jsonDiff(actual, expected) {
-  var actualLines = actual.split(/\n/);
-  var expectedLines = expected.split(/\n/);
+  const actualLines = actual.split(/\n/);
+  const expectedLines = expected.split(/\n/);
 
-  for (var i = 0; i < actualLines.length; i++) {
+  for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return `#${i + 1}
-    Actual:   ${escapeInvisibles(actualLines[i])}
-    Expected: ${escapeInvisibles(expectedLines[i])}`;
+      return chalk`{bold line #${i + 1}}
+    {yellow Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
+    {green Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
 }
