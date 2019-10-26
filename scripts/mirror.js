@@ -40,8 +40,7 @@ const create_webview_range = (value) => {
   */
 const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
   const browserData = browsers[dest_browser];
-  for (let r in browserData.releases) {
-    const release = browserData.releases[r];
+  for (const release of browserData.releases) {
     if (
       (release.engine == source_browser_release.engine && Number(release.engine_version) >= Number(source_browser_release.engine_version)) ||
       (["opera", "opera_android"].includes(dest_browser) && release.engine == "Blink" && source_browser_release.engine == "WebKit")
@@ -288,7 +287,7 @@ function mirrorDataByFile(browser, filepath, source, force) {
     return path.join(file, subfile);
   });
 
-  for (let subfile in subfiles) {
+  for (let subfile of subfiles) {
     load(browser, subfile, source, force);
   }
 
