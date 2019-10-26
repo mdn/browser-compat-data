@@ -75,7 +75,7 @@ const getSource = (browser, source) => {
     case "firefox_android":
       return "firefox";
       break;
-    case "edge";
+    case "edge":
       return "ie";
       break;
     case "safari_ios":
