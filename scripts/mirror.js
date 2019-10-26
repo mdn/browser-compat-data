@@ -93,7 +93,9 @@ const getSource = (browser, source) => {
   */
 const bumpVersion = (data, destination, source) => {
   let newValue = null;
-  if (Array.isArray(data)) {
+  if (data == null) {
+    return null;
+  } else if (Array.isArray(data)) {
     newValue = [];
     for (let i = 0; i < data.length; i++) {
       newValue[i] = bumpVersion(data[i], destination, source);
