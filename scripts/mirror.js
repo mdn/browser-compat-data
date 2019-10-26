@@ -40,7 +40,8 @@ const create_webview_range = (value) => {
   */
 const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
   const browserData = browsers[dest_browser];
-  for (const release of browserData.releases) {
+  for (const r in browserData.releases) {
+    const release = browserData.releases[r];
     if (
       (release.engine == source_browser_release.engine && Number(release.engine_version) >= Number(source_browser_release.engine_version)) ||
       (["opera", "opera_android"].includes(dest_browser) && release.engine == "Blink" && source_browser_release.engine == "WebKit")
@@ -91,13 +92,14 @@ const getSource = (browser, source) => {
   * @param {string} source
   */
 const bumpVersion = (data, destination, source) => {
+  let newValue = null;
   if (Array.isArray(data)) {
-    let newValue = [];
+    newValue = [];
     for (let i = 0; i < data.length(); i++) {
       newValue[i] = bumpVersion[i];
     }
   } else {
-    let newValue = {};
+    newValue = {};
     for (let i in data) {
       newValue[i] = data[i]; // Prevent shallow copy / modification of source data
     }
