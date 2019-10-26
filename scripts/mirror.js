@@ -109,10 +109,8 @@ const bumpVersion = (data, destination, source) => {
         newValue.version_added = Math.max(15, Number(newValue.version_added)).toString();
       }
 
-      if (data.version_removed) {
-        if (typeof(newValue.version_removed) === 'string') {
-          newValue.version_removed = Math.max(15, Number(newValue.version_removed)).toString();
-        }
+      if (data.version_removed && typeof(newValue.version_removed) === 'string') {
+        newValue.version_removed = Math.max(15, Number(newValue.version_removed)).toString();
       }
     }
 
@@ -133,10 +131,8 @@ const bumpVersion = (data, destination, source) => {
         newValue.version_added = Math.max(4, Number(newValue.version_added)).toString();
       }
 
-      if (data.version_removed) {
-        if (typeof(newValue.version_removed) === 'string') {
-          newValue.version_removed = Math.max(4, Number(newValue.version_removed)).toString();
-        }
+      if (data.version_removed && typeof(newValue.version_removed) === 'string') {
+        newValue.version_removed = Math.max(4, Number(newValue.version_removed)).toString();
       }
     }
 
@@ -145,10 +141,8 @@ const bumpVersion = (data, destination, source) => {
         newValue.version_added = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_added]);
       }
 
-      if (data.version_removed) {
-        if (typeof(data.version_removed) === 'string') {
-          newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
-        }
+      if (data.version_removed && typeof(data.version_removed) === 'string') {
+        newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
       }
 
       if (typeof(data.notes) === 'string') {
@@ -161,10 +155,8 @@ const bumpVersion = (data, destination, source) => {
         newValue.version_added = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_added]);
       }
 
-      if (data.version_removed) {
-        if (typeof(data.version_removed) === 'string') {
-          newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
-        }
+      if (data.version_removed && typeof(data.version_removed) === 'string') {
+        newValue.version_removed = getMatchingBrowserVersion(destination, browsers[source].releases[data.version_removed]);
       }
 
       if (typeof(data.notes) === 'string') {
@@ -201,10 +193,8 @@ const bumpVersion = (data, destination, source) => {
         newValue.version_added = create_webview_range(newValue.version_added);
       }
 
-      if (data.version_removed) {
-        if (typeof(newValue.version_removed) === 'string') {
-          newValue.version_removed = create_webview_range(newValue.version_removed);
-        }
+      if (data.version_removed && typeof(newValue.version_removed) === 'string') {
+        newValue.version_removed = create_webview_range(newValue.version_removed);
       }
 
       if (typeof(data.notes) === 'string') {
