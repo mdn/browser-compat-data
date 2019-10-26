@@ -44,7 +44,7 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
     const release = browserData.releases[r];
     if (
       (release.engine == source_browser_release.engine && Number(release.engine_version) >= Number(source_browser_release.engine_version)) ||
-      (["opera", "opera_android"].includes(dest_browser) && release.engine == "Blink" && source_browser_release.engine == "WebKit")
+      (["opera", "opera_android", "samsunginternet_android"].includes(dest_browser) && release.engine == "Blink" && source_browser_release.engine == "WebKit")
     ) {
       return r;
     }
