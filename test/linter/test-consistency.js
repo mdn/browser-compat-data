@@ -278,7 +278,7 @@ function testConsistency(filename) {
         }
 
         subfeatures.forEach(subfeature => {
-          console.error(chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${subfeature[1]}}`);
+          console.error(chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${subfeature[1] || "[Array]"}}`);
         });
       });
     })
