@@ -73,29 +73,29 @@ function processData(filename, logger) {
 
   if (actual !== expected) {
     hasErrors = true;
-    logger.error(chalk`{red Error on ${jsonDiff(actual, expected)}}`);
+    logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red → Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   if (expected !== expectedFeatureSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red → Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   const constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
+    logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
   }
 
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
+    logger.error(chalk`{red → ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
@@ -104,7 +104,7 @@ function processData(filename, logger) {
     const a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
+      logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
     }
   }
 
@@ -126,7 +126,7 @@ function testStyle(filename) {
   if (errors.length) {
     console.error(chalk`{red   Style – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`    ${error}`);
+      console.error(`  ${error}`);
     }
     return true;
   }

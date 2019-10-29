@@ -6,7 +6,7 @@ function checkPrefix(data, category, errors, prefix, path="") {
   for (const key in data) {
     if (key === "prefix" && typeof(data[key]) === "string") {
       if (data[key].includes(prefix)) {
-        const error = chalk`{red {bold ${prefix}} prefix is wrong for key: {bold ${path}}}`;
+        const error = chalk`{red → {bold ${prefix}} prefix is wrong for key: {bold ${path}}}`;
         const rules = [
           category == "api" && !data[key].startsWith(prefix),
           category == "css" && !data[key].startsWith(`-${prefix}`)
@@ -51,7 +51,7 @@ function testPrefix(filename) {
   if (errors.length) {
     console.error(chalk`{red   Prefix – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`    ${error}`);
+      console.error(`  ${error}`);
     }
     return true;
   }
