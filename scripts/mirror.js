@@ -31,7 +31,7 @@ const { argv } = require('yargs').command('$0 <browser> <feature_or_file>', 'Mir
   * @param {string} value
   */
 const create_webview_range = (value) => {
-  return Number(value) < 37 ? "≤37" : value;
+  return value == "1" ? "1" : Number(value) < 37 ? "≤37" : value;
 }
 
  /**
