@@ -1717,12 +1717,34 @@
           "__compat": {
             "description": "Available in workers",
             "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
+              "chrome": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "67",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Experimental Web Platform Features"
+                    }
+                  ]
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "67",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Experimental Web Platform Features"
+                    }
+                  ]
+                }
+              ],
               "edge": {
                 "version_added": false
               },
@@ -1735,14 +1757,25 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": null
-              },
+              "nodejs": [
+                {
+                  "version_added": true
+                },
+                {
+                  "version_added": true,
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
               "opera": {
-                "version_added": true
+                "version_added": false
               },
               "opera_android": {
-                "version_added": true
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -1751,10 +1784,10 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": false
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "80"
               }
             },
             "status": {
