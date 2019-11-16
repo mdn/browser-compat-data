@@ -33,7 +33,7 @@ const blockList = {
   html: [],
   http: [],
   svg: [],
-  javascript: ['edge', 'firefox', 'firefox_android', 'ie'],
+  javascript: ['chrome', 'edge', 'firefox', 'firefox_android', 'ie'],
   mathml: blockMany,
   webdriver: blockMany,
   webextensions: [],
