@@ -11,13 +11,6 @@ All data in the repo must conform to the schema. The formal feature data schema 
 You can use `npm test` to validate data against the schema. You might need to install the `devDependencies` using `npm install`.
 The JSON data is validated against the schema using [`ajv`](http://epoberezkin.github.io/ajv/).
 
-## Rendering
-
-You can use `npm run render $query $depth $aggregateMode` to output an HTML like it would be rendered on MDN.
-The parameters are the same as the [`{{compat}}` macro](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs).
-
-Paste the generated HTML into the MDN editor (source mode). You can use a new page, for example: https://developer.mozilla.org/en-US/docs/new and verify if the output looks correct.
-
 ## Statistics
 
 To see how changes will affect the statistics of real (either `false` or a version number, as defined in [#3555](https://github.com/mdn/browser-compat-data/issues/3555)), true, and null values, you can run `npm run stats [folder]`.  This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on.  The script also takes an optional argument regarding a specific folder (such as `api` or `javascript`), which will print statistics result for only that folder.

@@ -60,15 +60,15 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 
     for (const statement of supportStatements) {
       if (statement === undefined) {
-        logger.error(chalk`{red {bold ${browser}} must be defined for {bold ${relPath}}}`);
+        logger.error(chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`);
           hasErrors = true;
       } else {
         if ([true, null].includes(statement.version_added)) {
-          logger.error(chalk`{red {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`);
+          logger.error(chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`);
           hasErrors = true;
         }
         if ([true, null].includes(statement.version_removed)) {
-          logger.error(chalk`{red {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`);
+          logger.error(chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`);
           hasErrors = true;
         }
       }
@@ -116,7 +116,7 @@ function testRealValues(filename) {
   if (errors.length) {
     console.error(chalk`{red   Real values – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`    ${error}`);
+      console.error(`  ${error}`);
     }
     return true;
   }
