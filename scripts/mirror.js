@@ -20,8 +20,8 @@ const { argv } = require('yargs').command('$0 <browser> <feature_or_file>', 'Mir
     describe: 'Use a specified source browser rather than the default',
     type: 'string',
     default: undefined
-  }).option('force', {
-    alias: 'f',
+  }).option('always_mirror', {
+    alias: 'a',
     describe: 'Force a mirroring of the data even when "version_added" is not true/null',
     type: 'boolean'
   });
