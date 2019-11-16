@@ -108,11 +108,19 @@ const bumpVersion = (data, destination, source) => {
 
     if (destination == 'chrome_android') {
       if (typeof(newValue.version_added) === 'string') {
-        newValue.version_added = Math.max(15, Number(newValue.version_added)).toString();
+        let value = Number(newValue.version_added);
+        if (value < 18) value = 18;
+        if (value > 18 && value < 25) value = 25;
+
+        newValue.version_added = value.toString();
       }
 
       if (data.version_removed && typeof(newValue.version_removed) === 'string') {
-        newValue.version_removed = Math.max(15, Number(newValue.version_removed)).toString();
+        let value = Number(newValue.version_removed);
+        if (value < 18) value = 18;
+        if (value > 18 && value < 25) value = 25;
+
+        newValue.version_removed = value.toString();
       }
     }
 
