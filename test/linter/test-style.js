@@ -58,10 +58,10 @@ function processData(filename, logger) {
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
-  let dataObject = JSON.parse(actual);
+  const dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
-  let expectedFeatureSorting = JSON.stringify(JSON.parse(actual), orderFeatures, 2);
+  let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -73,38 +73,38 @@ function processData(filename, logger) {
 
   if (actual !== expected) {
     hasErrors = true;
-    logger.error(chalk`{red Error on {bold line ${jsonDiff(actual, expected)}}}`);
+    logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Browser sorting error on {bold line ${jsonDiff(expected, expectedBrowserSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red → Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
-  if (actual !== expectedFeatureSorting) {
+  if (expected !== expectedFeatureSorting) {
     hasErrors = true;
-    logger.error(chalk`{red Feature sorting error on {bold line ${jsonDiff(expected, expectedFeatureSorting)}}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(chalk`{red → Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
-  let constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
+  const constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
   if (constructorMatch) {
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
+    logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
   }
 
-  let hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
+  const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     hasErrors = true;
-    logger.error(chalk`{red ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
+    logger.error(chalk`{red → ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
   }
 
   const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
-  let match = regexp.exec(actual);
+  const match = regexp.exec(actual);
   if (match) {
-    var a_url = url.parse(match[1]);
+    const a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
       hasErrors = true;
-      logger.error(chalk`{red ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
+      logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
     }
   }
 
@@ -126,7 +126,7 @@ function testStyle(filename) {
   if (errors.length) {
     console.error(chalk`{red   Style – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`    ${error}`);
+      console.error(`  ${error}`);
     }
     return true;
   }

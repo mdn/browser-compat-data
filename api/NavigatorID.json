@@ -193,7 +193,11 @@
               "version_added": true
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "notes": [
+                "Previously, <code>platform</code> would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system. This was corrected in Firefox 69.",
+                "You can override the value returned by <code>platform</code> by setting the preference <code>general.platform.override</code> to the string you wish to be returned instead."
+              ]
             },
             "firefox_android": {
               "version_added": true

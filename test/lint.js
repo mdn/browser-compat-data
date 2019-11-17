@@ -12,6 +12,8 @@ const {
   testStyle,
   testSchema,
   testVersions,
+  testConsistency,
+  testDescriptions
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js')
 const testCompareFeatures = require('./test-compare-features');
@@ -53,8 +55,10 @@ function load(...files) {
           hasLinkErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
+          hasConsistencyErrors = false,
           hasRealValueErrors = false,
-          hasPrefixErrors = false;
+          hasPrefixErrors = false,
+          hasDescriptionsErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -80,14 +84,17 @@ function load(...files) {
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
+            hasStyleErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
+            hasConsistencyErrors = testConsistency(file);
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
+            hasDescriptionsErrors = testDescriptions(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -101,8 +108,10 @@ function load(...files) {
           hasLinkErrors,
           hasBrowserErrors,
           hasVersionErrors,
+          hasConsistencyErrors,
           hasRealValueErrors,
           hasPrefixErrors,
+          hasDescriptionsErrors
         ].some(x => !!x);
 
         if (fileHasErrors) {
@@ -150,6 +159,7 @@ if (hasErrors) {
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../../schemas/browsers.schema.json');
+        testLinks(file);
       } else {
         testSchema(file);
         testStyle(file);
@@ -157,7 +167,9 @@ if (hasErrors) {
         testVersions(file);
         testRealValues(file);
         testBrowsers(file);
+        testConsistency(file);
         testPrefix(file);
+        testDescriptions(file);
       }
     } catch (e) {
       console.error(e);
