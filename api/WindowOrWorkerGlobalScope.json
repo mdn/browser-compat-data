@@ -11,10 +11,7 @@
             "version_added": "18"
           },
           "edge": {
-            "version_added": null
-          },
-          "edge_mobile": {
-            "version_added": null
+            "version_added": true
           },
           "firefox": {
             "version_added": "1"
@@ -23,19 +20,19 @@
             "version_added": "4"
           },
           "ie": {
-            "version_added": null
+            "version_added": true
           },
           "opera": {
-            "version_added": null
+            "version_added": true
           },
           "opera_android": {
-            "version_added": null
+            "version_added": true
           },
           "safari": {
-            "version_added": null
+            "version_added": true
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": true
           },
           "webview_android": {
             "version_added": true
@@ -59,9 +56,6 @@
             },
             "edge": {
               "version_added": true
-            },
-            "edge_mobile": {
-              "version_added": null
             },
             "firefox": [
               {
@@ -128,9 +122,6 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": [
               {
                 "version_added": "1"
@@ -186,9 +177,6 @@
               "version_added": true
             },
             "edge": {
-              "version_added": null
-            },
-            "edge_mobile": {
               "version_added": null
             },
             "firefox": [
@@ -248,9 +236,6 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "1"
@@ -271,6 +256,11 @@
             ],
             "ie": {
               "version_added": "4"
+            },
+            "nodejs": {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Takes a <code>Timeout</code> object instead of the <code>intervalID</code>."
             },
             "opera": {
               "version_added": "4"
@@ -308,9 +298,6 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "1"
@@ -331,6 +318,11 @@
             ],
             "ie": {
               "version_added": "4"
+            },
+            "nodejs": {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Takes a <code>Timeout</code> object instead of the <code>timeoutID</code>."
             },
             "opera": {
               "version_added": "4"
@@ -367,9 +359,6 @@
             },
             "edge": {
               "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": null
             },
             "firefox": [
               {
@@ -421,9 +410,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": null
-              },
               "firefox": {
                 "version_added": false
               },
@@ -468,9 +454,6 @@
               },
               "edge": {
                 "version_added": false
-              },
-              "edge_mobile": {
-                "version_added": null
               },
               "firefox": {
                 "version_added": false
@@ -517,9 +500,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": null
-              },
               "firefox": {
                 "version_added": "65"
               },
@@ -564,9 +544,6 @@
               "version_added": "42"
             },
             "edge": {
-              "version_added": "14"
-            },
-            "edge_mobile": {
               "version_added": "14"
             },
             "firefox": [
@@ -640,7 +617,7 @@
               "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": "10.1"
+              "version_added": "10.3"
             },
             "webview_android": {
               "version_added": "42"
@@ -650,64 +627,6 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "streaming_response_body": {
-          "__compat": {
-            "description": "Streaming response body",
-            "support": {
-              "chrome": {
-                "version_added": "43"
-              },
-              "chrome_android": {
-                "version_added": "43"
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "edge_mobile": {
-                "version_added": "14"
-              },
-              "firefox": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.streams.enabled"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "javascript.options.streams"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "29"
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": "10.1"
-              },
-              "safari_ios": {
-                "version_added": "10.1"
-              },
-              "webview_android": {
-                "version_added": "43"
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         },
         "blob_data_support": {
@@ -721,9 +640,6 @@
                 "version_added": "48"
               },
               "edge": {
-                "version_added": false
-              },
-              "edge_mobile": {
                 "version_added": false
               },
               "firefox": {
@@ -771,9 +687,6 @@
               "edge": {
                 "version_added": false
               },
-              "edge_mobile": {
-                "version_added": false
-              },
               "firefox": {
                 "version_added": "52"
               },
@@ -819,9 +732,6 @@
               "edge": {
                 "version_added": "16"
               },
-              "edge_mobile": {
-                "version_added": false
-              },
               "firefox": {
                 "version_added": "57"
               },
@@ -841,13 +751,68 @@
                 "version_added": "11.1"
               },
               "safari_ios": {
-                "version_added": "11.1"
+                "version_added": "11.3"
               },
               "samsunginternet_android": {
                 "version_added": false
               },
               "webview_android": {
                 "version_added": "66"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "streaming_response_body": {
+          "__compat": {
+            "description": "Streaming response body",
+            "support": {
+              "chrome": {
+                "version_added": "43"
+              },
+              "chrome_android": {
+                "version_added": "43"
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.streams"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "29"
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": {
+                "version_added": "10.3"
+              },
+              "webview_android": {
+                "version_added": "43"
               }
             },
             "status": {
@@ -866,12 +831,9 @@
               "version_added": "24"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "25"
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -930,12 +892,9 @@
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
-              },
-              "edge": {
                 "version_added": true
               },
-              "edge_mobile": {
+              "edge": {
                 "version_added": true
               },
               "firefox": {
@@ -984,9 +943,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": "52"
             },
@@ -1032,9 +988,6 @@
             "edge": {
               "version_added": null
             },
-            "edge_mobile": {
-              "version_added": null
-            },
             "firefox": {
               "version_added": "54"
             },
@@ -1067,6 +1020,54 @@
           }
         }
       },
+      "queueMicrotask": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask",
+          "support": {
+            "chrome": {
+              "version_added": "71"
+            },
+            "chrome_android": {
+              "version_added": "71"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "69"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "11.0.0"
+            },
+            "opera": {
+              "version_added": "58"
+            },
+            "opera_android": {
+              "version_added": "50"
+            },
+            "safari": {
+              "version_added": "12.1"
+            },
+            "safari_ios": {
+              "version_added": "12.2"
+            },
+            "webview_android": {
+              "version_added": "71"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "setInterval": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setInterval",
@@ -1078,9 +1079,6 @@
               "version_added": "30"
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": [
@@ -1103,6 +1101,14 @@
             ],
             "ie": {
               "version_added": "4"
+            },
+            "nodejs": {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": [
+                "Returns a <code>Timeout</code> object instead of the <code>intervalID</code>.",
+                "Does not support passing a <code>code</code> string and throws when the first parameter is not a function."
+              ]
             },
             "opera": {
               "version_added": "4"
@@ -1134,13 +1140,10 @@
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true
               },
               "edge": {
                 "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": null
               },
               "firefox": {
                 "version_added": true
@@ -1150,6 +1153,9 @@
               },
               "ie": {
                 "version_added": "10"
+              },
+              "nodejs": {
+                "version_added": true
               },
               "opera": {
                 "version_added": true
@@ -1164,7 +1170,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true
               }
             },
             "status": {
@@ -1188,9 +1194,6 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": [
               {
                 "version_added": "1"
@@ -1211,6 +1214,14 @@
             ],
             "ie": {
               "version_added": "4"
+            },
+            "nodejs": {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": [
+                "Returns a <code>Timeout</code> object instead of the <code>timeoutID</code>.",
+                "Does not support passing a <code>code</code> string and throws when the first parameter is not a function."
+              ]
             },
             "opera": {
               "version_added": "4"
@@ -1242,13 +1253,10 @@
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true
               },
               "edge": {
                 "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": null
               },
               "firefox": {
                 "version_added": true
@@ -1258,6 +1266,9 @@
               },
               "ie": {
                 "version_added": "10"
+              },
+              "nodejs": {
+                "version_added": true
               },
               "opera": {
                 "version_added": true
@@ -1272,7 +1283,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true
               }
             },
             "status": {
@@ -1295,9 +1306,6 @@
               "edge": {
                 "version_added": null
               },
-              "edge_mobile": {
-                "version_added": null
-              },
               "firefox": {
                 "version_added": "55"
               },
@@ -1305,6 +1313,9 @@
                 "version_added": "55"
               },
               "ie": {
+                "version_added": null
+              },
+              "nodejs": {
                 "version_added": null
               },
               "opera": {

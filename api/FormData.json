@@ -13,9 +13,6 @@
           "edge": {
             "version_added": true
           },
-          "edge_mobile": {
-            "version_added": true
-          },
           "firefox": {
             "version_added": "4",
             "notes": "Prior to Firefox 7, specifying a <a href='https://developer.mozilla.org/docs/Web/API/Blob'><code>Blob</code></a> as the data to append to the object, the filename reported in the <code>Content-Disposition</code> HTTP header was an empty string, resulting in errors on some servers. Starting with Firefox 7, the filename <code>blob</code> is sent."
@@ -66,9 +63,6 @@
             "edge": {
               "version_added": true
             },
-            "edge_mobile": {
-              "version_added": true
-            },
             "firefox": {
               "version_added": "4"
             },
@@ -104,6 +98,55 @@
           }
         }
       },
+      "SupportForOf": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData",
+          "description": "Support of <code>for...of</code>",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "50"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "append": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/append",
@@ -116,9 +159,6 @@
             },
             "edge": {
               "version_added": "12"
-            },
-            "edge_mobile": {
-              "version_added": true
             },
             "firefox": {
               "version_added": "4",
@@ -167,13 +207,10 @@
                 "version_added": true
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": true
               },
               "edge": {
                 "version_added": true
-              },
-              "edge_mobile": {
-                "version_added": null
               },
               "firefox": {
                 "version_added": "22"
@@ -200,7 +237,7 @@
                 "version_added": null
               },
               "webview_android": {
-                "version_added": null
+                "version_added": true
               }
             },
             "status": {
@@ -223,9 +260,6 @@
             },
             "edge": {
               "version_added": "18"
-            },
-            "edge_mobile": {
-              "version_added": false
             },
             "firefox": {
               "version_added": "39"
@@ -262,6 +296,54 @@
           }
         }
       },
+      "entries": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/entries",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": "18"
+            },
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": true
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": null
+            },
+            "webview_android": {
+              "version_added": "50"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "get": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/get",
@@ -274,9 +356,6 @@
             },
             "edge": {
               "version_added": "18"
-            },
-            "edge_mobile": {
-              "version_added": false
             },
             "firefox": {
               "version_added": "39"
@@ -326,9 +405,6 @@
             "edge": {
               "version_added": "18"
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "39"
             },
@@ -377,9 +453,6 @@
             "edge": {
               "version_added": "18"
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "39"
             },
@@ -406,108 +479,6 @@
             },
             "webview_android": {
               "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "set": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/set",
-          "support": {
-            "chrome": {
-              "version_added": "50"
-            },
-            "chrome_android": {
-              "version_added": "50"
-            },
-            "edge": {
-              "version_added": "18"
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "39"
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "entries": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/entries",
-          "support": {
-            "chrome": {
-              "version_added": "50"
-            },
-            "chrome_android": {
-              "version_added": "50"
-            },
-            "edge": {
-              "version_added": "18"
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "44"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": null
             }
           },
           "status": {
@@ -530,9 +501,6 @@
             "edge": {
               "version_added": "18"
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "44"
             },
@@ -558,7 +526,55 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "50"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "set": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/set",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": "18"
+            },
+            "firefox": {
+              "version_added": "39"
+            },
+            "firefox_android": {
+              "version_added": true
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": true
+            },
+            "samsunginternet_android": {
+              "version_added": true
+            },
+            "webview_android": {
+              "version_added": true
             }
           },
           "status": {
@@ -581,9 +597,6 @@
             "edge": {
               "version_added": "18"
             },
-            "edge_mobile": {
-              "version_added": false
-            },
             "firefox": {
               "version_added": "44"
             },
@@ -609,59 +622,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "SupportForOf": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData",
-          "description": "Support of <code>for...of</code>",
-          "support": {
-            "chrome": {
               "version_added": "50"
-            },
-            "chrome_android": {
-              "version_added": "50"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "edge_mobile": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "44"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": null
             }
           },
           "status": {
@@ -683,9 +644,6 @@
               "version_added": true
             },
             "edge": {
-              "version_added": true
-            },
-            "edge_mobile": {
               "version_added": true
             },
             "firefox": {
