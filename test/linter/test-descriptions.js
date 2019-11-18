@@ -1,9 +1,14 @@
 const chalk = require('chalk');
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
+ */
+
+/**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasValidConstrutorDescription(apiData, apiName, logger) {
   const constructor = apiData[apiName];
@@ -17,7 +22,7 @@ function hasValidConstrutorDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
   for (const methodName in apiData) {
@@ -36,7 +41,7 @@ function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
   const secureContext = apiData.secure_context_required;
@@ -50,7 +55,7 @@ function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
   const workerSupport = apiData.worker_support;

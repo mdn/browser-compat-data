@@ -2,6 +2,17 @@
 const path = require('path');
 const chalk = require('chalk');
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
+/**
+ * @param {Identifier} data
+ * @param {string} category
+ * @param {string[]} errors
+ * @param {string} prefix
+ * @param {string} [path]
+ */
 function checkPrefix(data, category, errors, prefix, path="") {
   for (const key in data) {
     if (key === "prefix" && typeof(data[key]) === "string") {
@@ -25,6 +36,11 @@ function checkPrefix(data, category, errors, prefix, path="") {
   return errors;
 }
 
+/**
+ * @param {Identifier} data
+ * @param {string} category
+ * @return {string[]}
+ */
 function processData(data, category) {
   let errors = [];
   let prefixes = [];
@@ -42,6 +58,9 @@ function processData(data, category) {
   return errors;
 }
 
+/**
+ * @param {string} filename
+ */
 function testPrefix(filename) {
   const relativePath = path.relative(path.resolve(__dirname, '..', '..'), filename);
   const category = relativePath.includes(path.sep) && relativePath.split(path.sep)[0];

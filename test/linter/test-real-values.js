@@ -7,6 +7,7 @@ const chalk = require('chalk');
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {string[]} */
@@ -45,7 +46,7 @@ const blockList = {
  * @param {SupportBlock} supportData
  * @param {string[]} blockList
  * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function checkRealValues(supportData, blockList, relPath, logger) {
   let hasErrors = false;

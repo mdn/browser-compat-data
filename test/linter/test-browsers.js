@@ -4,6 +4,7 @@ const chalk = require('chalk');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {Record<string, string[]>} */
@@ -46,7 +47,7 @@ const browsers = {
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
  * @param {string} category
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  * @param {string} [path]
  * @returns {boolean}
  */
