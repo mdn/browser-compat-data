@@ -48,14 +48,14 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 #### List of current peers
 - Rachel Andrew (@rachelandrew)
+- Richard Bloor (@rebloor), Mozilla (contractor)
 - Vinyl Darkscratch (@vinyldarkscratch)
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Ryan Johnson (@escattone), Mozilla
 - Joe Medley (@jpmedley), Google
 - Jean-Yves Perrier (@teoli2003), Mozilla
 - Eric Shepherd (@a2sheppy), Mozilla
-- Irene Smith (@irenesmith), Mozilla
-- Estelle Weyl (@estelle), Mozilla
+- Estelle Weyl (@estelle), Mozilla (contractor)
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
