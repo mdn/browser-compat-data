@@ -1,5 +1,5 @@
 'use strict';
-const { inspect } = require('util');
+const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 
@@ -35,7 +35,7 @@ const chalk = require('chalk');
 class ConsistencyChecker {
   /**
    * @param {Identifier} data
-   * @returns {ConsistencyError[]}
+   * @return {ConsistencyError[]}
    */
   check(data) {
     return this.checkSubfeatures(data);
@@ -44,7 +44,7 @@ class ConsistencyChecker {
   /**
    * @param {Identifier} data
    * @param {string[]} [path]
-   * @returns {ConsistencyError[]}
+   * @return {ConsistencyError[]}
    */
   checkSubfeatures(data, path = []) {
     /** @type {ConsistencyError[]} */
@@ -79,7 +79,7 @@ class ConsistencyChecker {
 
   /**
    * @param {PrimaryIdentifier & Required<IdentifierMeta>} data
-   * @returns {FeatureError[]}
+   * @return {FeatureError[]}
    */
   checkFeature(data) {
     /** @type {FeatureError[]} */
@@ -115,7 +115,7 @@ class ConsistencyChecker {
         errortype,
         browser,
         parent_value,
-        subfeatures,
+        subfeatures
       });
     });
 
@@ -146,7 +146,7 @@ class ConsistencyChecker {
         errortype,
         browser,
         parent_value,
-        subfeatures,
+        subfeatures
       });
     });
 
@@ -156,13 +156,7 @@ class ConsistencyChecker {
 
     subfeatures.forEach(subfeature => {
       supportInParent.forEach(browser => {
-        if (
-          data[subfeature].__compat.support[browser] != undefined &&
-          this.isVersionAddedGreater(
-            data[subfeature].__compat.support[browser],
-            data.__compat.support[browser]
-          )
-        ) {
+        if (data[subfeature].__compat.support[browser] != undefined && this.isVersionAddedGreater(data[subfeature].__compat.support[browser], data.__compat.support[browser])) {
           inconsistentSubfeaturesByBrowser[browser] = inconsistentSubfeaturesByBrowser[browser] || [];
           const subfeature_value = data[subfeature].__compat.support[browser].version_added;
           inconsistentSubfeaturesByBrowser[browser].push([subfeature, subfeature_value]);
@@ -180,7 +174,7 @@ class ConsistencyChecker {
         errortype,
         browser,
         parent_value,
-        subfeatures,
+        subfeatures
       });
     });
 
@@ -189,7 +183,7 @@ class ConsistencyChecker {
 
   /**
    * @param {Identifier} data
-   * @returns {data is Required<IdentifierMeta>}
+   * @return {data is Required<IdentifierMeta>}
    */
   isFeature(data) {
     return '__compat' in data;
@@ -197,78 +191,50 @@ class ConsistencyChecker {
 
   /**
    * @param {CompatStatement} compatData
-   * @returns {Array<string>}
+   * @return {string[]}
    */
   extractUnsupportedBrowsers(compatData) {
-    return this.extractBrowsers(
-      compatData,
-      data =>
-        data.version_added === false ||
-        (typeof data.version_removed !== 'undefined' &&
-          data.version_removed !== false),
-    );
+    return this.extractBrowsers(compatData, data => data.version_added === false || typeof data.version_removed !== 'undefined' && data.version_removed !== false);
   }
 
   /**
    * @param {CompatStatement} compatData
-   * @returns {Array<string>}
+   * @return {string[]}
    */
   extractSupportUnknownBrowsers(compatData) {
-    return this.extractBrowsers(
-      compatData,
-      data => data.version_added === null,
-    );
+    return this.extractBrowsers(compatData, data => data.version_added === null);
   }
 
   /**
    * @param {CompatStatement} compatData
-   * @returns {Array<string>}
+   * @return {string[]}
    */
   extractSupportNotTrueBrowsers(compatData) {
-    return this.extractBrowsers(
-      compatData,
-      data =>
-        data.version_added === false ||
-        data.version_added === null ||
-        (typeof data.version_removed !== 'undefined' &&
-          data.version_removed !== false),
-    );
+    return this.extractBrowsers(compatData, data => (data.version_added === false || data.version_added === null) || typeof data.version_removed !== 'undefined' && data.version_removed !== false);
   }
   /**
    * @param {CompatStatement} compatData
-   * @returns {Array<string>}
+   * @return {string[]}
    */
   extractSupportedBrowsersWithVersion(compatData) {
-    return this.extractBrowsers(
-      compatData,
-      data => typeof data.version_added === 'string',
-    );
+    return this.extractBrowsers(compatData, data => typeof(data.version_added) === 'string');
   }
 
   /**
    * @param {SupportStatement} compatData
-   * @returns {string | null}
+   * @return {string | null}
    */
   getVersionAdded(compatData) {
     /** @type {string | null} */
-    let version_added = null;
+    var version_added = null;
 
-    if (typeof compatData.version_added === 'string')
+    if (typeof(compatData.version_added) === 'string')
       return compatData.version_added;
 
-    if (Array.isArray(compatData)) {
-      for (let i = compatData.length - 1; i >= 0; i--) {
-        const va = compatData[i].version_added;
-        if (
-          typeof va === 'string' &&
-          (version_added == null ||
-            (typeof version_added === 'string' &&
-              compareVersions.compare(
-                version_added.replace('≤', ''),
-                va.replace('≤', ''),
-                '>'
-              )))
-        ) {
+    if (compatData.constructor === Array) {
+      for (var i = compatData.length - 1; i >= 0; i--) {
+        var va = compatData[i].version_added;
+        if (typeof(va) === 'string' && (version_added == null || (typeof(version_added) === 'string' && compareVersions.compare(version_added.replace('≤', ''), va.replace('≤', ''), '>')))) {
           version_added = va;
         }
       }
@@ -280,16 +246,13 @@ class ConsistencyChecker {
   /**
    * @param {SupportStatement} a
    * @param {SupportStatement} b
-   * @returns {boolean}
+   * @return {boolean}
    */
   isVersionAddedGreater(a, b) {
     var a_version_added = this.getVersionAdded(a);
     var b_version_added = this.getVersionAdded(b);
 
-    if (
-      typeof a_version_added === 'string' &&
-      typeof b_version_added === 'string'
-    ) {
+    if (typeof(a_version_added) === 'string' && typeof(b_version_added) === 'string') {
       if (a_version_added.startsWith('≤') || b_version_added.startsWith('≤')) {
         return false;
       }
@@ -303,9 +266,10 @@ class ConsistencyChecker {
    *
    * @param {CompatStatement} compatData
    * @param {(browserData: SimpleSupportStatement) => boolean} callback
-   * @returns {string[]}
+   * @return {string[]}
    */
-  extractBrowsers(compatData, callback) {
+  extractBrowsers(compatData, callback)
+  {
     return Object.keys(compatData.support).filter(browser => {
       const browserData = compatData.support[browser];
 
@@ -335,18 +299,12 @@ function testConsistency(filename) {
     errors.forEach(({ feature, path, errors }) =>  {
       console.error(chalk`{red   → {bold ${errors.length}} × {bold ${feature}} [${path.join('.')}]: }`);
       errors.forEach(({ errortype, browser, parent_value, subfeatures }) => {
-        switch (errortype) {
-          case 'unsupported':
-            console.error(chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
-            break;
-          case 'support_unknown':
-            console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
-            break;
-          case 'subfeature_earlier_implementation':
-            console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):}`);
-            break;
-          default:
-            throw new TypeError('Unknown error type: ' + inspect(errortype));
+        if (errortype == 'unsupported') {
+          console.error(chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
+        } else if (errortype == 'support_unknown') {
+          console.error(chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`);
+        } else if (errortype == 'subfeature_earlier_implementation') {
+          console.error(chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):}`);
         }
 
         subfeatures.forEach(subfeature => {
