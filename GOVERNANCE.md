@@ -54,7 +54,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Joe Medley (@jpmedley), Google
 - Jean-Yves Perrier (@teoli2003), Mozilla
 - Eric Shepherd (@a2sheppy), Mozilla
-- Irene Smith (@irenesmith), Mozilla
+- Richard Bloor (@rebloor), Mozilla
 - Estelle Weyl (@estelle), Mozilla
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
