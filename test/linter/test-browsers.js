@@ -51,20 +51,17 @@ const browsers = {
  * @returns {boolean}
  */
 function processData(data, displayBrowsers, requiredBrowsers, category, logger, path = '') {
-  let hasErrors = false;
   if (data.__compat && data.__compat.support) {
     const support = data.__compat.support;
 
     const invalidEntries = Object.keys(support).filter(value => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(chalk`{red → {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(', ')}}}`);
-      hasErrors = true;
     }
 
     const missingEntries = requiredBrowsers.filter(value => !(value in support));
     if (missingEntries.length > 0) {
       logger.error(chalk`{red → {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(', ')}}}`);
-      hasErrors = true;
     }
 
     for (const [browser, supportStatement] of Object.entries(support)) {
@@ -78,7 +75,6 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
         if (hasVersionAddedOnly(statement)) {
           if (sawVersionAddedOnly) {
            logger.error(chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`);
-            hasErrors = true;
             break;
           } else {
             sawVersionAddedOnly = true;
@@ -89,14 +85,8 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
   }
   for (const key in data) {
     if (key === "__compat") continue;
-    // Note that doing `hasErrors |= processData(…)` would convert
-    // `hasErrors` into a number, which could potentially lead
-    // to unexpected issues down the line.
 
-    // We can't use the ESNext `hasErrors ||= processData(…)` here either,
-    // as that would prevent printing nested browser issues, making testing
-    // and fixing issues longer, as nested issues wouldn't be logged.
-    hasErrors = processData(
+    processData(
       data[key],
       displayBrowsers,
       requiredBrowsers,
@@ -105,9 +95,8 @@ function processData(data, displayBrowsers, requiredBrowsers, category, logger, 
       (path && path.length > 0)
         ? `${path}.${key}`
         : key,
-    ) || hasErrors;
+    )
   }
-  return hasErrors;
 }
 
 /**
