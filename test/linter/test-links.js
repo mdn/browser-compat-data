@@ -32,7 +32,7 @@ function processData(filename) {
   processLink( // use https://crbug.com/100000 instead
     errors,
     actual,
-    String.raw`https?://bugs\.chromium\.org/p/chromium/issues/detail\?id=(\d+)`,
+    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/chromium/issues/detail\?id=(\d+)`,
     match => {
       return {'issue': 'Use shortenable URL', 'expected': `https://crbug.com/${match[1]}`};
     }
