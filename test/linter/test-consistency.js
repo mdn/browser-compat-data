@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 const compareVersions = require('compare-versions');
-const chalk = require('chalk');
+const chalk = require('chalk')
 
 /**
  * @typedef {import('../../types').CompatStatement} CompatStatement
@@ -32,7 +32,8 @@ const chalk = require('chalk');
  * This checker aims at improving data quality
  * by detecting inconsistent information.
  */
-class ConsistencyChecker {
+ class ConsistencyChecker
+ {
   /**
    * @param {Identifier} data
    * @return {ConsistencyError[]}
@@ -282,7 +283,7 @@ class ConsistencyChecker {
       }
     });
   }
-}
+ }
 
 /**
  * @param {string} filename
@@ -311,7 +312,7 @@ function testConsistency(filename) {
           console.error(chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${subfeature[1] || "[Array]"}}`);
         });
       });
-    });
+    })
     return true;
   }
   return false;
