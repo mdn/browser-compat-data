@@ -34,7 +34,7 @@ function processData(filename) {
     actual,
     String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/chromium/issues/detail\?id=(\d+)`,
     match => {
-      return {'issue': 'Use shortenable URL', 'expected': `https://crbug.com/${match[1]}`};
+      return {'issue': 'Use shortenable URL', 'expected': `https://crbug.com/${match[2]}`};
     }
   );
 
