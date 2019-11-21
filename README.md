@@ -35,8 +35,6 @@ There's a top-level directory for each broad area covered: for example, "http",
 "javascript", "webextensions". Inside each of these directories is one or more
 JSON file containing the compatibility data.
 
-*Please note that we have not (yet) migrated all compatibility data from the MDN wiki pages into this repository.*
-
 - [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
 - [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
@@ -63,9 +61,6 @@ JSON file containing the compatibility data.
 ## Format of the browser compat json files
 The definitive description of the format used to represent compatibility data is the [schema file](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json).
 You can also have a look at the [schema documentation](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md).
-
-*Please note that we do not (yet) guarantee the stability of the data format.
-You're welcome to use the data, but its structure is subject to change without notice.*
 
 ## Issues?
 
