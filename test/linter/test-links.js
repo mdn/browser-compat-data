@@ -5,9 +5,8 @@ const { IS_WINDOWS, indexToPos } = require('../utils.js');
 
 /**
  * @param {string} filename
- * @param {import('../utils').Logger} logger
  */
-function processData(filename, logger) {
+function processData(filename) {
   let errors = [];
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -166,14 +165,8 @@ function processLink(errors, actual, regexp, matchHandler) {
 function testLinks(filename) {
   /** @type {string[]} */
   const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
 
-  processData(filename, logger);
+  processData(filename);
 
   if (errors.length) {
     console.error(chalk`{red   Links – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
