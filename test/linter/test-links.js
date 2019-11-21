@@ -135,10 +135,6 @@ function processData(filename, logger) {
     }
   );
 
-  errors.forEach((error, index) => {
-    logger.error(chalk`{red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
-  })
-
   return errors;
 }
 
@@ -182,7 +178,7 @@ function testLinks(filename) {
   if (errors.length) {
     console.error(chalk`{red   Links – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(`  ${error}`);
+      console.error(`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
     }
     return true;
   }
