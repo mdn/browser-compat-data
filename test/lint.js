@@ -85,7 +85,7 @@ function load(...files) {
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
-            hasStyleErrors = testLinks(file);
+            hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
