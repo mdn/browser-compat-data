@@ -136,7 +136,7 @@ function processData(filename, logger) {
   );
 
   errors.forEach((error, index) => {
-    logger.error(chalk`{red → ${error.pos} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
+    logger.error(chalk`{red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
   })
 
   return errors;
@@ -153,12 +153,13 @@ function processLink(errors, actual, regexp, matchHandler) {
   /** @type {RegExpExecArray} */
   let match;
   while ((match = re.exec(actual)) !== null) {
-    let pos = indexToPos(actual, match.index);
+    let pos = indexToPosRaw(actual, match.index)
+    let posString = indexToPos(actual, match.index);
     let result = matchHandler(match);
 
     if (result) {
       let {issue, expected, actualLink = match[0]} = result;
-      errors.push({'issue': issue, 'pos': pos, 'actual': actualLink, 'expected': expected});
+      errors.push({'issue': issue, 'pos': pos, 'posString': posString, 'actual': actualLink, 'expected': expected});
     }
   }
 }
