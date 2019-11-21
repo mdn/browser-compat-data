@@ -87,7 +87,6 @@ function checkVersions(supportData, relPath, logger) {
       }
     }
   }
-
 }
 
 /**
