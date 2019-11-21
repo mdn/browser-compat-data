@@ -69,25 +69,25 @@ function processData(filename, logger) {
     expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
   }
 
-  if (actual !== expected) {.
+  if (actual !== expected) {
     logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
-  if (expected !== expectedBrowserSorting) {.
+  if (expected !== expectedBrowserSorting) {
     logger.error(chalk`{red → Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
-  if (expected !== expectedFeatureSorting) {.
+  if (expected !== expectedFeatureSorting) {
     logger.error(chalk`{red → Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
   }
 
   const constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
-  if (constructorMatch) {.
+  if (constructorMatch) {
     logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
   }
 
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
-  if (hrefDoubleQuoteIndex >= 0) {.
+  if (hrefDoubleQuoteIndex >= 0) {
     logger.error(chalk`{red → ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
   }
 
@@ -95,11 +95,10 @@ function processData(filename, logger) {
   const match = regexp.exec(actual);
   if (match) {
     const a_url = url.parse(match[1]);
-    if (a_url.hostname === null) {.
+    if (a_url.hostname === null) {
       logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
     }
   }
-.
 }
 
 function testStyle(filename) {
