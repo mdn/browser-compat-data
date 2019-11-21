@@ -163,10 +163,8 @@ function processLink(errors, actual, regexp, matchHandler) {
  * @param {string} filename
  */
 function testLinks(filename) {
-  /** @type {string[]} */
-  const errors = [];
-
-  processData(filename);
+  /** @type {Object[]} */
+  let errors = processData(filename);
 
   if (errors.length) {
     console.error(chalk`{red   Links – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
