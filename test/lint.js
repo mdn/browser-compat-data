@@ -17,6 +17,7 @@ const {
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js')
 const testCompareFeatures = require('./test-compare-features');
+const testMigrations = require('./test-migrations');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -84,7 +85,7 @@ function load(...files) {
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
-            hasStyleErrors = testLinks(file);
+            hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
@@ -134,7 +135,7 @@ function load(...files) {
 }
 
 /** @type {boolean} */
-const hasErrors = argv.files
+var hasErrors = argv.files
   ? load.apply(undefined, argv.files)
   : load(
     'api',
@@ -149,7 +150,9 @@ const hasErrors = argv.files
     'webextensions',
     'xpath',
     'xslt',
-  ) || testCompareFeatures();
+  );
+hasErrors = testCompareFeatures() || hasErrors;
+hasErrors = testMigrations() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
