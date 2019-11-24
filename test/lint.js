@@ -7,6 +7,7 @@ const chalk = require('chalk');
 const {
   testBrowsers,
   testLinks,
+  testMDNUrls,
   testPrefix,
   testRealValues,
   testStyle,
@@ -54,6 +55,7 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasLinkErrors = false,
+          hasMDNUrlErroros = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
@@ -90,6 +92,7 @@ function load(...files) {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
+            hasMDNUrlErroros = testMDNUrls(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
@@ -167,6 +170,7 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testLinks(file);
+        testMDNUrls(file);
         testVersions(file);
         testRealValues(file);
         testBrowsers(file);
