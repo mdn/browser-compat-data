@@ -95,7 +95,7 @@ function checkVersions(supportData, relPath, logger) {
           }
         }
         if ('flags' in statement) {
-          if (FLAGLESS_BROWSERS.indexOf(browser) != -1) {
+          if (FLAGLESS_BROWSERS.includes(browser)) {
             logger.error(chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`);
               hasErrors = true;
           }
