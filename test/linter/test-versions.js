@@ -18,6 +18,11 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
+/** @type string[] */
+const FLAGLESS_BROWSERS = [
+  'webview_android'
+];
+
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
@@ -87,6 +92,12 @@ function checkVersions(supportData, relPath, logger) {
               logger.error(chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`);
               hasErrors = true;
             }
+          }
+        }
+        if ('flags' in statement) {
+          if (FLAGLESS_BROWSERS.includes(browser)) {
+            logger.error(chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`);
+              hasErrors = true;
           }
         }
       }
