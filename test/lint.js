@@ -8,6 +8,7 @@ const {
   testBrowsers,
   testLinks,
   testPrefix,
+  testMDNURLs,
   testRealValues,
   testStyle,
   testSchema,
@@ -58,6 +59,7 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasLinkErrors = false,
+          hasMDNURLErrors = false,
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
@@ -97,6 +99,7 @@ function load(...files) {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
+            hasMDNURLErrors = testMDNURLs(file);
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
@@ -179,6 +182,7 @@ if (hasErrors) {
         testSchema(file);
         testStyle(file);
         testLinks(file);
+        testMDNURLs(file);
         testVersions(file);
         testRealValues(file);
         testBrowsers(file);
