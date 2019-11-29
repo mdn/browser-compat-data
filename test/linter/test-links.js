@@ -1,5 +1,6 @@
 'use strict';
 const fs = require('fs');
+const request = require('request');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
@@ -134,6 +135,20 @@ function processData(filename) {
     }
   );
 
+  processLink(
+    errors,
+    actual,
+    String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`,
+    match => {
+      if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
+        request.get(match[0]).on('error', (err) => {
+          console.error(err);
+          return {'issue': 'Link does not return successful HTTP code'};
+        });
+      }
+    }
+  );
+
   return errors;
 }
 
@@ -169,7 +184,11 @@ function testLinks(filename) {
   if (errors.length) {
     console.error(chalk`{red   Links – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
     for (const error of errors) {
-      console.error(chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
+      if (error.expected) {
+        console.error(chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
+      } else {
+        console.error(chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}}).}`);
+      }
     }
     return true;
   }
