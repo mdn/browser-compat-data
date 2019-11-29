@@ -141,9 +141,11 @@ function processData(filename) {
     String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`,
     match => {
       if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
-        request.get(match[0]).on('error', (err) => {
-          console.error(err);
-          return {'issue': 'Link does not return successful HTTP code'};
+        request(match[0], (err, resp, body) => {
+          if (err) {
+            console.log(err);
+            return {'issue': 'Link does not return successful HTTP code'};
+          }
         });
       }
     }
