@@ -4,7 +4,12 @@ const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
 /**
+ * @typedef {import('../utils').Logger} Logger
+ */
+
+/**
  * @param {string} filename
+ * @param {Logger} logger
  */
 function processData(filename) {
   let errors = [];
