@@ -1,11 +1,16 @@
 const chalk = require('chalk');
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
+ */
+
+/**
  * @param {String} error_type
  * @param {String} name
  * @param {Identifier} method
  * @param {String} expected
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function checkError(error_type, name, method, expected, logger) {
   const actual = method.__compat.description || "";
@@ -15,14 +20,12 @@ function checkError(error_type, name, method, expected, logger) {
       Expected: {green "${expected}"}}`);
     return true;
   }
-
-  return false;
 }
 
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function processData(apiData, apiName, logger) {
   for (let methodName in apiData) {

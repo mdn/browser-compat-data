@@ -13,16 +13,21 @@
           "edge": {
             "version_added": false
           },
-          "firefox": {
-            "version_added": "67",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "webgl.enable-draft-extensions",
-                "value_to_set": "true"
-              }
-            ]
-          },
+          "firefox": [
+            {
+              "version_added": "71"
+            },
+            {
+              "version_added": "67",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "webgl.enable-draft-extensions",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
             "version_added": false
           },
@@ -49,7 +54,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
