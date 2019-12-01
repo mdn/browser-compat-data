@@ -4,6 +4,8 @@ const request = require('sync-request');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
+let testDeadLinks = true;
+
 /**
  * @param {string} filename
  */
@@ -135,20 +137,22 @@ function processData(filename) {
     }
   );
 
-  processLink(
-    errors,
-    actual,
-    String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`,
-    match => {
-      if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
-        let res = request('GET', match[0]);
+  if (testDeadLinks) {
+    processLink(
+      errors,
+      actual,
+      String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`,
+      match => {
+        if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
+          let res = request('GET', match[0]);
 
-        if (res.statusCode < 200 || res.statusCode > 299) {
-          return {'issue': 'Link does not return successful HTTP code'};
+          if (res.statusCode < 200 || res.statusCode > 299) {
+            return {'issue': 'Link does not return successful HTTP code'};
+          }
         }
       }
-    }
-  );
+    );
+  };
 
   return errors;
 }
