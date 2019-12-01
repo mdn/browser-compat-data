@@ -147,7 +147,7 @@ function processData(filename) {
           let res = request('GET', match[0]);
 
           if (res.statusCode < 200 || res.statusCode > 299) {
-            return {'issue': 'Link does not return successful HTTP code'};
+            return {'issue': `Link does not return successful HTTP code (${res.statusCode})`};
           }
         }
       }
