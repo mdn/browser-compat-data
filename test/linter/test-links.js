@@ -1,6 +1,6 @@
 'use strict';
 const fs = require('fs');
-const request = require('request');
+const request = require('sync-request');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
@@ -141,12 +141,11 @@ function processData(filename) {
     String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`,
     match => {
       if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
-        request(match[0], (err, resp, body) => {
-          if (err) {
-            console.log(err);
-            return {'issue': 'Link does not return successful HTTP code'};
-          }
-        });
+        let res = request('GET', match[0]);
+
+        if (res.statusCode < 200 || res.statusCode > 299) {
+          return {'issue': 'Link does not return successful HTTP code'};
+        }
       }
     }
   );
