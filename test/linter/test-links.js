@@ -4,7 +4,7 @@ const request = require('sync-request');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
-let testDeadLinks = true;
+let testDeadLinks = false;
 
 /**
  * @param {string} filename
