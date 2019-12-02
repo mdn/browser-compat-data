@@ -19,13 +19,16 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   })
 );
+exports.INVISIBLES_MAP = INVISIBLES_MAP;
 const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
 const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+exports.IS_CI = IS_CI;
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
+exports.IS_WINDOWS = IS_WINDOWS;
 
 /**
  * Escapes common invisible characters.
@@ -39,6 +42,7 @@ function escapeInvisibles(str) {
     return INVISIBLES_MAP[char] || char;
   });
 }
+exports.escapeInvisibles = escapeInvisibles;
 
 /**
  * Gets the row and column matching the index in a string.
@@ -82,6 +86,7 @@ function indexToPosRaw(str, index) {
 
   return [line, col];
 }
+exports.indexToPosRaw = indexToPosRaw;
 
 /**
  * Gets the row and column matching the index in a string and formats it.
@@ -94,6 +99,7 @@ function indexToPos(str, index) {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
 }
+exports.indexToPos = indexToPos;
 
 /**
  * @param {string} actual
@@ -112,13 +118,4 @@ function jsonDiff(actual, expected) {
     }
   }
 }
-
-module.exports = {
-  INVISIBLES_MAP,
-  IS_CI,
-  IS_WINDOWS,
-  escapeInvisibles,
-  indexToPosRaw,
-  indexToPos,
-  jsonDiff,
-};
+exports.jsonDiff = jsonDiff;
