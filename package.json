@@ -1,6 +1,6 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "0.0.99",
+  "version": "1.0.0",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -41,12 +41,13 @@
     "eslint-plugin-standard": "^4.0.0",
     "mdn-confluence": "^1.0.3",
     "ora": "^4.0.3",
-    "yargs": "^15.0.1"
+    "prettier": "^1.18.2",
+    "yargs": "^15.0.2"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "lint": "node test/lint; ./node_modules/.bin/eslint test/ scripts/ index.js",
-    "fix": "node scripts/fix; ./node_modules/.bin/eslint --fix test/ scripts/ index.js",
+    "fix": "node scripts/fix; prettier --write **/*.js **/*.ts; ./node_modules/.bin/eslint --fix test/ scripts/ index.js",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
     "show-errors": "npm test 1> /dev/null",
