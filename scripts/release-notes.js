@@ -114,7 +114,7 @@ const makeURL = (version, body) => {
   // Adhering to RFC 3986 makes the full link clickable in Terminal.app
   const encodedBody = encodeURIComponent(body).replace(/[!'()*]/g, c => `%${c.charCodeAt(0).toString(16)}`);
 
-  return `${baseURL}?title=${version}&tag=${version}&prerelease=true&body=${encodedBody}`;
+  return `${baseURL}?title=${version}&tag=${version}&body=${encodedBody}`;
 };
 
 const main = async () => {
@@ -133,8 +133,8 @@ const main = async () => {
 - ${changeMessage}
 
 **Statistics**
-- ${features} total features
 - ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits (https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version})
+- ${features} total features
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
 
