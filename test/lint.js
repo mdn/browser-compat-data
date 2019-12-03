@@ -13,23 +13,26 @@ const {
   testSchema,
   testVersions,
   testConsistency,
-  testDescriptions
+  testDescriptions,
 } = require('./linter/index.js');
-const { IS_CI } = require('./utils.js')
+const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
-const argv = yargs.alias('version','v')
+const argv = yargs
+  .alias('version', 'v')
   .usage('$0 [[--] files...]', false, yargs => {
     return yargs.positional('files...', {
       description: 'The files to lint',
-      type: 'string'
-    })
+      type: 'string',
+    });
   })
-  .help().alias('help','h').alias('help','?')
+  .help()
+  .alias('help', 'h')
+  .alias('help', '?')
   .parse(process.argv.slice(2));
 
 /**
@@ -80,11 +83,14 @@ function load(...files) {
           spinner.fail(chalk.red.bold(relativeFilePath));
           console.error = console_error;
           console.error(...args);
-        }
+        };
 
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
-            hasSchemaErrors = testSchema(file, './../../schemas/browsers.schema.json');
+            hasSchemaErrors = testSchema(
+              file,
+              './../../schemas/browsers.schema.json',
+            );
             hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
@@ -112,7 +118,7 @@ function load(...files) {
           hasConsistencyErrors,
           hasRealValueErrors,
           hasPrefixErrors,
-          hasDescriptionsErrors
+          hasDescriptionsErrors,
         ].some(x => !!x);
 
         if (fileHasErrors) {
@@ -138,25 +144,29 @@ function load(...files) {
 var hasErrors = argv.files
   ? load.apply(undefined, argv.files)
   : load(
-    'api',
-    'browsers',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'webdriver',
-    'webextensions',
-    'xpath',
-    'xslt',
-  );
+      'api',
+      'browsers',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'webdriver',
+      'webextensions',
+      'xpath',
+      'xslt',
+    );
 hasErrors = testCompareFeatures() || hasErrors;
 hasErrors = testMigrations() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
-  console.warn(chalk`{red Problems in {bold ${filesWithErrors.size}} ${filesWithErrors.size === 1 ? 'file' : 'files'}:}`);
+  console.warn(
+    chalk`{red Problems in {bold ${filesWithErrors.size}} ${
+      filesWithErrors.size === 1 ? 'file' : 'files'
+    }:}`,
+  );
   for (const [fileName, file] of filesWithErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
     try {
