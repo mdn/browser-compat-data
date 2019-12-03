@@ -40,7 +40,7 @@
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "lint": "node test/lint",
+    "lint": "node test/lint; prettier --check **/*.js **/*.ts",
     "fix": "node scripts/fix; prettier --write **/*.js **/*.ts",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
