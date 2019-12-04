@@ -14,7 +14,7 @@
  *
  */
 
-const compareFeatures = (a,b) => {
+const compareFeatures = (a, b) => {
   if (a == '__compat') return -1;
   if (b == '__compat') return 1;
 
@@ -34,6 +34,6 @@ const compareFeatures = (a,b) => {
     return 1;
   }
   return a.localeCompare(b, 'en');
-}
+};
 
 module.exports = compareFeatures;
