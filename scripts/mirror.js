@@ -144,7 +144,7 @@ const bumpVersion = (data, destination, source) => {
       }
     } else if (destination == 'edge') {
       if (data.version_removed && newValue.version_removed !== null) {
-        newValue.version_removed = false;
+        newValue.version_added = false;
       } else if (newValue.version_added !== null) {
         newValue.version_added = newValue.version_added ? '12' : null;
       }
