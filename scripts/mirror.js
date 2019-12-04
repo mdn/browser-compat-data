@@ -103,6 +103,18 @@ const getSource = (browser, source) => {
   }
 };
 
+const updateNotes = (notes, regex, replace) => {
+  if (typeof notes === 'string') {
+    return notes.replace(regex, replace);
+  }
+
+  let newNotes = [];
+  for (let note of notes) {
+    newNotes.push(note.replace(regex, replace));
+  }
+  return newNotes;
+};
+
 /**
  * @param {object} data
  * @param {string} destination
@@ -150,7 +162,7 @@ const bumpVersion = (data, destination, source) => {
       }
 
       if (data.notes) {
-        newValue.notes = newValue.notes.replace(/Internet Explorer/g, 'Edge');
+        newValue.notes = updateNotes(data.notes, /Internet Explorer/g, 'Edge');
       }
     } else if (destination == 'firefox_android') {
       if (typeof newValue.version_added === 'string') {
@@ -185,7 +197,7 @@ const bumpVersion = (data, destination, source) => {
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = newValue.notes.replace(/Chrome/g, 'Opera');
+        newValue.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
       }
     } else if (destination == 'opera_android') {
       if (typeof data.version_added === 'string') {
@@ -203,7 +215,7 @@ const bumpVersion = (data, destination, source) => {
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = newValue.notes.replace(/Chrome/g, 'Opera');
+        newValue.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
       }
     } else if (destination == 'safari_ios') {
       if (typeof data.version_added === 'string') {
@@ -235,7 +247,7 @@ const bumpVersion = (data, destination, source) => {
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = newValue.notes.replace(/Chrome/g, 'Samsung Internet');
+        newValue.notes = updateNotes(data.notes, /Chrome/g, 'Samsung Internet');
       }
     } else if (destination == 'webview_android') {
       if (typeof newValue.version_added === 'string') {
@@ -252,7 +264,7 @@ const bumpVersion = (data, destination, source) => {
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = newValue.notes.replace(/Chrome/g, 'WebView');
+        newValue.notes = updateNotes(data.notes, /Chrome/g, 'WebView');
       }
     }
   }
