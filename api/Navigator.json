@@ -154,13 +154,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "67",
-              "flags": [
-                {
-                  "name": "WebAuth",
-                  "type": "preference"
-                }
-              ]
+              "version_added": false
             }
           },
           "status": {
@@ -436,7 +430,14 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true,
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.netinfo.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": "14",
@@ -1379,7 +1380,7 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": "71"
             },
             "firefox_android": {
               "version_added": null
