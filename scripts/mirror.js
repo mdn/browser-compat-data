@@ -10,7 +10,7 @@ const { platform } = require('os');
 const browsers = require('..').browsers;
 
 const { argv } = require('yargs').command(
-  '$0 <browser> <feature_or_file>',
+  '$0 <browser> [feature_or_file]',
   'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
   yargs => {
     yargs
@@ -21,6 +21,7 @@ const { argv } = require('yargs').command(
       .positional('feature_or_file', {
         describe: 'The feature, file, or folder to perform mirroring',
         type: 'string',
+        default: '',
       })
       .option('source', {
         describe: 'Use a specified source browser rather than the default',
@@ -469,15 +470,31 @@ const mirrorDataByFeature = (browser, featureIdent, source, force) => {
  * @param {boolean} force
  */
 const mirrorData = (browser, feature_or_file, source, force) => {
-  let doMirror = mirrorDataByFeature;
-  if (
-    fs.existsSync(feature_or_file) &&
-    (fs.statSync(feature_or_file).isFile() ||
-      fs.statSync(feature_or_file).isDirectory())
-  )
-    doMirror = mirrorDataByFile;
+  if (feature_or_file) {
+    let doMirror = mirrorDataByFeature;
+    if (
+      fs.existsSync(feature_or_file) &&
+      (fs.statSync(feature_or_file).isFile() ||
+        fs.statSync(feature_or_file).isDirectory())
+    )
+      doMirror = mirrorDataByFile;
 
-  doMirror(browser, feature_or_file, source, force);
+    doMirror(browser, feature_or_file, source, force);
+  } else {
+    [
+      'api',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'webdriver',
+      'webextensions',
+    ].forEach(folder => {
+      mirrorDataByFile(browser, folder, source, force);
+    });
+  }
 };
 
 if (require.main === module) {
