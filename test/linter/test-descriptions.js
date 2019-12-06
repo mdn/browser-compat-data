@@ -1,9 +1,14 @@
 const chalk = require('chalk');
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
+ */
+
+/**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasValidConstrutorDescription(apiData, apiName, logger) {
   const constructor = apiData[apiName];
@@ -17,10 +22,10 @@ function hasValidConstrutorDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
-  for (let methodName in apiData) {
+  for (const methodName in apiData) {
     if (methodName.endsWith("_event")) {
       const event = apiData[methodName];
       const eventName = methodName.replace("_event", "");
@@ -36,7 +41,7 @@ function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
   const secureContext = apiData.secure_context_required;
@@ -50,7 +55,7 @@ function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
   const workerSupport = apiData.worker_support;
@@ -79,7 +84,7 @@ function testDescriptions(filename) {
   };
 
   if (data.api) {
-    for (let apiName in data.api) {
+    for (const apiName in data.api) {
       const apiData = data.api[apiName];
       hasValidConstrutorDescription(apiData, apiName, logger);
       hasCorrectDOMEventsDescription(apiData, apiName, logger);
