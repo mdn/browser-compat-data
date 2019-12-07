@@ -46,12 +46,12 @@
             "safari": {
               "version_added": "11.1",
               "partial_implementation": true,
-              "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              "notes": "Currently only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements. See <a href='https://webkit.org/b/183300'>bug 183300</a>."
             },
             "safari_ios": {
               "version_added": "11.3",
               "partial_implementation": true,
-              "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              "notes": "Currently only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements. See <a href='https://webkit.org/b/183300'>bug 183300</a>."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -129,7 +129,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "10.0"
               },
               "webview_android": {
                 "version_added": false
@@ -205,7 +205,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "10.0"
               },
               "webview_android": {
                 "version_added": false
@@ -261,10 +261,12 @@
                 "version_added": "47"
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/189191'>bug 189191</a>."
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/189191'>bug 189191</a>."
               },
               "samsunginternet_android": {
                 "version_added": "9.0"
@@ -397,10 +399,12 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/display-capture",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/1002796'>bug 1002796</a>."
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/1002796'>bug 1002796</a>."
               },
               "edge": {
                 "version_added": false
@@ -454,6 +458,56 @@
             }
           }
         },
+        "document-access": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/document-access",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/961448'>bug 961448</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/961448'>bug 961448</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "document-domain": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/document-domain",
@@ -462,7 +516,7 @@
                 "version_added": "77"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "77"
               },
               "edge": {
                 "version_added": false
@@ -578,6 +632,156 @@
             }
           }
         },
+        "execution-while-not-rendered": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/execution-while-not-rendered",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/907125'>bug 907125</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/907125'>bug 907125</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "execution-while-out-of-viewport": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/execution-while-out-of-viewport",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/907125'>bug 907125</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/907125'>bug 907125</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "focus-without-user-activation": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/focus-without-user-activation",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/965495'>bug 965495</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/965495'>bug 965495</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "fullscreen": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/fullscreen",
@@ -631,6 +835,56 @@
               },
               "webview_android": {
                 "version_added": "62"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "gamepad": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/gamepad",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/1011006'>bug 1011006</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/1011006'>bug 1011006</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -765,7 +1019,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "10.0"
               },
               "webview_android": {
                 "version_added": false
@@ -778,15 +1032,17 @@
             }
           }
         },
-        "layout-animations": {
+        "hid": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/layout-animations",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/hid",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/890096'>bug 890096</a>."
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/890096'>bug 890096</a>."
               },
               "edge": {
                 "version_added": false
@@ -817,6 +1073,58 @@
               },
               "webview_android": {
                 "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "layout-animations": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/layout-animations",
+            "support": {
+              "chrome": {
+                "version_added": "68",
+                "notes": "See <a href='https://crbug.com/874218'>bug 874218</a>."
+              },
+              "chrome_android": {
+                "version_added": "68",
+                "notes": "See <a href='https://crbug.com/874218'>bug 874218</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1530994'>bug 1530994</a>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1530994'>bug 1530994</a>."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "55"
+              },
+              "opera_android": {
+                "version_added": "48"
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "10.0"
+              },
+              "webview_android": {
+                "version_added": "68"
               }
             },
             "status": {
@@ -889,7 +1197,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "10.0"
               },
               "webview_android": {
                 "version_added": false
@@ -965,7 +1273,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "10.0"
               },
               "webview_android": {
                 "version_added": false
@@ -1093,6 +1401,54 @@
               },
               "webview_android": {
                 "version_added": "60"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "navigation-override": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/navigation-override",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -1294,10 +1650,62 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/993007'>bug </a>."
+                "notes": "See <a href='https://crbug.com/993007'>bug 993007</a>."
               },
               "chrome_android": {
                 "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1460986'>bug 1460986</a>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1460986'>bug 1460986</a>."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "serial": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/serial",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/884928'>bug 884928</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/884928'>bug 884928</a>."
               },
               "edge": {
                 "version_added": false
@@ -1385,15 +1793,17 @@
             }
           }
         },
-        "sync-xhr": {
+        "sync-script": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/sync-xhr",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/sync-script",
             "support": {
               "chrome": {
-                "version_added": "65"
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/862422'>bug 862422</a>."
               },
               "chrome_android": {
-                "version_added": "65"
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/862422'>bug 862422</a>."
               },
               "edge": {
                 "version_added": false
@@ -1408,16 +1818,68 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "52"
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "47"
+                "version_added": false
               },
               "safari": {
                 "version_added": false
               },
               "safari_ios": {
                 "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "sync-xhr": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/sync-xhr",
+            "support": {
+              "chrome": {
+                "version_added": "65"
+              },
+              "chrome_android": {
+                "version_added": "65"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1442689'>bug 1442689</a>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1442689'>bug 1442689</a>."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "52"
+              },
+              "opera_android": {
+                "version_added": "47"
+              },
+              "safari": {
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/183292'>bug 183292</a>."
+              },
+              "safari_ios": {
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/183292'>bug 183292</a>."
               },
               "samsunginternet_android": {
                 "version_added": "9.0"
@@ -1633,15 +2095,17 @@
             }
           }
         },
-        "vibrate": {
+        "vertical-scroll": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vibrate",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vertical-scroll",
             "support": {
               "chrome": {
-                "version_added": "60"
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/841668'>bug 841668</a>."
               },
               "chrome_android": {
-                "version_added": "60"
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/841668'>bug 841668</a>."
               },
               "edge": {
                 "version_added": false
@@ -1656,10 +2120,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "47"
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -1668,16 +2132,64 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": "8.0"
+                "version_added": false
               },
               "webview_android": {
-                "version_added": "60"
+                "version_added": false
               }
             },
             "status": {
               "experimental": true,
               "standard_track": true,
               "deprecated": false
+            }
+          }
+        },
+        "vibrate": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vibrate",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": true
             }
           }
         },
@@ -1735,6 +2247,56 @@
             }
           }
         },
+        "wake-lock": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/wake-lock",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/257511'>bug 257511</a>."
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/257511'>bug 257511</a>."
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "xr-spatial-tracking": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/xr-spatial-tracking",
@@ -1749,10 +2311,12 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1582629'>bug 1582629</a>."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1582629'>bug 1582629</a>."
               },
               "ie": {
                 "version_added": false
