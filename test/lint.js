@@ -32,10 +32,10 @@ const argv = yargs
   .alias('help', '?')
   .parse(process.argv.slice(2));
 
-/** @type {Array<string>} */
+/** @type {string[]} */
 let errors = [];
 
-/** @type integer */
+/** @type {integer} */
 let filesWithErrors = 0;
 
 /**
