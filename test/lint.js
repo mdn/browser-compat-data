@@ -19,9 +19,6 @@ const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 
-/** @type {Map<string, string>} */
-const filesWithErrors = new Map();
-
 const argv = yargs
   .alias('version', 'v')
   .usage('$0 [[--] files...]', false, yargs => {
@@ -34,6 +31,12 @@ const argv = yargs
   .alias('help', 'h')
   .alias('help', '?')
   .parse(process.argv.slice(2));
+
+/** @type {Array<string>} */
+let errors = [];
+
+/** @type integer */
+let filesWithErrors = 0;
 
 /**
  * @param {string[]} files
@@ -77,12 +80,17 @@ function load(...files) {
           spinner.start();
         }
 
+        let fileErrors = [];
+
         const console_error = console.error;
         console.error = (...args) => {
-          spinner['stream'] = process.stderr;
-          spinner.fail(chalk.red.bold(relativeFilePath));
-          console.error = console_error;
-          console.error(...args);
+          if (!fileHasErrors) {
+            fileHasErrors = true;
+            spinner['stream'] = process.stderr;
+            spinner.fail(chalk.red.bold(relativeFilePath));
+          }
+          console_error(...args);
+          fileErrors.push(...args);
         };
 
         try {
@@ -108,21 +116,25 @@ function load(...files) {
           console.error(e);
         }
 
-        fileHasErrors = [
-          hasSyntaxErrors,
-          hasSchemaErrors,
-          hasStyleErrors,
-          hasLinkErrors,
-          hasBrowserErrors,
-          hasVersionErrors,
-          hasConsistencyErrors,
-          hasRealValueErrors,
-          hasPrefixErrors,
-          hasDescriptionsErrors,
-        ].some(x => !!x);
+        fileHasErrors =
+          fileHasErrors ||
+          [
+            hasSyntaxErrors,
+            hasSchemaErrors,
+            hasStyleErrors,
+            hasLinkErrors,
+            hasBrowserErrors,
+            hasVersionErrors,
+            hasConsistencyErrors,
+            hasRealValueErrors,
+            hasPrefixErrors,
+            hasDescriptionsErrors,
+          ].some(x => !!x);
 
         if (fileHasErrors) {
-          filesWithErrors.set(relativeFilePath, file);
+          errors.push(chalk`{red.bold ✖ ${file}}`);
+          errors.push(...fileErrors);
+          filesWithErrors++;
         } else {
           console.error = console_error;
           spinner.succeed();
@@ -163,30 +175,12 @@ hasErrors = testMigrations() || hasErrors;
 if (hasErrors) {
   console.warn('');
   console.warn(
-    chalk`{red Problems in {bold ${filesWithErrors.size}} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
+    chalk`{red Problems in {bold ${filesWithErrors}} ${
+      filesWithErrors === 1 ? 'file' : 'files'
     }:}`,
   );
-  for (const [fileName, file] of filesWithErrors) {
-    console.warn(chalk`{red.bold ✖ ${fileName}}`);
-    try {
-      if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../../schemas/browsers.schema.json');
-        testLinks(file);
-      } else {
-        testSchema(file);
-        testStyle(file);
-        testLinks(file);
-        testVersions(file);
-        testRealValues(file);
-        testBrowsers(file);
-        testConsistency(file);
-        testPrefix(file);
-        testDescriptions(file);
-      }
-    } catch (e) {
-      console.error(e);
-    }
+  for (let error of errors) {
+    console.error(error);
   }
   process.exit(1);
 }
