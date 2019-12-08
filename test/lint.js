@@ -173,8 +173,8 @@ hasErrors = testCompareFeatures() || hasErrors;
 hasErrors = testMigrations() || hasErrors;
 
 if (hasErrors) {
-  console.warn('');
-  console.warn(
+  console.error('');
+  console.error(
     chalk`{red Problems in {bold ${filesWithErrors}} ${
       filesWithErrors === 1 ? 'file' : 'files'
     }:}`,
