@@ -7,7 +7,7 @@
 const { exec } = require('child_process');
 
 const fixStyling = () => {
-  exec('npx prettier --write **/*.js **/*.ts');
+  exec('npx prettier --write "**/*.js" "**/*.ts"');
 };
 
 module.exports = fixStyling;
