@@ -132,7 +132,7 @@ function load(...files) {
           ].some(x => !!x);
 
         if (fileHasErrors) {
-          errors.push(chalk`{red.bold ✖ ${file}}`);
+          errors.push(chalk`{red.bold ✖ ${relativeFilePath}}`);
           errors.push(...fileErrors);
           filesWithErrors++;
         } else {
