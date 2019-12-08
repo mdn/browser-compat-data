@@ -56,16 +56,6 @@ function load(...files) {
       let fileHasErrors = false;
 
       if (path.extname(file) === '.json') {
-        let hasSyntaxErrors = false,
-          hasSchemaErrors = false,
-          hasStyleErrors = false,
-          hasLinkErrors = false,
-          hasBrowserErrors = false,
-          hasVersionErrors = false,
-          hasConsistencyErrors = false,
-          hasRealValueErrors = false,
-          hasPrefixErrors = false,
-          hasDescriptionsErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -95,41 +85,22 @@ function load(...files) {
 
         try {
           if (file.indexOf('browsers' + path.sep) !== -1) {
-            hasSchemaErrors = testSchema(
-              file,
-              './../../schemas/browsers.schema.json',
-            );
-            hasLinkErrors = testLinks(file);
+            testSchema(file, './../../schemas/browsers.schema.json');
+            testLinks(file);
           } else {
-            hasSchemaErrors = testSchema(file);
-            hasStyleErrors = testStyle(file);
-            hasLinkErrors = testLinks(file);
-            hasBrowserErrors = testBrowsers(file);
-            hasVersionErrors = testVersions(file);
-            hasConsistencyErrors = testConsistency(file);
-            hasRealValueErrors = testRealValues(file);
-            hasPrefixErrors = testPrefix(file);
-            hasDescriptionsErrors = testDescriptions(file);
+            testSchema(file);
+            testStyle(file);
+            testLinks(file);
+            testBrowsers(file);
+            testVersions(file);
+            testConsistency(file);
+            testRealValues(file);
+            testPrefix(file);
+            testDescriptions(file);
           }
         } catch (e) {
-          hasSyntaxErrors = true;
           console.error(e);
         }
-
-        fileHasErrors =
-          fileHasErrors ||
-          [
-            hasSyntaxErrors,
-            hasSchemaErrors,
-            hasStyleErrors,
-            hasLinkErrors,
-            hasBrowserErrors,
-            hasVersionErrors,
-            hasConsistencyErrors,
-            hasRealValueErrors,
-            hasPrefixErrors,
-            hasDescriptionsErrors,
-          ].some(x => !!x);
 
         if (fileHasErrors) {
           errors.push(chalk`{red.bold ✖ ${relativeFilePath}}`);
