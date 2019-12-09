@@ -6,4 +6,4 @@
 
 const { exec } = require('child_process');
 
-exec("node scripts/fix-feature-order.js");
+exec('node scripts/fix-feature-order.js');
