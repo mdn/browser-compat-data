@@ -81,8 +81,8 @@ function processData(filename) {
           return {'issue': 'Use standard link text', 'expected': `bug ${bugId}`, 'actualLink': linkText};
         }
       }
-    }
-  )
+    },
+  );
 
   processLink(
     errors,
@@ -90,12 +90,14 @@ function processData(filename) {
     String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
     match => {
       const [url, protocol, subdomain, path] = match;
-      const [, locale, expectedPath_] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
-      let expectedPath = expectedPath_
+      const [, locale, expectedPath_] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(
+        path,
+      );
+      let expectedPath = expectedPath_;
 
       if (!expectedPath.startsWith('docs/')) {
         // Convert legacy zone URLs (see https://bugzil.la/1462475):
-        const [zone, index] = (/** @return {[string|null, number]} */() => {
+        const [zone, index] = /** @return {[string|null, number]} */ (() => {
           const match = expectedPath.match(
             /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
           );
@@ -127,7 +129,7 @@ function processData(filename) {
       if (path !== expectedPath) {
         return {'issue': `Use ${locale ? 'non-localized' : 'correct'} MDN URL`, 'expected': `https://developer.mozilla.org/${expectedPath}`};
       }
-    }
+    },
   );
 
   processLink(
@@ -162,7 +164,7 @@ function processLink(errors, actual, regexp, matchHandler) {
       errors.push({'issue': issue, 'pos': pos, 'posString': posString, 'actual': actualLink, 'expected': expected});
     }
   }
-}
+};
 
 /**
  * @param {string} filename
@@ -172,7 +174,11 @@ function testLinks(filename) {
   let errors = processData(filename);
 
   if (errors.length) {
-    console.error(chalk`{red   Links – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red   Links – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (const error of errors) {
       console.error(chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
     }
