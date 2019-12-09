@@ -114,7 +114,6 @@ function checkVersions(supportData, relPath, logger) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );
-            hasErrors = true;
           }
         }
       }
