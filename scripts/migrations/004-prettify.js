@@ -6,4 +6,4 @@
 
 const { exec } = require('child_process');
 
-exec("npx prettier --write **/*.js **/*.ts");
+exec('npx prettier --write **/*.js **/*.ts');
