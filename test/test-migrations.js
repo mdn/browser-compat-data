@@ -9,9 +9,9 @@ const chalk = require('chalk');
 
 const m002 = require('../scripts/migrations/002-remove-webview-flags.test.js');
 
- /**
-  * @returns {boolean} If the migrations aren't functioning properly
-  */
+/**
+ * @returns {boolean} If the migrations aren't functioning properly
+ */
 const testMigrations = () => {
   /** @type {string[]} */
   const errors = [];
@@ -25,13 +25,17 @@ const testMigrations = () => {
   m002(logger);
 
   if (errors.length) {
-    console.error(chalk`{red Migrations – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red Migrations – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (let i in errors) {
       console.error(chalk`{red   ${errors[i]}}`);
     }
     return true;
   }
   return false;
-}
+};
 
 module.exports = testMigrations;

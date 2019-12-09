@@ -1,15 +1,23 @@
 const chalk = require('chalk');
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
+ */
+
+/**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasValidConstrutorDescription(apiData, apiName, logger) {
   const constructor = apiData[apiName];
-  if (constructor && constructor.__compat.description !== `<code>${apiName}()</code> constructor`) {
-      logger.error(chalk`{red Incorrect constructor description for {bold ${apiName}()}}
-      {yellow Actual: {bold "${constructor.__compat.description || ""}"}}
+  if (
+    constructor &&
+    constructor.__compat.description !== `<code>${apiName}()</code> constructor`
+  ) {
+    logger.error(chalk`{red Incorrect constructor description for {bold ${apiName}()}}
+      {yellow Actual: {bold "${constructor.__compat.description || ''}"}}
       {green Expected: {bold "<code>${apiName}()</code> constructor"}}`);
   }
 }
@@ -17,16 +25,16 @@ function hasValidConstrutorDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
   for (const methodName in apiData) {
-    if (methodName.endsWith("_event")) {
+    if (methodName.endsWith('_event')) {
       const event = apiData[methodName];
-      const eventName = methodName.replace("_event", "");
+      const eventName = methodName.replace('_event', '');
       if (event.__compat.description !== `<code>${eventName}</code> event`) {
         logger.error(chalk`{red Incorrect event description for {bold ${apiName}#${methodName}}}
-      {yellow Actual: {bold "${event.__compat.description || ""}"}}
+      {yellow Actual: {bold "${event.__compat.description || ''}"}}
       {green Expected: {bold "<code>${eventName}</code> event"}}`);
       }
     }
@@ -36,13 +44,16 @@ function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
   const secureContext = apiData.secure_context_required;
-  if (secureContext && secureContext.__compat.description !== `Secure context required`) {
-      logger.error(chalk`{red Incorrect secure context required description for {bold ${apiName}()}}
-      {yellow Actual: {bold "${secureContext.__compat.description || ""}"}}
+  if (
+    secureContext &&
+    secureContext.__compat.description !== `Secure context required`
+  ) {
+    logger.error(chalk`{red Incorrect secure context required description for {bold ${apiName}()}}
+      {yellow Actual: {bold "${secureContext.__compat.description || ''}"}}
       {green Expected: {bold "Secure context required"}}`);
   }
 }
@@ -50,17 +61,19 @@ function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
   const workerSupport = apiData.worker_support;
-  if (workerSupport && workerSupport.__compat.description !== `Available in workers`) {
-      logger.error(chalk`{red Incorrect worker support description for {bold ${apiName}()}}
-      {yellow Actual: {bold "${workerSupport.__compat.description || ""}"}}
+  if (
+    workerSupport &&
+    workerSupport.__compat.description !== `Available in workers`
+  ) {
+    logger.error(chalk`{red Incorrect worker support description for {bold ${apiName}()}}
+      {yellow Actual: {bold "${workerSupport.__compat.description || ''}"}}
       {green Expected: {bold "Available in workers"}}`);
   }
 }
-
 
 /**
  * @param {string} filename
@@ -89,7 +102,11 @@ function testDescriptions(filename) {
   }
 
   if (errors.length) {
-    console.error(chalk`{red   Descriptions – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red   Descriptions – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (const error of errors) {
       console.error(`    ${error}`);
     }
