@@ -188,12 +188,14 @@ function processData(filename) {
           let res = request('GET', match[0]);
 
           if (res.statusCode < 200 || res.statusCode > 299) {
-            return {'issue': `Link does not return successful HTTP code (${res.statusCode})`};
+            return {
+              issue: `Link does not return successful HTTP code (${res.statusCode})`,
+            };
           }
         }
-      }
+      },
     );
-  };
+  }
 
   return errors;
 }
@@ -241,9 +243,13 @@ function testLinks(filename) {
     );
     for (const error of errors) {
       if (error.expected) {
-        console.error(chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`);
+        console.error(
+          chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`,
+        );
       } else {
-        console.error(chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}}).}`);
+        console.error(
+          chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}}).}`,
+        );
       }
     }
     return true;
