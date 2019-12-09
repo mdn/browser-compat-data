@@ -66,12 +66,12 @@
           },
           "samsunginternet_android": [
             {
-              "version_added": true
+              "version_added": "3.0"
             },
             {
               "version_removed": "7.0",
               "prefix": "webkit",
-              "version_added": true
+              "version_added": "1.0"
             }
           ],
           "webview_android": {
@@ -130,7 +130,11 @@
               "prefix": "webkit"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "6.0",
+              "notes": [
+                "Each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Samsung Internet'>Per-tab audio context limitation in Samsung Internet</a>.",
+                "If <code>latencyHint</code> isn't valid, Samsung Internet throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Samsung Internet'>Non-standard exceptions in Samsung Internet</a> for details."
+              ]
             },
             "webview_android": {
               "version_added": "55"
@@ -177,7 +181,7 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "8.0"
               },
               "webview_android": {
                 "version_added": "60"
@@ -274,7 +278,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "7.0"
             },
             "webview_android": {
               "version_added": "58"
@@ -400,7 +404,9 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "1.0",
+              "version_removed": "6.0",
+              "notes": "Available as a part of <code>BaseAudioContext</code>."
             },
             "webview_android": {
               "version_added": true,
@@ -450,7 +456,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
               "version_added": true
@@ -498,7 +504,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
               "version_added": true
@@ -546,7 +552,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
               "version_added": true
@@ -740,7 +746,7 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "4.0"
             },
             "webview_android": {
               "version_added": true
