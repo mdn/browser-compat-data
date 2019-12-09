@@ -66,7 +66,11 @@ function testDescriptions(filename) {
   }
 
   if (errors.length) {
-    console.error(chalk`{red   Descriptions – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red   Descriptions – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (const error of errors) {
       console.error(`  ${error}`);
     }
