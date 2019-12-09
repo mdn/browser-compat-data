@@ -13,7 +13,7 @@ const chalk = require('chalk');
  * @param {Logger} logger
  */
 function checkError(error_type, name, method, expected, logger) {
-  const actual = method.__compat.description || "";
+  const actual = method.__compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${error_type} description for {bold ${name}}
       Actual: {yellow "${actual}"}
@@ -31,13 +31,37 @@ function processData(apiData, apiName, logger) {
   for (let methodName in apiData) {
     const method = apiData[methodName];
     if (methodName == apiName) {
-      checkError("constructor", `${apiName}()`, method, `<code>${apiName}()</code> constructor`, logger);
-    } else if (methodName.endsWith("_event")) {
-      checkError("event", `${apiName}.${methodName}`, method, `<code>${methodName.replace("_event", "")}</code> event`, logger);
+      checkError(
+        'constructor',
+        `${apiName}()`,
+        method,
+        `<code>${apiName}()</code> constructor`,
+        logger,
+      );
+    } else if (methodName.endsWith('_event')) {
+      checkError(
+        'event',
+        `${apiName}.${methodName}`,
+        method,
+        `<code>${methodName.replace('_event', '')}</code> event`,
+        logger,
+      );
     } else if (methodName == 'secure_context_required') {
-      checkError("secure context required", `${apiName}()`, method, "Secure context required", logger);
+      checkError(
+        'secure context required',
+        `${apiName}()`,
+        method,
+        'Secure context required',
+        logger,
+      );
     } else if (methodName == 'worker_support') {
-      checkError("worker", `${apiName}()`, method, "Available in workers", logger);
+      checkError(
+        'worker',
+        `${apiName}()`,
+        method,
+        'Available in workers',
+        logger,
+      );
     }
   }
 }
