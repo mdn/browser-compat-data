@@ -86,7 +86,6 @@ function checkRealValues(supportData, blockList, relPath, logger) {
       }
     }
   }
-
 }
 
 /**
