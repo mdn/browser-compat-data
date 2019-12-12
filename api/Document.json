@@ -4696,14 +4696,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreen",
           "support": {
-            "chrome": {
-              "alternative_name": "webkitIsFullScreen",
-              "version_added": false
-            },
-            "chrome_android": {
-              "alternative_name": "webkitIsFullScreen",
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "15",
+                "alternative_name": "webkitIsFullscreen"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "18",
+                "alternative_name": "webkitIsFullscreen"
+              }
+            ],
             "edge": {
               "version_added": null
             },
@@ -4752,12 +4762,24 @@
             "ie": {
               "version_added": null
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
+            "opera": [
+              {
+                "version_added": "58"
+              },
+              {
+                "version_added": "15",
+                "alternative_name": "webkitIsFullscreen"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "50"
+              },
+              {
+                "version_added": "14",
+                "alternative_name": "webkitIsFullscreen"
+              }
+            ],
             "safari": {
               "alternative_name": "webkitIsFullScreen",
               "version_added": true
@@ -4765,12 +4787,24 @@
             "safari_ios": {
               "version_added": null
             },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "10.0"
+              },
+              {
+                "version_added": "1.0",
+                "alternative_name": "webkitIsFullscreen"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "≤37",
+                "alternative_name": "webkitIsFullscreen"
+              }
+            ]
           },
           "status": {
             "experimental": false,
