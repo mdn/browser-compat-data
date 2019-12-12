@@ -28,7 +28,7 @@ const { argv } = require('yargs').command(
         type: 'string',
         default: undefined,
       })
-      .option('always_mirror', {
+      .option('always', {
         alias: 'a',
         describe:
           'Force a mirroring of the data even when "version_added" is not true/null',
@@ -306,13 +306,13 @@ const bumpVersion = (data, destination, source) => {
  * @param {string} rootPath
  * @param {string} browser
  * @param {string} source
- * @param {boolean} force
+ * @param {boolean} always
  */
-const doSetFeature = (data, newData, rootPath, browser, source, force) => {
+const doSetFeature = (data, newData, rootPath, browser, source, always) => {
   let comp = data[rootPath].__compat.support;
 
   let doBump = false;
-  if (force) {
+  if (always) {
     doBump = true;
   } else {
     if (Array.isArray(comp[browser])) {
@@ -348,9 +348,9 @@ const doSetFeature = (data, newData, rootPath, browser, source, force) => {
  * @param {string} feature
  * @param {string} browser
  * @param {string} source
- * @param {boolean} force
+ * @param {boolean} always
  */
-const setFeature = (data, feature, browser, source, force) => {
+const setFeature = (data, feature, browser, source, always) => {
   let newData = Object.assign({}, data);
 
   const rootPath = feature.shift();
@@ -360,11 +360,11 @@ const setFeature = (data, feature, browser, source, force) => {
       feature,
       browser,
       source,
-      force,
+      always,
     );
   } else {
     if (data[rootPath].constructor == Object || Array.isArray(data[rootPath])) {
-      newData = doSetFeature(data, newData, rootPath, browser, source, force);
+      newData = doSetFeature(data, newData, rootPath, browser, source, always);
     }
   }
 
@@ -375,18 +375,18 @@ const setFeature = (data, feature, browser, source, force) => {
  * @param {object} data
  * @param {string} browser
  * @param {string} source
- * @param {boolean} force
+ * @param {boolean} always
  */
-const setFeatureRecursive = (data, browser, source, force) => {
+const setFeatureRecursive = (data, browser, source, always) => {
   let newData = Object.assign({}, data);
 
   for (let i in data) {
     if (!!data[i] && typeof data[i] == 'object' && i !== '__compat') {
       newData[i] = data[i];
       if (data[i].__compat) {
-        doSetFeature(data, newData, i, browser, source, force);
+        doSetFeature(data, newData, i, browser, source, always);
       }
-      setFeatureRecursive(data[i], browser, source, force);
+      setFeatureRecursive(data[i], browser, source, always);
     }
   }
 
@@ -397,9 +397,9 @@ const setFeatureRecursive = (data, browser, source, force) => {
  * @param {string} browser
  * @param {string} filepath
  * @param {string} source
- * @param {boolean} force
+ * @param {boolean} always
  */
-function mirrorDataByFile(browser, filepath, source, force) {
+function mirrorDataByFile(browser, filepath, source, always) {
   let file = filepath;
   if (file.indexOf(__dirname) !== 0) {
     file = path.resolve(__dirname, '..', file);
@@ -412,7 +412,7 @@ function mirrorDataByFile(browser, filepath, source, force) {
   if (fs.statSync(file).isFile()) {
     if (path.extname(file) === '.json') {
       let data = require(file);
-      let newData = setFeatureRecursive(data, browser, source, force);
+      let newData = setFeatureRecursive(data, browser, source, always);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
@@ -422,7 +422,7 @@ function mirrorDataByFile(browser, filepath, source, force) {
     });
 
     for (let subfile of subFiles) {
-      mirrorDataByFile(browser, subfile, source, force);
+      mirrorDataByFile(browser, subfile, source, always);
     }
   }
 
@@ -433,9 +433,9 @@ function mirrorDataByFile(browser, filepath, source, force) {
  * @param {string} browser
  * @param {string} featureIdent
  * @param {string} source
- * @param {boolean} force
+ * @param {boolean} always
  */
-const mirrorDataByFeature = (browser, featureIdent, source, force) => {
+const mirrorDataByFeature = (browser, featureIdent, source, always) => {
   let filepath = path.resolve(__dirname, '..');
   let feature = featureIdent.split('.');
   let found = false;
@@ -456,7 +456,7 @@ const mirrorDataByFeature = (browser, featureIdent, source, force) => {
   }
 
   let data = require(filepath);
-  let newData = setFeature(data, feature, browser, source, force);
+  let newData = setFeature(data, feature, browser, source, always);
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
 
@@ -467,9 +467,9 @@ const mirrorDataByFeature = (browser, featureIdent, source, force) => {
  * @param {string} browser
  * @param {string} feature_or_file
  * @param {string} source
- * @param {boolean} force
+ * @param {boolean} always
  */
-const mirrorData = (browser, feature_or_file, source, force) => {
+const mirrorData = (browser, feature_or_file, source, always) => {
   if (feature_or_file) {
     let doMirror = mirrorDataByFeature;
     if (
@@ -479,7 +479,7 @@ const mirrorData = (browser, feature_or_file, source, force) => {
     )
       doMirror = mirrorDataByFile;
 
-    doMirror(browser, feature_or_file, source, force);
+    doMirror(browser, feature_or_file, source, always);
   } else {
     [
       'api',
@@ -492,13 +492,13 @@ const mirrorData = (browser, feature_or_file, source, force) => {
       'webdriver',
       'webextensions',
     ].forEach(folder => {
-      mirrorDataByFile(browser, folder, source, force);
+      mirrorDataByFile(browser, folder, source, always);
     });
   }
 };
 
 if (require.main === module) {
-  mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.force);
+  mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.always);
 }
 
 module.exports = mirrorData;
