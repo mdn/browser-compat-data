@@ -65,6 +65,10 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
+## Optional: Generating data using the mirroring script
+
+Many browsers within BCD are derived from Chrome. To help cut down time working on copying these values over, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--force]` to automatically perform this mirroring process. The browser is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination, but manual specification is possible through the `--source=""` argument. The feature argument is the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`). By default, the mirroring script will only overwrite values that are `true` or `null`, but is able to overwrite all through the `--force` argument.
+
 ## Getting help
 
 If you need help with this repository or have any questions, contact the MDN team
