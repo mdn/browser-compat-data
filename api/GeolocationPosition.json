@@ -4,22 +4,40 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationPosition",
         "support": {
-          "chrome": {
-            "version_added": "5",
-            "notes": "Interface updated to <code>GeolocationPosition</code> in version 79."
-          },
-          "chrome_android": {
-            "version_added": "18",
-            "notes": "Interface updated to <code>GeolocationPosition</code> in version 79."
-          },
+          "chrome": [
+            {
+              "version_added": "79"
+            },
+            {
+              "version_added": "5",
+              "version_removed": "78",
+              "alternative_name": "Position"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "79"
+            },
+            {
+              "version_added": "18",
+              "version_removed": "78",
+              "alternative_name": "Position"
+            }
+          ],
           "edge": {
             "alternative_name": "Position",
             "version_added": true
           },
-          "firefox": {
-            "version_added": "3.5",
-            "notes": "Interface updated to <code>GeolocationPosition</code> in version 72."
-          },
+          "firefox": [
+            {
+              "version_added": "72"
+            },
+            {
+              "version_added": "3.5",
+              "version_removed": "71",
+              "alternative_name": "Position"
+            }
+          ],
           "firefox_android": {
             "alternative_name": "Position",
             "version_added": "4"
@@ -44,10 +62,16 @@
             "alternative_name": "Position",
             "version_added": true
           },
-          "webview_android": {
-            "version_added": true,
-            "notes": "Interface updated to <code>GeolocationPosition</code> in version 79."
-          }
+          "webview_android": [
+            {
+              "version_added": "79"
+            },
+            {
+              "version_added": true,
+              "version_removed": "78",
+              "alternative_name": "Position"
+            }
+          ]
         },
         "status": {
           "experimental": false,
