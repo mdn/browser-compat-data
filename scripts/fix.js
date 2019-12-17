@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
-const fixStyling = require('./fix-styling');
+const format = require('./fix-format');
 
 const promises = [];
 
@@ -54,5 +54,5 @@ if (process.argv[2]) {
     'webextensions',
   );
 
-  fixStyling();
+  format();
 }
