@@ -32,6 +32,11 @@ const argv = yargs
   .alias('help', '?')
   .parse(process.argv.slice(2));
 
+/** @type {object} */
+const spinner = ora({
+  stream: process.stdout,
+});
+
 /** @type {string[]} */
 let errors = [];
 
@@ -58,10 +63,7 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         const relativeFilePath = path.relative(process.cwd(), file);
 
-        const spinner = ora({
-          stream: process.stdout,
-          text: relativeFilePath,
-        });
+        spinner.text = relativeFilePath;
 
         if (!IS_CI) {
           // Continuous integration environments don't allow overwriting
@@ -123,6 +125,47 @@ function load(...files) {
   }, false);
 }
 
+/**
+ * @param {string} testName
+ * @param {function} test
+/** @return {boolean} */
+function testGlobal(testName, test) {
+  const console_error = console.error;
+  console.error = (...args) => {
+    console_error(...args);
+  };
+
+  spinner.text = `${testName}()`;
+
+  if (!IS_CI) {
+    // Continuous integration environments don't allow overwriting
+    // previous lines using VT escape sequences, which is how
+    // the spinner animation is implemented.
+    spinner.start();
+  }
+
+  let globalHasErrors = test();
+
+  if (globalHasErrors) {
+    filesWithErrors += 1;
+    spinner.fail();
+  } else {
+    spinner.succeed();
+  }
+
+  return globalHasErrors;
+}
+
+/**
+ * @param {string} testName
+ * @param {function} test
+/** @return {boolean} */
+function testGlobals() {
+  let hasErrors = false;
+  hasErrors = testGlobal('compare-features', testCompareFeatures);
+  hasErrors = testGlobal('migrations', testMigrations);
+}
+
 /** @type {boolean} */
 var hasErrors = argv.files
   ? load.apply(undefined, argv.files)
@@ -140,8 +183,7 @@ var hasErrors = argv.files
       'xpath',
       'xslt',
     );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
+hasErrors = testGlobals() || hasErrors;
 
 if (hasErrors) {
   console.error('');
