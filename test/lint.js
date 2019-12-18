@@ -131,8 +131,11 @@ function load(...files) {
  * @param {function} test
 /** @return {boolean} */
 function testGlobal(testName, test) {
+  let globalHasErrors = false;
+
   const console_error = console.error;
   console.error = (...args) => {
+    globalHasErrors = true;
     console_error(...args);
   };
 
@@ -145,7 +148,7 @@ function testGlobal(testName, test) {
     spinner.start();
   }
 
-  let globalHasErrors = test();
+  test();
 
   if (globalHasErrors) {
     filesWithErrors += 1;
