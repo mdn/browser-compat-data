@@ -18,6 +18,7 @@ const {
 const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
+const testFormat = require('./test-format');
 
 const argv = yargs
   .alias('version', 'v')
@@ -162,8 +163,9 @@ function testGlobal(testName, test) {
 /** @return {boolean} */
 function testGlobals() {
   let hasErrors = false;
-  hasErrors = testGlobal('compare-features', testCompareFeatures);
-  hasErrors = testGlobal('migrations', testMigrations);
+  hasErrors = testGlobal('compare-features', testCompareFeatures) || hasErrors;
+  hasErrors = testGlobal('migrations', testMigrations) || hasErrors;
+  hasErrors = testGlobal('migrations', testMigrations) || hasErrors;
 }
 
 /** @type {boolean} */

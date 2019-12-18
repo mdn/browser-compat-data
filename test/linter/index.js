@@ -18,5 +18,5 @@ module.exports = {
   testSchema,
   testVersions,
   testConsistency,
-  testDescriptions
+  testDescriptions,
 };
