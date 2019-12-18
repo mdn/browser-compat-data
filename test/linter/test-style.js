@@ -4,6 +4,7 @@ const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
+const compareStatements = require('../../scripts/compare-statements');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -54,6 +55,28 @@ function orderFeatures(key, value) {
 }
 
 /**
+ * Return a new "support_block" object whose support statements have
+ * been ordered in reverse chronological order, moving statements
+ * with flags, partial support, prefixes, or alternative names lower.
+ *
+ * @param {string} key The key in the object
+ * @param {*} value The value of the key
+ *
+ * @returns {*} The new value
+ */
+function orderStatements(key, value) {
+  if (key === '__compat') {
+    for (let browser of Object.keys(value.support)) {
+      let supportData = value.support[browser];
+      if (Array.isArray(supportData)) {
+        value.support[browser] = supportData.sort(compareStatements);
+      }
+    }
+  }
+  return value;
+}
+
+/**
  * @param {string} filename
  * @param {import('../utils').Logger} logger
  */
@@ -66,6 +89,7 @@ function processData(filename, logger) {
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
   let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
+  let expectedStatementSorting = JSON.stringify(dataObject, orderStatements, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -73,6 +97,7 @@ function processData(filename, logger) {
     expected = expected.replace(/\r/g, '');
     expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
     expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
+    expectedStatementSorting = expectedStatementSorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -96,6 +121,16 @@ function processData(filename, logger) {
       chalk`{red → Feature sorting error on ${jsonDiff(
         actual,
         expectedFeatureSorting,
+      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+    );
+  }
+
+  if (expected !== expectedStatementSorting) {
+    hasErrors = true;
+    logger.error(
+      chalk`{red → Statement sorting error on ${jsonDiff(
+        actual,
+        expectedStatementSorting,
       )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
     );
   }
