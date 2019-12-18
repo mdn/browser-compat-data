@@ -18,13 +18,13 @@ const compareStatements = (a, b) => {
   let has = {
     a: {
       flags: a.flags != undefined,
-      altname: a.prefix != undefined && a.alternative_name != undefined,
-      partial: a.partial_support == true,
+      altname: a.prefix != undefined || a.alternative_name != undefined,
+      partial: a.partial_implementation != undefined,
     },
     b: {
       flags: b.flags != undefined,
-      altname: b.prefix != undefined && b.alternative_name != undefined,
-      partial: b.partial_support == true,
+      altname: b.prefix != undefined || b.alternative_name != undefined,
+      partial: b.partial_implementation != undefined,
     },
   };
 
@@ -38,7 +38,7 @@ const compareStatements = (a, b) => {
   if (!has.a.partial && has.b.partial) return -1;
 
   if (typeof a.version_added == 'string' && typeof b.version_added == 'string')
-    return Number(a.version_added) < Number(b.version_added);
+    return Number(a.version_added) < Number(b.version_added) ? 1 : -1;
 
   return 1;
 };
