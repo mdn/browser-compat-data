@@ -168,7 +168,7 @@ function testGlobals() {
   let hasErrors = false;
   hasErrors = testGlobal('compare-features', testCompareFeatures) || hasErrors;
   hasErrors = testGlobal('migrations', testMigrations) || hasErrors;
-  hasErrors = testGlobal('migrations', testMigrations) || hasErrors;
+  hasErrors = testGlobal('format', testFormat) || hasErrors;
 }
 
 /** @type {boolean} */
