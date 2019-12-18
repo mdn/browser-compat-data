@@ -131,11 +131,15 @@ function load(...files) {
  * @param {function} test
 /** @return {boolean} */
 function testGlobal(testName, test) {
-  let hasErrors = false;
+  let globalHasErrors = false;
 
   const console_error = console.error;
   console.error = (...args) => {
-    hasErrors = true;
+    if (!globalHasErrors) {
+      globalHasErrors = true;
+      spinner['stream'] = process.stderr;
+      spinner.fail(chalk.red.bold(`${testName}()`));
+    }
     console_error(...args);
   };
 
@@ -150,14 +154,14 @@ function testGlobal(testName, test) {
 
   test();
 
-  if (hasErrors) {
+  if (globalHasErrors) {
     filesWithErrors += 1;
     spinner.fail();
   } else {
     spinner.succeed();
   }
 
-  return hasErrors;
+  return globalHasErrors;
 }
 
 /**
