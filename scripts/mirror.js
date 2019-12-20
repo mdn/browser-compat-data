@@ -72,11 +72,11 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
 
 /**
  * @param {string} browser
- * @param {string} source
+ * @param {string} forced_source
  */
-const getSource = (browser, source) => {
-  if (source) {
-    return source;
+const getSource = (browser, forced_source) => {
+  if (forced_source) {
+    return forced_source;
   }
 
   switch (browser) {
@@ -335,11 +335,7 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   }
 
   if (doBump) {
-    let newValue = bumpVersion(
-      comp[getSource(browser, source)],
-      browser,
-      getSource(browser, source),
-    );
+    let newValue = bumpVersion(comp[source], browser, source);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
@@ -471,16 +467,18 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
 /**
  * @param {string} browser
  * @param {string} feature_or_file
- * @param {string} source
+ * @param {string} forced_source
  * @param {string} modify
  */
-const mirrorData = (browser, feature_or_file, source, modify) => {
+const mirrorData = (browser, feature_or_file, forced_source, modify) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
     );
     return false;
   }
+
+  let source = getSource(browser, forced_source);
 
   if (feature_or_file) {
     let doMirror = mirrorDataByFeature;
