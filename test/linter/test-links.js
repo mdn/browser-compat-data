@@ -18,14 +18,10 @@ function processData(filename) {
   let errors = [];
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  /** @type {import('../../types').CompatData} */
-  const dataObject = JSON.parse(actual);
-  let expected = JSON.stringify(dataObject, null, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
     actual = actual.replace(/\r/g, '');
-    expected = expected.replace(/\r/g, '');
   }
 
   processLink(
@@ -114,7 +110,7 @@ function processData(filename) {
     actual,
     String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
     match => {
-      const [url, protocol, subdomain, path] = match;
+      const [, protocol, subdomain, path] = match;
       const [, locale, expectedPath_] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(
         path,
       );
