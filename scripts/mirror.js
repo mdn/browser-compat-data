@@ -5,7 +5,6 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { platform } = require('os');
 
 const browsers = require('..').browsers;
 
@@ -79,30 +78,34 @@ const getSource = (browser, forced_source) => {
     return forced_source;
   }
 
+  let source = '';
+
   switch (browser) {
     case 'chrome_android':
     case 'opera':
-      return 'chrome';
+      source = 'chrome';
       break;
     case 'opera_android':
     case 'samsunginternet_android':
     case 'webview_android':
-      return 'chrome_android';
+      source = 'chrome_android';
       break;
     case 'firefox_android':
-      return 'firefox';
+      source = 'firefox';
       break;
     case 'edge':
-      return 'ie';
+      source = 'ie';
       break;
     case 'safari_ios':
-      return 'safari';
+      source = 'safari';
       break;
     default:
       throw Error(
         `${browser} is a base browser and a "source" browser must be specified.`,
       );
   }
+
+  return source;
 };
 
 const updateNotes = (notes, regex, replace) => {
