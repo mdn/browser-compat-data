@@ -4,6 +4,7 @@ const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
 const format = require('./fix-format');
+const eslint = require('./fix-eslint');
 
 const promises = [];
 
@@ -55,4 +56,5 @@ if (process.argv[2]) {
   );
 
   format();
+  eslint();
 }
