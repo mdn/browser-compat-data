@@ -316,23 +316,19 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   if (modify == 'always') {
     doBump = true;
   } else {
+    let triggers =
+      modify == 'nonreal'
+        ? [true, null, undefined]
+        : [true, false, null, undefined];
     if (Array.isArray(comp[browser])) {
       for (let i = 0; i < comp[browser].length; i++) {
-        if (
-          (modify == 'nonreal'
-            ? [true, null, undefined]
-            : [true, false, null, undefined]
-          ).includes(comp[browser][i].version_added)
-        ) {
+        if (triggers.includes(comp[browser][i].version_added)) {
           doBump = true;
           break;
         }
       }
     } else if (comp[browser] !== undefined) {
-      doBump = (modify == 'nonreal'
-        ? [true, null, undefined]
-        : [true, false, null, undefined]
-      ).includes(comp[browser].version_added);
+      doBump = triggers.includes(comp[browser].version_added);
     } else {
       doBump = true;
     }
