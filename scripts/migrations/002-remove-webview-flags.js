@@ -11,7 +11,7 @@ const { platform } = require('os');
 const IS_WINDOWS = platform() === 'win32';
 
 const removeWebViewFlags = (key, value) => {
-  if (key === "__compat") {
+  if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
         const result = [];
@@ -22,36 +22,41 @@ const removeWebViewFlags = (key, value) => {
         }
 
         if (result.length == 0) {
-          value.support.webview_android = {"version_added": false};
+          value.support.webview_android = { version_added: false };
         } else if (result.length == 1) {
           value.support.webview_android = result[0];
         } else {
           value.support.webview_android = result;
         }
       } else if (value.support.webview_android.flags !== undefined) {
-        value.support.webview_android = {"version_added": false};
+        value.support.webview_android = { version_added: false };
       }
     }
   }
   return value;
 };
 
- /**
-  * @param {Promise<void>} filename
-  */
-const fixWebViewFlags = (filename) => {
-  const actual   = fs.readFileSync(filename, 'utf-8').trim();
-  const expected = JSON.stringify(JSON.parse(actual, removeWebViewFlags), null, 2);
+/**
+ * @param {Promise<void>} filename
+ */
+const fixWebViewFlags = filename => {
+  const actual = fs.readFileSync(filename, 'utf-8').trim();
+  const expected = JSON.stringify(
+    JSON.parse(actual, removeWebViewFlags),
+    null,
+    2,
+  );
 
-  if (IS_WINDOWS) { // prevent false positives from git.core.autocrlf on Windows
-    actual   = actual.replace(/\r/g, '');
+  if (IS_WINDOWS) {
+    // prevent false positives from git.core.autocrlf on Windows
+    actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
     fs.writeFileSync(filename, expected + '\n', 'utf-8');
   }
-}
+};
 
 if (require.main === module) {
   /**
@@ -75,7 +80,7 @@ if (require.main === module) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map((subfile) => {
+      const subFiles = fs.readdirSync(file).map(subfile => {
         return path.join(file, subfile);
       });
 
@@ -96,9 +101,9 @@ if (require.main === module) {
       'mathml',
       'test',
       'webdriver',
-      'webextensions'
+      'webextensions',
     );
   }
 }
 
-module.exports = {removeWebViewFlags, fixWebViewFlags};
+module.exports = { removeWebViewFlags, fixWebViewFlags };

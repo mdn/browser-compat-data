@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
-
+const format = require('./fix-format');
 
 const promises = [];
 
@@ -17,7 +17,7 @@ function load(...files) {
     }
 
     if (!fs.existsSync(file)) {
-      console.warn("File not found, skipping:", file);
+      console.warn('File not found, skipping:', file);
       continue; // Ignore non-existent files
     }
 
@@ -30,7 +30,7 @@ function load(...files) {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
+    const subFiles = fs.readdirSync(file).map(subfile => {
       return path.join(file, subfile);
     });
 
@@ -51,6 +51,8 @@ if (process.argv[2]) {
     'mathml',
     'test',
     'webdriver',
-    'webextensions'
+    'webextensions',
   );
+
+  format();
 }
