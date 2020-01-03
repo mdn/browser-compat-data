@@ -12,133 +12,137 @@ const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
 const tests = [
   {
-    "input": {
-      "test1": {
-        "__compat": {
-          "support": {
-            "webview_android": {
-              "version_added": "61",
-              "flags": [
+    input: {
+      test1: {
+        __compat: {
+          support: {
+            webview_android: {
+              version_added: '61',
+              flags: [
                 {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            }
+                  type: 'preference',
+                  name: '#service-worker-payment-apps',
+                  value_to_set: 'Enabled',
+                },
+              ],
+            },
           },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      }
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
     },
-    "output": {
-      "test1": {
-        "__compat": {
-          "support": {
-            "webview_android": {
-              "version_added": false
-            }
+    output: {
+      test1: {
+        __compat: {
+          support: {
+            webview_android: {
+              version_added: false,
+            },
           },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      }
-    }
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
   },
   {
-    "input": {
-      "test2": {
-        "__compat": {
-          "support": {
-            "webview_android": {
-              "version_added": true
-            }
+    input: {
+      test2: {
+        __compat: {
+          support: {
+            webview_android: {
+              version_added: true,
+            },
           },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      }
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
     },
-    "output": {
-      "test2": {
-        "__compat": {
-          "support": {
-            "webview_android": {
-              "version_added": true
-            }
+    output: {
+      test2: {
+        __compat: {
+          support: {
+            webview_android: {
+              version_added: true,
+            },
           },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      }
-    }
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
   },
   {
-    "input": {
-      "test3": {
-        "__compat": {
-          "support": {
-            "webview_android": [
+    input: {
+      test3: {
+        __compat: {
+          support: {
+            webview_android: [
               {
-                "version_added": "40",
-                "flags": [
+                version_added: '40',
+                flags: [
                   {
-                    "type": "preference",
-                    "name": "#service-worker-payment-apps",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                    type: 'preference',
+                    name: '#service-worker-payment-apps',
+                    value_to_set: 'Enabled',
+                  },
+                ],
               },
               {
-                "version_added": "56"
-              }
-            ]
+                version_added: '56',
+              },
+            ],
           },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      }
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
     },
-    "output": {
-      "test3": {
-        "__compat": {
-          "support": {
-            "webview_android": {
-              "version_added": "56"
-            }
+    output: {
+      test3: {
+        __compat: {
+          support: {
+            webview_android: {
+              version_added: '56',
+            },
           },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      }
-    }
-  }
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+  },
 ];
 
 const testFixWebViewFlags = (logger = console) => {
   let hasErrors = false;
   for (let i = 0; i < tests.length; i++) {
-    let expected = JSON.stringify(tests[i]["output"], null, 2);
-    let output = JSON.stringify(JSON.parse(JSON.stringify(tests[i]["input"]), removeWebViewFlags), null, 2);
+    let expected = JSON.stringify(tests[i]['output'], null, 2);
+    let output = JSON.stringify(
+      JSON.parse(JSON.stringify(tests[i]['input']), removeWebViewFlags),
+      null,
+      2,
+    );
 
     if (output !== expected) {
       logger.error(chalk`{red WebView flags aren't removed properly!}
@@ -149,7 +153,7 @@ const testFixWebViewFlags = (logger = console) => {
   }
 
   return hasErrors;
-}
+};
 
 if (require.main === module) {
   testFixWebViewFlags();

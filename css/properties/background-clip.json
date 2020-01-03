@@ -91,9 +91,17 @@
               "prefix": "-webkit-",
               "notes": "Safari accepts alternate synonyms to its values: <code>padding</code>, <code>border</code>, and <code>content</code>."
             },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "1.0"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "notes": "Chrome accepts alternate synonyms to its values: <code>padding</code>, <code>border</code>, and <code>content</code>."
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "4.1"
@@ -274,7 +282,7 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
