@@ -4,7 +4,7 @@ const chalk = require('chalk');
 
 const testFormat = () => {
   try {
-    execSync('npx prettier --check "**/*.js" "**/*.ts"');
+    execSync('npx prettier --check "**/*.js" "**/*.ts"', { stdio: 'inherit' });
   } catch (err) {
     let errorText = err.stdout.toString();
     console.error(chalk`{red   Prettier – formatting errors:}`);
