@@ -41,7 +41,7 @@ const { argv } = require('yargs').command(
  * @param {string} value
  */
 const create_webview_range = value => {
-  return value == '18' ? '18' : Number(value) < 37 ? '≤37' : value;
+  return value == '18' ? '1' : Number(value) < 37 ? '≤37' : value;
 };
 
 /**
