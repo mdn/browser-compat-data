@@ -26,7 +26,9 @@ const fixLinks = filename => {
   }
 
   for (let error of errors) {
-    data = data.replace(error.actual, error.expected);
+    if (error.expected) {
+      data = data.replace(error.actual, error.expected);
+    }
   }
 
   if (original !== data) {
