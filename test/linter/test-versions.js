@@ -87,20 +87,22 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string'
           ) {
+            const addedIsRange = statement.version_added.startsWith('≤');
+            const removedIsRange = statement.version_removed.startsWith('≤');
+
             if (
-              (statement.version_added.startsWith('≤') &&
-                statement.version_removed.startsWith('≤') &&
+              (addedIsRange &&
+                removedIsRange &&
                 compareVersions.compare(
                   statement.version_added.replace('≤', ''),
                   statement.version_removed.replace('≤', ''),
                   '<',
                 )) ||
-              ((!statement.version_added.startsWith('≤') ||
-                !statement.version_removed.startsWith('≤')) &&
+              ((!addedIsRange || !removedIsRange) &&
                 compareVersions.compare(
                   statement.version_added.replace('≤', ''),
                   statement.version_removed.replace('≤', ''),
-                  '>=',
+                  addedIsRange ? '>' : '>=',
                 ))
             ) {
               logger.error(
