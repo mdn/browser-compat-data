@@ -50,6 +50,8 @@ const blockList = {
     'firefox',
     'firefox_android',
     'ie',
+    'safari',
+    'safari_ios',
     'webview_android',
   ],
   mathml: blockMany,
