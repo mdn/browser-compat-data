@@ -1,5 +1,19 @@
 'use strict';
+const chalk = require('chalk');
+
 const bcd = require('..');
+
+const { argv } = require('yargs').command(
+  '$0 [folder]',
+  'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
+  yargs => {
+    yargs.positional('folder', {
+      describe: 'Limit the statistics to a specific folder',
+      type: 'string',
+      default: '',
+    });
+  },
+);
 
 /**
  * @typedef {object} VersionStats
@@ -87,16 +101,6 @@ const iterateData = data => {
   }
 };
 
-if (process.argv[2]) {
-  iterateData(bcd[process.argv[2]]);
-} else {
-  for (const data in bcd) {
-    if (!(data === 'browsers' || data === 'webextensions')) {
-      iterateData(bcd[data]);
-    }
-  }
-}
-
 const printTable = () => {
   let table = `| browser | real values | ranged values | \`true\` values | \`null\` values |
 | --- | --- | --- | --- | --- |
@@ -116,9 +120,30 @@ const printTable = () => {
   console.log(table);
 };
 
-console.log(
-  `Status as of version 0.0.xx (released on 2019-MM-DD) for ${
-    process.argv[2] ? `${process.argv[2]}/ directory` : `web platform features`
-  }: \n`,
-);
-printTable();
+const printStats = folder => {
+  if (folder) {
+    if (bcd[folder]) {
+      iterateData(bcd[folder]);
+    } else {
+      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      return false;
+    }
+  } else {
+    for (const data in bcd) {
+      if (!(data === 'browsers' || data === 'webextensions')) {
+        iterateData(bcd[data]);
+      }
+    }
+  }
+
+  console.log(
+    chalk`{bold Status as of version 0.0.xx (released on 2019-MM-DD) for ${
+      folder ? `${folder}/ directory` : `web platform features`
+    }}: \n`,
+  );
+  printTable();
+
+  return true;
+};
+
+printStats(argv.folder);
