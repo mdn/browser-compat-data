@@ -6,6 +6,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const compareVersions = require('compare-versions');
+
 const browsers = require('..').browsers;
 
 const { argv } = require('yargs').command(
@@ -54,8 +56,11 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
     const release = browserData.releases[r];
     if (
       (release.engine == source_browser_release.engine &&
-        Number(release.engine_version) >=
-          Number(source_browser_release.engine_version)) ||
+        compareVersions.compare(
+          release.engine_version,
+          source_browser_release.engine_version,
+          '>=',
+        )) ||
       (['opera', 'opera_android', 'samsunginternet_android'].includes(
         dest_browser,
       ) &&
