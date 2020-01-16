@@ -16,7 +16,7 @@ const validBrowserVersions = {};
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
-  edge: ['≤79'],
+  edge: ['≤18'],
 };
 
 /** @type string[] */
