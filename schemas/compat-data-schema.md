@@ -1,4 +1,4 @@
-t# The mdn-browser-compat-data JSON schema
+# The mdn-browser-compat-data JSON schema
 
 This document helps you to understand how mdn-browser-compat-data is organized and structured.
 
