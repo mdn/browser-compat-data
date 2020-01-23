@@ -439,10 +439,16 @@
               "firefox_android": {
                 "version_added": "4"
               },
-              "ie": {
-                "version_added": "9",
-                "notes": "Also supported in Internet Explorer 8, but only on DOM objects and with some non-standard behaviors."
-              },
+              "ie": [
+                {
+                  "version_added": "9"
+                },
+                {
+                  "version_added": "8",
+                  "partial_implementation": true,
+                  "notes": "In Internet Explorer 8, this was only supported on DOM objects and with some non-standard behaviors.  This was later fixed in Internet Explorer 9."
+                }
+              ],
               "nodejs": {
                 "version_added": true
               },
@@ -818,9 +824,16 @@
               "firefox_android": {
                 "version_added": "4"
               },
-              "ie": {
-                "version_added": "8"
-              },
+              "ie": [
+                {
+                  "version_added": "9"
+                },
+                {
+                  "version_added": "8",
+                  "partial_implementation": true,
+                  "notes": "In Internet Explorer 8, this was only supported on DOM objects and with some non-standard behaviors.  This was later fixed in Internet Explorer 9."
+                }
+              ],
               "nodejs": {
                 "version_added": true
               },
