@@ -19,10 +19,12 @@ const compareFeatures = require('../../scripts/compare-features');
  */
 function orderSupportBlock(key, value) {
   if (key === '__compat') {
-    value.support = Object.keys(value.support).sort().reduce((result, key) => {
-      result[key] = value.support[key];
-      return result;
-    }, {});
+    value.support = Object.keys(value.support)
+      .sort()
+      .reduce((result, key) => {
+        result[key] = value.support[key];
+        return result;
+      }, {});
   }
   return value;
 }
@@ -41,10 +43,12 @@ function orderSupportBlock(key, value) {
  */
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
-    value = Object.keys(value).sort(compareFeatures).reduce((result, key) => {
-      result[key] = value[key];
-      return result;
-    }, {});
+    value = Object.keys(value)
+      .sort(compareFeatures)
+      .reduce((result, key) => {
+        result[key] = value[key];
+        return result;
+      }, {});
   }
   return value;
 }
@@ -54,8 +58,6 @@ function orderFeatures(key, value) {
  * @param {import('../utils').Logger} logger
  */
 function processData(filename, logger) {
-  let hasErrors = false;
-
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -72,43 +74,69 @@ function processData(filename, logger) {
   }
 
   if (actual !== expected) {
-    hasErrors = true;
     logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
-    hasErrors = true;
-    logger.error(chalk`{red → Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(
+      chalk`{red → Browser sorting error on ${jsonDiff(
+        actual,
+        expectedBrowserSorting,
+      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+    );
   }
 
   if (expected !== expectedFeatureSorting) {
-    hasErrors = true;
-    logger.error(chalk`{red → Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`);
+    logger.error(
+      chalk`{red → Feature sorting error on ${jsonDiff(
+        actual,
+        expectedFeatureSorting,
+      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+    );
   }
 
-  const constructorMatch = actual.match(String.raw`"<code>([^)]*?)</code> constructor"`)
+  const constructorMatch = actual.match(
+    String.raw`"<code>([^)]*?)</code> constructor"`,
+  );
   if (constructorMatch) {
-    hasErrors = true;
-    logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} – Use parentheses in constructor description ({yellow ${constructorMatch[1]}} → {green ${constructorMatch[1]}{bold ()}}).}`);
+    logger.error(
+      chalk`{red → ${indexToPos(
+        actual,
+        constructorMatch.index,
+      )} – Use parentheses in constructor description ({yellow ${
+        constructorMatch[1]
+      }} → {green ${constructorMatch[1]}{bold ()}}).}`,
+    );
   }
 
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
-    hasErrors = true;
-    logger.error(chalk`{red → ${indexToPos(actual, hrefDoubleQuoteIndex)} - Found {yellow \\"}, but expected {green \'} for <a href>.}`);
+    logger.error(
+      chalk`{red → ${indexToPos(
+        actual,
+        hrefDoubleQuoteIndex,
+      )} - Found {yellow \\"}, but expected {green \'} for <a href>.}`,
+    );
   }
 
-  const regexp = new RegExp(String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`, 'g');
+  const regexp = new RegExp(
+    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
+    'g',
+  );
   const match = regexp.exec(actual);
   if (match) {
     const a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
-      hasErrors = true;
-      logger.error(chalk`{red → ${indexToPos(actual, constructorMatch.index)} - Include hostname in URL ({yellow ${match[1]}} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`);
+      logger.error(
+        chalk`{red → ${indexToPos(
+          actual,
+          constructorMatch.index,
+        )} - Include hostname in URL ({yellow ${
+          match[1]
+        }} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`,
+      );
     }
   }
-
-  return hasErrors;
 }
 
 function testStyle(filename) {
@@ -124,7 +152,11 @@ function testStyle(filename) {
   processData(filename, logger);
 
   if (errors.length) {
-    console.error(chalk`{red   Style – {bold ${errors.length}} ${errors.length === 1 ? 'error' : 'errors'}:}`);
+    console.error(
+      chalk`{red   Style – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
     for (const error of errors) {
       console.error(`  ${error}`);
     }
