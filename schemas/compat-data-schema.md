@@ -251,8 +251,15 @@ Examples:
 
 ### Ranged versions
 
-For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. The statement below means "supported in at least version 37 and probably in earlier versions as well".
-Currently, the only allowed ranged version is `"≤37"` for `webview_android`. There will be more ranged versions for other browsers in the future but ranged versions aren't generally allowed for every version string. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in.
+For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
+
+- Edge
+  - "≤18" (supported in some version of EdgeHTML-based Edge)
+  - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+- WebView Android
+  - "≤37" (supported in former Android versions prior to Chrome-based WebView)
+
+For example, the statement below means, "supported in at least version 37 and probably in earlier versions as well".
 
 ```json
 {
