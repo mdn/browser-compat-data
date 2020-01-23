@@ -133,7 +133,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
 - `uc_android`, UC Browser (Android version)
 - `uc_chinese_android`, UC Browser (Chinese Android version)
-- `webview_android`, Webview, the former stock browser on Android
+- `webview_android`, Webview, the built-in browser for Android
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 

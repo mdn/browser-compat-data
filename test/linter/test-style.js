@@ -58,8 +58,6 @@ function orderFeatures(key, value) {
  * @param {import('../utils').Logger} logger
  */
 function processData(filename, logger) {
-  let hasErrors = false;
-
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -76,12 +74,10 @@ function processData(filename, logger) {
   }
 
   if (actual !== expected) {
-    hasErrors = true;
     logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
-    hasErrors = true;
     logger.error(
       chalk`{red → Browser sorting error on ${jsonDiff(
         actual,
@@ -91,7 +87,6 @@ function processData(filename, logger) {
   }
 
   if (expected !== expectedFeatureSorting) {
-    hasErrors = true;
     logger.error(
       chalk`{red → Feature sorting error on ${jsonDiff(
         actual,
@@ -104,7 +99,6 @@ function processData(filename, logger) {
     String.raw`"<code>([^)]*?)</code> constructor"`,
   );
   if (constructorMatch) {
-    hasErrors = true;
     logger.error(
       chalk`{red → ${indexToPos(
         actual,
@@ -117,7 +111,6 @@ function processData(filename, logger) {
 
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
-    hasErrors = true;
     logger.error(
       chalk`{red → ${indexToPos(
         actual,
@@ -134,7 +127,6 @@ function processData(filename, logger) {
   if (match) {
     const a_url = url.parse(match[1]);
     if (a_url.hostname === null) {
-      hasErrors = true;
       logger.error(
         chalk`{red → ${indexToPos(
           actual,
@@ -145,8 +137,6 @@ function processData(filename, logger) {
       );
     }
   }
-
-  return hasErrors;
 }
 
 function testStyle(filename) {
