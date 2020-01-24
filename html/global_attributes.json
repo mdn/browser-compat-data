@@ -130,9 +130,16 @@
                 "notes": "Originally only supported on the <code>&lt;input&gt;</code> element."
               }
             ],
-            "edge": {
-              "version_added": null
-            },
+            "edge": [
+              {
+                "version_added": "≤79",
+                "notes": "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements."
+              },
+              {
+                "version_added": "≤79",
+                "notes": "Originally only supported on the <code>&lt;input&gt;</code> element."
+              }
+            ],
             "firefox": {
               "version_added": true
             },
@@ -201,7 +208,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": "67"
@@ -354,7 +361,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -402,7 +409,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -450,7 +457,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -498,7 +505,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -574,7 +581,15 @@
               ]
             },
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-blink-features",
+                  "value_to_set": "ContextMenu"
+                }
+              ],
+              "notes": "This was removed from the <i>Enable Experimental Web Platform Features</i> due to a <a href='https://crbug.com/412945'>Web compatibility issue</a>. In June 2017, it was removed entirely from the browsers. This is documented in <a href='https://crbug.com/87553'>Chromium bug 87553</a>."
             },
             "firefox": {
               "version_added": "9"
@@ -694,7 +709,7 @@
               "version_added": true
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": true
@@ -850,7 +865,7 @@
               "version_added": "73"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1007,7 +1022,7 @@
               "version_added": "66"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1055,7 +1070,7 @@
               "version_added": "67"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": [
               {
@@ -1449,7 +1464,7 @@
               "version_added": "73"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": [
               {
@@ -1507,7 +1522,7 @@
               "version_added": "53"
             },
             "edge": {
-              "version_added": null
+              "version_added": "≤79"
             },
             "firefox": [
               {
@@ -1854,7 +1869,7 @@
               "version_added": true
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
