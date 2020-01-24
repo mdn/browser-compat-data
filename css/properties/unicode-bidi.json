@@ -68,9 +68,19 @@
               "chrome_android": {
                 "version_added": "48"
               },
-              "edge": {
-                "version_added": false
-              },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "79",
+                  "notes": [
+                    "Avoiding using <code>-webkit-isolate</code>. It can lock up older versions of Safari (up to version 9) and Edge (up to version 47).",
+                    "Since Edge 19, the syntax from a previous version of the specification, where the <code>isolate</code> keyword could be used together with <code>bidi-override</code>, is allowed."
+                  ]
+                }
+              ],
               "firefox": [
                 {
                   "version_added": "50"
@@ -147,7 +157,7 @@
                 "version_added": "48"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": [
                 {
@@ -209,7 +219,7 @@
                 "version_added": "48"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": [
                 {
