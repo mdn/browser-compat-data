@@ -3,13 +3,13 @@
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
 - [Data guidelines](#data-guidelines)
-  * [Constructors](#constructors)
-  * [DOM events (`eventname_event`)](#dom-events-eventname_event)
-  * [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
-  * [Web Workers (`worker_support`)](#web-workers-worker_support)
-  * [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
-  * [Release lines and backported features](#release-lines-and-backported-features)
-  * [Safari for iOS versioning](#safari-for-ios-versioning)
+  - [Constructors](#constructors)
+  - [DOM events (`eventname_event`)](#dom-events-eventname_event)
+  - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
+  - [Web Workers (`worker_support`)](#web-workers-worker_support)
+  - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
+  - [Release lines and backported features](#release-lines-and-backported-features)
+  - [Safari for iOS versioning](#safari-for-ios-versioning)
 
 <!-- BEGIN TEMPLATE
 
@@ -43,7 +43,6 @@ For example, the `ImageData` constructor, `ImageData()`, is represented as `api.
 }
 ```
 
-
 ## DOM events (`eventname_event`)
 
 Add DOM events as features of their target interfaces, using the name _eventname_\_event with the description text set to `<code>eventname</code> event`. If an event can be sent to multiple interfaces, add the event as a feature of each interface that can receive it.
@@ -70,10 +69,9 @@ This rule applies to the event features themselves, not the features for the eve
 
 This practice emerged through several discussions:
 
-* [#935](https://github.com/mdn/browser-compat-data/issues/935#issuecomment-464691417)
-* [#3420](https://github.com/mdn/browser-compat-data/pull/3420)
-* [#3469](https://github.com/mdn/browser-compat-data/pull/3469)
-
+- [#935](https://github.com/mdn/browser-compat-data/issues/935#issuecomment-464691417)
+- [#3420](https://github.com/mdn/browser-compat-data/pull/3420)
+- [#3469](https://github.com/mdn/browser-compat-data/pull/3469)
 
 ## Secure context required (`secure_context_required`)
 
@@ -96,7 +94,6 @@ Use a subfeature named `secure_context_required` with the description text `Secu
 ```
 
 This convention is discussed in more detail in [#190](https://github.com/mdn/browser-compat-data/issues/190).
-
 
 ## Web Workers (`worker_support`)
 
@@ -122,7 +119,6 @@ For example, the `ImageData` API has worker support, recorded like this:
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
 
-
 ## Non-functional defined names imply `partial_implementation`
 
 If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
@@ -130,7 +126,6 @@ If a browser recognizes an API name, but the API doesn’t have any discernable 
 For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a note describing the feature’s misbehavior.
 
 See [#3904](https://github.com/mdn/browser-compat-data/pull/3904#issuecomment-484433603) for additional background (and nuance).
-
 
 ## Release lines and backported features
 
@@ -141,7 +136,6 @@ Typically, BCD does not record absolute version numbers (such as Chrome 76.0.380
 For example, if the current release of browser X is version 10.2, but a new feature was backported to previous versions including a new 9.7.1 release, then the supported version is 9.7 (not 10.2 or 9.7.1).
 
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
-
 
 ## Safari for iOS versioning
 
