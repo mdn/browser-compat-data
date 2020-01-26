@@ -99,7 +99,9 @@ function checkVersions(supportData, relPath, logger) {
               ((!statement.version_added.startsWith('≤') ||
                 !statement.version_removed.startsWith('≤')) &&
                 compareVersions.compare(
-                  statement.version_added.replace('≤', ''),
+                  statement.version_added.startsWith('≤')
+                    ? '0'
+                    : statement.version_added,
                   statement.version_removed.replace('≤', ''),
                   '>=',
                 ))
