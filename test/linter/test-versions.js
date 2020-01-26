@@ -89,22 +89,13 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_removed === 'string'
           ) {
             if (
-              (statement.version_added.startsWith('≤') &&
-                statement.version_removed.startsWith('≤') &&
-                compareVersions.compare(
-                  statement.version_added.replace('≤', ''),
-                  statement.version_removed.replace('≤', ''),
-                  '<',
-                )) ||
-              ((!statement.version_added.startsWith('≤') ||
-                !statement.version_removed.startsWith('≤')) &&
-                compareVersions.compare(
-                  statement.version_added.startsWith('≤')
-                    ? '0'
-                    : statement.version_added,
-                  statement.version_removed.replace('≤', ''),
-                  '>=',
-                ))
+              compareVersions.compare(
+                statement.version_added.startsWith('≤')
+                  ? '0'
+                  : statement.version_added,
+                statement.version_removed.replace('≤', ''),
+                '>=',
+              )
             ) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
