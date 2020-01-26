@@ -7,11 +7,17 @@ const { argv } = require('yargs').command(
   '$0 [folder]',
   'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
   yargs => {
-    yargs.positional('folder', {
-      describe: 'Limit the statistics to a specific folder',
-      type: 'string',
-      default: '',
-    });
+    yargs
+      .positional('folder', {
+        describe: 'Limit the statistics to a specific folder',
+        type: 'string',
+        default: '',
+      })
+      .option('all', {
+        describe: 'Show statistics for all browsers within BCD',
+        type: 'flags',
+        nargs: 0,
+      });
   },
 );
 
@@ -24,16 +30,18 @@ const { argv } = require('yargs').command(
  * @property {number} real The total number of real values for the browser.
  */
 
-const browsers = [
-  'chrome',
-  'chrome_android',
-  'edge',
-  'firefox',
-  'ie',
-  'safari',
-  'safari_ios',
-  'webview_android',
-];
+const browsers = argv.all
+  ? Object.keys(bcd.browsers)
+  : [
+      'chrome',
+      'chrome_android',
+      'edge',
+      'firefox',
+      'ie',
+      'safari',
+      'safari_ios',
+      'webview_android',
+    ];
 /** @type {{total: VersionStats; [browser: string]: VersionStats}} */
 let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
