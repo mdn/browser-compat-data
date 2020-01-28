@@ -4,27 +4,24 @@ const chalk = require('chalk');
 const parser = require('node-html-parser');
 const { VALID_ELEMENTS } = require('../utils.js');
 
-/** @type {string[]} */
-let errors = [];
-
-function testNode(node, browser, relPath) {
+function testNode(node, browser, relPath, errors) {
   if (node.nodeType == 1) {
     if (node.tagName && !VALID_ELEMENTS.includes(node.tagName))
       errors.push({ relPath: relPath, browser: browser, tag: node.tagName });
   }
   for (let childNode of node.childNodes) {
-    testNode(childNode, browser, relPath);
+    testNode(childNode, browser, relPath, errors);
   }
 }
 
-function checkNotes(notes, browser, relPath) {
+function checkNotes(notes, browser, relPath, errors) {
   if (Array.isArray(notes)) {
     for (let note of notes) {
-      checkNotes(note, browser, relPath);
+      checkNotes(note, browser, relPath, errors);
     }
   } else {
     let notesData = parser.parse(notes);
-    testNode(notesData, browser, relPath);
+    testNode(notesData, browser, relPath, errors);
   }
 }
 
@@ -41,6 +38,9 @@ function testNotes(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
+  /** @type {string[]} */
+  const errors = [];
+
   /**
    * @param {Identifier} data
    * @param {string} [relPath]
@@ -52,11 +52,11 @@ function testNotes(filename) {
         for (const browser in statement) {
           if (Array.isArray(statement[browser])) {
             for (let s in statement[browser]) {
-              if (s.notes) checkNotes(s.notes, browser, relPath);
+              if (s.notes) checkNotes(s.notes, browser, relPath, errors);
             }
           } else {
             if (statement[browser].notes)
-              checkNotes(statement[browser].notes, browser, relPath);
+              checkNotes(statement[browser].notes, browser, relPath, errors);
           }
         }
       }
