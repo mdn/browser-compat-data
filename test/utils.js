@@ -7,6 +7,9 @@ const chalk = require('chalk');
  * @property {(...message: unknown[]) => void} error
  */
 
+/** @type {string[]} */
+const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+
 /** @type {{readonly [char: string]: string}} */
 const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
@@ -114,6 +117,7 @@ function jsonDiff(actual, expected) {
 }
 
 module.exports = {
+  VALID_ELEMENTS,
   INVISIBLES_MAP,
   IS_CI,
   IS_WINDOWS,
