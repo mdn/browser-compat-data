@@ -7,7 +7,32 @@ const { VALID_ELEMENTS } = require('../utils.js');
 function testNode(node, browser, relPath, errors) {
   if (node.nodeType == 1) {
     if (node.tagName && !VALID_ELEMENTS.includes(node.tagName))
-      errors.push({ relPath: relPath, browser: browser, tag: node.tagName });
+      errors.push({
+        type: 'disallowed',
+        relPath: relPath,
+        browser: browser,
+        tag: node.tagName,
+      });
+    if (node.tagName !== 'a' && Object.entries(node.attributes).length !== 0) {
+      errors.push({
+        type: 'attrs',
+        relPath: relPath,
+        browser: browser,
+        tag: node.tagName,
+      });
+    }
+    if (
+      node.tagName === 'a' &&
+      (Object.entries(node.attributes).length !== 1 ||
+        Object.entries(node.attributes)[0][0] !== 'href')
+    ) {
+      errors.push({
+        type: 'attrs_a',
+        relPath: relPath,
+        browser: browser,
+        tag: node.tagName,
+      });
+    }
   }
   for (let childNode of node.childNodes) {
     testNode(childNode, browser, relPath, errors);
@@ -75,13 +100,23 @@ function testNotes(filename) {
       }:}`,
     );
     for (const error of errors) {
-      console.error(
-        `  Notes for ${error.relPath} in ${
-          error.browser
-        } have a disallowed HTML element (<${
-          error.tag
-        }>).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}`,
-      );
+      if (error.type == 'disallowed') {
+        console.error(
+          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
+            error.browser
+          }} have a {bold disallowed HTML element} ({bold <${
+            error.tag
+          }>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}}`,
+        );
+      } else if (error.type == 'attrs') {
+        console.error(
+          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  Elements other than {bold <a>} may {bold not} have any attributes.`,
+        );
+      } else if (error.type == 'attrs_a') {
+        console.error(
+          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  {bold <a>} elements may only have an {bold href} attribute.}`,
+        );
+      }
     }
     return true;
   }
