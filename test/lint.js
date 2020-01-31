@@ -6,14 +6,14 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const {
   testBrowsers,
+  testConsistency,
+  testDescriptions,
   testLinks,
   testPrefix,
   testRealValues,
-  testStyle,
   testSchema,
+  testStyle,
   testVersions,
-  testConsistency,
-  testDescriptions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
@@ -91,15 +91,15 @@ function load(...files) {
             testSchema(file, './../../schemas/browsers.schema.json');
             testLinks(file);
           } else {
+            testBrowsers(file);
+            testConsistency(file);
+            testDescriptions(file);
+            testLinks(file);
+            testPrefix(file);
+            testRealValues(file);
             testSchema(file);
             testStyle(file);
-            testLinks(file);
-            testBrowsers(file);
             testVersions(file);
-            testConsistency(file);
-            testRealValues(file);
-            testPrefix(file);
-            testDescriptions(file);
           }
         } catch (e) {
           console.error(e);
