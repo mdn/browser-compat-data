@@ -42,12 +42,12 @@ const spinner = ora({
 /** @type {string[]} */
 let errors = [];
 
-/** @type {integer} */
+/** @type {number} */
 let filesWithErrors = 0;
 
 /**
- * @param {string[]} files
- * @return {boolean}
+ * @param {string[]} files - The files to test
+ * @returns {boolean}
  */
 function load(...files) {
   return files.reduce((prevHasErrors, file) => {
@@ -128,9 +128,9 @@ function load(...files) {
 }
 
 /**
- * @param {string} testName
- * @param {function} test
- * @return {boolean} */
+ * @param {string} testName - The name of the test (for output purposes)
+ * @param {function} test - The test function
+ * @returns {boolean} */
 function testGlobal(testName, test) {
   let globalHasErrors = false;
 
@@ -165,7 +165,7 @@ function testGlobal(testName, test) {
   return globalHasErrors;
 }
 
-/** @return {boolean} */
+/** @returns {boolean} */
 function testGlobals() {
   let hasErrors = false;
 
