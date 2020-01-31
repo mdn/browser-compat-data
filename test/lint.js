@@ -179,23 +179,27 @@ function testGlobals() {
 }
 
 /** @type {boolean} */
-var hasErrors = argv.files
-  ? load.apply(undefined, argv.files)
-  : load(
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-      'xpath',
-      'xslt',
-    );
-hasErrors = testGlobals() || hasErrors;
+var hasErrors = false;
+
+if (argv.files) {
+  hasErrors = load.apply(undefined, argv.files);
+} else {
+  hasErrors = load(
+    'api',
+    'browsers',
+    'css',
+    'html',
+    'http',
+    'svg',
+    'javascript',
+    'mathml',
+    'webdriver',
+    'webextensions',
+    'xpath',
+    'xslt',
+  );
+  hasErrors = testGlobals() || hasErrors;
+}
 
 if (hasErrors) {
   console.error('');
