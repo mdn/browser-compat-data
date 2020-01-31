@@ -4,9 +4,7 @@ const chalk = require('chalk');
 
 const testFormat = () => {
   try {
-    execSync('npx eslint "**/*.js" "**/*.ts" "**/*.md"', {
-      stdio: 'inherit',
-    });
+    execSync('npx eslint "**/*.js" "**/*.ts" "**/*.md" --color');
   } catch (err) {
     let errorText = err.stdout.toString();
     console.error(chalk`{red   ESLint – code formatting/quality errors:}`);
