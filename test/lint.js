@@ -24,7 +24,8 @@ const argv = yargs
   .alias('version', 'v')
   .usage('$0 [[--] files...]', false, yargs => {
     return yargs.positional('files...', {
-      description: 'The files to lint',
+      description:
+        'The files to lint (leave blank to test everything, can also be "globals" to test only core features)',
       type: 'string',
     });
   })
@@ -179,7 +180,9 @@ function testGlobals() {
 var hasErrors = false;
 
 if (argv.files) {
-  hasErrors = load.apply(undefined, argv.files);
+  if (argv.files != 'globals') {
+    hasErrors = load.apply(undefined, argv.files);
+  }
 } else {
   hasErrors = load(
     'api',
@@ -195,6 +198,9 @@ if (argv.files) {
     'xpath',
     'xslt',
   );
+}
+
+if (!argv.files || argv.files == 'globals') {
   hasErrors = testGlobals() || hasErrors;
 }
 
