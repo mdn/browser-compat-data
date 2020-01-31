@@ -3,8 +3,6 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 
 const compareFeatures = require('../scripts/compare-features');
