@@ -129,7 +129,7 @@ function load(...files) {
 /**
  * @param {string} testName
  * @param {function} test
-/** @return {boolean} */
+ * @return {boolean} */
 function testGlobal(testName, test) {
   let globalHasErrors = false;
 
@@ -164,9 +164,6 @@ function testGlobal(testName, test) {
   return globalHasErrors;
 }
 
-/**
- * @param {string} testName
- * @param {function} test
 /** @return {boolean} */
 function testGlobals() {
   let hasErrors = false;
