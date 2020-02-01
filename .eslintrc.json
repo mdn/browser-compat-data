@@ -24,6 +24,19 @@
     "semi": ["error", "always"],
     "no-console": "off",
     "no-empty": ["error", { "allowEmptyCatch": true }],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "jsdoc/require-jsdoc": [
+      "warn",
+      {
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        }
+      }
+    ]
   }
 }
