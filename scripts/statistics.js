@@ -84,30 +84,22 @@ const checkSupport = (supportData, type) => {
  */
 const processData = data => {
   if (data.support) {
-    browsers.forEach(function(browser) {
+    browsers.forEach(browser => {
       stats[browser].all++;
       stats.total.all++;
-      let real_value = true;
       if (!data.support[browser]) {
         stats[browser].null++;
         stats.total.null++;
-        real_value = false;
+      } else if (checkSupport(data.support[browser], null)) {
+        stats[browser].null++;
+        stats.total.null++;
+      } else if (checkSupport(data.support[browser], true)) {
+        stats[browser].true++;
+        stats.total.true++;
+      } else if (checkSupport(data.support[browser], '≤')) {
+        stats[browser].range++;
+        stats.total.range++;
       } else {
-        if (checkSupport(data.support[browser], null)) {
-          stats[browser].null++;
-          stats.total.null++;
-          real_value = false;
-        } else if (checkSupport(data.support[browser], true)) {
-          stats[browser].true++;
-          stats.total.true++;
-          real_value = false;
-        } else if (checkSupport(data.support[browser], '≤')) {
-          stats[browser].range++;
-          stats.total.range++;
-          real_value = false;
-        }
-      }
-      if (real_value) {
         stats[browser].real++;
         stats.total.real++;
       }
