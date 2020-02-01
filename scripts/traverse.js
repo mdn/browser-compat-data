@@ -34,7 +34,18 @@ const { argv } = require('yargs').command(
   },
 );
 
-function traverseFeatures(obj, depth, identifier) {
+let features = [];
+
+/**
+ * Traverse all of the features within a specified object and find all features that have one of the specified values
+ *
+ * @param {object} obj The compat data to traverse through
+ * @param {number} depth The depth to traverse
+ * @param {string} identifier The identifier of the current object
+ * @param {string} values The values to test for in stringified format
+ * @returns {void}
+ */
+const traverseFeatures = (obj, depth, identifier, values) => {
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
@@ -61,22 +72,31 @@ function traverseFeatures(obj, depth, identifier) {
             }
           }
         }
-        traverseFeatures(obj[i], depth, identifier + i + '.');
+        traverseFeatures(obj[i], depth, identifier + i + '.', values);
       }
     }
   }
+};
+
+/**
+ * Traverse the features within the specified folder(s) to find features with the specified value(s) for their version, and log them to the console, followed by the number of features found
+ *
+ * @param {string|string[]} folder The folder(s) to traverse
+ * @param {string|string[]} value The value(s) to test for in stringified format
+ * @returns {void}
+ */
+const main = (folder, value) => {
+  const folders = Array.isArray(folder) ? folder : folder.split(',');
+  const values = Array.isArray(value) ? value : value.toString().split(',');
+
+  for (const folder in folders)
+    traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`, values);
+
+  console.log(features.join('\n'));
+  console.log('\n');
+  console.log(features.length);
+};
+
+if (require.main === module) {
+  main(argv.folder, argv.value);
 }
-
-let features = [];
-const folders = Array.isArray(argv.folder)
-  ? argv.folder
-  : argv.folder.split(',');
-const values = Array.isArray(argv.value)
-  ? argv.value
-  : argv.value.toString().split(',');
-
-for (const folder in folders)
-  traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
-
-console.log(features.join('\n'));
-console.log(features.length);

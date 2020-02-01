@@ -5,15 +5,16 @@
 'use strict';
 
 /**
- *
  * Sort a list of features based upon a specific order:
  *  1. __compat is always first
  *  2. Alphanumerical features starting with an uppercase letter (without symbols aside from - or _)
  *  3. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
  *  4. All other features
  *
+ * @param {object} a The first object to perform comparison with
+ * @param {object} b The second object to perform comparison with
+ * @returns {boolean} Result of localeCompare
  */
-
 const compareFeatures = (a, b) => {
   if (a == '__compat') return -1;
   if (b == '__compat') return 1;

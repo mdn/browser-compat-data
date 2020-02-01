@@ -1,7 +1,6 @@
 const { execSync } = require('child_process');
 const http = require('https');
 const readline = require('readline');
-const chalk = require('chalk');
 
 const bcd = require('..');
 
@@ -16,6 +15,22 @@ const { argv } = require('yargs').command(
   },
 );
 
+/**
+ * @constant {string} The platform-specific "open" command
+ */
+const start =
+  process.platform == 'darwin'
+    ? 'open'
+    : process.platform == 'win32'
+    ? 'start'
+    : 'xdg-open';
+
+/**
+ * Get the JSON response from a specified URL
+ *
+ * @param {string} url The URL to get the JSON from
+ * @returns {object} The JSON obtained from the specified URL
+ */
 const getJSON = url =>
   new Promise((resolve, reject) =>
     http.get(
@@ -34,6 +49,12 @@ const getJSON = url =>
     ),
   );
 
+/**
+ * Display a prompt to the user and await input, then return the user's input
+ *
+ * @param {string} query The query to present to the user
+ * @returns {string} The user's response to said query
+ */
 const question = query => {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -45,8 +66,20 @@ const question = query => {
   });
 };
 
+/**
+ * Checks whether a user's input is a confirmation -- in other words, not "n" or "no" (case-insensitive).  Used as a type to questions passed to the prompt() function.
+ *
+ * @param {string} str The string to check against
+ * @returns {boolean} True if the string represents a confirmation
+ */
 const confirm = str => !['n', 'no'].includes(str.toLowerCase());
 
+/**
+ * Display a series of prompts to the user and collect the input, converting it to the specified type.
+ *
+ * @param {{name: string, type: object, message: string}} questions The prompts to display to the user
+ * @returns {object.<string, string>} The results from each and every prompt
+ */
 const prompt = async questions => {
   const results = {};
   for (const q of questions) {
@@ -56,11 +89,23 @@ const prompt = async questions => {
   return results;
 };
 
+/**
+ * Get the number of stargazers from the BCD repository and return it
+ *
+ * @returns {number} The number of stargazers for the BCD repository
+ */
 const stargazers = () =>
   getJSON('https://api.github.com/repos/mdn/browser-compat-data').then(
     json => json.stargazers_count,
   );
 
+/**
+ * Obtain the number of changes (commits, files changed, insertions, deletions)
+ *
+ * @param {string} version The current version
+ * @param {string} previousVersion The previous version
+ * @returns {{commits: string, changed: string, insertions: string, deletions: string}} The commits, files changed, insertions, and deletions between the current and previous versions
+ */
 const stats = (version, previousVersion) => {
   // Get just the diff stats summary
   const diff = execSync(
@@ -87,6 +132,13 @@ const stats = (version, previousVersion) => {
   };
 };
 
+/**
+ * Obtain the number of changes (commits, files changed, insertions, deletions)
+ *
+ * @param {string} version The current version
+ * @param {string} previousVersion The previous version
+ * @returns {{commits: string, changed: string, insertions: string, deletions: string}} The commits, files changed, insertions, and deletions between the current and previous versions
+ */
 const contributors = (version, previousVersion) =>
   prompt([
     {
@@ -102,6 +154,11 @@ const contributors = (version, previousVersion) =>
     },
   ]);
 
+/**
+ * Prompt the user if there are any notable changes, and return a string to indicate as such
+ *
+ * @returns {string} "None" if the user said no, or a dummy string to be later replaced
+ */
 const notableChanges = async () => {
   const { result } = await prompt([
     {
@@ -118,6 +175,11 @@ const notableChanges = async () => {
   return 'REPLACE ME WITH ACTUAL RELEASE NOTES';
 };
 
+/**
+ * Count the number of features throughout BCD
+ *
+ * @returns {number} The count of features in BCD
+ */
 const countFeatures = () => {
   let count = 0;
   JSON.parse(JSON.stringify(bcd), k => {
@@ -129,6 +191,13 @@ const countFeatures = () => {
   return count;
 };
 
+/**
+ * Generate the URL to create a release on GitHub
+ *
+ * @param {string} version The version tag to use
+ * @param {string} body The body of the release
+ * @returns {string} The generated URL
+ */
 const makeURL = (version, body) => {
   const baseURL = 'https://github.com/mdn/browser-compat-data/releases/new';
 
@@ -141,6 +210,11 @@ const makeURL = (version, body) => {
   return `${baseURL}?title=${version}&tag=${version}&body=${encodedBody}`;
 };
 
+/**
+ * Initiate a release of the package on GitHub
+ *
+ * @returns {void}
+ */
 const main = async () => {
   const version = argv.versionTag;
   const previousVersion = execSync(`git describe --abbrev=0 ${version}^`, {
@@ -170,8 +244,9 @@ const main = async () => {
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
 
-  console.log(chalk.bold('\nOpen this URL in a browser:'));
-  console.log(makeURL(version, body));
+  execSync(`${start} ${makeURL(version, body)}`);
 };
 
-main();
+if (require.main === module) {
+  main();
+}
