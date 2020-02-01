@@ -3,16 +3,25 @@ const fs = require('fs');
 const path = require('path');
 const extend = require('extend');
 
+/**
+ * Recursively load one or more files and/or directories passed as arguments.
+ *
+ * @returns {object} All of the browser compatibility data
+ */
 function load() {
-  // Recursively load one or more directories passed as arguments.
   let dir,
     result = {};
 
+  /**
+   * Process data from a file based upon the filename. If the given filename is a directory, recursively load it.
+   *
+   * @param {string} fn Filename to process
+   * @returns {void}
+   */
   function processFilename(fn) {
     const fp = path.join(dir, fn);
     let extra;
 
-    // If the given filename is a directory, recursively load it.
     if (fs.statSync(fp).isDirectory()) {
       extra = load(fp);
     } else if (path.extname(fp) === '.json') {
