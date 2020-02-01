@@ -30,6 +30,9 @@ const { argv } = require('yargs').command(
  * @property {number} real The total number of real values for the browser.
  */
 
+/**
+ * @constant {string[]}
+ */
 const browsers = argv.all
   ? Object.keys(bcd.browsers)
   : [
@@ -42,12 +45,19 @@ const browsers = argv.all
       'safari_ios',
       'webview_android',
     ];
-/** @type {{total: VersionStats; [browser: string]: VersionStats}} */
+/** @type {object.<string, VersionStats>} */
 let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
   stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
 });
 
+/**
+ * Check whether a support statement is a specified type
+ *
+ * @param {object} supportData The support statement to check
+ * @param {string|boolean|null} type What type of support (true, null, ranged)
+ * @returns {boolean} If the support statement has the type
+ */
 const checkSupport = (supportData, type) => {
   if (!Array.isArray(supportData)) {
     supportData = [supportData];
@@ -66,6 +76,12 @@ const checkSupport = (supportData, type) => {
   );
 };
 
+/**
+ * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
+ *
+ * @param {object} data The data to process and count stats for
+ * @returns {void}
+ */
 const processData = data => {
   if (data.support) {
     browsers.forEach(function(browser) {
@@ -99,6 +115,12 @@ const processData = data => {
   }
 };
 
+/**
+ * Iterate through all of the data and process statistics
+ *
+ * @param {object} data The compat data to iterate
+ * @returns {void}
+ */
 const iterateData = data => {
   for (const key in data) {
     if (key === '__compat') {
@@ -109,6 +131,11 @@ const iterateData = data => {
   }
 };
 
+/**
+ * Print a Markdown-formatted table of the statistics
+ *
+ * @returns {void}
+ */
 const printTable = () => {
   let table = `| browser | real values | ranged values | \`true\` values | \`null\` values |
 | --- | --- | --- | --- | --- |
@@ -128,6 +155,12 @@ const printTable = () => {
   console.log(table);
 };
 
+/**
+ * Print statistics of BCD
+ *
+ * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @returns {boolean} False if the folder specified wasn't found
+ */
 const printStats = folder => {
   if (folder) {
     if (bcd[folder]) {
