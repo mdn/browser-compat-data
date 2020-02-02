@@ -8,7 +8,7 @@ const extend = require('extend');
  *
  * @returns {object} All of the browser compatibility data
  */
-function load() {
+const load = () => {
   let dir,
     result = {};
 
@@ -18,7 +18,7 @@ function load() {
    * @param {string} fn Filename to process
    * @returns {void}
    */
-  function processFilename(fn) {
+  const processFilename = fn => {
     const fp = path.join(dir, fn);
     let extra;
 
@@ -33,7 +33,7 @@ function load() {
     // The JSON data is independent of the actual file
     // hierarchy, so it is essential to extend "deeply".
     result = extend(true, result, extra);
-  }
+  };
 
   for (dir of arguments) {
     dir = path.resolve(__dirname, dir);
@@ -41,7 +41,7 @@ function load() {
   }
 
   return result;
-}
+};
 
 module.exports = load(
   'api',
