@@ -22,6 +22,8 @@ const { argv } = require('yargs').command(
 );
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ *
  * @typedef {object} VersionStats
  * @property {number} all The total number of occurrences for the browser.
  * @property {number} true The total number of `true` values for the browser.
@@ -54,7 +56,7 @@ browsers.forEach(browser => {
 /**
  * Check whether a support statement is a specified type
  *
- * @param {object} supportData The support statement to check
+ * @param {Identifier} supportData The support statement to check
  * @param {string|boolean|null} type What type of support (true, null, ranged)
  * @returns {boolean} If the support statement has the type
  */
@@ -79,7 +81,7 @@ const checkSupport = (supportData, type) => {
 /**
  * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
  *
- * @param {object} data The data to process and count stats for
+ * @param {Identifier} data The data to process and count stats for
  * @returns {void}
  */
 const processData = data => {
@@ -110,7 +112,7 @@ const processData = data => {
 /**
  * Iterate through all of the data and process statistics
  *
- * @param {object} data The compat data to iterate
+ * @param {Identifier} data The compat data to iterate
  * @returns {void}
  */
 const iterateData = data => {
