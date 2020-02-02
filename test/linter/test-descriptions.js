@@ -18,7 +18,6 @@ const checkError = (error_type, name, method, expected, logger) => {
     logger.error(chalk`{red → Incorrect ${error_type} description for {bold ${name}}
       Actual: {yellow "${actual}"}
       Expected: {green "${expected}"}}`);
-    return true;
   }
 };
 
