@@ -4,7 +4,7 @@
     "es6": true,
     "node": true
   },
-  "plugins": ["prettier", "jsdoc"],
+  "plugins": ["prettier", "jsdoc", "prefer-arrow"],
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
@@ -38,6 +38,7 @@
           "MethodDefinition": true
         }
       }
-    ]
+    ],
+    "prefer-arrow/prefer-arrow-functions": "error"
   }
 }
