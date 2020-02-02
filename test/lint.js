@@ -46,10 +46,12 @@ let errors = [];
 let filesWithErrors = 0;
 
 /**
- * @param {string[]} files - The files to test
- * @returns {boolean}
+ * Recursively load one or more files and/or directories passed as arguments and check for any errors.
+ *
+ * @param {string[]} files The files to test
+ * @returns {boolean} Whether any of the files passed have errors
  */
-function load(...files) {
+const load = (...files) => {
   return files.reduce((prevHasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -125,13 +127,16 @@ function load(...files) {
 
     return load(...subFiles) || prevHasErrors;
   }, false);
-}
+};
 
 /**
- * @param {string} testName - The name of the test (for output purposes)
- * @param {function} test - The test function
- * @returns {boolean} */
-function testGlobal(testName, test) {
+ * Run a specified test function and return whether the function had any errors
+ *
+ * @param {string} testName The name of the test (for output purposes)
+ * @param {function} test The test function
+ * @returns {boolean} Whether the test has errors
+ */
+const testGlobal = (testName, test) => {
   let globalHasErrors = false;
 
   const console_error = console.error;
@@ -163,10 +168,14 @@ function testGlobal(testName, test) {
   }
 
   return globalHasErrors;
-}
+};
 
-/** @returns {boolean} */
-function testGlobals() {
+/**
+ * Test for errors in any non-file ("global") tests
+ *
+ * @returns {boolean} Whether any globals had errors
+ */
+const testGlobals = () => {
   let hasErrors = false;
 
   hasErrors = testGlobal('compare-features', testCompareFeatures) || hasErrors;
@@ -174,7 +183,7 @@ function testGlobals() {
   hasErrors = testGlobal('format', testFormat) || hasErrors;
 
   return hasErrors;
-}
+};
 
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
