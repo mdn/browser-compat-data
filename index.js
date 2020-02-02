@@ -6,9 +6,10 @@ const extend = require('extend');
 /**
  * Recursively load one or more files and/or directories passed as arguments.
  *
+ * @param {string[]} files The files to test
  * @returns {object} All of the browser compatibility data
  */
-const load = () => {
+const load = (...files) => {
   let dir,
     result = {};
 
@@ -35,7 +36,7 @@ const load = () => {
     result = extend(true, result, extra);
   };
 
-  for (dir of arguments) {
+  for (dir of files) {
     dir = path.resolve(__dirname, dir);
     fs.readdirSync(dir).forEach(processFilename);
   }
