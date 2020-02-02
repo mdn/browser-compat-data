@@ -181,6 +181,6 @@ const printStats = folder => {
   return true;
 };
 
-if (requires.main === module) {
+if (require.main === module) {
   printStats(argv.folder);
 }
