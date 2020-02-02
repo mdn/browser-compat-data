@@ -176,43 +176,56 @@ function testGlobals() {
   return hasErrors;
 }
 
-/** @type {boolean} */
-var hasErrors = false;
+/**
+ * Test for any errors in specified file(s) and/or folder(s), or all of BCD
+ *
+ * @param {?string} The file(s) and/or folder(s) to test, or "globals" to test non-file tests.  Leave null for everything.
+ * @returns {boolean} Whether there were any errors
+ */
+const main = files => {
+  /** @type {boolean} */
+  var hasErrors = false;
 
-if (argv.files) {
-  if (argv.files != 'globals') {
-    hasErrors = load.apply(undefined, argv.files);
+  if (files) {
+    if (files != 'globals') {
+      hasErrors = load.apply(undefined, files);
+    }
+  } else {
+    hasErrors = load(
+      'api',
+      'browsers',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'webdriver',
+      'webextensions',
+      'xpath',
+      'xslt',
+    );
   }
-} else {
-  hasErrors = load(
-    'api',
-    'browsers',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'webdriver',
-    'webextensions',
-    'xpath',
-    'xslt',
-  );
-}
 
-if (!argv.files || argv.files == 'globals') {
-  hasErrors = testGlobals() || hasErrors;
-}
-
-if (hasErrors) {
-  console.error('');
-  console.error(
-    chalk`{red Problems in {bold ${filesWithErrors}} ${
-      filesWithErrors === 1 ? 'file' : 'files'
-    }:}`,
-  );
-  for (let error of errors) {
-    console.error(error);
+  if (!files || files == 'globals') {
+    hasErrors = testGlobals() || hasErrors;
   }
-  process.exit(1);
+
+  if (hasErrors) {
+    console.error('');
+    console.error(
+      chalk`{red Problems in {bold ${filesWithErrors}} ${
+        filesWithErrors === 1 ? 'file' : 'files'
+      }:}`,
+    );
+    for (let error of errors) {
+      console.error(error);
+    }
+  }
+
+  return hasErrors;
+};
+
+if (require.main === module) {
+  process.exit(main(argv.files) ? 1 : 0);
 }
