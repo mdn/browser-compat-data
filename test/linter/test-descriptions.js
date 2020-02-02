@@ -6,11 +6,14 @@ const chalk = require('chalk');
  */
 
 /**
- * @param {String} error_type
- * @param {String} name
- * @param {Identifier} method
- * @param {String} expected
- * @param {Logger} logger
+ * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
+ *
+ * @param {String} error_type The name of the error
+ * @param {String} name The name of the API method
+ * @param {Identifier} method The method's compat data
+ * @param {String} expected Expected description
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 const checkError = (error_type, name, method, expected, logger) => {
   const actual = method.__compat.description || '';
@@ -22,9 +25,12 @@ const checkError = (error_type, name, method, expected, logger) => {
 };
 
 /**
- * @param {Identifier} apiData
- * @param {String} apiName
- * @param {Logger} logger
+ * Process data and check for any incorrect descriptions in said data, logging any errors
+ *
+ * @param {Identifier} apiData The compat data to check through
+ * @param {String} apiName The name of the API
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 const processData = (apiData, apiName, logger) => {
   for (let methodName in apiData) {
@@ -66,7 +72,10 @@ const processData = (apiData, apiName, logger) => {
 };
 
 /**
- * @param {string} filename
+ * Test all of the descriptions through the data in a given filename.  This test only functions with files with API data; all other files are silently ignored
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} Whether the file has errors
  */
 const testDescriptions = filename => {
   /** @type {Identifier} */
