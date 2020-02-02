@@ -133,7 +133,7 @@ const load = (...files) => {
  * Run a specified test function and return whether the function had any errors
  *
  * @param {string} testName The name of the test (for output purposes)
- * @param {function} test The test function
+ * @param {Function} test The test function
  * @returns {boolean} Whether the test has errors
  */
 const testGlobal = (testName, test) => {
@@ -188,7 +188,7 @@ const testGlobals = () => {
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
  *
- * @param {?string} The file(s) and/or folder(s) to test, or "globals" to test non-file tests.  Leave null for everything.
+ * @param {?string} files The file(s) and/or folder(s) to test, or "globals" to test non-file tests.  Leave null for everything.
  * @returns {boolean} Whether there were any errors
  */
 const main = files => {
