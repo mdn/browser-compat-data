@@ -173,7 +173,7 @@ const printStats = folder => {
 
   console.log(
     chalk`{bold Status as of version 0.0.xx (released on 2019-MM-DD) for ${
-      folder ? `${folder}/ directory` : `web platform features`
+      folder ? `${folder}/ directory` : 'web platform features'
     }}: \n`,
   );
   printTable();
