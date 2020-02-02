@@ -12,7 +12,7 @@ const chalk = require('chalk');
  * @param {String} expected
  * @param {Logger} logger
  */
-function checkError(error_type, name, method, expected, logger) {
+const checkError = (error_type, name, method, expected, logger) => {
   const actual = method.__compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${error_type} description for {bold ${name}}
@@ -20,14 +20,14 @@ function checkError(error_type, name, method, expected, logger) {
       Expected: {green "${expected}"}}`);
     return true;
   }
-}
+};
 
 /**
  * @param {Identifier} apiData
  * @param {String} apiName
  * @param {Logger} logger
  */
-function processData(apiData, apiName, logger) {
+const processData = (apiData, apiName, logger) => {
   for (let methodName in apiData) {
     const method = apiData[methodName];
     if (methodName == apiName) {
@@ -64,12 +64,12 @@ function processData(apiData, apiName, logger) {
       );
     }
   }
-}
+};
 
 /**
  * @param {string} filename
  */
-function testDescriptions(filename) {
+const testDescriptions = filename => {
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -101,6 +101,6 @@ function testDescriptions(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testDescriptions;
