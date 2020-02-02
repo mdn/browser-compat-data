@@ -7,6 +7,10 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
@@ -18,8 +22,8 @@ const IS_WINDOWS = platform() === 'win32';
  * non-integer keys (which is our case).
  *
  * @param {string} key The key of the object
- * @param {object} value The value of the key
- * @returns {object} Value with sorting applied
+ * @param {Identifier} value The value of the key
+ * @returns {Identifier} Value with sorting applied
  */
 const orderSupportBlock = (key, value) => {
   if (key === '__compat') {

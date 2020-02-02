@@ -8,6 +8,10 @@ const path = require('path');
 const { platform } = require('os');
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
+/**
  * Determines if the OS is Windows
  *
  * @constant {boolean}
@@ -18,8 +22,8 @@ const IS_WINDOWS = platform() === 'win32';
  * Recursively load one or more files and/or directories passed as arguments and perform feature sorting.
  *
  * @param {string} key The key in the object
- * @param {object} value The value of the key
- * @returns {object} The new value with WebView flags removed
+ * @param {Identifier} value The value of the key
+ * @returns {Identifier} The new value with WebView flags removed
  */
 const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {

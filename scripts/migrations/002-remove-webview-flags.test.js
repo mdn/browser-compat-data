@@ -8,7 +8,11 @@ const chalk = require('chalk');
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
 /**
- * @constant {{input: object, output: object}[]} Objects of each test, with input and expected output
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
+/**
+ * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
  */
 const tests = [
   {

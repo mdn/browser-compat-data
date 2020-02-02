@@ -34,12 +34,16 @@ const { argv } = require('yargs').command(
   },
 );
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 let features = [];
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
  *
- * @param {object} obj The compat data to traverse through
+ * @param {Identifier} obj The compat data to traverse through
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
  * @param {string} values The values to test for in stringified format

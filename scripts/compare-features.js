@@ -11,8 +11,8 @@
  *  3. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
  *  4. All other features
  *
- * @param {object} a The first object to perform comparison with
- * @param {object} b The second object to perform comparison with
+ * @param {string} a The name of the first object to perform comparison with
+ * @param {string} b The name of the second object to perform comparison with
  * @returns {boolean} Result of localeCompare
  */
 const compareFeatures = (a, b) => {

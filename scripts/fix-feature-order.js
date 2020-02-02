@@ -7,10 +7,14 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
+const compareFeatures = require('./compare-features');
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
-
-const compareFeatures = require('./compare-features');
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -20,8 +24,8 @@ const compareFeatures = require('./compare-features');
  * (which is our case).
  *
  * @param {string} key The key in the object
- * @param {object} value The value of the key
- * @returns {object} The new value
+ * @param {Identifier} value The value of the key
+ * @returns {Identifier} The new value
  */
 const orderFeatures = (key, value) => {
   if (value instanceof Object && '__compat' in value) {
