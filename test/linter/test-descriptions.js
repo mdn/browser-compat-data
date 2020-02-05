@@ -8,10 +8,10 @@ const chalk = require('chalk');
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
  *
- * @param {String} error_type The name of the error
- * @param {String} name The name of the API method
+ * @param {string} error_type The name of the error
+ * @param {string} name The name of the API method
  * @param {Identifier} method The method's compat data
- * @param {String} expected Expected description
+ * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
@@ -27,8 +27,8 @@ const checkError = (error_type, name, method, expected, logger) => {
 /**
  * Process data and check for any incorrect descriptions in said data, logging any errors
  *
- * @param {Identifier} apiData The compat data to check through
- * @param {String} apiName The name of the API
+ * @param {Identifier} apiData The data to test
+ * @param {string} apiName The name of the API
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
@@ -84,7 +84,11 @@ const testDescriptions = filename => {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
