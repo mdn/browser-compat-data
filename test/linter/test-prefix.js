@@ -7,13 +7,14 @@ const chalk = require('chalk');
  */
 
 /**
- * @param {Identifier} data
- * @param {string} category
- * @param {string[]} errors
- * @param {string} prefix
- * @param {string} [path]
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {string[]} errors The errors object to push the new errors to
+ * @param {string} prefix The browser-based prefix to test
+ * @param {string} [path] The path to the data
+ * @returns {string[]} Any errors found within the data
  */
-function checkPrefix(data, category, errors, prefix, path = '') {
+const checkPrefix = (data, category, errors, prefix, path = '') => {
   for (const key in data) {
     if (key === 'prefix' && typeof data[key] === 'string') {
       if (data[key].includes(prefix)) {
@@ -34,14 +35,14 @@ function checkPrefix(data, category, errors, prefix, path = '') {
     }
   }
   return errors;
-}
+};
 
 /**
- * @param {Identifier} data
- * @param {string} category
- * @return {string[]}
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @returns {string[]} Any errors found within the data
  */
-function processData(data, category) {
+const processData = (data, category) => {
   let errors = [];
   let prefixes = [];
 
@@ -56,12 +57,13 @@ function processData(data, category) {
     checkPrefix(data, category, errors, prefix);
   }
   return errors;
-}
+};
 
 /**
- * @param {string} filename
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
-function testPrefix(filename) {
+const testPrefix = filename => {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -83,6 +85,6 @@ function testPrefix(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testPrefix;

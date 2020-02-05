@@ -7,19 +7,20 @@ const chalk = require('chalk');
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
+ * @typedef {import('../utils').Logger} Logger
  */
 const browsers = require('../..').browsers;
 
-/** @type {Object<string, string[]>} */
+/** @type {object<string, string[]>} */
 const validBrowserVersions = {};
 
-/** @type {Object<string, string[]>} */
+/** @type {object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
   edge: ['≤18', '≤79'],
 };
 
-/** @type string[] */
+/** @type {string[]} */
 const FLAGLESS_BROWSERS = ['webview_android'];
 
 for (const browser of Object.keys(browsers)) {
@@ -30,23 +31,25 @@ for (const browser of Object.keys(browsers)) {
 }
 
 /**
- * @param {string} browserIdentifier
- * @param {VersionValue} version
+ * @param {string} browser The browser to check
+ * @param {VersionValue} version The version to test
+ * @returns {boolean} Whether the browser allows that version
  */
-function isValidVersion(browserIdentifier, version) {
+const isValidVersion = (browser, version) => {
   if (typeof version === 'string') {
-    return validBrowserVersions[browserIdentifier].includes(version);
+    return validBrowserVersions[browser].includes(version);
   } else {
     return true;
   }
-}
+};
 
 /**
- * @param {SupportBlock} supportData
- * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * @param {SupportBlock} supportData The data to test
+ * @param {string} relPath The path to the data
+ * @param {import('../utils').Logger} logger The logger to output errors to
+ * @returns {void}
  */
-function checkVersions(supportData, relPath, logger) {
+const checkVersions = (supportData, relPath, logger) => {
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
@@ -120,40 +123,48 @@ function checkVersions(supportData, relPath, logger) {
       }
     }
   }
-}
+};
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The data to test
+ * @param {Logger} logger The logger to ouptut errors to
+ * @param {string} [relPath] The path of the data
+ * @returns {void}
  */
-function testVersions(filename) {
+const findSupport = (data, logger, relPath) => {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      checkVersions(data[prop].support, relPath, logger);
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(sub, logger, relPath ? `${relPath}.${prop}` : `${prop}`);
+    }
+  }
+};
+
+/**
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
+ */
+const testVersions = filename => {
   /** @type {Identifier} */
   const data = require(filename);
 
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
   };
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, logger);
 
   if (errors.length) {
     console.error(
@@ -167,6 +178,6 @@ function testVersions(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testVersions;

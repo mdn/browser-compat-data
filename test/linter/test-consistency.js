@@ -1,5 +1,4 @@
 'use strict';
-const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 
@@ -15,15 +14,15 @@ const chalk = require('chalk');
  * @typedef {'unsupported' | 'support_unknown' | 'subfeature_earlier_implementation'} ErrorType
  *
  * @typedef {object} ConsistencyError
- * @property {string} feature
- * @property {string[]} path
- * @property {FeatureError[]} errors
+ * @property {string} feature The identifier of the feature
+ * @property {string[]} path The path of the feature
+ * @property {FeatureError[]} errors Any errors found
  *
  * @typedef {object} FeatureError
- * @property {ErrorType} errortype
- * @property {string} browser
- * @property {VersionValue} parent_value
- * @property {[string, VersionValue][]} subfeatures
+ * @property {ErrorType} errortype The type of the error
+ * @property {string} browser The browser the error was found
+ * @property {VersionValue} parent_value The value of the parent feature
+ * @property {[string, VersionValue][]} subfeatures The versions of the subfeatures
  */
 
 /**
@@ -34,17 +33,17 @@ const chalk = require('chalk');
  */
 class ConsistencyChecker {
   /**
-   * @param {Identifier} data
-   * @return {ConsistencyError[]}
+   * @param {Identifier} data The data to test
+   * @returns {ConsistencyError[]} Any errors found within the data
    */
   check(data) {
     return this.checkSubfeatures(data);
   }
 
   /**
-   * @param {Identifier} data
-   * @param {string[]} [path]
-   * @return {ConsistencyError[]}
+   * @param {Identifier} data The data to test
+   * @param {string[]} [path] The path of the data
+   * @returns {ConsistencyError[]} Any errors found within the data
    */
   checkSubfeatures(data, path = []) {
     /** @type {ConsistencyError[]} */
@@ -78,8 +77,8 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {PrimaryIdentifier & Required<IdentifierMeta>} data
-   * @return {FeatureError[]}
+   * @param {Identifier} data The data to test
+   * @returns {FeatureError[]} Any errors found within the data
    */
   checkFeature(data) {
     /** @type {FeatureError[]} */
@@ -92,7 +91,7 @@ class ConsistencyChecker {
     // Test whether sub-features are supported when basic support is not implemented
     // For all unsupported browsers (basic support == false), sub-features should be set to false
     const unsupportedInParent = this.extractUnsupportedBrowsers(data.__compat);
-    /** @type {Partial<Record<string, [string, VersionValue][]>>} */
+    /** @type {?object.<string, string[]|VersionValue[]>} */
     var inconsistentSubfeaturesByBrowser = {};
 
     subfeatures.forEach(subfeature => {
@@ -217,16 +216,16 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {Identifier} data
-   * @return {data is Required<IdentifierMeta>}
+   * @param {Identifier} data The data to test
+   * @returns {boolean} If the data is a feature statement
    */
   isFeature(data) {
     return '__compat' in data;
   }
 
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers marked as unsupported
    */
   extractUnsupportedBrowsers(compatData) {
     return this.extractBrowsers(
@@ -239,8 +238,8 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers with unknown support
    */
   extractSupportUnknownBrowsers(compatData) {
     return this.extractBrowsers(
@@ -250,8 +249,8 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers with non-truthy (false or null) support
    */
   extractSupportNotTrueBrowsers(compatData) {
     return this.extractBrowsers(
@@ -264,8 +263,8 @@ class ConsistencyChecker {
     );
   }
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers with an exact version number
    */
   extractSupportedBrowsersWithVersion(compatData) {
     return this.extractBrowsers(
@@ -275,11 +274,11 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {SupportStatement} compatData
-   * @return {string | null}
+   * @param {SupportStatement} compatData The compat data to process
+   * @returns {?string} The earliest version added in the data
    */
   getVersionAdded(compatData) {
-    /** @type {string | null} */
+    /** @type {?string} */
     var version_added = null;
 
     if (typeof compatData.version_added === 'string')
@@ -307,9 +306,9 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {SupportStatement} a
-   * @param {SupportStatement} b
-   * @return {boolean}
+   * @param {SupportStatement} a The first support statement to compare
+   * @param {SupportStatement} b The second support statement to compare
+   * @returns {boolean} If a's version is greater (later) than b's version
    */
   isVersionAddedGreater(a, b) {
     var a_version_added = this.getVersionAdded(a);
@@ -330,9 +329,9 @@ class ConsistencyChecker {
 
   /**
    *
-   * @param {CompatStatement} compatData
-   * @param {(browserData: SimpleSupportStatement) => boolean} callback
-   * @return {string[]}
+   * @param {CompatStatement} compatData The compat data to process
+   * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to send the data to
+   * @returns {*} The response of the callback, or "false"
    */
   extractBrowsers(compatData, callback) {
     return Object.keys(compatData.support).filter(browser => {
@@ -350,9 +349,10 @@ class ConsistencyChecker {
 }
 
 /**
- * @param {string} filename
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
-function testConsistency(filename) {
+const testConsistency = filename => {
   /** @type {Identifier} */
   let data = require(filename);
 
@@ -398,6 +398,6 @@ function testConsistency(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testConsistency;

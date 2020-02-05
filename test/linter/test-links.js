@@ -3,15 +3,22 @@ const fs = require('fs');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
+// {issue: string, pos: [?number, ?number], posString: string, expected: string, actualLink: string}
+
 /**
- * @typedef {import('../utils').Logger} Logger
+ * @typedef {object} LinkError
+ * @property {string} issue The description of the error
+ * @property {Array.<?number>} pos The cursor position of the issue in number-array form
+ * @property {string} posString The cursor position of the issue in string form
+ * @property {?string} expected The expected string if applicable
+ * @property {string} actualLink What the link currently is
  */
 
 /**
- * @param {string} filename
- * @param {Logger} logger
+ * @param {string} filename The file to test
+ * @returns {LinkError[]} A list of errors found in the links
  */
-function processData(filename) {
+const processData = filename => {
   let errors = [];
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -115,7 +122,7 @@ function processData(filename) {
 
       if (!expectedPath.startsWith('docs/')) {
         // Convert legacy zone URLs (see https://bugzil.la/1462475):
-        const [zone, index] = /** @return {[string|null, number]} */ (() => {
+        const [zone, index] = /** @returns {[string|null, number]} */ (() => {
           const match = expectedPath.match(
             /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
           );
@@ -172,17 +179,18 @@ function processData(filename) {
   );
 
   return errors;
-}
+};
 
 /**
- * @param {Object[]} errors
- * @param {string} actual
- * @param {string|RegExp} regexp
- * @param {(match: RegExpExecArray) => Object} matchHandler
+ * @param {LinkError[]} errors The errors object to push the new errors to
+ * @param {string} actual The link to test
+ * @param {string|RegExp} regexp The regex to test with
+ * @param {(match: Array.<?string>) => object} matchHandler The callback
+ * @returns {void}
  */
-function processLink(errors, actual, regexp, matchHandler) {
+const processLink = (errors, actual, regexp, matchHandler) => {
   const re = new RegExp(regexp, 'g');
-  /** @type {RegExpExecArray} */
+  /** @type {Array.<?string>} */
   let match;
   while ((match = re.exec(actual)) !== null) {
     let pos = indexToPosRaw(actual, match.index);
@@ -203,10 +211,11 @@ function processLink(errors, actual, regexp, matchHandler) {
 }
 
 /**
- * @param {string} filename
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
-function testLinks(filename) {
-  /** @type {Object[]} */
+const testLinks = filename => {
+  /** @type {object[]} */
   let errors = processData(filename);
 
   if (errors.length) {
@@ -223,6 +232,6 @@ function testLinks(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testLinks;

@@ -26,7 +26,7 @@ const blockMany = [
   'webview_android',
 ];
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const blockList = {
   api: [],
   css: [
@@ -62,12 +62,13 @@ const blockList = {
 };
 
 /**
- * @param {SupportBlock} supportData
- * @param {string[]} blockList
- * @param {string} relPath
- * @param {Logger} logger
+ * @param {SupportBlock} supportData The data to test
+ * @param {string[]} blockList The list of browsers required to have real values
+ * @param {string} relPath The path of the data
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
-function checkRealValues(supportData, blockList, relPath, logger) {
+const checkRealValues = (supportData, blockList, relPath, logger) => {
   for (const browser of blockList) {
     /** @type {SimpleSupportStatement[]} */
     const supportStatements = [];
@@ -96,12 +97,43 @@ function checkRealValues(supportData, blockList, relPath, logger) {
       }
     }
   }
-}
+};
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} [relPath] The path to the data
+ * @returns {void}
  */
-function testRealValues(filename) {
+const findSupport = (data, category, logger, relPath) => {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      if (blockList[category] && blockList[category].length > 0)
+        checkRealValues(
+          data[prop].support,
+          blockList[category],
+          relPath,
+          logger,
+        );
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(
+        sub,
+        category,
+        logger,
+        relPath ? `${relPath}.${prop}` : `${prop}`,
+      );
+    }
+  }
+};
+
+/**
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
+ */
+const testRealValues = filename => {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -114,34 +146,17 @@ function testRealValues(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
   };
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0)
-          checkRealValues(
-            data[prop].support,
-            blockList[category],
-            relPath,
-            logger,
-          );
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, category, logger);
 
   if (errors.length) {
     console.error(
@@ -155,6 +170,6 @@ function testRealValues(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testRealValues;

@@ -1,19 +1,19 @@
 'use strict';
 const Ajv = require('ajv');
 const betterAjvErrors = require('better-ajv-errors');
-const path = require('path');
 const chalk = require('chalk');
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
 
 /**
- * @param {string} dataFilename
- * @param {string} [schemaFilename]
+ * @param {string} dataFilename The file to test
+ * @param {string} [schemaFilename] A specific schema file to test with, if needed
+ * @returns {boolean} If the file contains errors
  */
-function testSchema(
+const testSchema = (
   dataFilename,
   schemaFilename = './../../schemas/compat-data.schema.json',
-) {
+) => {
   const schema = require(schemaFilename);
   const data = require(dataFilename);
 
@@ -33,6 +33,6 @@ function testSchema(
     return true;
   }
   return false;
-}
+};
 
 module.exports = testSchema;

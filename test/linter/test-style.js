@@ -6,6 +6,10 @@ const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
 
 /**
+ * @typedef {import('../utils').Logger} Logger
+ */
+
+/**
  * Return a new "support_block" object whose first-level properties
  * (browser names) have been ordered according to Array.prototype.sort,
  * and so will be stringified in that order as well. This relies on
@@ -17,7 +21,7 @@ const compareFeatures = require('../../scripts/compare-features');
  *
  * @returns {*} The new value
  */
-function orderSupportBlock(key, value) {
+const orderSupportBlock = (key, value) => {
   if (key === '__compat') {
     value.support = Object.keys(value.support)
       .sort()
@@ -27,7 +31,7 @@ function orderSupportBlock(key, value) {
       }, {});
   }
   return value;
-}
+};
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -41,7 +45,7 @@ function orderSupportBlock(key, value) {
  *
  * @returns {*} The new value
  */
-function orderFeatures(key, value) {
+const orderFeatures = (key, value) => {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
@@ -51,13 +55,13 @@ function orderFeatures(key, value) {
       }, {});
   }
   return value;
-}
+};
 
 /**
- * @param {string} filename
- * @param {import('../utils').Logger} logger
+ * @param {string} filename The file to test
+ * @param {Logger} logger The logger to output errors to
  */
-function processData(filename, logger) {
+const processData = (filename, logger) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -137,13 +141,21 @@ function processData(filename, logger) {
       );
     }
   }
-}
+};
 
-function testStyle(filename) {
+/**
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
+ */
+const testStyle = filename => {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
@@ -163,6 +175,6 @@ function testStyle(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testStyle;

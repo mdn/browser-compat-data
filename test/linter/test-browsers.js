@@ -7,7 +7,7 @@ const chalk = require('chalk');
  * @typedef {import('../utils').Logger} Logger
  */
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const browsers = {
   desktop: ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari'],
   mobile: [
@@ -27,22 +27,24 @@ const browsers = {
 };
 
 /**
- * @param {Identifier} data
- * @param {string[]} displayBrowsers
- * @param {string[]} requiredBrowsers
- * @param {string} category
- * @param {Logger} logger
- * @param {string} [path]
- * @returns {boolean}
+ * Check the data for any disallowed browsers or if it's missing required browsers
+ *
+ * @param {Identifier} data The data to test
+ * @param {string[]} displayBrowsers All of the allowed browsers for this data
+ * @param {string[]} requiredBrowsers All of the required browsers for this data
+ * @param {string} category The category the data belongs to
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} [path] The path of the data
+ * @returns {void}
  */
-function processData(
+const processData = (
   data,
   displayBrowsers,
   requiredBrowsers,
   category,
   logger,
   path = '',
-) {
+) => {
   if (data.__compat && data.__compat.support) {
     const support = data.__compat.support;
 
@@ -72,10 +74,6 @@ function processData(
       const statementList = Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement];
-      function hasVersionAddedOnly(statement) {
-        const keys = Object.keys(statement);
-        return keys.length === 1 && keys[0] === 'version_added';
-      }
       let sawVersionAddedOnly = false;
       for (const statement of statementList) {
         if (hasVersionAddedOnly(statement)) {
@@ -103,13 +101,26 @@ function processData(
       path && path.length > 0 ? `${path}.${key}` : key,
     );
   }
-}
+};
 
 /**
- * @param {string} filename
+ * Checks a support statement and identifies whether it only has 'version_added'
+ *
+ * @param {Identifier} statement The support statement to check
+ * @returns {boolean} If the statement only has 'version_added'
+ */
+const hasVersionAddedOnly = statement => {
+  const keys = Object.keys(statement);
+  return keys.length === 1 && keys[0] === 'version_added';
+};
+
+/**
+ * Test for issues within the browsers in the data within the specified file
+ *
+ * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+const testBrowsers = filename => {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -145,7 +156,11 @@ function testBrowsers(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
@@ -165,6 +180,6 @@ function testBrowsers(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testBrowsers;

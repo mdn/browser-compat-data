@@ -3,8 +3,6 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 
 const m002 = require('../scripts/migrations/002-remove-webview-flags.test.js');
@@ -16,7 +14,11 @@ const testMigrations = () => {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
