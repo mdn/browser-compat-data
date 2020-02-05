@@ -208,7 +208,7 @@ const processLink = (errors, actual, regexp, matchHandler) => {
       });
     }
   }
-}
+};
 
 /**
  * @param {string} filename The file to test
