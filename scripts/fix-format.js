@@ -12,8 +12,8 @@ const { exec } = require('child_process');
  * @returns {void}
  */
 const format = () => {
-  exec('npx eslint --fix "**/*.js" "**/*.ts"');
-  exec('npx prettier --write "**/*.md"');
+  exec('npx eslint --fix "**/*.js"');
+  exec('npx prettier --write "**/*.ts" "**/*.md"');
 };
 
 module.exports = format;

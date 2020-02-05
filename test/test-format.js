@@ -5,13 +5,13 @@ const chalk = require('chalk');
 const testFormat = () => {
   let errorText = '';
   try {
-    execSync('npx eslint "**/*.js" "**/*.ts" --color');
+    execSync('npx eslint "**/*.js" --color');
   } catch (err) {
     errorText += err.stdout.toString();
   }
 
   try {
-    execSync('npx prettier "**/*.md" --color');
+    execSync('npx prettier "**/*.ts" "**/*.md" --color');
   } catch (err) {
     errorText += err.stdout.toString();
   }
