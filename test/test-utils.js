@@ -1,45 +1,52 @@
 'use strict';
-const ora = require('ora');
 const chalk = require('chalk');
-const { IS_CI, escapeInvisibles } = require('./utils.js');
+const { escapeInvisibles } = require('./utils.js');
 
-it('`escapeInvisibles()` works correctly', () => {
-  const EXPECTED = [
-    /* ␀ */ ['\0', '\\0'],
-    /* ␁ */ '\x01',
-    /* ␂ */ '\x02',
-    /* ␃ */ '\x03',
-    /* ␄ */ '\x04',
-    /* ␅ */ '\x05',
-    /* ␆ */ '\x06',
-    /* ␇ */ '\x07',
-    /* ␈ */ ['\b', '\\b'],
-    /* ␉ */ ['\t', '\\t'],
-    /* ␊ */ ['\n', '\\n'],
-    /* ␋ */ ['\v', '\\v'],
-    /* ␌ */ ['\f', '\\f'],
-    /* ␍ */ ['\r', '\\r'],
-    /* ␏ */ '\x0F',
-    /* ␎ */ '\x0E',
-    /* ␐ */ '\x10',
-    /* ␑ */ '\x11',
-    /* ␒ */ '\x12',
-    /* ␓ */ '\x13',
-    /* ␔ */ '\x14',
-    /* ␕ */ '\x15',
-    /* ␖ */ '\x16',
-    /* ␗ */ '\x17',
-    /* ␘ */ '\x18',
-    /* ␙ */ '\x19',
-    /* ␚ */ '\x1A',
-    /* ␛ */ '\x1B',
-    /* ␜ */ '\x1C',
-    /* ␝ */ '\x1D',
-    /* ␞ */ '\x1E',
-    /* ␟ */ '\x1F',
-    /* ␠ */ ' ',
-    /* ␡ */ '\x7F',
-  ];
+const EXPECTED = [
+  /* ␀ */ ['\0', '\\0'],
+  /* ␁ */ '\x01',
+  /* ␂ */ '\x02',
+  /* ␃ */ '\x03',
+  /* ␄ */ '\x04',
+  /* ␅ */ '\x05',
+  /* ␆ */ '\x06',
+  /* ␇ */ '\x07',
+  /* ␈ */ ['\b', '\\b'],
+  /* ␉ */ ['\t', '\\t'],
+  /* ␊ */ ['\n', '\\n'],
+  /* ␋ */ ['\v', '\\v'],
+  /* ␌ */ ['\f', '\\f'],
+  /* ␍ */ ['\r', '\\r'],
+  /* ␏ */ '\x0F',
+  /* ␎ */ '\x0E',
+  /* ␐ */ '\x10',
+  /* ␑ */ '\x11',
+  /* ␒ */ '\x12',
+  /* ␓ */ '\x13',
+  /* ␔ */ '\x14',
+  /* ␕ */ '\x15',
+  /* ␖ */ '\x16',
+  /* ␗ */ '\x17',
+  /* ␘ */ '\x18',
+  /* ␙ */ '\x19',
+  /* ␚ */ '\x1A',
+  /* ␛ */ '\x1B',
+  /* ␜ */ '\x1C',
+  /* ␝ */ '\x1D',
+  /* ␞ */ '\x1E',
+  /* ␟ */ '\x1F',
+  /* ␠ */ ' ',
+  /* ␡ */ '\x7F',
+];
+
+/**
+ * @todo This test only tests the escapeInvisibles() function in the utilities file, nothing else.
+ *
+ * @returns {boolean} If the linter utilities aren't functioning properly
+ */
+const testUtils = () => {
+  /** @type {string[]} */
+  const errors = [];
 
   for (const data of EXPECTED) {
     let char, expected;
@@ -49,56 +56,25 @@ it('`escapeInvisibles()` works correctly', () => {
     } else {
       [char, expected = char] = data;
     }
-    console.assert(
-      escapeInvisibles(char) === expected,
-      chalk`{red Character ${escape(char)} does not get correctly escaped.}`,
+    if (escapeInvisibles(char) !== expected) {
+      errors.push(
+        chalk`Character {bold ${escape(char)}} does not get correctly escaped.`,
+      );
+    }
+  }
+
+  if (errors.length) {
+    console.error(
+      chalk`{red Linter utilities – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
     );
+    for (let i in errors) {
+      console.error(chalk`{red   ${errors[i]}}`);
+    }
+    return true;
   }
-});
+  return false;
+};
 
-/**
- * TODO: Maybe use a real test suite for this?
- *
- * @param {string} message
- * @param {() => void | Promise<void>} testCase
- */
-function it(message, testCase) {
-  const spinner = ora({
-    stream: process.stdout,
-    text: message,
-  });
-
-  if (!IS_CI) {
-    // Continuous integration environments don't allow overwriting
-    // previous lines using VT escape sequences, which is how
-    // the spinner animation is implemented.
-    spinner.start();
-  }
-
-  let result;
-  let err;
-
-  try {
-    result = testCase();
-  } catch (e) {
-    err = e;
-  }
-  if (err) {
-    spinner.fail(chalk.red.bold(message));
-    console.error(err);
-    return;
-  }
-  if (result && typeof result.then === 'function') {
-    Promise.resolve(result).then(
-      () => {
-        spinner.succeed();
-      },
-      err => {
-        spinner.fail(chalk.red.bold(message));
-        console.error(err);
-      },
-    );
-    return;
-  }
-  spinner.succeed();
-}
+module.exports = testUtils;

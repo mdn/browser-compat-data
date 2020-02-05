@@ -3,11 +3,18 @@ const { platform } = require('os');
 const chalk = require('chalk');
 
 /**
- * @typedef {object} Logger
- * @property {(...message: unknown[]) => void} error
+ * @typedef {import('../types').Identifier} Identifier
  */
 
-/** @type {{readonly [char: string]: string}} */
+/** @type {Identifier} */
+const bcd = require('..');
+
+/**
+ * @typedef {object} Logger
+ * @property {(...message: *[]) => void} error The function for linters to output errors to
+ */
+
+/** @type {object.<string, string>} */
 const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
@@ -19,7 +26,7 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   }),
 );
-const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
+const INVISIBLES_REGEXP = /[\0\b\t\n\v\f\r]/g;
 
 /** Used to check if the process is running in a CI environment. */
 const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
@@ -30,27 +37,27 @@ const IS_WINDOWS = platform() === 'win32';
 /**
  * Escapes common invisible characters.
  *
- * @param {string} str
+ * @param {string} str The string to perform the invisibles replacement
+ * @returns {string} The string with replaced invisibles
  */
-function escapeInvisibles(str) {
+const escapeInvisibles = str => {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
   return INVISIBLES_REGEXP[Symbol.replace](str, char => {
     return INVISIBLES_MAP[char] || char;
   });
-}
+};
 
 /**
  * Gets the row and column matching the index in a string.
  *
- * @param {string} str
- * @param {number} index
- * @return {[number, number] | [null, null]}
+ * @param {string} str The string of the data
+ * @param {number} index The index to get the position for
+ * @returns {[?number, ?number]} The line and column from the given index
  */
-function indexToPosRaw(str, index) {
+const indexToPosRaw = (str, index) => {
   let line = 1,
     col = 1;
-  let prevChar = null;
 
   if (
     typeof str !== 'string' ||
@@ -64,10 +71,10 @@ function indexToPosRaw(str, index) {
     const char = str[i];
     switch (char) {
       case '\n':
-        if (prevChar === '\r') break;
-      case '\r':
         line++;
         col = 1;
+        break;
+      case '\r':
         break;
       case '\t':
         // Use JSON `tab_size` value from `.editorconfig`
@@ -77,30 +84,29 @@ function indexToPosRaw(str, index) {
         col++;
         break;
     }
-    prevChar = char;
   }
 
   return [line, col];
-}
+};
 
 /**
  * Gets the row and column matching the index in a string and formats it.
  *
- * @param {string} str
- * @param {number} index
- * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
+ * @param {string} str The string of the data
+ * @param {number} index The index to get the position for
+ * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-function indexToPos(str, index) {
+const indexToPos = (str, index) => {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
-}
+};
 
 /**
- * @param {string} actual
- * @param {string} expected
- * @return {string}
+ * @param {string} actual The actual data
+ * @param {string} expected The expected data
+ * @returns {string} The formatted string showing the first differing line
  */
-function jsonDiff(actual, expected) {
+const jsonDiff = (actual, expected) => {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
@@ -111,7 +117,17 @@ function jsonDiff(actual, expected) {
     {green Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
-}
+};
+
+/**
+ * @param {string} dottedFeature Lookup a feature by its identifier
+ * @returns {Identifier} The feature found
+ */
+const lookup = dottedFeature => {
+  const x = dottedFeature.split('.');
+  const feature = x.reduce((prev, current) => prev[current], bcd);
+  return feature;
+};
 
 module.exports = {
   INVISIBLES_MAP,
@@ -121,4 +137,5 @@ module.exports = {
   indexToPosRaw,
   indexToPos,
   jsonDiff,
+  lookup,
 };

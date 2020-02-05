@@ -1,45 +1,17 @@
 'use strict';
 const assert = require('assert');
+const chalk = require('chalk');
+
+const { lookup } = require('./utils.js');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
  *
  * @typedef {object} TestCase
- * @property {string[]} features
- * @property {string[]} matches
- * @property {string[]} misses
+ * @property {string[]} features The data to test
+ * @property {string[]} matches All regex tests required to match
+ * @property {string[]} misses All regex tests required not to match
  */
-
-/** @type {Identifier} */
-const bcd = require('..');
-
-/**
- * @param {string} dottedFeature
- */
-function lookup(dottedFeature) {
-  const x = dottedFeature.split('.');
-  const feature = x.reduce((prev, current) => prev[current], bcd);
-  return feature;
-}
-
-/**
- * @param {Identifier} feature
- * @param {string[]} matches
- * @param {string[]} misses
- */
-function testToken(feature, matches, misses) {
-  const str =
-    feature.__compat.matches.regex_token ||
-    feature.__compat.matches.regex_value;
-  const regexp = new RegExp(str);
-
-  matches.forEach(match =>
-    assert.ok(regexp.test(match), `${regexp} did not match ${match}`),
-  );
-  misses.forEach(miss =>
-    assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`),
-  );
-}
 
 /** @type {TestCase[]} */
 const tests = [
@@ -63,6 +35,65 @@ const tests = [
   },
 ];
 
-tests.forEach(({ features, matches, misses }) => {
-  features.forEach(feature => testToken(lookup(feature), matches, misses));
-});
+/**
+ * @param {Identifier} feature The data to test
+ * @param {string[]} matches All regex tests required to match
+ * @param {string[]} misses All regex tests required not to match
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
+ */
+const testToken = (feature, matches, misses, logger) => {};
+
+/**
+ * @todo This test only tests the escapeInvisibles() function in the utilities file, nothing else.
+ *
+ * @returns {boolean} If the linter utilities aren't functioning properly
+ */
+const testRegexes = () => {
+  /** @type {string[]} */
+  const errors = [];
+  const logger = {
+    /** @param {...unknown} message */
+    error: (...message) => {
+      errors.push(message.join(' '));
+    },
+  };
+
+  tests.forEach(({ features, matches, misses }) => {
+    features.forEach(featureIdent => {
+      const feature = lookup(featureIdent);
+      const str =
+        feature.__compat.matches.regex_token ||
+        feature.__compat.matches.regex_value;
+      const regexp = new RegExp(str);
+
+      matches.forEach(match => {
+        if (!regexp.test(match)) {
+          logger.error(chalk`{bold ${regexp}} did not match {bold ${match}}`);
+        }
+      });
+      misses.forEach(miss => {
+        if (regexp.test(miss)) {
+          logger.error(
+            chalk`{bold ${regexp}} erroneously matched {bold ${miss}}`,
+          );
+        }
+      });
+    });
+  });
+
+  if (errors.length) {
+    console.error(
+      chalk`{red Regexes – {bold ${errors.length}} ${
+        errors.length === 1 ? 'error' : 'errors'
+      }:}`,
+    );
+    for (let i in errors) {
+      console.error(chalk`{red   ${errors[i]}}`);
+    }
+    return true;
+  }
+  return false;
+};
+
+module.exports = testRegexes;
