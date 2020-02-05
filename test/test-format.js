@@ -2,6 +2,9 @@
 const { execSync } = require('child_process');
 const chalk = require('chalk');
 
+/**
+ * @returns {boolean} If the file contains errors
+ */
 const testFormat = () => {
   let errorText = '';
   try {
