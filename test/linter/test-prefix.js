@@ -10,6 +10,8 @@ const chalk = require('chalk');
  */
 
 /**
+ * Check the prefix of a specific feature
+ *
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
  * @param {string[]} errors The errors object to push the new errors to
@@ -41,6 +43,8 @@ const checkPrefix = (data, category, errors, prefix, path = '') => {
 };
 
 /**
+ * Process the data for prefix errors
+ *
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
  * @returns {string[]} Any errors found within the data
@@ -63,6 +67,8 @@ const processData = (data, category) => {
 };
 
 /**
+ * Test for issues with feature's prefix
+ *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */

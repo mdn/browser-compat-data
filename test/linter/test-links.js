@@ -18,6 +18,8 @@ const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
  */
 
 /**
+ * Process the data for any errors within the links
+ *
  * @param {string} filename The file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
@@ -185,6 +187,8 @@ const processData = filename => {
 };
 
 /**
+ * Given a RegEx expression, test the link for errors
+ *
  * @param {LinkError[]} errors The errors object to push the new errors to
  * @param {string} actual The link to test
  * @param {string|RegExp} regexp The regex to test with
@@ -214,6 +218,8 @@ const processLink = (errors, actual, regexp, matchHandler) => {
 };
 
 /**
+ * Test for any malformed links
+ *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */

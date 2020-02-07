@@ -65,6 +65,8 @@ const blockList = {
 };
 
 /**
+ * Check if the feature has any browsers with nonreal data
+ *
  * @param {SupportBlock} supportData The data to test
  * @param {string[]} blockList The list of browsers required to have real values
  * @param {string} relPath The path of the data
@@ -103,6 +105,8 @@ const checkRealValues = (supportData, blockList, relPath, logger) => {
 };
 
 /**
+ * Process the data for nonreal values
+ *
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
  * @param {Logger} logger The logger to output errors to
@@ -133,6 +137,8 @@ const findSupport = (data, category, logger, relPath) => {
 };
 
 /**
+ * Test for real values within the data
+ *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */

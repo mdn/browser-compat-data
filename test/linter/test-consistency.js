@@ -36,6 +36,8 @@ const chalk = require('chalk');
  */
 class ConsistencyChecker {
   /**
+   * Checks the data for any errors
+   *
    * @param {Identifier} data The data to test
    * @returns {ConsistencyError[]} Any errors found within the data
    */
@@ -44,6 +46,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Recursively checks the data for any errors
+   *
    * @param {Identifier} data The data to test
    * @param {string[]} [path] The path of the data
    * @returns {ConsistencyError[]} Any errors found within the data
@@ -80,6 +84,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Checks a specific feature for errors
+   *
    * @param {Identifier} data The data to test
    * @returns {FeatureError[]} Any errors found within the data
    */
@@ -219,6 +225,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Checks if the data is a feature
+   *
    * @param {Identifier} data The data to test
    * @returns {boolean} If the data is a feature statement
    */
@@ -227,6 +235,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Get all of the unsupported browsers in a feature
+   *
    * @param {CompatStatement} compatData The compat data to process
    * @returns {string[]} The list of browsers marked as unsupported
    */
@@ -241,6 +251,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Get all of the browsers with unknown support in a feature
+   *
    * @param {CompatStatement} compatData The compat data to process
    * @returns {string[]} The list of browsers with unknown support
    */
@@ -252,6 +264,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Get all of the browsers with either unknown or no support in a feature
+   *
    * @param {CompatStatement} compatData The compat data to process
    * @returns {string[]} The list of browsers with non-truthy (false or null) support
    */
@@ -266,6 +280,8 @@ class ConsistencyChecker {
     );
   }
   /**
+   * Get all of the browsers with a version number in a feature
+   *
    * @param {CompatStatement} compatData The compat data to process
    * @returns {string[]} The list of browsers with an exact version number
    */
@@ -277,6 +293,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Get the version added for a feature or recursively search the array for the earliest version
+   *
    * @param {SupportStatement} compatData The compat data to process
    * @returns {?string} The earliest version added in the data
    */
@@ -309,6 +327,8 @@ class ConsistencyChecker {
   }
 
   /**
+   * Compare two versions and determine if a's version is greater (later) than b's version
+   *
    * @param {SupportStatement} a The first support statement to compare
    * @param {SupportStatement} b The second support statement to compare
    * @returns {boolean} If a's version is greater (later) than b's version
@@ -331,6 +351,7 @@ class ConsistencyChecker {
   }
 
   /**
+   * Get all of the browsers within the data and send the data to the callback
    *
    * @param {CompatStatement} compatData The compat data to process
    * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to send the data to
@@ -352,6 +373,8 @@ class ConsistencyChecker {
 }
 
 /**
+ * Test the version consistency within the file
+ *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */

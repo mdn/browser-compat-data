@@ -61,6 +61,8 @@ const orderFeatures = (key, value) => {
 };
 
 /**
+ * Process the data for any styling errors that cannot be caught by Prettier or the schema
+ *
  * @param {string} filename The file to test
  * @param {Logger} logger The logger to output errors to
  */
@@ -147,6 +149,8 @@ const processData = (filename, logger) => {
 };
 
 /**
+ * Test the data for any styling errors that cannot be caught by Prettier or the schema
+ *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */

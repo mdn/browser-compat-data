@@ -34,6 +34,8 @@ for (const browser of Object.keys(browsers)) {
 }
 
 /**
+ * Test to see if the browser allows for the specified version
+ *
  * @param {string} browser The browser to check
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
@@ -47,6 +49,8 @@ const isValidVersion = (browser, version) => {
 };
 
 /**
+ * Check the data for any errors in provided versions
+ *
  * @param {SupportBlock} supportData The data to test
  * @param {string} relPath The path to the data
  * @param {import('../utils').Logger} logger The logger to output errors to
@@ -129,6 +133,8 @@ const checkVersions = (supportData, relPath, logger) => {
 };
 
 /**
+ * Process the data for version errors
+ *
  * @param {Identifier} data The data to test
  * @param {Logger} logger The logger to ouptut errors to
  * @param {string} [relPath] The path of the data
@@ -147,6 +153,8 @@ const findSupport = (data, logger, relPath) => {
 };
 
 /**
+ * Test for version errors
+ *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
