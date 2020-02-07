@@ -95,20 +95,6 @@ function processData(filename, logger) {
     );
   }
 
-  const constructorMatch = actual.match(
-    String.raw`"<code>([^)]*?)</code> constructor"`,
-  );
-  if (constructorMatch) {
-    logger.error(
-      chalk`{red → ${indexToPos(
-        actual,
-        constructorMatch.index,
-      )} – Use parentheses in constructor description ({yellow ${
-        constructorMatch[1]
-      }} → {green ${constructorMatch[1]}{bold ()}}).}`,
-    );
-  }
-
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     logger.error(
