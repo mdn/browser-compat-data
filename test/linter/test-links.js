@@ -171,6 +171,20 @@ function processData(filename) {
     },
   );
 
+  processLink(
+    errors,
+    actual,
+    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
+    match => {
+      return {
+        issue: 'Include hostname in URL',
+        expected: `<a href='https://developer.mozilla.org/${match[1]}'>${
+          match[2]
+        }</a>.`,
+      };
+    },
+  );
+
   return errors;
 }
 

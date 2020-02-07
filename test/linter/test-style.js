@@ -118,25 +118,6 @@ function processData(filename, logger) {
       )} - Found {yellow \\"}, but expected {green \'} for <a href>.}`,
     );
   }
-
-  const regexp = new RegExp(
-    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
-    'g',
-  );
-  const match = regexp.exec(actual);
-  if (match) {
-    const a_url = url.parse(match[1]);
-    if (a_url.hostname === null) {
-      logger.error(
-        chalk`{red → ${indexToPos(
-          actual,
-          constructorMatch.index,
-        )} - Include hostname in URL ({yellow ${
-          match[1]
-        }} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`,
-      );
-    }
-  }
 }
 
 function testStyle(filename) {
