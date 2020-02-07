@@ -1,5 +1,6 @@
 'use strict';
 const fs = require('fs');
+const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
@@ -176,11 +177,13 @@ function processData(filename) {
     actual,
     String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
     match => {
-      return {
-        issue: 'Include hostname in URL',
-        actualLink: match[1],
-        expected: `https://developer.mozilla.org/${match[1]}`,
-      };
+      if (url.parse(match[1]).hostname === null) {
+        return {
+          issue: 'Include hostname in URL',
+          actualLink: match[1],
+          expected: `https://developer.mozilla.org/${match[1]}`,
+        };
+      }
     },
   );
 
