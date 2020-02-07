@@ -1,10 +1,30 @@
 'use strict';
-const path = require('path');
 const chalk = require('chalk');
 const parser = require('node-html-parser');
 const { VALID_ELEMENTS } = require('../utils.js');
 
-function testNode(node, browser, relPath, errors) {
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ *
+ * @typedef {'disallowed' | 'attrs' | 'attrs_a'} ErrorType
+ *
+ * @typedef {object} NotesError
+ * @property {ErrorType} errortype The type of error
+ * @property {string} relPath The identifier of the feature
+ * @property {string} browser The browser where the error was found
+ * @property {string} tag The specific HTML tag
+ */
+
+/**
+ * Test a specific HTML tag (node) in notes for issues
+ *
+ * @param {object} node The HTML node to test
+ * @param {string} browser The browser the notes belong to
+ * @param {string} relPath The identifier of the feature
+ * @param {NotesError[]} errors The array to push errors to
+ * @returns {void}
+ */
+const testNode = (node, browser, relPath, errors) => {
   if (node.nodeType == 1) {
     if (node.tagName && !VALID_ELEMENTS.includes(node.tagName))
       errors.push({
@@ -37,9 +57,18 @@ function testNode(node, browser, relPath, errors) {
   for (let childNode of node.childNodes) {
     testNode(childNode, browser, relPath, errors);
   }
-}
+};
 
-function checkNotes(notes, browser, relPath, errors) {
+/**
+ * Recursively check the notes in the data
+ *
+ * @param {string|string[]} notes The notes to test
+ * @param {string} browser The browser the notes belong to
+ * @param {string} relPath The identifier of the feature
+ * @param {NotesError[]} errors The array to push errors to
+ * @returns {void}
+ */
+const checkNotes = (notes, browser, relPath, errors) => {
   if (Array.isArray(notes)) {
     for (let note of notes) {
       checkNotes(note, browser, relPath, errors);
@@ -48,50 +77,52 @@ function checkNotes(notes, browser, relPath, errors) {
     let notesData = parser.parse(notes);
     testNode(notesData, browser, relPath, errors);
   }
-}
+};
 
 /**
- * @param {string} filename
+ * Process the data for notes errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {NotesError[]} errors The array to push errors to
+ * @param {string} [relPath] The identifier of the feature
+ * @returns {void}
  */
-function testNotes(filename) {
-  const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
-    filename,
-  );
-  const category =
-    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
+const processData = (data, errors, relPath) => {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      let statement = data[prop].support;
+      for (const browser in statement) {
+        if (Array.isArray(statement[browser])) {
+          for (let s in statement[browser]) {
+            if (s.notes) checkNotes(s.notes, browser, relPath, errors);
+          }
+        } else {
+          if (statement[browser].notes)
+            checkNotes(statement[browser].notes, browser, relPath, errors);
+        }
+      }
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      processData(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
+    }
+  }
+};
+
+/**
+ * Test the data for notes errors
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} Whether the file had any errors
+ */
+const testNotes = filename => {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
+  /** @type {NotesError[]} */
   const errors = [];
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        let statement = data[prop].support;
-        for (const browser in statement) {
-          if (Array.isArray(statement[browser])) {
-            for (let s in statement[browser]) {
-              if (s.notes) checkNotes(s.notes, browser, relPath, errors);
-            }
-          } else {
-            if (statement[browser].notes)
-              checkNotes(statement[browser].notes, browser, relPath, errors);
-          }
-        }
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  processData(data, errors);
 
   if (errors.length) {
     console.error(
@@ -121,6 +152,6 @@ function testNotes(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testNotes;
