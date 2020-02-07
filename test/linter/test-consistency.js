@@ -355,7 +355,7 @@ class ConsistencyChecker {
    *
    * @param {CompatStatement} compatData The compat data to process
    * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to send the data to
-   * @returns {*} The response of the callback, or "false"
+   * @returns {boolean} The response of the callback, or "false"
    */
   extractBrowsers(compatData, callback) {
     return Object.keys(compatData.support).filter(browser => {

@@ -53,7 +53,7 @@ const isValidVersion = (browser, version) => {
  *
  * @param {SupportBlock} supportData The data to test
  * @param {string} relPath The path to the data
- * @param {import('../utils').Logger} logger The logger to output errors to
+ * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
 const checkVersions = (supportData, relPath, logger) => {
