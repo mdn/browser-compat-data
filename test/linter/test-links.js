@@ -178,9 +178,8 @@ function processData(filename) {
     match => {
       return {
         issue: 'Include hostname in URL',
-        expected: `<a href='https://developer.mozilla.org/${match[1]}'>${
-          match[2]
-        }</a>.`,
+        actualLink: match[1],
+        expected: `https://developer.mozilla.org/${match[1]}`,
       };
     },
   );
