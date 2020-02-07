@@ -43,6 +43,8 @@ const EXPECTED = [
 ];
 
 /**
+ * Test the linter's utilities file
+ *
  * @todo This test only tests the escapeInvisibles() function in the utilities file, nothing else.
  *
  * @returns {boolean} If the linter utilities aren't functioning properly
