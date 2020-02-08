@@ -50,6 +50,8 @@ const blockList = {
     'firefox',
     'firefox_android',
     'ie',
+    'opera',
+    'opera_android',
     'safari',
     'safari_ios',
     'webview_android',
