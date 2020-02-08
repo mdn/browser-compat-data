@@ -129,15 +129,16 @@ const updateNotes = (notes, regex, replace) => {
  * @param {object} data
  * @param {string} destination
  * @param {string} source
+ * @param {object} original_data
  */
-const bumpVersion = (data, destination, source) => {
+const bumpVersion = (data, destination, source, original_data) => {
   let newValue = null;
   if (data == null) {
     return null;
   } else if (Array.isArray(data)) {
     newValue = [];
     for (let i = 0; i < data.length; i++) {
-      newValue[i] = bumpVersion(data[i], destination, source);
+      newValue[i] = bumpVersion(data[i], destination, source, original_data);
     }
   } else {
     newValue = {};
@@ -343,7 +344,7 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   }
 
   if (doBump) {
-    let newValue = bumpVersion(comp[source], browser, source);
+    let newValue = bumpVersion(comp[source], browser, source, comp[browser]);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
