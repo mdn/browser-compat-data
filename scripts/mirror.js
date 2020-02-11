@@ -200,16 +200,21 @@ const bumpVersionEdgeChromium = (edgeData, chromeData) => {
     newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
   } else {
     if (!chromeFalse && !chromeNull) {
-      switch (edgeData.version_added) {
-        case true:
-          newData.version_added = '≤18';
-          break;
-        case false:
-          newData.version_added = '79';
-          break;
-        case null:
-          newData.version_added = '≤79';
-          break;
+      if (edgeData.version_added == true) {
+        newData.version_added = '≤18';
+      } else {
+        if (
+          chromeData.version_added == true ||
+          Number(chromeData.version_added) <= 79
+        ) {
+          if (edgeData.version_added == false) {
+            newData.version_added = '79';
+          } else if (edgeData.version_added == null) {
+            newData.version_added = '≤79';
+          }
+        } else {
+          newData.version_added == chromeData.version_added;
+        }
       }
     } else if (chromeFalse) {
       if (edgeData.version_added && !edgeData.version_removed) {
