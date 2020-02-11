@@ -124,6 +124,33 @@ const getSource = (browser, forced_source) => {
 };
 
 /**
+ * @param {string|string[]} notes1
+ * @param {string|string[]} notes2
+ * @returns {string|string[]}
+ */
+const combineNotes = (notes1, notes2) => {
+  let newNotes = [];
+
+  if (typeof notes1 === 'string') {
+    newNotes.push(notes1);
+  } else {
+    newNotes.push(...notes1);
+  }
+
+  if (typeof notes2 === 'string') {
+    newNotes.push(notes2);
+  } else {
+    newNotes.push(...notes2);
+  }
+
+  if (newNotes.length === 1) {
+    newNotes = newNotes[0];
+  }
+
+  return newNotes;
+};
+
+/**
  * @param {string|string[]} notes
  * @param {RegExp} regex
  * @param {string} replace
