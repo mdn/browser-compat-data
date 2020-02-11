@@ -124,39 +124,50 @@ const getSource = (browser, forced_source) => {
 };
 
 /**
- * @param {string|string[]} notes1
- * @param {string|string[]} notes2
- * @returns {string|string[]}
+ * @param {string|string[]|null} notes1
+ * @param {string|string[]|null} notes2
+ * @returns {string|string[]|null}
  */
 const combineNotes = (notes1, notes2) => {
   let newNotes = [];
 
-  if (typeof notes1 === 'string') {
-    newNotes.push(notes1);
-  } else {
-    newNotes.push(...notes1);
+  if (notes1) {
+    if (typeof notes1 === 'string') {
+      newNotes.push(notes1);
+    } else {
+      newNotes.push(...notes1);
+    }
   }
 
-  if (typeof notes2 === 'string') {
-    newNotes.push(notes2);
-  } else {
-    newNotes.push(...notes2);
+  if (notes2) {
+    if (typeof notes2 === 'string') {
+      newNotes.push(notes2);
+    } else {
+      newNotes.push(...notes2);
+    }
   }
 
-  if (newNotes.length === 1) {
-    newNotes = newNotes[0];
+  if (newNotes.length == 0) {
+    return null;
+  }
+  if (newNotes.length == 1) {
+    return newNotes[0];
   }
 
   return newNotes;
 };
 
 /**
- * @param {string|string[]} notes
+ * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
- * @returns {string|string[]}
+ * @returns {string|string[]|null}
  */
 const updateNotes = (notes, regex, replace) => {
+  if (notes === null || notes === undefined) {
+    return null;
+  }
+
   if (typeof notes === 'string') {
     return notes.replace(regex, replace);
   }
