@@ -214,10 +214,15 @@ const bumpVersionEdgeChromium = (edgeData, chromeData) => {
     }
   }
 
-  newData.notes = combineNotes(
+  let newNotes = combineNotes(
     updateNotes(chromeData.notes, /Chrome/g, 'Edge'),
     edgeData.notes,
   );
+
+  if (newNotes) {
+    newData.notes = newNotes;
+  }
+
   return newData;
 };
 
