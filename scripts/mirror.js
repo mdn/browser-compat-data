@@ -169,7 +169,47 @@ const updateNotes = (notes, regex, replace) => {
 };
 
 /**
- * @param {object} data
+ * @param {SimpleSupportStatement} edgeData
+ * @param {SimpleSupportStatement} chromeData
+ * @returns {SimpleSupportStatement}
+ */
+const bumpVersionEdgeChromium = (edgeData, chromeData) => {
+  let newData = edgeData == undefined ? chromeData : edgeData;
+
+  let chromeFalse =
+    chromeData.version_added === false ||
+    chromeData.version_removed !== undefined;
+  let chromeNull = chromeData.version_added === null;
+
+  if (edgeData === undefined) {
+    newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
+  } else {
+    if (!chromeFalse && !chromeNull) {
+      switch (edgeData.version_added) {
+        case true:
+          newData.version_added = '≤18';
+          break;
+        case false:
+          newData.version_added = '79';
+          break;
+        case null:
+          newData.version_added = '≤79';
+          break;
+      }
+    } else if (chromeFalse) {
+      if (edgeData.version_added && !edgeData.version_removed) {
+        newData.version_removed = '79';
+      }
+    }
+  }
+
+  newData.notes = combineNotes(
+    updateNotes(chromeData.notes, /Chrome/g, 'Edge'),
+    edgeData.notes,
+  );
+  return newData;
+};
+
 /**
  * @param {SupportStatement} data
  * @param {string} destination
@@ -226,26 +266,7 @@ const bumpVersion = (data, destination, source, originalData) => {
           );
         }
       } else if (source == 'chrome') {
-        if (typeof newValue.version_added === 'string') {
-          let value = Number(newValue.version_added);
-          if (value < 79) value = 79;
-
-          newValue.version_added = value.toString();
-        }
-
-        if (
-          data.version_removed &&
-          typeof newValue.version_removed === 'string'
-        ) {
-          let value = Number(newValue.version_removed);
-          if (value < 79) value = 79;
-
-          newValue.version_removed = value.toString();
-        }
-
-        if (data.notes) {
-          newValue.notes = updateNotes(data.notes, /Chrome/g, 'Edge');
-        }
+        newValue = bumpVersionEdgeChromium(originalData, newValue);
       }
     } else if (destination == 'firefox_android') {
       if (typeof newValue.version_added === 'string') {
