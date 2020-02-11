@@ -5,7 +5,6 @@
 /**
  * @typedef {import('../types').Identifier} Identifier
  * @typedef {import('../types').SupportStatement} SupportStatement
- * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
 
@@ -184,9 +183,9 @@ const updateNotes = (notes, regex, replace) => {
 };
 
 /**
- * @param {SimpleSupportStatement} edgeData
- * @param {SimpleSupportStatement} chromeData
- * @returns {SimpleSupportStatement}
+ * @param {SupportStatement} edgeData
+ * @param {SupportStatement} chromeData
+ * @returns {SupportStatement}
  */
 const bumpVersionEdgeChromium = (edgeData, chromeData) => {
   let newData = edgeData == undefined ? chromeData : edgeData;
@@ -245,7 +244,10 @@ const bumpVersion = (data, destination, source, originalData) => {
   let newData = null;
   if (data == null) {
     return null;
-  } else if (Array.isArray(data)) {
+  } else if (
+    Array.isArray(data) &&
+    !(destination == 'edge' && source == 'chrome')
+  ) {
     newData = [];
     for (let i = 0; i < data.length; i++) {
       newData[i] = bumpVersion(data[i], destination, source, originalData);
