@@ -407,9 +407,9 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   }
 
   if (doBump) {
-    let newData = bumpVersion(comp[source], browser, source, comp[browser]);
-    if (newData !== null) {
-      newData[rootPath].__compat.support[browser] = newData;
+    let newValue = bumpVersion(comp[source], browser, source, comp[browser]);
+    if (newValue !== null) {
+      newData[rootPath].__compat.support[browser] = newValue;
     }
   }
 
