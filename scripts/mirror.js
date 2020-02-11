@@ -217,18 +217,18 @@ const bumpVersionEdgeChromium = (edgeData, chromeData) => {
  * @param {SupportStatement} originalData
  */
 const bumpVersion = (data, destination, source, originalData) => {
-  let newValue = null;
+  let newData = null;
   if (data == null) {
     return null;
   } else if (Array.isArray(data)) {
-    newValue = [];
+    newData = [];
     for (let i = 0; i < data.length; i++) {
-      newValue[i] = bumpVersion(data[i], destination, source, originalData);
+      newData[i] = bumpVersion(data[i], destination, source, originalData);
     }
   } else {
-    newValue = {};
+    newData = {};
     for (let i in data) {
-      newValue[i] = data[i]; // Prevent shallow copy / modification of source data
+      newData[i] = data[i]; // Prevent shallow copy / modification of source data
     }
 
     if (destination == 'chrome_android') {
@@ -237,7 +237,7 @@ const bumpVersion = (data, destination, source, originalData) => {
         if (value < 18) value = 18;
         if (value > 18 && value < 25) value = 25;
 
-        newValue.version_added = value.toString();
+        newData.version_added = value.toString();
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
@@ -245,124 +245,120 @@ const bumpVersion = (data, destination, source, originalData) => {
         if (value < 18) value = 18;
         if (value > 18 && value < 25) value = 25;
 
-        newValue.version_removed = value.toString();
+        newData.version_removed = value.toString();
       }
     } else if (destination == 'edge') {
       if (source == 'ie') {
         if (data.version_removed && data.version_removed !== null) {
-          newValue.version_added = false;
+          newData.version_added = false;
         } else if (data.version_added !== null) {
-          newValue.version_added = data.version_added ? '12' : null;
+          newData.version_added = data.version_added ? '12' : null;
         }
 
         if (data.notes) {
-          newValue.notes = updateNotes(
-            data.notes,
-            /Internet Explorer/g,
-            'Edge',
-          );
+          newData.notes = updateNotes(data.notes, /Internet Explorer/g, 'Edge');
         }
       } else if (source == 'chrome') {
-        newValue = bumpVersionEdgeChromium(originalData, data);
+        newData = bumpVersionEdgeChromium(originalData, data);
       }
     } else if (destination == 'firefox_android') {
       if (typeof data.version_added === 'string') {
-        newValue.version_added = Math.max(
+        newData.version_added = Math.max(
           4,
           Number(data.version_added),
         ).toString();
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
-        newValue.version_removed = Math.max(
+        newData.version_removed = Math.max(
           4,
           Number(data.version_removed),
         ).toString();
       }
     } else if (destination == 'opera') {
       if (typeof data.version_added === 'string') {
-        newValue.version_added = getMatchingBrowserVersion(
+        newData.version_added = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_added],
         );
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
-        newValue.version_removed = getMatchingBrowserVersion(
+        newData.version_removed = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_removed],
         );
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
+        newData.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
       }
     } else if (destination == 'opera_android') {
       if (typeof data.version_added === 'string') {
-        newValue.version_added = getMatchingBrowserVersion(
+        newData.version_added = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_added],
         );
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
-        newValue.version_removed = getMatchingBrowserVersion(
+        newData.version_removed = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_removed],
         );
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
+        newData.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
       }
     } else if (destination == 'safari_ios') {
       if (typeof data.version_added === 'string') {
-        newValue.version_added = getMatchingBrowserVersion(
+        newData.version_added = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_added],
         );
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
-        newValue.version_removed = getMatchingBrowserVersion(
+        newData.version_removed = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_removed],
         );
       }
     } else if (destination == 'samsunginternet_android') {
       if (typeof data.version_added === 'string') {
-        newValue.version_added = getMatchingBrowserVersion(
+        newData.version_added = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_added],
         );
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
-        newValue.version_removed = getMatchingBrowserVersion(
+        newData.version_removed = getMatchingBrowserVersion(
           destination,
           browsers[source].releases[data.version_removed],
         );
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = updateNotes(data.notes, /Chrome/g, 'Samsung Internet');
+        newData.notes = updateNotes(data.notes, /Chrome/g, 'Samsung Internet');
       }
     } else if (destination == 'webview_android') {
       if (typeof data.version_added === 'string') {
-        newValue.version_added = create_webview_range(data.version_added);
+        newData.version_added = create_webview_range(data.version_added);
       }
 
       if (data.version_removed && typeof data.version_removed === 'string') {
-        newValue.version_removed = create_webview_range(data.version_removed);
+        newData.version_removed = create_webview_range(data.version_removed);
       }
 
       if (typeof data.notes === 'string') {
-        newValue.notes = updateNotes(data.notes, /Chrome/g, 'WebView');
+        newData.notes = updateNotes(data.notes, /Chrome/g, 'WebView');
       }
     }
   }
 
-  return newValue;
+  return newData;
 };
 
 /**
@@ -400,9 +396,9 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   }
 
   if (doBump) {
-    let newValue = bumpVersion(comp[source], browser, source, comp[browser]);
-    if (newValue !== null) {
-      newData[rootPath].__compat.support[browser] = newValue;
+    let newData = bumpVersion(comp[source], browser, source, comp[browser]);
+    if (newData !== null) {
+      newData[rootPath].__compat.support[browser] = newData;
     }
   }
 
