@@ -2,6 +2,13 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SupportStatement} SupportStatement
+ * @typedef {import('../types').SimpleSupportStatement} SimpleSupportStatement
+ * @typedef {import('../types').ReleaseStatement} ReleaseStatement
+ */
+
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -41,6 +48,7 @@ const { argv } = require('yargs').command(
 
 /**
  * @param {string} value
+ * @returns {string}
  */
 const create_webview_range = value => {
   return value == '18' ? '1' : Number(value) < 37 ? '≤37' : value;
@@ -48,7 +56,8 @@ const create_webview_range = value => {
 
 /**
  * @param {string} dest_browser
- * @param {object} source_browser_release
+ * @param {ReleaseStatement} source_browser_release
+ * @returns {ReleaseStatement|boolean}
  */
 const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
   const browserData = browsers[dest_browser];
@@ -77,6 +86,7 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
 /**
  * @param {string} browser
  * @param {string} forced_source
+ * @returns {string}
  */
 const getSource = (browser, forced_source) => {
   if (forced_source) {
@@ -113,6 +123,12 @@ const getSource = (browser, forced_source) => {
   return source;
 };
 
+/**
+ * @param {string|string[]} notes
+ * @param {RegExp} regex
+ * @param {string} replace
+ * @returns {string|string[]}
+ */
 const updateNotes = (notes, regex, replace) => {
   if (typeof notes === 'string') {
     return notes.replace(regex, replace);
@@ -127,18 +143,20 @@ const updateNotes = (notes, regex, replace) => {
 
 /**
  * @param {object} data
+/**
+ * @param {SupportStatement} data
  * @param {string} destination
  * @param {string} source
- * @param {object} original_data
+ * @param {SupportStatement} originalData
  */
-const bumpVersion = (data, destination, source, original_data) => {
+const bumpVersion = (data, destination, source, originalData) => {
   let newValue = null;
   if (data == null) {
     return null;
   } else if (Array.isArray(data)) {
     newValue = [];
     for (let i = 0; i < data.length; i++) {
-      newValue[i] = bumpVersion(data[i], destination, source, original_data);
+      newValue[i] = bumpVersion(data[i], destination, source, originalData);
     }
   } else {
     newValue = {};
@@ -311,12 +329,13 @@ const bumpVersion = (data, destination, source, original_data) => {
 };
 
 /**
- * @param {object} data
- * @param {object} newData
+ * @param {Identifier} data
+ * @param {Identifier} newData
  * @param {string} rootPath
  * @param {string} browser
  * @param {string} source
  * @param {string} modify
+ @ @returns {Identifier}
  */
 const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   let comp = data[rootPath].__compat.support;
@@ -354,11 +373,12 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
 };
 
 /**
- * @param {object} data
+ * @param {Identifier} data
  * @param {string} feature
  * @param {string} browser
  * @param {string} source
  * @param {string} modify
+ * @returns {Identifier}
  */
 const setFeature = (data, feature, browser, source, modify) => {
   let newData = Object.assign({}, data);
@@ -382,10 +402,11 @@ const setFeature = (data, feature, browser, source, modify) => {
 };
 
 /**
- * @param {object} data
+ * @param {Identifier} data
  * @param {string} browser
  * @param {string} source
  * @param {string} modify
+ * @returns {Identifier}
  */
 const setFeatureRecursive = (data, browser, source, modify) => {
   let newData = Object.assign({}, data);
@@ -408,6 +429,7 @@ const setFeatureRecursive = (data, browser, source, modify) => {
  * @param {string} filepath
  * @param {string} source
  * @param {string} modify
+ * @returns {boolean}
  */
 function mirrorDataByFile(browser, filepath, source, modify) {
   let file = filepath;
@@ -444,6 +466,7 @@ function mirrorDataByFile(browser, filepath, source, modify) {
  * @param {string} featureIdent
  * @param {string} source
  * @param {string} modify
+ * @returns {boolean}
  */
 const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
   let filepath = path.resolve(__dirname, '..');
@@ -478,6 +501,7 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
  * @param {string} feature_or_file
  * @param {string} forced_source
  * @param {string} modify
+ * @returns {boolean}
  */
 const mirrorData = (browser, feature_or_file, forced_source, modify) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
@@ -514,6 +538,8 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
       mirrorDataByFile(browser, folder, source, modify);
     });
   }
+
+  return true;
 };
 
 if (require.main === module) {
