@@ -63,12 +63,12 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 ### Old pull requests
 
-We may close pull requests that have been inactive for 30 or more days.  The procedure is as follows:
+We may close pull requests that have been inactive for 30 or more days. The procedure is as follows:
 
-1. A peer will review the pull request, and potentially request changes or request more information.
+1. A peer will review the pull request, and potentially request changes or more information.
 2. If the pull request author doesn't respond within a week, a peer may ping and ask if the author plans to return to the pull request.
-3. After another week or two, a peer may add a label to mark the pull request as inactive, as well as comment that it's been flagged for closing due to inactivity.
-4. After one final week, a peer may simply close the pull request.  Typically, the pull request would be closed after 30 days of inactivity.
+3. After another week or two, a peer may add an "Inactive" label and comment that it's been flagged for closing due to inactivity.
+4. After one final week, a peer may simply close the pull request.
 
 ### Optional: Generating data using the Web API Confluence Dashboard
 
