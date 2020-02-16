@@ -21,4 +21,11 @@ function matchLabels (fileList, config) {
   return Array.from(labels)
 }
 
-module.exports = matchLabels
+module.exports = matchLabelsunction matchLabels (fileList, config) {
+  const labels = new Set()
+
+  for (const [label, patterns] of Object.entries(config || {})) {
+    if (anyPatternMatches(fileList, patterns)) {
+      labels.add(label)
+    }
+  }
