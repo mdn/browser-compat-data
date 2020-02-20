@@ -16,6 +16,8 @@ browser support for APIs. For example:
 
 Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md).
 
+Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
+
 ## Installation
 
 You can install mdn-browser-compat-data as a node package.
