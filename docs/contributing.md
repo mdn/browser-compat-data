@@ -67,5 +67,4 @@ If the feature you're interested in is a JavaScript API, you can cross-reference
 
 ## Getting help
 
-If you need help with this repository or have any questions, contact the MDN team
-in the [#mdn](irc://irc.mozilla.org/mdn) IRC channel on irc.mozilla.org or write us on [discourse](https://discourse.mozilla-community.org/c/mdn).
+If you need help with this repository or have any questions, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).

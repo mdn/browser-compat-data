@@ -20,7 +20,11 @@
               ]
             },
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "Initial versions had bugs on Windows and Linux that broke <a href='https://crbug.com/114719'>font substitition</a>, <a href='https://crbug.com/51973'>small-caps</a>, <a href='https://crbug.com/55458'>letter-spacing</a> or caused <a href='https://crbug.com/149548'>text to overlap</a>."
+              ]
             },
             "firefox": {
               "version_added": "1",
@@ -75,7 +79,8 @@
                 "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "edge": {
-                "version_added": false
+                "version_added": "79",
+                "notes": "Edge treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "firefox": {
                 "version_added": "1",
@@ -132,7 +137,8 @@
                 "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "edge": {
-                "version_added": false
+                "version_added": "79",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "firefox": {
                 "version_added": "1",
