@@ -91,9 +91,16 @@
             "opera": {
               "version_added": "7"
             },
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "14",
+                "notes": "<code>box-sizing</code> is not respected when the height is calculated from <a href='https://developer.mozilla.org/docs/Web/API/Window/getComputedStyle'><code>window.getComputedStyle()</code></a>."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "14"
+              }
+            ],
             "safari": [
               {
                 "version_added": "5.1"
