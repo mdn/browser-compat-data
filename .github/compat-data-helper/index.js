@@ -34,7 +34,7 @@ module.exports = app => {
     }
 
     const fileList = await context.github.paginate(
-      context.github.pullRequests.listFiles.endpoint.merge(pr),
+      context.github.pulls.listFiles.endpoint.merge(pr),
       res => res.data
     )
     const filenames = fileList.map(f => f.filename)
