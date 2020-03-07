@@ -1,4 +1,5 @@
 'use strict';
+const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
@@ -89,7 +90,7 @@ function testRealValues(filename) {
   const category =
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(fs.readFileSync(filename, 'UTF-8'));
 
   /** @type {string[]} */
   const errors = [];

@@ -1,4 +1,5 @@
 'use strict';
+const fs = require('fs');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 
@@ -129,7 +130,7 @@ function checkVersions(supportData, relPath, logger) {
  */
 function testVersions(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(fs.readFileSync(filename, 'UTF-8'));
 
   /** @type {string[]} */
   const errors = [];

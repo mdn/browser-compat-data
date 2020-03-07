@@ -1,5 +1,5 @@
 'use strict';
-const path = require('path');
+const fs = require('fs');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 
@@ -354,7 +354,7 @@ class ConsistencyChecker {
  */
 function testConsistency(filename) {
   /** @type {Identifier} */
-  let data = require(filename);
+  const data = JSON.parse(fs.readFileSync(filename, 'UTF-8'));
 
   const checker = new ConsistencyChecker();
   const errors = checker.check(data);

@@ -1,10 +1,15 @@
 'use strict';
+const fs = require('fs');
 const Ajv = require('ajv');
 const betterAjvErrors = require('better-ajv-errors');
 const path = require('path');
 const chalk = require('chalk');
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
 
 /**
  * @param {string} dataFilename
@@ -14,8 +19,11 @@ function testSchema(
   dataFilename,
   schemaFilename = './../../schemas/compat-data.schema.json',
 ) {
-  const schema = require(schemaFilename);
-  const data = require(dataFilename);
+  const schema = JSON.parse(
+    fs.readFileSync(path.resolve(__dirname, schemaFilename), 'UTF-8'),
+  );
+  /** @type {Identifier} */
+  const data = JSON.parse(fs.readFileSync(dataFilename, 'UTF-8'));
 
   const valid = ajv.validate(schema, data);
 

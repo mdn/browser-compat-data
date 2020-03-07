@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const fs = require('fs');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -80,7 +81,7 @@ function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
  */
 function testDescriptions(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(fs.readFileSync(filename, 'UTF-8'));
 
   /** @type {string[]} */
   const errors = [];
