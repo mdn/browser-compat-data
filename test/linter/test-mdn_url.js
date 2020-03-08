@@ -1,5 +1,16 @@
 const chalk = require('chalk');
 
+// Used for dictionaries where slugs have format /dictionaryName#valueName
+const dictionaryPattern = {
+  __default: {
+    __slug: key => '#' + key,
+  },
+};
+
+const noSlugPattern = {
+  __slug: '',
+};
+
 /*
  * Map of data keys to URL segments
  */
@@ -7,6 +18,10 @@ const URLPatternMap = {
   __slug: 'https://developer.mozilla.org/docs',
   api: {
     __slug: '/Web/API',
+    XMLHttpRequest: {
+      responseType: dictionaryPattern,
+      send: dictionaryPattern,
+    },
     WebGLRenderingContext: {
       __slug: '/WebGLRenderingContext',
       '^uniformMatrix[234]fv$': {
@@ -16,23 +31,46 @@ const URLPatternMap = {
         __slug: 'uniformMatrix[234]fv',
       },
     },
+    PaintWorkletGlobalScope: {
+      // See https://github.com/mdn/browser-compat-data/pull/4416#issuecomment-517339589
+      __slug: '/PaintWorklet',
+    },
+    RTCIceCredentialType: dictionaryPattern,
+    ServiceWorkerRegistration: {
+      showNotification: {
+        __default: {
+          __slug: '',
+        },
+      },
+    },
+    XREnvironmentBlendMode: dictionaryPattern,
+    XREye: dictionaryPattern,
+    XRSessionMode: dictionaryPattern,
   },
   css: {
     __slug: '/Web/CSS',
-    content: {
-      __slug: '',
-    },
+    content: noSlugPattern,
     properties: {
       __slug: '',
+      'background-image': {
+        __slug: '',
+        gradients: {
+          // TODO: consider renaming in MDN from gradients to gradient
+          __slug: '/gradient',
+        },
+        'image-rect': {
+          // TODO: consider moving MDN page from /-moz-image-rect to /image-rect
+          __slug: '/-moz-image-rect',
+        },
+      },
       'custom-property': {
         __slug: '',
       },
     },
     types: {
       __slug: '',
-      global_keywords: {
-        __slug: '',
-      },
+      angle: dictionaryPattern,
+      global_keywords: noSlugPattern,
     },
     'at-rules': {
       __slug: '',
@@ -60,6 +98,12 @@ const URLPatternMap = {
     __slug: '/Web',
     elements: {
       __slug: '/HTML/Element',
+      input: {
+        __default: {
+          // Removes "imput-" from "input-something"
+          __slug: key => '/' + key.substring('input-'.length),
+        },
+      },
     },
     global_attributes: {
       __slug: '/HTML/Global_attributes',
@@ -75,9 +119,7 @@ const URLPatternMap = {
     },
     headers: {
       __slug: '/Headers',
-      csp: {
-        __slug: '',
-      },
+      csp: noSlugPattern,
     },
     status: {
       __slug: '/Status',
@@ -103,8 +145,13 @@ const URLPatternMap = {
     builtins: {
       __slug: '/Global_Objects',
       Intl: {
+        // TODO: move Intl?
         // As per https://github.com/mdn/sprints/issues/2537
         __slug: '',
+        getCanonicalLocales: {
+          //
+          __slug: '/Intl/getCanonicalLocales',
+        },
       },
     },
     classes: {
@@ -121,39 +168,19 @@ const URLPatternMap = {
     __slug: '/Web/SVG',
     attributes: {
       __slug: '/Attribute',
-      conditional_processing: {
-        __slug: '',
-      },
-      core: {
-        __slug: '',
-      },
-      document: {
-        __slug: '',
-      },
+      conditional_processing: noSlugPattern,
+      core: noSlugPattern,
+      document: noSlugPattern,
       events: {
         __slug: '',
-        global: {
-          __slug: '',
-        },
-        document: {
-          __slug: '',
-        },
-        animation: {
-          __slug: '',
-        },
-        graphical: {
-          __slug: '',
-        },
+        global: noSlugPattern,
+        document: noSlugPattern,
+        animation: noSlugPattern,
+        graphical: noSlugPattern,
       },
-      graphical: {
-        __slug: '',
-      },
-      presentation: {
-        __slug: '',
-      },
-      style: {
-        __slug: '',
-      },
+      graphical: noSlugPattern,
+      presentation: noSlugPattern,
+      style: noSlugPattern,
     },
     elements: {
       __slug: '/Element',
@@ -170,7 +197,6 @@ const URLPatternMap = {
     api: {
       __slug: '/API',
       devtools: {
-        __slug: '/devtools',
         __default: {
           // TODO: may be, move the articles?
           __slug: key => `.${key}`,
@@ -179,6 +205,14 @@ const URLPatternMap = {
     },
     manifest: {
       __slug: '/manifest.json',
+      content_security_policy: dictionaryPattern,
+      theme: dictionaryPattern,
+      theme_experiment: {
+        __default: {
+          // See https://github.com/mdn/browser-compat-data/pull/5800#issuecomment-596950381
+          __slug: '#Syntax',
+        },
+      },
     },
   },
   xpath: {
