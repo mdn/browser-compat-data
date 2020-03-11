@@ -711,40 +711,100 @@
             "description": "<code>composite</code> option",
             "support": {
               "chrome": {
-                "version_added": null
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
               },
               "edge": {
-                "version_added": null
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
               },
-              "firefox": {
-                "version_added": null
-              },
-              "firefox_android": {
-                "version_added": null
-              },
+              "firefox": [
+                {
+                  "version_added": "63",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.animations-api.compositing.enabled"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "53",
+                  "version_removed": "63",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.animations-api.core.enabled"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "63",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.animations-api.compositing.enabled"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "53",
+                  "version_removed": "63",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.animations-api.core.enabled"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": "66",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
               },
               "opera_android": {
-                "version_added": null
+                "version_added": false
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": false
               },
               "webview_android": {
-                "version_added": null
+                "version_added": false
               }
             },
             "status": {
