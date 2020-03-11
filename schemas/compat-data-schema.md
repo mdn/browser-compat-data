@@ -100,7 +100,7 @@ The `__compat` object consists of the following:
 - An optional `matches` property to **help match the feature to source code** ([see below](#the-matches-object))
   An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
 
-- An optional `status` property for **status information**.
+- A mandatory `status` property for **status information**.
   An object containing information about the stability of the feature:
   Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
 
@@ -421,8 +421,8 @@ A `matches` object contains hints to help automatically detect whether source co
 
 ### Status information
 
-The status property contains information about stability of the feature. It is
-an optional object named `status` and has three mandatory properties:
+The mandatory status property contains information about stability of the feature. It is
+an object named `status` and has three mandatory properties:
 
 - `experimental`: a `boolean` value that indicates this functionality is
   intended to be an addition to the Web platform. Some features are added to
