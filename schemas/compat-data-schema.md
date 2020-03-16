@@ -256,6 +256,12 @@ For certain browsers, ranged versions are allowed as it is sometimes impossible 
 - Edge
   - "≤18" (supported in some version of EdgeHTML-based Edge)
   - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+- Opera
+  - "≤12.1" (supported in some version of Presto-based Opera)
+  - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+- Opera Android
+  - "≤12.1" (supported in some version of Presto-based Opera)
+  - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
 - WebView Android
   - "≤37" (supported in former Android versions prior to Chrome-based WebView)
 
