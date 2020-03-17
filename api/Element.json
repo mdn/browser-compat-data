@@ -2993,39 +2993,329 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAnimations",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "67",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "44",
+                "version_removed": "67",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "38",
+                "version_removed": "44",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "67",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "44",
+                "version_removed": "67",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "38",
+                "version_removed": "44",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "75"
+              },
+              {
+                "version_added": "63",
+                "version_removed": "75",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "48",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "40",
+                "version_removed": "48",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "33",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Does not return any animations added via CSS.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.animations-api.getAnimations.enabled"
+                }
+              ]
             },
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": [
+              {
+                "version_added": "66",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "54",
+                "version_removed": "66",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "31",
+                "version_removed": "54",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "25",
+                "version_removed": "31",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "48",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "32",
+                "version_removed": "48",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "25",
+                "version_removed": "32",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
             "safari": {
-              "version_added": false
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Does not support the <code>subtree</code> option.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Web Animations"
+                },
+                {
+                  "type": "preference",
+                  "name": "CSS Animations via Web Animations"
+                }
+              ]
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "Does not support the <code>subtree</code> option.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Web Animations"
+                },
+                {
+                  "type": "preference",
+                  "name": "CSS Animations via Web Animations"
+                }
+              ]
             },
-            "samsunginternet_android": {
-              "version_added": false
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "version_added": "4.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "3.0",
+                "version_removed": "4.0",
+                "partial_implementation": true,
+                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
             "webview_android": {
               "version_added": false
             }
