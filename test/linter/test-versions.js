@@ -91,7 +91,7 @@ function checkVersions(supportData, relPath, logger) {
             if (
               compareVersions.compare(
                 statement.version_added.startsWith('≤')
-                  ? '0'
+                  ? '0' // 0 was chosen as it's a number lower than any possible browser version
                   : statement.version_added,
                 statement.version_removed.replace('≤', ''),
                 '>=',
