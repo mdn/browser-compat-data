@@ -107,8 +107,9 @@ class ConsistencyChecker {
       browsers.forEach(browser => {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
-        const subfeature_value =
-          data[subfeature].__compat.support[browser].version_added;
+        const subfeature_value = this.getVersionAdded(
+          data[subfeature].__compat.support[browser],
+        );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
           subfeature_value,
@@ -149,8 +150,9 @@ class ConsistencyChecker {
       browsers.forEach(browser => {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
-        const subfeature_value =
-          data[subfeature].__compat.support[browser].version_added;
+        const subfeature_value = this.getVersionAdded(
+          data[subfeature].__compat.support[browser],
+        );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
           subfeature_value,
@@ -189,8 +191,9 @@ class ConsistencyChecker {
         ) {
           inconsistentSubfeaturesByBrowser[browser] =
             inconsistentSubfeaturesByBrowser[browser] || [];
-          const subfeature_value =
-            data[subfeature].__compat.support[browser].version_added;
+          const subfeature_value = this.getVersionAdded(
+            data[subfeature].__compat.support[browser],
+          );
           inconsistentSubfeaturesByBrowser[browser].push([
             subfeature,
             subfeature_value,
