@@ -544,7 +544,7 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
   }
 
   if (!found) {
-    console.error(`Could not find ${feature}!`);
+    console.error(`Could not find file for ${featureIdent}!`);
     return false;
   }
 
