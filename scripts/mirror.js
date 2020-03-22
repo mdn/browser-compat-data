@@ -527,7 +527,7 @@ function mirrorDataByFile(browser, filepath, source, modify) {
  * Note that this assumes a predictable file structure
  * which BCD doesn't have right now. (issue #3617)
  * For example, even if "html.elements.input.input-button"
- * is a valid query, it will fail here, because the file structure 
+ * is a valid query, it will fail here, because the file structure
  * for input-button isn't consistent with the rest right now.
  *
  * @param {string} browser
