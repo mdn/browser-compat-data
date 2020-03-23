@@ -46,14 +46,6 @@ const { argv } = require('yargs').command(
 );
 
 /**
- * @param {string} value
- * @returns {string}
- */
-const create_webview_range = value => {
-  return value == '18' ? '1' : Number(value) < 37 ? '≤37' : value;
-};
-
-/**
  * @param {string} dest_browser
  * @param {ReleaseStatement} source_browser_release
  * @returns {ReleaseStatement|boolean}
@@ -454,15 +446,29 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 const bumpWebView = (originalData, sourceData, source) => {
   let newData = sourceData;
 
+  const createWebViewRange = version => {
+    if (Number(version) <= 18) {
+      return '1';
+    } else if (Number(version) > 18 && Number(version) < 30) {
+      return '≤37';
+    } else if (Number(version) >= 30 && Number(version) < 33) {
+      return '4.4';
+    } else if (Number(version) >= 33 && Number(version) < 37) {
+      return '4.4.3';
+    } else {
+      return version;
+    }
+  };
+
   if (typeof sourceData.version_added === 'string') {
-    newData.version_added = create_webview_range(sourceData.version_added);
+    newData.version_added = createWebViewRange(sourceData.version_added);
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = create_webview_range(sourceData.version_removed);
+    newData.version_removed = createWebViewRange(sourceData.version_removed);
   }
 
   if (typeof sourceData.notes === 'string') {
