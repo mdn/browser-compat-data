@@ -67,7 +67,24 @@ If the feature you're interested in is a JavaScript API, you can cross-reference
 
 ## Optional: Generating data using the mirroring script
 
-Many browsers within BCD are derived from Chrome. To help cut down time working on copying these values over, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically perform this mirroring process. The browser is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination, but manual specification is possible through the `--source=""` argument. The feature argument is the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`). By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify=""` argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
+Many browsers within BCD are derived from other browsers, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically copy values.
+
+The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument.
+
+| Destination      | Default Source    |
+| ---------------- | ----------------- |
+| Chrome Android   | Chrome            |
+| Edge             | Internet Explorer |
+| Firefox Android  | Firefox           |
+| Opera            | Chrome            |
+| Opera Android    | Chrome Android    |
+| Safari iOS       | Safari            |
+| Samsung Internet | Chrome Android    |
+| WebView          | Chrome Android    |
+
+The <feature> argument is the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
+
+By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify=""` argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
 
 ## Getting help
 
