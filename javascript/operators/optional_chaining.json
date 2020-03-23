@@ -5,7 +5,7 @@
         "__compat": {
           "description": "Optional chaining operator (<code>?.</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining",
-          "spec_url": "https://tc39.es/proposal-optional-chaining/#top",
+          "spec_url": "https://tc39.es/proposal-optional-chaining/#sec-scope",
           "support": {
             "chrome": [
               {
@@ -37,9 +37,21 @@
                 ]
               }
             ],
-            "edge": {
-              "version_added": false
-            },
+            "edge": [
+              {
+                "version_added": "80"
+              },
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "74"
             },
@@ -57,7 +69,7 @@
                 "version_added": "67"
               },
               {
-                "version_added": "65",
+                "version_added": "66",
                 "flags": [
                   {
                     "type": "preference",
