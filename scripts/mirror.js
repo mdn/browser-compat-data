@@ -183,55 +183,304 @@ const updateNotes = (notes, regex, replace) => {
 };
 
 /**
- * @param {SupportStatement} edgeData
- * @param {SupportStatement} chromeData
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpVersionEdgeChromium = (edgeData, chromeData) => {
-  let newData = edgeData == undefined ? chromeData : edgeData;
+const bumpChromeAndroid = (originalData, sourceData, source) => {
+  let newData = sourceData;
 
-  let chromeFalse =
-    chromeData.version_added === false ||
-    chromeData.version_removed !== undefined;
-  let chromeNull = chromeData.version_added === null;
+  if (typeof sourceData.version_added === 'string') {
+    let value = Number(sourceData.version_added);
+    if (value < 18) value = 18;
+    if (value > 18 && value < 25) value = 25;
 
-  if (edgeData === undefined) {
-    newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
-  } else {
-    if (!chromeFalse && !chromeNull) {
-      if (edgeData.version_added == true) {
-        newData.version_added = '≤18';
-      } else {
-        if (
-          chromeData.version_added == true ||
-          Number(chromeData.version_added) <= 79
-        ) {
-          if (edgeData.version_added == false) {
-            newData.version_added = '79';
-          } else if (edgeData.version_added == null) {
-            newData.version_added = '≤79';
-          }
-        } else {
-          newData.version_added == chromeData.version_added;
-        }
-      }
-    } else if (chromeFalse) {
-      if (edgeData.version_added && !edgeData.version_removed) {
-        newData.version_removed = '79';
-      }
-    }
+    newData.version_added = value.toString();
   }
 
-  let newNotes = combineNotes(
-    updateNotes(chromeData.notes, /Chrome/g, 'Edge'),
-    edgeData.notes,
-  );
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    let value = Number(sourceData.version_removed);
+    if (value < 18) value = 18;
+    if (value > 18 && value < 25) value = 25;
 
-  if (newNotes) {
-    newData.notes = newNotes;
+    newData.version_removed = value.toString();
   }
 
   return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpEdge = (originalData, sourceData, source) => {
+  let newData = {};
+
+  if (source == 'ie') {
+    if (sourceData.version_removed && sourceData.version_removed !== null) {
+      newData.version_added = false;
+    } else if (sourceData.version_added !== null) {
+      newData.version_added = sourceData.version_added ? '12' : null;
+    }
+
+    if (sourceData.notes) {
+      newData.notes = updateNotes(
+        sourceData.notes,
+        /Internet Explorer/g,
+        'Edge',
+      );
+    }
+  } else if (source == 'chrome') {
+    newData = originalData == undefined ? sourceData : originalData;
+
+    let chromeFalse =
+      sourceData.version_added === false ||
+      sourceData.version_removed !== undefined;
+    let chromeNull = sourceData.version_added === null;
+
+    if (originalData === undefined) {
+      newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
+    } else {
+      if (!chromeFalse && !chromeNull) {
+        if (originalData.version_added == true) {
+          newData.version_added = '≤18';
+        } else {
+          if (
+            sourceData.version_added == true ||
+            Number(sourceData.version_added) <= 79
+          ) {
+            if (originalData.version_added == false) {
+              newData.version_added = '79';
+            } else if (originalData.version_added == null) {
+              newData.version_added = '≤79';
+            }
+          } else {
+            newData.version_added == sourceData.version_added;
+          }
+        }
+      } else if (chromeFalse) {
+        if (originalData.version_added && !originalData.version_removed) {
+          newData.version_removed = '79';
+        }
+      }
+    }
+
+    let newNotes = combineNotes(
+      updateNotes(sourceData.notes, /Chrome/g, 'Edge'),
+      originalData.notes,
+    );
+
+    if (newNotes) {
+      newData.notes = newNotes;
+    }
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpFirefoxAndroid = (originalData, sourceData, source) => {
+  let newData = sourceData;
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = Math.max(
+      4,
+      Number(sourceData.version_added),
+    ).toString();
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = Math.max(
+      4,
+      Number(sourceData.version_removed),
+    ).toString();
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpOpera = (originalData, sourceData, source) => {
+  let newData = sourceData;
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = getMatchingBrowserVersion(
+      'opera',
+      browsers[source].releases[sourceData.version_added],
+    );
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = getMatchingBrowserVersion(
+      'opera',
+      browsers[source].releases[sourceData.version_removed],
+    );
+  }
+
+  if (typeof sourceData.notes === 'string') {
+    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpOperaAndroid = (originalData, sourceData, source) => {
+  let newData = sourceData;
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = getMatchingBrowserVersion(
+      'opera_android',
+      browsers[source].releases[sourceData.version_added],
+    );
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = getMatchingBrowserVersion(
+      'opera_android',
+      browsers[source].releases[sourceData.version_removed],
+    );
+  }
+
+  if (typeof sourceData.notes === 'string') {
+    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpSafariiOS = (originalData, sourceData, source) => {
+  let newData = sourceData;
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = getMatchingBrowserVersion(
+      'safari_ios',
+      browsers[source].releases[sourceData.version_added],
+    );
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = getMatchingBrowserVersion(
+      'safari_ios',
+      browsers[source].releases[sourceData.version_removed],
+    );
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpSamsungInternet = (originalData, sourceData, source) => {
+  let newData = sourceData;
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = getMatchingBrowserVersion(
+      'samsunginternet_android',
+      browsers[source].releases[sourceData.version_added],
+    );
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = getMatchingBrowserVersion(
+      'samsunginternet_android',
+      browsers[source].releases[sourceData.version_removed],
+    );
+  }
+
+  if (typeof sourceData.notes === 'string') {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      /Chrome/g,
+      'Samsung Internet',
+    );
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpWebView = (originalData, sourceData, source) => {
+  let newData = sourceData;
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = create_webview_range(sourceData.version_added);
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = create_webview_range(sourceData.version_removed);
+  }
+
+  if (typeof sourceData.notes === 'string') {
+    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @param {string} source
+ * @returns {SupportStatement}
+ */
+const bumpGeneric = (originalData, sourceData, source) => {
+  // For browsers we're not tracking, simply mirror the source data
+  return sourceData;
 };
 
 /**
@@ -253,136 +502,39 @@ const bumpVersion = (data, destination, source, originalData) => {
       newData[i] = bumpVersion(data[i], destination, source, originalData);
     }
   } else {
-    newData = {};
-    for (let i in data) {
-      newData[i] = data[i]; // Prevent shallow copy / modification of source data
+    let bumpFunction = null;
+
+    switch (destination) {
+      case 'chrome_android':
+        bumpFunction = bumpChromeAndroid;
+        break;
+      case 'edge':
+        bumpFunction = bumpEdge;
+        break;
+      case 'firefox_android':
+        bumpFunction = bumpFirefoxAndroid;
+        break;
+      case 'opera':
+        bumpFunction = bumpOpera;
+        break;
+      case 'opera_android':
+        bumpFunction = bumpOperaAndroid;
+        break;
+      case 'safari_ios':
+        bumpFunction = bumpSafariiOS;
+        break;
+      case 'samsunginternet_android':
+        bumpFunction = bumpSamsungInternet;
+        break;
+      case 'webview_android':
+        bumpFunction = bumpWebView;
+        break;
+      default:
+        bumpFunction = bumpGeneric;
+        break;
     }
 
-    if (destination == 'chrome_android') {
-      if (typeof data.version_added === 'string') {
-        let value = Number(data.version_added);
-        if (value < 18) value = 18;
-        if (value > 18 && value < 25) value = 25;
-
-        newData.version_added = value.toString();
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        let value = Number(data.version_removed);
-        if (value < 18) value = 18;
-        if (value > 18 && value < 25) value = 25;
-
-        newData.version_removed = value.toString();
-      }
-    } else if (destination == 'edge') {
-      if (source == 'ie') {
-        if (data.version_removed && data.version_removed !== null) {
-          newData.version_added = false;
-        } else if (data.version_added !== null) {
-          newData.version_added = data.version_added ? '12' : null;
-        }
-
-        if (data.notes) {
-          newData.notes = updateNotes(data.notes, /Internet Explorer/g, 'Edge');
-        }
-      } else if (source == 'chrome') {
-        newData = bumpVersionEdgeChromium(originalData, data);
-      }
-    } else if (destination == 'firefox_android') {
-      if (typeof data.version_added === 'string') {
-        newData.version_added = Math.max(
-          4,
-          Number(data.version_added),
-        ).toString();
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        newData.version_removed = Math.max(
-          4,
-          Number(data.version_removed),
-        ).toString();
-      }
-    } else if (destination == 'opera') {
-      if (typeof data.version_added === 'string') {
-        newData.version_added = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_added],
-        );
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        newData.version_removed = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_removed],
-        );
-      }
-
-      if (typeof data.notes === 'string') {
-        newData.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
-      }
-    } else if (destination == 'opera_android') {
-      if (typeof data.version_added === 'string') {
-        newData.version_added = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_added],
-        );
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        newData.version_removed = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_removed],
-        );
-      }
-
-      if (typeof data.notes === 'string') {
-        newData.notes = updateNotes(data.notes, /Chrome/g, 'Opera');
-      }
-    } else if (destination == 'safari_ios') {
-      if (typeof data.version_added === 'string') {
-        newData.version_added = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_added],
-        );
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        newData.version_removed = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_removed],
-        );
-      }
-    } else if (destination == 'samsunginternet_android') {
-      if (typeof data.version_added === 'string') {
-        newData.version_added = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_added],
-        );
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        newData.version_removed = getMatchingBrowserVersion(
-          destination,
-          browsers[source].releases[data.version_removed],
-        );
-      }
-
-      if (typeof data.notes === 'string') {
-        newData.notes = updateNotes(data.notes, /Chrome/g, 'Samsung Internet');
-      }
-    } else if (destination == 'webview_android') {
-      if (typeof data.version_added === 'string') {
-        newData.version_added = create_webview_range(data.version_added);
-      }
-
-      if (data.version_removed && typeof data.version_removed === 'string') {
-        newData.version_removed = create_webview_range(data.version_removed);
-      }
-
-      if (typeof data.notes === 'string') {
-        newData.notes = updateNotes(data.notes, /Chrome/g, 'WebView');
-      }
-    }
+    newData = bumpFunction(originalData, data, source);
   }
 
   return newData;
