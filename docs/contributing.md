@@ -82,7 +82,7 @@ The <browser> argument is the destination browser that values will be copied to.
 | Samsung Internet | Chrome Android    |
 | WebView          | Chrome Android    |
 
-The <feature> argument is the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
+The <feature> argument is the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`). Note: the script assumes a predictable file structure when passing in a feature identifier, which BCD doesn't have right now. (See [issue 3617](https://github.com/mdn/browser-compat-data/issues/3617).) For example, even if "html.elements.input.input-button" is a valid query, it will fail because the file structure for input-button isn't consistent with the rest right now.
 
 By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify=""` argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
 
