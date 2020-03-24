@@ -76,6 +76,14 @@ const checkNotes = (notes, browser, relPath, errors) => {
   } else {
     let notesData = parser.parse(notes);
     testNode(notesData, browser, relPath, errors);
+    if (notes.includes('  ')) {
+      errors.push({
+        type: 'doublespace',
+        relPath: relPath,
+        browser: browser,
+        tag: null,
+      });
+    }
   }
 };
 
@@ -146,6 +154,10 @@ const testNotes = filename => {
       } else if (error.type == 'attrs_a') {
         console.error(
           chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  {bold <a>} elements may only have an {bold href} attribute.}`,
+        );
+      } else if (error.type == 'doublespace') {
+        console.error(
+          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have double-spaces.  Notes are required to have single spaces only.}`,
         );
       }
     }
