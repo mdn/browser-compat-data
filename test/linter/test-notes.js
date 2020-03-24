@@ -104,7 +104,7 @@ const processData = (data, errors, relPath) => {
     }
     const sub = data[prop];
     if (typeof sub === 'object') {
-      processData(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
+      processData(sub, errors, relPath ? `${relPath}.${prop}` : `${prop}`);
     }
   }
 };
