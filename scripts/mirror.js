@@ -778,6 +778,10 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
     });
   }
 
+  console.log(
+    "Mirroring complete!  Note that results are not guaranteed to be 100% accurate.  Please review the script's output, especially notes, for any errors, and be sure to run `npm test` before submitting a pull request.",
+  );
+
   return true;
 };
 
