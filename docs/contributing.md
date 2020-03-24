@@ -65,6 +65,32 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
+## Optional: Generating data using the mirroring script
+
+Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically copy values.
+
+The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument.
+
+| Destination      | Default Source    |
+| ---------------- | ----------------- |
+| Chrome Android   | Chrome            |
+| Edge             | Internet Explorer |
+| Firefox Android  | Firefox           |
+| Opera            | Chrome            |
+| Opera Android    | Chrome Android    |
+| Safari iOS       | Safari            |
+| Samsung Internet | Chrome Android    |
+| WebView          | Chrome Android    |
+
+The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
+
+Note when using feature identifiers:
+
+- Updates aren't applied recursively; only the given data point is updated when using a feature ID. Use a filename or folder for mass mirroring.
+- The script assumes a predictable file structure when passing in a feature identifier, which BCD doesn't have right now. (See [issue 3617](https://github.com/mdn/browser-compat-data/issues/3617).) For example, even if "html.elements.input.input-button" is a valid query, it will fail because the file structure for input-button isn't consistent with the rest right now.
+
+By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify=""` argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
+
 ## Getting help
 
 If you need help with this repository or have any questions, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
