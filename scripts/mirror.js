@@ -175,13 +175,26 @@ const updateNotes = (notes, regex, replace) => {
 };
 
 /**
+ * @param {SupportStatement} data
+ * @returns {SupportStatement}
+ */
+const copyStatement = data => {
+  let newData = {};
+  for (let i in data) {
+    newData[i] = data[i];
+  }
+
+  return newData;
+};
+
+/**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @param {string} source
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     let value = Number(sourceData.version_added);
@@ -283,7 +296,7 @@ const bumpEdge = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpFirefoxAndroid = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = Math.max(
@@ -312,7 +325,7 @@ const bumpFirefoxAndroid = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpOpera = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
@@ -345,7 +358,7 @@ const bumpOpera = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpOperaAndroid = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
@@ -378,7 +391,7 @@ const bumpOperaAndroid = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpSafariiOS = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
@@ -407,7 +420,7 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpSamsungInternet = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
@@ -444,7 +457,7 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpWebView = (originalData, sourceData, source) => {
-  let newData = sourceData;
+  let newData = copyStatement(sourceData);
 
   const createWebViewRange = version => {
     if (Number(version) <= 18) {
