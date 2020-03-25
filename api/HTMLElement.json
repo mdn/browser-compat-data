@@ -487,21 +487,25 @@
       "click": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/click",
+          "description": "click()",
           "support": {
             "chrome": {
               "version_added": "9",
-              "notes": "Before Chrome 19, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Chrome 19, <code>click()</code> is only defined on buttons and inputs."
             },
             "chrome_android": {
               "version_added": "18",
-              "notes": "Before Chrome 19, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Chrome 19, <code>click()</code> is only defined on buttons and inputs."
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "3",
-              "notes": "Before Firefox 5, <code>click</code> is only defined on buttons and inputs, and has no effect on text and file inputs."
+              "notes": [
+                "Before Firefox 5, <code>click()</code> is only defined on buttons and inputs, and has no effect on text and file inputs.",
+                "Starting in Firefox 75, the <code>click()</code> function works even when the element is not attached to a DOM tree."
+              ]
             },
             "firefox_android": {
               "version_added": "5"
@@ -523,11 +527,11 @@
             },
             "samsunginternet_android": {
               "version_added": "1.0",
-              "notes": "Before Samsung Internet 1.5, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Samsung Internet 1.5, <code>click()</code> is only defined on buttons and inputs."
             },
             "webview_android": {
               "version_added": "≤37",
-              "notes": "Before Android WebView 4.4, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Android WebView 4.4, <code>click()</code> is only defined on buttons and inputs."
             }
           },
           "status": {
