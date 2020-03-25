@@ -92,6 +92,10 @@ The `__compat` object consists of the following:
 - A mandatory `support` property for **compat information**.
   An object listing the compatibility information for each browser ([see below](#the-support-object)).
 
+- A mandatory `status` property for **status information**.
+  An object containing information about the stability of the feature:
+  Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
+
 - An optional `description` property to **describe the feature**.
   A string containing a human-readable description of the feature.
   It is intended to be used as a caption or title and should be kept short.
@@ -99,10 +103,6 @@ The `__compat` object consists of the following:
 
 - An optional `matches` property to **help match the feature to source code** ([see below](#the-matches-object))
   An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
-
-- An optional `status` property for **status information**.
-  An object containing information about the stability of the feature:
-  Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
 
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
@@ -421,8 +421,8 @@ A `matches` object contains hints to help automatically detect whether source co
 
 ### Status information
 
-The status property contains information about stability of the feature. It is
-an optional object named `status` and has three mandatory properties:
+The mandatory status property contains information about stability of the feature. It is
+an object named `status` and has three mandatory properties:
 
 - `experimental`: a `boolean` value that indicates this functionality is
   intended to be an addition to the Web platform. Some features are added to

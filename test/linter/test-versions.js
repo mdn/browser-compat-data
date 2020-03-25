@@ -22,7 +22,7 @@ const VERSION_RANGE_BROWSERS = {
 };
 
 /** @type string[] */
-const FLAGLESS_BROWSERS = ['webview_android'];
+const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
 
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
