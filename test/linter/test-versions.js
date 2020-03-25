@@ -20,11 +20,13 @@ const validBrowserVersions = {};
 /** @type {object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
+  opera: ['≤12.1', '≤15'],
+  opera_android: ['≤12.1', '≤14'],
   edge: ['≤18', '≤79'],
 };
 
-/** @type {string[]} */
-const FLAGLESS_BROWSERS = ['webview_android'];
+/** @type string[] */
+const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
 
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
