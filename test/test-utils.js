@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 'use strict';
+
 const ora = require('ora');
 const chalk = require('chalk');
 const { IS_CI, escapeInvisibles } = require('./utils.js');

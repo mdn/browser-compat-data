@@ -3,6 +3,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
+
 const chalk = require('chalk');
 
 const bcd = require('..');

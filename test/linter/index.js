@@ -1,4 +1,5 @@
 'use strict';
+
 const testBrowsers = require('./test-browsers.js');
 const testLinks = require('./test-links.js');
 const testPrefix = require('./test-prefix.js');

@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+'use strict';
+
 const { execSync } = require('child_process');
 const http = require('https');
 const readline = require('readline');

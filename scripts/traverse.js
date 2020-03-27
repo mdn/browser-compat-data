@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 'use strict';
+
 const bcd = require('..');
 
 const { argv } = require('yargs').command(

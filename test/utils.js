@@ -1,4 +1,5 @@
 'use strict';
+
 const { platform } = require('os');
 const chalk = require('chalk');
 

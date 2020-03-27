@@ -1,4 +1,5 @@
 'use strict';
+
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 

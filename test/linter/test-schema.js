@@ -1,4 +1,5 @@
 'use strict';
+
 const Ajv = require('ajv');
 const betterAjvErrors = require('better-ajv-errors');
 const path = require('path');
