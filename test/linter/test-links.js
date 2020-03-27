@@ -11,7 +11,7 @@ const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
  * @param {string} filename
  * @param {Logger} logger
  */
-function processData(filename) {
+const processData = filename => {
   let errors = [];
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -172,7 +172,7 @@ function processData(filename) {
   );
 
   return errors;
-}
+};
 
 /**
  * @param {Object[]} errors
@@ -180,7 +180,7 @@ function processData(filename) {
  * @param {string|RegExp} regexp
  * @param {(match: RegExpExecArray) => Object} matchHandler
  */
-function processLink(errors, actual, regexp, matchHandler) {
+const processLink = (errors, actual, regexp, matchHandler) => {
   const re = new RegExp(regexp, 'g');
   /** @type {RegExpExecArray} */
   let match;
@@ -200,12 +200,12 @@ function processLink(errors, actual, regexp, matchHandler) {
       });
     }
   }
-}
+};
 
 /**
  * @param {string} filename
  */
-function testLinks(filename) {
+const testLinks = filename => {
   /** @type {Object[]} */
   let errors = processData(filename);
 
@@ -223,6 +223,6 @@ function testLinks(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testLinks;

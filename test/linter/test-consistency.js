@@ -352,7 +352,7 @@ class ConsistencyChecker {
 /**
  * @param {string} filename
  */
-function testConsistency(filename) {
+const testConsistency = filename => {
   /** @type {Identifier} */
   let data = require(filename);
 
@@ -398,6 +398,6 @@ function testConsistency(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testConsistency;

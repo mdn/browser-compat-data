@@ -23,7 +23,7 @@ const { argv } = require('yargs').command(
   },
 );
 
-function traverseFeatures(obj, depth, identifier) {
+const traverseFeatures = (obj, depth, identifier) => {
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
@@ -54,7 +54,7 @@ function traverseFeatures(obj, depth, identifier) {
       }
     }
   }
-}
+};
 
 let features = [];
 const folders =

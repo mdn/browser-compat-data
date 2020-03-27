@@ -17,7 +17,7 @@ const compareFeatures = require('../../scripts/compare-features');
  *
  * @returns {*} The new value
  */
-function orderSupportBlock(key, value) {
+const orderSupportBlock = (key, value) => {
   if (key === '__compat') {
     value.support = Object.keys(value.support)
       .sort()
@@ -27,7 +27,7 @@ function orderSupportBlock(key, value) {
       }, {});
   }
   return value;
-}
+};
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -41,7 +41,7 @@ function orderSupportBlock(key, value) {
  *
  * @returns {*} The new value
  */
-function orderFeatures(key, value) {
+const orderFeatures = (key, value) => {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
@@ -51,13 +51,13 @@ function orderFeatures(key, value) {
       }, {});
   }
   return value;
-}
+};
 
 /**
  * @param {string} filename
  * @param {import('../utils').Logger} logger
  */
-function processData(filename, logger) {
+const processData = (filename, logger) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -137,9 +137,9 @@ function processData(filename, logger) {
       );
     }
   }
-}
+};
 
-function testStyle(filename) {
+const testStyle = filename => {
   /** @type {string[]} */
   const errors = [];
   const logger = {
@@ -163,6 +163,6 @@ function testStyle(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testStyle;

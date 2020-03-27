@@ -62,7 +62,7 @@ it('`escapeInvisibles()` works correctly', () => {
  * @param {string} message
  * @param {() => void | Promise<void>} testCase
  */
-function it(message, testCase) {
+const it = (message, testCase) => {
   const spinner = ora({
     stream: process.stdout,
     text: message,
@@ -101,4 +101,4 @@ function it(message, testCase) {
     return;
   }
   spinner.succeed();
-}
+};

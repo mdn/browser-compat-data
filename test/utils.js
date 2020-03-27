@@ -32,13 +32,13 @@ const IS_WINDOWS = platform() === 'win32';
  *
  * @param {string} str
  */
-function escapeInvisibles(str) {
+const escapeInvisibles = str => {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
   return INVISIBLES_REGEXP[Symbol.replace](str, char => {
     return INVISIBLES_MAP[char] || char;
   });
-}
+};
 
 /**
  * Gets the row and column matching the index in a string.
@@ -47,7 +47,7 @@ function escapeInvisibles(str) {
  * @param {number} index
  * @return {[number, number] | [null, null]}
  */
-function indexToPosRaw(str, index) {
+const indexToPosRaw = (str, index) => {
   let line = 1,
     col = 1;
   let prevChar = null;
@@ -81,7 +81,7 @@ function indexToPosRaw(str, index) {
   }
 
   return [line, col];
-}
+};
 
 /**
  * Gets the row and column matching the index in a string and formats it.
@@ -90,17 +90,17 @@ function indexToPosRaw(str, index) {
  * @param {number} index
  * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-function indexToPos(str, index) {
+const indexToPos = (str, index) => {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
-}
+};
 
 /**
  * @param {string} actual
  * @param {string} expected
  * @return {string}
  */
-function jsonDiff(actual, expected) {
+const jsonDiff = (actual, expected) => {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
@@ -111,7 +111,7 @@ function jsonDiff(actual, expected) {
     {green Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
-}
+};
 
 module.exports = {
   INVISIBLES_MAP,

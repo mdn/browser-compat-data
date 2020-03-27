@@ -662,7 +662,7 @@ const setFeatureRecursive = (data, browser, source, modify) => {
  * @param {string} modify
  * @returns {boolean}
  */
-function mirrorDataByFile(browser, filepath, source, modify) {
+const mirrorDataByFile = (browser, filepath, source, modify) => {
   let file = filepath;
   if (file.indexOf(__dirname) !== 0) {
     file = path.resolve(__dirname, '..', file);
@@ -690,7 +690,7 @@ function mirrorDataByFile(browser, filepath, source, modify) {
   }
 
   return true;
-}
+};
 
 /**
  * Allows mirroring by feature ID (e.g. "html.elements.a")

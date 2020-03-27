@@ -16,18 +16,18 @@ const bcd = require('..');
 /**
  * @param {string} dottedFeature
  */
-function lookup(dottedFeature) {
+const lookup = dottedFeature => {
   const x = dottedFeature.split('.');
   const feature = x.reduce((prev, current) => prev[current], bcd);
   return feature;
-}
+};
 
 /**
  * @param {Identifier} feature
  * @param {string[]} matches
  * @param {string[]} misses
  */
-function testToken(feature, matches, misses) {
+const testToken = (feature, matches, misses) => {
   const str =
     feature.__compat.matches.regex_token ||
     feature.__compat.matches.regex_value;
@@ -39,7 +39,7 @@ function testToken(feature, matches, misses) {
   misses.forEach(miss =>
     assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`),
   );
-}
+};
 
 /** @type {TestCase[]} */
 const tests = [

@@ -40,7 +40,7 @@ const argv = yargs
  * @param {string[]} files
  * @return {boolean}
  */
-function load(...files) {
+const load = (...files) => {
   return files.reduce((prevHasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -139,7 +139,7 @@ function load(...files) {
 
     return load(...subFiles) || prevHasErrors;
   }, false);
-}
+};
 
 /** @type {boolean} */
 var hasErrors = argv.files

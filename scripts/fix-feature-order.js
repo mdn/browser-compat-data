@@ -25,7 +25,7 @@ const IS_WINDOWS = platform() === 'win32';
 
 const compareFeatures = require('./compare-features');
 
-function orderFeatures(key, value) {
+const orderFeatures = (key, value) => {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
@@ -35,7 +35,7 @@ function orderFeatures(key, value) {
       }, {});
   }
   return value;
-}
+};
 
 /**
  * @param {Promise<void>} filename

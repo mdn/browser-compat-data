@@ -35,20 +35,20 @@ for (const browser of Object.keys(browsers)) {
  * @param {string} browserIdentifier
  * @param {VersionValue} version
  */
-function isValidVersion(browserIdentifier, version) {
+const isValidVersion = (browserIdentifier, version) => {
   if (typeof version === 'string') {
     return validBrowserVersions[browserIdentifier].includes(version);
   } else {
     return true;
   }
-}
+};
 
 /**
  * @param {SupportBlock} supportData
  * @param {string} relPath
  * @param {import('../utils').Logger} logger
  */
-function checkVersions(supportData, relPath, logger) {
+const checkVersions = (supportData, relPath, logger) => {
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
@@ -122,12 +122,28 @@ function checkVersions(supportData, relPath, logger) {
       }
     }
   }
-}
+};
+
+/**
+ * @param {Identifier} data
+ * @param {string} [relPath]
+ */
+const findSupport = (data, logger, relPath) => {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      checkVersions(data[prop].support, relPath, logger);
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(sub, logger, relPath ? `${relPath}.${prop}` : `${prop}`);
+    }
+  }
+};
 
 /**
  * @param {string} filename
  */
-function testVersions(filename) {
+const testVersions = filename => {
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -140,22 +156,7 @@ function testVersions(filename) {
     },
   };
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, logger);
 
   if (errors.length) {
     console.error(
@@ -169,6 +170,6 @@ function testVersions(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testVersions;

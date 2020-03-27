@@ -13,7 +13,7 @@ const chalk = require('chalk');
  * @param {string} prefix
  * @param {string} [path]
  */
-function checkPrefix(data, category, errors, prefix, path = '') {
+const checkPrefix = (data, category, errors, prefix, path = '') => {
   for (const key in data) {
     if (key === 'prefix' && typeof data[key] === 'string') {
       if (data[key].includes(prefix)) {
@@ -34,14 +34,14 @@ function checkPrefix(data, category, errors, prefix, path = '') {
     }
   }
   return errors;
-}
+};
 
 /**
  * @param {Identifier} data
  * @param {string} category
  * @return {string[]}
  */
-function processData(data, category) {
+const processData = (data, category) => {
   let errors = [];
   let prefixes = [];
 
@@ -56,12 +56,12 @@ function processData(data, category) {
     checkPrefix(data, category, errors, prefix);
   }
   return errors;
-}
+};
 
 /**
  * @param {string} filename
  */
-function testPrefix(filename) {
+const testPrefix = filename => {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -83,6 +83,6 @@ function testPrefix(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testPrefix;

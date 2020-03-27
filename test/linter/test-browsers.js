@@ -26,6 +26,11 @@ const browsers = {
   'webextensions-mobile': ['firefox_android'],
 };
 
+const hasVersionAddedOnly = statement => {
+  const keys = Object.keys(statement);
+  return keys.length === 1 && keys[0] === 'version_added';
+};
+
 /**
  * @param {Identifier} data
  * @param {string[]} displayBrowsers
@@ -35,14 +40,14 @@ const browsers = {
  * @param {string} [path]
  * @returns {boolean}
  */
-function processData(
+const processData = (
   data,
   displayBrowsers,
   requiredBrowsers,
   category,
   logger,
   path = '',
-) {
+) => {
   if (data.__compat && data.__compat.support) {
     const support = data.__compat.support;
 
@@ -72,10 +77,6 @@ function processData(
       const statementList = Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement];
-      function hasVersionAddedOnly(statement) {
-        const keys = Object.keys(statement);
-        return keys.length === 1 && keys[0] === 'version_added';
-      }
       let sawVersionAddedOnly = false;
       for (const statement of statementList) {
         if (hasVersionAddedOnly(statement)) {
@@ -103,13 +104,13 @@ function processData(
       path && path.length > 0 ? `${path}.${key}` : key,
     );
   }
-}
+};
 
 /**
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+const testBrowsers = filename => {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -165,6 +166,6 @@ function testBrowsers(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testBrowsers;

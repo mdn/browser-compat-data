@@ -8,7 +8,7 @@ const format = require('./fix-format');
 /**
  * @param {string[]} files
  */
-function load(...files) {
+const load = (...files) => {
   for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -34,7 +34,7 @@ function load(...files) {
 
     load(...subFiles);
   }
-}
+};
 
 if (process.argv[2]) {
   load(process.argv[2]);

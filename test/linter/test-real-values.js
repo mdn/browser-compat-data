@@ -47,7 +47,7 @@ const blockList = {
  * @param {string} relPath
  * @param {Logger} logger
  */
-function checkRealValues(supportData, blockList, relPath, logger) {
+const checkRealValues = (supportData, blockList, relPath, logger) => {
   for (const browser of blockList) {
     /** @type {SimpleSupportStatement[]} */
     const supportStatements = [];
@@ -76,12 +76,39 @@ function checkRealValues(supportData, blockList, relPath, logger) {
       }
     }
   }
-}
+};
+
+/**
+ * @param {Identifier} data
+ * @param {string} [relPath]
+ */
+const findSupport = (data, category, logger, relPath) => {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      if (blockList[category] && blockList[category].length > 0)
+        checkRealValues(
+          data[prop].support,
+          blockList[category],
+          relPath,
+          logger,
+        );
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(
+        sub,
+        category,
+        logger,
+        relPath ? `${relPath}.${prop}` : `${prop}`,
+      );
+    }
+  }
+};
 
 /**
  * @param {string} filename
  */
-function testRealValues(filename) {
+const testRealValues = filename => {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -100,28 +127,7 @@ function testRealValues(filename) {
     },
   };
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0)
-          checkRealValues(
-            data[prop].support,
-            blockList[category],
-            relPath,
-            logger,
-          );
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, category, logger);
 
   if (errors.length) {
     console.error(
@@ -135,6 +141,6 @@ function testRealValues(filename) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = testRealValues;
