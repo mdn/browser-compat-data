@@ -3,6 +3,18 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ *
+ * @typedef {object} VersionStats
+ * @property {number} all The total number of occurrences for the browser.
+ * @property {number} true The total number of `true` values for the browser.
+ * @property {number} null The total number of `null` values for the browser.
+ * @property {number} range The total number of range values for the browser.
+ * @property {number} real The total number of real values for the browser.
+ */
+
 const chalk = require('chalk');
 
 const bcd = require('..');
@@ -24,17 +36,6 @@ const { argv } = require('yargs').command(
       });
   },
 );
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {object} VersionStats
- * @property {number} all The total number of occurrences for the browser.
- * @property {number} true The total number of `true` values for the browser.
- * @property {number} null The total number of `null` values for the browser.
- * @property {number} range The total number of range values for the browser.
- * @property {number} real The total number of real values for the browser.
- */
 
 /**
  * @constant {string[]}

@@ -1,19 +1,22 @@
 'use strict';
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
+ * @typedef {import('../../types').Logger} Logger
  */
+
+const compareVersions = require('compare-versions');
+const chalk = require('chalk');
+
 const browsers = require('../..').browsers;
 
-/** @type {Object<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const validBrowserVersions = {};
 
-/** @type {Object<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
   opera: ['≤12.1', '≤15'],
@@ -32,8 +35,11 @@ for (const browser of Object.keys(browsers)) {
 }
 
 /**
- * @param {string} browserIdentifier
- * @param {VersionValue} version
+ * Test to see if the browser allows for the specified version
+ *
+ * @param {string} browser The browser to check
+ * @param {VersionValue} version The version to test
+ * @returns {boolean} Whether the browser allows that version
  */
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === 'string') {
@@ -44,9 +50,12 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 /**
- * @param {SupportBlock} supportData
- * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * Check the data for any errors in provided versions
+ *
+ * @param {SupportBlock} supportData The data to test
+ * @param {string} relPath The path to the data
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function checkVersions(supportData, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
@@ -125,7 +134,10 @@ function checkVersions(supportData, relPath, logger) {
 }
 
 /**
- * @param {string} filename
+ * Test for version errors
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testVersions(filename) {
   /** @type {Identifier} */
@@ -134,15 +146,23 @@ function testVersions(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
   };
 
   /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
+   * Process the data for version errors
+   *
+   * @param {Identifier} data The data to test
+   * @param {Logger} logger The logger to ouptut errors to
+   * @param {string} [relPath] The path of the data
+   * @returns {void}
    */
   function findSupport(data, relPath) {
     for (const prop in data) {

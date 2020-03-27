@@ -1,11 +1,12 @@
 'use strict';
-const { platform } = require('os');
-const chalk = require('chalk');
 
 /**
  * @typedef {object} Logger
  * @property {(...message: unknown[]) => void} error
  */
+
+const { platform } = require('os');
+const chalk = require('chalk');
 
 /** @type {{readonly [char: string]: string}} */
 const INVISIBLES_MAP = Object.freeze(

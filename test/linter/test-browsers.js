@@ -7,7 +7,7 @@ const chalk = require('chalk');
  * @typedef {import('../utils').Logger} Logger
  */
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const browsers = {
   desktop: ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari'],
   mobile: [
@@ -27,13 +27,15 @@ const browsers = {
 };
 
 /**
- * @param {Identifier} data
- * @param {string[]} displayBrowsers
- * @param {string[]} requiredBrowsers
- * @param {string} category
- * @param {Logger} logger
- * @param {string} [path]
- * @returns {boolean}
+ * Check the data for any disallowed browsers or if it's missing required browsers
+ *
+ * @param {Identifier} data The data to test
+ * @param {string[]} displayBrowsers All of the allowed browsers for this data
+ * @param {string[]} requiredBrowsers All of the required browsers for this data
+ * @param {string} category The category the data belongs to
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} [path] The path of the data
+ * @returns {void}
  */
 function processData(
   data,
@@ -72,6 +74,12 @@ function processData(
       const statementList = Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement];
+      /**
+       * Checks a support statement and identifies whether it only has 'version_added'
+       *
+       * @param {Identifier} statement The support statement to check
+       * @returns {boolean} If the statement only has 'version_added'
+       */
       function hasVersionAddedOnly(statement) {
         const keys = Object.keys(statement);
         return keys.length === 1 && keys[0] === 'version_added';
@@ -107,6 +115,9 @@ function processData(
 
 /**
  * @param {string} filename
+ * Test for issues within the browsers in the data within the specified file
+ *
+ * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
 function testBrowsers(filename) {
@@ -146,6 +157,11 @@ function testBrowsers(filename) {
   const errors = [];
   const logger = {
     /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },

@@ -1,4 +1,9 @@
 'use strict';
+
+/**
+ * @typedef {import('../utils').Logger} Logger
+ */
+
 const fs = require('fs');
 const url = require('url');
 const chalk = require('chalk');
@@ -54,8 +59,10 @@ function orderFeatures(key, value) {
 }
 
 /**
- * @param {string} filename
- * @param {import('../utils').Logger} logger
+ * Process the data for any styling errors that cannot be caught by Prettier or the schema
+ *
+ * @param {string} filename The file to test
+ * @param {Logger} logger The logger to output errors to
  */
 function processData(filename, logger) {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -139,11 +146,21 @@ function processData(filename, logger) {
   }
 }
 
+/**
+ * Test the data for any styling errors that cannot be caught by Prettier or the schema
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
+ */
 function testStyle(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },

@@ -15,15 +15,15 @@ const chalk = require('chalk');
  * @typedef {'unsupported' | 'support_unknown' | 'subfeature_earlier_implementation'} ErrorType
  *
  * @typedef {object} ConsistencyError
- * @property {string} feature
- * @property {string[]} path
- * @property {FeatureError[]} errors
+ * @property {string} feature The identifier of the feature
+ * @property {string[]} path The path of the feature
+ * @property {FeatureError[]} errors Any errors found
  *
  * @typedef {object} FeatureError
- * @property {ErrorType} errortype
- * @property {string} browser
- * @property {VersionValue} parent_value
- * @property {[string, VersionValue][]} subfeatures
+ * @property {ErrorType} errortype The type of the error
+ * @property {string} browser The browser the error was found
+ * @property {VersionValue} parent_value The value of the parent feature
+ * @property {[string, VersionValue][]} subfeatures The versions of the subfeatures
  */
 
 /**
@@ -34,17 +34,21 @@ const chalk = require('chalk');
  */
 class ConsistencyChecker {
   /**
-   * @param {Identifier} data
-   * @return {ConsistencyError[]}
+   * Checks the data for any errors
+   *
+   * @param {Identifier} data The data to test
+   * @returns {ConsistencyError[]} Any errors found within the data
    */
   check(data) {
     return this.checkSubfeatures(data);
   }
 
   /**
-   * @param {Identifier} data
-   * @param {string[]} [path]
-   * @return {ConsistencyError[]}
+   * Recursively checks the data for any errors
+   *
+   * @param {Identifier} data The data to test
+   * @param {string[]} [path] The path of the data
+   * @returns {ConsistencyError[]} Any errors found within the data
    */
   checkSubfeatures(data, path = []) {
     /** @type {ConsistencyError[]} */
@@ -78,8 +82,10 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {PrimaryIdentifier & Required<IdentifierMeta>} data
-   * @return {FeatureError[]}
+   * Checks a specific feature for errors
+   *
+   * @param {Identifier} data The data to test
+   * @returns {FeatureError[]} Any errors found within the data
    */
   checkFeature(data) {
     /** @type {FeatureError[]} */
@@ -217,16 +223,20 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {Identifier} data
-   * @return {data is Required<IdentifierMeta>}
+   * Checks if the data is a feature
+   *
+   * @param {Identifier} data The data to test
+   * @returns {boolean} If the data is a feature statement
    */
   isFeature(data) {
     return '__compat' in data;
   }
 
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * Get all of the unsupported browsers in a feature
+   *
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers marked as unsupported
    */
   extractUnsupportedBrowsers(compatData) {
     return this.extractBrowsers(
@@ -239,8 +249,10 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * Get all of the browsers with unknown support in a feature
+   *
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers with unknown support
    */
   extractSupportUnknownBrowsers(compatData) {
     return this.extractBrowsers(
@@ -250,8 +262,10 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * Get all of the browsers with either unknown or no support in a feature
+   *
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers with non-truthy (false or null) support
    */
   extractSupportNotTrueBrowsers(compatData) {
     return this.extractBrowsers(
@@ -264,8 +278,10 @@ class ConsistencyChecker {
     );
   }
   /**
-   * @param {CompatStatement} compatData
-   * @return {string[]}
+   * Get all of the browsers with a version number in a feature
+   *
+   * @param {CompatStatement} compatData The compat data to process
+   * @returns {string[]} The list of browsers with an exact version number
    */
   extractSupportedBrowsersWithVersion(compatData) {
     return this.extractBrowsers(
@@ -275,11 +291,13 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {SupportStatement} compatData
-   * @return {string | null}
+   * Get the version added for a feature or recursively search the array for the earliest version
+   *
+   * @param {SupportStatement} compatData The compat data to process
+   * @returns {?string} The earliest version added in the data
    */
   getVersionAdded(compatData) {
-    /** @type {string | null} */
+    /** @type {?string} */
     var version_added = null;
 
     if (typeof compatData.version_added === 'string')
@@ -307,9 +325,11 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {SupportStatement} a
-   * @param {SupportStatement} b
-   * @return {boolean}
+   * Compare two versions and determine if a's version is greater (later) than b's version
+   *
+   * @param {SupportStatement} a The first support statement to compare
+   * @param {SupportStatement} b The second support statement to compare
+   * @returns {boolean} If a's version is greater (later) than b's version
    */
   isVersionAddedGreater(a, b) {
     var a_version_added = this.getVersionAdded(a);
@@ -329,10 +349,11 @@ class ConsistencyChecker {
   }
 
   /**
+   * Get all of the browsers within the data and send the data to the callback
    *
-   * @param {CompatStatement} compatData
-   * @param {(browserData: SimpleSupportStatement) => boolean} callback
-   * @return {string[]}
+   * @param {CompatStatement} compatData The compat data to process
+   * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to send the data to
+   * @returns {boolean} The response of the callback, or "false"
    */
   extractBrowsers(compatData, callback) {
     return Object.keys(compatData.support).filter(browser => {
@@ -350,7 +371,10 @@ class ConsistencyChecker {
 }
 
 /**
- * @param {string} filename
+ * Test the version consistency within the file
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testConsistency(filename) {
   /** @type {Identifier} */

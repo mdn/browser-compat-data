@@ -26,7 +26,7 @@ const blockMany = [
   'webview_android',
 ];
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const blockList = {
   api: [],
   css: blockMany,
@@ -42,10 +42,13 @@ const blockList = {
 };
 
 /**
- * @param {SupportBlock} supportData
- * @param {string[]} blockList
- * @param {string} relPath
- * @param {Logger} logger
+ * Check if the feature has any browsers with nonreal data
+ *
+ * @param {SupportBlock} supportData The data to test
+ * @param {string[]} blockList The list of browsers required to have real values
+ * @param {string} relPath The path of the data
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function checkRealValues(supportData, blockList, relPath, logger) {
   for (const browser of blockList) {
@@ -79,7 +82,10 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 }
 
 /**
- * @param {string} filename
+ * Test for real values within the data
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testRealValues(filename) {
   const relativePath = path.relative(
@@ -94,15 +100,24 @@ function testRealValues(filename) {
   /** @type {string[]} */
   const errors = [];
   const logger = {
-    /** @param {...unknown} message */
+    /**
+     * logger.error
+     *
+     * @param {...*} message Messages to add to errors
+     */
     error: (...message) => {
       errors.push(message.join(' '));
     },
   };
 
   /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
+   * Process the data for nonreal values
+   *
+   * @param {Identifier} data The data to test
+   * @param {string} category The category the data belongs to
+   * @param {Logger} logger The logger to output errors to
+   * @param {string} [relPath] The path to the data
+   * @returns {void}
    */
   function findSupport(data, relPath) {
     for (const prop in data) {

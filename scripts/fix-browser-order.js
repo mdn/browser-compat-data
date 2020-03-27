@@ -2,20 +2,12 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
+'use strict';
+
 /**
- * Return a new "support_block" object whose first-level properties
- * (browser names) have been ordered according to Array.prototype.sort,
- * and so will be stringified in that order as well. This relies on
- * guaranteed "own" property ordering, which is insertion order for
- * non-integer keys (which is our case).
- *
- * @param {string} key The key in the object
- * @param {*} value The value of the key
- *
- * @returns {*} The new value
+ * @typedef {import('../../types').Identifier} Identifier
  */
 
-'use strict';
 const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
@@ -23,6 +15,17 @@ const { platform } = require('os');
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
+/**
+ * Return a new "support_block" object whose first-level properties
+ * (browser names) have been ordered according to Array.prototype.sort,
+ * and so will be stringified in that order as well. This relies on
+ * guaranteed "own" property ordering, which is insertion order for
+ * non-integer keys (which is our case).
+ *
+ * @param {string} key The key of the object
+ * @param {Identifier} value The value of the key
+ * @returns {Identifier} Value with sorting applied
+ */
 const orderSupportBlock = (key, value) => {
   if (key === '__compat') {
     value.support = Object.keys(value.support)
@@ -36,7 +39,10 @@ const orderSupportBlock = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * Perform a fix of the browser order of a __compat.support block within all the data in a specified file.  The function will then automatically write any needed changes back into the file.
+ *
+ * @param {string} filename The filename to perform fix upon
+ * @returns {void}
  */
 const fixBrowserOrder = filename => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
