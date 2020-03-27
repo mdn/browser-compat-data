@@ -62,6 +62,7 @@ const load = (...files) => {
     }
 
     if (!fs.existsSync(file)) {
+      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       return prevHasErrors; // Ignore non-existent files
     }
 
