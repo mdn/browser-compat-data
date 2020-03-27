@@ -202,7 +202,7 @@ const main = files => {
 
   if (files) {
     if (files != 'globals') {
-      hasErrors = load.apply(undefined, files);
+      hasErrors = load(...files);
     }
   } else {
     hasErrors = load(
