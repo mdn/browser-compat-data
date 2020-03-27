@@ -189,3 +189,5 @@ const printStats = folder => {
 if (require.main === module) {
   printStats(argv.folder);
 }
+
+module.exports = printStats;

@@ -178,4 +178,8 @@ const main = async () => {
   console.log(makeURL(version, body));
 };
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = main;

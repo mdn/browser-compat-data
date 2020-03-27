@@ -144,54 +144,64 @@ function load(...files) {
   }, false);
 }
 
-/** @type {boolean} */
-var hasErrors = argv.files
-  ? load.apply(undefined, argv.files)
-  : load(
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-      'xpath',
-      'xslt',
-    );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
-hasErrors = testFormat() || hasErrors;
+const main = files => {
+  /** @type {boolean} */
+  var hasErrors = argv.files
+    ? load.apply(undefined, argv.files)
+    : load(
+        'api',
+        'browsers',
+        'css',
+        'html',
+        'http',
+        'svg',
+        'javascript',
+        'mathml',
+        'webdriver',
+        'webextensions',
+        'xpath',
+        'xslt',
+      );
+  hasErrors = testCompareFeatures() || hasErrors;
+  hasErrors = testMigrations() || hasErrors;
+  hasErrors = testFormat() || hasErrors;
 
-if (hasErrors) {
-  console.warn('');
-  console.warn(
-    chalk`{red Problems in {bold ${filesWithErrors.size}} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:}`,
-  );
-  for (const [fileName, file] of filesWithErrors) {
-    console.warn(chalk`{red.bold ✖ ${fileName}}`);
-    try {
-      if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../../schemas/browsers.schema.json');
-        testLinks(file);
-      } else {
-        testSchema(file);
-        testStyle(file);
-        testLinks(file);
-        testVersions(file);
-        testRealValues(file);
-        testBrowsers(file);
-        testConsistency(file);
-        testPrefix(file);
-        testDescriptions(file);
+  if (hasErrors) {
+    console.warn('');
+    console.warn(
+      chalk`{red Problems in {bold ${filesWithErrors.size}} ${
+        filesWithErrors.size === 1 ? 'file' : 'files'
+      }:}`,
+    );
+    for (const [fileName, file] of filesWithErrors) {
+      console.warn(chalk`{red.bold ✖ ${fileName}}`);
+      try {
+        if (file.indexOf('browsers' + path.sep) !== -1) {
+          testSchema(file, './../../schemas/browsers.schema.json');
+          testLinks(file);
+        } else {
+          testSchema(file);
+          testStyle(file);
+          testLinks(file);
+          testVersions(file);
+          testRealValues(file);
+          testBrowsers(file);
+          testConsistency(file);
+          testPrefix(file);
+          testDescriptions(file);
+        }
+      } catch (e) {
+        console.error(e);
       }
-    } catch (e) {
-      console.error(e);
     }
+    return true;
   }
-  process.exit(1);
+
+  return false;
+};
+
+if (require.main === module) {
+  process.exit(main(argv.files) ? 1 : 0);
 }
+
+module.exports = main;

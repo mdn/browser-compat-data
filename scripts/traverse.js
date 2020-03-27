@@ -59,28 +59,34 @@ function traverseFeatures(obj, depth, identifier) {
   }
 }
 
-let features = [];
-const folders =
-  argv.folder == 'all'
-    ? [
-        'api',
-        'css',
-        'html',
-        'http',
-        'svg',
-        'javascript',
-        'mathml',
-        'webdriver',
-        'xpath',
-        'xslt',
-      ]
-    : argv.folder.split(',');
-const values = Array.isArray(argv.value)
-  ? argv.value
-  : argv.value.toString().split(',');
+const main = (folder = 'all', value = ['null', 'true']) => {
+  let features = [];
+  const folders =
+    folder == 'all'
+      ? [
+          'api',
+          'css',
+          'html',
+          'http',
+          'svg',
+          'javascript',
+          'mathml',
+          'webdriver',
+          'xpath',
+          'xslt',
+        ]
+      : folder.split(',');
+  const values = Array.isArray(value) ? value : value.toString().split(',');
 
-for (const folder in folders)
-  traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
+  for (const folder in folders)
+    traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
 
-console.log(features.join('\n'));
-console.log(features.length);
+  console.log(features.join('\n'));
+  console.log(features.length);
+};
+
+if (require.main === module) {
+  main(argv.folder, argv.value);
+}
+
+module.exports = main;
