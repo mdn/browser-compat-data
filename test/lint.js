@@ -242,3 +242,5 @@ const main = files => {
 if (require.main === module) {
   process.exit(main(argv.files) ? 1 : 0);
 }
+
+module.exports = main;
