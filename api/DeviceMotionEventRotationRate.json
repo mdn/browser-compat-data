@@ -1,17 +1,25 @@
 {
   "api": {
-    "DeviceAcceleration": {
+    "DeviceMotionEventRotationRate": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceAcceleration",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceMotionEventRotationRate",
         "support": {
           "chrome": {
-            "version_added": null
+            "version_added": false
           },
-          "chrome_android": {
-            "version_added": null
-          },
+          "chrome_android": [
+            {
+              "version_added": "74"
+            },
+            {
+              "alternative_name": "DeviceRotation",
+              "version_added": "28",
+              "version_removed": "73"
+            }
+          ],
           "edge": {
-            "version_added": true
+            "version_added": "≤18",
+            "version_removed": "79"
           },
           "firefox": {
             "version_added": null
@@ -34,12 +42,26 @@
           "safari_ios": {
             "version_added": null
           },
-          "samsunginternet_android": {
-            "version_added": null
-          },
-          "webview_android": {
-            "version_added": null
-          }
+          "samsunginternet_android": [
+            {
+              "version_added": "11.0"
+            },
+            {
+              "alternative_name": "DeviceRotation",
+              "version_added": "1.5",
+              "version_removed": "11.0"
+            }
+          ],
+          "webview_android": [
+            {
+              "version_added": "74"
+            },
+            {
+              "alternative_name": "DeviceAcceleration",
+              "version_added": "≤37",
+              "version_removed": "73"
+            }
+          ]
         },
         "status": {
           "experimental": true,
@@ -47,18 +69,19 @@
           "deprecated": false
         }
       },
-      "x": {
+      "alpha": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceAcceleration/x",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceMotionEventRotationRate/alpha",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "28"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": null
@@ -82,10 +105,10 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -95,18 +118,19 @@
           }
         }
       },
-      "y": {
+      "beta": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceAcceleration/y",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceMotionEventRotationRate/beta",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "28"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": null
@@ -130,10 +154,10 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -143,18 +167,19 @@
           }
         }
       },
-      "z": {
+      "gamma": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceAcceleration/z",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeviceMotionEventRotationRate/gamma",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "28"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": null
@@ -178,10 +203,58 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "1.5"
             },
             "webview_android": {
+              "version_added": "≤37"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "28"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
               "version_added": null
+            },
+            "firefox_android": {
+              "version_added": null
+            },
+            "ie": {
+              "version_added": null
+            },
+            "opera": {
+              "version_added": null
+            },
+            "opera_android": {
+              "version_added": null
+            },
+            "safari": {
+              "version_added": null
+            },
+            "safari_ios": {
+              "version_added": null
+            },
+            "samsunginternet_android": {
+              "version_added": "1.5"
+            },
+            "webview_android": {
+              "version_added": "≤37"
             }
           },
           "status": {

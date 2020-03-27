@@ -109,7 +109,7 @@
               "version_added": "6.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "55"
             }
           },
           "status": {
@@ -146,16 +146,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -198,16 +198,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -255,7 +255,8 @@
               "version_added": "36"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "36",
+              "notes": "From Opera 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
             },
             "safari": {
               "version_added": "10.1"
@@ -314,22 +315,22 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "5.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -366,16 +367,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -418,16 +419,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "10"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -448,10 +449,7 @@
           "__compat": {
             "description": "<code>default</code> keyword in <code>switch</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/default",
-            "spec_url": [
-              "https://tc39.es/ecma262/#sec-switch-statement",
-              "https://tc39.es/ecma262/#sec-exports"
-            ],
+            "spec_url": "https://tc39.es/ecma262/#sec-switch-statement",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -475,16 +473,16 @@
                 "version_added": true
               },
               "opera": {
-                "version_added": true
+                "version_added": "4"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "10.1"
               },
               "safari": {
-                "version_added": true
+                "version_added": "1"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "1"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -504,10 +502,7 @@
           "__compat": {
             "description": "<code>default</code> keyword with <code>export</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/default",
-            "spec_url": [
-              "https://tc39.es/ecma262/#sec-switch-statement",
-              "https://tc39.es/ecma262/#sec-exports"
-            ],
+            "spec_url": "https://tc39.es/ecma262/#sec-exports",
             "support": {
               "chrome": {
                 "version_added": "61"
@@ -562,16 +557,32 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "8.5.0",
-                "flags": [
-                  {
-                    "name": "--experimental-modules",
-                    "type": "runtime_flag"
-                  }
-                ],
-                "notes": "Module file names must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
-              },
+              "nodejs": [
+                {
+                  "version_added": "13.2.0",
+                  "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                },
+                {
+                  "version_added": "12.0.0",
+                  "flags": [
+                    {
+                      "name": "--experimental-modules",
+                      "type": "runtime_flag"
+                    }
+                  ],
+                  "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/docs/latest-v12.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                },
+                {
+                  "version_added": "8.5.0",
+                  "flags": [
+                    {
+                      "name": "--experimental-modules",
+                      "type": "runtime_flag"
+                    }
+                  ],
+                  "notes": "Module filenames must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                }
+              ],
               "opera": {
                 "version_added": "47"
               },
@@ -627,16 +638,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -680,16 +691,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -763,16 +774,32 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "8.5.0",
-              "flags": [
-                {
-                  "name": "--experimental-modules",
-                  "type": "runtime_flag"
-                }
-              ],
-              "notes": "Module file names must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
-            },
+            "nodejs": [
+              {
+                "version_added": "13.2.0",
+                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              },
+              {
+                "version_added": "12.0.0",
+                "flags": [
+                  {
+                    "name": "--experimental-modules",
+                    "type": "runtime_flag"
+                  }
+                ],
+                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/docs/latest-v12.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              },
+              {
+                "version_added": "8.5.0",
+                "flags": [
+                  {
+                    "name": "--experimental-modules",
+                    "type": "runtime_flag"
+                  }
+                ],
+                "notes": "Module filenames must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              }
+            ],
             "opera": {
               "version_added": "47"
             },
@@ -826,16 +853,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -864,7 +891,7 @@
               "version_added": "63"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "57"
@@ -900,7 +927,7 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -910,7 +937,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1004,10 +1031,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -1059,13 +1086,13 @@
               "version_added": "25"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "3.0"
             },
             "webview_android": {
               "version_added": "38"
@@ -1109,10 +1136,10 @@
                 "version_added": "46"
               },
               "safari": {
-                "version_added": null
+                "version_added": "7"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": "8.0"
@@ -1154,22 +1181,22 @@
                 "version_added": true
               },
               "opera": {
-                "version_added": true
+                "version_added": "38"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "41"
               },
               "safari": {
-                "version_added": true
+                "version_added": "7"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "7"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "51"
               }
             },
             "status": {
@@ -1207,16 +1234,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -1263,10 +1290,10 @@
                 "version_added": "43"
               },
               "safari": {
-                "version_added": null
+                "version_added": "10"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "10"
               },
               "samsunginternet_android": {
                 "version_added": "7.0"
@@ -1325,7 +1352,7 @@
               "version_added": "26"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "26"
             },
             "safari": {
               "version_added": "10"
@@ -1337,7 +1364,7 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "39"
             }
           },
           "status": {
@@ -1372,22 +1399,22 @@
                 "version_added": true
               },
               "opera": {
-                "version_added": true
+                "version_added": "36"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "36"
               },
               "safari": {
-                "version_added": true
+                "version_added": "10"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "10"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "49"
               }
             },
             "status": {
@@ -1480,10 +1507,10 @@
                 "version_added": "43"
               },
               "safari": {
-                "version_added": null
+                "version_added": "10"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "10"
               },
               "samsunginternet_android": {
                 "version_added": "7.0"
@@ -1528,16 +1555,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -1557,7 +1584,7 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import",
           "spec_url": [
-            "https://github.com/tc39/proposal-dynamic-import/#import",
+            "https://tc39.es/proposal-dynamic-import/#sec-import-calls",
             "https://tc39.es/ecma262/#sec-imports"
           ],
           "support": {
@@ -1614,16 +1641,32 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "8.5.0",
-              "flags": [
-                {
-                  "name": "--experimental-modules",
-                  "type": "runtime_flag"
-                }
-              ],
-              "notes": "Module file names must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
-            },
+            "nodejs": [
+              {
+                "version_added": "13.2.0",
+                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              },
+              {
+                "version_added": "12.0.0",
+                "flags": [
+                  {
+                    "name": "--experimental-modules",
+                    "type": "runtime_flag"
+                  }
+                ],
+                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/docs/latest-v12.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              },
+              {
+                "version_added": "8.5.0",
+                "flags": [
+                  {
+                    "name": "--experimental-modules",
+                    "type": "runtime_flag"
+                  }
+                ],
+                "notes": "Module filenames must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              }
+            ],
             "opera": {
               "version_added": "47"
             },
@@ -1660,8 +1703,7 @@
                 "version_added": "63"
               },
               "edge": {
-                "version_added": false,
-                "notes": "See <a href='https://developer.microsoft.com/microsoft-edge/platform/status/javascriptmoduleimport/'>development status</a>."
+                "version_added": "79"
               },
               "firefox": [
                 {
@@ -1698,16 +1740,22 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "12.0.0",
-                "flags": [
-                  {
-                    "name": "--experimental-modules",
-                    "type": "runtime_flag"
-                  }
-                ],
-                "notes": "Module file names must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
-              },
+              "nodejs": [
+                {
+                  "version_added": "13.2.0",
+                  "notes": "Dynamic <code>import</code> can be used in either CommonJS or ES module files, to import either CommonJS or ES module files. See Node's <a href='https://nodejs.org/api/esm.html#esm_import_expressions'>ECMAScript Modules documentation</a> for more details."
+                },
+                {
+                  "version_added": "12.0.0",
+                  "flags": [
+                    {
+                      "name": "--experimental-modules",
+                      "type": "runtime_flag"
+                    }
+                  ],
+                  "notes": "Dynamic <code>import</code> can be used in either CommonJS or ES module files, to import either CommonJS or ES module files. See Node's <a href='https://nodejs.org/api/esm.html#esm_import_expressions'>ECMAScript Modules documentation</a> for more details."
+                }
+              ],
               "opera": {
                 "version_added": "50"
               },
@@ -1766,9 +1814,20 @@
                   ]
                 }
               ],
-              "edge": {
-                "version_added": false
-              },
+              "edge": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "79",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Experimental Web Platform Features"
+                    }
+                  ]
+                }
+              ],
               "firefox": {
                 "version_added": false
               },
@@ -1824,7 +1883,7 @@
           "description": "<code>import.meta</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import.meta",
           "spec_url": [
-            "https://github.com/tc39/proposal-import-meta/#importmeta",
+            "https://tc39.es/proposal-import-meta/#prod-ImportMeta",
             "https://html.spec.whatwg.org/multipage/webappapis.html#hostgetimportmetaproperties"
           ],
           "support": {
@@ -1835,7 +1894,7 @@
               "version_added": "64"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "62"
@@ -1899,16 +1958,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2077,16 +2136,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2129,16 +2188,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2181,16 +2240,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2234,16 +2293,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2322,7 +2381,7 @@
                 "version_added": "66"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "58"
@@ -2390,16 +2449,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2442,16 +2501,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "3"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2494,16 +2553,16 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"

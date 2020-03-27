@@ -11,20 +11,9 @@ const { argv } = require('yargs').command(
         type: 'string',
       })
       .positional('folder', {
-        describe: 'The folder(s) to test',
+        describe: 'The folder(s) to test (set to "all" for all folders)',
         type: 'array',
-        default: [
-          'api',
-          'css',
-          'html',
-          'http',
-          'svg',
-          'javascript',
-          'mathml',
-          'webdriver',
-          'xpath',
-          'xslt',
-        ],
+        default: 'all',
       })
       .positional('value', {
         describe: 'The value(s) to test against',
@@ -68,9 +57,21 @@ function traverseFeatures(obj, depth, identifier) {
 }
 
 let features = [];
-const folders = Array.isArray(argv.folder)
-  ? argv.folder
-  : argv.folder.split(',');
+const folders =
+  argv.folder == 'all'
+    ? [
+        'api',
+        'css',
+        'html',
+        'http',
+        'svg',
+        'javascript',
+        'mathml',
+        'webdriver',
+        'xpath',
+        'xslt',
+      ]
+    : argv.folder.split(',');
 const values = Array.isArray(argv.value)
   ? argv.value
   : argv.value.toString().split(',');
