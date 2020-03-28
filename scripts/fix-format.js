@@ -6,8 +6,14 @@
 
 const { exec } = require('child_process');
 
+/**
+ * Perform fix of styling and code formatting with ESLint and Prettier on all JavaScript, TypeScript, and Markdown files in this repository.
+ *
+ * @returns {void}
+ */
 const format = () => {
-  exec('npx prettier --write "**/*.js" "**/*.ts" "**/*.md"');
+  exec('npx eslint --fix "**/*.js"');
+  exec('npx prettier --write "**/*.ts" "**/*.md"');
 };
 
 module.exports = format;
