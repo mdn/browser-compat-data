@@ -21,7 +21,9 @@ const processFilename = fn => {
   } else if (path.extname(fp) === '.json') {
     try {
       extra = require(fp);
-    } catch (e) {}
+    } catch (e) {
+      console.error(`Error loading ${fp}: ${e}`);
+    }
   }
 
   // The JSON data is independent of the actual file
