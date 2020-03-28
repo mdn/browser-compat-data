@@ -7,6 +7,29 @@ const path = require('path');
 const extend = require('extend');
 
 /**
+ * Process data from a file based upon the filename. If the given filename is a directory, recursively load it.
+ *
+ * @param {string} fn Filename to process
+ * @returns {void}
+ */
+const processFilename = fn => {
+  const fp = path.join(dir, fn);
+  let extra;
+
+  if (fs.statSync(fp).isDirectory()) {
+    extra = load(fp);
+  } else if (path.extname(fp) === '.json') {
+    try {
+      extra = require(fp);
+    } catch (e) {}
+  }
+
+  // The JSON data is independent of the actual file
+  // hierarchy, so it is essential to extend "deeply".
+  result = extend(true, result, extra);
+};
+
+/**
  * Recursively load one or more files and/or directories passed as arguments.
  *
  * @param {string[]} files The files to test
@@ -15,29 +38,6 @@ const extend = require('extend');
 const load = (...files) => {
   let dir,
     result = {};
-
-  /**
-   * Process data from a file based upon the filename. If the given filename is a directory, recursively load it.
-   *
-   * @param {string} fn Filename to process
-   * @returns {void}
-   */
-  const processFilename = fn => {
-    const fp = path.join(dir, fn);
-    let extra;
-
-    if (fs.statSync(fp).isDirectory()) {
-      extra = load(fp);
-    } else if (path.extname(fp) === '.json') {
-      try {
-        extra = require(fp);
-      } catch (e) {}
-    }
-
-    // The JSON data is independent of the actual file
-    // hierarchy, so it is essential to extend "deeply".
-    result = extend(true, result, extra);
-  };
 
   for (dir of files) {
     dir = path.resolve(__dirname, dir);
