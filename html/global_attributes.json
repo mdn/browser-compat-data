@@ -1016,21 +1016,22 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": { 
-              [
-                {"version_added": "17",
-                 "notes": "Prior to 75, Firefox used values from an earlier spec version; in 75, it was updated to match the WHATWG Living Standard as of that time. However, Firefox does not support inputmode when contenteditable is true (see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1424284'>bug 1424284</a>)."
-                },
-                {"version_added": "23",
-                 "flags": [
-                   {"type": "preference",
+            "firefox": [
+              {
+                "version_added": "17",
+                "notes": "Prior to 75, Firefox used values from an earlier spec version; in 75, it was updated to match the WHATWG Living Standard as of that time. However, Firefox does not support inputmode when contenteditable is true (see https://bugzil.la/1424284)."
+              },
+              {
+                "version_added": "23",
+                "flags": [
+                  {
+                    "type": "preference",
                     "name": "dom.forms.inputmode",
                     "value_to_set": "true"
-                   }
-                 ]
-                },
-              ]
-            },
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
