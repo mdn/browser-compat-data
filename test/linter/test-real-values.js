@@ -79,33 +79,6 @@ const checkRealValues = (supportData, blockList, relPath, logger) => {
 };
 
 /**
- * @param {Identifier} data
- * @param {string} [relPath]
- */
-const findSupport = (data, category, logger, relPath) => {
-  for (const prop in data) {
-    if (prop === '__compat' && data[prop].support) {
-      if (blockList[category] && blockList[category].length > 0)
-        checkRealValues(
-          data[prop].support,
-          blockList[category],
-          relPath,
-          logger,
-        );
-    }
-    const sub = data[prop];
-    if (typeof sub === 'object') {
-      findSupport(
-        sub,
-        category,
-        logger,
-        relPath ? `${relPath}.${prop}` : `${prop}`,
-      );
-    }
-  }
-};
-
-/**
  * @param {string} filename
  */
 const testRealValues = filename => {
@@ -125,6 +98,33 @@ const testRealValues = filename => {
     error: (...message) => {
       errors.push(message.join(' '));
     },
+  };
+
+  /**
+   * @param {Identifier} data
+   * @param {string} [relPath]
+   */
+  const findSupport = (data, category, logger, relPath) => {
+    for (const prop in data) {
+      if (prop === '__compat' && data[prop].support) {
+        if (blockList[category] && blockList[category].length > 0)
+          checkRealValues(
+            data[prop].support,
+            blockList[category],
+            relPath,
+            logger,
+          );
+      }
+      const sub = data[prop];
+      if (typeof sub === 'object') {
+        findSupport(
+          sub,
+          category,
+          logger,
+          relPath ? `${relPath}.${prop}` : `${prop}`,
+        );
+      }
+    }
   };
 
   findSupport(data, category, logger);

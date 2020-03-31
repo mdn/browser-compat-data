@@ -26,11 +26,6 @@ const browsers = {
   'webextensions-mobile': ['firefox_android'],
 };
 
-const hasVersionAddedOnly = statement => {
-  const keys = Object.keys(statement);
-  return keys.length === 1 && keys[0] === 'version_added';
-};
-
 /**
  * @param {Identifier} data
  * @param {string[]} displayBrowsers
@@ -77,6 +72,10 @@ const processData = (
       const statementList = Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement];
+      const hasVersionAddedOnly = statement => {
+        const keys = Object.keys(statement);
+        return keys.length === 1 && keys[0] === 'version_added';
+      };
       let sawVersionAddedOnly = false;
       for (const statement of statementList) {
         if (hasVersionAddedOnly(statement)) {
