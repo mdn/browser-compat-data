@@ -141,6 +141,62 @@ function load(...files) {
   }, false);
 }
 
+/**
+ * Run a specified test function and return whether the function had any errors
+ *
+ * @param {string} testName The name of the test (for output purposes)
+ * @param {Function} test The test function
+ * @returns {boolean} Whether the test has errors
+ */
+const testGlobal = (testName, test) => {
+  let globalHasErrors = false;
+
+  const console_error = console.error;
+  console.error = (...args) => {
+    if (!globalHasErrors) {
+      globalHasErrors = true;
+      spinner['stream'] = process.stderr;
+      spinner.fail(chalk.red.bold(`${testName}()`));
+    }
+    console_error(...args);
+  };
+
+  spinner.text = `${testName}()`;
+
+  if (!IS_CI) {
+    // Continuous integration environments don't allow overwriting
+    // previous lines using VT escape sequences, which is how
+    // the spinner animation is implemented.
+    spinner.start();
+  }
+
+  test();
+
+  if (globalHasErrors) {
+    filesWithErrors += 1;
+    spinner.fail();
+  } else {
+    spinner.succeed();
+  }
+
+  return globalHasErrors;
+};
+
+/**
+ * Test for errors in any non-file ("global") tests
+ *
+ * @returns {boolean} Whether any globals had errors
+ */
+const testGlobals = () => {
+  let hasErrors = false;
+
+  hasErrors = testGlobal('compare-features', testCompareFeatures) || hasErrors;
+  hasErrors = testGlobal('migrations', testMigrations) || hasErrors;
+  hasErrors = testGlobal('format', testFormat) || hasErrors;
+
+  return hasErrors;
+};
+
 /** @type {boolean} */
 var hasErrors = argv.files
   ? load.apply(undefined, argv.files)
@@ -158,9 +214,7 @@ var hasErrors = argv.files
       'xpath',
       'xslt',
     );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
-hasErrors = testFormat() || hasErrors;
+hasErrors = testGlobals() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
