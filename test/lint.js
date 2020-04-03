@@ -36,6 +36,11 @@ const argv = yargs
   .alias('help', '?')
   .parse(process.argv.slice(2));
 
+/** @type {object} */
+const spinner = ora({
+  stream: process.stdout,
+});
+
 /**
  * @param {string[]} files
  * @return {boolean}
@@ -66,10 +71,7 @@ function load(...files) {
           hasDescriptionsErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
-        const spinner = ora({
-          stream: process.stdout,
-          text: relativeFilePath,
-        });
+        spinner.text = relativeFilePath;
 
         if (!IS_CI) {
           // Continuous integration environments don't allow overwriting
