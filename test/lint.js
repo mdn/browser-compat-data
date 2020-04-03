@@ -175,7 +175,7 @@ const testGlobal = (testName, test) => {
   test();
 
   if (globalHasErrors) {
-    filesWithErrors += 1;
+    filesWithErrors.set(testName, testName);
     spinner.fail();
   } else {
     spinner.succeed();
