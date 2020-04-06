@@ -1,6 +1,5 @@
 'use strict';
 const fs = require('fs');
-const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
@@ -92,20 +91,6 @@ const processData = (filename, logger) => {
         actual,
         expectedFeatureSorting,
       )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
-    );
-  }
-
-  const constructorMatch = actual.match(
-    String.raw`"<code>([^)]*?)</code> constructor"`,
-  );
-  if (constructorMatch) {
-    logger.error(
-      chalk`{red → ${indexToPos(
-        actual,
-        constructorMatch.index,
-      )} – Use parentheses in constructor description ({yellow ${
-        constructorMatch[1]
-      }} → {green ${constructorMatch[1]}{bold ()}}).}`,
     );
   }
 
