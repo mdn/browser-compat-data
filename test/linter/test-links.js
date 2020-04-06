@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const request = require('sync-request');
+const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
@@ -174,6 +175,21 @@ function processData(filename) {
     },
   );
 
+  processLink(
+    errors,
+    actual,
+    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
+    match => {
+      if (url.parse(match[1]).hostname === null) {
+        return {
+          issue: 'Include hostname in URL',
+          actualLink: match[1],
+          expected: `https://developer.mozilla.org/${match[1]}`,
+        };
+      }
+    },
+  );
+  
   if (testDeadLinks) {
     processLink(
       errors,
