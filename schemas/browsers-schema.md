@@ -66,6 +66,10 @@ The release objects consist of the following properties:
 
 - An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
 
+- An optional `js_engine` property which is the name of the browser's JavaScript engine.
+
+- An optional `js_engine_version` property which is the version of the browser's JavaScript engine.
+
 ### Exports
 
 This structure is exported for consumers of `mdn-browser-compat-data`:
