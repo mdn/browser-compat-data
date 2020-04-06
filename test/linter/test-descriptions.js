@@ -29,14 +29,14 @@ const checkError = (error_type, name, method, expected, logger) => {
 };
 
 /**
- * Process data and check for any incorrect descriptions in said data, logging any errors
+ * Process API data and check for any incorrect descriptions in said data, logging any errors
  *
  * @param {Identifier} apiData The data to test
  * @param {string} apiName The name of the API
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-const processData = (apiData, apiName, logger) => {
+const processApiData = (apiData, apiName, logger) => {
   for (let methodName in apiData) {
     const method = apiData[methodName];
     if (methodName == apiName) {
@@ -76,6 +76,22 @@ const processData = (apiData, apiName, logger) => {
 };
 
 /**
+ * Process data and check for any incorrect descriptions in said data, logging any errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
+ */
+const processData = (data, logger) => {
+  if (data.api) {
+    for (const apiName in data.api) {
+      const apiData = data.api[apiName];
+      processApiData(apiData, apiName, logger);
+    }
+  }
+};
+
+/**
  * Test all of the descriptions through the data in a given filename.  This test only functions with files with API data; all other files are silently ignored
  *
  * @param {string} filename The file to test
@@ -98,12 +114,7 @@ const testDescriptions = filename => {
     },
   };
 
-  if (data.api) {
-    for (const apiName in data.api) {
-      const apiData = data.api[apiName];
-      processData(apiData, apiName, logger);
-    }
-  }
+  processData(data, logger);
 
   if (errors.length) {
     console.error(
