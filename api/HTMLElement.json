@@ -438,7 +438,7 @@
       },
       "blur": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/blur",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLOrForeignElement/blur",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -487,21 +487,25 @@
       "click": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/click",
+          "description": "click()",
           "support": {
             "chrome": {
               "version_added": "9",
-              "notes": "Before Chrome 19, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Chrome 19, <code>click()</code> is only defined on buttons and inputs."
             },
             "chrome_android": {
               "version_added": "18",
-              "notes": "Before Chrome 19, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Chrome 19, <code>click()</code> is only defined on buttons and inputs."
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "3",
-              "notes": "Before Firefox 5, <code>click</code> is only defined on buttons and inputs, and has no effect on text and file inputs."
+              "notes": [
+                "Before Firefox 5, <code>click()</code> is only defined on buttons and inputs, and has no effect on text and file inputs.",
+                "Starting in Firefox 75, the <code>click()</code> function works even when the element is not attached to a DOM tree."
+              ]
             },
             "firefox_android": {
               "version_added": "5"
@@ -523,11 +527,11 @@
             },
             "samsunginternet_android": {
               "version_added": "1.0",
-              "notes": "Before Samsung Internet 1.5, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Samsung Internet 1.5, <code>click()</code> is only defined on buttons and inputs."
             },
             "webview_android": {
               "version_added": "≤37",
-              "notes": "Before Android WebView 4.4, <code>click</code> is only defined on buttons and inputs."
+              "notes": "Before Android WebView 4.4, <code>click()</code> is only defined on buttons and inputs."
             }
           },
           "status": {
@@ -640,7 +644,7 @@
       },
       "dataset": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLOrForeignElement/dataset",
           "support": {
             "chrome": {
               "version_added": "8"
@@ -837,7 +841,7 @@
       },
       "focus": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/focus",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLOrForeignElement/focus",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1786,7 +1790,7 @@
       },
       "nonce": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLOrForeignElement/nonce",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -1798,7 +1802,7 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "75"
             },
             "firefox_android": {
               "version_added": false
@@ -1813,10 +1817,10 @@
               "version_added": true
             },
             "safari": {
-              "version_added": null
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -3010,7 +3014,7 @@
       },
       "style": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/style",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementCSSInlineStyle/style",
           "support": {
             "chrome": {
               "version_added": "45"
@@ -3058,7 +3062,7 @@
       },
       "tabIndex": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/tabIndex",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLOrForeignElement/tabIndex",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3197,7 +3201,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
               "version_added": "74"
@@ -3359,7 +3363,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
               "version_added": "74"
@@ -3408,7 +3412,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
               "version_added": "74"
