@@ -1,20 +1,20 @@
 {
   "api": {
-    "MediaSession": {
+    "MediaPositionState": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession",
         "support": {
           "chrome": {
-            "version_added": "73"
+            "version_added": "78"
           },
           "chrome_android": {
-            "version_added": "57"
+            "version_added": "78"
           },
           "edge": {
             "version_added": "≤79"
           },
           "firefox": {
-            "version_added": "71",
+            "version_added": "76",
             "flags": [
               {
                 "type": "preference",
@@ -54,21 +54,21 @@
           "deprecated": false
         }
       },
-      "metadata": {
+      "duration": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/metadata",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaPositionState/duration",
           "support": {
             "chrome": {
-              "version_added": "73"
+              "version_added": "78"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "78"
             },
             "edge": {
               "version_added": "≤79"
             },
             "firefox": {
-              "version_added": "71",
+              "version_added": "76",
               "flags": [
                 {
                   "type": "preference",
@@ -103,76 +103,27 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "playbackState": {
+      "playbackRate": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaPositionState/playbackRate",
           "support": {
             "chrome": {
-              "version_added": "73"
+              "version_added": "78"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "78"
             },
             "edge": {
               "version_added": "≤79"
             },
             "firefox": {
-              "version_added": "76"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "7.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "setActionHandler": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler",
-          "description": "<code>setActionHandler()</code>",
-          "support": {
-            "chrome": {
-              "version_added": "73"
-            },
-            "chrome_android": {
-              "version_added": "57"
-            },
-            "edge": {
-              "version_added": "≤79"
-            },
-            "firefox": {
-              "version_added": "71",
+              "version_added": "76",
               "flags": [
                 {
                   "type": "preference",
@@ -207,28 +158,34 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "setPositionState": {
+      "position": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState",
-          "description": "<code>setPositionState()</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaPositionState/position",
           "support": {
             "chrome": {
-              "version_added": "73"
+              "version_added": "78"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "78"
             },
             "edge": {
               "version_added": "≤79"
             },
             "firefox": {
-              "version_added": "76"
+              "version_added": "76",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.media.mediasession.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -256,7 +213,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
