@@ -142,3 +142,10 @@ This decision was made in [#3953, under the expectation that most users are like
 For Safari for iOS, use the iOS version number, not the Safari version number or WebKit version number.
 
 This versioning scheme came at [Apple's request, in #2006](https://github.com/mdn/browser-compat-data/issues/2006#issuecomment-457277312).
+
+## Removal of irrelevant data
+
+Data can be removed from BCD if it is considered irrelevant. This can happen if:
+
+- a feature isn't implemented in any browser and the specification has been abondoned.
+- a feature has been removed from all browsers and wasn't present in releases dating back 2 years.
