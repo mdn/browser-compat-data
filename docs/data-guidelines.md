@@ -10,6 +10,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
+  - [Removal of irrelevant features](#removal-of-irrelevant-features)
 
 <!-- BEGIN TEMPLATE
 
@@ -149,3 +150,5 @@ Features can be removed from BCD if it is considered irrelevant. A feature can b
 
 - a feature was never implemented in any browser and the specification has been abandoned.
 - a feature was implemented and has since been removed from all browser releases dating back 2 years.
+
+This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
