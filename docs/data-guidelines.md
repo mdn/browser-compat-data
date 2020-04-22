@@ -143,9 +143,9 @@ For Safari for iOS, use the iOS version number, not the Safari version number or
 
 This versioning scheme came at [Apple's request, in #2006](https://github.com/mdn/browser-compat-data/issues/2006#issuecomment-457277312).
 
-## Removal of irrelevant data
+## Removal of irrelevant features
 
-Data can be removed from BCD if it is considered irrelevant. This can happen if:
+Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
-- a feature isn't implemented in any browser and the specification has been abondoned.
-- a feature has been removed from all browsers and wasn't present in releases dating back 2 years.
+- a feature was never implemented in any browser and the specification has been abandoned.
+- a feature was implemented and has since been removed from all browser releases dating back 2 years.
