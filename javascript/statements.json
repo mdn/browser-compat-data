@@ -174,14 +174,48 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/class",
           "spec_url": "https://tc39.es/ecma262/#sec-class-definitions",
           "support": {
-            "chrome": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "chrome_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "13"
             },
@@ -197,27 +231,74 @@
             "nodejs": {
               "version_added": "6.0.0"
             },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36",
-              "notes": "From Opera 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
+            "opera": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
             "safari_ios": {
               "version_added": "10.3"
             },
-            "samsunginternet_android": {
-              "version_added": "4.0",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "webview_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "5.0"
+              },
+              {
+                "version_removed": "5.0",
+                "version_added": "4.0",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ]
           },
           "status": {
             "experimental": false,
