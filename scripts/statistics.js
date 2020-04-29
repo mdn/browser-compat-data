@@ -1,7 +1,33 @@
+#!/usr/bin/env node
+/* Any copyright is dedicated to the Public Domain.
+ * http://creativecommons.org/publicdomain/zero/1.0/ */
+
 'use strict';
+const chalk = require('chalk');
+
 const bcd = require('..');
 
+const { argv } = require('yargs').command(
+  '$0 [folder]',
+  'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
+  yargs => {
+    yargs
+      .positional('folder', {
+        describe: 'Limit the statistics to a specific folder',
+        type: 'string',
+        default: '',
+      })
+      .option('all', {
+        describe: 'Show statistics for all browsers within BCD',
+        type: 'flags',
+        nargs: 0,
+      });
+  },
+);
+
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ *
  * @typedef {object} VersionStats
  * @property {number} all The total number of occurrences for the browser.
  * @property {number} true The total number of `true` values for the browser.
@@ -10,22 +36,34 @@ const bcd = require('..');
  * @property {number} real The total number of real values for the browser.
  */
 
-const browsers = [
-  'chrome',
-  'chrome_android',
-  'edge',
-  'firefox',
-  'ie',
-  'safari',
-  'safari_ios',
-  'webview_android',
-];
-/** @type {{total: VersionStats; [browser: string]: VersionStats}} */
+/**
+ * @constant {string[]}
+ */
+const browsers = argv.all
+  ? Object.keys(bcd.browsers)
+  : [
+      'chrome',
+      'chrome_android',
+      'edge',
+      'firefox',
+      'ie',
+      'safari',
+      'safari_ios',
+      'webview_android',
+    ];
+/** @type {object.<string, VersionStats>} */
 let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
 browsers.forEach(browser => {
   stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
 });
 
+/**
+ * Check whether a support statement is a specified type
+ *
+ * @param {Identifier} supportData The support statement to check
+ * @param {string|boolean|null} type What type of support (true, null, ranged)
+ * @returns {boolean} If the support statement has the type
+ */
 const checkSupport = (supportData, type) => {
   if (!Array.isArray(supportData)) {
     supportData = [supportData];
@@ -44,32 +82,30 @@ const checkSupport = (supportData, type) => {
   );
 };
 
+/**
+ * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
+ *
+ * @param {Identifier} data The data to process and count stats for
+ * @returns {void}
+ */
 const processData = data => {
   if (data.support) {
-    browsers.forEach(function(browser) {
+    browsers.forEach(browser => {
       stats[browser].all++;
       stats.total.all++;
-      let real_value = true;
       if (!data.support[browser]) {
         stats[browser].null++;
         stats.total.null++;
-        real_value = false;
+      } else if (checkSupport(data.support[browser], null)) {
+        stats[browser].null++;
+        stats.total.null++;
+      } else if (checkSupport(data.support[browser], true)) {
+        stats[browser].true++;
+        stats.total.true++;
+      } else if (checkSupport(data.support[browser], '≤')) {
+        stats[browser].range++;
+        stats.total.range++;
       } else {
-        if (checkSupport(data.support[browser], null)) {
-          stats[browser].null++;
-          stats.total.null++;
-          real_value = false;
-        } else if (checkSupport(data.support[browser], true)) {
-          stats[browser].true++;
-          stats.total.true++;
-          real_value = false;
-        } else if (checkSupport(data.support[browser], '≤')) {
-          stats[browser].range++;
-          stats.total.range++;
-          real_value = false;
-        }
-      }
-      if (real_value) {
         stats[browser].real++;
         stats.total.real++;
       }
@@ -77,6 +113,12 @@ const processData = data => {
   }
 };
 
+/**
+ * Iterate through all of the data and process statistics
+ *
+ * @param {Identifier} data The compat data to iterate
+ * @returns {void}
+ */
 const iterateData = data => {
   for (const key in data) {
     if (key === '__compat') {
@@ -87,16 +129,11 @@ const iterateData = data => {
   }
 };
 
-if (process.argv[2]) {
-  iterateData(bcd[process.argv[2]]);
-} else {
-  for (const data in bcd) {
-    if (!(data === 'browsers' || data === 'webextensions')) {
-      iterateData(bcd[data]);
-    }
-  }
-}
-
+/**
+ * Print a Markdown-formatted table of the statistics
+ *
+ * @returns {void}
+ */
 const printTable = () => {
   let table = `| browser | real values | ranged values | \`true\` values | \`null\` values |
 | --- | --- | --- | --- | --- |
@@ -116,9 +153,38 @@ const printTable = () => {
   console.log(table);
 };
 
-console.log(
-  `Status as of version 0.0.xx (released on 2019-MM-DD) for ${
-    process.argv[2] ? `${process.argv[2]}/ directory` : `web platform features`
-  }: \n`,
-);
-printTable();
+/**
+ * Print statistics of BCD
+ *
+ * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @returns {boolean} False if the folder specified wasn't found
+ */
+const printStats = folder => {
+  if (folder) {
+    if (bcd[folder]) {
+      iterateData(bcd[folder]);
+    } else {
+      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      return false;
+    }
+  } else {
+    for (const data in bcd) {
+      if (!(data === 'browsers' || data === 'webextensions')) {
+        iterateData(bcd[data]);
+      }
+    }
+  }
+
+  console.log(
+    chalk`{bold Status as of version 1.0.xx (released on 2020-MM-DD) for ${
+      folder ? `${folder}/ directory` : 'web platform features'
+    }}: \n`,
+  );
+  printTable();
+
+  return true;
+};
+
+if (require.main === module) {
+  printStats(argv.folder);
+}

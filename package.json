@@ -1,6 +1,6 @@
 {
   "name": "mdn-browser-compat-data",
-  "version": "1.0.13",
+  "version": "1.0.18",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,7 +8,7 @@
     "extend": "3.0.2"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
@@ -29,19 +29,20 @@
   },
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
-    "ajv": "^6.12.0",
-    "better-ajv-errors": "^0.6.7",
-    "chalk": "^3.0.0",
-    "compare-versions": "^3.6.0",
-    "mdn-confluence": "^1.0.3",
-    "ora": "^4.0.3",
-    "prettier": "^1.19.1",
-    "yargs": "^15.1.0"
+    "ajv": "~6.12.2",
+    "better-ajv-errors": "~0.6.7",
+    "chalk": "~3.0.0",
+    "compare-versions": "~3.6.0",
+    "mdn-confluence": "~1.0.3",
+    "ora": "~4.0.3",
+    "prettier": "~1.19.1",
+    "yargs": "~15.3.1"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "lint": "node test/lint",
     "fix": "node scripts/fix",
+    "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
     "show-errors": "npm test 1> /dev/null",
