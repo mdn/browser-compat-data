@@ -1,0 +1,80 @@
+<hr/>
+
+<hr/>
+
+<h2>Description</h2>
+
+<p>The <code>LargestContentfulPaint</code> interface of the Largest Contentful Paint API provides details about the largest image or text paint before user input on a web page. The timing of this paint is a good heuristic for when the main page content is available during load.</p>
+
+<h2>Properties</h2>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.element")}}</p></strong></code>
+
+<p>The element that is the current largest contentful paint.</p>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.renderTime")}}</p></strong></code>
+
+<p>The time the element was rendered to the screen. May not be available if the element is a cross-origin image loaded without the <code>Timing-Allow-Origin</code> header.</p>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.loadTime")}}</p></strong></code>
+
+<p>The time the element was loaded.</p>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.size")}}</p></strong></code>
+
+<p>The size of the element (width * height).</p>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.id")}}</p></strong></code>
+
+<p>The id of the element.</p>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.url")}}</p></strong></code>
+
+<p>If the element is an image, the request url of the image.</p>
+
+<h2>Methods</h2>
+
+<p><strong><code>{{domxref("LargestContentfulPaint.toJSON")}}</p></strong></code>
+
+<p>Returns the above properties as JSON.</p>
+
+<h2>Examples</h2>
+
+<p>The following example shows how to create a <a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver"><code>PerformanceObserver</code></a> that listens for <code>largest-contentful-paint</code> entries and logs the LCP value to the console.</p>
+
+<p><code></code><code>js
+// Catch errors since some browsers throw when using the new </code>type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create a variable to hold the latest LCP value (since it can change).
+  let lcp;</p>
+
+<p>  // Create the PerformanceObserver instance.
+  const po = new PerformanceObserver((entryList) =&gt; {
+    const entries = entryList.getEntries();
+    const lastEntry = entries[entries.length - 1];</p>
+
+<pre><code>// Update `lcp` to the latest value, using `renderTime` if it&#39;s available,
+// otherwise using `loadTime`. (Note: `renderTime` may not be available if
+// the element is an image and it&#39;s loaded cross-origin without the
+// `Timing-Allow-Origin` header.)
+lcp = lastEntry.renderTime || lastEntry.loadTime;</code></pre>
+
+<p>  });</p>
+
+<p>  // Observe entries of type <code>largest-contentful-paint</code>, including buffered
+  // entries, i.e. entries that occurred before calling <code>observe()</code>.
+  po.observe({type: &#39;largest-contentful-paint&#39;, buffered: true});</p>
+
+<p>  // Send the latest LCP value to your analytics server once the user
+  // leaves the tab.
+  addEventListener(&#39;visibilitychange&#39;, function fn() {
+    if (lcp &amp;&amp; document.visibilityState === &#39;hidden&#39;) {
+      console.log(&#39;LCP:&#39;, lcp);
+      removeEventListener(&#39;visibilitychange&#39;, fn, true);
+    }
+  }, true);
+} catch (e) {
+  // Do nothing if the browser doesn&#39;t support this API.
+}
+<code></code>`</p>
