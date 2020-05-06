@@ -1,60 +1,6 @@
 {
   "javascript": {
     "statements": {
-      "legacy_generator_function": {
-        "__compat": {
-          "description": "Legacy generator function",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "2",
-              "version_removed": "58"
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "version_removed": "58"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "async_function": {
         "__compat": {
           "description": "<code>async function</code>",
@@ -228,14 +174,48 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/class",
           "spec_url": "https://tc39.es/ecma262/#sec-class-definitions",
           "support": {
-            "chrome": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "chrome_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "13"
             },
@@ -251,27 +231,74 @@
             "nodejs": {
               "version_added": "6.0.0"
             },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36",
-              "notes": "From Opera 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
+            "opera": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
             "safari_ios": {
               "version_added": "10.3"
             },
-            "samsunginternet_android": {
-              "version_added": "4.0",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "webview_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "5.0"
+              },
+              {
+                "version_removed": "5.0",
+                "version_added": "4.0",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -940,60 +967,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "for_each_in": {
-        "__compat": {
-          "description": "<code>for each...in</code>",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for_each...in",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "1.5",
-              "version_removed": "57"
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "version_removed": "57"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },

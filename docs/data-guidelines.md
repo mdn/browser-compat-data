@@ -10,6 +10,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
+  - [Removal of irrelevant features](#removal-of-irrelevant-features)
 
 <!-- BEGIN TEMPLATE
 
@@ -142,3 +143,12 @@ This decision was made in [#3953, under the expectation that most users are like
 For Safari for iOS, use the iOS version number, not the Safari version number or WebKit version number.
 
 This versioning scheme came at [Apple's request, in #2006](https://github.com/mdn/browser-compat-data/issues/2006#issuecomment-457277312).
+
+## Removal of irrelevant features
+
+Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
+
+- a feature was never implemented in any browser and the specification has been abandoned.
+- a feature was implemented and has since been removed from all browser releases dating back 2 years.
+
+This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
