@@ -1,7 +1,6 @@
 'use strict';
 const fs = require('fs');
 const chalk = require('chalk');
-const url = require('url');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
 
