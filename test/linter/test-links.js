@@ -189,7 +189,7 @@ function processData(filename) {
       }
     },
   );
-  
+
   if (testDeadLinks) {
     processLink(
       errors,
