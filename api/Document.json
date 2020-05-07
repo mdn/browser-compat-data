@@ -3201,7 +3201,7 @@
             "firefox": {
               "version_added": "3.5",
               "partial_implementation": true,
-              "notes": "Firefox doesn't set the mouse coordinates during the drag event.  See <a href='https://bugzil.la/505521'>bug 505521</a>."
+              "notes": "Firefox doesn't set the mouse coordinates during the drag event. See <a href='https://bugzil.la/505521'>bug 505521</a>."
             },
             "firefox_android": {
               "version_added": false
@@ -3254,7 +3254,7 @@
               "version_added": "3.5",
               "partial_implementation": true,
               "notes": [
-                "Firefox doesn't set the mouse coordinates during the drag event.  See <a href='https://bugzil.la/505521'>bug 505521</a>.",
+                "Firefox doesn't set the mouse coordinates during the drag event. See <a href='https://bugzil.la/505521'>bug 505521</a>.",
                 "In Firefox, <code>dragend</code> is not dispatched if the source node is moved or removed during the drag (e.g. on <code>drop</code> or <code>dragover</code>). See <a href='https://bugzil.la/460801'>bug 460801</a> for details."
               ]
             },
@@ -4769,7 +4769,7 @@
               }
             ],
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": [
               {
@@ -4790,11 +4790,12 @@
               }
             ],
             "safari": {
-              "alternative_name": "webkitIsFullScreen",
-              "version_added": true
+              "version_added": "6",
+              "alternative_name": "webkitIsFullScreen"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "6",
+              "alternative_name": "webkitIsFullScreen"
             },
             "samsunginternet_android": [
               {
@@ -5107,37 +5108,300 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getAnimations",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false,
-              "notes": "Currently available only in Firefox Nightly and Firefox Developer Edition."
-            },
-            "firefox_android": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "67",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see <a href='https://crbug.com/828585'>Chromium bug 828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "61",
+                "version_removed": "67",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification, does not automatically flush pending style changes and not supported on <code>ShadowRoot</code>, see Chromium bugs <a href='https://crbug.com/828424'>828424</a> and <a href='https://crbug.com/828585'>828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "67",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see <a href='https://crbug.com/828585'>Chromium bug 828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "61",
+                "version_removed": "67",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification, does not automatically flush pending style changes and not supported on <code>ShadowRoot</code>, see Chromium bugs <a href='https://crbug.com/828424'>828424</a> and <a href='https://crbug.com/828585'>828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "79",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see <a href='https://crbug.com/828585'>Chromium bug 828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "75"
+              },
+              {
+                "version_added": "72",
+                "version_removed": "75",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "63",
+                "version_removed": "72",
+                "partial_implementation": true,
+                "notes": "Not supported on <code>ShadowRoot</code>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "47",
+                "version_removed": "63",
+                "partial_implementation": true,
+                "notes": "Not supported on <code>ShadowRoot</code>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "46",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Does not return any animations on pseudo-elements and is not supported on <code>ShadowRoot</code>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "partial_implementation": true,
+                "notes": "Not supported on <code>ShadowRoot</code>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "47",
+                "version_removed": "63",
+                "partial_implementation": true,
+                "notes": "Not supported on <code>ShadowRoot</code>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "46",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Does not return any animations on pseudo-elements and is not supported on <code>ShadowRoot</code>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "opera": [
+              {
+                "version_added": "69",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "54",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see <a href='https://crbug.com/828585'>Chromium bug 828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "48",
+                "version_removed": "54",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification, does not automatically flush pending style changes and not supported on <code>ShadowRoot</code>, see Chromium bugs <a href='https://crbug.com/828424'>828424</a> and <a href='https://crbug.com/828585'>828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "48",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see <a href='https://crbug.com/828585'>Chromium bug 828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              },
+              {
+                "version_added": "45",
+                "version_removed": "48",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification, does not automatically flush pending style changes and not supported on <code>ShadowRoot</code>, see Chromium bugs <a href='https://crbug.com/828424'>828424</a> and <a href='https://crbug.com/828585'>828585</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "13.1",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see Webkit bugs <a href='https://webkit.org/b/179536'>179536</a> and <a href='https://webkit.org/b/202192'>202192</a>."
+              },
+              {
+                "version_added": true,
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see Webkit bugs <a href='https://webkit.org/b/179536'>179536</a> and <a href='https://webkit.org/b/202192'>202192</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "13.4",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see Webkit bugs <a href='https://webkit.org/b/179536'>179536</a> and <a href='https://webkit.org/b/202192'>202192</a>."
+              },
+              {
+                "version_added": true,
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification and not supported on <code>ShadowRoot</code>, see Webkit bugs <a href='https://webkit.org/b/179536'>179536</a> and <a href='https://webkit.org/b/202192'>202192</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
@@ -5309,7 +5573,7 @@
             },
             "edge": {
               "version_added": "12",
-              "notes": "In EdgeHTML, this returns an <code>HTMLCollection</code>, not a <code>NodeList</code>.  This behavior was fixed in Chromium versions of Edge."
+              "notes": "In EdgeHTML, this returns an <code>HTMLCollection</code>, not a <code>NodeList</code>. This behavior was fixed in Chromium versions of Edge."
             },
             "firefox": {
               "version_added": "1"
@@ -7267,78 +7531,6 @@
           }
         }
       },
-      "onselectionchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onselectionchange",
-          "support": {
-            "chrome": {
-              "version_added": "12"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": [
-              {
-                "version_added": "52"
-              },
-              {
-                "version_added": "43",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.select_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "52"
-              },
-              {
-                "version_added": "43",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.select_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": true
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "1.3"
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "onvisibilitychange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onvisibilitychange",
@@ -7460,7 +7652,8 @@
               "version_removed": "71"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": false
@@ -7472,10 +7665,12 @@
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "28",
+              "version_removed": "58"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "28",
+              "version_removed": "50"
             },
             "safari": {
               "version_added": true
@@ -9124,13 +9319,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/registerElement",
           "support": {
             "chrome": {
-              "version_added": "35"
+              "version_added": "35",
+              "version_removed": "80"
             },
             "chrome_android": {
-              "version_added": "35"
+              "version_added": "35",
+              "version_removed": "80"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "79",
+              "version_removed": "80"
             },
             "firefox": {
               "version_added": "31",
@@ -9168,7 +9366,8 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "25"
+              "version_added": "25",
+              "version_removed": "67"
             },
             "opera_android": {
               "version_added": "25"
@@ -9183,7 +9382,8 @@
               "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "37",
+              "version_removed": "80"
             }
           },
           "status": {
@@ -9865,7 +10065,7 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": true
             },
             "opera": {
               "version_added": true
