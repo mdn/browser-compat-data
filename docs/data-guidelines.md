@@ -120,6 +120,27 @@ For example, the `ImageData` API has worker support, recorded like this:
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
 
+### Permissions API permission descriptions (`api.Permissions.*_permission.__compat.description`)
+
+Document Permissions API permissions called `[permissionname]` as `api.Permissions.[permissionname]_permission` and add a description that reads `"<code>[permissionname]</code> permission"`
+For example, the Geolocation permission is named `geolocation_permission` with the description text `<code>geolocation</code> permission`, like this:
+
+```
+{
+  "api": {
+    "Permissions": {
+      "__compat": { ... },
+      "geolocation_permission": {
+        "__compat": {
+          "description": "<code>geolocation</code> permission",
+          "support": { ... }
+        }
+      }
+    }
+  }
+}
+```
+
 ## Non-functional defined names imply `partial_implementation`
 
 If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
