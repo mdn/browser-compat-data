@@ -52,12 +52,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/activeVRDisplays",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked). WebVR support is no longer available in Chrome 80 and later."
+              "version_added": false
             },
             "chrome_android": {
               "version_added": true,
-              "notes": "Only supported only by Google Daydream. WebVR support is no longer available in Chrome 80 and later."
+              "version_removed": "80",
+              "notes": "Only supported only by Google Daydream."
             },
             "edge": {
               "version_added": "15",
@@ -110,13 +110,13 @@
             "description": "Secure context required",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "79"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "73"
@@ -1091,8 +1091,7 @@
                 "notes": "macOS support was enabled in Firefox 64."
               },
               {
-                "version_added": "73",
-                "notes": "Starting in Firefox 73, WebVR is only available in secure contexts. WeBVR methods and properties are only present if the context was loaded using hTTPS."
+                "version_added": "73"
               }
             ],
             "firefox_android": {
