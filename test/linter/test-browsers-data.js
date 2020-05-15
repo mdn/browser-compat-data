@@ -26,22 +26,20 @@ function processData(data, logger) {
   for (let releaseVersion in releases) {
     const releaseData = releases[releaseVersion];
 
-    if (['current', 'beta', 'nightly', 'esr'].includes(releaseData.status)) {
+    if (
+      (browser == 'nodejs'
+        ? ['beta', 'nightly']
+        : ['current', 'beta', 'nightly', 'esr']
+      ).includes(releaseData.status)
+    ) {
       if (releaseByStatus[releaseData.status]) {
-        if (
-          !(
-            browser == 'nodejs' &&
-            ['current', 'esr'].includes(releaseData.status)
-          )
-        ) {
-          logger.error(
-            chalk`{red → {bold ${browser}} has multiple {bold ${
-              releaseData.status
-            }} releases (${
-              releaseByStatus[releaseData.status]
-            } and ${releaseVersion}), which is not allowed.}`,
-          );
-        }
+        logger.error(
+          chalk`{red → {bold ${browser}} has multiple {bold ${
+            releaseData.status
+          }} releases (${
+            releaseByStatus[releaseData.status]
+          } and ${releaseVersion}), which is not allowed.}`,
+        );
       }
 
       releaseByStatus[releaseData.status] = releaseVersion;
