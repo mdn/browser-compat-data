@@ -5,7 +5,8 @@ const ora = require('ora');
 const yargs = require('yargs');
 const chalk = require('chalk');
 const {
-  testBrowsers,
+  testBrowsersData,
+  testBrowsersPresence,
   testLinks,
   testPrefix,
   testRealValues,
@@ -58,7 +59,8 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasLinkErrors = false,
-          hasBrowserErrors = false,
+          hasBrowserDataErrors = false,
+          hasBrowserPresenceErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
           hasRealValueErrors = false,
@@ -92,12 +94,13 @@ function load(...files) {
               file,
               './../../schemas/browsers.schema.json',
             );
+            hasBrowserDataErrors = testBrowsersData(file);
             hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
-            hasBrowserErrors = testBrowsers(file);
+            hasBrowserPresenceErrors = testBrowsersPresence(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
             hasRealValueErrors = testRealValues(file);
@@ -114,7 +117,8 @@ function load(...files) {
           hasSchemaErrors,
           hasStyleErrors,
           hasLinkErrors,
-          hasBrowserErrors,
+          hasBrowserDataErrors,
+          hasBrowserPresenceErrors,
           hasVersionErrors,
           hasConsistencyErrors,
           hasRealValueErrors,
@@ -174,6 +178,7 @@ if (hasErrors) {
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../../schemas/browsers.schema.json');
+        testBrowsersData(file);
         testLinks(file);
       } else {
         testSchema(file);
@@ -181,7 +186,7 @@ if (hasErrors) {
         testLinks(file);
         testVersions(file);
         testRealValues(file);
-        testBrowsers(file);
+        testBrowsersPresence(file);
         testConsistency(file);
         testPrefix(file);
         testDescriptions(file);
