@@ -37,7 +37,7 @@ function processData(data, logger) {
           logger.error(
             chalk`{red → {bold ${browser}} has multiple {bold ${
               releaseData.status
-            }} (${
+            }} releases (${
               releaseByStatus[releaseData.status]
             } and ${releaseVersion}), which is not allowed.}`,
           );
