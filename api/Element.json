@@ -3188,7 +3188,7 @@
                 "version_added": "44",
                 "version_removed": "67",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3201,7 +3201,7 @@
                 "version_added": "38",
                 "version_removed": "44",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3236,7 +3236,7 @@
                 "version_added": "44",
                 "version_removed": "67",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3249,7 +3249,7 @@
                 "version_added": "38",
                 "version_removed": "44",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3305,7 +3305,7 @@
               },
               {
                 "alternative_name": "getAnimationPlayers",
-                "version_added": "33",
+                "version_added": "35",
                 "version_removed": "40",
                 "partial_implementation": true,
                 "notes": "Does not support the <code>subtree</code> option.",
@@ -3315,19 +3315,80 @@
                     "name": "dom.animations-api.core.enabled"
                   }
                 ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "33",
+                "version_removed": "35",
+                "partial_implementation": true,
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
               }
             ],
-            "firefox_android": {
-              "version_added": true,
-              "partial_implementation": true,
-              "notes": "Does not return any animations added via CSS.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.getAnimations.enabled"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "48",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "40",
+                "version_removed": "48",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "35",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "Does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              },
+              {
+                "alternative_name": "getAnimationPlayers",
+                "version_added": "33",
+                "version_removed": "35",
+                "partial_implementation": true,
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -3357,7 +3418,7 @@
                 "version_added": "31",
                 "version_removed": "54",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3370,7 +3431,7 @@
                 "version_added": "25",
                 "version_removed": "31",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3395,7 +3456,7 @@
                 "version_added": "32",
                 "version_removed": "48",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
@@ -3408,7 +3469,7 @@
                 "version_added": "25",
                 "version_removed": "32",
                 "partial_implementation": true,
-                "notes": "Does not return any animations added via CSS and does not support the <code>subtree</code> option.",
+                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
                 "flags": [
                   {
                     "type": "preference",
