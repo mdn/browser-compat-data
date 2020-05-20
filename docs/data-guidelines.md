@@ -7,6 +7,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [DOM events (`eventname_event`)](#dom-events-eventname_event)
   - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
   - [Web Workers (`worker_support`)](#web-workers-worker_support)
+  - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
@@ -119,6 +120,30 @@ For example, the `ImageData` API has worker support, recorded like this:
 ```
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
+
+## Permissions API permissions (`permissionname_permission`)
+
+Add [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) permissions as subfeatures of [`api.Permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Permissions) using the name _permissionname_\_permission with the description text set to `<code>permissionname</code> permission`.
+
+For example, the Geolocation permission is named `geolocation_permission` with the description text `<code>geolocation</code> permission`, like this:
+
+```
+{
+  "api": {
+    "Permissions": {
+      "__compat": { ... },
+      "geolocation_permission": {
+        "__compat": {
+          "description": "<code>geolocation</code> permission",
+          "support": { ... }
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-data/pull/6156).
 
 ## Non-functional defined names imply `partial_implementation`
 
