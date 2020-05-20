@@ -7,6 +7,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [DOM events (`eventname_event`)](#dom-events-eventname_event)
   - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
   - [Web Workers (`worker_support`)](#web-workers-worker_support)
+  - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
