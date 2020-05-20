@@ -120,9 +120,10 @@ For example, the `ImageData` API has worker support, recorded like this:
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
 
-### Permissions API permission descriptions (`api.Permissions.*_permission.__compat.description`)
+## Permissions API permissions (`permissionname_permission`)
 
-Document Permissions API permissions called `[permissionname]` as `api.Permissions.[permissionname]_permission` and add a description that reads `"<code>[permissionname]</code> permission"`
+Add [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) permissions as subfeatures of [`api.Permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Permissions) using the name _permissionname_\_permission with the description text set to `<code>permissionname</code> permission`.
+
 For example, the Geolocation permission is named `geolocation_permission` with the description text `<code>geolocation</code> permission`, like this:
 
 ```
@@ -140,6 +141,8 @@ For example, the Geolocation permission is named `geolocation_permission` with t
   }
 }
 ```
+
+This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-data/pull/6156).
 
 ## Non-functional defined names imply `partial_implementation`
 
