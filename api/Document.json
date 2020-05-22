@@ -9752,10 +9752,29 @@
             "firefox": {
               "version_added": "75"
             },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "Currently only supported in Firefox Nightly (version 48)."
-            },
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "32",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": true
             },
