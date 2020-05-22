@@ -76,6 +76,29 @@ function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
 }
 
 /**
+ * @param {Identifier} apiData
+ * @param {String} apiName
+ * @param {Logger} logger
+ */
+function hasCorrectPermissionDescription(apiData, apiName, logger) {
+  const expectedDescrition = `<code>${apiName.replace(
+    '_permission',
+    '',
+  )}</code> permission`;
+  if (
+    apiName &&
+    apiName.match('_permission$') &&
+    apiData &&
+    apiData.__compat &&
+    apiData.__compat.description !== expectedDescrition
+  ) {
+    logger.error(chalk`{red Incorrect permission description for {bold ${apiName}}}
+      {yellow Actual: {bold "${apiData.__compat.description || ''}"}}
+      {green Expected: {bold "${expectedDescrition}"}}`);
+  }
+}
+
+/**
  * @param {string} filename
  */
 function testDescriptions(filename) {
@@ -98,6 +121,13 @@ function testDescriptions(filename) {
       hasCorrectDOMEventsDescription(apiData, apiName, logger);
       hasCorrectSecureContextRequiredDescription(apiData, apiName, logger);
       hasCorrectWebWorkersDescription(apiData, apiName, logger);
+    }
+  }
+
+  if (data.api && data.api.Permissions) {
+    for (const permissionKey in data.api.Permissions) {
+      const apiData = data.api.Permissions[permissionKey];
+      hasCorrectPermissionDescription(apiData, permissionKey, logger);
     }
   }
 
