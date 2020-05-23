@@ -29,21 +29,11 @@ const blockMany = [
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
-  css: [
-    'chrome',
-    'chrome_android',
-    'edge',
-    'firefox',
-    'firefox_android',
-    'ie',
-    'safari',
-    'safari_ios',
-    'webview_android',
-  ],
+  css: blockMany,
   html: [],
   http: [],
   svg: [],
-  javascript: ['chrome', 'edge', 'firefox', 'firefox_android', 'ie'],
+  javascript: blockMany,
   mathml: blockMany,
   webdriver: blockMany,
   webextensions: [],
@@ -58,7 +48,6 @@ const blockList = {
  * @param {Logger} logger
  */
 function checkRealValues(supportData, blockList, relPath, logger) {
-  let hasErrors = false;
   for (const browser of blockList) {
     /** @type {SimpleSupportStatement[]} */
     const supportStatements = [];
@@ -73,25 +62,20 @@ function checkRealValues(supportData, blockList, relPath, logger) {
         logger.error(
           chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
         );
-        hasErrors = true;
       } else {
         if ([true, null].includes(statement.version_added)) {
           logger.error(
             chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`,
           );
-          hasErrors = true;
         }
         if ([true, null].includes(statement.version_removed)) {
           logger.error(
             chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`,
           );
-          hasErrors = true;
         }
       }
     }
   }
-
-  return hasErrors;
 }
 
 /**

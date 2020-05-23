@@ -4,7 +4,7 @@
       "DataView": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView",
-          "spec_url": "https://tc39.es/ecma262/#sec-dataview-constructor",
+          "spec_url": "https://tc39.es/ecma262/#sec-dataview-objects",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -25,7 +25,7 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.10"
             },
             "opera": {
               "version_added": "12.1"
@@ -40,7 +40,7 @@
               "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
               "version_added": "4"
@@ -50,6 +50,225 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "DataView": {
+          "__compat": {
+            "description": "<code>DataView()</code> constructor",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/DataView",
+            "spec_url": "https://tc39.es/ecma262/#sec-dataview-constructor",
+            "support": {
+              "chrome": {
+                "version_added": "9"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "15"
+              },
+              "firefox_android": {
+                "version_added": "15"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "nodejs": {
+                "version_added": "0.10"
+              },
+              "opera": {
+                "version_added": "12.1"
+              },
+              "opera_android": {
+                "version_added": "12.1"
+              },
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": "4.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "4"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "new_required": {
+            "__compat": {
+              "description": "<code>DataView()</code> without <code>new</code> throws",
+              "support": {
+                "chrome": {
+                  "version_added": "11"
+                },
+                "chrome_android": {
+                  "version_added": "18"
+                },
+                "edge": {
+                  "version_added": "13"
+                },
+                "firefox": {
+                  "version_added": "40"
+                },
+                "firefox_android": {
+                  "version_added": "40"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "0.10"
+                },
+                "opera": {
+                  "version_added": "15"
+                },
+                "opera_android": {
+                  "version_added": "14"
+                },
+                "safari": {
+                  "version_added": "5.1"
+                },
+                "safari_ios": {
+                  "version_added": "5.1"
+                },
+                "samsunginternet_android": {
+                  "version_added": "1.0"
+                },
+                "webview_android": {
+                  "version_added": "≤37"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "sharedarraybuffer_support": {
+            "__compat": {
+              "description": "<code>SharedArrayBuffer</code> accepted as buffer",
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "68"
+                  },
+                  {
+                    "version_added": "60",
+                    "version_removed": "63",
+                    "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
+                  }
+                ],
+                "chrome_android": {
+                  "version_added": "60",
+                  "version_removed": "63",
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": [
+                  {
+                    "version_added": "57",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "javascript.options.shared_memory",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  },
+                  {
+                    "version_added": "55",
+                    "version_removed": "57"
+                  },
+                  {
+                    "version_added": "46",
+                    "version_removed": "55",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "javascript.options.shared_memory",
+                        "value_to_set": "true"
+                      }
+                    ]
+                  }
+                ],
+                "firefox_android": [
+                  {
+                    "version_added": "57",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "javascript.options.shared_memory",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "notes": "Support was disabled by default to mitigate <a href='https://blog.mozilla.org/security/2018/01/03/mitigations-landing-new-class-timing-attack/'>speculative execution side-channel attacks (Mozilla Security Blog)</a>."
+                  },
+                  {
+                    "version_added": "55",
+                    "version_removed": "57"
+                  },
+                  {
+                    "version_added": "46",
+                    "version_removed": "55",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "javascript.options.shared_memory",
+                        "value_to_set": "true"
+                      }
+                    ]
+                  }
+                ],
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "10.1",
+                  "version_removed": "11"
+                },
+                "safari_ios": {
+                  "version_added": "10.3",
+                  "version_removed": "11"
+                },
+                "samsunginternet_android": {
+                  "version_added": false,
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                },
+                "webview_android": {
+                  "version_added": "60",
+                  "version_removed": "63",
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "buffer": {
@@ -76,7 +295,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -91,7 +310,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -114,7 +333,7 @@
                   "version_added": "60"
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": "55"
@@ -132,13 +351,15 @@
                   "version_added": "47"
                 },
                 "opera_android": {
-                  "version_added": null
+                  "version_added": "44"
                 },
                 "safari": {
-                  "version_added": null
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
                 },
                 "safari_ios": {
-                  "version_added": null
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
                 },
                 "samsunginternet_android": {
                   "version_added": "8.0"
@@ -179,7 +400,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -194,7 +415,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -231,7 +452,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -246,7 +467,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -271,7 +492,7 @@
                 "version_added": "67"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "68"
@@ -323,7 +544,7 @@
                 "version_added": "67"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "68"
@@ -387,7 +608,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -402,7 +623,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -439,7 +660,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -454,7 +675,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -491,7 +712,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -506,7 +727,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -543,7 +764,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -558,7 +779,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -595,7 +816,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -610,7 +831,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -647,7 +868,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -662,7 +883,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -699,7 +920,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -714,7 +935,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -751,7 +972,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -764,112 +985,9 @@
               },
               "safari_ios": {
                 "version_added": "4.2"
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": "4"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "new_required": {
-          "__compat": {
-            "description": "<code>DataView()</code> without <code>new</code> throws",
-            "support": {
-              "chrome": {
-                "version_added": "11"
-              },
-              "chrome_android": {
-                "version_added": "18"
-              },
-              "edge": {
-                "version_added": "13"
-              },
-              "firefox": {
-                "version_added": "40"
-              },
-              "firefox_android": {
-                "version_added": "40"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
-              },
-              "webview_android": {
-                "version_added": "≤37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "prototype": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/prototype",
-            "spec_url": "https://tc39.es/ecma262/#sec-dataview.prototype",
-            "support": {
-              "chrome": {
-                "version_added": "9"
-              },
-              "chrome_android": {
-                "version_added": "18"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "15"
-              },
-              "firefox_android": {
-                "version_added": "15"
-              },
-              "ie": {
-                "version_added": "10"
-              },
-              "nodejs": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": "12.1"
-              },
-              "opera_android": {
-                "version_added": "12.1"
-              },
-              "safari": {
-                "version_added": "5.1"
-              },
-              "safari_ios": {
-                "version_added": "4.2"
-              },
-              "samsunginternet_android": {
-                "version_added": true
               },
               "webview_android": {
                 "version_added": "4"
@@ -894,7 +1012,7 @@
                 "version_added": "67"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "68"
@@ -946,7 +1064,7 @@
                 "version_added": "67"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "68"
@@ -1010,7 +1128,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1025,7 +1143,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1062,7 +1180,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1077,7 +1195,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1114,7 +1232,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1129,7 +1247,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1166,7 +1284,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1181,7 +1299,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1218,7 +1336,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1233,7 +1351,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1270,7 +1388,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1285,7 +1403,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1322,7 +1440,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1337,7 +1455,7 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
@@ -1374,7 +1492,7 @@
                 "version_added": "10"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10"
               },
               "opera": {
                 "version_added": "12.1"
@@ -1389,61 +1507,10 @@
                 "version_added": "4.2"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "1.0"
               },
               "webview_android": {
                 "version_added": "4"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "sharedarraybuffer_support": {
-          "__compat": {
-            "description": "<code>SharedArrayBuffer</code> accepted as buffer",
-            "support": {
-              "chrome": {
-                "version_added": "60"
-              },
-              "chrome_android": {
-                "version_added": "60"
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "55"
-              },
-              "firefox_android": {
-                "version_added": "55"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": "47"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "8.0"
-              },
-              "webview_android": {
-                "version_added": "60"
               }
             },
             "status": {

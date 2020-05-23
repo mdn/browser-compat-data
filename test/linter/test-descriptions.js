@@ -55,6 +55,14 @@ const processApiData = (apiData, apiName, logger) => {
         `<code>${methodName.replace('_event', '')}</code> event`,
         logger,
       );
+    } else if (methodName.endsWith('_permission')) {
+      checkError(
+        'permission',
+        `${apiName}.${methodName}`,
+        method,
+        `<code>${methodName.replace('_permission', '')}</code> permission`,
+        logger,
+      );
     } else if (methodName == 'secure_context_required') {
       checkError(
         'secure context required',
@@ -115,6 +123,13 @@ const testDescriptions = filename => {
   };
 
   processData(data, logger);
+
+  if (data.api && data.api.Permissions) {
+    for (const permissionKey in data.api.Permissions) {
+      const apiData = data.api.Permissions[permissionKey];
+      hasCorrectPermissionDescription(apiData, permissionKey, logger);
+    }
+  }
 
   if (errors.length) {
     console.error(

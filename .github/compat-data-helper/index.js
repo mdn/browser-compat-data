@@ -30,11 +30,11 @@ module.exports = app => {
     context.log(`PR ${prString}: ${changedFiles} files changed`)
     if (changedFiles >= 300) {
       context.log.warn(`PR ${prString}: Large file lists (≥300 files) aren't returned by GitHub; not all applicable labels may be applied`)
-      await commentOnlyOnce(context, prAsIssue, '🤖 Note: This PR contains more 300 or more files. Some automatic labels may not have been applied.')
+      await commentOnlyOnce(context, prAsIssue, '🤖 Note: This PR contains 300 or more files. Some automatic labels may not have been applied.')
     }
 
     const fileList = await context.github.paginate(
-      context.github.pullRequests.listFiles.endpoint.merge(pr),
+      context.github.pulls.listFiles.endpoint.merge(pr),
       res => res.data
     )
     const filenames = fileList.map(f => f.filename)
