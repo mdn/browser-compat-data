@@ -10,6 +10,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
+  - [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
 
@@ -162,6 +163,10 @@ Typically, BCD does not record absolute version numbers (such as Chrome 76.0.380
 For example, if the current release of browser X is version 10.2, but a new feature was backported to previous versions including a new 9.7.1 release, then the supported version is 9.7 (not 10.2 or 9.7.1).
 
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
+
+## Finding browser version numbers for features
+
+When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Processes/Matching_features_to_browser_version).
 
 ## Safari for iOS versioning
 
