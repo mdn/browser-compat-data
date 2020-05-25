@@ -35,7 +35,7 @@ There are many ways you can help improve this repository! For example:
 
 ## Finding browser version numbers for features
 
-When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Processes/Matching_features_to_browser_version).
+When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](https://developer.mozilla.org/docs/MDN/Contribute/Processes/Matching_features_to_browser_version).
 
 ## Updating compatibility tables on MDN
 
