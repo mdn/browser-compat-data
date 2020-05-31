@@ -13,7 +13,7 @@ The JSON data is validated against the schema using [`ajv`](http://epoberezkin.g
 
 ## Statistics
 
-To see how changes will affect the statistics of real (either `false` or a version number, as defined in [#3555](https://github.com/mdn/browser-compat-data/issues/3555)), true, and null values, you can run `npm run stats [folder]`. This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on. The script also takes an optional argument regarding a specific folder (such as `api` or `javascript`), which will print statistics result for only that folder.
+To see how changes will affect the statistics of real (either `false` or a version number, as defined in [issue 3555](https://github.com/mdn/browser-compat-data/issues/3555)), true, and null values, you can run `npm run stats [folder]`. This generates a Markdown-formatted table of the percentages of real, true, and null values for the eight primary browsers that browser-compat-data is focusing on. The script also takes an optional argument regarding a specific folder (such as `api` or `javascript`), which will print statistics result for only that folder. Additionally, you can run the script with `--all` to get statistics for all browsers tracked in BCD, not just the primary eight.
 
 ## Traverse
 
