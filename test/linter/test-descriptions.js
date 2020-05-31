@@ -124,13 +124,6 @@ const testDescriptions = filename => {
 
   processData(data, logger);
 
-  if (data.api && data.api.Permissions) {
-    for (const permissionKey in data.api.Permissions) {
-      const apiData = data.api.Permissions[permissionKey];
-      hasCorrectPermissionDescription(apiData, permissionKey, logger);
-    }
-  }
-
   if (errors.length) {
     console.error(
       chalk`{red   Descriptions – {bold ${errors.length}} ${
