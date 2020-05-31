@@ -5436,7 +5436,8 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Currently Chrome Canary only"
             }
           },
           "status": {
@@ -10030,36 +10031,56 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/timeline",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Currently Chrome Canary only"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Currently Chrome Canary only"
             },
             "edge": {
               "version_added": false
             },
             "firefox": {
-              "version_added": false,
-              "notes": "Currently only supported in Firefox Nightly (version 48)."
+              "version_added": "75"
             },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "Currently only supported in Firefox Nightly (version 48)."
-            },
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "32",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": false
             },
             "safari": {
-              "version_added": true
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
               "version_added": false
