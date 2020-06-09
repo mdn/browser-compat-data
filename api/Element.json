@@ -7436,7 +7436,10 @@
             },
             "edge": {
               "version_added": "12",
-              "notes": "Uses 0-100 for RTL instead of negative values. See <a href='https://crbug.com/721759'>issue 721759</a>"
+              "notes": [
+                "From Edge 79, for right-to-left elements, this property uses 0-100 (most left to most right) instead of negative values. See <a href='https://crbug.com/721759'>bug 721759</a>.",
+                "Before Edge 79, for right-to-left elements, this property uses 100-0 (most left to most right) instead of negative values."
+              ]
             },
             "firefox": {
               "version_added": "1"
