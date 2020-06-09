@@ -7427,13 +7427,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollLeft",
           "support": {
             "chrome": {
-              "version_added": "43"
+              "version_added": "43",
+              "notes": "Uses 0-100 for RTL instead of negative values. See <a href='https://bugs.chromium.org/p/chromium/issues/detail?id=721759'>issue 721759</a>"
             },
             "chrome_android": {
-              "version_added": "43"
+              "version_added": "43",
+              "notes": "Uses 0-100 for RTL instead of negative values. See <a href='https://bugs.chromium.org/p/chromium/issues/detail?id=721759'>issue 721759</a>"
             },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "notes": "Uses 0-100 for RTL instead of negative values. See <a href='https://bugs.chromium.org/p/chromium/issues/detail?id=721759'>issue 721759</a>"
             },
             "firefox": {
               "version_added": "1"
@@ -7442,7 +7445,8 @@
               "version_added": "4"
             },
             "ie": {
-              "version_added": "8"
+              "version_added": "8",
+              "notes": "Uses 100-0 for RTL instead of negative values. See <a href='https://github.com/othree/jquery.rtl-scroll-type'>here</a>."
             },
             "opera": {
               "version_added": "8"
