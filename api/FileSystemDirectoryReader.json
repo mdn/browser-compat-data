@@ -4,14 +4,28 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader",
         "support": {
-          "chrome": {
-            "version_added": "13",
-            "prefix": "webkit"
-          },
-          "chrome_android": {
-            "version_added": true,
-            "prefix": "webkit"
-          },
+          "chrome": [
+            {
+              "version_removed": true,
+              "version_added": "13",
+              "prefix": "webkit"
+            },
+            {
+              "version_added": "8",
+              "alternative_name": "DirectoryReader"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_removed": true,
+              "version_added": "18",
+              "prefix": "webkit"
+            },
+            {
+              "version_added": "8",
+              "alternative_name": "DirectoryReader"
+            }
+          ],
           "edge": {
             "version_added": "≤18",
             "alternative_name": "WebKitDirectoryReader"
@@ -42,10 +56,17 @@
             "prefix": "webkit",
             "version_added": true
           },
-          "webview_android": {
-            "version_added": true,
-            "prefix": "webkit"
-          }
+          "webview_android": [
+            {
+              "version_removed": true,
+              "version_added": "≤37",
+              "prefix": "webkit"
+            },
+            {
+              "version_added": "≤37",
+              "alternative_name": "DirectoryReader"
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -58,10 +79,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader/readEntries",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "8"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "18"
             },
             "edge": {
               "version_added": null
@@ -91,7 +112,7 @@
               "version_added": null
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "≤37"
             }
           },
           "status": {
