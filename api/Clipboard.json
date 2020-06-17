@@ -4,12 +4,26 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard",
         "support": {
-          "chrome": {
-            "version_added": "66"
-          },
-          "chrome_android": {
-            "version_added": "66"
-          },
+          "chrome": [
+            {
+              "version_added": "76"
+            },
+            {
+              "version_added": "66",
+              "partial_implementation": true,
+              "notes": "Images are not supported on read() and write()."
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "84"
+            },
+            {
+              "version_added": "66",
+              "partial_implementation": true,
+              "notes": "Images are not supported on read() and write()."
+            }
+          ],
           "edge": {
             "version_added": "79"
           },
@@ -37,9 +51,16 @@
           "samsunginternet_android": {
             "version_added": "9.0"
           },
-          "webview_android": {
-            "version_added": "66"
-          }
+          "webview_android": [
+            {
+              "version_added": "84"
+            },
+            {
+              "version_added": "66",
+              "partial_implementation": true,
+              "notes": "Images are not supported on read() and write()."
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -51,12 +72,26 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read",
           "support": {
-            "chrome": {
-              "version_added": "76"
-            },
-            "chrome_android": {
-              "version_added": "76"
-            },
+            "chrome": [
+              {
+                "version_added": "76"
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ],
             "edge": {
               "version_added": "79"
             },
@@ -100,9 +135,16 @@
             "samsunginternet_android": {
               "version_added": "12.0"
             },
-            "webview_android": {
-              "version_added": "76"
-            }
+            "webview_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -165,12 +207,26 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/write",
           "support": {
-            "chrome": {
-              "version_added": "76"
-            },
-            "chrome_android": {
-              "version_added": "76"
-            },
+            "chrome": [
+              {
+                "version_added": "76"
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ],
             "edge": {
               "version_added": "79"
             },
@@ -214,9 +270,16 @@
             "samsunginternet_android": {
               "version_added": "12.0"
             },
-            "webview_android": {
-              "version_added": "76"
-            }
+            "webview_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
