@@ -159,6 +159,15 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 | Release new npm package versions                       |                  |              |       | •      |
 | Merge to branches directly (without pull requests)     |                  |              |       | •      |
 
+## Peers and owners emeriti
+
+The mdn-browser-compat-data project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
+
+- Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
+- Jean-Yves Perrier (@teoli2003) (Former project lead, schema design co-author)
+- Estelle Weyl (@estelle) (Peer for CSS compat data)
+- John Whitlock (@jwhitlock) (Technical design of the former compat data project)
+
 ## Credits
 
 This work is a derivative of [ESLint Governance](https://github.com/eslint/eslint.github.io/blob/master/docs/maintainer-guide/governance.md), [YUI Contributor Model](https://github.com/yui/yui3/wiki/Contributor-Model), and the [JS Foundation TAC Charter](https://github.com/JSFoundation/TAC).
