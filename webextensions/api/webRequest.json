@@ -117,18 +117,29 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter",
             "support": {
               "chrome": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, this is treated as an error.",
                 "version_added": true
               },
               "edge": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, this is treated as an error.",
                 "version_added": "14"
               },
-              "firefox": {
-                "version_added": "45"
-              },
+              "firefox": [
+                {
+                  "version_added": "45"
+                },
+                {
+                  "notes": "If a filter contains unrecognized values in its <code>types</code> property, this is treated as an error.",
+                  "version_added": "45",
+                  "version_removed": "78"
+                }
+              ],
               "firefox_android": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, this is treated as an error.",
                 "version_added": "48"
               },
               "opera": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, this is treated as an error.",
                 "version_added": true
               }
             }
