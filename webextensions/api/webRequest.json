@@ -132,18 +132,26 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter",
             "support": {
               "chrome": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": true
               },
               "edge": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": "14"
               },
               "firefox": {
+                "notes": [
+                  "From Firefox 78 onwards, if a filter contains unrecognized values in its <code>types</code> property, then these values are ignored and <code>addListener()</code> proceeds.",
+                  "Before Firefox 78, if a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
+                ],
                 "version_added": "45"
               },
               "firefox_android": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": "48"
               },
               "opera": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": true
               },
               "safari": {
