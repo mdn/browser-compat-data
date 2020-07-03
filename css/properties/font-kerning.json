@@ -5,16 +5,27 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/font-kerning",
           "support": {
-            "chrome": {
-              "prefix": "-webkit-",
-              "version_added": "32"
-            },
-            "chrome_android": {
-              "prefix": "-webkit-",
-              "version_added": "32"
-            },
+            "chrome": [
+              {
+                "version_added": "33"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "29",
+                "version_removed": "33"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "33"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "29",
+                "version_removed": "33"
+              }
+            ],
             "edge": {
-              "prefix": "-webkit-",
               "version_added": "79"
             },
             "firefox": [
@@ -52,28 +63,64 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "prefix": "-webkit-",
-              "version_added": "19"
-            },
-            "opera_android": {
-              "prefix": "-webkit-",
-              "version_added": "19"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "7"
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0",
-              "prefix": "-webkit-"
-            },
-            "webview_android": {
-              "prefix": "-webkit-",
-              "version_added": "37"
-            }
+            "opera": [
+              {
+                "version_added": "20"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "16",
+                "version_removed": "20"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "20"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "16",
+                "version_removed": "20"
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "6",
+                "prefix": "-webkit-"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "6",
+                "prefix": "-webkit-"
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "2.0"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "1.0",
+                "version_removed": "2.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "4.4.3"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "4.4",
+                "version_removed": "4.4.3"
+              }
+            ]
           },
           "status": {
             "experimental": false,

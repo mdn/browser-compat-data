@@ -54,7 +54,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autocapitalize",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
               "version_added": "66"
@@ -81,10 +81,10 @@
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": null
@@ -1087,9 +1087,26 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "23",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.forms.inputmode",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "Before version 77, Firefox does not support <code>inputmode</code> when <code>contenteditable</code> is <code>true</code>.",
+                  "Before version 75, Firefox accepts values from an earlier specification. From version 75, it accepts values from the WHATWG Living Standard. See <a href='https://bugzil.la/1509527'>bug 1509527</a>."
+                ]
+              },
+              {
+                "version_added": "17",
+                "version_removed": "23"
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },

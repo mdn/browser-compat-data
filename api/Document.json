@@ -425,7 +425,7 @@
               "version_added": "54"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": false
@@ -433,12 +433,42 @@
             "opera_android": {
               "version_added": false
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
@@ -483,10 +513,10 @@
               "version_added": "30"
             },
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -532,10 +562,10 @@
               "version_added": "30"
             },
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -581,10 +611,10 @@
               "version_added": "30"
             },
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -5406,7 +5436,8 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Currently Chrome Canary only"
             }
           },
           "status": {
@@ -5573,7 +5604,7 @@
             },
             "edge": {
               "version_added": "12",
-              "notes": "In EdgeHTML, this returns an <code>HTMLCollection</code>, not a <code>NodeList</code>. This behavior was fixed in Chromium versions of Edge."
+              "notes": "Before Edge 79, this method returns an <code>HTMLCollection</code>, not a <code>NodeList</code>."
             },
             "firefox": {
               "version_added": "1"
@@ -9181,11 +9212,17 @@
             },
             "ie": [
               {
+                "version_added": "11"
+              },
+              {
                 "version_added": "9",
+                "version_removed": "11",
                 "notes": "Internet Explorer 9 and 10 have bugs where the 'interactive' state can be fired too early before the document has finished parsing."
               },
               {
                 "version_added": "8",
+                "version_removed": "9",
+                "partial_implementation": true,
                 "notes": "Only supports 'complete'."
               }
             ],
@@ -10000,36 +10037,56 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/timeline",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Currently Chrome Canary only"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Currently Chrome Canary only"
             },
             "edge": {
               "version_added": false
             },
             "firefox": {
-              "version_added": false,
-              "notes": "Currently only supported in Firefox Nightly (version 48)."
+              "version_added": "75"
             },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "Currently only supported in Firefox Nightly (version 48)."
-            },
+            "firefox_android": [
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.timelines.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "32",
+                "version_removed": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.core.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": false
             },
             "safari": {
-              "version_added": true
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
               "version_added": false
@@ -10367,12 +10424,42 @@
             "opera_android": {
               "version_added": null
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
@@ -10465,12 +10552,42 @@
             "opera_android": {
               "version_added": null
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
@@ -10514,12 +10631,42 @@
             "opera_android": {
               "version_added": null
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Web Animations"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "CSS Animations via Web Animations"
+                  }
+                ]
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },

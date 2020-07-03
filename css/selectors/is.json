@@ -12,8 +12,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -25,8 +25,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -45,8 +45,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -63,8 +63,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -75,14 +75,30 @@
                 "notes": "Doesn't support combinators."
               }
             ],
-            "firefox": {
-              "version_added": "4",
-              "alternative_name": ":-moz-any()",
-              "notes": [
-                "Doesn't support combinators.",
-                "See <a href='https://bugzil.la/906353'>bug 906353</a>"
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "78"
+              },
+              {
+                "version_added": "77",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.is-where-selectors.enabled",
+                    "value_to_set": "enabled"
+                  }
+                ],
+                "notes": "Enabled by default in Firefox Nightly."
+              },
+              {
+                "version_added": "4",
+                "alternative_name": ":-moz-any()",
+                "notes": [
+                  "Doesn't support combinators.",
+                  "See <a href='https://bugzil.la/906353'>bug 906353</a>"
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "4",
               "alternative_name": ":-moz-any()",
@@ -100,8 +116,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -113,8 +129,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -131,8 +147,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
@@ -144,8 +160,8 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features",
-                    "value_to_set": "enabled"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ],
                 "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
