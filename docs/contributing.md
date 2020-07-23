@@ -12,7 +12,6 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
    1. [Updating the compat data](#updating-the-compat-data)
    1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
 1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
-   1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
    1. [Optional: Generating data by mirroring](#optional-generating-data-by-mirroring)
 1. [Getting help](#getting-help)
@@ -113,10 +112,6 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 - Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
 - Nesting of feature identifiers should make sense.
 - Notes use correct grammar and spelling. They should be complete sentences ending with a period.
-
-### Optional: Generating data using the Web API Confluence Dashboard
-
-If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
 ### Optional: Generating data using the mdn-bcd-collector project
 
