@@ -174,6 +174,7 @@ This versioning scheme came at [Apple's request, in #2006](https://github.com/md
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
 - a feature was never implemented in any browser and the specification has been abandoned.
-- a feature was implemented and has since been removed from all browser releases dating back 2 years.
+- a feature was implemented and has since been removed from all browsers dating back two or more years ago.
+- a feature is unsupported in all releases in the past five years.
 
 This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
