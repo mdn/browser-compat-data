@@ -50,8 +50,12 @@ function isValidVersion(browserIdentifier, version) {
  */
 function checkVersions(supportData, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
+  let falseBrowsers = 0;
+
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
+      let hasFalse = false;
+
       /** @type {SimpleSupportStatement[]} */
       const supportStatements = [];
       if (Array.isArray(supportData[browser])) {
@@ -68,6 +72,9 @@ function checkVersions(supportData, relPath, logger) {
       ].join(', ')}`;
 
       for (const statement of supportStatements) {
+        if (statement.version_added === false) {
+          hasFalse = true;
+        }
         if (!isValidVersion(browser, statement.version_added)) {
           logger.error(
             chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
@@ -120,7 +127,17 @@ function checkVersions(supportData, relPath, logger) {
           }
         }
       }
+
+      if (hasFalse) {
+        falseBrowsers += 1;
+      }
     }
+  }
+
+  if (falseBrowsers === browsersToCheck.length) {
+    logger.error(
+      chalk`{red → {bold ${relPath}} - All browsers are set to {bold false}, which is not allowed.  A feature added to BCD must have at least {bold ONE} browser that has shipped the feature in a stable build.}`,
+    );
   }
 }
 
