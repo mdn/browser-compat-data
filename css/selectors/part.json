@@ -13,18 +13,24 @@
               "version_added": "73"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": "69",
-              "flags": [
-                {
-                  "name": "layout.css.shadow-parts.enabled",
-                  "type": "preference",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "72"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "72",
+                "flags": [
+                  {
+                    "name": "layout.css.shadow-parts.enabled",
+                    "type": "preference",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
@@ -34,11 +40,14 @@
             "opera": {
               "version_added": "60"
             },
+            "opera_android": {
+              "version_added": "52"
+            },
             "safari": {
-              "version_added": false
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
               "version_added": false
@@ -48,7 +57,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

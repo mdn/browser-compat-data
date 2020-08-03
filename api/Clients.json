@@ -11,11 +11,11 @@
             "version_added": "40"
           },
           "edge": {
-            "version_added": null
+            "version_added": "≤79"
           },
           "firefox": {
             "version_added": "44",
-            "notes": "Service workers (and Push) have been disabled in the Firefox 45 & 52 Extended Support Releases (ESR)."
+            "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
           },
           "firefox_android": {
             "version_added": "44"
@@ -59,11 +59,11 @@
               "version_added": "42"
             },
             "edge": {
-              "version_added": null
+              "version_added": "≤79"
             },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 & 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -108,11 +108,11 @@
               "version_added": "51"
             },
             "edge": {
-              "version_added": null
+              "version_added": "≤79"
             },
             "firefox": {
               "version_added": "45",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 & 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "45"
@@ -159,12 +159,13 @@
               "notes": "<code>Client</code> objects returned in most recent focus order."
             },
             "edge": {
-              "version_added": null
+              "version_added": "≤79",
+              "notes": "<code>Client</code> objects returned in most recent focus order."
             },
             "firefox": [
               {
                 "version_added": "44",
-                "notes": "Service workers (and Push) have been disabled in the Firefox 45 & 52 Extended Support Releases (ESR)."
+                "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
               },
               {
                 "version_added": "54",
@@ -196,7 +197,8 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "4.0",
+              "notes": "<code>Client</code> objects returned in most recent focus order."
             },
             "webview_android": {
               "version_added": "47",
@@ -222,7 +224,8 @@
                 "notes": "<code>Client</code> objects returned in most recent focus order."
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79",
+                "notes": "<code>Client</code> objects returned in most recent focus order."
               },
               "firefox": {
                 "version_added": "45",
@@ -248,7 +251,8 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": "5.0"
+                "version_added": "5.0",
+                "notes": "<code>Client</code> objects returned in most recent focus order."
               },
               "webview_android": {
                 "version_added": "47",
@@ -301,12 +305,26 @@
                 "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
               }
             ],
-            "edge": {
-              "version_added": null
-            },
+            "edge": [
+              {
+                "version_added": "≤79"
+              },
+              {
+                "version_added": "≤79",
+                "notes": "Can only open URLs on the same origin."
+              },
+              {
+                "version_added": "≤79",
+                "notes": "Can open any URL. "
+              },
+              {
+                "version_added": "≤79",
+                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
+              }
+            ],
             "firefox": {
               "version_added": "45",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 & 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "45"
@@ -331,8 +349,8 @@
                 "version_added": "4.0"
               },
               {
-                "notes": "URLs may open inside an existing browsing context provided by a standalone web app",
-                "version_added": "5.0"
+                "version_added": "5.0",
+                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
               }
             ],
             "webview_android": [

@@ -29,7 +29,7 @@
               "notes": "CSS 2.1 leaves the behavior of <code>max-height</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Opera supports applying <code>max-height</code> to <code>table</code> elements."
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "1.3"
@@ -38,10 +38,10 @@
               "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -72,9 +72,15 @@
                   "version_added": "25"
                 }
               ],
-              "edge": {
-                "version_added": false
-              },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "79"
+                }
+              ],
               "firefox": {
                 "partial_implementation": true,
                 "prefix": "-moz-",
@@ -82,7 +88,10 @@
                 "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "firefox_android": {
-                "version_added": false
+                "partial_implementation": true,
+                "prefix": "-moz-",
+                "version_added": "4",
+                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
               },
               "ie": {
                 "version_added": false
@@ -103,19 +112,32 @@
                   "version_added": "2"
                 }
               ],
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
+              "safari_ios": [
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "7"
+                },
+                {
+                  "alternative_name": "intrinsic",
+                  "version_added": "1"
+                }
+              ],
+              "samsunginternet_android": [
+                {
+                  "version_added": "5.0"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1.5"
+                }
+              ],
               "webview_android": [
                 {
                   "version_added": "46"
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": true
+                  "version_added": "≤37"
                 }
               ]
             },
@@ -137,7 +159,7 @@
                 "version_added": "46"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": [
                 {
@@ -209,7 +231,7 @@
                 "version_added": "46"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": [
                 {
@@ -283,7 +305,8 @@
                 "version_added": "28"
               },
               "edge": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false
@@ -295,19 +318,22 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "15"
               },
               "opera_android": {
-                "version_added": null
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "15"
               },
               "safari": {
                 "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "1.5",
+                "alternative_name": "-webkit-fill-available"
               },
               "webview_android": {
                 "alternative_name": "-webkit-fill-available",

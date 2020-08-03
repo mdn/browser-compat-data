@@ -5,19 +5,55 @@
         "__compat": {
           "description": "Optional chaining operator (<code>?.</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining",
-          "spec_url": "https://tc39.es/proposal-optional-chaining/#top",
+          "spec_url": "https://tc39.es/proposal-optional-chaining/#sec-scope",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "80"
+              },
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "80"
+              },
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "80"
+              },
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox": {
-              "version_added": false
+              "version_added": "74"
             },
             "firefox_android": {
               "version_added": false
@@ -26,29 +62,41 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "14.0.0"
             },
-            "opera": {
-              "version_added": false
-            },
+            "opera": [
+              {
+                "version_added": "67"
+              },
+              {
+                "version_added": "66",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "opera_android": {
               "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "80"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -57,4 +105,3 @@
     }
   }
 }
-  

@@ -10,7 +10,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "55"
@@ -20,6 +20,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           }
@@ -32,7 +35,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "55"
@@ -42,6 +45,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           }
@@ -54,17 +60,20 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
-                "version_added": false,
-                "notes": "There is a <a href='https://github.com/bfred-it/chrome-permissions-events-polyfill'>polyfill available</a>."
+                "version_added": "77",
+                "notes": "There is a <a href='https://github.com/bfred-it/chrome-permissions-events-polyfill'>polyfill</a> available for earlier versions."
               },
               "firefox_android": {
                 "version_added": false
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           }
@@ -77,17 +86,20 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
-                "version_added": false,
-                "notes": "There is a <a href='https://github.com/bfred-it/chrome-permissions-events-polyfill'>polyfill available</a>."
+                "version_added": "77",
+                "notes": "There is a <a href='https://github.com/bfred-it/chrome-permissions-events-polyfill'>polyfill</a> available for earlier versions."
               },
               "firefox_android": {
                 "version_added": false
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           }
@@ -100,7 +112,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "55"
@@ -110,6 +122,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           }
@@ -122,7 +137,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "55"
@@ -132,6 +147,10 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14",
+                "notes": "Removing <code>&lt;all_urls&gt;</code> or <code>*://*/*</code> origins will remove previously granted permission to request specific origin patterns and will stop automatically prompting the user for access to any visited website via the extension's access popover in the toolbar."
               }
             }
           }
@@ -144,7 +163,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": [
                 {
@@ -176,28 +195,14 @@
               ],
               "opera": {
                 "version_added": true
-              }
-            }
-          }
-        },
-        "tabHide": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/tabHide",
-            "support": {
-              "chrome": {
-                "version_added": false
               },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "61"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
+              "safari": {
+                "version_added": "14",
+                "notes": [
+                  "Requesting <code>&lt;all_urls&gt;</code> or <code>*://*/*</code> origins will grant permission to request specific origin patterns and automatically prompt the user for access to any visited website via the extension's access popover in the toolbar.",
+                  "The user will be prompted again for permissions that have been previously granted and then removed.",
+                  "Supported permissions will be granted without prompting the user. Only specific origin patterns will prompt the user."
+                ]
               }
             }
           }

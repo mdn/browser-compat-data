@@ -5,20 +5,21 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DataTransfer",
         "support": {
           "chrome": {
-            "version_added": "4"
+            "version_added": "3"
           },
           "chrome_android": {
-            "version_added": true
+            "version_added": "18"
           },
           "edge": {
-            "version_added": true
+            "version_added": "12"
           },
           "firefox": {
             "version_added": "3.5",
             "notes": "As of Firefox 52, the <a href='https://developer.mozilla.org/docs/Web/API/DataTransfer/types'><code>DataTransfer.types</code></a> property returns a frozen array of <a href='https://developer.mozilla.org/docs/Web/API/DOMString'><code>DOMString</code></a>s as per spec, rather than a <a href='https://developer.mozilla.org/docs/Web/API/DOMStringList'><code>DOMStringList</code></a>."
           },
           "firefox_android": {
-            "version_added": "52"
+            "version_added": "4",
+            "notes": "As of Firefox 52, the <a href='https://developer.mozilla.org/docs/Web/API/DataTransfer/types'><code>DataTransfer.types</code></a> property returns a frozen array of <a href='https://developer.mozilla.org/docs/Web/API/DOMString'><code>DOMString</code></a>s as per spec, rather than a <a href='https://developer.mozilla.org/docs/Web/API/DOMStringList'><code>DOMStringList</code></a>."
           },
           "ie": {
             "version_added": "10"
@@ -27,16 +28,19 @@
             "version_added": "12"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "12"
           },
           "safari": {
             "version_added": "3.1"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "2"
+          },
+          "samsunginternet_android": {
+            "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": true
+            "version_added": "≤37"
           }
         },
         "status": {
@@ -57,7 +61,7 @@
               "version_added": "60"
             },
             "edge": {
-              "version_added": null
+              "version_added": "≤79"
             },
             "firefox": {
               "version_added": null
@@ -75,10 +79,13 @@
               "version_added": "44"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
               "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "8.0"
             },
             "webview_android": {
               "version_added": "60"
@@ -413,6 +420,9 @@
             "safari_ios": {
               "version_added": false
             },
+            "samsunginternet_android": {
+              "version_added": true
+            },
             "webview_android": {
               "version_added": true
             }
@@ -438,7 +448,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "71"
             },
             "firefox_android": {
               "version_added": null
@@ -534,7 +545,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "71"
             },
             "firefox_android": {
               "version_added": null
@@ -582,7 +594,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "71"
             },
             "firefox_android": {
               "version_added": null
@@ -630,7 +643,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "71"
             },
             "firefox_android": {
               "version_added": null
@@ -726,7 +740,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "71"
             },
             "firefox_android": {
               "version_added": null
@@ -813,40 +828,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DataTransfer/setData",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "3"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "10"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "10"
             },
             "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
               "version_added": false
             },
+            "opera": {
+              "version_added": "12"
+            },
+            "opera_android": {
+              "version_added": "12"
+            },
+            "safari": {
+              "version_added": "5"
+            },
+            "safari_ios": {
+              "version_added": "5"
+            },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -924,10 +939,15 @@
               "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": "10",
+              "notes": [
+                "The property returns a <a href='https://developer.mozilla.org/docs/Web/API/DOMStringList'><code>DOMStringList</code></a>.",
+                "<code>Text</code> is returned instead of <code>text/plain</code>"
+              ]
             },
             "opera": {
-              "version_added": true
+              "version_added": true,
+              "notes": "As of Opera 12, <code>Text</code> is returned instead of <code>text/plain</code>"
             },
             "opera_android": {
               "version_added": true

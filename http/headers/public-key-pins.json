@@ -14,12 +14,24 @@
               "version_removed": "72"
             },
             "edge": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/publickeypinningextensionforhttp'>Under consideration</a> for future release."
+              "version_added": false
             },
-            "firefox": {
-              "version_added": "35"
-            },
+            "firefox": [
+              {
+                "version_added": "35",
+                "version_removed": "72"
+              },
+              {
+                "version_added": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "security.cert_pinning.hpkp.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "35"
             },
@@ -27,10 +39,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "60"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "51"
             },
             "safari": {
               "version_added": false
@@ -39,16 +53,17 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": true,
+              "version_removed": "11.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": false
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         },
         "report-uri": {
@@ -77,10 +92,12 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "33"
+                "version_added": "33",
+                "version_removed": "60"
               },
               "opera_android": {
-                "version_added": "33"
+                "version_added": "33",
+                "version_removed": "51"
               },
               "safari": {
                 "version_added": false
@@ -89,16 +106,17 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": true,
+                "version_removed": "11.0"
               },
               "webview_android": {
-                "version_added": true
+                "version_added": false
               }
             },
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         }

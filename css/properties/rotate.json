@@ -14,16 +14,22 @@
             "edge": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "60",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.individual-transform.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "72"
+              },
+              {
+                "version_added": "60",
+                "version_removed": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.individual-transform.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "60",
               "flags": [
@@ -57,7 +63,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -75,16 +81,22 @@
               "edge": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.individual-transform.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "72"
+                },
+                {
+                  "version_added": "65",
+                  "version_removed": "72",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.individual-transform.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
                 "version_added": "65",
                 "flags": [
@@ -118,7 +130,7 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

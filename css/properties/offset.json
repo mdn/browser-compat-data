@@ -23,12 +23,31 @@
                 "version_added": "46"
               }
             ],
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "alternative_name": "motion",
+                "version_added": "79"
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "72"
+              },
+              {
+                "version_added": "71",
+                "version_removed": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.motion-path.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
@@ -44,18 +63,30 @@
                 "version_added": "33"
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "alternative_name": "motion",
+                "version_added": "33"
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6.0"
+              },
+              {
+                "alternative_name": "motion",
+                "version_added": "5.0"
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "55"
@@ -67,7 +98,7 @@
             ]
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

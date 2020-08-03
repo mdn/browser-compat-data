@@ -12,19 +12,24 @@
               "version_added": "52"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.contain.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "See <a href='https://bugzil.la/1150081'>bug 1150081</a> for the overall implementation status."
-            },
+            "firefox": [
+              {
+                "version_added": "69",
+                "notes": "Firefox does not support the <code>style</code> value."
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.contain.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "41",
               "flags": [
@@ -34,7 +39,7 @@
                   "value_to_set": "true"
                 }
               ],
-              "notes": "See <a href='https://bugzil.la/1150081'>bug 1150081</a> for the overall implementation status."
+              "notes": "Firefox does not support the <code>style</code> value."
             },
             "ie": {
               "version_added": false
@@ -51,12 +56,15 @@
             "safari_ios": {
               "version_added": false
             },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
             "webview_android": {
               "version_added": "52"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

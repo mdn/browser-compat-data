@@ -31,7 +31,6 @@ export type BrowserEngines =
   | 'WebKit'
   | 'V8';
 
-
 /**
  * The browser namespace.
  */
@@ -88,7 +87,6 @@ export interface ReleaseStatement {
    * Version of the engine corresponding to the browser version.
    */
   engine_version?: string;
-
 
   /**
    * A property indicating where in the lifetime cycle this release is in.

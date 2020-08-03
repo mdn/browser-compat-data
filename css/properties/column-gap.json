@@ -208,10 +208,15 @@
                 "version_added": "10.3",
                 "alternative_name": "grid-gap"
               },
-              "samsunginternet_android": {
-                "version_added": "6.0",
-                "alternative_name": "grid-gap"
-              },
+              "samsunginternet_android": [
+                {
+                  "version_added": "9.0"
+                },
+                {
+                  "alternative_name": "grid-gap",
+                  "version_added": "6.0"
+                }
+              ],
               "uc_android": {
                 "version_added": null
               },
@@ -225,16 +230,6 @@
                 {
                   "version_added": "57",
                   "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "4.4",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
                 }
               ]
             },
@@ -284,6 +279,7 @@
                 {
                   "prefix": "-moz-",
                   "version_added": "1.5",
+                  "version_removed": "74",
                   "notes": "Before Firefox 3, the default value for the <code>normal</code> keyword was <code>0</code> and not <code>1em</code>."
                 }
               ],
@@ -367,7 +363,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": true
+                  "version_added": "≤37"
                 }
               ]
             },
@@ -375,63 +371,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          },
-          "percentage_values": {
-            "__compat": {
-              "description": "<code>&lt;percentage&gt;</code> values",
-              "support": {
-                "chrome": {
-                  "version_added": "66"
-                },
-                "chrome_android": {
-                  "version_added": "66"
-                },
-                "edge": {
-                  "version_added": "16"
-                },
-                "firefox": {
-                  "version_added": "61"
-                },
-                "firefox_android": {
-                  "version_added": "61"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": "53"
-                },
-                "opera_android": {
-                  "version_added": "47"
-                },
-                "qq_android": {
-                  "version_added": false
-                },
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": {
-                  "version_added": false
-                },
-                "samsunginternet_android": {
-                  "version_added": false
-                },
-                "uc_android": {
-                  "version_added": false
-                },
-                "uc_chinese_android": {
-                  "version_added": false
-                },
-                "webview_android": {
-                  "version_added": "66"
-                }
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
             }
           },
           "calc_values": {
@@ -472,7 +411,7 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "9.0"
                 },
                 "uc_android": {
                   "version_added": false
@@ -485,7 +424,64 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "percentage_values": {
+            "__compat": {
+              "description": "<code>&lt;percentage&gt;</code> values",
+              "support": {
+                "chrome": {
+                  "version_added": "66"
+                },
+                "chrome_android": {
+                  "version_added": "66"
+                },
+                "edge": {
+                  "version_added": "16"
+                },
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": {
+                  "version_added": "61"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "53"
+                },
+                "opera_android": {
+                  "version_added": "47"
+                },
+                "qq_android": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "9.0"
+                },
+                "uc_android": {
+                  "version_added": false
+                },
+                "uc_chinese_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": "66"
+                }
+              },
+              "status": {
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }

@@ -10,7 +10,7 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": "54"
@@ -20,6 +20,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -41,6 +44,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -52,30 +58,135 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
-                  "version_added": "54"
+                  "version_added": "54",
+                  "notes": "Starting in Firefox 70, a value of <code>disable_non_proxied_udp</code> requires a proxy if one is configured, but allows connections to go through if no proxy is set up. Previously, in this mode WebRTC could only be used if a proxy was configured and TURN over TCP was available; this behavior is now exposed as <code>proxy_only</code>."
                 },
                 "firefox_android": {
                   "version_added": "54"
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
           }
         },
         "services": {
-          "passwordSavingEnabled": {
+          "autofillAddressEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "70"
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "autofillCreditCardEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "70"
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "autofillEnabled": {
+            "__compat": {
+              "status": {
+                "deprecated": true,
+                "experimental": false,
+                "standard_track": false
+              },
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "alternateErrorPagesEnabled": {
             "__compat": {
               "support": {
                 "chrome": {
                   "version_added": true
                 },
                 "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
                   "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "passwordSavingEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "38"
+                },
+                "edge": {
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": "56"
@@ -85,6 +196,129 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "safeBrowsingEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "safeBrowsingExtendedReportingEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "42"
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "searchSuggestEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "spellingServiceEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "translationServiceEnabled": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -101,12 +335,20 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "59"
+                  "version_added": "59",
+                  "notes": [
+                    "The <code>behavior</code> property value \"reject_trackers_and_partition_foreign\" was introduced in version 78.",
+                    "The <code>behavior</code> property value \"reject_trackers\" was introduced in version 64."
+                  ]
                 },
                 "firefox_android": {
-                  "version_added": "59"
+                  "version_added": "59",
+                  "notes": "The <code>behavior</code> property value \"reject_trackers\" was introduced in version 64."
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -129,6 +371,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -140,7 +385,7 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": "54"
@@ -150,6 +395,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -161,7 +409,7 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": false
@@ -171,6 +419,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -182,7 +433,7 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": "56"
@@ -192,6 +443,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -213,6 +467,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -224,7 +481,7 @@
                   "version_added": true
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": false
@@ -234,6 +491,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -254,6 +514,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }

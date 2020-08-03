@@ -17,11 +17,150 @@
               "notes": "Firefox does not support 'http://127.0.0.1' or 'http://localhost' as script sources: they must be served over HTTPS."
             },
             "firefox_android": {
-              "version_added": "48",
-              "notes": "Firefox does not support 'http://127.0.0.1' or 'http://localhost' as script sources: they must be served over HTTPS."
+              "version_added": false
             },
             "opera": {
               "version_added": true
+            },
+            "safari": {
+              "version_added": "14"
+            }
+          }
+        },
+        "content_scripts": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#content_scripts",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "See <code>isolated_world</code>."
+              },
+              "edge": {
+                "version_added": false,
+                "notes": "See <code>isolated_world</code>."
+              },
+              "firefox": {
+                "version_added": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "extensions.content_script_csp.enabled",
+                    "value_to_set": "true"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "extensions.content_script_csp.report_only",
+                    "value_to_set": "false"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false,
+                "notes": "See <code>isolated_world</code>."
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "extension_pages": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#extension_pages",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Available in Canary builds."
+              },
+              "edge": {
+                "version_added": false,
+                "notes": "Available in Canary builds."
+              },
+              "firefox": {
+                "version_added": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "extensions.content_script_csp.enabled",
+                    "value_to_set": "true"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "extensions.content_script_csp.report_only",
+                    "value_to_set": "false"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "isolated_world": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#isolated_world",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Not yet implemented."
+              },
+              "edge": {
+                "version_added": false,
+                "notes": "Not yet implemented."
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "See <code>content_scripts</code>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <code>content_scripts</code>."
+              },
+              "opera": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "sandbox": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#sandbox",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Available in Canary builds."
+              },
+              "edge": {
+                "version_added": false,
+                "notes": "Available in Canary builds."
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "Firefox does not support sandboxed scripts, so this key is not applicable."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "Firefox does not support sandboxed scripts, so this key is not applicable."
+              },
+              "opera": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              }
             }
           }
         }

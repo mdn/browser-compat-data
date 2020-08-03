@@ -43,6 +43,11 @@
                   "type": "preference",
                   "name": "layout.css.backdrop-filter.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "gfx.webrender.all",
+                  "value_to_set": "true"
                 }
               ]
             },
@@ -62,9 +67,20 @@
                 }
               ]
             },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "54"
+              },
+              {
+                "version_added": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "prefix": "-webkit-",
               "version_added": "9"
@@ -81,7 +97,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
