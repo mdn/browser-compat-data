@@ -23,7 +23,7 @@ const { argv } = require('yargs').command(
       .option('depth', {
         alias: 'd',
         describe:
-          'Depth of features to go (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
+          'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
         type: 'number',
         default: 100,
       });
