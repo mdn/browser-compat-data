@@ -450,6 +450,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Gamepad/displayId",
           "support": {
             "chrome": {
+              "version_removed": "80",
               "version_added": true,
               "flags": [
                 {
@@ -460,6 +461,7 @@
               "notes": "Only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
             },
             "chrome_android": {
+              "version_removed": "80",
               "version_added": true,
               "notes": "Currently supported only by Google Daydream."
             },
@@ -1057,6 +1059,53 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "vibrationActuator": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "48"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
