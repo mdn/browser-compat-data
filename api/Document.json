@@ -4114,19 +4114,19 @@
           "support": {
             "chrome": [
               {
-                "version_added": "45"
+                "version_added": "71"
               },
               {
-                "version_added": true,
+                "version_added": "15",
                 "prefix": "webkit"
               }
             ],
             "chrome_android": [
               {
-                "version_added": "45"
+                "version_added": "71"
               },
               {
-                "version_added": true,
+                "version_added": "18",
                 "prefix": "webkit"
               }
             ],
@@ -4204,10 +4204,10 @@
             ],
             "webview_android": [
               {
-                "version_added": "45"
+                "version_added": "71"
               },
               {
-                "version_added": true,
+                "version_added": "≤37",
                 "prefix": "webkit"
               }
             ]
@@ -4223,10 +4223,10 @@
             "description": "Returns a <code>Promise</code>",
             "support": {
               "chrome": {
-                "version_added": "71"
+                "version_added": "69"
               },
               "chrome_android": {
-                "version_added": "71"
+                "version_added": "69"
               },
               "edge": {
                 "version_added": "79"
@@ -4256,7 +4256,7 @@
                 "version_added": "10.0"
               },
               "webview_android": {
-                "version_added": "71"
+                "version_added": "69"
               }
             },
             "status": {
@@ -4858,12 +4858,24 @@
           "description": "<code>fullscreenchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event",
           "support": {
-            "chrome": {
-              "version_added": "45"
-            },
-            "chrome_android": {
-              "version_added": "45"
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "webkitfullscreenchange"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "webkitfullscreenchange"
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -4911,7 +4923,7 @@
             ],
             "ie": {
               "version_added": "11",
-              "alternative_name": "MSFullscreenChange"
+              "alternative_name": "msfullscreenchange"
             },
             "opera": {
               "version_added": "32"
@@ -4928,9 +4940,15 @@
             "samsunginternet_android": {
               "version_added": "5.0"
             },
-            "webview_android": {
-              "version_added": "45"
-            }
+            "webview_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "webkitfullscreenchange"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -4945,7 +4963,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "45"
+                "version_added": "71"
               },
               {
                 "version_added": true,
@@ -4954,7 +4972,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "45"
+                "version_added": "71"
               },
               {
                 "version_added": true,
@@ -5008,7 +5026,7 @@
             ],
             "ie": {
               "version_added": "11",
-              "alternative_name": "msFullScreenEnabled"
+              "alternative_name": "msFullscreenEnabled"
             },
             "opera": {
               "version_added": true
@@ -5033,7 +5051,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "45"
+                "version_added": "71"
               },
               {
                 "version_added": true,
@@ -5053,12 +5071,24 @@
           "description": "<code>fullscreenerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event",
           "support": {
-            "chrome": {
-              "version_added": "45"
-            },
-            "chrome_android": {
-              "version_added": "45"
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "webkitfullscreenerror"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "webkitfullscreenerror"
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -5106,7 +5136,7 @@
             ],
             "ie": {
               "version_added": "11",
-              "alternative_name": "MSFullscreenError"
+              "alternative_name": "msfullscreenerror"
             },
             "opera": {
               "version_added": "32"
@@ -5123,9 +5153,15 @@
             "samsunginternet_android": {
               "version_added": "5.0"
             },
-            "webview_android": {
-              "version_added": "45"
-            }
+            "webview_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "webkitfullscreenerror"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -5604,7 +5640,7 @@
             },
             "edge": {
               "version_added": "12",
-              "notes": "In EdgeHTML, this returns an <code>HTMLCollection</code>, not a <code>NodeList</code>. This behavior was fixed in Chromium versions of Edge."
+              "notes": "Before Edge 79, this method returns an <code>HTMLCollection</code>, not a <code>NodeList</code>."
             },
             "firefox": {
               "version_added": "1"
@@ -7157,12 +7193,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfullscreenchange",
           "support": {
-            "chrome": {
-              "version_added": "45"
-            },
-            "chrome_android": {
-              "version_added": "45"
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "onwebkitfullscreenchange"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "onwebkitfullscreenchange"
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -7210,7 +7258,7 @@
             ],
             "ie": {
               "version_added": "11",
-              "alternative_name": "onMSFullscreenChange"
+              "alternative_name": "onmsfullscreenchange"
             },
             "opera": {
               "version_added": true
@@ -7227,9 +7275,15 @@
             "samsunginternet_android": {
               "version_added": "5.0"
             },
-            "webview_android": {
-              "version_added": "45"
-            }
+            "webview_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "onwebkitfullscreenchange"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -7242,12 +7296,24 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfullscreenerror",
           "support": {
-            "chrome": {
-              "version_added": "45"
-            },
-            "chrome_android": {
-              "version_added": "45"
-            },
+            "chrome": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "onwebkitfullscreenerror"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "onwebkitfullscreenerror"
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -7295,7 +7361,7 @@
             ],
             "ie": {
               "version_added": "11",
-              "alternative_name": "onMSFullscreenError"
+              "alternative_name": "onmsfullscreenerror"
             },
             "opera": {
               "version_added": true
@@ -7312,9 +7378,15 @@
             "samsunginternet_android": {
               "version_added": "5.0"
             },
-            "webview_android": {
-              "version_added": "45"
-            }
+            "webview_android": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "45",
+                "alternative_name": "onwebkitfullscreenerror"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -9212,11 +9284,17 @@
             },
             "ie": [
               {
+                "version_added": "11"
+              },
+              {
                 "version_added": "9",
+                "version_removed": "11",
                 "notes": "Internet Explorer 9 and 10 have bugs where the 'interactive' state can be fired too early before the document has finished parsing."
               },
               {
                 "version_added": "8",
+                "version_removed": "9",
+                "partial_implementation": true,
                 "notes": "Only supports 'complete'."
               }
             ],
