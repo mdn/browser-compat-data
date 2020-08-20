@@ -17,3 +17,4 @@ To create and publish a new version of `mdn-browser-compat-data`:
 6. Check [Travis CI](https://travis-ci.org/mdn/browser-compat-data) again for the v1.0.3 build and also check [mdn-browser-compat-data on npm](https://www.npmjs.com/package/mdn-browser-compat-data) to see if `1.0.3` shows up correctly once Travis has finished its work.
 7. Notify the #mdn-dev IRC channel on Mozilla Slack about the new release.
 8. Create a new [release on GitHub](https://github.com/mdn/browser-compat-data/releases) by running `npm run release-notes -- v1.0.3`).
+9. Update tracking issues ([#6369](https://github.com/mdn/browser-compat-data/issues/6369) for every release, [#3555](https://github.com/mdn/browser-compat-data/issues/3555) if there is significant progress) by running `npm run stats`.
