@@ -540,7 +540,8 @@
             },
             "edge": {
               "version_added": "12",
-              "notes": "EdgeHTML versions of edge only trim whitespace - it doesn't remove duplicates. This behavior was fixed in Chromium versions of Edge."
+              "partial_implementation": true,
+              "notes": "Before Edge 79, <code>DOMTokenList</code> trims whitespace but doesn't remove duplicates."
             },
             "firefox": {
               "version_added": "55"
@@ -550,7 +551,8 @@
             },
             "ie": {
               "version_added": true,
-              "notes": " IE only trims whitespace - it doesn't remove duplicates."
+              "partial_implementation": true,
+              "notes": "<code>DOMTokenList</code> trims whitespace but doesn't remove duplicates."
             },
             "opera": {
               "version_added": true
