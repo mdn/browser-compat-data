@@ -23,7 +23,7 @@ const browsers = {
     'webview_android',
   ],
   server: ['nodejs'],
-  'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera'],
+  'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
   'webextensions-mobile': ['firefox_android'],
 };
 

@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
@@ -96,20 +95,6 @@ function processData(filename, logger) {
     );
   }
 
-  const constructorMatch = actual.match(
-    String.raw`"<code>([^)]*?)</code> constructor"`,
-  );
-  if (constructorMatch) {
-    logger.error(
-      chalk`{red → ${indexToPos(
-        actual,
-        constructorMatch.index,
-      )} – Use parentheses in constructor description ({yellow ${
-        constructorMatch[1]
-      }} → {green ${constructorMatch[1]}{bold ()}}).}`,
-    );
-  }
-
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     logger.error(
@@ -118,25 +103,6 @@ function processData(filename, logger) {
         hrefDoubleQuoteIndex,
       )} - Found {yellow \\"}, but expected {green \'} for <a href>.}`,
     );
-  }
-
-  const regexp = new RegExp(
-    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
-    'g',
-  );
-  const match = regexp.exec(actual);
-  if (match) {
-    const a_url = url.parse(match[1]);
-    if (a_url.hostname === null) {
-      logger.error(
-        chalk`{red → ${indexToPos(
-          actual,
-          constructorMatch.index,
-        )} - Include hostname in URL ({yellow ${
-          match[1]
-        }} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`,
-      );
-    }
   }
 }
 

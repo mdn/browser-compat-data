@@ -309,22 +309,30 @@
                 },
                 {
                   "alternative_name": "min-intrinsic",
-                  "version_added": "25"
+                  "version_added": "25",
+                  "version_removed": "48"
                 }
               ],
-              "chrome_android": {
-                "version_added": "46"
-              },
+              "chrome_android": [
+                {
+                  "version_added": "46"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "25"
+                },
+                {
+                  "alternative_name": "min-intrinsic",
+                  "version_added": "25",
+                  "version_removed": "48"
+                }
+              ],
               "edge": [
                 {
                   "version_added": "79"
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "79"
-                },
-                {
-                  "alternative_name": "min-intrinsic",
                   "version_added": "79"
                 }
               ],
@@ -349,12 +357,34 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "44"
-              },
-              "opera_android": {
-                "version_added": "43"
-              },
+              "opera": [
+                {
+                  "version_added": "33"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "≤15"
+                },
+                {
+                  "alternative_name": "min-intrinsic",
+                  "version_added": "≤15",
+                  "version_removed": "35"
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "33"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "≤14"
+                },
+                {
+                  "alternative_name": "min-intrinsic",
+                  "version_added": "≤14",
+                  "version_removed": "35"
+                }
+              ],
               "safari": [
                 {
                   "version_added": "11"
@@ -373,9 +403,20 @@
                   "version_added": "1"
                 }
               ],
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
+              "samsunginternet_android": [
+                {
+                  "version_added": "5.0"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1.5"
+                },
+                {
+                  "alternative_name": "min-intrinsic",
+                  "version_added": "1.5",
+                  "version_removed": "5.0"
+                }
+              ],
               "webview_android": [
                 {
                   "version_added": "46"
@@ -383,6 +424,11 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "≤37"
+                },
+                {
+                  "alternative_name": "min-intrinsic",
+                  "version_added": "≤37",
+                  "version_removed": "48"
                 }
               ]
             },

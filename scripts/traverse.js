@@ -22,6 +22,13 @@ const { argv } = require('yargs').command(
         describe: 'The value(s) to test against',
         type: 'array',
         default: ['null', 'true'],
+      })
+      .option('depth', {
+        alias: 'd',
+        describe:
+          'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
+        type: 'number',
+        default: 100,
       });
   },
 );
@@ -59,7 +66,7 @@ function traverseFeatures(obj, depth, identifier) {
   }
 }
 
-const main = (folder = 'all', value = ['null', 'true']) => {
+const main = (folder = 'all', value = ['null', 'true'], depth = 100) => {
   let features = [];
   const folders =
     folder == 'all'
@@ -79,14 +86,14 @@ const main = (folder = 'all', value = ['null', 'true']) => {
   const values = Array.isArray(value) ? value : value.toString().split(',');
 
   for (const folder in folders)
-    traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
+    traverseFeatures(bcd[folders[folder]], depth, `${folders[folder]}.`);
 
   console.log(features.join('\n'));
   console.log(features.length);
 };
 
 if (require.main === module) {
-  main(argv.folder, argv.value);
+  main(argv.folder, argv.value, argv.depth);
 }
 
 module.exports = main;
