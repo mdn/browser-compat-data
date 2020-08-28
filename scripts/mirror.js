@@ -241,33 +241,29 @@ const bumpEdge = compData => {
     chromeData.version_removed !== undefined;
   let chromeNull = chromeData.version_added === null;
 
-  if (originalData === undefined) {
-    newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
-  } else {
-    if (!chromeFalse && !chromeNull) {
-      if (originalData.version_added == true) {
-        newData.version_added = '≤18';
-      } else {
-        if (
-          chromeData.version_added == true ||
-          Number(chromeData.version_added) <= 79
-        ) {
-          if (originalData.version_added == false) {
-            newData.version_added = '79';
-          } else if (originalData.version_added == null) {
-            newData.version_added = '≤79';
-          }
-        } else {
-          newData.version_added = chromeData.version_added;
+  if (!chromeFalse && !chromeNull) {
+    if (originalData.version_added == true) {
+      newData.version_added = '≤18';
+    } else {
+      if (
+        chromeData.version_added == true ||
+        Number(chromeData.version_added) <= 79
+      ) {
+        if (originalData.version_added == false) {
+          newData.version_added = '79';
+        } else if (originalData.version_added == null) {
+          newData.version_added = '≤79';
         }
+      } else {
+        newData.version_added = chromeData.version_added;
       }
-    } else if (chromeFalse) {
-      if (originalData.version_added && !originalData.version_removed) {
-        newData.version_removed = '79';
-      }
-    } else if (chromeNull) {
-      newData.version_added = null;
     }
+  } else if (chromeFalse) {
+    if (originalData.version_added && !originalData.version_removed) {
+      newData.version_removed = '79';
+    }
+  } else if (chromeNull) {
+    newData.version_added = null;
   }
 
   let newNotes = combineNotes(
