@@ -223,7 +223,7 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpEdge = comp => {
-  let newData = comp['edge'];
+  let newData = copyStatement(comp['edge']);
   let originalData = comp['edge'];
   let ieData = comp['ie'];
   let chromeData = comp['chrome'];
@@ -258,13 +258,15 @@ const bumpEdge = comp => {
             newData.version_added = '≤79';
           }
         } else {
-          newData.version_added == chromeData.version_added;
+          newData.version_added = chromeData.version_added;
         }
       }
     } else if (chromeFalse) {
       if (originalData.version_added && !originalData.version_removed) {
         newData.version_removed = '79';
       }
+    } else if (chromeNull) {
+      newData.version_added = null;
     }
   }
 
