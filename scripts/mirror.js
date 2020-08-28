@@ -271,7 +271,7 @@ const bumpEdge = compData => {
   }
 
   let newNotes = combineNotes(
-    updateNotes(ieData.notes, /Internet Explorer/g, 'Edge'),
+    ieData ? updateNotes(ieData.notes, /Internet Explorer/g, 'Edge') : null,
     updateNotes(chromeData.notes, /Chrome/g, 'Edge'),
     originalData.notes,
   );
