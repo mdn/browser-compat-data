@@ -228,10 +228,12 @@ const bumpEdge = comp => {
   let ieData = comp['ie'];
   let chromeData = comp['chrome'];
 
-  if (ieData.version_removed !== null) {
-    newData.version_added = false;
-  } else if (ieData.version_added !== null) {
-    newData.version_added = ieData.version_added ? '12' : null;
+  if (ieData) {
+    if (ieData.version_removed !== null) {
+      newData.version_added = false;
+    } else if (ieData.version_added !== null) {
+      newData.version_added = ieData.version_added ? '12' : null;
+    }
   }
 
   let chromeFalse =
