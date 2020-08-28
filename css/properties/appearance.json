@@ -5,21 +5,36 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/appearance",
           "support": {
-            "chrome": {
-              "version_added": "1",
-              "partial_implementation": true,
-              "prefix": "-webkit-"
-            },
-            "chrome_android": {
-              "version_added": "18",
-              "partial_implementation": true,
-              "prefix": "-webkit-"
-            },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "prefix": "-webkit-"
-            },
+            "chrome": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "1",
+                "partial_implementation": true,
+                "prefix": "-webkit-"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "prefix": "-webkit-"
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "prefix": "-webkit-"
+              }
+            ],
             "firefox": [
               {
                 "version_added": "1",
@@ -71,11 +86,16 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15",
-              "partial_implementation": true,
-              "prefix": "-webkit-"
-            },
+            "opera": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "15",
+                "partial_implementation": true,
+                "prefix": "-webkit-"
+              }
+            ],
             "opera_android": {
               "version_added": "14",
               "partial_implementation": true,
@@ -96,11 +116,16 @@
               "partial_implementation": true,
               "prefix": "-webkit-"
             },
-            "webview_android": {
-              "version_added": "1",
-              "partial_implementation": true,
-              "prefix": "-webkit-"
-            }
+            "webview_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "1",
+                "partial_implementation": true,
+                "prefix": "-webkit-"
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -112,16 +137,16 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "83"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "83"
               },
               "edge": {
-                "version_added": false
+                "version_added": "83"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "80"
               },
               "firefox_android": {
                 "version_added": false
@@ -130,7 +155,7 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "69"
               },
               "opera_android": {
                 "version_added": false
@@ -145,7 +170,7 @@
                 "version_added": false
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "83"
               }
             },
             "status": {
@@ -202,9 +227,9 @@
             }
           }
         },
-        "compat": {
+        "compat-auto": {
           "__compat": {
-            "description": "<code>&lt;compat&gt;</code> (compatibility values <code>searchfield</code>, <code>textarea</code>, <code>push-button</code>, <code>button-bevel</code>, <code>slider-horizontal</code>, <code>checkbox</code>, <code>radio</code>, <code>square-button</code>, <code>menulist</code>, <code>menulist-button</code>, <code>listbox</code>, <code>meter</code>, <code>progress-bar</code>)",
+            "description": "<code>&lt;compat-auto&gt;</code> (compatibility values <code>searchfield</code>, <code>textarea</code>, <code>push-button</code>, <code>slider-horizontal</code>, <code>checkbox</code>, <code>radio</code>, <code>square-button</code>, <code>menulist</code>, <code>listbox</code>, <code>meter</code>, <code>progress-bar</code>)",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -216,10 +241,72 @@
                 "version_added": "12",
                 "partial_implementation": true
               },
-              "firefox": {
-                "version_added": "1",
+              "firefox": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "1",
+                  "partial_implementation": true
+                }
+              ],
+              "firefox_android": {
+                "version_added": "4",
                 "partial_implementation": true
               },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "3"
+              },
+              "safari_ios": {
+                "version_added": "1"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "menulist-button": {
+          "__compat": {
+            "description": "<code>menulist-button</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12",
+                "partial_implementation": true
+              },
+              "firefox": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "1",
+                  "partial_implementation": true,
+                  "notes": "See <a href='https://bugzil.la/1481615'>bug 1481615</a>."
+                }
+              ],
               "firefox_android": {
                 "version_added": "4",
                 "partial_implementation": true
