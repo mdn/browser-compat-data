@@ -219,14 +219,14 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
 };
 
 /**
- * @param {SupportStatement} comp
+ * @param {SupportStatement} compData
  * @returns {SupportStatement}
  */
-const bumpEdge = comp => {
-  let newData = copyStatement(comp['edge']);
-  let originalData = comp['edge'];
-  let ieData = comp['ie'];
-  let chromeData = comp['chrome'];
+const bumpEdge = compData => {
+  let newData = copyStatement(compData['edge']);
+  let originalData = compData['edge'];
+  let ieData = compData['ie'];
+  let chromeData = compData['chrome'];
 
   if (ieData) {
     if (ieData.version_removed !== null) {
@@ -557,7 +557,7 @@ const bumpVersion = (data, destination, source, originalData) => {
  @ @returns {Identifier}
  */
 const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
-  let comp = data[rootPath].__compat.support;
+  let compData = data[rootPath].__compat.support;
 
   let doBump = false;
   if (modify == 'always') {
@@ -567,15 +567,15 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
       modify == 'nonreal'
         ? [true, null, undefined]
         : [true, false, null, undefined];
-    if (Array.isArray(comp[browser])) {
-      for (let i = 0; i < comp[browser].length; i++) {
-        if (triggers.includes(comp[browser][i].version_added)) {
+    if (Array.isArray(compData[browser])) {
+      for (let i = 0; i < compData[browser].length; i++) {
+        if (triggers.includes(compData[browser][i].version_added)) {
           doBump = true;
           break;
         }
       }
-    } else if (comp[browser] !== undefined) {
-      doBump = triggers.includes(comp[browser].version_added);
+    } else if (compData[browser] !== undefined) {
+      doBump = triggers.includes(compData[browser].version_added);
     } else {
       doBump = true;
     }
@@ -584,9 +584,14 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   if (doBump) {
     let newValue = null;
     if (browser == 'edge') {
-      newValue = bumpEdge(comp);
+      newValue = bumpEdge(compData);
     } else {
-      newValue = bumpVersion(comp[source], browser, source, comp[browser]);
+      newValue = bumpVersion(
+        compData[source],
+        browser,
+        source,
+        compData[browser],
+      );
     }
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
