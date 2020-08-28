@@ -219,7 +219,7 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
 };
 
 /**
- * @param {SupportStatement} compData
+ * @param {SupportStatement} originalData
  * @param {SupportStatement} chromeData
  * @param {SupportStatement} ieData
  * @returns {SupportStatement}
