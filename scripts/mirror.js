@@ -244,10 +244,9 @@ const bumpEdge = (originalData, chromeData, ieData) => {
     if (originalData.version_added == true) {
       newData.version_added = '≤18';
     } else {
-      if (
-        chromeData.version_added == true ||
-        Number(chromeData.version_added) <= 79
-      ) {
+      if (chromeData.version_added == true) {
+        newData.version_added = true;
+      } else if (Number(chromeData.version_added) <= 79) {
         if (originalData.version_added == false) {
           newData.version_added = '79';
         } else if (originalData.version_added == null) {
