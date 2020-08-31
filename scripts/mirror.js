@@ -745,6 +745,10 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
     return false;
   }
 
+  if (browser === 'edge' && forced_source) {
+    console.warn('Warning: Edge does not support --source parameter.');
+  }
+
   let source = getSource(browser, forced_source);
 
   if (feature_or_file) {
