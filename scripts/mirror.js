@@ -523,6 +523,7 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
       case 'edge':
         bumpFunction = (originalData, data, source) =>
           bumpEdge(originalData, data, compData['ie']);
+        break;
       case 'opera':
         bumpFunction = bumpOpera;
         break;
@@ -589,6 +590,7 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
       browser,
       source,
       compData[browser],
+      compData,
     );
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
