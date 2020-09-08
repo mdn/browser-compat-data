@@ -3,6 +3,36 @@ const fs = require('fs');
 const path = require('path');
 const extend = require('extend');
 
+function warnPackageName() {
+  if (!warnPackageName.emitted) {
+    warnPackageName.emitted = true;
+    process.emitWarning(
+      'mdn-browser-compat-data is deprecated. Upgrade to @mdn/browser-compat-data: (TODO: upgrade doc URL)',
+      {
+        type: 'DeprecationWarning',
+        details: 'For upgrade instructions, go to: (TODO: URL)',
+      },
+    );
+  }
+}
+
+function warnNode8Deprecation() {
+  if (!warnNode8Deprecation.emitted) {
+    warnNode8Deprecation.emitted = true;
+    process.emitWarning(
+      'mdn-browser-compat-data: @mdn/browser-compat-data ends support for Node.js 8. Upgrade to Node.js 10 or later.',
+      {
+        type: 'DeprecationWarning',
+      },
+    );
+  }
+}
+
+warnPackageName();
+if (process.version.split('.')[0] === 'v8') {
+  warnNode8Deprecation();
+}
+
 function load() {
   // Recursively load one or more directories passed as arguments.
   let dir,
