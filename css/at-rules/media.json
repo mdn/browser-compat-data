@@ -596,7 +596,14 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors",
             "support": {
               "chrome": {
-                "version_added": false,
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#forced-colors",
+                    "value_to_set": "Enabled"
+                  }
+                ],
                 "notes": "See <a href='https://crbug.com/970285'>bug 970285</a>."
               },
               "chrome_android": {
@@ -604,8 +611,7 @@
                 "notes": "See <a href='https://crbug.com/970285'>bug 970285</a>."
               },
               "edge": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/970285'>bug 970285</a>."
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "81",
