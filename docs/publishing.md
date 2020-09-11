@@ -17,15 +17,18 @@ To create and publish a new version of `mdn-browser-compat-data`:
 4. Check if the commit passes fine on [Travis CI](https://travis-ci.org/mdn/browser-compat-data).
 
 5. If Travis is alright, push the git tag as well: `git push origin v1.0.3`.
-   This step will trigger Travis to publish to npm automatically (see our [.travis.yml file](https://github.com/mdn/browser-compat-data/blob/master/.travis.yml)).
 
-6. Check [Travis CI](https://travis-ci.org/mdn/browser-compat-data) again for the v1.0.3 build and also check [mdn-browser-compat-data on npm](https://www.npmjs.com/package/mdn-browser-compat-data) to see if `1.0.3` shows up correctly once Travis has finished its work.
+6. Create a new [release on GitHub](https://github.com/mdn/browser-compat-data/releases) by running `npm run release-notes -- v1.0.3`).
 
-7. Notify the #mdn-dev IRC channel on Mozilla Slack about the new release.
+7. Download and unzip the built package from [the GitHub Actions workflow](https://github.com/ddbeck/browser-compat-data/actions?query=workflow%3A%22Build+for+release%22).
 
-8. Create a new [release on GitHub](https://github.com/mdn/browser-compat-data/releases) by running `npm run release-notes -- v1.0.3`).
+   Pushing a release tag triggers a GitHub Action workflow that builds the release package.
 
-9. Update tracking issues:
+8. Run `npm publish mdn-browser-compat-data-1.0.3.tgz` to publish the package and check [mdn-browser-compat-data on npm](https://www.npmjs.com/package/mdn-browser-compat-data) to see if `1.0.3` shows up correctly.
 
-   - [#6369](https://github.com/mdn/browser-compat-data/issues/6369) for every release, update with the results of `npm run stats api`
-   - [#3555](https://github.com/mdn/browser-compat-data/issues/3555) when there's significant progress, update with the results of `npm run stats`
+9. Notify the #mdn-dev channel on Mozilla Slack about the new release.
+
+10. Update tracking issues:
+
+    - [#6369](https://github.com/mdn/browser-compat-data/issues/6369) for every release, update with the results of `npm run stats api`
+    - [#3555](https://github.com/mdn/browser-compat-data/issues/3555) when there's significant progress, update with the results of `npm run stats`
