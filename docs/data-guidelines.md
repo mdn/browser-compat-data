@@ -178,3 +178,14 @@ Features can be removed from BCD if it is considered irrelevant. A feature can b
 - a feature is unsupported in all releases in the past five years.
 
 This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
+
+## Removal of irrelevant flag data
+
+Valid support statements containing flags can be removed from BCD if it is considered irrelevant. To be considered irrelevant, the support statement must meet these conditions:
+
+- As of at least two years ago, the browser has supported the feature by default or removed the flagged feature.
+- The removal of the support statement must not create an ambiguous gap or void in the data for that browser (for example, leaving behind only a `"version_added": true` or `null` value).
+
+These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
+
+This guideline was proposed in TODO:
