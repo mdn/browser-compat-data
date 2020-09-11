@@ -1,0 +1,34 @@
+name: Build for release
+
+on:
+  push:
+    tags: 'v*' # Build on every version tag
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # TODO: hoist to 10.x when we bump the version supported in #5931
+        node-version: [ 8.x ]
+
+    steps:
+    - name: Set RELEASE_VERSION
+      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/tags/v}
+
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm test
+    - run: npm pack
+
+    - uses: actions/upload-artifact@v2
+      with:
+        # The artifact -- itself a tarball -- will be wrapped in a zip file on download!
+        # https://github.com/actions/upload-artifact#zipped-artifact-downloads
+        name: "mdn-browser-compat-data-${{ env.RELEASE_VERSION }}--unzip-before-publish"
+        path: "mdn-browser-compat-data-${{ env.RELEASE_VERSION }}.tgz"
+        if-no-files-found: error
