@@ -191,4 +191,4 @@ Valid support statements containing flags can be removed from BCD if it is consi
 
 These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
 
-This guideline was proposed in TODO:
+This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
