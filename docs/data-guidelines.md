@@ -2,6 +2,8 @@
 
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
+<!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
+
 - [Data guidelines](#data-guidelines)
   - [Constructors](#constructors)
   - [DOM events (`eventname_event`)](#dom-events-eventname_event)
@@ -12,10 +14,11 @@ This file contains recommendations to help you record data in a consistent and u
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
+  - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
 
 <!-- BEGIN TEMPLATE
 
-## Short title in sentence case
+Short title in sentence case
 
 A description of what to do, preferably in the imperative. If applicable, include an example to illustrate the rule.
 
