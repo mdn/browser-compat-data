@@ -18,8 +18,6 @@ Read how this project is [governed](https://github.com/mdn/browser-compat-data/b
 
 Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
 
-[![Testing Powered By SauceLabs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true 'Testing Powered By SauceLabs')](https://saucelabs.com)
-
 ## Installation
 
 You can install mdn-browser-compat-data as a node package.
@@ -91,3 +89,12 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
 - [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
 - [Hexo Plugin: hexo-compat-report](https://github.com/TimDaub/hexo-compat-report) - Allows to embed MDN's compatibility table in a hexo blog post.
+
+## Acknowledgments
+
+Thanks to:
+
+- The [BrowserStack Open Source Program](https://www.browserstack.com/open-source) for testing services
+- [SauceLabs Open Source](https://opensource.saucelabs.com/) for testing services
+
+[![Testing Powered By SauceLabs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true 'Testing Powered By SauceLabs')](https://saucelabs.com)
