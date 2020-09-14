@@ -23,6 +23,6 @@ The browser may be any single browser defined in the [`browsers/` folder](https:
 
 The folder may be omitted or set to `all` to search through all data folders, or a comma-separated list of folders to search through.
 
-The value may be omitted to search for all non-real values (or more specifically, `true` and `null` values), or any value accepted by `version_added` and `version_removed`.
+The value may be omitted to search for all non-real values (or more specifically, `true` and `null` values), or any value accepted by `version_added` and `version_removed`. It can also be set to `any` to allow for any value (to simply list all the entries in BCD).
 
 For example, to search for all Safari entries that are non-real, run `npm run traverse safari`. To search for all WebView entries that are marked as `true` in `api` and `javascript`, run `npm run traverse webview_android api,javascript true`. To search for all Firefox entries supported since `10` across all folders, run `npm run traverse firefox all 10`.

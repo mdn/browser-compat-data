@@ -16,7 +16,8 @@ const { argv } = require('yargs').command(
         default: 'all',
       })
       .positional('value', {
-        describe: 'The value(s) to test against',
+        describe:
+          'The value(s) to test against (set to "any" to allow any value)',
         type: 'array',
         default: ['null', 'true'],
       })
@@ -45,6 +46,7 @@ function traverseFeatures(obj, depth, identifier) {
             if (browser[range] === undefined) {
               if (values.includes('null')) features.push(`${identifier}${i}`);
             } else if (
+              values.includes('any') ||
               values.includes(String(browser[range].version_added)) ||
               values.includes(String(browser[range].version_removed))
             ) {
