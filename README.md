@@ -18,6 +18,8 @@ Read how this project is [governed](https://github.com/mdn/browser-compat-data/b
 
 Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
 
+[![Testing Powered By SauceLabs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true 'Testing Powered By SauceLabs')](https://saucelabs.com)
+
 ## Installation
 
 You can install mdn-browser-compat-data as a node package.
