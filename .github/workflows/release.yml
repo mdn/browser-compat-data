@@ -21,6 +21,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        registry-url: "https://registry.nmpjs.org/"
     - run: npm install
     - run: npm test
-    - run: npm pack
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
