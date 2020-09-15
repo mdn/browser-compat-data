@@ -4,7 +4,7 @@
 MDN staff [deploy the package to the MDN site](contributing.md#updating-compatibility-tables-on-mdn).
 Usually, this happens every Thursday (MDN never deploys to production on Fridays).
 
-Any owner can complete the following steps to publish a new version, but please coordinate releases with [Florian Scholz](https://github.com/Elchi3).
+Any owner can complete the following steps to publish a new version, but please coordinate releases with [@ddbeck](https://github.com/ddbeck).
 
 To create and publish a new version of `mdn-browser-compat-data`:
 
