@@ -1,8 +1,8 @@
 name: Release package
 
 on:
-  push:
-    tags: 'v*' # Build on every version tag
+  release:
+    types: [published]
 
 jobs:
   build:
