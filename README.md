@@ -118,7 +118,8 @@ Thanks to:
       />
       <p>
         <a href="https://opensource.saucelabs.com/">Sauce Labs Open Source</a
-        >for testing services
+        >
+        for testing services
       </p>
     </td>
   </tr>
