@@ -1,6 +1,6 @@
 # Contributing to browser-compat-data
 
-We're really happy to accept contributions to the mdn-browser-compat-data repository!
+We're really happy to accept contributions to the mdn/browser-compat-data repository!
 
 ## Table of contents
 
@@ -44,8 +44,8 @@ It takes up to four weeks for BCD changes to be reflected in MDN's browser compa
 The process is:
 
 1. A pull request is reviewed and merged to `master`.
-2. Project owners publish a new release of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data).
-   See [Publishing a new version of `mdn-browser-compat-data`](publishing.md) for details.
+2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
+   See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
 3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, to production.
    This typically happens within a day of the release of the npm package.
 4. Tables are generated on MDN:
