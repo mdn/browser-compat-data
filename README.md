@@ -1,4 +1,4 @@
-# mdn-browser-compat-data
+# `@mdn/browser-compat-data`
 
 [https://github.com/mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)
 
@@ -10,7 +10,7 @@ This data can be used in documentation, to build compatibility tables listing
 browser support for APIs. For example:
 [Browser support for WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
 
-[![npm](https://img.shields.io/npm/v/mdn-browser-compat-data.svg)](https://www.npmjs.com/package/mdn-browser-compat-data)
+[![npm](https://img.shields.io/npm/v/@mdn/browser-compat-data.svg)](https://www.npmjs.com/package/@mdn/browser-compat-data)
 [![Build Status](https://travis-ci.org/mdn/browser-compat-data.svg?branch=master)](https://travis-ci.org/mdn/browser-compat-data)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mozdevnet.svg?style=social&label=Follow&style=plastic)](https://twitter.com/MozDevNet)
 
@@ -20,16 +20,16 @@ Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)
 
 ## Installation
 
-You can install mdn-browser-compat-data as a node package.
+You can install `@mdn/browser-compat-data` as a node package.
 
 ```
-npm install mdn-browser-compat-data
+npm install @mdn/browser-compat-data
 ```
 
 ## Usage
 
 ```js
-const bcd = require('mdn-browser-compat-data');
+const bcd = require('@mdn/browser-compat-data');
 bcd.css.properties.background;
 // returns a compat data object (see schema)
 ```
@@ -78,7 +78,7 @@ We're very happy to accept contributions to this data. See [Contributing to brow
 
 ## Projects using the data
 
-Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/mdn-browser-compat-data) or directly:
+Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/@mdn/browser-compat-data) or directly:
 
 - [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
 - [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.
