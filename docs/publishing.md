@@ -8,7 +8,7 @@ Usually, this happens every Thursday (MDN never deploys to production on Fridays
 
 Any project owner (or release designee) can complete the following steps to publish a new version, but please coordinate releases with [@ddbeck](https://github.com/ddbeck).
 
-The steps in this process assume that your `origin` remote poitns to `mdn/browser-compat-data`. You may have to adjust the procedure to use a different remote name.
+The steps in this process assume that your `origin` remote points to `mdn/browser-compat-data`. You may have to adjust the procedure to use a different remote name.
 
 ## Prepare the release
 
