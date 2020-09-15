@@ -8,7 +8,10 @@ Usually, this happens every Thursday (MDN never deploys to production on Fridays
 
 Any project owner (or release designee) can complete the following steps to publish a new version, but please coordinate releases with [@ddbeck](https://github.com/ddbeck).
 
-The steps in this process assume that your `origin` remote points to `mdn/browser-compat-data`. You may have to adjust the procedure to use a different remote name.
+The steps in this process assume:
+
+- `NPM_TOKEN` is set in the repository secrets. If the token is invalidated or unset, a member of the `@mdn` organization on npm must [create a new token](https://docs.npmjs.com/creating-and-viewing-authentication-tokens) and [add it to the repository's secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+- Your `origin` remote points to `mdn/browser-compat-data`. You may have to adjust the procedure to use a different remote name.
 
 ## Prepare the release
 
