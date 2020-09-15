@@ -7,10 +7,9 @@ function warnPackageName() {
   if (!warnPackageName.emitted) {
     warnPackageName.emitted = true;
     process.emitWarning(
-      'mdn-browser-compat-data is deprecated. Upgrade to @mdn/browser-compat-data: (TODO: upgrade doc URL)',
+      'mdn-browser-compat-data is deprecated. Upgrade to @mdn/browser-compat-data. Learn more: https://github.com/mdn/browser-compat-data/blob/v1.1.0/UPGRADE-2.0.md',
       {
         type: 'DeprecationWarning',
-        details: 'For upgrade instructions, go to: (TODO: URL)',
       },
     );
   }
