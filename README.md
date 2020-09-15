@@ -110,7 +110,7 @@ Thanks to:
         for testing services
       </p>
     </td>
-    <td align="center">
+    <td>
       <img
         src="https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true"
         height="86"
