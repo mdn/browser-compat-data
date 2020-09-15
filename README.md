@@ -94,7 +94,32 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 
 Thanks to:
 
-- The [BrowserStack Open Source Program](https://www.browserstack.com/open-source) for testing services
-- [Sauce Labs Open Source](https://opensource.saucelabs.com/) for testing services
-
-[![Testing Powered By Sauce Labs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true 'Testing Powered By Sauce Labs')](https://saucelabs.com)
+<table>
+  <tr align="center">
+    <td>
+      <img
+        src="https://user-images.githubusercontent.com/498917/52569900-852b3080-2e12-11e9-9bd0-f1e256b13e53.png"
+        height="86"
+        alt="BrowserStack"
+      />
+      <p>
+        The
+        <a href="https://www.browserstack.com/open-source"
+          >BrowserStack Open Source Program</a
+        >
+        for testing services
+      </p>
+    </td>
+    <td align="center">
+      <img
+        src="https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true"
+        height="86"
+        alt="Testing Powered By Sauce Labs"
+      />
+      <p>
+        <a href="https://opensource.saucelabs.com/">Sauce Labs Open Source</a
+        >for testing services
+      </p>
+    </td>
+  </tr>
+</table>
