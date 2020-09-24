@@ -160,7 +160,7 @@
                 "version_added": "80"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "80"
               },
               "ie": {
                 "version_added": false
@@ -337,7 +337,8 @@
                 },
                 {
                   "version_added": "4",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "See <a href='https://bugzil.la/1481615'>bug 1481615</a>."
                 }
               ],
               "ie": {
@@ -412,11 +413,16 @@
                   "notes": "Doesn't work with <code>&lt;input type=\"checkbox\"&gt;</code> and <code>&lt;input type=\"radio\"&gt;</code>."
                 }
               ],
-              "firefox_android": {
-                "version_added": "4",
-                "partial_implementation": true,
-                "notes": "Doesn't work with <code>&lt;input type=\"checkbox\"&gt;</code> and <code>&lt;input type=\"radio\"&gt;</code>."
-              },
+              "firefox_android": [
+                {
+                  "version_added": "54"
+                },
+                {
+                  "version_added": "4",
+                  "partial_implementation": true,
+                  "notes": "Doesn't work with <code>&lt;input type=\"checkbox\"&gt;</code> and <code>&lt;input type=\"radio\"&gt;</code>."
+                }
+              ],
               "ie": {
                 "version_added": false
               },
