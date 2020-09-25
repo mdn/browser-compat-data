@@ -367,36 +367,22 @@
           "support": {
             "chrome": [
               {
-                "version_added": "52"
+                "version_added": "53"
               },
               {
-                "version_added": "47",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                "version_added": "52",
+                "version_removed": "53",
+                "prefix": "webkit"
               }
             ],
             "chrome_android": [
               {
-                "version_added": "52"
+                "version_added": "53"
               },
               {
-                "version_added": "47",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Older versions of Chrome implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                "version_added": "52",
+                "version_removed": "53",
+                "prefix": "webkit"
               }
             ],
             "edge": {
@@ -428,35 +414,14 @@
                 "version_added": "40"
               },
               {
-                "version_added": "34",
+                "version_added": "39",
                 "version_removed": "40",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
+                "prefix": "webkit"
               }
             ],
-            "opera_android": [
-              {
-                "version_added": "41"
-              },
-              {
-                "version_added": "34",
-                "version_removed": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Older versions of Opera implement <code>navigator.webkitGetUserMedia</code>, a prefixed form of the legacy <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'><code>navigator.getUserMedia</code></a> API."
-              }
-            ],
+            "opera_android": {
+              "version_added": "41"
+            },
             "safari": {
               "version_added": "11"
             },
@@ -466,9 +431,16 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "53"
-            }
+            "webview_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "52",
+                "version_removed": "53",
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
