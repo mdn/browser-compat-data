@@ -264,7 +264,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 
   let newNotes = combineNotes(
     ieData ? updateNotes(ieData.notes, /Internet Explorer/g, 'Edge') : null,
-    updateNotes(chromeData.notes, /Chrome/g, 'Edge'),
+    updateNotes(chromeData.notes, /Chrome(?! OS)/g, 'Edge'),
     originalData.notes,
   );
 
@@ -331,7 +331,7 @@ const bumpOpera = (originalData, sourceData, source) => {
   }
 
   if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
+    newData.notes = updateNotes(sourceData.notes, /Chrome(?! OS)/g, 'Opera');
   }
 
   return newData;
@@ -364,7 +364,7 @@ const bumpOperaAndroid = (originalData, sourceData, source) => {
   }
 
   if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
+    newData.notes = updateNotes(sourceData.notes, /Chrome(?! OS)/g, 'Opera');
   }
 
   return newData;
@@ -428,7 +428,7 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
   if (typeof sourceData.notes === 'string') {
     newData.notes = updateNotes(
       sourceData.notes,
-      /Chrome/g,
+      /Chrome(?! OS)/g,
       'Samsung Internet',
     );
   }
@@ -471,7 +471,7 @@ const bumpWebView = (originalData, sourceData, source) => {
   }
 
   if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+    newData.notes = updateNotes(sourceData.notes, /Chrome(?! OS)/g, 'WebView');
   }
 
   return newData;
