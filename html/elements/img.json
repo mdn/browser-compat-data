@@ -401,13 +401,7 @@
                 ]
               },
               "edge": {
-                "version_added": "≤79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features"
-                  }
-                ]
+                "version_added": false
               },
               "firefox": {
                 "version_added": false
@@ -419,10 +413,24 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "58"
+                "version_added": "58",
+                "version_removed": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-productivity-features"
+                  }
+                ]
               },
               "opera_android": {
-                "version_added": "50"
+                "version_added": "50",
+                "version_removed": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-productivity-features"
+                  }
+                ]
               },
               "safari": {
                 "version_added": false
@@ -438,9 +446,9 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": false,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
