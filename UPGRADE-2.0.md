@@ -25,6 +25,6 @@ The schema, public API, and other details of the package remain the same since `
 
 4. In your code, replace any `require("mdn-browser-compat-data")` calls with `require("@mdn/browser-compat-data")`.
 
-If possible, run your test suite to confirm that the process completed successfully. You're finished.
+   If possible, run your test suite to make sure this worked.
 
 If you encountered any undocumented breaking changes as a result of this upgrade, please [open an issue](https://github.com/mdn/browser-compat-data/issues/new).
