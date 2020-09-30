@@ -1,4 +1,4 @@
-# Upgrading from `mdn-browser-compat-data` 1.1 to `@mdn/browser-compat-data`
+# Upgrading from `mdn-browser-compat-data` 1.1 to `@mdn/browser-compat-data` 2.0.x
 
 `mdn-browser-compat-data` has been renamed to `@mdn/browser-compat-data` (note the `@mdn` scope). Follow these instructions to upgrade to the new package name.
 
