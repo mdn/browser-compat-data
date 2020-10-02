@@ -27,4 +27,4 @@ The schema, public API, and other details of the package remain the same since `
 
    If possible, run your test suite to make sure this worked.
 
-If you encountered any undocumented breaking changes as a result of this upgrade, please [open an issue](https://github.com/mdn/browser-compat-data/issues/new).
+If you encountered any undocumented [breaking changes](#Before-you-start) as a result of this upgrade, please [open an issue](https://github.com/mdn/browser-compat-data/issues/new).
