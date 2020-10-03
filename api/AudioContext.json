@@ -90,16 +90,16 @@
           "description": "<code>AudioContext()</code> constructor",
           "support": {
             "chrome": {
-              "version_added": "55",
+              "version_added": "35",
               "notes": [
-                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "Prior to Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                 "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
               ]
             },
             "chrome_android": {
-              "version_added": "55",
+              "version_added": "35",
               "notes": [
-                "Each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "Prior to Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                 "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
               ]
             },
@@ -116,28 +116,40 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "42"
+              "version_added": "22",
+              "notes": [
+                "Prior to Opera 53, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Opera throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+              ]
             },
             "opera_android": {
-              "version_added": "42"
+              "version_added": "22",
+              "notes": [
+                "Prior to Opera Android 47, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Opera throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+              ]
             },
             "safari": {
-              "version_added": true,
+              "version_added": "6.1",
               "prefix": "webkit"
             },
             "safari_ios": {
-              "version_added": true,
+              "version_added": "6.1",
               "prefix": "webkit"
             },
             "samsunginternet_android": {
-              "version_added": "6.0",
+              "version_added": "3.0",
               "notes": [
-                "Each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Samsung Internet'>Per-tab audio context limitation in Samsung Internet</a>.",
-                "If <code>latencyHint</code> isn't valid, Samsung Internet throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Samsung Internet'>Non-standard exceptions in Samsung Internet</a> for details."
+                "Prior to Samsung Internet 9.0, each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, Samsung Internet throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
               ]
             },
             "webview_android": {
-              "version_added": "55"
+              "version_added": "37",
+              "notes": [
+                "Prior to WebView 66, each tab is limited to 6 audio contexts in WebView; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                "If <code>latencyHint</code> isn't valid, WebView throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+              ]
             }
           },
           "status": {
