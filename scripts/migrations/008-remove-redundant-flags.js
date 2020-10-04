@@ -7,6 +7,8 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
+const compareVersions = require('compare-versions');
+
 const bcd = require('../..');
 
 /** Determines if the OS is Windows */
@@ -15,10 +17,30 @@ const IS_WINDOWS = platform() === 'win32';
 let twoYearsAgo = new Date(Date.now());
 twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
 
+const getEarliestVersion = (...args) => {
+  const versions = args
+    .filter(version => typeof version === 'string')
+    .map(version => version.replace('≤', ''));
+
+  let earliestVersion = versions[0];
+
+  for (const version of versions) {
+    if (compareVersions.compare(earliestVersion, version, '>'))
+      earliestVersion = version;
+  }
+
+  return earliestVersion;
+};
+
 const removeRedundantFlags = (key, value) => {
   if (key === '__compat') {
-    for (const [browser, supportData] of Object.entries(value.support)) {
-      if (supportData !== undefined && Array.isArray(supportData)) {
+    for (const [browser, originalSupportData] of Object.entries(
+      value.support,
+    )) {
+      if (originalSupportData !== undefined) {
+        const supportData = Array.isArray(originalSupportData)
+          ? originalSupportData
+          : [originalSupportData];
         const result = [];
 
         const simpleStatement = supportData.find(statement => {
@@ -37,10 +59,11 @@ const removeRedundantFlags = (key, value) => {
           let addData = true;
 
           if (supportData[i].flags) {
-            const versionToCheck =
-              typeof supportData[i].version_removed === 'string'
-                ? supportData[i].version_removed
-                : simpleStatement && simpleStatement.version_added;
+            const versionToCheck = getEarliestVersion(
+              supportData[i].version_removed ||
+                (simpleStatement && supportData[i].version_added),
+              simpleStatement && simpleStatement.version_added,
+            );
 
             if (typeof versionToCheck === 'string') {
               const releaseDate = new Date(
