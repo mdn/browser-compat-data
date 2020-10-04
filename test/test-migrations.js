@@ -8,6 +8,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 const m002 = require('../scripts/migrations/002-remove-webview-flags.test.js');
+const m008 = require('../scripts/migrations/008-remove-redundant-flags.test.js');
 
 /**
  * @returns {boolean} If the migrations aren't functioning properly
@@ -23,6 +24,7 @@ const testMigrations = () => {
   };
 
   m002(logger);
+  m008(logger);
 
   if (errors.length) {
     console.error(
