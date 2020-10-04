@@ -2,23 +2,30 @@
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
-  '$0 <browser> [folder] [value]',
+  '$0 [folder] [-b/--browser browsername, ...] [-f/--filter value, ...] [--nonreal] [-d/--depth depth, ...]',
   'Test for specified values in any specified browser',
   yargs => {
     yargs
-      .positional('browser', {
-        describe: 'The browser to test for',
-        type: 'string',
-      })
       .positional('folder', {
-        describe: 'The folder(s) to test (set to "all" for all folders)',
+        describe: 'The folder(s) to test',
         type: 'array',
-        default: 'all',
+        default: Object.keys(bcd).filter(k => k !== 'browsers'),
       })
-      .positional('value', {
+      .option('browser', {
+        alias: 'b',
+        describe: 'Filter specific browsers',
+        type: 'array',
+        default: Object.keys(bcd.browsers),
+      })
+      .option('filter', {
+        alias: 'f',
         describe: 'The value(s) to test against',
         type: 'array',
-        default: ['null', 'true'],
+        default: [],
+      })
+      .option('nonreal', {
+        describe: 'Alias for "-f true -f null"',
+        type: 'boolean',
       })
       .option('depth', {
         alias: 'd',
@@ -30,61 +37,93 @@ const { argv } = require('yargs').command(
   },
 );
 
-function traverseFeatures(obj, depth, identifier) {
+function traverseFeatures(obj, browsers, values, depth, identifier) {
+  let features = [];
+
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
           const comp = obj[i].__compat.support;
-          let browser = comp[argv.browser];
-          if (!Array.isArray(browser)) {
-            browser = [browser];
-          }
-          for (const range in browser) {
-            if (browser[range] === undefined) {
-              if (values.includes('null')) features.push(`${identifier}${i}`);
-            } else if (
-              values.includes(String(browser[range].version_added)) ||
-              values.includes(String(browser[range].version_removed))
-            ) {
-              let f = `${identifier}${i}`;
-              if (browser[range].prefix)
-                f += ` (${browser[range].prefix} prefix)`;
-              if (browser[range].alternative_name)
-                f += ` (as ${browser[range].alternative_name})`;
-              features.push(f);
+          for (const browser of browsers) {
+            let browserData = comp[browser];
+
+            if (!browserData) {
+              if (values.length == 0 || values.includes('null'))
+                features.push(`${identifier}${i}`);
+              continue;
+            }
+            if (!Array.isArray(browserData)) {
+              browserData = [browserData];
+            }
+
+            for (const range in browserData) {
+              if (browserData[range] === undefined) {
+                if (values.length == 0 || values.includes('null'))
+                  features.push(`${identifier}${i}`);
+              } else if (
+                values.length == 0 ||
+                values.includes(String(browserData[range].version_added)) ||
+                values.includes(String(browserData[range].version_removed))
+              ) {
+                let f = `${identifier}${i}`;
+                if (browserData[range].prefix)
+                  f += ` (${browserData[range].prefix} prefix)`;
+                if (browserData[range].alternative_name)
+                  f += ` (as ${browserData[range].alternative_name})`;
+                features.push(f);
+              }
             }
           }
         }
-        traverseFeatures(obj[i], depth, identifier + i + '.');
+        features.push(
+          ...traverseFeatures(
+            obj[i],
+            browsers,
+            values,
+            depth,
+            identifier + i + '.',
+          ),
+        );
       }
     }
   }
+
+  return features.filter((item, pos) => features.indexOf(item) == pos);
 }
 
-let features = [];
-const folders =
-  argv.folder == 'all'
-    ? [
-        'api',
-        'css',
-        'html',
-        'http',
-        'svg',
-        'javascript',
-        'mathml',
-        'webdriver',
-        'xpath',
-        'xslt',
-      ]
+const main = (folders, browsers, values) => {
+  let features = [];
+
+  for (const folder in folders) {
+    features.push(
+      ...traverseFeatures(
+        bcd[folders[folder]],
+        browsers,
+        values,
+        argv.depth,
+        `${folders[folder]}.`,
+      ),
+    );
+  }
+
+  return features;
+};
+
+if (require.main === module) {
+  let folders = Array.isArray(argv.folder)
+    ? argv.folder
     : argv.folder.split(',');
-const values = Array.isArray(argv.value)
-  ? argv.value
-  : argv.value.toString().split(',');
+  let browsers = Array.isArray(argv.browser) ? argv.browser : [argv.browser];
+  let values = Array.isArray(argv.filter) ? argv.filter : [argv.filter];
 
-for (const folder in folders)
-  traverseFeatures(bcd[folders[folder]], argv.depth, `${folders[folder]}.`);
+  if (argv.nonreal) {
+    values.push('true', 'null');
+  }
 
-console.log(features.join('\n'));
-console.log(features.length);
+  const features = main(folders, argv.browser, values);
+
+  console.log(features.join('\n'));
+  console.log(features.length);
+}

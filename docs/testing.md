@@ -17,12 +17,12 @@ To see how changes will affect the statistics of real (either `false` or a versi
 
 ## Traverse
 
-To find all the entries that are non-real, or of a specified value, you can run `npm run traverse <browser> [folder] [value]`.
+To find all the entries that are non-real, or of a specified value, you can run `npm run traverse [folder] -- [-b/--browser browsername, ...] [-f/--filter value, ...] [--nonreal] [-d/--depth depth, ...]`.
 
-The browser may be any single browser defined in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/master/browsers/).
+The folder argument may be a comma-separated list of folder to check entries in. By default, the script will traverse all folders.
 
-The folder may be omitted or set to `all` to search through all data folders, or a comma-separated list of folders to search through.
+The `-b` or `--browser` argument may be any browser in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/master/browsers/). This argument may be repeated to traverse multiple browsers. By default, the script will traverse all browsers.
 
-The value may be omitted to search for all non-real values (or more specifically, `true` and `null` values), or any value accepted by `version_added` and `version_removed`.
+The `-f` or `--filter` argument may be any value accepted by `version_added` or `version_removed`. This argument may be repeated to test multiple values. By default, the script will traverse all features regardless of their value. The `--nonreal` argument may be included as a convenience alias for `-f null -f true`.
 
-For example, to search for all Safari entries that are non-real, run `npm run traverse safari`. To search for all WebView entries that are marked as `true` in `api` and `javascript`, run `npm run traverse webview_android api,javascript true`. To search for all Firefox entries supported since `10` across all folders, run `npm run traverse firefox all 10`.
+Examples: to search for all Safari entries that are non-real, run `npm run traverse -- -b safari --noreal`. To search for all WebView entries that are marked as `true` in `api` and `javascript`, run `npm run traverse api,javascript -- -b webview_android -f true`. To search for all Firefox entries supported since `10` across all folders, run `npm run traverse -- -b firefox -f 10`.
