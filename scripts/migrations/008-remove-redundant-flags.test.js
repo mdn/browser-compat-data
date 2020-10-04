@@ -254,6 +254,66 @@ const tests = [
       },
     },
   },
+  {
+    input: {
+      test6: {
+        __compat: {
+          support: {
+            chrome: [
+              {
+                version_added: '80',
+              },
+              {
+                version_added: '21',
+                version_removed: '80',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: '#service-worker-payment-apps',
+                    value_to_set: 'Enabled',
+                  },
+                ],
+              },
+            ],
+          },
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+    output: {
+      test6: {
+        __compat: {
+          support: {
+            chrome: [
+              {
+                version_added: '80',
+              },
+              {
+                version_added: '21',
+                version_removed: '80',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: '#service-worker-payment-apps',
+                    value_to_set: 'Enabled',
+                  },
+                ],
+              },
+            ],
+          },
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+  },
 ];
 
 const testFixRedundantFlags = (logger = console) => {
