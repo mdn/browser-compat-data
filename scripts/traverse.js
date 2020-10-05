@@ -15,23 +15,27 @@ const { argv } = require('yargs').command(
         alias: 'b',
         describe: 'Filter specific browsers',
         type: 'array',
+        nargs: 1,
         default: Object.keys(bcd.browsers),
       })
       .option('filter', {
         alias: 'f',
         describe: 'The value(s) to test against',
         type: 'array',
+        nargs: 1,
         default: [],
       })
       .option('nonreal', {
         describe: 'Alias for "-f true -f null"',
         type: 'boolean',
+        nargs: 0,
       })
       .option('depth', {
         alias: 'd',
         describe:
           'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
         type: 'number',
+        nargs: 1,
         default: 100,
       });
   },
