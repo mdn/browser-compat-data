@@ -2,7 +2,7 @@
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
-  '$0 [folder] [-b/--browser browsername, ...] [-f/--filter value, ...] [--nonreal] [-d/--depth depth, ...]',
+  '$0 [folder..]',
   'Test for specified values in any specified browser',
   yargs => {
     yargs
@@ -116,9 +116,7 @@ const main = (folders, browsers, values) => {
 };
 
 if (require.main === module) {
-  let folders = Array.isArray(argv.folder)
-    ? argv.folder
-    : argv.folder.split(',');
+  let folders = argv.folder;
   let browsers = Array.isArray(argv.browser) ? argv.browser : [argv.browser];
   let values = Array.isArray(argv.filter) ? argv.filter : [argv.filter];
 
