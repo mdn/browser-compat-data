@@ -16,13 +16,11 @@
             },
             "firefox": {
               "version_added": true,
-              "notes": [
-                "From version 82 the inline directive is ignored if the HTML5 'a download' attribute is specified (to match the specification)",
-                "Earlier versions respected the header inline directive over the HTML, see <a href='https://bugzil.la/1658877 '>bug 1658877</a>."
-              ] 
+              "notes": "From version 82, if an <code>&lt;a&gt;</code> element's <code>download</code> attribute is set (for a same-origin URL) then the <code>inline</code> directive is ignored. Earlier versions did not match the specification and respected the header directive over the attribute. See <a href='https://bugzil.la/1658877'>bug 1658877</a>."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "From version 82, if an <code>&lt;a&gt;</code> element's <code>download</code> attribute is set (for a same-origin URL) then the <code>inline</code> directive is ignored. Earlier versions did not match the specification and respected the header directive over the attribute. See <a href='https://bugzil.la/1658877'>bug 1658877</a>."
             },
             "ie": {
               "version_added": true
