@@ -112,31 +112,58 @@ class Logger {
   /** @param {string} title */
   constructor(title) {
     this.title = title;
-    this.errors = [];
+    this.messages = { warnings: [], errors: [] };
   }
 
-  /** @param {...*} message */
-  error(...message) {
-    this.errors.push(message.join(' '));
+  /**
+   * @param {string} message
+   * @param {string} tip
+   */
+  warn(message, tip) {
+    this.messages.warings.push({ message: message, tip: tip });
+  }
+
+  /** @param {string} message */
+  error(message, tip) {
+    this.messages.errors.push({ message: message, tip: tip });
   }
 
   emit() {
-    const errorCount = this.errors.length;
+    const warningCount = this.messages.warnings.length;
+    const errorCount = this.messages.errors.length;
 
-    if (errorCount) {
-      console.error(
-        chalk`{red   ${this.title} – {bold ${errorCount}} ${
-          errorCount === 1 ? 'error' : 'errors'
-        }:}`,
+    let countMessages = [];
+    if (warningCount) {
+      countMessages.push(
+        chalk`{bold ${warningCount}} warning${warningCount === 1 ? '' : 's'}`,
       );
-      for (const error of this.errors) {
-        console.error(`  ${error}`);
+    }
+    if (errorCount) {
+      countMessages.push(
+        chalk`{bold ${errorCount}} error${errorCount === 1 ? '' : 's'}`,
+      );
+    }
+
+    if (warningCount || errorCount) {
+      (errorCount ? console.error : console.warn)(
+        chalk`{${errorCount ? 'red' : 'yellow'}   ${
+          this.title
+        } – ${countMessages.join(', ')}:}`,
+      );
+
+      for (const warning of this.messages.warnings) {
+        console.warn(chalk`  {yellow → ${warning.message}}`);
+        if (warning.tip) console.warn(chalk`  {blue   Tip: ${warning.tip}}`);
+      }
+      for (const error of this.messages.errors) {
+        console.error(chalk`  {red → ${error.message}}`);
+        if (error.tip) console.error(chalk`  {blue   Tip: ${error.tip}}`);
       }
     }
   }
 
   hasErrors() {
-    return !!this.errors.length;
+    return !!this.messages.errors.length;
   }
 }
 
