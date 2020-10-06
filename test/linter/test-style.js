@@ -3,7 +3,7 @@ const fs = require('fs');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * Return a new "support_block" object whose first-level properties

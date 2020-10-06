@@ -108,6 +108,38 @@ function jsonDiff(actual, expected) {
   }
 }
 
+class Logger {
+  /** @param {string} title */
+  constructor(title) {
+    this.title = title;
+    this.errors = [];
+  }
+
+  /** @param {...*} message */
+  error(...message) {
+    this.errors.push(message.join(' '));
+  }
+
+  emit() {
+    const errorCount = this.errors.length;
+
+    if (errorCount) {
+      console.error(
+        chalk`{red   ${this.title} – {bold ${errorCount}} ${
+          errorCount === 1 ? 'error' : 'errors'
+        }:}`,
+      );
+      for (const error of this.errors) {
+        console.error(`  ${error}`);
+      }
+    }
+  }
+
+  hasErrors() {
+    return !!this.errors.length;
+  }
+}
+
 module.exports = {
   INVISIBLES_MAP,
   IS_CI,
@@ -116,4 +148,5 @@ module.exports = {
   indexToPosRaw,
   indexToPos,
   jsonDiff,
+  Logger,
 };
