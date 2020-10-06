@@ -46,22 +46,18 @@ const testFeatureOrder = () => {
     '43',
   ];
 
-  let errors = false;
+  const logger = new Logger('compareFeatures()');
+
   for (let i = actual.length; i--; ) {
     if (actual[i] !== expected[i]) {
-      errors = true;
-      break;
+      logger.error(chalk`Actual and expected orders do not match
+    {yellow Actual: {bold ${actual}}}
+    {green Expected: {bold ${expected}}}`);
     }
   }
 
-  if (errors) {
-    console.error(chalk`{red compareFeatures() – {bold 1} error:}`);
-    console.error(chalk`{red   → Actual and expected orders do not match}`);
-    console.error(chalk`{yellow     Actual: {bold ${actual}}}`);
-    console.error(chalk`{green     Expected: {bold ${expected}}}`);
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 };
 
 module.exports = testFeatureOrder;
