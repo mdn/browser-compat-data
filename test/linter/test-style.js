@@ -79,29 +79,31 @@ function processData(filename, logger) {
 
   if (expected !== expectedBrowserSorting) {
     logger.error(
-      chalk`{red → Browser sorting error on ${jsonDiff(
+      chalk`Browser sorting error on ${jsonDiff(
         actual,
         expectedBrowserSorting,
-      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+      )}`,
+      chalk`Run {bold npm run fix} to fix sorting automatically`,
     );
   }
 
   if (expected !== expectedFeatureSorting) {
     logger.error(
-      chalk`{red → Feature sorting error on ${jsonDiff(
+      chalk`Feature sorting error on ${jsonDiff(
         actual,
         expectedFeatureSorting,
-      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+      )}`,
+      chalk`Run {bold npm run fix} to fix sorting automatically`,
     );
   }
 
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     logger.error(
-      chalk`{red → ${indexToPos(
+      chalk`${indexToPos(
         actual,
         hrefDoubleQuoteIndex,
-      )} - Found {yellow \\"}, but expected {green \'} for <a href>.}`,
+      )} - Found {yellow \\"}, but expected {green \'} for <a href>.`,
     );
   }
 }

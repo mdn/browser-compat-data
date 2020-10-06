@@ -60,17 +60,17 @@ function checkRealValues(supportData, blockList, relPath, logger) {
     for (const statement of supportStatements) {
       if (statement === undefined) {
         logger.error(
-          chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
+          chalk`{bold ${browser}} must be defined for {bold ${relPath}}`,
         );
       } else {
         if ([true, null].includes(statement.version_added)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`,
+            chalk`{bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value`,
           );
         }
         if ([true, null].includes(statement.version_removed)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`,
+            chalk`{bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value`,
           );
         }
       }

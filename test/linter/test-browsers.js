@@ -51,9 +51,9 @@ function processData(
     );
     if (invalidEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
+        chalk`{bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
 
@@ -62,9 +62,9 @@ function processData(
     );
     if (missingEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
+        chalk`{bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
 
@@ -81,7 +81,7 @@ function processData(
         if (hasVersionAddedOnly(statement)) {
           if (sawVersionAddedOnly) {
             logger.error(
-              chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`,
+              chalk`'{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}`,
             );
             break;
           } else {
