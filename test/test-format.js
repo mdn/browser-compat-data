@@ -1,6 +1,7 @@
 'use strict';
 const { execSync } = require('child_process');
 const chalk = require('chalk');
+const { Logger } = require('../utils.js');
 
 const testFormat = () => {
   const logger = new Logger('Prettier');
@@ -11,7 +12,9 @@ const testFormat = () => {
     });
   } catch (err) {
     let errorText = err.stdout && err.stdout.toString();
-    logger.error(chalk`{bold ${errorText}}`, chalk`Run {bold npm run fix} to fix formatting automatically`);
+    logger.error(
+      chalk`{bold ${errorText}}`,
+      chalk`Run {bold npm run fix} to fix formatting automatically`,
     );
   }
 

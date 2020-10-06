@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('../utils.js');
 
 const m002 = require('../scripts/migrations/002-remove-webview-flags.test.js');
 

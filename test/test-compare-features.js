@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('../utils.js');
 
 const compareFeatures = require('../scripts/compare-features');
 
