@@ -123,47 +123,26 @@ class Logger {
   /** @param {string} title */
   constructor(title) {
     this.title = title;
-    this.messages = { warnings: [], errors: [] };
+    this.errors = [];
   }
 
   /**
    * @param {string} message
    * @param {string} tip
    */
-  warn(message, tip) {
-    this.messages.warings.push({ message: message, tip: tip });
-  }
-
-  /** @param {string} message */
   error(message, tip) {
-    this.messages.errors.push({ message: message, tip: tip });
+    this.errors.push({ message: message, tip: tip });
   }
 
   emit() {
-    const warningCount = this.messages.warnings.length;
-    const errorCount = this.messages.errors.length;
+    const errorCount = this.errors.length;
 
-    let countMessages = [];
-    if (warningCount) {
-      countMessages.push(pluralize('warning', warningCount));
-    }
     if (errorCount) {
-      countMessages.push(pluralize('error', errorCount));
-    }
-
-    if (warningCount || errorCount) {
-      (errorCount ? console.error : console.warn)(
-        chalk`{${errorCount ? 'red' : 'yellow'}   → ${
-          this.title
-        } – ${countMessages.join(', ')}:}`,
+      console.error(
+        chalk`{red   → ${this.title} – ${pluralize('error', errorCount)}:}`,
       );
 
-      for (const warning of this.messages.warnings) {
-        console.warn(chalk`    {yellow → ${warning.message}}`);
-        if (warning.tip)
-          console.warn(chalk`      {blue → Tip: ${warning.tip}}`);
-      }
-      for (const error of this.messages.errors) {
+      for (const error of this.errors) {
         console.error(chalk`    {red → ${error.message}}`);
         if (error.tip) console.error(chalk`      {blue → Tip: ${error.tip}}`);
       }
@@ -171,7 +150,7 @@ class Logger {
   }
 
   hasErrors() {
-    return !!this.messages.errors.length;
+    return !!this.errors.length;
   }
 }
 
