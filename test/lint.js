@@ -15,7 +15,7 @@ const {
   testConsistency,
   testDescriptions,
 } = require('./linter/index.js');
-const { IS_CI } = require('./utils.js');
+const { IS_CI, pluralize } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
@@ -165,9 +165,7 @@ hasErrors = testFormat() || hasErrors;
 if (hasErrors) {
   console.warn('');
   console.warn(
-    chalk`{red Problems in {bold ${filesWithErrors.size}} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:}`,
+    chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
