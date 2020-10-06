@@ -10,10 +10,6 @@ This data can be used in documentation, to build compatibility tables listing
 browser support for APIs. For example:
 [Browser support for WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
 
-[![npm](https://img.shields.io/npm/v/@mdn/browser-compat-data.svg)](https://www.npmjs.com/package/@mdn/browser-compat-data)
-[![Build Status](https://travis-ci.org/mdn/browser-compat-data.svg?branch=master)](https://travis-ci.org/mdn/browser-compat-data)
-[![Twitter Follow](https://img.shields.io/twitter/follow/mozdevnet.svg?style=social&label=Follow&style=plastic)](https://twitter.com/MozDevNet)
-
 Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md).
 
 Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
