@@ -38,7 +38,19 @@ const { argv } = require('yargs').command(
         type: 'number',
         nargs: 1,
         default: 100,
-      });
+      })
+      .example(
+        'npm run traverse -- --browser=safari --non-real',
+        'Find all features containing non-real Safari entries',
+      )
+      .example(
+        'npm run traverse -- -b webview_android -f true',
+        'Find all features marked as true for WebVeiw',
+      )
+      .example(
+        'npm run traverse -- -b firefox -f 10',
+        'Find all features marked as supported since Firefox 10',
+      );
   },
 );
 
