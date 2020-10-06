@@ -2,7 +2,7 @@
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
-  '$0 [folder..]',
+  '$0 [folder...]',
   'Print feature names in the folder (and optionally filter features to specific browser or version values)',
   yargs => {
     yargs
@@ -13,7 +13,7 @@ const { argv } = require('yargs').command(
       })
       .option('browser', {
         alias: 'b',
-        describe: 'Filter by a browser. May repeat.'
+        describe: 'Filter by a browser. May repeat.',
         type: 'array',
         nargs: 1,
         default: Object.keys(bcd.browsers),
@@ -26,7 +26,8 @@ const { argv } = require('yargs').command(
         default: [],
       })
       .option('non-real', {
-        describe: 'Filter to features with non-real values. Alias for "-f true -f null"',
+        describe:
+          'Filter to features with non-real values. Alias for "-f true -f null"',
         type: 'boolean',
         nargs: 0,
       })
