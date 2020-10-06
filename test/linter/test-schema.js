@@ -3,6 +3,7 @@ const Ajv = require('ajv');
 const betterAjvErrors = require('better-ajv-errors');
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('../utils.js');
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
 
@@ -17,22 +18,18 @@ function testSchema(
   const schema = require(schemaFilename);
   const data = require(dataFilename);
 
-  const valid = ajv.validate(schema, data);
+  const logger = new Logger('JSON Schema');
 
-  if (!valid) {
-    console.error(
-      chalk`{red   JSON Schema – {bold ${ajv.errors.length}} ${
-        ajv.errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
+  if (!ajv.validate(schema, data)) {
     // Output messages by one since better-ajv-errors wrongly joins messages
     // (see https://github.com/atlassian/better-ajv-errors/pull/21)
     ajv.errors.forEach(e => {
-      console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+      logger.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
     });
-    return true;
   }
-  return false;
+
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testSchema;
