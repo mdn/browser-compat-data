@@ -23,6 +23,17 @@ const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 const IS_WINDOWS = platform() === 'win32';
 
 /**
+ * Pluralizes a string
+ *
+ * @param {string} word Word in singular form
+ * @param {number} quantifier
+ * @return {string}
+ */
+const pluralize = (word, quantifier) => {
+  return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
+};
+
+/**
  * Escapes common invisible characters.
  *
  * @param {string} str
@@ -134,14 +145,10 @@ class Logger {
 
     let countMessages = [];
     if (warningCount) {
-      countMessages.push(
-        chalk`{bold ${warningCount}} warning${warningCount === 1 ? '' : 's'}`,
-      );
+      countMessages.push(pluralize('warning', warningCount));
     }
     if (errorCount) {
-      countMessages.push(
-        chalk`{bold ${errorCount}} error${errorCount === 1 ? '' : 's'}`,
-      );
+      countMessages.push(pluralize('error', errorCount));
     }
 
     if (warningCount || errorCount) {
@@ -172,6 +179,7 @@ module.exports = {
   INVISIBLES_MAP,
   IS_CI,
   IS_WINDOWS,
+  pluralize,
   escapeInvisibles,
   indexToPosRaw,
   indexToPos,
