@@ -17,9 +17,11 @@ To see how changes will affect the statistics of real (either `false` or a versi
 
 ## Traverse
 
-To find all the entries that are non-real, or of a specified value, you can run `npm run traverse [folder] -- [-b/--browser browsername, ...] [-f/--filter value, ...] [--nonreal] [-d/--depth depth, ...]`.
+To find all the entries that are non-real, or of a specified value, you can run `npm run traverse -- [options] [folder]`.
 
-The folder argument may be a comma-separated list of folder to check entries in. By default, the script will traverse all folders.
+By default, the script will traverse and print the dotted path to every feature. One or more positional arguments can limit the traversal to a specific folder (for example, `api`). Additional options can limit the features listed to features with data matching specific browser and version values (for example, `--non-real`).
+
+Run `npm run traverse -- --help` for a complete list of options and examples.
 
 The `-b` or `--browser` argument may be any browser in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/master/browsers/). This argument may be repeated to traverse multiple browsers. By default, the script will traverse all browsers.
 

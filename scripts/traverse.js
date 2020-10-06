@@ -3,30 +3,30 @@ const bcd = require('..');
 
 const { argv } = require('yargs').command(
   '$0 [folder..]',
-  'Test for specified values in any specified browser',
+  'Print feature names in the folder (and optionally filter features to specific browser or version values)',
   yargs => {
     yargs
       .positional('folder', {
-        describe: 'The folder(s) to test',
+        describe: 'The folder(s) to traverse',
         type: 'array',
         default: Object.keys(bcd).filter(k => k !== 'browsers'),
       })
       .option('browser', {
         alias: 'b',
-        describe: 'Filter specific browsers',
+        describe: 'Filter by a browser. May repeat.'
         type: 'array',
         nargs: 1,
         default: Object.keys(bcd.browsers),
       })
       .option('filter', {
         alias: 'f',
-        describe: 'The value(s) to test against',
+        describe: 'Filter by version value. May repeat.',
         type: 'array',
         nargs: 1,
         default: [],
       })
-      .option('nonreal', {
-        describe: 'Alias for "-f true -f null"',
+      .option('non-real', {
+        describe: 'Filter to features with non-real values. Alias for "-f true -f null"',
         type: 'boolean',
         nargs: 0,
       })
