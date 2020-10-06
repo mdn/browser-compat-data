@@ -102,8 +102,8 @@ function jsonDiff(actual, expected) {
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
       return chalk`{bold line #${i + 1}}:
-    {yellow → Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
-    {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
+      {yellow → Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
+      {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
 }
@@ -146,18 +146,19 @@ class Logger {
 
     if (warningCount || errorCount) {
       (errorCount ? console.error : console.warn)(
-        chalk`{${errorCount ? 'red' : 'yellow'}   ${
+        chalk`{${errorCount ? 'red' : 'yellow'}   → ${
           this.title
         } – ${countMessages.join(', ')}:}`,
       );
 
       for (const warning of this.messages.warnings) {
-        console.warn(chalk`  {yellow → ${warning.message}}`);
-        if (warning.tip) console.warn(chalk`  {blue   → Tip: ${warning.tip}}`);
+        console.warn(chalk`    {yellow → ${warning.message}}`);
+        if (warning.tip)
+          console.warn(chalk`      {blue → Tip: ${warning.tip}}`);
       }
       for (const error of this.messages.errors) {
-        console.error(chalk`  {red → ${error.message}}`);
-        if (error.tip) console.error(chalk`  {blue   → Tip: ${error.tip}}`);
+        console.error(chalk`    {red → ${error.message}}`);
+        if (error.tip) console.error(chalk`      {blue → Tip: ${error.tip}}`);
       }
     }
   }
