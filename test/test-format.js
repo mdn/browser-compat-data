@@ -1,7 +1,7 @@
 'use strict';
 const { execSync } = require('child_process');
 const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+const { Logger } = require('./utils.js');
 
 const testFormat = () => {
   const logger = new Logger('Prettier');
