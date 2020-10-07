@@ -33,6 +33,7 @@
     "better-ajv-errors": "~0.6.7",
     "chalk": "~3.0.0",
     "compare-versions": "~3.6.0",
+    "jest": "~26.5.2",
     "mdn-confluence": "~2.1.0",
     "ora": "~4.0.3",
     "prettier": "~1.19.1",
@@ -40,13 +41,14 @@
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+    "jest": "jest test/",
     "lint": "node test/lint",
     "fix": "node scripts/fix",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run lint",
+    "test": "npm run jest && npm run lint",
     "traverse": "node scripts/traverse"
   }
 }
