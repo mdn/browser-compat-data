@@ -1,8 +1,8 @@
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
  */
 
 /**
@@ -76,20 +76,36 @@ function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
 }
 
 /**
+ * @param {Identifier} apiData
+ * @param {String} apiName
+ * @param {Logger} logger
+ */
+function hasCorrectPermissionDescription(apiData, apiName, logger) {
+  const expectedDescrition = `<code>${apiName.replace(
+    '_permission',
+    '',
+  )}</code> permission`;
+  if (
+    apiName &&
+    apiName.match('_permission$') &&
+    apiData &&
+    apiData.__compat &&
+    apiData.__compat.description !== expectedDescrition
+  ) {
+    logger.error(chalk`{red Incorrect permission description for {bold ${apiName}}}
+      {yellow Actual: {bold "${apiData.__compat.description || ''}"}}
+      {green Expected: {bold "${expectedDescrition}"}}`);
+  }
+}
+
+/**
  * @param {string} filename
  */
 function testDescriptions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Descriptions');
 
   if (data.api) {
     for (const apiName in data.api) {
@@ -101,18 +117,15 @@ function testDescriptions(filename) {
     }
   }
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Descriptions – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`    ${error}`);
+  if (data.api && data.api.Permissions) {
+    for (const permissionKey in data.api.Permissions) {
+      const apiData = data.api.Permissions[permissionKey];
+      hasCorrectPermissionDescription(apiData, permissionKey, logger);
     }
-    return true;
   }
-  return false;
+
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testDescriptions;
