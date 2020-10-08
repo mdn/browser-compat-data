@@ -142,3 +142,5 @@ if (require.main === module) {
   console.log(features.join('\n'));
   console.log(features.length);
 }
+
+module.exports = traverseFeatures;
