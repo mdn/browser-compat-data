@@ -226,9 +226,9 @@ const bumpEdge = (originalData, chromeData, ieData) => {
   let newData = copyStatement(originalData);
 
   if (ieData) {
-    if (ieData.version_removed !== null) {
+    if (ieData.version_removed || ieData.version_added === false) {
       newData.version_added = false;
-    } else if (ieData.version_added !== null) {
+    } else if (ieData.version_added) {
       newData.version_added = ieData.version_added ? '12' : null;
     }
   }
@@ -239,20 +239,21 @@ const bumpEdge = (originalData, chromeData, ieData) => {
   let chromeNull = chromeData.version_added === null;
 
   if (!chromeFalse && !chromeNull) {
-    if (originalData.version_added == true) {
+    if (originalData.version_added === true) {
       newData.version_added = '≤18';
-    } else {
-      if (chromeData.version_added == true) {
-        newData.version_added = true;
-      } else if (Number(chromeData.version_added) <= 79) {
-        if (originalData.version_added == false) {
-          newData.version_added = '79';
-        } else if (originalData.version_added == null) {
-          newData.version_added = '≤79';
-        }
-      } else {
-        newData.version_added = chromeData.version_added;
+    } else if (chromeData.version_added === true) {
+      newData.version_added = true;
+    } else if (Number(chromeData.version_added) <= 79) {
+      if (
+        originalData.version_added === false ||
+        newData.version_added === false
+      ) {
+        newData.version_added = '79';
+      } else if (originalData.version_added === null) {
+        newData.version_added = '≤79';
       }
+    } else {
+      newData.version_added = chromeData.version_added;
     }
   } else if (chromeFalse) {
     if (originalData.version_added && !originalData.version_removed) {
