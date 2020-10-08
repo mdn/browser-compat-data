@@ -638,7 +638,8 @@
               },
               "firefox": [
                 {
-                  "version_added": "74"
+                  "version_added": "74",
+                  "notes": "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present."
                 },
                 {
                   "version_added": "65",
@@ -1386,20 +1387,18 @@
             }
           }
         },
-        "publickey-credentials": {
+        "publickey-credentials-get": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/publickey-credentials",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/publickey-credentials-get",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/993007'>bug </a>."
+                "version_added": "84"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "84"
               },
               "edge": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/993007'>bug </a>."
+                "version_added": "84"
               },
               "firefox": {
                 "version_added": false
@@ -1426,7 +1425,7 @@
                 "version_added": false
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "84"
               }
             },
             "status": {
