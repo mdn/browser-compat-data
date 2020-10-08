@@ -2,11 +2,6 @@
 const { platform } = require('os');
 const chalk = require('chalk');
 
-/**
- * @typedef {object} Logger
- * @property {(...message: unknown[]) => void} error
- */
-
 /** @type {string[]} */
 const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
