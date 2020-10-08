@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -34,11 +35,11 @@ function processData(data, logger) {
     ) {
       if (releaseByStatus[releaseData.status]) {
         logger.error(
-          chalk`{red → {bold ${browser}} has multiple {bold ${
+          chalk`{bold ${browser}} has multiple {bold ${
             releaseData.status
           }} releases (${
             releaseByStatus[releaseData.status]
-          } and ${releaseVersion}), which is not allowed.}`,
+          } and ${releaseVersion}), which is not allowed.`,
         );
       }
 
@@ -55,29 +56,12 @@ function testBrowsersData(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Browser Data');
 
   processData(data, logger);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Browsers – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testBrowsersData;
