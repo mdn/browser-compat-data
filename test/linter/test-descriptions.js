@@ -115,6 +115,6 @@ const testDescriptions = filename => {
 
   logger.emit();
   return logger.hasErrors();
-}
+};
 
 module.exports = testDescriptions;
