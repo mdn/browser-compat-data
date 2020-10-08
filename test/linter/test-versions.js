@@ -11,9 +11,6 @@ const { Logger } = require('./utils.js');
  * @typedef {import('../../types').Logger} Logger
  */
 
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
-
 const browsers = require('../..').browsers;
 
 /** @type {object.<string, string[]>} */
