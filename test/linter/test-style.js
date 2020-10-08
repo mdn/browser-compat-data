@@ -8,6 +8,7 @@ const fs = require('fs');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
+const { Logger } = require('./utils.js');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -119,33 +120,12 @@ function processData(filename, logger) {
  * @returns {boolean} If the file contains errors
  */
 function testStyle(filename) {
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /**
-     * logger.error
-     *
-     * @param {...*} message Messages to add to errors
-     */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Style');
 
   processData(filename, logger);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Style – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testStyle;

@@ -1,13 +1,13 @@
 'use strict';
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
- * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {string[]} */
@@ -96,19 +96,7 @@ function testRealValues(filename) {
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
-
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /**
-     * logger.error
-     *
-     * @param {...*} message Messages to add to errors
-     */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Real values');
 
   /**
    * Process the data for nonreal values
@@ -138,18 +126,8 @@ function testRealValues(filename) {
   }
   findSupport(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Real values – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testRealValues;
