@@ -235,7 +235,7 @@
                 "version_added": "72"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "58"
@@ -259,7 +259,7 @@
                 "version_added": "11.3"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "11.0"
               },
               "webview_android": {
                 "version_added": "72"
@@ -490,28 +490,40 @@
                 "version_added": "62"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
-              "firefox": {
-                "version_added": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.font-variations.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.font-variations.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "62"
+                },
+                {
+                  "version_added": "60",
+                  "version_removed": "62",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.font-variations.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "62"
+                },
+                {
+                  "version_added": "60",
+                  "version_removed": "62",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.font-variations.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -519,7 +531,7 @@
                 "version_added": "49"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "46"
               },
               "safari": {
                 "version_added": false
@@ -543,6 +555,7 @@
         },
         "font-weight": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-weight",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -633,6 +646,54 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "format_keyword": {
+            "__compat": {
+              "description": "Support for <code>format</code> keywords",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "4"
+                },
+                "safari_ios": {
+                  "version_added": "5"
+                },
+                "samsunginternet_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },

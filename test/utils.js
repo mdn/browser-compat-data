@@ -12,12 +12,7 @@ const chalk = require('chalk');
 /** @type {Identifier} */
 const bcd = require('..');
 
-/**
- * @typedef {object} Logger
- * @property {(...message: *[]) => void} error The function for linters to output errors to
- */
-
-/** @type {object.<string, string>} */
+/** @type {{readonly [char: string]: string}} */
 const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)

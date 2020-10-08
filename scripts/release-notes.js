@@ -13,6 +13,12 @@ const { argv } = require('yargs').command(
       describe: 'the version tag to generate release notes for',
       type: 'string',
     });
+    yargs.option('p', {
+      alias: 'previous',
+      requiresArg: true,
+      describe: 'the previous version tag',
+      type: 'string',
+    });
   },
 );
 
@@ -102,20 +108,12 @@ const contributors = (version, previousVersion) =>
     },
   ]);
 
-const notableChanges = async () => {
-  const { result } = await prompt([
-    {
-      name: 'result',
-      message:
-        'Does this release contain any schema, test, or infrastructure changes?',
-      type: confirm,
-    },
-  ]);
+const notableChanges = previousReleaseDate => {
+  const searchUrl = new URL('https://github.com/mdn/browser-compat-data/pulls');
+  const querySafeDate = previousReleaseDate.replace('+', '%2B');
+  searchUrl.search = `q=is:pr merged:>=${querySafeDate} label:"needs-release-note :newspaper:"`;
 
-  if (!result) {
-    return 'None';
-  }
-  return 'REPLACE ME WITH ACTUAL RELEASE NOTES';
+  return `SUMMARIZE THESE PRs: ${searchUrl.href}`;
 };
 
 const countFeatures = () => {
@@ -143,9 +141,17 @@ const makeURL = (version, body) => {
 
 const main = async () => {
   const version = argv.versionTag;
-  const previousVersion = execSync(`git describe --abbrev=0 ${version}^`, {
-    encoding: 'utf8',
-  }).trim();
+  const previousVersion =
+    argv.previous ||
+    execSync(`git describe --abbrev=0 ${version}^`, {
+      encoding: 'utf8',
+    }).trim();
+  const previousReleaseDate = execSync(
+    `git log -1 --format=%aI ${previousVersion}`,
+    {
+      encoding: 'utf8',
+    },
+  ).trim();
 
   const { commits, changed, insertions, deletions } = stats(
     version,
@@ -156,7 +162,7 @@ const main = async () => {
     version,
     previousVersion,
   );
-  const changeMessage = await notableChanges();
+  const changeMessage = notableChanges(previousReleaseDate);
   const stars = await stargazers();
   const features = countFeatures();
 
