@@ -2,6 +2,8 @@
 
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
+<!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
+
 - [Data guidelines](#data-guidelines)
   - [Constructors](#constructors)
   - [DOM events (`eventname_event`)](#dom-events-eventname_event)
@@ -12,10 +14,11 @@ This file contains recommendations to help you record data in a consistent and u
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
+  - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
 
 <!-- BEGIN TEMPLATE
 
-## Short title in sentence case
+Short title in sentence case
 
 A description of what to do, preferably in the imperative. If applicable, include an example to illustrate the rule.
 
@@ -157,7 +160,7 @@ See [#3904](https://github.com/mdn/browser-compat-data/pull/3904#issuecomment-48
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
 
-Typically, BCD does not record absolute version numbers (such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature, even when that support change was backported to a previous release of the browser.
+Typically, BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature, even when that support change was backported to a previous release of the browser.
 
 For example, if the current release of browser X is version 10.2, but a new feature was backported to previous versions including a new 9.7.1 release, then the supported version is 9.7 (not 10.2 or 9.7.1).
 
@@ -174,6 +177,18 @@ This versioning scheme came at [Apple's request, in #2006](https://github.com/md
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
 - a feature was never implemented in any browser and the specification has been abandoned.
-- a feature was implemented and has since been removed from all browser releases dating back 2 years.
+- a feature was implemented and has since been removed from all browsers dating back two or more years ago.
+- a feature is unsupported in all releases in the past five years.
 
 This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
+
+## Removal of irrelevant flag data
+
+Valid support statements containing flags can be removed from BCD if it is considered irrelevant. To be considered irrelevant, the support statement must meet these conditions:
+
+- As of at least two years ago, the browser has supported the feature by default or removed the flagged feature.
+- The removal of the support statement must not create an ambiguous gap or void in the data for that browser (for example, leaving behind only a `"version_added": true` or `null` value).
+
+These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
+
+This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).

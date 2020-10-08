@@ -13,6 +13,12 @@ const { argv } = require('yargs').command(
       describe: 'the version tag to generate release notes for',
       type: 'string',
     });
+    yargs.option('p', {
+      alias: 'previous',
+      requiresArg: true,
+      describe: 'the previous version tag',
+      type: 'string',
+    });
   },
 );
 
@@ -135,9 +141,11 @@ const makeURL = (version, body) => {
 
 const main = async () => {
   const version = argv.versionTag;
-  const previousVersion = execSync(`git describe --abbrev=0 ${version}^`, {
-    encoding: 'utf8',
-  }).trim();
+  const previousVersion =
+    argv.previous ||
+    execSync(`git describe --abbrev=0 ${version}^`, {
+      encoding: 'utf8',
+    }).trim();
   const previousReleaseDate = execSync(
     `git log -1 --format=%aI ${previousVersion}`,
     {
