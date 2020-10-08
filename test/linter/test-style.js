@@ -113,6 +113,6 @@ const testStyle = filename => {
 
   logger.emit();
   return logger.hasErrors();
-}
+};
 
 module.exports = testStyle;

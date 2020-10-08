@@ -123,6 +123,6 @@ const testRealValues = filename => {
 
   logger.emit();
   return logger.hasErrors();
-}
+};
 
 module.exports = testRealValues;

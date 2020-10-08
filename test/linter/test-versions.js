@@ -154,6 +154,6 @@ const testVersions = filename => {
 
   logger.emit();
   return logger.hasErrors();
-}
+};
 
 module.exports = testVersions;

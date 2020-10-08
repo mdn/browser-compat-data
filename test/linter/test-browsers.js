@@ -148,6 +148,6 @@ const testBrowsers = filename => {
 
   logger.emit();
   return logger.hasErrors();
-}
+};
 
 module.exports = testBrowsers;
