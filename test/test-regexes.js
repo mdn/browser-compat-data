@@ -19,7 +19,7 @@ const { lookup } = require('./utils.js');
 /** @type {TestCase[]} */
 const tests = [
   {
-    features: ['css.properties.color.alpha_hexadecimal_notation'],
+    features: ['css.types.color.alpha_hexadecimal_notation'],
     matches: ['#003399ff', '#0af9'],
     misses: ['#00aaff', '#0af', 'green', '#greenish'],
   },
@@ -65,6 +65,7 @@ const testRegexes = () => {
   tests.forEach(({ features, matches, misses }) => {
     features.forEach(featureIdent => {
       const feature = lookup(featureIdent);
+      console.log(featureIdent);
       const str =
         feature.__compat.matches.regex_token ||
         feature.__compat.matches.regex_value;
