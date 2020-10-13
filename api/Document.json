@@ -7624,6 +7624,7 @@
             },
             "safari": {
               "version_added": "10.1",
+              "partial_implementation": true,
               "notes": [
                 "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
                 "Before Safari 10.1, this event handler attribute was not supported; however, the event itself was supported since Safari 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
@@ -7631,6 +7632,7 @@
             },
             "safari_ios": {
               "version_added": "10.3",
+              "partial_implementation": true,
               "notes": [
                 "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
                 "Before Safari iOS 10.3, this event handler attribute was not supported; however, the event itself was supported since Safari iOS 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
@@ -10804,6 +10806,7 @@
             },
             "safari": {
               "version_added": "7",
+              "partial_implementation": true,
               "notes": [
                 "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
                 "The <code>onvisibilitychange</code> attribute was not supported until Safari 10.1. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
@@ -10811,6 +10814,7 @@
             },
             "safari_ios": {
               "version_added": "7",
+              "partial_implementation": true,
               "notes": [
                 "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
                 "The <code>onvisibilitychange</code> attribute was not supported until Safari iOS 10.3. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
