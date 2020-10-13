@@ -169,6 +169,11 @@ const getStats = (folder, allBrowsers) => {
  * @returns {void}
  */
 const printStats = (stats, folder) => {
+  if (!stats) {
+    console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
+    return;
+  }
+
   console.log(
     chalk`{bold Status as of version 1.0.xx (released on 2020-MM-DD) for ${
       folder ? `${folder}/ directory` : 'web platform features'
