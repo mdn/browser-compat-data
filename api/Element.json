@@ -8138,7 +8138,8 @@
             ],
             "firefox_android": [
               {
-                "version_added": false
+                "version_added": true,
+                "notes": "Before Firefox 82, <code>setPointerCapture()</code> throws <code>InvalidPointerId</code> for an invalid <code>pointerId</code> argument. From Firefox 82, it throws <a href='https://w3c.github.io/pointerevents/#setting-pointer-capture'>the specified</a> <code>NotFoundError</code> exception. See <a href='https://bugzil.la/1662124'>bug 1662124</a>."
               },
               {
                 "version_added": "41",
@@ -8148,8 +8149,7 @@
                     "name": "dom.w3c_pointer_events.enabled",
                     "value_to_set": "true"
                   }
-                ],
-                "notes": "From Firefox 82 throws <code>NotFoundError</code> exception if pointer id is invalid (as per <a href='https://w3c.github.io/pointerevents/#setting-pointer-capture'>WC3 PointerEvents specification</a>). Earlier Firefox versions throw <code>InvalidPointerId</code>. See <a href='https://bugzil.la/1662124'>bug 1662124</a>."
+                ]
               }
             ],
             "ie": [
