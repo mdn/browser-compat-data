@@ -21,18 +21,32 @@
             "edge": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "81",
-              "partial_implementation": true,
-              "notes": "Firefox 81 implements aspect-ratio for blocks and replaced elements.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.aspect-ratio.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "83",
+                "partial_implementation": true,
+                "notes": "Firefox 83 implements aspect-ratio for flex items.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.aspect-ratio.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "81",
+                "partial_implementation": true,
+                "notes": "Firefox 81 implements aspect-ratio for blocks and replaced elements.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.aspect-ratio.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
