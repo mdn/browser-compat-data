@@ -1,6 +1,7 @@
 'use strict';
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -46,7 +47,7 @@ function isValidVersion(browserIdentifier, version) {
 /**
  * @param {SupportBlock} supportData
  * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function checkVersions(supportData, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
@@ -131,14 +132,7 @@ function testVersions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Versions');
 
   /**
    * @param {Identifier} data
@@ -157,18 +151,8 @@ function testVersions(filename) {
   }
   findSupport(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Versions – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testVersions;
