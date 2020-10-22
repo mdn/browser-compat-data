@@ -2,13 +2,14 @@
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
-  '$0 <browser> [folder] [value]',
+  '$0 [browser] [folder] [value]',
   'Test for specified values in any specified browser',
   yargs => {
     yargs
       .positional('browser', {
         describe: 'The browser to test for',
         type: 'string',
+        default: 'all',
       })
       .positional('folder', {
         describe: 'The folder(s) to test (set to "all" for all folders)',
@@ -36,26 +37,20 @@ function traverseFeatures(obj, depth, identifier) {
     for (const i in obj) {
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
-          const comp = obj[i].__compat.support;
-          let browser = comp[argv.browser];
-          if (!Array.isArray(browser)) {
-            browser = [browser];
-          }
-          for (const range in browser) {
-            if (browser[range] === undefined) {
-              if (values.includes('null')) features.push(`${identifier}${i}`);
-            } else if (
-              values.includes(String(browser[range].version_added)) ||
-              values.includes(String(browser[range].version_removed))
-            ) {
-              let f = `${identifier}${i}`;
-              if (browser[range].prefix)
-                f += ` (${browser[range].prefix} prefix)`;
-              if (browser[range].alternative_name)
-                f += ` (as ${browser[range].alternative_name})`;
-              features.push(f);
+          const path = `${identifier}${i}`;
+          const {description, mdn_url, support, status} = obj[i].__compat;
+          const flatSupport = browsers.map(b => {
+            let ranges = support[b];
+            if (!ranges) {
+              return null;
             }
-          }
+            if (!Array.isArray(ranges)) {
+              ranges = [ranges];
+            }
+            ranges = ranges.filter(r => !r.flags && !r.version_removed);
+            return ranges.length;
+          });
+          features.push([path, ...flatSupport]);
         }
         traverseFeatures(obj[i], depth, identifier + i + '.');
       }
@@ -64,6 +59,10 @@ function traverseFeatures(obj, depth, identifier) {
 }
 
 let features = [];
+const browsers =
+  argv.browser == 'all'
+    ? Object.keys(bcd.browsers)
+    : argv.browser.split(',');
 const folders =
   argv.folder == 'all'
     ? [
@@ -83,8 +82,8 @@ const values = Array.isArray(argv.value)
   ? argv.value
   : argv.value.toString().split(',');
 
+console.log(`path,${browsers.join(',')}`);
 for (const folder in folders)
   traverseFeatures(bcd[folders[folder]], argv.depth, `${folders[folder]}.`);
 
 console.log(features.join('\n'));
-console.log(features.length);
