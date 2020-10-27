@@ -16,12 +16,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 10.x ]
+        # TODO: hoist to 10.x when we bump the version supported in #5931
+        node-version: [ 8.x ]
 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2-beta
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install

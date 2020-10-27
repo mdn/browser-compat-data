@@ -10,6 +10,7 @@ We're really happy to accept contributions to the mdn-browser-compat-data reposi
 4. [Updating compatibility tables on MDN](#updating-compatibility-tables-on-mdn)
 5. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
+   2. [Optional: Generating data using the mirroring script](#optional-generating-data-using-the-mirroring-script)
 6. [Getting help](#getting-help)
 
 ## Before you begin
@@ -70,7 +71,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
-## Optional: Generating data using the mirroring script
+### Optional: Generating data using the mirroring script
 
 Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically copy values.
 
