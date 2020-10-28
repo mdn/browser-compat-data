@@ -32,7 +32,9 @@ function hasSupportHistory(data) {
  */
 function checkSupport(data, logger, path = []) {
   if (data.__compat && !hasSupportHistory(data)) {
-    logger.error(chalk`{red → No support history in ${path.join('.')}}`);
+    logger.error(
+      chalk`{red → No support without a tracking bug in ${path.join('.')}}`,
+    );
   }
   for (const member in data) {
     if (member === '__compat') {
