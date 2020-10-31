@@ -8,12 +8,7 @@ const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 let testDeadLinks = false;
 
 /**
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * @param {string} filename
- * @param {Logger} logger
  */
 function processData(filename) {
   let errors = [];
