@@ -7,11 +7,9 @@ const testFormat = () => {
   const logger = new Logger('Prettier');
 
   try {
-    execSync('npx prettier --check "**/*.js" "**/*.ts" "**/*.md"', {
-      stdio: 'inherit',
-    });
+    execSync('npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md"');
   } catch (err) {
-    let errorText = err.stdout && err.stdout.toString();
+    let errorText = err.stdout.toString();
     logger.error(
       chalk`{bold ${errorText}}`,
       chalk`Run {bold npm run fix} to fix formatting automatically`,
