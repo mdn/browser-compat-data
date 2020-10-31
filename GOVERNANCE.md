@@ -1,6 +1,6 @@
 # Governance
 
-[mdn-browser-compat-data](https://github.com/mdn/browser-compat-data) (also often referred to as "BCD") is an open source project that depends on contributions from the community. As long as they abide by the project’s Contribution Guidelines, anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the mdn-browser-compat-data project and how decisions are made.
+[`@mdn/browser-compat-data`](https://github.com/mdn/browser-compat-data) (also often referred to as "BCD") is an open source project that depends on contributions from the community. As long as they abide by the project’s Contribution Guidelines, anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the `@mdn/browser-compat-data` project and how decisions are made.
 
 ## Roles and Responsibilities
 
@@ -60,12 +60,13 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Joe Medley (@jpmedley), Google
 - Eric Shepherd (@a2sheppy), Mozilla
 - Michael Smith (@sideshowbarker), W3C
+- Philip Jägenstedt (@foolip), Google
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
 ### Owners
 
-The mdn-browser-compat-data project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
+The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
 
 The [Owner group](#list-of-current-owners) has final authority over this project including:
 
@@ -107,7 +108,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 ## Additional paths to becoming a Peer or Owner
 
-Some Owners or Peers are also [MDN Content Curators](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Documentation_topics_and_curators) and have thus earned the privilege to be a mdn-browser-compat-data Peer, so that their expertise in a given content area (CSS, HTML, etc.) can help improve the compat data for that same content area. Such Peers are marked in the relevant folders using GitHub’s Code Owner mechanism.
+Some Owners or Peers are also [MDN Content Curators](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Documentation_topics_and_curators) and have thus earned the privilege to be a `@mdn/browser-compat-data` Peer, so that their expertise in a given content area (CSS, HTML, etc.) can help improve the compat data for that same content area. Such Peers are marked in the relevant folders using GitHub’s Code Owner mechanism.
 
 Peers might also be representatives of browser vendors and have expertise and/or access to browser-specific information within their company. Their company name is listed in the Peer list.
 
@@ -161,7 +162,7 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 ## Peers and owners emeriti
 
-The mdn-browser-compat-data project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
+The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
 - Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
 - Jean-Yves Perrier (@teoli2003) (Former project lead, schema design co-author)
