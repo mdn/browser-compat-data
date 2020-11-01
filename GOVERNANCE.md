@@ -35,7 +35,7 @@ Peers:
 - Are expected to work on public branches of their forks and submit pull requests to the master branch.
 - Must submit pull requests for all their changes.
 - May label and close issues.
-- May only merge other people's pull requests that relate to compat data updates.
+- May only merge other people's pull requests that relate to compat data updates. (Note: Peers may merge changes to the files in the `browsers` directory — because those are compat data updates, not schema updates).
 - Have their non-data update work reviewed and merged by [Owners](#Owners). Non-data pull requests are PRs that change the schema, update project meta-docs, the linter, or other infrastructure changes.
 - Should ask for additional review from other Peers or Owners on other people's PRs that are disruptive or controversial.
 
