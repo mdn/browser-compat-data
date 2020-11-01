@@ -362,7 +362,7 @@
                 "notes": "Starting in Chrome 65, this property is readonly."
               },
               {
-                "version_added": "3",
+                "version_added": "1",
                 "version_removed": "64",
                 "partial_implementation": true,
                 "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
@@ -944,7 +944,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "1"
             }
           },
           "status": {
@@ -1071,7 +1071,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/caretRangeFromPoint",
           "support": {
             "chrome": {
-              "version_added": "8"
+              "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
@@ -2220,11 +2220,11 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "version_removed": "30"
+              "version_removed": "29"
             },
             "chrome_android": {
               "version_added": "18",
-              "version_removed": "30"
+              "version_removed": "29"
             },
             "edge": {
               "version_added": false
@@ -2241,10 +2241,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "version_removed": "16"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14",
+              "version_removed": "16"
             },
             "safari": {
               "version_added": "1",
@@ -2498,10 +2500,10 @@
               "version_added": true
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2926,7 +2928,7 @@
               "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -6442,10 +6444,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/height",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "31"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18",
+              "version_removed": "31"
             },
             "edge": {
               "version_added": false
@@ -6462,10 +6466,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "version_removed": "18"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14",
+              "version_removed": "18"
             },
             "safari": {
               "version_added": "1",
@@ -6476,10 +6482,12 @@
               "version_removed": "10"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0",
+              "version_removed": "3.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "4.4.3"
             }
           },
           "status": {
@@ -6987,10 +6995,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7451,10 +7459,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7499,10 +7507,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7547,10 +7555,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -8171,16 +8179,22 @@
           "support": {
             "chrome": [
               {
-                "version_added": "33"
+                "version_added": "62"
               },
               {
                 "version_added": "13",
                 "prefix": "webkit"
               }
             ],
-            "chrome_android": {
-              "version_added": "33"
-            },
+            "chrome_android": [
+              {
+                "version_added": "62"
+              },
+              {
+                "version_added": "18",
+                "prefix": "webkit"
+              }
+            ],
             "edge": {
               "version_added": "18",
               "notes": "Before Edge 18, this event handler attribute was not supported; however, the event itself was supported since Edge 12. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
@@ -8219,12 +8233,24 @@
                 "Before Safari iOS 10.3, this event handler attribute was not supported; however, the event itself was supported since Safari iOS 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
               ]
             },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "2.0"
+              },
+              {
+                "version_added": "1.0",
+                "prefix": "webkit"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "62"
+              },
+              {
+                "version_added": "≤37",
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -9484,10 +9510,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -9594,10 +9620,10 @@
               "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "2"
@@ -10192,7 +10218,7 @@
               "version_added": "5"
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
               "version_added": false
@@ -10407,10 +10433,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -10612,10 +10638,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -10806,10 +10832,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -11501,10 +11527,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -11938,10 +11964,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/width",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "31"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18",
+              "version_removed": "31"
             },
             "edge": {
               "version_added": false
@@ -11958,10 +11986,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "version_removed": "18"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14",
+              "version_removed": "18"
             },
             "safari": {
               "version_added": "1",
@@ -11972,10 +12002,12 @@
               "version_removed": "10"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0",
+              "version_removed": "3.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "4.4.3"
             }
           },
           "status": {
@@ -12170,10 +12202,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
@@ -12220,10 +12252,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
@@ -12270,10 +12302,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
