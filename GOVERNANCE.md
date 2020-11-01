@@ -155,7 +155,7 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 | Open pull requests or issues                           |                  | •            | •     | •      |
 | Review pull requests or comment on issues              |                  | •            | •     | •      |
 | Label issues and PRs                                   |                  |              | •     | •      |
-| Merge compat data PRs                                  |                  |              | •     | •      |
+| Merge compat data PRs (includes `browser` directory)   |                  |              | •     | •      |
 | Merge schema, linter, infrastructure or policy changes |                  |              |       | •      |
 | Release new npm package versions                       |                  |              |       | •      |
 | Merge to branches directly (without pull requests)     |                  |              |       | •      |
