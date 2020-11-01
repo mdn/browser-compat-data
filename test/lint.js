@@ -19,6 +19,7 @@ const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
+const testReleases = require('./linter/test-releases.js');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -63,7 +64,8 @@ function load(...files) {
           hasConsistencyErrors = false,
           hasRealValueErrors = false,
           hasPrefixErrors = false,
-          hasDescriptionsErrors = false;
+          hasDescriptionsErrors = false,
+          hasReleaseErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -93,6 +95,7 @@ function load(...files) {
               './../../schemas/browsers.schema.json',
             );
             hasLinkErrors = testLinks(file);
+            hasReleaseErrors = testReleases(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
@@ -120,6 +123,7 @@ function load(...files) {
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
+          hasReleaseErrors,
         ].some(x => !!x);
 
         if (fileHasErrors) {
