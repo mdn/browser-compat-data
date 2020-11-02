@@ -33,7 +33,6 @@ const browsers = {
  * @param {string} category
  * @param {Logger} logger
  * @param {string} [path]
- * @returns {boolean}
  */
 function processData(
   data,
