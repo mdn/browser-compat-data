@@ -35,7 +35,8 @@ Peers:
 - Are expected to work on public branches of their forks and submit pull requests to the master branch.
 - Must submit pull requests for all their changes.
 - May label and close issues.
-- May only merge other people's pull requests that relate to compat data updates. (Note: Peers may merge changes to the files in the `browsers` directory — because those are compat data updates, not schema updates).
+- May merge other people's pull requests that relate to compat data updates.
+- May merge other people's pull requests that relate to browser data updates (excluding the addition or removal of browsers).
 - Have their non-data update work reviewed and merged by [Owners](#Owners). Non-data pull requests are PRs that change the schema, update project meta-docs, the linter, or other infrastructure changes.
 - Should ask for additional review from other Peers or Owners on other people's PRs that are disruptive or controversial.
 
@@ -155,7 +156,8 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 | Open pull requests or issues                           |                  | •            | •     | •      |
 | Review pull requests or comment on issues              |                  | •            | •     | •      |
 | Label issues and PRs                                   |                  |              | •     | •      |
-| Merge compat data PRs (includes `browser` directory)   |                  |              | •     | •      |
+| Merge compat data PRs                                  |                  |              | •     | •      |
+| Merge browser data PRs                                  |                  |              | •     | •      |
 | Merge schema, linter, infrastructure or policy changes |                  |              |       | •      |
 | Release new npm package versions                       |                  |              |       | •      |
 | Merge to branches directly (without pull requests)     |                  |              |       | •      |
