@@ -251,7 +251,7 @@ Examples:
 
 ### Ranged versions
 
-For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
+For certain browsers, ranged versions are allowed as it is sometimes impossible, or simply unreasonable, to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
 - Edge
   - "≤18" (supported in some version of EdgeHTML-based Edge)
@@ -262,6 +262,8 @@ For certain browsers, ranged versions are allowed as it is sometimes impossible 
 - Opera Android
   - "≤12.1" (supported in some version of Presto-based Opera)
   - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+- Safari
+  - "≤4" (earliest Safari version supported in BrowserStack)
 - WebView Android
   - "≤37" (supported in former Android versions prior to Chrome-based WebView)
 
