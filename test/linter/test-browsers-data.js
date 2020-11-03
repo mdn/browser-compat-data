@@ -23,21 +23,17 @@ function processData(data, logger) {
     nightly: null,
   };
 
-  for (let releaseVersion in releases) {
-    const releaseData = releases[releaseVersion];
+  for (const status of ['current', 'beta', 'nightly']) {
+    const releasesForStatus = Object.entries(releases)
+      .filter(([version, data]) => data.status == status)
+      .map(([version, data]) => version);
 
-    if (['current', 'beta', 'nightly'].includes(releaseData.status)) {
-      if (releaseByStatus[releaseData.status]) {
-        logger.error(
-          chalk`{bold ${browser}} has multiple {bold ${
-            releaseData.status
-          }} releases (${
-            releaseByStatus[releaseData.status]
-          } and ${releaseVersion}), which is not allowed.`,
-        );
-      }
-
-      releaseByStatus[releaseData.status] = releaseVersion;
+    if (releasesForStatus.length > 1) {
+      logger.error(
+        chalk`{red → {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
+          ', ',
+        )}), which is {bold not} allowed.}`,
+      );
     }
   }
 }
