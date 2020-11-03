@@ -183,6 +183,8 @@ To add a new browser to BCD, we need evidence of (in decreasing order of importa
 - published release information (e.g., release notes with version numbers and dates, etc.)
 - documentation (e.g., how to get and test a feature in that browser, links to resources that might help with it, etc.)
 
+This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
+
 ## Removal of browsers
 
 To remove a browser from BCD, we need habitual (six months or more) evidence of (in decreasing order of importance):
