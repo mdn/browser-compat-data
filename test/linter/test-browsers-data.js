@@ -27,11 +27,13 @@ function processData(data, logger) {
   for (let releaseVersion in releases) {
     const releaseData = releases[releaseVersion];
 
-    if (
-      ['current', 'beta', 'nightly', browser !== 'nodejs' && 'esr'].includes(
-        releaseData.status,
-      )
-    ) {
+    if (['current', 'beta', 'nightly', 'esr'].includes(releaseData.status)) {
+      if (
+        releaseData.status === 'esr' &&
+        ['nodejs', 'firefox'].includes(browser)
+      ) {
+        continue;
+      }
       if (releaseByStatus[releaseData.status]) {
         logger.error(
           chalk`{bold ${browser}} has multiple {bold ${
