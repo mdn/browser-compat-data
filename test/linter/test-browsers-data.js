@@ -28,10 +28,9 @@ function processData(data, logger) {
     const releaseData = releases[releaseVersion];
 
     if (
-      (browser == 'nodejs'
-        ? ['beta', 'nightly']
-        : ['current', 'beta', 'nightly', 'esr']
-      ).includes(releaseData.status)
+      ['current', 'beta', 'nightly', browser !== 'nodejs' && 'esr'].includes(
+        releaseData.status,
+      )
     ) {
       if (releaseByStatus[releaseData.status]) {
         logger.error(
