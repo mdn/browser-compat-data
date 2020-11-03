@@ -21,7 +21,6 @@ function processData(data, logger) {
     current: null,
     beta: null,
     nightly: null,
-    esr: null,
   };
 
   for (let releaseVersion in releases) {
