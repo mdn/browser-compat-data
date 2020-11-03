@@ -1176,10 +1176,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": "22"
+              "version_added": "4"
             },
             "ie": {
               "version_added": "5.5"
@@ -1224,10 +1224,10 @@
               "version_added": "≤79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -3649,10 +3649,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "23"
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": "23"
+              "version_added": "4"
             },
             "ie": {
               "version_added": "5"
@@ -3745,10 +3745,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "6"
@@ -3793,10 +3793,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -3841,11 +3841,12 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true,
+              "version_added": "1",
               "notes": "Starting in Firefox 13, <code>null</code> is always returned instead of the empty string, as per the DOM4 specification. Previously, there were cases in which an empty string could be returned."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4",
+              "notes": "Starting in Firefox 13, <code>null</code> is always returned instead of the empty string, as per the DOM4 specification. Previously, there were cases in which an empty string could be returned."
             },
             "ie": {
               "version_added": "9"
@@ -4341,18 +4342,15 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true,
+              "version_added": "1",
               "notes": [
                 "The behavior of <code>element.getElementsByTagNameNS</code> changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the <a href='https://bugzil.la/542185#c5'>comment from Henri Sivonen about the change</a>. You can also look at the <a href='https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names'>relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't.</a>",
                 "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
               ]
             },
             "firefox_android": {
-              "version_added": true,
-              "notes": [
-                "The behavior of <code>element.getElementsByTagNameNS</code> changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the <a href='https://bugzil.la/542185#c5'>comment from Henri Sivonen about the change</a>. You can also look at the <a href='https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names'>relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't.</a>",
-                "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
-              ]
+              "version_added": "4",
+              "notes": "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
             },
             "ie": {
               "version_added": "9"
@@ -4403,11 +4401,7 @@
                 "version_added": true
               },
               "firefox_android": {
-                "version_added": true,
-                "notes": [
-                  "The behavior of <code>element.getElementsByTagNameNS</code> changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the <a href='https://bugzil.la/542185#c5'>comment from Henri Sivonen about the change</a>. You can also look at the <a href='https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names'>relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't.</a>",
-                  "Prior to Firefox 19, this method was returning a <code>NodeList</code>; it was then changed to reflects the spec change."
-                ]
+                "version_added": true
               },
               "ie": {
                 "version_added": "9"
@@ -4501,10 +4495,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -4549,11 +4543,12 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true,
-              "notes": "[1] Before Firefox 35, it was implemented on the <code>Node</code> interface."
+              "version_added": "1",
+              "notes": "Before Firefox 35, it was implemented on the <code>Node</code> interface."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4",
+              "notes": "Before Firefox 35, it was implemented on the <code>Node</code> interface."
             },
             "ie": {
               "version_added": "8"
@@ -4670,10 +4665,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "5"
@@ -5740,7 +5735,8 @@
               "notes": "This API was previously available on the <code>Node</code> API."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "48",
+              "notes": "This API was previously available on the <code>Node</code> API."
             },
             "ie": {
               "version_added": "9"
@@ -6099,18 +6095,23 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "71",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.shadow-parts.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "72"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.shadow-parts.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -6541,10 +6542,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "6"
@@ -6589,10 +6590,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -7796,10 +7797,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "5",
@@ -7943,10 +7944,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "6"
@@ -7992,10 +7993,10 @@
               "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9",
@@ -8041,10 +8042,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -8090,10 +8091,10 @@
               "version_removed": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "4"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "4"
             },
             "ie": {
               "version_added": "5",
@@ -8388,10 +8389,10 @@
               "version_added": "≤79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
