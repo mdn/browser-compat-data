@@ -6,6 +6,7 @@
 const chalk = require('chalk');
 
 const bcd = require('..');
+const version = require('../package.json').version;
 
 const { argv } = require('yargs').command(
   '$0 [folder]',
@@ -175,7 +176,7 @@ const printStats = (stats, folder) => {
   }
 
   console.log(
-    chalk`{bold Status as of version 1.0.xx (released on 2020-MM-DD) for ${
+    chalk`{bold Status as of version ${version} (released on 2020-MM-DD) for ${
       folder ? `${folder}/ directory` : 'web platform features'
     }}: \n`,
   );
