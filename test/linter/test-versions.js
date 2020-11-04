@@ -20,6 +20,7 @@ const VERSION_RANGE_BROWSERS = {
   opera: ['≤12.1', '≤15'],
   opera_android: ['≤12.1', '≤14'],
   edge: ['≤18', '≤79'],
+  safari: ['≤4'],
 };
 
 /** @type string[] */
