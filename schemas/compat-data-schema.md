@@ -253,9 +253,20 @@ Examples:
 
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
+- Chrome
+  - "≤15" (earliest Chrome version supported in BrowserStack)
+  - "≤26" (earliest Chrome version supported in SauceLabs)
 - Edge
+  - "≤13" (earliest Edge version supported in BrowserStack)
+  - "≤15" (earliest Edge version supported in SauceLabs)
   - "≤18" (supported in some version of EdgeHTML-based Edge)
   - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+- Firefox
+  - "≤3" (earliest Firefox version supported in BrowserStack)
+  - "≤4" (earliest Firefox version supported in SauceLabs)
+- Internet Explorer
+  - "≤6" (earliest Internet Explorer version supported in BrowserStack)
+  - "≤9" (earliest Internet Explorer version supported in SauceLabs)
 - Opera
   - "≤12.1" (supported in some version of Presto-based Opera)
   - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
@@ -264,6 +275,7 @@ For certain browsers, ranged versions are allowed as it is sometimes impractical
   - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
 - Safari
   - "≤4" (earliest Safari version supported in BrowserStack)
+  - "≤8" (earliest Safari version supported in SauceLabs)
 - WebView Android
   - "≤37" (supported in former Android versions prior to Chrome-based WebView)
 
