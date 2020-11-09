@@ -12,8 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2-beta
       with:
-        # TODO: hoist to 10.x when we bump the version supported in #5931
-        node-version: 8.x
+        node-version: 10.x
         registry-url: "https://registry.npmjs.org/"
     - run: npm install
     - run: npm test
