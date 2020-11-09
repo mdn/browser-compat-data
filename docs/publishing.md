@@ -1,6 +1,6 @@
-# Publishing a new version of `mdn-browser-compat-data`
+# Publishing a new version of `@mdn/browser-compat-data`
 
-[Project owners](/GOVERNANCE.md#owners) publish new releases of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) on npm.
+[Project owners](/GOVERNANCE.md#owners) publish new releases of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data) on npm.
 MDN staff [deploy the package to the MDN site](contributing.md#updating-compatibility-tables-on-mdn).
 Usually, this happens every Thursday (MDN never deploys to production on Fridays).
 
