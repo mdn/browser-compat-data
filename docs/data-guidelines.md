@@ -26,6 +26,14 @@ If it's helpful to understanding the rule, summarize the rationale. Definitely c
 
 -- END TEMPLATE -->
 
+## `"partial_implementation"` requires a note
+
+If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
+
+For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
+
+This guideline was proposed in [#TK](https://tk.example/).
+
 ## Constructors
 
 Name a constructor for an API feature the same as the parent feature (unless the constructor doesn't share the name of its parent feature) and have a description with text in the form of `<code>Name()</code> constructor`.
