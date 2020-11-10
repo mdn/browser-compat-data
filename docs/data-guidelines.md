@@ -5,6 +5,7 @@ This file contains recommendations to help you record data in a consistent and u
 <!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
 
 - [Data guidelines](#data-guidelines)
+  - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
   - [Constructors](#constructors)
   - [DOM events (`eventname_event`)](#dom-events-eventname_event)
   - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
