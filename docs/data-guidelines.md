@@ -155,7 +155,7 @@ If you set `"partial_implementation": true`, then write a note describing how th
 
 For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
 
-This guideline was proposed in [#TK](https://tk.example/).
+This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
 ## Non-functional defined names imply `partial_implementation`
 
