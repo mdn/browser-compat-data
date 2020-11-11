@@ -22,7 +22,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`,
-    match => {
+    (match) => {
       return {
         issue: 'Use shortenable URL',
         expected: `https://bugzil.la/${match[1]}`,
@@ -35,7 +35,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/chromium/issues/detail\?id=(\d+)`,
-    match => {
+    (match) => {
       return {
         issue: 'Use shortenable URL',
         expected: `https://crbug.com/${match[2]}`,
@@ -48,7 +48,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`,
-    match => {
+    (match) => {
       return {
         issue: 'Use shortenable URL',
         expected: `https://webkit.org/b/${match[1]}`,
@@ -61,7 +61,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`(....)<a href='((https?)://(bugzil\.la|crbug\.com|webkit\.org/b)/(\d+))'>(.*?)</a>`,
-    match => {
+    (match) => {
       const [, before, url, protocol, domain, bugId, linkText] = match;
 
       if (protocol !== 'https') {
@@ -102,7 +102,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
-    match => {
+    (match) => {
       const [, protocol, subdomain, path] = match;
       const [, locale, expectedPath_] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(
         path,
@@ -159,7 +159,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`,
-    match => {
+    (match) => {
       return {
         issue: 'Use non-localized Microsoft Developer URL',
         expected: `https://developer.microsoft.com/${match[2]}`,
@@ -171,7 +171,7 @@ function processData(filename) {
     errors,
     actual,
     String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
-    match => {
+    (match) => {
       if (url.parse(match[1]).hostname === null) {
         return {
           issue: 'Include hostname in URL',

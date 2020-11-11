@@ -8,7 +8,7 @@ const bcd = require('..');
 const { argv } = require('yargs').command(
   '$0 <version-tag>',
   'Initiate a release of this package on GitHub',
-  yargs => {
+  (yargs) => {
     yargs.positional('version-tag', {
       describe: 'the version tag to generate release notes for',
       type: 'string',
@@ -22,17 +22,17 @@ const { argv } = require('yargs').command(
   },
 );
 
-const getJSON = url =>
+const getJSON = (url) =>
   new Promise((resolve, reject) =>
     http.get(
       url,
       { headers: { 'User-Agent': 'bcd-release-script' } },
-      response => {
+      (response) => {
         let body = '';
-        response.on('data', data => {
+        response.on('data', (data) => {
           body += data;
         });
-        response.on('error', error => reject(error));
+        response.on('error', (error) => reject(error));
         response.on('end', () => {
           resolve(JSON.parse(body));
         });
@@ -40,20 +40,22 @@ const getJSON = url =>
     ),
   );
 
-const question = query => {
+const question = (query) => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
-  return new Promise(resolve => rl.question(query, resolve)).then(response => {
-    rl.close();
-    return response;
-  });
+  return new Promise((resolve) => rl.question(query, resolve)).then(
+    (response) => {
+      rl.close();
+      return response;
+    },
+  );
 };
 
-const confirm = str => !['n', 'no'].includes(str.toLowerCase());
+const confirm = (str) => !['n', 'no'].includes(str.toLowerCase());
 
-const prompt = async questions => {
+const prompt = async (questions) => {
   const results = {};
   for (const q of questions) {
     const options = q.type === confirm ? '(Y/n) ' : '';
@@ -64,7 +66,7 @@ const prompt = async questions => {
 
 const stargazers = () =>
   getJSON('https://api.github.com/repos/mdn/browser-compat-data').then(
-    json => json.stargazers_count,
+    (json) => json.stargazers_count,
   );
 
 const stats = (version, previousVersion) => {
@@ -108,7 +110,7 @@ const contributors = (version, previousVersion) =>
     },
   ]);
 
-const notableChanges = previousReleaseDate => {
+const notableChanges = (previousReleaseDate) => {
   const searchUrl = new URL('https://github.com/mdn/browser-compat-data/pulls');
   const querySafeDate = previousReleaseDate.replace('+', '%2B');
   searchUrl.search = `q=is:pr merged:>=${querySafeDate} label:"needs-release-note :newspaper:"`;
@@ -118,7 +120,7 @@ const notableChanges = previousReleaseDate => {
 
 const countFeatures = () => {
   let count = 0;
-  JSON.parse(JSON.stringify(bcd), k => {
+  JSON.parse(JSON.stringify(bcd), (k) => {
     if (k === '__compat') {
       count++;
     }
@@ -133,7 +135,7 @@ const makeURL = (version, body) => {
   // Adhering to RFC 3986 makes the full link clickable in Terminal.app
   const encodedBody = encodeURIComponent(body).replace(
     /[!'()*]/g,
-    c => `%${c.charCodeAt(0).toString(16)}`,
+    (c) => `%${c.charCodeAt(0).toString(16)}`,
   );
 
   return `${baseURL}?title=${version}&tag=${version}&body=${encodedBody}`;
