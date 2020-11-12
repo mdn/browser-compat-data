@@ -54,9 +54,7 @@ const { argv } = require('yargs').command(
   },
 );
 
-function traverseFeatures(obj, browsers, values, depth, identifier) {
-  let features = [];
-
+function* iterateFeatures(obj, browsers, values, depth, identifier) {
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
@@ -68,7 +66,7 @@ function traverseFeatures(obj, browsers, values, depth, identifier) {
 
             if (!browserData) {
               if (values.length == 0 || values.includes('null'))
-                features.push(`${identifier}${i}`);
+                yield `${identifier}${i}`;
               continue;
             }
             if (!Array.isArray(browserData)) {
@@ -78,7 +76,7 @@ function traverseFeatures(obj, browsers, values, depth, identifier) {
             for (const range in browserData) {
               if (browserData[range] === undefined) {
                 if (values.length == 0 || values.includes('null'))
-                  features.push(`${identifier}${i}`);
+                  yield `${identifier}${i}`;
               } else if (
                 values.length == 0 ||
                 values.includes(String(browserData[range].version_added)) ||
@@ -89,23 +87,27 @@ function traverseFeatures(obj, browsers, values, depth, identifier) {
                   f += ` (${browserData[range].prefix} prefix)`;
                 if (browserData[range].alternative_name)
                   f += ` (as ${browserData[range].alternative_name})`;
-                features.push(f);
+                yield f;
               }
             }
           }
         }
-        features.push(
-          ...traverseFeatures(
-            obj[i],
-            browsers,
-            values,
-            depth,
-            identifier + i + '.',
-          ),
+        yield* iterateFeatures(
+          obj[i],
+          browsers,
+          values,
+          depth,
+          identifier + i + '.',
         );
       }
     }
   }
+}
+
+function traverseFeatures(obj, browsers, values, depth, identifier) {
+  const features = Array.from(
+    iterateFeatures(obj, browsers, values, depth, identifier),
+  );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
 }
@@ -120,7 +122,7 @@ const main = (folders, browsers, values) => {
         browsers,
         values,
         argv.depth,
-        `${folders[folder]}.`,
+        folders[folder] + '.',
       ),
     );
   }
