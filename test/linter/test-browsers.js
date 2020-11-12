@@ -1,10 +1,10 @@
 'use strict';
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {Record<string, string[]>} */
@@ -142,29 +142,12 @@ function testBrowsers(filename) {
   displayBrowsers.sort();
   requiredBrowsers.sort();
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Browsers');
 
   processData(data, displayBrowsers, requiredBrowsers, category, logger);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Browsers – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testBrowsers;

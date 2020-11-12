@@ -1,8 +1,8 @@
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
  */
 
 /**
@@ -105,14 +105,7 @@ function testDescriptions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Descriptions');
 
   if (data.api) {
     for (const apiName in data.api) {
@@ -131,18 +124,8 @@ function testDescriptions(filename) {
     }
   }
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Descriptions – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`    ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testDescriptions;
