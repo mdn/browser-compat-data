@@ -6,7 +6,6 @@
 const chalk = require('chalk');
 
 const bcd = require('..');
-const version = require('../package.json').version;
 
 const { argv } = require('yargs').command(
   '$0 [folder]',
