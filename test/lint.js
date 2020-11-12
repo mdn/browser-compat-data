@@ -14,7 +14,7 @@ const {
   testVersions,
   testConsistency,
   testDescriptions,
-  testDeprecated,
+  testFlagConsistency,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
@@ -65,7 +65,7 @@ function load(...files) {
           hasRealValueErrors = false,
           hasPrefixErrors = false,
           hasDescriptionsErrors = false,
-          hasDeprecatedErrors = false;
+          hasFlagConsistencyErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -105,7 +105,7 @@ function load(...files) {
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
-            hasDeprecatedErrors = testDeprecated(file);
+            hasFlagConsistencyErrors = testFlagConsistency(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -123,7 +123,7 @@ function load(...files) {
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
-          hasDeprecatedErrors,
+          hasFlagConsistencyErrors,
         ].some(x => !!x);
 
         if (fileHasErrors) {

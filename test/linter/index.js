@@ -8,7 +8,7 @@ const testStyle = require('./test-style.js');
 const testVersions = require('./test-versions.js');
 const testConsistency = require('./test-consistency.js');
 const testDescriptions = require('./test-descriptions.js');
-const testDeprecated = require('./test-deprecated.js');
+const testFlagConsistency = require('./test-flag-consistency.js');
 
 module.exports = {
   testBrowsers,
@@ -20,5 +20,5 @@ module.exports = {
   testVersions,
   testConsistency,
   testDescriptions,
-  testDeprecated,
+  testFlagConsistency,
 };

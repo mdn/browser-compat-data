@@ -3,18 +3,19 @@ const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../../types.js').StatusBlock} StatusBlock
  */
 
 /**
  * @param {Identifier} data
  * @param {Logger} logger
- * @param {boolean} isParentDeprecated,
+ * @param {StatusBlock} parentStatus,
  * @param {string[]} path
  */
-function checkStatus(data, logger, isParentDeprecated, path = []) {
-  const status = data.__compat && data.__compat.status;
-  const deprecated = status && status.deprecated;
-  if (!deprecated && isParentDeprecated) {
+function checkStatus(data, logger, parentStatus, path = []) {
+  /** @type {StatusBlock} */
+  const status = (data.__compat && data.__compat.status) || {};
+  if (!status.deprecated && parentStatus.deprecated) {
     logger.error(
       chalk`{red → Unexpected non-deprecated status while the parent is deprecated, in ${path.join(
         '.',
@@ -25,7 +26,7 @@ function checkStatus(data, logger, isParentDeprecated, path = []) {
     if (member === '__compat') {
       continue;
     }
-    checkStatus(data[member], logger, deprecated, [...path, member]);
+    checkStatus(data[member], logger, status, [...path, member]);
   }
 }
 
@@ -33,11 +34,11 @@ function checkStatus(data, logger, isParentDeprecated, path = []) {
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testDeprecated(filename) {
+function testFlagConsistency(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  const logger = new Logger('Deprecated');
+  const logger = new Logger('Flag consistency');
 
   checkStatus(data, logger, false);
 
@@ -45,4 +46,4 @@ function testDeprecated(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testDeprecated;
+module.exports = testFlagConsistency;
