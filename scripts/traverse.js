@@ -37,7 +37,7 @@ const { argv } = require('yargs').command(
           'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
         type: 'number',
         nargs: 1,
-        default: 100,
+        default: 10,
       })
       .example(
         'npm run traverse -- --browser=safari --non-real',
