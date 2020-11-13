@@ -256,6 +256,8 @@ For certain browsers, ranged versions are allowed as it is sometimes impractical
 - Edge
   - "≤18" (supported in some version of EdgeHTML-based Edge)
   - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+- Internet Explorer
+  - "≤6" (earliest IE version supported in BrowserStack)
 - Opera
   - "≤12.1" (supported in some version of Presto-based Opera)
   - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
