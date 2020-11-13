@@ -266,6 +266,8 @@ For certain browsers, ranged versions are allowed as it is sometimes impractical
   - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
 - Safari
   - "≤4" (earliest Safari version supported in BrowserStack)
+- Safari iOS
+  - "≤3" (earliest Safari iOS version supported in BrowserStack)
 - WebView Android
   - "≤37" (supported in former Android versions prior to Chrome-based WebView)
 
