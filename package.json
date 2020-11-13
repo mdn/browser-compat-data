@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -15,6 +15,7 @@
     "url": "git+https://github.com/mdn/browser-compat-data.git"
   },
   "keywords": [
+    "bcd",
     "browser-compat-data",
     "browser",
     "compatibility",
@@ -31,24 +32,26 @@
   "devDependencies": {
     "ajv": "~6.12.2",
     "better-ajv-errors": "~0.6.7",
-    "chalk": "~3.0.0",
+    "chalk": "~4.1.0",
     "compare-versions": "~3.6.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "mdn-confluence": "~2.2.0",
-    "ora": "~4.0.3",
-    "prettier": "~1.19.1",
-    "yargs": "~15.4.1"
+    "mocha": "~8.2.0",
+    "ora": "~5.1.0",
+    "prettier": "~2.1.2",
+    "yargs": "~16.1.0"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+    "mocha": "mocha \"test/**.test.js\"",
     "lint": "node test/lint",
     "fix": "node scripts/fix",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run lint",
+    "test": "npm run mocha && npm run lint",
     "traverse": "node scripts/traverse"
   }
 }
