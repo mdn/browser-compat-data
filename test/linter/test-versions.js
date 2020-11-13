@@ -16,13 +16,13 @@ const validBrowserVersions = {};
 
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
-  webview_android: ['≤37'],
+  edge: ['≤18', '≤79'],
+  ie: ['≤6'],
   opera: ['≤12.1', '≤15'],
   opera_android: ['≤12.1', '≤14'],
-  edge: ['≤18', '≤79'],
   safari: ['≤4'],
   safari_ios: ['≤3'],
-  ie: ['≤6'],
+  webview_android: ['≤37'],
 };
 
 /** @type string[] */
