@@ -34,7 +34,7 @@ function checkStatus(data, logger, parentStatus, path = []) {
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testFlagConsistency(filename) {
+function testStatus(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -46,4 +46,4 @@ function testFlagConsistency(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testFlagConsistency;
+module.exports = testStatus;
