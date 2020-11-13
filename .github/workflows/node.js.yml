@@ -16,8 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        # TODO: hoist to 10.x when we bump the version supported in #5931
-        node-version: [ 8.x ]
+        node-version: [ 10.x, 14.x ]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,3 +26,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
+      env:
+        FORCE_COLOR: 3
