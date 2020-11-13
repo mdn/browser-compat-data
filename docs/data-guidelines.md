@@ -10,6 +10,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
   - [Web Workers (`worker_support`)](#web-workers-worker_support)
   - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
+  - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
@@ -147,6 +148,14 @@ For example, the Geolocation permission is named `geolocation_permission` with t
 ```
 
 This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-data/pull/6156).
+
+## `"partial_implementation"` requires a note
+
+If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
+
+For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
+
+This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
 ## Non-functional defined names imply `partial_implementation`
 
