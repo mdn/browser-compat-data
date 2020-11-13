@@ -5,16 +5,40 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/ruby-position",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "12",
-              "version_removed": "79"
-            },
+            "chrome": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "1",
+                "prefix": "-webkit-",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "18",
+                "prefix": "-webkit-",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "79",
+                "prefix": "-webkit-",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": "38"
             },
@@ -25,26 +49,49 @@
               "version_added": false,
               "notes": "Internet Explorer 9 and later support an old draft values: <code>inline</code> (equivalent of having <code>display: inline</code> on the ruby), and <code>above</code> (synonym of the modern <code>over</code>)."
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "15",
+                "prefix": "-webkit-",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "14",
+                "prefix": "-webkit-",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              }
+            ],
             "safari": {
-              "version_added": false,
-              "notes": "Safari implements a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              "version_added": "6.1",
+              "prefix": "-webkit-",
+              "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
             },
             "safari_ios": {
-              "version_added": false,
-              "notes": "Safari implements a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              "version_added": "6.1",
+              "prefix": "-webkit-",
+              "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
             },
             "samsunginternet_android": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "1",
+                "prefix": "-webkit-",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -66,7 +113,8 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1055672'>bug 1055672</a>"
               },
               "firefox_android": {
                 "version_added": false
