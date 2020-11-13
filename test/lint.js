@@ -20,7 +20,6 @@ const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
 const testRegexes = require('./test-regexes');
-const testUtils = require('./test-utils');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -164,7 +163,6 @@ hasErrors = testCompareFeatures() || hasErrors;
 hasErrors = testMigrations() || hasErrors;
 hasErrors = testFormat() || hasErrors;
 hasErrors = testRegexes() || hasErrors;
-hasErrors = testUtils() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
