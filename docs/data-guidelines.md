@@ -11,7 +11,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Web Workers (`worker_support`)](#web-workers-worker_support)
   - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
   - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
-  - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
+  - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
   - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
@@ -158,7 +158,7 @@ For historical reasons, some support statements have the flag set to `true` with
 
 This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
-## Non-functional defined names imply `partial_implementation`
+## Non-functional defined names imply `"partial_implementation"`
 
 If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
 
