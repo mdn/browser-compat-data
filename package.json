@@ -2,11 +2,8 @@
   "name": "@mdn/browser-compat-data",
   "version": "2.0.7",
   "description": "Browser compatibility data provided by MDN Web Docs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "index.d.ts",
-  "dependencies": {
-    "extend": "3.0.2"
-  },
   "engines": {
     "node": ">=10.0.0"
   },
@@ -14,6 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/mdn/browser-compat-data.git"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/data.json",
+    "dist/index.js",
+    "types.d.ts",
+    "index.d.ts"
+  ],
   "keywords": [
     "bcd",
     "browser-compat-data",
@@ -34,6 +39,7 @@
     "better-ajv-errors": "~0.6.7",
     "chalk": "~4.1.0",
     "compare-versions": "~3.6.0",
+    "extend": "~3.0.2",
     "mdn-confluence": "~2.2.0",
     "mocha": "~8.2.0",
     "ora": "~5.1.0",
@@ -48,6 +54,7 @@
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-notes": "node scripts/release-notes",
+    "prepack": "node scripts/release-dist",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run mocha && npm run lint",
     "traverse": "node scripts/traverse"
