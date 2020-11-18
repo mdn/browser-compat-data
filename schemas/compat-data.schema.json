@@ -39,6 +39,12 @@
             "required": ["type", "name"]
           }
         },
+        "implementation_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^http(s)?:\/\/[^#]+#.+",
+          "description": "An optional changeset URL or commit URL for the change which implemented the feature in the source code for the associated browser."
+        },
         "partial_implementation": {
           "type": "boolean",
           "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."

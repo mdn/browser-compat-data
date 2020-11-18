@@ -369,6 +369,18 @@ Example for two flags required:
 }
 ```
 
+#### `implementation_url`
+
+An optional changeset URL or commit URL for the change which implemented the feature in the
+source code for the associated browser; e.g. a https://trac.webkit.org/changeset/ URL for a
+changeset whose subject line is in the form _"Enable [feature name/description]."_ or
+_"Enable [feature name/description] by default."_. The presence of an `implementation_url`
+value indicates that the associated browser has spec-conformant support for the feature in
+its source code. Therefore, an `implementation_url` value can be added even if the feature
+hasn't yet shipped in a stable release, but instead only in a Nightly, Canary, or Technology
+Preview release — or even if the feature hasn't yet shipped in any release at all, but has
+only landed in the source code for the associated browser.
+
 #### `partial_implementation`
 
 A `boolean` value indicating whether or not the implementation of the sub-feature
