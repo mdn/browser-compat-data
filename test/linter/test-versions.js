@@ -95,12 +95,6 @@ function checkVersions(supportData, category, relPath, logger) {
         ? supportData[browser]
         : [supportData[browser]];
 
-      const validBrowserVersionsString = validBrowserVersions[browser].join(
-        ', ',
-      );
-      const validBrowserVersionsNonReal = `true, null, false, ${validBrowserVersionsString}`;
-      const validBrowserVersionsTruthy = `true, ${validBrowserVersionsString}`;
-
       for (const statement of supportStatements) {
         if (statement === undefined) {
           if (blockList[category].includes(browser)) {
