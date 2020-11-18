@@ -177,8 +177,9 @@ export interface SimpleSupportStatement {
      * An enum that indicates the flag type:
      * - `preference` a flag the user can set (like in `about:config` in Firefox).
      * - `runtime_flag` a flag to be set before starting the browser.
+     * - `build` a flag to be set when building the browser.
      */
-    type: 'preference' | 'runtime_flag';
+    type: 'preference' | 'runtime_flag' | 'build';
 
     /**
      * A `string` representing the flag or preference to modify.
