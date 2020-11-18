@@ -73,6 +73,48 @@ function removedAfterAdded(statement) {
 }
 
 /**
+ * @param {VersionValue} xver
+ * @param {VersionValue} yver
+ */
+function compareVersionNumber(xver, yver) {
+  /**
+   * @param {VersionValue} version
+   */
+  function toArray(version) {
+    if (typeof version === 'string') {
+      return (version.startsWith('≤') ? version.slice(1) : version).split('.');
+    }
+    return [0];
+  }
+  const x = toArray(xver);
+  const y = toArray(yver);
+  const length = Math.max(x.length, y.length);
+  for (let i = 0; i < length; i++) {
+    return Math.sign((x[i] || 0) - (y[i] || 0));
+  }
+  return 0;
+}
+
+/**
+ * @param {SimpleSupportStatement[]} supportDataList
+ * @param {string} relPath
+ * @param {Logger} logger
+ */
+function checkVersionOrder(supportDataList, relPath, browser, logger) {
+  const sorted = supportDataList
+    .slice()
+    .sort((a, b) => compareVersionNumber(b.version_added, a.version_added));
+  for (let i = 0; i < supportDataList.length; i++) {
+    if (supportDataList[i] !== sorted[i]) {
+      logger.error(
+        chalk`{red → versions not in order at ${relPath} (${browser})}`,
+      );
+      break;
+    }
+  }
+}
+
+/**
  * @param {SupportBlock} supportData
  * @param {string} relPath
  * @param {Logger} logger
@@ -84,7 +126,8 @@ function checkVersions(supportData, relPath, logger) {
       /** @type {SimpleSupportStatement[]} */
       const supportStatements = [];
       if (Array.isArray(supportData[browser])) {
-        Array.prototype.push.apply(supportStatements, supportData[browser]);
+        supportStatements.push(...supportData[browser]);
+        checkVersionOrder(supportData[browser], relPath, browser, logger);
       } else {
         supportStatements.push(supportData[browser]);
       }
