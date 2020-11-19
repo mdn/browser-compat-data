@@ -197,8 +197,9 @@ export interface SimpleSupportStatement {
   }[];
 
   /**
-   * An optional changeset URL or commit URL for the change which implemented the feature in the
-   * source code for the associated browser; e.g. a https://trac.webkit.org/changeset/ URL.
+   * An optional changeset URL or commit URL for the revision which implemented the feature
+   * in the source code for the associated browser; e.g. a https://trac.webkit.org/changeset/
+   * https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL.
    */
   implementation_url?: string;
 
