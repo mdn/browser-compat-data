@@ -39,15 +39,6 @@ const tests = [
 ];
 
 /**
- * @param {Identifier} feature The data to test
- * @param {string[]} matches All regex tests required to match
- * @param {string[]} misses All regex tests required not to match
- * @param {Logger} logger The logger to output errors to
- * @returns {void}
- */
-const testToken = (feature, matches, misses, logger) => {};
-
-/**
  * @todo This test only tests the escapeInvisibles() function in the utilities file, nothing else.
  *
  * @returns {boolean} If the linter utilities aren't functioning properly
