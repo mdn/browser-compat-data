@@ -19,7 +19,6 @@ const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
-const testRegexes = require('./test-regexes');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -162,7 +161,6 @@ var hasErrors = argv.files
 hasErrors = testCompareFeatures() || hasErrors;
 hasErrors = testMigrations() || hasErrors;
 hasErrors = testFormat() || hasErrors;
-hasErrors = testRegexes() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
