@@ -1088,6 +1088,55 @@
             }
           }
         },
+        "sandbox-allow-same-origin": {
+          "__compat": {
+            "description": "<code>sandbox=\"allow-same-origin\"</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true,
+                "notes": "Safari blocks script execution without <code>allow-scripts</code> even if <code>allow-same-origin</code> is set. For example, any bound handlers for click events of nodes inside an iframe throw an error for blocked script execution."
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "sandbox-allow-storage-access-by-user-activation": {
           "__compat": {
             "description": "<code>sandbox=\"allow-storage-access-by-user-activation\"</code>",
