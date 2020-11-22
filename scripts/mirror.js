@@ -439,17 +439,17 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 
 /**
  * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @param {string} source
+ * @param {SupportStatement} chromeAndroidData
+ * @param {SupportStatement} chromeData
  * @returns {SupportStatement}
  */
-const bumpWebView = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
+const bumpWebView = (originalData, chromeAndroidData, chromeData) => {
+  let newData = copyStatement(chromeAndroidData);
 
-  const createWebViewRange = version => {
-    if (Number(version) <= 18) {
+  const createWebViewRange = (version, desktopVersion) => {
+    if (Number(desktopVersion) == 1) {
       return '1';
-    } else if (Number(version) > 18 && Number(version) < 30) {
+    } else if (Number(version) < 30) {
       return '≤37';
     } else if (Number(version) >= 30 && Number(version) < 33) {
       return '4.4';
@@ -460,19 +460,29 @@ const bumpWebView = (originalData, sourceData, source) => {
     }
   };
 
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = createWebViewRange(sourceData.version_added);
+  if (typeof chromeAndroidData.version_added === 'string') {
+    newData.version_added = createWebViewRange(
+      chromeAndroidData.version_added,
+      chromeData.version_added,
+    );
   }
 
   if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
+    chromeAndroidData.version_removed &&
+    typeof chromeAndroidData.version_removed === 'string'
   ) {
-    newData.version_removed = createWebViewRange(sourceData.version_removed);
+    newData.version_removed = createWebViewRange(
+      chromeAndroidData.version_removed,
+      chromeData.version_removed,
+    );
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'WebView');
+  if (typeof chromeAndroidData.notes === 'string') {
+    newData.notes = updateNotes(
+      chromeAndroidData.notes,
+      /Chrome(?! ?OS)/g,
+      'WebView',
+    );
   }
 
   return newData;
@@ -538,7 +548,8 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
         bumpFunction = bumpSamsungInternet;
         break;
       case 'webview_android':
-        bumpFunction = bumpWebView;
+        bumpFunction = (originalData, data, source) =>
+          bumpWebView(originalData, data, compData['chrome']);
         break;
       default:
         bumpFunction = bumpGeneric;
@@ -748,8 +759,11 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
     return false;
   }
 
-  if (browser === 'edge' && forced_source) {
-    console.warn('Warning: Edge does not support --source parameter.');
+  if (['edge', 'webview_android'].includes(browser) && forced_source) {
+    console.warn(
+      'Warning: Edge and WebView do not support --source parameter.',
+    );
+    forced_source = false;
   }
 
   let source = getSource(browser, forced_source);
