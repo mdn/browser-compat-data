@@ -447,13 +447,13 @@ const bumpWebView = (originalData, chromeAndroidData, chromeData) => {
   let newData = copyStatement(chromeAndroidData);
 
   const createWebViewRange = (version, desktopVersion) => {
-    if (Number(desktopVersion) == 1) {
+    if (desktopVersion === '1') {
       return '1';
-    } else if (Number(version) < 30) {
+    } else if (version >= 18 && version < 30) {
       return '≤37';
-    } else if (Number(version) >= 30 && Number(version) < 33) {
+    } else if (version >= 30 && version < 33) {
       return '4.4';
-    } else if (Number(version) >= 33 && Number(version) < 37) {
+    } else if (version >= 33 && version < 37) {
       return '4.4.3';
     } else {
       return version;
