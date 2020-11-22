@@ -14,6 +14,7 @@ const testRealValues = require('./test-real-values.js');
 const testSchema = require('./test-schema.js');
 const testStyle = require('./test-style.js');
 const testVersions = require('./test-versions.js');
+const testIEtoEdgeContinuety = require('./test-ie-edge-continuety.js');
 
 module.exports = {
   testBrowsersData,
@@ -27,4 +28,5 @@ module.exports = {
   testSchema,
   testStyle,
   testVersions,
+  testIEtoEdgeContinuety,
 };

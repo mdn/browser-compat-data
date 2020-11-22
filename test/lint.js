@@ -20,6 +20,7 @@ const {
   testSchema,
   testStyle,
   testVersions,
+  testIEtoEdgeContinuety,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
 
@@ -69,6 +70,7 @@ function load(...files) {
           hasPrefixErrors = false,
           hasDescriptionsErrors = false,
           hasNotesErrors = false;
+          hasIEtoEdgeContinuetyErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -110,6 +112,7 @@ function load(...files) {
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
             hasNotesErrors = testNotes(file);
+            hasIEtoEdgeContinuetyErrors = testIEtoEdgeContinuety(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -129,6 +132,7 @@ function load(...files) {
           hasPrefixErrors,
           hasDescriptionsErrors,
           hasNotesErrors,
+          hasIEtoEdgeContinuetyErrors,
         ].some((x) => !!x);
 
         if (fileHasErrors) {
@@ -191,6 +195,7 @@ if (hasErrors) {
         testPrefix(file);
         testDescriptions(file);
         testNotes(file);
+        testIEtoEdgeContinuety(file);
       }
     } catch (e) {
       console.error(e);
