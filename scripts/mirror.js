@@ -354,7 +354,7 @@ const bumpOpera = (originalData, sourceData, source) => {
  * @param {SupportStatement} operaData
  * @returns {SupportStatement}
  */
-const bumpOperaAndroid = (originalData, chromeAndroidData, operadata) => {
+const bumpOperaAndroid = (originalData, chromeAndroidData, operaData) => {
   let newData = copyStatement(chromeAndroidData);
 
   if (
