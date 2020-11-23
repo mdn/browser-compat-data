@@ -2,20 +2,24 @@
 
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
+<!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
+
 - [Data guidelines](#data-guidelines)
   - [Constructors](#constructors)
   - [DOM events (`eventname_event`)](#dom-events-eventname_event)
   - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
   - [Web Workers (`worker_support`)](#web-workers-worker_support)
   - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
+  - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
   - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
+  - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
 
 <!-- BEGIN TEMPLATE
 
-## Short title in sentence case
+Short title in sentence case
 
 A description of what to do, preferably in the imperative. If applicable, include an example to illustrate the rule.
 
@@ -145,6 +149,14 @@ For example, the Geolocation permission is named `geolocation_permission` with t
 
 This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-data/pull/6156).
 
+## `"partial_implementation"` requires a note
+
+If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
+
+For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
+
+This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
+
 ## Non-functional defined names imply `partial_implementation`
 
 If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
@@ -178,3 +190,14 @@ Features can be removed from BCD if it is considered irrelevant. A feature can b
 - a feature is unsupported in all releases in the past five years.
 
 This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
+
+## Removal of irrelevant flag data
+
+Valid support statements containing flags can be removed from BCD if it is considered irrelevant. To be considered irrelevant, the support statement must meet these conditions:
+
+- As of at least two years ago, the browser has supported the feature by default or removed the flagged feature.
+- The removal of the support statement must not create an ambiguous gap or void in the data for that browser (for example, leaving behind only a `"version_added": true` or `null` value).
+
+These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
+
+This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).

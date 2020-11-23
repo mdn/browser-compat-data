@@ -1,21 +1,33 @@
 {
   "api": {
-    "DOMConfiguration": {
+    "MediaSessionActionDetails": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMConfiguration",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSessionActionDetails",
         "support": {
           "chrome": {
-            "version_added": false
+            "version_added": "73"
           },
           "chrome_android": {
-            "version_added": false
+            "version_added": "57"
           },
           "edge": {
-            "version_added": false
+            "version_added": "≤79"
           },
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "82"
+            },
+            {
+              "version_added": "71",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.media.mediasession.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
             "version_added": false
           },
@@ -35,39 +47,51 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": false
+            "version_added": "7.0"
           },
           "webview_android": {
             "version_added": false
           }
         },
         "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": true
+          "experimental": true,
+          "standard_track": true,
+          "deprecated": false
         }
       },
-      "canSetParameter": {
+      "action": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMConfiguration/canSetParameter",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSessionActionDetails/action",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "73"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "edge": {
-              "version_added": false
+              "version_added": "≤79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "82"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.mediasession.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
             "ie": {
-              "version_added": false
+              "version_added": null
             },
             "opera": {
               "version_added": false
@@ -82,31 +106,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "7.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "getParameter": {
+      "fastSeek": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMConfiguration/getParameter",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSessionActionDetails/fastSeek",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "73"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "edge": {
-              "version_added": false
+              "version_added": "≤79"
             },
             "firefox": {
               "version_added": false
@@ -115,7 +139,7 @@
               "version_added": false
             },
             "ie": {
-              "version_added": false
+              "version_added": null
             },
             "opera": {
               "version_added": false
@@ -130,40 +154,52 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "7.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "parameterNames": {
+      "seekOffset": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMConfiguration/parameterNames",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSessionActionDetails/seekOffset",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "73"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "edge": {
-              "version_added": false
+              "version_added": "≤79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "82"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.mediasession.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
             "ie": {
-              "version_added": false
+              "version_added": null
             },
             "opera": {
               "version_added": false
@@ -178,31 +214,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "7.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "setParameter": {
+      "seekTime": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMConfiguration/setParameter",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSessionActionDetails/seekTime",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "73"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "edge": {
-              "version_added": false
+              "version_added": "≤79"
             },
             "firefox": {
               "version_added": false
@@ -211,7 +247,7 @@
               "version_added": false
             },
             "ie": {
-              "version_added": false
+              "version_added": null
             },
             "opera": {
               "version_added": false
@@ -226,15 +262,15 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "7.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
