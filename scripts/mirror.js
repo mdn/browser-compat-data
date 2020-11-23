@@ -340,32 +340,48 @@ const bumpOpera = (originalData, sourceData, source) => {
 
 /**
  * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @param {string} source
+ * @param {SupportStatement} chromeAndroidData
+ * @param {SupportStatement} operaData
  * @returns {SupportStatement}
  */
-const bumpOperaAndroid = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
+const bumpOperaAndroid = (originalData, chromeAndroidData, operadata) => {
+  let newData = copyStatement(chromeAndroidData);
 
-  if (typeof sourceData.version_added === 'string') {
+  if (
+    typeof operaData.version_added === 'string' &&
+    operaData.version_added.replace('≤', '') < 15
+  ) {
+    if (operaData.include('≤')) {
+      newData.version_added = operaData.version_added;
+    } else {
+      newData.version_added = getMatchingBrowserVersion(
+        'opera_android',
+        browsers['opera'].releases[operaData.version_added],
+      );
+    }
+  } else if (typeof chromeAndroidData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'opera_android',
-      browsers[source].releases[sourceData.version_added],
+      browsers['chrome_android'].releases[chromeAndroidData.version_added],
     );
   }
 
   if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
+    chromeAndroidData.version_removed &&
+    typeof chromeAndroidData.version_removed === 'string'
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'opera_android',
-      browsers[source].releases[sourceData.version_removed],
+      browsers['chrome_android'].releases[chromeAndroidData.version_removed],
     );
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Opera');
+  if (typeof chromeAndroidData.notes === 'string') {
+    newData.notes = updateNotes(
+      chromeAndroidData.notes,
+      /Chrome(?! ?OS)/g,
+      'Opera',
+    );
   }
 
   return newData;
@@ -539,6 +555,8 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
         bumpFunction = bumpOpera;
         break;
       case 'opera_android':
+        bumpFunction = (originalData, data, source) =>
+          bumpOperaAndroid(originalData, data, compData['opera_android']);
         bumpFunction = bumpOperaAndroid;
         break;
       case 'safari_ios':
@@ -759,9 +777,12 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
     return false;
   }
 
-  if (['edge', 'webview_android'].includes(browser) && forced_source) {
+  if (
+    ['edge', 'opera_android', 'webview_android'].includes(browser) &&
+    forced_source
+  ) {
     console.warn(
-      'Warning: Edge and WebView do not support --source parameter.',
+      'Warning: Edge, Opera Android and WebView do not support --source parameter.',
     );
     forced_source = false;
   }
