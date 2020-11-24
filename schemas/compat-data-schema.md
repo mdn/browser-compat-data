@@ -120,7 +120,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
-- `edge`, MS Edge (on Windows), based on the EdgeHTML version
+- `edge`, MS Edge (on Windows), based on the EdgeHTML version, and later on Chromium versions
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 - `ie`, Microsoft Internet Explorer (discontinued)
@@ -248,6 +248,26 @@ Examples:
   "version_removed": false
 }
 ```
+
+### Initial versions
+
+The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. These are not naturally "1" or "1.0" as explained in the notes column.
+
+| Browser          | Initial version | Notes                                                                                                                      |
+| ---------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Chrome           | 1               |                                                                                                                            |
+| Chrome Android   | 18              | First stable release started at 18. No Chrome Android 17 or earlier was ever released.                                     |
+| Edge             | 12              | EdgeHTML, continuation of IE 11 (another initial version is Edge 79 when Edge switched to Chromium).                       |
+| Firefox          | 1               |                                                                                                                            |
+| Firefox Android  | 4               | First stable release started at 4. Earlier non-Android mobile versions are ignored.                                        |
+| IE               | 1               |                                                                                                                            |
+| Node.js          | 0.1.100         | Subject to change to `0.10.0` which is the first stable version (LTS status was retrospectively applied). See issue #6861. |
+| Opera            | 2               | Opera 1 was demoed at a conference, but never publicly released.                                                           |
+| Opera Android    | 10.1            | First stable release started at 10.1.                                                                                      |
+| Safari           | 1               |                                                                                                                            |
+| iOS Safari       | 1               |                                                                                                                            |
+| Samsung Internet | 1.0             |                                                                                                                            |
+| WebView Android  | 1               |                                                                                                                            |
 
 ### Ranged versions
 

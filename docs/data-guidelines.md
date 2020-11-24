@@ -214,24 +214,10 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 ## Initial versions for browsers
 
-The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used.
+The schema docs list [initial versions](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
 
-For example, if the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", BCD requires you to record the intial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number. Usually initial version numbers are "1" or "1.0"; the table below provides explanations when this is not the case.
+If the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", BCD requires you to record the intial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number.
 
-| Browser          | Initial version | Notes                                                                                                                    |
-| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Chrome           | 1               |                                                                                                                          |
-| Chrome Android   | 18              | First stable release using Chromium 18; older Android versions are ignored or listed under WebView Android.              |
-| Edge             | 12              | EdgeHTML, continuation of IE 11 (another initial version is Edge 79 when Edge switched to Chromium).                     |
-| Firefox          | 1               |                                                                                                                          |
-| Firefox Android  | 4               | ?!                                                                                                                       |
-| IE               | 1               |                                                                                                                          |
-| Node.js          | 0.1.100         | Subject to change to 0.10.0 which is the first stable version (LTS status was retrospectively applied). See issue #6861. |
-| Opera            | 2               | ?!                                                                                                                       |
-| Opera Android    | 10.1            | ?!                                                                                                                       |
-| Safari           | 1               |                                                                                                                          |
-| iOS Safari       | 1               |                                                                                                                          |
-| Samsung Internet | 1.0             |                                                                                                                          |
-| WebView Android  | 1               |                                                                                                                          |
+If you're adding new data for Node.js, use `0.10.0` or later. If a feature was added in a version before `0.10.0`, use `0.10.0` anyway.
 
 This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-data/pull/6861).
