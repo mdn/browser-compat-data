@@ -11,7 +11,8 @@ This file contains recommendations to help you record data in a consistent and u
   - [Web Workers (`worker_support`)](#web-workers-worker_support)
   - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
   - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
-  - [Non-functional defined names imply `partial_implementation`](#non-functional-defined-names-imply-partial_implementation)
+  - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
+  - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
@@ -157,13 +158,21 @@ For historical reasons, some support statements have the flag set to `true` with
 
 This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
-## Non-functional defined names imply `partial_implementation`
+## Non-functional defined names imply `"partial_implementation"`
 
 If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
 
 For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a note describing the feature’s misbehavior.
 
 See [#3904](https://github.com/mdn/browser-compat-data/pull/3904#issuecomment-484433603) for additional background (and nuance).
+
+## Operating system limitations imply `"partial_implementation"`
+
+If a browser or engine is available on more than one operating system and a feature is only implemented on a subset of those operating systems, then the support statement should set `"partial_implementation": true`. For example, if a browser supports both Windows and Linux, but only implements a feature on Windows, then a support statement for that feature should should set `"partial_implementation": true` (and a [note](#partial_implementation-requires-a-note)).
+
+However, this guideline does not apply to features where the browser's expected behavior is conditional on the behavior of the operating system itself. For example, a browser can fully implement a CSS media query even if an underlying operating system can never satisfy the media query's condition because it does not support the requisite hardware.
+
+This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
 
 ## Release lines and backported features
 
