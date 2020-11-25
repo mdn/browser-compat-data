@@ -1,7 +1,5 @@
 const assert = require('assert');
-const { ConsistencyChecker } = require('./test-consistency.js');
-
-const testConsistency = require('./test-consistency.js');
+const ConsistencyChecker = require('./ConsistencyChecker.js');
 
 describe('ConsistencyChecker', function () {
   describe('isVersionAddedGreater()', function () {
