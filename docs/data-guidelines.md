@@ -17,6 +17,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
   - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
+  - [Initial versions for browsers](#initial-versions-for-browsers)
 
 <!-- BEGIN TEMPLATE
 
@@ -210,3 +211,13 @@ Valid support statements containing flags can be removed from BCD if it is consi
 These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
 
 This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
+
+## Initial versions for browsers
+
+The schema docs list [initial versions](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
+
+If the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", record the initial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number.
+
+If you're adding new data for Node.js, use `0.10.0` or later. If a feature was added in a version before `0.10.0`, use `0.10.0` anyway.
+
+This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-data/pull/6861).
