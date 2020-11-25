@@ -216,7 +216,7 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 The schema docs list [initial versions](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
 
-If the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", BCD requires you to record the intial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number.
+If the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", record the initial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number.
 
 If you're adding new data for Node.js, use `0.10.0` or later. If a feature was added in a version before `0.10.0`, use `0.10.0` anyway.
 
