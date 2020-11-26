@@ -180,7 +180,7 @@ BCD's [owners](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE
 
 - a compelling downstream-consumer story (e.g., MDN or caniuse express an interest, or someone is planning to do something with the data that might plausibly grow BCD's reach)
 - reviewers (e.g., two or more people with interest and ability to test data relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
-- published release information (e.g., release notes with version numbers and dates)
+- a release process allowing BCD to publish stable release information in a `browsers/` file (containing release notes with version numbers and dates)
 - documentation (e.g., how to get and test a feature in that browser, links to resources that might help with it, etc.)
 
 This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
