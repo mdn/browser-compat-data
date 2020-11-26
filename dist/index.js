@@ -4,5 +4,5 @@
 try {
   module.exports = require('../index.js');
 } catch (e) {
-  module.exports = require('./dist/data.json');
+  module.exports = require('./data.json');
 }
