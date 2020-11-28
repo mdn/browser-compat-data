@@ -288,7 +288,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -336,7 +336,7 @@
               "version_added": "4"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -484,7 +484,7 @@
               "notes": "Prior to Firefox 28, <code>canPlayType()</code> returned <code>probably</code> when asked about WebM audio or video files without the <code>codecs</code> parameter. Since multiple codecs are supported, this is not enough information to determine if a file can be played, so <code>maybe</code> is now correctly returned."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -632,7 +632,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -677,7 +677,10 @@
               "version_added": "≤79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -731,9 +734,16 @@
                 "alternative_name": "crossorigin"
               }
             ],
-            "firefox_android": {
-              "version_added": true
-            },
+            "firefox_android": [
+              {
+                "version_added": "22"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "22",
+                "alternative_name": "crossorigin"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -780,7 +790,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -828,7 +838,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -1020,7 +1030,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -1166,7 +1176,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -1263,7 +1273,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -1634,7 +1644,7 @@
               "version_added": "11"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "ie": {
               "version_added": "9"
@@ -2157,7 +2167,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -2206,7 +2216,7 @@
               "notes": "The <code>NETWORK_LOADED</code> state was removed to align with the HTML spec in Firefox 4."
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -2486,7 +2496,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -2583,7 +2593,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -2972,7 +2982,8 @@
               "version_added": "20"
             },
             "firefox_android": {
-              "version_added": true
+              "prefix": "moz",
+              "version_added": "20"
             },
             "ie": {
               "version_added": false
@@ -3120,7 +3131,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "5.5"
@@ -3265,7 +3276,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -3356,24 +3367,10 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "49",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.seekToNextFrame",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "56"
             },
             "firefox_android": {
-              "version_added": "49",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.seekToNextFrame",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "56"
             },
             "ie": {
               "version_added": false
@@ -3570,7 +3567,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -3996,7 +3993,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
