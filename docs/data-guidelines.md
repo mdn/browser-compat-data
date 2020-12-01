@@ -15,6 +15,8 @@ This file contains recommendations to help you record data in a consistent and u
   - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
+  - [Addition of browsers](#addition-of-browsers)
+  - [Removal of browsers](#removal-of-browsers)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
   - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
   - [Initial versions for browsers](#initial-versions-for-browsers)
@@ -190,6 +192,30 @@ This decision was made in [#3953, under the expectation that most users are like
 For Safari for iOS, use the iOS version number, not the Safari version number or WebKit version number.
 
 This versioning scheme came at [Apple's request, in #2006](https://github.com/mdn/browser-compat-data/issues/2006#issuecomment-457277312).
+
+## Addition of browsers
+
+BCD's [owners](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we need evidence of (in decreasing order of importance):
+
+- a compelling downstream-consumer story (e.g., MDN or caniuse express an interest, or someone is planning to do something with the data that might plausibly grow BCD's reach)
+- reviewers (e.g., two or more people with interest and ability to test data relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
+- a release process allowing BCD to publish stable release information in a `browsers/` file (containing release notes with version numbers and dates)
+- documentation (e.g., how to get and test a feature in that browser, links to resources that might help with it, etc.)
+
+This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
+
+## Removal of browsers
+
+To maintain data quality, BCD's [owners](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md) may choose to remove a browser or engine from the project. To remove a browser from BCD, we need habitual (six months or more) evidence of (in decreasing order of importance):
+
+- negative/neutral downstream-consumer interest in the browser's data (e.g., MDN and caniuse don't object to removal)
+- poor data coverage with negative trends (e.g., our data for the browser covers only a few features, with limited/flat growth in more data being added for it, or few features with real version numbers rather than just `null` or `true`, etc.)
+- infrequent community or vendor involvement in issues or PRs relating to the browser
+- infrequent new PRs relating to the browser (e.g., weeks or months go by without PRs touching the browser's data)
+
+Removing a browser from BCD does not constitute a ban; browsers may be readmitted under the [Addition of browsers](#addition-of-browsers) guideline.
+
+This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
 
 ## Removal of irrelevant features
 
