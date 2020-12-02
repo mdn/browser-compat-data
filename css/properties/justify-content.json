@@ -46,21 +46,6 @@
               ],
               "firefox": [
                 {
-                  "version_added": "20",
-                  "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
-                },
-                {
-                  "version_added": "18",
-                  "version_removed": "20",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.flexbox.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                {
                   "prefix": "-webkit-",
                   "version_added": "49"
                 },
@@ -71,6 +56,21 @@
                     {
                       "type": "preference",
                       "name": "layout.css.prefixes.webkit",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "20",
+                  "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "20",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.flexbox.enabled",
                       "value_to_set": "true"
                     }
                   ]
@@ -78,21 +78,6 @@
               ],
               "firefox_android": [
                 {
-                  "version_added": "20",
-                  "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
-                },
-                {
-                  "version_added": "18",
-                  "version_removed": "20",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.flexbox.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                {
                   "prefix": "-webkit-",
                   "version_added": "49"
                 },
@@ -103,6 +88,21 @@
                     {
                       "type": "preference",
                       "name": "layout.css.prefixes.webkit",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "20",
+                  "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "20",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.flexbox.enabled",
                       "value_to_set": "true"
                     }
                   ]
@@ -154,13 +154,13 @@
                   "version_added": "52"
                 },
                 {
+                  "prefix": "-webkit-",
+                  "version_added": "≤37"
+                },
+                {
                   "version_added": "4.4",
                   "partial_implementation": true,
                   "notes": "Older versions of the specification treat absolute positioned children as though they are a 0 by 0 flex item. Later specification versions take the children out of the flow and set their positions based on align and justify properties. Chrome implements the new behavior beginning with Chrome 52."
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
                 }
               ]
             },
