@@ -99,7 +99,7 @@ Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, inclu
 
 ### [`webdriver`](https://github.com/mdn/browser-compat-data/tree/master/webdriver)
 
-Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) interfaces features.
+Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
 
 ### [`webextensions`](https://github.com/mdn/browser-compat-data/tree/master/webextensions)
 
@@ -122,7 +122,7 @@ For the purposes of [semantic versioning](https://semver.org/) (SemVer), the pub
 
 The details of browser compatibility change frequently, as browsers ship new features, standards organizations revise specifications, and Web developers discover new bugs. We routinely publish updates to the package to reflect these changes.
 
-You should expect lower-level namespaces, feature data, and browser data to be added, removed, or modified at any time. That said, we strive to communicate changes and preserve backward compatibility; if you rely on an currently undocumented portion of the package and want SemVer to apply to it, please [open an issue](https://github.com/mdn/browser-compat-data/issues).
+You should expect lower-level namespaces, feature data, and browser data to be added, removed, or modified at any time. That said, we strive to communicate changes and preserve backward compatibility; if you rely on a currently undocumented portion of the package and want SemVer to apply to it, please [open an issue](https://github.com/mdn/browser-compat-data/issues).
 
 ## Issues?
 
