@@ -103,7 +103,10 @@ Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) fea
 
 ### [`webextensions`](https://github.com/mdn/browser-compat-data/tree/master/webextensions)
 
-Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) features.
+Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) features, including:
+
+- `api` - WebExtension-specific APIs
+- `manifest` - `manifest.json` keys
 
 ### [`xpath`](https://github.com/mdn/browser-compat-data/tree/master/xpath)
 
