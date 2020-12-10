@@ -127,12 +127,9 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
-- `qq_android`, the QQ browser (Android version)
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `uc_android`, UC Browser (Android version)
-- `uc_chinese_android`, UC Browser (Chinese Android version)
 - `webview_android`, Webview, the built-in browser for Android
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
