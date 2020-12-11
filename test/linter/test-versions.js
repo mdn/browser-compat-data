@@ -59,7 +59,7 @@ const blockList = {
   html: [],
   http: [],
   svg: [],
-  javascript: blockMany,
+  javascript: [...blockMany, 'nodejs'],
   mathml: blockMany,
   webdriver: blockMany,
   webextensions: [],
