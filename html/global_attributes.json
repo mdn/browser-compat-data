@@ -54,19 +54,33 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autocapitalize",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": "66"
+              "version_added": "43"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "83",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.forms.autocapitalize",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "83",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.forms.autocapitalize",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": null
@@ -75,9 +89,6 @@
               "version_added": null
             },
             "opera_android": {
-              "version_added": null
-            },
-            "qq_android": {
               "version_added": null
             },
             "safari": {
@@ -89,14 +100,8 @@
             "samsunginternet_android": {
               "version_added": null
             },
-            "uc_android": {
-              "version_added": null
-            },
-            "uc_chinese_android": {
-              "version_added": null
-            },
             "webview_android": {
-              "version_added": "66"
+              "version_added": "43"
             }
           },
           "status": {
@@ -160,9 +165,6 @@
             "opera_android": {
               "version_added": true
             },
-            "qq_android": {
-              "version_added": null
-            },
             "safari": {
               "version_added": null
             },
@@ -185,12 +187,6 @@
                 "version_added": true
               }
             ],
-            "uc_android": {
-              "version_added": null
-            },
-            "uc_chinese_android": {
-              "version_added": null
-            },
             "webview_android": [
               {
                 "version_added": "66",
@@ -242,9 +238,6 @@
               "opera_android": {
                 "version_added": true
               },
-              "qq_android": {
-                "version_added": null
-              },
               "safari": {
                 "version_added": null
               },
@@ -253,12 +246,6 @@
               },
               "samsunginternet_android": {
                 "version_added": true
-              },
-              "uc_android": {
-                "version_added": null
-              },
-              "uc_chinese_android": {
-                "version_added": null
               },
               "webview_android": {
                 "version_added": true
@@ -564,48 +551,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contextmenu",
           "support": {
-            "chrome": [
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--enable-blink-features",
-                    "value_to_set": "ContextMenu"
-                  }
-                ],
-                "notes": "This was removed from the <i>Enable Experimental Web Platform Features</i> due to a <a href='https://crbug.com/412945'>Web compatibility issue</a>. In June 2017, it was removed entirely from the browsers. This is documented in <a href='https://crbug.com/87553'>Chromium bug 87553</a>."
-              },
-              {
-                "version_added": true,
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable experimental Web Platform features"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": false
+            },
             "chrome_android": {
-              "version_added": true,
-              "version_removed": "52",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable experimental Web Platform features"
-                }
-              ]
+              "version_added": false
             },
             "edge": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "runtime_flag",
-                  "name": "--enable-blink-features",
-                  "value_to_set": "ContextMenu"
-                }
-              ]
+              "version_added": false
             },
             "firefox": {
               "version_added": "9"
@@ -618,29 +571,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "39",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--enable-blink-features",
-                    "value_to_set": "ContextMenu"
-                  }
-                ],
-                "notes": "This was removed from the <i>Enable Experimental Web Platform Features</i> due to a <a href='https://crbug.com/412945'>Web compatibility issue</a>. In June 2017, it was removed entirely from the browsers. This is documented in <a href='https://crbug.com/87553'>Chromium bug 87553</a>."
-              },
-              {
-                "version_added": true,
-                "version_removed": "39",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable experimental Web Platform features"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": false
+            },
             "opera_android": {
               "version_added": false
             },
@@ -651,8 +584,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true,
-              "version_removed": "6.0"
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -660,7 +592,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -866,7 +798,7 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
