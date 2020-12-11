@@ -14,12 +14,9 @@ export type BrowserNames =
   | 'nodejs'
   | 'opera'
   | 'opera_android'
-  | 'qq_android'
   | 'safari'
   | 'safari_ios'
   | 'samsunginternet_android'
-  | 'uc_android'
-  | 'uc_chinese_android'
   | 'webview_android';
 
 export type BrowserEngines =
