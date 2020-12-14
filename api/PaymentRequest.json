@@ -620,11 +620,15 @@
             },
             "firefox": {
               "version_added": false,
-              "notes": "Available only in nightly builds as <code>shippingAddress</code>."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.payments.request.enabled"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false,
-              "notes": "Available only in nightly builds as <code>shippingAddress</code>."
+              "version_added": false
             },
             "ie": {
               "version_added": false
