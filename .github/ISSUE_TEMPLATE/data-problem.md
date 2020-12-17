@@ -12,4 +12,4 @@ assignees: ''
 #### What information was incorrect, unhelpful, or incomplete?
 #### What did you expect to see?
 #### Did you test this? If so, how?
-#### Do you know of any release notes, bugs, or issues related to this?
+#### Can you link to any release notes, bugs, pull requests, or MDN pages related to this?
