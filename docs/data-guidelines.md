@@ -177,6 +177,12 @@ However, this guideline does not apply to features where the browser's expected 
 
 This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
 
+## Constants
+
+We don't include data for constants in BCD. The rationale for not including them is that they're not known to be a source of any compatibility issues.
+
+This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
+
 ## Release lines and backported features
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
