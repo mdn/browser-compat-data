@@ -29,12 +29,18 @@
             "opera_android": {
               "version_added": "48"
             },
-            "safari": {
-              "version_added": "11",
-              "alternative_name": "scroll-snap-margin-top",
-              "partial_implementation": true,
-              "notes": "Scroll margin is not applied for scrolls to fragment target or <code>scrollIntoView()</code>, see <a href='https://webkit.org/b/189265'>bug 189265</a>."
-            },
+            "safari": [
+              {
+                "version_added": "11",
+                "alternative_name": "scroll-snap-margin-top",
+                "partial_implementation": true,
+                "notes": "Scroll margin is not applied for scrolls to fragment target or <code>scrollIntoView()</code>, see <a href='https://webkit.org/b/189265'>bug 189265</a>."
+              },
+              {
+                "version_added": "15",
+                "partial_implementation": false
+              }
+            ],
             "safari_ios": {
               "version_added": "11",
               "alternative_name": "scroll-snap-margin-top",
