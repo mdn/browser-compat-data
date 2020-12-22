@@ -1,6 +1,6 @@
-# Publishing a new version of `mdn-browser-compat-data`
+# Publishing a new version of `@mdn/browser-compat-data`
 
-[Project owners](/GOVERNANCE.md#owners) publish new releases of [mdn-browser-compat-data](https://www.npmjs.com/package/mdn-browser-compat-data) on npm.
+[Project owners](/GOVERNANCE.md#owners) publish new releases of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data) on npm.
 MDN staff [deploy the package to the MDN site](contributing.md#updating-compatibility-tables-on-mdn).
 Usually, this happens every Thursday (MDN never deploys to production on Fridays).
 
@@ -25,7 +25,7 @@ To create a new version of the package:
 
 4. Check if the commit passes our [GitHub Actions workflows](https://github.com/mdn/browser-compat-data/actions).
 
-5. If the commit pass, push the git tag as well: `git push origin v1.0.3`.
+5. If the commit passed, push the git tag as well: `git push origin v1.0.3`.
 
 6. Start a draft [release on GitHub](https://github.com/mdn/browser-compat-data/releases) by running `npm run release-notes -- v1.0.3` and completing the prompts.
 
