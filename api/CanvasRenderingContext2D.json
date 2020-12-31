@@ -1122,7 +1122,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/currentTransform",
           "support": {
             "chrome": {
-              "version_added": true,
+              "version_added": "32",
+              "version_removed": "68",
               "flags": [
                 {
                   "type": "preference",
@@ -1131,10 +1132,18 @@
               ]
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "32",
+              "version_removed": "68",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "≤18",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": false,
@@ -1147,10 +1156,24 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "19",
+              "version_removed": "55",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "19",
+              "version_removed": "48",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental Web Platform Features"
+                }
+              ]
             },
             "safari": {
               "version_added": false,
