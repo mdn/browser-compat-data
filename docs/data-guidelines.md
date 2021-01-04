@@ -181,6 +181,8 @@ This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-dat
 
 Don't include data for constants in BCD. The rationale for not including them is that they're not known to be a source of any compatibility issues.
 
+For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_STANDARD`](https://w3c.github.io/uievents/#dom-keyboardevent-dom_key_location_standard) constant, we don't include data for it in BCD.
+
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
 ## Release lines and backported features
