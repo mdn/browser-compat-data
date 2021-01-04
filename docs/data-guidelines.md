@@ -13,6 +13,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
   - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
   - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
+  - [Constants](#constants)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Addition of browsers](#addition-of-browsers)
