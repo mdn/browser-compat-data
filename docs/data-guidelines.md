@@ -179,7 +179,7 @@ This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-dat
 
 ## Constants
 
-We don't include data for constants in BCD. The rationale for not including them is that they're not known to be a source of any compatibility issues.
+Don't include data for constants in BCD. The rationale for not including them is that they're not known to be a source of any compatibility issues.
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
