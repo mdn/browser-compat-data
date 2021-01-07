@@ -13,6 +13,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
   - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
   - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
+  - [Constants](#constants)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
   - [Addition of browsers](#addition-of-browsers)
@@ -176,6 +177,14 @@ If a browser or engine is available on more than one operating system and a feat
 However, this guideline does not apply to features where the browser's expected behavior is conditional on the behavior of the operating system itself. For example, a browser can fully implement a CSS media query even if an underlying operating system can never satisfy the media query's condition because it does not support the requisite hardware.
 
 This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
+
+## Constants
+
+Don't include data for constants in BCD. The rationale for not including them is that they're not known to be a source of any compatibility issues.
+
+For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_STANDARD`](https://w3c.github.io/uievents/#dom-keyboardevent-dom_key_location_standard) constant, we don't include data for it in BCD.
+
+This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
 ## Release lines and backported features
 
