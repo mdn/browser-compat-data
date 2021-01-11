@@ -1,0 +1,15 @@
+name: Close incomplete issue templates
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  close-issues-if-invalid:
+    steps:
+      - uses: ddbeck/invalid-issue-closer@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          labels: 'invalid :no_entry_sign:'
+          comment: 'This issue was automatically closed because it appears that the issue template has not been completed. If this has been closed in error, edit the title and body, and post a follow-up comment.'
+          title-contains: '<PUT TITLE HERE>'
+          body-contains: "<!-- Tips: where applicable, specify browser name, browser version, and mobile operating system version -->\r\n\r\n#### What information was incorrect, unhelpful, or incomplete?\r\n\r\n#### What did you expect to see?\r\n\r\n#### Did you test this? If so, how?\r\n\r\n"
