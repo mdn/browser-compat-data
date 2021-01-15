@@ -10,7 +10,7 @@ on:
     branches: [ ] # Test on push to every branch
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -28,3 +28,17 @@ jobs:
     - run: npm test
       env:
         FORCE_COLOR: 3
+
+  # This succeeds if all the matrix builds succeed. This allows us to set branch
+  # protection rules on this job in particular, rather than having to change
+  # branch protection rules when the matrix changes. See
+  # https://github.community/t/status-check-for-a-matrix-jobs/127354/7.
+  testall:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    name: Test (matrix)
+    needs: test
+    steps:
+      - name: Check test matrix status
+        if: ${{ needs.test.result != 'success' }}
+        run: exit 1
