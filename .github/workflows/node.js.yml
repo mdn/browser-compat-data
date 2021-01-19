@@ -10,27 +10,21 @@ on:
     branches: [ ] # Test on push to every branch
 
 jobs:
-  maintenance_lts:
-    name: "Maintenance LTS"
+  test:
+    strategy:
+      matrix:
+        include:
+          - name: Maintenance LTS
+            node-version: 10.x # use oldest
+          - name: Active LTS
+            node-version: 14.x
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2-beta
       with:
-        node-version: 10.x
-    - run: npm install
-    - run: npm test
-      env:
-        FORCE_COLOR: 3
-
-  active_lts:
-    name: "Active LTS"
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2-beta
-      with:
-        node-version: 14.x
+        node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
       env:
