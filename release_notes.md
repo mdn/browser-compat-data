@@ -1489,3 +1489,6 @@ November 8, 2018
 Notable changes:
 - Standardized bugzilla bug link format. ([#2511](https://github.com/mdn/browser-compat-data/issues/2511))
 
+## [Releases before v0.0.45](https://github.com/mdn/browser-compat-data/tags?after=v0.0.45)
+
+Releases before v0.0.45 were published without release notes. Review [the version history](https://github.com/mdn/browser-compat-data/tags?after=v0.0.45) instead.
