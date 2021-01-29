@@ -7445,24 +7445,34 @@
             },
             "firefox": [
               {
-                "version_added": "55",
-                "notes": "Enabled by default."
+                "version_added": "55"
               },
               {
                 "version_added": "53",
                 "version_removed": "55",
-                "notes": "Implemented but disabled by default."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.requestIdleCallback.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
             "firefox_android": [
               {
-                "version_added": "55",
-                "notes": "Enabled by default."
+                "version_added": "55"
               },
               {
                 "version_added": "53",
                 "version_removed": "55",
-                "notes": "Implemented but disabled by default."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.requestIdleCallback.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               }
             ],
             "ie": {
