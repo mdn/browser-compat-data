@@ -41,6 +41,16 @@ function isValidVersion(browserIdentifier, version) {
   }
 }
 
+function removedAfterAdded(statement) {
+  return compareVersions.compare(
+    statement.version_added.startsWith('≤')
+      ? '0' // 0 was chosen as it's a number lower than any possible browser version
+      : statement.version_added,
+    statement.version_removed.replace('≤', ''),
+    '>=',
+  );
+}
+
 /**
  * @param {SupportBlock} supportData
  * @param {string} relPath
@@ -88,15 +98,7 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string'
           ) {
-            if (
-              compareVersions.compare(
-                statement.version_added.startsWith('≤')
-                  ? '0' // 0 was chosen as it's a number lower than any possible browser version
-                  : statement.version_added,
-                statement.version_removed.replace('≤', ''),
-                '>=',
-              )
-            ) {
+            if (removedAfterAdded(statement)) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
