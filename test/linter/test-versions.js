@@ -41,6 +41,10 @@ function isValidVersion(browserIdentifier, version) {
   }
 }
 
+/**
+ * @param {SimpleSupportStatement} statement
+ * @returns {boolean}
+ */
 function removedAfterAdded(statement) {
   return compareVersions.compare(
     statement.version_added.startsWith('≤')
