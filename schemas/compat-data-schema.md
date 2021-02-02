@@ -120,19 +120,16 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
-- `edge`, MS Edge (on Windows), based on the EdgeHTML version
+- `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 - `ie`, Microsoft Internet Explorer (discontinued)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
-- `qq_android`, the QQ browser (Android version)
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `uc_android`, UC Browser (Android version)
-- `uc_chinese_android`, UC Browser (Chinese Android version)
 - `webview_android`, Webview, the built-in browser for Android
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
@@ -248,6 +245,26 @@ Examples:
   "version_removed": false
 }
 ```
+
+### Initial versions
+
+The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
+
+| Browser          | Initial version | Notes                                                                                                                                                                    |
+| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Chrome           | 1               |                                                                                                                                                                          |
+| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
+| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
+| Firefox          | 1               |                                                                                                                                                                          |
+| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
+| IE               | 1               |                                                                                                                                                                          |
+| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
+| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
+| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
+| Safari           | 1               |                                                                                                                                                                          |
+| iOS Safari       | 1               |                                                                                                                                                                          |
+| Samsung Internet | 1.0             |                                                                                                                                                                          |
+| WebView Android  | 1               |                                                                                                                                                                          |
 
 ### Ranged versions
 
