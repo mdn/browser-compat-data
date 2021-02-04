@@ -1112,15 +1112,35 @@
       "getInstalledRelatedApps": {
         "__compat": {
           "support": {
-            "chrome": {
-              "version_added": "80"
-            },
+            "chrome": [
+              {
+                "version_added": "85",
+                "partial_implementation": true,
+                "notes": "Only supported on Windows. Resolves with an empty array on other platforms."
+              },
+              {
+                "version_added": "80",
+                "version_removed": "85",
+                "partial_implementation": true,
+                "notes": "Always resolves with an empty array."
+              }
+            ],
             "chrome_android": {
               "version_added": "80"
             },
-            "edge": {
-              "version_added": "80"
-            },
+            "edge": [
+              {
+                "version_added": "85",
+                "partial_implementation": true,
+                "notes": "Only supported on Windows. Resolves with an empty array on other platforms."
+              },
+              {
+                "version_added": "80",
+                "version_removed": "85",
+                "partial_implementation": true,
+                "notes": "Always resolves with an empty array."
+              }
+            ],
             "firefox": {
               "version_added": false
             },
@@ -1130,9 +1150,19 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "67"
-            },
+            "opera": [
+              {
+                "version_added": "71",
+                "partial_implementation": true,
+                "notes": "Only supported on Windows. Resolves with an empty array on other platforms."
+              },
+              {
+                "version_added": "67",
+                "version_removed": "71",
+                "partial_implementation": true,
+                "notes": "Always resolves with an empty array."
+              }
+            ],
             "opera_android": {
               "version_added": false
             },
@@ -2731,12 +2761,19 @@
               },
               {
                 "version_added": "11",
+                "version_removed": true,
                 "prefix": "moz"
               }
             ],
             "firefox_android": [
               {
+                "version_added": "79",
+                "partial_implementation": true,
+                "notes": "Vibration is disabled. If the window is visible, then <code>navigator.vibrate()</code> returns <code>true</code>, but no vibration takes place (regardless of hardware support). See <a href='https://bugzil.la/1591113'>bug 1591113</code>."
+              },
+              {
                 "version_added": "16",
+                "version_removed": "79",
                 "notes": [
                   "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning <code>false</code> (<a href='https://bugzil.la/884935'>bug 884935</a>).",
                   "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns <code>true</code> but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>)."
@@ -2744,6 +2781,7 @@
               },
               {
                 "version_added": "14",
+                "version_removed": true,
                 "prefix": "moz"
               }
             ],
