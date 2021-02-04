@@ -11,10 +11,17 @@
             "chrome_android": {
               "version_added": "32"
             },
-            "edge": {
-              "version_added": "16",
-              "notes": "Edge supports <code>object-fit</code> on <code>img</code> elements only. <a href='https://developer.microsoft.com/microsoft-edge/platform/issues/13603873/#comment-0'>See Edge issue 13603873 for details</a>."
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Only supported for <code>&lt;img&gt;</code> elements."
+              }
+            ],
             "firefox": {
               "version_added": "36"
             },
