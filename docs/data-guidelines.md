@@ -260,16 +260,16 @@ This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-dat
 
 ## Mixins
 
-Mixins appear in WebIDL and in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. BCD doesn't expose mixins.
+Mixins appear in WebIDL and in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
 
 For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
 
-Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them, and thus there are two options to add mixin members to BCD:
+Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members to BCD in one of these ways:
 
-1. Members of `HTMLHyperlinkElementUtils` are added directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
+1. For smaller mixins, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
 
-2. (Large) Mixins have their own files in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.  
-   Note that in these files you'll need to expose the data under the correct tree, so for `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` the file needs to start like this:
+2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.  
+   In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
 
 ```json
 {
