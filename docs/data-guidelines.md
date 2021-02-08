@@ -271,12 +271,12 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
 2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.  
    In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
 
-```json
-{
-  "api": {
-    "HTMLAnchorElement": {
-      "myFeatureName": {
-        "__compat": {
-```
+   ```
+   {
+     "api": {
+       "HTMLAnchorElement": {
+         "myFeatureName": {
+           "__compat": {
+   ```
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
