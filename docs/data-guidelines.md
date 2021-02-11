@@ -21,6 +21,7 @@ This file contains recommendations to help you record data in a consistent and u
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
   - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
   - [Initial versions for browsers](#initial-versions-for-browsers)
+  - [Mixins](#mixins)
 
 <!-- BEGIN TEMPLATE
 
@@ -256,3 +257,26 @@ If the table indicates an initial version of "1" and an information source says 
 If you're adding new data for Node.js, use `0.10.0` or later. If a feature was added in a version before `0.10.0`, use `0.10.0` anyway.
 
 This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-data/pull/6861).
+
+## Mixins
+
+[Interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
+
+For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
+
+Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members to BCD in one of these ways:
+
+1. For smaller mixins, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
+
+2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.  
+   In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
+
+   ```
+   {
+     "api": {
+       "HTMLAnchorElement": {
+         "myFeatureName": {
+           "__compat": {
+   ```
+
+This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
