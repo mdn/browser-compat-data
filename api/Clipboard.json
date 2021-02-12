@@ -103,6 +103,7 @@
               {
                 "version_added": "63",
                 "version_removed": "87",
+                "partial_implementation": true,
                 "flags": [
                   {
                     "type": "preference",
@@ -110,7 +111,10 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Currently works just like <code>readText()</code>; non-text content is not currently supported."
+                "notes": [
+                  "This method returns a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
+                  "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+                ]
               }
             ],
             "firefox_android": [
@@ -128,6 +132,7 @@
               {
                 "version_added": "63",
                 "version_removed": "87",
+                "partial_implementation": true,
                 "flags": [
                   {
                     "type": "preference",
@@ -135,7 +140,10 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Currently works just like <code>readText()</code>; non-text content is not currently supported."
+                "notes": [
+                  "This method returns a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
+                  "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+                ]
               }
             ],
             "ie": {
@@ -255,6 +263,7 @@
               },
               {
                 "version_added": "63",
+                "partial_implementation": true,
                 "flags": [
                   {
                     "type": "preference",
@@ -262,7 +271,10 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Currently works exactly like <code>writeText()</code>, including the availability limitations currently imposed by Firefox."
+                "notes": [
+                  "This method accepts a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
+                  "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+                ]
               }
             ],
             "firefox_android": [
@@ -279,6 +291,7 @@
               },
               {
                 "version_added": "63",
+                "partial_implementation": true,
                 "flags": [
                   {
                     "type": "preference",
@@ -286,7 +299,10 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Currently works exactly like <code>writeText()</code>, including the availability limitations currently imposed by Firefox."
+                "notes": [
+                  "This method accepts a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
+                  "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+                ]
               }
             ],
             "ie": {
