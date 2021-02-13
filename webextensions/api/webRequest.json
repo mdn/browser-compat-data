@@ -20,6 +20,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": false
               }
             }
           },
@@ -40,6 +43,9 @@
                   "version_added": "59"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -64,6 +70,9 @@
               },
               "opera": {
                 "version_added": false
+              },
+              "safari": {
+                "version_added": false
               }
             }
           }
@@ -86,6 +95,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           }
@@ -108,6 +120,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": false
               }
             }
           }
@@ -117,19 +132,30 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter",
             "support": {
               "chrome": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": true
               },
               "edge": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": "14"
               },
               "firefox": {
+                "notes": [
+                  "From Firefox 78 onwards, if a filter contains unrecognized values in its <code>types</code> property, then these values are ignored and <code>addListener()</code> proceeds.",
+                  "Before Firefox 78, if a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
+                ],
                 "version_added": "45"
               },
               "firefox_android": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": "48"
               },
               "opera": {
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
                 "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
               }
             }
           },
@@ -150,6 +176,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": "14"
                 }
               }
             }
@@ -173,6 +202,33 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": "14"
+                }
+              }
+            }
+          },
+          "view-source": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "84"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -194,6 +250,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": "14"
                 }
               }
             }
@@ -217,6 +276,9 @@
               },
               "opera": {
                 "version_added": "31"
+              },
+              "safari": {
+                "version_added": false
               }
             }
           },
@@ -236,6 +298,9 @@
                   "version_added": "48"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -258,6 +323,9 @@
                 },
                 "opera": {
                   "version_added": "45"
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -279,6 +347,9 @@
                 },
                 "opera": {
                   "version_added": "36"
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -299,6 +370,9 @@
                   "version_added": "48"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -321,6 +395,9 @@
                 },
                 "opera": {
                   "version_added": "45"
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -344,6 +421,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -356,8 +436,7 @@
                   "notes": "Requests sent by navigator.sendBeacon(), and CSP reports in Chrome 49-57 (Opera 36-44), are also labeled as `ping`."
                 },
                 "edge": {
-                  "version_added": "79",
-                  "notes": "Requests sent by navigator.sendBeacon(), and CSP reports in Edge 49-57 (Opera 36-44), are also labeled as `ping`."
+                  "version_added": "79"
                 },
                 "firefox": {
                   "version_added": "45"
@@ -367,6 +446,10 @@
                 },
                 "opera": {
                   "version_added": "36",
+                  "notes": "Requests sent by navigator.sendBeacon(), and CSP reports in Chrome 49-57 (Opera 36-44), are also labeled as `ping`."
+                },
+                "safari": {
+                  "version_added": false,
                   "notes": "Requests sent by navigator.sendBeacon(), and CSP reports in Chrome 49-57 (Opera 36-44), are also labeled as `ping`."
                 }
               }
@@ -389,6 +472,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -409,6 +495,9 @@
                   "version_added": "48"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -431,6 +520,9 @@
                 },
                 "opera": {
                   "version_added": "45"
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -445,12 +537,16 @@
                   "version_added": false
                 },
                 "firefox": {
-                  "version_added": "45"
+                  "version_added": "45",
+                  "version_removed": "78"
                 },
                 "firefox_android": {
                   "version_added": "48"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -473,6 +569,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -493,6 +592,9 @@
                   "version_added": "48"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -517,6 +619,9 @@
               },
               "opera": {
                 "version_added": false
+              },
+              "safari": {
+                "version_added": false
               }
             }
           }
@@ -539,6 +644,9 @@
               },
               "opera": {
                 "version_added": false
+              },
+              "safari": {
+                "version_added": false
               }
             }
           },
@@ -559,6 +667,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -582,6 +693,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -603,6 +717,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -626,6 +743,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -647,6 +767,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -670,6 +793,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -691,6 +817,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -714,6 +843,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -735,6 +867,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -758,6 +893,9 @@
                 },
                 "opera": {
                   "version_added": false
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -779,6 +917,9 @@
                   "version_added": "57"
                 },
                 "opera": {
+                  "version_added": false
+                },
+                "safari": {
                   "version_added": false
                 }
               }
@@ -803,6 +944,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": false
               }
             }
           }
@@ -824,6 +968,9 @@
                 "version_added": "57"
               },
               "opera": {
+                "version_added": false
+              },
+              "safari": {
                 "version_added": false
               }
             }
@@ -847,6 +994,9 @@
               },
               "opera": {
                 "version_added": false
+              },
+              "safari": {
+                "version_added": false
               }
             }
           }
@@ -869,6 +1019,9 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "version_added": false
               }
             }
           }
@@ -893,6 +1046,10 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
@@ -913,6 +1070,9 @@
                 },
                 "opera": {
                   "version_added": true
+                },
+                "safari": {
+                  "version_added": false
                 }
               }
             }
@@ -937,6 +1097,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -957,6 +1144,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -979,6 +1169,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -1000,6 +1217,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1021,6 +1241,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1041,6 +1264,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1063,6 +1289,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1083,6 +1312,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1105,6 +1337,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1126,6 +1361,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1147,6 +1385,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1168,6 +1409,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1189,6 +1433,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1210,6 +1457,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1231,6 +1481,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1251,6 +1504,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1273,6 +1529,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1294,6 +1553,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1315,6 +1577,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1335,6 +1600,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1360,10 +1628,38 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -1380,6 +1676,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1402,6 +1701,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1423,6 +1725,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -1444,6 +1773,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1465,6 +1797,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1485,6 +1820,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1507,6 +1845,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1527,6 +1868,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1549,6 +1893,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1570,6 +1917,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1591,6 +1941,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1612,6 +1965,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1633,6 +1989,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1654,6 +2013,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1674,6 +2036,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1696,6 +2061,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1717,6 +2085,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1738,6 +2109,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1758,6 +2132,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1788,10 +2165,38 @@
               "opera": {
                 "notes": "Asynchronous event listeners are not supported.",
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -1808,6 +2213,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1830,6 +2238,9 @@
                   },
                   "opera": {
                     "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -1851,6 +2262,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -1872,6 +2310,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1892,6 +2333,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1914,6 +2358,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1934,6 +2381,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -1956,6 +2406,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1977,6 +2430,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -1998,6 +2454,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2018,6 +2477,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2040,6 +2502,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2061,6 +2526,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2082,6 +2550,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2102,6 +2573,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2132,10 +2606,38 @@
               "opera": {
                 "notes": "Asynchronous event listeners are not supported.",
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -2152,6 +2654,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2174,6 +2679,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -2195,6 +2727,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2215,6 +2750,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2237,6 +2775,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2257,6 +2798,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2279,6 +2823,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2300,6 +2847,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2321,6 +2871,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2341,6 +2894,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2363,6 +2919,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2384,6 +2943,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2405,6 +2967,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2425,6 +2990,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2450,10 +3018,38 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -2470,6 +3066,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2492,6 +3091,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2513,6 +3115,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -2534,6 +3163,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2555,6 +3187,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2575,6 +3210,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2597,6 +3235,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2617,6 +3258,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2639,6 +3283,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2660,6 +3307,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2681,6 +3331,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2702,6 +3355,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2723,6 +3379,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2743,6 +3402,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2765,6 +3427,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2786,6 +3451,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2807,6 +3475,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2827,6 +3498,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2852,10 +3526,38 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -2872,6 +3574,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -2894,6 +3599,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2915,6 +3623,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2936,6 +3647,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -2957,6 +3695,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2978,6 +3719,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -2998,6 +3742,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3020,6 +3767,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3040,6 +3790,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3062,6 +3815,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3083,6 +3839,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3103,6 +3862,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3125,6 +3887,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3146,6 +3911,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3167,6 +3935,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3187,6 +3958,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3223,10 +3997,38 @@
               "opera": {
                 "notes": "Asynchronous event listeners are not supported.",
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -3243,6 +4045,33 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "frameAncestors": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "58"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3265,6 +4094,81 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "fromCache": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "47"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "ip": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "47"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -3286,6 +4190,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3306,6 +4213,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3328,6 +4238,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3348,6 +4261,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3370,6 +4286,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3391,6 +4310,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3412,6 +4334,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3433,6 +4358,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3454,6 +4382,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3474,6 +4405,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3496,6 +4430,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3517,6 +4454,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3538,6 +4478,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3558,6 +4501,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3583,10 +4529,38 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -3603,6 +4577,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3625,6 +4602,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3646,6 +4626,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -3667,6 +4674,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3688,6 +4698,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3708,6 +4721,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3730,6 +4746,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3750,6 +4769,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3772,6 +4794,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3793,6 +4818,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3814,6 +4842,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3835,6 +4866,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3856,6 +4890,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3876,6 +4913,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3898,6 +4938,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3919,6 +4962,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3940,6 +4986,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -3960,6 +5009,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -3985,10 +5037,38 @@
               },
               "opera": {
                 "version_added": true
+              },
+              "safari": {
+                "notes": "extraInfoSpec options are not supported.",
+                "version_added": "14"
               }
             }
           },
           "details": {
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "documentUrl": {
               "__compat": {
                 "support": {
@@ -4005,6 +5085,9 @@
                     "version_added": "54"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -4027,6 +5110,33 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
+                  }
+                }
+              }
+            },
+            "incognito": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": {
+                    "version_added": false
+                  },
+                  "firefox": {
+                    "version_added": "68"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
                   }
                 }
               }
@@ -4048,6 +5158,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4068,6 +5181,9 @@
                     "version_added": "48"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -4090,6 +5206,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4110,6 +5229,9 @@
                     "version_added": "57"
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -4132,6 +5254,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4153,6 +5278,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4174,6 +5302,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4194,6 +5325,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
@@ -4216,6 +5350,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4237,6 +5374,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4258,6 +5398,9 @@
                   },
                   "opera": {
                     "version_added": true
+                  },
+                  "safari": {
+                    "version_added": "14"
                   }
                 }
               }
@@ -4278,6 +5421,9 @@
                     "version_added": false
                   },
                   "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
                     "version_added": false
                   }
                 }
