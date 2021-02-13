@@ -1,9 +1,9 @@
 'use strict';
 const fs = require('fs');
-const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
+const { Logger } = require('./utils.js');
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -55,11 +55,9 @@ function orderFeatures(key, value) {
 
 /**
  * @param {string} filename
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function processData(filename, logger) {
-  let hasErrors = false;
-
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -76,12 +74,10 @@ function processData(filename, logger) {
   }
 
   if (actual !== expected) {
-    hasErrors = true;
     logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
   if (expected !== expectedBrowserSorting) {
-    hasErrors = true;
     logger.error(
       chalk`{red → Browser sorting error on ${jsonDiff(
         actual,
@@ -91,7 +87,6 @@ function processData(filename, logger) {
   }
 
   if (expected !== expectedFeatureSorting) {
-    hasErrors = true;
     logger.error(
       chalk`{red → Feature sorting error on ${jsonDiff(
         actual,
@@ -100,24 +95,8 @@ function processData(filename, logger) {
     );
   }
 
-  const constructorMatch = actual.match(
-    String.raw`"<code>([^)]*?)</code> constructor"`,
-  );
-  if (constructorMatch) {
-    hasErrors = true;
-    logger.error(
-      chalk`{red → ${indexToPos(
-        actual,
-        constructorMatch.index,
-      )} – Use parentheses in constructor description ({yellow ${
-        constructorMatch[1]
-      }} → {green ${constructorMatch[1]}{bold ()}}).}`,
-    );
-  }
-
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
-    hasErrors = true;
     logger.error(
       chalk`{red → ${indexToPos(
         actual,
@@ -125,54 +104,15 @@ function processData(filename, logger) {
       )} - Found {yellow \\"}, but expected {green \'} for <a href>.}`,
     );
   }
-
-  const regexp = new RegExp(
-    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
-    'g',
-  );
-  const match = regexp.exec(actual);
-  if (match) {
-    const a_url = url.parse(match[1]);
-    if (a_url.hostname === null) {
-      hasErrors = true;
-      logger.error(
-        chalk`{red → ${indexToPos(
-          actual,
-          constructorMatch.index,
-        )} - Include hostname in URL ({yellow ${
-          match[1]
-        }} → {green {bold https://developer.mozilla.org/}${match[1]}}).}`,
-      );
-    }
-  }
-
-  return hasErrors;
 }
 
 function testStyle(filename) {
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Style');
 
   processData(filename, logger);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Style – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testStyle;

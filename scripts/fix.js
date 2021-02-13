@@ -5,8 +5,6 @@ const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
 const format = require('./fix-format');
 
-const promises = [];
-
 /**
  * @param {string[]} files
  */

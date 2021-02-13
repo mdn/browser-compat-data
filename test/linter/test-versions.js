@@ -1,6 +1,7 @@
 'use strict';
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -15,11 +16,17 @@ const validBrowserVersions = {};
 
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
+  edge: ['≤18', '≤79'],
+  ie: ['≤6'],
+  opera: ['≤12.1', '≤15'],
+  opera_android: ['≤12.1', '≤14'],
+  safari: ['≤4'],
+  safari_ios: ['≤3'],
   webview_android: ['≤37'],
 };
 
 /** @type string[] */
-const FLAGLESS_BROWSERS = ['webview_android'];
+const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
 
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
@@ -43,10 +50,9 @@ function isValidVersion(browserIdentifier, version) {
 /**
  * @param {SupportBlock} supportData
  * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function checkVersions(supportData, relPath, logger) {
-  let hasErrors = false;
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
@@ -70,13 +76,11 @@ function checkVersions(supportData, relPath, logger) {
           logger.error(
             chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
           );
-          hasErrors = true;
         }
         if (!isValidVersion(browser, statement.version_removed)) {
           logger.error(
             chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
           );
-          hasErrors = true;
         }
         if ('version_removed' in statement && 'version_added' in statement) {
           if (
@@ -86,7 +90,6 @@ function checkVersions(supportData, relPath, logger) {
             logger.error(
               chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`,
             );
-            hasErrors = true;
           } else if (
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string'
@@ -110,7 +113,6 @@ function checkVersions(supportData, relPath, logger) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
-              hasErrors = true;
             }
           }
         }
@@ -119,14 +121,11 @@ function checkVersions(supportData, relPath, logger) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );
-            hasErrors = true;
           }
         }
       }
     }
   }
-
-  return hasErrors;
 }
 
 /**
@@ -136,14 +135,7 @@ function testVersions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Versions');
 
   /**
    * @param {Identifier} data
@@ -162,18 +154,8 @@ function testVersions(filename) {
   }
   findSupport(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Versions – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testVersions;
