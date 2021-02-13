@@ -18,8 +18,9 @@ const { argv } = require('yargs').command(
         default: '',
       })
       .option('all', {
+        alias: 'a',
         describe: 'Show statistics for all browsers within BCD',
-        type: 'flags',
+        type: 'boolean',
         nargs: 0,
       });
   },
@@ -35,27 +36,6 @@ const { argv } = require('yargs').command(
  * @property {number} range The total number of range values for the browser.
  * @property {number} real The total number of real values for the browser.
  */
-
-/**
- * @constant {string[]}
- */
-const browsers = argv.all
-  ? Object.keys(bcd.browsers)
-  : [
-      'chrome',
-      'chrome_android',
-      'edge',
-      'firefox',
-      'ie',
-      'safari',
-      'safari_ios',
-      'webview_android',
-    ];
-/** @type {object.<string, VersionStats>} */
-let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
-browsers.forEach(browser => {
-  stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
-});
 
 /**
  * Check whether a support statement is a specified type
@@ -86,9 +66,11 @@ const checkSupport = (supportData, type) => {
  * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
  *
  * @param {Identifier} data The data to process and count stats for
+ * @param {string[]} browsers The browsers to test
+ * @param {object.<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
-const processData = data => {
+const processData = (data, browsers, stats) => {
   if (data.support) {
     browsers.forEach(browser => {
       stats[browser].all++;
@@ -117,24 +99,89 @@ const processData = data => {
  * Iterate through all of the data and process statistics
  *
  * @param {Identifier} data The compat data to iterate
+ * @param {string[]} browsers The browsers to test
+ * @param {object.<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
-const iterateData = data => {
+const iterateData = (data, browsers, stats) => {
   for (const key in data) {
     if (key === '__compat') {
-      processData(data[key]);
+      processData(data[key], browsers, stats);
     } else {
-      iterateData(data[key]);
+      iterateData(data[key], browsers, stats);
     }
   }
 };
 
 /**
- * Print a Markdown-formatted table of the statistics
+ * Get all of the stats
  *
+ * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
+ * @returns {object.<string, VersionStats>?}
+ */
+const getStats = (folder, allBrowsers) => {
+  /**
+   * @constant {string[]}
+   */
+  const browsers = allBrowsers
+    ? Object.keys(bcd.browsers)
+    : [
+        'chrome',
+        'chrome_android',
+        'edge',
+        'firefox',
+        'ie',
+        'safari',
+        'safari_ios',
+        'webview_android',
+      ];
+
+  /** @type {object.<string, VersionStats>} */
+  let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
+  browsers.forEach(browser => {
+    stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
+  });
+
+  if (folder) {
+    if (bcd[folder]) {
+      iterateData(bcd[folder], browsers, stats);
+    } else {
+      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      return null;
+    }
+  } else {
+    for (const data in bcd) {
+      if (!(data === 'browsers' || data === 'webextensions')) {
+        iterateData(bcd[data], browsers, stats);
+      }
+    }
+  }
+
+  return stats;
+};
+
+/**
+ * Print statistics of BCD
+ *
+ * @param {object.<string, VersionStats>} stats The stats object to print from
+ * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @returns {void}
  */
-const printTable = () => {
+const printStats = (stats, folder) => {
+  if (!stats) {
+    console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
+    return;
+  }
+
+  console.log(
+    chalk`{bold Status as of version ${
+      process.env.npm_package_version
+    } (released on 2020-MM-DD) for ${
+      folder ? `${folder}/ directory` : 'web platform features'
+    }}: \n`,
+  );
+
   let table = `| browser | real values | ranged values | \`true\` values | \`null\` values |
 | --- | --- | --- | --- | --- |
 `;
@@ -153,38 +200,8 @@ const printTable = () => {
   console.log(table);
 };
 
-/**
- * Print statistics of BCD
- *
- * @param {string} folder The folder to show statistics for (or all folders if blank)
- * @returns {boolean} False if the folder specified wasn't found
- */
-const printStats = folder => {
-  if (folder) {
-    if (bcd[folder]) {
-      iterateData(bcd[folder]);
-    } else {
-      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
-      return false;
-    }
-  } else {
-    for (const data in bcd) {
-      if (!(data === 'browsers' || data === 'webextensions')) {
-        iterateData(bcd[data]);
-      }
-    }
-  }
-
-  console.log(
-    chalk`{bold Status as of version 1.0.xx (released on 2020-MM-DD) for ${
-      folder ? `${folder}/ directory` : 'web platform features'
-    }}: \n`,
-  );
-  printTable();
-
-  return true;
-};
-
 if (require.main === module) {
-  printStats(argv.folder);
+  printStats(getStats(argv.folder, argv.all), argv.folder);
 }
+
+module.exports = getStats;
