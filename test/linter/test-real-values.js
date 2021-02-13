@@ -1,13 +1,13 @@
 'use strict';
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
- * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {string[]} */
@@ -29,21 +29,11 @@ const blockMany = [
 /** @type {Record<string, string[]>} */
 const blockList = {
   api: [],
-  css: [
-    'chrome',
-    'chrome_android',
-    'edge',
-    'firefox',
-    'firefox_android',
-    'ie',
-    'safari',
-    'safari_ios',
-    'webview_android',
-  ],
+  css: blockMany,
   html: [],
   http: [],
   svg: [],
-  javascript: ['chrome', 'edge', 'firefox', 'firefox_android', 'ie'],
+  javascript: [...blockMany, 'nodejs'],
   mathml: blockMany,
   webdriver: blockMany,
   webextensions: [],
@@ -100,15 +90,7 @@ function testRealValues(filename) {
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
-
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Real values');
 
   /**
    * @param {Identifier} data
@@ -133,18 +115,8 @@ function testRealValues(filename) {
   }
   findSupport(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Real values – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testRealValues;

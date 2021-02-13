@@ -45,31 +45,33 @@ The `name` string is a required property which should use the browser brand name
 An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
 
 ### Release objects
+
 The release objects consist of the following properties:
 
-* A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
-  * `retired`: This release is no longer supported (EOL).
-  * `current`: This release is the official latest release.
-  * `exclusive`: This is an exclusive release (for example on a flagship device), not generally available.
-  * `beta`: This release will the next official release.
-  * `nightly`: This release is the current alpha / experimental release (like Firefox Nightly, Chrome Canary).
-  * `esr`: This release is an Extended Support Release.
-  * `planned`: This release is planned in the future.
+- A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
 
-* An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
+  - `retired`: This release is no longer supported (EOL). For NodeJS, every minor/patch release aside from the latest within the major release is considered "retired".
+  - `current`: This release is the official latest release.
+  - `exclusive`: This is an exclusive release (for example on a flagship device), not generally available.
+  - `beta`: This release will the next official release.
+  - `nightly`: This release is the current alpha / experimental release (like Firefox Nightly, Chrome Canary).
+  - `esr`: This release is an Extended Support Release or Long Term Support release.
+  - `planned`: This release is planned in the future.
 
-* An optional `release_notes` property which points to release notes. It needs to be a valid URL.
+- An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
 
-* An optional `engine` property which is the name of the browser's engine.
+- An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
-* An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
+- An optional `engine` property which is the name of the browser's engine.
+
+- An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
 
 ### Exports
 
-This structure is exported for consumers of `mdn-browser-compat-data`:
+This structure is exported for consumers of `@mdn/browser-compat-data`:
 
 ```js
-> const compat = require('mdn-browser-compat-data');
+> const compat = require('@mdn/browser-compat-data');
 > compat.browsers.firefox.releases['1.5'].status;
 // "retired"
 ```

@@ -6,10 +6,10 @@
 
 Before using the `confluence` command make sure you have done the following:
 
-* On GitHub fork [mdn/browser-compat-data](https://github.com/mdn/browser-compat-data/).
-* In this repo, add your fork as a remote repo: `git remote add fork-name path-to-fork`
-* In the root of your clone, run `npm install`.
-* Configure a Git [difftool](https://git-scm.com/docs/git-difftool).
+- On GitHub fork [mdn/browser-compat-data](https://github.com/mdn/browser-compat-data/).
+- In this repo, add your fork as a remote repo: `git remote add fork-name path-to-fork`
+- In the root of your clone, run `npm install`.
+- Configure a Git [difftool](https://git-scm.com/docs/git-difftool).
 
 ## Basic procedure
 
@@ -20,6 +20,7 @@ Before using the `confluence` command make sure you have done the following:
    `npm run confluence -- --interfaces=ServiceWorker`
 
    If the confluence command finds any differences between existing browser compatibility data and Web API Confluence, it will write a new file. Confirm that it did so by running `git status`.
+
 1. Open the file that changed and manually copy values from `chrome` to `chrome_android` and `webview_android`. Read [Only Desktop Data is Available](#only-desktop-data-is-available) for an explanation. Save the file.
 1. To review changes made to a JSON file, run `git difftool`. Save the file.
 1. Commit your changes using `git add .` then `git commit`.
