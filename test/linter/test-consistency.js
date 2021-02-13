@@ -319,10 +319,14 @@ class ConsistencyChecker {
       typeof a_version_added === 'string' &&
       typeof b_version_added === 'string'
     ) {
-      if (a_version_added.startsWith('≤') || b_version_added.startsWith('≤')) {
+      if (b_version_added.startsWith('≤')) {
         return false;
       }
-      return compareVersions.compare(a_version_added, b_version_added, '<');
+      return compareVersions.compare(
+        a_version_added.replace('≤', ''),
+        b_version_added,
+        '<',
+      );
     }
 
     return false;
@@ -388,9 +392,9 @@ function testConsistency(filename) {
 
         subfeatures.forEach(subfeature => {
           console.error(
-            chalk`{red       → {bold ${path.join('.')}.${
-              subfeature[0]
-            }}: ${subfeature[1] || '[Array]'}}`,
+            chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${
+              subfeature[1] === undefined ? '[Array]' : subfeature[1]
+            }}`,
           );
         });
       });

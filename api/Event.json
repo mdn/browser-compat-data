@@ -5,40 +5,43 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event",
         "support": {
           "chrome": {
-            "version_added": true
+            "version_added": "1"
           },
           "chrome_android": {
-            "version_added": true
+            "version_added": "18"
           },
           "edge": {
-            "version_added": true
+            "version_added": "12"
           },
           "firefox": {
-            "version_added": true
+            "version_added": "1"
           },
           "firefox_android": {
-            "version_added": true
+            "version_added": "4"
           },
           "ie": {
-            "version_added": true
+            "version_added": "6"
+          },
+          "nodejs": {
+            "version_added": "14.5.0"
           },
           "opera": {
-            "version_added": true
+            "version_added": "4"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "10.1"
           },
           "safari": {
-            "version_added": true
+            "version_added": "1"
           },
           "safari_ios": {
-            "version_added": true
+            "version_added": "1"
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": true
+            "version_added": "1"
           }
         },
         "status": {
@@ -59,7 +62,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": true
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "11"
@@ -70,6 +73,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "15.0.0"
+              },
+              {
+                "version_added": "14.5.0",
+                "notes": "Only available from the <code>events</code> module"
+              }
+            ],
             "opera": {
               "version_added": "11.6"
             },
@@ -86,7 +98,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -117,6 +129,10 @@
             },
             "ie": {
               "version_added": null
+            },
+            "nodejs": {
+              "version_added": "14.5.0",
+              "notes": "This is not used in Node.js and is provided purely for completeness."
             },
             "opera": {
               "version_added": true
@@ -166,6 +182,9 @@
             "ie": {
               "version_added": null
             },
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
               "version_added": true
             },
@@ -207,16 +226,34 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "53",
-              "notes": "Prior to Firefox 53, this property was defined on the <a href='https://developer.mozilla.org/docs/Web/API/UIEvent'><code>UIEvent</code></a> interface. See <a href='https://bugzil.la/1298970'>bug 1298970</a> for more details."
-            },
-            "firefox_android": {
-              "version_added": "53",
-              "notes": "Prior to Firefox 53, this property was defined on the <a href='https://developer.mozilla.org/docs/Web/API/UIEvent'><code>UIEvent</code></a> interface. See <a href='https://bugzil.la/1298970'>bug 1298970</a> for more details."
-            },
+            "firefox": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_removed": "53",
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/UIEvent'><code>UIEvent</code></a>, not all <code>Event</code> objects."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_removed": "53",
+                "version_added": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/UIEvent'><code>UIEvent</code></a>, not all <code>Event</code> objects."
+              }
+            ],
             "ie": {
               "version_added": true
+            },
+            "nodejs": {
+              "version_added": "14.5.0",
+              "notes": "This is not used in Node.js and is provided purely for completeness."
             },
             "opera": {
               "version_added": true,
@@ -259,7 +296,7 @@
               "version_added": "53"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "52"
@@ -269,6 +306,10 @@
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "14.5.0",
+              "notes": "This is not used in Node.js and is provided purely for completeness."
             },
             "opera": {
               "version_added": "40"
@@ -321,7 +362,7 @@
               }
             ],
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "52"
@@ -331,6 +372,10 @@
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "14.5.0",
+              "notes": "Returns an array with either the event itself or no contents."
             },
             "opera": [
               {
@@ -386,72 +431,24 @@
           }
         }
       },
-      "createEvent": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/createEvent",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "currentTarget": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/currentTarget",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": [
               {
@@ -464,11 +461,14 @@
                 "notes": "On Internet Explorer 6 through 8, the event model is different. Event listeners are attached with the non-standard <a href='https://developer.mozilla.org/docs/Web/API/EventTarget/attachEvent'><code>EventTarget.attachEvent</code></a> method. In this model, there is no equivalent to <code>event.currentTarget</code> and <code>this</code> is the global object. One solution to emulate the <code>event.currentTarget</code> feature is to wrap your handler in a function calling the handler using <code>Function.prototype.call</code> with the element as a first argument. This way, <code>this</code> will be the expected value."
               }
             ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
-              "version_added": true
+              "version_added": "7"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "10"
@@ -477,10 +477,10 @@
               "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -512,6 +512,9 @@
             "ie": {
               "version_added": "9"
             },
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
               "version_added": "11"
             },
@@ -528,7 +531,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -559,6 +562,9 @@
             },
             "ie": {
               "version_added": "9"
+            },
+            "nodejs": {
+              "version_added": "14.5.0"
             },
             "opera": {
               "version_added": "32"
@@ -608,6 +614,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": false
+            },
             "opera": {
               "version_added": false
             },
@@ -645,7 +654,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
               "version_added": true,
@@ -658,7 +667,10 @@
               "notes": "See <a href='https://bugzil.la/691151'>bug 691151</a>."
             },
             "ie": {
-              "version_added": null
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
             },
             "opera": {
               "version_added": false
@@ -724,6 +736,9 @@
             "ie": {
               "version_added": true
             },
+            "nodejs": {
+              "version_added": false
+            },
             "opera": {
               "version_added": true
             },
@@ -774,6 +789,10 @@
             "ie": {
               "version_added": false,
               "notes": "In Internet Explorer, all events are trusted except those that are created with the <code>createEvent()</code> method."
+            },
+            "nodejs": {
+              "version_added": "14.5.0",
+              "notes": "This is not used in Node.js and is provided purely for completeness."
             },
             "opera": {
               "version_added": "33",
@@ -827,6 +846,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": false
+            },
             "opera": {
               "version_added": false
             },
@@ -864,7 +886,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
               "version_added": true,
@@ -875,7 +897,10 @@
               "version_removed": "24"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
             },
             "opera": {
               "version_added": false
@@ -914,7 +939,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
               "version_added": true,
@@ -925,7 +950,10 @@
               "version_removed": "24"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
             },
             "opera": {
               "version_added": false
@@ -958,40 +986,43 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/preventDefault",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
             },
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
-              "version_added": true
+              "version_added": "7"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1024,6 +1055,9 @@
             },
             "ie": {
               "version_added": "6"
+            },
+            "nodejs": {
+              "version_added": "14.5.0"
             },
             "opera": {
               "version_added": true
@@ -1073,6 +1107,9 @@
             "ie": {
               "version_added": true
             },
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
               "version_added": true
             },
@@ -1094,8 +1131,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": false
+            "standard_track": true,
+            "deprecated": true
           }
         }
       },
@@ -1121,6 +1158,9 @@
             "ie": {
               "version_added": "9"
             },
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
               "version_added": "15"
             },
@@ -1137,7 +1177,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1152,40 +1192,44 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/stopPropagation",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
             },
+            "nodejs": {
+              "version_added": "14.5.0",
+              "notes": "This is not used in Node.js and is provided purely for completeness."
+            },
             "opera": {
-              "version_added": true
+              "version_added": "7"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1200,40 +1244,43 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/target",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
+            },
+            "nodejs": {
+              "version_added": "14.5.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "7"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1270,6 +1317,9 @@
               "version_added": true,
               "notes": "Starting with Chrome 49, Firefox 54 and Opera 36, this property returns <a href='https://developer.mozilla.org/docs/Web/API/DOMHighResTimeStamp'><code>DOMHighResTimeStamp</code></a> instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMTimeStamp'><code>DOMTimeStamp</code></a>."
             },
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "opera": {
               "version_added": "36",
               "notes": "Starting with Chrome 49, Firefox 54 and Opera 36, this property returns <a href='https://developer.mozilla.org/docs/Web/API/DOMHighResTimeStamp'><code>DOMHighResTimeStamp</code></a> instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMTimeStamp'><code>DOMTimeStamp</code></a>."
@@ -1305,40 +1355,43 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/type",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "45"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
+            },
+            "nodejs": {
+              "version_added": "14.5.0"
             },
             "opera": {
-              "version_added": "32"
+              "version_added": "7"
             },
             "opera_android": {
-              "version_added": "32"
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "45"
+              "version_added": "1"
             }
           },
           "status": {
