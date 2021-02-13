@@ -1,6 +1,6 @@
-# The mdn-browser-compat-data JSON schema
+# The compat data JSON schema
 
-This document helps you to understand how mdn-browser-compat-data is organized and structured.
+This document helps you to understand how compatibility data is organized and structured.
 
 ## Where to find compat data
 
@@ -92,6 +92,10 @@ The `__compat` object consists of the following:
 - A mandatory `support` property for **compat information**.
   An object listing the compatibility information for each browser ([see below](#the-support-object)).
 
+- A mandatory `status` property for **status information**.
+  An object containing information about the stability of the feature:
+  Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
+
 - An optional `description` property to **describe the feature**.
   A string containing a human-readable description of the feature.
   It is intended to be used as a caption or title and should be kept short.
@@ -99,10 +103,6 @@ The `__compat` object consists of the following:
 
 - An optional `matches` property to **help match the feature to source code** ([see below](#the-matches-object))
   An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
-
-- An optional `status` property for **status information**.
-  An object containing information about the stability of the feature:
-  Is it a functionality that is standard? Is it stable? Has it been deprecated and shouldn't be used anymore? ([see below](#status-information))
 
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
@@ -120,19 +120,16 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
-- `edge`, MS Edge (on Windows), based on the EdgeHTML version
+- `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 - `ie`, Microsoft Internet Explorer (discontinued)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
-- `qq_android`, the QQ browser (Android version)
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `uc_android`, UC Browser (Android version)
-- `uc_chinese_android`, UC Browser (Chinese Android version)
 - `webview_android`, Webview, the built-in browser for Android
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
@@ -249,13 +246,45 @@ Examples:
 }
 ```
 
+### Initial versions
+
+The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
+
+| Browser          | Initial version | Notes                                                                                                                                                                    |
+| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Chrome           | 1               |                                                                                                                                                                          |
+| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
+| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
+| Firefox          | 1               |                                                                                                                                                                          |
+| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
+| IE               | 1               |                                                                                                                                                                          |
+| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
+| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
+| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
+| Safari           | 1               |                                                                                                                                                                          |
+| iOS Safari       | 1               |                                                                                                                                                                          |
+| Samsung Internet | 1.0             |                                                                                                                                                                          |
+| WebView Android  | 1               |                                                                                                                                                                          |
+
 ### Ranged versions
 
-For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
+For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
 - Edge
   - "≤18" (supported in some version of EdgeHTML-based Edge)
   - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+- Internet Explorer
+  - "≤6" (earliest IE version supported in BrowserStack)
+- Opera
+  - "≤12.1" (supported in some version of Presto-based Opera)
+  - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+- Opera Android
+  - "≤12.1" (supported in some version of Presto-based Opera)
+  - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+- Safari
+  - "≤4" (earliest Safari version supported in BrowserStack)
+- Safari iOS
+  - "≤3" (earliest Safari iOS version supported in BrowserStack)
 - WebView Android
   - "≤37" (supported in former Android versions prior to Chrome-based WebView)
 
@@ -415,8 +444,8 @@ A `matches` object contains hints to help automatically detect whether source co
 
 ### Status information
 
-The status property contains information about stability of the feature. It is
-an optional object named `status` and has three mandatory properties:
+The mandatory status property contains information about stability of the feature. It is
+an object named `status` and has three mandatory properties:
 
 - `experimental`: a `boolean` value that indicates this functionality is
   intended to be an addition to the Web platform. Some features are added to

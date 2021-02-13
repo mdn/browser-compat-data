@@ -1,6 +1,7 @@
 'use strict';
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -15,8 +16,13 @@ const validBrowserVersions = {};
 
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
-  webview_android: ['≤37'],
   edge: ['≤18', '≤79'],
+  ie: ['≤6'],
+  opera: ['≤12.1', '≤15'],
+  opera_android: ['≤12.1', '≤14'],
+  safari: ['≤4'],
+  safari_ios: ['≤3'],
+  webview_android: ['≤37'],
 };
 
 /** @type {Object<string, string>} */
@@ -28,7 +34,7 @@ const browserTips = {
 };
 
 /** @type string[] */
-const FLAGLESS_BROWSERS = ['webview_android'];
+const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
 
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
@@ -52,7 +58,7 @@ function isValidVersion(browserIdentifier, version) {
 /**
  * @param {SupportBlock} supportData
  * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function checkVersions(supportData, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
@@ -149,14 +155,7 @@ function testVersions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Versions');
 
   /**
    * @param {Identifier} data
@@ -175,18 +174,8 @@ function testVersions(filename) {
   }
   findSupport(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Versions – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testVersions;

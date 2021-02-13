@@ -68,12 +68,38 @@
                 "The <code>start</code> and <code>end</code> values are not supported."
               ]
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
+            "opera": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "23",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental Web Platform Features",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "34"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "34",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable Experimental Web Platform Features",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": false,
               "notes": "See WebKit <a href='https://webkit.org/b/76173'>bug 76173</a>."

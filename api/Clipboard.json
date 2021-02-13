@@ -11,7 +11,7 @@
             "version_added": "66"
           },
           "edge": {
-            "version_added": false
+            "version_added": "79"
           },
           "firefox": {
             "version_added": "63"
@@ -29,10 +29,10 @@
             "version_added": "47"
           },
           "safari": {
-            "version_added": false
+            "version_added": "13.1"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "13.4"
           },
           "samsunginternet_android": {
             "version_added": "9.0"
@@ -51,14 +51,42 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read",
           "support": {
-            "chrome": {
-              "version_added": "76"
-            },
-            "chrome_android": {
-              "version_added": "76"
-            },
+            "chrome": [
+              {
+                "version_added": "86",
+                "partial_implementation": true,
+                "notes": "From version 86, the <code>text/html</code> MIME type is supported."
+              },
+              {
+                "version_added": "76",
+                "partial_implementation": true,
+                "notes": "From version 76, the <code>image/png</code> MIME type is supported."
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "86",
+                "partial_implementation": true,
+                "notes": "From version 86, the <code>text/html</code> MIME type is supported."
+              },
+              {
+                "version_added": "84",
+                "partial_implementation": true,
+                "notes": "From version 84, the <code>image/png</code> MIME type is supported."
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ],
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "63",
@@ -92,17 +120,26 @@
               "version_added": "54"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
-            "webview_android": {
-              "version_added": "76"
-            }
+            "webview_android": [
+              {
+                "version_added": "84",
+                "partial_implementation": true,
+                "notes": "From version 84, the <code>image/png</code> MIME type is supported."
+              },
+              {
+                "version_added": "66",
+                "partial_implementation": true,
+                "notes": "Images are not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -122,7 +159,7 @@
               "version_added": "66"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "63",
@@ -142,10 +179,10 @@
               "version_added": "47"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
               "version_added": "9.0"
@@ -166,13 +203,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/write",
           "support": {
             "chrome": {
-              "version_added": "76"
+              "version_added": "66",
+              "notes": "From version 76, the <code>image/png</code> MIME type is supported."
             },
             "chrome_android": {
-              "version_added": "76"
+              "version_added": "66",
+              "notes": "From version 84, the <code>image/png</code> MIME type is supported."
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "63",
@@ -206,16 +245,17 @@
               "version_added": "54"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
-              "version_added": "76"
+              "version_added": "66",
+              "notes": "From version 84, the <code>image/png</code> MIME type is supported."
             }
           },
           "status": {
@@ -236,7 +276,7 @@
               "version_added": "66"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "63",
@@ -256,10 +296,10 @@
               "version_added": "47"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
               "version_added": "9.0"
