@@ -5,22 +5,22 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers",
         "support": {
           "chrome": {
-            "version_added": true
+            "version_added": "1"
           },
           "chrome_android": {
-            "version_added": true
+            "version_added": "18"
           },
           "edge": {
             "version_added": "12"
           },
           "firefox": {
-            "version_added": true
+            "version_added": "1"
           },
           "firefox_android": {
-            "version_added": true
+            "version_added": "4"
           },
           "ie": {
-            "version_added": true
+            "version_added": "4"
           },
           "opera": {
             "version_added": true
@@ -29,16 +29,16 @@
             "version_added": true
           },
           "safari": {
-            "version_added": true
+            "version_added": "1"
           },
           "safari_ios": {
-            "version_added": true
+            "version_added": "1"
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": true
+            "version_added": "1"
           }
         },
         "status": {
@@ -52,40 +52,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onabort",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -123,12 +123,26 @@
             "opera_android": {
               "version_added": null
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
@@ -149,7 +163,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -158,7 +172,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -167,7 +181,7 @@
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "18"
               },
               {
                 "version_added": "≤79",
@@ -175,38 +189,38 @@
               }
             ],
             "firefox": {
-              "version_added": true
+              "version_added": "51"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "51"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "66"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "57"
             },
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": [
               {
-                "version_added": true
+                "version_added": "12.0"
               },
               {
-                "alternative_name": "onwebkitanimationend",
-                "version_added": true
+                "version_added": true,
+                "alternative_name": "onwebkitanimationend"
               }
             ],
             "webview_android": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -227,7 +241,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -236,7 +250,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -245,7 +259,7 @@
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "18"
               },
               {
                 "version_added": "≤79",
@@ -259,32 +273,32 @@
               "version_added": "51"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "66"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "57"
             },
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": [
               {
-                "version_added": true
+                "version_added": "12.0"
               },
               {
-                "alternative_name": "onwebkitanimationiteration",
-                "version_added": true
+                "version_added": true,
+                "alternative_name": "onwebkitanimationiteration"
               }
             ],
             "webview_android": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -305,7 +319,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -314,7 +328,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -323,7 +337,7 @@
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "18"
               },
               {
                 "version_added": "≤79",
@@ -337,32 +351,32 @@
               "version_added": "51"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "66"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "57"
             },
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": [
               {
-                "version_added": true
+                "version_added": "12.0"
               },
               {
-                "alternative_name": "onwebkitanimationstart",
-                "version_added": true
+                "version_added": true,
+                "alternative_name": "onwebkitanimationstart"
               }
             ],
             "webview_android": [
               {
-                "version_added": true
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -385,7 +399,7 @@
               "version_added": "55"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "55"
             },
             "edge": {
               "version_added": "79"
@@ -400,10 +414,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "42"
             },
             "safari": {
               "version_added": false
@@ -412,10 +426,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "6.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "55"
             }
           },
           "status": {
@@ -430,40 +444,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onblur",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -478,13 +492,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oncancel",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -493,25 +507,25 @@
               "version_added": false
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "19"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -526,40 +540,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oncanplay",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -574,40 +600,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oncanplaythrough",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -622,40 +660,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onchange",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "3"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -670,40 +708,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onclick",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "3"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -718,28 +756,28 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onclose",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "53"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "19"
             },
             "safari": {
               "version_added": false
@@ -748,10 +786,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -766,40 +804,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oncontextmenu",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "5"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "3.2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -814,13 +852,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oncuechange",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "18"
             },
             "firefox": [
               {
@@ -843,25 +881,37 @@
               }
             ],
             "ie": {
-              "version_added": null
+              "version_added": false
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -876,40 +926,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondblclick",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "4"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -924,40 +974,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondrag",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -972,40 +1022,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondragend",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -1020,40 +1070,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondragenter",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -1107,8 +1157,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -1117,40 +1167,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondragleave",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -1165,40 +1215,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondragover",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -1213,40 +1263,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondragstart",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -1261,40 +1311,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondrop",
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "9"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "12"
             },
             "safari": {
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1"
             }
           },
           "status": {
@@ -1309,40 +1359,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ondurationchange",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -1357,40 +1419,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onemptied",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -1405,40 +1479,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onended",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -1453,40 +1539,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onerror",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "10"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "11.6"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "12"
             },
             "safari": {
-              "version_added": null
+              "version_added": "6"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1501,40 +1587,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onfocus",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1561,7 +1647,7 @@
               "version_added": "72"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -1579,7 +1665,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
               "version_added": "77"
@@ -1603,16 +1689,16 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "17"
             },
             "firefox": {
               "version_added": "59"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "59"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "44"
@@ -1621,10 +1707,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -1645,19 +1731,19 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oninput",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "2"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
               "version_added": "9"
@@ -1666,19 +1752,19 @@
               "version_added": "10"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "3.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1693,40 +1779,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/oninvalid",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "13"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "4"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1741,40 +1827,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onkeydown",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "4"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1789,40 +1875,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onkeypress",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "4"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1837,40 +1923,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onkeyup",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "4"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1885,40 +1971,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onload",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "3"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -1933,40 +2019,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onloadeddata",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -1981,40 +2079,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onloadedmetadata",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -2077,47 +2187,59 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onloadstart",
           "support": {
             "chrome": {
-              "version_added": true,
+              "version_added": "32",
               "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
             },
             "chrome_android": {
-              "version_added": true,
+              "version_added": "32",
               "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "52"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "52"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": true,
-              "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
-            },
-            "opera_android": {
-              "version_added": true,
-              "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
-            },
+            "opera": [
+              {
+                "version_added": "19",
+                "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19",
+                "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": true,
+              "version_added": "9",
               "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
             },
             "safari_ios": {
-              "version_added": true,
+              "version_added": "9",
               "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
             },
             "samsunginternet_android": {
-              "version_added": true,
+              "version_added": "2.0",
               "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
             },
             "webview_android": {
-              "version_added": true,
+              "version_added": "4.4.3",
               "notes": "The <code>loadstart</code> event is not fired on <code>&lt;img&gt;</code> elements."
             }
           },
@@ -2139,16 +2261,16 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "17"
             },
             "firefox": {
               "version_added": "59"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "59"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "44"
@@ -2157,10 +2279,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -2181,40 +2303,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onmousedown",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2232,7 +2354,7 @@
               "version_added": "30"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "edge": {
               "version_added": "12"
@@ -2253,16 +2375,16 @@
               "version_added": "18"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -2280,7 +2402,7 @@
               "version_added": "30"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "edge": {
               "version_added": "12"
@@ -2301,16 +2423,16 @@
               "version_added": "18"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -2325,40 +2447,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onmousemove",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2373,40 +2495,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onmouseout",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2421,40 +2543,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onmouseover",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2469,40 +2591,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onmouseup",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2565,40 +2687,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onpause",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -2613,40 +2747,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onplay",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -2661,40 +2807,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onplaying",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -2739,16 +2897,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -2759,16 +2922,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -2819,16 +2982,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -2839,16 +3007,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -2899,16 +3067,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -2919,16 +3092,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -2979,16 +3152,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -2999,16 +3177,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -3029,40 +3207,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onpointerlockchange",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "36"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "edge": {
-              "version_added": null
+              "version_added": "13"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "50"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "50"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "24"
             },
             "safari": {
-              "version_added": null
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "37"
             }
           },
           "status": {
@@ -3077,40 +3255,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onpointerlockerror",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "36"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "36"
             },
             "edge": {
-              "version_added": null
+              "version_added": "13"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "50"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "50"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "24"
             },
             "safari": {
-              "version_added": null
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "37"
             }
           },
           "status": {
@@ -3155,16 +3333,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -3175,16 +3358,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -3235,16 +3418,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -3255,16 +3443,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -3315,16 +3503,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -3335,16 +3528,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -3395,16 +3588,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "29",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "59"
+              },
+              {
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -3415,16 +3613,16 @@
               }
             ],
             "opera": {
-              "version_added": null
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -3445,40 +3643,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onprogress",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -3493,40 +3703,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onratechange",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -3541,40 +3763,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onreset",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -3589,40 +3811,50 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onresize",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "34"
             },
             "chrome_android": {
-              "version_added": "45"
+              "version_added": "34"
             },
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "In EdgeHTML versions of Edge, this handler was only supported on the <a href='https://developer.mozilla.org/docs/Web/API/Window'><code>Window</code></a> API."
+              }
+            ],
             "firefox": {
-              "version_added": true
+              "version_added": "38"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "38"
             },
             "ie": {
-              "version_added": true
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "In Internet Explorer, this handler was only supported on the <a href='https://developer.mozilla.org/docs/Web/API/Window'><code>Window</code></a> API."
             },
             "opera": {
-              "version_added": "32"
+              "version_added": "21"
             },
             "opera_android": {
-              "version_added": "32"
+              "version_added": "21"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "45"
+              "version_added": "37"
             }
           },
           "status": {
@@ -3637,40 +3869,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onscroll",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1.3"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -3685,40 +3917,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onseeked",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -3733,40 +3977,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onseeking",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -3781,40 +4037,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselect",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -3829,7 +4085,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectionchange",
           "support": {
             "chrome": {
-              "version_added": "12"
+              "version_added": "11"
             },
             "chrome_android": {
               "version_added": "18"
@@ -3868,7 +4124,7 @@
               }
             ],
             "ie": {
-              "version_added": true
+              "version_added": "5.5"
             },
             "opera": {
               "version_added": "15"
@@ -3877,16 +4133,16 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "5.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -3901,10 +4157,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onselectstart",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -3940,25 +4196,25 @@
               }
             ],
             "ie": {
-              "version_added": true
+              "version_added": "4"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "1.3"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -4012,7 +4268,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -4069,40 +4325,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onstalled",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -4117,40 +4385,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onsubmit",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -4165,40 +4433,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onsuspend",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.6"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -4213,40 +4493,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontimeupdate",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -4261,41 +4553,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontouchcancel",
           "support": {
             "chrome": {
-              "version_added": "18"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": false
             },
             "firefox": {
-              "version_added": true,
-              "version_removed": "67"
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤14"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4310,41 +4601,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontouchend",
           "support": {
             "chrome": {
-              "version_added": "18"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": false
             },
             "firefox": {
-              "version_added": true,
-              "version_removed": "67"
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤14"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4359,41 +4649,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontouchmove",
           "support": {
             "chrome": {
-              "version_added": "18"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": false
             },
             "firefox": {
-              "version_added": true,
-              "version_removed": "67"
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤14"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4408,41 +4697,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontouchstart",
           "support": {
             "chrome": {
-              "version_added": "18"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": false
             },
             "firefox": {
-              "version_added": true,
-              "version_removed": "67"
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤14"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4457,13 +4745,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontransitioncancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "87"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "87"
             },
             "edge": {
-              "version_added": false
+              "version_added": "87"
             },
             "firefox": {
               "version_added": "53"
@@ -4472,25 +4760,39 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "73"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "87"
             }
           },
           "status": {
@@ -4504,18 +4806,33 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontransitionend",
           "support": {
-            "chrome": {
-              "version_added": true,
-              "alternative_name": "onwebkittransitionend"
-            },
-            "chrome_android": {
-              "version_added": true,
-              "alternative_name": "onwebkittransitionend"
-            },
-            "edge": {
-              "version_added": "≤79",
-              "alternative_name": "onwebkittransitionend"
-            },
+            "chrome": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "onwebkittransitionend"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "onwebkittransitionend"
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "≤79",
+                "alternative_name": "onwebkittransitionend"
+              }
+            ],
             "firefox": {
               "version_added": "51"
             },
@@ -4523,28 +4840,38 @@
               "version_added": "51"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "66"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "57"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11"
             },
-            "samsunginternet_android": {
-              "version_added": true,
-              "alternative_name": "onwebkittransitionend"
-            },
-            "webview_android": {
-              "version_added": true,
-              "alternative_name": "onwebkittransitionend"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "11.0"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "onwebkittransitionend"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": true,
+                "alternative_name": "onwebkittransitionend"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -4558,13 +4885,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontransitionrun",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "87"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "87"
             },
             "edge": {
-              "version_added": false
+              "version_added": "87"
             },
             "firefox": {
               "version_added": "53"
@@ -4573,25 +4900,39 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "73"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "87"
             }
           },
           "status": {
@@ -4606,13 +4947,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/ontransitionstart",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "87"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "87"
             },
             "edge": {
-              "version_added": false
+              "version_added": "87"
             },
             "firefox": {
               "version_added": "53"
@@ -4621,25 +4962,39 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "73"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "13.4"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "87"
             }
           },
           "status": {
@@ -4654,40 +5009,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onvolumechange",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -4702,40 +5069,52 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onwaiting",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "9"
             },
             "ie": {
-              "version_added": null
+              "version_added": "9"
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": null
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -4750,40 +5129,40 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onwheel",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "31"
             },
             "chrome_android": {
-              "version_added": "61"
+              "version_added": "31"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "17"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "17"
             },
             "ie": {
-              "version_added": true
+              "version_added": false
             },
             "opera": {
-              "version_added": "48"
+              "version_added": "18"
             },
             "opera_android": {
-              "version_added": "45"
+              "version_added": "18"
             },
             "safari": {
-              "version_added": true
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": "8.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "61"
+              "version_added": "4.4.3"
             }
           },
           "status": {

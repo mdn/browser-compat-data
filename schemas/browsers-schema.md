@@ -50,12 +50,12 @@ The release objects consist of the following properties:
 
 - A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
 
-  - `retired`: This release is no longer supported (EOL).
+  - `retired`: This release is no longer supported (EOL). For NodeJS, every minor/patch release aside from the latest within the major release is considered "retired".
   - `current`: This release is the official latest release.
   - `exclusive`: This is an exclusive release (for example on a flagship device), not generally available.
   - `beta`: This release will the next official release.
   - `nightly`: This release is the current alpha / experimental release (like Firefox Nightly, Chrome Canary).
-  - `esr`: This release is an Extended Support Release.
+  - `esr`: This release is an Extended Support Release or Long Term Support release.
   - `planned`: This release is planned in the future.
 
 - An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
@@ -68,10 +68,10 @@ The release objects consist of the following properties:
 
 ### Exports
 
-This structure is exported for consumers of `mdn-browser-compat-data`:
+This structure is exported for consumers of `@mdn/browser-compat-data`:
 
 ```js
-> const compat = require('mdn-browser-compat-data');
+> const compat = require('@mdn/browser-compat-data');
 > compat.browsers.firefox.releases['1.5'].status;
 // "retired"
 ```

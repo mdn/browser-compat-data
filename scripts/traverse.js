@@ -19,6 +19,13 @@ const { argv } = require('yargs').command(
         describe: 'The value(s) to test against',
         type: 'array',
         default: ['null', 'true'],
+      })
+      .option('depth', {
+        alias: 'd',
+        describe:
+          'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
+        type: 'number',
+        default: 100,
       });
   },
 );
@@ -77,7 +84,7 @@ const values = Array.isArray(argv.value)
   : argv.value.toString().split(',');
 
 for (const folder in folders)
-  traverseFeatures(bcd[folders[folder]], 100, `${folders[folder]}.`);
+  traverseFeatures(bcd[folders[folder]], argv.depth, `${folders[folder]}.`);
 
 console.log(features.join('\n'));
 console.log(features.length);
