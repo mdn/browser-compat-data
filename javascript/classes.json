@@ -476,7 +476,7 @@
       "private_class_fields": {
         "__compat": {
           "description": "Private class fields",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Class_elements#Private_fields",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_class_fields",
           "spec_url": "https://tc39.es/proposal-class-fields/#prod-PrivateIdentifier",
           "support": {
             "chrome": {
@@ -489,10 +489,36 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Available only in nightly builds. See <a href='https://bugzil.la/1562054'>bug 1562054</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "javascript.options.experimental.private_fields",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "javascript.options.experimental.private_methods",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Available only in nightly builds. See <a href='https://bugzil.la/1562054'>bug 1562054</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "javascript.options.experimental.private_fields",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "javascript.options.experimental.private_methods",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -545,7 +571,7 @@
               "version_added": "69"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -560,10 +586,14 @@
               "version_added": "51"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14",
+              "partial_implementation": true,
+              "notes": "Doesn't support public static fields. See WebKit bug <a href='https://webkit.org/b/194095'>194095</a>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14",
+              "partial_implementation": true,
+              "notes": "Doesn't support public static fields. See WebKit bug <a href='https://webkit.org/b/194095'>194095</a>."
             },
             "samsunginternet_android": {
               "version_added": false
@@ -704,10 +734,10 @@
               }
             ],
             "safari": {
-              "version_added": "9"
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": "9"
+              "version_added": false
             },
             "samsunginternet_android": [
               {
@@ -756,7 +786,7 @@
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
