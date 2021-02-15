@@ -306,12 +306,18 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
-            "ie": {
-              "version_added": "9",
-              "notes": "Internet Explorer 8 only supported CSS2 selectors."
-            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "8",
+                "partial_implementation": true,
+                "notes": "<code>querySelectorAll()</code> is supported, but only for CSS 2.1 selectors."
+              }
+            ],
             "opera": {
               "version_added": "10"
             },
@@ -357,10 +363,16 @@
             "firefox_android": {
               "version_added": true
             },
-            "ie": {
-              "version_added": "9",
-              "notes": "Internet Explorer 8 only supported CSS2 selectors."
-            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "8",
+                "partial_implementation": true,
+                "notes": "<code>querySelectorAll()</code> is supported, but only for CSS 2.1 selectors."
+              }
+            ],
             "opera": {
               "version_added": "10"
             },
@@ -404,7 +416,7 @@
               "version_added": "78"
             },
             "firefox_android": {
-              "version_added": "78"
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
