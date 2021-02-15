@@ -116,10 +116,17 @@
             "firefox_android": {
               "version_added": "4"
             },
-            "ie": {
-              "version_added": "9",
-              "notes": "Internet Explorer 6, 7 and 8 supported it, but erroneously includes <code>Comment</code> nodes."
-            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "6",
+                "version_removed": "9",
+                "partial_implementation": true,
+                "notes": "Erroneously includes <code>Comment</code> nodes."
+              }
+            ],
             "opera": {
               "version_added": "10"
             },
