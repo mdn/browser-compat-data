@@ -1,55 +1,9 @@
 {
   "api": {
-    "DocumentOrShadowRoot": {
-      "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot",
-        "support": {
-          "chrome": {
-            "version_added": "1"
-          },
-          "chrome_android": {
-            "version_added": "18"
-          },
-          "edge": {
-            "version_added": "12"
-          },
-          "firefox": {
-            "version_added": "1"
-          },
-          "firefox_android": {
-            "version_added": "4"
-          },
-          "ie": {
-            "version_added": "4"
-          },
-          "opera": {
-            "version_added": "≤12.1"
-          },
-          "opera_android": {
-            "version_added": "≤12.1"
-          },
-          "safari": {
-            "version_added": "4"
-          },
-          "safari_ios": {
-            "version_added": "3.2"
-          },
-          "samsunginternet_android": {
-            "version_added": "1.0"
-          },
-          "webview_android": {
-            "version_added": "1"
-          }
-        },
-        "status": {
-          "experimental": true,
-          "standard_track": true,
-          "deprecated": false
-        }
-      },
+    "Document": {
       "activeElement": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/activeElement",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/activeElement",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -89,7 +43,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -97,7 +51,7 @@
       },
       "adoptedStyleSheets": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/adoptedStyleSheets",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -137,7 +91,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -145,7 +99,7 @@
       },
       "caretPositionFromPoint": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/caretPositionFromPoint",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint",
           "support": {
             "chrome": {
               "version_added": false
@@ -185,7 +139,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -193,7 +147,7 @@
       },
       "elementFromPoint": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/elementFromPoint",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementFromPoint",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -239,7 +193,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -247,7 +201,7 @@
       },
       "elementsFromPoint": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/elementsFromPoint",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementsFromPoint",
           "support": {
             "chrome": {
               "version_added": "43",
@@ -257,11 +211,17 @@
               "version_added": "43",
               "notes": "Before Chrome 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
             },
-            "edge": {
-              "version_added": "12",
-              "alternative_name": "msElementsFromPoint",
-              "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "alternative_name": "msElementsFromPoint",
+                "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
+              }
+            ],
             "firefox": {
               "version_added": "46"
             },
@@ -295,7 +255,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -303,7 +263,7 @@
       },
       "fullscreenElement": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/fullscreenElement",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement",
           "support": {
             "chrome": [
               {
@@ -382,14 +342,24 @@
               "version_added": true,
               "prefix": "ms"
             },
-            "opera": {
-              "version_added": "40",
-              "prefix": "webkit"
-            },
-            "opera_android": {
-              "version_added": "41",
-              "prefix": "webkit"
-            },
+            "opera": [
+              {
+                "version_added": "58"
+              },
+              {
+                "version_added": "40",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "50"
+              },
+              {
+                "version_added": "41",
+                "prefix": "webkit"
+              }
+            ],
             "safari": {
               "version_added": true,
               "prefix": "webkit"
@@ -400,10 +370,15 @@
               "partial_implementation": true,
               "notes": "Full-screen mode is only supported on the iPad."
             },
-            "samsunginternet_android": {
-              "version_added": "6.0",
-              "prefix": "webkit"
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "10.0"
+              },
+              {
+                "version_added": "6.0",
+                "prefix": "webkit"
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "71"
@@ -423,7 +398,7 @@
       },
       "getSelection": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/getSelection",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getSelection",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -463,7 +438,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -471,7 +446,7 @@
       },
       "pointerLockElement": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/pointerLockElement",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -489,7 +464,7 @@
               "version_added": "50"
             },
             "ie": {
-              "version_added": true
+              "version_added": false
             },
             "opera": {
               "version_added": "24"
@@ -498,10 +473,10 @@
               "version_added": "24"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -511,7 +486,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -519,7 +494,7 @@
       },
       "styleSheets": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/styleSheets",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/styleSheets",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -559,7 +534,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
