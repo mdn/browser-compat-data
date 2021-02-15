@@ -533,24 +533,13 @@
             "edge": {
               "version_added": "17"
             },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "25",
-                "version_removed": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.mediasource.enabled"
-                  }
-                ],
-                "notes": "Limited support to an allowed list of sites, for example YouTube, Netflix, and other popular streaming sites. The limitation was removed when Media Source Extensions was enabled by default in Firefox 42."
-              }
-            ],
+            "firefox": {
+              "version_added": false,
+              "notes": "This event handler attribute is not supported; however, the event itself is supported since Firefox 42. The event can be listened to via <code>mediaSource.addEventListener('sourceclose', function() {});</code>. See <a href='https://bugzil.la/1689222'>bug 1689222</a>."
+            },
             "firefox_android": {
-              "version_added": "41"
+              "version_added": false,
+              "notes": "This event handler attribute is not supported; however, the event itself is supported since Firefox 42. The event can be listened to via <code>mediaSource.addEventListener('sourceclose', function() {});</code>. See <a href='https://bugzil.la/1689222'>bug 1689222</a>."
             },
             "ie": {
               "version_added": "11",
