@@ -10,9 +10,9 @@ February 11, 2021
 
   For example, `HTMLHyperlinkElementUtils` attributes are now represented on `HTMLAnchorElement` and `HTMLAreaElement` directly.
 
-  Existing interface mixins data will be replaced as part of our regular release process. The release notes will describe specific changes as they happen. ([[#9016](https://github.com/mdn/browser-compat-data/issues/9016)](https://github.com/mdn/browser-compat-data/pull/9016))
+  Existing interface mixins data will be replaced as part of our regular release process. The release notes will describe specific changes as they happen. ([#9016](https://github.com/mdn/browser-compat-data/pull/9016))
 
-- The following mixin features have been migrated to their exposed interfaces ([[#8933](https://github.com/mdn/browser-compat-data/issues/8933)](https://github.com/mdn/browser-compat-data/pull/8933), [[#9046](https://github.com/mdn/browser-compat-data/issues/9046)](https://github.com/mdn/browser-compat-data/pull/9046), [[#9048](https://github.com/mdn/browser-compat-data/issues/9048)](https://github.com/mdn/browser-compat-data/pull/9048)):
+- The following mixin features have been migrated to their exposed interfaces ([#8933](https://github.com/mdn/browser-compat-data/pull/8933), [#9046](https://github.com/mdn/browser-compat-data/pull/9046), [#9048](https://github.com/mdn/browser-compat-data/pull/9048)):
 
   | Old                                      | New                                                                   |
   | ---------------------------------------- | --------------------------------------------------------------------- |
@@ -31,9 +31,9 @@ February 11, 2021
   | `api.HTMLHyperlinkElementUtils.hash`     | `api.HTMLAnchorElement.hash`<br>`api.HTMLAreaElement.hash`            |
   | `api.Slottable.assignedSlot`             | `api.Element.assignedSlot`<br>`api.Text.assignedSlot`                 |
 
-- `api.Credential.name` was removed as irrelevant ([[#9046](https://github.com/mdn/browser-compat-data/issues/9046)](https://github.com/mdn/browser-compat-data/pull/9046)).
+- `api.Credential.name` was removed as irrelevant ([#9046](https://github.com/mdn/browser-compat-data/pull/9046)).
 
-- `css.selectors.-webkit-autofill` has been renamed to `css.selectors.autofill` to reflect the standardized name ([[#8877](https://github.com/mdn/browser-compat-data/issues/8877)](https://github.com/mdn/browser-compat-data/pull/8877))
+- `css.selectors.-webkit-autofill` has been renamed to `css.selectors.autofill` to reflect the standardized name ([#8877](https://github.com/mdn/browser-compat-data/pull/8877))
 
 **Statistics**
 
@@ -48,7 +48,7 @@ February 4, 2021
 
 **Notable changes**
 
-- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([[#8934](https://github.com/mdn/browser-compat-data/issues/8934)](https://github.com/mdn/browser-compat-data/pull/8934))
+- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([#8934](https://github.com/mdn/browser-compat-data/pull/8934))
 
 **Statistics**
 
