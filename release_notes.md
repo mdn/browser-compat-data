@@ -1,5 +1,78 @@
 # Release notes
 
+## [v3.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.0)
+
+February 11, 2021
+
+**Notable changes**
+
+- We've adopted [a new data guideline for interface mixins](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
+
+  For example, `HTMLHyperlinkElementUtils` attributes are now represented on `HTMLAnchorElement` and `HTMLAreaElement` directly.
+
+  Existing interface mixins data will be replaced as part of our regular release process. The release notes will describe specific changes as they happen. ([[#9016](https://github.com/mdn/browser-compat-data/issues/9016)](https://github.com/mdn/browser-compat-data/pull/9016))
+
+- The following mixin features have been migrated to their exposed interfaces ([[#8933](https://github.com/mdn/browser-compat-data/issues/8933)](https://github.com/mdn/browser-compat-data/pull/8933), [[#9046](https://github.com/mdn/browser-compat-data/issues/9046)](https://github.com/mdn/browser-compat-data/pull/9046), [[#9048](https://github.com/mdn/browser-compat-data/issues/9048)](https://github.com/mdn/browser-compat-data/pull/9048)):
+
+  | Old                                      | New                                                                   |
+  | ---------------------------------------- | --------------------------------------------------------------------- |
+  | `api.CredentialUserData.iconURL`         | `api.FederatedCredential.iconURL`<br>`api.PasswordCredential.iconURL` |
+  | `api.CredentialUserData.name`            | `api.FederatedCredential.name`<br>`api.PasswordCredential.name`       |
+  | `api.HTMLHyperlinkElementUtils.href`     | `api.HTMLAnchorElement.href`<br>`api.HTMLAreaElement.href`            |
+  | `api.HTMLHyperlinkElementUtils.origin`   | `api.HTMLAnchorElement.origin`<br>`api.HTMLAreaElement.origin`        |
+  | `api.HTMLHyperlinkElementUtils.protocol` | `api.HTMLAnchorElement.protocol`<br>`api.HTMLAreaElement.protocol`    |
+  | `api.HTMLHyperlinkElementUtils.username` | `api.HTMLAnchorElement.username`<br>`api.HTMLAreaElement.username`    |
+  | `api.HTMLHyperlinkElementUtils.password` | `api.HTMLAnchorElement.password`<br>`api.HTMLAreaElement.password`    |
+  | `api.HTMLHyperlinkElementUtils.host`     | `api.HTMLAnchorElement.host`<br>`api.HTMLAreaElement.host`            |
+  | `api.HTMLHyperlinkElementUtils.hostname` | `api.HTMLAnchorElement.hostname`<br>`api.HTMLAreaElement.hostname`    |
+  | `api.HTMLHyperlinkElementUtils.port`     | `api.HTMLAnchorElement.port`<br>`api.HTMLAreaElement.port`            |
+  | `api.HTMLHyperlinkElementUtils.pathname` | `api.HTMLAnchorElement.pathname`<br>`api.HTMLAreaElement.pathname`    |
+  | `api.HTMLHyperlinkElementUtils.search`   | `api.HTMLAnchorElement.search`<br>`api.HTMLAreaElement.search`        |
+  | `api.HTMLHyperlinkElementUtils.hash`     | `api.HTMLAnchorElement.hash`<br>`api.HTMLAreaElement.hash`            |
+  | `api.Slottable.assignedSlot`             | `api.Element.assignedSlot`<br>`api.Text.assignedSlot`                 |
+
+- `api.Credential.name` was removed as irrelevant ([[#9046](https://github.com/mdn/browser-compat-data/issues/9046)](https://github.com/mdn/browser-compat-data/pull/9046)).
+
+- `css.selectors.-webkit-autofill` has been renamed to `css.selectors.autofill` to reflect the standardized name ([[#8877](https://github.com/mdn/browser-compat-data/issues/8877)](https://github.com/mdn/browser-compat-data/pull/8877))
+
+**Statistics**
+
+- 10 contributors have changed 49 files with 1,534 additions and 644 deletions in 37 commits ([`v3.0.6...v3.1.0`](https://github.com/mdn/browser-compat-data/compare/v3.0.6...v3.1.0))
+- 12,972 total features
+- 758 total contributors
+- 3,234 total stargazers
+
+## [v3.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v3.0.6)
+
+February 4, 2021
+
+**Notable changes**
+
+- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([[#8934](https://github.com/mdn/browser-compat-data/issues/8934)](https://github.com/mdn/browser-compat-data/pull/8934))
+
+**Statistics**
+
+- 17 contributors have changed 90 files with 939 additions and 446 deletions in 56 commits ([`v3.0.5...v3.0.6`](https://github.com/mdn/browser-compat-data/compare/v3.0.5...v3.0.6))
+- 12,955 total features
+- 757 total contributors
+- 3,223 total stargazers
+
+## [v3.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.0.5)
+
+January 28, 2021
+
+**Notable changes**
+
+- `html.elements.command`, never implemented, was removed as irrelevant ([#8825](https://github.com/mdn/browser-compat-data/issues/8825))
+- `html.elements.element`, never implemented, was removed as irrelevant ([#8826](https://github.com/mdn/browser-compat-data/issues/8826))
+
+**Statistics**
+
+- 15 contributors have changed 82 files with 294 additions and 524 deletions in 20 commits ([`v3.0.4...v3.0.5`](https://github.com/mdn/browser-compat-data/compare/v3.0.4...v3.0.5))
+- 12,951 total features
+- 753 total contributors
+- 3,211 total stargazers
+
 ## [v3.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.0.4)
 
 January 21, 2021
