@@ -10,18 +10,19 @@ on:
     branches: [ ] # Test on push to every branch
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  test:
     strategy:
       matrix:
-        node-version: [ 10.x, 14.x ]
-
+        include:
+          - name: Maintenance LTS
+            node-version: 10.x # use oldest
+          - name: Active LTS
+            node-version: 14.x
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2-beta
+    - uses: actions/setup-node@v2-beta
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
