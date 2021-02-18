@@ -1,5 +1,41 @@
 # Release notes
 
+## [v3.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.1)
+
+**Notable changes**
+
+- The following mixin features have been migrated to their exposed interfaces:
+
+  | Former mixin (old)                                | Exposed interface (new)                                                          |
+  | ------------------------------------------------- | -------------------------------------------------------------------------------- |
+  | `api.DocumentOrShadowRoot`                        | (removed)                                                                        |
+  | `api.DocumentOrShadowRoot.activeElement`          | `api.Document.activeElement`<br>`api.ShadowRoot.activeElement`                   |
+  | `api.DocumentOrShadowRoot.adoptedStyleSheets`     | `api.Document.adoptedStyleSheets`<br>`api.ShadowRoot.adoptedStyleSheets`         |
+  | `api.DocumentOrShadowRoot.caretPositionFromPoint` | `api.Document.caretPositionFromPoint`<br>`api.ShadowRoot.caretPositionFromPoint` |
+  | `api.DocumentOrShadowRoot.elementFromPoint`       | `api.Document.elementFromPoint`<br>`api.ShadowRoot.elementFromPoint`             |
+  | `api.DocumentOrShadowRoot.elementsFromPoint`      | `api.Document.elementsFromPoint`<br>`api.ShadowRoot.elementsFromPoint`           |
+  | `api.DocumentOrShadowRoot.fullscreenElement`      | `api.Document.fullscreenElement`<br>`api.ShadowRoot.fullscreenElement`           |
+  | `api.DocumentOrShadowRoot.getSelection`           | `api.Document.getSelection`<br>`api.ShadowRoot.getSelection`                     |
+  | `api.DocumentOrShadowRoot.pointerLockElement`     | `api.Document.pointerLockElement`<br>`api.ShadowRoot.pointerLockElement`         |
+  | `api.DocumentOrShadowRoot.styleSheets`            | `api.Document.styleSheets`<br>`api.ShadowRoot.styleSheets`                       |
+  | `api.ShadowRoot.documentorshadowroot`             | (removed)                                                                        |
+
+* The following never-supported features were removed as irrelevant:
+
+  - `api.Window.clipboardchange_event` ([#6942](https://github.com/mdn/browser-compat-data/pull/6942))
+  - `api.Window.getAttention` ([#6942](https://github.com/mdn/browser-compat-data/pull/6942))
+  - `api.Window.getAttentionWithCycleCount` ([#6942](https://github.com/mdn/browser-compat-data/pull/6942))
+  - `svg.elements.textPath.method` ([#6959](https://github.com/mdn/browser-compat-data/pull/6959))
+
+* The subfeatures of `api.Element.getBoundingClientRect` (`height`, `width`, `x`, and `y`) were removed because they duplicated the subfeatures of `api.DOMRectReadOnly`. ([#9061](https://github.com/mdn/browser-compat-data/pull/9061))
+
+**Statistics**
+
+- 13 contributors have changed 77 files with 4,859 additions and 3,148 deletions in 57 commits (https://github.com/mdn/browser-compat-data/compare/v3.1.0...HEAD)
+- 12975 total features
+- 759 total contributors
+- 3240 total stargazers
+
 ## [v3.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.0)
 
 February 11, 2021
