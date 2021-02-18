@@ -4,30 +4,52 @@
 
 **Notable changes**
 
-- The following mixin features have been migrated to their exposed interfaces:
+- `css.properties.grid-template-rows.masonry` feature was moved from its previously erroneous entry as `css.properties.masonry`. ([#9078](https://github.com/mdn/browser-compat-data/pull/9078))
 
-  | Former mixin (old)                                | Exposed interface (new)                                                          |
-  | ------------------------------------------------- | -------------------------------------------------------------------------------- |
-  | `api.DocumentOrShadowRoot`                        | (removed)                                                                        |
-  | `api.DocumentOrShadowRoot.activeElement`          | `api.Document.activeElement`<br>`api.ShadowRoot.activeElement`                   |
-  | `api.DocumentOrShadowRoot.adoptedStyleSheets`     | `api.Document.adoptedStyleSheets`<br>`api.ShadowRoot.adoptedStyleSheets`         |
-  | `api.DocumentOrShadowRoot.caretPositionFromPoint` | `api.Document.caretPositionFromPoint`<br>`api.ShadowRoot.caretPositionFromPoint` |
-  | `api.DocumentOrShadowRoot.elementFromPoint`       | `api.Document.elementFromPoint`<br>`api.ShadowRoot.elementFromPoint`             |
-  | `api.DocumentOrShadowRoot.elementsFromPoint`      | `api.Document.elementsFromPoint`<br>`api.ShadowRoot.elementsFromPoint`           |
-  | `api.DocumentOrShadowRoot.fullscreenElement`      | `api.Document.fullscreenElement`<br>`api.ShadowRoot.fullscreenElement`           |
-  | `api.DocumentOrShadowRoot.getSelection`           | `api.Document.getSelection`<br>`api.ShadowRoot.getSelection`                     |
-  | `api.DocumentOrShadowRoot.pointerLockElement`     | `api.Document.pointerLockElement`<br>`api.ShadowRoot.pointerLockElement`         |
-  | `api.DocumentOrShadowRoot.styleSheets`            | `api.Document.styleSheets`<br>`api.ShadowRoot.styleSheets`                       |
-  | `api.ShadowRoot.documentorshadowroot`             | (removed)                                                                        |
+- The following mixin features have been migrated to their exposed interfaces (or deduplicated, where the exposed interface data already existed):
 
-* The following never-supported features were removed as irrelevant:
+  | Former mixin (old)                                           | Exposed interface (new)                                                                                             |
+  | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+  | `api.DocumentFragment.methods`                               | (removed, duplicate)                                                                                                |
+  | `api.DocumentFragment.properties`                            | (removed, duplicate)                                                                                                |
+  | `api.DocumentOrShadowRoot.activeElement`                     | `api.Document.activeElement`<br>`api.ShadowRoot.activeElement`                                                      |
+  | `api.DocumentOrShadowRoot.adoptedStyleSheets`                | `api.Document.adoptedStyleSheets`<br>`api.ShadowRoot.adoptedStyleSheets`                                            |
+  | `api.DocumentOrShadowRoot.caretPositionFromPoint`            | `api.Document.caretPositionFromPoint`<br>`api.ShadowRoot.caretPositionFromPoint`                                    |
+  | `api.DocumentOrShadowRoot.elementFromPoint`                  | `api.Document.elementFromPoint`<br>`api.ShadowRoot.elementFromPoint`                                                |
+  | `api.DocumentOrShadowRoot.elementsFromPoint`                 | `api.Document.elementsFromPoint`<br>`api.ShadowRoot.elementsFromPoint`                                              |
+  | `api.DocumentOrShadowRoot.fullscreenElement`                 | `api.Document.fullscreenElement`<br>`api.ShadowRoot.fullscreenElement`                                              |
+  | `api.DocumentOrShadowRoot.getSelection`                      | `api.Document.getSelection`<br>`api.ShadowRoot.getSelection`                                                        |
+  | `api.DocumentOrShadowRoot.pointerLockElement`                | `api.Document.pointerLockElement`<br>`api.ShadowRoot.pointerLockElement`                                            |
+  | `api.DocumentOrShadowRoot.styleSheets`                       | `api.Document.styleSheets`<br>`api.ShadowRoot.styleSheets`                                                          |
+  | `api.DocumentOrShadowRoot`                                   | (removed)                                                                                                           |
+  | `api.ParentNode.append`                                      | `api.Document.append` <br> `api.DocumentFragment.append` <br> `api.Element.append`                                  |
+  | `api.ParentNode.childElementCount.document_documentfragment` | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.childElementCount`                           | `api.Document.childElementCount` <br> `api.DocumentFragment.childElementCount` <br> `api.Element.childElementCount` |
+  | `api.ParentNode.children.document_documentfragment`          | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.children.svgelement`                         | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.children`                                    | `api.Document.children` <br> `api.DocumentFragment.children` <br> `api.Element.children`                            |
+  | `api.ParentNode.document_documentfragment`                   | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.firstElementChild.document_documentfragment` | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.firstElementChild`                           | `api.Document.firstElementChild` <br> `api.DocumentFragment.firstElementChild` <br> `api.Element.firstElementChild` |
+  | `api.ParentNode.lastElementChild.document_documentfragment`  | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.lastElementChild`                            | `api.Document.lastElementChild` <br> `api.DocumentFragment.lastElementChild` <br> `api.Element.lastElementChild`    |
+  | `api.ParentNode.prepend`                                     | `api.Document.prepend` <br> `api.DocumentFragment.prepend` <br> `api.Element.prepend`                               |
+  | `api.ParentNode.querySelector`                               | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.querySelectorAll`                            | (removed, duplicate)                                                                                                |
+  | `api.ParentNode.replaceChildren`                             | `api.Document.replaceChildren` <br> `api.DocumentFragment.replaceChildren` <br> `api.Element.replaceChildren`       |
+  | `api.ParentNode`                                             | (removed)                                                                                                           |
+  | `api.ShadowRoot.documentorshadowroot`                        | (removed, duplicate)                                                                                                |
+
+  See [#9045](https://github.com/mdn/browser-compat-data/pull/9045) and [#9064](https://github.com/mdn/browser-compat-data/pull/9064) for details.
+
+- The following never-supported features were removed as irrelevant:
 
   - `api.Window.clipboardchange_event` ([#6942](https://github.com/mdn/browser-compat-data/pull/6942))
   - `api.Window.getAttention` ([#6942](https://github.com/mdn/browser-compat-data/pull/6942))
   - `api.Window.getAttentionWithCycleCount` ([#6942](https://github.com/mdn/browser-compat-data/pull/6942))
   - `svg.elements.textPath.method` ([#6959](https://github.com/mdn/browser-compat-data/pull/6959))
 
-* The subfeatures of `api.Element.getBoundingClientRect` (`height`, `width`, `x`, and `y`) were removed because they duplicated the subfeatures of `api.DOMRectReadOnly`. ([#9061](https://github.com/mdn/browser-compat-data/pull/9061))
+- The subfeatures of `api.Element.getBoundingClientRect` (`height`, `width`, `x`, and `y`) were removed because they duplicated the subfeatures of `api.DOMRectReadOnly`. ([#9061](https://github.com/mdn/browser-compat-data/pull/9061))
 
 **Statistics**
 
