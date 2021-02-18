@@ -2,6 +2,8 @@
 
 ## [v3.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.1)
 
+February 18, 2021
+
 **Notable changes**
 
 - `css.properties.grid-template-rows.masonry` feature was moved from its previously erroneous entry as `css.properties.masonry`. ([#9078](https://github.com/mdn/browser-compat-data/pull/9078))
