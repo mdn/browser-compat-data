@@ -9,7 +9,7 @@ const { platform } = require('os');
 
 const compareVersions = require('compare-versions');
 
-const bcd = require('../..');
+const bcd = require('..');
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
