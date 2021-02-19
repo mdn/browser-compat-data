@@ -81,7 +81,15 @@ const removeRedundantFlags = (key, value) => {
                 ].release_date,
               );
 
-              if (releaseDate <= twoYearsAgo) {
+              if (
+                (!(simpleStatement && simpleStatement.version_removed) ||
+                  compareVersions.compare(
+                    supportData[i].version_added.replace('≤', ''),
+                    simpleStatement.version_removed.replace('≤', ''),
+                    '<',
+                  )) &&
+                releaseDate <= twoYearsAgo
+              ) {
                 addData = false;
               }
             }

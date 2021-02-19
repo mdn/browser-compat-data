@@ -314,6 +314,66 @@ const tests = [
       },
     },
   },
+  {
+    input: {
+      test7: {
+        __compat: {
+          support: {
+            edge: [
+              {
+                version_added: '79',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: 'enable-experimental-web-platform-features',
+                    value_to_set: 'enabled',
+                  },
+                ],
+              },
+              {
+                version_added: '12',
+                version_removed: '79',
+              },
+            ],
+          },
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+    output: {
+      test7: {
+        __compat: {
+          support: {
+            edge: [
+              {
+                version_added: '79',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: 'enable-experimental-web-platform-features',
+                    value_to_set: 'enabled',
+                  },
+                ],
+              },
+              {
+                version_added: '12',
+                version_removed: '79',
+              },
+            ],
+          },
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+  },
 ];
 
 describe('remove-redundant-flags', () => {
