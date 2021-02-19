@@ -14,8 +14,14 @@ const bcd = require('..');
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
-let twoYearsAgo = new Date(Date.now());
-twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+let twoYearsAgo;
+if (process.env.npm_lifecycle_event.includes('mocha')) {
+  // When running test, use a specific time for consistent testing
+  twoYearsAgo = new Date('January 1, 2019 0:00:00');
+} else {
+  twoYearsAgo = new Date(Date.now());
+  twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+}
 
 const getEarliestVersion = (...args) => {
   const versions = args
