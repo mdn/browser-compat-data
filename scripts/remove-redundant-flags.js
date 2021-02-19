@@ -15,7 +15,10 @@ const bcd = require('..');
 const IS_WINDOWS = platform() === 'win32';
 
 let twoYearsAgo;
-if (process.env.npm_lifecycle_event.includes('mocha')) {
+if (
+  process.env.npm_lifecycle_event &&
+  process.env.npm_lifecycle_event.includes('mocha')
+) {
   // When running test, use a specific time for consistent testing
   twoYearsAgo = new Date('January 1, 2019 0:00:00');
 } else {
