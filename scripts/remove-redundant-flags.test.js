@@ -317,7 +317,7 @@ const tests = [
 ];
 
 describe('remove-redundant-flags', () => {
-  let i = 0;
+  let i = 1;
   for (const test of tests) {
     it(`Test #${i}`, () => {
       let expected = JSON.stringify(test['output'], null, 2);
@@ -329,5 +329,7 @@ describe('remove-redundant-flags', () => {
 
       assert.deepStrictEqual(expected, output);
     });
+
+    i += 1;
   }
 });
