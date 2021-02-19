@@ -43,13 +43,8 @@ const getEarliestVersion = (...args) => {
 
 const removeRedundantFlags = (key, value) => {
   if (key === '__compat') {
-    for (const [browser, originalSupportData] of Object.entries(
-      value.support,
-    )) {
-      if (originalSupportData !== undefined) {
-        const supportData = Array.isArray(originalSupportData)
-          ? originalSupportData
-          : [originalSupportData];
+    for (const [browser, supportData] of Object.entries(value.support)) {
+      if (supportData !== undefined && Array.isArray(supportData)) {
         const result = [];
 
         const simpleStatement = supportData.find(statement => {
@@ -98,13 +93,7 @@ const removeRedundantFlags = (key, value) => {
           if (addData) result.push(supportData[i]);
         }
 
-        if (result.length == 0) {
-          if (!simpleStatement) {
-            value.support[browser] = { version_added: false };
-          } else {
-            continue;
-          }
-        } else if (result.length == 1) {
+        if (result.length == 1) {
           value.support[browser] = result[0];
         } else {
           value.support[browser] = result;
