@@ -8,7 +8,7 @@ const path = require('path');
 const chalk = require('chalk');
 const { platform } = require('os');
 
-const { removeRedundantFlags } = require('./008-remove-redundant-flags.js');
+const { removeRedundantFlags } = require('./remove-redundant-flags.js');
 
 const tests = [
   {
