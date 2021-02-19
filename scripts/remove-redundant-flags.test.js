@@ -5,8 +5,8 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const chalk = require('chalk');
 const { platform } = require('os');
+const assert = require('assert');
 
 const { removeRedundantFlags } = require('./remove-redundant-flags.js');
 
@@ -316,29 +316,18 @@ const tests = [
   },
 ];
 
-const testFixRedundantFlags = (logger = console) => {
-  let hasErrors = false;
-  for (let i = 0; i < tests.length; i++) {
-    let expected = JSON.stringify(tests[i]['output'], null, 2);
-    let output = JSON.stringify(
-      JSON.parse(JSON.stringify(tests[i]['input']), removeRedundantFlags),
-      null,
-      2,
-    );
+describe('remove-redundant-flags', () => {
+  let i = 0;
+  for (const test of tests) {
+    it(`Test #${i}`, () => {
+      let expected = JSON.stringify(test['output'], null, 2);
+      let output = JSON.stringify(
+        JSON.parse(JSON.stringify(test['input']), removeRedundantFlags),
+        null,
+        2,
+      );
 
-    if (output !== expected) {
-      logger.error(chalk`{red Redundant flags aren't removed properly!}
-      {yellow Actual: {bold ${output}}}
-      {green Expected: {bold ${expected}}}`);
-      hasErrors = true;
-    }
+      assert.deepStrictEqual(expected, output);
+    });
   }
-
-  return hasErrors;
-};
-
-if (require.main === module) {
-  testFixRedundantFlags();
-}
-
-module.exports = testFixRedundantFlags;
+});
