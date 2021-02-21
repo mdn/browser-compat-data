@@ -29,7 +29,7 @@
             "version_added": "10.1"
           },
           "safari": {
-            "version_added": "3"
+            "version_added": "1.3"
           },
           "safari_ios": {
             "version_added": "1"
@@ -369,6 +369,53 @@
           }
         }
       },
+      "attachInternals": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "77"
+            },
+            "chrome_android": {
+              "version_added": "77"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "64"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "12.0"
+            },
+            "webview_android": {
+              "version_added": "77"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "autocapitalize": {
         "__compat": {
           "support": {
@@ -382,10 +429,24 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "83",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.forms.autocapitalize",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "83",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.forms.autocapitalize",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -431,10 +492,24 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "74",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.input_events.beforeinput.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.input_events.beforeinput.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "ie": {
               "version_added": false
@@ -537,7 +612,11 @@
               ]
             },
             "firefox_android": {
-              "version_added": "5"
+              "version_added": "4",
+              "notes": [
+                "Before Firefox 5, <code>click()</code> is only defined on buttons and inputs, and has no effect on text and file inputs.",
+                "Starting in Firefox for Android 79, the <code>click()</code> function works even when the element is not attached to a DOM tree."
+              ]
             },
             "ie": {
               "version_added": "5.5"
@@ -817,6 +896,7 @@
       },
       "enterKeyHint": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -1246,7 +1326,7 @@
               "version_added": "3"
             },
             "safari_ios": {
-              "version_added": "≤3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -1390,7 +1470,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "1"
+              "version_added": "4"
             },
             "firefox_android": {
               "version_added": "4"
@@ -1880,10 +1960,14 @@
               "version_added": "45"
             },
             "safari": {
-              "version_added": "10"
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The property is defined only for its useful elements: <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, and <code>&lt;style&gt;</code>; it is undefined for all other elements."
             },
             "safari_ios": {
-              "version_added": "10"
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The property is defined only for its useful elements: <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, and <code>&lt;style&gt;</code>; it is undefined for all other elements."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -2303,7 +2387,7 @@
               "version_added": false
             },
             "ie": {
-              "version_added": "≤6"
+              "version_added": "5.5"
             },
             "opera": {
               "version_added": "≤12.1"
@@ -2312,10 +2396,10 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "≤4"
+              "version_added": "1.3"
             },
             "safari_ios": {
-              "version_added": "≤3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -2555,10 +2639,10 @@
               "version_added": null
             },
             "safari": {
-              "version_added": false
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "6.0"

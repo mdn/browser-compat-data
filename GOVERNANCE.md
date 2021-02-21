@@ -101,7 +101,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 #### List of current Owners
 
-- Florian Scholz (@Elchi3), Mozilla, BCD project lead
+- Florian Scholz (@Elchi3), Open Web Docs
 - Daniel Beck (@ddbeck)
 - Will Bamberg (@wbamberg), Mozilla
 - Chris David Mills (@chrisdavidmills), Mozilla
