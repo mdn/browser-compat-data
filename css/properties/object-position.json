@@ -6,14 +6,22 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/object-position",
           "support": {
             "chrome": {
-              "version_added": "31"
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": "31"
+              "version_added": "32"
             },
-            "edge": {
-              "version_added": "16"
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Only supported for <code>&lt;img&gt;</code> elements."
+              }
+            ],
             "firefox": {
               "version_added": "36"
             },
@@ -29,7 +37,8 @@
               },
               {
                 "prefix": "-o-",
-                "version_added": "11.6"
+                "version_added": "11.6",
+                "version_removed": "15"
               }
             ],
             "opera_android": [
@@ -38,7 +47,8 @@
               },
               {
                 "prefix": "-o-",
-                "version_added": "12"
+                "version_added": "12",
+                "version_removed": "14"
               }
             ],
             "safari": {
@@ -65,11 +75,11 @@
             "description": "Support for three-value syntax of position",
             "support": {
               "chrome": {
-                "version_added": "31",
+                "version_added": "32",
                 "version_removed": "68"
               },
               "chrome_android": {
-                "version_added": "31",
+                "version_added": "32",
                 "version_removed": "68"
               },
               "edge": {
@@ -81,7 +91,8 @@
                 "version_removed": "70"
               },
               "firefox_android": {
-                "version_added": "36"
+                "version_added": "36",
+                "version_removed": "79"
               },
               "ie": {
                 "version_added": false
@@ -93,7 +104,8 @@
                 },
                 {
                   "prefix": "-o-",
-                  "version_added": "11.6"
+                  "version_added": "11.6",
+                  "version_removed": "15"
                 }
               ],
               "opera_android": [
@@ -103,14 +115,17 @@
                 },
                 {
                   "prefix": "-o-",
-                  "version_added": "12"
+                  "version_added": "12",
+                  "version_removed": "14"
                 }
               ],
               "safari": {
-                "version_added": "10"
+                "version_added": "10",
+                "version_removed": "13.1"
               },
               "safari_ios": {
-                "version_added": "10"
+                "version_added": "10",
+                "version_removed": "13.4"
               },
               "samsunginternet_android": {
                 "version_added": "2.0",
@@ -123,8 +138,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
-              "deprecated": false
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }
