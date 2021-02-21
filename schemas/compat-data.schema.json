@@ -136,22 +136,26 @@
 
     "support_block": {
       "type": "object",
-      "properties": {
-        "chrome": { "$ref": "#/definitions/support_statement" },
-        "chrome_android": { "$ref": "#/definitions/support_statement" },
-        "edge": { "$ref": "#/definitions/support_statement" },
-        "firefox": { "$ref": "#/definitions/support_statement" },
-        "firefox_android": { "$ref": "#/definitions/support_statement" },
-        "ie": { "$ref": "#/definitions/support_statement" },
-        "nodejs": { "$ref": "#/definitions/support_statement" },
-        "opera": { "$ref": "#/definitions/support_statement" },
-        "opera_android": { "$ref": "#/definitions/support_statement" },
-        "safari": { "$ref": "#/definitions/support_statement" },
-        "safari_ios": { "$ref": "#/definitions/support_statement" },
-        "samsunginternet_android": { "$ref": "#/definitions/support_statement" },
-        "webview_android": { "$ref": "#/definitions/support_statement" }
+      "propertyNames": {
+        "enum": [
+          "chrome",
+          "chrome_android",
+          "edge",
+          "firefox",
+          "firefox_android",
+          "ie",
+          "nodejs",
+          "opera",
+          "opera_android",
+          "safari",
+          "safari_ios",
+          "samsunginternet_android",
+          "webview_android"
+        ]
       },
-      "additionalProperties": false
+      "additionalProperties": {
+        "$ref": "#/definitions/support_statement"
+      }
     },
 
     "compat_statement": {
