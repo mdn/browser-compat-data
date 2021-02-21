@@ -68,10 +68,10 @@ The release objects consist of the following properties:
 
 ### Exports
 
-This structure is exported for consumers of `mdn-browser-compat-data`:
+This structure is exported for consumers of `@mdn/browser-compat-data`:
 
 ```js
-> const compat = require('mdn-browser-compat-data');
+> const compat = require('@mdn/browser-compat-data');
 > compat.browsers.firefox.releases['1.5'].status;
 // "retired"
 ```

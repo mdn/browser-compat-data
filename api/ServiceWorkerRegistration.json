@@ -167,6 +167,53 @@
           }
         }
       },
+      "cookies": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "87"
+            },
+            "chrome_android": {
+              "version_added": "87"
+            },
+            "edge": {
+              "version_added": "87"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "73"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "87"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "getNotifications": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications",
@@ -217,12 +264,60 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>"
             }
           },
           "status": {
             "experimental": true,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "index": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": true
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": true
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -574,7 +669,8 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>"
             }
           },
           "status": {
@@ -694,7 +790,8 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>"
             }
           },
           "status": {
@@ -705,7 +802,6 @@
         },
         "actions": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "45"
@@ -741,7 +837,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "45"
+                "version_added": false
               }
             },
             "status": {
@@ -753,7 +849,6 @@
         },
         "badge": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "53"
@@ -789,7 +884,7 @@
                 "version_added": "6.0"
               },
               "webview_android": {
-                "version_added": "53"
+                "version_added": false
               }
             },
             "status": {
@@ -801,7 +896,6 @@
         },
         "data": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "44"
@@ -837,7 +931,7 @@
                 "version_added": "4.0"
               },
               "webview_android": {
-                "version_added": "44"
+                "version_added": false
               }
             },
             "status": {
@@ -849,7 +943,6 @@
         },
         "image": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "56"
@@ -885,7 +978,7 @@
                 "version_added": "6.0"
               },
               "webview_android": {
-                "version_added": "56"
+                "version_added": false
               }
             },
             "status": {
@@ -897,7 +990,6 @@
         },
         "renotify": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -933,7 +1025,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "50"
+                "version_added": false
               }
             },
             "status": {
@@ -945,7 +1037,6 @@
         },
         "requireInteraction": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "47"
@@ -981,7 +1072,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "47"
+                "version_added": false
               }
             },
             "status": {
@@ -993,7 +1084,6 @@
         },
         "vibrate": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "45"
@@ -1029,7 +1119,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "45"
+                "version_added": false
               }
             },
             "status": {
