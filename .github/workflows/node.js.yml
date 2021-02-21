@@ -10,20 +10,22 @@ on:
     branches: [ ] # Test on push to every branch
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  test:
     strategy:
       matrix:
-        # TODO: hoist to 10.x when we bump the version supported in #5931
-        node-version: [ 8.x ]
-
+        include:
+          - name: Maintenance LTS
+            node-version: 10.x # use oldest
+          - name: Active LTS
+            node-version: 14.x
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2-beta
+    - uses: actions/setup-node@v2-beta
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
+      env:
+        FORCE_COLOR: 3
