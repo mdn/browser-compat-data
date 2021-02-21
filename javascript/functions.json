@@ -24,7 +24,7 @@
             "version_added": "3"
           },
           "nodejs": {
-            "version_added": true
+            "version_added": "0.10.0"
           },
           "opera": {
             "version_added": "3"
@@ -75,7 +75,7 @@
               "version_added": "3"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.10.0"
             },
             "opera": {
               "version_added": "3"
@@ -126,7 +126,7 @@
                 "version_added": "6"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10.0"
               },
               "opera": {
                 "version_added": "4"
@@ -178,7 +178,7 @@
                 "version_added": "4"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10.0"
               },
               "opera": {
                 "version_added": "4"
@@ -233,7 +233,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "39"
@@ -294,9 +294,22 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "4.0.0"
+              },
+              {
+                "version_added": "0.12.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "The arrow function syntax is supported, but not the correct lexical binding of the <code>this</code> value."
+              }
+            ],
             "opera": {
               "version_added": "32"
             },
@@ -345,7 +358,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "8.0.0"
               },
               "opera": {
                 "version_added": "45"
@@ -396,9 +409,20 @@
             "ie": {
               "version_added": "11"
             },
-            "nodejs": {
-              "version_added": null
-            },
+            "nodejs": [
+              {
+                "version_added": "4.0.0"
+              },
+              {
+                "version_added": "0.10.0",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--harmony"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "36"
             },
@@ -500,7 +524,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "6.0.0"
               },
               "opera": {
                 "version_added": "36"
@@ -551,7 +575,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "6.0.0"
               },
               "opera": {
                 "version_added": "36"
@@ -604,7 +628,7 @@
               "version_added": "9"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.10.0"
             },
             "opera": {
               "version_added": "9.5"
@@ -654,7 +678,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "47"
@@ -708,7 +732,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "4.0.0"
             },
             "opera": {
               "version_added": "26"
@@ -997,7 +1021,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "6.0.0"
               },
               "opera": {
                 "version_added": "36"
@@ -1050,7 +1074,7 @@
               "version_added": "9"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "0.10.0"
             },
             "opera": {
               "version_added": "9.5"
@@ -1100,7 +1124,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "4.0.0"
               },
               "opera": {
                 "version_added": "47"

@@ -25,7 +25,7 @@ To create a new version of the package:
 
 4. Check if the commit passes our [GitHub Actions workflows](https://github.com/mdn/browser-compat-data/actions).
 
-5. If the commit pass, push the git tag as well: `git push origin v1.0.3`.
+5. If the commit passed, push the git tag as well: `git push origin v1.0.3`.
 
 6. Start a draft [release on GitHub](https://github.com/mdn/browser-compat-data/releases) by running `npm run release-notes -- v1.0.3` and completing the prompts.
 
