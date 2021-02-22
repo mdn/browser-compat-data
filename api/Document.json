@@ -222,10 +222,10 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "3"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -245,14 +245,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/alinkColor",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -265,26 +279,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": "1.2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1.2",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -296,14 +356,28 @@
       "all": {
         "__compat": {
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -316,31 +390,77 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "3",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "≤37",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": false
+            "standard_track": true,
+            "deprecated": true
           }
         }
       },
@@ -670,14 +790,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/bgColor",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -690,26 +824,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -732,7 +912,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "2",
+              "version_added": "1",
               "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
             },
             "firefox_android": {
@@ -740,7 +920,7 @@
               "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
             },
             "ie": {
-              "version_added": "6"
+              "version_added": "4"
             },
             "opera": {
               "version_added": "9.6"
@@ -749,16 +929,16 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": "5"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "1"
             }
           },
           "status": {
@@ -772,14 +952,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/captureEvents",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -792,26 +986,72 @@
             "ie": {
               "version_added": "11"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -825,7 +1065,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/caretRangeFromPoint",
           "support": {
             "chrome": {
-              "version_added": "8"
+              "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
@@ -852,7 +1092,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5"
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -954,7 +1194,7 @@
             ],
             "opera": [
               {
-                "version_added": true
+                "version_added": "≤12.1"
               },
               {
                 "alternative_name": "charset",
@@ -1044,14 +1284,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/clear",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -1064,26 +1318,56 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "safari": {
               "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
             },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -1096,14 +1380,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/close",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -1116,26 +1414,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0",
-              "notes": "Before Samsung Internet 9.0, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -1233,10 +1577,10 @@
               }
             ],
             "safari": {
-              "version_added": "9.1"
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": "9.3"
+              "version_added": "9"
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -1308,10 +1652,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/copy_event",
           "support": {
             "chrome": {
-              "version_added": "58"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "58"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "≤18"
@@ -1326,10 +1670,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "45"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": true
@@ -1338,10 +1682,10 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": "7.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "58"
+              "version_added": "1"
             }
           },
           "status": {
@@ -1416,7 +1760,7 @@
                 "version_added": "44"
               },
               {
-                "version_added": "4",
+                "version_added": "1",
                 "version_removed": "44",
                 "notes": "The parameter was not converted to its lowercase variant."
               }
@@ -1624,7 +1968,7 @@
               "version_added": "4"
             },
             "ie": {
-              "version_added": "5"
+              "version_added": "6"
             },
             "opera": {
               "version_added": "≤12.1"
@@ -1705,11 +2049,11 @@
             "description": "<code>options</code> parameter",
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "56",
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "chrome_android": {
-                "version_added": true,
+                "version_added": "56",
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "edge": {
@@ -1728,11 +2072,11 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true,
+                "version_added": "43",
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "opera_android": {
-                "version_added": true,
+                "version_added": "43",
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "safari": {
@@ -1742,11 +2086,11 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": true,
+                "version_added": "6.0",
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "webview_android": {
-                "version_added": true,
+                "version_added": "56",
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               }
             },
@@ -1870,31 +2214,33 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "version_removed": "30"
+              "version_removed": "29"
             },
             "chrome_android": {
               "version_added": "18",
-              "version_removed": "30"
+              "version_removed": "29"
             },
             "edge": {
               "version_added": false
             },
             "firefox": {
               "version_added": "1",
-              "version_removed": "6"
+              "version_removed": "7"
             },
             "firefox_android": {
               "version_added": "4",
-              "version_removed": "6"
+              "version_removed": "7"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "version_removed": "16"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14",
+              "version_removed": "16"
             },
             "safari": {
               "version_added": "1",
@@ -2031,10 +2377,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5"
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -2049,13 +2395,13 @@
               "version_added": "3"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2142,16 +2488,16 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2261,29 +2607,16 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/createTouch",
           "support": {
-            "chrome": [
-              {
-                "version_added": "22",
-                "version_removed": "66"
-              },
-              {
-                "version_added": "59",
-                "notes": "All parameters optional"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "25",
-                "version_removed": "66"
-              },
-              {
-                "version_added": "59",
-                "notes": "All parameters optional"
-              }
-            ],
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "25",
+              "version_removed": "68",
+              "notes": "Since Chrome 55, all parameters are optional."
+            },
             "edge": {
-              "version_added": "79",
-              "notes": "All parameters optional"
+              "version_added": false
             },
             "firefox": {
               "version_added": "18",
@@ -2296,39 +2629,29 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true,
-              "version_removed": "53"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": true,
-              "version_removed": "47"
+              "version_added": "14",
+              "version_removed": "48",
+              "notes": "Since Opera Android 42, all parameters are optional."
             },
             "safari": {
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "≤3"
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "1.5",
-                "version_removed": "9.0"
-              },
-              {
-                "version_added": "7.0",
-                "notes": "All parameters optional"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": true,
-                "version_removed": "66"
-              },
-              {
-                "version_added": "59",
-                "notes": "All parameters optional"
-              }
-            ]
+            "samsunginternet_android": {
+              "version_added": "1.5",
+              "version_removed": "10.0",
+              "notes": "Since Samsung Internet 6.0, all parameters are optional."
+            },
+            "webview_android": {
+              "version_added": "≤37",
+              "version_removed": "68",
+              "notes": "Since WebView 55, all parameters are optional."
+            }
           },
           "status": {
             "experimental": false,
@@ -2374,14 +2697,14 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.5",
               "version_removed": "10.0"
             },
             "webview_android": {
-              "version_added": true,
+              "version_added": "≤37",
               "version_removed": "69"
             }
           },
@@ -2406,7 +2729,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "2"
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
@@ -2430,7 +2753,7 @@
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "1"
             }
           },
           "status": {
@@ -2444,13 +2767,14 @@
             "description": "<code>expandEntityReferences</code> parameter",
             "support": {
               "chrome": {
-                "version_added": "4"
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": false
               },
               "edge": {
-                "version_added": "12"
+                "version_added": "12",
+                "version_removed": "79"
               },
               "firefox": {
                 "version_added": "2",
@@ -2464,28 +2788,32 @@
                 "version_added": "9"
               },
               "opera": {
-                "version_added": "9"
+                "version_added": "9",
+                "version_removed": "15"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": true,
+                "version_removed": "14"
               },
               "safari": {
-                "version_added": "3"
+                "version_added": "3",
+                "version_removed": "10.1"
               },
               "safari_ios": {
-                "version_added": "3"
+                "version_added": "3",
+                "version_removed": "10.3"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": false
               },
               "webview_android": {
-                "version_added": true
+                "version_added": false
               }
             },
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -2527,7 +2855,7 @@
                 "version_added": true
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "≤37"
               }
             },
             "status": {
@@ -2555,7 +2883,7 @@
               "version_added": "4"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": false
@@ -2564,10 +2892,10 @@
               "version_added": "16"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "16"
             },
             "safari": {
-              "version_added": "8"
+              "version_added": "6.1"
             },
             "safari_ios": {
               "version_added": "8"
@@ -2576,7 +2904,7 @@
               "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -2592,10 +2920,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/cut_event",
           "support": {
             "chrome": {
-              "version_added": "58"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "58"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "≤18"
@@ -2610,10 +2938,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "45"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": true
@@ -2622,10 +2950,10 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": "7.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "58"
+              "version_added": "1"
             }
           },
           "status": {
@@ -2782,14 +3110,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/dir",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -2804,26 +3146,72 @@
             "ie": {
               "version_added": "5"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "10.3"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "10.3",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -3126,54 +3514,6 @@
           }
         }
       },
-      "domConfig": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/domConfig",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "drag_event": {
         "__compat": {
           "description": "<code>drag</code> event",
@@ -3342,25 +3682,26 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
+              "version_added": "12",
+              "version_removed": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "3.5"
             },
             "firefox_android": {
               "version_added": false
             },
             "ie": {
-              "version_added": false
+              "version_added": "10"
             },
             "opera": {
-              "version_added": false
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "3.1"
             },
             "safari_ios": {
               "version_added": false
@@ -3579,14 +3920,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/embeds",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -3599,26 +3954,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "2",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "10.3"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "10.3",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -3650,10 +4051,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -3689,7 +4090,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "1.5"
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
@@ -3704,10 +4105,10 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "5"
+              "version_added": "3"
             },
             "safari_ios": {
-              "version_added": "4.2"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -4229,6 +4630,53 @@
           }
         }
       },
+      "exitPictureInPicture": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "56"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "exitPointerLock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/exitPointerLock",
@@ -4493,14 +4941,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fgColor",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -4513,26 +4975,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -4561,7 +5069,7 @@
               "version_added": false
             },
             "ie": {
-              "version_added": true,
+              "version_added": "5.5",
               "version_removed": "11"
             },
             "opera": {
@@ -4682,6 +5190,53 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "fragmentDirective": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "86"
+            },
+            "chrome_android": {
+              "version_added": "86"
+            },
+            "edge": {
+              "version_added": "86"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "72"
+            },
+            "opera_android": {
+              "version_added": "61"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "86"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -5429,8 +5984,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": true,
-              "version_removed": true
+              "version_added": "1",
+              "version_removed": "3.6"
             },
             "firefox_android": {
               "version_added": false
@@ -5526,7 +6081,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "4"
+              "version_added": "3"
             },
             "firefox_android": {
               "version_added": "4"
@@ -5775,7 +6330,7 @@
               "version_added": "4"
             },
             "ie": {
-              "version_added": "6"
+              "version_added": "5.5"
             },
             "opera": {
               "version_added": "15"
@@ -5808,10 +6363,24 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess",
           "support": {
             "chrome": {
-              "version_added": "85"
+              "version_added": "78",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#storage-access-api",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": {
-              "version_added": "85"
+              "version_added": "78",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#storage-access-api",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "edge": {
               "version_added": "85"
@@ -5833,10 +6402,17 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "71"
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#storage-access-api",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "opera_android": {
-              "version_added": "60"
+              "version_added": false
             },
             "safari": {
               "version_added": "11.1"
@@ -5848,7 +6424,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "85"
+              "version_added": false
             }
           },
           "status": {
@@ -5890,13 +6466,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": true
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -5911,10 +6487,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/height",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "31"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18",
+              "version_removed": "31"
             },
             "edge": {
               "version_added": false
@@ -5931,10 +6509,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "version_removed": "18"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14",
+              "version_removed": "18"
             },
             "safari": {
               "version_added": "1",
@@ -5945,10 +6525,12 @@
               "version_removed": "10"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0",
+              "version_removed": "3.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "4.4.3"
             }
           },
           "status": {
@@ -6015,7 +6597,7 @@
               "version_added": "12.1"
             },
             "safari": {
-              "version_added": "7"
+              "version_added": "6.1"
             },
             "safari_ios": {
               "version_added": "7"
@@ -6029,9 +6611,15 @@
                 "version_added": "1.0"
               }
             ],
-            "webview_android": {
-              "version_added": true
-            }
+            "webview_android": [
+              {
+                "version_added": "4.4.3"
+              },
+              {
+                "version_added": "≤37",
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -6150,7 +6738,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
@@ -6456,10 +7044,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -6485,14 +7073,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/linkColor",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -6505,26 +7107,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -6803,10 +7451,12 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "8",
+              "version_removed": "23"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "8",
+              "version_removed": "23"
             },
             "ie": {
               "version_added": false
@@ -6851,19 +7501,21 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "7"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "4",
+              "version_removed": "7"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -6899,19 +7551,19 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -6947,19 +7599,19 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "firefox_android": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7414,7 +8066,7 @@
               "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -7462,7 +8114,7 @@
               "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -7510,7 +8162,7 @@
               "version_added": "5.1"
             },
             "safari_ios": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -7578,17 +8230,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onvisibilitychange",
           "support": {
-            "chrome": [
-              {
-                "version_added": "33"
-              },
-              {
-                "version_added": "13",
-                "prefix": "webkit"
-              }
-            ],
+            "chrome": {
+              "version_added": "62",
+              "notes": "Before Chrome 62, this event handler attribute is not supported; however, the event itself is supported since Chrome 33. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
+            },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "62",
+              "notes": "Before Chrome 62, this event handler attribute is not supported; however, the event itself is supported since Chrome 33. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
             "edge": {
               "version_added": "18",
@@ -7605,12 +8253,12 @@
               "notes": "This event handler attribute is not supported; however, the event itself is supported since IE 10. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
             "opera": {
-              "version_added": "12.1",
-              "notes": "Doesn't fire the <code>visibilitychange</code> event when the browser window is minimized, nor when <code>hidden</code> is set to true."
+              "version_added": "49",
+              "notes": "Before Opera 49, this event handler attribute is not supported; however, the event itself is supported since Opera 20. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
             "opera_android": {
-              "version_added": "12.1",
-              "notes": "Doesn't fire the <code>visibilitychange</code> event when the browser window is minimized, nor when <code>hidden</code> is set to true."
+              "version_added": "46",
+              "notes": "Before Opera Android 46, this event handler attribute is not supported; however, the event itself is supported since Opera Android 20. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
             "safari": {
               "version_added": "10.1",
@@ -7629,10 +8277,12 @@
               ]
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "8.0",
+              "notes": "Before Samsung Internet 8.0, this event handler attribute is not supported; however, the event itself is supported since Samsung Internet 2.0. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "62",
+              "notes": "Before WebView 62, this event handler attribute is not supported; however, the event itself is supported since WebView 4.4.3. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
             }
           },
           "status": {
@@ -7646,14 +8296,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/open",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -7666,26 +8330,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0",
-              "notes": "Before Samsung Internet 9.0, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -7757,10 +8467,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/paste_event",
           "support": {
             "chrome": {
-              "version_added": "58"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "58"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -7775,10 +8485,10 @@
               "version_added": "11"
             },
             "opera": {
-              "version_added": "45"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": true
@@ -7787,10 +8497,10 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": "7.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "58"
+              "version_added": "1"
             }
           },
           "status": {
@@ -7847,18 +8557,79 @@
           }
         }
       },
+      "pictureInPictureEnabled": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "56"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "plugins": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/plugins",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -7871,26 +8642,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "3",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "10.3"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "10.3",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -8287,7 +9104,7 @@
                 "version_added": "45"
               },
               {
-                "version_added": true,
+                "version_added": "≤37",
                 "version_removed": "45",
                 "prefix": "webkit"
               }
@@ -8364,7 +9181,7 @@
                 "version_added": "45"
               },
               {
-                "version_added": true,
+                "version_added": "≤37",
                 "version_removed": "45",
                 "prefix": "webkit"
               }
@@ -8773,10 +9590,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -8816,7 +9633,7 @@
                 "version_added": "41"
               },
               {
-                "version_added": "9",
+                "version_added": "1",
                 "version_removed": "41",
                 "notes": "<code>queryCommandEnabled</code> with arguments <code>cut</code>, <code>copy</code> or <code>paste</code> would throw errors unless the script had special privileges."
               }
@@ -8826,7 +9643,7 @@
                 "version_added": "41"
               },
               {
-                "version_added": "9",
+                "version_added": "4",
                 "version_removed": "41",
                 "notes": "<code>queryCommandEnabled</code> with arguments <code>cut</code>, <code>copy</code> or <code>paste</code> would throw errors unless the script had special privileges."
               }
@@ -8883,10 +9700,10 @@
               "version_added": "4"
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "2"
@@ -8974,7 +9791,7 @@
                 "version_added": "41"
               },
               {
-                "version_added": "9",
+                "version_added": "1",
                 "version_removed": "41",
                 "notes": "<code>paste</code> argument incorrectly returned <code>true</code> when the paste feature was available but the calling script had insufficient privileges to actually perform the action."
               }
@@ -8984,7 +9801,7 @@
                 "version_added": "41"
               },
               {
-                "version_added": "9",
+                "version_added": "4",
                 "version_removed": "41",
                 "notes": "<code>paste</code> argument incorrectly returned <code>true</code> when the paste feature was available but the calling script had insufficient privileges to actually perform the action."
               }
@@ -9121,102 +9938,6 @@
           }
         }
       },
-      "querySelector": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/querySelector",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "3.5"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "8"
-            },
-            "opera": {
-              "version_added": "10"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "3.2"
-            },
-            "safari_ios": {
-              "version_added": "3"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "querySelectorAll": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "3.5"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "8"
-            },
-            "opera": {
-              "version_added": "10"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "3.2"
-            },
-            "safari_ios": {
-              "version_added": "3"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "readyState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/readyState",
@@ -9231,7 +9952,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "4"
+              "version_added": "3.6"
             },
             "firefox_android": {
               "version_added": "4"
@@ -9246,7 +9967,7 @@
                 "notes": "Internet Explorer 9 and 10 have bugs where the 'interactive' state can be fired too early before the document has finished parsing."
               },
               {
-                "version_added": "8",
+                "version_added": "4",
                 "version_removed": "9",
                 "partial_implementation": true,
                 "notes": "Only supports 'complete'."
@@ -9481,7 +10202,7 @@
               "version_added": "5"
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
               "version_added": false
@@ -9510,14 +10231,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/releaseEvents",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -9530,26 +10265,72 @@
             "ie": {
               "version_added": "11"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -9563,10 +10344,24 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess",
           "support": {
             "chrome": {
-              "version_added": "85"
+              "version_added": "78",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#storage-access-api",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": {
-              "version_added": "85"
+              "version_added": "78",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#storage-access-api",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "edge": {
               "version_added": "85"
@@ -9588,10 +10383,17 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "71"
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#storage-access-api",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "opera_android": {
-              "version_added": "60"
+              "version_added": false
             },
             "safari": {
               "version_added": "11.1"
@@ -9603,7 +10405,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "85"
+              "version_added": false
             }
           },
           "status": {
@@ -9627,19 +10429,21 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "25"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "4",
+              "version_removed": "25"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -9786,9 +10590,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": true
-            },
+            "firefox_android": [
+              {
+                "version_added": "48"
+              },
+              {
+                "version_added": "47",
+                "version_removed": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.document.scrollingElement.enabled"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -9841,10 +10657,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -10035,10 +10851,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -10077,6 +10893,9 @@
               "version_added": "75"
             },
             "firefox_android": [
+              {
+                "version_added": "79"
+              },
               {
                 "version_added": "63",
                 "flags": [
@@ -10264,7 +11083,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -10313,7 +11132,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -10362,7 +11181,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -10411,7 +11230,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -10730,10 +11549,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -10762,19 +11581,27 @@
           "support": {
             "chrome": [
               {
-                "version_added": "33"
+                "version_added": "33",
+                "notes": "Before Chrome 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Chrome, use <code>document.addEventListener('visibilitychange', function() {});</code>."
               },
               {
                 "version_added": "13",
                 "prefix": "webkit"
               }
             ],
-            "chrome_android": {
-              "version_added": "33"
-            },
+            "chrome_android": [
+              {
+                "version_added": "33",
+                "notes": "Before Chrome 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Chrome, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              },
+              {
+                "version_added": "18",
+                "prefix": "webkit"
+              }
+            ],
             "edge": {
               "version_added": "12",
-              "notes": "The <code>onvisibilitychange</code> attribute was not supported until Edge 18. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              "notes": "Before Edge 18, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
             "firefox": {
               "version_added": "56"
@@ -10786,20 +11613,41 @@
               "version_added": "10",
               "notes": "The <code>onvisibilitychange</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('visibilitychange', function() {});</code>."
             },
-            "opera": {
-              "version_added": "12.1",
-              "notes": "Doesn't fire the <code>visibilitychange</code> event when the browser window is minimized, nor when <code>hidden</code> is set to true."
-            },
-            "opera_android": {
-              "version_added": "12.1",
-              "notes": "Doesn't fire the <code>visibilitychange</code> event when the browser window is minimized, nor when <code>hidden</code> is set to true."
-            },
+            "opera": [
+              {
+                "version_added": "20",
+                "notes": "Before Opera 49, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Opera, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              },
+              {
+                "version_added": "15",
+                "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "20",
+                "notes": "Before Opera Android 46, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Opera Android, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              },
+              {
+                "version_added": "14",
+                "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
               "version_added": "7",
               "partial_implementation": true,
               "notes": [
                 "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                "The <code>onvisibilitychange</code> attribute was not supported until Safari 10.1. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                "Before Safari 10.1, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Safari, use <code>document.addEventListener('visibilitychange', function() {});</code>."
               ]
             },
             "safari_ios": {
@@ -10807,15 +11655,30 @@
               "partial_implementation": true,
               "notes": [
                 "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                "The <code>onvisibilitychange</code> attribute was not supported until Safari iOS 10.3. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "Before Safari iOS 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                "Before Safari iOS 10.3, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Safari iOS, use <code>document.addEventListener('visibilitychange', function() {});</code>."
               ]
             },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "2.0",
+                "notes": "Before Samsung Internet 8.0, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Samsung Internet, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              },
+              {
+                "version_added": "1.0",
+                "prefix": "webkit"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "4.4.3",
+                "notes": "Before WebView 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of WebView, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              },
+              {
+                "version_added": "≤37",
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -10842,7 +11705,7 @@
                 "version_added": "33"
               },
               {
-                "version_added": true,
+                "version_added": "18",
                 "prefix": "webkit"
               }
             ],
@@ -10872,32 +11735,56 @@
             "ie": {
               "version_added": "10"
             },
-            "opera": {
-              "version_added": "12.1",
-              "notes": "Doesn't fire the <code>visibilitychange</code> event when the browser window is minimized, nor when <code>hidden</code> is set to true."
-            },
-            "opera_android": {
-              "version_added": "12.1",
-              "notes": "Doesn't fire the <code>visibilitychange</code> event when the browser window is minimized, nor when <code>hidden</code> is set to true."
-            },
+            "opera": [
+              {
+                "version_added": "20"
+              },
+              {
+                "version_added": "15",
+                "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "20"
+              },
+              {
+                "version_added": "14",
+                "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
-              "version_added": "7"
+              "version_added": "6.1"
             },
             "safari_ios": {
               "version_added": "7"
             },
             "samsunginternet_android": [
               {
-                "version_added": "3.0"
+                "version_added": "2.0"
               },
               {
-                "prefix": "webkit",
-                "version_added": "1.0"
+                "version_added": "1.0",
+                "prefix": "webkit"
               }
             ],
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
+            "webview_android": [
+              {
+                "version_added": "4.4.3"
+              },
+              {
+                "version_added": "≤37",
+                "prefix": "webkit"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -10934,10 +11821,10 @@
                 "version_added": null
               },
               "safari": {
-                "version_added": null
+                "version_added": "6.1"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": true
@@ -10958,14 +11845,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/vlinkColor",
           "support": {
-            "chrome": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -10978,26 +11879,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "notes": "Before Samsung Internet 9.0, this property was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "64",
-              "notes": "Before Chrome 64, this property was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -11107,10 +12054,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/width",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "31"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "18",
+              "version_removed": "31"
             },
             "edge": {
               "version_added": false
@@ -11127,10 +12076,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15",
+              "version_removed": "18"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14",
+              "version_removed": "18"
             },
             "safari": {
               "version_added": "1",
@@ -11141,10 +12092,12 @@
               "version_removed": "10"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.0",
+              "version_removed": "3.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "1",
+              "version_removed": "4.4.3"
             }
           },
           "status": {
@@ -11206,14 +12159,28 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/writeln",
           "support": {
-            "chrome": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "chrome_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
+            "chrome": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -11226,26 +12193,72 @@
             "ie": {
               "version_added": "4"
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0",
-              "notes": "Before Samsung Internet 9.0, this method was accessed through the <code>HTMLDocument</code> alias."
-            },
-            "webview_android": {
-              "version_added": "45",
-              "notes": "Before Chrome 64, this method was accessed through the <code>HTMLDocument</code> alias."
-            }
+            "opera": [
+              {
+                "version_added": "51"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "51",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "47",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "samsunginternet_android": [
+              {
+                "version_added": "9.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "9.0",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -11279,10 +12292,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
@@ -11329,10 +12342,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
@@ -11379,10 +12392,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
