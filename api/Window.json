@@ -4525,7 +4525,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "From Firefox 86, if a new page from another domain is loaded into a tab, then window.name is set to an empty string (the original string is restored if the tab reverts back to the original page). This change prevents some cross-site attacks. From Firefox 82 to 86 this feature can enabled using the preference privacy.window.name.update.enabled. See <a href='https://bugzil.la/1685089'>bug 1685089</a> and <a href='https://bugzil.la/444222'>bug 444222</a>."
+              "notes": "Before Firefox 86, if a new page from another domain is loaded into a tab, then <code>window.name</code> is not set to an empty string, which can allow some cross-site attacks. See <a href='https://bugzil.la/1685089'>bug 1685089</a> and <a href='https://bugzil.la/444222'>bug 444222</a>."
             },
             "firefox_android": {
               "version_added": "4",
