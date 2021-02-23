@@ -3,8 +3,6 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 
 const compareFeatures = require('../scripts/compare-features');
@@ -13,7 +11,8 @@ const compareFeatures = require('../scripts/compare-features');
  * A unit test for the compareFeatures() function, to ensure that features are sorted as expected.
  * @returns {boolean} If the sorter isn't functioning properly
  */
-const testFeatureOrder = () => {
+describe('compare-features script', () => {
+  it('`compareFeatures()` works correctly', () => {
   const input = [
     'foobar',
     'Foo',
@@ -62,6 +61,4 @@ const testFeatureOrder = () => {
     return true;
   }
   return false;
-};
-
-module.exports = testFeatureOrder;
+})});
