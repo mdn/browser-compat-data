@@ -3,10 +3,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
-const { platform } = require('os');
 
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
@@ -134,7 +131,8 @@ const tests = [
   },
 ];
 
-const testFixWebViewFlags = (logger = console) => {
+describe('migration scripts', () => {
+  it('`removeWebViewFlags()` works correctly', () => {
   let hasErrors = false;
   for (let i = 0; i < tests.length; i++) {
     let expected = JSON.stringify(tests[i]['output'], null, 2);
@@ -145,7 +143,7 @@ const testFixWebViewFlags = (logger = console) => {
     );
 
     if (output !== expected) {
-      logger.error(chalk`{red WebView flags aren't removed properly!}
+      console.error(chalk`{red WebView flags aren't removed properly!}
       {yellow Actual: {bold ${output}}}
       {green Expected: {bold ${expected}}}`);
       hasErrors = true;
@@ -153,10 +151,4 @@ const testFixWebViewFlags = (logger = console) => {
   }
 
   return hasErrors;
-};
-
-if (require.main === module) {
-  testFixWebViewFlags();
-}
-
-module.exports = testFixWebViewFlags;
+})});
