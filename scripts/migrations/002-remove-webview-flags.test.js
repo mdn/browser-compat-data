@@ -133,22 +133,23 @@ const tests = [
 
 describe('migration scripts', () => {
   it('`removeWebViewFlags()` works correctly', () => {
-  let hasErrors = false;
-  for (let i = 0; i < tests.length; i++) {
-    let expected = JSON.stringify(tests[i]['output'], null, 2);
-    let output = JSON.stringify(
-      JSON.parse(JSON.stringify(tests[i]['input']), removeWebViewFlags),
-      null,
-      2,
-    );
+    let hasErrors = false;
+    for (let i = 0; i < tests.length; i++) {
+      let expected = JSON.stringify(tests[i]['output'], null, 2);
+      let output = JSON.stringify(
+        JSON.parse(JSON.stringify(tests[i]['input']), removeWebViewFlags),
+        null,
+        2,
+      );
 
-    if (output !== expected) {
-      console.error(chalk`{red WebView flags aren't removed properly!}
+      if (output !== expected) {
+        console.error(chalk`{red WebView flags aren't removed properly!}
       {yellow Actual: {bold ${output}}}
       {green Expected: {bold ${expected}}}`);
-      hasErrors = true;
+        hasErrors = true;
+      }
     }
-  }
 
-  return hasErrors;
-})});
+    return hasErrors;
+  });
+});
