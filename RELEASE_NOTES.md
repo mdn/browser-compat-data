@@ -41,6 +41,13 @@
   - `api.KeyboardEvent.DOM_KEY_LOCATION_RIGHT`
   - `api.KeyboardEvent.DOM_KEY_LOCATION_STANDARD`
 
+**Statistics**
+
+- 19 contributors have changed 122 files with 4,549 additions and 2,365 deletions in 43 commits (https://github.com/mdn/browser-compat-data/compare/v3.1.1...HEAD)
+- 13,024 total features
+- 765 total contributors
+- 3,248 total stargazers
+
 ## [v3.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.1)
 
 February 18, 2021
