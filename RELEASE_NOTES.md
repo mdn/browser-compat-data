@@ -1,5 +1,53 @@
 # Release notes
 
+## [v3.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.2)
+
+- The following withdrawn features have been removed as irrelevant:
+
+  - `api.HTMLFormElement.requestAutocomplete` ([#9232](https://github.com/mdn/browser-compat-data/pull/9232))
+  - `api.XMLHttpRequest.sendAsBinary` ([#9239](https://github.com/mdn/browser-compat-data/pull/9239))
+  - `html.elements.script.type.version_parameter` ([#9206](https://github.com/mdn/browser-compat-data/pull/9206))
+
+- The following never-supported WebExtensions features have been removed ([#6960](https://github.com/mdn/browser-compat-data/pull/6960)):
+
+  - `webextensions.manifest.content_security_policy.isolated_world`
+  - `webextensions.manifest.content_security_policy.sandbox`
+  - `webextensions.match_patterns.scheme.ftps`
+
+- The following never-supported MathML features have been removed ([#6958](https://github.com/mdn/browser-compat-data/pull/6958)):
+
+  - `mathml.elements.math.overflow`
+  - `mathml.elements.mglyph`
+  - `mathml.elements.mlabeledtr`
+  - `mathml.elements.mo.form`
+  - `mathml.elements.mo.largeop`
+  - `mathml.elements.mspace.linebreak`
+  - `mathml.elements.mstyle.decimalpoint`
+  - `mathml.elements.mstyle.infixbreakstyle`
+  - `mathml.elements.mtable.alignmentscope`
+  - `mathml.elements.mtable.columnwidth`
+  - `mathml.elements.mtable.equalcolumns`
+  - `mathml.elements.mtable.equalrows`
+  - `mathml.elements.mtable.groupalign`
+  - `mathml.elements.mtable.minlabelspacing`
+  - `mathml.elements.mtable.side`
+  - `mathml.elements.mtd.groupalign`
+  - `mathml.elements.mtr.groupalign`
+
+- The following constants have been removed, under the recently-adopted [_Constants_ guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([#9195](https://github.com/mdn/browser-compat-data/pull/9195)):
+
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_LEFT`
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_NUMPAD`
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_RIGHT`
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_STANDARD`
+
+**Statistics**
+
+- 19 contributors have changed 122 files with 4,549 additions and 2,365 deletions in 43 commits ([`v3.1.1...v3.1.2`](https://github.com/mdn/browser-compat-data/compare/v3.1.1...v3.1.2))
+- 13,024 total features
+- 765 total contributors
+- 3,248 total stargazers
+
 ## [v3.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.1)
 
 February 18, 2021
