@@ -1285,7 +1285,11 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": "67"
+                "version_added": "67",
+                "notes": [
+                  "The feature can be overridden by Firefox preference <code>privacy.resistFingerprinting</code>. Set to <code>true</code> to always return <code>light</code>.",
+                  "The feature can be overridden by Firefox numeric preference <code>ui.systemUsesDarkTheme</code>. Set to <code>0</code> for <code>light</code>, <code>1</code> for <code>dark</code>, <code>2</code> for <code>no-preference</code> (in versions that support it). Any other value causes Firefox to return <code>light</code>."
+                ]
               },
               "firefox_android": {
                 "version_added": false
