@@ -1210,55 +1210,6 @@
           }
         }
       },
-      "clipboardchange_event": {
-        "__compat": {
-          "description": "<code>clipboardchange</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/clipboardchange_event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/close",
@@ -2777,102 +2728,6 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getAttention": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/getAttention",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "getAttentionWithCycleCount": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/getAttentionWithCycleCount",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
             "deprecated": false
           }
         }
@@ -4525,11 +4380,11 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "From Firefox 82, if a new page from another domain is loaded into a tab, then <code>window.name</code> is set to the empty string (the original string is restored if the tab reverts back to the original page). This change prevents some cross-site attacks. See <a href='https://bugzil.la/444222'>bug 444222</a>."
+              "notes": "Before Firefox 86, if a new page from another domain is loaded into a tab, then <code>window.name</code> is not set to an empty string, which can allow some cross-site attacks. See <a href='https://bugzil.la/1685089'>bug 1685089</a> and <a href='https://bugzil.la/444222'>bug 444222</a>."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "From Firefox 82, if a new page from another domain is loaded into a tab, then <code>window.name</code> is set to the empty string (the original string is restored if the tab reverts back to the original page). This change prevents some cross-site attacks. See <a href='https://bugzil.la/444222'>bug 444222</a>."
+              "notes": "Before Firefox 86, if a new page from another domain is loaded into a tab, then <code>window.name</code> is not set to an empty string, which can allow some cross-site attacks. See <a href='https://bugzil.la/1685089'>bug 1685089</a> and <a href='https://bugzil.la/444222'>bug 444222</a>."
             },
             "ie": {
               "version_added": "4"

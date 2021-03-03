@@ -1096,7 +1096,8 @@
             "description": "<code>sandbox=\"allow-same-origin\"</code>",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Chrome 70 and earlier block script execution without <code>allow-scripts</code>, even if <code>allow-same-origin</code> is set. For example, any bound handlers for click events of nodes inside an iframe throw an error for blocked script execution."
               },
               "chrome_android": {
                 "version_added": true
