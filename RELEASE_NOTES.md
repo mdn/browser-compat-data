@@ -1,5 +1,9 @@
 # Release notes
 
+## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
+
+- `api.SVGFECompositeElement.in` replaces `api.SVGFECompositeElement.in1`, fixing a misidentified attribute ([#9074](https://github.com/mdn/browser-compat-data/pull/9074)).
+
 ## [v3.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.2)
 
 - The following withdrawn features have been removed as irrelevant:
