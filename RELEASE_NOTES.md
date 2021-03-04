@@ -2,7 +2,18 @@
 
 ## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
 
+March 4, 2021
+
+### Notable changes
+
 - `api.SVGFECompositeElement.in` replaces `api.SVGFECompositeElement.in1`, fixing a misidentified attribute ([#9074](https://github.com/mdn/browser-compat-data/pull/9074)).
+
+### Statistics
+
+- 13 contributors have changed 87 files with 771 additions and 480 deletions in 28 commits ([`v3.1.2...v3.1.3`](https://github.com/mdn/browser-compat-data/compare/v3.1.2...v3.1.3))
+- 13,028 total features
+- 767 total contributors
+- 3,253 total stargazers
 
 ## [v3.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.2)
 
