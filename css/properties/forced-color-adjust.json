@@ -5,16 +5,21 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust",
           "support": {
-            "chrome": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "forced-colors",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "89"
+              },
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "forced-colors",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -52,7 +57,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
