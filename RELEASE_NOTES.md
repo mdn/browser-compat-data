@@ -8,7 +8,7 @@ March 11, 2021
 
 - [Support statement objects](https://github.com/mdn/browser-compat-data/blob/v3.2.0/schemas/compat-data-schema.md#the-support_statement-object) may no longer use `false` or `null` values for `version_removed`. Values for `version_removed` are now required to be real version numbers or `true` (removed in some unknown version). This change to the schema codifies a widely-followed practice within existing compatability data. ([#9015](https://github.com/mdn/browser-compat-data/pull/9015))
 - `api.Window.layoutShift` was removed as spurious and irrelevant. ([#9388](https://github.com/mdn/browser-compat-data/pull/9388))
--
+- `api.SVGFECompositeElement.in1` replaces `api.SVGFECompositeElement.in`, fixing a misidentified attribute (again). ([#9074](https://github.com/mdn/browser-compat-data/pull/9074), [#9343](https://github.com/mdn/browser-compat-data/pull/9343))
 
 ## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
 
