@@ -1,14 +1,14 @@
 {
   "api": {
-    "ReadableByteStreamController": {
+    "SerialPort": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort",
         "support": {
           "chrome": {
             "version_added": "89"
           },
           "chrome_android": {
-            "version_added": "89"
+            "version_added": false
           },
           "edge": {
             "version_added": "89"
@@ -23,7 +23,7 @@
             "version_added": false
           },
           "opera": {
-            "version_added": "75"
+            "version_added": false
           },
           "opera_android": {
             "version_added": false
@@ -38,7 +38,7 @@
             "version_added": false
           },
           "webview_android": {
-            "version_added": "89"
+            "version_added": false
           }
         },
         "status": {
@@ -47,63 +47,15 @@
           "deprecated": false
         }
       },
-      "byobRequest": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/byobRequest",
-          "support": {
-            "chrome": {
-              "version_added": "89"
-            },
-            "chrome_android": {
-              "version_added": "89"
-            },
-            "edge": {
-              "version_added": "89"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "75"
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "89"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "close": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/close",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/close",
           "support": {
             "chrome": {
               "version_added": "89"
             },
             "chrome_android": {
-              "version_added": "89"
+              "version_added": false
             },
             "edge": {
               "version_added": "89"
@@ -118,7 +70,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "75"
+              "version_added": false
             },
             "opera_android": {
               "version_added": false
@@ -133,7 +85,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "89"
+              "version_added": false
             }
           },
           "status": {
@@ -143,15 +95,15 @@
           }
         }
       },
-      "desiredSize": {
+      "getInfo": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/desiredSize",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/getInfo",
           "support": {
             "chrome": {
               "version_added": "89"
             },
             "chrome_android": {
-              "version_added": "89"
+              "version_added": false
             },
             "edge": {
               "version_added": "89"
@@ -166,7 +118,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "75"
+              "version_added": false
             },
             "opera_android": {
               "version_added": false
@@ -181,7 +133,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "89"
+              "version_added": false
             }
           },
           "status": {
@@ -191,15 +143,15 @@
           }
         }
       },
-      "enqueue": {
+      "getSignals": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/enqueue",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals",
           "support": {
             "chrome": {
               "version_added": "89"
             },
             "chrome_android": {
-              "version_added": "89"
+              "version_added": false
             },
             "edge": {
               "version_added": "89"
@@ -214,7 +166,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "75"
+              "version_added": false
             },
             "opera_android": {
               "version_added": false
@@ -229,7 +181,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": "89"
+              "version_added": false
             }
           },
           "status": {
@@ -239,15 +191,15 @@
           }
         }
       },
-      "error": {
+      "onconnect": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/error",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/onconnect",
           "support": {
             "chrome": {
               "version_added": "89"
             },
             "chrome_android": {
-              "version_added": "89"
+              "version_added": false
             },
             "edge": {
               "version_added": "89"
@@ -262,7 +214,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "75"
+              "version_added": false
             },
             "opera_android": {
               "version_added": false
@@ -277,7 +229,247 @@
               "version_added": false
             },
             "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ondisconnect": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/ondisconnect",
+          "support": {
+            "chrome": {
               "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "open": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/open",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "readable": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/readable",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setSignals": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "writable": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/writable",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
