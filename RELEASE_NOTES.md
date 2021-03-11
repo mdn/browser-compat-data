@@ -30,6 +30,7 @@ March 11, 2021
 - The following never-implemented features were removed:
 
   - `api.PaymentManager.requestPermission` ([#9399](https://github.com/mdn/browser-compat-data/pull/9399))
+  - `api.Response.useFinalURL` ([#9386](https://github.com/mdn/browser-compat-data/pull/9386))
   - `api.Window.layoutShift` ([#9388](https://github.com/mdn/browser-compat-data/pull/9388))
 
 ## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
