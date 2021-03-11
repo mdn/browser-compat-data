@@ -217,14 +217,14 @@ entirely unknown. Examples:
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was
-removed in. It may also be a Boolean value of (`true` or `false`), or the
-`null` value.
+Contains a string with the version number the sub-feature was removed in.
+It may also be `true`, meaning that it is unknown in which version support
+was removed.
 
 Default values:
 
 - If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
-- if `version_added` is set to `null`, the default value of `version_removed` is also `null`.
+- If `version_added` is set to `null`, the default value of `version_removed` is also `null`.
 
 Examples:
 
@@ -237,12 +237,12 @@ Examples:
 }
 ```
 
-- Not removed (default if `version_added` is not `null`):
+- Removed in some version after 3.5:
 
 ```json
 {
   "version_added": "3.5",
-  "version_removed": false
+  "version_removed": true
 }
 ```
 
