@@ -35,6 +35,13 @@ March 11, 2021
   - `api.Response.useFinalURL` ([#9386](https://github.com/mdn/browser-compat-data/pull/9386))
   - `api.Window.layoutShift` ([#9388](https://github.com/mdn/browser-compat-data/pull/9388))
 
+### Statistics
+
+- 11 contributors have changed 163 files with 1,288 additions and 1,323 deletions in 27 commits ([`v3.1.3...v3.2.0`](https://github.com/mdn/browser-compat-data/compare/v3.1.3...v3.2.0))
+- 13,031 total features
+- 769 total contributors
+- 3,266 total stargazers
+
 ## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
 
 March 4, 2021
