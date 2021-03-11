@@ -17,6 +17,8 @@ March 11, 2021
 - The following features were removed because they duplicated data under historic names:
 
   - `api.AuthenticationAssertion`, duplicating `api.AuthenticatorAssertionResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.ConstrainLong`, duplicating `api.ConstrainULong` ([#9418](https://github.com/mdn/browser-compat-data/pull/9418))
+  - `api.LongRange`, duplicating `api.ULongRange` ([#9418](https://github.com/mdn/browser-compat-data/pull/9418))
   - `api.ScopedCredential`, duplicating `api.PublicKeyCredential` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
   - `api.ScopedCredentialInfo`, duplicating `api.AuthenticatorResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
   - `api.Window.OverconstrainedError`, duplicating `api.OverconstrainedError` ([#9401](https://github.com/mdn/browser-compat-data/pull/9401))
