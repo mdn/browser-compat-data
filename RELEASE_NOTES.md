@@ -21,7 +21,7 @@ March 11, 2021
   - `api.ScopedCredentialInfo`, duplicating `api.AuthenticatorResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
   - `api.Window.OverconstrainedError`, duplicating `api.OverconstrainedError` ([#9401](https://github.com/mdn/browser-compat-data/pull/9401))
 
-- The following no-longer supported features have been removed as irrelevant:
+- The following no-longer supported features were removed as irrelevant:
 
   - `api.PasswordCredential.additionalData` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
   - `api.PasswordCredential.idName` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
