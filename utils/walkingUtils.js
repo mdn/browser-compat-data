@@ -15,7 +15,7 @@ function descendantKeys(data) {
   }
 
   if (isBrowser(data)) {
-    // Browsers never have indepndently meaningful descendants
+    // Browsers never have independently meaningful descendants
     return [];
   }
 
