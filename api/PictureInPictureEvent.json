@@ -10,32 +10,23 @@
             },
             {
               "version_added": "69",
-              "version_removed": "72",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                },
-                {
-                  "type": "preference",
-                  "name": "enable-surfaces-for-videos",
-                  "value_to_set": "enabled"
-                },
-                {
-                  "type": "preference",
-                  "name": "enable-picture-in-picture",
-                  "value_to_set": "enabled"
-                }
-              ]
+              "version_removed": "85",
+              "alternative_name": "EnterPictureInPictureEvent"
             }
           ],
           "chrome_android": {
             "version_added": false
           },
-          "edge": {
-            "version_added": "85"
-          },
+          "edge": [
+            {
+              "version_added": "85"
+            },
+            {
+              "version_added": "69",
+              "version_removed": "85",
+              "alternative_name": "EnterPictureInPictureEvent"
+            }
+          ],
           "firefox": {
             "version_added": false
           },
@@ -45,9 +36,16 @@
           "ie": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "56"
-          },
+          "opera": [
+            {
+              "version_added": "71"
+            },
+            {
+              "version_added": "56",
+              "version_removed": "71",
+              "alternative_name": "EnterPictureInPictureEvent"
+            }
+          ],
           "opera_android": {
             "version_added": false
           },
@@ -81,32 +79,23 @@
               },
               {
                 "version_added": "69",
-                "version_removed": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "enable-surfaces-for-videos",
-                    "value_to_set": "enabled"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "enable-picture-in-picture",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_removed": "85",
+                "alternative_name": "EnterPictureInPictureEvent"
               }
             ],
             "chrome_android": {
               "version_added": false
             },
-            "edge": {
-              "version_added": "85"
-            },
+            "edge": [
+              {
+                "version_added": "85"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "85",
+                "alternative_name": "EnterPictureInPictureEvent"
+              }
+            ],
             "firefox": {
               "version_added": false
             },
@@ -116,9 +105,16 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "56"
-            },
+            "opera": [
+              {
+                "version_added": "71"
+              },
+              {
+                "version_added": "56",
+                "version_removed": "71",
+                "alternative_name": "EnterPictureInPictureEvent"
+              }
+            ],
             "opera_android": {
               "version_added": false
             },
@@ -146,37 +142,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow",
           "support": {
-            "chrome": [
-              {
-                "version_added": "85"
-              },
-              {
-                "version_added": "69",
-                "version_removed": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "enable-surfaces-for-videos",
-                    "value_to_set": "enabled"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "enable-picture-in-picture",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "69"
+            },
             "chrome_android": {
               "version_added": false
             },
             "edge": {
-              "version_added": "85"
+              "version_added": "69"
             },
             "firefox": {
               "version_added": false
