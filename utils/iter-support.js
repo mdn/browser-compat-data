@@ -4,7 +4,7 @@ function iterSupport(compat, browser) {
     return Array.isArray(data) ? data : [data];
   }
 
-  return [];
+  return [{ version_added: null }];
 }
 
 module.exports = iterSupport;

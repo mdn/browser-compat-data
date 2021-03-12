@@ -3,10 +3,10 @@ const assert = require('assert');
 const iterSupport = require('./iter-support');
 
 describe('iterSupport()', function () {
-  it('returns an empty array for non-existent browsers', function () {
+  it('returns a `"version_added": null` support statement for non-existent browsers', function () {
     assert.deepStrictEqual(
       iterSupport({ support: { firefox: [] } }, 'chrome'),
-      [],
+      [{ version_added: null }],
     );
   });
 
