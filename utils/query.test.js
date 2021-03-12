@@ -1,41 +1,41 @@
-const assert = require("assert");
+const assert = require('assert');
 
-const query = require("./query");
+const query = require('./query');
 
-describe("query()", function () {
-  describe("should throw on non-existent features", function () {
-    assert.throws(() => query("nonExistentNameSpace"), ReferenceError);
-    assert.throws(() => query("api.NonExistentFeature"), ReferenceError);
+describe('query()', function () {
+  describe('should throw on non-existent features', function () {
+    assert.throws(() => query('nonExistentNameSpace'), ReferenceError);
+    assert.throws(() => query('api.NonExistentFeature'), ReferenceError);
     assert.throws(
-      () => query("api.NonExistentFeature.subFeature"),
-      ReferenceError
+      () => query('api.NonExistentFeature.subFeature'),
+      ReferenceError,
     );
   });
 
-  it("should return the expected point in the tree (namespace)", function () {
-    const obj = query("css");
+  it('should return the expected point in the tree (namespace)', function () {
+    const obj = query('css');
 
-    assert.ok(!("__compat" in obj));
-    assert.ok("properties" in obj);
-    assert.ok("at-rules" in obj);
+    assert.ok(!('__compat' in obj));
+    assert.ok('properties' in obj);
+    assert.ok('at-rules' in obj);
   });
 
-  it("should return the expected point in the tree (feature)", function () {
-    const obj = query("api.HTMLAnchorElement.href");
+  it('should return the expected point in the tree (feature)', function () {
+    const obj = query('api.HTMLAnchorElement.href');
 
-    assert.ok("support" in obj.__compat);
-    assert.ok("status" in obj.__compat);
+    assert.ok('support' in obj.__compat);
+    assert.ok('status' in obj.__compat);
     assert.strictEqual(
-      "https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href",
-      obj.__compat.mdn_url
+      'https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href',
+      obj.__compat.mdn_url,
     );
   });
 
-  it("should return the expected point in the tree (feature with children)", function () {
-    const obj = query("api.HTMLAnchorElement");
+  it('should return the expected point in the tree (feature with children)', function () {
+    const obj = query('api.HTMLAnchorElement');
 
-    assert.ok("__compat" in obj);
-    assert.ok("charset" in obj);
-    assert.ok("href" in obj);
+    assert.ok('__compat' in obj);
+    assert.ok('charset' in obj);
+    assert.ok('href' in obj);
   });
 });

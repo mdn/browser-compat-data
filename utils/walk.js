@@ -1,6 +1,6 @@
-const bcd = require("./bcd");
-const { isBrowser, descendantKeys, joinPath } = require("./walkingUtils");
-const query = require("./query");
+const bcd = require('./bcd');
+const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
+const query = require('./query');
 
 function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined) {
@@ -27,9 +27,9 @@ function* walk(entryPoints) {
   } else {
     entryPoints = Array.isArray(entryPoints) ? entryPoints : [entryPoints];
     walkers.push(
-      ...entryPoints.map((entryPoint) =>
-        lowLevelWalk(query(entryPoint), entryPoint)
-      )
+      ...entryPoints.map(entryPoint =>
+        lowLevelWalk(query(entryPoint), entryPoint),
+      ),
     );
   }
 

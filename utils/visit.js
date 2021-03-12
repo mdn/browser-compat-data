@@ -1,9 +1,9 @@
-const bcd = require("./bcd");
-const query = require("./query");
-const { descendantKeys, joinPath, isFeature } = require("./walkingUtils");
+const bcd = require('./bcd');
+const query = require('./query');
+const { descendantKeys, joinPath, isFeature } = require('./walkingUtils');
 
-const BREAK = Symbol("break");
-const CONTINUE = Symbol("continue");
+const BREAK = Symbol('break');
+const CONTINUE = Symbol('continue');
 
 function visit(entryPoint, testFn, visitorFn) {
   const data = entryPoint === undefined ? bcd : query(entryPoint);

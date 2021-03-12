@@ -1,35 +1,35 @@
-const assert = require("assert");
+const assert = require('assert');
 
-const visit = require("./visit");
-const { walk } = require("./walk");
+const visit = require('./visit');
+const { walk } = require('./walk');
 
-describe("visit()", function () {
-  it("runs the function on all features if no other entry point is specified", function () {
-    const walker = walk("html.elements.a");
+describe('visit()', function () {
+  it('runs the function on all features if no other entry point is specified', function () {
+    const walker = walk('html.elements.a');
     visit(
-      "html.elements.a",
+      'html.elements.a',
       () => true,
-      (visitorPath) => {
+      visitorPath => {
         assert.strictEqual(visitorPath, walker.next().value.path);
-      }
+      },
     );
   });
 
-  it("skips features not selected by testFn", function () {
+  it('skips features not selected by testFn', function () {
     const hits = new Set();
     const misses = new Set();
     visit(
-      "css",
-      (path) => {
-        if (path.includes("at-rules")) {
+      'css',
+      path => {
+        if (path.includes('at-rules')) {
           return true;
         }
         misses.add(path);
         return false;
       },
-      (path) => {
+      path => {
         hits.add(path);
-      }
+      },
     );
 
     for (const miss in misses) {
@@ -37,37 +37,37 @@ describe("visit()", function () {
     }
   });
 
-  it("visitorFn can break iteration", function () {
+  it('visitorFn can break iteration', function () {
     visit(
       undefined,
       () => true,
-      (path) => {
-        if (path.startsWith("css")) {
+      path => {
+        if (path.startsWith('css')) {
           return visit.BREAK;
         }
-        if (path.startsWith("html")) {
+        if (path.startsWith('html')) {
           assert.fail(
-            `visitorFn should never be invoked after the css tree. Reached ${path}`
+            `visitorFn should never be invoked after the css tree. Reached ${path}`,
           );
         }
-      }
+      },
     );
   });
 
-  it("visitorFn can skip traversal of children", function () {
+  it('visitorFn can skip traversal of children', function () {
     visit(
       undefined,
       () => true,
-      (path) => {
-        if (path === "css.at-rules.counter-style") {
+      path => {
+        if (path === 'css.at-rules.counter-style') {
           return visit.CONTINUE;
         }
-        if (path.startsWith("css.at-rules-counter-style.")) {
+        if (path.startsWith('css.at-rules-counter-style.')) {
           assert.fail(
-            `visitorFn should never reach a child of counter-style. Reached ${path}`
+            `visitorFn should never reach a child of counter-style. Reached ${path}`,
           );
         }
-      }
+      },
     );
   });
 });
