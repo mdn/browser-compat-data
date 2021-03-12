@@ -15,7 +15,7 @@ function query(path, data = bcd) {
     const next = pathElements.shift();
     lookup = lookup[next];
     if (lookup === undefined) {
-      throw ReferenceError(
+      throw new ReferenceError(
         `${path} is not a valid tree identifier (failed at '${next}')`,
       );
     }
