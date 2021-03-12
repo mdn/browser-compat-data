@@ -4632,10 +4632,34 @@
       },
       "exitPictureInPicture": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture",
           "support": {
-            "chrome": {
-              "version_added": "69"
-            },
+            "chrome": [
+              {
+                "version_added": "69",
+                "version_removed": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "enable-surfaces-for-videos",
+                    "value_to_set": "enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "enable-picture-in-picture",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "72"
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -4655,7 +4679,7 @@
               "version_added": "56"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": null
             },
             "safari": {
               "version_added": "13.1"
@@ -8555,10 +8579,34 @@
       },
       "pictureInPictureEnabled": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled",
           "support": {
-            "chrome": {
-              "version_added": "69"
-            },
+            "chrome": [
+              {
+                "version_added": "69",
+                "version_removed": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "enable-surfaces-for-videos",
+                    "value_to_set": "enabled"
+                  },
+                  {
+                    "type": "preference",
+                    "name": "enable-picture-in-picture",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "72"
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -8578,7 +8626,7 @@
               "version_added": "56"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": null
             },
             "safari": {
               "version_added": "13.1"
@@ -8594,7 +8642,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
