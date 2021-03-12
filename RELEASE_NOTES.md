@@ -1,5 +1,13 @@
 # Release notes
 
+## [v3.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.1)
+
+March 18, 2021
+
+### Notable changes
+
+- `api.PictureInPicture` has been removed as part of an effort to more accurately represent Picture-in-Picture interfaces. ([#9438](https://github.com/mdn/browser-compat-data/pull/9438), [#7028](https://github.com/mdn/browser-compat-data/pull/7028))
+
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
 March 11, 2021
