@@ -33,7 +33,7 @@ describe('lowLevelWalk()', function () {
 });
 
 describe('walk()', function () {
-  it('should visit html.elements.a.href.href_top', function () {
+  it('should visit deeply nested features', function () {
     let results = Array.from(walk('html')).map(feature => feature.path);
     assert.ok(results.includes('html.elements.a.href.href_top'));
   });
