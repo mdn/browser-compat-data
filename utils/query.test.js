@@ -1,4 +1,4 @@
-const assert = require('assert');
+const assert = require('assert').strict;
 
 const query = require('./query');
 
@@ -25,7 +25,7 @@ describe('query()', function () {
 
     assert.ok('support' in obj.__compat);
     assert.ok('status' in obj.__compat);
-    assert.strictEqual(
+    assert.equal(
       'https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href',
       obj.__compat.mdn_url,
     );

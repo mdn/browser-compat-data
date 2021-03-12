@@ -1,17 +1,16 @@
-const assert = require('assert');
+const assert = require('assert').strict;
 
 const iterSupport = require('./iter-support');
 
 describe('iterSupport()', function () {
   it('returns a `"version_added": null` support statement for non-existent browsers', function () {
-    assert.deepStrictEqual(
-      iterSupport({ support: { firefox: [] } }, 'chrome'),
-      [{ version_added: null }],
-    );
+    assert.deepEqual(iterSupport({ support: { firefox: [] } }, 'chrome'), [
+      { version_added: null },
+    ]);
   });
 
   it('returns a single support statement as an array', function () {
-    assert.deepStrictEqual(
+    assert.deepEqual(
       iterSupport({ support: { firefox: { version_added: true } } }, 'firefox'),
       [{ version_added: true }],
     );
@@ -23,6 +22,6 @@ describe('iterSupport()', function () {
     };
     const support = [{ version_added: true }, { version_added: '1' }];
 
-    assert.deepStrictEqual(iterSupport(compatObj, 'firefox'), support);
+    assert.deepEqual(iterSupport(compatObj, 'firefox'), support);
   });
 });
