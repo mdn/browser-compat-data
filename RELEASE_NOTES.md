@@ -8,6 +8,10 @@ March 18, 2021
 
 - `api.PictureInPicture` has been removed as part of an effort to more accurately represent Picture-in-Picture interfaces. ([#9438](https://github.com/mdn/browser-compat-data/pull/9438), [#7028](https://github.com/mdn/browser-compat-data/pull/7028))
 
+- The following-never supported features were removed:
+
+  - `api.StorageQuota` ([#9459](https://github.com/mdn/browser-compat-data/pull/9459))
+
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
 March 11, 2021
