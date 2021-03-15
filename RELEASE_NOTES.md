@@ -11,6 +11,7 @@ March 18, 2021
 - The following-never supported features were removed:
 
   - `api.Burnable` ([#9458](https://github.com/mdn/browser-compat-data/pull/9458))
+  - `api.DOMErrorHandler` ([#9382](https://github.com/mdn/browser-compat-data/pull/9382))
   - `api.StorageQuota` ([#9459](https://github.com/mdn/browser-compat-data/pull/9459))
 
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
