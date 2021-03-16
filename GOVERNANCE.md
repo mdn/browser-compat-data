@@ -1,4 +1,4 @@
-# Governance
+ Governance
 
 [`@mdn/browser-compat-data`](https://github.com/mdn/browser-compat-data) (also often referred to as "BCD") is an open source project that depends on contributions from the community. As long as they abide by the project’s Contribution Guidelines, anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the `@mdn/browser-compat-data` project and how decisions are made.
 
