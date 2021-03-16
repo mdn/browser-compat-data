@@ -15,6 +15,10 @@ March 18, 2021
   - `api.ShadowRoot.caretPositionFromPoint` ([#9439](https://github.com/mdn/browser-compat-data/pull/9439))
   - `api.StorageQuota` ([#9459](https://github.com/mdn/browser-compat-data/pull/9459))
 
+- The following duplicate features were removed:
+
+  - `svg.attributes.presentation.stop-opacity` (duplicating `svg.elements.stop.stop-opacity`) ([#9468](https://github.com/mdn/browser-compat-data/pull/9468))
+
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
 March 11, 2021
