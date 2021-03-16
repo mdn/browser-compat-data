@@ -1,5 +1,47 @@
 # Release notes
 
+## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
+
+March 11, 2021
+
+### Notable changes
+
+- [Support statement objects](https://github.com/mdn/browser-compat-data/blob/v3.2.0/schemas/compat-data-schema.md#the-support_statement-object) may no longer use `false` or `null` values for `version_removed`. Values for `version_removed` are now required to be real version numbers or `true` (removed in some unknown version). This change to the schema codifies a widely-followed practice within existing compatability data. ([#9015](https://github.com/mdn/browser-compat-data/pull/9015))
+
+- The following features were renamed:
+
+  - `api.SVGFECompositeElement.in` is now `api.SVGFECompositeElement.in1`, fixing a misidentified attribute (again). ([#9074](https://github.com/mdn/browser-compat-data/pull/9074), [#9343](https://github.com/mdn/browser-compat-data/pull/9343))
+  - `api.SVGTests.hasextension` is now `api.SVGTests.hasExtension`, fixing incorrect capitalization. ([#9387](https://github.com/mdn/browser-compat-data/pull/9387))
+  - `api.SVGViewElement.viewtarget` is now `api.SVGViewElement.viewTarget`, fixing incorrect capitalization. ([#9387](https://github.com/mdn/browser-compat-data/pull/9387))
+
+- The following features were removed because they duplicated data under historic names:
+
+  - `api.AuthenticationAssertion`, duplicating `api.AuthenticatorAssertionResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.ConstrainLong`, duplicating `api.ConstrainULong` ([#9418](https://github.com/mdn/browser-compat-data/pull/9418))
+  - `api.LongRange`, duplicating `api.ULongRange` ([#9418](https://github.com/mdn/browser-compat-data/pull/9418))
+  - `api.ScopedCredential`, duplicating `api.PublicKeyCredential` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.ScopedCredentialInfo`, duplicating `api.AuthenticatorResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.Window.OverconstrainedError`, duplicating `api.OverconstrainedError` ([#9401](https://github.com/mdn/browser-compat-data/pull/9401))
+
+- The following no-longer supported features were removed as irrelevant:
+
+  - `api.PasswordCredential.additionalData` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
+  - `api.PasswordCredential.idName` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
+  - `api.PasswordCredential.passwordName` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
+
+- The following never-implemented features were removed:
+
+  - `api.PaymentManager.requestPermission` ([#9399](https://github.com/mdn/browser-compat-data/pull/9399))
+  - `api.Response.useFinalURL` ([#9386](https://github.com/mdn/browser-compat-data/pull/9386))
+  - `api.Window.layoutShift` ([#9388](https://github.com/mdn/browser-compat-data/pull/9388))
+
+### Statistics
+
+- 11 contributors have changed 163 files with 1,288 additions and 1,323 deletions in 27 commits ([`v3.1.3...v3.2.0`](https://github.com/mdn/browser-compat-data/compare/v3.1.3...v3.2.0))
+- 13,031 total features
+- 769 total contributors
+- 3,266 total stargazers
+
 ## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
 
 March 4, 2021
