@@ -17,7 +17,8 @@ March 18, 2021
 
 - The following duplicate features were removed:
 
-  - `svg.attributes.presentation.stop-opacity` (duplicating `svg.elements.stop.stop-opacity`) ([#9468](https://github.com/mdn/browser-compat-data/pull/9468))
+  - `javascript.operators.spread.spread_in_destructuring`, duplicating `javascript.operators.destructuring.rest_in_arrays` and `javascript.operators.destructuring.rest_in_objects` ([#9457](https://github.com/mdn/browser-compat-data/issues/9457), [#9472](https://github.com/mdn/browser-compat-data/pull/9472))
+  - `svg.attributes.presentation.stop-opacity`, duplicating `svg.elements.stop.stop-opacity` ([#9468](https://github.com/mdn/browser-compat-data/pull/9468))
 
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
