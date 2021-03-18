@@ -1,6 +1,6 @@
 const assert = require('assert').strict;
 
-const bcd = require('./bcd');
+const bcd = require('..');
 const { walk } = require('./index');
 const { lowLevelWalk } = require('./walk');
 

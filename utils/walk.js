@@ -1,4 +1,4 @@
-const bcd = require('./bcd');
+const bcd = require('..');
 const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
 const query = require('./query');
 

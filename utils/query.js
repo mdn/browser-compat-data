@@ -1,4 +1,4 @@
-const bcd = require('./bcd');
+const bcd = require('..');
 
 /**
  * Get a subtree of compat data.

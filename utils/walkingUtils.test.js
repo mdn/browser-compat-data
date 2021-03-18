@@ -1,6 +1,6 @@
 const assert = require('assert').strict;
 
-const bcd = require('./bcd');
+const bcd = require('..');
 const query = require('./query');
 const { joinPath, isBrowser, isFeature } = require('./walkingUtils');
 
