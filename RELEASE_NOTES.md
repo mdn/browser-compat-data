@@ -1,5 +1,43 @@
 # Release notes
 
+## [v3.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.1)
+
+March 18, 2021
+
+### Notable changes
+
+- `api.PictureInPicture` has been removed as part of an effort to more accurately represent Picture-in-Picture interfaces. ([#9438](https://github.com/mdn/browser-compat-data/pull/9438), [#7028](https://github.com/mdn/browser-compat-data/pull/7028))
+
+- The following-never supported features were removed:
+
+  - `api.Burnable` ([#9458](https://github.com/mdn/browser-compat-data/pull/9458))
+  - `api.DOMErrorHandler` ([#9382](https://github.com/mdn/browser-compat-data/pull/9382))
+  - `api.ShadowRoot.caretPositionFromPoint` ([#9439](https://github.com/mdn/browser-compat-data/pull/9439))
+  - `api.StorageQuota` ([#9459](https://github.com/mdn/browser-compat-data/pull/9459))
+
+- The following duplicate features were removed:
+
+  - `javascript.operators.spread.spread_in_destructuring`, duplicating `javascript.operators.destructuring.rest_in_arrays` and `javascript.operators.destructuring.rest_in_objects` ([#9457](https://github.com/mdn/browser-compat-data/issues/9457), [#9472](https://github.com/mdn/browser-compat-data/pull/9472))
+  - `svg.attributes.presentation.stop-opacity`, duplicating `svg.elements.stop.stop-opacity` ([#9468](https://github.com/mdn/browser-compat-data/pull/9468))
+
+- To improve consistency with other parameter features, the following `CanvasRenderingContext2D` features have been renamed to lower-case ([#9433](https://github.com/mdn/browser-compat-data/pull/9433)):
+
+  | Before                                                          | After                                                           |
+  | --------------------------------------------------------------- | --------------------------------------------------------------- |
+  | `api.CanvasRenderingContext2D.clip.Path_parameter`              | `api.CanvasRenderingContext2D.clip.path_parameter`              |
+  | `api.CanvasRenderingContext2D.drawFocusIfNeeded.Path_parameter` | `api.CanvasRenderingContext2D.drawFocusIfNeeded.path_parameter` |
+  | `api.CanvasRenderingContext2D.fill.Path_parameter`              | `api.CanvasRenderingContext2D.fill.path_parameter`              |
+  | `api.CanvasRenderingContext2D.isPointInPath.Path_parameter`     | `api.CanvasRenderingContext2D.isPointInPath.path_parameter`     |
+  | `api.CanvasRenderingContext2D.isPointInStroke.Path_parameter`   | `api.CanvasRenderingContext2D.isPointInStroke.path_parameter`   |
+  | `api.CanvasRenderingContext2D.stroke.Path_parameter`            | `api.CanvasRenderingContext2D.stroke.path_parameter`            |
+
+### Statistics
+
+- 17 contributors have changed 99 files with 1,537 additions and 2,285 deletions in 35 commits ([`v3.2.0...v3.2.1`](https://github.com/mdn/browser-compat-data/compare/v3.2.0...v3.2.1))
+- 13,023 total features
+- 771 total contributors
+- 3,276 total stargazers
+
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
 March 11, 2021
