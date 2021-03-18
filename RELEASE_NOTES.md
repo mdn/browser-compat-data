@@ -31,6 +31,13 @@ March 18, 2021
   | `api.CanvasRenderingContext2D.isPointInStroke.Path_parameter`   | `api.CanvasRenderingContext2D.isPointInStroke.path_parameter`   |
   | `api.CanvasRenderingContext2D.stroke.Path_parameter`            | `api.CanvasRenderingContext2D.stroke.path_parameter`            |
 
+### Statistics
+
+- 17 contributors have changed 99 files with 1,537 additions and 2,285 deletions in 35 commits ([`v3.2.0...v3.2.1`](https://github.com/mdn/browser-compat-data/compare/v3.2.0...v3.2.1))
+- 13,023 total features
+- 771 total contributors
+- 3,276 total stargazers
+
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
 March 11, 2021
