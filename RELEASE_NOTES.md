@@ -20,6 +20,17 @@ March 18, 2021
   - `javascript.operators.spread.spread_in_destructuring`, duplicating `javascript.operators.destructuring.rest_in_arrays` and `javascript.operators.destructuring.rest_in_objects` ([#9457](https://github.com/mdn/browser-compat-data/issues/9457), [#9472](https://github.com/mdn/browser-compat-data/pull/9472))
   - `svg.attributes.presentation.stop-opacity`, duplicating `svg.elements.stop.stop-opacity` ([#9468](https://github.com/mdn/browser-compat-data/pull/9468))
 
+- To improve consistency with other parameter features, the following `CanvasRenderingContext2D` features have been renamed to lower-case ([#9433](https://github.com/mdn/browser-compat-data/pull/9433)):
+
+  | Before                                                          | After                                                           |
+  | --------------------------------------------------------------- | --------------------------------------------------------------- |
+  | `api.CanvasRenderingContext2D.clip.Path_parameter`              | `api.CanvasRenderingContext2D.clip.path_parameter`              |
+  | `api.CanvasRenderingContext2D.drawFocusIfNeeded.Path_parameter` | `api.CanvasRenderingContext2D.drawFocusIfNeeded.path_parameter` |
+  | `api.CanvasRenderingContext2D.fill.Path_parameter`              | `api.CanvasRenderingContext2D.fill.path_parameter`              |
+  | `api.CanvasRenderingContext2D.isPointInPath.Path_parameter`     | `api.CanvasRenderingContext2D.isPointInPath.path_parameter`     |
+  | `api.CanvasRenderingContext2D.isPointInStroke.Path_parameter`   | `api.CanvasRenderingContext2D.isPointInStroke.path_parameter`   |
+  | `api.CanvasRenderingContext2D.stroke.Path_parameter`            | `api.CanvasRenderingContext2D.stroke.path_parameter`            |
+
 ## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
 
 March 11, 2021
