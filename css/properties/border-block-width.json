@@ -4,6 +4,7 @@
       "border-block-width": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/border-block-width",
+          "spec_url": "https://drafts.csswg.org/css-logical/#propdef-border-block-width",
           "support": {
             "chrome": [
               {
@@ -69,9 +70,21 @@
                 ]
               }
             ],
-            "opera_android": {
-              "version_added": "48"
-            },
+            "opera_android": [
+              {
+                "version_added": false
+              },
+              {
+                "version_added": "48",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": false
             },
@@ -79,7 +92,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "10.0"
+              "version_added": false
             },
             "webview_android": {
               "version_added": "87"

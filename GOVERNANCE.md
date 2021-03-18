@@ -59,7 +59,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Ryan Johnson (@escattone), Mozilla
 - Joe Medley (@jpmedley), Google
-- Eric Shepherd (@a2sheppy), Mozilla
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
 
@@ -101,11 +100,10 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 #### List of current Owners
 
-- Florian Scholz (@Elchi3), Mozilla, BCD project lead
+- Florian Scholz (@Elchi3), Open Web Docs
 - Daniel Beck (@ddbeck)
-- Will Bamberg (@wbamberg), Mozilla
+- Will Bamberg (@wbamberg), Open Web Docs
 - Chris David Mills (@chrisdavidmills), Mozilla
-- Kadir Topal (@atopal), Mozilla
 
 ## Additional paths to becoming a Peer or Owner
 
@@ -168,6 +166,8 @@ The `@mdn/browser-compat-data` project would like to thank the following former 
 
 - Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
 - Jean-Yves Perrier (@teoli2003) (Former project lead, schema design co-author)
+- Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
+- Kadir Topal (@atopal) (BCD co-owner until September 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 
