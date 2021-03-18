@@ -491,26 +491,38 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "74",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.input_events.beforeinput.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.input_events.beforeinput.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "87"
+              },
+              {
+                "version_added": "74",
+                "version_removed": "87",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.input_events.beforeinput.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "87"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "87",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.input_events.beforeinput.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
