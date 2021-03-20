@@ -57,7 +57,7 @@ Although it is a useful and, to date, the most automated source of web platform 
 
 ## Only Web Platform APIs are available
 
-Web Platform APIs generally refer to features you would use in JavaScript that are not JavaScript itself. You can only use Confluence to verify data in the repo's [api/](https://github.com/mdn/browser-compat-data/tree/master/api) directory.
+Web Platform APIs generally refer to features you would use in JavaScript that are not JavaScript itself. You can only use Confluence to verify data in the repo's [api/](../api) directory.
 
 ## Only prototype-exposed interfaces are available
 
