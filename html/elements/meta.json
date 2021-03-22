@@ -641,21 +641,23 @@
                   {
                     "version_added": "73",
                     "partial_implementation": true,
-                    "notes": "Desktop Chrome only uses the color on installed progressive web apps. (Per caniuse.com.)"
+                    "notes": "Chrome uses the color only on installed progressive web apps."
                   },
                   {
                     "version_added": "39",
                     "version_removed": "72",
                     "partial_implementation": true,
-                    "notes": "Desktop Chrome 39-72 claimed to have support, but did not actually use the color anywhere. Chrome for Android did use the color in the toolbar. (Per caniuse.com.)"
+                    "notes": "Chrome reports support, but does not actually use the color anywhere."
                   }
                 ],
                 "chrome_android": {
                   "version_added": "80",
-                  "notes": "Chrome for Android does not use the color on devices with native dark-mode enabled. (Per caniuse.com.)"
+                  "notes": "Chrome for Android does not use the color on devices with native dark mode enabled."
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "Edge uses the color only on installed progressive web apps."
                 },
                 "firefox": {
                   "version_added": false
@@ -686,7 +688,7 @@
                 }
               },
               "status": {
-                "experimental": false,
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
