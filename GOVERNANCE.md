@@ -6,11 +6,11 @@
 
 ### Community members
 
-_Everyone_ who is involved in any form with the project must abide by the project’s [Contribution Guidelines](https://github.com/mdn/browser-compat-data/blob/master/CODE_OF_CONDUCT.md) and Commit Access Guidelines. Everyone is expected to be respectful of fellow community members and to work collaboratively respective of the Code of Conduct (CPG). Consequences for not adhering to these Guidelines are listed in their respective documents.
+_Everyone_ who is involved in any form with the project must abide by the project’s [Contribution Guidelines](CODE_OF_CONDUCT.md) and Commit Access Guidelines. Everyone is expected to be respectful of fellow community members and to work collaboratively respective of the Code of Conduct (CPG). Consequences for not adhering to these Guidelines are listed in their respective documents.
 
 ### Users
 
-Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](https://github.com/mdn/browser-compat-data#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](https://github.com/mdn/browser-compat-data/blob/master/LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
+Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](README.md#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
 
 Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#Contributors), as described in the next section.
 
@@ -126,7 +126,7 @@ If an agenda item cannot reach a consensus, an owner can call for either a closi
 ## Licensing
 
 Please note that this project is made available using the
-[CC0 license](https://github.com/mdn/browser-compat-data/blob/master/LICENSE),
+[CC0 license](LICENSE),
 so anyone contributing should only submit data if they know they have the right to submit it under CC0. If you're not sure about that, just ask.
 
 ## Project Meetings

@@ -129,7 +129,7 @@ March 4, 2021
   - `mathml.elements.mtd.groupalign`
   - `mathml.elements.mtr.groupalign`
 
-- The following constants have been removed, under the recently-adopted [_Constants_ guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([#9195](https://github.com/mdn/browser-compat-data/pull/9195)):
+- The following constants have been removed, under the recently-adopted [_Constants_ guideline](docs/data-guidelines.md#constants) ([#9195](https://github.com/mdn/browser-compat-data/pull/9195)):
 
   - `api.KeyboardEvent.DOM_KEY_LOCATION_LEFT`
   - `api.KeyboardEvent.DOM_KEY_LOCATION_NUMPAD`
@@ -209,7 +209,7 @@ February 11, 2021
 
 **Notable changes**
 
-- We've adopted [a new data guideline for interface mixins](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
+- We've adopted [a new data guideline for interface mixins](docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
 
   For example, `HTMLHyperlinkElementUtils` attributes are now represented on `HTMLAnchorElement` and `HTMLAreaElement` directly.
 
@@ -251,7 +251,7 @@ February 4, 2021
 
 **Notable changes**
 
-- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([#8934](https://github.com/mdn/browser-compat-data/pull/8934))
+- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](docs/data-guidelines.md#constants) ([#8934](https://github.com/mdn/browser-compat-data/pull/8934))
 
 **Statistics**
 
@@ -359,7 +359,7 @@ Review the changes below for details.
 - Node.js versions `0.10` and `0.12` were replaced by their full SemVer values, `0.10.0` and `0.12.0`, respectively. ([#7491](https://github.com/mdn/browser-compat-data/issues/7491), [#7492](https://github.com/mdn/browser-compat-data/issues/7492))
 - Many high-level namespaces in the package were [documented](https://github.com/mdn/browser-compat-data#package-contents) and [a formal Semantic Versioning policy was introduced](https://github.com/mdn/browser-compat-data#semantic-versioning-policy). ([#7615](https://github.com/mdn/browser-compat-data/issues/7615))
 - Data in `javascript` requires version number data; the `javascript` data no longer contains any `null` or `true` values. ([#7607](https://github.com/mdn/browser-compat-data/issues/7607))
-- [_Addition of browsers_](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#addition-of-browsers) and [_Removal of browsers_](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-browsers) data guidelines were adopted to document requirements to add or remove a browser or engine from package. ([#7244](https://github.com/mdn/browser-compat-data/issues/7244))
+- [_Addition of browsers_](docs/data-guidelines.md#addition-of-browsers) and [_Removal of browsers_](docs/data-guidelines.md#removal-of-browsers) data guidelines were adopted to document requirements to add or remove a browser or engine from package. ([#7244](https://github.com/mdn/browser-compat-data/issues/7244))
 - The following features were removed as irrelevant:
   - `api.HTMLAnchorElement.media` ([#7538](https://github.com/mdn/browser-compat-data/issues/7538))
   - `api.HTMLAreaElement.hreflang` ([#7539](https://github.com/mdn/browser-compat-data/issues/7539))
@@ -413,7 +413,7 @@ November 19, 2020
 **Notable changes**
 
 - Internet Explorer version `"≤6"` is now an accepted value, to reflect testing limitations for older versions ([#7337](https://github.com/mdn/browser-compat-data/issues/7337))
-- The following features were [removed as irrelevant](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-irrelevant-features):
+- The following features were [removed as irrelevant](docs/data-guidelines.md#removal-of-irrelevant-features):
   - `api.MediaQueryListListener` ([#7210](https://github.com/mdn/browser-compat-data/issues/7210))
   - `api.IDBVersionChangeRequest.setVersion` ([#6934](https://github.com/mdn/browser-compat-data/issues/6934))
   - `api.IDBVersionChangeRequest` ([#7411](https://github.com/mdn/browser-compat-data/issues/7411))
@@ -924,7 +924,7 @@ May 28, 2020
 
 **Notable changes**
 
-- The following [irrelevant features](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
+- The following [irrelevant features](docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
   - `javascript.builtins.String.quote` ([#6207](https://github.com/mdn/browser-compat-data/issues/6207))
   - `javascript.builtins.String.replace.flags` ([#6206](https://github.com/mdn/browser-compat-data/issues/6206))
   - `api.LocalFileSystem` and `api.LocalFileSystemSync` ([#6163](https://github.com/mdn/browser-compat-data/issues/6163))
@@ -942,12 +942,12 @@ May 21, 2020
 
 **Notable changes**
 
-- The following [irrelevant features](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
+- The following [irrelevant features](docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
   - `javascript.builtins.Date.toLocaleFormat` ([#6183](https://github.com/mdn/browser-compat-data/issues/6183))
   - `javascript.builtins.String.match.flags` ([#6184](https://github.com/mdn/browser-compat-data/issues/6184))
   - `javascript.statements.try_catch.conditional_clauses` ([#6192](https://github.com/mdn/browser-compat-data/issues/6192))
 - `javascript.statements.default.exports` has moved to `javascript.statements.exports.default` (see [#5869](https://github.com/mdn/browser-compat-data/issues/5869)).
-- A new guideline for how [Permissions API permissions data](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#permissions-api-permissions-permissionname_permission) is stored has been accepted and the descriptions have been fixed, see https://github.com/mdn/browser-compat-data/pull/6156.
+- A new guideline for how [Permissions API permissions data](docs/data-guidelines.md#permissions-api-permissions-permissionname_permission) is stored has been accepted and the descriptions have been fixed, see https://github.com/mdn/browser-compat-data/pull/6156.
 
 **Statistics**
 
@@ -1688,7 +1688,7 @@ March 28, 2019
 
 **Notable changes**
 
-- [`matches` objects](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#the-matches-object) have been added to the schema.(https://github.com/mdn/browser-compat-data/pull/3631)
+- [`matches` objects](schemas/compat-data-schema.md#the-matches-object) have been added to the schema.(https://github.com/mdn/browser-compat-data/pull/3631)
 
 **Statistics**
 
