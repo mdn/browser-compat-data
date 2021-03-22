@@ -43,7 +43,7 @@ When adding data for a particular feature, you'll often need to find which versi
 It takes up to four weeks for BCD changes to be reflected in MDN's browser compatibility tables.
 The process is:
 
-1. A pull request is reviewed and merged to `master`.
+1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
    See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
 3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, to production.

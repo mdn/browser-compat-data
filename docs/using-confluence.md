@@ -13,7 +13,7 @@ Before using the `confluence` command make sure you have done the following:
 
 ## Basic procedure
 
-1. On your local `master` branch run `git pull` to update your local data.
+1. On your local `main` branch run `git pull` to update your local data.
 1. Create a new branch using `git checkout -b my-new-branch-name`.
 1. Run the `confluence` command, passing in the name of web platform interface. For example:
 
