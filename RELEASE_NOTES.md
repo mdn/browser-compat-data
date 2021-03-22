@@ -1,5 +1,18 @@
 # Release notes
 
+## [v3.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.2)
+
+March 25, 2021
+
+### Notable changes
+
+The following duplicate features were removed:
+
+- `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+- `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+- `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+- `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+
 ## [v3.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.1)
 
 March 18, 2021
