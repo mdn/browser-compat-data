@@ -8,6 +8,12 @@ March 25, 2021
 
 - The default branch for the repository was renamed from `master` to `main`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
 
+- For improved consistency with related features, the following features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
+
+  - `javascript.operators.async_function_expression` → `javascript.operators.async_function`
+  - `javascript.operators.function_star` → `javascript.operators.generator_function`
+  - `javascript.operators.async_generator_function_expression` → `javascript.operators.async_generator_function`
+
 - The following duplicate features were removed:
 
   - `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
