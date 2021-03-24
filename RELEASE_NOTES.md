@@ -6,12 +6,14 @@ March 25, 2021
 
 ### Notable changes
 
-The following duplicate features were removed:
+- The default branch for the repository was renamed from `master` to `main`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
 
-- `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
-- `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
-- `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
-- `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+- The following duplicate features were removed:
+
+  - `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+  - `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+  - `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+  - `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
 
 ## [v3.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.1)
 
