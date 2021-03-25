@@ -302,3 +302,26 @@ Sometimes it's useful to represent support for specific parameters (also known a
 For existing data which does not follow this guideline, you may modify it to conform with this data, if you are you otherwise updating the data (or data related to it).
 
 This guideline was proposed and adopted in [#10509](https://github.com/mdn/browser-compat-data/pull/10509).
+
+## APIs moved on the prototype chain
+
+[Web IDL interfaces](https://heycam.github.io/webidl/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
+
+Some of these interfaces are [abstract](https://en.wikipedia.org/wiki/Abstract_type) and never have instances, while most are concrete and can be instantiated. For example, `BaseAudioContext` and `Node` are abstract, while `AudioContext` and `Element` are concrete.
+
+When attributes and methods are moved between interfaces in specifications and implementations, BCD should make the corresponding change. This guidelines covers what versions to use, and whether to use `partial_implementation` and notes in the resulting compat data.
+
+**When members are moved up the prototype chain**, such as from `AudioContext` to `BaseAudioContext`:
+
+- For the members, use the versions when they were first supported on any concrete interface inheriting from `BaseAudioContext`, even if that is earlier than `BaseAudioContext` itself existed. Use `partial_implementation` and notes for the members if there are concrete interfaces where the member wasn't supported prior to the move.
+- For the interface itself, add a `partial_implementation` entry going back as far as the earliest member, and a simple entry from the time the interface itself was introduced.
+
+The [`SVGGeometryElement`](https://github.com/mdn/browser-compat-data/pull/9479) move is an example of this.
+
+**When members are moved down the prototype chain**, such as from `Node` to `Element`:
+
+- Use the version when the member was first supported on `Element` instances, ignoring whether it was inherited from `Node` or not. No `partial_implementation` or notes about the move are needed.
+
+The [`localName`/`namespaceURI`/`prefix`](https://github.com/mdn/browser-compat-data/pull/9561) move is an example of this.
+
+This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
