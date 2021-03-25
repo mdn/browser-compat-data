@@ -8,6 +8,16 @@ March 25, 2021
 
 - The default branch for the repository has been renamed to `main` from `master`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
 
+- The following duplicate features of the `AudioScheduledSourceNode` interface were removed ([#9599](https://github.com/mdn/browser-compat-data/pull/9599)):
+
+  - `api.AudioBufferSourceNode.onended`
+  - `api.ConstantSourceNode.onended`
+  - `api.ConstantSourceNode.start`
+  - `api.ConstantSourceNode.stop`
+  - `api.OscillatorNode.onended`
+  - `api.OscillatorNode.start`
+  - `api.OscillatorNode.stop`
+
 - The following historic features of the `Node` interface were removed to more accurately represent their moves to the `Element` and `Attr` interfaces ([#9561](https://github.com/mdn/browser-compat-data/pull/9561)):
 
   - `api.Node.localName`
