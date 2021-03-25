@@ -4,12 +4,17 @@ const query = require('./query');
 
 function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined) {
-    yield {
+    const next = {
       path,
       data,
-      compat: data.__compat,
-      browser: isBrowser(data) ? data : undefined,
     };
+
+    if (isBrowser(data)) {
+      next.browser = data;
+    } else if (data.__compat !== undefined) {
+      next.data.__compat;
+    }
+    yield next;
   }
 
   if (depth > 0) {
