@@ -8,6 +8,18 @@ March 25, 2021
 
 - The default branch for the repository has been renamed to `main` from `master`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
 
+- For improved consistency with related features, the following JavaScript features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
+
+  - `javascript.operators.async_function_expression` → `javascript.operators.async_function`
+  - `javascript.operators.function_star` → `javascript.operators.generator_function`
+  - `javascript.operators.async_generator_function_expression` → `javascript.operators.async_generator_function`
+
+- The following historic features of the `Node` interface were removed to more accurately represent their moves to the `Element` and `Attr` interfaces ([#9561](https://github.com/mdn/browser-compat-data/pull/9561)):
+
+  - `api.Node.localName`
+  - `api.Node.namespaceURI`
+  - `api.Node.prefix`
+
 - The following duplicate features of the `AudioScheduledSourceNode` interface were removed ([#9599](https://github.com/mdn/browser-compat-data/pull/9599)):
 
   - `api.AudioBufferSourceNode.onended`
@@ -18,24 +30,12 @@ March 25, 2021
   - `api.OscillatorNode.start`
   - `api.OscillatorNode.stop`
 
-- The following historic features of the `Node` interface were removed to more accurately represent their moves to the `Element` and `Attr` interfaces ([#9561](https://github.com/mdn/browser-compat-data/pull/9561)):
+- The following duplicate features of the `SVGGeometryElement` interface were removed ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/)):
 
-  - `api.Node.localName`
-  - `api.Node.namespaceURI`
-  - `api.Node.prefix`
-
-- For improved consistency with related features, the following features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
-
-  - `javascript.operators.async_function_expression` → `javascript.operators.async_function`
-  - `javascript.operators.function_star` → `javascript.operators.generator_function`
-  - `javascript.operators.async_generator_function_expression` → `javascript.operators.async_generator_function`
-
-- The following duplicate features were removed:
-
-  - `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
-  - `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
-  - `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
-  - `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength` ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/))
+  - `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement`
+  - `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength`
+  - `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength`
+  - `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength`
 
 ### Statistics
 
