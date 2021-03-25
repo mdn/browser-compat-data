@@ -6,7 +6,7 @@ March 25, 2021
 
 ### Notable changes
 
-- The default branch for the repository was renamed from `master` to `main`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
+- The default branch for the repository has been renamed to `main` from `master`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
 
 - For improved consistency with related features, the following features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
 
