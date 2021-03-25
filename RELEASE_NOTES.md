@@ -8,6 +8,12 @@ March 25, 2021
 
 - The default branch for the repository has been renamed to `main` from `master`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
 
+- The following historic features of the `Node` interface were removed to more accurately represent their moves to the `Element` and `Attr` interfaces ([#9561](https://github.com/mdn/browser-compat-data/pull/9561)):
+
+  - `api.Node.localName`
+  - `api.Node.namespaceURI`
+  - `api.Node.prefix`
+
 - For improved consistency with related features, the following features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
 
   - `javascript.operators.async_function_expression` → `javascript.operators.async_function`
