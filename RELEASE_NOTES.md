@@ -1,5 +1,49 @@
 # Release notes
 
+## [v3.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.2)
+
+March 25, 2021
+
+### Notable changes
+
+- The default branch for the repository has been renamed to `main` from `master`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
+
+- For improved consistency with related features, the following JavaScript features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
+
+  - `javascript.operators.async_function_expression` → `javascript.operators.async_function`
+  - `javascript.operators.function_star` → `javascript.operators.generator_function`
+  - `javascript.operators.async_generator_function_expression` → `javascript.operators.async_generator_function`
+
+- The following historic features of the `Node` interface were removed to more accurately represent their moves to the `Element` and `Attr` interfaces ([#9561](https://github.com/mdn/browser-compat-data/pull/9561)):
+
+  - `api.Node.localName`
+  - `api.Node.namespaceURI`
+  - `api.Node.prefix`
+
+- The following duplicate features of the `AudioScheduledSourceNode` interface were removed ([#9599](https://github.com/mdn/browser-compat-data/pull/9599)):
+
+  - `api.AudioBufferSourceNode.onended`
+  - `api.ConstantSourceNode.onended`
+  - `api.ConstantSourceNode.start`
+  - `api.ConstantSourceNode.stop`
+  - `api.OscillatorNode.onended`
+  - `api.OscillatorNode.start`
+  - `api.OscillatorNode.stop`
+
+- The following duplicate features of the `SVGGeometryElement` interface were removed ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/)):
+
+  - `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement`
+  - `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength`
+  - `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength`
+  - `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength`
+
+### Statistics
+
+- 15 contributors have changed 417 files with 2,977 additions and 1,915 deletions in 62 commits ([`v3.2.1...v3.2.2`](https://github.com/mdn/browser-compat-data/compare/v3.2.1...v3.2.2))
+- 13,020 total features
+- 761 total contributors
+- 3,284 total stargazers
+
 ## [v3.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.1)
 
 March 18, 2021
