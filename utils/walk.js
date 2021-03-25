@@ -12,7 +12,7 @@ function* lowLevelWalk(data = bcd, path, depth = Infinity) {
     if (isBrowser(data)) {
       next.browser = data;
     } else if (data.__compat !== undefined) {
-      next.data.__compat;
+      next.compat = data.__compat;
     }
     yield next;
   }
