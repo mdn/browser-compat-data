@@ -699,7 +699,8 @@
               "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
             },
             "ie": {
-              "version_added": "4"
+              "version_added": "4",
+              "notes": "<code>navigator.cookieEnabled</code> returns <code>true</true> even if the browser is set to block cookies (for example, if the page is in the <em>Restricted sites</em> security zone)."
             },
             "opera": {
               "version_added": "≤12.1"
