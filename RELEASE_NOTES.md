@@ -6,6 +6,12 @@ April 1, 2021
 
 ### Notable changes
 
+- The following historic features, which are no longer supported in any browser, have been removed as irrelevant:
+
+  - `css.properties.display.run-in` ([#9694](https://github.com/mdn/browser-compat-data/pull/9694))
+  - `api.HTMLObjectElement.typeMustMatch` ([#9671](https://github.com/mdn/browser-compat-data/pull/9671))
+  - `html.elements.object.typemustmatch` ([#9671](https://github.com/mdn/browser-compat-data/pull/9671))
+
 - The following duplicate features have been removed:
 
   - `api.FormData.SupportForOf`, duplicating `api.FormData.@@iterator` ([#9640](https://github.com/mdn/browser-compat-data/pull/9640))
