@@ -1,10 +1,10 @@
 # The browser JSON schema
 
-This document helps you to understand the structure of the [browser JSON](https://github.com/mdn/browser-compat-data/tree/master/browsers) files.
+This document helps you to understand the structure of the [browser JSON](../browsers) files.
 
 #### Browser identifiers
 
-The currently accepted browser identifiers are [defined in the compat-data schema](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#browser-identifiers). They are re-used for the browser data scheme. No other identifiers are allowed and the file names should also use the browser identifiers.
+The currently accepted browser identifiers are [defined in the compat-data schema](compat-data-schema.md#browser-identifiers). They are re-used for the browser data scheme. No other identifiers are allowed and the file names should also use the browser identifiers.
 
 For example, for the browser identifier `firefox`, the file name is `firefox.json`.
 

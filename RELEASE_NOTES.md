@@ -1,5 +1,218 @@
 # Release notes
 
+## [v3.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
+
+April 1, 2021
+
+### Notable changes
+
+- `css.selectors.-moz-ui-valid` has been removed and replaced by `css.selectors.user-valid` to reflect the standardization of the `:user-valid` pseudo-class. ([#9695](https://github.com/mdn/browser-compat-data/pull/9695))
+
+- The following historic features, which are no longer supported in any browser, have been removed as irrelevant:
+
+  - `css.properties.display.run-in` ([#9694](https://github.com/mdn/browser-compat-data/pull/9694))
+  - `api.HTMLObjectElement.typeMustMatch` ([#9671](https://github.com/mdn/browser-compat-data/pull/9671))
+  - `html.elements.object.typemustmatch` ([#9671](https://github.com/mdn/browser-compat-data/pull/9671))
+
+- The following duplicate features have been removed:
+
+  - `api.FormData.SupportForOf`, duplicating `api.FormData.@@iterator` ([#9640](https://github.com/mdn/browser-compat-data/pull/9640))
+  - `api.WorkerGlobalScope.console`, duplicating `api.Console.worker_support` ([#9634](https://github.com/mdn/browser-compat-data/pull/9634))
+
+### Statistics
+
+- 12 contributors have changed 78 files with 1,721 additions and 1,313 deletions in 47 commits ([`v3.2.2...v3.2.3`](https://github.com/mdn/browser-compat-data/compare/v3.2.2...v3.2.3))
+- 13,029 total features
+- 763 total contributors
+- 3,297 total stargazers
+
+## [v3.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.2)
+
+March 25, 2021
+
+### Notable changes
+
+- The default branch for the repository has been renamed to `main` from `master`. ([#6292](https://github.com/mdn/browser-compat-data/issues/6292))
+
+- For improved consistency with related features, the following JavaScript features have been renamed ([#9592](https://github.com/mdn/browser-compat-data/pull/9592)):
+
+  - `javascript.operators.async_function_expression` → `javascript.operators.async_function`
+  - `javascript.operators.function_star` → `javascript.operators.generator_function`
+  - `javascript.operators.async_generator_function_expression` → `javascript.operators.async_generator_function`
+
+- The following historic features of the `Node` interface were removed to more accurately represent their moves to the `Element` and `Attr` interfaces ([#9561](https://github.com/mdn/browser-compat-data/pull/9561)):
+
+  - `api.Node.localName`
+  - `api.Node.namespaceURI`
+  - `api.Node.prefix`
+
+- The following duplicate features of the `AudioScheduledSourceNode` interface were removed ([#9599](https://github.com/mdn/browser-compat-data/pull/9599)):
+
+  - `api.AudioBufferSourceNode.onended`
+  - `api.ConstantSourceNode.onended`
+  - `api.ConstantSourceNode.start`
+  - `api.ConstantSourceNode.stop`
+  - `api.OscillatorNode.onended`
+  - `api.OscillatorNode.start`
+  - `api.OscillatorNode.stop`
+
+- The following duplicate features of the `SVGGeometryElement` interface were removed ([#9479](https://github.com/mdn/browser-compat-data/pull/9479/)):
+
+  - `api.SVGGeometryElement.supportOtherThanPath`, duplicating several new support statements in `api.SVGGeometryElement`
+  - `api.SVGPathElement.getPointAtLength`, duplicating `api.SVGGeometryElement.getPointAtLength`
+  - `api.SVGPathElement.getTotalLength`, duplicating `api.SVGGeometryElement.getTotalLength`
+  - `api.SVGPathElement.pathLength`, duplicating `api.SVGGeometryElement.pathLength`
+
+### Statistics
+
+- 15 contributors have changed 417 files with 2,977 additions and 1,915 deletions in 62 commits ([`v3.2.1...v3.2.2`](https://github.com/mdn/browser-compat-data/compare/v3.2.1...v3.2.2))
+- 13,020 total features
+- 761 total contributors
+- 3,284 total stargazers
+
+## [v3.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.1)
+
+March 18, 2021
+
+### Notable changes
+
+- `api.PictureInPicture` has been removed as part of an effort to more accurately represent Picture-in-Picture interfaces. ([#9438](https://github.com/mdn/browser-compat-data/pull/9438), [#7028](https://github.com/mdn/browser-compat-data/pull/7028))
+
+- The following-never supported features were removed:
+
+  - `api.Burnable` ([#9458](https://github.com/mdn/browser-compat-data/pull/9458))
+  - `api.DOMErrorHandler` ([#9382](https://github.com/mdn/browser-compat-data/pull/9382))
+  - `api.ShadowRoot.caretPositionFromPoint` ([#9439](https://github.com/mdn/browser-compat-data/pull/9439))
+  - `api.StorageQuota` ([#9459](https://github.com/mdn/browser-compat-data/pull/9459))
+
+- The following duplicate features were removed:
+
+  - `javascript.operators.spread.spread_in_destructuring`, duplicating `javascript.operators.destructuring.rest_in_arrays` and `javascript.operators.destructuring.rest_in_objects` ([#9457](https://github.com/mdn/browser-compat-data/issues/9457), [#9472](https://github.com/mdn/browser-compat-data/pull/9472))
+  - `svg.attributes.presentation.stop-opacity`, duplicating `svg.elements.stop.stop-opacity` ([#9468](https://github.com/mdn/browser-compat-data/pull/9468))
+
+- To improve consistency with other parameter features, the following `CanvasRenderingContext2D` features have been renamed to lower-case ([#9433](https://github.com/mdn/browser-compat-data/pull/9433)):
+
+  | Before                                                          | After                                                           |
+  | --------------------------------------------------------------- | --------------------------------------------------------------- |
+  | `api.CanvasRenderingContext2D.clip.Path_parameter`              | `api.CanvasRenderingContext2D.clip.path_parameter`              |
+  | `api.CanvasRenderingContext2D.drawFocusIfNeeded.Path_parameter` | `api.CanvasRenderingContext2D.drawFocusIfNeeded.path_parameter` |
+  | `api.CanvasRenderingContext2D.fill.Path_parameter`              | `api.CanvasRenderingContext2D.fill.path_parameter`              |
+  | `api.CanvasRenderingContext2D.isPointInPath.Path_parameter`     | `api.CanvasRenderingContext2D.isPointInPath.path_parameter`     |
+  | `api.CanvasRenderingContext2D.isPointInStroke.Path_parameter`   | `api.CanvasRenderingContext2D.isPointInStroke.path_parameter`   |
+  | `api.CanvasRenderingContext2D.stroke.Path_parameter`            | `api.CanvasRenderingContext2D.stroke.path_parameter`            |
+
+### Statistics
+
+- 17 contributors have changed 99 files with 1,537 additions and 2,285 deletions in 35 commits ([`v3.2.0...v3.2.1`](https://github.com/mdn/browser-compat-data/compare/v3.2.0...v3.2.1))
+- 13,023 total features
+- 771 total contributors
+- 3,276 total stargazers
+
+## [v3.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.0)
+
+March 11, 2021
+
+### Notable changes
+
+- [Support statement objects](https://github.com/mdn/browser-compat-data/blob/v3.2.0/schemas/compat-data-schema.md#the-support_statement-object) may no longer use `false` or `null` values for `version_removed`. Values for `version_removed` are now required to be real version numbers or `true` (removed in some unknown version). This change to the schema codifies a widely-followed practice within existing compatability data. ([#9015](https://github.com/mdn/browser-compat-data/pull/9015))
+
+- The following features were renamed:
+
+  - `api.SVGFECompositeElement.in` is now `api.SVGFECompositeElement.in1`, fixing a misidentified attribute (again). ([#9074](https://github.com/mdn/browser-compat-data/pull/9074), [#9343](https://github.com/mdn/browser-compat-data/pull/9343))
+  - `api.SVGTests.hasextension` is now `api.SVGTests.hasExtension`, fixing incorrect capitalization. ([#9387](https://github.com/mdn/browser-compat-data/pull/9387))
+  - `api.SVGViewElement.viewtarget` is now `api.SVGViewElement.viewTarget`, fixing incorrect capitalization. ([#9387](https://github.com/mdn/browser-compat-data/pull/9387))
+
+- The following features were removed because they duplicated data under historic names:
+
+  - `api.AuthenticationAssertion`, duplicating `api.AuthenticatorAssertionResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.ConstrainLong`, duplicating `api.ConstrainULong` ([#9418](https://github.com/mdn/browser-compat-data/pull/9418))
+  - `api.LongRange`, duplicating `api.ULongRange` ([#9418](https://github.com/mdn/browser-compat-data/pull/9418))
+  - `api.ScopedCredential`, duplicating `api.PublicKeyCredential` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.ScopedCredentialInfo`, duplicating `api.AuthenticatorResponse` ([#9398](https://github.com/mdn/browser-compat-data/pull/9398))
+  - `api.Window.OverconstrainedError`, duplicating `api.OverconstrainedError` ([#9401](https://github.com/mdn/browser-compat-data/pull/9401))
+
+- The following no-longer supported features were removed as irrelevant:
+
+  - `api.PasswordCredential.additionalData` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
+  - `api.PasswordCredential.idName` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
+  - `api.PasswordCredential.passwordName` ([#9400](https://github.com/mdn/browser-compat-data/pull/9400))
+
+- The following never-implemented features were removed:
+
+  - `api.PaymentManager.requestPermission` ([#9399](https://github.com/mdn/browser-compat-data/pull/9399))
+  - `api.Response.useFinalURL` ([#9386](https://github.com/mdn/browser-compat-data/pull/9386))
+  - `api.Window.layoutShift` ([#9388](https://github.com/mdn/browser-compat-data/pull/9388))
+
+### Statistics
+
+- 11 contributors have changed 163 files with 1,288 additions and 1,323 deletions in 27 commits ([`v3.1.3...v3.2.0`](https://github.com/mdn/browser-compat-data/compare/v3.1.3...v3.2.0))
+- 13,031 total features
+- 769 total contributors
+- 3,266 total stargazers
+
+## [v3.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.3)
+
+March 4, 2021
+
+### Notable changes
+
+- `api.SVGFECompositeElement.in` replaces `api.SVGFECompositeElement.in1`, fixing a misidentified attribute ([#9074](https://github.com/mdn/browser-compat-data/pull/9074)).
+
+### Statistics
+
+- 13 contributors have changed 87 files with 771 additions and 480 deletions in 28 commits ([`v3.1.2...v3.1.3`](https://github.com/mdn/browser-compat-data/compare/v3.1.2...v3.1.3))
+- 13,028 total features
+- 767 total contributors
+- 3,253 total stargazers
+
+## [v3.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.2)
+
+- The following withdrawn features have been removed as irrelevant:
+
+  - `api.HTMLFormElement.requestAutocomplete` ([#9232](https://github.com/mdn/browser-compat-data/pull/9232))
+  - `api.XMLHttpRequest.sendAsBinary` ([#9239](https://github.com/mdn/browser-compat-data/pull/9239))
+  - `html.elements.script.type.version_parameter` ([#9206](https://github.com/mdn/browser-compat-data/pull/9206))
+
+- The following never-supported WebExtensions features have been removed ([#6960](https://github.com/mdn/browser-compat-data/pull/6960)):
+
+  - `webextensions.manifest.content_security_policy.isolated_world`
+  - `webextensions.manifest.content_security_policy.sandbox`
+  - `webextensions.match_patterns.scheme.ftps`
+
+- The following never-supported MathML features have been removed ([#6958](https://github.com/mdn/browser-compat-data/pull/6958)):
+
+  - `mathml.elements.math.overflow`
+  - `mathml.elements.mglyph`
+  - `mathml.elements.mlabeledtr`
+  - `mathml.elements.mo.form`
+  - `mathml.elements.mo.largeop`
+  - `mathml.elements.mspace.linebreak`
+  - `mathml.elements.mstyle.decimalpoint`
+  - `mathml.elements.mstyle.infixbreakstyle`
+  - `mathml.elements.mtable.alignmentscope`
+  - `mathml.elements.mtable.columnwidth`
+  - `mathml.elements.mtable.equalcolumns`
+  - `mathml.elements.mtable.equalrows`
+  - `mathml.elements.mtable.groupalign`
+  - `mathml.elements.mtable.minlabelspacing`
+  - `mathml.elements.mtable.side`
+  - `mathml.elements.mtd.groupalign`
+  - `mathml.elements.mtr.groupalign`
+
+- The following constants have been removed, under the recently-adopted [_Constants_ guideline](docs/data-guidelines.md#constants) ([#9195](https://github.com/mdn/browser-compat-data/pull/9195)):
+
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_LEFT`
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_NUMPAD`
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_RIGHT`
+  - `api.KeyboardEvent.DOM_KEY_LOCATION_STANDARD`
+
+**Statistics**
+
+- 19 contributors have changed 122 files with 4,549 additions and 2,365 deletions in 43 commits ([`v3.1.1...v3.1.2`](https://github.com/mdn/browser-compat-data/compare/v3.1.1...v3.1.2))
+- 13,024 total features
+- 765 total contributors
+- 3,248 total stargazers
+
 ## [v3.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.1.1)
 
 February 18, 2021
@@ -66,7 +279,7 @@ February 11, 2021
 
 **Notable changes**
 
-- We've adopted [a new data guideline for interface mixins](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
+- We've adopted [a new data guideline for interface mixins](docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
 
   For example, `HTMLHyperlinkElementUtils` attributes are now represented on `HTMLAnchorElement` and `HTMLAreaElement` directly.
 
@@ -108,7 +321,7 @@ February 4, 2021
 
 **Notable changes**
 
-- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#constants) ([#8934](https://github.com/mdn/browser-compat-data/pull/8934))
+- `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](docs/data-guidelines.md#constants) ([#8934](https://github.com/mdn/browser-compat-data/pull/8934))
 
 **Statistics**
 
@@ -216,7 +429,7 @@ Review the changes below for details.
 - Node.js versions `0.10` and `0.12` were replaced by their full SemVer values, `0.10.0` and `0.12.0`, respectively. ([#7491](https://github.com/mdn/browser-compat-data/issues/7491), [#7492](https://github.com/mdn/browser-compat-data/issues/7492))
 - Many high-level namespaces in the package were [documented](https://github.com/mdn/browser-compat-data#package-contents) and [a formal Semantic Versioning policy was introduced](https://github.com/mdn/browser-compat-data#semantic-versioning-policy). ([#7615](https://github.com/mdn/browser-compat-data/issues/7615))
 - Data in `javascript` requires version number data; the `javascript` data no longer contains any `null` or `true` values. ([#7607](https://github.com/mdn/browser-compat-data/issues/7607))
-- [_Addition of browsers_](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#addition-of-browsers) and [_Removal of browsers_](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-browsers) data guidelines were adopted to document requirements to add or remove a browser or engine from package. ([#7244](https://github.com/mdn/browser-compat-data/issues/7244))
+- [_Addition of browsers_](docs/data-guidelines.md#addition-of-browsers) and [_Removal of browsers_](docs/data-guidelines.md#removal-of-browsers) data guidelines were adopted to document requirements to add or remove a browser or engine from package. ([#7244](https://github.com/mdn/browser-compat-data/issues/7244))
 - The following features were removed as irrelevant:
   - `api.HTMLAnchorElement.media` ([#7538](https://github.com/mdn/browser-compat-data/issues/7538))
   - `api.HTMLAreaElement.hreflang` ([#7539](https://github.com/mdn/browser-compat-data/issues/7539))
@@ -270,7 +483,7 @@ November 19, 2020
 **Notable changes**
 
 - Internet Explorer version `"≤6"` is now an accepted value, to reflect testing limitations for older versions ([#7337](https://github.com/mdn/browser-compat-data/issues/7337))
-- The following features were [removed as irrelevant](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-irrelevant-features):
+- The following features were [removed as irrelevant](docs/data-guidelines.md#removal-of-irrelevant-features):
   - `api.MediaQueryListListener` ([#7210](https://github.com/mdn/browser-compat-data/issues/7210))
   - `api.IDBVersionChangeRequest.setVersion` ([#6934](https://github.com/mdn/browser-compat-data/issues/6934))
   - `api.IDBVersionChangeRequest` ([#7411](https://github.com/mdn/browser-compat-data/issues/7411))
@@ -781,7 +994,7 @@ May 28, 2020
 
 **Notable changes**
 
-- The following [irrelevant features](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
+- The following [irrelevant features](docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
   - `javascript.builtins.String.quote` ([#6207](https://github.com/mdn/browser-compat-data/issues/6207))
   - `javascript.builtins.String.replace.flags` ([#6206](https://github.com/mdn/browser-compat-data/issues/6206))
   - `api.LocalFileSystem` and `api.LocalFileSystemSync` ([#6163](https://github.com/mdn/browser-compat-data/issues/6163))
@@ -799,12 +1012,12 @@ May 21, 2020
 
 **Notable changes**
 
-- The following [irrelevant features](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
+- The following [irrelevant features](docs/data-guidelines.md#removal-of-irrelevant-features) have been removed:
   - `javascript.builtins.Date.toLocaleFormat` ([#6183](https://github.com/mdn/browser-compat-data/issues/6183))
   - `javascript.builtins.String.match.flags` ([#6184](https://github.com/mdn/browser-compat-data/issues/6184))
   - `javascript.statements.try_catch.conditional_clauses` ([#6192](https://github.com/mdn/browser-compat-data/issues/6192))
 - `javascript.statements.default.exports` has moved to `javascript.statements.exports.default` (see [#5869](https://github.com/mdn/browser-compat-data/issues/5869)).
-- A new guideline for how [Permissions API permissions data](https://github.com/mdn/browser-compat-data/blob/master/docs/data-guidelines.md#permissions-api-permissions-permissionname_permission) is stored has been accepted and the descriptions have been fixed, see https://github.com/mdn/browser-compat-data/pull/6156.
+- A new guideline for how [Permissions API permissions data](docs/data-guidelines.md#permissions-api-permissions-permissionname_permission) is stored has been accepted and the descriptions have been fixed, see https://github.com/mdn/browser-compat-data/pull/6156.
 
 **Statistics**
 
@@ -1545,7 +1758,7 @@ March 28, 2019
 
 **Notable changes**
 
-- [`matches` objects](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#the-matches-object) have been added to the schema.(https://github.com/mdn/browser-compat-data/pull/3631)
+- [`matches` objects](schemas/compat-data-schema.md#the-matches-object) have been added to the schema.(https://github.com/mdn/browser-compat-data/pull/3631)
 
 **Statistics**
 
