@@ -1,5 +1,13 @@
 # Release notes
 
+## [v3.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
+
+April 1, 2021
+
+### Notable changes
+
+- `css.selectors.-moz-ui-valid` has been removed and replaced by `css.selectors.user-valid` to reflect the standardization of the `:user-valid` pseudo-class. ([#9695](https://github.com/mdn/browser-compat-data/pull/9695))
+
 ## [v3.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.2)
 
 March 25, 2021
