@@ -6,7 +6,11 @@ April 1, 2021
 
 ### Notable changes
 
-- `api.FormData.SupportForOf` has been removed because it duplicates `api.FormData.@@iterator` ([#9640](https://github.com/mdn/browser-compat-data/pull/9640))
+- The following duplicate features have been removed:
+
+  - `api.FormData.SupportForOf`, duplicating `api.FormData.@@iterator` ([#9640](https://github.com/mdn/browser-compat-data/pull/9640))
+  - `api.WorkerGlobalScope.console`, duplicating `api.Console.worker_support` ([#9634](https://github.com/mdn/browser-compat-data/pull/9634))
+
 - `css.selectors.-moz-ui-valid` has been removed and replaced by `css.selectors.user-valid` to reflect the standardization of the `:user-valid` pseudo-class. ([#9695](https://github.com/mdn/browser-compat-data/pull/9695))
 
 ## [v3.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.2)
