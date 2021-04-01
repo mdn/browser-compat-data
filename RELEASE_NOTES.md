@@ -6,6 +6,8 @@ April 1, 2021
 
 ### Notable changes
 
+- `css.selectors.-moz-ui-valid` has been removed and replaced by `css.selectors.user-valid` to reflect the standardization of the `:user-valid` pseudo-class. ([#9695](https://github.com/mdn/browser-compat-data/pull/9695))
+
 - The following historic features, which are no longer supported in any browser, have been removed as irrelevant:
 
   - `css.properties.display.run-in` ([#9694](https://github.com/mdn/browser-compat-data/pull/9694))
@@ -16,8 +18,6 @@ April 1, 2021
 
   - `api.FormData.SupportForOf`, duplicating `api.FormData.@@iterator` ([#9640](https://github.com/mdn/browser-compat-data/pull/9640))
   - `api.WorkerGlobalScope.console`, duplicating `api.Console.worker_support` ([#9634](https://github.com/mdn/browser-compat-data/pull/9634))
-
-- `css.selectors.-moz-ui-valid` has been removed and replaced by `css.selectors.user-valid` to reflect the standardization of the `:user-valid` pseudo-class. ([#9695](https://github.com/mdn/browser-compat-data/pull/9695))
 
 ### Statistics
 
