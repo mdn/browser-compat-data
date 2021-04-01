@@ -1,5 +1,31 @@
 # Release notes
 
+## [v3.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
+
+April 1, 2021
+
+### Notable changes
+
+- `css.selectors.-moz-ui-valid` has been removed and replaced by `css.selectors.user-valid` to reflect the standardization of the `:user-valid` pseudo-class. ([#9695](https://github.com/mdn/browser-compat-data/pull/9695))
+
+- The following historic features, which are no longer supported in any browser, have been removed as irrelevant:
+
+  - `css.properties.display.run-in` ([#9694](https://github.com/mdn/browser-compat-data/pull/9694))
+  - `api.HTMLObjectElement.typeMustMatch` ([#9671](https://github.com/mdn/browser-compat-data/pull/9671))
+  - `html.elements.object.typemustmatch` ([#9671](https://github.com/mdn/browser-compat-data/pull/9671))
+
+- The following duplicate features have been removed:
+
+  - `api.FormData.SupportForOf`, duplicating `api.FormData.@@iterator` ([#9640](https://github.com/mdn/browser-compat-data/pull/9640))
+  - `api.WorkerGlobalScope.console`, duplicating `api.Console.worker_support` ([#9634](https://github.com/mdn/browser-compat-data/pull/9634))
+
+### Statistics
+
+- 12 contributors have changed 78 files with 1,721 additions and 1,313 deletions in 47 commits ([`v3.2.2...v3.2.3`](https://github.com/mdn/browser-compat-data/compare/v3.2.2...v3.2.3))
+- 13,029 total features
+- 763 total contributors
+- 3,297 total stargazers
+
 ## [v3.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.2)
 
 March 25, 2021
