@@ -1,5 +1,16 @@
 # Release notes
 
+## [v3.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
+
+April 8, 2021
+
+### Statistics
+
+- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits [`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v2.3.4)
+- 13,029 total features
+- 766 total contributors
+- 3,309 total stargazers
+
 ## [v3.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
 
 April 1, 2021
