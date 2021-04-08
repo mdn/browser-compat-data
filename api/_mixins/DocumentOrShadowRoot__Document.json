@@ -97,54 +97,6 @@
           }
         }
       },
-      "caretPositionFromPoint": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "20"
-            },
-            "firefox_android": {
-              "version_added": "20"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "elementFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementFromPoint",
@@ -301,19 +253,7 @@
                 "version_added": "64"
               },
               {
-                "version_added": "47",
-                "version_removed": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "full-screen-api.unprefix.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "version_added": "9",
-                "version_removed": "65",
                 "alternative_name": "mozFullScreenElement"
               }
             ],
@@ -322,19 +262,7 @@
                 "version_added": "64"
               },
               {
-                "version_added": "47",
-                "version_removed": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "full-screen-api.unprefix.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "version_added": "9",
-                "version_removed": "65",
                 "alternative_name": "mozFullScreenElement"
               }
             ],
@@ -396,45 +324,185 @@
           }
         }
       },
-      "getSelection": {
+      "getAnimations": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getSelection",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getAnimations",
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "61",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "61",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "79",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "75"
+              },
+              {
+                "version_added": "63",
+                "version_removed": "75",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "79"
             },
             "ie": {
-              "version_added": "9"
+              "version_added": false
             },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "4"
-            },
-            "safari_ios": {
-              "version_added": "3.2"
-            },
+            "opera": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "48",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "45",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "13.1",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification, see Webkit bug <a href='https://webkit.org/b/179536'>179536</a>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "13.4",
+                "partial_implementation": true,
+                "notes": "Implements an older version of the specification, see Webkit bug <a href='https://webkit.org/b/179536'>179536</a>."
+              }
+            ],
             "samsunginternet_android": {
-              "version_added": "1.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "84"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pictureInPictureElement": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#documentorshadowroot-extension",
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "56"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
