@@ -99,7 +99,7 @@ const contributors = (start, end) =>
   ]);
 
 function countFeatures() {
-  return { features: [...walk()].length };
+  return [...walk()].length;
 }
 
 const formatter = new Intl.NumberFormat('en-US');
@@ -136,8 +136,8 @@ async function main() {
       end,
       ...stats(start, end),
       ...(await contributors(start, end)),
-      ...{ stars: await stargazers() },
-      ...countFeatures(),
+      stars: await stargazers(),
+      features: countFeatures(),
     }),
   );
 }
