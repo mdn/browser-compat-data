@@ -36,6 +36,7 @@ const question = query => {
   });
   return new Promise(resolve => rl.question(query, resolve)).then(response => {
     rl.close();
+    console.log();
     return response;
   });
 };
@@ -107,25 +108,44 @@ const countFeatures = () => {
   return count;
 };
 
-const main = async () => {
-  const { startVersionTag: start, endVersionTag: end } = argv;
-  const { commits, changed, insertions, deletions } = stats(start, end);
-  const { releaseContributors, totalContributors } = await contributors(
-    start,
-    end,
-  );
-  const stars = await stargazers();
-  const features = countFeatures();
+const formatter = new Intl.NumberFormat('en-US');
 
-  const body = `\
+function formatNumber(n) {
+  return formatter.format(n);
+}
+
+function formatStats(details) {
+  const releaseContributors = formatNumber(details.releaseContributors);
+  const totalContributors = formatNumber(details.totalContributors);
+  const changed = formatNumber(details.changed);
+  const insertions = formatNumber(details.insertions);
+  const deletions = formatNumber(details.deletions);
+  const commits = formatNumber(details.commits);
+  const features = formatNumber(details.features);
+  const stars = formatNumber(details.stars);
+  const { start, end } = details;
+
+  return `\
 ### Statistics
-- ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits (https://github.com/mdn/browser-compat-data/compare/${start}...${end})
+- ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits [\`${start}...${end}\`](https://github.com/mdn/browser-compat-data/compare/${start}...${end})
 - ${features} total features
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
+}
 
-  console.log();
-  console.log(body);
-};
+async function main() {
+  const { startVersionTag: start, endVersionTag: end } = argv;
+
+  console.log(
+    formatStats({
+      start,
+      end,
+      ...stats(start, end),
+      ...(await contributors(start, end)),
+      ...{ stars: await stargazers() },
+      ...{ features: countFeatures() },
+    }),
+  );
+}
 
 main();
