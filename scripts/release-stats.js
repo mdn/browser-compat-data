@@ -4,6 +4,7 @@ const chalk = require('chalk');
 
 const bcd = require('..');
 const { exec, releaseYargsBuilder } = require('./release-utils');
+const { walk } = require('../utils');
 
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',
@@ -97,16 +98,9 @@ const contributors = (start, end) =>
     },
   ]);
 
-const countFeatures = () => {
-  let count = 0;
-  JSON.parse(JSON.stringify(bcd), k => {
-    if (k === '__compat') {
-      count++;
-    }
-    return count;
-  });
-  return count;
-};
+function countFeatures() {
+  return { features: [...walk()].length };
+}
 
 const formatter = new Intl.NumberFormat('en-US');
 
@@ -143,7 +137,7 @@ async function main() {
       ...stats(start, end),
       ...(await contributors(start, end)),
       ...{ stars: await stargazers() },
-      ...{ features: countFeatures() },
+      ...countFeatures(),
     }),
   );
 }
