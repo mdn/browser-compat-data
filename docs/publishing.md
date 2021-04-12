@@ -21,7 +21,7 @@ Start preparing a release when:
 - the first pull request labeled [needs-release-note 📰](https://github.com/mdn/browser-compat-data/pulls?q=is%3Apr+label%3A%22needs-release-note+%3Anewspaper%3A%22+) has been merged after the most-recent release
 - you're ready to issue a new release
 
-whichever comes first first.
+whichever comes first.
 
 1. Start a new branch for the upcoming release. For example, run `git switch -c release-YYYY-MM-DD`, where `YYYY-MM-DD` is the target release date.
 
