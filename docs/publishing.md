@@ -60,7 +60,7 @@ The package is now ready to be published.
 
    _Note_: If you're not ready to publish to npm, click **Save draft** in GitHub and resume this process later.
 
-2. Click **Publish release**. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
+2. Click **Publish release** to create the tag and trigger the workflow that publishes to npm. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
 
 3. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly.
 
