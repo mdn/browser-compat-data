@@ -11,6 +11,15 @@ function getLatestTag() {
   return exec('git describe --abbrev=0 --tags');
 }
 
+function getRefDate(ref, querySafe = false) {
+  const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
+
+  if (querySafe) {
+    return rawDateString.replace('+', '%2B');
+  }
+  return rawDateString;
+}
+
 function releaseYargsBuilder(yargs) {
   yargs.positional('start-version-tag', {
     type: 'string',
@@ -26,5 +35,6 @@ function releaseYargsBuilder(yargs) {
 module.exports = {
   exec,
   getLatestTag,
+  getRefDate,
   releaseYargsBuilder,
 };

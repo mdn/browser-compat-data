@@ -1,6 +1,6 @@
 const assert = require('assert').strict;
 
-const { exec, releaseYargsBuilder } = require('./release-utils');
+const { getRefDate, releaseYargsBuilder } = require('./release-utils');
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
@@ -13,23 +13,17 @@ const { argv } = require('yargs').command(
   releaseYargsBuilder,
 );
 
-function getDate(ref, querySafe = false) {
-  const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
-
-  if (querySafe) {
-    return rawDateString.replace('+', '%2B');
-  }
-  return rawDateString;
-}
-
 function needsReleaseNotePulls(startRef, endRef) {
   const searchUrl = new URL(pullsBaseURL);
 
   let merged;
   if (endRef !== 'HEAD') {
-    merged = `merged:${getDate(startRef, true)}..${getDate(endRef, true)}`;
+    merged = `merged:${getRefDate(startRef, true)}..${getRefDate(
+      endRef,
+      true,
+    )}`;
   } else {
-    merged = `merged:>=${getDate(startRef, true)}`;
+    merged = `merged:>=${getRefDate(startRef, true)}`;
   }
   searchUrl.search = `q=is:pr ${merged} ${releaseNotesLabel}`;
 
@@ -39,7 +33,9 @@ function needsReleaseNotePulls(startRef, endRef) {
 function main() {
   const { startVersionTag: start, endVersionTag: end } = argv;
 
-  console.log(`From ${start} (${getDate(start)}) to ${end} (${getDate(end)}):`);
+  console.log(
+    `From ${start} (${getRefDate(start)}) to ${end} (${getRefDate(end)}):`,
+  );
   console.log();
   console.log(needsReleaseNotePulls(start, end));
 }
