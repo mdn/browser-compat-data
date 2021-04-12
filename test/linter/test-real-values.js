@@ -37,8 +37,6 @@ const blockList = {
   mathml: blockMany,
   webdriver: blockMany,
   webextensions: [],
-  xpath: [],
-  xslt: [],
 };
 
 /**

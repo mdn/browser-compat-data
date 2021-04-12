@@ -28,10 +28,6 @@ JSON files containing the compatibility data.
 
 - [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-- [xpath/](../xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
-
-- [xslt/](../xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
-
 ### File and folder breakdown
 
 The JSON files contain [feature identifiers](#feature-identifiers),

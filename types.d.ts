@@ -375,16 +375,4 @@ interface CompatDataIdentifiers
    * JavaScript APIs and manifest keys.
    */
   webextensions: PrimaryIdentifier;
-
-  /**
-   * Contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath)
-   * axes, and functions.
-   */
-  xpath: PrimaryIdentifier;
-
-  /**
-   * Contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT)
-   * elements, attributes, and global attributes.
-   */
-  xslt: PrimaryIdentifier;
 }
