@@ -6,11 +6,11 @@
 
 ### Community members
 
-_Everyone_ who is involved in any form with the project must abide by the project’s [Contribution Guidelines](https://github.com/mdn/browser-compat-data/blob/master/CODE_OF_CONDUCT.md) and Commit Access Guidelines. Everyone is expected to be respectful of fellow community members and to work collaboratively respective of the Code of Conduct (CPG). Consequences for not adhering to these Guidelines are listed in their respective documents.
+_Everyone_ who is involved in any form with the project must abide by the project’s [Contribution Guidelines](CODE_OF_CONDUCT.md) and Commit Access Guidelines. Everyone is expected to be respectful of fellow community members and to work collaboratively respective of the Code of Conduct (CPG). Consequences for not adhering to these Guidelines are listed in their respective documents.
 
 ### Users
 
-Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](https://github.com/mdn/browser-compat-data#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](https://github.com/mdn/browser-compat-data/blob/master/LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
+Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](README.md#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
 
 Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#Contributors), as described in the next section.
 
@@ -32,7 +32,7 @@ Peers are community members who have shown that they are committed to the contin
 
 Peers:
 
-- Are expected to work on public branches of their forks and submit pull requests to the master branch.
+- Are expected to work on public branches of their forks and submit pull requests to the main branch.
 - Must submit pull requests for all their changes.
 - May label and close issues.
 - May merge other people's pull requests that relate to compat data updates.
@@ -59,7 +59,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Ryan Johnson (@escattone), Mozilla
 - Joe Medley (@jpmedley), Google
-- Eric Shepherd (@a2sheppy), Mozilla
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
 
@@ -101,11 +100,10 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 #### List of current Owners
 
-- Florian Scholz (@Elchi3), Mozilla, BCD project lead
+- Florian Scholz (@Elchi3), Open Web Docs
 - Daniel Beck (@ddbeck)
-- Will Bamberg (@wbamberg), Mozilla
+- Will Bamberg (@wbamberg), Open Web Docs
 - Chris David Mills (@chrisdavidmills), Mozilla
-- Kadir Topal (@atopal), Mozilla
 
 ## Additional paths to becoming a Peer or Owner
 
@@ -128,7 +126,7 @@ If an agenda item cannot reach a consensus, an owner can call for either a closi
 ## Licensing
 
 Please note that this project is made available using the
-[CC0 license](https://github.com/mdn/browser-compat-data/blob/master/LICENSE),
+[CC0 license](LICENSE),
 so anyone contributing should only submit data if they know they have the right to submit it under CC0. If you're not sure about that, just ask.
 
 ## Project Meetings
@@ -168,6 +166,8 @@ The `@mdn/browser-compat-data` project would like to thank the following former 
 
 - Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
 - Jean-Yves Perrier (@teoli2003) (Former project lead, schema design co-author)
+- Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
+- Kadir Topal (@atopal) (BCD co-owner until September 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 

@@ -13,11 +13,15 @@ This file contains recommendations to help you record data in a consistent and u
   - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
   - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
   - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
+  - [Constants](#constants)
   - [Release lines and backported features](#release-lines-and-backported-features)
   - [Safari for iOS versioning](#safari-for-ios-versioning)
+  - [Addition of browsers](#addition-of-browsers)
+  - [Removal of browsers](#removal-of-browsers)
   - [Removal of irrelevant features](#removal-of-irrelevant-features)
   - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
   - [Initial versions for browsers](#initial-versions-for-browsers)
+  - [Mixins](#mixins)
 
 <!-- BEGIN TEMPLATE
 
@@ -175,6 +179,14 @@ However, this guideline does not apply to features where the browser's expected 
 
 This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
 
+## Constants
+
+Don't include data for constants in BCD. The rationale for not including them is that they're not known to be a source of any compatibility issues.
+
+For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_STANDARD`](https://w3c.github.io/uievents/#dom-keyboardevent-dom_key_location_standard) constant, we don't include data for it in BCD.
+
+This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
+
 ## Release lines and backported features
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
@@ -190,6 +202,30 @@ This decision was made in [#3953, under the expectation that most users are like
 For Safari for iOS, use the iOS version number, not the Safari version number or WebKit version number.
 
 This versioning scheme came at [Apple's request, in #2006](https://github.com/mdn/browser-compat-data/issues/2006#issuecomment-457277312).
+
+## Addition of browsers
+
+BCD's [owners](../GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we need evidence of (in decreasing order of importance):
+
+- a compelling downstream-consumer story (e.g., MDN or caniuse express an interest, or someone is planning to do something with the data that might plausibly grow BCD's reach)
+- reviewers (e.g., two or more people with interest and ability to test data relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
+- a release process allowing BCD to publish stable release information in a `browsers/` file (containing release notes with version numbers and dates)
+- documentation (e.g., how to get and test a feature in that browser, links to resources that might help with it, etc.)
+
+This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
+
+## Removal of browsers
+
+To maintain data quality, BCD's [owners](../GOVERNANCE.md) may choose to remove a browser or engine from the project. To remove a browser from BCD, we need habitual (six months or more) evidence of (in decreasing order of importance):
+
+- negative/neutral downstream-consumer interest in the browser's data (e.g., MDN and caniuse don't object to removal)
+- poor data coverage with negative trends (e.g., our data for the browser covers only a few features, with limited/flat growth in more data being added for it, or few features with real version numbers rather than just `null` or `true`, etc.)
+- infrequent community or vendor involvement in issues or PRs relating to the browser
+- infrequent new PRs relating to the browser (e.g., weeks or months go by without PRs touching the browser's data)
+
+Removing a browser from BCD does not constitute a ban; browsers may be readmitted under the [Addition of browsers](#addition-of-browsers) guideline.
+
+This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
 
 ## Removal of irrelevant features
 
@@ -214,10 +250,33 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 ## Initial versions for browsers
 
-The schema docs list [initial versions](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
+The schema docs list [initial versions](../schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
 
 If the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", record the initial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number.
 
 If you're adding new data for Node.js, use `0.10.0` or later. If a feature was added in a version before `0.10.0`, use `0.10.0` anyway.
 
 This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-data/pull/6861).
+
+## Mixins
+
+[Interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
+
+For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
+
+Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members to BCD in one of these ways:
+
+1. For smaller mixins, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
+
+2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.
+   In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
+
+   ```
+   {
+     "api": {
+       "HTMLAnchorElement": {
+         "myFeatureName": {
+           "__compat": {
+   ```
+
+This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
