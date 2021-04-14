@@ -15,23 +15,19 @@ function createDataBundle() {
 }
 
 // Returns a promise for writing the data to JSON file
-function writeData() {
+async function writeData() {
   const dest = path.resolve('./', directory, './data.json');
   const data = createDataBundle();
-  const promise = fs.writeFile(dest, data);
-  return promise;
+  await fs.writeFile(dest, data);
 }
 
 // Returns an array of promises for copying of all files that don't need transformation
-function copyFiles() {
-  let promises = [];
+async function copyFiles() {
   for (const file of verbatimFiles) {
     const src = path.join('./', file);
     const dest = path.join(directory, file);
-    const promise = fs.copyFile(src, dest);
-    promises = promises.concat(promise);
+    await fs.copyFile(src, dest);
   }
-  return promises;
 }
 
 function createManifest() {
@@ -61,11 +57,10 @@ function createManifest() {
   return JSON.stringify(minimal);
 }
 
-function writeManifest() {
+async function writeManifest() {
   const dest = path.resolve('./', directory, './package.json');
   const manifest = createManifest();
-  const promise = fs.writeFile(dest, manifest);
-  return promise;
+  await fs.writeFile(dest, manifest);
 }
 
 async function main() {
@@ -77,18 +72,18 @@ async function main() {
   if (deletedDir !== undefined) throw deletedDir;
 
   // Crate a new directory
-  const createdDir = await fs.mkdir(directory);
-  if (createdDir !== undefined) throw createdDir;
+  await fs.mkdir(directory);
 
-  const promises = [writeManifest(), writeData(), ...copyFiles()];
-  let errors = await Promise.all(promises);
-  errors = errors.filter(e => e !== undefined);
-  if (errors.length !== 0) {
-    // Re-throw all errors
-    throw errors;
-  }
+  await writeManifest();
+  await writeData();
+  await copyFiles();
+
+  console.log('Data bundle is ready');
 }
 
 // This is needed because NodeJS does not support top-level await.
 // Do not catch errors so that NodeJS fails on them.
-main().then(console.log('Data bundle is ready'));
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+})
