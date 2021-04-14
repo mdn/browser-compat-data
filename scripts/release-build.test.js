@@ -11,5 +11,5 @@ describe('release-build', () => {
     const bundled = require(prebuiltPath);
     assert.deepEqual(regular, bundled);
     done();
-  }).timeout(5000);
+  }).timeout(5000); // Timeout must be long enough for all the file I/O
 });

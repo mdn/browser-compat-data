@@ -65,10 +65,15 @@ async function writeManifest() {
 
 async function main() {
   // Remove existing files, if there are any
-  await fs.rmdir(directory, {
-    force: true,
-    recursive: true,
-  });
+  await fs
+    .rmdir(directory, {
+      force: true,
+      recursive: true,
+    })
+    .catch(e => {
+      // Missing folder is not an issue since we wanted to delete it anyway
+      if (e.code !== 'ENOENT') throw e;
+    });
 
   // Crate a new directory
   await fs.mkdir(directory);
