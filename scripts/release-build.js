@@ -16,7 +16,7 @@ function createDataBundle() {
 
 // Returns a promise for writing the data to JSON file
 async function writeData() {
-  const dest = path.resolve('./', directory, './data.json');
+  const dest = path.resolve(directory, 'data.json');
   const data = createDataBundle();
   await fs.writeFile(dest, data);
 }
@@ -32,7 +32,7 @@ async function copyFiles() {
 
 function createManifest() {
   const full = require('../package.json');
-  const minimal = {};
+  const minimal = { main: 'data.json' };
 
   const minimalKeys = [
     'name',
@@ -58,7 +58,7 @@ function createManifest() {
 }
 
 async function writeManifest() {
-  const dest = path.resolve('./', directory, './package.json');
+  const dest = path.resolve(directory, 'package.json');
   const manifest = createManifest();
   await fs.writeFile(dest, manifest);
 }
