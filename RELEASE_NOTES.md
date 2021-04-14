@@ -4,6 +4,10 @@
 
 April 15, 2021
 
+### Notable changes
+
+- `css.selectors.not_match_link` feature has been removed. The data is now correctly represented as `css.selectors.any-link.not_match_link` and `css.selectors.link.not_match_link`. ([#9842](https://github.com/mdn/browser-compat-data/pull/9842))
+
 ## [v3.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
 
 April 8, 2021
