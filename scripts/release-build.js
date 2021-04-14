@@ -65,11 +65,10 @@ async function writeManifest() {
 
 async function main() {
   // Remove existing files, if there are any
-  const deletedDir = await fs.rm(directory, {
+  await fs.rmdir(directory, {
     force: true,
     recursive: true,
   });
-  if (deletedDir !== undefined) throw deletedDir;
 
   // Crate a new directory
   await fs.mkdir(directory);
