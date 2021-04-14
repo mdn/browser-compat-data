@@ -82,7 +82,7 @@ async function main() {
 }
 
 // This is needed because NodeJS does not support top-level await.
-// Do not catch errors so that NodeJS fails on them.
+// Also, make sure to log all errors and exit with failure code.
 main().catch(e => {
   console.error(e);
   process.exit(1);
