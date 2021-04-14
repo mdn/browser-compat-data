@@ -34,7 +34,7 @@ function createManifest() {
   const full = require('../package.json');
   const minimal = {};
 
-  const allowList = [
+  const minimalKeys = [
     'name',
     'version',
     'description',
@@ -47,7 +47,7 @@ function createManifest() {
     'types',
   ];
 
-  for (const key of allowList) {
+  for (const key of minimalKeys) {
     if (key in full) {
       minimal[key] = full[key];
     } else {
