@@ -33,27 +33,26 @@ function load() {
   return result;
 }
 
-function extend(a, b) {
-  // iterate over all direct and inherited enumerable properties
-  for (const name in b) {
-    let newValue = b[name];
+function isPlainObject(v) {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
 
-    // check if the new value is an object and its property exists on the former
-    if (typeof newValue === 'object' && newValue !== null && name in a) {
-      const oldValue = a[name];
-
-      // check if the former value is also an object
-      if (typeof oldValue === 'object' && oldValue !== null) {
-        // update the new value as a new object extended by the former and later
-        newValue = extend(extend({}, oldValue), newValue);
-      }
-    }
-
-    // update the object with the new value
-    a[name] = newValue;
+function extend(target, source) {
+  if (!isPlainObject(target) || !isPlainObject(source)) {
+    throw new Error('Both target and source must be plain objects');
   }
 
-  return a;
+  // iterate over all enumerable properties
+  for (const [key, value] of Object.entries(source)) {
+    // recursively extend if target has the same key, otherwise just assign
+    if (Object.prototype.hasOwnProperty.call(target, key)) {
+      target[key] = extend(extend({}, target[key]), value);
+    } else {
+      target[key] = value;
+    }
+  }
+
+  return target;
 }
 
 module.exports = load(
