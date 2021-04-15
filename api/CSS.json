@@ -3,6 +3,7 @@
     "CSS": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS",
+        "spec_url": "https://drafts.csswg.org/css-conditional/#the-css-interface",
         "support": {
           "chrome": {
             "version_added": "28"
@@ -11,36 +12,14 @@
             "version_added": "28"
           },
           "edge": {
-            "version_added": "≤18"
+            "version_added": "12"
           },
-          "firefox": [
-            {
-              "version_added": "22"
-            },
-            {
-              "version_added": "20",
-              "flags": [
-                {
-                  "name": "layout.css.supports-rule.enabled",
-                  "type": "preference"
-                }
-              ]
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "22"
-            },
-            {
-              "version_added": "20",
-              "flags": [
-                {
-                  "name": "layout.css.supports-rule.enabled",
-                  "type": "preference"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "22"
+          },
+          "firefox_android": {
+            "version_added": "22"
+          },
           "ie": {
             "version_added": false
           },
@@ -504,6 +483,7 @@
       "escape": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/escape",
+          "spec_url": "https://drafts.csswg.org/cssom/#the-css.escape()-method",
           "support": {
             "chrome": {
               "version_added": "46"
@@ -698,7 +678,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/ic",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/778495'>bug 778495</a>"
             },
             "chrome_android": {
               "version_added": false
@@ -707,7 +688,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1531223'>bug 1531223</a>"
             },
             "firefox_android": {
               "version_added": false
@@ -722,7 +704,8 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/195176'>bug 195176</a>"
             },
             "safari_ios": {
               "version_added": false
@@ -842,7 +825,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/lh",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/937104'>bug 937104</a>"
             },
             "chrome_android": {
               "version_added": false
@@ -851,7 +835,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1310170'>bug 1310170</a>"
             },
             "firefox_android": {
               "version_added": false
@@ -1032,6 +1017,7 @@
       "paintWorklet": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/paintWorklet",
+          "spec_url": "https://drafts.css-houdini.org/css-paint-api/#dom-css-paintworklet",
           "support": {
             "chrome": {
               "version_added": "65"
@@ -1043,10 +1029,10 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1320,6 +1306,7 @@
       "registerProperty": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/registerProperty",
+          "spec_url": "https://drafts.css-houdini.org/css-properties-values-api/#the-registerproperty-function",
           "support": {
             "chrome": {
               "version_added": "78"
@@ -1418,7 +1405,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/rlh",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/937104'>bug 937104</a>"
             },
             "chrome_android": {
               "version_added": false
@@ -1427,7 +1415,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1310170'>bug 1310170</a>"
             },
             "firefox_android": {
               "version_added": false
@@ -1512,6 +1501,7 @@
       "supports": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/supports",
+          "spec_url": "https://drafts.csswg.org/css-conditional/#dom-css-supports",
           "support": {
             "chrome": [
               {
@@ -1546,16 +1536,6 @@
                 "version_added": "22",
                 "partial_implementation": true,
                 "notes": "Version 54 or older didn't support parentheses-less one-argument version."
-              },
-              {
-                "version_added": "20",
-                "partial_implementation": true,
-                "flags": [
-                  {
-                    "name": "layout.css.supports-rule.enabled",
-                    "type": "preference"
-                  }
-                ]
               }
             ],
             "firefox_android": [
@@ -1566,16 +1546,6 @@
                 "version_added": "22",
                 "partial_implementation": true,
                 "notes": "Version 54 or older didn't support parentheses-less one-argument version."
-              },
-              {
-                "version_added": "20",
-                "partial_implementation": true,
-                "flags": [
-                  {
-                    "name": "layout.css.supports-rule.enabled",
-                    "type": "preference"
-                  }
-                ]
               }
             ],
             "ie": {
@@ -1674,7 +1644,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/vb",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/778495'>bug 778495</a>"
             },
             "chrome_android": {
               "version_added": false
@@ -1683,7 +1654,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1287034'>bug 1287034</a>"
             },
             "firefox_android": {
               "version_added": false
@@ -1698,7 +1670,8 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/159801'>bug 159801</a>"
             },
             "safari_ios": {
               "version_added": false
@@ -1770,7 +1743,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSS/vi",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/778495'>bug 778495</a>"
             },
             "chrome_android": {
               "version_added": false
@@ -1779,7 +1753,8 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1287034'>bug 1287034</a>"
             },
             "firefox_android": {
               "version_added": false
@@ -1794,7 +1769,8 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/159801'>bug 159801</a>"
             },
             "safari_ios": {
               "version_added": false

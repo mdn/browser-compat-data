@@ -15,9 +15,15 @@
                 "firefox": {
                   "version_added": "53"
                 },
-                "firefox_android": {
-                  "version_added": "56"
-                },
+                "firefox_android": [
+                  {
+                    "version_added": "56",
+                    "version_removed": "79"
+                  },
+                  {
+                    "version_added": "85"
+                  }
+                ],
                 "opera": {
                   "version_added": true
                 },
@@ -39,9 +45,15 @@
                 "firefox": {
                   "version_added": "53"
                 },
-                "firefox_android": {
-                  "version_added": "56"
-                },
+                "firefox_android": [
+                  {
+                    "version_added": "56",
+                    "version_removed": "79"
+                  },
+                  {
+                    "version_added": "85"
+                  }
+                ],
                 "opera": {
                   "version_added": true
                 },
@@ -64,7 +76,8 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": "56",
+                  "version_removed": "79"
                 },
                 "opera": {
                   "version_added": true
@@ -112,7 +125,8 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": "56",
+                  "version_removed": "79"
                 },
                 "opera": {
                   "version_added": true
@@ -136,7 +150,8 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": "56"
+                  "version_added": "56",
+                  "version_removed": "79"
                 },
                 "opera": {
                   "version_added": true
@@ -160,7 +175,7 @@
                   "version_added": "57"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "85"
                 },
                 "opera": {
                   "version_added": true
@@ -184,7 +199,7 @@
                   "version_added": "57"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "85"
                 },
                 "opera": {
                   "version_added": true
@@ -232,7 +247,7 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "85"
                 },
                 "opera": {
                   "version_added": true
@@ -280,7 +295,7 @@
                   "version_added": "53"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "85"
                 },
                 "opera": {
                   "version_added": true
@@ -293,6 +308,30 @@
           }
         },
         "RemovalOptions": {
+          "cookieStoreId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "84"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
           "hostnames": {
             "__compat": {
               "support": {
@@ -306,7 +345,7 @@
                   "version_added": "56"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "85"
                 },
                 "opera": {
                   "version_added": false
@@ -402,10 +441,17 @@
                   "notes": "<code>since</code> is not supported with the following data types: <code>cache</code>, <code>indexedDB</code>, <code>localStorage</code>, and <code>serviceWorkers</code>.",
                   "version_added": "53"
                 },
-                "firefox_android": {
-                  "notes": "<code>since</code> is not supported with the following data types: <code>cache</code>, <code>indexedDB</code>, <code>localStorage</code>, and <code>serviceWorkers</code>.",
-                  "version_added": "56"
-                },
+                "firefox_android": [
+                  {
+                    "notes": "<code>since</code> is not supported with the following data types: <code>cache</code>, <code>indexedDB</code>, <code>localStorage</code>, and <code>serviceWorkers</code>.",
+                    "version_added": "56",
+                    "version_removed": "79"
+                  },
+                  {
+                    "notes": "<code>since</code> is not supported with the following data types: <code>cache</code>, <code>indexedDB</code>, <code>localStorage</code>, and <code>serviceWorkers</code>.",
+                    "version_added": "85"
+                  }
+                ],
                 "opera": {
                   "version_added": true
                 },
@@ -430,10 +476,17 @@
                 "notes": "Specifying <code>dataTypes.history</code> will also remove download history and service workers.",
                 "version_added": "53"
               },
-              "firefox_android": {
-                "notes": "Specifying <code>dataTypes.history</code> will also remove download history and service workers.",
-                "version_added": "57"
-              },
+              "firefox_android": [
+                {
+                  "notes": "Specifying <code>dataTypes.history</code> will also remove download history and service workers.",
+                  "version_added": "57",
+                  "version_removed": "79"
+                },
+                {
+                  "notes": "Specifying <code>dataTypes.history</code> will also remove download history and service workers.",
+                  "version_added": "85"
+                }
+              ],
               "opera": {
                 "version_added": true
               },
@@ -457,10 +510,17 @@
                 "notes": "<code>removalOptions.since</code> is not supported.",
                 "version_added": "53"
               },
-              "firefox_android": {
-                "notes": "<code>removalOptions.since</code> is not supported.",
-                "version_added": "57"
-              },
+              "firefox_android": [
+                {
+                  "notes": "<code>removalOptions.since</code> is not supported.",
+                  "version_added": "57",
+                  "version_removed": "79"
+                },
+                {
+                  "notes": "<code>removalOptions.since</code> is not supported.",
+                  "version_added": "85"
+                }
+              ],
               "opera": {
                 "version_added": true
               },
@@ -483,9 +543,15 @@
               "firefox": {
                 "version_added": "53"
               },
-              "firefox_android": {
-                "version_added": "56"
-              },
+              "firefox_android": [
+                {
+                  "version_added": "56",
+                  "version_removed": "79"
+                },
+                {
+                  "version_added": "85"
+                }
+              ],
               "opera": {
                 "version_added": true
               },
@@ -509,7 +575,8 @@
                 "version_added": "53"
               },
               "firefox_android": {
-                "version_added": "57"
+                "version_added": "57",
+                "version_removed": "79"
               },
               "opera": {
                 "version_added": true
@@ -534,7 +601,8 @@
                 "version_added": "53"
               },
               "firefox_android": {
-                "version_added": "57"
+                "version_added": "57",
+                "version_removed": "79"
               },
               "opera": {
                 "version_added": true
@@ -560,7 +628,7 @@
                 "version_added": "53"
               },
               "firefox_android": {
-                "notes": "See <a href='https://bugzil.la/1363010'>bug 1363010</a>. <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/remove'><code>browser.history.remove(options, {history:true})</code></a> can be used instead.",
+                "notes": "See <a href='https://bugzil.la/1363010'>bug 1363010</a>. Before Firefox for Android 79, <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/remove'><code>browser.history.remove(options, {history:true})</code></a> can be used instead.",
                 "version_added": false
               },
               "opera": {
@@ -587,8 +655,8 @@
                 "version_added": "57"
               },
               "firefox_android": {
-                "notes": "The method is defined but returns a rejected promise.",
-                "version_added": false
+                "notes": "<code>removalOptions.since</code> is not supported.",
+                "version_added": "85"
               },
               "opera": {
                 "version_added": true
@@ -612,7 +680,7 @@
                     "version_added": "58"
                   },
                   "firefox_android": {
-                    "version_added": false
+                    "version_added": "85"
                   },
                   "opera": {
                     "version_added": false
@@ -639,7 +707,6 @@
                 "version_added": "53"
               },
               "firefox_android": {
-                "notes": "See <a href='https://bugzil.la/1363012'>bug 1363012</a>.",
                 "version_added": false
               },
               "opera": {
@@ -665,7 +732,7 @@
                 "version_added": "53"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "85"
               },
               "opera": {
                 "version_added": true
@@ -689,9 +756,15 @@
               "firefox": {
                 "version_added": "53"
               },
-              "firefox_android": {
-                "version_added": "56"
-              },
+              "firefox_android": [
+                {
+                  "version_added": "56",
+                  "version_removed": "79"
+                },
+                {
+                  "version_added": "85"
+                }
+              ],
               "opera": {
                 "version_added": true
               },

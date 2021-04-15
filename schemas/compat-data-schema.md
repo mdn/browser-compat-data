@@ -1,6 +1,6 @@
-# The mdn-browser-compat-data JSON schema
+# The compat data JSON schema
 
-This document helps you to understand how mdn-browser-compat-data is organized and structured.
+This document helps you to understand how compatibility data is organized and structured.
 
 ## Where to find compat data
 
@@ -10,27 +10,27 @@ Compatibility data is organized in top-level directories for each broad area cov
 `javascript`, and `webextensions`. Inside each of these directories is one or more
 JSON files containing the compatibility data.
 
-- [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
+- [api/](../api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
-- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
+- [css/](../css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
 
-- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
+- [html/](../html) contains data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
 
-- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
+- [http/](../http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
 
-- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
+- [javascript/](../javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
 
-- [mathml/](https://github.com/mdn/browser-compat-data/tree/master/mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
+- [mathml/](../mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
 
-- [svg/](https://github.com/mdn/browser-compat-data/tree/master/svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
+- [svg/](../svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
 
-- [webdriver/](https://github.com/mdn/browser-compat-data/tree/master/webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
+- [webdriver/](../webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
 
-- [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
+- [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-- [xpath/](https://github.com/mdn/browser-compat-data/tree/master/xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
+- [xpath/](../xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
 
-- [xslt/](https://github.com/mdn/browser-compat-data/tree/master/xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
+- [xslt/](../xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
 
 ### File and folder breakdown
 
@@ -120,19 +120,16 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
-- `edge`, MS Edge (on Windows), based on the EdgeHTML version
+- `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 - `ie`, Microsoft Internet Explorer (discontinued)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
-- `qq_android`, the QQ browser (Android version)
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `uc_android`, UC Browser (Android version)
-- `uc_chinese_android`, UC Browser (Chinese Android version)
 - `webview_android`, Webview, the built-in browser for Android
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
@@ -220,14 +217,14 @@ entirely unknown. Examples:
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was
-removed in. It may also be a Boolean value of (`true` or `false`), or the
-`null` value.
+Contains a string with the version number the sub-feature was removed in.
+It may also be `true`, meaning that it is unknown in which version support
+was removed.
 
 Default values:
 
 - If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
-- if `version_added` is set to `null`, the default value of `version_removed` is also `null`.
+- If `version_added` is set to `null`, the default value of `version_removed` is also `null`.
 
 Examples:
 
@@ -240,28 +237,54 @@ Examples:
 }
 ```
 
-- Not removed (default if `version_added` is not `null`):
+- Removed in some version after 3.5:
 
 ```json
 {
   "version_added": "3.5",
-  "version_removed": false
+  "version_removed": true
 }
 ```
 
+### Initial versions
+
+The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
+
+| Browser          | Initial version | Notes                                                                                                                                                                    |
+| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Chrome           | 1               |                                                                                                                                                                          |
+| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
+| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
+| Firefox          | 1               |                                                                                                                                                                          |
+| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
+| IE               | 1               |                                                                                                                                                                          |
+| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
+| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
+| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
+| Safari           | 1               |                                                                                                                                                                          |
+| iOS Safari       | 1               |                                                                                                                                                                          |
+| Samsung Internet | 1.0             |                                                                                                                                                                          |
+| WebView Android  | 1               |                                                                                                                                                                          |
+
 ### Ranged versions
 
-For certain browsers, ranged versions are allowed as it is sometimes impossible to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
+For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
 - Edge
   - "≤18" (supported in some version of EdgeHTML-based Edge)
   - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+- Internet Explorer
+  - "≤6" (earliest IE version supported in BrowserStack)
 - Opera
   - "≤12.1" (supported in some version of Presto-based Opera)
   - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
 - Opera Android
   - "≤12.1" (supported in some version of Presto-based Opera)
   - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+- Safari
+  - "≤4" (earliest Safari version supported in BrowserStack)
+- Safari iOS
+  - "≤3" (earliest Safari iOS version supported in BrowserStack)
 - WebView Android
   - "≤37" (supported in former Android versions prior to Chrome-based WebView)
 
