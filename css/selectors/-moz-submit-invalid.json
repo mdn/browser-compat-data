@@ -15,11 +15,27 @@
             "edge": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "4"
-            },
+            "firefox": [
+              {
+                "version_added": "88",
+                "notes": "From Firefox 88 the feature has been placed behind a flag. See <a href='https://bugzil.la/1694129'>bug 1694129</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.moz-submit-invalid.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "4",
+                "version_removed": "88"
+              }
+            ],
             "firefox_android": {
-              "version_added": "4"
+              "version_added": "4",
+              "version_removed": "88",
+              "notes": "From version 88, the feature has been withdrawn. See <a href='https://bugzil.la/1694129'>bug 1694129</a>."
             },
             "ie": {
               "version_added": false
