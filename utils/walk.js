@@ -32,7 +32,7 @@ function* walk(entryPoints, data = bcd) {
   } else {
     entryPoints = Array.isArray(entryPoints) ? entryPoints : [entryPoints];
     walkers.push(
-      ...entryPoints.map(entryPoint =>
+      ...entryPoints.map((entryPoint) =>
         lowLevelWalk(query(entryPoint, data), entryPoint),
       ),
     );
