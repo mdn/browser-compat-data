@@ -1,10 +1,18 @@
 # Release notes
 
-## [v3.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.5)
+## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
 
 April 15, 2021
 
 ### Notable changes
+
+- `@mdn/browser-compat-data` is now smaller, faster to load, and has zero dependencies.
+
+  The data is now bundled into a single JSON file at publishing time, instead of loading many JSON files at runtime. This reduces the size of the package and shortens loading times.
+
+  These changes also eliminate dependencies. There are zero runtime package dependencies and Node.js ≥10.0.0 is no longer required. This version of the package has been shown to load in many end-of-life versions of Node.js.
+
+  ([#7374](https://github.com/mdn/browser-compat-data/issues/7374), [#7398](https://github.com/mdn/browser-compat-data/pull/7398))
 
 - `css.selectors.not_match_link` feature has been removed. The data is now correctly represented as `css.selectors.any-link.not_match_link` and `css.selectors.link.not_match_link`. ([#9842](https://github.com/mdn/browser-compat-data/pull/9842))
 
