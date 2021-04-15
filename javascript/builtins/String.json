@@ -1498,7 +1498,7 @@
                 "version_added": "13"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "11.0"
               },
               "webview_android": {
                 "version_added": "73"
@@ -1824,9 +1824,17 @@
               "firefox_android": {
                 "version_added": "4"
               },
-              "ie": {
-                "version_added": "4"
-              },
+              "ie": [
+                {
+                  "version_added": "5.5"
+                },
+                {
+                  "version_added": "4",
+                  "version_removed": "5.5",
+                  "partial_implementation": true,
+                  "notes": "A replacement function as second argument is not supported."
+                }
+              ],
               "nodejs": {
                 "version_added": "0.10.0"
               },
