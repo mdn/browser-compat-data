@@ -52,13 +52,19 @@ function isValidVersion(browserIdentifier, version) {
  * @returns {boolean}
  */
 function removedAfterAdded(statement) {
-  return compareVersions.compare(
-    statement.version_added.startsWith('≤')
-      ? '0' // 0 was chosen as it's a number lower than any possible browser version
-      : statement.version_added,
-    statement.version_removed.replace('≤', ''),
-    '>=',
-  );
+  try {
+    return compareVersions.compare(
+      statement.version_added.startsWith('≤')
+        ? '0' // 0 was chosen as it's a number lower than any possible browser version
+        : statement.version_added,
+      statement.version_removed.replace('≤', ''),
+      '>=',
+    );
+  } catch (err) {
+    if (err.message === 'Invalid argument not valid semver') {
+      return null;
+    }
+  }
 }
 
 /**
