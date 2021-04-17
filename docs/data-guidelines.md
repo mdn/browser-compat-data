@@ -2,27 +2,6 @@
 
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
-<!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
-
-- [Data guidelines](#data-guidelines)
-  - [Constructors](#constructors)
-  - [DOM events (`eventname_event`)](#dom-events-eventname_event)
-  - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
-  - [Web Workers (`worker_support`)](#web-workers-worker_support)
-  - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
-  - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
-  - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
-  - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
-  - [Constants](#constants)
-  - [Release lines and backported features](#release-lines-and-backported-features)
-  - [Safari for iOS versioning](#safari-for-ios-versioning)
-  - [Addition of browsers](#addition-of-browsers)
-  - [Removal of browsers](#removal-of-browsers)
-  - [Removal of irrelevant features](#removal-of-irrelevant-features)
-  - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
-  - [Initial versions for browsers](#initial-versions-for-browsers)
-  - [Mixins](#mixins)
-
 <!-- BEGIN TEMPLATE
 
 Short title in sentence case
