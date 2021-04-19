@@ -52,20 +52,22 @@ function isValidVersion(browserIdentifier, version) {
  * @returns {boolean}
  */
 function removedAfterAdded(statement) {
+  const { version_added, version_removed } = statement;
+
   if (
     !(
-      compareVersions.validate(statement.version_added.replace('≤', '')) &&
-      compareVersions.validate(statement.version_removed.replace('≤', ''))
+      compareVersions.validate(version_added.replace('≤', '')) &&
+      compareVersions.validate(version_removed.replace('≤', ''))
     )
   ) {
     return null;
   }
 
   return compareVersions.compare(
-    statement.version_added.startsWith('≤')
+    version_added.startsWith('≤')
       ? '0' // 0 was chosen as it's a number lower than any possible browser version
-      : statement.version_added,
-    statement.version_removed.replace('≤', ''),
+      : version_added,
+    version_removed.replace('≤', ''),
     '>=',
   );
 }
