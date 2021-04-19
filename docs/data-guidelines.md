@@ -296,7 +296,7 @@ If a feature has been supported by one and only one engine without major changes
 | An API supported in Chrome and Firefox, without flags or prefixes.          | No           |
 | A CSS property supported in Chrome and Firefox, with the `-webkit-` prefix. | No           |
 | An HTTP header supported in Chrome and Firefox, behind flags.               | Yes          |
-| A CSS value supported in Safari, released last week.                        | Yes          |
+| A CSS property value supported in Safari, released last week.               | Yes          |
 | An API supported in Firefox, released three years ago.                      | No           |
 
 This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#9933](https://github.com/mdn/browser-compat-data/pull/9933).
