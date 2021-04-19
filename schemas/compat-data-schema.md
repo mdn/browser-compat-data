@@ -447,10 +447,12 @@ A `matches` object contains hints to help automatically detect whether source co
 The mandatory status property contains information about stability of the feature. It is
 an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value that indicates this functionality is
-  intended to be an addition to the Web platform. Some features are added to
-  conduct tests. Set to `false`, it means the functionality is mature, and no
-  significant incompatible changes are expected in the future.
+- `experimental`: a `boolean` value.
+
+  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+
+  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+
 - `standard_track`: a `boolean` value indicating if the feature is part of an
   active specification or specification process.
 - `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
