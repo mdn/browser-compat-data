@@ -299,4 +299,4 @@ If a feature has been supported by one and only one engine without major changes
 | A CSS value supported in Safari, released last week.                        | Yes          |
 | An API supported in Firefox, released three years ago.                      | No           |
 
-This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#TK]().
+This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#9933](https://github.com/mdn/browser-compat-data/pull/9933).
