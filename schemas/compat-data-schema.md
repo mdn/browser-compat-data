@@ -453,10 +453,13 @@ an object named `status` and has three mandatory properties:
 
   If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
 
-- `standard_track`: a `boolean` value indicating if the feature is part of an
-  active specification or specification process.
-- `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
-  It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+- `standard_track`: a `boolean` value.
+
+  If `standard_track` is `true`, then the feature is part of an active specification or specification process.
+
+- `deprecated`: a `boolean` value.
+
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
 ```json
 "__compat": {
