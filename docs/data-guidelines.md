@@ -280,3 +280,23 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
    ```
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
+
+## Choosing an experimental status
+
+Generally, when a feature is supported by one and only one browser engine, set `experimental` to `true`. When a feature is supported by two or more engines, then set `experimental` to `false`. Some exceptions apply, however, for long-standing features and features behind flags and prefixes.
+
+If a feature is supported behind flags only, no matter how many engines, then set `experimental` to `true`.
+
+If a feature is supported behind incompatible prefixes only (such as `-webkit-` in one engine and `-moz-` in another), no matter how many engines support the feature overall, then set `experimental` to `true`. If two or more engines support a feature behind a common prefix (such as `-webkit-` only), then set `experimental` to `false`.
+
+If a feature has been supported by one and only one engine without major changes for two or more years (relative to the most-recent browser release introducing support for the feature, or the most-recent browser release since the last major change) , then `experimental` may be set to `false`.
+
+| Example                                                                     | Experimental |
+| --------------------------------------------------------------------------- | ------------ |
+| An API supported in Chrome and Firefox, without flags or prefixes.          | No           |
+| A CSS property supported in Chrome and Firefox, with the `-webkit-` prefix. | No           |
+| An HTTP header supported in Chrome and Firefox, behind flags.               | Yes          |
+| A CSS value supported in Safari, released last week.                        | Yes          |
+| An API supported in Firefox, released three years ago.                      | No           |
+
+This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#TK]().
