@@ -289,7 +289,10 @@ If a feature is supported behind flags only, no matter how many engines, then se
 
 If a feature is supported behind incompatible prefixes only (such as `-webkit-` in one engine and `-moz-` in another), no matter how many engines support the feature overall, then set `experimental` to `true`. If two or more engines support a feature behind a common prefix (such as `-webkit-` only), then set `experimental` to `false`.
 
-If a feature has been supported by one and only one engine without major changes for two or more years (relative to the most-recent browser release introducing support for the feature, or the most-recent browser release since the last major change) , then `experimental` may be set to `false`.
+A single-engine feature's `experimental` status may expire and switch to `false` when the following conditions are met:
+
+- The feature has been supported by default and without major changes by some browser for two or more years.
+- If any other browser engine supports the feature behind a flag, then the behaviors are mutually compatible.
 
 | Example                                                                     | Experimental |
 | --------------------------------------------------------------------------- | ------------ |
