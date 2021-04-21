@@ -1,5 +1,13 @@
 # Release notes
 
+## [v3.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.1)
+
+April 22, 2021
+
+### Notable changes
+
+- `api.Navigator.battery` has been removed as historic and irrelevant. ([#9626](https://github.com/mdn/browser-compat-data/pull/9626))
+
 ## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
 
 April 15, 2021
