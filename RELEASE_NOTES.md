@@ -14,7 +14,7 @@ April 22, 2021
 
 ### Statistics
 
-- 15 contributors have changed 181 files with 1,867 additions and 5,377 deletions in 71 commits [`v3.3.0...v3.3.1`](https://github.com/mdn/browser-compat-data/compare/v3.3.0...v3.3.1)
+- 15 contributors have changed 181 files with 1,867 additions and 5,377 deletions in 71 commits ([`v3.3.0...v3.3.1`](https://github.com/mdn/browser-compat-data/compare/v3.3.0...v3.3.1))
 - 13,034 total features
 - 769 total contributors
 - 3,330 total stargazers
@@ -37,7 +37,7 @@ April 15, 2021
 
 ### Statistics
 
-- 13 contributors have changed 437 files with 2,792 additions and 4,018 deletions in 45 commits [`v3.2.4...v3.3.0`](https://github.com/mdn/browser-compat-data/compare/v3.2.4...v3.3.0)
+- 13 contributors have changed 437 files with 2,792 additions and 4,018 deletions in 45 commits ([`v3.2.4...v3.3.0`](https://github.com/mdn/browser-compat-data/compare/v3.2.4...v3.3.0))
 - 13,033 total features
 - 766 total contributors
 - 3,325 total stargazers
@@ -48,7 +48,7 @@ April 8, 2021
 
 ### Statistics
 
-- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits [`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4)
+- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits ([`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4))
 - 13,029 total features
 - 766 total contributors
 - 3,309 total stargazers
