@@ -12,6 +12,13 @@ April 22, 2021
 
 - Over 10,000 issues and pull requests have been opened against BCD (and most of them have been closed). Here's to the next 10,000! 🥂🎉 ([#10000](https://github.com/mdn/browser-compat-data/pull/10000))
 
+### Statistics
+
+- 15 contributors have changed 181 files with 1,867 additions and 5,377 deletions in 71 commits [`v3.3.0...v3.3.1`](https://github.com/mdn/browser-compat-data/compare/v3.3.0...v3.3.1)
+- 13,034 total features
+- 769 total contributors
+- 3,330 total stargazers
+
 ## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
 
 April 15, 2021
