@@ -21,6 +21,12 @@ async function writeData() {
   await fs.writeFile(dest, data);
 }
 
+async function writeIndex() {
+  const dest = path.resolve(directory, 'index.js');
+  const content = `module.exports = require("./data.json");\n`;
+  await fs.writeFile(dest, content);
+}
+
 // Returns an array of promises for copying of all files that don't need transformation
 async function copyFiles() {
   for (const file of verbatimFiles) {
@@ -32,7 +38,7 @@ async function copyFiles() {
 
 function createManifest() {
   const full = require('../package.json');
-  const minimal = { main: 'data.json' };
+  const minimal = { main: 'index.js' };
 
   const minimalKeys = [
     'name',
@@ -80,6 +86,7 @@ async function main() {
 
   await writeManifest();
   await writeData();
+  await writeIndex();
   await copyFiles();
 
   console.log('Data bundle is ready');
