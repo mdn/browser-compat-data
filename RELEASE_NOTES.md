@@ -6,6 +6,8 @@ April 22, 2021
 
 ### Notable changes
 
+- ECMAScript module compatibility has been restored. The previous release unintentionally broke using `import` with this package. ([#9966](https://github.com/mdn/browser-compat-data/issues/9966), [#10033](https://github.com/mdn/browser-compat-data/pull/10033))
+
 - `api.Navigator.battery` has been removed as historic and irrelevant. ([#9626](https://github.com/mdn/browser-compat-data/pull/9626))
 
 ## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
