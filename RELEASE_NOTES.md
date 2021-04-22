@@ -10,6 +10,8 @@ April 22, 2021
 
 - `api.Navigator.battery` has been removed as historic and irrelevant. ([#9626](https://github.com/mdn/browser-compat-data/pull/9626))
 
+- Over 10,000 issues and pull requests have been opened against BCD (and most of them have been closed). Here's to the next 10,000! 🥂🎉 ([#10000](https://github.com/mdn/browser-compat-data/pull/10000))
+
 ## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
 
 April 15, 2021
