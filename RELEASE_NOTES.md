@@ -1,12 +1,54 @@
 # Release notes
 
+## [v3.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.1)
+
+April 22, 2021
+
+### Notable changes
+
+- ECMAScript module compatibility has been restored. The previous release unintentionally broke using `import` with this package. ([#9966](https://github.com/mdn/browser-compat-data/issues/9966), [#10033](https://github.com/mdn/browser-compat-data/pull/10033))
+
+- `api.Navigator.battery` has been removed as historic and irrelevant. ([#9626](https://github.com/mdn/browser-compat-data/pull/9626))
+
+- Over 10,000 issues and pull requests have been opened against BCD (and most of them have been closed). Here's to the next 10,000! 🥂🎉 ([#10000](https://github.com/mdn/browser-compat-data/pull/10000))
+
+### Statistics
+
+- 15 contributors have changed 181 files with 1,867 additions and 5,377 deletions in 71 commits ([`v3.3.0...v3.3.1`](https://github.com/mdn/browser-compat-data/compare/v3.3.0...v3.3.1))
+- 13,034 total features
+- 769 total contributors
+- 3,330 total stargazers
+
+## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
+
+April 15, 2021
+
+### Notable changes
+
+- `@mdn/browser-compat-data` is now smaller, faster to load, and has zero dependencies.
+
+  The data is now bundled into a single JSON file at publishing time, instead of loading many JSON files at runtime. This reduces the size of the package and shortens loading times.
+
+  These changes also eliminate dependencies. There are zero runtime package dependencies and Node.js ≥10.0.0 is no longer required. This version of the package has been shown to load in many end-of-life versions of Node.js.
+
+  ([#7374](https://github.com/mdn/browser-compat-data/issues/7374), [#7398](https://github.com/mdn/browser-compat-data/pull/7398))
+
+- `css.selectors.not_match_link` feature has been removed. The data is now correctly represented as `css.selectors.any-link.not_match_link` and `css.selectors.link.not_match_link`. ([#9842](https://github.com/mdn/browser-compat-data/pull/9842))
+
+### Statistics
+
+- 13 contributors have changed 437 files with 2,792 additions and 4,018 deletions in 45 commits ([`v3.2.4...v3.3.0`](https://github.com/mdn/browser-compat-data/compare/v3.2.4...v3.3.0))
+- 13,033 total features
+- 766 total contributors
+- 3,325 total stargazers
+
 ## [v3.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
 
 April 8, 2021
 
 ### Statistics
 
-- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits [`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4)
+- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits ([`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4))
 - 13,029 total features
 - 766 total contributors
 - 3,309 total stargazers

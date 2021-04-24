@@ -53,6 +53,34 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 /**
+ * Checks if the version number of version_removed is greater than or equal to that of version_added,
+ * assuming they are both version strings. If either one is not a valid version string, return null.
+ *
+ * @param {SimpleSupportStatement} statement
+ * @returns {(boolean|null)}
+ */
+function removedAfterAdded(statement) {
+  const { version_added, version_removed } = statement;
+
+  if (
+    !(
+      compareVersions.validate(version_added.replace('≤', '')) &&
+      compareVersions.validate(version_removed.replace('≤', ''))
+    )
+  ) {
+    return null;
+  }
+
+  return compareVersions.compare(
+    version_added.startsWith('≤')
+      ? '0' // 0 was chosen as it's a number lower than any possible browser version
+      : version_added,
+    version_removed.replace('≤', ''),
+    '>=',
+  );
+}
+
+/**
  * Check the data for any errors in provided versions
  *
  * @param {SupportBlock} supportData The data to test
@@ -102,22 +130,7 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string'
           ) {
-            if (
-              (statement.version_added.startsWith('≤') &&
-                statement.version_removed.startsWith('≤') &&
-                compareVersions.compare(
-                  statement.version_added.replace('≤', ''),
-                  statement.version_removed.replace('≤', ''),
-                  '<',
-                )) ||
-              ((!statement.version_added.startsWith('≤') ||
-                !statement.version_removed.startsWith('≤')) &&
-                compareVersions.compare(
-                  statement.version_added.replace('≤', ''),
-                  statement.version_removed.replace('≤', ''),
-                  '>=',
-                ))
-            ) {
+            if (removedAfterAdded(statement)) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
