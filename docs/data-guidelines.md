@@ -2,27 +2,6 @@
 
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
-<!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
-
-- [Data guidelines](#data-guidelines)
-  - [Constructors](#constructors)
-  - [DOM events (`eventname_event`)](#dom-events-eventname_event)
-  - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
-  - [Web Workers (`worker_support`)](#web-workers-worker_support)
-  - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
-  - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
-  - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
-  - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
-  - [Constants](#constants)
-  - [Release lines and backported features](#release-lines-and-backported-features)
-  - [Safari for iOS versioning](#safari-for-ios-versioning)
-  - [Addition of browsers](#addition-of-browsers)
-  - [Removal of browsers](#removal-of-browsers)
-  - [Removal of irrelevant features](#removal-of-irrelevant-features)
-  - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
-  - [Initial versions for browsers](#initial-versions-for-browsers)
-  - [Mixins](#mixins)
-
 <!-- BEGIN TEMPLATE
 
 Short title in sentence case
@@ -205,7 +184,7 @@ This versioning scheme came at [Apple's request, in #2006](https://github.com/md
 
 ## Addition of browsers
 
-BCD's [owners](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we need evidence of (in decreasing order of importance):
+BCD's [owners](../GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we need evidence of (in decreasing order of importance):
 
 - a compelling downstream-consumer story (e.g., MDN or caniuse express an interest, or someone is planning to do something with the data that might plausibly grow BCD's reach)
 - reviewers (e.g., two or more people with interest and ability to test data relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
@@ -216,7 +195,7 @@ This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data
 
 ## Removal of browsers
 
-To maintain data quality, BCD's [owners](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md) may choose to remove a browser or engine from the project. To remove a browser from BCD, we need habitual (six months or more) evidence of (in decreasing order of importance):
+To maintain data quality, BCD's [owners](../GOVERNANCE.md) may choose to remove a browser or engine from the project. To remove a browser from BCD, we need habitual (six months or more) evidence of (in decreasing order of importance):
 
 - negative/neutral downstream-consumer interest in the browser's data (e.g., MDN and caniuse don't object to removal)
 - poor data coverage with negative trends (e.g., our data for the browser covers only a few features, with limited/flat growth in more data being added for it, or few features with real version numbers rather than just `null` or `true`, etc.)
@@ -250,7 +229,7 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 ## Initial versions for browsers
 
-The schema docs list [initial versions](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
+The schema docs list [initial versions](../schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
 
 If the table indicates an initial version of "1" and an information source says a feature was implemented in a (beta) version "0.8", record the initial version number "1" for it. In other words, a lower version number is always elevated to a browser's initial version number.
 
@@ -268,7 +247,7 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
 
 1. For smaller mixins, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
 
-2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.  
+2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.
    In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
 
    ```
