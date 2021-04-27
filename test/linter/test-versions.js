@@ -21,7 +21,7 @@ const VERSION_RANGE_BROWSERS = {
   opera: ['≤12.1', '≤15'],
   opera_android: ['≤12.1', '≤14'],
   safari: ['≤4'],
-  safari_ios: ['≤3'],
+  safari_ios: ['≤3', '≤10.3'],
   webview_android: ['≤37'],
 };
 
