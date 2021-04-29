@@ -107,7 +107,12 @@ function checkVersions(supportData, relPath, logger) {
             chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
           );
         }
-        if ('version_removed' in statement && 'version_added' in statement) {
+        if ('version_added' in statement && 'version_removed' in statement) {
+          if (statement.version_added === statement.version_removed) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+            );
+          }
           if (
             typeof statement.version_added !== 'string' &&
             statement.version_added !== true
