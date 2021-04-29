@@ -2,6 +2,8 @@
 
 ## [v3.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.2)
 
+April 29, 2021
+
 ### Notable changes
 
 - The following features have been renamed to the correct case ([#10142](https://github.com/mdn/browser-compat-data/pull/10142)):
