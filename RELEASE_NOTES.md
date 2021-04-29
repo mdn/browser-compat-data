@@ -4,6 +4,11 @@
 
 ### Notable changes
 
+- The following features have been renamed to the correct case ([#10142](https://github.com/mdn/browser-compat-data/pull/10142)):
+
+  - `html.elements.script.referrerPolicy` (now `html.elements.script.referrerpolicy`)
+  - `svg.elements.a.referrerPolicy` (now `html.elements.a.referrerpolicy`)
+
 - `api.DOMHighResTimestamp` has been removed, since it is an incorrectly-named and unexposed specification typedef. ([#9892](https://github.com/mdn/browser-compat-data/pull/9892), [#9930](https://github.com/mdn/browser-compat-data/issues/9930))
 
 ## [v3.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.1)
