@@ -7,7 +7,7 @@
 - The following features have been renamed to the correct case ([#10142](https://github.com/mdn/browser-compat-data/pull/10142)):
 
   - `html.elements.script.referrerPolicy` → `html.elements.script.referrerpolicy`
-  - `svg.elements.a.referrerPolicy` → `html.elements.a.referrerpolicy`
+  - `svg.elements.a.referrerPolicy` → `svg.elements.a.referrerpolicy`
 
 - `http.headers.Accept-Charset` has been removed as historic and irrelevant. ([#10114](https://github.com/mdn/browser-compat-data/pull/10114))
 
