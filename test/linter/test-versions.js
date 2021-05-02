@@ -141,66 +141,73 @@ function checkVersions(supportData, category, relPath, logger) {
               }}`,
             );
           }
-          if (
-            'version_removed' in statement &&
-            !isValidVersion(browser, category, statement.version_removed)
-          ) {
-            logger.error(
-              chalk`{red → {bold ${relPath}} - {bold version_removed: "${
-                statement.version_removed
-              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${
-                blockList[category].includes(browser)
-                  ? `false, ${validBrowserVersions[browser].join(', ')}`
-                  : `true, false, null, ${validBrowserVersions[browser].join(
-                      ', ',
-                    )}`
-              }}`,
-            );
-          } else if (
-            typeof statement.version_added === 'string' &&
-            typeof statement.version_removed === 'string'
-          ) {
-            if (removedAfterAdded(statement)) {
+          if ('version_added' in statement && 'version_removed' in statement) {
+            if (statement.version_added === statement.version_removed) {
               logger.error(
-                chalk`{red → {bold ${relPath}} - {bold version_added: "${
-                  statement.version_added
-                }"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${
+                chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+              );
+            }
+            if (
+              'version_removed' in statement &&
+              !isValidVersion(browser, category, statement.version_removed)
+            ) {
+              logger.error(
+                chalk`{red → {bold ${relPath}} - {bold version_removed: "${
+                  statement.version_removed
+                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${
                   blockList[category].includes(browser)
-                    ? validBrowserVersions[browser].join(', ')
-                    : `true, ${validBrowserVersions[browser].join(', ')}`
+                    ? `false, ${validBrowserVersions[browser].join(', ')}`
+                    : `true, false, null, ${validBrowserVersions[browser].join(
+                        ', ',
+                      )}`
                 }}`,
               );
             } else if (
               typeof statement.version_added === 'string' &&
               typeof statement.version_removed === 'string'
             ) {
-              if (
-                (statement.version_added.startsWith('≤') &&
-                  statement.version_removed.startsWith('≤') &&
-                  compareVersions.compare(
-                    statement.version_added.replace('≤', ''),
-                    statement.version_removed.replace('≤', ''),
-                    '<',
-                  )) ||
-                ((!statement.version_added.startsWith('≤') ||
-                  !statement.version_removed.startsWith('≤')) &&
-                  compareVersions.compare(
-                    statement.version_added.replace('≤', ''),
-                    statement.version_removed.replace('≤', ''),
-                    '>=',
-                  ))
-              ) {
+              if (removedAfterAdded(statement)) {
                 logger.error(
-                  chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
+                  chalk`{red → {bold ${relPath}} - {bold version_added: "${
+                    statement.version_added
+                  }"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${
+                    blockList[category].includes(browser)
+                      ? validBrowserVersions[browser].join(', ')
+                      : `true, ${validBrowserVersions[browser].join(', ')}`
+                  }}`,
                 );
+              } else if (
+                typeof statement.version_added === 'string' &&
+                typeof statement.version_removed === 'string'
+              ) {
+                if (
+                  (statement.version_added.startsWith('≤') &&
+                    statement.version_removed.startsWith('≤') &&
+                    compareVersions.compare(
+                      statement.version_added.replace('≤', ''),
+                      statement.version_removed.replace('≤', ''),
+                      '<',
+                    )) ||
+                  ((!statement.version_added.startsWith('≤') ||
+                    !statement.version_removed.startsWith('≤')) &&
+                    compareVersions.compare(
+                      statement.version_added.replace('≤', ''),
+                      statement.version_removed.replace('≤', ''),
+                      '>=',
+                    ))
+                ) {
+                  logger.error(
+                    chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
+                  );
+                }
               }
             }
-          }
-          if ('flags' in statement) {
-            if (FLAGLESS_BROWSERS.includes(browser)) {
-              logger.error(
-                chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
-              );
+            if ('flags' in statement) {
+              if (FLAGLESS_BROWSERS.includes(browser)) {
+                logger.error(
+                  chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
+                );
+              }
             }
           }
         }
