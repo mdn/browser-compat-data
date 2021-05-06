@@ -34,6 +34,13 @@ May 6, 2021
   - `api.BluetoothRemoteGATTService.getIncludedServices`
   - `api.BluetoothRemoteGATTService.getIncludedServices`
 
+### Statistics
+
+- 12 contributors have changed 316 files with 1,816 additions and 2,817 deletions in 112 commits ([`v3.3.2...v3.3.3`](https://github.com/mdn/browser-compat-data/compare/v3.3.2...v3.3.3))
+- 13,016 total features
+- 774 total contributors
+- 3,350 total stargazers
+
 ## [v3.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.2)
 
 April 29, 2021
