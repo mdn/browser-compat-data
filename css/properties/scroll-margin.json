@@ -15,12 +15,26 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "68"
-            },
-            "firefox_android": {
-              "version_added": "68"
-            },
+            "firefox": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "68",
+                  "partial_implementation": true,
+                  "notes": "Before version 90, scroll margin is not calculated correctly on <code>element.focus()</code>, see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1708303'>bug 1708303</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "68",
+                  "partial_implementation": true,
+                  "notes": "Before version 90, scroll margin is not calculated correctly on <code>element.focus()</code>, see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1708303'>bug 1708303</a>."
+              }
+            ],
             "ie": {
               "version_added": false
             },
