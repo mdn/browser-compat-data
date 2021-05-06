@@ -2,7 +2,29 @@
 
 ## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
 
-RELEASE DATE TK
+May 6, 2021
+
+### Notable changes
+
+- The following never-implemented Bluetooth API features have been removed ([#9975](https://github.com/mdn/browser-compat-data/pull/9975/)):
+
+  - `api.BluetoothAdvertisingData`
+  - `api.BluetoothDevice.adData`
+  - `api.BluetoothDevice.connectGATT`
+  - `api.BluetoothDevice.deviceClass`
+  - `api.BluetoothDevice.gattServer`
+  - `api.BluetoothDevice.paired`
+  - `api.BluetoothDevice.productID`
+  - `api.BluetoothDevice.productVersion`
+  - `api.BluetoothDevice.unwatchAdvertisements`
+  - `api.BluetoothDevice.uuids`
+  - `api.BluetoothDevice.vendorID`
+  - `api.BluetoothDevice.vendorIDSource`
+  - `api.BluetoothDevice.watchAdvertisements`
+  - `api.BluetoothDevice.watchingAdvertisements`
+  - `api.BluetoothRemoteGATTService.getIncludedService`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
 
 ## [v3.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.2)
 
