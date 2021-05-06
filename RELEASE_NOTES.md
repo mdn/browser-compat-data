@@ -11,6 +11,7 @@ May 6, 2021
 - The following features have been removed as historic and irrelevant:
 
   - `api.Notation` ([#10225](https://github.com/mdn/browser-compat-data/pull/10225))
+  - `api.StaticRange.toRange` ([#10288](https://github.com/mdn/browser-compat-data/pull/10288))
   - `javascript.builtins.WeakSet.clear` ([#10261](https://github.com/mdn/browser-compat-data/pull/10261))
 
 - The following never-implemented Bluetooth API features have been removed ([#9975](https://github.com/mdn/browser-compat-data/pull/9975/)):
