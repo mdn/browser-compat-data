@@ -8,6 +8,8 @@ May 6, 2021
 
 - `api.RTCIceCandidatePairStats.lastReponseTimestamp` was renamed to `api.RTCIceCandidatePairStats.lastResponseTimestamp` to correct a typo. ([#10175](https://github.com/mdn/browser-compat-data/pull/10175))
 
+- `api.Notation` has been removed as historic and irrelevant. ([#10225](https://github.com/mdn/browser-compat-data/pull/10225))
+
 - The following never-implemented Bluetooth API features have been removed ([#9975](https://github.com/mdn/browser-compat-data/pull/9975/)):
 
   - `api.BluetoothAdvertisingData`
