@@ -1,5 +1,68 @@
 # Release notes
 
+## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
+
+May 6, 2021
+
+### Notable changes
+
+- `api.RTCIceCandidatePairStats.lastReponseTimestamp` was renamed to `api.RTCIceCandidatePairStats.lastResponseTimestamp` to correct a typo. ([#10175](https://github.com/mdn/browser-compat-data/pull/10175))
+
+- The following features have been removed as historic and irrelevant:
+
+  - `api.Notation` ([#10225](https://github.com/mdn/browser-compat-data/pull/10225))
+  - `api.StaticRange.toRange` ([#10288](https://github.com/mdn/browser-compat-data/pull/10288))
+  - `javascript.builtins.WeakSet.clear` ([#10261](https://github.com/mdn/browser-compat-data/pull/10261))
+
+- The following never-implemented Bluetooth API features have been removed ([#9975](https://github.com/mdn/browser-compat-data/pull/9975/)):
+
+  - `api.BluetoothAdvertisingData`
+  - `api.BluetoothDevice.adData`
+  - `api.BluetoothDevice.connectGATT`
+  - `api.BluetoothDevice.deviceClass`
+  - `api.BluetoothDevice.gattServer`
+  - `api.BluetoothDevice.paired`
+  - `api.BluetoothDevice.productID`
+  - `api.BluetoothDevice.productVersion`
+  - `api.BluetoothDevice.unwatchAdvertisements`
+  - `api.BluetoothDevice.uuids`
+  - `api.BluetoothDevice.vendorID`
+  - `api.BluetoothDevice.vendorIDSource`
+  - `api.BluetoothDevice.watchAdvertisements`
+  - `api.BluetoothDevice.watchingAdvertisements`
+  - `api.BluetoothRemoteGATTService.getIncludedService`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+
+### Statistics
+
+- 12 contributors have changed 316 files with 1,816 additions and 2,817 deletions in 112 commits ([`v3.3.2...v3.3.3`](https://github.com/mdn/browser-compat-data/compare/v3.3.2...v3.3.3))
+- 13,016 total features
+- 774 total contributors
+- 3,350 total stargazers
+
+## [v3.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.2)
+
+April 29, 2021
+
+### Notable changes
+
+- The following features have been renamed to the correct case ([#10142](https://github.com/mdn/browser-compat-data/pull/10142)):
+
+  - `html.elements.script.referrerPolicy` → `html.elements.script.referrerpolicy`
+  - `svg.elements.a.referrerPolicy` → `svg.elements.a.referrerpolicy`
+
+- `http.headers.Accept-Charset` has been removed as historic and irrelevant. ([#10114](https://github.com/mdn/browser-compat-data/pull/10114))
+
+- `api.DOMHighResTimestamp` has been removed, since it is an incorrectly-named and unexposed specification typedef. ([#9892](https://github.com/mdn/browser-compat-data/pull/9892), [#9930](https://github.com/mdn/browser-compat-data/issues/9930))
+
+### Statistics
+
+- 18 contributors have changed 436 files with 2,952 additions and 1,494 deletions in 60 commits ([`v3.3.1...v3.3.2`](https://github.com/mdn/browser-compat-data/compare/v3.3.1...v3.3.2))
+- 13,039 total features
+- 771 total contributors
+- 3,342 total stargazers
+
 ## [v3.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.1)
 
 April 22, 2021
