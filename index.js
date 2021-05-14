@@ -17,7 +17,7 @@ function load() {
       extra = load(fp);
     } else if (path.extname(fp) === '.json') {
       try {
-        extra = require(fp);
+        extra = JSON.parse(fs.readFileSync(fp));
       } catch (e) {}
     }
 
