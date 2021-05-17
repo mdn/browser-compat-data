@@ -42,6 +42,7 @@ Make sure the issue is connected to other relevant information.
   4. Close the issue.
 
 - **If there are related issues, link to them.** Comment or edit the issue description.
+- For new features, **link to relevant specifications**.
 
 ## Fill in additional details
 
