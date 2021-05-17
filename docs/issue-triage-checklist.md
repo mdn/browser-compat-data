@@ -71,3 +71,19 @@ These details can be helpful if an issue is specific to the Chromium-based brows
 
 - If applicable, **request or link to a relevant bug on [WebKit Bugzilla](https://bugs.webkit.org/).**
 - If a version has been identified for addition or removal, **check the release notes linked from [`safari.json`](https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json)**.
+
+## Propose next steps
+
+After we've collected all of the required information, make a plan for what to do next.
+
+- **Comment suggesting next steps**, such as:
+
+  - Finding or writing a minimal test case.
+  - Running tests in BrowserStack or Sauce Labs.
+  - Updating the data files with a pull request.
+
+  Or, if you're not sure what the next step is, ask for ideas, input, or help.
+
+- If applicable, **set labels seeking help**. Use the [_good first issue:100:_](https://github.com/mdn/browser-compat-data/labels/good%20first%20issue%20%3A100%3A) or [_help wanted :sos:_](https://github.com/mdn/browser-compat-data/labels/help%20wanted%20%3Asos%3A) labels.
+
+- **Thank the reporter.**
