@@ -297,7 +297,7 @@ Sometimes it's useful to represent support for specific arguments of a function 
 
 - For properties of argument objects, use a subfeature named `argname_prop_argument` with description text `<code>argname.prop</code> argument`, where _argname_ is the name of the argument object and _prop_ is the name of the property.
 
-  For example, to represent support for the `year` property of the `date` argument to a method `schedule(date)` (e.g., `schedule({"year": 1970 })`), use a subfeature of `schedule` named `date_year_argument` with description text `<code>date.year</code> argument`.
+  For example, to represent support for the `year` property of the `date` argument to a method `schedule(date)` (as in `schedule({"year": 1970 })`), use a subfeature of `schedule` named `date_year_argument` with description text `<code>date.year</code> argument`.
 
 For existing data which does not follow this guideline, you may modify it to conform with this data, if you are you otherwise updating the data (or data related to it).
 
