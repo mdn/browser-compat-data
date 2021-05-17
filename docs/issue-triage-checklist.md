@@ -21,6 +21,14 @@ Make sure the issue is well-described. If these details aren't satisfied, ask fo
 - As applicable, **are specific browsers, versions, and operating systems identified?**
 - If applicable, **is there a link to a relevant MDN page?**
 
+## Confirm the existing data
+
+Make sure the data is consistent with the issue reported before investing time in more research or testing.
+
+- **Check if the existing data makes sense.** Sometimes there's confusion about what the data shows (e.g., ranged data) or where it should be recorded (e.g., different event features).
+- **Check if the data has already been updated.** Data doesn't reach consumers immediately; make sure the data hasn't been fixed already.
+- **Link to the relevant data files.** If the data does in fact need changes, link to the source files that will need be changed.
+
 ## Related information
 
 Make sure the issue is connected to other relevant information.
