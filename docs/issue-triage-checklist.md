@@ -1,6 +1,6 @@
 # Issue triage checklist
 
-<!-- TODO: needs some intro text -->
+Helping process and understand new issues is a great way to help the project. To review a new issue, follow these steps. It looks lengthy, but with practice, many issues can be processed in a few minutes.
 
 ## Close fast
 
