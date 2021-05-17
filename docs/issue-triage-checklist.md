@@ -43,7 +43,7 @@ Most reporters won't do these things on their own, but these are important steps
 
 - **If there is an [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/) test for this feature, link to it.**
 - **If there's a live sample or interactive example on MDN that can be used as a test, link to it.**
-- A**sk the reporter if they have a minimal test case** (e.g., on CodePen).
+- **Ask the reporter if they have a minimal test case** (e.g., on CodePen).
 - If applicable, **comment if a more detailed or specific test is required.** For example, tests often work by checking whether a prototype has a particular member, not the actual behavior of that member.
 
 ### Chrome (and Chromium-based browsers)
@@ -62,4 +62,4 @@ These details can be helpful if an issue is specific to the Chromium-based brows
 ### Safari
 
 - If applicable, **request or link to a relevant bug on [WebKit Bugzilla](https://bugs.webkit.org/).**
-- If a version has been identified for addition or removal, **check the release notes linked from `[safari.json](https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json)`**.
+- If a version has been identified for addition or removal, **check the release notes linked from [`safari.json`](https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json)**.
