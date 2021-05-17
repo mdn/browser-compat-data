@@ -23,11 +23,17 @@ Make sure the issue is well-described. If these details aren't satisfied, ask fo
 
 ## Related information
 
-Make sure the issue is connected to other, relevant information.
+Make sure the issue is connected to other relevant information.
 
-- **Look for related issues.** Search for other issues with the same dotted path to a feature (or a parent feature) or using similar keywords.
-- **If the issue is a duplicate, close it.** Copy any new information into the original issue, then thank the reporter of the duplicate issue, link to the original issue, and close the duplicate.
-- **If there are related issues, link to them in a new comment.**
+- **Link to related issues.** Search for other issues with the same dotted path to a feature (or a parent feature) or using similar keywords.
+- **If the issue is a duplicate, close it.** Follow these steps:
+
+  1. Copy any new information into the original issue.
+  2. Comment to thank the reporter and link to the original issue.
+  3. Label the issue [_duplicate :dancing_women:_](https://github.com/mdn/browser-compat-data/labels/duplicate%20%3Adancing_women%3A).
+  4. Close the issue.
+
+- **If there are related issues, link to them.** Comment or edit the issue description.
 
 ## Fill in additional details
 
