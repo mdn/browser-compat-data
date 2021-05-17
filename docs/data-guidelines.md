@@ -282,3 +282,23 @@ A single-engine feature's `experimental` status may expire and switch to `false`
 | An API supported in Firefox, released three years ago.                      | No           |
 
 This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#9933](https://github.com/mdn/browser-compat-data/pull/9933).
+
+## Arguments and argument object features
+
+Sometimes it's useful to represent support for specific arguments of a function or method, as a subfeature of the function itself. To record data about whether a specific argument (parameter) is supported by a function or method, use the following naming conventions:
+
+- For named arguments, use a subfeature named `argname_argument` with description text `<code>argname</code> argument`. Where _argname_ is the name of the argument as it appears on the corresponding function's MDN page (or specification, if no MDN page is available).
+
+  For example, to represent support for the `firstName` argument of a method `hello(firstName, familyName)`, use a subfeature of `hello` named `firstName_argument` with the description text `<code>firstName</code> argument`.
+
+- For unnamed arguments, use a subfeature named `ordinal_argument` with description text `ordinal argument` where _ordinal_ is the ordinal number position of the argument.
+
+  For example, to represent support for the second argument of a method `count()`, use a subfeature of `count` named `second_argument` and description text `Second argument`.
+
+- For properties of argument objects, use a subfeature named `argname_prop_argument` with description text `<code>argname.prop</code> argument`, where _argname_ is the name of the argument object and _prop_ is the name of the property.
+
+  For example, to represent support for the `year` property of the `date` argument to a method `schedule(date)` (e.g., `schedule({"year": 1970 })`), use a subfeature of `schedule` named `date_year_argument` with description text `<code>date.year</code> argument`.
+
+For existing data which does not follow this guideline, you may modify it to conform with this data, if you are you otherwise updating the data (or data related to it).
+
+This guideline was proposed and adopted in #TK.
