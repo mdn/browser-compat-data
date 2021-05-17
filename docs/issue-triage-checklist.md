@@ -15,10 +15,10 @@ Avoid wasting time on issues which are not relevant to the repository by closing
 
 Make sure the issue is well-described. If these details aren't satisfied, ask for more information or update the issue title, description, or labels yourself (or @ mention a Peer or Owner who can do this for you).
 
-- **Does the title summarize the issue in the description?**
+- **Does the title summarize the issue?**
 - **Does the issue uniquely identify relevant feature(s)?** Ideally with a dotted path to a feature (e.g., `javascript.builtins.Date.now`) or an unambiguous name (`Date.now()`).
-- **Is the issue labeled appropriately?** For example, if it's about CSS, does it have the CSS label?
-- If applicable, **are specific browsers named?**
+- **Is the issue labeled correctly?** For example, if it's about CSS, does it have the CSS label?
+- As applicable, **are specific browsers, versions, and operating systems identified?**
 - If applicable, **is there a link to a relevant MDN page?**
 
 ## Related information
