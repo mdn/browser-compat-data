@@ -13,7 +13,7 @@ Avoid wasting time on issues which are not relevant to the repository by closing
 
 ## Confirm the title, description, and metadata
 
-Make sure the issue is well-described. If these details aren't satisfied, ask for more information or update the issue title, description, or labels yourself (or *@-*mention a Peer or Owner who can do this for you).
+Make sure the issue is well-described. If these details aren't satisfied, ask for more information or update the issue title, description, or labels yourself (or @ mention a Peer or Owner who can do this for you).
 
 - **Does the title summarize the issue in the description?**
 - **Does the issue uniquely identify relevant feature(s)?** Ideally with a dotted path to a feature (e.g., `javascript.builtins.Date.now`) or an unambiguous name (`Date.now()`).
