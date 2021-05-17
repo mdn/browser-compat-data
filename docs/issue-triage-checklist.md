@@ -6,10 +6,10 @@
 
 Avoid wasting time on issues which are not relevant to the repository by closing them quickly.
 
-- **Is it obvious spam?** Close it without comment and label it _spam :wastebasket:_.
-- **Is the issue template wholly incomplete?** Close it and label it _invalid :no_entry_sign:_.
-- **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it _invalid :no_entry_sign:_.
-- **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it _invalid :no_entry_sign:_.
+- **Is it obvious spam?** Close it without comment and label it [_spam :wastebasket:_](https://github.com/mdn/browser-compat-data/labels/spam%20%3Awastebasket%3A).
+- **Is the issue template wholly incomplete?** Close it and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
+- **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
+- **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
 
 ## Confirm the title, description, and metadata
 
