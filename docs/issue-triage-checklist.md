@@ -1,0 +1,59 @@
+# Issue triage checklist
+
+<!-- TODO: needs some intro text -->
+
+## Close fast
+
+Avoid wasting time on issues which are not relevant to the repository by closing them quickly.
+
+- **Is it obvious spam?** Close it without comment and label it _spam :wastebasket:_.
+- **Is the issue template wholly incomplete?** Close it and label it _invalid :no_entry_sign:_.
+- **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it _invalid :no_entry_sign:_.
+- **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it _invalid :no_entry_sign:_.
+
+## Confirm the title, description, and metadata
+
+Make sure the issue is well-described. If these details aren't satisfied, ask for more information or update the issue title, description, or labels yourself (or *@-*mention a Peer or Owner who can do this for you).
+
+- **Does the title summarize the issue in the description?**
+- **Does the issue uniquely identify relevant feature(s)?** Ideally with a dotted path to a feature (e.g., `javascript.builtins.Date.now`) or an unambiguous name (`Date.now()`).
+- **Is the issue labeled appropriately?** For example, if it's about CSS, does it have the CSS label?
+- If applicable, **are specific browsers named?**
+- If applicable, **is there a link to a relevant MDN page?**
+
+## Related information
+
+Make sure the issue is connected to other, relevant information.
+
+- **Look for related issues.** Search for other issues with the same dotted path to a feature (or a parent feature) or using similar keywords.
+- **If the issue is a duplicate, close it.** Copy any new information into the original issue, then thank the reporter of the duplicate issue, link to the original issue, and close the duplicate.
+- **If there are related issues, link to them in a new comment.**
+
+## Fill in additional details
+
+Most reporters won't do these things on their own, but these are important steps to confirming a report, testing for verification, or invalidating an issue.
+
+### Get testing details
+
+- **If there is an [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/) test for this feature, link to it.**
+- **If there's a live sample or interactive example on MDN that can be used as a test, link to it.**
+- A**sk the reporter if they have a minimal test case** (e.g., on CodePen).
+- If applicable, **comment if a more detailed or specific test is required.** For example, tests often work by checking whether a prototype has a particular member, not the actual behavior of that member.
+
+### Chrome (and Chromium-based browsers)
+
+These details can be helpful if an issue is specific to the Chromium-based browsers: Chrome, Chrome for Android, Android WebView, Edge (versions ≥79), Opera, Opera for Android, and Samsung Internet.
+
+- **Link to a Chrome Platform Status entry, if it exists.**
+- If applicable, **request or link to a relevant issue on [the Chromium issue tracker](https://bugs.chromium.org/p/chromium/issues/list)**.
+- If applicable, **comment if the interface is listed in [`not-webview-exposed.txt`](https://source.chromium.org/chromium/chromium/src/+/master:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt).**
+
+### Firefox and Firefox for Android
+
+- If applicable, **request or link to a relevant bug on [Bugzilla](http://bugzilla.mozilla.org/).**
+- If the issue affects Firefox for Android only, **check whether the feature was introduced before or after Firefox 68 and make a note of it in a comment or the issue description**.
+
+### Safari
+
+- If applicable, **request or link to a relevant bug on [WebKit Bugzilla](https://bugs.webkit.org/).**
+- If a version has been identified for addition or removal, **check the release notes linked from `[safari.json](https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json)`**.
