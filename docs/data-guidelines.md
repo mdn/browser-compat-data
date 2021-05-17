@@ -301,4 +301,4 @@ Sometimes it's useful to represent support for specific arguments of a function 
 
 For existing data which does not follow this guideline, you may modify it to conform with this data, if you are you otherwise updating the data (or data related to it).
 
-This guideline was proposed and adopted in #TK.
+This guideline was proposed and adopted in [#10509](https://github.com/mdn/browser-compat-data/pull/10509).
