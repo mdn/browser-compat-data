@@ -53,7 +53,7 @@
         "cross-fade": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade()",
-            "spec_url": "https://drafts.csswg.org/css-images/#cross-fade-function",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#cross-fade-function",
             "description": "<code>cross-fade()</code>",
             "support": {
               "chrome": {
@@ -133,7 +133,7 @@
         "element": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element()",
-            "spec_url": "https://drafts.csswg.org/css-images/#element-notation",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
             "description": "<code>element()</code>",
             "support": {
               "chrome": {
@@ -327,36 +327,14 @@
             "__compat": {
               "description": "<code>conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/conic-gradient()",
-              "spec_url": "https://drafts.csswg.org/css-images/#conic-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
               "support": {
-                "chrome": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "chrome_android": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": {
+                  "version_added": "69"
+                },
                 "edge": {
                   "version_added": "79"
                 },
@@ -391,34 +369,12 @@
                 "ie": {
                   "version_added": false
                 },
-                "opera": [
-                  {
-                    "version_added": "56"
-                  },
-                  {
-                    "version_added": "46",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "opera_android": [
-                  {
-                    "version_added": "48"
-                  },
-                  {
-                    "version_added": "43",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "opera": {
+                  "version_added": "56"
+                },
+                "opera_android": {
+                  "version_added": "48"
+                },
                 "safari": {
                   "version_added": "12.1"
                 },
@@ -1216,34 +1172,12 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeating-conic-gradient()",
               "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
               "support": {
-                "chrome": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "chrome_android": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": {
+                  "version_added": "69"
+                },
                 "edge": {
                   "version_added": "79"
                 },
@@ -1278,34 +1212,12 @@
                 "ie": {
                   "version_added": false
                 },
-                "opera": [
-                  {
-                    "version_added": "56"
-                  },
-                  {
-                    "version_added": "46",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "opera_android": [
-                  {
-                    "version_added": "48"
-                  },
-                  {
-                    "version_added": "43",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "opera": {
+                  "version_added": "56"
+                },
+                "opera_android": {
+                  "version_added": "48"
+                },
                 "safari": {
                   "version_added": "12.1"
                 },
@@ -2069,7 +1981,7 @@
         "image": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image()",
-            "spec_url": "https://drafts.csswg.org/css-images/#image-notation",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-notation",
             "description": "<code>image()</code>",
             "support": {
               "chrome": {
@@ -2083,7 +1995,10 @@
               },
               "firefox": {
                 "version_added": false,
-                "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect'><code>-moz-image-rect()</code></a> function supports fragments as of Firefox 4."
+                "notes": [
+                  "See <a href='https://bugzil.la/703217'>bug 703217</a>.",
+                  "The <a href='https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect'><code>-moz-image-rect()</code></a> function supports fragments as of Firefox 4."
+                ]
               },
               "firefox_android": {
                 "version_added": false,
@@ -2121,7 +2036,7 @@
         "image-set": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set()",
-            "spec_url": "https://drafts.csswg.org/css-images/#image-set-notation",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
             "description": "<code>image-set()</code>",
             "support": {
               "chrome": {
@@ -2137,12 +2052,18 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
+                "version_added": "88",
+                "notes": [
+                  "In <code>cursor</code> and <code>content</code> properties, gradients are not supported as arguments to <code>image-set()</code>. See <a href='https://bugzil.la/1696314'>bug 1696314</a>.",
+                  "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                ]
               },
               "firefox_android": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
+                "version_added": "88",
+                "notes": [
+                  "In <code>cursor</code> and <code>content</code> properties, gradients are not supported as arguments to <code>image-set()</code>. See <a href='https://bugzil.la/1696314'>bug 1696314</a>.",
+                  "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                ]
               },
               "ie": {
                 "version_added": false

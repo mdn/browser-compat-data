@@ -3,6 +3,7 @@
     "BaseAudioContext": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext",
+        "spec_url": "https://webaudio.github.io/web-audio-api/#BaseAudioContext",
         "support": {
           "chrome": [
             {
@@ -84,16 +85,28 @@
               "notes": "The <code>BaseAudioContext</code> interface itself is not present, but many of the methods are available on the <a href='https://developer.mozilla.org/docs/Web/API/AudioContext'><code>AudioContext</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/OfflineAudioContext'><code>OfflineAudioContext</code></a> interfaces."
             }
           ],
-          "safari": {
-            "version_added": "6",
-            "partial_implementation": true,
-            "notes": "The <code>BaseAudioContext</code> interface itself is not present, but many of the methods are available on the <a href='https://developer.mozilla.org/docs/Web/API/AudioContext'><code>AudioContext</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/OfflineAudioContext'><code>OfflineAudioContext</code></a> interfaces."
-          },
-          "safari_ios": {
-            "version_added": "6",
-            "partial_implementation": true,
-            "notes": "The <code>BaseAudioContext</code> interface itself is not present, but many of the methods are available on the <a href='https://developer.mozilla.org/docs/Web/API/AudioContext'><code>AudioContext</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/OfflineAudioContext'><code>OfflineAudioContext</code></a> interfaces."
-          },
+          "safari": [
+            {
+              "version_added": "14.1"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.1",
+              "partial_implementation": true,
+              "notes": "The <code>BaseAudioContext</code> interface itself is not present, but many of the methods are available on the <a href='https://developer.mozilla.org/docs/Web/API/AudioContext'><code>AudioContext</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/OfflineAudioContext'><code>OfflineAudioContext</code></a> interfaces."
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "14.5"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.5",
+              "partial_implementation": true,
+              "notes": "The <code>BaseAudioContext</code> interface itself is not present, but many of the methods are available on the <a href='https://developer.mozilla.org/docs/Web/API/AudioContext'><code>AudioContext</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/OfflineAudioContext'><code>OfflineAudioContext</code></a> interfaces."
+            }
+          ],
           "samsunginternet_android": [
             {
               "version_added": "6.0"
@@ -126,6 +139,7 @@
       "audioWorklet": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/audioWorklet",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-audioworklet",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -152,10 +166,10 @@
               "version_added": true
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "9.0"
@@ -174,12 +188,13 @@
       "createAnalyser": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createAnalyser",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createanalyser",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -206,10 +221,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -222,12 +237,13 @@
       "createBiquadFilter": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBiquadFilter",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createbiquadfilter",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -254,10 +270,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -270,12 +286,13 @@
       "createBuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createbuffer",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -302,10 +319,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -318,12 +335,13 @@
       "createBufferSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBufferSource",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createbuffersource",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -350,10 +368,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -366,12 +384,13 @@
       "createChannelMerger": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelMerger",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createchannelmerger",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -398,10 +417,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -414,12 +433,13 @@
       "createChannelSplitter": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createchannelsplitter",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -446,10 +466,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -462,6 +482,7 @@
       "createConstantSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConstantSource",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createconstantsource",
           "support": {
             "chrome": {
               "version_added": "56"
@@ -488,10 +509,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -510,12 +531,13 @@
       "createConvolver": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConvolver",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createconvolver",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -542,10 +564,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -558,12 +580,13 @@
       "createDelay": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDelay",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createdelay",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -590,10 +613,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -606,12 +629,13 @@
       "createDynamicsCompressor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDynamicsCompressor",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createdynamicscompressor",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -638,10 +662,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -654,12 +678,13 @@
       "createGain": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createGain",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-creategain",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -686,10 +711,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -702,6 +727,7 @@
       "createIIRFilter": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createIIRFilter",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createiirfilter",
           "support": {
             "chrome": {
               "version_added": "49"
@@ -728,10 +754,10 @@
               "version_added": true
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -750,12 +776,13 @@
       "createOscillator": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createOscillator",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createoscillator",
           "support": {
             "chrome": {
-              "version_added": "14"
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "12"
@@ -782,10 +809,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -798,12 +825,13 @@
       "createPanner": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPanner",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createpanner",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -830,10 +858,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -846,6 +874,7 @@
       "createPeriodicWave": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPeriodicWave",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createperiodicwave",
           "support": {
             "chrome": [
               {
@@ -853,7 +882,7 @@
                 "notes": "Default values supported"
               },
               {
-                "version_added": "14"
+                "version_added": "30"
               }
             ],
             "chrome_android": [
@@ -862,7 +891,7 @@
                 "notes": "Default values supported"
               },
               {
-                "version_added": "33"
+                "version_added": "30"
               }
             ],
             "edge": {
@@ -878,16 +907,16 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "17"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "18"
             },
             "safari": {
-              "version_added": "6"
+              "version_added": "8"
             },
             "safari_ios": {
-              "version_added": "6"
+              "version_added": "8"
             },
             "samsunginternet_android": [
               {
@@ -904,7 +933,7 @@
                 "notes": "Default values supported"
               },
               {
-                "version_added": "4.4.3"
+                "version_added": "≤37"
               }
             ]
           },
@@ -966,12 +995,13 @@
       "createScriptProcessor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createScriptProcessor",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createscriptprocessor",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -998,10 +1028,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1014,6 +1044,7 @@
       "createStereoPanner": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createStereoPanner",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createstereopanner",
           "support": {
             "chrome": {
               "version_added": "42"
@@ -1040,10 +1071,10 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": true
@@ -1062,12 +1093,13 @@
       "createWaveShaper": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createWaveShaper",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-createwaveshaper",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -1094,10 +1126,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1110,12 +1142,13 @@
       "currentTime": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/currentTime",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-currenttime",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -1142,10 +1175,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1158,12 +1191,13 @@
       "decodeAudioData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-decodeaudiodata",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -1190,10 +1224,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1254,12 +1288,13 @@
       "destination": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/destination",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-destination",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -1286,10 +1321,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1302,12 +1337,13 @@
       "listener": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/listener",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-listener",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -1334,10 +1370,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1350,6 +1386,7 @@
       "onstatechange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/onstatechange",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-onstatechange",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -1398,12 +1435,13 @@
       "sampleRate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-samplerate",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
-              "version_added": "33"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
@@ -1430,10 +1468,10 @@
               "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1446,6 +1484,7 @@
       "state": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BaseAudioContext/state",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-baseaudiocontext-state",
           "support": {
             "chrome": {
               "version_added": "43"
