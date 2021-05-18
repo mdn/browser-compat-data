@@ -3,6 +3,7 @@
     "Navigator": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator",
+        "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#the-navigator-object",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -225,102 +226,6 @@
           }
         }
       },
-      "battery": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/battery",
-          "support": {
-            "chrome": {
-              "version_added": "20",
-              "version_removed": "29",
-              "prefix": "webkit"
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "50",
-                "notes": [
-                  "Removed in favor of <code>navigator.getBattery()</code>.",
-                  "The Battery API was supported on Android, Windows, and Linux with UPower installed. Support for macOS was available starting with Firefox 18."
-                ]
-              },
-              {
-                "version_added": "11",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "16",
-                "version_removed": "50",
-                "notes": [
-                  "Removed in favor of <code>navigator.getBattery()</code>.",
-                  "The Battery API was supported on Android, Windows, and Linux with UPower installed. Support for macOS was available starting with Firefox 18."
-                ]
-              },
-              {
-                "version_added": "14",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
       "bluetooth": {
         "__compat": {
           "support": {
@@ -528,6 +433,7 @@
       "clipboard": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/clipboard",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#navigator-clipboard",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -576,6 +482,7 @@
       "connection": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/connection",
+          "spec_url": "https://wicg.github.io/netinfo/#connection-attribute",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -632,6 +539,7 @@
       "contacts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
+          "spec_url": "https://wicg.github.io/contact-api/spec/#extensions-to-navigator",
           "support": {
             "chrome": {
               "version_added": false
@@ -680,6 +588,7 @@
       "cookieEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-cookieenabled-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -699,7 +608,8 @@
               "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
             },
             "ie": {
-              "version_added": "4"
+              "version_added": "4",
+              "notes": "<code>navigator.cookieEnabled</code> returns <code>true</true> even if the browser is set to block cookies (for example, if the page is in the <em>Restricted sites</em> security zone)."
             },
             "opera": {
               "version_added": "≤12.1"
@@ -730,6 +640,7 @@
       "credentials": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/credentials",
+          "spec_url": "https://w3c.github.io/webappsec-credential-management/#framework-credential-management",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -778,6 +689,7 @@
       "deviceMemory": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory",
+          "spec_url": "https://w3c.github.io/device-memory/#sec-device-memory-js-api",
           "support": {
             "chrome": {
               "version_added": "63"
@@ -826,6 +738,7 @@
       "doNotTrack": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/doNotTrack",
+          "spec_url": "https://www.w3.org/TR/tracking-dnt/#dom-navigator-donottrack",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -873,15 +786,16 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
       "geolocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/geolocation",
+          "spec_url": "https://w3c.github.io/geolocation-api/#dom-navigator-geolocation",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -924,6 +838,55 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "hid": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/Navigator/hid",
+            "spec_url": "https://wicg.github.io/webhid/#dom-navigator-hid",
+            "support": {
+              "chrome": {
+                "version_added": "89"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": "89"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "75"
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
           }
         },
         "secure_context_required": {
@@ -978,6 +941,7 @@
       "getBattery": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getBattery",
+          "spec_url": "https://w3c.github.io/battery/#dom-navigator-getbattery",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -990,13 +954,11 @@
             },
             "firefox": {
               "version_added": "43",
-              "version_removed": "52",
-              "notes": "From Firefox 52 onwards, the Battery Status API is only available in chrome/privileged code."
+              "version_removed": "52"
             },
             "firefox_android": {
               "version_added": "43",
-              "version_removed": "52",
-              "notes": "From Firefox 52 onwards, the Battery Status API is only available in chrome/privileged code."
+              "version_removed": "52"
             },
             "ie": {
               "version_added": false
@@ -1023,13 +985,14 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
       "getGamepads": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads",
+          "spec_url": "https://w3c.github.io/gamepad/#dom-navigator-getgamepads",
           "support": {
             "chrome": [
               {
@@ -1356,6 +1319,7 @@
       "keyboard": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/keyboard",
+          "spec_url": "https://wicg.github.io/keyboard-map/#navigator-interface",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -1404,6 +1368,7 @@
       "locks": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/locks",
+          "spec_url": "https://wicg.github.io/web-locks/#navigator-mixins",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1452,6 +1417,7 @@
       "maxTouchPoints": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints",
+          "spec_url": "https://w3c.github.io/pointerevents/#extensions-to-the-navigator-interface",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -1531,6 +1497,7 @@
       "mediaCapabilities": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaCapabilities",
+          "spec_url": "https://w3c.github.io/media-capabilities/#dom-navigator-mediacapabilities",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -1579,6 +1546,7 @@
       "mediaDevices": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaDevices",
+          "spec_url": "https://w3c.github.io/mediacapture-main/#mediadevices",
           "support": {
             "chrome": {
               "version_added": "47"
@@ -1675,6 +1643,7 @@
       "mediaSession": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession",
+          "spec_url": "https://w3c.github.io/mediasession/#dom-navigator-mediasession",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -1785,6 +1754,7 @@
       "oscpu": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/oscpu",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-oscpu",
           "support": {
             "chrome": {
               "version_added": false
@@ -1835,6 +1805,7 @@
       "permissions": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
+          "spec_url": "https://w3c.github.io/permissions/#dom-navigator-permissions",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -1884,6 +1855,7 @@
       "presentation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/presentation",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-navigator-presentation",
           "support": {
             "chrome": {
               "version_added": "47"
@@ -1896,6 +1868,7 @@
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -1906,6 +1879,7 @@
             },
             "firefox_android": {
               "version_added": "51",
+              "version_removed": "79",
               "flags": [
                 {
                   "type": "preference",
@@ -1947,6 +1921,7 @@
       "productSub": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/productSub",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-productsub-dev",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -2056,6 +2031,7 @@
       "registerProtocolHandler": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers",
           "support": {
             "chrome": {
               "version_added": "13",
@@ -2162,6 +2138,7 @@
       "requestMediaKeySystemAccess": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess",
+          "spec_url": "https://w3c.github.io/encrypted-media/#navigator-extension-requestmediakeysystemaccess",
           "support": {
             "chrome": {
               "version_added": "42",
@@ -2322,7 +2299,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "87"
@@ -2338,6 +2315,7 @@
       "sendBeacon": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon",
+          "spec_url": "https://w3c.github.io/beacon/#sendbeacon-method",
           "support": {
             "chrome": {
               "version_added": "39",
@@ -2392,6 +2370,7 @@
       "serial": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/serial",
+          "spec_url": "https://wicg.github.io/serial/#extensions-to-the-navigator-interface",
           "support": {
             "chrome": {
               "version_added": "89"
@@ -2440,6 +2419,7 @@
       "serviceWorker": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-serviceworker",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -2447,20 +2427,9 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
               "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
@@ -2547,6 +2516,7 @@
       "share": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/share",
+          "spec_url": "https://w3c.github.io/web-share/#share-method",
           "support": {
             "chrome": {
               "version_added": "89",
@@ -2699,6 +2669,7 @@
       "vendor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vendor",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-vendor-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2747,6 +2718,7 @@
       "vendorSub": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vendorSub",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-vendorsub-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2795,6 +2767,7 @@
       "vibrate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vibrate",
+          "spec_url": "https://w3c.github.io/vibration/#dom-navigator-vibrate",
           "support": {
             "chrome": {
               "version_added": "32"
@@ -2885,6 +2858,7 @@
       "wakeLock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock",
+          "spec_url": "https://w3c.github.io/screen-wake-lock/#extensions-to-the-navigator-interface",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -2917,7 +2891,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
@@ -2933,6 +2907,7 @@
       "webdriver": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/webdriver",
+          "spec_url": "https://w3c.github.io/webdriver/#dom-navigatorautomationinformation-webdriver",
           "support": {
             "chrome": {
               "version_added": "63"
@@ -2981,6 +2956,7 @@
       "xr": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/xr",
+          "spec_url": "https://immersive-web.github.io/webxr/#navigator-xr-attribute",
           "support": {
             "chrome": {
               "version_added": "79"
