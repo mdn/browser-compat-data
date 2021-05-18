@@ -283,21 +283,21 @@ A single-engine feature's `experimental` status may expire and switch to `false`
 
 This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#9933](https://github.com/mdn/browser-compat-data/pull/9933).
 
-## Arguments and argument object features
+## Parameters and parameter object features
 
-Sometimes it's useful to represent support for specific arguments of a function or method, as a subfeature of the function itself. To record data about whether a specific argument (parameter) is supported by a function or method, use the following naming conventions:
+Sometimes it's useful to represent support for specific parameters (also known as arguments) of a function or method, as a subfeature of the function itself. To record data about whether a specific parameter is supported by a function or method, use the following naming conventions:
 
-- For named arguments, use a subfeature named `argname_argument` with description text `<code>argname</code> argument`. Where _argname_ is the name of the argument as it appears on the corresponding function's MDN page (or specification, if no MDN page is available).
+- For named parameters, use a subfeature named `paramname_parameter` with description text `<code>paramname</code> parameter`. Where _paramname_ is the name of the parameter as it appears on the corresponding function's MDN page (or specification, if no MDN page is available).
 
-  For example, to represent support for the `firstName` argument of a method `hello(firstName, familyName)`, use a subfeature of `hello` named `firstName_argument` with the description text `<code>firstName</code> argument`.
+  For example, to represent support for the `firstName` parameter of a method `hello(firstName, familyName)`, use a subfeature of `hello` named `firstName_parameter` with the description text `<code>firstName</code> parameter`.
 
-- For unnamed arguments, use a subfeature named `ordinal_argument` with description text `ordinal argument` where _ordinal_ is the ordinal number position of the argument.
+- For unnamed parameters, use a subfeature named `ordinal_parameter` with description text `ordinal parameter` where _ordinal_ is the ordinal number position of the parameter.
 
-  For example, to represent support for the second argument of a method `count()`, use a subfeature of `count` named `second_argument` and description text `Second argument`.
+  For example, to represent support for the second parameter of a method `count()`, use a subfeature of `count` named `second_parameter` and description text `Second parameter`.
 
-- For properties of argument objects, use a subfeature named `argname_prop_argument` with description text `<code>argname.prop</code> argument`, where _argname_ is the name of the argument object and _prop_ is the name of the property.
+- For properties of parameter objects, use a subfeature named `paramname_prop_parameter` with description text `<code>paramname.prop</code> parameter`, where _paramname_ is the name of the parameter object and _prop_ is the name of the property.
 
-  For example, to represent support for the `year` property of the `date` argument to a method `schedule(date)` (as in `schedule({"year": 1970 })`), use a subfeature of `schedule` named `date_year_argument` with description text `<code>date.year</code> argument`.
+  For example, to represent support for the `year` property of the `date` parameter to a method `schedule(date)` (as in `schedule({"year": 1970 })`), use a subfeature of `schedule` named `date_year_parameter` with description text `<code>date.year</code> parameter`.
 
 For existing data which does not follow this guideline, you may modify it to conform with this data, if you are you otherwise updating the data (or data related to it).
 
