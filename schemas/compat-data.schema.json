@@ -170,6 +170,12 @@
       }
     },
 
+    "spec_url_value": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "(^http(s)?:\/\/[^#]+#.+)|(^https://www.khronos.org/registry/webgl/extensions/[^/]+/)"
+    },
+
     "compat_statement": {
       "type": "object",
       "properties": {
@@ -186,17 +192,13 @@
         "spec_url": {
           "anyOf": [
             {
-              "type": "string",
-              "format": "uri",
-              "pattern": "^http(s)?:\/\/[^#]+#.+"
+              "$ref": "#/definitions/spec_url_value"
             },
             {
               "type": "array",
               "minItems": 2,
               "items": {
-                "type": "string",
-                "format": "uri",
-                "pattern": "^http(s)?:\/\/[^#]+#.+"
+                "$ref": "#/definitions/spec_url_value"
               }
             }
           ],

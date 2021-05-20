@@ -1,12 +1,117 @@
 # Release notes
 
+## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
+
+May 6, 2021
+
+### Notable changes
+
+- `api.RTCIceCandidatePairStats.lastReponseTimestamp` was renamed to `api.RTCIceCandidatePairStats.lastResponseTimestamp` to correct a typo. ([#10175](https://github.com/mdn/browser-compat-data/pull/10175))
+
+- The following features have been removed as historic and irrelevant:
+
+  - `api.Notation` ([#10225](https://github.com/mdn/browser-compat-data/pull/10225))
+  - `api.StaticRange.toRange` ([#10288](https://github.com/mdn/browser-compat-data/pull/10288))
+  - `javascript.builtins.WeakSet.clear` ([#10261](https://github.com/mdn/browser-compat-data/pull/10261))
+
+- The following never-implemented Bluetooth API features have been removed ([#9975](https://github.com/mdn/browser-compat-data/pull/9975/)):
+
+  - `api.BluetoothAdvertisingData`
+  - `api.BluetoothDevice.adData`
+  - `api.BluetoothDevice.connectGATT`
+  - `api.BluetoothDevice.deviceClass`
+  - `api.BluetoothDevice.gattServer`
+  - `api.BluetoothDevice.paired`
+  - `api.BluetoothDevice.productID`
+  - `api.BluetoothDevice.productVersion`
+  - `api.BluetoothDevice.unwatchAdvertisements`
+  - `api.BluetoothDevice.uuids`
+  - `api.BluetoothDevice.vendorID`
+  - `api.BluetoothDevice.vendorIDSource`
+  - `api.BluetoothDevice.watchAdvertisements`
+  - `api.BluetoothDevice.watchingAdvertisements`
+  - `api.BluetoothRemoteGATTService.getIncludedService`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+
+### Statistics
+
+- 12 contributors have changed 316 files with 1,816 additions and 2,817 deletions in 112 commits ([`v3.3.2...v3.3.3`](https://github.com/mdn/browser-compat-data/compare/v3.3.2...v3.3.3))
+- 13,016 total features
+- 774 total contributors
+- 3,350 total stargazers
+
+## [v3.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.2)
+
+April 29, 2021
+
+### Notable changes
+
+- The following features have been renamed to the correct case ([#10142](https://github.com/mdn/browser-compat-data/pull/10142)):
+
+  - `html.elements.script.referrerPolicy` → `html.elements.script.referrerpolicy`
+  - `svg.elements.a.referrerPolicy` → `svg.elements.a.referrerpolicy`
+
+- `http.headers.Accept-Charset` has been removed as historic and irrelevant. ([#10114](https://github.com/mdn/browser-compat-data/pull/10114))
+
+- `api.DOMHighResTimestamp` has been removed, since it is an incorrectly-named and unexposed specification typedef. ([#9892](https://github.com/mdn/browser-compat-data/pull/9892), [#9930](https://github.com/mdn/browser-compat-data/issues/9930))
+
+### Statistics
+
+- 18 contributors have changed 436 files with 2,952 additions and 1,494 deletions in 60 commits ([`v3.3.1...v3.3.2`](https://github.com/mdn/browser-compat-data/compare/v3.3.1...v3.3.2))
+- 13,039 total features
+- 771 total contributors
+- 3,342 total stargazers
+
+## [v3.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.1)
+
+April 22, 2021
+
+### Notable changes
+
+- ECMAScript module compatibility has been restored. The previous release unintentionally broke using `import` with this package. ([#9966](https://github.com/mdn/browser-compat-data/issues/9966), [#10033](https://github.com/mdn/browser-compat-data/pull/10033))
+
+- `api.Navigator.battery` has been removed as historic and irrelevant. ([#9626](https://github.com/mdn/browser-compat-data/pull/9626))
+
+- Over 10,000 issues and pull requests have been opened against BCD (and most of them have been closed). Here's to the next 10,000! 🥂🎉 ([#10000](https://github.com/mdn/browser-compat-data/pull/10000))
+
+### Statistics
+
+- 15 contributors have changed 181 files with 1,867 additions and 5,377 deletions in 71 commits ([`v3.3.0...v3.3.1`](https://github.com/mdn/browser-compat-data/compare/v3.3.0...v3.3.1))
+- 13,034 total features
+- 769 total contributors
+- 3,330 total stargazers
+
+## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
+
+April 15, 2021
+
+### Notable changes
+
+- `@mdn/browser-compat-data` is now smaller, faster to load, and has zero dependencies.
+
+  The data is now bundled into a single JSON file at publishing time, instead of loading many JSON files at runtime. This reduces the size of the package and shortens loading times.
+
+  These changes also eliminate dependencies. There are zero runtime package dependencies and Node.js ≥10.0.0 is no longer required. This version of the package has been shown to load in many end-of-life versions of Node.js.
+
+  ([#7374](https://github.com/mdn/browser-compat-data/issues/7374), [#7398](https://github.com/mdn/browser-compat-data/pull/7398))
+
+- `css.selectors.not_match_link` feature has been removed. The data is now correctly represented as `css.selectors.any-link.not_match_link` and `css.selectors.link.not_match_link`. ([#9842](https://github.com/mdn/browser-compat-data/pull/9842))
+
+### Statistics
+
+- 13 contributors have changed 437 files with 2,792 additions and 4,018 deletions in 45 commits ([`v3.2.4...v3.3.0`](https://github.com/mdn/browser-compat-data/compare/v3.2.4...v3.3.0))
+- 13,033 total features
+- 766 total contributors
+- 3,325 total stargazers
+
 ## [v3.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
 
 April 8, 2021
 
 ### Statistics
 
-- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits [`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v2.3.4)
+- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits ([`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4))
 - 13,029 total features
 - 766 total contributors
 - 3,309 total stargazers
@@ -1999,7 +2104,37 @@ Statistics:
 - 327 total contributors
 - 1464 total stargazers
 
-## [v0.0.50](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.50)
+## [v0.0.58](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.58)
+
+November 8, 2018
+
+Notable changes:
+
+- Use yargs to parse the arguments passed to the linter ([#2155](https://github.com/mdn/browser-compat-data/issues/2155))
+- Sort browsers in api/\* json files ([#3049](https://github.com/mdn/browser-compat-data/issues/3049))
+
+Statistics:
+
+- 11 contributors have changed 616 files with 14,578 additions and 12,345 deletions in 17 commits
+  [`v0.0.57...v0.0.58`](https://github.com/mdn/browser-compat-data/compare/v0.0.57...v0.0.58)
+- 324 total contributors
+- 1412 total stargazers
+
+## [v0.0.57](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.57)
+
+November 9, 2018
+
+Notable changes:
+
+- Add a VS Code snippet config for creating new BCD files ([#2939](https://github.com/mdn/browser-compat-data/issues/2939))
+- Make the lint output less verbose by adding ora ([#2528](https://github.com/mdn/browser-compat-data/issues/2528))
+
+Statistics:
+
+- 20 contributors have changed 37 files with 1,427 additions and 593 deletions in 25 commits
+  [`v0.0.56...v0.0.57`](https://github.com/mdn/browser-compat-data/compare/v0.0.56...v0.0.57)
+
+## [v0.0.56](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.56)
 
 November 9, 2018
 
@@ -2009,12 +2144,12 @@ Notable changes:
 
 Statistics:
 
-- 22 contributors changed 62 files with 2,110 additions and 448 deletions in 51 commits [`v0.0.49...v0.0.50`](https://github.com/mdn/browser-compat-data/compare/v0.0.49...v0.0.50)
-- 273 total contributors
-- 1263 total stargazers
-- 10324 total features
+- 13 contributors changed 34 files with 1,015 additions and 104 deletions in 16 commits [`v0.0.55...v0.0.56`](https://github.com/mdn/browser-compat-data/compare/v0.0.55...v0.0.56)
+- 310 total contributors
+- 1383 total stargazers
+- 10559 total features
 
-## [v0.0.51](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.51)
+## [v0.0.55](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.55)
 
 November 9, 2018
 
@@ -2024,25 +2159,20 @@ Notable changes:
 
 Statistics:
 
-- 17 contributors changed 63 files with 3,676 additions and 747 deletions in 47 commits [`v0.0.50...v0.0.51`](https://github.com/mdn/browser-compat-data/compare/v0.0.50...v0.0.51)
-- 277 total contributors
-- 1285 total stargazers
-- 10378 total features
+- 21 contributors changed 52 files with 1,103 additions and 519 deletions in 39 commits [`v0.0.54...v0.0.55`](https://github.com/mdn/browser-compat-data/compare/v0.0.54...v0.0.55)
 
-## [v0.0.52](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.52)
+## [v0.0.54](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.54)
 
 November 9, 2018
 
 Notable changes:
 
-- Add webview_android browser data ([#2690](https://github.com/mdn/browser-compat-data/issues/2690))
+- Sort browsers in css/\* json files ([#2922](https://github.com/mdn/browser-compat-data/issues/2922))
+- Add descriptions to schema properties ([#2923](https://github.com/mdn/browser-compat-data/issues/2923))
 
 Statistics:
 
-- 21 contributors changed 211 files with 6,604 additions and 1,276 deletions in 50 commits [`v0.0.51...v0.0.52`](https://github.com/mdn/browser-compat-data/compare/v0.0.51...v0.0.52)
-- 283 total contributors
-- 1317 total stargazers
-- 10443 total features
+- 14 contributors changed 468 files with 5,777 additions and 3,377 deletions in 23 commits [`v0.0.53...v0.0.54`](https://github.com/mdn/browser-compat-data/compare/v0.0.53...v0.0.54)
 
 ## [v0.0.53](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.53)
 
@@ -2065,32 +2195,22 @@ Statistics:
 - 1330 total stargazers
 - 10495 total features
 
-## [v0.0.54](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.54)
+## [v0.0.52](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.52)
 
 November 9, 2018
 
 Notable changes:
 
-- Sort browsers in css/\* json files ([#2922](https://github.com/mdn/browser-compat-data/issues/2922))
-- Add descriptions to schema properties ([#2923](https://github.com/mdn/browser-compat-data/issues/2923))
+- Add webview_android browser data ([#2690](https://github.com/mdn/browser-compat-data/issues/2690))
 
 Statistics:
 
-- 14 contributors changed 468 files with 5,777 additions and 3,377 deletions in 23 commits [`v0.0.53...v0.0.54`](https://github.com/mdn/browser-compat-data/compare/v0.0.53...v0.0.54)
+- 21 contributors changed 211 files with 6,604 additions and 1,276 deletions in 50 commits [`v0.0.51...v0.0.52`](https://github.com/mdn/browser-compat-data/compare/v0.0.51...v0.0.52)
+- 283 total contributors
+- 1317 total stargazers
+- 10443 total features
 
-## [v0.0.55](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.55)
-
-November 9, 2018
-
-Notable changes:
-
-- None
-
-Statistics:
-
-- 21 contributors changed 52 files with 1,103 additions and 519 deletions in 39 commits [`v0.0.54...v0.0.55`](https://github.com/mdn/browser-compat-data/compare/v0.0.54...v0.0.55)
-
-## [v0.0.56](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.56)
+## [v0.0.51](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.51)
 
 November 9, 2018
 
@@ -2100,40 +2220,25 @@ Notable changes:
 
 Statistics:
 
-- 13 contributors changed 34 files with 1,015 additions and 104 deletions in 16 commits [`v0.0.55...v0.0.56`](https://github.com/mdn/browser-compat-data/compare/v0.0.55...v0.0.56)
-- 310 total contributors
-- 1383 total stargazers
-- 10559 total features
+- 17 contributors changed 63 files with 3,676 additions and 747 deletions in 47 commits [`v0.0.50...v0.0.51`](https://github.com/mdn/browser-compat-data/compare/v0.0.50...v0.0.51)
+- 277 total contributors
+- 1285 total stargazers
+- 10378 total features
 
-## [v0.0.57](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.57)
+## [v0.0.50](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.50)
 
 November 9, 2018
 
 Notable changes:
 
-- Add a VS Code snippet config for creating new BCD files ([#2939](https://github.com/mdn/browser-compat-data/issues/2939))
-- Make the lint output less verbose by adding ora ([#2528](https://github.com/mdn/browser-compat-data/issues/2528))
+- None
 
 Statistics:
 
-- 20 contributors have changed 37 files with 1,427 additions and 593 deletions in 25 commits
-  [`v0.0.56...v0.0.57`](https://github.com/mdn/browser-compat-data/compare/v0.0.56...v0.0.57)
-
-## [v0.0.58](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.58)
-
-November 8, 2018
-
-Notable changes:
-
-- Use yargs to parse the arguments passed to the linter ([#2155](https://github.com/mdn/browser-compat-data/issues/2155))
-- Sort browsers in api/\* json files ([#3049](https://github.com/mdn/browser-compat-data/issues/3049))
-
-Statistics:
-
-- 11 contributors have changed 616 files with 14,578 additions and 12,345 deletions in 17 commits
-  [`v0.0.57...v0.0.58`](https://github.com/mdn/browser-compat-data/compare/v0.0.57...v0.0.58)
-- 324 total contributors
-- 1412 total stargazers
+- 22 contributors changed 62 files with 2,110 additions and 448 deletions in 51 commits [`v0.0.49...v0.0.50`](https://github.com/mdn/browser-compat-data/compare/v0.0.49...v0.0.50)
+- 273 total contributors
+- 1263 total stargazers
+- 10324 total features
 
 ## [v0.0.45](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.45)
 

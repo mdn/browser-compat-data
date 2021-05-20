@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "3.2.4",
+  "version": "3.3.3",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -34,10 +34,10 @@
     "better-ajv-errors": "~0.7.0",
     "chalk": "~4.1.0",
     "compare-versions": "~3.6.0",
-    "mdn-confluence": "~2.2.0",
-    "mocha": "~8.3.0",
+    "mdn-confluence": "~2.2.2",
+    "mocha": "~8.4.0",
     "ora": "~5.4.0",
-    "prettier": "~2.2.0",
+    "prettier": "~2.3.0",
     "yargs": "~16.2.0"
   },
   "scripts": {
@@ -47,9 +47,11 @@
     "fix": "node scripts/fix",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
-    "release-notes": "node scripts/release-notes",
+    "release-build": "node scripts/release-build",
+    "release-pulls": "node scripts/release-pulls",
+    "release-stats": "node scripts/release-stats",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run mocha && npm run lint",
+    "test": "npm run lint && npm run mocha",
     "traverse": "node scripts/traverse"
   }
 }
