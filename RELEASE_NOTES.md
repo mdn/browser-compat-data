@@ -37,7 +37,9 @@ May 20, 2021
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.BudgetService` ([#10417](https://github.com/mdn/browser-compat-data/pull/10417))
+  - `api.SVGColorProfileElement` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
   - `api.SVGExternalResourcesRequired` ([#10539](https://github.com/mdn/browser-compat-data/pull/10539))
+  - `api.SVGSolidcolorElement` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
   - `api.SVGStylable` ([#10536](https://github.com/mdn/browser-compat-data/pull/10536))
   - `api.SVGTransformable` [#10354](https://github.com/mdn/browser-compat-data/pull/10354)
   - `api.SVGURIReference` ([#10522](https://github.com/mdn/browser-compat-data/pull/10522))
