@@ -54,6 +54,7 @@ May 20, 2021
   - `css.at-rules.page.bleed` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
   - `css.at-rules.page.marks` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
   - `css.at-rules.page.page-margin-boxes` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `html.elements.multicol` ([#10545](https://github.com/mdn/browser-compat-data/pull/10545))
   - `svg.attributes.conditional_processing.externalResourcesRequired` ([#10539](https://github.com/mdn/browser-compat-data/pull/10539))
   - `svg.elements.color-profile` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
   - `svg.elements.solidcolor` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
