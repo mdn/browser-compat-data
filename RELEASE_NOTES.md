@@ -10,6 +10,8 @@ May 20, 2021
 
 - The schema now permits valid WebGL specification links. ([#10353](https://github.com/mdn/browser-compat-data/pull/10353))
 
+- `api.Navigator.geolocation.hid` has been moved to the correctly nested `api.Navigator.hid`. ([#10291](https://github.com/mdn/browser-compat-data/pull/10291))
+
 - The following mixin features have been migrated to their exposed interfaces (or deduplicated, where the exposed interface data already existed):
 
   | Before                          | After                                                                                          |
