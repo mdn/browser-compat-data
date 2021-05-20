@@ -12,7 +12,7 @@ May 20, 2021
 
 - `api.Navigator.geolocation.hid` has been moved to the correctly nested `api.Navigator.hid`. ([#10291](https://github.com/mdn/browser-compat-data/pull/10291))
 
-- The following mixin features have been migrated to their exposed interfaces (or deduplicated, where the exposed interface data already existed):
+- The following mixin features have been migrated to their exposed interfaces:
 
   | Before                          | After                                                                                          |
   | ------------------------------- | ---------------------------------------------------------------------------------------------- |
