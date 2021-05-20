@@ -31,6 +31,7 @@ May 20, 2021
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.BudgetService` ([#10417](https://github.com/mdn/browser-compat-data/pull/10417))
+  - `api.SVGTransformable` [#10354](https://github.com/mdn/browser-compat-data/pull/10354)
   - `api.TransitionEvent.animationName` ([#10336](https://github.com/mdn/browser-compat-data/pull/10336))
   - `api.Window.returnValue` ([#10449](https://github.com/mdn/browser-compat-data/pull/10449))
   - `api.WindowClient.ancestorOrigins` ([#10415](https://github.com/mdn/browser-compat-data/pull/10415))
