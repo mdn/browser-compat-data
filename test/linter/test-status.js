@@ -10,7 +10,7 @@ const { Logger } = require('./utils.js');
  * @param {Logger} logger
  */
 function checkStatus(data, logger, path = []) {
-  const status = data.__compat && data.__compat.status;
+  const status = data.__compat?.status;
   if (status && status.experimental && status.deprecated) {
     logger.error(
       chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(

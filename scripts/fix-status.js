@@ -24,7 +24,7 @@ const { platform } = require('os');
 const IS_WINDOWS = platform() === 'win32';
 
 const fixStatus = (key, value) => {
-  const status = value && value.__compat && value.__compat.status;
+  const status = value?.__compat?.status;
   if (status && status.experimental && status.deprecated) {
     status.experimental = false;
   }
