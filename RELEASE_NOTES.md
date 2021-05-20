@@ -2,7 +2,12 @@
 
 ## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
 
-RELEASE DATE TK
+May 20, 2021
+
+### Notable changes
+
+- The schema now permits valid WebGL specification links. ([#10353](https://github.com/mdn/browser-compat-data/pull/10353))
+
 
 ## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
 
