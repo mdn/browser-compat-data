@@ -12,6 +12,8 @@ May 20, 2021
 
 - `api.Navigator.geolocation.hid` has been moved to the correctly nested `api.Navigator.hid`. ([#10291](https://github.com/mdn/browser-compat-data/pull/10291))
 
+- `http.headers.feature-policy.wake-lock` has been moved to the correctly-named `http.headers.feature-policy.screen-wake-lock`. ([#10421](https://github.com/mdn/browser-compat-data/pull/10421))
+
 - The following mixin features have been migrated to their exposed interfaces:
 
   | Before                          | After                                                                                          |
