@@ -318,6 +318,7 @@ For interface members, use the version when the member is first supported on any
 For interfaces, use the version when the interface itself is first supported. If there are members supported earlier than the interface itself was introduced, then use `partial_implementation` and notes for that range of versions.
 
 For example, most members of `AudioContext` have moved to a new `BaseAudioContext` parent interface. The data was recorded like this:
+
 - The members were removed from `AudioContext` and added to `BaseAudioContext`.
 - Since some of the members were supported on `AudioContext` earlier than on `BaseAudioContext`, `partial_implementation` and notes are used for `BaseAudioContext` for that range of versions.
 - Full `BaseAudioContext` support (without `partial_implementation`) is recorded as separate entries from the versions when the `BaseAudioContext` interface itself is supported.
@@ -329,6 +330,7 @@ See [#9516](https://github.com/mdn/browser-compat-data/pull/9516) for a part of 
 Use the version when the member is first supported on the current interface, regardless of where in the prototype chain the member is. No `partial_implementation` or notes about the move are needed.
 
 For example, some attributes have moved from `Node` to `Attr` + `Element`. The data was recorded like this:
+
 - The members were removed from `Node` and added to `Attr` + `Element`.
 - Support is recorded from when the members were first available via `Node`, without any notes.
 
