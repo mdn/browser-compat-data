@@ -311,17 +311,27 @@ Some of these interfaces are [abstract](https://en.wikipedia.org/wiki/Abstract_t
 
 When attributes and methods are moved between interfaces in specifications and implementations, BCD should make the corresponding change. This guidelines covers what versions to use, and whether to use `partial_implementation` and notes in the resulting compat data.
 
-**When members are moved up the prototype chain**, such as from `AudioContext` to `BaseAudioContext`:
+**When members are moved up the prototype chain**
 
-- For the members, use the versions when they were first supported on any concrete interface inheriting from `BaseAudioContext`, even if that is earlier than `BaseAudioContext` itself existed. Use `partial_implementation` and notes for the members if there are concrete interfaces where the member wasn't supported prior to the move.
-- For the interface itself, add a `partial_implementation` entry going back as far as the earliest member, and a simple entry from the time the interface itself was introduced.
+For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported prior to the move, then use `partial_implementation` and notes.
 
-The [`SVGGeometryElement`](https://github.com/mdn/browser-compat-data/pull/9479) move is an example of this.
+For interfaces, use the version when the interface itself is first supported. If there are members supported earlier than the interface itself was introduced, then use `partial_implementation` and notes for that range of versions.
 
-**When members are moved down the prototype chain**, such as from `Node` to `Element`:
+For example, most members of `AudioContext` have moved to a new `BaseAudioContext` parent interface. The data was recorded like this:
+- The members were removed from `AudioContext` and added to `BaseAudioContext`.
+- Since some of the members were supported on `AudioContext` earlier than on `BaseAudioContext`, `partial_implementation` and notes are used for `BaseAudioContext` for that range of versions.
+- Full `BaseAudioContext` support (without `partial_implementation`) is recorded as separate entries from the versions when the `BaseAudioContext` interface itself is supported.
 
-- Use the version when the member was first supported on `Element` instances, ignoring whether it was inherited from `Node` or not. No `partial_implementation` or notes about the move are needed.
+See [#9516](https://github.com/mdn/browser-compat-data/pull/9516) for a part of this data being fixed, and [#9479](https://github.com/mdn/browser-compat-data/pull/9479) for another example.
 
-The [`localName`/`namespaceURI`/`prefix`](https://github.com/mdn/browser-compat-data/pull/9561) move is an example of this.
+**When members are moved down the prototype chain**
+
+Use the version when the member is first supported on the current interface, regardless of where in the prototype chain the member is. No `partial_implementation` or notes about the move are needed.
+
+For example, some attributes have moved from `Node` to `Attr` + `Element`. The data was recorded like this:
+- The members were removed from `Node` and added to `Attr` + `Element`.
+- Support is recorded from when the members were first available via `Node`, without any notes.
+
+See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
 This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
