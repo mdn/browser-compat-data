@@ -8,6 +8,23 @@ May 20, 2021
 
 - The schema now permits valid WebGL specification links. ([#10353](https://github.com/mdn/browser-compat-data/pull/10353))
 
+- The following mixin features have been migrated to their exposed interfaces (or deduplicated, where the exposed interface data already existed):
+
+  | Before                        | After                       |
+  | ----------------------------- | --------------------------- |
+  | api.URLUtilsReadOnly          | (removed)                   |
+  | api.URLUtilsReadOnly.hash     | api.WorkerLocation.hash     |
+  | api.URLUtilsReadOnly.host     | api.WorkerLocation.host     |
+  | api.URLUtilsReadOnly.hostname | api.WorkerLocation.hostname |
+  | api.URLUtilsReadOnly.href     | api.WorkerLocation.href     |
+  | api.URLUtilsReadOnly.origin   | api.WorkerLocation.origin   |
+  | api.URLUtilsReadOnly.pathname | api.WorkerLocation.pathname |
+  | api.URLUtilsReadOnly.port     | api.WorkerLocation.port     |
+  | api.URLUtilsReadOnly.protocol | api.WorkerLocation.protocol |
+  | api.URLUtilsReadOnly.search   | api.WorkerLocation.search   |
+  | api.URLUtilsReadOnly.toString | api.WorkerLocation.toString |
+
+  For details, see [#10347](https://github.com/mdn/browser-compat-data/pull/10347).
 
 ## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
 
