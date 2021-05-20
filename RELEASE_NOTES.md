@@ -30,6 +30,7 @@ May 20, 2021
 
   - `api.TransitionEvent.animationName` ([#10336](https://github.com/mdn/browser-compat-data/pull/10336))
   - `api.WindowClient.ancestorOrigins` ([#10415](https://github.com/mdn/browser-compat-data/pull/10415))
+  - `api.BudgetService` ([#10417](https://github.com/mdn/browser-compat-data/pull/10417))
 
 ## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
 
