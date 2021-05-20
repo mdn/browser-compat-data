@@ -77,11 +77,21 @@
               "opera_android": {
                 "version_added": "14"
               },
-              "safari": {
-                "version_added": false
-              },
+              "safari": [
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "<code>local</code> is recognized but has no effect due to [a bug](https://bugs.webkit.org/show_bug.cgi?id=219324)."
+                },
+                {
+                  "version_added": "3.1",
+                  "version_removed": "14"
+                }
+              ],
               "safari_ios": {
-                "version_added": "4.2"
+                "version_added": "5",
+                "partial_implementation": true,
+                "notes": "<code>local</code> is recognized but has no effect."
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -125,12 +135,29 @@
               "opera_android": {
                 "version_added": "14"
               },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": "4.2"
-              },
+              "safari": [
+                {
+                  "version_added": "13",
+                  "partial_implementation": true,
+                  "notes": "<code>local</code> is recognized but has no effect due to [a bug](https://bugs.webkit.org/show_bug.cgi?id=219324)."
+                },
+                {
+                  "version_added": "5",
+                  "version_removed": "13"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "13",
+                  "partial_implementation": true,
+                  "notes": "<code>local</code> is recognized but has no effect due to [a bug](https://bugs.webkit.org/show_bug.cgi?id=219324)."
+                },
+                {
+                  "version_added": "4.2",
+                  "version_removed": "13",
+                  "notes": "<code>local</code> is only supported when <code>-webkit-overflow-scrolling: touch</code> is NOT used."
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": "1.0"
               },
