@@ -26,6 +26,10 @@ May 20, 2021
 
   For details, see [#10347](https://github.com/mdn/browser-compat-data/pull/10347).
 
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.TransitionEvent.animationName` ([#10336](https://github.com/mdn/browser-compat-data/pull/10336))
+
 ## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
 
 May 6, 2021
