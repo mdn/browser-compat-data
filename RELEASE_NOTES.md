@@ -6,6 +6,8 @@ May 20, 2021
 
 ### Notable changes
 
+- The [definition of the `experimental` status](https://github.com/mdn/browser-compat-data/blob/main/schemas/compat-data-schema.md#status-information) has been revised to more closely reflect its actual use. For more information on choosing values for `experimental`, see the [the new data guideline for `experimental`](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#choosing-an-experimental-status). ([#9933](https://github.com/mdn/browser-compat-data/pull/9933))
+
 - The schema now permits valid WebGL specification links. ([#10353](https://github.com/mdn/browser-compat-data/pull/10353))
 
 - The following mixin features have been migrated to their exposed interfaces (or deduplicated, where the exposed interface data already existed):
