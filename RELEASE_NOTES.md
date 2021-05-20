@@ -12,21 +12,25 @@ May 20, 2021
 
 - The following mixin features have been migrated to their exposed interfaces (or deduplicated, where the exposed interface data already existed):
 
-  | Before                          | After                         |
-  | ------------------------------- | ----------------------------- |
-  | `api.URLUtilsReadOnly`          | (removed)                     |
-  | `api.URLUtilsReadOnly.hash`     | `api.WorkerLocation.hash`     |
-  | `api.URLUtilsReadOnly.host`     | `api.WorkerLocation.host`     |
-  | `api.URLUtilsReadOnly.hostname` | `api.WorkerLocation.hostname` |
-  | `api.URLUtilsReadOnly.href`     | `api.WorkerLocation.href`     |
-  | `api.URLUtilsReadOnly.origin`   | `api.WorkerLocation.origin`   |
-  | `api.URLUtilsReadOnly.pathname` | `api.WorkerLocation.pathname` |
-  | `api.URLUtilsReadOnly.port`     | `api.WorkerLocation.port`     |
-  | `api.URLUtilsReadOnly.protocol` | `api.WorkerLocation.protocol` |
-  | `api.URLUtilsReadOnly.search`   | `api.WorkerLocation.search`   |
-  | `api.URLUtilsReadOnly.toString` | `api.WorkerLocation.toString` |
+  | Before                          | After                                                                                          |
+  | ------------------------------- | ---------------------------------------------------------------------------------------------- |
+  | `api.ChildNode`                 | (removed)                                                                                      |
+  | `api.ChildNode.before`          | `api.CharacterData.before`<br>`api.DocumentType.before`<br>`api.Element.before`                |
+  | `api.ChildNode.remove`          | `api.CharacterData.remove`<br>`api.DocumentType.remove`<br>`api.Element.remove`                |
+  | `api.ChildNode.replaceWith`     | `api.CharacterData.replaceWith`<br>`api.DocumentType.replaceWith`<br>`api.Element.replaceWith` |
+  | `api.URLUtilsReadOnly`          | (removed)                                                                                      |
+  | `api.URLUtilsReadOnly.hash`     | `api.WorkerLocation.hash`                                                                      |
+  | `api.URLUtilsReadOnly.host`     | `api.WorkerLocation.host`                                                                      |
+  | `api.URLUtilsReadOnly.hostname` | `api.WorkerLocation.hostname`                                                                  |
+  | `api.URLUtilsReadOnly.href`     | `api.WorkerLocation.href`                                                                      |
+  | `api.URLUtilsReadOnly.origin`   | `api.WorkerLocation.origin`                                                                    |
+  | `api.URLUtilsReadOnly.pathname` | `api.WorkerLocation.pathname`                                                                  |
+  | `api.URLUtilsReadOnly.port`     | `api.WorkerLocation.port`                                                                      |
+  | `api.URLUtilsReadOnly.protocol` | `api.WorkerLocation.protocol`                                                                  |
+  | `api.URLUtilsReadOnly.search`   | `api.WorkerLocation.search`                                                                    |
+  | `api.URLUtilsReadOnly.toString` | `api.WorkerLocation.toString`                                                                  |
 
-  For details, see [#10347](https://github.com/mdn/browser-compat-data/pull/10347).
+  For details, see [#10347](https://github.com/mdn/browser-compat-data/pull/10347) and [#10506](https://github.com/mdn/browser-compat-data/pull/10506).
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
