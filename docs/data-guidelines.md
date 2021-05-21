@@ -309,7 +309,7 @@ This guideline was proposed and adopted in [#10509](https://github.com/mdn/brows
 
 Some of these interfaces are [abstract](https://en.wikipedia.org/wiki/Abstract_type) and never have instances, while most are concrete and can be instantiated. For example, `BaseAudioContext` and `Node` are abstract, while `AudioContext` and `Element` are concrete.
 
-When attributes and methods are moved between interfaces in specifications and implementations, BCD should make the corresponding change. This guidelines covers what versions to use, and whether to use `partial_implementation` and notes in the resulting compat data.
+When attributes and methods are moved between interfaces in specifications and implementations, BCD should make the corresponding change. This guideline covers which versions to use, and whether to use `partial_implementation` and notes in the resulting compat data.
 
 **When members are moved up the prototype chain**
 
