@@ -2,27 +2,6 @@
 
 This file contains recommendations to help you record data in a consistent and understandable way. It covers the project's preferences for the way features should be represented, rather than hard requirements encoded in the schema definitions or linter logic.
 
-<!-- You can quickly regenerate this TOC by running: npx markdown-toc@1.2.0 --bullets='-' docs/data-guidelines.md -->
-
-- [Data guidelines](#data-guidelines)
-  - [Constructors](#constructors)
-  - [DOM events (`eventname_event`)](#dom-events-eventname_event)
-  - [Secure context required (`secure_context_required`)](#secure-context-required-secure_context_required)
-  - [Web Workers (`worker_support`)](#web-workers-worker_support)
-  - [Permissions API permissions (`permissionname_permission`)](#permissions-api-permissions-permissionname_permission)
-  - [`"partial_implementation"` requires a note](#partial_implementation-requires-a-note)
-  - [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation)
-  - [Operating system limitations imply `"partial_implementation"`](#operating-system-limitations-imply-partial_implementation)
-  - [Constants](#constants)
-  - [Release lines and backported features](#release-lines-and-backported-features)
-  - [Safari for iOS versioning](#safari-for-ios-versioning)
-  - [Addition of browsers](#addition-of-browsers)
-  - [Removal of browsers](#removal-of-browsers)
-  - [Removal of irrelevant features](#removal-of-irrelevant-features)
-  - [Removal of irrelevant flag data](#removal-of-irrelevant-flag-data)
-  - [Initial versions for browsers](#initial-versions-for-browsers)
-  - [Mixins](#mixins)
-
 <!-- BEGIN TEMPLATE
 
 Short title in sentence case
@@ -280,3 +259,46 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
    ```
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
+
+## Choosing an experimental status
+
+Generally, when a feature is supported by one and only one browser engine, set `experimental` to `true`. When a feature is supported by two or more engines, then set `experimental` to `false`. Some exceptions apply, however, for long-standing features and features behind flags and prefixes.
+
+If a feature is supported behind flags only, no matter how many engines, then set `experimental` to `true`.
+
+If a feature is supported behind incompatible prefixes only (such as `-webkit-` in one engine and `-moz-` in another), no matter how many engines support the feature overall, then set `experimental` to `true`. If two or more engines support a feature behind a common prefix (such as `-webkit-` only), then set `experimental` to `false`.
+
+A single-engine feature's `experimental` status may expire and switch to `false` when the following conditions are met:
+
+- The feature has been supported by default and without major changes by some browser for two or more years.
+- If any other browser engine supports the feature behind a flag, then the behaviors are mutually compatible.
+
+| Example                                                                     | Experimental |
+| --------------------------------------------------------------------------- | ------------ |
+| An API supported in Chrome and Firefox, without flags or prefixes.          | No           |
+| A CSS property supported in Chrome and Firefox, with the `-webkit-` prefix. | No           |
+| An HTTP header supported in Chrome and Firefox, behind flags.               | Yes          |
+| A CSS property value supported in Safari, released last week.               | Yes          |
+| An API supported in Firefox, released three years ago.                      | No           |
+
+This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-data/issues/6905) and adopted in [#9933](https://github.com/mdn/browser-compat-data/pull/9933).
+
+## Parameters and parameter object features
+
+Sometimes it's useful to represent support for specific parameters (also known as arguments) of a function or method, as a subfeature of the function itself. To record data about whether a specific parameter is supported by a function or method, use the following naming conventions:
+
+- For named parameters, use a subfeature named `paramname_parameter` with description text `<code>paramname</code> parameter`. Where _paramname_ is the name of the parameter as it appears on the corresponding function's MDN page (or specification, if no MDN page is available).
+
+  For example, to represent support for the `firstName` parameter of a method `hello(firstName, familyName)`, use a subfeature of `hello` named `firstName_parameter` with the description text `<code>firstName</code> parameter`.
+
+- For unnamed parameters, use a subfeature named `ordinal_parameter` with description text `ordinal parameter` where _ordinal_ is the ordinal number position of the parameter.
+
+  For example, to represent support for the second parameter of a method `count()`, use a subfeature of `count` named `second_parameter` and description text `Second parameter`.
+
+- For properties of parameter objects, use a subfeature named `paramname_prop_parameter` with description text `<code>paramname.prop</code> parameter`, where _paramname_ is the name of the parameter object and _prop_ is the name of the property.
+
+  For example, to represent support for the `year` property of the `date` parameter to a method `schedule(date)` (as in `schedule({"year": 1970 })`), use a subfeature of `schedule` named `date_year_parameter` with description text `<code>date.year</code> parameter`.
+
+For existing data which does not follow this guideline, you may modify it to conform with this data, if you are you otherwise updating the data (or data related to it).
+
+This guideline was proposed and adopted in [#10509](https://github.com/mdn/browser-compat-data/pull/10509).

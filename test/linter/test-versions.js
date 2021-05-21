@@ -52,11 +52,22 @@ function isValidVersion(browserIdentifier, version) {
  * @returns {boolean}
  */
 function removedAfterAdded(statement) {
+  const { version_added, version_removed } = statement;
+
+  if (
+    !(
+      compareVersions.validate(version_added.replace('≤', '')) &&
+      compareVersions.validate(version_removed.replace('≤', ''))
+    )
+  ) {
+    return null;
+  }
+
   return compareVersions.compare(
-    statement.version_added.startsWith('≤')
+    version_added.startsWith('≤')
       ? '0' // 0 was chosen as it's a number lower than any possible browser version
-      : statement.version_added,
-    statement.version_removed.replace('≤', ''),
+      : version_added,
+    version_removed.replace('≤', ''),
     '>=',
   );
 }
@@ -96,7 +107,12 @@ function checkVersions(supportData, relPath, logger) {
             chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
           );
         }
-        if ('version_removed' in statement && 'version_added' in statement) {
+        if ('version_added' in statement && 'version_removed' in statement) {
+          if (statement.version_added === statement.version_removed) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+            );
+          }
           if (
             typeof statement.version_added !== 'string' &&
             statement.version_added !== true
