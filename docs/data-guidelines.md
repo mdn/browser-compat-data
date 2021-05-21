@@ -329,9 +329,9 @@ See [#9516](https://github.com/mdn/browser-compat-data/pull/9516) for a part of 
 
 Use the version when the member is first supported on the current interface, regardless of where in the prototype chain the member is. No `partial_implementation` or notes about the move are needed.
 
-For example, some attributes have moved from `Node` to `Attr` + `Element`. The data was recorded like this:
+For example, some attributes have moved from `Node` to `Attr` and `Element`. The data was recorded like this:
 
-- The members were removed from `Node` and added to `Attr` + `Element`.
+- The members were removed from `Node` and added to `Attr` and `Element`.
 - Support is recorded from when the members were first available via `Node`, without any notes.
 
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
