@@ -6,13 +6,27 @@ const { Logger } = require('./utils.js');
  */
 
 /**
+ * @param {(string | string[])?} target
+ * @param {string} str
+ */
+function stringOrArrayIncludes(target, str) {
+  if (!target) {
+    return false;
+  }
+  if (Array.isArray(target)) {
+    return target.some(item => item.includes(str));
+  }
+  return target.includes(str);
+}
+
+/**
  * @param {import('../../types.js').SimpleSupportStatement} statement
  */
 function includesTrackingBug(statement) {
   return (
-    statement.notes?.includes('crbug.com') ||
-    statement.notes?.includes('bugzil.la') ||
-    statement.notes?.includes('webkit.org/b/')
+    stringOrArrayIncludes(statement.notes, 'crbug.com') ||
+    stringOrArrayIncludes(statement.notes, 'bugzil.la') ||
+    stringOrArrayIncludes(statement.notes, 'webkit.org/b/')
   );
 }
 
