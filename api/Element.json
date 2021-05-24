@@ -3,6 +3,14 @@
     "Element": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element",
+        "spec_url": [
+          "https://dom.spec.whatwg.org/#interface-element",
+          "https://w3c.github.io/pointerevents/#extensions-to-the-element-interface",
+          "https://w3c.github.io/pointerlock/#extensions-to-the-element-interface",
+          "https://fullscreen.spec.whatwg.org/#api",
+          "https://w3c.github.io/DOM-Parsing/#extensions-to-the-element-interface",
+          "https://drafts.csswg.org/cssom-view/#extension-to-the-element-interface"
+        ],
         "support": {
           "chrome": {
             "version_added": "1"
@@ -29,7 +37,7 @@
             "version_added": "10.1"
           },
           "safari": {
-            "version_added": "1.3"
+            "version_added": "1"
           },
           "safari_ios": {
             "version_added": "1"
@@ -51,6 +59,7 @@
         "__compat": {
           "description": "<code>DOMActivate</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/DOMActivate_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-DOMActivate",
           "support": {
             "chrome": {
               "version_added": true
@@ -545,6 +554,55 @@
           }
         }
       },
+      "after": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/after",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-childnode-after①",
+          "support": {
+            "chrome": {
+              "version_added": "54"
+            },
+            "chrome_android": {
+              "version_added": "54"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "49"
+            },
+            "firefox_android": {
+              "version_added": "49"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "39"
+            },
+            "opera_android": {
+              "version_added": "41"
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": "10"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "54"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "afterscriptexecute_event": {
         "__compat": {
           "description": "<code>afterscriptexecute</code> event",
@@ -597,6 +655,7 @@
       "animate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animate",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animatable-animate",
           "support": {
             "chrome": {
               "version_added": "36"
@@ -700,39 +759,18 @@
                       "name": "dom.animations-api.compositing.enabled"
                     }
                   ]
-                },
-                {
-                  "version_added": "53",
-                  "version_removed": "63",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.animations-api.core.enabled"
-                    }
-                  ]
                 }
               ],
-              "firefox_android": [
-                {
-                  "version_added": "63",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.animations-api.compositing.enabled"
-                    }
-                  ]
-                },
-                {
-                  "version_added": "53",
-                  "version_removed": "63",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.animations-api.core.enabled"
-                    }
-                  ]
-                }
-              ],
+              "firefox_android": {
+                "version_added": "63",
+                "version_removed": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.compositing.enabled"
+                  }
+                ]
+              },
               "ie": {
                 "version_added": false
               },
@@ -897,39 +935,18 @@
                       "name": "dom.animations-api.compositing.enabled"
                     }
                   ]
-                },
-                {
-                  "version_added": "51",
-                  "version_removed": "63",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.animations-api.core.enabled"
-                    }
-                  ]
                 }
               ],
-              "firefox_android": [
-                {
-                  "version_added": "63",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.animations-api.compositing.enabled"
-                    }
-                  ]
-                },
-                {
-                  "version_added": "51",
-                  "version_removed": "63",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.animations-api.core.enabled"
-                    }
-                  ]
-                }
-              ],
+              "firefox_android": {
+                "version_added": "63",
+                "version_removed": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.compositing.enabled"
+                  }
+                ]
+              },
               "ie": {
                 "version_added": false
               },
@@ -1043,6 +1060,7 @@
       "assignedSlot": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/assignedSlot",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-slotable-assignedslot",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -1053,70 +1071,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": true,
-                "version_removed": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.enabled",
-                    "value_to_set": "true"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": true,
-                "version_removed": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.enabled",
-                    "value_to_set": "true"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -1149,6 +1109,7 @@
       "attachShadow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/attachShadow",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-attachshadow①",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -1159,38 +1120,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -1271,6 +1206,7 @@
       "attributes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/attributes",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-attributes",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1297,7 +1233,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -1367,6 +1303,7 @@
       "auxclick_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/auxclick_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-auxclick",
           "description": "<code>auxclick</code> event",
           "support": {
             "chrome": {
@@ -1405,6 +1342,55 @@
             },
             "webview_android": {
               "version_added": "55"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "before": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/before",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-childnode-before①",
+          "support": {
+            "chrome": {
+              "version_added": "54"
+            },
+            "chrome_android": {
+              "version_added": "54"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "49"
+            },
+            "firefox_android": {
+              "version_added": "49"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "39"
+            },
+            "opera_android": {
+              "version_added": "41"
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": "10"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "54"
             }
           },
           "status": {
@@ -1467,6 +1453,7 @@
         "__compat": {
           "description": "<code>blur</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/blur_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-blur",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1529,6 +1516,7 @@
       "classList": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/classList",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-classlist①",
           "support": {
             "chrome": [
               {
@@ -1630,155 +1618,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "add_and_remove_multiple_arguments": {
-          "__compat": {
-            "description": "Multiple arguments for <code>add()</code> & <code>remove()</code>",
-            "support": {
-              "chrome": {
-                "version_added": "24"
-              },
-              "chrome_android": {
-                "version_added": "25"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "26"
-              },
-              "firefox_android": {
-                "version_added": "26"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "15"
-              },
-              "opera_android": {
-                "version_added": "14"
-              },
-              "safari": {
-                "version_added": "7"
-              },
-              "safari_ios": {
-                "version_added": "7"
-              },
-              "samsunginternet_android": {
-                "version_added": "1.5"
-              },
-              "webview_android": {
-                "version_added": "≤37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "replace": {
-          "__compat": {
-            "description": "<code>replace()</code>",
-            "support": {
-              "chrome": {
-                "version_added": "61"
-              },
-              "chrome_android": {
-                "version_added": "61"
-              },
-              "edge": {
-                "version_added": "17"
-              },
-              "firefox": {
-                "version_added": "49"
-              },
-              "firefox_android": {
-                "version_added": "49"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": "8.0"
-              },
-              "webview_android": {
-                "version_added": "61"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "toggle_method_second_argument": {
-          "__compat": {
-            "description": "<code>toggle()</code> method's second argument",
-            "support": {
-              "chrome": {
-                "version_added": "24"
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "24"
-              },
-              "firefox_android": {
-                "version_added": "24"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "15"
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": "7"
-              },
-              "safari_ios": {
-                "version_added": "7"
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": "≤37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "className": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/className",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-classname①",
           "support": {
             "chrome": [
               {
@@ -1821,7 +1666,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -1860,6 +1705,7 @@
         "__compat": {
           "description": "<code>click</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/click_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-click",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1965,6 +1811,7 @@
       "clientHeight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientHeight",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-clientheight",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2013,6 +1860,7 @@
       "clientLeft": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientLeft",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-clientleft",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2061,6 +1909,7 @@
       "clientTop": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientTop",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-clienttop",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2109,6 +1958,7 @@
       "clientWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/clientWidth",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-clientwidth",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2157,6 +2007,7 @@
       "closest": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/closest",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-closest①",
           "support": {
             "chrome": {
               "version_added": "41"
@@ -2206,6 +2057,7 @@
         "__compat": {
           "description": "<code>compositionend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/compositionend_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-compositionend",
           "support": {
             "chrome": {
               "version_added": true
@@ -2255,6 +2107,7 @@
         "__compat": {
           "description": "<code>compositionstart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/compositionstart_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-compositionstart",
           "support": {
             "chrome": {
               "version_added": true
@@ -2304,6 +2157,7 @@
         "__compat": {
           "description": "<code>compositionupdate</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/compositionupdate_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-compositionupdate",
           "support": {
             "chrome": {
               "version_added": true
@@ -2352,6 +2206,7 @@
       "computedStyleMap": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/computedStyleMap",
+          "spec_url": "https://drafts.css-houdini.org/css-typed-om/#dom-element-computedstylemap",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -2400,6 +2255,7 @@
       "contextmenu_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-contextmenu",
           "description": "<code>contextmenu</code> event",
           "support": {
             "chrome": {
@@ -2450,6 +2306,7 @@
         "__compat": {
           "description": "<code>copy</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/copy_event",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#clipboard-event-copy",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2553,7 +2410,7 @@
               },
               {
                 "version_added": "25",
-                "version_removed": true,
+                "version_removed": "36",
                 "prefix": "webkit"
               }
             ],
@@ -2564,7 +2421,7 @@
               },
               {
                 "version_added": "25",
-                "version_removed": true,
+                "version_removed": "36",
                 "prefix": "webkit"
               }
             ],
@@ -2629,7 +2486,7 @@
               },
               {
                 "version_added": "15",
-                "version_removed": true,
+                "version_removed": "23",
                 "prefix": "webkit"
               }
             ],
@@ -2640,7 +2497,7 @@
               },
               {
                 "version_added": "14",
-                "version_removed": true,
+                "version_removed": "24",
                 "prefix": "webkit"
               }
             ],
@@ -2652,12 +2509,12 @@
             },
             "samsunginternet_android": [
               {
-                "version_added": "5.0",
+                "version_added": "3.0",
                 "notes": "In Samsung Internet 5.0, the ability to have multiple shadow roots was deprecated."
               },
               {
-                "version_added": "4.0",
-                "version_removed": true,
+                "version_added": "1.5",
+                "version_removed": "3.0",
                 "prefix": "webkit"
               }
             ],
@@ -2667,8 +2524,8 @@
                 "notes": "In version 45, the ability to have multiple shadow roots was deprecated."
               },
               {
-                "version_added": true,
-                "version_removed": true,
+                "version_added": "4.4",
+                "version_removed": "37",
                 "prefix": "webkit"
               }
             ]
@@ -2734,6 +2591,7 @@
         "__compat": {
           "description": "<code>cut</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/cut_event",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#clipboard-event-cut",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2829,6 +2687,7 @@
       "dblclick_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/dblclick_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-dblclick",
           "description": "<code>dblclick</code> event",
           "support": {
             "chrome": {
@@ -2880,6 +2739,7 @@
         "__compat": {
           "description": "<code>error</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/error_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-error",
           "support": {
             "chrome": {
               "version_added": true
@@ -2929,6 +2789,7 @@
         "__compat": {
           "description": "<code>focus</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/focus_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-focus",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2992,6 +2853,7 @@
         "__compat": {
           "description": "<code>focusin</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/focusin_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-focusin",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3041,6 +2903,7 @@
         "__compat": {
           "description": "<code>focusout</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/focusout_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-focusout",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3090,6 +2953,7 @@
         "__compat": {
           "description": "<code>fullscreenchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenchange",
           "support": {
             "chrome": [
               {
@@ -3118,7 +2982,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "64",
                 "alternative_name": "mozfullscreenchange"
               }
             ],
@@ -3128,7 +2991,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "64",
                 "alternative_name": "mozfullscreenchange"
               }
             ],
@@ -3171,6 +3033,7 @@
         "__compat": {
           "description": "<code>fullscreenerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenerror",
           "support": {
             "chrome": [
               {
@@ -3199,7 +3062,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "64",
                 "alternative_name": "mozfullscreenerror"
               }
             ],
@@ -3209,7 +3071,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "64",
                 "alternative_name": "mozfullscreenerror"
               }
             ],
@@ -3398,6 +3259,7 @@
       "getAnimations": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAnimations",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animatable-getanimations",
           "support": {
             "chrome": [
               {
@@ -3528,111 +3390,19 @@
                     "name": "dom.animations-api.getAnimations.enabled"
                   }
                 ]
-              },
-              {
-                "version_added": "48",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "40",
-                "version_removed": "48",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "35",
-                "version_removed": "40",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "33",
-                "version_removed": "35",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
               }
             ],
             "firefox_android": [
               {
+                "version_added": "79"
+              },
+              {
                 "version_added": "63",
+                "version_removed": "79",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "dom.animations-api.getAnimations.enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "48",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "40",
-                "version_removed": "48",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "35",
-                "version_removed": "40",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "33",
-                "version_removed": "35",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled"
                   }
                 ]
               }
@@ -3773,7 +3543,7 @@
               ]
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
@@ -3789,6 +3559,7 @@
       "getAttribute": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttribute",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-getattribute①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3815,7 +3586,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -3837,6 +3608,7 @@
       "getAttributeNames": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNames",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-getattributenames①",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -3885,6 +3657,7 @@
       "getAttributeNode": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-getattributenode",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3911,7 +3684,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -3933,6 +3706,7 @@
       "getAttributeNodeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-getattributenodens",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3959,7 +3733,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -3981,6 +3755,7 @@
       "getAttributeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAttributeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-getattributens①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4009,7 +3784,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -4031,6 +3806,7 @@
       "getBoundingClientRect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-getboundingclientrect",
           "support": {
             "chrome": {
               "version_added": "2"
@@ -4075,201 +3851,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "height": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "3.5"
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "width": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "3.5"
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": true
-              },
-              "safari_ios": {
-                "version_added": true
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "x": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "79"
-              },
-              "firefox": {
-                "version_added": true
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": false,
-                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "11"
-              },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "y": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "79"
-              },
-              "firefox": {
-                "version_added": true
-              },
-              "firefox_android": {
-                "version_added": null
-              },
-              "ie": {
-                "version_added": false,
-                "notes": "Returns a <code>ClientRectList</code> with <a href='http://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a> objects (which do not contain <code>x</code> and <code>y</code> properties) instead of <a href='https://developer.mozilla.org/docs/Web/API/DOMRect'><code>DOMRect</code></a> objects."
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": "11"
-              },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getClientRects": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getClientRects",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-getclientrects",
           "support": {
             "chrome": {
               "version_added": "2"
@@ -4318,6 +3905,7 @@
       "getElementsByClassName": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-getelementsbyclassname",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4375,6 +3963,7 @@
       "getElementsByTagName": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-getelementsbytagname",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -4406,7 +3995,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3",
+              "version_added": "1",
               "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
             },
             "safari_ios": {
@@ -4481,6 +4070,7 @@
       "getElementsByTagNameNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagNameNS",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-getelementsbytagnamens",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -4516,7 +4106,7 @@
               "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
             },
             "safari": {
-              "version_added": "1.3",
+              "version_added": "1",
               "notes": "Initially, this method was returning a <code>NodeList</code>; it was then changed to reflect the spec change."
             },
             "safari_ios": {
@@ -4590,6 +4180,7 @@
       "hasAttribute": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasAttribute",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-hasattribute①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4616,7 +4207,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -4638,6 +4229,7 @@
       "hasAttributeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasAttributeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-hasattributens①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4664,7 +4256,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -4686,6 +4278,7 @@
       "hasAttributes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasAttributes",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-hasattributes①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4714,7 +4307,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -4736,6 +4329,7 @@
       "hasPointerCapture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/hasPointerCapture",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-element-haspointercapture",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -4763,7 +4357,7 @@
             ],
             "firefox_android": [
               {
-                "version_added": false
+                "version_added": "79"
               },
               {
                 "version_added": "41",
@@ -4808,6 +4402,7 @@
       "id": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/id",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-id①",
           "support": {
             "chrome": [
               {
@@ -4850,7 +4445,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -4888,6 +4483,7 @@
       "innerHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/innerHTML",
+          "spec_url": "https://w3c.github.io/DOM-Parsing/#dom-innerhtml-innerhtml",
           "support": {
             "chrome": {
               "version_added": "33",
@@ -4942,6 +4538,7 @@
       "insertAdjacentElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentElement",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-insertadjacentelement",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4998,6 +4595,7 @@
       "insertAdjacentHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML",
+          "spec_url": "https://w3c.github.io/DOM-Parsing/#dom-element-insertadjacenthtml",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5057,6 +4655,7 @@
       "insertAdjacentText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentText",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-insertadjacenttext",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5100,7 +4699,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "2.3"
+              "version_added": "2.2"
             }
           },
           "status": {
@@ -5114,6 +4713,7 @@
         "__compat": {
           "description": "<code>keydown</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/keydown_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-keydown",
           "support": {
             "chrome": {
               "version_added": true
@@ -5163,6 +4763,7 @@
         "__compat": {
           "description": "<code>keypress</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/keypress_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-keypress",
           "support": {
             "chrome": {
               "version_added": true,
@@ -5218,6 +4819,7 @@
         "__compat": {
           "description": "<code>keyup</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/keyup_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-keyup",
           "support": {
             "chrome": {
               "version_added": true
@@ -5266,25 +4868,22 @@
       "localName": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/localName",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-localname①",
           "support": {
             "chrome": {
-              "version_added": "31",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "31",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "48",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": "48",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -5296,18 +4895,16 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "10"
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": "10"
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": "2.0",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             }
           },
           "status": {
@@ -5320,6 +4917,7 @@
       "matches": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/matches",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-matches①",
           "support": {
             "chrome": [
               {
@@ -5462,6 +5060,7 @@
       "mousedown_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mousedown_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mousedown",
           "description": "<code>mousedown</code> event",
           "support": {
             "chrome": {
@@ -5511,6 +5110,7 @@
       "mouseenter_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseenter",
           "description": "<code>mouseenter</code> event",
           "support": {
             "chrome": {
@@ -5560,6 +5160,7 @@
       "mouseleave_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseleave",
           "description": "<code>mouseleave</code> event",
           "support": {
             "chrome": {
@@ -5609,6 +5210,7 @@
       "mousemove_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mousemove_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mousemove",
           "description": "<code>mousemove</code> event",
           "support": {
             "chrome": {
@@ -5658,6 +5260,7 @@
       "mouseout_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseout_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseout",
           "description": "<code>mouseout</code> event",
           "support": {
             "chrome": {
@@ -5707,6 +5310,7 @@
       "mouseover_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseover_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseover",
           "description": "<code>mouseover</code> event",
           "support": {
             "chrome": {
@@ -5756,6 +5360,7 @@
       "mouseup_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseup_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseup",
           "description": "<code>mouseup</code> event",
           "support": {
             "chrome": {
@@ -5904,50 +5509,92 @@
       "namespaceURI": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/namespaceURI",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-namespaceuri①",
           "support": {
             "chrome": {
-              "version_added": "31",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "31",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "48",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": "48",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
             },
             "opera": {
-              "version_added": "≤12.1",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "≤12.1",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "10"
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": "10"
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": "2.0",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "nextElementSibling": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/nextElementSibling",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-nondocumenttypechildnode-nextelementsibling②",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3.5"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": "10"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -5960,6 +5607,7 @@
       "onfullscreenchange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onfullscreenchange",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenchange",
           "support": {
             "chrome": [
               {
@@ -5988,7 +5636,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "65",
                 "alternative_name": "onmozfullscreenchange"
               }
             ],
@@ -5998,7 +5645,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "65",
                 "alternative_name": "onmozfullscreenchange"
               }
             ],
@@ -6040,6 +5686,7 @@
       "onfullscreenerror": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onfullscreenerror",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenerror",
           "support": {
             "chrome": [
               {
@@ -6068,7 +5715,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "65",
                 "alternative_name": "onmozfullscreenerror"
               }
             ],
@@ -6078,7 +5724,6 @@
               },
               {
                 "version_added": "10",
-                "version_removed": "65",
                 "alternative_name": "onmozfullscreenerror"
               }
             ],
@@ -6170,6 +5815,7 @@
       "outerHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/outerHTML",
+          "spec_url": "https://w3c.github.io/DOM-Parsing/#dom-element-outerhtml",
           "support": {
             "chrome": {
               "version_added": "33",
@@ -6271,6 +5917,7 @@
       "part": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/part",
+          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#idl",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -6332,6 +5979,7 @@
         "__compat": {
           "description": "<code>paste</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/paste_event",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#clipboard-event-paste",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6349,7 +5997,8 @@
               "version_added": "22"
             },
             "ie": {
-              "version_added": "11"
+              "version_added": "8",
+              "notes": "Before Internet Explorer 11, copying files does not trigger the <code>paste</code> event."
             },
             "opera": {
               "version_added": "15"
@@ -6427,25 +6076,22 @@
       "prefix": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/prefix",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-prefix①",
           "support": {
             "chrome": {
-              "version_added": "31",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "31",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "18"
             },
             "edge": {
-              "version_added": "13"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "48",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             },
             "firefox_android": {
-              "version_added": "48",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -6457,18 +6103,16 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "10"
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": "10"
+              "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": "2.0",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4.3",
-              "notes": "This API was previously available on the <code>Node</code> API."
+              "version_added": "1"
             }
           },
           "status": {
@@ -6478,9 +6122,10 @@
           }
         }
       },
-      "querySelector": {
+      "previousElementSibling": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/querySelector",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/previousElementSibling",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-nondocumenttypechildnode-previouselementsibling②",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6497,16 +6142,9 @@
             "firefox_android": {
               "version_added": "4"
             },
-            "ie": [
-              {
-                "version_added": "9"
-              },
-              {
-                "version_added": "8",
-                "partial_implementation": true,
-                "notes": "<code>querySelector()</code> is supported, but only for CSS 2.1 selectors."
-              }
-            ],
+            "ie": {
+              "version_added": "9"
+            },
             "opera": {
               "version_added": "10"
             },
@@ -6514,71 +6152,16 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "3.1"
-            },
-            "safari_ios": {
-              "version_added": "2"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "querySelectorAll": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/querySelectorAll",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "3.5"
-            },
-            "firefox_android": {
               "version_added": "4"
             },
-            "ie": [
-              {
-                "version_added": "9"
-              },
-              {
-                "version_added": "8",
-                "partial_implementation": true,
-                "notes": "<code>querySelectorAll()</code> is supported, but only for CSS 2.1 selectors."
-              }
-            ],
-            "opera": {
-              "version_added": "10"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "3.1"
-            },
             "safari_ios": {
-              "version_added": "2"
+              "version_added": "3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -6591,6 +6174,7 @@
       "releasePointerCapture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-element-releasepointercapture",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -6618,7 +6202,7 @@
             ],
             "firefox_android": [
               {
-                "version_added": false
+                "version_added": "79"
               },
               {
                 "version_added": "41",
@@ -6666,9 +6250,59 @@
           }
         }
       },
+      "remove": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/remove",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-childnode-remove①",
+          "support": {
+            "chrome": {
+              "version_added": "24"
+            },
+            "chrome_android": {
+              "version_added": "25"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "23"
+            },
+            "firefox_android": {
+              "version_added": "23"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "7"
+            },
+            "safari_ios": {
+              "version_added": "7"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.5"
+            },
+            "webview_android": {
+              "version_added": "≤37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "removeAttribute": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/removeAttribute",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-removeattribute①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6696,7 +6330,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -6718,6 +6352,7 @@
       "removeAttributeNode": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-removeattributenode",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6744,7 +6379,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -6766,6 +6401,7 @@
       "removeAttributeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-removeattributens①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6792,7 +6428,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -6811,9 +6447,59 @@
           }
         }
       },
+      "replaceWith": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/replaceWith",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-childnode-replacewith①",
+          "support": {
+            "chrome": {
+              "version_added": "54"
+            },
+            "chrome_android": {
+              "version_added": "54"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "49"
+            },
+            "firefox_android": {
+              "version_added": "49"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "39"
+            },
+            "opera_android": {
+              "version_added": "41"
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": "10"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "54"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "requestFullscreen": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#ref-for-dom-element-requestfullscreen①",
           "support": {
             "chrome": [
               {
@@ -6852,19 +6538,7 @@
                 "version_added": "64"
               },
               {
-                "version_added": "47",
-                "version_removed": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "full-screen-api.unprefix.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "version_added": "9",
-                "version_removed": "65",
                 "alternative_name": "mozRequestFullScreen",
                 "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or <code>&lt;object&gt;</code> element to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code>&lt;iframe&gt;</code> element with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
               }
@@ -6874,19 +6548,7 @@
                 "version_added": "64"
               },
               {
-                "version_added": "47",
-                "version_removed": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "full-screen-api.unprefix.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "version_added": "9",
-                "version_removed": "65",
                 "alternative_name": "mozRequestFullScreen",
                 "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a <code>&lt;frame&gt;</code> or an <code>&lt;object&gt;</code> to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an <code><code>&lt;iframe&gt;</code></code> with the <code>allowfullscreen</code> attribute can be displayed fullscreen."
               }
@@ -6905,8 +6567,7 @@
               },
               {
                 "version_added": "12",
-                "version_removed": "15",
-                "prefix": "o"
+                "version_removed": "15"
               }
             ],
             "opera_android": [
@@ -6919,8 +6580,7 @@
               },
               {
                 "version_added": "12",
-                "version_removed": "14",
-                "prefix": "o"
+                "version_removed": "14"
               }
             ],
             "safari": {
@@ -7057,6 +6717,7 @@
       "requestPointerLock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock",
+          "spec_url": "https://w3c.github.io/pointerlock/#dom-element-requestpointerlock",
           "support": {
             "chrome": [
               {
@@ -7207,6 +6868,7 @@
       "scroll": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scroll",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scroll-options-options",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -7304,6 +6966,7 @@
         "__compat": {
           "description": "<code>scroll</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scroll_event",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#scrolling-events",
           "support": {
             "chrome": {
               "version_added": true
@@ -7330,10 +6993,10 @@
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": "1.3"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": true
@@ -7352,6 +7015,7 @@
       "scrollBy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollBy",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollby-options-options",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -7448,6 +7112,7 @@
       "scrollHeight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollHeight",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollheight",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -7491,7 +7156,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -7513,6 +7178,7 @@
       "scrollIntoView": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollintoview",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -7694,6 +7360,7 @@
       "scrollLeft": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollLeft",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollleft",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -7727,7 +7394,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -7799,6 +7466,7 @@
       "scrollTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollTo",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollto-options-options",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -7895,6 +7563,7 @@
       "scrollTop": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollTop",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrolltop",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -7921,7 +7590,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -7991,6 +7660,7 @@
       "scrollWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollWidth",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollwidth",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8018,7 +7688,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -8041,6 +7711,7 @@
         "__compat": {
           "description": "<code>select</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/select_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-select",
           "support": {
             "chrome": {
               "version_added": true
@@ -8089,6 +7760,7 @@
       "setAttribute": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttribute",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-setattribute①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8116,7 +7788,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -8138,6 +7810,7 @@
       "setAttributeNode": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttributeNode",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-setattributenode",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8164,7 +7837,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -8186,6 +7859,7 @@
       "setAttributeNodeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-setattributenodens",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8214,7 +7888,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -8236,6 +7910,7 @@
       "setAttributeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setAttributeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-setattributens①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8262,7 +7937,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -8334,6 +8009,7 @@
       "setPointerCapture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-element-setpointercapture",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -8414,6 +8090,7 @@
       "shadowRoot": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/shadowRoot",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-shadowroot①",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -8424,38 +8101,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -8537,6 +8188,7 @@
       "slot": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/slot",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-slot①",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -8633,6 +8285,7 @@
       "tagName": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/tagName",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-tagname①",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8659,7 +8312,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "1.3"
+              "version_added": "1"
             },
             "safari_ios": {
               "version_added": "1"
@@ -8681,6 +8334,7 @@
       "toggleAttribute": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/toggleAttribute",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-toggleattribute①",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -8730,6 +8384,7 @@
         "__compat": {
           "description": "<code>touchcancel</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event",
+          "spec_url": "https://w3c.github.io/touch-events/#event-touchcancel",
           "support": {
             "chrome": {
               "version_added": "22"
@@ -8779,6 +8434,7 @@
         "__compat": {
           "description": "<code>touchend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchend_event",
+          "spec_url": "https://w3c.github.io/touch-events/#event-touchend",
           "support": {
             "chrome": {
               "version_added": "22"
@@ -8828,6 +8484,7 @@
         "__compat": {
           "description": "<code>touchmove</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchmove_event",
+          "spec_url": "https://w3c.github.io/touch-events/#event-touchmove",
           "support": {
             "chrome": {
               "version_added": "22"
@@ -8877,6 +8534,7 @@
         "__compat": {
           "description": "<code>touchstart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchstart_event",
+          "spec_url": "https://w3c.github.io/touch-events/#event-touchstart",
           "support": {
             "chrome": {
               "version_added": "22"
@@ -9171,6 +8829,7 @@
         "__compat": {
           "description": "<code>wheel</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/wheel_event",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-wheel",
           "support": {
             "chrome": {
               "version_added": "61"
