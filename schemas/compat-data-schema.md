@@ -107,7 +107,7 @@ The `__compat` object consists of the following:
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
+- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
 
 ### The `support` object
 
@@ -447,14 +447,19 @@ A `matches` object contains hints to help automatically detect whether source co
 The mandatory status property contains information about stability of the feature. It is
 an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value that indicates this functionality is
-  intended to be an addition to the Web platform. Some features are added to
-  conduct tests. Set to `false`, it means the functionality is mature, and no
-  significant incompatible changes are expected in the future.
-- `standard_track`: a `boolean` value indicating if the feature is part of an
-  active specification or specification process.
-- `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
-  It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+- `experimental`: a `boolean` value.
+
+  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+
+  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+
+- `standard_track`: a `boolean` value.
+
+  If `standard_track` is `true`, then the feature is part of an active specification or specification process.
+
+- `deprecated`: a `boolean` value.
+
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
 ```json
 "__compat": {
