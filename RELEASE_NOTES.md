@@ -21,6 +21,13 @@ May 27, 2021
 
 - Several duplicate or erroneous release entries for WebView Android were removed. These covered historic releases and fewer than 20 support statements were changed to reflect the removals. ([#10524](https://github.com/mdn/browser-compat-data/issues/10524))
 
+### Statistics
+
+- 14 contributors have changed 379 files with 917 additions and 2,091 deletions in 49 commits ([`v3.3.4...v3.3.5`](https://github.com/mdn/browser-compat-data/compare/v3.3.4...v3.3.5))
+- 12,993 total features
+- 781 total contributors
+- 3,378 total stargazers
+
 ## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
 
 May 20, 2021
