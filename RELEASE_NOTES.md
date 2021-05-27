@@ -9,6 +9,7 @@ May 27, 2021
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `html.elements.listing` ([#10548](https://github.com/mdn/browser-compat-data/pull/10548))
+  - `html.elements.nextid` ([#10550](https://github.com/mdn/browser-compat-data/pull/10550))
   - `html.elements.video.buffered` ([#10571](https://github.com/mdn/browser-compat-data/pull/10571))
 
 ## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
