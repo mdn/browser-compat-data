@@ -6,6 +6,12 @@ May 27, 2021
 
 ### Notable changes
 
+- The following features duplicated subfeatures of `api.DOMTokenList` and have been removed ([#10128](https://github.com/mdn/browser-compat-data/pull/10128)):
+
+  - `api.Element.classList.add_and_remove_multiple_arguments`
+  - `api.Element.classList.replace`
+  - `api.Element.classList.toggle_method_second_argument`
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `html.elements.isindex` ([#10551](https://github.com/mdn/browser-compat-data/pull/10551))
