@@ -2,7 +2,11 @@
 
 ## [v3.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.5)
 
-RELEASE DATE TK
+May 27, 2021
+
+### Notable changes
+
+- The non-existent `html.elements.video.buffered` feature has been removed. ([#10571](https://github.com/mdn/browser-compat-data/pull/10571))
 
 ## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
 
