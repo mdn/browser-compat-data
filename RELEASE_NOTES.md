@@ -19,6 +19,8 @@ May 27, 2021
   - `html.elements.nextid` ([#10550](https://github.com/mdn/browser-compat-data/pull/10550))
   - `html.elements.video.buffered` ([#10571](https://github.com/mdn/browser-compat-data/pull/10571))
 
+- Several duplicate or erroneous release entries for WebView Android were removed. These covered historic releases and fewer than 20 support statements were changed to reflect the removals. ([#10524](https://github.com/mdn/browser-compat-data/issues/10524))
+
 ## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
 
 May 20, 2021
