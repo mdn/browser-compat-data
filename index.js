@@ -22,7 +22,7 @@ function load() {
 
     // The JSON data is independent of the actual file
     // hierarchy, so it is essential to extend "deeply".
-    result = extend(result, extra);
+    extend(result, extra);
   }
 
   for (dir of arguments) {
@@ -42,11 +42,11 @@ function extend(target, source) {
     throw new Error('Both target and source must be plain objects');
   }
 
-  // iterate over all enumerable properties
+  // iterate over own enumerable properties
   for (const [key, value] of Object.entries(source)) {
     // recursively extend if target has the same key, otherwise just assign
     if (Object.prototype.hasOwnProperty.call(target, key)) {
-      target[key] = extend(extend({}, target[key]), value);
+      extend(target[key], value);
     } else {
       target[key] = value;
     }
