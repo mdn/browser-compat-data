@@ -51,8 +51,6 @@ function extend(target, source) {
       target[key] = value;
     }
   }
-
-  return target;
 }
 
 module.exports = load(
