@@ -113,6 +113,18 @@ RELEASE DATE TK
 
   </details>
 
+- The mixin `api.GeometryUtils` has been removed and replaced by features representing its exposed interfaces. ([#10721](https://github.com/mdn/browser-compat-data/pull/10721))
+
+  <details>
+
+  <summary>New features ex-<code>api.GeometryUtils</code></summary>
+
+  - `api.Document.getBoxQuads`
+  - `api.Element.getBoxQuads`
+  - `api.Text.getBoxQuads`
+
+  </details>
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.Document.undoManager` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
