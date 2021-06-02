@@ -100,6 +100,13 @@ RELEASE DATE TK
 
   </details>
 
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed ([#10581](https://github.com/mdn/browser-compat-data/pull/10581)):
+
+  - `api.Document.undoManager`
+  - `api.Element.tabStop`
+  - `api.HTMLElement.forceSpellCheck`
+  - `api.PaymentAddress.regionCode`
+
 ## [v3.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.5)
 
 May 27, 2021
