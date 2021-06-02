@@ -10,7 +10,7 @@ RELEASE DATE TK
 
   <details>
 
-  <summary>New features from <code>SVGFilterPrimitiveStandardAttributes</code></summary>
+  <summary>New features ex-<code>SVGFilterPrimitiveStandardAttributes</code></summary>
 
   - `api.SVGFEBlendElement.height`
   - `api.SVGFEBlendElement.result`
@@ -97,6 +97,19 @@ RELEASE DATE TK
   - `api.SVGFETurbulenceElement.width`
   - `api.SVGFETurbulenceElement.x`
   - `api.SVGFETurbulenceElement.y`
+
+  </details>
+
+- The mixin `api.SVGTests` has been removed and replaced by features representing its exposed interfaces. ([#10691](https://github.com/mdn/browser-compat-data/pull/10691))
+
+  <details>
+
+  <summary>New features ex-<code>api.SVGTests</code></summary>
+
+  - `api.SVGAnimationElement.requiredExtensions`
+  - `api.SVGAnimationElement.systemLanguage`
+  - `api.SVGGraphicsElement.requiredExtensions`
+  - `api.SVGGraphicsElement.systemLanguage`
 
   </details>
 
