@@ -1,57 +1,25 @@
 'use strict';
 const assert = require('assert');
 const specData = require('browser-specs');
-const { visit } = require('../utils');
+const { walk } = require('../utils');
 
 describe('spec_url data', () => {
-  it('spec_url specifications only use allow listed hosts by w3c/browser-specs (and those we allow list for now)', () => {
-    const toVisit = [
-      'api',
-      'css',
-      'html',
-      'http',
-      'javascript',
-      'mathml',
-      'svg',
-      'webdriver',
-    ];
+  it('spec_urls only use allow listed hosts by w3c/browser-specs (and our exception list)', () => {
+    const specURLs = [];
 
-    let specURLs = [];
-    for (const key of toVisit) {
-      visit(
-        (path, feature) => {
-          if (feature.spec_url) {
-            if (Array.isArray(feature.spec_url)) {
-              specURLs.push(...feature.spec_url);
-            } else {
-              specURLs.push(feature.spec_url);
-            }
-          }
-        },
-        {
-          entryPoint: key,
-        },
-      );
+    for (const { compat } of walk()) {
+      const { spec_url } = compat;
+      const specs = [].concat(spec_url || []); // coerce spec_url to array, or empty array if undefined
+      specURLs.push(...specs);
     }
 
-    let specsNotInBrowserSpecs = [];
-    specURLs.forEach(url => {
-      let spec = specData.find(
-        spec =>
-          url.startsWith(spec.url) ||
-          url.startsWith(spec.nightly.url) ||
-          url.startsWith(spec.series.nightlyUrl),
-      );
-      if (!spec) {
-        specsNotInBrowserSpecs.push(url.split('#')[0]);
-      }
-    });
-
-    let uniqueSpecsNotInBrowserSpecs = [
-      ...new Set(specsNotInBrowserSpecs.sort()),
+    const specsFromBrowserSpecs = [
+      ...specData.map(spec => spec.url),
+      ...specData.map(spec => spec.nightly.url),
+      ...specData.map(spec => spec.series.nightlyUrl),
     ];
 
-    let temporaryAllowList = [
+    const specsExceptions = [
       'https://wicg.github.io/controls-list/',
       'https://w3c.github.io/webrtc-extensions/',
       'https://w3c.github.io/setImmediate/',
@@ -86,11 +54,22 @@ describe('spec_url data', () => {
       'https://tc39.es/proposal-hashbang/out.html',
       'https://tc39.es/proposal-pipeline-operator/',
       'https://mathml-refresh.github.io/mathml/',
-    ].sort();
+      'https://www.w3.org/TR/xpath-31/',
+      'https://www.w3.org/TR/xslt-30/',
+    ];
 
-    // Ideally browser-specs has all relevant specs included
-    // and so uniqueSpecsNotInBrowserSpecs should be []
-    // However, for the moment we need an allow list
-    assert.deepStrictEqual(uniqueSpecsNotInBrowserSpecs, temporaryAllowList);
+    const allowList = new Set([...specsFromBrowserSpecs, ...specsExceptions]);
+    const rejectedSpecs = [];
+
+    for (const spec of specURLs) {
+      if (![...allowList].find(host => spec.startsWith(host)))
+        rejectedSpecs.push(spec);
+    }
+    assert.deepStrictEqual(
+      rejectedSpecs,
+      [],
+      `Invalid specification host(s) found. Try a more current specification URL and/or
+      check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
+    );
   });
 });
