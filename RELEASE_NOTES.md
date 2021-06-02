@@ -125,6 +125,8 @@ RELEASE DATE TK
 
   </details>
 
+- `api.FormData.append.AppendWithFilename` has been renamed to `api.FormData.append.filename_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#10695](https://github.com/mdn/browser-compat-data/pull/10695))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.Document.undoManager` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
