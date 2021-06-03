@@ -930,14 +930,28 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1",
-              "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
-            },
+            "firefox": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "60",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "60",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "ie": {
               "version_added": "4"
             },
