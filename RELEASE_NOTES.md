@@ -1,5 +1,33 @@
 # Release notes
 
+## [v3.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.5)
+
+May 27, 2021
+
+### Notable changes
+
+- The following features duplicated subfeatures of `api.DOMTokenList` and have been removed ([#10128](https://github.com/mdn/browser-compat-data/pull/10128)):
+
+  - `api.Element.classList.add_and_remove_multiple_arguments`
+  - `api.Element.classList.replace`
+  - `api.Element.classList.toggle_method_second_argument`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `html.elements.isindex` ([#10551](https://github.com/mdn/browser-compat-data/pull/10551))
+  - `html.elements.listing` ([#10548](https://github.com/mdn/browser-compat-data/pull/10548))
+  - `html.elements.nextid` ([#10550](https://github.com/mdn/browser-compat-data/pull/10550))
+  - `html.elements.video.buffered` ([#10571](https://github.com/mdn/browser-compat-data/pull/10571))
+
+- Several duplicate or erroneous release entries for WebView Android were removed. These covered historic releases and fewer than 20 support statements were changed to reflect the removals. ([#10524](https://github.com/mdn/browser-compat-data/issues/10524))
+
+### Statistics
+
+- 15 contributors have changed 379 files with 953 additions and 2,103 deletions in 50 commits ([`v3.3.4...v3.3.5`](https://github.com/mdn/browser-compat-data/compare/v3.3.4...v3.3.5))
+- 12,993 total features
+- 782 total contributors
+- 3,378 total stargazers
+
 ## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
 
 May 20, 2021
