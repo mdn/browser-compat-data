@@ -6,6 +6,10 @@ RELEASE DATE TK
 
 ### Notable changes
 
+- The `extend` dependency has been removed and replaced by a more narrowly scoped function, which prevents data files from erroneously setting data for the same feature. ([#9821](https://github.com/mdn/browser-compat-data/pull/9821))
+
+  Additionally, this release eliminates runtime dependencies for source distributions of this package. As of the [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0) release, the `@mdn/browser-compat-data` package published on npm has zero dependencies; this release extends that benefit to installing the package from the repository source (such as from GitHub's releases assets).
+
 - The mixin `api.SVGFilterPrimitiveStandardAttributes` has been removed and replaced by features representing its exposed interfaces. ([#10646](https://github.com/mdn/browser-compat-data/pull/10646))
 
   <details>
