@@ -21,7 +21,6 @@ describe('spec_url data', () => {
 
     const specsExceptions = [
       'https://wicg.github.io/controls-list/',
-      'https://w3c.github.io/webrtc-extensions/',
       'https://w3c.github.io/setImmediate/',
       'https://datatracker.ietf.org/doc/html/rfc2397',
       'https://datatracker.ietf.org/doc/html/rfc8942',
