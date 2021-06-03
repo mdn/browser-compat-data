@@ -22,7 +22,7 @@ function load() {
 
     // The JSON data is independent of the actual file
     // hierarchy, so it is essential to extend "deeply".
-    extend(result, extra);
+    if (extra) extend(result, extra);
   }
 
   for (dir of arguments) {
