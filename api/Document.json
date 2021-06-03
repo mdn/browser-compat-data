@@ -930,14 +930,28 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1",
-              "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
-            },
+            "firefox": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "60",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "60",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "ie": {
               "version_added": "4"
             },
@@ -2435,7 +2449,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -2533,7 +2547,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4220,7 +4234,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4245,11 +4259,17 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>."
+              "notes": [
+                "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>.",
+                "Before Firefox 89, manipulating the content of <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements using <code>Document.execCommand()</code> commands requires workarounds (see <a href='https://bugzil.la/1220696'>bug 1220696</a>)."
+              ]
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>."
+              "notes": [
+                "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>.",
+                "Before Firefox 89, manipulating the content of <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements using <code>Document.execCommand()</code> commands requires workarounds (see <a href='https://bugzil.la/1220696'>bug 1220696</a>)."
+              ]
             },
             "ie": {
               "version_added": "4"
@@ -5932,7 +5952,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -6031,7 +6051,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -11212,54 +11232,6 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "undoManager": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/undoManager",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
