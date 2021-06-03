@@ -31,14 +31,10 @@ const load = (...files) => {
         }
       }
 
-    // The JSON data is independent of the actual file
-    // hierarchy, so it is essential to extend "deeply".
-    extend(result, extra);
-  }
-
-  for (dir of arguments) {
-    dir = path.resolve(__dirname, dir);
-    fs.readdirSync(dir).forEach(processFilename);
+      // The JSON data is independent of the actual file
+      // hierarchy, so it is essential to extend "deeply".
+      extend(result, extra);
+    });
   }
 
   return result;
