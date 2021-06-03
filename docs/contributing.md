@@ -86,7 +86,7 @@ The <browser> argument is the destination browser that values will be copied to.
 | Opera Android    | Chrome Android             |
 | Safari iOS       | Safari                     |
 | Samsung Internet | Chrome Android             |
-| WebView          | Chrome Android             |
+| WebView          | Chrome Android + Safari    |
 
 The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
 

@@ -473,16 +473,16 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} chromeAndroidData
- * @param {SupportStatement} chromeData
+ * @param {SupportStatement} safariData
  * @returns {SupportStatement}
  */
-const bumpWebView = (originalData, chromeAndroidData, chromeData) => {
+const bumpWebView = (originalData, chromeAndroidData, safariData) => {
   let newData = copyStatement(chromeAndroidData);
 
-  const createWebViewRange = (version, desktopVersion) => {
-    if (desktopVersion === '1') {
+  const createWebViewRange = (version, safariVersion) => {
+    if (desktopVersion <= '3') {
       return '1';
-    } else if (version >= 18 && version < 30) {
+    } else if (version < 30) {
       return '≤37';
     } else if (version >= 30 && version < 33) {
       return '4.4';
@@ -496,7 +496,7 @@ const bumpWebView = (originalData, chromeAndroidData, chromeData) => {
   if (typeof chromeAndroidData.version_added === 'string') {
     newData.version_added = createWebViewRange(
       chromeAndroidData.version_added,
-      chromeData.version_added,
+      safariData.version_added,
     );
   }
 
@@ -506,7 +506,7 @@ const bumpWebView = (originalData, chromeAndroidData, chromeData) => {
   ) {
     newData.version_removed = createWebViewRange(
       chromeAndroidData.version_removed,
-      chromeData.version_removed,
+      safariData.version_removed,
     );
   }
 
@@ -584,7 +584,7 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
         break;
       case 'webview_android':
         bumpFunction = (originalData, data, source) =>
-          bumpWebView(originalData, data, compData['chrome']);
+          bumpWebView(originalData, data, compData['safari']);
         break;
       default:
         bumpFunction = bumpGeneric;
