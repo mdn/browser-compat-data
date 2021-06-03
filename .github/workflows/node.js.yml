@@ -11,20 +11,13 @@ on:
 
 jobs:
   test:
-    strategy:
-      matrix:
-        include:
-          - name: Maintenance LTS
-            node-version: 10.x # use oldest
-          - name: Active LTS
-            node-version: 14.x
-    name: ${{ matrix.name }}
+    name: Active LTS
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2-beta
+    - uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
     - run: npm install
     - run: npm test
       env:
