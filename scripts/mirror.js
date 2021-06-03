@@ -223,6 +223,10 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpEdge = (originalData, chromeData, ieData) => {
+  if (Array.isArray(originalData)) {
+    return originalData.map(d => bumpEdge(d));
+  }
+
   let newData = copyStatement(originalData);
 
   if (ieData) {
