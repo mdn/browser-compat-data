@@ -4,7 +4,6 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const extend = require('extend');
 
 /**
  * Recursively load one or more files and/or directories passed as arguments.
@@ -32,14 +31,38 @@ const load = (...files) => {
         }
       }
 
-      // The JSON data is independent of the actual file
-      // hierarchy, so it is essential to extend "deeply".
-      result = extend(true, result, extra);
-    });
+    // The JSON data is independent of the actual file
+    // hierarchy, so it is essential to extend "deeply".
+    extend(result, extra);
+  }
+
+  for (dir of arguments) {
+    dir = path.resolve(__dirname, dir);
+    fs.readdirSync(dir).forEach(processFilename);
   }
 
   return result;
 };
+
+function isPlainObject(v) {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
+function extend(target, source) {
+  if (!isPlainObject(target) || !isPlainObject(source)) {
+    throw new Error('Both target and source must be plain objects');
+  }
+
+  // iterate over own enumerable properties
+  for (const [key, value] of Object.entries(source)) {
+    // recursively extend if target has the same key, otherwise just assign
+    if (Object.prototype.hasOwnProperty.call(target, key)) {
+      extend(target[key], value);
+    } else {
+      target[key] = value;
+    }
+  }
+}
 
 module.exports = load(
   'api',
