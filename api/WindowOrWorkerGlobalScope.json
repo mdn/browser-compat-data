@@ -3,6 +3,7 @@
     "WindowOrWorkerGlobalScope": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope",
+        "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#windoworworkerglobalscope-mixin",
         "support": {
           "chrome": {
             "version_added": "4"
@@ -50,6 +51,7 @@
       "atob": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/atob",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -67,10 +69,6 @@
               {
                 "version_added": "27",
                 "notes": "<code>atob()</code> ignores all space characters in the argument to comply with the latest HTML5 spec (see <a href='https://bugzil.la/711180'>bug 711180</a>)."
-              },
-              {
-                "version_added": "57",
-                "notes": "<code>atob()</code> now defined on <code><A href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
               }
             ],
             "firefox_android": [
@@ -80,10 +78,6 @@
               {
                 "version_added": "27",
                 "notes": "<code>atob()</code> ignores all space characters in the argument to comply with the latest HTML5 spec (see <a href='https://bugzil.la/711180'>bug 711180</a>)."
-              },
-              {
-                "version_added": "57",
-                "notes": "<code>atob()</code> now defined on <code><A href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
               }
             ],
             "ie": {
@@ -118,6 +112,7 @@
       "btoa": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/btoa",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -128,24 +123,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>btoa()</code> now defined on <code><A href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>atob()</code> now defined on <code><A href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -178,6 +161,7 @@
       "caches": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/caches",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#self-caches",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -188,24 +172,12 @@
             "edge": {
               "version_added": "≤79"
             },
-            "firefox": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>caches</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "42"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>caches</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "42"
+            },
             "ie": {
               "version_added": false
             },
@@ -238,6 +210,7 @@
       "clearInterval": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval",
+          "spec_url": "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -248,24 +221,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>clearInterval()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>clearInterval()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
             "ie": {
               "version_added": "4",
               "notes": "From Internet Explorer 4 through 8, <code>clearInterval</code> is an Object rather than a Function. This behavior was fixed in Internet Explorer 9."
@@ -291,7 +252,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -304,6 +265,7 @@
       "clearTimeout": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/clearTimeout",
+          "spec_url": "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout-dev",
           "support": {
             "chrome": {
               "version_added": "45"
@@ -314,24 +276,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>clearTimeout()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>clearTimeout()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
             "ie": {
               "version_added": "4",
               "notes": "From Internet Explorer 4 through 8, <code>clearTimeout</code> is an Object rather than a Function. This behavior was fixed in Internet Explorer 9."
@@ -370,6 +320,7 @@
       "createImageBitmap": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap",
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-createimagebitmap-dev",
           "support": {
             "chrome": {
               "version_added": "50"
@@ -380,15 +331,9 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "52",
-                "notes": "<code>createImageBitmap()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              },
-              {
-                "version_added": "42"
-              }
-            ],
+            "firefox": {
+              "version_added": "42"
+            },
             "firefox_android": {
               "version_added": true
             },
@@ -568,6 +513,7 @@
       "crossOriginIsolated": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#dom-crossoriginisolated-dev",
           "support": {
             "chrome": {
               "version_added": "87"
@@ -603,7 +549,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
@@ -619,6 +565,7 @@
       "fetch": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch",
+          "spec_url": "https://fetch.spec.whatwg.org/#fetch-method",
           "support": {
             "chrome": {
               "version_added": "42"
@@ -629,73 +576,21 @@
             "edge": {
               "version_added": "14"
             },
-            "firefox": [
-              {
-                "version_added": "39"
-              },
-              {
-                "version_added": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.fetch.enable"
-                  }
-                ]
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>fetch()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "39"
-              },
-              {
-                "version_added": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.fetch.enable"
-                  }
-                ]
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>fetch()</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "39"
+            },
+            "firefox_android": {
+              "version_added": "39"
+            },
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "29"
-              },
-              {
-                "version_added": "28",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "29"
-              },
-              {
-                "version_added": "28",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": "29"
+            },
+            "opera_android": {
+              "version_added": "29"
+            },
             "safari": {
               "version_added": "10.1"
             },
@@ -921,6 +816,7 @@
       "indexedDB": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/indexedDB",
+          "spec_url": "https://w3c.github.io/IndexedDB/#dom-windoworworkerglobalscope-indexeddb",
           "support": {
             "chrome": {
               "version_added": "24"
@@ -938,21 +834,11 @@
               {
                 "version_added": "10",
                 "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>indexedDB</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "22"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>indexedDB</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox_android": {
+              "version_added": "22"
+            },
             "ie": {
               "version_added": "10",
               "partial_implementation": true
@@ -1034,6 +920,7 @@
       "isSecureContext": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#dom-issecurecontext-dev",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -1082,6 +969,7 @@
       "origin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/origin",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#dom-origin-dev",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -1130,6 +1018,7 @@
       "queueMicrotask": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask",
+          "spec_url": "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#microtask-queuing",
           "support": {
             "chrome": {
               "version_added": "71"
@@ -1144,7 +1033,7 @@
               "version_added": "69"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -1181,6 +1070,7 @@
       "setInterval": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setInterval",
+          "spec_url": "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval-dev",
           "support": {
             "chrome": {
               "version_added": "30"
@@ -1191,24 +1081,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>setInterval</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>setInterval</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
             "ie": {
               "version_added": "4"
             },
@@ -1300,6 +1178,7 @@
       "setTimeout": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout",
+          "spec_url": "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout-dev",
           "support": {
             "chrome": {
               "version_added": "30"
@@ -1310,24 +1189,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>setInterval</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "52",
-                "notes": "<code>setInterval</code> now defined on <code><a href='https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope'>WindowOrWorkerGlobalScope</a></code> mixin."
-              }
-            ],
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
             "ie": {
               "version_added": "4"
             },
