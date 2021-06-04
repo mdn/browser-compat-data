@@ -139,6 +139,8 @@ RELEASE DATE TK
   - `api.Element.tabStop` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
   - `api.HTMLElement.forceSpellCheck` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
   - `api.PaymentAddress.regionCode` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.RTCPeerConnection.defaultIceServers` ([#10725](https://github.com/mdn/browser-compat-data/pull/10725))
+  - `api.RTCPeerConnection.getDefaultIceServers` ([#10725](https://github.com/mdn/browser-compat-data/pull/10725))
   - `api.SVGUnknownElement` ([#10685](https://github.com/mdn/browser-compat-data/pull/10685))
   - `javascript.builtins.AsyncIterator.@@toStringTag` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
   - `javascript.builtins.AsyncIterator.asIndexedPairs` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
