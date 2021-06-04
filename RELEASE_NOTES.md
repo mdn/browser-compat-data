@@ -174,6 +174,13 @@ RELEASE DATE TK
   - `javascript.builtins.Iterator.toArray` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
   - `javascript.operators.pipeline` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
 
+### Statistics
+
+- 14 contributors have changed 335 files with 7,135 additions and 5,583 deletions in 70 commits ([`v3.3.5...v3.3.6`](https://github.com/mdn/browser-compat-data/compare/v3.3.5...v3.3.6))
+- 13,039 total features
+- 783 total contributors
+- 3,390 total stargazers
+
 ## [v3.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.5)
 
 May 27, 2021
