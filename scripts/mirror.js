@@ -238,8 +238,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
   }
 
   let chromeFalse =
-    chromeData.version_added === false ||
-    chromeData.version_removed !== undefined;
+    chromeData.version_removed || chromeData.version_added === false;
   let chromeNull = chromeData.version_added === null;
 
   if (!chromeFalse && !chromeNull) {
