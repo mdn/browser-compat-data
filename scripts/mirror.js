@@ -224,7 +224,7 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
  */
 const bumpEdge = (originalData, chromeData, ieData) => {
   if (Array.isArray(originalData)) {
-    return originalData.map(d => bumpEdge(d));
+    return originalData.map(d => bumpEdge(d, chromeData, ieData));
   }
 
   let newData = copyStatement(originalData);
