@@ -233,7 +233,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
     if (ieData.version_removed || ieData.version_added === false) {
       newData.version_added = false;
     } else if (ieData.version_added) {
-      newData.version_added = ieData.version_added ? '12' : null;
+      newData.version_added = '12';
     }
   }
 
