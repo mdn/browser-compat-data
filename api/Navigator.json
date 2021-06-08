@@ -387,10 +387,12 @@
         "__compat": {
           "support": {
             "chrome": {
-              "version_added": "81"
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "Windows and Mac only."
             },
             "chrome_android": {
-              "version_added": "81"
+              "version_added": false
             },
             "edge": {
               "version_added": "81"
@@ -420,7 +422,7 @@
               "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": "81"
+              "version_added": false
             }
           },
           "status": {
@@ -539,7 +541,7 @@
       "contacts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
-          "spec_url": "https://wicg.github.io/contact-api/spec/#extensions-to-navigator",
+          "spec_url": "https://wicg.github.io/contact-api/spec/#dom-navigator-contacts",
           "support": {
             "chrome": {
               "version_added": false
@@ -640,6 +642,7 @@
       "credentials": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/credentials",
+          "spec_url": "https://w3c.github.io/webappsec-credential-management/#framework-credential-management",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -785,9 +788,9 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -837,55 +840,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "hid": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/Navigator/hid",
-            "spec_url": "https://wicg.github.io/webhid/#dom-navigator-hid",
-            "support": {
-              "chrome": {
-                "version_added": "89"
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": "89"
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "75"
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": false,
-              "deprecated": false
-            }
           }
         },
         "secure_context_required": {
@@ -991,6 +945,7 @@
       "getGamepads": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads",
+          "spec_url": "https://w3c.github.io/gamepad/#dom-navigator-getgamepads",
           "support": {
             "chrome": [
               {
@@ -1314,10 +1269,59 @@
           }
         }
       },
+      "hid": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/hid",
+          "spec_url": "https://wicg.github.io/webhid/#dom-navigator-hid",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "75"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "keyboard": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/keyboard",
-          "spec_url": "https://wicg.github.io/keyboard-map/#navigator-interface",
+          "spec_url": "https://wicg.github.io/keyboard-map/#h-navigator-keyboard",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -1366,7 +1370,7 @@
       "locks": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/locks",
-          "spec_url": "https://wicg.github.io/web-locks/#navigator-mixins",
+          "spec_url": "https://wicg.github.io/web-locks/#dom-navigatorlocks-locks",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1415,7 +1419,7 @@
       "maxTouchPoints": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints",
-          "spec_url": "https://w3c.github.io/pointerevents/#extensions-to-the-navigator-interface",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-navigator-maxtouchpoints",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -1495,6 +1499,7 @@
       "mediaCapabilities": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaCapabilities",
+          "spec_url": "https://w3c.github.io/media-capabilities/#dom-navigator-mediacapabilities",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -1802,6 +1807,7 @@
       "permissions": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
+          "spec_url": "https://w3c.github.io/permissions/#dom-navigator-permissions",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -2415,7 +2421,7 @@
       "serviceWorker": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-serviceworker",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-service-worker-attribute",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -2466,13 +2472,17 @@
         "__compat": {
           "support": {
             "chrome": {
-              "version_added": "81"
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "Windows and Mac only."
             },
             "chrome_android": {
-              "version_added": "81"
+              "version_added": false
             },
             "edge": {
-              "version_added": "81"
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "Windows and Mac only."
             },
             "firefox": {
               "version_added": false
@@ -2499,7 +2509,7 @@
               "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": "81"
+              "version_added": false
             }
           },
           "status": {
@@ -2763,6 +2773,7 @@
       "vibrate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vibrate",
+          "spec_url": "https://w3c.github.io/vibration/#dom-navigator-vibrate",
           "support": {
             "chrome": {
               "version_added": "32"
@@ -2902,7 +2913,7 @@
       "webdriver": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/webdriver",
-          "spec_url": "https://w3c.github.io/webdriver/#dom-navigatorautomationinformation-webdriver",
+          "spec_url": "https://w3c.github.io/webdriver/#dfn-webdriver",
           "support": {
             "chrome": {
               "version_added": "63"
