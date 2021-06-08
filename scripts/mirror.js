@@ -216,6 +216,57 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
   return newData;
 };
 
+const bumpEdgeFromIE = sourceData => {
+  let newData = copyStatement(sourceData);
+
+  if (sourceData.version_removed || sourceData.version_added === false) {
+    newData.version_added = false;
+  } else if (sourceData.version_added) {
+    newData.version_added = '12';
+  }
+
+  newData.notes = updateNotes(sourceData.notes, /Internet Explorer/g, 'Edge');
+
+  return newData;
+};
+
+const bumpEdgeFromChrome = (sourceData, originalData) => {
+  let newData = copyStatement(sourceData);
+
+  let chromeFalse =
+    sourceData.version_removed || sourceData.version_added === false;
+  let chromeNull = sourceData.version_added === null;
+
+  if (!chromeFalse && !chromeNull) {
+    if (originalData.version_added === true) {
+      newData.version_added = '≤18';
+    } else if (sourceData.version_added === true) {
+      newData.version_added = true;
+    } else if (Number(sourceData.version_added) <= 79) {
+      if (
+        originalData.version_added === false ||
+        newData.version_added === false
+      ) {
+        newData.version_added = '79';
+      } else if (originalData.version_added === null) {
+        newData.version_added = '≤79';
+      }
+    } else {
+      newData.version_added = sourceData.version_added;
+    }
+  } else if (chromeFalse) {
+    if (originalData.version_added && !originalData.version_removed) {
+      newData.version_removed = '79';
+    }
+  } else if (chromeNull) {
+    newData.version_added = null;
+  }
+
+  newData.notes = updateNotes(chromeData.notes, /Chrome(?! ?OS)/g, 'Edge');
+
+  return newData;
+};
+
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} chromeData
@@ -227,53 +278,22 @@ const bumpEdge = (originalData, chromeData, ieData) => {
     return originalData.map(d => bumpEdge(d, chromeData, ieData));
   }
 
-  let newData = copyStatement(originalData);
+  let newData = [];
 
   if (ieData) {
-    if (ieData.version_removed || ieData.version_added === false) {
-      newData.version_added = false;
-    } else if (ieData.version_added) {
-      newData.version_added = '12';
-    }
-  }
-
-  let chromeFalse =
-    chromeData.version_removed || chromeData.version_added === false;
-  let chromeNull = chromeData.version_added === null;
-
-  if (!chromeFalse && !chromeNull) {
-    if (originalData.version_added === true) {
-      newData.version_added = '≤18';
-    } else if (chromeData.version_added === true) {
-      newData.version_added = true;
-    } else if (Number(chromeData.version_added) <= 79) {
-      if (
-        originalData.version_added === false ||
-        newData.version_added === false
-      ) {
-        newData.version_added = '79';
-      } else if (originalData.version_added === null) {
-        newData.version_added = '≤79';
-      }
+    if (Array.isArray(ieData)) {
+      newData += ieData.map(d => bumpEdgeFromIE(d));
     } else {
-      newData.version_added = chromeData.version_added;
+      newData.push(bumpEdgeFromIE(ieData));
     }
-  } else if (chromeFalse) {
-    if (originalData.version_added && !originalData.version_removed) {
-      newData.version_removed = '79';
-    }
-  } else if (chromeNull) {
-    newData.version_added = null;
   }
 
-  let newNotes = combineNotes(
-    ieData ? updateNotes(ieData.notes, /Internet Explorer/g, 'Edge') : null,
-    updateNotes(chromeData.notes, /Chrome(?! ?OS)/g, 'Edge'),
-    originalData.notes,
-  );
-
-  if (newNotes) {
-    newData.notes = newNotes;
+  if (chromeData) {
+    if (Array.isArray(chromeData)) {
+      newData += chromeData.map(d => bumpEdgeFromChrome(d, originalData));
+    } else {
+      newData.push(bumpEdgeFromChrome(chromeData, originalData));
+    }
   }
 
   return newData;
