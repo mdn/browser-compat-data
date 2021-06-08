@@ -22,13 +22,18 @@ const load = (...files) => {
       let extra;
 
       if (fs.statSync(fp).isDirectory()) {
+        // If the given filename is a directory, recursively load it.
         extra = load(fp);
       } else if (path.extname(fp) === '.json') {
         try {
           extra = JSON.parse(fs.readFileSync(fp));
         } catch (e) {
-          console.error(`Error loading ${fp}: ${e}`);
+          // Skip invalid JSON. Tests will flag the problem separately.
+          return;
         }
+      } else {
+        // Skip anything else, such as *~ backup files or similar.
+        return;
       }
 
       // The JSON data is independent of the actual file
