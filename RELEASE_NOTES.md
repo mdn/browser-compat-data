@@ -4,6 +4,18 @@
 
 ### Notable changes
 
+- The `api.AbstractWorker` mixin has been removed and replaced by features representing its exposed interfaces. ([#10744](https://github.com/mdn/browser-compat-data/pull/10744))
+
+  <details>
+
+  <summary>New features ex-<code>AbstractWorker</code></summary>
+
+  - `api.ServiceWorker.onerror`
+  - `api.SharedWorker.onerror`
+  - `api.Worker.onerror`
+
+  </details>
+
 - `api.Element.attributeStyleMap` has been removed and replaced by features representing the `ElementCSSInlineStyle` mixin's exposed interfaces. ([#10686](https://github.com/mdn/browser-compat-data/pull/10686))
 
   <details>
