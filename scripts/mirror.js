@@ -285,7 +285,13 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
     sourceData.version_removed || sourceData.version_added === false;
   let chromeNull = sourceData.version_added === null;
 
-  if (!chromeFalse && !chromeNull) {
+  if (chromeFalse) {
+    if (originalData.version_added && !originalData.version_removed) {
+      newData.version_removed = '79';
+    }
+  } else if (chromeNull) {
+    newData.version_added = null;
+  } else {
     if (sourceData.version_added === true) {
       newData.version_added =
         originalData.version_added === true ? '≤18' : true;
@@ -301,12 +307,6 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
     } else {
       newData.version_added = sourceData.version_added;
     }
-  } else if (chromeFalse) {
-    if (originalData.version_added && !originalData.version_removed) {
-      newData.version_removed = '79';
-    }
-  } else if (chromeNull) {
-    newData.version_added = null;
   }
 
   newData.notes = updateNotes(chromeData.notes, /Chrome(?! ?OS)/g, 'Edge');
