@@ -184,6 +184,56 @@ const copyStatement = data => {
 };
 
 /**
+ * @param {...SupportStatement} data
+ * @returns {SupportStatement}
+ */
+const combineStatements = (...data) => {
+  const ignored_keys = ['version_added', 'notes'];
+
+  let flattenedData = data.flat(2);
+  let sections = {};
+  let newData = [];
+
+  for (const d of flattenedData) {
+    let key = Object.keys(d)
+      .filter(k => !ignored_keys.includes(k))
+      .join('');
+    if (!(key in sections)) sections[key] = [];
+    sections[key].push(d);
+  }
+
+  for (const k of Object.keys(sections)) {
+    let currentStatement = sections[k][0];
+
+    if (sections[k].length == 1) {
+      newData.push(currentStatement);
+      continue;
+    }
+
+    for (const i in sections[k]) {
+      if (i == 0) continue;
+      let newStatement = sections[k][i];
+
+      if (
+        compareVersions.compare(
+          currentStatement.version_added,
+          newStatement.version_added,
+          '>',
+        )
+      )
+        currentStatement.version_added = newStatement.version_added;
+
+      let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      if (newNotes) currentStatement.notes = newNotes;
+    }
+
+    newData.push(currentStatement);
+  }
+
+  return newData;
+};
+
+/**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @param {string} source
