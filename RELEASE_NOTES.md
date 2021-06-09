@@ -2,9 +2,20 @@
 
 ## [v3.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.7)
 
-RELEASE DATE TK
-
 ### Notable changes
+
+- `api.Element.attributeStyleMap` has been removed and replaced by features representing the `ElementCSSInlineStyle` mixin's exposed interfaces. ([#10686](https://github.com/mdn/browser-compat-data/pull/10686))
+
+  <details>
+
+  <summary>New features ex-<code>ElementCSSInlineStyle</code></summary>
+
+  - `api.HTMLElement.attributeStyleMap`
+  - `api.MathMLElement.style`
+  - `api.SVGElement.attributeStyleMap`
+  - `api.SVGElement.style`
+
+  </details>
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
