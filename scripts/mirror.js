@@ -279,6 +279,10 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
   return newData;
 };
 
+/**
+ * @param {SupportStatement} sourceData
+ * @returns {SupportStatement}
+ */
 const bumpEdgeFromIE = sourceData => {
   let newData = copyStatement(sourceData);
 
@@ -294,6 +298,11 @@ const bumpEdgeFromIE = sourceData => {
   return newData;
 };
 
+/**
+ * @param {SupportStatement} sourceData
+ * @param {SupportStatement} originalData
+ * @returns {SupportStatement}
+ */
 const bumpEdgeFromChrome = (sourceData, originalData) => {
   let newData = copyStatement(sourceData);
 
