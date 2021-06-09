@@ -1,5 +1,280 @@
 # Release notes
 
+## [v3.3.6](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.6)
+
+June 4, 2021
+
+### Notable changes
+
+- The `extend` dependency has been removed and replaced by a more narrowly scoped function, which prevents two (or more) data files from erroneously setting data for the same feature. ([#9821](https://github.com/mdn/browser-compat-data/pull/9821))
+
+  Additionally, this release eliminates runtime dependencies for source distributions of this package. As of the [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0) release, the `@mdn/browser-compat-data` package published on npm has zero dependencies; this release extends that benefit to installing the package from the repository source (such as from GitHub's releases assets).
+
+- Specification URLs (`spec_url` values) are now validated against [`w3c/browser-specs`](https://github.com/w3c/browser-specs) and a small allowlist for additional specifications. ([#10681](https://github.com/mdn/browser-compat-data/pull/10681))
+
+- The mixin `api.SVGFilterPrimitiveStandardAttributes` has been removed and replaced by features representing its exposed interfaces. ([#10646](https://github.com/mdn/browser-compat-data/pull/10646))
+
+  <details>
+
+  <summary>New features ex-<code>SVGFilterPrimitiveStandardAttributes</code></summary>
+
+  - `api.SVGFEBlendElement.height`
+  - `api.SVGFEBlendElement.result`
+  - `api.SVGFEBlendElement.width`
+  - `api.SVGFEBlendElement.x`
+  - `api.SVGFEBlendElement.y`
+  - `api.SVGFEColorMatrixElement.height`
+  - `api.SVGFEColorMatrixElement.result`
+  - `api.SVGFEColorMatrixElement.width`
+  - `api.SVGFEColorMatrixElement.x`
+  - `api.SVGFEColorMatrixElement.y`
+  - `api.SVGFEComponentTransferElement.height`
+  - `api.SVGFEComponentTransferElement.result`
+  - `api.SVGFEComponentTransferElement.width`
+  - `api.SVGFEComponentTransferElement.x`
+  - `api.SVGFEComponentTransferElement.y`
+  - `api.SVGFECompositeElement.height`
+  - `api.SVGFECompositeElement.result`
+  - `api.SVGFECompositeElement.width`
+  - `api.SVGFECompositeElement.x`
+  - `api.SVGFECompositeElement.y`
+  - `api.SVGFEConvolveMatrixElement.height`
+  - `api.SVGFEConvolveMatrixElement.result`
+  - `api.SVGFEConvolveMatrixElement.width`
+  - `api.SVGFEConvolveMatrixElement.x`
+  - `api.SVGFEConvolveMatrixElement.y`
+  - `api.SVGFEDiffuseLightingElement.height`
+  - `api.SVGFEDiffuseLightingElement.result`
+  - `api.SVGFEDiffuseLightingElement.width`
+  - `api.SVGFEDiffuseLightingElement.x`
+  - `api.SVGFEDiffuseLightingElement.y`
+  - `api.SVGFEDisplacementMapElement.height`
+  - `api.SVGFEDisplacementMapElement.result`
+  - `api.SVGFEDisplacementMapElement.width`
+  - `api.SVGFEDisplacementMapElement.x`
+  - `api.SVGFEDisplacementMapElement.y`
+  - `api.SVGFEDropShadowElement.height`
+  - `api.SVGFEDropShadowElement.result`
+  - `api.SVGFEDropShadowElement.width`
+  - `api.SVGFEDropShadowElement.x`
+  - `api.SVGFEDropShadowElement.y`
+  - `api.SVGFEFloodElement.height`
+  - `api.SVGFEFloodElement.result`
+  - `api.SVGFEFloodElement.width`
+  - `api.SVGFEFloodElement.x`
+  - `api.SVGFEFloodElement.y`
+  - `api.SVGFEGaussianBlurElement.height`
+  - `api.SVGFEGaussianBlurElement.result`
+  - `api.SVGFEGaussianBlurElement.width`
+  - `api.SVGFEGaussianBlurElement.x`
+  - `api.SVGFEGaussianBlurElement.y`
+  - `api.SVGFEImageElement.height`
+  - `api.SVGFEImageElement.result`
+  - `api.SVGFEImageElement.width`
+  - `api.SVGFEImageElement.x`
+  - `api.SVGFEImageElement.y`
+  - `api.SVGFEMergeElement.height`
+  - `api.SVGFEMergeElement.result`
+  - `api.SVGFEMergeElement.width`
+  - `api.SVGFEMergeElement.x`
+  - `api.SVGFEMergeElement.y`
+  - `api.SVGFEMorphologyElement.height`
+  - `api.SVGFEMorphologyElement.result`
+  - `api.SVGFEMorphologyElement.width`
+  - `api.SVGFEMorphologyElement.x`
+  - `api.SVGFEMorphologyElement.y`
+  - `api.SVGFEOffsetElement.height`
+  - `api.SVGFEOffsetElement.result`
+  - `api.SVGFEOffsetElement.width`
+  - `api.SVGFEOffsetElement.x`
+  - `api.SVGFEOffsetElement.y`
+  - `api.SVGFESpecularLightingElement.height`
+  - `api.SVGFESpecularLightingElement.result`
+  - `api.SVGFESpecularLightingElement.width`
+  - `api.SVGFESpecularLightingElement.x`
+  - `api.SVGFESpecularLightingElement.y`
+  - `api.SVGFETileElement.height`
+  - `api.SVGFETileElement.result`
+  - `api.SVGFETileElement.width`
+  - `api.SVGFETileElement.x`
+  - `api.SVGFETileElement.y`
+  - `api.SVGFETurbulenceElement.height`
+  - `api.SVGFETurbulenceElement.result`
+  - `api.SVGFETurbulenceElement.width`
+  - `api.SVGFETurbulenceElement.x`
+  - `api.SVGFETurbulenceElement.y`
+
+  </details>
+
+- The mixin `api.SVGTests` has been removed and replaced by features representing its exposed interfaces. ([#10691](https://github.com/mdn/browser-compat-data/pull/10691))
+
+  <details>
+
+  <summary>New features ex-<code>api.SVGTests</code></summary>
+
+  - `api.SVGAnimationElement.requiredExtensions`
+  - `api.SVGAnimationElement.systemLanguage`
+  - `api.SVGGraphicsElement.requiredExtensions`
+  - `api.SVGGraphicsElement.systemLanguage`
+
+  </details>
+
+- The mixin `api.GeometryUtils` has been removed and replaced by features representing its exposed interfaces. ([#10721](https://github.com/mdn/browser-compat-data/pull/10721))
+
+  <details>
+
+  <summary>New features ex-<code>api.GeometryUtils</code></summary>
+
+  - `api.Document.getBoxQuads`
+  - `api.Element.getBoxQuads`
+  - `api.Text.getBoxQuads`
+
+  </details>
+
+- `api.FormData.append.AppendWithFilename` has been renamed to `api.FormData.append.filename_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#10695](https://github.com/mdn/browser-compat-data/pull/10695))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.undoManager` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.Element.tabStop` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.HTMLElement.forceSpellCheck` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.PaymentAddress.regionCode` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.RTCPeerConnection.defaultIceServers` ([#10725](https://github.com/mdn/browser-compat-data/pull/10725))
+  - `api.RTCPeerConnection.getDefaultIceServers` ([#10725](https://github.com/mdn/browser-compat-data/pull/10725))
+  - `api.SVGUnknownElement` ([#10685](https://github.com/mdn/browser-compat-data/pull/10685))
+  - `javascript.builtins.AsyncIterator.@@toStringTag` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.asIndexedPairs` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.AsyncIterator` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.drop` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.every` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.filter` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.find` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.flatMap` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.forEach` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.from` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.map` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.reduce` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.some` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.take` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.toArray` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.@@toStringTag` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.asIndexedPairs` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.drop` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.every` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.filter` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.find` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.flatMap` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.forEach` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.from` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.Iterator` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.map` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.reduce` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.some` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.take` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.toArray` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.operators.pipeline` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+
+### Statistics
+
+- 14 contributors have changed 335 files with 7,135 additions and 5,583 deletions in 70 commits ([`v3.3.5...v3.3.6`](https://github.com/mdn/browser-compat-data/compare/v3.3.5...v3.3.6))
+- 13,039 total features
+- 783 total contributors
+- 3,390 total stargazers
+
+## [v3.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.5)
+
+May 27, 2021
+
+### Notable changes
+
+- The following features duplicated subfeatures of `api.DOMTokenList` and have been removed ([#10128](https://github.com/mdn/browser-compat-data/pull/10128)):
+
+  - `api.Element.classList.add_and_remove_multiple_arguments`
+  - `api.Element.classList.replace`
+  - `api.Element.classList.toggle_method_second_argument`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `html.elements.isindex` ([#10551](https://github.com/mdn/browser-compat-data/pull/10551))
+  - `html.elements.listing` ([#10548](https://github.com/mdn/browser-compat-data/pull/10548))
+  - `html.elements.nextid` ([#10550](https://github.com/mdn/browser-compat-data/pull/10550))
+  - `html.elements.video.buffered` ([#10571](https://github.com/mdn/browser-compat-data/pull/10571))
+
+- Several duplicate or erroneous release entries for WebView Android were removed. These covered historic releases and fewer than 20 support statements were changed to reflect the removals. ([#10524](https://github.com/mdn/browser-compat-data/issues/10524))
+
+### Statistics
+
+- 15 contributors have changed 379 files with 953 additions and 2,103 deletions in 50 commits ([`v3.3.4...v3.3.5`](https://github.com/mdn/browser-compat-data/compare/v3.3.4...v3.3.5))
+- 12,993 total features
+- 782 total contributors
+- 3,378 total stargazers
+
+## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
+
+May 20, 2021
+
+### Notable changes
+
+- The [definition of the `experimental` status](https://github.com/mdn/browser-compat-data/blob/main/schemas/compat-data-schema.md#status-information) has been revised to more closely reflect its actual use. For more information on choosing values for `experimental`, see the [the new data guideline for `experimental`](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#choosing-an-experimental-status). ([#9933](https://github.com/mdn/browser-compat-data/pull/9933))
+
+- The schema now permits valid WebGL specification links. ([#10353](https://github.com/mdn/browser-compat-data/pull/10353))
+
+- `api.Navigator.geolocation.hid` has been moved to the correctly nested `api.Navigator.hid`. ([#10291](https://github.com/mdn/browser-compat-data/pull/10291))
+
+- `http.headers.feature-policy.wake-lock` has been moved to the correctly-named `http.headers.feature-policy.screen-wake-lock`. ([#10421](https://github.com/mdn/browser-compat-data/pull/10421))
+
+- The following mixin features have been migrated to their exposed interfaces:
+
+  | Before                          | After                                                                                          |
+  | ------------------------------- | ---------------------------------------------------------------------------------------------- |
+  | `api.ChildNode`                 | (removed)                                                                                      |
+  | `api.ChildNode.before`          | `api.CharacterData.before`<br>`api.DocumentType.before`<br>`api.Element.before`                |
+  | `api.ChildNode.remove`          | `api.CharacterData.remove`<br>`api.DocumentType.remove`<br>`api.Element.remove`                |
+  | `api.ChildNode.replaceWith`     | `api.CharacterData.replaceWith`<br>`api.DocumentType.replaceWith`<br>`api.Element.replaceWith` |
+  | `api.URLUtilsReadOnly`          | (removed)                                                                                      |
+  | `api.URLUtilsReadOnly.hash`     | `api.WorkerLocation.hash`                                                                      |
+  | `api.URLUtilsReadOnly.host`     | `api.WorkerLocation.host`                                                                      |
+  | `api.URLUtilsReadOnly.hostname` | `api.WorkerLocation.hostname`                                                                  |
+  | `api.URLUtilsReadOnly.href`     | `api.WorkerLocation.href`                                                                      |
+  | `api.URLUtilsReadOnly.origin`   | `api.WorkerLocation.origin`                                                                    |
+  | `api.URLUtilsReadOnly.pathname` | `api.WorkerLocation.pathname`                                                                  |
+  | `api.URLUtilsReadOnly.port`     | `api.WorkerLocation.port`                                                                      |
+  | `api.URLUtilsReadOnly.protocol` | `api.WorkerLocation.protocol`                                                                  |
+  | `api.URLUtilsReadOnly.search`   | `api.WorkerLocation.search`                                                                    |
+  | `api.URLUtilsReadOnly.toString` | `api.WorkerLocation.toString`                                                                  |
+
+  For details, see [#10347](https://github.com/mdn/browser-compat-data/pull/10347) and [#10506](https://github.com/mdn/browser-compat-data/pull/10506).
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.BudgetService` ([#10417](https://github.com/mdn/browser-compat-data/pull/10417))
+  - `api.SVGColorProfileElement` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+  - `api.SVGExternalResourcesRequired` ([#10539](https://github.com/mdn/browser-compat-data/pull/10539))
+  - `api.SVGSolidcolorElement` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+  - `api.SVGStylable` ([#10536](https://github.com/mdn/browser-compat-data/pull/10536))
+  - `api.SVGTransformable` [#10354](https://github.com/mdn/browser-compat-data/pull/10354)
+  - `api.SVGURIReference` ([#10522](https://github.com/mdn/browser-compat-data/pull/10522))
+  - `api.TransitionEvent.animationName` ([#10336](https://github.com/mdn/browser-compat-data/pull/10336))
+  - `api.Window.returnValue` ([#10449](https://github.com/mdn/browser-compat-data/pull/10449))
+  - `api.WindowClient.ancestorOrigins` ([#10415](https://github.com/mdn/browser-compat-data/pull/10415))
+  - `css.at-rules.media.prefers-reduced-transparency` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.media.scan` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.media.update` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.page.bleed` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.page.marks` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.page.page-margin-boxes` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `html.elements.multicol` ([#10545](https://github.com/mdn/browser-compat-data/pull/10545))
+  - `svg.attributes.conditional_processing.externalResourcesRequired` ([#10539](https://github.com/mdn/browser-compat-data/pull/10539))
+  - `svg.elements.color-profile` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+  - `svg.elements.solidcolor` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+
+### Statistics
+
+- 18 contributors have changed 361 files with 3,670 additions and 3,690 deletions in 143 commits ([`v3.3.3...v3.3.4`](https://github.com/mdn/browser-compat-data/compare/v3.3.3...v3.3.4))
+- 13,002 total features
+- 777 total contributors
+- 3,369 total stargazers
+
 ## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
 
 May 6, 2021

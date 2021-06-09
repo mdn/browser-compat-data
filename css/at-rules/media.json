@@ -56,7 +56,7 @@
         "any-hover": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/any-hover",
-            "spec_url": "https://drafts.csswg.org/mediaqueries/#descdef-media-any-hover",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#any-input",
             "description": "<code>any-hover</code> media feature",
             "support": {
               "chrome": {
@@ -106,7 +106,7 @@
         "any-pointer": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/any-pointer",
-            "spec_url": "https://drafts.csswg.org/mediaqueries/#descdef-media-any-pointer",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#any-input",
             "description": "<code>any-pointer</code> media feature",
             "support": {
               "chrome": {
@@ -1282,7 +1282,7 @@
         "prefers-color-scheme": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme",
-            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme",
             "description": "<code>prefers-color-scheme</code> media feature",
             "support": {
               "chrome": {
@@ -1388,7 +1388,7 @@
           "__compat": {
             "description": "<code>prefers-contrast</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast",
-            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-contrast",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-contrast",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1444,7 +1444,7 @@
         "prefers-reduced-data": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data",
-            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-reduced-data",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data",
             "description": "<code>prefers-reduced-data</code> media feature",
             "support": {
               "chrome": {
@@ -1519,7 +1519,7 @@
         "prefers-reduced-motion": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion",
-            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-reduced-motion",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion",
             "description": "<code>prefers-reduced-motion</code> media feature",
             "support": {
               "chrome": {
@@ -1968,72 +1968,14 @@
               "edge": {
                 "version_added": "12"
               },
-              "firefox": [
-                {
-                  "version_added": "63",
-                  "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "49",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "45",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    },
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "63",
-                  "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "49",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "45",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    },
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
-                }
-              ],
+              "firefox": {
+                "version_added": "63",
+                "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
+              },
+              "firefox_android": {
+                "version_added": "63",
+                "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -2078,72 +2020,14 @@
               "edge": {
                 "version_added": "12"
               },
-              "firefox": [
-                {
-                  "version_added": "63",
-                  "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "49",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "45",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    },
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "63",
-                  "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "49",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "45",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    },
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
-                }
-              ],
+              "firefox": {
+                "version_added": "63",
+                "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
+              },
+              "firefox_android": {
+                "version_added": "63",
+                "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -2188,72 +2072,14 @@
               "edge": {
                 "version_added": "12"
               },
-              "firefox": [
-                {
-                  "version_added": "63",
-                  "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "49",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "45",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    },
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "63",
-                  "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "49",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
-                },
-                {
-                  "version_added": "45",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    },
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.device-pixel-ratio-webkit",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
-                }
-              ],
+              "firefox": {
+                "version_added": "63",
+                "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
+              },
+              "firefox_android": {
+                "version_added": "63",
+                "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -2356,36 +2182,12 @@
                 "version_added": "12",
                 "version_removed": "79"
               },
-              "firefox": [
-                {
-                  "version_added": "49"
-                },
-                {
-                  "version_added": "46",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "49"
-                },
-                {
-                  "version_added": "46",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": {
+                "version_added": "49"
+              },
               "ie": {
                 "version_added": false
               },

@@ -4,7 +4,7 @@
       "await": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await",
-          "spec_url": "https://tc39.es/ecma262/#sec-async-function-definitions",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-async-function-definitions",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -76,7 +76,7 @@
                 "version_added": "89"
               },
               "edge": {
-                "version_added": false
+                "version_added": "89"
               },
               "firefox": {
                 "version_added": "89"
@@ -103,17 +103,23 @@
                   "notes": "Not supported in CommonJS modules."
                 }
               ],
-              "opera": {
-                "version_added": "73",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-javascript-harmony"
-                  }
-                ]
-              },
+              "opera": [
+                {
+                  "version_added": "75"
+                },
+                {
+                  "version_added": "73",
+                  "version_removed": "75",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-javascript-harmony"
+                    }
+                  ]
+                }
+              ],
               "opera_android": {
-                "version_added": false
+                "version_added": "63"
               },
               "safari": {
                 "version_added": false,
