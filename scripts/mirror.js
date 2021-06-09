@@ -344,7 +344,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
     }
   }
 
-  return newData;
+  return combineStatements(...newData);
 };
 
 /**
