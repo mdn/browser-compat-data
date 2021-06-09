@@ -35,8 +35,7 @@ function includesTrackingBug(statement) {
  */
 function hasSupportHistory(data) {
   return Object.values(data.__compat.support).some(
-    c =>
-      Array.isArray(c) || c.version_added !== false || includesTrackingBug(c),
+    c => Array.isArray(c) || !!c.version_added || includesTrackingBug(c),
   );
 }
 
