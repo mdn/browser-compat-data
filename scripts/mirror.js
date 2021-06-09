@@ -136,9 +136,7 @@ const combineNotes = (notes1, notes2) => {
     }
   }
 
-  newNotes = newNotes.filter((item, pos) => {
-    newNotes.indexOf(item) == pos;
-  });
+  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
 
   if (newNotes.length == 0) {
     return null;
