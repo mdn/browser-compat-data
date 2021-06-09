@@ -216,8 +216,8 @@ const combineStatements = (...data) => {
 
       if (
         compareVersions.compare(
-          currentStatement.version_added,
-          newStatement.version_added,
+          currentStatement.version_added.replace('≤', ''),
+          newStatement.version_added.replace('≤', ''),
           '>',
         )
       )
