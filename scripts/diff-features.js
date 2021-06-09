@@ -46,9 +46,7 @@ function enumerateFeatures(ref = 'HEAD') {
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
-    if (ref !== 'HEAD') {
-      execSync(`git worktree remove ${worktree}`);
-    }
+    execSync(`git worktree remove ${worktree}`);
   }
 }
 
