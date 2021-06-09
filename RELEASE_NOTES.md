@@ -4,6 +4,14 @@
 
 ### Notable changes
 
+- Several extraneous features representing indexed property getters have been removed ([#9464](https://github.com/mdn/browser-compat-data/pull/9464)):
+
+  - `api.CSSNumericArray.CSSNumericValue`
+  - `api.CSSUnparsedValue.CSSUnparsedSegment`
+  - `api.DataTransferItemList.DataTransferItem`
+  - `api.SourceBufferList.SourceBuffer`
+  - `api.TrackDefaultList.TrackDefault`
+
 - The `api.AbstractWorker` mixin has been removed and replaced by features representing its exposed interfaces. ([#10744](https://github.com/mdn/browser-compat-data/pull/10744))
 
   <details>
