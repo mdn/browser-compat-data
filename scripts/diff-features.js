@@ -36,16 +36,18 @@ function main({ ref1, ref2, format }) {
 }
 
 function enumerateFeatures(ref = 'HEAD') {
+  const worktree = `__enumerating__${ref}`;
+
   console.error(`Enumerating features on ${ref}`);
   try {
-    if (ref !== 'HEAD') {
-      execSync(`git checkout --quiet ${ref}`);
-    }
-    execSync(`node ./scripts/enumerate-features.js`);
+    execSync(`git worktree add ${worktree} ${ref}`);
+    execSync(`npm ci`, { cwd: worktree });
+    execSync(`node ./scripts/enumerate-features.js --data-from=${worktree}`);
+
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
     if (ref !== 'HEAD') {
-      execSync(`git switch -`);
+      execSync(`git worktree remove ${worktree}`);
     }
   }
 }
