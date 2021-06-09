@@ -238,9 +238,10 @@ const combineStatements = (...data) => {
 
       let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
       if (newNotes) currentStatement.notes = newNotes;
-      else if ('notes' in currentStatement) delete currentStatement.notes;
     }
 
+    if ('notes' in currentStatement && !currentStatement.notes)
+      delete currentStatement.notes;
     newData.push(currentStatement);
   }
 
@@ -287,7 +288,8 @@ const bumpEdgeFromIE = sourceData => {
     newData.version_added = '12';
   }
 
-  newData.notes = updateNotes(sourceData.notes, /Internet Explorer/g, 'Edge');
+  let newNotes = updateNotes(sourceData.notes, /Internet Explorer/g, 'Edge');
+  if (newNotes) newData.notes = newNotes;
 
   return newData;
 };
@@ -320,7 +322,8 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
     }
   }
 
-  newData.notes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
+  let newNotes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
+  if (newNotes) newData.notes = newNotes;
 
   return newData;
 };
