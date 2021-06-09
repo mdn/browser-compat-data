@@ -144,9 +144,7 @@ const combineNotes = (notes1, notes2) => {
     }
   }
 
-  newNotes = newNotes.filter((item, pos) => {
-    newNotes.indexOf(item) == pos;
-  });
+  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
 
   if (newNotes.length == 0) {
     return null;
@@ -194,6 +192,71 @@ const copyStatement = data => {
 };
 
 /**
+ * @param {...SupportStatement} data
+ * @returns {SupportStatement}
+ */
+const combineStatements = (...data) => {
+  const ignored_keys = ['version_added', 'notes'];
+
+  let flattenedData = data.flat(2);
+  let sections = {};
+  let newData = [];
+
+  for (const d of flattenedData) {
+    let key = Object.keys(d)
+      .filter(k => !ignored_keys.includes(k))
+      .join('');
+    if (!(key in sections)) sections[key] = [];
+    sections[key].push(d);
+  }
+
+  for (const k of Object.keys(sections)) {
+    let currentStatement = sections[k][0];
+
+    if (sections[k].length == 1) {
+      newData.push(currentStatement);
+      continue;
+    }
+
+    for (const i in sections[k]) {
+      if (i == 0) continue;
+      let newStatement = sections[k][i];
+
+      let currentVA = currentStatement.version_added;
+      let newVA = newStatement.version_added;
+
+      if (newVA === false) {
+        // Ignore statements with version_added being false
+        continue;
+      } else if (typeof newVA === 'string') {
+        if (typeof currentVA === 'string') {
+          if (
+            compareVersions.compare(
+              currentVA.replace('≤', ''),
+              newVA.replace('≤', ''),
+              '>',
+            )
+          ) {
+            currentStatement.version_added = newVA;
+          }
+        } else {
+          currentStatement.version_added = currentVA || newVA;
+        }
+      }
+
+      let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      if (newNotes) currentStatement.notes = newNotes;
+    }
+
+    if ('notes' in currentStatement && !currentStatement.notes)
+      delete currentStatement.notes;
+    newData.push(currentStatement);
+  }
+
+  return newData.length === 1 ? newData[0] : newData;
+};
+
+/**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @param {string} source
@@ -224,6 +287,55 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
   return newData;
 };
 
+const bumpEdgeFromIE = sourceData => {
+  let newData = copyStatement(sourceData);
+
+  if (sourceData.version_removed || sourceData.version_added === false) {
+    newData.version_added = false;
+  } else if (sourceData.version_added) {
+    newData.version_added = '12';
+  }
+
+  let newNotes = updateNotes(sourceData.notes, /Internet Explorer/g, 'Edge');
+  if (newNotes) newData.notes = newNotes;
+
+  return newData;
+};
+
+const bumpEdgeFromChrome = (sourceData, originalData) => {
+  let newData = copyStatement(sourceData);
+
+  let chromeFalse =
+    sourceData.version_removed || sourceData.version_added === false;
+  let chromeNull = sourceData.version_added === null;
+
+  if (chromeFalse) {
+    if (originalData.version_added && !originalData.version_removed) {
+      newData.version_removed = '79';
+    }
+  } else if (chromeNull) {
+    newData.version_added = null;
+  } else {
+    if (sourceData.version_added === true) {
+      newData.version_added =
+        originalData.version_added === true ? '≤18' : true;
+    } else if (Number(sourceData.version_added) <= 79) {
+      if (originalData.version_added === false) {
+        newData.version_added = '79';
+      } else if (originalData.version_added === null) {
+        newData.version_added = '≤79';
+      }
+    } else {
+      newData.version_added = sourceData.version_added;
+    }
+  }
+
+  let newNotes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
+  if (newNotes) newData.notes = newNotes;
+
+  return newData;
+};
+
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} chromeData
@@ -231,57 +343,29 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpEdge = (originalData, chromeData, ieData) => {
-  let newData = copyStatement(originalData);
+  if (Array.isArray(originalData)) {
+    return originalData.map(d => bumpEdge(d, chromeData, ieData));
+  }
+
+  let newData = [];
 
   if (ieData) {
-    if (ieData.version_removed || ieData.version_added === false) {
-      newData.version_added = false;
-    } else if (ieData.version_added) {
-      newData.version_added = ieData.version_added ? '12' : null;
-    }
-  }
-
-  let chromeFalse =
-    chromeData.version_added === false ||
-    chromeData.version_removed !== undefined;
-  let chromeNull = chromeData.version_added === null;
-
-  if (!chromeFalse && !chromeNull) {
-    if (originalData.version_added === true) {
-      newData.version_added = '≤18';
-    } else if (chromeData.version_added === true) {
-      newData.version_added = true;
-    } else if (Number(chromeData.version_added) <= 79) {
-      if (
-        originalData.version_added === false ||
-        newData.version_added === false
-      ) {
-        newData.version_added = '79';
-      } else if (originalData.version_added === null) {
-        newData.version_added = '≤79';
-      }
+    if (Array.isArray(ieData)) {
+      newData += ieData.map(d => bumpEdgeFromIE(d));
     } else {
-      newData.version_added = chromeData.version_added;
+      newData.push(bumpEdgeFromIE(ieData));
     }
-  } else if (chromeFalse) {
-    if (originalData.version_added && !originalData.version_removed) {
-      newData.version_removed = '79';
-    }
-  } else if (chromeNull) {
-    newData.version_added = null;
   }
 
-  let newNotes = combineNotes(
-    ieData ? updateNotes(ieData.notes, /Internet Explorer/g, 'Edge') : null,
-    updateNotes(chromeData.notes, /Chrome(?! ?OS)/g, 'Edge'),
-    originalData.notes,
-  );
-
-  if (newNotes) {
-    newData.notes = newNotes;
+  if (chromeData) {
+    if (Array.isArray(chromeData)) {
+      newData += chromeData.map(d => bumpEdgeFromChrome(d, originalData));
+    } else {
+      newData.push(bumpEdgeFromChrome(chromeData, originalData));
+    }
   }
 
-  return newData;
+  return combineStatements(...newData);
 };
 
 /**

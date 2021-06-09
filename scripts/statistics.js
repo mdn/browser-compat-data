@@ -6,6 +6,7 @@
 const chalk = require('chalk');
 
 const bcd = require('..');
+const { getRefDate } = require('./release-utils');
 
 const { argv } = require('yargs').command(
   '$0 [folder]',
@@ -174,11 +175,16 @@ const printStats = (stats, folder) => {
     return;
   }
 
+  let releaseDate = getRefDate('v' + process.env.npm_package_version).slice(
+    0,
+    'YYYY-MM-DD'.length,
+  );
+
   console.log(
     chalk`{bold Status as of version ${
       process.env.npm_package_version
-    } (released on 2020-MM-DD) for ${
-      folder ? `${folder}/ directory` : 'web platform features'
+    } (released on ${releaseDate}) for ${
+      folder ? `the \`${folder}/\` directory` : 'web platform features'
     }}: \n`,
   );
 

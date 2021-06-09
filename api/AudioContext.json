@@ -3,6 +3,7 @@
     "AudioContext": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext",
+        "spec_url": "https://webaudio.github.io/web-audio-api/#AudioContext",
         "support": {
           "chrome": [
             {
@@ -31,7 +32,7 @@
             "version_added": "25"
           },
           "firefox_android": {
-            "version_added": "26"
+            "version_added": "25"
           },
           "ie": {
             "version_added": false
@@ -56,14 +57,26 @@
               "prefix": "webkit"
             }
           ],
-          "safari": {
-            "version_added": "6",
-            "prefix": "webkit"
-          },
-          "safari_ios": {
-            "version_added": "6",
-            "prefix": "webkit"
-          },
+          "safari": [
+            {
+              "version_added": "14.1"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.1",
+              "prefix": "webkit"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "14.5"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.5",
+              "prefix": "webkit"
+            }
+          ],
           "samsunginternet_android": [
             {
               "version_added": "3.0"
@@ -94,6 +107,7 @@
       "AudioContext": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-audiocontext",
           "description": "<code>AudioContext()</code> constructor",
           "support": {
             "chrome": [
@@ -131,7 +145,7 @@
               "version_added": "25"
             },
             "firefox_android": {
-              "version_added": "26"
+              "version_added": "25"
             },
             "ie": {
               "version_added": false
@@ -164,14 +178,24 @@
                 "prefix": "webkit"
               }
             ],
-            "safari": {
-              "version_added": "6.1",
-              "prefix": "webkit"
-            },
-            "safari_ios": {
-              "version_added": "6.1",
-              "prefix": "webkit"
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
             "samsunginternet_android": [
               {
                 "version_added": "3.0",
@@ -307,6 +331,7 @@
       "baseLatency": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-baselatency",
           "support": {
             "chrome": {
               "version_added": "58"
@@ -333,10 +358,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -355,6 +380,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-close",
           "support": {
             "chrome": {
               "version_added": "42"
@@ -403,6 +429,7 @@
       "createMediaElementSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediaelementsource",
           "support": {
             "chrome": {
               "version_added": "14"
@@ -417,7 +444,7 @@
               "version_added": "25"
             },
             "firefox_android": {
-              "version_added": "26"
+              "version_added": "25"
             },
             "ie": {
               "version_added": false
@@ -451,6 +478,7 @@
       "createMediaStreamDestination": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamdestination",
           "support": {
             "chrome": {
               "version_added": "14"
@@ -465,7 +493,7 @@
               "version_added": "25"
             },
             "firefox_android": {
-              "version_added": "26"
+              "version_added": "25"
             },
             "ie": {
               "version_added": false
@@ -499,6 +527,7 @@
       "createMediaStreamSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamsource",
           "support": {
             "chrome": {
               "version_added": "14"
@@ -513,7 +542,7 @@
               "version_added": "25"
             },
             "firefox_android": {
-              "version_added": "26"
+              "version_added": "25"
             },
             "ie": {
               "version_added": false
@@ -547,6 +576,7 @@
       "createMediaStreamTrackSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamtracksource",
           "support": {
             "chrome": {
               "version_added": false
@@ -597,6 +627,7 @@
       "getOutputTimestamp": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-getoutputtimestamp",
           "support": {
             "chrome": {
               "version_added": "57"
@@ -623,10 +654,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -645,6 +676,7 @@
       "outputLatency": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-outputlatency",
           "support": {
             "chrome": {
               "version_added": false
@@ -693,6 +725,7 @@
       "resume": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/resume",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-resume",
           "support": {
             "chrome": {
               "version_added": "41"
@@ -741,6 +774,7 @@
       "suspend": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/suspend",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-suspend",
           "support": {
             "chrome": {
               "version_added": "43"
