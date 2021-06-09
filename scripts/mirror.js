@@ -214,14 +214,27 @@ const combineStatements = (...data) => {
       if (i == 0) continue;
       let newStatement = sections[k][i];
 
-      if (
-        compareVersions.compare(
-          currentStatement.version_added.replace('≤', ''),
-          newStatement.version_added.replace('≤', ''),
-          '>',
-        )
-      )
-        currentStatement.version_added = newStatement.version_added;
+      let currentVA = currentStatement.version_added;
+      let newVA = newStatement.version_added;
+
+      if (newVA === false) {
+        // Ignore statements with version_added being false
+        continue;
+      } else if (typeof newVA === 'string') {
+        if (typeof currentVA === 'string') {
+          if (
+            compareVersions.compare(
+              currentVA.replace('≤', ''),
+              newVA.replace('≤', ''),
+              '>',
+            )
+          ) {
+            currentStatement.version_added = newVA;
+          }
+        } else {
+          currentStatement.version_added = currentVA || newVA;
+        }
+      }
 
       let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
       if (newNotes) currentStatement.notes = newNotes;
