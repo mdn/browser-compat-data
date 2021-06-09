@@ -36,6 +36,8 @@
   - `api.MediaStreamTrack.isolated` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
   - `api.MediaStreamTrack.onisolationchange` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
   - `api.MediaStreamTrack.readonly` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
+  - `api.RTCCertificate.getSupportedAlgorithms` ([#10582](https://github.com/mdn/browser-compat-data/pull/10582))
+  - `api.RTCRemoteOutboundRtpStreamStats.reportsSent` ([#10582](https://github.com/mdn/browser-compat-data/pull/10582))
 
 ## [v3.3.6](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.6)
 
