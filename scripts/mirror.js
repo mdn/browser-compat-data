@@ -244,7 +244,7 @@ const combineStatements = (...data) => {
     newData.push(currentStatement);
   }
 
-  return newData;
+  return newData.length === 1 ? newData[0] : newData;
 };
 
 /**
