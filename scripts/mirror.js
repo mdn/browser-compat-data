@@ -238,6 +238,7 @@ const combineStatements = (...data) => {
 
       let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
       if (newNotes) currentStatement.notes = newNotes;
+      else if ('notes' in currentStatement) delete currentStatement.notes;
     }
 
     newData.push(currentStatement);
@@ -319,7 +320,7 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
     }
   }
 
-  newData.notes = updateNotes(chromeData.notes, /Chrome(?! ?OS)/g, 'Edge');
+  newData.notes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
 
   return newData;
 };
