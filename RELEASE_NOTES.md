@@ -31,6 +31,7 @@
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.GlobalEventHandlers.onsort` ([#10820](https://github.com/mdn/browser-compat-data/pull/10820))
   - `api.MediaStreamTrack.getSources` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
   - `api.MediaStreamTrack.isolated` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
   - `api.MediaStreamTrack.onisolationchange` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
