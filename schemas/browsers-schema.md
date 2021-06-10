@@ -17,6 +17,7 @@ The file `firefox.json` is structured like this:
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "preview_name": "Nightly",
       "pref_url": "about:config",
       "releases": {
         "1.5": {
@@ -39,6 +40,10 @@ Underneath, there is a `releases` object which will hold the various releases of
 ### `name`
 
 The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
+
+### `preview_name`
+
+An optional string containing the name of the preview browser. For example, this is "Nightly" for Firefox, "Canary" for Chrome, and "TP" for Safari.
 
 ### `pref_url`
 

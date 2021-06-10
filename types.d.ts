@@ -46,6 +46,12 @@ export interface BrowserStatement {
   name: string;
 
   /**
+   * The preview browser's name, for example:
+   * `"Nightly"`, `"Canary"`, `"TP"`, etc.
+   */
+  preview_name: string;
+
+  /**
    * The known versions of this browser.
    */
   releases: {
