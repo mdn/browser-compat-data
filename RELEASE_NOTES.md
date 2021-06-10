@@ -59,6 +59,7 @@
   - `api.Request.context` ([#10827](https://github.com/mdn/browser-compat-data/pull/10827))
   - `api.RTCCertificate.getSupportedAlgorithms` ([#10582](https://github.com/mdn/browser-compat-data/pull/10582))
   - `api.RTCRemoteOutboundRtpStreamStats.reportsSent` ([#10582](https://github.com/mdn/browser-compat-data/pull/10582))
+  - `api.SVGSVGElement.viewport` ([#10829](https://github.com/mdn/browser-compat-data/pull/10829))
 
 ## [v3.3.6](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.6)
 
