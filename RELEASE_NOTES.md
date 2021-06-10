@@ -51,6 +51,8 @@
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.Element.currentStyle` ([#10782](https://github.com/mdn/browser-compat-data/pull/10782))
+  - `api.Element.runtimeStyle` ([#10782](https://github.com/mdn/browser-compat-data/pull/10782))
   - `api.GlobalEventHandlers.onsort` ([#10820](https://github.com/mdn/browser-compat-data/pull/10820))
   - `api.MediaStreamTrack.getSources` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
   - `api.MediaStreamTrack.isolated` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
