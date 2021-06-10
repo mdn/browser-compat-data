@@ -2,6 +2,8 @@
 
 ## [v3.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.7)
 
+June 10, 2021
+
 ### Notable changes
 
 - Several extraneous features representing indexed property getters have been removed ([#9464](https://github.com/mdn/browser-compat-data/pull/9464)):
