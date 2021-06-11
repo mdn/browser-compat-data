@@ -2,57 +2,69 @@
 const fs = require('fs');
 const path = require('path');
 
-function load() {
-  // Recursively load one or more directories passed as arguments.
-  let dir,
-    result = {};
+function load(...dirs) {
+  const result = {};
 
-  function processFilename(fn) {
-    const fp = path.join(dir, fn);
-    let extra;
+  // Traverse directories depth-first by maintaining a stack. Reverse the given
+  // dirs so that we pop the first directory first. All subdirectories of that
+  // will be pushed to the stack and popped before the next top-level directory
+  // is popped. Directory paths on the stack are always relative to __dirname.
+  const stack = dirs.reverse();
+  while (stack.length) {
+    const reldir = stack.pop();
+    const absdir = path.resolve(__dirname, reldir);
 
-    if (fs.statSync(fp).isDirectory()) {
-      // If the given filename is a directory, recursively load it.
-      extra = load(fp);
-    } else if (path.extname(fp) === '.json') {
-      try {
-        extra = JSON.parse(fs.readFileSync(fp));
-      } catch (e) {
-        // Skip invalid JSON. Tests will flag the problem separately.
-        return;
+    const entries = fs.readdirSync(absdir, { withFileTypes: true });
+    for (const ent of entries) {
+      const relpath = path.join(reldir, ent.name);
+      if (ent.isDirectory()) {
+        stack.push(relpath);
+      } else if (path.extname(ent.name) === '.json') {
+        const abspath = path.resolve(__dirname, relpath);
+        let data;
+        try {
+          data = JSON.parse(fs.readFileSync(abspath));
+        } catch (e) {
+          // Skip invalid JSON. Tests will flag the problem separately.
+          continue;
+        }
+        // The JSON data is independent of the actual file hierarchy, so merge
+        // objects as they are into the final object.
+        try {
+          extend(result, data);
+        } catch (e) {
+          throw new Error(`While processing ${relpath}: ${e.message}`);
+        }
+      } else {
+        // Skip anything else, such as *~ backup files or similar.
+        continue;
       }
-    } else {
-      // Skip anything else, such as *~ backup files or similar.
-      return;
     }
-
-    // The JSON data is independent of the actual file
-    // hierarchy, so it is essential to extend "deeply".
-    extend(result, extra);
-  }
-
-  for (dir of arguments) {
-    dir = path.resolve(__dirname, dir);
-    fs.readdirSync(dir).forEach(processFilename);
   }
 
   return result;
 }
 
-function isPlainObject(v) {
-  return typeof v === 'object' && v !== null && !Array.isArray(v);
+function type(v) {
+  if (Array.isArray(v)) {
+    return 'array';
+  }
+  if (v === null) {
+    return 'null';
+  }
+  return typeof v;
 }
 
-function extend(target, source) {
-  if (!isPlainObject(target) || !isPlainObject(source)) {
-    throw new Error('Both target and source must be plain objects');
+function extend(target, source, path = null) {
+  if (type(target) !== 'object' || type(source) !== 'object') {
+    throw new Error(`${path} of target/source type ${type(target)}/${type(source)} cannot be extended, both target and source must be plain objects`);
   }
 
   // iterate over own enumerable properties
   for (const [key, value] of Object.entries(source)) {
     // recursively extend if target has the same key, otherwise just assign
     if (Object.prototype.hasOwnProperty.call(target, key)) {
-      extend(target[key], value);
+      extend(target[key], value, path ? `${path}.${key}` : key);
     } else {
       target[key] = value;
     }
