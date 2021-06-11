@@ -352,7 +352,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 
   if (ieData) {
     if (Array.isArray(ieData)) {
-      newData += ieData.map(d => bumpEdgeFromIE(d));
+      newData.concat(ieData.map(d => bumpEdgeFromIE(d)));
     } else {
       newData.push(bumpEdgeFromIE(ieData));
     }
@@ -360,7 +360,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 
   if (chromeData) {
     if (Array.isArray(chromeData)) {
-      newData += chromeData.map(d => bumpEdgeFromChrome(d, originalData));
+      newData.concat(chromeData.map(d => bumpEdgeFromChrome(d, originalData)));
     } else {
       newData.push(bumpEdgeFromChrome(chromeData, originalData));
     }
