@@ -54,6 +54,7 @@ describe('spec_url data', () => {
       'https://mathml-refresh.github.io/mathml/',
       'https://www.w3.org/TR/xpath-31/',
       'https://www.w3.org/TR/xslt-30/',
+      'https://www.w3.org/TR/DOM-Level-2-Style/',
     ];
 
     const allowList = new Set([...specsFromBrowserSpecs, ...specsExceptions]);
