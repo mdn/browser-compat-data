@@ -8,6 +8,8 @@ RELEASE DATE TK
 
 - `api.URL.createObjectURL.no_MediaStream_argument` was replaced by `api.URL.createObjectURL.MediaStream_support` to more clearly represent a deprecated feature. ([#11081](https://github.com/mdn/browser-compat-data/pull/11081))
 
+- `api.Element.attachShadow.delegatesFocus` was renamed to `api.Element.attachShadow.init_delegatesFocus_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#11090](https://github.com/mdn/browser-compat-data/pull/11090))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.PaymentRequest.requestId` ([#11082](https://github.com/mdn/browser-compat-data/pull/11082))
