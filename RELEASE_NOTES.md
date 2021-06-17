@@ -11,6 +11,10 @@ RELEASE DATE TK
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.RTCSessionDescriptionCallback` ([#11057](https://github.com/mdn/browser-compat-data/pull/11057))
+  - `api.SVGElement.abort_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.resize_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.scroll_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.unload_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
 
 ## [v3.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.7)
 
