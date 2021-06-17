@@ -155,8 +155,6 @@ var hasErrors = argv.files
       'mathml',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     );
 hasErrors = testCompareFeatures() || hasErrors;
 hasErrors = testMigrations() || hasErrors;
