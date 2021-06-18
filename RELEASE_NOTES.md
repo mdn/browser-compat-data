@@ -4,6 +4,24 @@
 
 RELEASE DATE TK
 
+### Notable changes
+
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11080](https://github.com/mdn/browser-compat-data/pull/11080)):
+
+  | Before                                                 | After                                                            |
+  | ------------------------------------------------------ | ---------------------------------------------------------------- |
+  | `api.AudioNode.disconnect.destination`                 | `api.AudioNode.disconnect.destination_parameter`                 |
+  | `api.AudioNode.disconnect.input`                       | `api.AudioNode.disconnect.input_parameter`                       |
+  | `api.Document.createElement.options`                   | `api.Document.createElement.options_parameter`                   |
+  | `api.Document.createElementNS.options`                 | `api.Document.createElementNS.options_parameter`                 |
+  | `api.Document.createTreeWalker.expandEntityReferences` | `api.Document.createTreeWalker.expandEntityReferences_parameter` |
+  | `api.Element.scroll.ScrollToOptions`                   | `api.Element.scroll.options_parameter`                           |
+  | `api.Element.scrollBy.ScrollToOptions`                 | `api.Element.scrollBy.options_parameter`                         |
+  | `api.Element.scrollTo.ScrollToOptions`                 | `api.Element.scrollTo.options_parameter`                         |
+  | `api.Window.scroll.ScrollToOptions`                    | `api.Window.scroll.options_parameter`                            |
+  | `api.Window.scrollBy.ScrollToOptions`                  | `api.Window.scrollBy.options_parameter`                          |
+  | `api.Window.scrollTo.ScrollToOptions`                  | `api.Window.scrollTo.options_parameter`                          |
+
 ## [v3.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.8)
 
 June 17, 2021
