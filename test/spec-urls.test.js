@@ -51,7 +51,7 @@ describe('spec_url data', () => {
       'https://github.com/tc39/proposal-regexp-legacy-features/',
       'https://webassembly.github.io/threads/js-api/',
       'https://tc39.es/proposal-hashbang/out.html',
-      'https://mathml-refresh.github.io/mathml/',
+      'https://w3c.github.io/mathml/',
       'https://www.w3.org/TR/xpath-31/',
       'https://www.w3.org/TR/xslt-30/',
     ];
