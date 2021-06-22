@@ -380,11 +380,34 @@
             "chrome_android": {
               "version_added": true
             },
-            "deno": {
-              "version_added": "1.0",
-              "partial_implementation": true,
-              "notes": "The <code>transfer</code> argument is not supported."
-            },
+            "deno": [
+              {
+                "version_added": "1.12",
+                "partial_implementation": true,
+                "notes": [
+                  "The <code>message</code> property does not support cloning <code>SharedArrayBuffer</code> or <code>Blob</code> values.",
+                  "The <code>transfer</code> argument does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+                ]
+              },
+              {
+                "version_added": "1.10",
+                "version_removed": "1.11",
+                "partial_implementation": true,
+                "notes": [
+                  "The <code>message</code> proprety does not support <code>SharedArrayBuffer</code>.",
+                  "The <code>transfer</code> argument is ignored."
+                ]
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "1.10",
+                "partial_implementation": true,
+                "notes": [
+                  "Data passed in the <code>message</code> property is serialized with JSON, not the structured clone algorithm.",
+                  "The <code>transfer</code> argument is ignored."
+                ]
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
