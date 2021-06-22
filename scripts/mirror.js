@@ -52,7 +52,9 @@ const { argv } = require('yargs').command(
  */
 const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
   const browserData = browsers[dest_browser];
-  for (const r in browserData.releases) {
+  const releaseKeys = Object.keys(browserData.releases);
+  releaseKeys.sort(compareVersions);
+  for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
       (release.engine == source_browser_release.engine &&
