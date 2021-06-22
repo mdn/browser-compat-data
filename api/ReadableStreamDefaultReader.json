@@ -11,10 +11,17 @@
           "chrome_android": {
             "version_added": "78"
           },
-          "deno": {
-            "version_added": "1.0",
-            "notes": "This interface was not exposed on the global scope until Deno 1.7."
-          },
+          "deno": [
+            {
+              "version_added": "1.7"
+            },
+            {
+              "version_added": "1.0",
+              "version_removed": "1.7",
+              "partial_implementation": true,
+              "notes": "<code>ReadableStreamDefaultReader</code> is not exposed on the global scope."
+            }
+          ],
           "edge": {
             "version_added": "79"
           },
