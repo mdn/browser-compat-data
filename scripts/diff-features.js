@@ -36,11 +36,20 @@ function main({ ref1, ref2, format }) {
 }
 
 function enumerateFeatures(ref = 'HEAD') {
-  const worktree = `__enumerating__${ref}`;
+  // Get the short hash for this ref.
+  // Most of the time, you check out named references (a branch or a tag).
+  // However, if `ref` is already checked out, then `git worktree add` fails. As
+  // long as you haven't checked out a detached HEAD for `ref`, then
+  // `git worktree add` for the hash succeeds.
+  const hash = execSync(`git rev-parse --short ${ref}`, {
+    encoding: 'utf-8',
+  }).trim();
 
-  console.error(`Enumerating features on ${ref}`);
+  const worktree = `__enumerating__${hash}`;
+
+  console.error(`Enumerating features for ${ref} (${hash})`);
   try {
-    execSync(`git worktree add ${worktree} ${ref}`);
+    execSync(`git worktree add ${worktree} ${hash}`);
     execSync(`npm ci`, { cwd: worktree });
     execSync(`node ./scripts/enumerate-features.js --data-from=${worktree}`);
 
