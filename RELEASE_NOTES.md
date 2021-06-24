@@ -8,21 +8,37 @@ RELEASE DATE TK
 
 - Safari for iOS 4.3 has been removed from the data set, since it represented the same browser as Safari for iOS 4.2. The small number of entries that referenced Safari for iOS 4.3 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11174))
 
-- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11080](https://github.com/mdn/browser-compat-data/pull/11080)):
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11080](https://github.com/mdn/browser-compat-data/pull/11080), [#10700](https://github.com/mdn/browser-compat-data/pull/10700)):
 
-  | Before                                                 | After                                                            |
-  | ------------------------------------------------------ | ---------------------------------------------------------------- |
-  | `api.AudioNode.disconnect.destination`                 | `api.AudioNode.disconnect.destination_parameter`                 |
-  | `api.AudioNode.disconnect.input`                       | `api.AudioNode.disconnect.input_parameter`                       |
-  | `api.Document.createElement.options`                   | `api.Document.createElement.options_parameter`                   |
-  | `api.Document.createElementNS.options`                 | `api.Document.createElementNS.options_parameter`                 |
-  | `api.Document.createTreeWalker.expandEntityReferences` | `api.Document.createTreeWalker.expandEntityReferences_parameter` |
-  | `api.Element.scroll.ScrollToOptions`                   | `api.Element.scroll.options_parameter`                           |
-  | `api.Element.scrollBy.ScrollToOptions`                 | `api.Element.scrollBy.options_parameter`                         |
-  | `api.Element.scrollTo.ScrollToOptions`                 | `api.Element.scrollTo.options_parameter`                         |
-  | `api.Window.scroll.ScrollToOptions`                    | `api.Window.scroll.options_parameter`                            |
-  | `api.Window.scrollBy.ScrollToOptions`                  | `api.Window.scrollBy.options_parameter`                          |
-  | `api.Window.scrollTo.ScrollToOptions`                  | `api.Window.scrollTo.options_parameter`                          |
+  | Removed                                                                                 | Added                                                                                    |
+  | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+  | `api.AudioNode.disconnect.destination`                                                  | `api.AudioNode.disconnect.destination_parameter`                                         |
+  | `api.AudioNode.disconnect.input`                                                        | `api.AudioNode.disconnect.input_parameter`                                               |
+  | `api.Document.createElement.options`                                                    | `api.Document.createElement.options_parameter`                                           |
+  | `api.Document.createElementNS.options`                                                  | `api.Document.createElementNS.options_parameter`                                         |
+  | `api.Document.createTreeWalker.expandEntityReferences`                                  | `api.Document.createTreeWalker.expandEntityReferences_parameter`                         |
+  | `api.DOMTokenList.add.add_multiple_arguments`                                           | `api.DOMTokenList.add.multiple_parameters`                                               |
+  | `api.DOMTokenList.remove.remove_multiple_arguments`                                     | `api.DOMTokenList.remove.multiple_parameters`                                            |
+  | `api.DOMTokenList.toggle.force_argument`                                                | `api.DOMTokenList.toggle.force_parameter`                                                |
+  | `api.Element.scroll.ScrollToOptions`                                                    | `api.Element.scroll.options_parameter`                                                   |
+  | `api.Element.scrollBy.ScrollToOptions`                                                  | `api.Element.scrollBy.options_parameter`                                                 |
+  | `api.Element.scrollTo.ScrollToOptions`                                                  | `api.Element.scrollTo.options_parameter`                                                 |
+  | `api.HTMLTableRowElement.insertCell.negative_one_index_argument`                        | `api.HTMLTableRowElement.insertCell.negative_one_index_parameter`                        |
+  | `api.RTCPeerConnection.getStats.MediaStreamTrack_argument`                              | `api.RTCPeerConnection.getStats.selector_parameter`                                      |
+  | `api.Window.postMessage.transfer_argument_support`                                      | `api.Window.postMessage.transfer_parameter`                                              |
+  | `api.Window.scroll.ScrollToOptions`                                                     | `api.Window.scroll.options_parameter`                                                    |
+  | `api.Window.scrollBy.ScrollToOptions`                                                   | `api.Window.scrollBy.options_parameter`                                                  |
+  | `api.Window.scrollTo.ScrollToOptions`                                                   | `api.Window.scrollTo.options_parameter`                                                  |
+  | `javascript.builtins.Float32Array.Float32Array.constructor_without_arguments`           | `javascript.builtins.Float32Array.Float32Array.constructor_without_parameters`           |
+  | `javascript.builtins.Float64Array.Float64Array.constructor_without_arguments`           | `javascript.builtins.Float64Array.Float64Array.constructor_without_parameters`           |
+  | `javascript.builtins.Int16Array.Int16Array.constructor_without_arguments`               | `javascript.builtins.Int16Array.Int16Array.constructor_without_parameters`               |
+  | `javascript.builtins.Int32Array.Int32Array.constructor_without_arguments`               | `javascript.builtins.Int32Array.Int32Array.constructor_without_parameters`               |
+  | `javascript.builtins.Int8Array.Int8Array.constructor_without_arguments`                 | `javascript.builtins.Int8Array.Int8Array.constructor_without_parameters`                 |
+  | `javascript.builtins.TypedArray.constructor_without_arguments`                          | `javascript.builtins.TypedArray.constructor_without_parameters`                          |
+  | `javascript.builtins.Uint16Array.Uint16Array.constructor_without_arguments`             | `javascript.builtins.Uint16Array.Uint16Array.constructor_without_parameters`             |
+  | `javascript.builtins.Uint32Array.Uint32Array.constructor_without_arguments`             | `javascript.builtins.Uint32Array.Uint32Array.constructor_without_parameters`             |
+  | `javascript.builtins.Uint8Array.Uint8Array.constructor_without_arguments`               | `javascript.builtins.Uint8Array.Uint8Array.constructor_without_parameters`               |
+  | `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.constructor_without_arguments` | `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.constructor_without_parameters` |
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
