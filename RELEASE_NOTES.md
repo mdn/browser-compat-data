@@ -6,6 +6,8 @@ RELEASE DATE TK
 
 ### Notable changes
 
+- Safari for iOS 4.3 has been removed from the data set, since it represented the same browser as Safari for iOS 4.2. The small number of entries that referenced Safari for iOS 4.3 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11174))
+
 - The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11080](https://github.com/mdn/browser-compat-data/pull/11080)):
 
   | Before                                                 | After                                                            |
