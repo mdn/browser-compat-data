@@ -22,11 +22,21 @@ RELEASE DATE TK
   | `api.Window.scrollBy.ScrollToOptions`                  | `api.Window.scrollBy.options_parameter`                          |
   | `api.Window.scrollTo.ScrollToOptions`                  | `api.Window.scrollTo.options_parameter`                          |
 
-- The following non-existent, long-removed, or otherwise irrelevant features have been removed ([#10774](https://github.com/mdn/browser-compat-data/pull/10774)):
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
-  - `api.FetchEvent.client`
-  - `api.FetchEvent.navigationPreload`
-  - `api.FetchEvent.targetClientId`
+  - `api.FetchEvent.client` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.FetchEvent.navigationPreload` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.FetchEvent.targetClientId` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.RTCIdentityErrorEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCIdentityEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.identityresult_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.idpassertionerror_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.idpvalidationerror_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidentityresult` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidpassertionerror` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidpvalidationerror` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onpeeridentity` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.peeridentity_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
 
 ## [v3.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.8)
 
