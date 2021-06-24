@@ -29,6 +29,7 @@ RELEASE DATE TK
   - `api.FetchEvent.client` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
   - `api.FetchEvent.navigationPreload` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
   - `api.FetchEvent.targetClientId` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.Navigator.registerContentHandler` ([#11229](https://github.com/mdn/browser-compat-data/pull/11229))
   - `api.RTCIdentityErrorEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
   - `api.RTCIdentityEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
   - `api.RTCPeerConnection.identityresult_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
