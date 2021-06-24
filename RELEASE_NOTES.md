@@ -22,6 +22,12 @@ RELEASE DATE TK
   | `api.Window.scrollBy.ScrollToOptions`                  | `api.Window.scrollBy.options_parameter`                          |
   | `api.Window.scrollTo.ScrollToOptions`                  | `api.Window.scrollTo.options_parameter`                          |
 
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed ([#10774](https://github.com/mdn/browser-compat-data/pull/10774)):
+
+  - `api.FetchEvent.client`
+  - `api.FetchEvent.navigationPreload`
+  - `api.FetchEvent.targetClientId`
+
 ## [v3.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.8)
 
 June 17, 2021
