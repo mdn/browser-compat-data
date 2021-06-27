@@ -367,6 +367,8 @@
       },
       "all": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/all",
+          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-all",
           "support": {
             "chrome": [
               {
@@ -930,14 +932,28 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1",
-              "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "notes": "The <code>body</code> property was implemented on the <code>HTMLDocument</code> interface in Firefox for a long time, hence <code>document.body</code> would not return the <code>&lt;body&gt;</code> element if the document's <code>Content-Type</code> was not set to <code>text/html</code> or <code>application/xhtml+xml</code> (or if it came from <code>DOMParser.parseFromString</code> without the <code>text/html</code> type being used). This has been fixed in Firefox 60."
-            },
+            "firefox": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "60",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "60"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "60",
+                "partial_implementation": true,
+                "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
+              }
+            ],
             "ie": {
               "version_added": "4"
             },
@@ -1671,6 +1687,7 @@
       "cookie": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/cookie",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-document-cookie",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2122,7 +2139,7 @@
             "deprecated": false
           }
         },
-        "options": {
+        "options_parameter": {
           "__compat": {
             "description": "<code>options</code> parameter",
             "support": {
@@ -2229,7 +2246,7 @@
             "deprecated": false
           }
         },
-        "options": {
+        "options_parameter": {
           "__compat": {
             "description": "<code>options</code> parameter",
             "support": {
@@ -2265,10 +2282,10 @@
                 "notes": "For backwards compatibility, the <code>options</code> argument can be an object or a string with the custom element tag name, although the string version is deprecated."
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
                 "version_added": "6.0",
@@ -2398,6 +2415,7 @@
       "createExpression": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/createExpression",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-xpathevaluatorbase-createexpression",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2433,7 +2451,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -2531,7 +2549,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -2848,7 +2866,7 @@
             "deprecated": false
           }
         },
-        "expandEntityReferences": {
+        "expandEntityReferences_parameter": {
           "__compat": {
             "description": "<code>expandEntityReferences</code> parameter",
             "support": {
@@ -4218,7 +4236,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4243,11 +4261,17 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>."
+              "notes": [
+                "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>.",
+                "Before Firefox 89, manipulating the content of <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements using <code>Document.execCommand()</code> commands requires workarounds (see <a href='https://bugzil.la/1220696'>bug 1220696</a>)."
+              ]
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>."
+              "notes": [
+                "From Firefox 82, nested calls are not supported (return <code>false</code>). See <a href='https://bugzil.la/1634262'>bug 1634262</a>.",
+                "Before Firefox 89, manipulating the content of <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements using <code>Document.execCommand()</code> commands requires workarounds (see <a href='https://bugzil.la/1220696'>bug 1220696</a>)."
+              ]
             },
             "ie": {
               "version_added": "4"
@@ -4691,7 +4715,7 @@
                 "version_added": null
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
                 "version_added": false
@@ -4861,62 +4885,12 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/featurePolicy",
           "support": {
-            "chrome": [
-              {
-                "version_added": "74"
-              },
-              {
-                "version_added": "73",
-                "version_removed": "74",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "69",
-                "version_removed": "73",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "74"
-              },
-              {
-                "version_added": "73",
-                "version_removed": "74",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "69",
-                "version_removed": "73",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": {
+              "version_added": "74"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -4958,44 +4932,11 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "60",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "56",
-                "version_removed": "60",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": "62"
+            },
             "opera_android": {
-              "version_added": "48",
-              "alternative_name": "policy",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-productivity-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "53"
             },
             "safari": {
               "version_added": false
@@ -5432,6 +5373,7 @@
         "__compat": {
           "description": "<code>fullscreenchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenchange",
           "support": {
             "chrome": [
               {
@@ -5600,6 +5542,7 @@
         "__compat": {
           "description": "<code>fullscreenerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenerror",
           "support": {
             "chrome": [
               {
@@ -6011,7 +5954,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -6110,7 +6053,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -6361,7 +6304,7 @@
               "version_added": "12.1"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -8250,7 +8193,7 @@
                 "version_added": "58"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": "22"
@@ -9210,6 +9153,56 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pointerrawupdate_event": {
+        "__compat": {
+          "description": "<code>pointerrawupdate</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerrawupdate_event",
+          "spec_url": "https://w3c.github.io/pointerevents/#the-pointerrawupdate-event",
+          "support": {
+            "chrome": {
+              "version_added": "77"
+            },
+            "chrome_android": {
+              "version_added": "77"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "64"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "12.0"
+            },
+            "webview_android": {
+              "version_added": "77"
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -11246,54 +11239,6 @@
           }
         }
       },
-      "undoManager": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/undoManager",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "visibilitychange_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event",
@@ -11484,7 +11429,7 @@
               }
             ],
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -11543,7 +11488,7 @@
                 "version_added": null
               },
               "safari": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "safari_ios": {
                 "version_added": "7"

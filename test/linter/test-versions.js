@@ -83,27 +83,21 @@ function isValidVersion(browser, category, version) {
 
 /**
  * @param {SimpleSupportStatement} statement
- * @returns {boolean}
+ * @returns {boolean|null}
  */
-function removedAfterAdded(statement) {
-  const { version_added, version_removed } = statement;
+function addedBeforeRemoved(statement) {
+  // In order to ensure that the versions could be displayed without the "≤"
+  // markers and still make sense, compare the versions without them. This
+  // means that combinations like version_added: "≤37" + version_removed: "37"
+  // are not allowed, even though this can be technically correct.
+  const added = statement.version_added.replace('≤', '');
+  const removed = statement.version_removed.replace('≤', '');
 
-  if (
-    !(
-      compareVersions.validate(version_added.replace('≤', '')) &&
-      compareVersions.validate(version_removed.replace('≤', ''))
-    )
-  ) {
+  if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
     return null;
   }
 
-  return compareVersions.compare(
-    version_added.startsWith('≤')
-      ? '0' // 0 was chosen as it's a number lower than any possible browser version
-      : version_added,
-    version_removed.replace('≤', ''),
-    '>=',
-  );
+  return compareVersions.compare(added, removed, '<');
 }
 
 /**
@@ -180,22 +174,7 @@ function checkVersions(supportData, category, relPath, logger) {
                 typeof statement.version_added === 'string' &&
                 typeof statement.version_removed === 'string'
               ) {
-                if (
-                  (statement.version_added.startsWith('≤') &&
-                    statement.version_removed.startsWith('≤') &&
-                    compareVersions.compare(
-                      statement.version_added.replace('≤', ''),
-                      statement.version_removed.replace('≤', ''),
-                      '<',
-                    )) ||
-                  ((!statement.version_added.startsWith('≤') ||
-                    !statement.version_removed.startsWith('≤')) &&
-                    compareVersions.compare(
-                      statement.version_added.replace('≤', ''),
-                      statement.version_removed.replace('≤', ''),
-                      '>=',
-                    ))
-                ) {
+                if (addedBeforeRemoved(statement) === false) {
                   logger.error(
                     chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
                   );
