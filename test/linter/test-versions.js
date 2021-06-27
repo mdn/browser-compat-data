@@ -158,28 +158,12 @@ function checkVersions(supportData, category, relPath, logger) {
               );
             } else if (
               typeof statement.version_added === 'string' &&
-              typeof statement.version_removed === 'string'
+              typeof statement.version_removed === 'string' &&
+              addedBeforeRemoved(statement) === false
             ) {
-              if (removedAfterAdded(statement)) {
-                logger.error(
-                  chalk`{red → {bold ${relPath}} - {bold version_added: "${
-                    statement.version_added
-                  }"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${
-                    blockList[category].includes(browser)
-                      ? validBrowserVersions[browser].join(', ')
-                      : `true, ${validBrowserVersions[browser].join(', ')}`
-                  }}`,
-                );
-              } else if (
-                typeof statement.version_added === 'string' &&
-                typeof statement.version_removed === 'string'
-              ) {
-                if (addedBeforeRemoved(statement) === false) {
-                  logger.error(
-                    chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
-                  );
-                }
-              }
+              logger.error(
+                chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
+              );
             }
             if ('flags' in statement) {
               if (FLAGLESS_BROWSERS.includes(browser)) {
