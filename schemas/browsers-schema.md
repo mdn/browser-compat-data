@@ -79,6 +79,8 @@ The release objects consist of the following properties:
 
 - An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
 
+- An optional `safari_version` property used only for Safari iOS, which is the version of the corresponding Safari release. This is used to make the non-trivial mapping between the two available to scripts.
+
 ### Exports
 
 This structure is exported for consumers of `@mdn/browser-compat-data`:
