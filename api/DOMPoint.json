@@ -5,15 +5,42 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMPoint",
         "spec_url": "https://drafts.fxtf.org/geometry/#DOMPoint",
         "support": {
-          "chrome": {
-            "version_added": "61"
-          },
-          "chrome_android": {
-            "version_added": "61"
-          },
-          "edge": {
-            "version_added": "79"
-          },
+          "chrome": [
+            {
+              "version_added": "61"
+            },
+            {
+              "version_added": "2",
+              "version_removed": "39",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "61"
+            },
+            {
+              "version_added": "18",
+              "version_removed": "39",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "edge": [
+            {
+              "version_added": "79"
+            },
+            {
+              "version_added": "12",
+              "version_removed": "79",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
           "firefox": {
             "version_added": "31"
           },
@@ -23,24 +50,76 @@
           "ie": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "48"
-          },
-          "opera_android": {
-            "version_added": "45"
-          },
-          "safari": {
-            "version_added": "10.1"
-          },
-          "safari_ios": {
-            "version_added": "10.3"
-          },
-          "samsunginternet_android": {
-            "version_added": "8.0"
-          },
-          "webview_android": {
-            "version_added": "61"
-          }
+          "opera": [
+            {
+              "version_added": "48"
+            },
+            {
+              "version_added": "15",
+              "version_removed": "26",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "45"
+            },
+            {
+              "version_added": "15",
+              "version_removed": "26",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "safari": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "version_added": "4",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "10.3"
+            },
+            {
+              "version_added": "3.2",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "samsunginternet_android": [
+            {
+              "version_added": "8.0"
+            },
+            {
+              "version_added": "1.0",
+              "version_removed": "4.0",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ],
+          "webview_android": [
+            {
+              "version_added": "61"
+            },
+            {
+              "version_added": "≤39",
+              "version_removed": "39",
+              "partial_implementation": true,
+              "alternative_name": "WebKitPoint",
+              "notes": "<code>WebKitPoint</code> only supports 2D positioning using <code>x</code> and <code>y</code>."
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -249,15 +328,33 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMPoint/x",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dompointreadonly-x",
           "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "2",
+                "version_removed": "39"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "39"
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": "31"
             },
@@ -267,24 +364,48 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
+            "opera": [
+              {
+                "version_added": "48"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "26"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "45"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "26"
+              }
+            ],
             "safari": {
-              "version_added": "10.1"
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": "3.2"
             },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "8.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "4.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "≤37",
+                "version_removed": "39"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -298,15 +419,33 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMPoint/y",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dompointreadonly-y",
           "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "2",
+                "version_removed": "39"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "39"
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": "31"
             },
@@ -316,24 +455,48 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
+            "opera": [
+              {
+                "version_added": "48"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "26"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "45"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "26"
+              }
+            ],
             "safari": {
-              "version_added": "10.1"
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": "3.2"
             },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "8.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "4.0"
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "≤37",
+                "version_removed": "39"
+              }
+            ]
           },
           "status": {
             "experimental": false,
