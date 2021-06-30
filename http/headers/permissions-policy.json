@@ -1,20 +1,41 @@
 {
   "http": {
     "headers": {
-      "Feature-Policy": {
+      "Permissions-Policy": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy",
           "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#permissions-policy-http-header-field",
           "support": {
-            "chrome": {
-              "version_added": "60"
-            },
-            "chrome_android": {
-              "version_added": "60"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome": [
+              {
+                "version_added": "88"
+              },
+              {
+                "alternative_name": "Feature-Policy",
+                "version_added": "60",
+                "version_removed": "87"
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "88"
+              },
+              {
+                "alternative_name": "Feature-Policy",
+                "version_added": "60",
+                "version_removed": "87"
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "88"
+              },
+              {
+                "alternative_name": "Feature-Policy",
+                "version_added": "79",
+                "version_removed": "87"
+              }
+            ],
             "firefox": {
               "version_added": "65",
               "flags": [
@@ -69,7 +90,7 @@
         },
         "accelerometer": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/accelerometer",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/accelerometer",
             "spec_url": "https://w3c.github.io/permissions/#accelerometer",
             "support": {
               "chrome": {
@@ -118,7 +139,7 @@
         },
         "ambient-light-sensor": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/ambient-light-sensor",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/ambient-light-sensor",
             "spec_url": "https://w3c.github.io/permissions/#ambient-light-sensor",
             "support": {
               "chrome": {
@@ -167,7 +188,7 @@
         },
         "autoplay": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/autoplay",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/autoplay",
             "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#autoplay-feature",
             "support": {
               "chrome": {
@@ -230,7 +251,7 @@
         },
         "battery": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/battery",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/battery",
             "spec_url": "https://w3c.github.io/battery/#permissions-policy-integration",
             "support": {
               "chrome": {
@@ -282,7 +303,7 @@
         },
         "camera": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/camera",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/camera",
             "spec_url": "https://w3c.github.io/permissions/#media-devices",
             "support": {
               "chrome": {
@@ -345,7 +366,7 @@
         },
         "display-capture": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/display-capture",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/display-capture",
             "spec_url": [
               "https://w3c.github.io/mediacapture-screen-share/#permissions-policy-integration",
               "https://w3c.github.io/permissions/#screen-capture"
@@ -411,7 +432,7 @@
         },
         "document-domain": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/document-domain",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/document-domain",
             "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#document-domain-feature",
             "support": {
               "chrome": {
@@ -474,7 +495,7 @@
         },
         "encrypted-media": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/encrypted-media",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/encrypted-media",
             "spec_url": "https://w3c.github.io/encrypted-media/#permissions-policy-integration",
             "support": {
               "chrome": {
@@ -537,7 +558,7 @@
         },
         "fullscreen": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/fullscreen",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/fullscreen",
             "spec_url": "https://fullscreen.spec.whatwg.org/#permissions-policy-integration",
             "support": {
               "chrome": {
@@ -601,7 +622,7 @@
         },
         "geolocation": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/geolocation",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/geolocation",
             "spec_url": "https://w3c.github.io/permissions/#geolocation",
             "support": {
               "chrome": {
@@ -664,7 +685,7 @@
         },
         "gyroscope": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/gyroscope",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/gyroscope",
             "spec_url": "https://w3c.github.io/permissions/#gyroscope",
             "support": {
               "chrome": {
@@ -713,7 +734,7 @@
         },
         "layout-animations": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/layout-animations",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/layout-animations",
             "support": {
               "chrome": {
                 "version_added": false
@@ -761,7 +782,7 @@
         },
         "legacy-image-formats": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/legacy-image-formats",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/legacy-image-formats",
             "support": {
               "chrome": {
                 "version_added": false
@@ -809,7 +830,7 @@
         },
         "magnetometer": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/magnetometer",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/magnetometer",
             "spec_url": "https://w3c.github.io/permissions/#magnetometer",
             "support": {
               "chrome": {
@@ -858,7 +879,7 @@
         },
         "microphone": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/microphone",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/microphone",
             "spec_url": "https://w3c.github.io/permissions/#media-devices",
             "support": {
               "chrome": {
@@ -921,7 +942,7 @@
         },
         "midi": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/midi",
             "spec_url": "https://w3c.github.io/permissions/#midi",
             "support": {
               "chrome": {
@@ -984,7 +1005,7 @@
         },
         "oversized-images": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/oversized-images",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/oversized-images",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1032,7 +1053,7 @@
         },
         "payment": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/payment",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/payment",
             "spec_url": "https://w3c.github.io/payment-request/#permissions-policy",
             "support": {
               "chrome": {
@@ -1095,7 +1116,7 @@
         },
         "picture-in-picture": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/picture-in-picture",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/picture-in-picture",
             "spec_url": "https://w3c.github.io/picture-in-picture/#feature-policy",
             "support": {
               "chrome": {
@@ -1144,7 +1165,7 @@
         },
         "publickey-credentials-get": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/publickey-credentials-get",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/publickey-credentials-get",
             "spec_url": "https://w3c.github.io/webauthn/#sctn-permissions-policy",
             "support": {
               "chrome": {
@@ -1193,7 +1214,7 @@
         },
         "screen-wake-lock": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/screen-wake-lock",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/screen-wake-lock",
             "spec_url": "https://w3c.github.io/screen-wake-lock/#policy-control",
             "support": {
               "chrome": {
@@ -1242,7 +1263,7 @@
         },
         "sync-xhr": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/sync-xhr",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/sync-xhr",
             "support": {
               "chrome": {
                 "version_added": "65"
@@ -1290,7 +1311,7 @@
         },
         "unoptimized-images": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/unoptimized-images",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/unoptimized-images",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1338,7 +1359,7 @@
         },
         "unsized-media": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/unsized-media",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/unsized-media",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1386,7 +1407,7 @@
         },
         "usb": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/usb",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/usb",
             "spec_url": "https://wicg.github.io/webusb/#permissions-policy",
             "support": {
               "chrome": {
@@ -1435,7 +1456,7 @@
         },
         "vibrate": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vibrate",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/vibrate",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1483,7 +1504,7 @@
         },
         "vr": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vr",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/vr",
             "support": {
               "chrome": {
                 "version_added": "62",
@@ -1543,7 +1564,7 @@
         },
         "web-share": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/web-share",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/web-share",
             "spec_url": "https://w3c.github.io/web-share/#permissions-policy",
             "support": {
               "chrome": {
@@ -1608,7 +1629,7 @@
         },
         "xr-spatial-tracking": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/xr-spatial-tracking",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/xr-spatial-tracking",
             "spec_url": "https://immersive-web.github.io/webxr/#permissions-policy",
             "support": {
               "chrome": {
