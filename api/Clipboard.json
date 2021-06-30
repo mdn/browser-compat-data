@@ -92,7 +92,19 @@
             },
             "firefox": [
               {
+                "version_added": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.read",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              },
+              {
                 "version_added": "87",
+                "version_removed": "90",
                 "flags": [
                   {
                     "type": "preference",
@@ -121,7 +133,19 @@
             ],
             "firefox_android": [
               {
+                "version_added": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.read",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              },
+              {
                 "version_added": "87",
+                "version_removed": "90",
                 "flags": [
                   {
                     "type": "preference",

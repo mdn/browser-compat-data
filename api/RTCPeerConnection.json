@@ -1613,9 +1613,9 @@
             "deprecated": false
           }
         },
-        "MediaStreamTrack_argument": {
+        "selector_parameter": {
           "__compat": {
-            "description": "Optional <code>MediaStreamTrack</code> argument",
+            "description": "<code>selector</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "67"
@@ -1783,6 +1783,7 @@
       },
       "getTransceivers": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getTransceivers",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -2054,106 +2055,6 @@
           }
         }
       },
-      "identityresult_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/identityresult_event",
-          "description": "<code>identityresult</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "idpassertionerror_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/idpassertionerror_event",
-          "description": "<code>idpassertionerror</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
       "idpLoginUrl": {
         "__compat": {
           "support": {
@@ -2198,56 +2099,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "idpvalidationerror_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/idpvalidationerror_event",
-          "description": "<code>idpvalidationerror</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
@@ -2778,195 +2629,6 @@
           }
         }
       },
-      "onidentityresult": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidentityresult",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onidpassertionerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpassertionerror",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onidpvalidationerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpvalidationerror",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "onnegotiationneeded": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onnegotiationneeded",
@@ -3027,69 +2689,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "onpeeridentity": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onpeeridentity",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -3344,56 +2943,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "peeridentity_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/peeridentity_event",
-          "description": "<code>peeridentity</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
