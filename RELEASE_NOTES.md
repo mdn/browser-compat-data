@@ -32,6 +32,7 @@ RELEASE DATE TK
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.RTCIceCandidateType` ([#11061](https://github.com/mdn/browser-compat-data/pull/11061))
+  - `api.RTCIceComponent` ([#11062](https://github.com/mdn/browser-compat-data/pull/11062))
 
 ## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
 
