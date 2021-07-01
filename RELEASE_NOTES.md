@@ -37,6 +37,7 @@ RELEASE DATE TK
   - `api.GlobalEventHandlers.onpointerlockerror` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
   - `api.Node.getUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
   - `api.Node.setUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.RequestDestination` ([#11323](https://github.com/mdn/browser-compat-data/pull/11323))
   - `api.RTCIceCandidateType` ([#11061](https://github.com/mdn/browser-compat-data/pull/11061))
   - `api.RTCIceComponent` ([#11062](https://github.com/mdn/browser-compat-data/pull/11062))
   - `api.UserDataHandler.handle` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
