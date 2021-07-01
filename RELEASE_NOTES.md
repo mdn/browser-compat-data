@@ -6,6 +6,8 @@ RELEASE DATE TK
 
 ### Notable changes
 
+- Safari 3.2 has been removed from the data set, since it represented the same browser capabilities as Safari 3.1. The small number of entries that referenced Safari 3.2 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11266))
+
 - The `api.Body` mixin has been removed and replaced by features representing its exposed interfaces. ([#10958](https://github.com/mdn/browser-compat-data/pull/10958))
 
   <details>
