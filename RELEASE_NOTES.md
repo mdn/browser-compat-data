@@ -33,6 +33,8 @@ RELEASE DATE TK
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.GlobalEventHandlers.onpointerlockchange` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
+  - `api.GlobalEventHandlers.onpointerlockerror` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
   - `api.Node.getUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
   - `api.Node.setUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
   - `api.RTCIceCandidateType` ([#11061](https://github.com/mdn/browser-compat-data/pull/11061))
