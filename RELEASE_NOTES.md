@@ -31,7 +31,7 @@ RELEASE DATE TK
 
   </details>
 
-- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features): ([#11328](https://github.com/mdn/browser-compat-data/pull/11328), [#11334](https://github.com/mdn/browser-compat-data/pull/11334))
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11328](https://github.com/mdn/browser-compat-data/pull/11328), [#11334](https://github.com/mdn/browser-compat-data/pull/11334)):
 
   | Before                                       | After                                                   |
   | -------------------------------------------- | ------------------------------------------------------- |
@@ -52,7 +52,7 @@ RELEASE DATE TK
   - `api.UserDataHandler.handle` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
   - `api.UserDataHandler` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
 
-- Several features duplicating `api.PointerEvents.pointerType.fractional_coordinates` were removed: ([#11317](https://github.com/mdn/browser-compat-data/pull/11317))
+- Several features duplicating `api.PointerEvents.pointerType.fractional_coordinates` were removed ([#11317](https://github.com/mdn/browser-compat-data/pull/11317)):
 
   - `api.MouseEvent.MouseEvent.long_to_double`
   - `api.MouseEvent.clientX.long_to_double`
