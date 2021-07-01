@@ -4,6 +4,31 @@
 
 RELEASE DATE TK
 
+### Notable changes
+
+- The `api.Body` mixin has been removed and replaced by features representing its exposed interfaces. ([#10958](https://github.com/mdn/browser-compat-data/pull/10958))
+
+  <details>
+
+  <summary>New features ex-<code>Body</code></summary>
+
+  - `api.Request.arrayBuffer`
+  - `api.Request.blob`
+  - `api.Request.body`
+  - `api.Request.bodyUsed`
+  - `api.Request.formData`
+  - `api.Request.json`
+  - `api.Request.text`
+  - `api.Response.arrayBuffer`
+  - `api.Response.blob`
+  - `api.Response.body`
+  - `api.Response.bodyUsed`
+  - `api.Response.formData`
+  - `api.Response.json`
+  - `api.Response.text`
+
+  </details>
+
 ## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
 
 June 24, 2021
