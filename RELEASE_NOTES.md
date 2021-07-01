@@ -42,6 +42,18 @@ RELEASE DATE TK
   - `api.UserDataHandler.handle` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
   - `api.UserDataHandler` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
 
+- Several features duplicating `api.PointerEvents.pointerType.fractional_coordinates` were removed: ([#11317](https://github.com/mdn/browser-compat-data/pull/11317))
+
+  - `api.MouseEvent.MouseEvent.long_to_double`
+  - `api.MouseEvent.clientX.long_to_double`
+  - `api.MouseEvent.clientY.long_to_double`
+  - `api.MouseEvent.offsetX.long_to_double`
+  - `api.MouseEvent.offsetY.long_to_double`
+  - `api.MouseEvent.pageX.long_to_double`
+  - `api.MouseEvent.pageY.long_to_double`
+  - `api.MouseEvent.screenX.long_to_double`
+  - `api.MouseEvent.screenY.long_to_double`
+
 ## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
 
 June 24, 2021
