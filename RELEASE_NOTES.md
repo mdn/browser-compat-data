@@ -64,6 +64,13 @@ July 1, 2021
   - `api.MouseEvent.screenX.long_to_double`
   - `api.MouseEvent.screenY.long_to_double`
 
+### Statistics
+
+- 10 contributors have changed 80 files with 1,024 additions and 1,373 deletions in 54 commits ([`v3.3.9...v3.3.10`](https://github.com/mdn/browser-compat-data/compare/v3.3.9...v3.3.10))
+- 13,046 total features
+- 790 total contributors
+- 3,423 total stargazers
+
 ## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
 
 June 24, 2021
