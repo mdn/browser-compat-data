@@ -1,4 +1,4 @@
-name: Remote Dispatch Action Initiator
+name: Ping other repos
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 jobs:
   ping-pong:
     runs-on: ubuntu-latest
+    if: ${{ github.respository == 'mdn/browser-compat-data' }}
     steps:
       - name: PING - Dispatch initiating repository event
         if: github.event.action != 'pong'
