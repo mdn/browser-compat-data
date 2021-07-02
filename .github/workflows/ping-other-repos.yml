@@ -8,14 +8,12 @@ on:
 jobs:
   ping-pong:
     runs-on: ubuntu-latest
-    if: ${{ github.respository == 'mdn/browser-compat-data' }}
+    env:
+      SIDESHOWBARKER_TOKEN: ${{ secrets.SIDESHOWBARKER }}
+    if: ${{ github.respository == 'mdn/browser-compat-data' && env.SIDESHOWBARKER_TOKEN != '' }}
     steps:
-      - name: PING - Dispatch initiating repository event
-        env:
-          SIDESHOWBARKER_TOKEN: ${{ secrets.SIDESHOWBARKER }}
-        if: github.event.action != 'pong' && env.SIDESHOWBARKER_TOKEN != ''
-        run: |
-          curl -X POST https://api.github.com/repos/w3c/mdn-spec-links/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.SIDESHOWBARKER }} \
-          --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.SIDESHOWBARKER }}
+          event-type: ping
