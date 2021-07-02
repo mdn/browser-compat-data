@@ -14,3 +14,4 @@ jobs:
         with:
           token: ${{ secrets.SIDESHOWBARKER }}
           event-type: ping
+          client-payload: '{"repository": "${{ github.repository }}", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
