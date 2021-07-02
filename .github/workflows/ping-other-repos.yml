@@ -7,9 +7,7 @@ on:
 jobs:
   ping:
     runs-on: ubuntu-latest
-    env:
-      SIDESHOWBARKER_TOKEN: ${{ secrets.SIDESHOWBARKER }}
-    if: ${{ github.respository == 'mdn/browser-compat-data' && env.SIDESHOWBARKER_TOKEN != '' }}
+    if: ${{ github.respository == 'mdn/browser-compat-data' }}
     steps:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
