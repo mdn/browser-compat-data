@@ -11,7 +11,9 @@ jobs:
     if: ${{ github.respository == 'mdn/browser-compat-data' }}
     steps:
       - name: PING - Dispatch initiating repository event
-        if: github.event.action != 'pong'
+        env:
+          SIDESHOWBARKER_TOKEN: ${{ secrets.SIDESHOWBARKER }}
+        if: github.event.action != 'pong' && env.SIDESHOWBARKER_TOKEN != ''
         run: |
           curl -X POST https://api.github.com/repos/w3c/mdn-spec-links/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
