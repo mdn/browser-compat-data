@@ -426,3 +426,21 @@ Note that APIs available on only _some_ types of workers are not considered glob
 - The `requestAnimationFrame()` function, available in `Window` and `DedicatedWorkerGlobalScope`.
 
 This guideline is based on a discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
+
+## Setting `deprecated`
+
+Set `deprecated` to `true` to show that a feature has been formally discouraged from use.
+
+The `deprecated` status captures any of the many ways in which web platform features are identified as disfavored by standards organizations (and, for non-standard features, by vendors). This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
+
+Evidence for setting `deprecated` to `true` includes:
+
+- Specification text that marks a feature with terminology such as _obsolete_, _legacy_, _deprecated_, or _end-of-life_
+- Specification text that advises developers against the use of a feature in new code
+- Removal of an existing feature from a specification
+- Discouragement statements from a relevant specification body that represents that body's formal position (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
+- For non-standard features, warnings in implementing browsers (for example, a console deprecation warning) or documentation from vendors
+
+Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
+
+This guideline was proposed in TK. See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."
