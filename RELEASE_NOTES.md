@@ -1,5 +1,76 @@
 # Release notes
 
+## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
+
+July 1, 2021
+
+### Notable changes
+
+- Safari 3.2 has been removed from the data set, since it represented the same browser capabilities as Safari 3.1. The small number of entries that referenced Safari 3.2 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11266))
+
+- The `api.Body` mixin has been removed and replaced by features representing its exposed interfaces. ([#10958](https://github.com/mdn/browser-compat-data/pull/10958))
+
+  <details>
+
+  <summary>New features ex-<code>Body</code></summary>
+
+  - `api.Request.arrayBuffer`
+  - `api.Request.blob`
+  - `api.Request.body`
+  - `api.Request.bodyUsed`
+  - `api.Request.formData`
+  - `api.Request.json`
+  - `api.Request.text`
+  - `api.Response.arrayBuffer`
+  - `api.Response.blob`
+  - `api.Response.body`
+  - `api.Response.bodyUsed`
+  - `api.Response.formData`
+  - `api.Response.json`
+  - `api.Response.text`
+
+  </details>
+
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11328](https://github.com/mdn/browser-compat-data/pull/11328), [#11334](https://github.com/mdn/browser-compat-data/pull/11334)):
+
+  | Before                                       | After                                                   |
+  | -------------------------------------------- | ------------------------------------------------------- |
+  | `api.HTMLElement.focus.preventScroll_option` | `api.HTMLElement.focus.options_preventScroll_parameter` |
+  | `api.SVGElement.focus.preventScroll_option`  | `api.SVGElement.focus.options_preventScroll_parameter`  |
+  | `api.Worker.Worker.name`                     | `api.Worker.Worker.options_name_parameter`              |
+  | `api.Worker.Worker.type`                     | `api.Worker.Worker.options_type_parameter`              |
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.GlobalEventHandlers.onpointerlockchange` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
+  - `api.GlobalEventHandlers.onpointerlockerror` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
+  - `api.Node.getUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.Node.setUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.RequestDestination` ([#11323](https://github.com/mdn/browser-compat-data/pull/11323))
+  - `api.RTCIceCandidateType` ([#11061](https://github.com/mdn/browser-compat-data/pull/11061))
+  - `api.RTCIceComponent` ([#11062](https://github.com/mdn/browser-compat-data/pull/11062))
+  - `api.UserDataHandler.handle` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.UserDataHandler` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+
+- Several features duplicating `api.PointerEvents.pointerType.fractional_coordinates` were removed ([#11317](https://github.com/mdn/browser-compat-data/pull/11317)):
+
+  - `api.MouseEvent.MouseEvent.long_to_double`
+  - `api.MouseEvent.clientX.long_to_double`
+  - `api.MouseEvent.clientY.long_to_double`
+  - `api.MouseEvent.offsetX.long_to_double`
+  - `api.MouseEvent.offsetY.long_to_double`
+  - `api.MouseEvent.pageX.long_to_double`
+  - `api.MouseEvent.pageY.long_to_double`
+  - `api.MouseEvent.screenX.long_to_double`
+  - `api.MouseEvent.screenY.long_to_double`
+
+### Statistics
+
+- 10 contributors have changed 80 files with 1,024 additions and 1,373 deletions in 54 commits ([`v3.3.9...v3.3.10`](https://github.com/mdn/browser-compat-data/compare/v3.3.9...v3.3.10))
+- 13,046 total features
+- 790 total contributors
+- 3,423 total stargazers
+
 ## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
 
 June 24, 2021
