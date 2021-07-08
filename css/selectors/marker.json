@@ -75,7 +75,7 @@
               "notes": "Safari support is limited to <code>color</code> and <code>font-size</code>. See <a href='https://webkit.org/b/204163'>bug 204163</a>"
             },
             "samsunginternet_android": {
-              "version_added": false
+                "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "86"
@@ -154,9 +154,20 @@
               "safari_ios": {
                 "version_added": false
               },
-              "samsunginternet_android": {
-                "version_added": false
-              },
+              "samsunginternet_android": [
+                {
+                  "version_added": "14.0"
+                },
+                {
+                  "version_added": "13.0",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "Enable experimental Web Platform features"
+                    }
+                  ]
+                }
+              ],
               "webview_android": {
                 "version_added": "86"
               }
