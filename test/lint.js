@@ -11,6 +11,7 @@ const {
   testRealValues,
   testStyle,
   testSchema,
+  testSpecLinks,
   testVersions,
   testConsistency,
   testDescriptions,
@@ -63,7 +64,8 @@ function load(...files) {
           hasConsistencyErrors = false,
           hasRealValueErrors = false,
           hasPrefixErrors = false,
-          hasDescriptionsErrors = false;
+          hasDescriptionsErrors = false,
+          hasSpecLinkErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -103,6 +105,7 @@ function load(...files) {
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
+            hasSpecLinkErrors = testSpecLinks(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -120,6 +123,7 @@ function load(...files) {
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
+          hasSpecLinkErrors,
         ].some(x => !!x);
 
         if (fileHasErrors) {
@@ -185,6 +189,7 @@ if (hasErrors) {
         testConsistency(file);
         testPrefix(file);
         testDescriptions(file);
+        testSpecLinks(file);
       }
     } catch (e) {
       console.error(e);
