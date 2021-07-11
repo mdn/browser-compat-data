@@ -1,5 +1,95 @@
 # Release notes
 
+## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
+
+June 24, 2021
+
+### Notable changes
+
+- Safari for iOS 4.3 has been removed from the data set, since it represented the same browser as Safari for iOS 4.2. The small number of entries that referenced Safari for iOS 4.3 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11174))
+
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11080](https://github.com/mdn/browser-compat-data/pull/11080), [#10700](https://github.com/mdn/browser-compat-data/pull/10700)):
+
+  | Removed                                                                                 | Added                                                                                    |
+  | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+  | `api.AudioNode.disconnect.destination`                                                  | `api.AudioNode.disconnect.destination_parameter`                                         |
+  | `api.AudioNode.disconnect.input`                                                        | `api.AudioNode.disconnect.input_parameter`                                               |
+  | `api.Document.createElement.options`                                                    | `api.Document.createElement.options_parameter`                                           |
+  | `api.Document.createElementNS.options`                                                  | `api.Document.createElementNS.options_parameter`                                         |
+  | `api.Document.createTreeWalker.expandEntityReferences`                                  | `api.Document.createTreeWalker.expandEntityReferences_parameter`                         |
+  | `api.DOMTokenList.add.add_multiple_arguments`                                           | `api.DOMTokenList.add.multiple_parameters`                                               |
+  | `api.DOMTokenList.remove.remove_multiple_arguments`                                     | `api.DOMTokenList.remove.multiple_parameters`                                            |
+  | `api.DOMTokenList.toggle.force_argument`                                                | `api.DOMTokenList.toggle.force_parameter`                                                |
+  | `api.Element.scroll.ScrollToOptions`                                                    | `api.Element.scroll.options_parameter`                                                   |
+  | `api.Element.scrollBy.ScrollToOptions`                                                  | `api.Element.scrollBy.options_parameter`                                                 |
+  | `api.Element.scrollTo.ScrollToOptions`                                                  | `api.Element.scrollTo.options_parameter`                                                 |
+  | `api.HTMLTableRowElement.insertCell.negative_one_index_argument`                        | `api.HTMLTableRowElement.insertCell.negative_one_index_parameter`                        |
+  | `api.RTCPeerConnection.getStats.MediaStreamTrack_argument`                              | `api.RTCPeerConnection.getStats.selector_parameter`                                      |
+  | `api.Window.postMessage.transfer_argument_support`                                      | `api.Window.postMessage.transfer_parameter`                                              |
+  | `api.Window.scroll.ScrollToOptions`                                                     | `api.Window.scroll.options_parameter`                                                    |
+  | `api.Window.scrollBy.ScrollToOptions`                                                   | `api.Window.scrollBy.options_parameter`                                                  |
+  | `api.Window.scrollTo.ScrollToOptions`                                                   | `api.Window.scrollTo.options_parameter`                                                  |
+  | `javascript.builtins.Float32Array.Float32Array.constructor_without_arguments`           | `javascript.builtins.Float32Array.Float32Array.constructor_without_parameters`           |
+  | `javascript.builtins.Float64Array.Float64Array.constructor_without_arguments`           | `javascript.builtins.Float64Array.Float64Array.constructor_without_parameters`           |
+  | `javascript.builtins.Int16Array.Int16Array.constructor_without_arguments`               | `javascript.builtins.Int16Array.Int16Array.constructor_without_parameters`               |
+  | `javascript.builtins.Int32Array.Int32Array.constructor_without_arguments`               | `javascript.builtins.Int32Array.Int32Array.constructor_without_parameters`               |
+  | `javascript.builtins.Int8Array.Int8Array.constructor_without_arguments`                 | `javascript.builtins.Int8Array.Int8Array.constructor_without_parameters`                 |
+  | `javascript.builtins.TypedArray.constructor_without_arguments`                          | `javascript.builtins.TypedArray.constructor_without_parameters`                          |
+  | `javascript.builtins.Uint16Array.Uint16Array.constructor_without_arguments`             | `javascript.builtins.Uint16Array.Uint16Array.constructor_without_parameters`             |
+  | `javascript.builtins.Uint32Array.Uint32Array.constructor_without_arguments`             | `javascript.builtins.Uint32Array.Uint32Array.constructor_without_parameters`             |
+  | `javascript.builtins.Uint8Array.Uint8Array.constructor_without_arguments`               | `javascript.builtins.Uint8Array.Uint8Array.constructor_without_parameters`               |
+  | `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.constructor_without_arguments` | `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.constructor_without_parameters` |
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.FetchEvent.client` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.FetchEvent.navigationPreload` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.FetchEvent.targetClientId` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.Navigator.registerContentHandler` ([#11229](https://github.com/mdn/browser-compat-data/pull/11229))
+  - `api.RTCIdentityErrorEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCIdentityEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.identityresult_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.idpassertionerror_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.idpvalidationerror_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidentityresult` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidpassertionerror` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidpvalidationerror` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onpeeridentity` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.peeridentity_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+
+### Statistics
+
+- 18 contributors have changed 188 files with 2,177 additions and 1,705 deletions in 71 commits ([`v3.3.8...v3.3.9`](https://github.com/mdn/browser-compat-data/compare/v3.3.8...v3.3.9))
+- 13,056 total features
+- 788 total contributors
+- 3,416 total stargazers
+
+## [v3.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.8)
+
+June 17, 2021
+
+### Notable changes
+
+- `api.URL.createObjectURL.no_MediaStream_argument` was replaced by `api.URL.createObjectURL.MediaStream_support` to more clearly represent a deprecated feature. ([#11081](https://github.com/mdn/browser-compat-data/pull/11081))
+
+- `api.Element.attachShadow.delegatesFocus` was renamed to `api.Element.attachShadow.init_delegatesFocus_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#11090](https://github.com/mdn/browser-compat-data/pull/11090))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.PaymentRequest.requestId` ([#11082](https://github.com/mdn/browser-compat-data/pull/11082))
+  - `api.RTCSessionDescriptionCallback` ([#11057](https://github.com/mdn/browser-compat-data/pull/11057))
+  - `api.SVGElement.abort_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.resize_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.scroll_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.unload_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+
+### Statistics
+
+- 14 contributors have changed 165 files with 2,908 additions and 1,736 deletions in 102 commits ([`v3.3.7...v3.3.8`](https://github.com/mdn/browser-compat-data/compare/v3.3.7...v3.3.8))
+- 13,052 total features
+- 785 total contributors
+- 3,409 total stargazers
+
 ## [v3.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.7)
 
 June 10, 2021

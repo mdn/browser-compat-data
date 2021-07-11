@@ -19,9 +19,19 @@ describe('spec_url data', () => {
       ...specData.map(spec => spec.series.nightlyUrl),
     ];
 
+    /*
+     * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to
+     * see if a spec should be added there instead.
+     * When adding an exception here, provide a reason and indicate how the exception can be removed.
+     */
     const specsExceptions = [
+      // Remove once https://github.com/whatwg/html/pull/6715 is resolved
       'https://wicg.github.io/controls-list/',
+
+      // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
       'https://w3c.github.io/setImmediate/',
+
+      // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/280
       'https://datatracker.ietf.org/doc/html/rfc2397',
       'https://datatracker.ietf.org/doc/html/rfc8942',
       'https://datatracker.ietf.org/doc/html/rfc7231',
@@ -48,10 +58,23 @@ describe('spec_url data', () => {
       'https://datatracker.ietf.org/doc/html/rfc7538',
       'https://datatracker.ietf.org/doc/html/rfc2324',
       'https://datatracker.ietf.org/doc/html/rfc7725',
+
+      // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
+      // Remove if it is in the main ECMA spec
       'https://github.com/tc39/proposal-regexp-legacy-features/',
+
+      // For the 'shared' flag in WebAssembly.Memory
+      // Remove if this spec will be merged with the main WebAssembly spec
       'https://webassembly.github.io/threads/js-api/',
+
+      // Not really a browser feature, thus not in browser-specs
+      // Remove if it is in the main ECMA spec
       'https://tc39.es/proposal-hashbang/out.html',
-      'https://mathml-refresh.github.io/mathml/',
+
+      // Remove if https://github.com/w3c/mathml/issues/216 is resolved
+      'https://w3c.github.io/mathml/',
+
+      // Remove when xpath/xslt data is removed in https://github.com/mdn/browser-compat-data/pull/9830
       'https://www.w3.org/TR/xpath-31/',
       'https://www.w3.org/TR/xslt-30/',
     ];
