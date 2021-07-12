@@ -31,21 +31,9 @@ describe('spec_url data', () => {
       // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
       'https://w3c.github.io/setImmediate/',
 
-      // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/338
-      'https://httpwg.org/specs/rfc7838.html', // Alt-Svc
-      'https://httpwg.org/specs/rfc8246.html', // Cache-Control immutable
-      'https://httpwg.org/specs/rfc6266.html', // Content-Disposition
-      'https://httpwg.org/specs/rfc7725.html', // 451 Status code
-
       // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/339
-      'https://datatracker.ietf.org/doc/html/rfc7578', // Content-Disposition in multipart/form-data
-      'https://datatracker.ietf.org/doc/html/rfc2397', // Data URI scheme
-      'https://datatracker.ietf.org/doc/html/rfc8942', // Client Hints
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-digest-headers-05',
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
-      'https://datatracker.ietf.org/doc/html/draft-thomson-hybi-http-timeout-03',
-      'https://datatracker.ietf.org/doc/html/rfc6797', // HSTS
-      'https://datatracker.ietf.org/doc/html/rfc7034', // X-Frame-Options
 
       // Exception for April Fools' joke for "418 I'm a teapot"
       'https://datatracker.ietf.org/doc/html/rfc2324',
