@@ -36,7 +36,7 @@ describe('spec_url data', () => {
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
 
       // Exception for April Fools' joke for "418 I'm a teapot"
-      'https://datatracker.ietf.org/doc/html/rfc2324',
+      'https://www.rfc-editor.org/rfc/rfc2324',
 
       // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
       // Remove if it is in the main ECMA spec
