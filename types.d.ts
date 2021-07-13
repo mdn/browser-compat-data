@@ -7,6 +7,7 @@
 export type BrowserNames =
   | 'chrome'
   | 'chrome_android'
+  | 'deno'
   | 'edge'
   | 'firefox'
   | 'firefox_android'
