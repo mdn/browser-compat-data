@@ -715,9 +715,65 @@
             "deprecated": false
           }
         },
-        "composite_option": {
+        "implicit_tofrom": {
           "__compat": {
-            "description": "<code>composite</code> option",
+            "description": "Implicit to/from keyframes are supported",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animate#Implicit_tofrom_keyframes",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Currently Chrome Canary only"
+              },
+              "chrome_android": {
+                "version_added": false,
+                "notes": "Currently Chrome Canary only"
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "75"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "13.1",
+                "partial_implementation": true,
+                "notes": "Implementation seems somewhat buggy. More information will follow when available."
+              },
+              "safari_ios": {
+                "version_added": "13.4",
+                "partial_implementation": true,
+                "notes": "Implementation seems somewhat buggy. More information will follow when available."
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_composite_parameter": {
+          "__compat": {
+            "description": "<code>options.composite</code> parameter",
+            "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffectoptions-composite",
             "support": {
               "chrome": {
                 "version_added": "79",
@@ -806,9 +862,10 @@
             }
           }
         },
-        "id_option": {
+        "options_id_parameter": {
           "__compat": {
-            "description": "<code>id</code> option",
+            "description": "<code>options.id</code> parameter",
+            "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeanimationoptions-id",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -854,64 +911,10 @@
             }
           }
         },
-        "implicit_tofrom": {
+        "options_iterationComposite_parameter": {
           "__compat": {
-            "description": "Implicit to/from keyframes are supported",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animate#Implicit_tofrom_keyframes",
-            "support": {
-              "chrome": {
-                "version_added": false,
-                "notes": "Currently Chrome Canary only"
-              },
-              "chrome_android": {
-                "version_added": false,
-                "notes": "Currently Chrome Canary only"
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "75"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": "13.1",
-                "partial_implementation": true,
-                "notes": "Implementation seems somewhat buggy. More information will follow when available."
-              },
-              "safari_ios": {
-                "version_added": "13.4",
-                "partial_implementation": true,
-                "notes": "Implementation seems somewhat buggy. More information will follow when available."
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "iterationcomposite_option": {
-          "__compat": {
-            "description": "<code>iterationComposite</code> option",
+            "description": "<code>options.iterationComposite</code> parameter",
+            "spec_url": "https://drafts.csswg.org/web-animations-2/#dom-keyframeeffectoptions-iterationcomposite",
             "support": {
               "chrome": {
                 "version_added": false
@@ -976,9 +979,10 @@
             }
           }
         },
-        "pseudoElement_option": {
+        "options_pseudoElement_parameter": {
           "__compat": {
-            "description": "<code>pseudoElement</code> option",
+            "description": "<code>options.pseudoElement</code> parameter",
+            "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffectoptions-pseudoelement",
             "support": {
               "chrome": {
                 "version_added": "81",
@@ -7145,9 +7149,9 @@
             "deprecated": false
           }
         },
-        "scrollIntoViewOptions": {
+        "options_parameter": {
           "__compat": {
-            "description": "<code>scrollIntoViewOptions</code>",
+            "description": "<code>options</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "61",
