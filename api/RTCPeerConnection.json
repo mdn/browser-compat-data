@@ -237,13 +237,14 @@
       "addStream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addStream",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#legacy-interface-extensions",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -294,7 +295,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -305,10 +306,12 @@
           "description": "<code>addstream</code> event",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "25"
+              "version_added": "25",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -1304,10 +1307,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getLocalStreams",
           "support": {
             "chrome": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -1417,10 +1422,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getRemoteStreams",
           "support": {
             "chrome": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -1613,9 +1620,9 @@
             "deprecated": false
           }
         },
-        "MediaStreamTrack_argument": {
+        "selector_parameter": {
           "__compat": {
-            "description": "Optional <code>MediaStreamTrack</code> argument",
+            "description": "<code>selector</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "67"
@@ -2321,10 +2328,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onaddstream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -2570,10 +2579,10 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -2798,10 +2807,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onremovestream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -3243,10 +3254,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeStream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -3309,10 +3322,12 @@
           "description": "<code>removestream</code> event",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "25"
+              "version_added": "25",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -3723,9 +3738,9 @@
             "deprecated": false
           }
         },
-        "optional_description": {
+        "description_parameter_optional": {
           "__compat": {
-            "description": "Description is optional",
+            "description": "<code>description</code> parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -3859,9 +3874,9 @@
             "deprecated": false
           }
         },
-        "implicit_rollback": {
+        "description_parameter_optional": {
           "__compat": {
-            "description": "Implicit rollback",
+            "description": "<code>description</code> parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -3873,7 +3888,7 @@
                 "version_added": "80"
               },
               "firefox": {
-                "version_added": "70"
+                "version_added": "75"
               },
               "firefox_android": {
                 "version_added": false
@@ -3907,9 +3922,9 @@
             }
           }
         },
-        "optional_description": {
+        "implicit_rollback": {
           "__compat": {
-            "description": "Description is optional",
+            "description": "Implicit rollback",
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -3921,7 +3936,7 @@
                 "version_added": "80"
               },
               "firefox": {
-                "version_added": "75"
+                "version_added": "70"
               },
               "firefox_android": {
                 "version_added": false
