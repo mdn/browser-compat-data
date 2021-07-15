@@ -6,30 +6,31 @@ RELEASE DATE TK
 
 ### Notable changes
 
-- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502))
+- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481))
 
   <details>
   <summary>Features removed and addded</summary>
 
   **Removed**
 
-  - `api.CSSStyleSheet.insertRule.optional_index`
   - `api.Clients.matchAll.includeUncontrolled_option`
+  - `api.CSSStyleSheet.insertRule.optional_index`
   - `api.Document.createTreeWalker.whatToShow_filter_optional`
   - `api.Document.importNode.deep_optional`
   - `api.Element.animate.composite_option`
   - `api.Element.animate.id_option`
   - `api.Element.animate.iterationcomposite_option`
   - `api.Element.animate.pseudoElement_option`
+  - `api.Element.requestFullscreen.options_parameter`
   - `api.Element.scrollIntoView.scrollIntoViewOptions`
   - `api.EventTarget.addEventListener.optional_usecapture`
-  - `api.EventTarget.addEventListener.options`
   - `api.EventTarget.addEventListener.options.capture`
   - `api.EventTarget.addEventListener.options.once`
-  - `api.EventTarget.addEventListener.options.passive`
   - `api.EventTarget.addEventListener.options.passive_true_touch`
   - `api.EventTarget.addEventListener.options.passive_true_wheel`
+  - `api.EventTarget.addEventListener.options.passive`
   - `api.EventTarget.addEventListener.options.signal`
+  - `api.EventTarget.addEventListener.options`
   - `api.EventTarget.removeEventListener.optional_type_listener`
   - `api.EventTarget.removeEventListener.optional_usecapture`
   - `api.EventTarget.removeEventListener.options`
@@ -38,9 +39,9 @@ RELEASE DATE TK
   - `api.IntersectionObserver.IntersectionObserver.document_as_root`
   - `api.MediaRecorder.MediaRecorder.options`
   - `api.Node.cloneNode.deep_defaults_to_false`
+  - `api.Request.Request.referrer_init`
   - `api.RTCPeerConnection.setLocalDescription.optional_description`
   - `api.RTCPeerConnection.setRemoteDescription.optional_description`
-  - `api.Request.Request.referrer_init`
   - `api.SharedWorker.SharedWorker.name_option`
   - `javascript.builtins.Array.toLocaleString.locales`
   - `javascript.builtins.Array.toLocaleString.options`
@@ -56,22 +57,23 @@ RELEASE DATE TK
 
   **Added**
 
-  - `api.CSSStyleSheet.insertRule.index_parameter_optional`
   - `api.Clients.matchAll.options_includeUncontrolled_parameter`
+  - `api.CSSStyleSheet.insertRule.index_parameter_optional`
   - `api.Document.createTreeWalker.whatToShow_filter_parameters_optional`
   - `api.Document.importNode.deep_parameter_optional`
   - `api.Element.animate.options_composite_parameter`
   - `api.Element.animate.options_id_parameter`
   - `api.Element.animate.options_iterationComposite_parameter`
   - `api.Element.animate.options_pseudoElement_parameter`
+  - `api.Element.requestFullscreen.options_navigationUI_parameter`
   - `api.Element.scrollIntoView.options_parameter`
-  - `api.EventTarget.addEventListener.options_parameter`
   - `api.EventTarget.addEventListener.options_parameter.options_capture_parameter`
   - `api.EventTarget.addEventListener.options_parameter.options_once_parameter`
-  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter`
   - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_touch`
   - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_wheel`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter`
   - `api.EventTarget.addEventListener.options_parameter.options_signal_parameter`
+  - `api.EventTarget.addEventListener.options_parameter`
   - `api.EventTarget.addEventListener.useCapture_parameter_optional`
   - `api.EventTarget.removeEventListener.options_parameter`
   - `api.EventTarget.removeEventListener.type_listener_parameters_optional`
@@ -81,9 +83,9 @@ RELEASE DATE TK
   - `api.IntersectionObserver.IntersectionObserver.options_root_parameter_Document`
   - `api.MediaRecorder.MediaRecorder.options_parameter`
   - `api.Node.cloneNode.deep_parameter_default_false`
+  - `api.Request.Request.init_referrer_parameter`
   - `api.RTCPeerConnection.setLocalDescription.description_parameter_optional`
   - `api.RTCPeerConnection.setRemoteDescription.description_parameter_optional`
-  - `api.Request.Request.init_referrer_parameter`
   - `api.SharedWorker.SharedWorker.options_name_parameter`
   - `javascript.builtins.Array.toLocaleString.locales_parameter`
   - `javascript.builtins.Array.toLocaleString.options_parameter`
