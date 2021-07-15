@@ -6,7 +6,7 @@ July 15, 2021
 
 ### Notable changes
 
-- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481), ([#11500](https://github.com/mdn/browser-compat-data/pull/11500/)))
+- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481), [#11500](https://github.com/mdn/browser-compat-data/pull/11500/))
 
   <details>
   <summary>Features removed and addded</summary>
