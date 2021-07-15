@@ -1,8 +1,11 @@
 'use strict';
 const fs = require('fs');
+const request = require('sync-request');
 const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
+
+let testDeadLinks = false;
 
 /**
  * @param {string} filename
@@ -182,6 +185,25 @@ function processData(filename) {
     },
   );
 
+  if (testDeadLinks) {
+    processLink(
+      errors,
+      actual,
+      String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=*]*)`,
+      match => {
+        if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
+          let res = request('GET', match[0]);
+
+          if (res.statusCode < 200 || res.statusCode > 299) {
+            return {
+              issue: `Link does not return successful HTTP code (${res.statusCode})`,
+            };
+          }
+        }
+      },
+    );
+  }
+
   return errors;
 }
 
@@ -227,9 +249,15 @@ function testLinks(filename) {
       }:}`,
     );
     for (const error of errors) {
-      console.error(
-        chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`,
-      );
+      if (error.expected) {
+        console.error(
+          chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`,
+        );
+      } else {
+        console.error(
+          chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}}).}`,
+        );
+      }
     }
     return true;
   }
