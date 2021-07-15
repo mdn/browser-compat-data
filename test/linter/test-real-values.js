@@ -79,6 +79,33 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 }
 
 /**
+ * @param {Identifier} data
+ * @param {string} [relPath]
+ */
+function findSupport(data, category, logger, relPath) {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      if (blockList[category] && blockList[category].length > 0)
+        checkRealValues(
+          data[prop].support,
+          blockList[category],
+          relPath,
+          logger,
+        );
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(
+        sub,
+        category,
+        logger,
+        relPath ? `${relPath}.${prop}` : `${prop}`,
+      );
+    }
+  }
+}
+
+/**
  * @param {string} filename
  */
 function testRealValues(filename) {
@@ -92,28 +119,7 @@ function testRealValues(filename) {
   const data = require(filename);
   const logger = new Logger('Real values');
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0)
-          checkRealValues(
-            data[prop].support,
-            blockList[category],
-            relPath,
-            logger,
-          );
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, category, logger);
 
   logger.emit();
   return logger.hasErrors();

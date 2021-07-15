@@ -138,6 +138,22 @@ function checkVersions(supportData, relPath, logger) {
 }
 
 /**
+ * @param {Identifier} data
+ * @param {string} [relPath]
+ */
+function findSupport(data, logger, relPath) {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      checkVersions(data[prop].support, relPath, logger);
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(sub, logger, relPath ? `${relPath}.${prop}` : `${prop}`);
+    }
+  }
+}
+
+/**
  * @param {string} filename
  */
 function testVersions(filename) {
@@ -146,22 +162,7 @@ function testVersions(filename) {
 
   const logger = new Logger('Versions');
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, logger);
 
   logger.emit();
   return logger.hasErrors();
