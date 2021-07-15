@@ -231,9 +231,12 @@ function testLinks(filename) {
         chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`,
       );
     }
+    console.error(
+      chalk`  {blue Tip: Run {bold npm run fix} to fix links automatically}`,
+    );
     return true;
   }
   return false;
 }
 
-module.exports = testLinks;
+module.exports = { processData, testLinks };

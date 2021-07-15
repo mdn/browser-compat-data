@@ -50,7 +50,15 @@ const { argv } = require('yargs').command(
  * @param {ReleaseStatement} source_browser_release
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
+const getMatchingBrowserVersion = (
+  dest_browser,
+  source_browser,
+  source_browser_version,
+) => {
+  const range = source_browser_version.includes('≤');
+  const source_browser_release =
+    browsers[source_browser].releases[source_browser_version.replace('≤', '')];
+
   const browserData = browsers[dest_browser];
   for (const r in browserData.releases) {
     const release = browserData.releases[r];
@@ -67,7 +75,7 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
         release.engine == 'Blink' &&
         source_browser_release.engine == 'WebKit')
     ) {
-      return r;
+      return range ? `≤${r}` : r;
     }
   }
 
@@ -88,6 +96,7 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
+    case 'edge':
     case 'opera':
       source = 'chrome';
       break;
@@ -98,9 +107,6 @@ const getSource = (browser, forced_source) => {
       break;
     case 'firefox_android':
       source = 'firefox';
-      break;
-    case 'edge':
-      source = 'ie';
       break;
     case 'safari_ios':
       source = 'safari';
@@ -138,9 +144,7 @@ const combineNotes = (notes1, notes2) => {
     }
   }
 
-  newNotes = newNotes.filter((item, pos) => {
-    newNotes.indexOf(item) == pos;
-  });
+  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
 
   if (newNotes.length == 0) {
     return null;
@@ -188,6 +192,71 @@ const copyStatement = data => {
 };
 
 /**
+ * @param {...SupportStatement} data
+ * @returns {SupportStatement}
+ */
+const combineStatements = (...data) => {
+  const ignored_keys = ['version_added', 'notes'];
+
+  let flattenedData = data.flat(2);
+  let sections = {};
+  let newData = [];
+
+  for (const d of flattenedData) {
+    let key = Object.keys(d)
+      .filter(k => !ignored_keys.includes(k))
+      .join('');
+    if (!(key in sections)) sections[key] = [];
+    sections[key].push(d);
+  }
+
+  for (const k of Object.keys(sections)) {
+    let currentStatement = sections[k][0];
+
+    if (sections[k].length == 1) {
+      newData.push(currentStatement);
+      continue;
+    }
+
+    for (const i in sections[k]) {
+      if (i == 0) continue;
+      let newStatement = sections[k][i];
+
+      let currentVA = currentStatement.version_added;
+      let newVA = newStatement.version_added;
+
+      if (newVA === false) {
+        // Ignore statements with version_added being false
+        continue;
+      } else if (typeof newVA === 'string') {
+        if (typeof currentVA === 'string') {
+          if (
+            compareVersions.compare(
+              currentVA.replace('≤', ''),
+              newVA.replace('≤', ''),
+              '>',
+            )
+          ) {
+            currentStatement.version_added = newVA;
+          }
+        } else {
+          currentStatement.version_added = currentVA || newVA;
+        }
+      }
+
+      let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      if (newNotes) currentStatement.notes = newNotes;
+    }
+
+    if ('notes' in currentStatement && !currentStatement.notes)
+      delete currentStatement.notes;
+    newData.push(currentStatement);
+  }
+
+  return newData.length === 1 ? newData[0] : newData;
+};
+
+/**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @param {string} source
@@ -218,75 +287,85 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
   return newData;
 };
 
-/**
- * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @param {string} source
- * @returns {SupportStatement}
- */
-const bumpEdge = (originalData, sourceData, source) => {
-  let newData = {};
+const bumpEdgeFromIE = sourceData => {
+  let newData = copyStatement(sourceData);
 
-  if (source == 'ie') {
-    if (sourceData.version_removed && sourceData.version_removed !== null) {
-      newData.version_added = false;
-    } else if (sourceData.version_added !== null) {
-      newData.version_added = sourceData.version_added ? '12' : null;
+  if (sourceData.version_removed || sourceData.version_added === false) {
+    newData.version_added = false;
+  } else if (sourceData.version_added) {
+    newData.version_added = '12';
+  }
+
+  let newNotes = updateNotes(sourceData.notes, /Internet Explorer/g, 'Edge');
+  if (newNotes) newData.notes = newNotes;
+
+  return newData;
+};
+
+const bumpEdgeFromChrome = (sourceData, originalData) => {
+  let newData = copyStatement(sourceData);
+
+  let chromeFalse =
+    sourceData.version_removed || sourceData.version_added === false;
+  let chromeNull = sourceData.version_added === null;
+
+  if (chromeFalse) {
+    if (originalData.version_added && !originalData.version_removed) {
+      newData.version_removed = '79';
     }
-
-    if (sourceData.notes) {
-      newData.notes = updateNotes(
-        sourceData.notes,
-        /Internet Explorer/g,
-        'Edge',
-      );
-    }
-  } else if (source == 'chrome') {
-    newData = originalData == undefined ? sourceData : originalData;
-
-    let chromeFalse =
-      sourceData.version_added === false ||
-      sourceData.version_removed !== undefined;
-    let chromeNull = sourceData.version_added === null;
-
-    if (originalData === undefined) {
-      newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
-    } else {
-      if (!chromeFalse && !chromeNull) {
-        if (originalData.version_added == true) {
-          newData.version_added = '≤18';
-        } else {
-          if (
-            sourceData.version_added == true ||
-            Number(sourceData.version_added) <= 79
-          ) {
-            if (originalData.version_added == false) {
-              newData.version_added = '79';
-            } else if (originalData.version_added == null) {
-              newData.version_added = '≤79';
-            }
-          } else {
-            newData.version_added == sourceData.version_added;
-          }
-        }
-      } else if (chromeFalse) {
-        if (originalData.version_added && !originalData.version_removed) {
-          newData.version_removed = '79';
-        }
+  } else if (chromeNull) {
+    newData.version_added = null;
+  } else {
+    if (sourceData.version_added === true) {
+      newData.version_added =
+        originalData.version_added === true ? '≤18' : true;
+    } else if (Number(sourceData.version_added) <= 79) {
+      if (originalData.version_added === false) {
+        newData.version_added = '79';
+      } else if (originalData.version_added === null) {
+        newData.version_added = '≤79';
       }
-    }
-
-    let newNotes = combineNotes(
-      updateNotes(sourceData.notes, /Chrome/g, 'Edge'),
-      originalData.notes,
-    );
-
-    if (newNotes) {
-      newData.notes = newNotes;
+    } else {
+      newData.version_added = sourceData.version_added;
     }
   }
 
+  let newNotes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
+  if (newNotes) newData.notes = newNotes;
+
   return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} chromeData
+ * @param {SupportStatement} ieData
+ * @returns {SupportStatement}
+ */
+const bumpEdge = (originalData, chromeData, ieData) => {
+  if (Array.isArray(originalData)) {
+    return originalData.map(d => bumpEdge(d, chromeData, ieData));
+  }
+
+  let newData = [];
+
+  if (ieData) {
+    if (Array.isArray(ieData)) {
+      newData += ieData.map(d => bumpEdgeFromIE(d));
+    } else {
+      newData.push(bumpEdgeFromIE(ieData));
+    }
+  }
+
+  if (chromeData) {
+    if (Array.isArray(chromeData)) {
+      newData += chromeData.map(d => bumpEdgeFromChrome(d, originalData));
+    } else {
+      newData.push(bumpEdgeFromChrome(chromeData, originalData));
+    }
+  }
+
+  return combineStatements(...newData);
 };
 
 /**
@@ -330,7 +409,8 @@ const bumpOpera = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'opera',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -340,12 +420,13 @@ const bumpOpera = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'opera',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
   if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
+    newData.notes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Opera');
   }
 
   return newData;
@@ -353,32 +434,51 @@ const bumpOpera = (originalData, sourceData, source) => {
 
 /**
  * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @param {string} source
+ * @param {SupportStatement} chromeAndroidData
+ * @param {SupportStatement} operaData
  * @returns {SupportStatement}
  */
-const bumpOperaAndroid = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
+const bumpOperaAndroid = (originalData, chromeAndroidData, operaData) => {
+  let newData = copyStatement(chromeAndroidData);
 
-  if (typeof sourceData.version_added === 'string') {
+  if (
+    typeof operaData.version_added === 'string' &&
+    operaData.version_added.replace('≤', '') < 15
+  ) {
+    if (operaData.include('≤')) {
+      newData.version_added = operaData.version_added;
+    } else {
+      newData.version_added = getMatchingBrowserVersion(
+        'opera_android',
+        'opera',
+        operaData.version_added,
+      );
+    }
+  } else if (typeof chromeAndroidData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'opera_android',
-      browsers[source].releases[sourceData.version_added],
+      'chrome_android',
+      chromeAndroidData.version_added,
     );
   }
 
   if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
+    chromeAndroidData.version_removed &&
+    typeof chromeAndroidData.version_removed === 'string'
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'opera_android',
-      browsers[source].releases[sourceData.version_removed],
+      'chrome_android',
+      chromeAndroidData.version_removed,
     );
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
+  if (typeof chromeAndroidData.notes === 'string') {
+    newData.notes = updateNotes(
+      chromeAndroidData.notes,
+      /Chrome(?! ?OS)/g,
+      'Opera',
+    );
   }
 
   return newData;
@@ -396,7 +496,8 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'safari_ios',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -406,7 +507,8 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'safari_ios',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
@@ -425,7 +527,8 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'samsunginternet_android',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -435,14 +538,15 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'samsunginternet_android',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
   if (typeof sourceData.notes === 'string') {
     newData.notes = updateNotes(
       sourceData.notes,
-      /Chrome/g,
+      /Chrome(?! ?OS)/g,
       'Samsung Internet',
     );
   }
@@ -452,40 +556,50 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 
 /**
  * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @param {string} source
+ * @param {SupportStatement} chromeAndroidData
+ * @param {SupportStatement} safariData
  * @returns {SupportStatement}
  */
-const bumpWebView = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
+const bumpWebView = (originalData, chromeAndroidData, safariData) => {
+  let newData = copyStatement(chromeAndroidData);
 
-  const createWebViewRange = version => {
-    if (Number(version) <= 18) {
+  const createWebViewRange = (version, safariVersion) => {
+    if (desktopVersion <= '3') {
       return '1';
-    } else if (Number(version) > 18 && Number(version) < 30) {
+    } else if (version < 30) {
       return '≤37';
-    } else if (Number(version) >= 30 && Number(version) < 33) {
+    } else if (version >= 30 && version < 33) {
       return '4.4';
-    } else if (Number(version) >= 33 && Number(version) < 37) {
+    } else if (version >= 33 && version < 37) {
       return '4.4.3';
     } else {
       return version;
     }
   };
 
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = createWebViewRange(sourceData.version_added);
+  if (typeof chromeAndroidData.version_added === 'string') {
+    newData.version_added = createWebViewRange(
+      chromeAndroidData.version_added,
+      safariData.version_added,
+    );
   }
 
   if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
+    chromeAndroidData.version_removed &&
+    typeof chromeAndroidData.version_removed === 'string'
   ) {
-    newData.version_removed = createWebViewRange(sourceData.version_removed);
+    newData.version_removed = createWebViewRange(
+      chromeAndroidData.version_removed,
+      safariData.version_removed,
+    );
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+  if (typeof chromeAndroidData.notes === 'string') {
+    newData.notes = updateNotes(
+      chromeAndroidData.notes,
+      /Chrome(?! ?OS)/g,
+      'WebView',
+    );
   }
 
   return newData;
@@ -507,18 +621,22 @@ const bumpGeneric = (originalData, sourceData, source) => {
  * @param {string} destination
  * @param {string} source
  * @param {SupportStatement} originalData
+ * @param {SupportStatement} compData
  */
-const bumpVersion = (data, destination, source, originalData) => {
+const bumpVersion = (data, destination, source, originalData, compData) => {
   let newData = null;
   if (data == null) {
     return null;
-  } else if (
-    Array.isArray(data) &&
-    !(destination == 'edge' && source == 'chrome')
-  ) {
+  } else if (Array.isArray(data)) {
     newData = [];
     for (let i = 0; i < data.length; i++) {
-      newData[i] = bumpVersion(data[i], destination, source, originalData);
+      newData[i] = bumpVersion(
+        data[i],
+        destination,
+        source,
+        originalData,
+        compData,
+      );
     }
   } else {
     let bumpFunction = null;
@@ -527,16 +645,19 @@ const bumpVersion = (data, destination, source, originalData) => {
       case 'chrome_android':
         bumpFunction = bumpChromeAndroid;
         break;
-      case 'edge':
-        bumpFunction = bumpEdge;
-        break;
       case 'firefox_android':
         bumpFunction = bumpFirefoxAndroid;
+        break;
+      case 'edge':
+        bumpFunction = (originalData, data, source) =>
+          bumpEdge(originalData, data, compData['ie']);
         break;
       case 'opera':
         bumpFunction = bumpOpera;
         break;
       case 'opera_android':
+        bumpFunction = (originalData, data, source) =>
+          bumpOperaAndroid(originalData, data, compData['opera_android']);
         bumpFunction = bumpOperaAndroid;
         break;
       case 'safari_ios':
@@ -546,7 +667,8 @@ const bumpVersion = (data, destination, source, originalData) => {
         bumpFunction = bumpSamsungInternet;
         break;
       case 'webview_android':
-        bumpFunction = bumpWebView;
+        bumpFunction = (originalData, data, source) =>
+          bumpWebView(originalData, data, compData['safari']);
         break;
       default:
         bumpFunction = bumpGeneric;
@@ -569,7 +691,7 @@ const bumpVersion = (data, destination, source, originalData) => {
  @ @returns {Identifier}
  */
 const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
-  let comp = data[rootPath].__compat.support;
+  let compData = data[rootPath].__compat.support;
 
   let doBump = false;
   if (modify == 'always') {
@@ -579,22 +701,28 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
       modify == 'nonreal'
         ? [true, null, undefined]
         : [true, false, null, undefined];
-    if (Array.isArray(comp[browser])) {
-      for (let i = 0; i < comp[browser].length; i++) {
-        if (triggers.includes(comp[browser][i].version_added)) {
+    if (Array.isArray(compData[browser])) {
+      for (let i = 0; i < compData[browser].length; i++) {
+        if (triggers.includes(compData[browser][i].version_added)) {
           doBump = true;
           break;
         }
       }
-    } else if (comp[browser] !== undefined) {
-      doBump = triggers.includes(comp[browser].version_added);
+    } else if (compData[browser] !== undefined) {
+      doBump = triggers.includes(compData[browser].version_added);
     } else {
       doBump = true;
     }
   }
 
   if (doBump) {
-    let newValue = bumpVersion(comp[source], browser, source, comp[browser]);
+    let newValue = bumpVersion(
+      compData[source],
+      browser,
+      source,
+      compData[browser],
+      compData,
+    );
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
@@ -748,6 +876,16 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
     );
     return false;
+  }
+
+  if (
+    ['edge', 'opera_android', 'webview_android'].includes(browser) &&
+    forced_source
+  ) {
+    console.warn(
+      'Warning: Edge, Opera Android and WebView do not support --source parameter.',
+    );
+    forced_source = false;
   }
 
   let source = getSource(browser, forced_source);
