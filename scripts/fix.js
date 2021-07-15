@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 'use strict';
+
 const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
@@ -36,21 +39,25 @@ function load(...files) {
   }
 }
 
-if (process.argv[2]) {
-  load(process.argv[2]);
-} else {
-  load(
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'test',
-    'webdriver',
-    'webextensions',
-  );
+if (require.main === module) {
+  if (process.argv[2]) {
+    load(process.argv[2]);
+  } else {
+    load(
+      'api',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'test',
+      'webdriver',
+      'webextensions',
+    );
 
-  format();
+    format();
+  }
 }
+
+module.exports = load;

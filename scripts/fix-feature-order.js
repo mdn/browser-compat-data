@@ -1,6 +1,7 @@
-#!/usr/bin/env node
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
+
+'use strict';
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -15,7 +16,6 @@
  * @returns {*} The new value
  */
 
-'use strict';
 const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
@@ -54,53 +54,5 @@ const fixFeatureOrder = filename => {
     fs.writeFileSync(filename, expected + '\n', 'utf-8');
   }
 };
-
-if (require.main === module) {
-  /**
-   * @param {string[]} files
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          fixFeatureOrder(file);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map(subfile => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
-    }
-  }
-
-  if (process.argv[2]) {
-    load(process.argv[2]);
-  } else {
-    load(
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'test',
-      'webdriver',
-      'webextensions',
-    );
-  }
-}
 
 module.exports = fixFeatureOrder;

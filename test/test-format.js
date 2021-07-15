@@ -1,4 +1,5 @@
 'use strict';
+
 const { execSync } = require('child_process');
 const chalk = require('chalk');
 
