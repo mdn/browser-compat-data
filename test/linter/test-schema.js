@@ -1,7 +1,6 @@
 'use strict';
 const Ajv = require('ajv');
 const betterAjvErrors = require('better-ajv-errors');
-const path = require('path');
 const chalk = require('chalk');
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
