@@ -6,7 +6,7 @@ RELEASE DATE TK
 
 ### Notable changes
 
-- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481))
+- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481), ([#11500](https://github.com/mdn/browser-compat-data/pull/11500/)))
 
   <details>
   <summary>Features removed and addded</summary>
@@ -42,6 +42,10 @@ RELEASE DATE TK
   - `api.Request.Request.referrer_init`
   - `api.RTCPeerConnection.setLocalDescription.optional_description`
   - `api.RTCPeerConnection.setRemoteDescription.optional_description`
+  - `api.Selection.containsNode.partialContainment`
+  - `api.Selection.extend.offset`
+  - `api.Selection.modify.node`
+  - `api.Selection.modify.offset`
   - `api.SharedWorker.SharedWorker.name_option`
   - `javascript.builtins.Array.toLocaleString.locales`
   - `javascript.builtins.Array.toLocaleString.options`
@@ -86,6 +90,10 @@ RELEASE DATE TK
   - `api.Request.Request.init_referrer_parameter`
   - `api.RTCPeerConnection.setLocalDescription.description_parameter_optional`
   - `api.RTCPeerConnection.setRemoteDescription.description_parameter_optional`
+  - `api.Selection.collapse.node_parameter_nullable`
+  - `api.Selection.collapse.offset_parameter_optional`
+  - `api.Selection.containsNode.partialContainment_parameter_optional`
+  - `api.Selection.extend.offset_parameter_optional`
   - `api.SharedWorker.SharedWorker.options_name_parameter`
   - `javascript.builtins.Array.toLocaleString.locales_parameter`
   - `javascript.builtins.Array.toLocaleString.options_parameter`
