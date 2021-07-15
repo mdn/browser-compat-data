@@ -1,5 +1,6 @@
 'use strict';
-const testBrowsers = require('./test-browsers.js');
+const testBrowsersData = require('./test-browsers-data.js');
+const testBrowsersPresence = require('./test-browsers-presence.js');
 const testLinks = require('./test-links.js');
 const testPrefix = require('./test-prefix.js');
 const testRealValues = require('./test-real-values.js');
@@ -10,7 +11,8 @@ const testConsistency = require('./test-consistency.js');
 const testDescriptions = require('./test-descriptions.js');
 
 module.exports = {
-  testBrowsers,
+  testBrowsersData,
+  testBrowsersPresence,
   testLinks,
   testPrefix,
   testRealValues,
