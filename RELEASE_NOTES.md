@@ -101,6 +101,7 @@ RELEASE DATE TK
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.Event.getPreventDefault` ([#11100](https://github.com/mdn/browser-compat-data/pull/11100))
   - `api.MouseEvent.MouseEvent.region_support` ([#11499](https://github.com/mdn/browser-compat-data/pull/11499))
 
 ## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
