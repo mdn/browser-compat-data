@@ -6,7 +6,10 @@ const fixFeatureOrder = require('./fix-feature-order');
 const format = require('./fix-format');
 
 /**
- * @param {string[]} files
+ * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
+ *
+ * @param {string[]} files The files to load and perform fix upon
+ * @returns {void}
  */
 function load(...files) {
   for (let file of files) {

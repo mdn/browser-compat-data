@@ -1,5 +1,4 @@
 'use strict';
-const assert = require('assert');
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -9,6 +8,8 @@ const assert = require('assert');
  * @property {string[]} matches
  * @property {string[]} misses
  */
+
+const assert = require('assert');
 
 /** @type {Identifier} */
 const bcd = require('..');

@@ -3,6 +3,11 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
@@ -10,6 +15,9 @@ const { platform } = require('os');
 
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
+/**
+ * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
+ */
 const tests = [
   {
     input: {
@@ -134,6 +142,11 @@ const tests = [
   },
 ];
 
+/**
+ * Test the WebView flags removal migration, using predefined tests
+ *
+ * @returns {boolean} Whether the test has found errors
+ */
 const testFixWebViewFlags = (logger = console) => {
   let hasErrors = false;
   for (let i = 0; i < tests.length; i++) {
