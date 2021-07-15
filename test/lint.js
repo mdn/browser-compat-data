@@ -8,7 +8,6 @@ const {
   testBrowsers,
   testLinks,
   testPrefix,
-  testRealValues,
   testStyle,
   testSchema,
   testVersions,
@@ -61,7 +60,6 @@ function load(...files) {
           hasBrowserErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
-          hasRealValueErrors = false,
           hasPrefixErrors = false,
           hasDescriptionsErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
@@ -100,7 +98,6 @@ function load(...files) {
             hasBrowserErrors = testBrowsers(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
-            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
           }
@@ -117,7 +114,6 @@ function load(...files) {
           hasBrowserErrors,
           hasVersionErrors,
           hasConsistencyErrors,
-          hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
         ].some(x => !!x);
@@ -180,7 +176,6 @@ if (hasErrors) {
         testStyle(file);
         testLinks(file);
         testVersions(file);
-        testRealValues(file);
         testBrowsers(file);
         testConsistency(file);
         testPrefix(file);

@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
@@ -25,9 +26,6 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
-/** @type string[] */
-const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
-
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
@@ -35,13 +33,49 @@ for (const browser of Object.keys(browsers)) {
   }
 }
 
+/** @type string[] */
+const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
+
+/** @type {string[]} */
+const blockMany = [
+  'chrome',
+  'chrome_android',
+  'edge',
+  'firefox',
+  'firefox_android',
+  'ie',
+  'opera',
+  'opera_android',
+  'safari',
+  'safari_ios',
+  'samsunginternet_android',
+  'webview_android',
+];
+
+/** @type {Record<string, string[]>} */
+const blockList = {
+  api: [],
+  css: blockMany,
+  html: [],
+  http: [],
+  svg: [],
+  javascript: [...blockMany, 'nodejs'],
+  mathml: blockMany,
+  webdriver: blockMany,
+  webextensions: [],
+  xpath: [],
+  xslt: [],
+};
+
 /**
  * @param {string} browserIdentifier
  * @param {VersionValue} version
  */
-function isValidVersion(browserIdentifier, version) {
+function isValidVersion(browser, category, version) {
   if (typeof version === 'string') {
-    return validBrowserVersions[browserIdentifier].includes(version);
+    return validBrowserVersions[browser].includes(version);
+  } else if (blockList[category].includes(browser) && version !== false) {
+    return false;
   } else {
     return true;
   }
@@ -71,65 +105,73 @@ function addedBeforeRemoved(statement) {
  * @param {string} relPath
  * @param {Logger} logger
  */
-function checkVersions(supportData, relPath, logger) {
+function checkVersions(supportData, category, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
       /** @type {SimpleSupportStatement[]} */
-      const supportStatements = [];
-      if (Array.isArray(supportData[browser])) {
-        Array.prototype.push.apply(supportStatements, supportData[browser]);
-      } else {
-        supportStatements.push(supportData[browser]);
-      }
-
-      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[
-        browser
-      ].join(', ')}`;
-      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[
-        browser
-      ].join(', ')}`;
+      const supportStatements = Array.isArray(supportData[browser])
+        ? supportData[browser]
+        : [supportData[browser]];
 
       for (const statement of supportStatements) {
-        if (!isValidVersion(browser, statement.version_added)) {
-          logger.error(
-            chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
-          );
-        }
-        if (!isValidVersion(browser, statement.version_removed)) {
-          logger.error(
-            chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
-          );
-        }
-        if ('version_added' in statement && 'version_removed' in statement) {
-          if (statement.version_added === statement.version_removed) {
+        if (statement === undefined) {
+          if (blockList[category].includes(browser)) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+              chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
             );
           }
-          if (
-            typeof statement.version_added !== 'string' &&
-            statement.version_added !== true
-          ) {
+        } else {
+          if (!isValidVersion(browser, category, statement.version_added)) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`,
+              chalk`{red → {bold ${relPath}} - {bold version_added: "${
+                statement.version_added
+              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${
+                blockList[category].includes(browser)
+                  ? `false, ${validBrowserVersions[browser].join(', ')}`
+                  : `true, false, null, ${validBrowserVersions[browser].join(
+                      ', ',
+                    )}`
+              }}`,
             );
-          } else if (
-            typeof statement.version_added === 'string' &&
-            typeof statement.version_removed === 'string'
-          ) {
-            if (addedBeforeRemoved(statement) === false) {
+          }
+          if ('version_added' in statement && 'version_removed' in statement) {
+            if (statement.version_added === statement.version_removed) {
+              logger.error(
+                chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+              );
+            }
+            if (
+              'version_removed' in statement &&
+              !isValidVersion(browser, category, statement.version_removed)
+            ) {
+              logger.error(
+                chalk`{red → {bold ${relPath}} - {bold version_removed: "${
+                  statement.version_removed
+                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${
+                  blockList[category].includes(browser)
+                    ? `false, ${validBrowserVersions[browser].join(', ')}`
+                    : `true, false, null, ${validBrowserVersions[browser].join(
+                        ', ',
+                      )}`
+                }}`,
+              );
+            } else if (
+              typeof statement.version_added === 'string' &&
+              typeof statement.version_removed === 'string' &&
+              addedBeforeRemoved(statement) === false
+            ) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
             }
-          }
-        }
-        if ('flags' in statement) {
-          if (FLAGLESS_BROWSERS.includes(browser)) {
-            logger.error(
-              chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
-            );
+            if ('flags' in statement) {
+              if (FLAGLESS_BROWSERS.includes(browser)) {
+                logger.error(
+                  chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
+                );
+              }
+            }
           }
         }
       }
@@ -141,6 +183,12 @@ function checkVersions(supportData, relPath, logger) {
  * @param {string} filename
  */
 function testVersions(filename) {
+  const relativePath = path.relative(
+    path.resolve(__dirname, '..', '..'),
+    filename,
+  );
+  const category =
+    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -153,7 +201,7 @@ function testVersions(filename) {
   function findSupport(data, relPath) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
+        checkVersions(data[prop].support, category, relPath, logger);
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
