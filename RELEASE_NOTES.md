@@ -1,5 +1,197 @@
 # Release notes
 
+## [v3.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.11)
+
+July 15, 2021
+
+### Notable changes
+
+- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481), [#11500](https://github.com/mdn/browser-compat-data/pull/11500/))
+
+  <details>
+  <summary>Features removed and addded</summary>
+
+  **Removed**
+
+  - `api.Clients.matchAll.includeUncontrolled_option`
+  - `api.CSSStyleSheet.insertRule.optional_index`
+  - `api.Document.createTreeWalker.whatToShow_filter_optional`
+  - `api.Document.importNode.deep_optional`
+  - `api.Element.animate.composite_option`
+  - `api.Element.animate.id_option`
+  - `api.Element.animate.iterationcomposite_option`
+  - `api.Element.animate.pseudoElement_option`
+  - `api.Element.requestFullscreen.options_parameter`
+  - `api.Element.scrollIntoView.scrollIntoViewOptions`
+  - `api.EventTarget.addEventListener.optional_usecapture`
+  - `api.EventTarget.addEventListener.options.capture`
+  - `api.EventTarget.addEventListener.options.once`
+  - `api.EventTarget.addEventListener.options.passive_true_touch`
+  - `api.EventTarget.addEventListener.options.passive_true_wheel`
+  - `api.EventTarget.addEventListener.options.passive`
+  - `api.EventTarget.addEventListener.options.signal`
+  - `api.EventTarget.addEventListener.options`
+  - `api.EventTarget.removeEventListener.optional_type_listener`
+  - `api.EventTarget.removeEventListener.optional_usecapture`
+  - `api.EventTarget.removeEventListener.options`
+  - `api.HTMLTableRowElement.insertCell.negative_one_index_parameter`
+  - `api.HTMLTableRowElement.insertCell.optional_index_parameter`
+  - `api.IntersectionObserver.IntersectionObserver.document_as_root`
+  - `api.MediaRecorder.MediaRecorder.options`
+  - `api.Node.cloneNode.deep_defaults_to_false`
+  - `api.Request.Request.referrer_init`
+  - `api.RTCPeerConnection.setLocalDescription.optional_description`
+  - `api.RTCPeerConnection.setRemoteDescription.optional_description`
+  - `api.Selection.containsNode.partialContainment`
+  - `api.Selection.extend.offset`
+  - `api.Selection.modify.node`
+  - `api.Selection.modify.offset`
+  - `api.SharedWorker.SharedWorker.name_option`
+  - `javascript.builtins.Array.toLocaleString.locales`
+  - `javascript.builtins.Array.toLocaleString.options`
+  - `javascript.builtins.Intl.Collator.Collator.caseFirst`
+  - `javascript.builtins.Intl.Collator.Collator.collation`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.compactDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.currencyDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.currencySign`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.notation`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.signDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.unit`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.unitDisplay`
+
+  **Added**
+
+  - `api.Clients.matchAll.options_includeUncontrolled_parameter`
+  - `api.CSSStyleSheet.insertRule.index_parameter_optional`
+  - `api.Document.createTreeWalker.whatToShow_filter_parameters_optional`
+  - `api.Document.importNode.deep_parameter_optional`
+  - `api.Element.animate.options_composite_parameter`
+  - `api.Element.animate.options_id_parameter`
+  - `api.Element.animate.options_iterationComposite_parameter`
+  - `api.Element.animate.options_pseudoElement_parameter`
+  - `api.Element.requestFullscreen.options_navigationUI_parameter`
+  - `api.Element.scrollIntoView.options_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_capture_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_once_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_touch`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_wheel`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_signal_parameter`
+  - `api.EventTarget.addEventListener.options_parameter`
+  - `api.EventTarget.addEventListener.useCapture_parameter_optional`
+  - `api.EventTarget.removeEventListener.options_parameter`
+  - `api.EventTarget.removeEventListener.type_listener_parameters_optional`
+  - `api.EventTarget.removeEventListener.useCapture_parameter_optional`
+  - `api.HTMLTableRowElement.insertCell.index_parameter_negative_one`
+  - `api.HTMLTableRowElement.insertCell.index_parameter_optional`
+  - `api.IntersectionObserver.IntersectionObserver.options_root_parameter_Document`
+  - `api.MediaRecorder.MediaRecorder.options_parameter`
+  - `api.Node.cloneNode.deep_parameter_default_false`
+  - `api.Request.Request.init_referrer_parameter`
+  - `api.RTCPeerConnection.setLocalDescription.description_parameter_optional`
+  - `api.RTCPeerConnection.setRemoteDescription.description_parameter_optional`
+  - `api.Selection.collapse.node_parameter_nullable`
+  - `api.Selection.collapse.offset_parameter_optional`
+  - `api.Selection.containsNode.partialContainment_parameter_optional`
+  - `api.Selection.extend.offset_parameter_optional`
+  - `api.SharedWorker.SharedWorker.options_name_parameter`
+  - `javascript.builtins.Array.toLocaleString.locales_parameter`
+  - `javascript.builtins.Array.toLocaleString.options_parameter`
+  - `javascript.builtins.Intl.Collator.Collator.options_caseFirst_parameter`
+  - `javascript.builtins.Intl.Collator.Collator.options_collation_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_compactDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currencyDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currencySign_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_notation_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_signDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_unit_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_unitDisplay_parameter`
+
+  </details>
+
+- The `api.Navigator`, `api.NavigatorConcurrentHardware`, `api.NavigatorID`, `api.NavigatorLanguage`, `api.NavigatorOnLine`, `api.NavigatorPlugins`, and `api.NavigatorStorage` mixins have been removed and replaced by features representing its exposed interfaces. ([#11413](https://github.com/mdn/browser-compat-data/pull/11413))
+
+  <details>
+
+  <summary>New features ex-<code>Navigator</code> (and related mixins)</summary>
+
+  - `api.Navigator.appCodeName`
+  - `api.Navigator.appName`
+  - `api.Navigator.appVersion`
+  - `api.Navigator.hardwareConcurrency`
+  - `api.Navigator.javaEnabled`
+  - `api.Navigator.language`
+  - `api.Navigator.languages`
+  - `api.Navigator.mimeTypes`
+  - `api.Navigator.onLine`
+  - `api.Navigator.platform`
+  - `api.Navigator.plugins`
+  - `api.Navigator.product`
+  - `api.Navigator.taintEnabled`
+  - `api.Navigator.userAgent`
+  - `api.WorkerNavigator.appCodeName`
+  - `api.WorkerNavigator.appName`
+  - `api.WorkerNavigator.appVersion`
+  - `api.WorkerNavigator.hardwareConcurrency`
+  - `api.WorkerNavigator.language`
+  - `api.WorkerNavigator.languages`
+  - `api.WorkerNavigator.onLine`
+  - `api.WorkerNavigator.platform`
+  - `api.WorkerNavigator.product`
+  - `api.WorkerNavigator.storage`
+  - `api.WorkerNavigator.userAgent`
+
+  </details>
+
+- The `api.PaymentDetailsBase` mixin has been removed and replaced by features representing its exposed interfaces. ([#11414](https://github.com/mdn/browser-compat-data/pull/11414))
+
+  The dictionary `api.PaymentDetailsInit` was also removed as part of this process.
+
+  <details>
+
+  <summary>New features ex-<code>PaymentDetailsBase</code></summary>
+
+  - `api.PaymentDetailsUpdate.displayItems`
+  - `api.PaymentDetailsUpdate.modifiers`
+  - `api.PaymentDetailsUpdate.shippingOptions`
+
+  </details>
+
+- The prefixed non-standard features `api.Point`, `api.Window.convertPointFromNodeToPage`, and `api.Window.convertPointFromPageToNode` were renamed to their actual implementations as `api.WebKitPoint`, `api.Window.webkitConvertPointFromNodeToPage`, and `api.Window.webkitConvertPointFromPageToNode`, respectively. ([#11361](https://github.com/mdn/browser-compat-data/pull/11361))
+
+- The following features duplicating `api.ClipboardEvent` data have been removed ([#11524](https://github.com/mdn/browser-compat-data/pull/11524)):
+
+  - `api.Document.copy_event.clipboardData`
+  - `api.Document.cut_event.clipboardData`
+  - `api.Document.paste_event.clipboardData`
+  - `api.Element.copy_event.clipboardData`
+  - `api.Element.cut_event.clipboardData`
+  - `api.Element.paste_event.clipboardData`
+  - `api.Window.copy_event.clipboardData`
+  - `api.Window.cut_event.clipboardData`
+  - `api.Window.paste_event.clipboardData`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.importNode.deep_parameter_optional` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
+  - `api.Event.getPreventDefault` ([#11100](https://github.com/mdn/browser-compat-data/pull/11100))
+  - `api.Event.preventBubble` ([#11101](https://github.com/mdn/browser-compat-data/pull/11101))
+  - `api.Event.preventCapture` ([#11101](https://github.com/mdn/browser-compat-data/pull/11101))
+  - `api.FullscreenOptions` ([#11481](https://github.com/mdn/browser-compat-data/pull/11481))
+  - `api.MouseEvent.MouseEvent.region_support` ([#11499](https://github.com/mdn/browser-compat-data/pull/11499))
+  - `api.Node.cloneNode.deep_parameter_default_false` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
+  - `api.PushRegistrationManager` ([#11355](https://github.com/mdn/browser-compat-data/pull/11355))
+  - `api.Sanitizer.sanitizeToString` ([#11520](https://github.com/mdn/browser-compat-data/pull/11520))
+  - `api.WindowOrWorkerGlobalScope.setTimeout.tracking_throttling` ([#11452](https://github.com/mdn/browser-compat-data/pull/11452))
+  - `api.XDomainRequest` ([#11438](https://github.com/mdn/browser-compat-data/pull/11438))
+
+### Statistics
+
+- 17 contributors have changed 287 files with 5,246 additions and 4,133 deletions in 109 commits ([`v3.3.10...v3.3.11`](https://github.com/mdn/browser-compat-data/compare/v3.3.10...v3.3.11))
+- 13,063 total features
+- 793 total contributors
+- 3,443 total stargazers
+
 ## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
 
 July 1, 2021
