@@ -111,6 +111,18 @@ RELEASE DATE TK
 
 - The prefixed non-standard features `api.Point`, `api.Window.convertPointFromNodeToPage`, and `api.Window.convertPointFromPageToNode` were renamed to their actual implementations as `api.WebKitPoint`, `api.Window.webkitConvertPointFromNodeToPage`, and `api.Window.webkitConvertPointFromPageToNode`, respectively. ([#11361](https://github.com/mdn/browser-compat-data/pull/11361))
 
+- The following features duplicating `api.ClipboardEvent` data have been removed ([#11524](https://github.com/mdn/browser-compat-data/pull/11524)):
+
+  - `api.Document.copy_event.clipboardData`
+  - `api.Document.cut_event.clipboardData`
+  - `api.Document.paste_event.clipboardData`
+  - `api.Element.copy_event.clipboardData`
+  - `api.Element.cut_event.clipboardData`
+  - `api.Element.paste_event.clipboardData`
+  - `api.Window.copy_event.clipboardData`
+  - `api.Window.cut_event.clipboardData`
+  - `api.Window.paste_event.clipboardData`
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.Document.importNode.deep_parameter_optional` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
