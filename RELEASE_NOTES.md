@@ -107,6 +107,7 @@ RELEASE DATE TK
   - `api.Event.preventCapture` ([#11101](https://github.com/mdn/browser-compat-data/pull/11101))
   - `api.MouseEvent.MouseEvent.region_support` ([#11499](https://github.com/mdn/browser-compat-data/pull/11499))
   - `api.Node.cloneNode.deep_parameter_default_false` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
+  - `api.PushRegistrationManager` ([#11355](https://github.com/mdn/browser-compat-data/pull/11355))
 
 ## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
 
