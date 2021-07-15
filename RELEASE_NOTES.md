@@ -4,6 +4,101 @@
 
 RELEASE DATE TK
 
+### Notable changes
+
+- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502))
+
+  <details>
+  <summary>Features removed and addded</summary>
+
+  **Removed**
+
+  - `api.CSSStyleSheet.insertRule.optional_index`
+  - `api.Clients.matchAll.includeUncontrolled_option`
+  - `api.Document.createTreeWalker.whatToShow_filter_optional`
+  - `api.Document.importNode.deep_optional`
+  - `api.Element.animate.composite_option`
+  - `api.Element.animate.id_option`
+  - `api.Element.animate.iterationcomposite_option`
+  - `api.Element.animate.pseudoElement_option`
+  - `api.Element.scrollIntoView.scrollIntoViewOptions`
+  - `api.EventTarget.addEventListener.optional_usecapture`
+  - `api.EventTarget.addEventListener.options`
+  - `api.EventTarget.addEventListener.options.capture`
+  - `api.EventTarget.addEventListener.options.once`
+  - `api.EventTarget.addEventListener.options.passive`
+  - `api.EventTarget.addEventListener.options.passive_true_touch`
+  - `api.EventTarget.addEventListener.options.passive_true_wheel`
+  - `api.EventTarget.addEventListener.options.signal`
+  - `api.EventTarget.removeEventListener.optional_type_listener`
+  - `api.EventTarget.removeEventListener.optional_usecapture`
+  - `api.EventTarget.removeEventListener.options`
+  - `api.HTMLTableRowElement.insertCell.negative_one_index_parameter`
+  - `api.HTMLTableRowElement.insertCell.optional_index_parameter`
+  - `api.IntersectionObserver.IntersectionObserver.document_as_root`
+  - `api.MediaRecorder.MediaRecorder.options`
+  - `api.Node.cloneNode.deep_defaults_to_false`
+  - `api.RTCPeerConnection.setLocalDescription.optional_description`
+  - `api.RTCPeerConnection.setRemoteDescription.optional_description`
+  - `api.Request.Request.referrer_init`
+  - `api.SharedWorker.SharedWorker.name_option`
+  - `javascript.builtins.Array.toLocaleString.locales`
+  - `javascript.builtins.Array.toLocaleString.options`
+  - `javascript.builtins.Intl.Collator.Collator.caseFirst`
+  - `javascript.builtins.Intl.Collator.Collator.collation`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.compactDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.currencyDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.currencySign`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.notation`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.signDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.unit`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.unitDisplay`
+
+  **Added**
+
+  - `api.CSSStyleSheet.insertRule.index_parameter_optional`
+  - `api.Clients.matchAll.options_includeUncontrolled_parameter`
+  - `api.Document.createTreeWalker.whatToShow_filter_parameters_optional`
+  - `api.Document.importNode.deep_parameter_optional`
+  - `api.Element.animate.options_composite_parameter`
+  - `api.Element.animate.options_id_parameter`
+  - `api.Element.animate.options_iterationComposite_parameter`
+  - `api.Element.animate.options_pseudoElement_parameter`
+  - `api.Element.scrollIntoView.options_parameter`
+  - `api.EventTarget.addEventListener.options_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_capture_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_once_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_touch`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_wheel`
+  - `api.EventTarget.addEventListener.options_parameter.options_signal_parameter`
+  - `api.EventTarget.addEventListener.useCapture_parameter_optional`
+  - `api.EventTarget.removeEventListener.options_parameter`
+  - `api.EventTarget.removeEventListener.type_listener_parameters_optional`
+  - `api.EventTarget.removeEventListener.useCapture_parameter_optional`
+  - `api.HTMLTableRowElement.insertCell.index_parameter_negative_one`
+  - `api.HTMLTableRowElement.insertCell.index_parameter_optional`
+  - `api.IntersectionObserver.IntersectionObserver.options_root_parameter_Document`
+  - `api.MediaRecorder.MediaRecorder.options_parameter`
+  - `api.Node.cloneNode.deep_parameter_default_false`
+  - `api.RTCPeerConnection.setLocalDescription.description_parameter_optional`
+  - `api.RTCPeerConnection.setRemoteDescription.description_parameter_optional`
+  - `api.Request.Request.init_referrer_parameter`
+  - `api.SharedWorker.SharedWorker.options_name_parameter`
+  - `javascript.builtins.Array.toLocaleString.locales_parameter`
+  - `javascript.builtins.Array.toLocaleString.options_parameter`
+  - `javascript.builtins.Intl.Collator.Collator.options_caseFirst_parameter`
+  - `javascript.builtins.Intl.Collator.Collator.options_collation_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_compactDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currencyDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currencySign_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_notation_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_signDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_unit_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_unitDisplay_parameter`
+
+  </details>
+
 ## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
 
 July 1, 2021
