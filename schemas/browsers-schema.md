@@ -40,6 +40,10 @@ Underneath, there is a `releases` object which will hold the various releases of
 
 The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
 
+### `accepts_flags`
+
+An optional boolean indicating whether the browser supports flags. This is a hint to data contributors and tools. A `true` value does not mean that there exists any flag data for the browser and a `false` value does not guarantee a lack of flag data for the browser.
+
 ### `pref_url`
 
 An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
@@ -61,6 +65,10 @@ The release objects consist of the following properties:
 - An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
+
+- An optional `accepts_flags` boolean property indicating whether the release supports flags.
+
+  This is a hint to data contributors and tools. A `true` value does not mean that there exists any flag data for the release and a `false` value does not guarantee a lack of flag data for the release.
 
 - An optional `engine` property which is the name of the browser's engine.
 
