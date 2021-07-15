@@ -135,7 +135,6 @@ const tests = [
 ];
 
 const testFixWebViewFlags = (logger = console) => {
-  let hasErrors = false;
   for (let i = 0; i < tests.length; i++) {
     let expected = JSON.stringify(tests[i]['output'], null, 2);
     let output = JSON.stringify(
@@ -145,14 +144,11 @@ const testFixWebViewFlags = (logger = console) => {
     );
 
     if (output !== expected) {
-      logger.error(chalk`{red WebView flags aren't removed properly!}
+      logger.error(chalk`WebView flags aren't removed properly!
       {yellow Actual: {bold ${output}}}
       {green Expected: {bold ${expected}}}`);
-      hasErrors = true;
     }
   }
-
-  return hasErrors;
 };
 
 if (require.main === module) {
