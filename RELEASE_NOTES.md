@@ -185,6 +185,13 @@ July 15, 2021
   - `api.WindowOrWorkerGlobalScope.setTimeout.tracking_throttling` ([#11452](https://github.com/mdn/browser-compat-data/pull/11452))
   - `api.XDomainRequest` ([#11438](https://github.com/mdn/browser-compat-data/pull/11438))
 
+### Statistics
+
+- 17 contributors have changed 287 files with 5,246 additions and 4,133 deletions in 109 commits ([`v3.3.10...v3.3.11`](https://github.com/mdn/browser-compat-data/compare/v3.3.10...v3.3.11))
+- 13,063 total features
+- 793 total contributors
+- 3,443 total stargazers
+
 ## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
 
 July 1, 2021
