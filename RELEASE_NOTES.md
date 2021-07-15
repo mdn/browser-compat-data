@@ -110,6 +110,7 @@ RELEASE DATE TK
   - `api.MouseEvent.MouseEvent.region_support` ([#11499](https://github.com/mdn/browser-compat-data/pull/11499))
   - `api.Node.cloneNode.deep_parameter_default_false` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
   - `api.PushRegistrationManager` ([#11355](https://github.com/mdn/browser-compat-data/pull/11355))
+  - `api.Sanitizer.sanitizeToString` ([#11520](https://github.com/mdn/browser-compat-data/pull/11520))
   - `api.XDomainRequest` ([#11438](https://github.com/mdn/browser-compat-data/pull/11438))
 
 ## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
