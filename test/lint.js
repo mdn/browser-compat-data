@@ -17,7 +17,6 @@ const {
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
 const testCompareFeatures = require('./test-compare-features');
-const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
 
 /** @type {Map<string, string>} */
@@ -159,7 +158,6 @@ var hasErrors = argv.files
       'xslt',
     );
 hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
 hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
