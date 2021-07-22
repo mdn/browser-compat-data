@@ -20,6 +20,9 @@ RELEASE DATE TK
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.WorkerGlobalScope.close_event` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.close` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.onclose` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
   - `api.XREnvironmentBlendMode` ([#11551](https://github.com/mdn/browser-compat-data/pull/11551))
   - `api.XRWebGLLayerInit` ([#11661](https://github.com/mdn/browser-compat-data/pull/11661))
 
