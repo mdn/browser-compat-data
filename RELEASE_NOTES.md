@@ -2,7 +2,7 @@
 
 ## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
 
-RELEASE DATE TK
+July 22, 2021
 
 ### Notable changes
 
@@ -30,6 +30,13 @@ RELEASE DATE TK
   - `api.XREye` ([#11636](https://github.com/mdn/browser-compat-data/pull/11636))
   - `api.XRFrameRequestCallback` ([#11633](https://github.com/mdn/browser-compat-data/pull/11633))
   - `api.XRWebGLLayerInit` ([#11661](https://github.com/mdn/browser-compat-data/pull/11661))
+
+### Statistics
+
+- 11 contributors have changed 159 files with 9,185 additions and 2,126 deletions in 93 commits ([`v3.3.11...v3.3.12`](https://github.com/mdn/browser-compat-data/compare/v3.3.11...v3.3.12))
+- 13,206 total features
+- 793 total contributors
+- 3,450 total stargazers
 
 ## [v3.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.11)
 
