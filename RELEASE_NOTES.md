@@ -6,6 +6,8 @@ RELEASE DATE TK
 
 ### Notable changes
 
+- `api.Console` was renamed to `api.console` to reflect the correct case of the `console` namespace. ([#11534](https://github.com/mdn/browser-compat-data/pull/11534))
+
 - Safari for iOS 5.1 data was corrected to report version 5.0 instead, since these browsers were found to support the same features. Since no data now uses the version 3.1 value, it was dropped from the release data. ([#11175](https://github.com/mdn/browser-compat-data/pull/11175))
 
 - Safari for iOS 3.1 data was corrected to report version 3.0 instead, since these browsers were found to support the same features. Since no data now uses the version 3.1 value, it was dropped from the release data. ([#11173](https://github.com/mdn/browser-compat-data/pull/11173))
