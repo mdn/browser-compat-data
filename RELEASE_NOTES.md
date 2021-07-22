@@ -8,9 +8,7 @@ July 22, 2021
 
 - `api.Console` was renamed to `api.console` to reflect the correct case of the `console` namespace. ([#11534](https://github.com/mdn/browser-compat-data/pull/11534))
 
-- Safari for iOS 5.1 data was corrected to report version 5.0 instead, since these browsers were found to support the same features. Since no data now uses the version 3.1 value, it was dropped from the release data. ([#11175](https://github.com/mdn/browser-compat-data/pull/11175))
-
-- Safari for iOS 3.1 data was corrected to report version 3.0 instead, since these browsers were found to support the same features. Since no data now uses the version 3.1 value, it was dropped from the release data. ([#11173](https://github.com/mdn/browser-compat-data/pull/11173))
+- Safari for iOS 5.1 and 3.1 data was corrected to version 5.0 and 3.0, respectively, since these browsers were found to support the same features. Since no data now uses the version 5.1 and 3.1 values, they were dropped from the release data. ([#11175](https://github.com/mdn/browser-compat-data/pull/11175))
 
 - The descendant features of `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat` (the `Intl.DateTimeFormat()` constructor's parameters) have been reorganized to follow [the guideline for parameter object features](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). See [the PR for a detailed list of features affected](https://github.com/mdn/browser-compat-data/pull/11544#issuecomment-884885596). ([#11544](https://github.com/mdn/browser-compat-data/pull/11544))
 
