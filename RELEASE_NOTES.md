@@ -20,6 +20,8 @@ RELEASE DATE TK
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.HTMLSelectElement.blur` (https://github.com/mdn/browser-compat-data/pull/11637)
+  - `api.HTMLSelectElement.focus` (https://github.com/mdn/browser-compat-data/pull/11637)
   - `api.WorkerGlobalScope.close_event` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
   - `api.WorkerGlobalScope.close` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
   - `api.WorkerGlobalScope.onclose` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
