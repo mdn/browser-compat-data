@@ -1,5 +1,41 @@
 # Release notes
 
+## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
+
+July 22, 2021
+
+### Notable changes
+
+- `api.Console` was renamed to `api.console` to reflect the correct case of the `console` namespace. ([#11534](https://github.com/mdn/browser-compat-data/pull/11534))
+
+- Safari for iOS 5.1 and 3.1 data was corrected to version 5.0 and 3.0, respectively, since these browsers were found to support the same features. Since no data now uses the version 5.1 and 3.1 values, they were dropped from the release data. ([#11175](https://github.com/mdn/browser-compat-data/pull/11175))
+
+- The descendant features of `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat` (the `Intl.DateTimeFormat()` constructor's parameters) have been reorganized to follow [the guideline for parameter object features](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). See [the PR for a detailed list of features affected](https://github.com/mdn/browser-compat-data/pull/11544#issuecomment-884885596). ([#11544](https://github.com/mdn/browser-compat-data/pull/11544))
+
+- `api.Element.attachInternals` was removed, since it duplicated `api.HTMLElement.attachInternals`. ([#11556](https://github.com/mdn/browser-compat-data/pull/11556))
+
+- `api.ContentIndexEvent.in` was renamed to `api.ContentIndexEvent.id` to correct a typo. ([#11555](https://github.com/mdn/browser-compat-data/pull/11555))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.HTMLSelectElement.blur` ([#11637](https://github.com/mdn/browser-compat-data/pull/11637))
+  - `api.HTMLSelectElement.focus` ([#11637](https://github.com/mdn/browser-compat-data/pull/11637))
+  - `api.KeyboardEvent.KeyboardEvent.code_and_key_in_init` ([#11530](https://github.com/mdn/browser-compat-data/pull/11530))
+  - `api.WorkerGlobalScope.close_event` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.close` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.onclose` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.XREnvironmentBlendMode` ([#11551](https://github.com/mdn/browser-compat-data/pull/11551))
+  - `api.XREye` ([#11636](https://github.com/mdn/browser-compat-data/pull/11636))
+  - `api.XRFrameRequestCallback` ([#11633](https://github.com/mdn/browser-compat-data/pull/11633))
+  - `api.XRWebGLLayerInit` ([#11661](https://github.com/mdn/browser-compat-data/pull/11661))
+
+### Statistics
+
+- 11 contributors have changed 159 files with 9,185 additions and 2,126 deletions in 93 commits ([`v3.3.11...v3.3.12`](https://github.com/mdn/browser-compat-data/compare/v3.3.11...v3.3.12))
+- 13,206 total features
+- 793 total contributors
+- 3,450 total stargazers
+
 ## [v3.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.11)
 
 July 15, 2021
