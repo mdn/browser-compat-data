@@ -490,42 +490,108 @@
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
           "support": {
-            "chrome": {
-              "version_added": "79"
-            },
-            "chrome_android": {
-              "version_added": "79"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Before Chrome 79, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Before Chrome 79, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Before Edge 79, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
             "firefox": {
-              "version_added": false
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "Firefox implements this attribute on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "Firefox implements this attribute on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
             },
             "ie": {
-              "version_added": false
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "Internet Explorer implements this attribute on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
             },
-            "opera": {
-              "version_added": "66"
-            },
-            "opera_android": {
-              "version_added": "57"
-            },
+            "opera": [
+              {
+                "version_added": "66"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "66",
+                "partial_implementation": true,
+                "notes": "Before Opera 66, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "57",
+                "partial_implementation": true,
+                "notes": "Before Opera Android 57, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
             "safari": {
-              "version_added": false
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "Safari implements this attribute on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "3.2",
+              "partial_implementation": true,
+              "notes": "Safari implements this attribute on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
             },
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": {
-              "version_added": "79"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "12.0"
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "12.0",
+                "partial_implementation": true,
+                "notes": "Before Samsung Internet 12.0, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "≤37",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Before Chrome 79, this attribute was implemented on <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>SVGElement</code>."
+              }
+            ]
           },
           "status": {
             "experimental": false,
