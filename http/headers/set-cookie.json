@@ -4,7 +4,7 @@
       "Set-Cookie": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie",
-          "spec_url": "https://datatracker.ietf.org/doc/html/rfc6265#section-4.1",
+          "spec_url": "https://httpwg.org/specs/rfc6265.html#sane-set-cookie",
           "support": {
             "chrome": {
               "version_added": true
@@ -147,6 +147,7 @@
         },
         "SameSite": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite",
             "description": "<code>SameSite</code>",
             "support": {
               "chrome": {
@@ -304,7 +305,7 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "13.0"
                 },
                 "webview_android": {
                   "version_added": "80"
@@ -418,26 +419,36 @@
             "__compat": {
               "description": "URL scheme-aware (\"schemeful\")",
               "support": {
-                "chrome": {
-                  "version_added": "86",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#schemeful-same-site",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                },
-                "chrome_android": {
-                  "version_added": "86",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#schemeful-same-site",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                },
+                "chrome": [
+                  {
+                    "version_added": "89"
+                  },
+                  {
+                    "version_added": "86",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "#schemeful-same-site",
+                        "value_to_set": "Enabled"
+                      }
+                    ]
+                  }
+                ],
+                "chrome_android": [
+                  {
+                    "version_added": "89"
+                  },
+                  {
+                    "version_added": "86",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "#schemeful-same-site",
+                        "value_to_set": "Enabled"
+                      }
+                    ]
+                  }
+                ],
                 "edge": {
                   "version_added": "86",
                   "flags": [
@@ -491,7 +502,7 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "15.0"
                 },
                 "webview_android": {
                   "version_added": false
@@ -553,7 +564,7 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "13.0"
                 },
                 "webview_android": {
                   "version_added": "80"

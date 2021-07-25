@@ -14,17 +14,22 @@
           "edge": {
             "version_added": "15"
           },
-          "firefox": {
-            "version_added": "22"
-          },
+          "firefox": [
+            {
+              "version_added": "44"
+            },
+            {
+              "prefix": "moz",
+              "version_added": "22"
+            }
+          ],
           "firefox_android": [
             {
               "version_added": "44"
             },
             {
               "prefix": "moz",
-              "version_added": "22",
-              "version_removed": "44"
+              "version_added": "22"
             }
           ],
           "ie": {
@@ -93,12 +98,24 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox": [
+              {
+                "version_added": "44"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "22"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "44"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "22"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -239,10 +256,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addStream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -293,7 +312,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -304,10 +323,12 @@
           "description": "<code>addstream</code> event",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "25"
+              "version_added": "25",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -331,7 +352,7 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -1071,7 +1092,7 @@
               "version_added": "25"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "22"
@@ -1092,7 +1113,7 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -1105,70 +1126,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "defaultIceServers": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/defaultIceServers",
-          "spec_url": "https://w3c.github.io/webrtc-extensions/#dom-rtcpeerconnection-getdefaulticeservers",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -1298,59 +1255,10 @@
           }
         }
       },
-      "getDefaultIceServers": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getDefaultIceServers",
-          "spec_url": "https://w3c.github.io/webrtc-extensions/#dom-rtcpeerconnection-getdefaulticeservers",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "getIdentityAssertion": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getIdentityAssertion",
-          "spec_url": "https://w3c.github.io/webrtc-identity/#dfn-getidentityassertion",
+          "spec_url": "https://w3c.github.io/webrtc-identity/#dom-rtcpeerconnection-getidentityassertion",
           "support": {
             "chrome": {
               "version_added": false
@@ -1363,10 +1271,10 @@
               "version_removed": "79"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "40"
             },
             "firefox_android": {
-              "version_added": "44"
+              "version_added": "40"
             },
             "ie": {
               "version_added": false
@@ -1416,10 +1324,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getLocalStreams",
           "support": {
             "chrome": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -1529,10 +1439,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getRemoteStreams",
           "support": {
             "chrome": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -1725,9 +1637,9 @@
             "deprecated": false
           }
         },
-        "MediaStreamTrack_argument": {
+        "selector_parameter": {
           "__compat": {
-            "description": "Optional <code>MediaStreamTrack</code> argument",
+            "description": "<code>selector</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "67"
@@ -1754,10 +1666,10 @@
                 "version_added": "48"
               },
               "safari": {
-                "version_added": null
+                "version_added": "11"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "11"
               },
               "samsunginternet_android": {
                 "version_added": "9.0"
@@ -1806,7 +1718,7 @@
                 "version_added": "11"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "11"
               },
               "samsunginternet_android": {
                 "version_added": true
@@ -1895,6 +1807,8 @@
       },
       "getTransceivers": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getTransceivers",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-gettranseceivers",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1974,13 +1888,65 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
             },
             "webview_android": {
               "version_added": true
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "icecandidateerror_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#event-icecandidateerror",
+          "description": "<code>icecandidateerror</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "77"
+            },
+            "chrome_android": {
+              "version_added": "77"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1561441'>bug 1561441</a>"
+            },
+            "firefox_android": {
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1561441'>bug 1561441</a>"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "64"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": "14.1"
+            },
+            "safari_ios": {
+              "version_added": "14.5"
+            },
+            "samsunginternet_android": {
+              "version_added": "12.0"
+            },
+            "webview_android": {
+              "version_added": "77"
             }
           },
           "status": {
@@ -2087,7 +2053,7 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -2166,20 +2132,20 @@
           }
         }
       },
-      "identityresult_event": {
+      "icegatheringstatechange_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/identityresult_event",
-          "description": "<code>identityresult</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icegatheringstatechange_event",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#event-icegatheringstatechange",
+          "description": "<code>icegatheringstatechange</code> event",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "59"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "59"
             },
             "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
+              "version_added": "15"
             },
             "firefox": {
               "version_added": "22"
@@ -2191,83 +2157,34 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "46"
             },
             "opera_android": {
               "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "7.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "59"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "idpassertionerror_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/idpassertionerror_event",
-          "description": "<code>idpassertionerror</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
       "idpLoginUrl": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/webrtc-identity/#dom-rtcpeerconnection-idploginurl",
           "support": {
             "chrome": {
               "version_added": false
@@ -2279,10 +2196,10 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "44"
+              "version_added": "40"
             },
             "firefox_android": {
-              "version_added": "44"
+              "version_added": "40"
             },
             "ie": {
               "version_added": false
@@ -2310,56 +2227,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "idpvalidationerror_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/idpvalidationerror_event",
-          "description": "<code>idpvalidationerror</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
@@ -2460,7 +2327,7 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -2481,10 +2348,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onaddstream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -2721,28 +2590,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-onicecandidateerror",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "77"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "77"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "64"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "55"
             },
             "safari": {
               "version_added": "14.1"
@@ -2751,10 +2620,10 @@
               "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "77"
             }
           },
           "status": {
@@ -2890,195 +2759,6 @@
           }
         }
       },
-      "onidentityresult": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidentityresult",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onidpassertionerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpassertionerror",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onidpvalidationerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onidpvalidationerror",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "onnegotiationneeded": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onnegotiationneeded",
@@ -3142,78 +2822,17 @@
           }
         }
       },
-      "onpeeridentity": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onpeeridentity",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Promise-based version."
-              },
-              {
-                "version_added": "37",
-                "version_removed": "43"
-              }
-            ],
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "onremovestream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/onremovestream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -3398,7 +3017,7 @@
       "peerIdentity": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/peerIdentity",
-          "spec_url": "https://w3c.github.io/webrtc-identity/#dfn-peeridentity",
+          "spec_url": "https://w3c.github.io/webrtc-identity/#dom-rtcpeerconnection-peeridentity",
           "support": {
             "chrome": {
               "version_added": false
@@ -3411,10 +3030,10 @@
               "version_removed": "79"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "40"
             },
             "firefox_android": {
-              "version_added": "44"
+              "version_added": "40"
             },
             "ie": {
               "version_added": false
@@ -3456,56 +3075,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "peeridentity_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/peeridentity_event",
-          "description": "<code>peeridentity</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
@@ -3705,10 +3274,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeStream",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": true,
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -3771,10 +3342,12 @@
           "description": "<code>removestream</code> event",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "24",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "chrome_android": {
-              "version_added": "25"
+              "version_added": "25",
+              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
             "edge": {
               "version_added": "15"
@@ -4034,7 +3607,7 @@
       "setIdentityProvider": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setIdentityProvider",
-          "spec_url": "https://w3c.github.io/webrtc-identity/#dfn-setidentityprovider",
+          "spec_url": "https://w3c.github.io/webrtc-identity/#dom-rtcpeerconnection-setidentityprovider",
           "support": {
             "chrome": {
               "version_added": false
@@ -4047,10 +3620,10 @@
               "version_removed": "79"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "40"
             },
             "firefox_android": {
-              "version_added": "44"
+              "version_added": "40"
             },
             "ie": {
               "version_added": false
@@ -4185,9 +3758,9 @@
             "deprecated": false
           }
         },
-        "optional_description": {
+        "description_parameter_optional": {
           "__compat": {
-            "description": "Description is optional",
+            "description": "<code>description</code> parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -4321,9 +3894,9 @@
             "deprecated": false
           }
         },
-        "implicit_rollback": {
+        "description_parameter_optional": {
           "__compat": {
-            "description": "Implicit rollback",
+            "description": "<code>description</code> parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -4335,7 +3908,7 @@
                 "version_added": "80"
               },
               "firefox": {
-                "version_added": "70"
+                "version_added": "75"
               },
               "firefox_android": {
                 "version_added": false
@@ -4369,9 +3942,9 @@
             }
           }
         },
-        "optional_description": {
+        "implicit_rollback": {
           "__compat": {
-            "description": "Description is optional",
+            "description": "Implicit rollback",
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -4383,7 +3956,7 @@
                 "version_added": "80"
               },
               "firefox": {
-                "version_added": "75"
+                "version_added": "70"
               },
               "firefox_android": {
                 "version_added": false
@@ -4565,7 +4138,7 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
