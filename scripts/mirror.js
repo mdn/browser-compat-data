@@ -317,6 +317,10 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
   let chromeNull = sourceData.version_added === null;
 
   if (chromeFalse) {
+    if (sourceData.version_removed <= 79) {
+      // If this feature was removed before Edgium existed, ignore
+      return {};
+    }
     if (originalData.version_added && !originalData.version_removed) {
       newData.version_removed = '79';
     }
