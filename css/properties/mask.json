@@ -30,9 +30,22 @@
                 "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
               }
             ],
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "79",
+                "partial_implementation": true,
+                "notes": "While the property is recognized, values applied to it don't have any effect."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "79",
+                "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": "2",
               "notes": "From Firefox 10, the default color space when handling masks is sRGB. Previously, the default and only supported color space was linear RGB. This changes the appearance of mask effects, but brings Firefox into compliance with the second edition of the SVG 1.1 specification."
@@ -70,25 +83,25 @@
             ],
             "safari": [
               {
-                "version_added": "3.2",
+                "version_added": "3.1",
                 "partial_implementation": true,
                 "notes": "While the property is recognized, values applied to it don't have any effect."
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "3.2",
+                "version_added": "3.1",
                 "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
               }
             ],
             "safari_ios": [
               {
-                "version_added": "3.2",
+                "version_added": "2",
                 "partial_implementation": true,
                 "notes": "While the property is recognized, values applied to it don't have any effect."
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "3.2",
+                "version_added": "2",
                 "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
               }
             ],

@@ -405,40 +405,19 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onabortpayment",
           "support": {
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "chrome_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "edge": {
-              "version_added": "≤79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "≤79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -716,58 +695,37 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/oncanmakepayment",
           "support": {
             "chrome": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "chrome_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "edge": {
-              "version_added": "≤79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "57"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "10.0"
             },
             "webview_android": {
               "version_added": false
@@ -782,6 +740,8 @@
       },
       "oncontentdelete": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/oncontentdelete",
+          "spec_url": "https://wicg.github.io/content-index/spec/#dom-serviceworkerglobalscope-oncontentdelete",
           "support": {
             "chrome": {
               "version_added": false
@@ -1030,40 +990,44 @@
           "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onmessageerror",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "81"
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": "81"
             },
             "edge": {
-              "version_added": null
+              "version_added": "81"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "65"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "65"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "68"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "58"
             },
             "safari": {
-              "version_added": "11.1"
+              "version_added": "11.1",
+              "partial_implementation": true,
+              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "safari_ios": {
-              "version_added": "11.3"
+              "version_added": "11.3",
+              "partial_implementation": true,
+              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": null
+              "version_added": "81"
             }
           },
           "status": {
@@ -1129,10 +1093,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-serviceworkerglobalscope-onnotificationclose",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": "50"
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": "50"
             },
             "edge": {
               "version_added": "≤79"
@@ -1148,10 +1112,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "24"
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": "24"
+              "version_added": "34"
             },
             "safari": {
               "version_added": "11.1"
@@ -1160,10 +1124,10 @@
               "version_added": "11.3"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "5.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "50"
             }
           },
           "status": {
@@ -1178,40 +1142,19 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onpaymentrequest",
           "support": {
             "chrome": {
-              "version_added": "57",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "chrome_android": {
-              "version_added": "57",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "edge": {
-              "version_added": "≤79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "≤79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1223,10 +1166,10 @@
               "version_added": null
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": false
@@ -1244,6 +1187,8 @@
       },
       "onperiodicsync": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onperiodicsync",
+          "spec_url": "https://wicg.github.io/periodic-background-sync/#dom-serviceworkerglobalscope-onperiodicsync",
           "support": {
             "chrome": {
               "version_added": "80"
@@ -1295,10 +1240,10 @@
           "spec_url": "https://w3c.github.io/push-api/#dom-serviceworkerglobalscope-onpush",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "edge": {
               "version_added": "≤79"
@@ -1314,10 +1259,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "24"
+              "version_added": "26"
             },
             "opera_android": {
-              "version_added": "24"
+              "version_added": "26"
             },
             "safari": {
               "version_added": "11.1"
@@ -1329,7 +1274,7 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "42"
             }
           },
           "status": {
@@ -1345,13 +1290,14 @@
           "spec_url": "https://w3c.github.io/push-api/#dom-serviceworkerglobalscope-onpushsubscriptionchange",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": false
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "17",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": "44",
@@ -1364,10 +1310,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "24"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "24"
+              "version_added": false
             },
             "safari": {
               "version_added": "11.1"
@@ -1376,10 +1322,10 @@
               "version_added": "11.3"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": false
             }
           },
           "status": {
@@ -1442,6 +1388,7 @@
       "periodicsync_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/periodicsync_event",
+          "spec_url": "https://wicg.github.io/periodic-background-sync/#periodicsync-event",
           "description": "<code>periodicsync</code> event",
           "support": {
             "chrome": {
@@ -1546,13 +1493,14 @@
           "description": "<code>pushsubscriptionchange</code> event",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": false
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "17",
+              "version_removed": "79"
             },
             "firefox": {
               "version_added": "44",
@@ -1565,10 +1513,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "24"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "24"
+              "version_added": false
             },
             "safari": {
               "version_added": "11.1"
@@ -1577,10 +1525,10 @@
               "version_added": "11.3"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": false
             }
           },
           "status": {
@@ -1596,10 +1544,10 @@
           "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-registration",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "edge": {
               "version_added": "≤79"
@@ -1615,10 +1563,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "24"
+              "version_added": "26"
             },
             "opera_android": {
-              "version_added": "24"
+              "version_added": "26"
             },
             "safari": {
               "version_added": "11.1"
@@ -1630,7 +1578,7 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "42"
             }
           },
           "status": {
@@ -1693,10 +1641,10 @@
           "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-skipwaiting",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": "41"
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": "41"
             },
             "edge": {
               "version_added": "≤79"
@@ -1712,10 +1660,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "24"
+              "version_added": "25"
             },
             "opera_android": {
-              "version_added": "24"
+              "version_added": "25"
             },
             "safari": {
               "version_added": "11.1"
@@ -1727,7 +1675,7 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "41"
             }
           },
           "status": {
