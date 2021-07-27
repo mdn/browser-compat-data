@@ -352,7 +352,9 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
  */
 const bumpEdge = (originalData, chromeData, ieData) => {
   if (Array.isArray(originalData)) {
-    return originalData.map(d => bumpEdge(d, chromeData, ieData));
+    return combineStatements(
+      ...originalData.map(d => bumpEdge(d, chromeData, ieData)),
+    );
   }
 
   let newData = [];
