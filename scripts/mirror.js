@@ -602,39 +602,21 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
       );
     }
   } else {
-    let bumpFunction = null;
+    const bumpFunctions = {
+      generic: bumpGeneric,
+      chrome_android: bumpChromeAndroid,
+      firefox_android: bumpFirefoxAndroid,
+      edge: (originalData, data, source) =>
+        bumpEdge(originalData, data, compData['ie']),
+      opera: bumpOpera,
+      opera_android: bumpOperaAndroid,
+      safari_ios: bumpSafariiOS,
+      samsunginternet_android: bumpSamsungInternet,
+      webview_android: bumpWebView,
+    };
 
-    switch (destination) {
-      case 'chrome_android':
-        bumpFunction = bumpChromeAndroid;
-        break;
-      case 'firefox_android':
-        bumpFunction = bumpFirefoxAndroid;
-        break;
-      case 'edge':
-        bumpFunction = (originalData, data, source) =>
-          bumpEdge(originalData, data, compData['ie']);
-        break;
-      case 'opera':
-        bumpFunction = bumpOpera;
-        break;
-      case 'opera_android':
-        bumpFunction = bumpOperaAndroid;
-        break;
-      case 'safari_ios':
-        bumpFunction = bumpSafariiOS;
-        break;
-      case 'samsunginternet_android':
-        bumpFunction = bumpSamsungInternet;
-        break;
-      case 'webview_android':
-        bumpFunction = bumpWebView;
-        break;
-      default:
-        bumpFunction = bumpGeneric;
-        break;
-    }
-
+    let bumpFunction =
+      bumpFunctions[destination in bumpFunctions ? destination : 'generic'];
     newData = bumpFunction(originalData, data, source);
   }
 
