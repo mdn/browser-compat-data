@@ -477,19 +477,16 @@ const bumpOpera = (originalData, sourceData, source) => {
  * @param {SupportStatement} operaData
  * @returns {SupportStatement}
  */
-<<<<<<< HEAD
 const bumpOperaAndroid = (originalData, chromeAndroidData, operaData) => {
-  let newData = copyStatement(chromeAndroidData);
-=======
-const bumpOperaAndroid = (originalData, sourceData, source) => {
-  if (Array.isArray(sourceData)) {
+  if (Array.isArray(chromeAndroidData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpOperaAndroid(originalData, d, source)),
+      ...chromeAndroidData.map(d =>
+        bumpOperaAndroid(originalData, d, operaData),
+      ),
     );
   }
 
-  let newData = copyStatement(sourceData);
->>>>>>> origin/scripts/mirroring
+  let newData = copyStatement(chromeAndroidData);
 
   if (
     typeof operaData.version_added === 'string' &&
@@ -622,19 +619,14 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
  * @param {SupportStatement} safariData
  * @returns {SupportStatement}
  */
-<<<<<<< HEAD
 const bumpWebView = (originalData, chromeAndroidData, safariData) => {
-  let newData = copyStatement(chromeAndroidData);
-=======
-const bumpWebView = (originalData, sourceData, source) => {
-  if (Array.isArray(sourceData)) {
+  if (Array.isArray(chromeAndroidData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpWebView(originalData, d, source)),
+      ...chromeAndroidData.map(d => bumpWebView(originalData, d, safariData)),
     );
   }
 
-  let newData = copyStatement(sourceData);
->>>>>>> origin/scripts/mirroring
+  let newData = copyStatement(chromeAndroidData);
 
   const createWebViewRange = (version, safariVersion) => {
     if (desktopVersion <= '3') {
@@ -699,58 +691,6 @@ const bumpGeneric = (originalData, sourceData, source) => {
 const bumpVersion = (data, destination, source, originalData, compData) => {
   if (data == null) {
     return null;
-<<<<<<< HEAD
-  } else if (Array.isArray(data)) {
-    newData = [];
-    for (let i = 0; i < data.length; i++) {
-      newData[i] = bumpVersion(
-        data[i],
-        destination,
-        source,
-        originalData,
-        compData,
-      );
-    }
-  } else {
-    let bumpFunction = null;
-
-    switch (destination) {
-      case 'chrome_android':
-        bumpFunction = bumpChromeAndroid;
-        break;
-      case 'firefox_android':
-        bumpFunction = bumpFirefoxAndroid;
-        break;
-      case 'edge':
-        bumpFunction = (originalData, data, source) =>
-          bumpEdge(originalData, data, compData['ie']);
-        break;
-      case 'opera':
-        bumpFunction = bumpOpera;
-        break;
-      case 'opera_android':
-        bumpFunction = (originalData, data, source) =>
-          bumpOperaAndroid(originalData, data, compData['opera_android']);
-        bumpFunction = bumpOperaAndroid;
-        break;
-      case 'safari_ios':
-        bumpFunction = bumpSafariiOS;
-        break;
-      case 'samsunginternet_android':
-        bumpFunction = bumpSamsungInternet;
-        break;
-      case 'webview_android':
-        bumpFunction = (originalData, data, source) =>
-          bumpWebView(originalData, data, compData['safari']);
-        break;
-      default:
-        bumpFunction = bumpGeneric;
-        break;
-    }
-
-    newData = bumpFunction(originalData, data, source);
-=======
->>>>>>> origin/scripts/mirroring
   }
 
   const bumpFunctions = {
@@ -760,10 +700,12 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
     edge: (originalData, data, source) =>
       bumpEdge(originalData, data, compData['ie']),
     opera: bumpOpera,
-    opera_android: bumpOperaAndroid,
+    opera_android: (originalData, data, source) =>
+      bumpOperaAndroid(originalData, data, compData['opera_android']),
     safari_ios: bumpSafariiOS,
     samsunginternet_android: bumpSamsungInternet,
-    webview_android: bumpWebView,
+    webview_android: (originalData, data, source) =>
+      bumpWebView(originalData, data, compData['safari']),
   };
 
   let bumpFunction =
