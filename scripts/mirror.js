@@ -245,6 +245,13 @@ const combineStatements = (...data) => {
     newData.push(currentStatement);
   }
 
+  if (newData.length === 1) return newData[0];
+
+  // Remove duplicate statements and statements that are only version_added = false
+  newData = newData
+    .filter((item, pos) => newData.indexOf(item) == pos)
+    .filter(item => item.version_added);
+
   return newData.length === 1 ? newData[0] : newData;
 };
 
