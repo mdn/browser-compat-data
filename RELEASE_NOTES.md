@@ -8,6 +8,10 @@ RELEASE DATE TK
 
 - `api.MediaDevices.stereo_audio_capture` was removed because it was historic, incomplete, and impractical to fix. ([#11717](https://github.com/mdn/browser-compat-data/pull/11717))
 
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
+
 ## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
 
 July 22, 2021
