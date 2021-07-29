@@ -2,7 +2,7 @@
 
 ## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
 
-RELEASE DATE TK
+July 29, 2021
 
 ### Notable changes
 
@@ -23,6 +23,13 @@ RELEASE DATE TK
   - `api.ULongRange` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
   - `api.WEBGL_compressed_texture_atc` ([#11763](https://github.com/mdn/browser-compat-data/pull/11763))
   - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
+
+### Statistics
+
+- 15 contributors have changed 59 files with 2,748 additions and 1,062 deletions in 61 commits ([`v3.3.12...v3.3.13`](https://github.com/mdn/browser-compat-data/compare/v3.3.12...v3.3.13))
+- 13,236 total features
+- 796 total contributors
+- 3,462 total stargazers
 
 ## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
 
