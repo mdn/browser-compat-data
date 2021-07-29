@@ -8,6 +8,8 @@ RELEASE DATE TK
 
 - `api.MediaDevices.stereo_audio_capture` was removed because it was historic, incomplete, and impractical to fix. ([#11717](https://github.com/mdn/browser-compat-data/pull/11717))
 
+- A catch-all mixin feature, `api.HTMLFrameSetElement.event_handlers`, has been removed. Read [#11675](https://github.com/mdn/browser-compat-data/issues/11675) for progress on the long-term fix of representing the `WindowEventHandlers` mixin's exposed interfaces. ([#11459](https://github.com/mdn/browser-compat-data/pull/11459/))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
