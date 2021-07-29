@@ -15,6 +15,7 @@ RELEASE DATE TK
   - `api.Document.loadOverlay` ([#11720](https://github.com/mdn/browser-compat-data/pull/11720))
   - `api.Document.popupNode` ([#11722](https://github.com/mdn/browser-compat-data/pull/11722))
   - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
+  - `api.Document.tooltipNode` ([#11721](https://github.com/mdn/browser-compat-data/pull/11721))
 
 ## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
 
