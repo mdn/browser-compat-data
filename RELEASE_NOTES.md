@@ -1,5 +1,36 @@
 # Release notes
 
+## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
+
+July 29, 2021
+
+### Notable changes
+
+- `api.MediaDevices.stereo_audio_capture` was removed because it was historic, incomplete, and impractical to fix. ([#11717](https://github.com/mdn/browser-compat-data/pull/11717))
+
+- A catch-all mixin feature, `api.HTMLFrameSetElement.event_handlers`, has been removed. Read [#11675](https://github.com/mdn/browser-compat-data/issues/11675) for progress on the long-term fix of representing the `WindowEventHandlers` mixin's exposed interfaces. ([#11459](https://github.com/mdn/browser-compat-data/pull/11459/))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.ConstrainBoolean` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDOMString` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDouble` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainULong` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
+  - `api.Document.loadOverlay` ([#11720](https://github.com/mdn/browser-compat-data/pull/11720))
+  - `api.Document.popupNode` ([#11722](https://github.com/mdn/browser-compat-data/pull/11722))
+  - `api.Document.tooltipNode` ([#11721](https://github.com/mdn/browser-compat-data/pull/11721))
+  - `api.DoubleRange` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ULongRange` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
+  - `api.WEBGL_compressed_texture_atc` ([#11763](https://github.com/mdn/browser-compat-data/pull/11763))
+  - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
+
+### Statistics
+
+- 15 contributors have changed 59 files with 2,748 additions and 1,062 deletions in 61 commits ([`v3.3.12...v3.3.13`](https://github.com/mdn/browser-compat-data/compare/v3.3.12...v3.3.13))
+- 13,236 total features
+- 796 total contributors
+- 3,462 total stargazers
+
 ## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
 
 July 22, 2021
