@@ -12,10 +12,14 @@ RELEASE DATE TK
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.ConstrainBoolean` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDOMString` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDouble` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
   - `api.ConstrainULong` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
   - `api.Document.loadOverlay` ([#11720](https://github.com/mdn/browser-compat-data/pull/11720))
   - `api.Document.popupNode` ([#11722](https://github.com/mdn/browser-compat-data/pull/11722))
   - `api.Document.tooltipNode` ([#11721](https://github.com/mdn/browser-compat-data/pull/11721))
+  - `api.DoubleRange` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
   - `api.ULongRange` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
   - `api.WEBGL_compressed_texture_atc` ([#11763](https://github.com/mdn/browser-compat-data/pull/11763))
   - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
