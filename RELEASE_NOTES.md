@@ -4,6 +4,10 @@
 
 RELEASE DATE TK
 
+### Notable changes
+
+- Internet Explorer version `"≤11"` is now an accepted value, to reflect testing limitations for older versions and diminishing interest in pre-IE11 versions. ([#11223](https://github.com/mdn/browser-compat-data/pull/11223))
+
 ## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
 
 July 29, 2021
