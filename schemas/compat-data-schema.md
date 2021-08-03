@@ -271,25 +271,25 @@ The following table indicates initial versions for browsers in BCD. These are th
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
 - Edge
-  - "≤18" (supported in some version of EdgeHTML-based Edge)
-  - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+  - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
+  - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
 - Internet Explorer
-  - "≤6" (earliest IE version supported in BrowserStack)
-  - "≤11" (supported in some version of IE)
+  - "≤6" (the earliest IE version testable in BrowserStack and possibly earlier)
+  - "≤11" (the last IE version and possibly earlier)
 - Opera
-  - "≤12.1" (supported in some version of Presto-based Opera)
-  - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera and possibly earlier)
+  - "≤15" (the first Chromium-based Opera and possibly in Presto-based Opera)
 - Opera Android
-  - "≤12.1" (supported in some version of Presto-based Opera)
-  - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera and possibly earlier)
+  - "≤14" (the first Chromium-based Opera and possibly in Presto-based Opera)
 - Safari
-  - "≤4" (earliest Safari version supported in BrowserStack)
+  - "≤4" (the earliest Safari version testable in BrowserStack and possibly earlier)
 - Safari iOS
-  - "≤3" (earliest Safari iOS version supported in BrowserStack)
+  - "≤3" (the earliest Safari iOS version testable in BrowserStack and possibly earlier)
 - WebView Android
-  - "≤37" (supported in former Android versions prior to Chrome-based WebView)
+  - "≤37" (the first Chrome-based WebView and possibly previous Android versions)
 
-For example, the statement below means, "supported in at least version 37 and probably in earlier versions as well".
+For example, the statement below means, "supported in at least version 37 and possibly in earlier versions as well".
 
 ```json
 {
