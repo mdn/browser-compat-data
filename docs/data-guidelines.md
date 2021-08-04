@@ -166,15 +166,28 @@ For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_S
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
-## Release lines and backported features
+## Release lines
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
 
-Typically, BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature, even when that support change was backported to a previous release of the browser.
-
-For example, if the current release of browser X is version 10.2, but a new feature was backported to previous versions including a new 9.7.1 release, then the supported version is 9.7 (not 10.2 or 9.7.1).
+Typically, BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature. For example, if a feature was not added in Chrome 76.0.3700.43, but added in Chrome 76.0.3809.46, then the supported version is 76.
 
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
+
+## Safari backported releases
+
+Safari has released a number of versions as backports of newer releases. These releases have roughly the same features, with exceptions to OS-dependent interfaces such as notifications and media playback.
+
+These releases include the following:
+
+- Safari 4.1 <- 5.0
+- Safari 6.1 <- 7.0
+- Safari 6.2 <- 8.0
+- Safari 7.1 <- 8.0
+
+If a feature is found to be supported in one of these backport releases, set the verion number to the following major version. For example, if a new feature was added in Safari 7.0 and it is present in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+
+This decision was made in [#4679](https://github.com/mdn/browser-compat-data/issues/4679) and [#9423](https://github.com/mdn/browser-compat-data/issues/9423).
 
 ## Safari for iOS versioning
 
