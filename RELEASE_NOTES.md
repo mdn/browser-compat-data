@@ -11,6 +11,7 @@ August 5, 2021
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.Text.isElementContentWhitespace` ([#11859](https://github.com/mdn/browser-compat-data/pull/11859))
+  - `api.Document.documentURIObject` ([#11860](https://github.com/mdn/browser-compat-data/pull/11860))
 
 ## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
 
