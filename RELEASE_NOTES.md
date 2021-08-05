@@ -4,6 +4,10 @@
 
 August 5, 2021
 
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
 ### Notable changes
 
 - Internet Explorer version `"≤11"` is now an accepted value, to reflect testing limitations for older versions and diminishing interest in pre-IE11 versions. ([#11223](https://github.com/mdn/browser-compat-data/pull/11223))
