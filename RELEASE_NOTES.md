@@ -1,5 +1,96 @@
 # Release notes
 
+## [v3.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.14)
+
+August 5, 2021
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Notable changes
+
+- Internet Explorer version `"≤11"` is now an accepted value, to reflect testing limitations for older versions and diminishing interest in pre-IE11 versions. ([#11223](https://github.com/mdn/browser-compat-data/pull/11223))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Text.isElementContentWhitespace` ([#11859](https://github.com/mdn/browser-compat-data/pull/11859))
+  - `api.Document.documentURIObject` ([#11860](https://github.com/mdn/browser-compat-data/pull/11860))
+
+### Statistics
+
+- 8 contributors have changed 37 files with 2,393 additions and 254 deletions in 28 commits ([`v3.3.13...v3.3.14`](https://github.com/mdn/browser-compat-data/compare/v3.3.13...v3.3.14))
+- 13,276 total features
+- 797 total contributors
+- 3,473 total stargazers
+
+## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
+
+July 29, 2021
+
+### Notable changes
+
+- `api.MediaDevices.stereo_audio_capture` was removed because it was historic, incomplete, and impractical to fix. ([#11717](https://github.com/mdn/browser-compat-data/pull/11717))
+
+- A catch-all mixin feature, `api.HTMLFrameSetElement.event_handlers`, has been removed. Read [#11675](https://github.com/mdn/browser-compat-data/issues/11675) for progress on the long-term fix of representing the `WindowEventHandlers` mixin's exposed interfaces. ([#11459](https://github.com/mdn/browser-compat-data/pull/11459/))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.ConstrainBoolean` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDOMString` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDouble` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainULong` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
+  - `api.Document.loadOverlay` ([#11720](https://github.com/mdn/browser-compat-data/pull/11720))
+  - `api.Document.popupNode` ([#11722](https://github.com/mdn/browser-compat-data/pull/11722))
+  - `api.Document.tooltipNode` ([#11721](https://github.com/mdn/browser-compat-data/pull/11721))
+  - `api.DoubleRange` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ULongRange` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
+  - `api.WEBGL_compressed_texture_atc` ([#11763](https://github.com/mdn/browser-compat-data/pull/11763))
+  - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
+
+### Statistics
+
+- 15 contributors have changed 59 files with 2,748 additions and 1,062 deletions in 61 commits ([`v3.3.12...v3.3.13`](https://github.com/mdn/browser-compat-data/compare/v3.3.12...v3.3.13))
+- 13,236 total features
+- 796 total contributors
+- 3,462 total stargazers
+
+## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
+
+July 22, 2021
+
+### Notable changes
+
+- `api.Console` was renamed to `api.console` to reflect the correct case of the `console` namespace. ([#11534](https://github.com/mdn/browser-compat-data/pull/11534))
+
+- Safari for iOS 5.1 and 3.1 data was corrected to version 5.0 and 3.0, respectively, since these browsers were found to support the same features. Since no data now uses the version 5.1 and 3.1 values, they were dropped from the release data. ([#11175](https://github.com/mdn/browser-compat-data/pull/11175))
+
+- The descendant features of `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat` (the `Intl.DateTimeFormat()` constructor's parameters) have been reorganized to follow [the guideline for parameter object features](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). See [the PR for a detailed list of features affected](https://github.com/mdn/browser-compat-data/pull/11544#issuecomment-884885596). ([#11544](https://github.com/mdn/browser-compat-data/pull/11544))
+
+- `api.Element.attachInternals` was removed, since it duplicated `api.HTMLElement.attachInternals`. ([#11556](https://github.com/mdn/browser-compat-data/pull/11556))
+
+- `api.ContentIndexEvent.in` was renamed to `api.ContentIndexEvent.id` to correct a typo. ([#11555](https://github.com/mdn/browser-compat-data/pull/11555))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.HTMLSelectElement.blur` ([#11637](https://github.com/mdn/browser-compat-data/pull/11637))
+  - `api.HTMLSelectElement.focus` ([#11637](https://github.com/mdn/browser-compat-data/pull/11637))
+  - `api.KeyboardEvent.KeyboardEvent.code_and_key_in_init` ([#11530](https://github.com/mdn/browser-compat-data/pull/11530))
+  - `api.WorkerGlobalScope.close_event` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.close` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.onclose` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.XREnvironmentBlendMode` ([#11551](https://github.com/mdn/browser-compat-data/pull/11551))
+  - `api.XREye` ([#11636](https://github.com/mdn/browser-compat-data/pull/11636))
+  - `api.XRFrameRequestCallback` ([#11633](https://github.com/mdn/browser-compat-data/pull/11633))
+  - `api.XRWebGLLayerInit` ([#11661](https://github.com/mdn/browser-compat-data/pull/11661))
+
+### Statistics
+
+- 11 contributors have changed 159 files with 9,185 additions and 2,126 deletions in 93 commits ([`v3.3.11...v3.3.12`](https://github.com/mdn/browser-compat-data/compare/v3.3.11...v3.3.12))
+- 13,206 total features
+- 793 total contributors
+- 3,450 total stargazers
+
 ## [v3.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.11)
 
 July 15, 2021
