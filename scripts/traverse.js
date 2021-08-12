@@ -12,13 +12,13 @@ const { argv } = require('yargs').command(
       })
       .positional('folder', {
         describe: 'The folder(s) to test (set to "all" for all folders)',
-        type: 'array',
+        type: 'string',
         default: 'all',
       })
       .positional('value', {
         describe: 'The value(s) to test against',
-        type: 'array',
-        default: ['null', 'true'],
+        type: 'string',
+        default: 'null,true',
       })
       .option('depth', {
         alias: 'd',
@@ -79,9 +79,7 @@ const folders =
         'xslt',
       ]
     : argv.folder.split(',');
-const values = Array.isArray(argv.value)
-  ? argv.value
-  : argv.value.toString().split(',');
+const values = argv.value.split(',');
 
 for (const folder in folders)
   traverseFeatures(bcd[folders[folder]], argv.depth, `${folders[folder]}.`);
