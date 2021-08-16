@@ -12,9 +12,15 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": {
-                "version_added": "53"
-              },
+              "firefox": [
+                {
+                  "version_added": "53"
+                },
+                {
+                  "version_added": "86",
+                  "notes": "The loopback address http://127.0.0.1/mozoauth2/[subdomain of URL returned by identity.getRedirectURL()] can be used as the redirect URL to enable the use of Google OAuth flows."
+                }
+              ],
               "firefox_android": {
                 "version_added": false
               },
@@ -45,6 +51,10 @@
                   "version_added": "53",
                   "version_removed": "63",
                   "notes": "The <code>redirect_uri</code> URL parameter is required."
+                },
+                {
+                  "version_added": "75",
+                  "notes": "The <code>redirect_uri</code> URL parameter must be set to the URL returned by <code>identity.getRedirectURL()</code>."
                 }
               ],
               "firefox_android": {
