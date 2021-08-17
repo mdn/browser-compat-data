@@ -4,6 +4,10 @@
 
 August 19, 2021
 
+### Notable changes
+
+- Descendant features of `api.HTMLCanvasElement.getContext` and `api.HTMLCanvasElement.toBlob` have been reorganized to follow [the guideline for parameter object features](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). See [the PR for a detailed list of features affected](https://github.com/mdn/browser-compat-data/pull/11234#issuecomment-900265901). ([#11234](https://github.com/mdn/browser-compat-data/pull/11234))
+
 ## [v3.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.14)
 
 August 5, 2021
