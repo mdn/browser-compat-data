@@ -5,18 +5,13 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification",
         "spec_url": "https://notifications.spec.whatwg.org/#api",
         "support": {
-          "chrome": [
-            {
-              "version_added": "22",
-              "notes": "Before Chrome 22, the support for notification followed an old prefixed version of the specification and used the <code>navigator.webkitNotifications</code> object to instantiate a new notification. Before Chrome 32, <code>Notification.permission</code> was not supported. Before Chrome 42, service worker additions were not supported. Starting in Chrome 49, notifications do not work in incognito mode."
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "5"
-            }
-          ],
+          "chrome": {
+            "version_added": "20",
+            "notes": "Before Chrome 20, the support for notification followed an old prefixed version of the specification and used the <code>navigator.webkitNotifications</code> object to instantiate a new notification. Before Chrome 42, service worker additions were not supported. Starting in Chrome 49, notifications do not work in incognito mode."
+          },
           "chrome_android": {
-            "version_added": true
+            "version_added": "25",
+            "notes": "Before Chrome 20, the support for notification followed an old prefixed version of the specification and used the <code>navigator.webkitNotifications</code> object to instantiate a new notification. Before Chrome 42, service worker additions were not supported. Starting in Chrome 49, notifications do not work in incognito mode."
           },
           "edge": {
             "version_added": "14"
@@ -35,7 +30,7 @@
               "version_added": "22"
             },
             {
-              "prefix": "webkit",
+              "prefix": "moz",
               "version_added": "4"
             }
           ],
@@ -43,10 +38,10 @@
             "version_added": false
           },
           "opera": {
-            "version_added": "25"
+            "version_added": "23"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "24"
           },
           "safari": {
             "version_added": "7"
@@ -55,7 +50,7 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "1.5"
           },
           "webview_android": {
             "version_added": false,
@@ -74,20 +69,14 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/Notification",
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-notification",
           "support": {
-            "chrome": [
-              {
-                "version_added": "22"
-              },
-              {
-                "version_added": "5",
-                "prefix": "webkit"
-              }
-            ],
+            "chrome": {
+              "version_added": "20"
+            },
             "chrome_android": {
-              "version_added": false
+              "version_added": "25"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "14"
             },
             "firefox": [
               {
@@ -111,10 +100,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "25"
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -123,7 +112,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -240,10 +229,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-body",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
               "version_added": "14"
@@ -258,10 +247,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "11"
@@ -270,7 +259,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
               "version_added": false
@@ -289,28 +278,28 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-close",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -319,7 +308,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -387,10 +376,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-dir",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
@@ -405,10 +394,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -417,7 +406,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -435,47 +424,29 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/icon",
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-icon",
           "support": {
-            "chrome": [
-              {
-                "version_added": "22"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "5"
-              }
-            ],
+            "chrome": {
+              "version_added": "33"
+            },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
               "version_added": "14"
             },
-            "firefox": [
-              {
-                "version_added": "22"
-              },
-              {
-                "prefix": "moz",
-                "version_added": "4"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "22"
-              },
-              {
-                "prefix": "moz",
-                "version_added": "4"
-              }
-            ],
+            "firefox": {
+              "version_added": "26"
+            },
+            "firefox_android": {
+              "version_added": "26"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "25"
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "11"
@@ -484,7 +455,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
               "version_added": false
@@ -552,10 +523,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-lang",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
               "version_added": "14"
@@ -570,10 +541,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "11"
@@ -582,7 +553,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
               "version_added": false
@@ -601,10 +572,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-maxactions",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "48"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "48"
             },
             "edge": {
               "version_added": "18"
@@ -619,10 +590,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "35"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "35"
             },
             "safari": {
               "version_added": false
@@ -631,7 +602,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "5.0"
             },
             "webview_android": {
               "version_added": false
@@ -650,10 +621,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-onclick",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
@@ -662,16 +633,16 @@
               "version_added": "22"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -680,7 +651,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -699,28 +670,28 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-onclose",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -729,7 +700,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -748,28 +719,28 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-onerror",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -778,7 +749,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -797,28 +768,28 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-onshow",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -827,7 +798,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -846,28 +817,28 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-permission",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "edge": {
               "version_added": "14"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -876,7 +847,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
               "version_added": false
@@ -944,32 +915,32 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-requestpermission",
           "support": {
             "chrome": {
-              "version_added": "46"
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": "46"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
             },
             "firefox": {
-              "version_added": "47",
+              "version_added": "22",
               "notes": [
                 "From Firefox 70 onwards, cannot be called from a cross-origin IFrame.",
                 "From Firefox 72 onwards, can only be called in response to a user gesture such as a <code>click</code> event."
               ]
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "40"
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": "41"
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -978,7 +949,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -997,10 +968,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-requireinteraction",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "47"
             },
             "edge": {
               "version_added": "17"
@@ -1015,10 +986,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
               "version_added": false
@@ -1027,7 +998,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "5.0"
             },
             "webview_android": {
               "version_added": false
@@ -1143,10 +1114,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-tag",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "20"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "14"
@@ -1161,10 +1132,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "7"
@@ -1173,7 +1144,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": false
@@ -1192,10 +1163,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-timestamp",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "50"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "50"
             },
             "edge": {
               "version_added": "17"
@@ -1210,10 +1181,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "37"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "37"
             },
             "safari": {
               "version_added": false
@@ -1222,7 +1193,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "5.0"
             },
             "webview_android": {
               "version_added": false
@@ -1241,10 +1212,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-title",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
               "version_added": "14"
@@ -1259,10 +1230,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "11"
@@ -1271,7 +1242,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
               "version_added": false
@@ -1290,14 +1261,14 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-vibrate",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "53"
             },
             "chrome_android": {
               "version_added": "53",
               "notes": "<a href='https://crbug.com/971422'>Does not work</a> on Android O or later regardless of Chrome version."
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1309,7 +1280,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "40"
             },
             "opera_android": {
               "version_added": "41",
