@@ -7,6 +7,7 @@ August 19, 2021
 Version 4.0.0 makes some potentially-breaking changes to improve the flexibility and quality of the data. Higlights include:
 
 - The schema now supports a `"preview"` version value for in-development browser releases, such as Safari Technology Preview, Chrome Canary, and Firefox Nightly.
+- Deno, the JavaScript and TypeScript runtime, has been added as a new engine.
 - All XPath (`xpath`) and XSLT (`xslt`) features have been removed because the data was incomplete and unmaintained.
 - The schema for browser release data now supports the optional `accepts_flags` boolean hint.
 
@@ -15,6 +16,8 @@ Version 4.0.0 makes some potentially-breaking changes to improve the flexibility
 - In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
 ### Notable changes
+
+- [Deno](https://deno.land/), the JavaScript and TypeScript runtime, has been added as a new engine. Deno data is included for JavaScript and some Web APIs, much like Node.js data. ([#10753](https://github.com/mdn/browser-compat-data/pull/10753))
 
 - The XPath (`xpath`) and XSLT (`xslt`) features have been removed. These features poorly covered their subjects and were unmaintained. Rather than purport to have such data, we removed it.
 
