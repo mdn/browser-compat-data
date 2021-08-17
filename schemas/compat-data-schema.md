@@ -28,10 +28,6 @@ JSON files containing the compatibility data.
 
 - [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-- [xpath/](../xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
-
-- [xslt/](../xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
-
 ### File and folder breakdown
 
 The JSON files contain [feature identifiers](#feature-identifiers),
@@ -120,6 +116,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
+- `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
