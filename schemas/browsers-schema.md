@@ -17,6 +17,7 @@ The file `firefox.json` is structured like this:
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "preview_name": "Nightly",
       "pref_url": "about:config",
       "releases": {
         "1.5": {
@@ -47,6 +48,10 @@ An optional boolean indicating whether the browser supports flags. This is a hin
 ### `pref_url`
 
 An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+
+### `preview_name`
+
+An optional string containing the name of the preview browser. For example, "Nightly" for Firefox, "Canary" for Chrome, and "TP" for Safari.
 
 ### Release objects
 

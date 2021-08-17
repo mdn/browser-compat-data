@@ -33,6 +33,9 @@ for (const browser of Object.keys(browsers)) {
   if (VERSION_RANGE_BROWSERS[browser]) {
     validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
   }
+  if (browsers[browser].preview_name) {
+    validBrowserVersions[browser].push('preview');
+  }
 }
 
 /**
@@ -61,6 +64,16 @@ function addedBeforeRemoved(statement) {
 
   if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
     return null;
+  }
+
+  if (added === 'preview' && removed === 'preview') {
+    return false;
+  }
+  if (added === 'preview' && removed !== 'preview') {
+    return false;
+  }
+  if (added !== 'preview' && removed === 'preview') {
+    return true;
   }
 
   return compareVersions.compare(added, removed, '<');
