@@ -7,7 +7,6 @@ function exec(command) {
 
 function getLatestTag() {
   const currentBranch = exec('git rev-parse --abbrev-ref HEAD');
-  assert.equal('main', currentBranch, 'Run this script on `main` branch only');
   return exec('git describe --abbrev=0 --tags');
 }
 
@@ -28,7 +27,7 @@ function releaseYargsBuilder(yargs) {
   });
   yargs.positional('end-version-tag', {
     type: 'string',
-    default: 'HEAD',
+    default: 'main',
   });
 }
 
