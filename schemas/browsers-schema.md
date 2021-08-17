@@ -59,7 +59,7 @@ The release objects consist of the following properties:
 
 - A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
 
-  - `retired`: This release is no longer supported (EOL). For NodeJS, every minor/patch release aside from the latest within the major release is considered "retired".
+  - `retired`: This release is no longer supported (EOL). For NodeJS and Deno, every minor/patch release aside from the latest within the major release is considered "retired".
   - `current`: This release is the official latest release.
   - `exclusive`: This is an exclusive release (for example on a flagship device), not generally available.
   - `beta`: This release will the next official release.
