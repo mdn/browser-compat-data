@@ -38,6 +38,7 @@ Version 4.0.0 makes some potentially-breaking changes to improve the flexibility
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.AnimationEvent.initAnimationEvent` ([#12059](https://github.com/mdn/browser-compat-data/pull/12059))
   - `api.TouchList.identifiedTouch` ([#11760](https://github.com/mdn/browser-compat-data/pull/11760))
 
 ## [v3.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.14)
