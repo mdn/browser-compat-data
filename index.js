@@ -82,6 +82,4 @@ module.exports = load(
   'svg',
   'webdriver',
   'webextensions',
-  'xpath',
-  'xslt',
 );

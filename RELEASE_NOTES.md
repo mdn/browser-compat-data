@@ -1,5 +1,29 @@
 # Release notes
 
+## [v3.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.14)
+
+August 5, 2021
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Notable changes
+
+- Internet Explorer version `"≤11"` is now an accepted value, to reflect testing limitations for older versions and diminishing interest in pre-IE11 versions. ([#11223](https://github.com/mdn/browser-compat-data/pull/11223))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Text.isElementContentWhitespace` ([#11859](https://github.com/mdn/browser-compat-data/pull/11859))
+  - `api.Document.documentURIObject` ([#11860](https://github.com/mdn/browser-compat-data/pull/11860))
+
+### Statistics
+
+- 8 contributors have changed 37 files with 2,393 additions and 254 deletions in 28 commits ([`v3.3.13...v3.3.14`](https://github.com/mdn/browser-compat-data/compare/v3.3.13...v3.3.14))
+- 13,276 total features
+- 797 total contributors
+- 3,473 total stargazers
+
 ## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
 
 July 29, 2021
