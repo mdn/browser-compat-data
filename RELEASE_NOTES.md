@@ -41,6 +41,13 @@ Version 4.0.0 makes some potentially-breaking changes to improve the flexibility
   - `api.AnimationEvent.initAnimationEvent` ([#12059](https://github.com/mdn/browser-compat-data/pull/12059))
   - `api.TouchList.identifiedTouch` ([#11760](https://github.com/mdn/browser-compat-data/pull/11760))
 
+### Statistics
+
+- 22 contributors have changed 406 files with 11,006 additions and 6,128 deletions in 84 commits ([`v3.3.14...v4.0.0`](https://github.com/mdn/browser-compat-data/compare/v3.3.14...v4.0.0))
+- 13,281 total features
+- 804 total contributors
+- 3,491 total stargazers
+
 ## [v3.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.14)
 
 August 5, 2021
