@@ -1,5 +1,6 @@
-const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+import fs from 'node:fs';
+import chalk from 'chalk';
+import { Logger } from './utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -101,9 +102,11 @@ function hasCorrectPermissionDescription(apiData, apiName, logger) {
 /**
  * @param {string} filename
  */
-function testDescriptions(filename) {
+export default function testDescriptions(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('Descriptions');
 
@@ -127,5 +130,3 @@ function testDescriptions(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testDescriptions;

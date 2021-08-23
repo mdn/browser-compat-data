@@ -1,6 +1,6 @@
-const assert = require('assert').strict;
+import { strict as assert } from 'node:assert';
 
-const query = require('./query');
+import query from './query.js';
 
 describe('query()', function () {
   describe('should throw on non-existent features', function () {

@@ -1,6 +1,8 @@
-'use strict';
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 function load() {
   // Recursively load one or more directories passed as arguments.
@@ -32,7 +34,7 @@ function load() {
   }
 
   for (dir of arguments) {
-    dir = path.resolve(__dirname, dir);
+    dir = path.resolve(dirname, dir);
     fs.readdirSync(dir).forEach(processFilename);
   }
 
@@ -59,7 +61,7 @@ function extend(target, source) {
   }
 }
 
-module.exports = load(
+export default load(
   'api',
   'browsers',
   'css',

@@ -1,8 +1,8 @@
-const bcd = require('..');
-const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
-const query = require('./query');
+import bcd from '../index.js';
+import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
+import query from './query.js';
 
-function* lowLevelWalk(data = bcd, path, depth = Infinity) {
+export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined) {
     const next = {
       path,
@@ -24,7 +24,7 @@ function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   }
 }
 
-function* walk(entryPoints, data = bcd) {
+export function* walk(entryPoints, data = bcd) {
   const walkers = [];
 
   if (entryPoints === undefined) {
@@ -46,5 +46,3 @@ function* walk(entryPoints, data = bcd) {
     }
   }
 }
-
-module.exports = { walk, lowLevelWalk };

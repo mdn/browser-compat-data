@@ -1,6 +1,5 @@
-'use strict';
-const assert = require('assert');
-const { escapeInvisibles } = require('./utils.js');
+import assert from 'node:assert';
+import { escapeInvisibles } from './utils.js';
 
 describe('utils', () => {
   it('`escapeInvisibles()` works correctly', () => {

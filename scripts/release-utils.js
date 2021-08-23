@@ -1,12 +1,10 @@
-const assert = require('assert').strict;
-const { execSync } = require('child_process');
+import { execSync } from 'node:child_process';
 
 function exec(command) {
   return execSync(command, { encoding: 'utf8' }).trim();
 }
 
 function getLatestTag() {
-  const currentBranch = exec('git rev-parse --abbrev-ref HEAD');
   return exec('git describe --abbrev=0 --tags');
 }
 
@@ -31,9 +29,4 @@ function releaseYargsBuilder(yargs) {
   });
 }
 
-module.exports = {
-  exec,
-  getLatestTag,
-  getRefDate,
-  releaseYargsBuilder,
-};
+export { exec, getLatestTag, getRefDate, releaseYargsBuilder };

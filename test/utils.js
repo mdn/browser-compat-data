@@ -1,6 +1,5 @@
-'use strict';
-const { platform } = require('os');
-const chalk = require('chalk');
+import { platform } from 'node:os';
+import chalk from 'chalk';
 
 /** @type {{readonly [char: string]: string}} */
 const INVISIBLES_MAP = Object.freeze(
@@ -108,7 +107,7 @@ function jsonDiff(actual, expected) {
   }
 }
 
-module.exports = {
+export {
   INVISIBLES_MAP,
   IS_CI,
   IS_WINDOWS,

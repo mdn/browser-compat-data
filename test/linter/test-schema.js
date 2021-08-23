@@ -1,8 +1,7 @@
-'use strict';
-const Ajv = require('ajv');
-const betterAjvErrors = require('better-ajv-errors');
-const path = require('path');
-const chalk = require('chalk');
+import fs from 'node:fs';
+import Ajv from 'ajv';
+import betterAjvErrors from 'better-ajv-errors';
+import chalk from 'chalk';
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
 
@@ -10,12 +9,16 @@ const ajv = new Ajv({ jsonPointers: true, allErrors: true });
  * @param {string} dataFilename
  * @param {string} [schemaFilename]
  */
-function testSchema(
+export default function testSchema(
   dataFilename,
   schemaFilename = './../../schemas/compat-data.schema.json',
 ) {
-  const schema = require(schemaFilename);
-  const data = require(dataFilename);
+  const schema = JSON.parse(
+    fs.readFileSync(new URL(schemaFilename, import.meta.url), 'utf-8'),
+  );
+  const data = JSON.parse(
+    fs.readFileSync(new URL(dataFilename, import.meta.url), 'utf-8'),
+  );
 
   const valid = ajv.validate(schema, data);
 
@@ -34,5 +37,3 @@ function testSchema(
   }
   return false;
 }
-
-module.exports = testSchema;

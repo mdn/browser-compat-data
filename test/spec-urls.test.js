@@ -1,7 +1,13 @@
-'use strict';
-const assert = require('assert');
-const specData = require('browser-specs');
-const { walk } = require('../utils');
+import fs from 'node:fs';
+import assert from 'node:assert';
+import { walk } from '../utils/index.js';
+
+const specData = JSON.parse(
+  fs.readFileSync(
+    new URL('../node_modules/browser-specs/index.json', import.meta.url),
+    'utf-8',
+  ),
+);
 
 describe('spec_url data', () => {
   it('spec_urls only use allow listed hosts by w3c/browser-specs (and our exception list)', () => {

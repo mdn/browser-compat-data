@@ -15,15 +15,17 @@
  * @returns {*} The new value
  */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
+import fs from 'node:fs';
+import path from 'node:path';
+import { platform } from 'node:os';
+import { fileURLToPath } from 'node:url';
+
+import compareFeatures from './compare-features.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
-
-const compareFeatures = require('./compare-features');
 
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
@@ -55,14 +57,15 @@ const fixFeatureOrder = filename => {
   }
 };
 
-if (require.main === module) {
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
   /**
    * @param {string[]} files
    */
   function load(...files) {
     for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', file);
+      if (file.indexOf(dirname) !== 0) {
+        file = path.resolve(dirname, '..', file);
       }
 
       if (!fs.existsSync(file)) {
@@ -103,4 +106,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = fixFeatureOrder;
+export default fixFeatureOrder;

@@ -1,4 +1,4 @@
-function iterSupport(compat, browser) {
+export default function iterSupport(compat, browser) {
   if (browser in compat.support) {
     const data = compat.support[browser];
     return Array.isArray(data) ? data : [data];
@@ -6,5 +6,3 @@ function iterSupport(compat, browser) {
 
   return [{ version_added: null }];
 }
-
-module.exports = iterSupport;

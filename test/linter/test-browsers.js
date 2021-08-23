@@ -1,7 +1,10 @@
-'use strict';
-const path = require('path');
-const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import chalk from 'chalk';
+import { Logger } from './utils.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -106,15 +109,17 @@ function processData(
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+export default function testBrowsers(filename) {
   const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
+    path.resolve(dirname, '..', '..'),
     filename,
   );
   const category =
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   if (!category) {
     console.warn(chalk.blackBright('  Browsers – Unknown category'));
@@ -147,5 +152,3 @@ function testBrowsers(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testBrowsers;

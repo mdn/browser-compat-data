@@ -1,7 +1,7 @@
-const assert = require('assert').strict;
+import { strict as assert } from 'node:assert';
 
-const visit = require('./visit');
-const { walk } = require('./walk');
+import visit from './visit.js';
+import { walk } from './walk.js';
 
 describe('visit()', function () {
   it('runs the function on all features if no other entry point is specified', function () {

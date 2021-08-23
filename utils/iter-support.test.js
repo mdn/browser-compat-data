@@ -1,6 +1,6 @@
-const assert = require('assert').strict;
+import { strict as assert } from 'node:assert';
 
-const iterSupport = require('./iter-support');
+import iterSupport from './iter-support.js';
 
 describe('iterSupport()', function () {
   it('returns a `"version_added": null` support statement for non-existent browsers', function () {

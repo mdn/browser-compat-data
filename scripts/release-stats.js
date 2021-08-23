@@ -1,12 +1,11 @@
-const http = require('https');
-const readline = require('readline');
-const chalk = require('chalk');
+import http from 'node:https';
+import readline from 'readline';
+import yargs from 'yargs';
 
-const bcd = require('..');
-const { exec, releaseYargsBuilder } = require('./release-utils');
-const { walk } = require('../utils');
+import { exec, releaseYargsBuilder } from './release-utils.js';
+import { walk } from '../utils/index.js';
 
-const { argv } = require('yargs').command(
+const { argv } = yargs().command(
   '$0 [start-version-tag [end-version-tag]]',
   'Generate statistics for release notes',
   releaseYargsBuilder,

@@ -1,15 +1,14 @@
-'use strict';
-const testBrowsers = require('./test-browsers.js');
-const testLinks = require('./test-links.js');
-const testPrefix = require('./test-prefix.js');
-const testRealValues = require('./test-real-values.js');
-const testSchema = require('./test-schema.js');
-const testStyle = require('./test-style.js');
-const testVersions = require('./test-versions.js');
-const testConsistency = require('./test-consistency.js');
-const testDescriptions = require('./test-descriptions.js');
+import testBrowsers from './test-browsers.js';
+import testLinks from './test-links.js';
+import testPrefix from './test-prefix.js';
+import testRealValues from './test-real-values.js';
+import testSchema from './test-schema.js';
+import testStyle from './test-style.js';
+import testVersions from './test-versions.js';
+import testConsistency from './test-consistency.js';
+import testDescriptions from './test-descriptions.js';
 
-module.exports = {
+export {
   testBrowsers,
   testLinks,
   testPrefix,

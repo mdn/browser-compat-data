@@ -1,7 +1,7 @@
-'use strict';
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+import fs from 'node:fs';
+import compareVersions from 'compare-versions';
+import chalk from 'chalk';
+import { Logger } from './utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -9,7 +9,8 @@ const { Logger } = require('./utils.js');
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
  */
-const browsers = require('../..').browsers;
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /** @type {Object<string, string[]>} */
 const validBrowserVersions = {};
@@ -153,9 +154,14 @@ function checkVersions(supportData, relPath, logger) {
 /**
  * @param {string} filename
  */
-function testVersions(filename) {
+export default function testVersions(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(
+      new URL(new URL(filename, import.meta.url), import.meta.url),
+      'utf-8',
+    ),
+  );
 
   const logger = new Logger('Versions');
 
@@ -179,5 +185,3 @@ function testVersions(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testVersions;

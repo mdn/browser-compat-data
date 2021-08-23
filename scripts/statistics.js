@@ -2,13 +2,16 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
-'use strict';
-const chalk = require('chalk');
+import { fileURLToPath } from 'node:url';
 
-const bcd = require('..');
-const { getRefDate } = require('./release-utils');
+import chalk from 'chalk';
+import yargs from 'yargs';
 
-const { argv } = require('yargs').command(
+import bcd from '../index.js';
+
+import { getRefDate } from './release-utils.js';
+
+const { argv } = yargs().command(
   '$0 [folder]',
   'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
   yargs => {
@@ -206,8 +209,9 @@ const printStats = (stats, folder) => {
   console.log(table);
 };
 
-if (require.main === module) {
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
   printStats(getStats(argv.folder, argv.all), argv.folder);
 }
 
-module.exports = getStats;
+export default getStats;

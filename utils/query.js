@@ -1,4 +1,4 @@
-const bcd = require('..');
+import bcd from '../index.js';
 
 /**
  * Get a subtree of compat data.
@@ -8,7 +8,7 @@ const bcd = require('..');
  * @returns {*} A BCD subtree
  * @throws {ReferenceError} For invalid identifiers
  */
-function query(path, data = bcd) {
+export default function query(path, data = bcd) {
   const pathElements = path.split('.');
   let lookup = data;
   while (pathElements.length) {
@@ -22,5 +22,3 @@ function query(path, data = bcd) {
   }
   return lookup;
 }
-
-module.exports = query;

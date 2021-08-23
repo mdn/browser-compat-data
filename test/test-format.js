@@ -1,6 +1,5 @@
-'use strict';
-const { execSync } = require('child_process');
-const chalk = require('chalk');
+import { execSync } from 'node:child_process';
+import chalk from 'chalk';
 
 const testFormat = () => {
   try {
@@ -19,4 +18,4 @@ const testFormat = () => {
   return false;
 };
 
-module.exports = testFormat;
+export default testFormat;

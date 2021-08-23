@@ -2,12 +2,9 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-const compareFeatures = require('../scripts/compare-features');
+import compareFeatures from '../scripts/compare-features.js';
 
 /**
  * A unit test for the compareFeatures() function, to ensure that features are sorted as expected.
@@ -64,4 +61,4 @@ const testFeatureOrder = () => {
   return false;
 };
 
-module.exports = testFeatureOrder;
+export default testFeatureOrder;

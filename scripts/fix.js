@@ -1,17 +1,19 @@
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const fixBrowserOrder = require('./fix-browser-order');
-const fixFeatureOrder = require('./fix-feature-order');
-const format = require('./fix-format');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import fixBrowserOrder from './fix-browser-order.js';
+import fixFeatureOrder from './fix-feature-order.js';
+import format from './fix-format.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @param {string[]} files
  */
 function load(...files) {
   for (let file of files) {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {

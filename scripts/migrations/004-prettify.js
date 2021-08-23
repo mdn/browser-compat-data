@@ -2,8 +2,6 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
-'use strict';
-
-const { exec } = require('child_process');
+import { exec } from 'node:child_process';
 
 exec('npx prettier --write **/*.js **/*.ts');

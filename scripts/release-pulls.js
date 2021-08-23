@@ -1,13 +1,13 @@
-const assert = require('assert').strict;
+import yargs from 'yargs';
 
-const { getRefDate, releaseYargsBuilder } = require('./release-utils');
+import { getRefDate, releaseYargsBuilder } from './release-utils.js';
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
 );
 const releaseNotesLabel = 'label:"needs-release-note :newspaper:"';
 
-const { argv } = require('yargs').command(
+const { argv } = yargs().command(
   '$0 [start-version-tag [end-version-tag]]',
   'Get a link to PRs that need release notes between two tags (or other commits)',
   releaseYargsBuilder,

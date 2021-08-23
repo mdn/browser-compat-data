@@ -4,6 +4,7 @@
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
   "engines": {
     "node": ">=10.0.0"
   },
@@ -41,15 +42,15 @@
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "mocha": "mocha \"*/**.test.js\"",
-    "lint": "node test/lint",
-    "fix": "node scripts/fix",
-    "mirror": "node scripts/mirror",
-    "stats": "node scripts/statistics",
-    "release-build": "node scripts/release-build",
-    "release-pulls": "node scripts/release-pulls",
-    "release-stats": "node scripts/release-stats",
+    "lint": "node test/lint.js",
+    "fix": "node scripts/fix.js",
+    "mirror": "node scripts/mirror.js",
+    "stats": "node scripts/statistics.js",
+    "release-build": "node scripts/release-build.js",
+    "release-pulls": "node scripts/release-pulls.js",
+    "release-stats": "node scripts/release-stats.js",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run lint && npm run mocha",
-    "traverse": "node scripts/traverse"
+    "traverse": "node scripts/traverse.js"
   }
 }

@@ -1,7 +1,6 @@
-'use strict';
-const path = require('path');
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
+import fs from 'node:fs';
+import compareVersions from 'compare-versions';
+import chalk from 'chalk';
 
 /**
  * @typedef {import('../../types').CompatStatement} CompatStatement
@@ -365,9 +364,11 @@ class ConsistencyChecker {
 /**
  * @param {string} filename
  */
-function testConsistency(filename) {
+export default function testConsistency(filename) {
   /** @type {Identifier} */
-  let data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const checker = new ConsistencyChecker();
   const errors = checker.check(data);
@@ -412,5 +413,3 @@ function testConsistency(filename) {
   }
   return false;
 }
-
-module.exports = testConsistency;

@@ -2,13 +2,11 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const { platform } = require('os');
+import { fileURLToPath } from 'node:url';
 
-const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
+import chalk from 'chalk';
+
+import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
 const tests = [
   {
@@ -155,8 +153,9 @@ const testFixWebViewFlags = (logger = console) => {
   return hasErrors;
 };
 
-if (require.main === module) {
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
   testFixWebViewFlags();
 }
 
-module.exports = testFixWebViewFlags;
+export default testFixWebViewFlags;

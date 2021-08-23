@@ -1,6 +1,9 @@
-'use strict';
-const path = require('path');
-const chalk = require('chalk');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import chalk from 'chalk';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -61,14 +64,16 @@ function processData(data, category) {
 /**
  * @param {string} filename
  */
-function testPrefix(filename) {
+export default function testPrefix(filename) {
   const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
+    path.resolve(dirname, '..', '..'),
     filename,
   );
   const category =
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
   const errors = processData(data, category);
 
   if (errors.length) {
@@ -84,5 +89,3 @@ function testPrefix(filename) {
   }
   return false;
 }
-
-module.exports = testPrefix;

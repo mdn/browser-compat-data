@@ -1,8 +1,7 @@
-const assert = require('assert').strict;
+import { strict as assert } from 'node:assert';
 
-const bcd = require('..');
-const { walk } = require('./index');
-const { lowLevelWalk } = require('./walk');
+import bcd from '../index.js';
+import { walk, lowLevelWalk } from './walk.js';
 
 describe('lowLevelWalk()', function () {
   it('visits every top-level tree', function () {

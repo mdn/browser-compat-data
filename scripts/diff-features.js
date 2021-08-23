@@ -1,7 +1,8 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
-const yargs = require('yargs');
+import yargs from 'yargs';
 
 function main({ ref1, ref2, format }) {
   let refA, refB;
@@ -73,7 +74,7 @@ function printMarkdown({ added, removed }) {
   }
 }
 
-const { argv } = yargs.command(
+const { argv } = yargs().command(
   '$0 [ref1] [ref2]',
   'Compare the set of features at refA and refB',
   yargs => {
@@ -99,6 +100,7 @@ const { argv } = yargs.command(
   },
 );
 
-if (require.main === module) {
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
   main(argv);
 }

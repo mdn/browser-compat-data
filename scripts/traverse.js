@@ -1,7 +1,8 @@
-'use strict';
-const bcd = require('..');
+import yargs from 'yargs';
 
-const { argv } = require('yargs').command(
+import bcd from '../index.js';
+
+const { argv } = yargs().command(
   '$0 <browser> [folder] [value]',
   'Test for specified values in any specified browser',
   yargs => {

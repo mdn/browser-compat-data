@@ -8,15 +8,19 @@
  * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const compareVersions = require('compare-versions');
+import compareVersions from 'compare-versions';
+import yargs from 'yargs';
 
-const browsers = require('..').browsers;
+import bcd from '../index.js';
+const { browsers } = bcd;
 
-const { argv } = require('yargs').command(
+const dirname = fileURLToPath(new URL('.', import.meta.url));
+
+const { argv } = yargs().command(
   '$0 <browser> [feature_or_file]',
   'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
   yargs => {
@@ -664,8 +668,8 @@ const setFeatureRecursive = (data, browser, source, modify) => {
  */
 function mirrorDataByFile(browser, filepath, source, modify) {
   let file = filepath;
-  if (file.indexOf(__dirname) !== 0) {
-    file = path.resolve(__dirname, '..', file);
+  if (file.indexOf(dirname) !== 0) {
+    file = path.resolve(dirname, '..', file);
   }
 
   if (!fs.existsSync(file)) {
@@ -674,7 +678,9 @@ function mirrorDataByFile(browser, filepath, source, modify) {
 
   if (fs.statSync(file).isFile()) {
     if (path.extname(file) === '.json') {
-      let data = require(file);
+      let data = JSON.parse(
+        fs.readFileSync(new URL(file, import.meta.url), 'utf-8'),
+      );
       let newData = setFeatureRecursive(data, browser, source, modify);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
@@ -708,7 +714,7 @@ function mirrorDataByFile(browser, filepath, source, modify) {
  * @returns {boolean}
  */
 const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
-  let filepath = path.resolve(__dirname, '..');
+  let filepath = path.resolve(dirname, '..');
   let feature = featureIdent.split('.');
   let found = false;
 
@@ -727,7 +733,9 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
     return false;
   }
 
-  let data = require(filepath);
+  let data = JSON.parse(
+    fs.readFileSync(new URL(filepath, import.meta.url), 'utf-8'),
+  );
   let newData = setFeature(data, feature, browser, source, modify);
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
@@ -758,8 +766,9 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
       fs.existsSync(feature_or_file) &&
       (fs.statSync(feature_or_file).isFile() ||
         fs.statSync(feature_or_file).isDirectory())
-    )
+    ) {
       doMirror = mirrorDataByFile;
+    }
 
     doMirror(browser, feature_or_file, source, modify);
   } else {
@@ -785,8 +794,9 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
   return true;
 };
 
-if (require.main === module) {
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
   mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.modify);
 }
 
-module.exports = mirrorData;
+export default mirrorData;

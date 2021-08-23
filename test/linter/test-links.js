@@ -1,8 +1,6 @@
-'use strict';
-const fs = require('fs');
-const url = require('url');
-const chalk = require('chalk');
-const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
+import fs from 'node:fs';
+import chalk from 'chalk';
+import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
 /**
  * @param {string} filename
@@ -172,7 +170,7 @@ function processData(filename) {
     actual,
     String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
     match => {
-      if (url.parse(match[1]).hostname === null) {
+      if (new URL(match[1]).hostname === null) {
         return {
           issue: 'Include hostname in URL',
           actualLink: match[1],
@@ -216,7 +214,7 @@ function processLink(errors, actual, regexp, matchHandler) {
 /**
  * @param {string} filename
  */
-function testLinks(filename) {
+export default function testLinks(filename) {
   /** @type {Object[]} */
   let errors = processData(filename);
 
@@ -235,5 +233,3 @@ function testLinks(filename) {
   }
   return false;
 }
-
-module.exports = testLinks;

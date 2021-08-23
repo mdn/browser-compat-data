@@ -1,10 +1,10 @@
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const ora = require('ora');
-const yargs = require('yargs');
-const chalk = require('chalk');
-const {
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import ora from 'ora';
+import yargs from 'yargs';
+import chalk from 'chalk';
+import {
   testBrowsers,
   testLinks,
   testPrefix,
@@ -14,16 +14,18 @@ const {
   testVersions,
   testConsistency,
   testDescriptions,
-} = require('./linter/index.js');
-const { IS_CI } = require('./utils.js');
-const testCompareFeatures = require('./test-compare-features');
-const testMigrations = require('./test-migrations');
-const testFormat = require('./test-format');
+} from './linter/index.js';
+import { IS_CI } from './utils.js';
+import testCompareFeatures from './test-compare-features.js';
+import testMigrations from './test-migrations.js';
+import testFormat from './test-format.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
-const argv = yargs
+const argv = yargs()
   .alias('version', 'v')
   .usage('$0 [[--] files...]', false, yargs => {
     return yargs.positional('files...', {
@@ -42,8 +44,8 @@ const argv = yargs
  */
 function load(...files) {
   return files.reduce((prevHasErrors, file) => {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {

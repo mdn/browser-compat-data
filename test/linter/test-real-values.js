@@ -1,7 +1,10 @@
-'use strict';
-const path = require('path');
-const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import chalk from 'chalk';
+import { Logger } from './utils.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -79,15 +82,17 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 /**
  * @param {string} filename
  */
-function testRealValues(filename) {
+export default function testRealValues(filename) {
   const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
+    path.resolve(dirname, '..', '..'),
     filename,
   );
   const category =
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
   const logger = new Logger('Real values');
 
   /**
@@ -97,13 +102,14 @@ function testRealValues(filename) {
   function findSupport(data, relPath) {
     for (const prop in data) {
       if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0)
+        if (blockList[category] && blockList[category].length > 0) {
           checkRealValues(
             data[prop].support,
             blockList[category],
             relPath,
             logger,
           );
+        }
       }
       const sub = data[prop];
       if (typeof sub === 'object') {
@@ -116,5 +122,3 @@ function testRealValues(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testRealValues;

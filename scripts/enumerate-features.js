@@ -1,9 +1,10 @@
-const yargs = require('yargs');
+import yargs from 'yargs';
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const { walk } = require('../utils');
+import { walk } from '../utils/index.js';
 
 function main({ dest, dataFrom }) {
   fs.writeFileSync(dest, JSON.stringify(enumerateFeatures(dataFrom)));
@@ -13,7 +14,12 @@ function enumerateFeatures(dataFrom) {
   const feats = [];
 
   const walker = dataFrom
-    ? walk(undefined, require(path.join(process.cwd(), dataFrom)))
+    ? walk(
+        undefined,
+        JSON.parse(
+          fs.readFileSync(path.join(process.cwd(), dataFrom), 'utf-8'),
+        ),
+      )
     : walk();
 
   for (const { path, compat } of walker) {
@@ -25,7 +31,7 @@ function enumerateFeatures(dataFrom) {
   return feats;
 }
 
-const { argv } = yargs.command(
+const { argv } = yargs().command(
   '$0 [dest]',
   'Write a JSON-formatted list of feature paths',
   yargs => {
@@ -41,8 +47,9 @@ const { argv } = yargs.command(
   },
 );
 
-if (require.main === module) {
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
   main(argv);
 }
 
-module.exports = enumerateFeatures;
+export default enumerateFeatures;

@@ -1,6 +1,6 @@
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-class Logger {
+export class Logger {
   /** @param {string} title */
   constructor(title) {
     this.title = title;
@@ -30,5 +30,3 @@ class Logger {
     return !!this.errors.length;
   }
 }
-
-module.exports = { Logger };

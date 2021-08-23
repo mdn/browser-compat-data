@@ -1,5 +1,4 @@
-'use strict';
-const assert = require('assert');
+import assert from 'node:assert';
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -11,7 +10,7 @@ const assert = require('assert');
  */
 
 /** @type {Identifier} */
-const bcd = require('..');
+import bcd from '../index.js';
 
 /**
  * @param {string} dottedFeature

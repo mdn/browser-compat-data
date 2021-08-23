@@ -1,15 +1,16 @@
-function joinPath() {
+export function joinPath() {
   return Array.from(arguments).filter(Boolean).join('.');
 }
 
-function isFeature(obj) {
+export function isFeature(obj) {
   return '__compat' in obj;
 }
-function isBrowser(obj) {
+
+export function isBrowser(obj) {
   return 'name' in obj && 'releases' in obj;
 }
 
-function descendantKeys(data) {
+export function descendantKeys(data) {
   if (isFeature(data)) {
     return Object.keys(data).filter(key => key !== '__compat');
   }
@@ -21,10 +22,3 @@ function descendantKeys(data) {
 
   return Object.keys(data);
 }
-
-module.exports = {
-  joinPath,
-  isFeature,
-  isBrowser,
-  descendantKeys,
-};
