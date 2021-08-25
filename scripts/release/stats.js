@@ -2,9 +2,9 @@ const http = require('https');
 const readline = require('readline');
 const chalk = require('chalk');
 
-const bcd = require('..');
-const { exec, releaseYargsBuilder } = require('./release-utils');
-const { walk } = require('../utils');
+const bcd = require('../..');
+const { exec, releaseYargsBuilder } = require('./utils');
+const { walk } = require('../../utils');
 
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',

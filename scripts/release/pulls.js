@@ -1,6 +1,6 @@
 const assert = require('assert').strict;
 
-const { getRefDate, releaseYargsBuilder } = require('./release-utils');
+const { getRefDate, releaseYargsBuilder } = require('./utils');
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
