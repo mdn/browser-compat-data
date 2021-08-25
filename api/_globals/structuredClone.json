@@ -11,14 +11,21 @@
           "chrome_android": {
             "version_added": false
           },
-          "deno": {
-            "version_added": "1.13",
-            "partial_implementation": true,
-            "notes": [
-              "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
-              "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
-            ]
-          },
+          "deno": [
+            {
+              "version_added": "1.14",
+              "notes": "The <code>message</code> parameter does not support cloning <code>Blob</code> values."
+            },
+            {
+              "version_added": "1.13",
+              "version_removed": "1.14",
+              "partial_implementation": true,
+              "notes": [
+                "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
+                "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+              ]
+            }
+          ],
           "edge": {
             "version_added": false
           },
