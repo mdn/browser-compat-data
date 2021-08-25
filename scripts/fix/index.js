@@ -11,7 +11,7 @@ const format = require('./fix-format');
 function load(...files) {
   for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+      file = path.resolve(__dirname, '..', '..', file);
     }
 
     if (!fs.existsSync(file)) {
