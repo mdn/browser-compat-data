@@ -4,6 +4,10 @@
 
 RELEASE DATE TK
 
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
 ## [v4.0.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.0)
 
 August 19, 2021
@@ -14,10 +18,6 @@ Version 4.0.0 makes some potentially-breaking changes to improve the flexibility
 - Deno, the JavaScript and TypeScript runtime, has been added as a new engine.
 - All XPath (`xpath`) and XSLT (`xslt`) features have been removed because the data was incomplete and unmaintained.
 - The schema for browser release data now supports the optional `accepts_flags` boolean hint.
-
-### Known issues
-
-- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
 ### Notable changes
 
