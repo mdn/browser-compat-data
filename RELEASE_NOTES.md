@@ -6,6 +6,8 @@ RELEASE DATE TK
 
 ### Notable changes
 
+- `css.types.filter-function.constrast` was renamed to `css.types.filter-function.contrast` to correct a typo. ([#12074](https://github.com/mdn/browser-compat-data/pull/12074))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.Window.onpaint` ([#12167](https://github.com/mdn/browser-compat-data/pull/12167))
