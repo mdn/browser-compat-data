@@ -140,23 +140,31 @@ If you set `"partial_implementation": true`, then write a note describing how th
 
 For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
 
+Typically, when the implementation is partial due to a bug or limitation in a browser, the note should describe that and any possible workaround, and preferably link to any open issue on the browser for them.
+
 This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
-## Non-functional defined names imply `"partial_implementation"`
+### Support status
 
-If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
+The decision as to whether something is unsupported, partially supported, or (fully) supported is ultimately an editorial decision.
 
-For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a note describing the feature’s misbehavior.
+The simplest state to explain is “unsupported”: if a feature is entirely absent then it should be marked as unsupported  (`"version_added": false`).
 
-See [#3904](https://github.com/mdn/browser-compat-data/pull/3904#issuecomment-484433603) for additional background (and nuance).
+Distinguishing the other two is harder; but as some guidelines consider the following:
 
-## Operating system limitations imply `"partial_implementation"`
+If a browser recognizes a feature, but the feature doesn’t have any discernable behavior, then it should be marked as partially supported (`"partial_implementation": true`), as if the feature has non-standard support, rather than no support.
+
+For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a [note](#partial_implementation-requires-a-note) describing the feature’s misbehavior.
+
+If the implementation has bugs which it is likely a large percentage of web developers will encounter when attempting to use the feature, then it should be marked as a partial implementation with an appropriate [note](#partial_implementation-requires-a-note).
+
+If the implementation is only supported in specific contexts (for example, if `break-before` is only supported for printed pages but not for other types of fragmentation, such as multi-column layout), then it should be marked as a partial implementation with an appropriate [note](#partial_implementation-requires-a-note).
 
 If a browser or engine is available on more than one operating system and a feature is only implemented on a subset of those operating systems, then the support statement should set `"partial_implementation": true`. For example, if a browser supports both Windows and Linux, but only implements a feature on Windows, then a support statement for that feature should should set `"partial_implementation": true` (and a [note](#partial_implementation-requires-a-note)).
 
 However, this guideline does not apply to features where the browser's expected behavior is conditional on the behavior of the operating system itself. For example, a browser can fully implement a CSS media query even if an underlying operating system can never satisfy the media query's condition because it does not support the requisite hardware.
 
-This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
+See [#6906](https://github.com/mdn/browser-compat-data/issues/6906) and [#3904](https://github.com/mdn/browser-compat-data/pull/3904#issuecomment-484433603) for additional background (and nuance).
 
 ## Constants
 
