@@ -12,6 +12,7 @@ RELEASE DATE TK
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.FileError` ([#12089](https://github.com/mdn/browser-compat-data/pull/12089))
   - `api.Window.onpaint` ([#12167](https://github.com/mdn/browser-compat-data/pull/12167))
   - `api.XRPermissionDescriptor` ([#10672](https://github.com/mdn/browser-compat-data/pull/10672))
 
