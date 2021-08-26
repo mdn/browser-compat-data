@@ -6,6 +6,8 @@ RELEASE DATE TK
 
 ### Notable changes
 
+- `css.types.ellipse` was moved to `css.types.basic-shape.ellipse` to correct improper nesting of features. ([#12075](https://github.com/mdn/browser-compat-data/pull/12075))
+
 - `css.types.filter-function.constrast` was renamed to `css.types.filter-function.contrast` to correct a typo. ([#12074](https://github.com/mdn/browser-compat-data/pull/12074))
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
