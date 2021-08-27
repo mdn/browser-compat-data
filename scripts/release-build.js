@@ -26,7 +26,7 @@ async function writeIndexCJS() {
   await fs.writeFile(dest, content);
 }
 
-async function writeIndexJS(data) {
+async function writeIndexESM(data) {
   const dest = path.resolve(directory, 'index.js');
   const content = `export default ${data};\n`;
   await fs.writeFile(dest, content);
@@ -98,7 +98,7 @@ async function main() {
   await writeManifest();
   await writeData(data);
   await writeIndexCJS();
-  await writeIndexJS(data);
+  await writeIndexESM(data);
   await copyFiles();
 
   console.log('Data bundle is ready');
