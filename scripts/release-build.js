@@ -20,12 +20,6 @@ async function writeData(data) {
   await fs.writeFile(dest, data);
 }
 
-async function writeIndexCJS() {
-  const dest = path.resolve(directory, 'index.cjs');
-  const content = `module.exports = require("./data.json");\n`;
-  await fs.writeFile(dest, content);
-}
-
 async function writeIndexESM(data) {
   const dest = path.resolve(directory, 'index.js');
   const content = `export default ${data};\n`;
@@ -44,8 +38,8 @@ async function copyFiles() {
 function createManifest() {
   const full = require('../package.json');
   const minimal = {
-    main: 'index.cjs',
-    exports: { import: './index.js', require: './index.cjs' },
+    main: 'data.json',
+    exports: { import: './index.js', require: './data.json' },
     type: 'module',
   };
 
@@ -97,7 +91,6 @@ async function main() {
 
   await writeManifest();
   await writeData(data);
-  await writeIndexCJS();
   await writeIndexESM(data);
   await copyFiles();
 
