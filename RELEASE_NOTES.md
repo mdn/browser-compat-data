@@ -10,6 +10,7 @@ RELEASE DATE TK
 
   - `api.UIEvent.pageX` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
   - `api.UIEvent.pageY` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.isChar` ([#12186](https://github.com/mdn/browser-compat-data/pull/12186))
 
 ## [v4.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.1)
 
