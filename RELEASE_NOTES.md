@@ -4,17 +4,9 @@
 
 September 2, 2021
 
-### Notable changes
-
-- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
-
-  - `api.UIEvent.pageX` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
-  - `api.UIEvent.pageY` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
-  - `api.UIEvent.isChar` ([#12186](https://github.com/mdn/browser-compat-data/pull/12186))
-
 ### WindowOrWorkerGlobalScope removal
 
-To no longer expose mixins, the following features have been moved from `api.WindowOrWorkerGlobalScope` (or `api.Window` for two cases) to the global `api.*` namespace. The features' worker support is now indicated using `worker_support` sub-features.
+To no longer expose mixins, the following features have been moved from `api.WindowOrWorkerGlobalScope` (or `api.Window` for two cases) to the global `api.*` namespace. The features' worker support is now indicated using `worker_support` sub-features. ([#11518](https://github.com/mdn/browser-compat-data/pull/11518))
 
 #### Removed
 
@@ -56,6 +48,14 @@ To no longer expose mixins, the following features have been moved from `api.Win
 - `api.structuredClone.worker_support`
 - `api.trustedTypes`
 - `api.trustedTypes.worker_support`
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.UIEvent.pageX` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.pageY` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.isChar` ([#12186](https://github.com/mdn/browser-compat-data/pull/12186))
 
 ### Known issues
 
