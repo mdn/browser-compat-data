@@ -2,7 +2,7 @@
 
 ## [v4.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.2)
 
-RELEASE DATE TK
+September 2, 2021
 
 ### Notable changes
 
@@ -61,7 +61,11 @@ To no longer expose mixins, the following features have been moved from `api.Win
 
 - In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
-RELEASE STATS TK
+### Statistics
+- 10 contributors have changed 61 files with 2,863 additions and 2,275 deletions in 34 commits ([`v4.0.1...v4.0.2`](https://github.com/mdn/browser-compat-data/compare/v4.0.1...main))
+- 13,290 total features
+- 806 total contributors
+- 3,551 total stargazers
 
 ## [v4.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.1)
 
