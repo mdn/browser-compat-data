@@ -19,6 +19,7 @@ const browsers = {
     'webview_android',
   ],
   server: ['nodejs', 'deno'],
+  xr: ['oculus'],
   'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
   'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
@@ -121,7 +122,11 @@ function testBrowsers(filename) {
     return false;
   }
 
-  let displayBrowsers = [...browsers['desktop'], ...browsers['mobile']];
+  let displayBrowsers = [
+    ...browsers['desktop'],
+    ...browsers['mobile'],
+    ...browsers['xr'],
+  ];
   let requiredBrowsers = browsers['desktop'];
   if (category === 'api') {
     displayBrowsers.push('nodejs');
