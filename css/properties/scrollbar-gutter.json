@@ -6,26 +6,38 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter",
           "spec_url": "https://drafts.csswg.org/css-overflow/#scrollbar-gutter-property",
           "support": {
-            "chrome": {
-              "version_added": "88",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable experimental Web Platform features"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "88",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable experimental Web Platform features"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "94"
+              },
+              {
+                "version_added": "88",
+                "version_removed": "94",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "94"
+              },
+              {
+                "version_added": "88",
+                "version_removed": "94",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
             "edge": {
-              "version_added": false
+              "version_added": "94"
             },
             "firefox": {
               "version_added": false
@@ -52,7 +64,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "94"
             }
           },
           "status": {
