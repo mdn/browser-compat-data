@@ -19,7 +19,10 @@ const entryPoints = [
 function main() {
   console.log(`path,${browsers.join(',')}`);
   for (const {path, compat} of walk(entryPoints, bcd)) {
+    const url = compat.mdn_url;
+    const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : path;
     const flatSupport = browsers.map(b => {
+      // Flatten to string, true, false, or null using the first non-flag range.
       let ranges = compat.support[b];
       if (!ranges) {
         return null;
@@ -36,8 +39,11 @@ function main() {
         return false;
       }
       return firstRange.version_added;
-    }).map(String);
-    console.log([path, ...flatSupport].join(','));
+    }).map(version => {
+      // Flatten even further to just 0 (not supported) or 1 (supported)
+      return version ? 1 : 0;
+    });
+    console.log([linkedPath, ...flatSupport].join(','));
   }
 }
 
