@@ -2,7 +2,7 @@
 
 ## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
 
-RELEASE DATE TK
+September 10, 2021
 
 ### Notable changes
 
