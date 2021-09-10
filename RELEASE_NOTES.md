@@ -10,6 +10,8 @@ RELEASE DATE TK
 
   - `api.Document.documentURI.readonly` ([#12276](https://github.com/mdn/browser-compat-data/pull/12276))
   - `api.IDBEnvironment` ([#12230](https://github.com/mdn/browser-compat-data/pull/12230))
+  - `api.KeyboardEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+  - `api.MouseEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
 
 ### Known issues
 
