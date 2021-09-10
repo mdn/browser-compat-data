@@ -1,5 +1,29 @@
 # Release notes
 
+## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
+
+September 10, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.documentURI.readonly` ([#12276](https://github.com/mdn/browser-compat-data/pull/12276))
+  - `api.IDBEnvironment` ([#12230](https://github.com/mdn/browser-compat-data/pull/12230))
+  - `api.KeyboardEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+  - `api.MouseEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 14 contributors have changed 76 files with 7,054 additions and 731 deletions in 36 commits ([`v4.0.2...v4.0.3`](https://github.com/mdn/browser-compat-data/compare/v4.0.2...v4.0.3))
+- 13,329 total features
+- 807 total contributors
+- 3,567 total stargazers
+
 ## [v4.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.2)
 
 September 2, 2021
