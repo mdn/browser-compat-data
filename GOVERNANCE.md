@@ -55,7 +55,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 #### List of current peers
 
 - Rachel Andrew (@rachelandrew)
-- Vinyl Darkscratch (@vinyldarkscratch)
+- Vinyl Da.i'gyu (@queengooborg)
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Ryan Johnson (@escattone), Mozilla
 - Joe Medley (@jpmedley), Google
