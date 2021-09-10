@@ -6,7 +6,10 @@ RELEASE DATE TK
 
 ### Notable changes
 
-- The historic `api.IDBEnvironment` mixin has been removed. ([#12230](https://github.com/mdn/browser-compat-data/pull/12230))
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.documentURI.readonly` ([#12276](https://github.com/mdn/browser-compat-data/pull/12276))
+  - `api.IDBEnvironment` ([#12230](https://github.com/mdn/browser-compat-data/pull/12230))
 
 ### Known issues
 
