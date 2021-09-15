@@ -1,4 +1,3 @@
-const assert = require('assert').strict;
 const { execSync } = require('child_process');
 
 function exec(command) {
@@ -6,7 +5,6 @@ function exec(command) {
 }
 
 function getLatestTag() {
-  const currentBranch = exec('git rev-parse --abbrev-ref HEAD');
   return exec('git describe --abbrev=0 --tags');
 }
 
