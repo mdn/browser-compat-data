@@ -41,7 +41,7 @@ const question = async query => {
 const prompt = async questions => {
   const results = {};
   for (const q of questions) {
-    results[q.name] = await question(q.message).then(q.type);
+    results[q.name] = await question(`${q.message} `).then(q.type);
   }
   return results;
 };
