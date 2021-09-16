@@ -166,7 +166,7 @@ For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_S
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
-## Release lines
+## Release lines and backported features
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
 
@@ -180,10 +180,10 @@ Safari has released a number of versions as backports of newer releases. These r
 
 These releases include the following:
 
-- Safari 4.1 <- 5.0
-- Safari 6.1 <- 7.0
-- Safari 6.2 <- 8.0
-- Safari 7.1 <- 8.0
+- Safari 4.1 is a backport of 5.0
+- Safari 6.1 is a backport of 7.0
+- Safari 6.2 is a backport of 8.0
+- Safari 7.1 is a backport of 8.0
 
 If a feature is found to be supported in one of these backport releases, set the verion number to the following major version. For example, if a new feature was added in Safari 7.0 and it is present in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
