@@ -4,6 +4,16 @@
 
 RELEASE DATE TK
 
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.DOMPointInit` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.DOMPointInit.w` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.DOMPointInit.x` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.DOMPointInit.y` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.DOMPointInit.z` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+
 ## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
 
 September 10, 2021
