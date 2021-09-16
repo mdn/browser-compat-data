@@ -16,6 +16,7 @@ RELEASE DATE TK
   - `api.DOMPointInit` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
   - `api.HTMLSourceElement.keySystem` ([#12383](https://github.com/mdn/browser-compat-data/pull/12383))
   - `api.Transferable` ([#12376](https://github.com/mdn/browser-compat-data/pull/12376)
+  - `api.Window.routeEvent` ([#12403](https://github.com/mdn/browser-compat-data/pull/12403))
 
 ## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
 
