@@ -1,5 +1,26 @@
 # Release notes
 
+## [v4.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.4)
+
+September 16, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.AudioNodeOptions` ([#12366](https://github.com/mdn/browser-compat-data/pull/12366))
+  - `api.DOMPointInit` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.HTMLSourceElement.keySystem` ([#12383](https://github.com/mdn/browser-compat-data/pull/12383))
+  - `api.Transferable` ([#12376](https://github.com/mdn/browser-compat-data/pull/12376)
+  - `api.Window.routeEvent` ([#12403](https://github.com/mdn/browser-compat-data/pull/12403))
+
+### Statistics
+
+- 14 contributors have changed 43 files with 587 additions and 887 deletions in 33 commits ([`v4.0.3...v4.0.4`](https://github.com/mdn/browser-compat-data/compare/v4.0.3...v4.0.4))
+- 13,422 total features
+- 808 total contributors
+- 3,576 total stargazers
+
 ## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
 
 September 10, 2021
