@@ -166,7 +166,7 @@ For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_S
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
-## Release lines and backported features
+## Release lines
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
 
@@ -174,18 +174,17 @@ Typically, BCD does not record absolute version numbers, such as Chrome 76.0.380
 
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
 
-## Safari backported releases
+## Backported releases
 
-Safari has released a number of versions as backports of newer releases. These releases have roughly the same features, with exceptions to OS-dependent interfaces such as notifications and media playback.
+Some browsers have created backport releases to include all or most of the features in a new major version, targeted for older operating systems.  If a feature is found to be supported in one of these backport releases, set the verion number to the following major version. For example, if a new feature was added in Safari 7.0 and it is present in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
-These releases include the following:
+Known backport releases include the following:
 
-- Safari 4.1 is a backport of 5.0
-- Safari 6.1 is a backport of 7.0
-- Safari 6.2 is a backport of 8.0
-- Safari 7.1 is a backport of 8.0
-
-If a feature is found to be supported in one of these backport releases, set the verion number to the following major version. For example, if a new feature was added in Safari 7.0 and it is present in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+- Safari
+  - 4.1 is a backport of 5.0
+  - 6.1 is a backport of 7.0
+  - 6.2 is a backport of 8.0
+  - 7.1 is a backport of 8.0
 
 This decision was made in [#4679](https://github.com/mdn/browser-compat-data/issues/4679) and [#9423](https://github.com/mdn/browser-compat-data/issues/9423).
 
