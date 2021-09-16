@@ -9,10 +9,6 @@ RELEASE DATE TK
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.AudioNodeOptions` ([#12366](https://github.com/mdn/browser-compat-data/pull/12366))
-  - `api.DOMPointInit.w` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
-  - `api.DOMPointInit.x` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
-  - `api.DOMPointInit.y` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
-  - `api.DOMPointInit.z` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
   - `api.DOMPointInit` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
   - `api.HTMLSourceElement.keySystem` ([#12383](https://github.com/mdn/browser-compat-data/pull/12383))
   - `api.Transferable` ([#12376](https://github.com/mdn/browser-compat-data/pull/12376)
