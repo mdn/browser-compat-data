@@ -337,3 +337,30 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
 This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+
+## Methods returning promises (`returns_promise`)
+
+When a method returns a promise in some (but not all) browser releases, use a subfeature named `returns_promise` with description text `Returns a <code>Promise</code>` to record when the method returns a promise.
+
+For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded like this:
+
+```json
+{
+  "api": {
+    "HTMLMediaElement": {
+      "__compat": {},
+      "play": {
+        "__compat": {},
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a <code>Promise</code>",
+            "support": {}
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline is based on discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
