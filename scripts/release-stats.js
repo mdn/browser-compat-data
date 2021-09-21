@@ -1,8 +1,5 @@
 const http = require('https');
 const readline = require('readline');
-const chalk = require('chalk');
-
-const bcd = require('..');
 const { exec, releaseYargsBuilder } = require('./release-utils');
 const { walk } = require('../utils');
 
@@ -30,25 +27,21 @@ const getJSON = url =>
     ),
   );
 
-const question = query => {
+const question = async query => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
-  return new Promise(resolve => rl.question(query, resolve)).then(response => {
-    rl.close();
-    console.log();
-    return response;
-  });
+  const response = await new Promise(resolve => rl.question(query, resolve));
+  rl.close();
+  console.log();
+  return response;
 };
-
-const confirm = str => !['n', 'no'].includes(str.toLowerCase());
 
 const prompt = async questions => {
   const results = {};
   for (const q of questions) {
-    const options = q.type === confirm ? '(Y/n) ' : '';
-    results[q.name] = await question(`${q.message} ${options}`).then(q.type);
+    results[q.name] = await question(`${q.message} `).then(q.type);
   }
   return results;
 };

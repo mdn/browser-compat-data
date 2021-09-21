@@ -338,6 +338,22 @@ See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of 
 
 This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
 
+## Choosing `"preview"` values
+
+Prefer `"preview"` values for `version_added` and `version_removed` when the future stable version number is unknown or uncertain. Use `"preview"` when:
+
+- You can't be sure a feature will progress (informally, "ride the train") to a numbered stable release.
+
+  For example, use `"preview"` when a feature is explicitly limited to Chrome Canary builds, is supported in the current version of Canary, and is not supported in the same numbered beta and stable versions.
+
+- The next version number is unknown to BCD.
+
+  For example, a feature is supported in Safari Technology Preview only and is expected in the next release of Safari, but Apple has not announced the version number for the next release of Safari.
+
+Do not use `"preview"` for planned but not yet implemented support changes. In other words, if you can't test or use a feature in the current development version of the browser, then use `false` not `"preview"`.
+
+This guideline was adopted to protect the quality of stable data in the face of schedule uncertainty. To learn more about the adoption of `"preview"` values, see [#12344](https://github.com/mdn/browser-compat-data/issues/12344) and [#10334](https://github.com/mdn/browser-compat-data/pull/10334).
+
 ## Methods returning promises (`returns_promise`)
 
 When a method returns a promise in some (but not all) browser releases, use a subfeature named `returns_promise` with description text `Returns a <code>Promise</code>` to record when the method returns a promise.
