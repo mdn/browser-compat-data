@@ -54,14 +54,14 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 #### List of current peers
 
-- Rachel Andrew (@rachelandrew)
-- Vinyl Da.i'gyu (@queengooborg)
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
-- Ryan Johnson (@escattone), Mozilla
+- Jean-Yves Perrier (@teoli2003), Open Web Docs
 - Joe Medley (@jpmedley), Google
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
-- Jean-Yves Perrier (@teoli2003), Open Web Docs
+- Rachel Andrew (@rachelandrew)
+- Ryan Johnson (@escattone), Mozilla
+- Vinyl Da.i'gyu (@queengooborg)
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
