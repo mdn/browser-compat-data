@@ -61,6 +61,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Joe Medley (@jpmedley), Google
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
+- Jean-Yves Perrier (@teoli2003), Open Web Docs
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
@@ -165,7 +166,6 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
 - Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
-- Jean-Yves Perrier (@teoli2003) (Former project lead, schema design co-author)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
