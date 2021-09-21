@@ -353,3 +353,30 @@ Prefer `"preview"` values for `version_added` and `version_removed` when the fut
 Do not use `"preview"` for planned but not yet implemented support changes. In other words, if you can't test or use a feature in the current development version of the browser, then use `false` not `"preview"`.
 
 This guideline was adopted to protect the quality of stable data in the face of schedule uncertainty. To learn more about the adoption of `"preview"` values, see [#12344](https://github.com/mdn/browser-compat-data/issues/12344) and [#10334](https://github.com/mdn/browser-compat-data/pull/10334).
+
+## Methods returning promises (`returns_promise`)
+
+When a method returns a promise in some (but not all) browser releases, use a subfeature named `returns_promise` with description text `Returns a <code>Promise</code>` to record when the method returns a promise.
+
+For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded like this:
+
+```json
+{
+  "api": {
+    "HTMLMediaElement": {
+      "__compat": {},
+      "play": {
+        "__compat": {},
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a <code>Promise</code>",
+            "support": {}
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline is based on discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
