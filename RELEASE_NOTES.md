@@ -6,6 +6,7 @@
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.CryptoKeyPair` ([#12346](https://github.com/mdn/browser-compat-data/pull/12346))
   - `api.MediaStream.ended` ([#12454](https://github.com/mdn/browser-compat-data/pull/12454))
   - `api.XMLSerializer.serializeToStream` ([#12417](https://github.com/mdn/browser-compat-data/pull/12417))
 
