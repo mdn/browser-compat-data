@@ -2,6 +2,12 @@
 
 ## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
 
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.XMLSerializer.serializeToStream` ([#12417](https://github.com/mdn/browser-compat-data/pull/12417))
+
 ### Known issues
 
 - In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
