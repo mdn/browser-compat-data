@@ -4,6 +4,13 @@
 
 ### Notable changes
 
+- The feature-naming convention `returns_promise` has been adopted for features that capture some but not all browsers' APIs returning a `Promise`. The [new data guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#methods-returning-promises-returns_promise) is meant to bring consistency to a few different styles used throughout the API data. The following features have been renamed to `returns_promise` ([#11630](https://github.com/mdn/browser-compat-data/pull/11630)):
+
+  - `api.BaseAudioContext.decodeAudioData.promise_syntax`
+  - `api.Document.exitFullscreen.returns_a_promise`
+  - `api.Element.requestFullscreen.returns_a_promise`
+  - `api.OfflineAudioContext.startRendering.Promise_based_startRendering`
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.CryptoKeyPair` ([#12346](https://github.com/mdn/browser-compat-data/pull/12346))
