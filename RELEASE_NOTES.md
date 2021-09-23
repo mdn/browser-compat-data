@@ -2,6 +2,8 @@
 
 ## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
 
+September 23, 2021
+
 ### Notable changes
 
 - The feature-naming convention `returns_promise` has been adopted for features that capture some but not all browsers' APIs returning a `Promise`. The [new data guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#methods-returning-promises-returns_promise) brings consistency to a competing styles used throughout the API data.
