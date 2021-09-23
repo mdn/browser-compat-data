@@ -28,6 +28,8 @@
   - `api.MediaStream.ended` ([#12454](https://github.com/mdn/browser-compat-data/pull/12454))
   - `api.MediaStream.label` ([#12455](https://github.com/mdn/browser-compat-data/pull/12455))
   - `api.SVGZoomAndPan` ([#12518](https://github.com/mdn/browser-compat-data/pull/12518))
+  - `api.Window.maximize` ([#12552](https://github.com/mdn/browser-compat-data/pull/12552))
+  - `api.Window.minimize` ([#12552](https://github.com/mdn/browser-compat-data/pull/12552))
   - `api.XMLSerializer.serializeToStream` ([#12417](https://github.com/mdn/browser-compat-data/pull/12417))
 
 ### Known issues
