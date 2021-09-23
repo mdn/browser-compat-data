@@ -1,5 +1,50 @@
 # Release notes
 
+## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
+
+September 23, 2021
+
+### Notable changes
+
+- The feature-naming convention `returns_promise` has been adopted for features that capture some but not all browsers' APIs returning a `Promise`. The [new data guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#methods-returning-promises-returns_promise) brings consistency to competing styles used throughout the API data.
+
+  The following features have been renamed to `returns_promise` ([#11630](https://github.com/mdn/browser-compat-data/pull/11630)):
+
+  - `api.BaseAudioContext.decodeAudioData.promise_syntax`
+  - `api.Document.exitFullscreen.returns_a_promise`
+  - `api.Element.requestFullscreen.returns_a_promise`
+  - `api.OfflineAudioContext.startRendering.Promise_based_startRendering`
+
+  The feature `api.RTCPeerConnection.getStats.with_callbacks` was removed and the data for several `RTCPeerConnection` methods expanded with `returns_promise` data. The following features have been added ([#12300](https://github.com/mdn/browser-compat-data/pull/12300)):
+
+  - `api.RTCPeerConnection.addIceCandidate.returns_promise`
+  - `api.RTCPeerConnection.createAnswer.returns_promise`
+  - `api.RTCPeerConnection.createOffer.returns_promise`
+  - `api.RTCPeerConnection.getStats.returns_promise`
+  - `api.RTCPeerConnection.setLocalDescription.returns_promise`
+  - `api.RTCPeerConnection.setRemoteDescription.returns_promise`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.CryptoKeyPair` ([#12346](https://github.com/mdn/browser-compat-data/pull/12346))
+  - `api.MediaStream.ended` ([#12454](https://github.com/mdn/browser-compat-data/pull/12454))
+  - `api.MediaStream.label` ([#12455](https://github.com/mdn/browser-compat-data/pull/12455))
+  - `api.SVGZoomAndPan` ([#12518](https://github.com/mdn/browser-compat-data/pull/12518))
+  - `api.Window.maximize` ([#12552](https://github.com/mdn/browser-compat-data/pull/12552))
+  - `api.Window.minimize` ([#12552](https://github.com/mdn/browser-compat-data/pull/12552))
+  - `api.XMLSerializer.serializeToStream` ([#12417](https://github.com/mdn/browser-compat-data/pull/12417))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 8 contributors have changed 53 files with 1,649 additions and 2,580 deletions in 54 commits ([`v4.0.4...v4.0.5`](https://github.com/mdn/browser-compat-data/compare/v4.0.4...v4.0.5))
+- 13,414 total features
+- 809 total contributors
+- 3,583 total stargazers
+
 ## [v4.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.4)
 
 September 16, 2021
@@ -13,6 +58,10 @@ September 16, 2021
   - `api.HTMLSourceElement.keySystem` ([#12383](https://github.com/mdn/browser-compat-data/pull/12383))
   - `api.Transferable` ([#12376](https://github.com/mdn/browser-compat-data/pull/12376)
   - `api.Window.routeEvent` ([#12403](https://github.com/mdn/browser-compat-data/pull/12403))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
 ### Statistics
 
