@@ -153,8 +153,6 @@ var hasErrors = argv.files
       'mathml',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     );
 hasErrors = testFormat() || hasErrors;
 

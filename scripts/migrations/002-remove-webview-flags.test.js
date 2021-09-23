@@ -4,6 +4,7 @@
 
 'use strict';
 const assert = require('assert');
+
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
 const tests = [

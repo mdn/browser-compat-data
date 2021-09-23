@@ -108,14 +108,6 @@ Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensio
 - `api` - WebExtension-specific APIs
 - `manifest` - `manifest.json` keys
 
-### [`xpath`](xpath)
-
-Data for [XPath](https://developer.mozilla.org/en-US/docs/Web/XPath) features.
-
-### [`xslt`](xslt)
-
-Data for [XSLT](https://developer.mozilla.org/en-US/docs/Web/XSLT) features.
-
 ## Semantic versioning policy
 
 For the purposes of [semantic versioning](https://semver.org/) (SemVer), the public API consists of:
@@ -141,6 +133,7 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 
 - [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
 - [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.
+- [CanIUse Embed](https://caniuse.bitsofco.de/) - Thanks to the inclusion of MDN BCD data in caniuse, this embed tool allows for embedding BCD data into any project.
 - [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
 - [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
 - [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).

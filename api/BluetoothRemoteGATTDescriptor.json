@@ -3,16 +3,17 @@
     "BluetoothRemoteGATTDescriptor": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTDescriptor",
-        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothremotegattdescriptor",
+        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothgattdescriptor-interface",
         "support": {
           "chrome": [
             {
               "version_added": "57",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Before Chrome 70, this feature was only supported in macOS.  In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "57",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -20,10 +21,6 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "70",
-              "notes": "Windows 10."
             }
           ],
           "chrome_android": {
@@ -32,11 +29,12 @@
           "edge": [
             {
               "version_added": "79",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "79",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -44,10 +42,6 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "79",
-              "notes": "Windows 10."
             }
           ],
           "firefox": {
@@ -62,11 +56,12 @@
           "opera": [
             {
               "version_added": "44",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Before Opera 57, this feature was only supported in macOS.  In Opera 57, support was added for Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "44",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -74,10 +69,6 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "57",
-              "notes": "Windows 10."
             }
           ],
           "opera_android": {
@@ -93,7 +84,8 @@
             "version_added": "7.0"
           },
           "webview_android": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
           }
         },
         "status": {
@@ -107,51 +99,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTDescriptor/characteristic",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattdescriptor-characteristic",
           "support": {
-            "chrome": [
-              {
-                "version_added": "57",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "57",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
             "chrome_android": {
               "version_added": "57"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -161,27 +117,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "44",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "44",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "44"
+            },
             "opera_android": {
               "version_added": "44"
             },
@@ -210,51 +148,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTDescriptor/readValue",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattdescriptor-readvalue",
           "support": {
-            "chrome": [
-              {
-                "version_added": "57",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "57",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
             "chrome_android": {
               "version_added": "57"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -264,27 +166,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "44",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "44",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "44"
+            },
             "opera_android": {
               "version_added": "44"
             },
@@ -313,51 +197,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTDescriptor/uuid",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattdescriptor-uuid",
           "support": {
-            "chrome": [
-              {
-                "version_added": "57",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "57",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
             "chrome_android": {
               "version_added": "57"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -367,27 +215,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "44",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "44",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "44"
+            },
             "opera_android": {
               "version_added": "44"
             },
@@ -416,51 +246,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTDescriptor/value",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattdescriptor-value",
           "support": {
-            "chrome": [
-              {
-                "version_added": "57",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "57",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
             "chrome_android": {
               "version_added": "57"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -470,27 +264,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "44",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "44",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "44"
+            },
             "opera_android": {
               "version_added": "44"
             },
@@ -519,51 +295,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTDescriptor/writeValue",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattdescriptor-writevalue",
           "support": {
-            "chrome": [
-              {
-                "version_added": "57",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "57",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
             "chrome_android": {
               "version_added": "57"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -573,27 +313,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "44",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "44",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "44"
+            },
             "opera_android": {
               "version_added": "44"
             },

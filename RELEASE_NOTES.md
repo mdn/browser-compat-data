@@ -1,12 +1,1106 @@
 # Release notes
 
+## [v4.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.4)
+
+September 16, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.AudioNodeOptions` ([#12366](https://github.com/mdn/browser-compat-data/pull/12366))
+  - `api.DOMPointInit` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.HTMLSourceElement.keySystem` ([#12383](https://github.com/mdn/browser-compat-data/pull/12383))
+  - `api.Transferable` ([#12376](https://github.com/mdn/browser-compat-data/pull/12376)
+  - `api.Window.routeEvent` ([#12403](https://github.com/mdn/browser-compat-data/pull/12403))
+
+### Statistics
+
+- 14 contributors have changed 43 files with 587 additions and 887 deletions in 33 commits ([`v4.0.3...v4.0.4`](https://github.com/mdn/browser-compat-data/compare/v4.0.3...v4.0.4))
+- 13,422 total features
+- 808 total contributors
+- 3,576 total stargazers
+
+## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
+
+September 10, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.documentURI.readonly` ([#12276](https://github.com/mdn/browser-compat-data/pull/12276))
+  - `api.IDBEnvironment` ([#12230](https://github.com/mdn/browser-compat-data/pull/12230))
+  - `api.KeyboardEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+  - `api.MouseEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 14 contributors have changed 76 files with 7,054 additions and 731 deletions in 36 commits ([`v4.0.2...v4.0.3`](https://github.com/mdn/browser-compat-data/compare/v4.0.2...v4.0.3))
+- 13,329 total features
+- 807 total contributors
+- 3,567 total stargazers
+
+## [v4.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.2)
+
+September 2, 2021
+
+### WindowOrWorkerGlobalScope removal
+
+To no longer expose mixins, the following features have been moved from `api.WindowOrWorkerGlobalScope` (or `api.Window` for two cases) to the global `api.*` namespace. The features' worker support is now indicated using `worker_support` sub-features. ([#11518](https://github.com/mdn/browser-compat-data/pull/11518))
+
+#### Removed
+
+- `api.Window.isSecureContext`
+- `api.Window.trustedTypes`
+- `api.WindowOrWorkerGlobalScope.*`
+
+#### Added
+
+- `api.atob`
+- `api.atob.worker_support`
+- `api.btoa`
+- `api.btoa.worker_support`
+- `api.caches`
+- `api.caches.worker_support`
+- `api.clearInterval`
+- `api.clearInterval.worker_support`
+- `api.clearTimeout`
+- `api.clearTimeout.worker_support`
+- `api.createImageBitmap`
+- `api.createImageBitmap.worker_support`
+- `api.crossOriginIsolated`
+- `api.crossOriginIsolated.worker_support`
+- `api.fetch`
+- `api.fetch.worker_support`
+- `api.indexedDB`
+- `api.indexedDB.worker_support`
+- `api.isSecureContext`
+- `api.isSecureContext.worker_support`
+- `api.origin`
+- `api.origin.worker_support`
+- `api.queueMicrotask`
+- `api.queueMicrotask.worker_support`
+- `api.setInterval`
+- `api.setInterval.worker_support`
+- `api.setTimeout`
+- `api.setTimeout.worker_support`
+- `api.structuredClone`
+- `api.structuredClone.worker_support`
+- `api.trustedTypes`
+- `api.trustedTypes.worker_support`
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.UIEvent.pageX` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.pageY` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.isChar` ([#12186](https://github.com/mdn/browser-compat-data/pull/12186))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 10 contributors have changed 61 files with 2,863 additions and 2,275 deletions in 34 commits ([`v4.0.1...v4.0.2`](https://github.com/mdn/browser-compat-data/compare/v4.0.1...4.0.2))
+- 13,290 total features
+- 806 total contributors
+- 3,551 total stargazers
+
+## [v4.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.1)
+
+August 26, 2021
+
+### Notable changes
+
+- `css.types.ellipse` was moved to `css.types.basic-shape.ellipse` to correct improper nesting of features. ([#12075](https://github.com/mdn/browser-compat-data/pull/12075))
+
+- `css.types.filter-function.constrast` was renamed to `css.types.filter-function.contrast` to correct a typo. ([#12074](https://github.com/mdn/browser-compat-data/pull/12074))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.FileError` ([#12089](https://github.com/mdn/browser-compat-data/pull/12089))
+  - `api.Headers.getAll` ([#12166](https://github.com/mdn/browser-compat-data/pull/12166))
+  - `api.Window.onpaint` ([#12167](https://github.com/mdn/browser-compat-data/pull/12167))
+  - `api.XRPermissionDescriptor` ([#10672](https://github.com/mdn/browser-compat-data/pull/10672))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 16 contributors have changed 76 files with 1,053 additions and 996 deletions in 62 commits ([`v4.0.0...v4.0.1`](https://github.com/mdn/browser-compat-data/compare/v4.0.0...v4.0.1))
+- 13,279 total features
+- 806 total contributors
+- 3,534 total stargazers
+
+## [v4.0.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.0)
+
+August 19, 2021
+
+Version 4.0.0 makes some potentially-breaking changes to improve the flexibility and quality of the data. Higlights include:
+
+- The schema now supports a `"preview"` version value for in-development browser releases, such as Safari Technology Preview, Chrome Canary, and Firefox Nightly.
+- Deno, the JavaScript and TypeScript runtime, has been added as a new engine.
+- All XPath (`xpath`) and XSLT (`xslt`) features have been removed because the data was incomplete and unmaintained.
+- The schema for browser release data now supports the optional `accepts_flags` boolean hint.
+
+### Notable changes
+
+- [Deno](https://deno.land/), the JavaScript and TypeScript runtime, has been added as a new engine. Deno data is included for JavaScript and some Web APIs, much like Node.js data. ([#10753](https://github.com/mdn/browser-compat-data/pull/10753))
+
+- The XPath (`xpath`) and XSLT (`xslt`) features have been removed. These features poorly covered their subjects and were unmaintained. Rather than purport to have such data, we removed it.
+
+  We're not ruling out the return of XPath and XSLT data in the future. But for now, in the absence of an intentional effort to create and maintain that data, we thought it best to remove the faulty data. ([#9830](https://github.com/mdn/browser-compat-data/pull/9830))
+
+- The schema now supports a special version value `"preview"` for in-development versions of browsers, such as Safari Technology Preview, Chrome Canary, and Firefox Nightly. Additionally, browser data now supports a `preview_name` property for supplying a corresponding name for the preview browser.
+
+  These additions to the schema should help represent features gated to development versions, which were previously misrepresented with notes, `false` values, or inaccurate version numbers. ([#10334](https://github.com/mdn/browser-compat-data/pull/10334))
+
+- The schema for browser release data now supports the optional `accepts_flags` boolean hint, which indicates whether a browser (or individual release) should contain `flags` data. Presently, this is a hint for data contributors or tools. The value of `accepts_flags` doesn't (yet) make any guarantees about the contents of feature data. ([#11286](https://github.com/mdn/browser-compat-data/pull/11286))
+
+- Descendant features of `api.HTMLCanvasElement.getContext` and `api.HTMLCanvasElement.toBlob` have been reorganized to follow [the guideline for parameter object features](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). See [the PR for a detailed list of features affected](https://github.com/mdn/browser-compat-data/pull/11234#issuecomment-900265901). ([#11234](https://github.com/mdn/browser-compat-data/pull/11234))
+
+- The following features were lower-cased for consistency with other feature names: ([#11961](https://github.com/mdn/browser-compat-data/pull/11961))
+
+  - `api.CanvasRenderingContext2D.drawImage.Smoothing_downscaling` (now `smoothing_downscaling`)
+  - `api.OfflineAudioContext.OfflineAudioContext.Parameters_accepted_in_an_object` (now `parameters_accepted_in_an_object`)
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.AnimationEvent.initAnimationEvent` ([#12059](https://github.com/mdn/browser-compat-data/pull/12059))
+  - `api.TouchList.identifiedTouch` ([#11760](https://github.com/mdn/browser-compat-data/pull/11760))
+
+### Statistics
+
+- 22 contributors have changed 406 files with 11,006 additions and 6,128 deletions in 84 commits ([`v3.3.14...v4.0.0`](https://github.com/mdn/browser-compat-data/compare/v3.3.14...v4.0.0))
+- 13,281 total features
+- 804 total contributors
+- 3,491 total stargazers
+
+## [v3.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.14)
+
+August 5, 2021
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Notable changes
+
+- Internet Explorer version `"≤11"` is now an accepted value, to reflect testing limitations for older versions and diminishing interest in pre-IE11 versions. ([#11223](https://github.com/mdn/browser-compat-data/pull/11223))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Text.isElementContentWhitespace` ([#11859](https://github.com/mdn/browser-compat-data/pull/11859))
+  - `api.Document.documentURIObject` ([#11860](https://github.com/mdn/browser-compat-data/pull/11860))
+
+### Statistics
+
+- 8 contributors have changed 37 files with 2,393 additions and 254 deletions in 28 commits ([`v3.3.13...v3.3.14`](https://github.com/mdn/browser-compat-data/compare/v3.3.13...v3.3.14))
+- 13,276 total features
+- 797 total contributors
+- 3,473 total stargazers
+
+## [v3.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.13)
+
+July 29, 2021
+
+### Notable changes
+
+- `api.MediaDevices.stereo_audio_capture` was removed because it was historic, incomplete, and impractical to fix. ([#11717](https://github.com/mdn/browser-compat-data/pull/11717))
+
+- A catch-all mixin feature, `api.HTMLFrameSetElement.event_handlers`, has been removed. Read [#11675](https://github.com/mdn/browser-compat-data/issues/11675) for progress on the long-term fix of representing the `WindowEventHandlers` mixin's exposed interfaces. ([#11459](https://github.com/mdn/browser-compat-data/pull/11459/))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.ConstrainBoolean` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDOMString` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainDouble` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ConstrainULong` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
+  - `api.Document.loadOverlay` ([#11720](https://github.com/mdn/browser-compat-data/pull/11720))
+  - `api.Document.popupNode` ([#11722](https://github.com/mdn/browser-compat-data/pull/11722))
+  - `api.Document.tooltipNode` ([#11721](https://github.com/mdn/browser-compat-data/pull/11721))
+  - `api.DoubleRange` ([#11000](https://github.com/mdn/browser-compat-data/pull/11000))
+  - `api.ULongRange` ([#10623](https://github.com/mdn/browser-compat-data/pull/10623))
+  - `api.WEBGL_compressed_texture_atc` ([#11763](https://github.com/mdn/browser-compat-data/pull/11763))
+  - `api.Window.beforeunload_event.custom_text_support` ([#11753](https://github.com/mdn/browser-compat-data/pull/11753))
+
+### Statistics
+
+- 15 contributors have changed 59 files with 2,748 additions and 1,062 deletions in 61 commits ([`v3.3.12...v3.3.13`](https://github.com/mdn/browser-compat-data/compare/v3.3.12...v3.3.13))
+- 13,236 total features
+- 796 total contributors
+- 3,462 total stargazers
+
+## [v3.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.12)
+
+July 22, 2021
+
+### Notable changes
+
+- `api.Console` was renamed to `api.console` to reflect the correct case of the `console` namespace. ([#11534](https://github.com/mdn/browser-compat-data/pull/11534))
+
+- Safari for iOS 5.1 and 3.1 data was corrected to version 5.0 and 3.0, respectively, since these browsers were found to support the same features. Since no data now uses the version 5.1 and 3.1 values, they were dropped from the release data. ([#11175](https://github.com/mdn/browser-compat-data/pull/11175))
+
+- The descendant features of `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat` (the `Intl.DateTimeFormat()` constructor's parameters) have been reorganized to follow [the guideline for parameter object features](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). See [the PR for a detailed list of features affected](https://github.com/mdn/browser-compat-data/pull/11544#issuecomment-884885596). ([#11544](https://github.com/mdn/browser-compat-data/pull/11544))
+
+- `api.Element.attachInternals` was removed, since it duplicated `api.HTMLElement.attachInternals`. ([#11556](https://github.com/mdn/browser-compat-data/pull/11556))
+
+- `api.ContentIndexEvent.in` was renamed to `api.ContentIndexEvent.id` to correct a typo. ([#11555](https://github.com/mdn/browser-compat-data/pull/11555))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.HTMLSelectElement.blur` ([#11637](https://github.com/mdn/browser-compat-data/pull/11637))
+  - `api.HTMLSelectElement.focus` ([#11637](https://github.com/mdn/browser-compat-data/pull/11637))
+  - `api.KeyboardEvent.KeyboardEvent.code_and_key_in_init` ([#11530](https://github.com/mdn/browser-compat-data/pull/11530))
+  - `api.WorkerGlobalScope.close_event` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.close` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.WorkerGlobalScope.onclose` ([#11557](https://github.com/mdn/browser-compat-data/pull/11557))
+  - `api.XREnvironmentBlendMode` ([#11551](https://github.com/mdn/browser-compat-data/pull/11551))
+  - `api.XREye` ([#11636](https://github.com/mdn/browser-compat-data/pull/11636))
+  - `api.XRFrameRequestCallback` ([#11633](https://github.com/mdn/browser-compat-data/pull/11633))
+  - `api.XRWebGLLayerInit` ([#11661](https://github.com/mdn/browser-compat-data/pull/11661))
+
+### Statistics
+
+- 11 contributors have changed 159 files with 9,185 additions and 2,126 deletions in 93 commits ([`v3.3.11...v3.3.12`](https://github.com/mdn/browser-compat-data/compare/v3.3.11...v3.3.12))
+- 13,206 total features
+- 793 total contributors
+- 3,450 total stargazers
+
+## [v3.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.11)
+
+July 15, 2021
+
+### Notable changes
+
+- Many parameter object features have been renamed for consistency. ([#11502](https://github.com/mdn/browser-compat-data/pull/11502), [#11481](https://github.com/mdn/browser-compat-data/pull/11481), [#11500](https://github.com/mdn/browser-compat-data/pull/11500/))
+
+  <details>
+  <summary>Features removed and addded</summary>
+
+  **Removed**
+
+  - `api.Clients.matchAll.includeUncontrolled_option`
+  - `api.CSSStyleSheet.insertRule.optional_index`
+  - `api.Document.createTreeWalker.whatToShow_filter_optional`
+  - `api.Document.importNode.deep_optional`
+  - `api.Element.animate.composite_option`
+  - `api.Element.animate.id_option`
+  - `api.Element.animate.iterationcomposite_option`
+  - `api.Element.animate.pseudoElement_option`
+  - `api.Element.requestFullscreen.options_parameter`
+  - `api.Element.scrollIntoView.scrollIntoViewOptions`
+  - `api.EventTarget.addEventListener.optional_usecapture`
+  - `api.EventTarget.addEventListener.options.capture`
+  - `api.EventTarget.addEventListener.options.once`
+  - `api.EventTarget.addEventListener.options.passive_true_touch`
+  - `api.EventTarget.addEventListener.options.passive_true_wheel`
+  - `api.EventTarget.addEventListener.options.passive`
+  - `api.EventTarget.addEventListener.options.signal`
+  - `api.EventTarget.addEventListener.options`
+  - `api.EventTarget.removeEventListener.optional_type_listener`
+  - `api.EventTarget.removeEventListener.optional_usecapture`
+  - `api.EventTarget.removeEventListener.options`
+  - `api.HTMLTableRowElement.insertCell.negative_one_index_parameter`
+  - `api.HTMLTableRowElement.insertCell.optional_index_parameter`
+  - `api.IntersectionObserver.IntersectionObserver.document_as_root`
+  - `api.MediaRecorder.MediaRecorder.options`
+  - `api.Node.cloneNode.deep_defaults_to_false`
+  - `api.Request.Request.referrer_init`
+  - `api.RTCPeerConnection.setLocalDescription.optional_description`
+  - `api.RTCPeerConnection.setRemoteDescription.optional_description`
+  - `api.Selection.containsNode.partialContainment`
+  - `api.Selection.extend.offset`
+  - `api.Selection.modify.node`
+  - `api.Selection.modify.offset`
+  - `api.SharedWorker.SharedWorker.name_option`
+  - `javascript.builtins.Array.toLocaleString.locales`
+  - `javascript.builtins.Array.toLocaleString.options`
+  - `javascript.builtins.Intl.Collator.Collator.caseFirst`
+  - `javascript.builtins.Intl.Collator.Collator.collation`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.compactDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.currencyDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.currencySign`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.notation`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.signDisplay`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.unit`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.unitDisplay`
+
+  **Added**
+
+  - `api.Clients.matchAll.options_includeUncontrolled_parameter`
+  - `api.CSSStyleSheet.insertRule.index_parameter_optional`
+  - `api.Document.createTreeWalker.whatToShow_filter_parameters_optional`
+  - `api.Document.importNode.deep_parameter_optional`
+  - `api.Element.animate.options_composite_parameter`
+  - `api.Element.animate.options_id_parameter`
+  - `api.Element.animate.options_iterationComposite_parameter`
+  - `api.Element.animate.options_pseudoElement_parameter`
+  - `api.Element.requestFullscreen.options_navigationUI_parameter`
+  - `api.Element.scrollIntoView.options_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_capture_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_once_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_touch`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter_default_true_wheel`
+  - `api.EventTarget.addEventListener.options_parameter.options_passive_parameter`
+  - `api.EventTarget.addEventListener.options_parameter.options_signal_parameter`
+  - `api.EventTarget.addEventListener.options_parameter`
+  - `api.EventTarget.addEventListener.useCapture_parameter_optional`
+  - `api.EventTarget.removeEventListener.options_parameter`
+  - `api.EventTarget.removeEventListener.type_listener_parameters_optional`
+  - `api.EventTarget.removeEventListener.useCapture_parameter_optional`
+  - `api.HTMLTableRowElement.insertCell.index_parameter_negative_one`
+  - `api.HTMLTableRowElement.insertCell.index_parameter_optional`
+  - `api.IntersectionObserver.IntersectionObserver.options_root_parameter_Document`
+  - `api.MediaRecorder.MediaRecorder.options_parameter`
+  - `api.Node.cloneNode.deep_parameter_default_false`
+  - `api.Request.Request.init_referrer_parameter`
+  - `api.RTCPeerConnection.setLocalDescription.description_parameter_optional`
+  - `api.RTCPeerConnection.setRemoteDescription.description_parameter_optional`
+  - `api.Selection.collapse.node_parameter_nullable`
+  - `api.Selection.collapse.offset_parameter_optional`
+  - `api.Selection.containsNode.partialContainment_parameter_optional`
+  - `api.Selection.extend.offset_parameter_optional`
+  - `api.SharedWorker.SharedWorker.options_name_parameter`
+  - `javascript.builtins.Array.toLocaleString.locales_parameter`
+  - `javascript.builtins.Array.toLocaleString.options_parameter`
+  - `javascript.builtins.Intl.Collator.Collator.options_caseFirst_parameter`
+  - `javascript.builtins.Intl.Collator.Collator.options_collation_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_compactDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currencyDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currencySign_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_notation_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_signDisplay_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_unit_parameter`
+  - `javascript.builtins.Intl.NumberFormat.NumberFormat.options_unitDisplay_parameter`
+
+  </details>
+
+- The `api.Navigator`, `api.NavigatorConcurrentHardware`, `api.NavigatorID`, `api.NavigatorLanguage`, `api.NavigatorOnLine`, `api.NavigatorPlugins`, and `api.NavigatorStorage` mixins have been removed and replaced by features representing its exposed interfaces. ([#11413](https://github.com/mdn/browser-compat-data/pull/11413))
+
+  <details>
+
+  <summary>New features ex-<code>Navigator</code> (and related mixins)</summary>
+
+  - `api.Navigator.appCodeName`
+  - `api.Navigator.appName`
+  - `api.Navigator.appVersion`
+  - `api.Navigator.hardwareConcurrency`
+  - `api.Navigator.javaEnabled`
+  - `api.Navigator.language`
+  - `api.Navigator.languages`
+  - `api.Navigator.mimeTypes`
+  - `api.Navigator.onLine`
+  - `api.Navigator.platform`
+  - `api.Navigator.plugins`
+  - `api.Navigator.product`
+  - `api.Navigator.taintEnabled`
+  - `api.Navigator.userAgent`
+  - `api.WorkerNavigator.appCodeName`
+  - `api.WorkerNavigator.appName`
+  - `api.WorkerNavigator.appVersion`
+  - `api.WorkerNavigator.hardwareConcurrency`
+  - `api.WorkerNavigator.language`
+  - `api.WorkerNavigator.languages`
+  - `api.WorkerNavigator.onLine`
+  - `api.WorkerNavigator.platform`
+  - `api.WorkerNavigator.product`
+  - `api.WorkerNavigator.storage`
+  - `api.WorkerNavigator.userAgent`
+
+  </details>
+
+- The `api.PaymentDetailsBase` mixin has been removed and replaced by features representing its exposed interfaces. ([#11414](https://github.com/mdn/browser-compat-data/pull/11414))
+
+  The dictionary `api.PaymentDetailsInit` was also removed as part of this process.
+
+  <details>
+
+  <summary>New features ex-<code>PaymentDetailsBase</code></summary>
+
+  - `api.PaymentDetailsUpdate.displayItems`
+  - `api.PaymentDetailsUpdate.modifiers`
+  - `api.PaymentDetailsUpdate.shippingOptions`
+
+  </details>
+
+- The prefixed non-standard features `api.Point`, `api.Window.convertPointFromNodeToPage`, and `api.Window.convertPointFromPageToNode` were renamed to their actual implementations as `api.WebKitPoint`, `api.Window.webkitConvertPointFromNodeToPage`, and `api.Window.webkitConvertPointFromPageToNode`, respectively. ([#11361](https://github.com/mdn/browser-compat-data/pull/11361))
+
+- The following features duplicating `api.ClipboardEvent` data have been removed ([#11524](https://github.com/mdn/browser-compat-data/pull/11524)):
+
+  - `api.Document.copy_event.clipboardData`
+  - `api.Document.cut_event.clipboardData`
+  - `api.Document.paste_event.clipboardData`
+  - `api.Element.copy_event.clipboardData`
+  - `api.Element.cut_event.clipboardData`
+  - `api.Element.paste_event.clipboardData`
+  - `api.Window.copy_event.clipboardData`
+  - `api.Window.cut_event.clipboardData`
+  - `api.Window.paste_event.clipboardData`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.importNode.deep_parameter_optional` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
+  - `api.Event.getPreventDefault` ([#11100](https://github.com/mdn/browser-compat-data/pull/11100))
+  - `api.Event.preventBubble` ([#11101](https://github.com/mdn/browser-compat-data/pull/11101))
+  - `api.Event.preventCapture` ([#11101](https://github.com/mdn/browser-compat-data/pull/11101))
+  - `api.FullscreenOptions` ([#11481](https://github.com/mdn/browser-compat-data/pull/11481))
+  - `api.MouseEvent.MouseEvent.region_support` ([#11499](https://github.com/mdn/browser-compat-data/pull/11499))
+  - `api.Node.cloneNode.deep_parameter_default_false` ([#11152](https://github.com/mdn/browser-compat-data/pull/11152))
+  - `api.PushRegistrationManager` ([#11355](https://github.com/mdn/browser-compat-data/pull/11355))
+  - `api.Sanitizer.sanitizeToString` ([#11520](https://github.com/mdn/browser-compat-data/pull/11520))
+  - `api.WindowOrWorkerGlobalScope.setTimeout.tracking_throttling` ([#11452](https://github.com/mdn/browser-compat-data/pull/11452))
+  - `api.XDomainRequest` ([#11438](https://github.com/mdn/browser-compat-data/pull/11438))
+
+### Statistics
+
+- 17 contributors have changed 287 files with 5,246 additions and 4,133 deletions in 109 commits ([`v3.3.10...v3.3.11`](https://github.com/mdn/browser-compat-data/compare/v3.3.10...v3.3.11))
+- 13,063 total features
+- 793 total contributors
+- 3,443 total stargazers
+
+## [v3.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.10)
+
+July 1, 2021
+
+### Notable changes
+
+- Safari 3.2 has been removed from the data set, since it represented the same browser capabilities as Safari 3.1. The small number of entries that referenced Safari 3.2 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11266))
+
+- The `api.Body` mixin has been removed and replaced by features representing its exposed interfaces. ([#10958](https://github.com/mdn/browser-compat-data/pull/10958))
+
+  <details>
+
+  <summary>New features ex-<code>Body</code></summary>
+
+  - `api.Request.arrayBuffer`
+  - `api.Request.blob`
+  - `api.Request.body`
+  - `api.Request.bodyUsed`
+  - `api.Request.formData`
+  - `api.Request.json`
+  - `api.Request.text`
+  - `api.Response.arrayBuffer`
+  - `api.Response.blob`
+  - `api.Response.body`
+  - `api.Response.bodyUsed`
+  - `api.Response.formData`
+  - `api.Response.json`
+  - `api.Response.text`
+
+  </details>
+
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11328](https://github.com/mdn/browser-compat-data/pull/11328), [#11334](https://github.com/mdn/browser-compat-data/pull/11334)):
+
+  | Before                                       | After                                                   |
+  | -------------------------------------------- | ------------------------------------------------------- |
+  | `api.HTMLElement.focus.preventScroll_option` | `api.HTMLElement.focus.options_preventScroll_parameter` |
+  | `api.SVGElement.focus.preventScroll_option`  | `api.SVGElement.focus.options_preventScroll_parameter`  |
+  | `api.Worker.Worker.name`                     | `api.Worker.Worker.options_name_parameter`              |
+  | `api.Worker.Worker.type`                     | `api.Worker.Worker.options_type_parameter`              |
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.GlobalEventHandlers.onpointerlockchange` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
+  - `api.GlobalEventHandlers.onpointerlockerror` ([#11307](https://github.com/mdn/browser-compat-data/pull/11307))
+  - `api.Node.getUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.Node.setUserData` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.RequestDestination` ([#11323](https://github.com/mdn/browser-compat-data/pull/11323))
+  - `api.RTCIceCandidateType` ([#11061](https://github.com/mdn/browser-compat-data/pull/11061))
+  - `api.RTCIceComponent` ([#11062](https://github.com/mdn/browser-compat-data/pull/11062))
+  - `api.UserDataHandler.handle` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+  - `api.UserDataHandler` ([#11276](https://github.com/mdn/browser-compat-data/pull/11276))
+
+- Several features duplicating `api.PointerEvents.pointerType.fractional_coordinates` were removed ([#11317](https://github.com/mdn/browser-compat-data/pull/11317)):
+
+  - `api.MouseEvent.MouseEvent.long_to_double`
+  - `api.MouseEvent.clientX.long_to_double`
+  - `api.MouseEvent.clientY.long_to_double`
+  - `api.MouseEvent.offsetX.long_to_double`
+  - `api.MouseEvent.offsetY.long_to_double`
+  - `api.MouseEvent.pageX.long_to_double`
+  - `api.MouseEvent.pageY.long_to_double`
+  - `api.MouseEvent.screenX.long_to_double`
+  - `api.MouseEvent.screenY.long_to_double`
+
+### Statistics
+
+- 10 contributors have changed 80 files with 1,024 additions and 1,373 deletions in 54 commits ([`v3.3.9...v3.3.10`](https://github.com/mdn/browser-compat-data/compare/v3.3.9...v3.3.10))
+- 13,046 total features
+- 790 total contributors
+- 3,423 total stargazers
+
+## [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9)
+
+June 24, 2021
+
+### Notable changes
+
+- Safari for iOS 4.3 has been removed from the data set, since it represented the same browser as Safari for iOS 4.2. The small number of entries that referenced Safari for iOS 4.3 have been updated. ([#11174](https://github.com/mdn/browser-compat-data/pull/11174))
+
+- The following features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features) ([#11080](https://github.com/mdn/browser-compat-data/pull/11080), [#10700](https://github.com/mdn/browser-compat-data/pull/10700)):
+
+  | Removed                                                                                 | Added                                                                                    |
+  | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+  | `api.AudioNode.disconnect.destination`                                                  | `api.AudioNode.disconnect.destination_parameter`                                         |
+  | `api.AudioNode.disconnect.input`                                                        | `api.AudioNode.disconnect.input_parameter`                                               |
+  | `api.Document.createElement.options`                                                    | `api.Document.createElement.options_parameter`                                           |
+  | `api.Document.createElementNS.options`                                                  | `api.Document.createElementNS.options_parameter`                                         |
+  | `api.Document.createTreeWalker.expandEntityReferences`                                  | `api.Document.createTreeWalker.expandEntityReferences_parameter`                         |
+  | `api.DOMTokenList.add.add_multiple_arguments`                                           | `api.DOMTokenList.add.multiple_parameters`                                               |
+  | `api.DOMTokenList.remove.remove_multiple_arguments`                                     | `api.DOMTokenList.remove.multiple_parameters`                                            |
+  | `api.DOMTokenList.toggle.force_argument`                                                | `api.DOMTokenList.toggle.force_parameter`                                                |
+  | `api.Element.scroll.ScrollToOptions`                                                    | `api.Element.scroll.options_parameter`                                                   |
+  | `api.Element.scrollBy.ScrollToOptions`                                                  | `api.Element.scrollBy.options_parameter`                                                 |
+  | `api.Element.scrollTo.ScrollToOptions`                                                  | `api.Element.scrollTo.options_parameter`                                                 |
+  | `api.HTMLTableRowElement.insertCell.negative_one_index_argument`                        | `api.HTMLTableRowElement.insertCell.negative_one_index_parameter`                        |
+  | `api.RTCPeerConnection.getStats.MediaStreamTrack_argument`                              | `api.RTCPeerConnection.getStats.selector_parameter`                                      |
+  | `api.Window.postMessage.transfer_argument_support`                                      | `api.Window.postMessage.transfer_parameter`                                              |
+  | `api.Window.scroll.ScrollToOptions`                                                     | `api.Window.scroll.options_parameter`                                                    |
+  | `api.Window.scrollBy.ScrollToOptions`                                                   | `api.Window.scrollBy.options_parameter`                                                  |
+  | `api.Window.scrollTo.ScrollToOptions`                                                   | `api.Window.scrollTo.options_parameter`                                                  |
+  | `javascript.builtins.Float32Array.Float32Array.constructor_without_arguments`           | `javascript.builtins.Float32Array.Float32Array.constructor_without_parameters`           |
+  | `javascript.builtins.Float64Array.Float64Array.constructor_without_arguments`           | `javascript.builtins.Float64Array.Float64Array.constructor_without_parameters`           |
+  | `javascript.builtins.Int16Array.Int16Array.constructor_without_arguments`               | `javascript.builtins.Int16Array.Int16Array.constructor_without_parameters`               |
+  | `javascript.builtins.Int32Array.Int32Array.constructor_without_arguments`               | `javascript.builtins.Int32Array.Int32Array.constructor_without_parameters`               |
+  | `javascript.builtins.Int8Array.Int8Array.constructor_without_arguments`                 | `javascript.builtins.Int8Array.Int8Array.constructor_without_parameters`                 |
+  | `javascript.builtins.TypedArray.constructor_without_arguments`                          | `javascript.builtins.TypedArray.constructor_without_parameters`                          |
+  | `javascript.builtins.Uint16Array.Uint16Array.constructor_without_arguments`             | `javascript.builtins.Uint16Array.Uint16Array.constructor_without_parameters`             |
+  | `javascript.builtins.Uint32Array.Uint32Array.constructor_without_arguments`             | `javascript.builtins.Uint32Array.Uint32Array.constructor_without_parameters`             |
+  | `javascript.builtins.Uint8Array.Uint8Array.constructor_without_arguments`               | `javascript.builtins.Uint8Array.Uint8Array.constructor_without_parameters`               |
+  | `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.constructor_without_arguments` | `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.constructor_without_parameters` |
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.FetchEvent.client` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.FetchEvent.navigationPreload` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.FetchEvent.targetClientId` ([#10774](https://github.com/mdn/browser-compat-data/pull/10774))
+  - `api.Navigator.registerContentHandler` ([#11229](https://github.com/mdn/browser-compat-data/pull/11229))
+  - `api.RTCIdentityErrorEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCIdentityEvent` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.identityresult_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.idpassertionerror_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.idpvalidationerror_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidentityresult` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidpassertionerror` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onidpvalidationerror` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.onpeeridentity` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+  - `api.RTCPeerConnection.peeridentity_event` ([#11149](https://github.com/mdn/browser-compat-data/pull/11149))
+
+### Statistics
+
+- 18 contributors have changed 188 files with 2,177 additions and 1,705 deletions in 71 commits ([`v3.3.8...v3.3.9`](https://github.com/mdn/browser-compat-data/compare/v3.3.8...v3.3.9))
+- 13,056 total features
+- 788 total contributors
+- 3,416 total stargazers
+
+## [v3.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.8)
+
+June 17, 2021
+
+### Notable changes
+
+- `api.URL.createObjectURL.no_MediaStream_argument` was replaced by `api.URL.createObjectURL.MediaStream_support` to more clearly represent a deprecated feature. ([#11081](https://github.com/mdn/browser-compat-data/pull/11081))
+
+- `api.Element.attachShadow.delegatesFocus` was renamed to `api.Element.attachShadow.init_delegatesFocus_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#11090](https://github.com/mdn/browser-compat-data/pull/11090))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.PaymentRequest.requestId` ([#11082](https://github.com/mdn/browser-compat-data/pull/11082))
+  - `api.RTCSessionDescriptionCallback` ([#11057](https://github.com/mdn/browser-compat-data/pull/11057))
+  - `api.SVGElement.abort_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.resize_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.scroll_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+  - `api.SVGElement.unload_event` ([#11071](https://github.com/mdn/browser-compat-data/pull/11071))
+
+### Statistics
+
+- 14 contributors have changed 165 files with 2,908 additions and 1,736 deletions in 102 commits ([`v3.3.7...v3.3.8`](https://github.com/mdn/browser-compat-data/compare/v3.3.7...v3.3.8))
+- 13,052 total features
+- 785 total contributors
+- 3,409 total stargazers
+
+## [v3.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.7)
+
+June 10, 2021
+
+### Notable changes
+
+- Several extraneous features representing indexed property getters have been removed ([#9464](https://github.com/mdn/browser-compat-data/pull/9464)):
+
+  - `api.CSSNumericArray.CSSNumericValue`
+  - `api.CSSUnparsedValue.CSSUnparsedSegment`
+  - `api.DataTransferItemList.DataTransferItem`
+  - `api.SourceBufferList.SourceBuffer`
+  - `api.TrackDefaultList.TrackDefault`
+
+- The `api.AbstractWorker` mixin has been removed and replaced by features representing its exposed interfaces. ([#10744](https://github.com/mdn/browser-compat-data/pull/10744))
+
+  <details>
+
+  <summary>New features ex-<code>AbstractWorker</code></summary>
+
+  - `api.ServiceWorker.onerror`
+  - `api.SharedWorker.onerror`
+  - `api.Worker.onerror`
+
+  </details>
+
+- `api.Element.attributeStyleMap` has been removed and replaced by features representing the `ElementCSSInlineStyle` mixin's exposed interfaces. ([#10686](https://github.com/mdn/browser-compat-data/pull/10686))
+
+  <details>
+
+  <summary>New features ex-<code>ElementCSSInlineStyle</code></summary>
+
+  - `api.HTMLElement.attributeStyleMap`
+  - `api.MathMLElement.style`
+  - `api.SVGElement.attributeStyleMap`
+  - `api.SVGElement.style`
+
+  </details>
+
+- The `api.LinkStyle` mixin has been removed and replaced by features representing its exposed interfaces. ([#10724](https://github.com/mdn/browser-compat-data/pull/10724))
+
+  <details>
+
+  <summary>New features ex-<code>LinkStyle</code></summary>
+
+  - `api.HTMLLinkElement.sheet`
+  - `api.ProcessingInstruction.sheet`
+  - `api.SVGStyleElement.sheet`
+
+  </details>
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Element.currentStyle` ([#10782](https://github.com/mdn/browser-compat-data/pull/10782))
+  - `api.Element.runtimeStyle` ([#10782](https://github.com/mdn/browser-compat-data/pull/10782))
+  - `api.GlobalEventHandlers.onsort` ([#10820](https://github.com/mdn/browser-compat-data/pull/10820))
+  - `api.MediaStreamTrack.getSources` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
+  - `api.MediaStreamTrack.isolated` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
+  - `api.MediaStreamTrack.onisolationchange` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
+  - `api.MediaStreamTrack.readonly` ([#10745](https://github.com/mdn/browser-compat-data/pull/10745))
+  - `api.Request.context` ([#10827](https://github.com/mdn/browser-compat-data/pull/10827))
+  - `api.RTCCertificate.getSupportedAlgorithms` ([#10582](https://github.com/mdn/browser-compat-data/pull/10582))
+  - `api.RTCRemoteOutboundRtpStreamStats.reportsSent` ([#10582](https://github.com/mdn/browser-compat-data/pull/10582))
+  - `api.SVGSVGElement.viewport` ([#10829](https://github.com/mdn/browser-compat-data/pull/10829))
+
+### Statistics
+
+- 10 contributors have changed 195 files with 2,189 additions and 2,294 deletions in 115 commits ([`v3.3.6...v3.3.7`](https://github.com/mdn/browser-compat-data/compare/v3.3.6...v3.3.7))
+- 13,029 total features
+- 783 total contributors
+- 3,400 total stargazers
+
+## [v3.3.6](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.6)
+
+June 4, 2021
+
+### Notable changes
+
+- The `extend` dependency has been removed and replaced by a more narrowly scoped function, which prevents two (or more) data files from erroneously setting data for the same feature. ([#9821](https://github.com/mdn/browser-compat-data/pull/9821))
+
+  Additionally, this release eliminates runtime dependencies for source distributions of this package. As of the [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0) release, the `@mdn/browser-compat-data` package published on npm has zero dependencies; this release extends that benefit to installing the package from the repository source (such as from GitHub's releases assets).
+
+- Specification URLs (`spec_url` values) are now validated against [`w3c/browser-specs`](https://github.com/w3c/browser-specs) and a small allowlist for additional specifications. ([#10681](https://github.com/mdn/browser-compat-data/pull/10681))
+
+- The mixin `api.SVGFilterPrimitiveStandardAttributes` has been removed and replaced by features representing its exposed interfaces. ([#10646](https://github.com/mdn/browser-compat-data/pull/10646))
+
+  <details>
+
+  <summary>New features ex-<code>SVGFilterPrimitiveStandardAttributes</code></summary>
+
+  - `api.SVGFEBlendElement.height`
+  - `api.SVGFEBlendElement.result`
+  - `api.SVGFEBlendElement.width`
+  - `api.SVGFEBlendElement.x`
+  - `api.SVGFEBlendElement.y`
+  - `api.SVGFEColorMatrixElement.height`
+  - `api.SVGFEColorMatrixElement.result`
+  - `api.SVGFEColorMatrixElement.width`
+  - `api.SVGFEColorMatrixElement.x`
+  - `api.SVGFEColorMatrixElement.y`
+  - `api.SVGFEComponentTransferElement.height`
+  - `api.SVGFEComponentTransferElement.result`
+  - `api.SVGFEComponentTransferElement.width`
+  - `api.SVGFEComponentTransferElement.x`
+  - `api.SVGFEComponentTransferElement.y`
+  - `api.SVGFECompositeElement.height`
+  - `api.SVGFECompositeElement.result`
+  - `api.SVGFECompositeElement.width`
+  - `api.SVGFECompositeElement.x`
+  - `api.SVGFECompositeElement.y`
+  - `api.SVGFEConvolveMatrixElement.height`
+  - `api.SVGFEConvolveMatrixElement.result`
+  - `api.SVGFEConvolveMatrixElement.width`
+  - `api.SVGFEConvolveMatrixElement.x`
+  - `api.SVGFEConvolveMatrixElement.y`
+  - `api.SVGFEDiffuseLightingElement.height`
+  - `api.SVGFEDiffuseLightingElement.result`
+  - `api.SVGFEDiffuseLightingElement.width`
+  - `api.SVGFEDiffuseLightingElement.x`
+  - `api.SVGFEDiffuseLightingElement.y`
+  - `api.SVGFEDisplacementMapElement.height`
+  - `api.SVGFEDisplacementMapElement.result`
+  - `api.SVGFEDisplacementMapElement.width`
+  - `api.SVGFEDisplacementMapElement.x`
+  - `api.SVGFEDisplacementMapElement.y`
+  - `api.SVGFEDropShadowElement.height`
+  - `api.SVGFEDropShadowElement.result`
+  - `api.SVGFEDropShadowElement.width`
+  - `api.SVGFEDropShadowElement.x`
+  - `api.SVGFEDropShadowElement.y`
+  - `api.SVGFEFloodElement.height`
+  - `api.SVGFEFloodElement.result`
+  - `api.SVGFEFloodElement.width`
+  - `api.SVGFEFloodElement.x`
+  - `api.SVGFEFloodElement.y`
+  - `api.SVGFEGaussianBlurElement.height`
+  - `api.SVGFEGaussianBlurElement.result`
+  - `api.SVGFEGaussianBlurElement.width`
+  - `api.SVGFEGaussianBlurElement.x`
+  - `api.SVGFEGaussianBlurElement.y`
+  - `api.SVGFEImageElement.height`
+  - `api.SVGFEImageElement.result`
+  - `api.SVGFEImageElement.width`
+  - `api.SVGFEImageElement.x`
+  - `api.SVGFEImageElement.y`
+  - `api.SVGFEMergeElement.height`
+  - `api.SVGFEMergeElement.result`
+  - `api.SVGFEMergeElement.width`
+  - `api.SVGFEMergeElement.x`
+  - `api.SVGFEMergeElement.y`
+  - `api.SVGFEMorphologyElement.height`
+  - `api.SVGFEMorphologyElement.result`
+  - `api.SVGFEMorphologyElement.width`
+  - `api.SVGFEMorphologyElement.x`
+  - `api.SVGFEMorphologyElement.y`
+  - `api.SVGFEOffsetElement.height`
+  - `api.SVGFEOffsetElement.result`
+  - `api.SVGFEOffsetElement.width`
+  - `api.SVGFEOffsetElement.x`
+  - `api.SVGFEOffsetElement.y`
+  - `api.SVGFESpecularLightingElement.height`
+  - `api.SVGFESpecularLightingElement.result`
+  - `api.SVGFESpecularLightingElement.width`
+  - `api.SVGFESpecularLightingElement.x`
+  - `api.SVGFESpecularLightingElement.y`
+  - `api.SVGFETileElement.height`
+  - `api.SVGFETileElement.result`
+  - `api.SVGFETileElement.width`
+  - `api.SVGFETileElement.x`
+  - `api.SVGFETileElement.y`
+  - `api.SVGFETurbulenceElement.height`
+  - `api.SVGFETurbulenceElement.result`
+  - `api.SVGFETurbulenceElement.width`
+  - `api.SVGFETurbulenceElement.x`
+  - `api.SVGFETurbulenceElement.y`
+
+  </details>
+
+- The mixin `api.SVGTests` has been removed and replaced by features representing its exposed interfaces. ([#10691](https://github.com/mdn/browser-compat-data/pull/10691))
+
+  <details>
+
+  <summary>New features ex-<code>api.SVGTests</code></summary>
+
+  - `api.SVGAnimationElement.requiredExtensions`
+  - `api.SVGAnimationElement.systemLanguage`
+  - `api.SVGGraphicsElement.requiredExtensions`
+  - `api.SVGGraphicsElement.systemLanguage`
+
+  </details>
+
+- The `api.SVGAnimatedPoints` mixin has been removed and replaced by features representing its exposed interfaces. ([#10698](https://github.com/mdn/browser-compat-data/pull/10698))
+
+  <details>
+
+  <summary>New features ex-<code>SVGAnimatedPoints</code></summary>
+
+  - `api.SVGPolygonElement.animatedPoints`
+  - `api.SVGPolygonElement.points`
+  - `api.SVGPolylineElement.animatedPoints`
+  - `api.SVGPolylineElement.points`
+
+  </details>
+
+- The mixin `api.GeometryUtils` has been removed and replaced by features representing its exposed interfaces. ([#10721](https://github.com/mdn/browser-compat-data/pull/10721))
+
+  <details>
+
+  <summary>New features ex-<code>api.GeometryUtils</code></summary>
+
+  - `api.Document.getBoxQuads`
+  - `api.Element.getBoxQuads`
+  - `api.Text.getBoxQuads`
+
+  </details>
+
+- `api.FormData.append.AppendWithFilename` has been renamed to `api.FormData.append.filename_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#10695](https://github.com/mdn/browser-compat-data/pull/10695))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.undoManager` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.Element.tabStop` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.HTMLElement.forceSpellCheck` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.PaymentAddress.regionCode` ([#10581](https://github.com/mdn/browser-compat-data/pull/10581))
+  - `api.RTCPeerConnection.defaultIceServers` ([#10725](https://github.com/mdn/browser-compat-data/pull/10725))
+  - `api.RTCPeerConnection.getDefaultIceServers` ([#10725](https://github.com/mdn/browser-compat-data/pull/10725))
+  - `api.SVGUnknownElement` ([#10685](https://github.com/mdn/browser-compat-data/pull/10685))
+  - `javascript.builtins.AsyncIterator.@@toStringTag` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.asIndexedPairs` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.AsyncIterator` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.drop` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.every` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.filter` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.find` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.flatMap` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.forEach` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.from` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.map` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.reduce` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.some` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.take` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.AsyncIterator.toArray` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.@@toStringTag` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.asIndexedPairs` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.drop` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.every` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.filter` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.find` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.flatMap` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.forEach` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.from` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.Iterator` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.map` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.reduce` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.some` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.take` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.builtins.Iterator.toArray` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+  - `javascript.operators.pipeline` ([#6957](https://github.com/mdn/browser-compat-data/pull/6957))
+
+### Statistics
+
+- 14 contributors have changed 335 files with 7,135 additions and 5,583 deletions in 70 commits ([`v3.3.5...v3.3.6`](https://github.com/mdn/browser-compat-data/compare/v3.3.5...v3.3.6))
+- 13,039 total features
+- 783 total contributors
+- 3,390 total stargazers
+
+## [v3.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.5)
+
+May 27, 2021
+
+### Notable changes
+
+- The following features duplicated subfeatures of `api.DOMTokenList` and have been removed ([#10128](https://github.com/mdn/browser-compat-data/pull/10128)):
+
+  - `api.Element.classList.add_and_remove_multiple_arguments`
+  - `api.Element.classList.replace`
+  - `api.Element.classList.toggle_method_second_argument`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `html.elements.isindex` ([#10551](https://github.com/mdn/browser-compat-data/pull/10551))
+  - `html.elements.listing` ([#10548](https://github.com/mdn/browser-compat-data/pull/10548))
+  - `html.elements.nextid` ([#10550](https://github.com/mdn/browser-compat-data/pull/10550))
+  - `html.elements.video.buffered` ([#10571](https://github.com/mdn/browser-compat-data/pull/10571))
+
+- Several duplicate or erroneous release entries for WebView Android were removed. These covered historic releases and fewer than 20 support statements were changed to reflect the removals. ([#10524](https://github.com/mdn/browser-compat-data/issues/10524))
+
+### Statistics
+
+- 15 contributors have changed 379 files with 953 additions and 2,103 deletions in 50 commits ([`v3.3.4...v3.3.5`](https://github.com/mdn/browser-compat-data/compare/v3.3.4...v3.3.5))
+- 12,993 total features
+- 782 total contributors
+- 3,378 total stargazers
+
+## [v3.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.4)
+
+May 20, 2021
+
+### Notable changes
+
+- The [definition of the `experimental` status](https://github.com/mdn/browser-compat-data/blob/main/schemas/compat-data-schema.md#status-information) has been revised to more closely reflect its actual use. For more information on choosing values for `experimental`, see the [the new data guideline for `experimental`](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#choosing-an-experimental-status). ([#9933](https://github.com/mdn/browser-compat-data/pull/9933))
+
+- The schema now permits valid WebGL specification links. ([#10353](https://github.com/mdn/browser-compat-data/pull/10353))
+
+- `api.Navigator.geolocation.hid` has been moved to the correctly nested `api.Navigator.hid`. ([#10291](https://github.com/mdn/browser-compat-data/pull/10291))
+
+- `http.headers.feature-policy.wake-lock` has been moved to the correctly-named `http.headers.feature-policy.screen-wake-lock`. ([#10421](https://github.com/mdn/browser-compat-data/pull/10421))
+
+- The following mixin features have been migrated to their exposed interfaces:
+
+  | Before                          | After                                                                                          |
+  | ------------------------------- | ---------------------------------------------------------------------------------------------- |
+  | `api.ChildNode`                 | (removed)                                                                                      |
+  | `api.ChildNode.before`          | `api.CharacterData.before`<br>`api.DocumentType.before`<br>`api.Element.before`                |
+  | `api.ChildNode.remove`          | `api.CharacterData.remove`<br>`api.DocumentType.remove`<br>`api.Element.remove`                |
+  | `api.ChildNode.replaceWith`     | `api.CharacterData.replaceWith`<br>`api.DocumentType.replaceWith`<br>`api.Element.replaceWith` |
+  | `api.URLUtilsReadOnly`          | (removed)                                                                                      |
+  | `api.URLUtilsReadOnly.hash`     | `api.WorkerLocation.hash`                                                                      |
+  | `api.URLUtilsReadOnly.host`     | `api.WorkerLocation.host`                                                                      |
+  | `api.URLUtilsReadOnly.hostname` | `api.WorkerLocation.hostname`                                                                  |
+  | `api.URLUtilsReadOnly.href`     | `api.WorkerLocation.href`                                                                      |
+  | `api.URLUtilsReadOnly.origin`   | `api.WorkerLocation.origin`                                                                    |
+  | `api.URLUtilsReadOnly.pathname` | `api.WorkerLocation.pathname`                                                                  |
+  | `api.URLUtilsReadOnly.port`     | `api.WorkerLocation.port`                                                                      |
+  | `api.URLUtilsReadOnly.protocol` | `api.WorkerLocation.protocol`                                                                  |
+  | `api.URLUtilsReadOnly.search`   | `api.WorkerLocation.search`                                                                    |
+  | `api.URLUtilsReadOnly.toString` | `api.WorkerLocation.toString`                                                                  |
+
+  For details, see [#10347](https://github.com/mdn/browser-compat-data/pull/10347) and [#10506](https://github.com/mdn/browser-compat-data/pull/10506).
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.BudgetService` ([#10417](https://github.com/mdn/browser-compat-data/pull/10417))
+  - `api.SVGColorProfileElement` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+  - `api.SVGExternalResourcesRequired` ([#10539](https://github.com/mdn/browser-compat-data/pull/10539))
+  - `api.SVGSolidcolorElement` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+  - `api.SVGStylable` ([#10536](https://github.com/mdn/browser-compat-data/pull/10536))
+  - `api.SVGTransformable` [#10354](https://github.com/mdn/browser-compat-data/pull/10354)
+  - `api.SVGURIReference` ([#10522](https://github.com/mdn/browser-compat-data/pull/10522))
+  - `api.TransitionEvent.animationName` ([#10336](https://github.com/mdn/browser-compat-data/pull/10336))
+  - `api.Window.returnValue` ([#10449](https://github.com/mdn/browser-compat-data/pull/10449))
+  - `api.WindowClient.ancestorOrigins` ([#10415](https://github.com/mdn/browser-compat-data/pull/10415))
+  - `css.at-rules.media.prefers-reduced-transparency` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.media.scan` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.media.update` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.page.bleed` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.page.marks` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `css.at-rules.page.page-margin-boxes` ([#6944](https://github.com/mdn/browser-compat-data/pull/6944))
+  - `html.elements.multicol` ([#10545](https://github.com/mdn/browser-compat-data/pull/10545))
+  - `svg.attributes.conditional_processing.externalResourcesRequired` ([#10539](https://github.com/mdn/browser-compat-data/pull/10539))
+  - `svg.elements.color-profile` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+  - `svg.elements.solidcolor` ([#10515](https://github.com/mdn/browser-compat-data/pull/10515))
+
+### Statistics
+
+- 18 contributors have changed 361 files with 3,670 additions and 3,690 deletions in 143 commits ([`v3.3.3...v3.3.4`](https://github.com/mdn/browser-compat-data/compare/v3.3.3...v3.3.4))
+- 13,002 total features
+- 777 total contributors
+- 3,369 total stargazers
+
+## [v3.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.3)
+
+May 6, 2021
+
+### Notable changes
+
+- `api.RTCIceCandidatePairStats.lastReponseTimestamp` was renamed to `api.RTCIceCandidatePairStats.lastResponseTimestamp` to correct a typo. ([#10175](https://github.com/mdn/browser-compat-data/pull/10175))
+
+- The following features have been removed as historic and irrelevant:
+
+  - `api.Notation` ([#10225](https://github.com/mdn/browser-compat-data/pull/10225))
+  - `api.StaticRange.toRange` ([#10288](https://github.com/mdn/browser-compat-data/pull/10288))
+  - `javascript.builtins.WeakSet.clear` ([#10261](https://github.com/mdn/browser-compat-data/pull/10261))
+
+- The following never-implemented Bluetooth API features have been removed ([#9975](https://github.com/mdn/browser-compat-data/pull/9975/)):
+
+  - `api.BluetoothAdvertisingData`
+  - `api.BluetoothDevice.adData`
+  - `api.BluetoothDevice.connectGATT`
+  - `api.BluetoothDevice.deviceClass`
+  - `api.BluetoothDevice.gattServer`
+  - `api.BluetoothDevice.paired`
+  - `api.BluetoothDevice.productID`
+  - `api.BluetoothDevice.productVersion`
+  - `api.BluetoothDevice.unwatchAdvertisements`
+  - `api.BluetoothDevice.uuids`
+  - `api.BluetoothDevice.vendorID`
+  - `api.BluetoothDevice.vendorIDSource`
+  - `api.BluetoothDevice.watchAdvertisements`
+  - `api.BluetoothDevice.watchingAdvertisements`
+  - `api.BluetoothRemoteGATTService.getIncludedService`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+  - `api.BluetoothRemoteGATTService.getIncludedServices`
+
+### Statistics
+
+- 12 contributors have changed 316 files with 1,816 additions and 2,817 deletions in 112 commits ([`v3.3.2...v3.3.3`](https://github.com/mdn/browser-compat-data/compare/v3.3.2...v3.3.3))
+- 13,016 total features
+- 774 total contributors
+- 3,350 total stargazers
+
+## [v3.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.2)
+
+April 29, 2021
+
+### Notable changes
+
+- The following features have been renamed to the correct case ([#10142](https://github.com/mdn/browser-compat-data/pull/10142)):
+
+  - `html.elements.script.referrerPolicy` → `html.elements.script.referrerpolicy`
+  - `svg.elements.a.referrerPolicy` → `svg.elements.a.referrerpolicy`
+
+- `http.headers.Accept-Charset` has been removed as historic and irrelevant. ([#10114](https://github.com/mdn/browser-compat-data/pull/10114))
+
+- `api.DOMHighResTimestamp` has been removed, since it is an incorrectly-named and unexposed specification typedef. ([#9892](https://github.com/mdn/browser-compat-data/pull/9892), [#9930](https://github.com/mdn/browser-compat-data/issues/9930))
+
+### Statistics
+
+- 18 contributors have changed 436 files with 2,952 additions and 1,494 deletions in 60 commits ([`v3.3.1...v3.3.2`](https://github.com/mdn/browser-compat-data/compare/v3.3.1...v3.3.2))
+- 13,039 total features
+- 771 total contributors
+- 3,342 total stargazers
+
+## [v3.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.1)
+
+April 22, 2021
+
+### Notable changes
+
+- ECMAScript module compatibility has been restored. The previous release unintentionally broke using `import` with this package. ([#9966](https://github.com/mdn/browser-compat-data/issues/9966), [#10033](https://github.com/mdn/browser-compat-data/pull/10033))
+
+- `api.Navigator.battery` has been removed as historic and irrelevant. ([#9626](https://github.com/mdn/browser-compat-data/pull/9626))
+
+- Over 10,000 issues and pull requests have been opened against BCD (and most of them have been closed). Here's to the next 10,000! 🥂🎉 ([#10000](https://github.com/mdn/browser-compat-data/pull/10000))
+
+### Statistics
+
+- 15 contributors have changed 181 files with 1,867 additions and 5,377 deletions in 71 commits ([`v3.3.0...v3.3.1`](https://github.com/mdn/browser-compat-data/compare/v3.3.0...v3.3.1))
+- 13,034 total features
+- 769 total contributors
+- 3,330 total stargazers
+
+## [v3.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.0)
+
+April 15, 2021
+
+### Notable changes
+
+- `@mdn/browser-compat-data` is now smaller, faster to load, and has zero dependencies.
+
+  The data is now bundled into a single JSON file at publishing time, instead of loading many JSON files at runtime. This reduces the size of the package and shortens loading times.
+
+  These changes also eliminate dependencies. There are zero runtime package dependencies and Node.js ≥10.0.0 is no longer required. This version of the package has been shown to load in many end-of-life versions of Node.js.
+
+  ([#7374](https://github.com/mdn/browser-compat-data/issues/7374), [#7398](https://github.com/mdn/browser-compat-data/pull/7398))
+
+- `css.selectors.not_match_link` feature has been removed. The data is now correctly represented as `css.selectors.any-link.not_match_link` and `css.selectors.link.not_match_link`. ([#9842](https://github.com/mdn/browser-compat-data/pull/9842))
+
+### Statistics
+
+- 13 contributors have changed 437 files with 2,792 additions and 4,018 deletions in 45 commits ([`v3.2.4...v3.3.0`](https://github.com/mdn/browser-compat-data/compare/v3.2.4...v3.3.0))
+- 13,033 total features
+- 766 total contributors
+- 3,325 total stargazers
+
 ## [v3.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v3.2.3)
 
 April 8, 2021
 
 ### Statistics
 
-- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits [`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4)
+- 11 contributors have changed 59 files with 863 additions and 4,322 deletions in 41 commits ([`v3.2.3...v3.2.4`](https://github.com/mdn/browser-compat-data/compare/v3.2.3...v3.2.4))
 - 13,029 total features
 - 766 total contributors
 - 3,309 total stargazers
@@ -1999,7 +3093,37 @@ Statistics:
 - 327 total contributors
 - 1464 total stargazers
 
-## [v0.0.50](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.50)
+## [v0.0.58](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.58)
+
+November 8, 2018
+
+Notable changes:
+
+- Use yargs to parse the arguments passed to the linter ([#2155](https://github.com/mdn/browser-compat-data/issues/2155))
+- Sort browsers in api/\* json files ([#3049](https://github.com/mdn/browser-compat-data/issues/3049))
+
+Statistics:
+
+- 11 contributors have changed 616 files with 14,578 additions and 12,345 deletions in 17 commits
+  [`v0.0.57...v0.0.58`](https://github.com/mdn/browser-compat-data/compare/v0.0.57...v0.0.58)
+- 324 total contributors
+- 1412 total stargazers
+
+## [v0.0.57](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.57)
+
+November 9, 2018
+
+Notable changes:
+
+- Add a VS Code snippet config for creating new BCD files ([#2939](https://github.com/mdn/browser-compat-data/issues/2939))
+- Make the lint output less verbose by adding ora ([#2528](https://github.com/mdn/browser-compat-data/issues/2528))
+
+Statistics:
+
+- 20 contributors have changed 37 files with 1,427 additions and 593 deletions in 25 commits
+  [`v0.0.56...v0.0.57`](https://github.com/mdn/browser-compat-data/compare/v0.0.56...v0.0.57)
+
+## [v0.0.56](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.56)
 
 November 9, 2018
 
@@ -2009,12 +3133,12 @@ Notable changes:
 
 Statistics:
 
-- 22 contributors changed 62 files with 2,110 additions and 448 deletions in 51 commits [`v0.0.49...v0.0.50`](https://github.com/mdn/browser-compat-data/compare/v0.0.49...v0.0.50)
-- 273 total contributors
-- 1263 total stargazers
-- 10324 total features
+- 13 contributors changed 34 files with 1,015 additions and 104 deletions in 16 commits [`v0.0.55...v0.0.56`](https://github.com/mdn/browser-compat-data/compare/v0.0.55...v0.0.56)
+- 310 total contributors
+- 1383 total stargazers
+- 10559 total features
 
-## [v0.0.51](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.51)
+## [v0.0.55](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.55)
 
 November 9, 2018
 
@@ -2024,25 +3148,20 @@ Notable changes:
 
 Statistics:
 
-- 17 contributors changed 63 files with 3,676 additions and 747 deletions in 47 commits [`v0.0.50...v0.0.51`](https://github.com/mdn/browser-compat-data/compare/v0.0.50...v0.0.51)
-- 277 total contributors
-- 1285 total stargazers
-- 10378 total features
+- 21 contributors changed 52 files with 1,103 additions and 519 deletions in 39 commits [`v0.0.54...v0.0.55`](https://github.com/mdn/browser-compat-data/compare/v0.0.54...v0.0.55)
 
-## [v0.0.52](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.52)
+## [v0.0.54](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.54)
 
 November 9, 2018
 
 Notable changes:
 
-- Add webview_android browser data ([#2690](https://github.com/mdn/browser-compat-data/issues/2690))
+- Sort browsers in css/\* json files ([#2922](https://github.com/mdn/browser-compat-data/issues/2922))
+- Add descriptions to schema properties ([#2923](https://github.com/mdn/browser-compat-data/issues/2923))
 
 Statistics:
 
-- 21 contributors changed 211 files with 6,604 additions and 1,276 deletions in 50 commits [`v0.0.51...v0.0.52`](https://github.com/mdn/browser-compat-data/compare/v0.0.51...v0.0.52)
-- 283 total contributors
-- 1317 total stargazers
-- 10443 total features
+- 14 contributors changed 468 files with 5,777 additions and 3,377 deletions in 23 commits [`v0.0.53...v0.0.54`](https://github.com/mdn/browser-compat-data/compare/v0.0.53...v0.0.54)
 
 ## [v0.0.53](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.53)
 
@@ -2065,32 +3184,22 @@ Statistics:
 - 1330 total stargazers
 - 10495 total features
 
-## [v0.0.54](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.54)
+## [v0.0.52](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.52)
 
 November 9, 2018
 
 Notable changes:
 
-- Sort browsers in css/\* json files ([#2922](https://github.com/mdn/browser-compat-data/issues/2922))
-- Add descriptions to schema properties ([#2923](https://github.com/mdn/browser-compat-data/issues/2923))
+- Add webview_android browser data ([#2690](https://github.com/mdn/browser-compat-data/issues/2690))
 
 Statistics:
 
-- 14 contributors changed 468 files with 5,777 additions and 3,377 deletions in 23 commits [`v0.0.53...v0.0.54`](https://github.com/mdn/browser-compat-data/compare/v0.0.53...v0.0.54)
+- 21 contributors changed 211 files with 6,604 additions and 1,276 deletions in 50 commits [`v0.0.51...v0.0.52`](https://github.com/mdn/browser-compat-data/compare/v0.0.51...v0.0.52)
+- 283 total contributors
+- 1317 total stargazers
+- 10443 total features
 
-## [v0.0.55](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.55)
-
-November 9, 2018
-
-Notable changes:
-
-- None
-
-Statistics:
-
-- 21 contributors changed 52 files with 1,103 additions and 519 deletions in 39 commits [`v0.0.54...v0.0.55`](https://github.com/mdn/browser-compat-data/compare/v0.0.54...v0.0.55)
-
-## [v0.0.56](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.56)
+## [v0.0.51](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.51)
 
 November 9, 2018
 
@@ -2100,40 +3209,25 @@ Notable changes:
 
 Statistics:
 
-- 13 contributors changed 34 files with 1,015 additions and 104 deletions in 16 commits [`v0.0.55...v0.0.56`](https://github.com/mdn/browser-compat-data/compare/v0.0.55...v0.0.56)
-- 310 total contributors
-- 1383 total stargazers
-- 10559 total features
+- 17 contributors changed 63 files with 3,676 additions and 747 deletions in 47 commits [`v0.0.50...v0.0.51`](https://github.com/mdn/browser-compat-data/compare/v0.0.50...v0.0.51)
+- 277 total contributors
+- 1285 total stargazers
+- 10378 total features
 
-## [v0.0.57](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.57)
+## [v0.0.50](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.50)
 
 November 9, 2018
 
 Notable changes:
 
-- Add a VS Code snippet config for creating new BCD files ([#2939](https://github.com/mdn/browser-compat-data/issues/2939))
-- Make the lint output less verbose by adding ora ([#2528](https://github.com/mdn/browser-compat-data/issues/2528))
+- None
 
 Statistics:
 
-- 20 contributors have changed 37 files with 1,427 additions and 593 deletions in 25 commits
-  [`v0.0.56...v0.0.57`](https://github.com/mdn/browser-compat-data/compare/v0.0.56...v0.0.57)
-
-## [v0.0.58](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.58)
-
-November 8, 2018
-
-Notable changes:
-
-- Use yargs to parse the arguments passed to the linter ([#2155](https://github.com/mdn/browser-compat-data/issues/2155))
-- Sort browsers in api/\* json files ([#3049](https://github.com/mdn/browser-compat-data/issues/3049))
-
-Statistics:
-
-- 11 contributors have changed 616 files with 14,578 additions and 12,345 deletions in 17 commits
-  [`v0.0.57...v0.0.58`](https://github.com/mdn/browser-compat-data/compare/v0.0.57...v0.0.58)
-- 324 total contributors
-- 1412 total stargazers
+- 22 contributors changed 62 files with 2,110 additions and 448 deletions in 51 commits [`v0.0.49...v0.0.50`](https://github.com/mdn/browser-compat-data/compare/v0.0.49...v0.0.50)
+- 273 total contributors
+- 1263 total stargazers
+- 10324 total features
 
 ## [v0.0.45](https://github.com/mdn/browser-compat-data/releases/tag/v0.0.45)
 
