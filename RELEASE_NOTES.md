@@ -36,6 +36,13 @@
 
 - In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
+### Statistics
+
+- 8 contributors have changed 53 files with 1,649 additions and 2,580 deletions in 54 commits ([`v4.0.4...v4.0.5`](https://github.com/mdn/browser-compat-data/compare/v4.0.4...v4.0.5))
+- 13,414 total features
+- 809 total contributors
+- 3,583 total stargazers
+
 ## [v4.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.4)
 
 September 16, 2021
