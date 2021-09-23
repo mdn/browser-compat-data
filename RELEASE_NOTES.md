@@ -4,12 +4,23 @@
 
 ### Notable changes
 
-- The feature-naming convention `returns_promise` has been adopted for features that capture some but not all browsers' APIs returning a `Promise`. The [new data guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#methods-returning-promises-returns_promise) is meant to bring consistency to a few different styles used throughout the API data. The following features have been renamed to `returns_promise` ([#11630](https://github.com/mdn/browser-compat-data/pull/11630)):
+- The feature-naming convention `returns_promise` has been adopted for features that capture some but not all browsers' APIs returning a `Promise`. The [new data guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#methods-returning-promises-returns_promise) brings consistency to a competing styles used throughout the API data.
+
+  The following features have been renamed to `returns_promise` ([#11630](https://github.com/mdn/browser-compat-data/pull/11630)):
 
   - `api.BaseAudioContext.decodeAudioData.promise_syntax`
   - `api.Document.exitFullscreen.returns_a_promise`
   - `api.Element.requestFullscreen.returns_a_promise`
   - `api.OfflineAudioContext.startRendering.Promise_based_startRendering`
+
+  The feature `api.RTCPeerConnection.getStats.with_callbacks` was removed and the data for several `RTCPeerConnection` methods expanded with `returns_promise` data. The following features have been added ([#12300](https://github.com/mdn/browser-compat-data/pull/12300)):
+
+  - `api.RTCPeerConnection.addIceCandidate.returns_promise`
+  - `api.RTCPeerConnection.createAnswer.returns_promise`
+  - `api.RTCPeerConnection.createOffer.returns_promise`
+  - `api.RTCPeerConnection.getStats.returns_promise`
+  - `api.RTCPeerConnection.setLocalDescription.returns_promise`
+  - `api.RTCPeerConnection.setRemoteDescription.returns_promise`
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
