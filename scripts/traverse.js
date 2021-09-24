@@ -81,8 +81,6 @@ const main = (folder = 'all', value = ['null', 'true'], depth = 100) => {
           'javascript',
           'mathml',
           'webdriver',
-          'xpath',
-          'xslt',
         ]
       : folder.split(',');
   const values = Array.isArray(value) ? value : value.toString().split(',');

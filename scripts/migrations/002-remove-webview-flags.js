@@ -38,7 +38,7 @@ const removeWebViewFlags = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
 const fixWebViewFlags = filename => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
