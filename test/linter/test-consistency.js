@@ -342,6 +342,15 @@ class ConsistencyChecker {
       if (b_version_added.startsWith('≤')) {
         return false;
       }
+      if (a_version_added === 'preview' && b_version_added === 'preview') {
+        return false;
+      }
+      if (b_version_added === 'preview') {
+        return true;
+      }
+      if (a_version_added === 'preview') {
+        return false;
+      }
       return compareVersions.compare(
         a_version_added.replace('≤', ''),
         b_version_added,
