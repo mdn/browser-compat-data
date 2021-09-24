@@ -1,5 +1,3 @@
-const assert = require('assert').strict;
-
 const { getRefDate, releaseYargsBuilder } = require('./release-utils');
 
 const pullsBaseURL = new URL(
