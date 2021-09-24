@@ -12,6 +12,9 @@
             "chrome_android": {
               "version_added": "55"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "14"
             },
@@ -75,8 +78,11 @@
               "chrome_android": {
                 "version_added": "89"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
-                "version_added": false
+                "version_added": "89"
               },
               "firefox": {
                 "version_added": "89"
@@ -103,27 +109,32 @@
                   "notes": "Not supported in CommonJS modules."
                 }
               ],
-              "opera": {
-                "version_added": "73",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-javascript-harmony"
-                  }
-                ]
-              },
+              "opera": [
+                {
+                  "version_added": "75"
+                },
+                {
+                  "version_added": "73",
+                  "version_removed": "75",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-javascript-harmony"
+                    }
+                  ]
+                }
+              ],
               "opera_android": {
-                "version_added": false
+                "version_added": "63"
               },
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/202484'>bug 202484</a>"
+                "version_added": "15"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "15"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "15.0"
               },
               "webview_android": {
                 "version_added": "89"
