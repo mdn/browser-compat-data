@@ -108,14 +108,6 @@ Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensio
 - `api` - WebExtension-specific APIs
 - `manifest` - `manifest.json` keys
 
-### [`xpath`](xpath)
-
-Data for [XPath](https://developer.mozilla.org/en-US/docs/Web/XPath) features.
-
-### [`xslt`](xslt)
-
-Data for [XSLT](https://developer.mozilla.org/en-US/docs/Web/XSLT) features.
-
 ## Semantic versioning policy
 
 For the purposes of [semantic versioning](https://semver.org/) (SemVer), the public API consists of:

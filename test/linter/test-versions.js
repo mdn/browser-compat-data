@@ -17,7 +17,7 @@ const validBrowserVersions = {};
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   edge: ['≤18', '≤79'],
-  ie: ['≤6'],
+  ie: ['≤6', '≤11'],
   opera: ['≤12.1', '≤15'],
   opera_android: ['≤12.1', '≤14'],
   safari: ['≤4'],
@@ -32,6 +32,9 @@ for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
     validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
+  if (browsers[browser].preview_name) {
+    validBrowserVersions[browser].push('preview');
   }
 }
 
@@ -61,6 +64,16 @@ function addedBeforeRemoved(statement) {
 
   if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
     return null;
+  }
+
+  if (added === 'preview' && removed === 'preview') {
+    return false;
+  }
+  if (added === 'preview' && removed !== 'preview') {
+    return false;
+  }
+  if (added !== 'preview' && removed === 'preview') {
+    return true;
   }
 
   return compareVersions.compare(added, removed, '<');
