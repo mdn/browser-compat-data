@@ -147,6 +147,7 @@
         },
         "fit-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content",
             "description": "<code>fit-content</code>",
             "support": {
               "chrome": [
@@ -231,7 +232,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 },
                 {
                   "alternative_name": "intrinsic",
@@ -301,11 +302,22 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1312588'>bug 1312588</a>."
+                "version_added": "91",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.fit-content-function.enabled"
+                  }
+                ]
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "91",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.fit-content-function.enabled"
+                  }
+                ]
               },
               "ie": {
                 "version_added": false
@@ -330,7 +342,7 @@
               }
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -338,6 +350,7 @@
         },
         "max-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-max-content",
             "description": "<code>max-content</code>",
             "support": {
               "chrome": [
@@ -422,6 +435,7 @@
         },
         "min-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-min-content",
             "description": "<code>min-content</code>",
             "support": {
               "chrome": [
