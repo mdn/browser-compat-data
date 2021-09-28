@@ -1,3 +1,5 @@
+const { parse } = require('node-html-parser');
+
 const bcd = require('.');
 const { walk } = require('./utils');
 
@@ -17,7 +19,7 @@ const entryPoints = [
 ];
 
 function main() {
-  console.log(`path,deprecated,experimental,${browsers.join(',')}`);
+  console.log(`path,deprecated,experimental,${browsers.join(',')},comments`);
   for (const {path, compat} of walk(entryPoints, bcd)) {
     const url = compat.mdn_url;
     const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : `=${JSON.stringify(path)}`;
@@ -25,6 +27,7 @@ function main() {
       compat.status.deprecated,
       compat.status.experimental
     ].map((s) => `=${String(s).toUpperCase()}`);
+    const links = [];
     const flatSupport = browsers.map(b => {
       // Flatten to string, true, false, or null using the first non-flag range.
       let ranges = compat.support[b];
@@ -39,6 +42,13 @@ function main() {
         return false;
       }
       const firstRange = ranges[0];
+      const notes = firstRange.notes;
+      if (notes) {
+        const tree = parse(notes);
+        for (const link of tree.querySelectorAll('a')) {
+          links.push(link.getAttribute('href'));
+        }
+      }
       if (firstRange.version_removed) {
         return false;
       }
@@ -47,7 +57,13 @@ function main() {
       // Flatten even further to just boolean support
       return version ? '=TRUE' : '=FALSE';
     });
-    console.log([linkedPath, ...statuses, ...flatSupport].join(','));
+    let crbug = links.find(href => href.startsWith('https://crbug.com/'));
+    if (crbug) {
+      crbug = `=HYPERLINK(${JSON.stringify(crbug)};${JSON.stringify(crbug.substr(8))})`;
+    } else {
+      crbug = '';
+    }
+    console.log([linkedPath, ...statuses, ...flatSupport, crbug].join(','));
   }
 }
 
