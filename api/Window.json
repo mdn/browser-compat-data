@@ -2677,9 +2677,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/hashchange_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-hashchange",
           "support": {
-            "chrome": {
-              "version_added": "5"
-            },
+            "chrome": [
+              {
+                "version_added": "8"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "8",
+                "notes": "A regular <code>Event</code> object is fired, rather than a <code>HashChangeEvent</code> object."
+              }
+            ],
             "chrome_android": {
               "version_added": "18"
             },
