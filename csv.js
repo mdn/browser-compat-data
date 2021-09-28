@@ -17,10 +17,14 @@ const entryPoints = [
 ];
 
 function main() {
-  console.log(`path,${browsers.join(',')}`);
+  console.log(`path,deprecated,experimental,${browsers.join(',')}`);
   for (const {path, compat} of walk(entryPoints, bcd)) {
     const url = compat.mdn_url;
-    const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : path;
+    const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : `=${JSON.stringify(path)}`;
+    const statuses = [
+      compat.status.deprecated,
+      compat.status.experimental
+    ].map((s) => `=${String(s).toUpperCase()}`);
     const flatSupport = browsers.map(b => {
       // Flatten to string, true, false, or null using the first non-flag range.
       let ranges = compat.support[b];
@@ -40,10 +44,10 @@ function main() {
       }
       return firstRange.version_added;
     }).map(version => {
-      // Flatten even further to just 0 (not supported) or 1 (supported)
-      return version ? 1 : 0;
+      // Flatten even further to just boolean support
+      return version ? '=TRUE' : '=FALSE';
     });
-    console.log([linkedPath, ...flatSupport].join(','));
+    console.log([linkedPath, ...statuses, ...flatSupport].join(','));
   }
 }
 
