@@ -1,5 +1,195 @@
 # Release notes
 
+## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
+
+September 23, 2021
+
+### Notable changes
+
+- The feature-naming convention `returns_promise` has been adopted for features that capture some but not all browsers' APIs returning a `Promise`. The [new data guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#methods-returning-promises-returns_promise) brings consistency to competing styles used throughout the API data.
+
+  The following features have been renamed to `returns_promise` ([#11630](https://github.com/mdn/browser-compat-data/pull/11630)):
+
+  - `api.BaseAudioContext.decodeAudioData.promise_syntax`
+  - `api.Document.exitFullscreen.returns_a_promise`
+  - `api.Element.requestFullscreen.returns_a_promise`
+  - `api.OfflineAudioContext.startRendering.Promise_based_startRendering`
+
+  The feature `api.RTCPeerConnection.getStats.with_callbacks` was removed and the data for several `RTCPeerConnection` methods expanded with `returns_promise` data. The following features have been added ([#12300](https://github.com/mdn/browser-compat-data/pull/12300)):
+
+  - `api.RTCPeerConnection.addIceCandidate.returns_promise`
+  - `api.RTCPeerConnection.createAnswer.returns_promise`
+  - `api.RTCPeerConnection.createOffer.returns_promise`
+  - `api.RTCPeerConnection.getStats.returns_promise`
+  - `api.RTCPeerConnection.setLocalDescription.returns_promise`
+  - `api.RTCPeerConnection.setRemoteDescription.returns_promise`
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.CryptoKeyPair` ([#12346](https://github.com/mdn/browser-compat-data/pull/12346))
+  - `api.MediaStream.ended` ([#12454](https://github.com/mdn/browser-compat-data/pull/12454))
+  - `api.MediaStream.label` ([#12455](https://github.com/mdn/browser-compat-data/pull/12455))
+  - `api.SVGZoomAndPan` ([#12518](https://github.com/mdn/browser-compat-data/pull/12518))
+  - `api.Window.maximize` ([#12552](https://github.com/mdn/browser-compat-data/pull/12552))
+  - `api.Window.minimize` ([#12552](https://github.com/mdn/browser-compat-data/pull/12552))
+  - `api.XMLSerializer.serializeToStream` ([#12417](https://github.com/mdn/browser-compat-data/pull/12417))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 8 contributors have changed 53 files with 1,649 additions and 2,580 deletions in 54 commits ([`v4.0.4...v4.0.5`](https://github.com/mdn/browser-compat-data/compare/v4.0.4...v4.0.5))
+- 13,414 total features
+- 809 total contributors
+- 3,583 total stargazers
+
+## [v4.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.4)
+
+September 16, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.AudioNodeOptions` ([#12366](https://github.com/mdn/browser-compat-data/pull/12366))
+  - `api.DOMPointInit` ([#12335](https://github.com/mdn/browser-compat-data/pull/12335))
+  - `api.HTMLSourceElement.keySystem` ([#12383](https://github.com/mdn/browser-compat-data/pull/12383))
+  - `api.Transferable` ([#12376](https://github.com/mdn/browser-compat-data/pull/12376)
+  - `api.Window.routeEvent` ([#12403](https://github.com/mdn/browser-compat-data/pull/12403))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 14 contributors have changed 43 files with 587 additions and 887 deletions in 33 commits ([`v4.0.3...v4.0.4`](https://github.com/mdn/browser-compat-data/compare/v4.0.3...v4.0.4))
+- 13,422 total features
+- 808 total contributors
+- 3,576 total stargazers
+
+## [v4.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.3)
+
+September 10, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Document.documentURI.readonly` ([#12276](https://github.com/mdn/browser-compat-data/pull/12276))
+  - `api.IDBEnvironment` ([#12230](https://github.com/mdn/browser-compat-data/pull/12230))
+  - `api.KeyboardEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+  - `api.MouseEvent.which` ([#12185](https://github.com/mdn/browser-compat-data/pull/12185))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 14 contributors have changed 76 files with 7,054 additions and 731 deletions in 36 commits ([`v4.0.2...v4.0.3`](https://github.com/mdn/browser-compat-data/compare/v4.0.2...v4.0.3))
+- 13,329 total features
+- 807 total contributors
+- 3,567 total stargazers
+
+## [v4.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.2)
+
+September 2, 2021
+
+### WindowOrWorkerGlobalScope removal
+
+To no longer expose mixins, the following features have been moved from `api.WindowOrWorkerGlobalScope` (or `api.Window` for two cases) to the global `api.*` namespace. The features' worker support is now indicated using `worker_support` sub-features. ([#11518](https://github.com/mdn/browser-compat-data/pull/11518))
+
+#### Removed
+
+- `api.Window.isSecureContext`
+- `api.Window.trustedTypes`
+- `api.WindowOrWorkerGlobalScope.*`
+
+#### Added
+
+- `api.atob`
+- `api.atob.worker_support`
+- `api.btoa`
+- `api.btoa.worker_support`
+- `api.caches`
+- `api.caches.worker_support`
+- `api.clearInterval`
+- `api.clearInterval.worker_support`
+- `api.clearTimeout`
+- `api.clearTimeout.worker_support`
+- `api.createImageBitmap`
+- `api.createImageBitmap.worker_support`
+- `api.crossOriginIsolated`
+- `api.crossOriginIsolated.worker_support`
+- `api.fetch`
+- `api.fetch.worker_support`
+- `api.indexedDB`
+- `api.indexedDB.worker_support`
+- `api.isSecureContext`
+- `api.isSecureContext.worker_support`
+- `api.origin`
+- `api.origin.worker_support`
+- `api.queueMicrotask`
+- `api.queueMicrotask.worker_support`
+- `api.setInterval`
+- `api.setInterval.worker_support`
+- `api.setTimeout`
+- `api.setTimeout.worker_support`
+- `api.structuredClone`
+- `api.structuredClone.worker_support`
+- `api.trustedTypes`
+- `api.trustedTypes.worker_support`
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.UIEvent.pageX` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.pageY` ([#12187](https://github.com/mdn/browser-compat-data/pull/12187))
+  - `api.UIEvent.isChar` ([#12186](https://github.com/mdn/browser-compat-data/pull/12186))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 10 contributors have changed 61 files with 2,863 additions and 2,275 deletions in 34 commits ([`v4.0.1...v4.0.2`](https://github.com/mdn/browser-compat-data/compare/v4.0.1...4.0.2))
+- 13,290 total features
+- 806 total contributors
+- 3,551 total stargazers
+
+## [v4.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.1)
+
+August 26, 2021
+
+### Notable changes
+
+- `css.types.ellipse` was moved to `css.types.basic-shape.ellipse` to correct improper nesting of features. ([#12075](https://github.com/mdn/browser-compat-data/pull/12075))
+
+- `css.types.filter-function.constrast` was renamed to `css.types.filter-function.contrast` to correct a typo. ([#12074](https://github.com/mdn/browser-compat-data/pull/12074))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.FileError` ([#12089](https://github.com/mdn/browser-compat-data/pull/12089))
+  - `api.Headers.getAll` ([#12166](https://github.com/mdn/browser-compat-data/pull/12166))
+  - `api.Window.onpaint` ([#12167](https://github.com/mdn/browser-compat-data/pull/12167))
+  - `api.XRPermissionDescriptor` ([#10672](https://github.com/mdn/browser-compat-data/pull/10672))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 16 contributors have changed 76 files with 1,053 additions and 996 deletions in 62 commits ([`v4.0.0...v4.0.1`](https://github.com/mdn/browser-compat-data/compare/v4.0.0...v4.0.1))
+- 13,279 total features
+- 806 total contributors
+- 3,534 total stargazers
+
 ## [v4.0.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.0)
 
 August 19, 2021
@@ -10,10 +200,6 @@ Version 4.0.0 makes some potentially-breaking changes to improve the flexibility
 - Deno, the JavaScript and TypeScript runtime, has been added as a new engine.
 - All XPath (`xpath`) and XSLT (`xslt`) features have been removed because the data was incomplete and unmaintained.
 - The schema for browser release data now supports the optional `accepts_flags` boolean hint.
-
-### Known issues
-
-- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
 ### Notable changes
 
