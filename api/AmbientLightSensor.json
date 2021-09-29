@@ -44,6 +44,17 @@
           "ie": {
             "version_added": false
           },
+          "oculus": {
+            "flags": [
+              {
+                "type": "preference",
+                "name": "#enable-experimental-web-platform-features",
+                "value_to_set": "Enabled"
+              }
+            ],
+            "version_added": "5.0",
+            "notes": "<code>AmbientLightSensor</code> is defined but it never generates any readings."
+          },
           "opera": {
             "version_added": "43",
             "flags": [
@@ -107,6 +118,9 @@
             "ie": {
               "version_added": false
             },
+            "oculus": {
+              "version_added": "5.0"
+            },
             "opera": {
               "version_added": "43"
             },
@@ -157,6 +171,10 @@
             },
             "ie": {
               "version_added": false
+            },
+            "oculus": {
+              "version_added": "5.0",
+              "notes": "<code>illuminance</code> always returns <code>null</code>."
             },
             "opera": {
               "version_added": "43",
