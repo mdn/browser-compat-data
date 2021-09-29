@@ -57,6 +57,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Jean-Yves Perrier (@teoli2003), Open Web Docs
 - Joe Medley (@jpmedley), Google
+- Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
 - Rachel Andrew (@rachelandrew)
