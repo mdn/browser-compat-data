@@ -413,4 +413,4 @@ function testConsistency(filename) {
   return false;
 }
 
-module.exports = testConsistency;
+module.exports = { ConsistencyChecker, testConsistency };
