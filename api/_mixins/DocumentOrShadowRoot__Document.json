@@ -53,7 +53,7 @@
       "adoptedStyleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets",
-          "spec_url": "https://wicg.github.io/construct-stylesheets/#dom-documentorshadowroot-adoptedstylesheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -227,7 +227,7 @@
                 "version_added": "71"
               },
               {
-                "version_added": "53",
+                "version_added": "20",
                 "prefix": "webkit"
               }
             ],
@@ -236,21 +236,21 @@
                 "version_added": "71"
               },
               {
-                "version_added": "53",
+                "version_added": "25",
                 "prefix": "webkit"
               }
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "79"
               },
               {
-                "version_added": "≤18",
+                "version_added": "12",
                 "prefix": "webkit"
               },
               {
                 "version_added": "12",
-                "prefix": "ms"
+                "version_removed": "14"
               }
             ],
             "firefox": [
@@ -272,16 +272,20 @@
               }
             ],
             "ie": {
-              "version_added": true,
-              "prefix": "ms"
+              "version_added": "11",
+              "alternative_name": "msFullscreenElement"
             },
             "opera": [
               {
                 "version_added": "58"
               },
               {
-                "version_added": "40",
+                "version_added": "15",
                 "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "15"
               }
             ],
             "opera_android": [
@@ -289,26 +293,30 @@
                 "version_added": "50"
               },
               {
-                "version_added": "41",
+                "version_added": "14",
                 "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "14"
               }
             ],
             "safari": {
-              "version_added": true,
+              "version_added": "6",
               "prefix": "webkit"
             },
             "safari_ios": {
               "version_added": "12",
               "prefix": "webkit",
               "partial_implementation": true,
-              "notes": "Full-screen mode is only supported on the iPad."
+              "notes": "Only available on iPad, not on iPhone."
             },
             "samsunginternet_android": [
               {
                 "version_added": "10.0"
               },
               {
-                "version_added": "6.0",
+                "version_added": "1.5",
                 "prefix": "webkit"
               }
             ],
@@ -317,7 +325,7 @@
                 "version_added": "71"
               },
               {
-                "version_added": "53",
+                "version_added": "≤37",
                 "prefix": "webkit"
               }
             ]
@@ -532,12 +540,26 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "50"
-            },
-            "firefox_android": {
-              "version_added": "50"
-            },
+            "firefox": [
+              {
+                "version_added": "50"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "50",
+                "prefix": "moz"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "50"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "50",
+                "prefix": "moz"
+              }
+            ],
             "ie": {
               "version_added": false
             },
