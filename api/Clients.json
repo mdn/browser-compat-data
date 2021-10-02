@@ -3,6 +3,7 @@
     "Clients": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients",
+        "spec_url": "https://w3c.github.io/ServiceWorker/#clients-interface",
         "support": {
           "chrome": {
             "version_added": "40"
@@ -11,7 +12,7 @@
             "version_added": "40"
           },
           "edge": {
-            "version_added": "≤79"
+            "version_added": "17"
           },
           "firefox": {
             "version_added": "44",
@@ -51,6 +52,7 @@
       "claim": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients/claim",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#clients-claim",
           "support": {
             "chrome": {
               "version_added": "42"
@@ -59,7 +61,7 @@
               "version_added": "42"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "17"
             },
             "firefox": {
               "version_added": "44",
@@ -100,6 +102,7 @@
       "get": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients/get",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#clients-get",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -108,7 +111,7 @@
               "version_added": "51"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "17"
             },
             "firefox": {
               "version_added": "45",
@@ -149,6 +152,7 @@
       "matchAll": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients/matchAll",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#clients-matchall",
           "support": {
             "chrome": {
               "version_added": "47",
@@ -159,7 +163,7 @@
               "notes": "<code>Client</code> objects returned in most recent focus order."
             },
             "edge": {
-              "version_added": "≤79",
+              "version_added": "17",
               "notes": "<code>Client</code> objects returned in most recent focus order."
             },
             "firefox": [
@@ -211,9 +215,10 @@
             "deprecated": false
           }
         },
-        "includeUncontrolled_option": {
+        "options_includeUncontrolled_parameter": {
           "__compat": {
-            "description": "<code>includeUncontrolled</code> option",
+            "description": "<code>options.includeUncontrolled</code> parameter",
+            "spec_url": "https://w3c.github.io/ServiceWorker/#dom-clientqueryoptions-includeuncontrolled",
             "support": {
               "chrome": {
                 "version_added": "47",
@@ -270,6 +275,7 @@
       "openWindow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients/openWindow",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#clients-openwindow",
           "support": {
             "chrome": [
               {
@@ -307,18 +313,10 @@
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "17"
               },
               {
-                "version_added": "≤79",
-                "notes": "Can only open URLs on the same origin."
-              },
-              {
-                "version_added": "≤79",
-                "notes": "Can open any URL. "
-              },
-              {
-                "version_added": "≤79",
+                "version_added": "79",
                 "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
               }
             ],

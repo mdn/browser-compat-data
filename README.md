@@ -10,7 +10,7 @@ This data can be used in documentation, to build compatibility tables listing
 browser support for APIs. For example:
 [Browser support for WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
 
-Read how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md).
+Read how this project is [governed](GOVERNANCE.md).
 
 Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
 
@@ -34,21 +34,21 @@ bcd.css.properties.background;
 
 The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 12,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
 
-The definitive description of the format used to represent individual features and browsers is the [schema definitions](https://github.com/mdn/browser-compat-data/blob/master/schemas/).
+The definitive description of the format used to represent individual features and browsers is the [schema definitions](schemas/).
 
 Apart from the explicitly documented objects below, feature-level support data may change at any time. See [_Semantic versioning policy_](#Semantic-versioning-policy) for details.
 
 The package contains the following top-level objects:
 
-### [`api`](https://github.com/mdn/browser-compat-data/tree/master/api)
+### [`api`](api)
 
 Data for [Web API](https://developer.mozilla.org/en-US/docs/Web/API) features.
 
-### [`browsers`](https://github.com/mdn/browser-compat-data/tree/master/browsers)
+### [`browsers`](browsers)
 
-Data for browser and engine releases. See the [browser schema](https://github.com/mdn/browser-compat-data/blob/master/schemas/browsers-schema.md) for details.
+Data for browser and engine releases. See the [browser schema](schemas/browsers-schema.md) for details.
 
-### [`css`](https://github.com/mdn/browser-compat-data/tree/master/css)
+### [`css`](css)
 
 Data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) features, including:
 
@@ -57,7 +57,7 @@ Data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) features, inclu
 - `selectors` - selectors (such as basic selectors, combinators, or pseudo elements)
 - `types` - types for rule values
 
-### [`html`](https://github.com/mdn/browser-compat-data/tree/master/html)
+### [`html`](html)
 
 Data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) features, including:
 
@@ -65,7 +65,7 @@ Data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) features, inc
 - `global_attributes` - Global attributes
 - `manifest` - Web App manifest keys
 
-### [`http`](https://github.com/mdn/browser-compat-data/tree/master/http)
+### [`http`](http)
 
 Data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) features, including:
 
@@ -73,7 +73,7 @@ Data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) features, inc
 - `methods` - Request methods
 - `status` - Status codes
 
-### [`javascript`](https://github.com/mdn/browser-compat-data/tree/master/javascript)
+### [`javascript`](javascript)
 
 Data for JavaScript language features, including:
 
@@ -84,37 +84,29 @@ Data for JavaScript language features, including:
 - `operators` - Mathematical and logical operators
 - `statements` - Language statements and expressions
 
-### [`mathml`](https://github.com/mdn/browser-compat-data/tree/master/mathml)
+### [`mathml`](mathml)
 
 Data for [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) features, including:
 
 - `elements` - Elements
 
-### [`svg`](https://github.com/mdn/browser-compat-data/tree/master/svg)
+### [`svg`](svg)
 
 Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, including:
 
 - `attributes` - Attributes
 - `elements` - Elements
 
-### [`webdriver`](https://github.com/mdn/browser-compat-data/tree/master/webdriver)
+### [`webdriver`](webdriver)
 
 Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
 
-### [`webextensions`](https://github.com/mdn/browser-compat-data/tree/master/webextensions)
+### [`webextensions`](webextensions)
 
 Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) features, including:
 
 - `api` - WebExtension-specific APIs
 - `manifest` - `manifest.json` keys
-
-### [`xpath`](https://github.com/mdn/browser-compat-data/tree/master/xpath)
-
-Data for [XPath](https://developer.mozilla.org/en-US/docs/Web/XPath) features.
-
-### [`xslt`](https://github.com/mdn/browser-compat-data/tree/master/xslt)
-
-Data for [XSLT](https://developer.mozilla.org/en-US/docs/Web/XSLT) features.
 
 ## Semantic versioning policy
 
@@ -141,6 +133,7 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 
 - [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
 - [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.
+- [CanIUse Embed](https://caniuse.bitsofco.de/) - Thanks to the inclusion of MDN BCD data in caniuse, this embed tool allows for embedding BCD data into any project.
 - [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
 - [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
 - [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).

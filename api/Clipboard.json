@@ -3,6 +3,7 @@
     "Clipboard": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard",
+        "spec_url": "https://w3c.github.io/clipboard-apis/#clipboard-interface",
         "support": {
           "chrome": {
             "version_added": "66"
@@ -50,6 +51,7 @@
       "read": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-read",
           "support": {
             "chrome": [
               {
@@ -90,7 +92,19 @@
             },
             "firefox": [
               {
+                "version_added": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.read",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              },
+              {
                 "version_added": "87",
+                "version_removed": "90",
                 "flags": [
                   {
                     "type": "preference",
@@ -119,7 +133,19 @@
             ],
             "firefox_android": [
               {
+                "version_added": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.read",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              },
+              {
                 "version_added": "87",
+                "version_removed": "90",
                 "flags": [
                   {
                     "type": "preference",
@@ -187,6 +213,7 @@
       "readText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/readText",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-readtext",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -237,6 +264,7 @@
       "write": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/write",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-write",
           "support": {
             "chrome": {
               "version_added": "66",
@@ -338,6 +366,7 @@
       "writeText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/writeText",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-writetext",
           "support": {
             "chrome": {
               "version_added": "66"
