@@ -3,6 +3,7 @@
     "HTMLIFrameElement": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement",
+        "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#htmliframeelement",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -187,7 +188,9 @@
               "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": "Only available on iPad, not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -270,6 +273,7 @@
       "contentDocument": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentDocument",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-contentdocument",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -318,6 +322,7 @@
       "contentWindow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentWindow",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-contentwindow",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -366,6 +371,7 @@
       "csp": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/csp",
+          "spec_url": "https://w3c.github.io/webappsec-cspee/#ref-for-dom-htmliframeelement-csp",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -415,67 +421,14 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/featurePolicy",
           "support": {
-            "chrome": [
-              {
-                "version_added": "74",
-                "notes": "<a href='https://www.chromestatus.com/feature/5190687460950016'>Chrome Platform Status</a> incorrectly describes this variable as <code>document.policy</code>. It was renamed in <a href='https://crbug.com/917057'>bug 917057</a> before being shipped in <a href='https://crbug.com/703703#c22'>bug 703703</a>."
-              },
-              {
-                "version_added": "73",
-                "version_removed": "74",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "69",
-                "version_removed": "73",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "74",
-                "notes": "<a href='https://www.chromestatus.com/feature/5190687460950016'>Chrome Platform Status</a> incorrectly describes this variable as <code>document.policy</code>. It was renamed in <a href='https://crbug.com/917057'>bug 917057</a> before being shipped in <a href='https://crbug.com/703703#c22'>bug 703703</a>."
-              },
-              {
-                "version_added": "73",
-                "version_removed": "74",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "69",
-                "version_removed": "73",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": {
+              "version_added": "74"
+            },
             "edge": {
-              "version_added": "79",
-              "notes": "<a href='https://www.chromestatus.com/feature/5190687460950016'>Edge Platform Status</a> incorrectly describes this variable as <code>document.policy</code>. It was renamed in <a href='https://crbug.com/917057'>bug 917057</a> before being shipped in <a href='https://crbug.com/703703#c22'>bug 703703</a>."
+              "version_added": "79"
             },
             "firefox": [
               {
@@ -515,44 +468,11 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "60",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "56",
-                "version_removed": "60",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": "62"
+            },
             "opera_android": {
-              "version_added": "48",
-              "alternative_name": "policy",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-productivity-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "53"
             },
             "safari": {
               "version_added": false
@@ -564,8 +484,7 @@
               "version_added": "11.0"
             },
             "webview_android": {
-              "version_added": "74",
-              "notes": "<a href='https://www.chromestatus.com/feature/5190687460950016'>Chrome Platform Status</a> incorrectly describes this variable as <code>document.policy</code>. It was renamed in <a href='https://crbug.com/917057'>bug 917057</a> before being shipped in <a href='https://crbug.com/703703#c22'>bug 703703</a>."
+              "version_added": "74"
             }
           },
           "status": {
@@ -660,7 +579,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -747,11 +666,11 @@
             },
             "safari": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>"
+              "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
             },
             "safari_ios": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>"
+              "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
             },
             "samsunginternet_android": {
               "version_added": "12.0"
@@ -962,6 +881,7 @@
       "referrerPolicy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-referrerpolicy",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -1051,7 +971,7 @@
               "notes": "Before Samsung Internet 5.0, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             },
             "webview_android": {
-              "version_added": "1",
+              "version_added": "≤37",
               "notes": "Before WebView 50, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
             }
           },
@@ -1113,6 +1033,7 @@
       "src": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-src",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1160,6 +1081,8 @@
       },
       "srcdoc": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/srcdoc",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-srcdoc",
           "support": {
             "chrome": {
               "version_added": "20"
