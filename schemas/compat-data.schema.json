@@ -43,8 +43,20 @@
           "type": "boolean",
           "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
         },
-        "version_added": { "$ref": "#/definitions/version_value" },
-        "version_removed": { "$ref": "#/definitions/version_value" },
+        "version_added": {
+          "description": "A string (indicating which browser version added this feature), the value true (indicating support added in an unknown version), the value false (indicating the feature is not supported), or the value null (indicating support is unknown).",
+          "allOf": [
+            { "type": ["string", "boolean", "null"] },
+            { "not": { "enum": ["true", "false", "null"] } }
+          ]
+        },
+        "version_removed": {
+          "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
+          "allOf": [
+            { "type": ["string", "boolean"] },
+            { "not": { "enum": ["true", false] } }
+          ]
+        },
         "notes": {
           "description": "A string or array of strings containing additional information.",
           "anyOf": [
@@ -64,7 +76,7 @@
       "required": ["version_added"],
       "anyOf": [
         {
-          "not": {"required": ["prefix","alternative_name"]}
+          "not": {"required": ["prefix", "alternative_name"]}
         },
         {
           "oneOf": [
@@ -136,25 +148,33 @@
 
     "support_block": {
       "type": "object",
-      "properties": {
-        "chrome": { "$ref": "#/definitions/support_statement" },
-        "chrome_android": { "$ref": "#/definitions/support_statement" },
-        "edge": { "$ref": "#/definitions/support_statement" },
-        "firefox": { "$ref": "#/definitions/support_statement" },
-        "firefox_android": { "$ref": "#/definitions/support_statement" },
-        "ie": { "$ref": "#/definitions/support_statement" },
-        "nodejs": { "$ref": "#/definitions/support_statement" },
-        "opera": { "$ref": "#/definitions/support_statement" },
-        "opera_android": { "$ref": "#/definitions/support_statement" },
-        "qq_android": { "$ref": "#/definitions/support_statement" },
-        "safari": { "$ref": "#/definitions/support_statement" },
-        "safari_ios": { "$ref": "#/definitions/support_statement" },
-        "samsunginternet_android": { "$ref": "#/definitions/support_statement" },
-        "uc_android": { "$ref": "#/definitions/support_statement" },
-        "uc_chinese_android": { "$ref": "#/definitions/support_statement" },
-        "webview_android": { "$ref": "#/definitions/support_statement" }
+      "propertyNames": {
+        "enum": [
+          "chrome",
+          "chrome_android",
+          "deno",
+          "edge",
+          "firefox",
+          "firefox_android",
+          "ie",
+          "nodejs",
+          "opera",
+          "opera_android",
+          "safari",
+          "safari_ios",
+          "samsunginternet_android",
+          "webview_android"
+        ]
       },
-      "additionalProperties": false
+      "additionalProperties": {
+        "$ref": "#/definitions/support_statement"
+      }
+    },
+
+    "spec_url_value": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "(^http(s)?:\/\/[^#]+#.+)|(^https://www.khronos.org/registry/webgl/extensions/[^/]+/)"
     },
 
     "compat_statement": {
@@ -173,17 +193,13 @@
         "spec_url": {
           "anyOf": [
             {
-              "type": "string",
-              "format": "uri",
-              "pattern": "^http(s)?:\/\/[^#]+#.+"
+              "$ref": "#/definitions/spec_url_value"
             },
             {
               "type": "array",
               "minItems": 2,
               "items": {
-                "type": "string",
-                "format": "uri",
-                "pattern": "^http(s)?:\/\/[^#]+#.+"
+                "$ref": "#/definitions/spec_url_value"
               }
             }
           ],
@@ -257,13 +273,6 @@
         "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/webextensions_identifier" }
       },
       "additionalProperties": false
-    },
-
-    "version_value": {
-      "allOf": [
-        { "type": ["string", "boolean", "null"] },
-        { "not": { "enum": ["true", "false", "null"] } }
-      ]
     }
   },
 

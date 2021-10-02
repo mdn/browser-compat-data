@@ -4,35 +4,18 @@
       "grid-template-rows": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-rows",
+          "spec_url": [
+            "https://drafts.csswg.org/css-grid/#track-sizing",
+            "https://drafts.csswg.org/css-grid/#subgrids",
+            "https://drafts.csswg.org/css-grid-3/#masonry-layout"
+          ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "57"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable experimental Web Platform features"
-                  }
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "57"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable experimental Web Platform features"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": {
+              "version_added": "57"
+            },
             "edge": [
               {
                 "version_added": "16"
@@ -43,70 +26,22 @@
                 "version_removed": "79"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "52"
-              },
-              {
-                "version_added": "40",
-                "version_removed": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.grid.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "52"
-              },
-              {
-                "version_added": "40",
-                "version_removed": "59",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.grid.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "52"
+            },
+            "firefox_android": {
+              "version_added": "52"
+            },
             "ie": {
               "version_added": "10",
               "alternative_name": "-ms-grid-rows"
             },
-            "opera": [
-              {
-                "version_added": "44"
-              },
-              {
-                "version_added": "28",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable experimental Web Platform features"
-                  }
-                ]
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "43"
-              },
-              {
-                "version_added": "28",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable experimental Web Platform features"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": "44"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
             "safari": {
               "version_added": "10.1"
             },
@@ -128,17 +63,19 @@
         },
         "animation": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-rows",
             "description": "Animation of tracks",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               },
               "edge": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               },
               "firefox": {
                 "version_added": "66"
@@ -150,22 +87,28 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               },
               "opera_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/204580'>bug 204580</a>."
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/204580'>bug 204580</a>."
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               },
               "webview_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/759665'>bug 759665</a>."
               }
             },
             "status": {
@@ -178,10 +121,11 @@
         "fit-content": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/fit-content",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#sizing-values",
             "description": "<code>fit-content()</code>",
             "support": {
               "chrome": {
-                "version_added": "29"
+                "version_added": "57"
               },
               "chrome_android": {
                 "version_added": "57"
@@ -190,10 +134,10 @@
                 "version_added": "16"
               },
               "firefox": {
-                "version_added": "51"
+                "version_added": "52"
               },
               "firefox_android": {
-                "version_added": "51"
+                "version_added": "52"
               },
               "ie": {
                 "version_added": false
@@ -224,105 +168,93 @@
             }
           }
         },
-        "minmax": {
+        "masonry": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/minmax",
-            "description": "<code>minmax()</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout",
+            "spec_url": "https://drafts.csswg.org/css-grid-3/#masonry-layout",
+            "description": "<code>masonry</code>",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "57"
-                },
-                {
-                  "version_added": "29",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "chrome_android": [
-                {
-                  "version_added": "57"
-                },
-                {
-                  "version_added": "29",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "edge": {
-                "version_added": "16"
+              "chrome": {
+                "version_added": false
               },
-              "firefox": [
-                {
-                  "version_added": "52"
-                },
-                {
-                  "version_added": "40",
-                  "version_removed": "59",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.grid.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "52"
-                },
-                {
-                  "version_added": "40",
-                  "version_removed": "59",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.grid.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "77",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.grid-template-masonry-value.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
               "ie": {
                 "version_added": false
               },
-              "opera": [
-                {
-                  "version_added": "44"
-                },
-                {
-                  "version_added": "28",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "opera_android": [
-                {
-                  "version_added": "43"
-                },
-                {
-                  "version_added": "28",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "minmax": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/minmax()",
+            "spec_url": "https://drafts.csswg.org/css-grid/#valdef-grid-template-columns-minmax",
+            "description": "<code>minmax()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": "52"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "44"
+              },
+              "opera_android": {
+                "version_added": "43"
+              },
               "safari": {
                 "version_added": "10.1"
               },
@@ -345,37 +277,16 @@
         },
         "repeat": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeat",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeat()",
+            "spec_url": "https://drafts.csswg.org/css-grid/#repeat-notation",
             "description": "<code>repeat()</code>",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "57"
-                },
-                {
-                  "version_added": "38",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "chrome_android": [
-                {
-                  "version_added": "57"
-                },
-                {
-                  "version_added": "38",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
               "edge": {
                 "version_added": "16"
               },
@@ -394,66 +305,34 @@
                   "version_removed": "57",
                   "notes": "<a href='https://developer.mozilla.org/docs/Web/CSS/calc'><code>calc()</code></a> doesn't work in <code>repeat()</code> (see <a href='https://bugzil.la/1350069'>bug 1350069</a>).",
                   "partial_implementation": true
-                },
-                {
-                  "version_added": "40",
-                  "version_removed": "59",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.grid.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "52"
+                  "version_added": "79"
                 },
                 {
-                  "version_added": "40",
-                  "version_removed": "59",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.grid.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": "57",
+                  "version_removed": "79",
+                  "notes": "<code>repeat(auto-fill, ...)</code> and <code>repeat(auto-fit, ...)</code> only support one repeated column (see <a href='https://bugzil.la/1341507'>bug 1341507</a>).",
+                  "partial_implementation": true
+                },
+                {
+                  "version_added": "52",
+                  "version_removed": "57",
+                  "notes": "<a href='https://developer.mozilla.org/docs/Web/CSS/calc'><code>calc()</code></a> doesn't work in <code>repeat()</code> (see <a href='https://bugzil.la/1350069'>bug 1350069</a>).",
+                  "partial_implementation": true
                 }
               ],
               "ie": {
                 "version_added": false
               },
-              "opera": [
-                {
-                  "version_added": "44"
-                },
-                {
-                  "version_added": "28",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "opera_android": [
-                {
-                  "version_added": "43"
-                },
-                {
-                  "version_added": "28",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
+              "opera": {
+                "version_added": "44"
+              },
+              "opera_android": {
+                "version_added": "43"
+              },
               "safari": {
                 "version_added": "10.1"
               },
@@ -477,16 +356,20 @@
         "subgrid": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid",
+            "spec_url": "https://drafts.csswg.org/css-grid/#subgrids",
             "description": "<code>subgrid</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               },
               "edge": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               },
               "firefox": [
                 {
@@ -511,22 +394,28 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               },
               "opera_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/202115'>bug 202115</a>."
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/202115'>bug 202115</a>."
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               },
               "webview_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
               }
             },
             "status": {

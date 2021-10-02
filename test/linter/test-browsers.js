@@ -14,14 +14,11 @@ const browsers = {
     'chrome_android',
     'firefox_android',
     'opera_android',
-    'qq_android',
     'safari_ios',
     'samsunginternet_android',
-    'uc_android',
-    'uc_chinese_android',
     'webview_android',
   ],
-  server: ['nodejs'],
+  server: ['nodejs', 'deno'],
   'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
   'webextensions-mobile': ['firefox_android'],
 };
@@ -128,6 +125,7 @@ function testBrowsers(filename) {
   let requiredBrowsers = browsers['desktop'];
   if (category === 'api') {
     displayBrowsers.push('nodejs');
+    displayBrowsers.push('deno');
   }
   if (category === 'javascript') {
     displayBrowsers.push(...browsers['server']);

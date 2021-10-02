@@ -4,6 +4,7 @@
       "tab-size": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/tab-size",
+          "spec_url": "https://drafts.csswg.org/css-text/#tab-size-property",
           "support": {
             "chrome": {
               "version_added": "21",
@@ -17,22 +18,26 @@
               "version_added": "79",
               "notes": "This property is not yet animatable."
             },
-            "firefox": {
-              "prefix": "-moz-",
-              "version_added": "4",
-              "notes": [
-                "See <a href='https://bugzil.la/737785'>bug 737785</a> for the status of unprefixing this property.",
-                "Before Firefox 53, this property was not animatable."
-              ]
-            },
-            "firefox_android": {
-              "prefix": "-moz-",
-              "version_added": "4",
-              "notes": [
-                "See <a href='https://bugzil.la/737785'>bug 737785</a> for the status of unprefixing this property.",
-                "Before Firefox 53, this property was not animatable."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "91"
+              },
+              {
+                "prefix": "-moz-",
+                "version_added": "4",
+                "notes": "Before Firefox 53, this property was not animatable."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "91"
+              },
+              {
+                "prefix": "-moz-",
+                "version_added": "4",
+                "notes": "Before Firefox 53, this property was not animatable."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -42,7 +47,8 @@
               },
               {
                 "prefix": "-o-",
-                "version_added": "10.5"
+                "version_added": "10.5",
+                "version_removed": "15"
               }
             ],
             "opera_android": [
@@ -51,11 +57,12 @@
               },
               {
                 "prefix": "-o-",
-                "version_added": "11"
+                "version_added": "11",
+                "version_removed": "14"
               }
             ],
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -77,6 +84,7 @@
         "length": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/length",
+            "spec_url": "https://drafts.csswg.org/css-values/#lengths",
             "description": "<code>&lt;length&gt;</code>",
             "support": {
               "chrome": {

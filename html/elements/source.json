@@ -4,6 +4,7 @@
       "source": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/source",
+          "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element",
           "support": {
             "chrome": {
               "version_added": true
@@ -29,7 +30,7 @@
               "version_added": true
             },
             "opera_android": {
-              "version_added": null
+              "version_added": true
             },
             "safari": {
               "version_added": true
@@ -100,61 +101,66 @@
         "sizes": {
           "__compat": {
             "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
+              "chrome": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "version_added": "34",
+                  "version_removed": "38",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "version_added": "34",
+                  "version_removed": "38",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
               "edge": {
                 "version_added": "≤18"
               },
-              "firefox": [
-                {
-                  "version_added": "38"
-                },
-                {
-                  "version_added": "33",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.image.picture.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "38"
-                },
-                {
-                  "version_added": "33",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.image.picture.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "38"
+              },
+              "firefox_android": {
+                "version_added": "38"
+              },
               "ie": {
                 "version_added": null
               },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": null
-              },
+              "opera": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "version_added": "21",
+                  "version_removed": "25",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "version_added": "21",
+                  "version_removed": "25",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
               "safari": [
                 {
                   "version_added": "9"
                 },
                 {
                   "version_added": "7",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
                 }
               ],
               "safari_ios": [
@@ -163,15 +169,30 @@
                 },
                 {
                   "version_added": "8",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
                 }
               ],
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
+              "samsunginternet_android": [
+                {
+                  "version_added": "3.0"
+                },
+                {
+                  "version_added": "2.0",
+                  "version_removed": "3.0",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
+              "webview_android": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "version_added": "≤37",
+                  "version_removed": "38",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ]
             },
             "status": {
               "experimental": false,
@@ -230,61 +251,66 @@
         "srcset": {
           "__compat": {
             "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
+              "chrome": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "version_added": "34",
+                  "version_removed": "38",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "version_added": "34",
+                  "version_removed": "38",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
               "edge": {
                 "version_added": "≤18"
               },
-              "firefox": [
-                {
-                  "version_added": "38"
-                },
-                {
-                  "version_added": "33",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.image.picture.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "38"
-                },
-                {
-                  "version_added": "33",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.image.picture.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "38"
+              },
+              "firefox_android": {
+                "version_added": "38"
+              },
               "ie": {
                 "version_added": null
               },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": null
-              },
+              "opera": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "version_added": "21",
+                  "version_removed": "25",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "version_added": "21",
+                  "version_removed": "25",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
               "safari": [
                 {
                   "version_added": "9"
                 },
                 {
                   "version_added": "7",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
                 }
               ],
               "safari_ios": [
@@ -293,15 +319,30 @@
                 },
                 {
                   "version_added": "8",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
                 }
               ],
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
-              }
+              "samsunginternet_android": [
+                {
+                  "version_added": "3.0"
+                },
+                {
+                  "version_added": "2.0",
+                  "version_removed": "3.0",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ],
+              "webview_android": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "version_added": "≤37",
+                  "version_removed": "38",
+                  "notes": "Supports a subset of the syntax for resolution switching (using the <code>x</code> descriptor), but not the full syntax that can be used with <code>sizes</code> (using the <code>w</code> descriptor)."
+                }
+              ]
             },
             "status": {
               "experimental": false,
