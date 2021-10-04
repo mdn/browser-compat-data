@@ -267,6 +267,10 @@ The following table indicates initial versions for browsers in BCD. These are th
 
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
+- Chrome
+  - "≤15" (the earliest Chrome version testable in BrowserStack and possibly earlier)
+- Firefox
+  - "≤4" (the earliest Firefox version testable in BrowserStack and possibly earlier)
 - Edge
   - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
   - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
