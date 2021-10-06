@@ -1433,7 +1433,7 @@ February 11, 2021
 
 **Notable changes**
 
-- We've adopted [a new data guideline for interface mixins](docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
+- We've adopted [a new data guideline for interface mixins](docs/data-guidelines.md#mixins). From v3.1.0, new data for [interface mixins](https://webidl.spec.whatwg.org/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
 
   For example, `HTMLHyperlinkElementUtils` attributes are now represented on `HTMLAnchorElement` and `HTMLAreaElement` directly.
 
