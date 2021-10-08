@@ -270,7 +270,7 @@ For certain browsers, ranged versions are allowed as it is sometimes impractical
 - Chrome
   - "≤15" (the earliest Chrome version testable in BrowserStack and possibly earlier)
 - Firefox
-  - "≤4" (the earliest Firefox version testable in BrowserStack and possibly earlier)
+  - "≤4" (the earliest Firefox version testable in BrowserStack that doesn't leave a gap in data and possibly earlier)
 - Edge
   - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
   - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
