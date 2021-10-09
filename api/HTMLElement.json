@@ -391,10 +391,10 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "93"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "93"
             },
             "ie": {
               "version_added": false
@@ -1075,25 +1075,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.forms.enterkeyhint",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "94"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "94",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.forms.enterkeyhint",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.forms.enterkeyhint",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "94"
             },
             "ie": {
               "version_added": false
