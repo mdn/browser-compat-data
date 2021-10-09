@@ -211,7 +211,7 @@ const combineStatements = (...data) => {
     }
 
     for (const i in sections[k]) {
-      if (i == 0) continue;
+      if (i === 0) continue;
       let newStatement = sections[k][i];
 
       let currentVA = currentStatement.version_added;
@@ -324,7 +324,7 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
   let chromeNull = sourceData.version_added === null;
 
   if (chromeFalse) {
-    if (sourceData.version_removed <= 79) {
+    if (compareVersions.compare(sourceData.version_removed, '79', '<=')) {
       // If this feature was removed before Chrome 79, ignore
       return {};
     }
@@ -337,7 +337,7 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
     if (sourceData.version_added === true) {
       newData.version_added =
         originalData.version_added === true ? '≤18' : true;
-    } else if (Number(sourceData.version_added) <= 79) {
+    } else if (compareVersions.compare(sourceData.version_added, '79', '<=')) {
       newData.version_added =
         originalData.version_added === null ? '≤79' : '79';
     } else {
@@ -661,8 +661,7 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
     webview_android: bumpWebView,
   };
 
-  let bumpFunction =
-    bumpFunctions[destination] || bumpFunctions.generic;
+  let bumpFunction = bumpFunctions[destination] || bumpFunctions.generic;
   return bumpFunction(originalData, data, source);
 };
 
