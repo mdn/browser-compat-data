@@ -325,7 +325,7 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
 
   if (chromeFalse) {
     if (sourceData.version_removed <= 79) {
-      // If this feature was removed before Edgium existed, ignore
+      // If this feature was removed before Chrome 79, ignore
       return {};
     }
     if (originalData.version_added && !originalData.version_removed) {
@@ -662,7 +662,7 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
   };
 
   let bumpFunction =
-    bumpFunctions[destination in bumpFunctions ? destination : 'generic'];
+    bumpFunctions[destination] || bumpFunctions.generic;
   return bumpFunction(originalData, data, source);
 };
 
