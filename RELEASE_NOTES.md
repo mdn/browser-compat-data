@@ -20,6 +20,7 @@ October 12, 2021
   - `api.HTMLMediaElement.onmozinterruptend` ([#12094](https://github.com/mdn/browser-compat-data/pull/12094))
   - `api.MouseWheelEvent` ([#12565](https://github.com/mdn/browser-compat-data/pull/12565))
   - `api.PayerErrors` ([#12768](https://github.com/mdn/browser-compat-data/pull/12768))
+  - `api.PaymentCurrencyAmount` ([#12794](https://github.com/mdn/browser-compat-data/pull/12794))
   - `api.PerformanceFrameTiming` ([#12718](https://github.com/mdn/browser-compat-data/pull/12718))
   - `api.PositionOptions` ([#12770](https://github.com/mdn/browser-compat-data/pull/12770))
   - `api.SourceBuffer.trackDefaults` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
