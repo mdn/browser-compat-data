@@ -6,6 +6,8 @@ October 12, 2021
 
 ### Notable changes
 
+- To no longer expose mixins, `api.Window.performance` has been moved to `api.performance` ([#12462](https://github.com/mdn/browser-compat-data/pull/12462)).
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.BasicCardRequest` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
