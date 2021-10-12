@@ -21,6 +21,7 @@ October 12, 2021
   - `api.MouseWheelEvent` ([#12565](https://github.com/mdn/browser-compat-data/pull/12565))
   - `api.PayerErrors` ([#12768](https://github.com/mdn/browser-compat-data/pull/12768))
   - `api.PerformanceFrameTiming` ([#12718](https://github.com/mdn/browser-compat-data/pull/12718))
+  - `api.PositionOptions` ([#12770](https://github.com/mdn/browser-compat-data/pull/12770))
   - `api.SourceBuffer.trackDefaults` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
   - `api.TrackDefault` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
   - `api.Window.location.window_location_origin` ([#12638](https://github.com/mdn/browser-compat-data/pull/12638))
