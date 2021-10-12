@@ -6,7 +6,9 @@ October 12, 2021
 
 ### Notable changes
 
-- To no longer expose mixins, `api.Window.performance` has been moved to `api.performance` ([#12462](https://github.com/mdn/browser-compat-data/pull/12462)).
+- The dictionary `api.ScrollToOptions` has been removed and replaced by parameter features on methods that consume the dictionary. ([#12490](https://github.com/mdn/browser-compat-data/pull/12490))
+
+- To no longer expose global mixins, `api.Window.performance` has been moved to `api.performance` ([#12462](https://github.com/mdn/browser-compat-data/pull/12462)).
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
