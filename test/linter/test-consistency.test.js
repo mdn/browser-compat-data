@@ -40,7 +40,6 @@ describe('ConsistencyChecker.getVersionAdded()', function () {
       ]),
       null,
     );
-
     assert.equal(
       check.getVersionAdded([
         { version_added: '87' },
