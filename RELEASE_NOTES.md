@@ -1,5 +1,51 @@
 # Release notes
 
+## [v4.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.6)
+
+October 12, 2021
+
+### Notable changes
+
+- The dictionary `api.ScrollToOptions` has been removed and replaced by parameter features on methods that consume the dictionary. ([#12490](https://github.com/mdn/browser-compat-data/pull/12490))
+
+- To no longer expose global mixins, `api.Window.performance` has been moved to `api.performance`. ([#12462](https://github.com/mdn/browser-compat-data/pull/12462))
+
+- To correct capitalization, the features `api.TextTrackList.addTrack_event` and `api.TextTrackList.removeTrack_event` were renamed to `api.TextTrackList.addtrack_event` and `api.TextTrackList.removetrack_event` respectively. ([#12723](https://github.com/mdn/browser-compat-data/pull/12723))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.BasicCardRequest` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
+  - `api.BasicCardResponse` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
+  - `api.CanvasRenderingContext2D.drawImage.smoothing_downscaling` ([#12796](https://github.com/mdn/browser-compat-data/pull/12796))
+  - `api.HTMLMediaElement.onmozinterruptbegin` ([#12094](https://github.com/mdn/browser-compat-data/pull/)12094)
+  - `api.HTMLMediaElement.onmozinterruptend` ([#12094](https://github.com/mdn/browser-compat-data/pull/12094))
+  - `api.KeyboardEvent.getModifierState.fnlock_parameter` ([#12813](https://github.com/mdn/browser-compat-data/pull/12813))
+  - `api.KeyboardEvent.getModifierState.hyper_parameter` ([#12813](https://github.com/mdn/browser-compat-data/pull/12813))
+  - `api.KeyboardEvent.getModifierState.super_parameter` ([#12813](https://github.com/mdn/browser-compat-data/pull/12813))
+  - `api.KeyboardEvent.getModifierState.symbollock_parameter` ([#12813](https://github.com/mdn/browser-compat-data/pull/12813))
+  - `api.MouseWheelEvent` ([#12565](https://github.com/mdn/browser-compat-data/pull/12565))
+  - `api.PayerErrors` ([#12768](https://github.com/mdn/browser-compat-data/pull/12768))
+  - `api.PaymentCurrencyAmount` ([#12794](https://github.com/mdn/browser-compat-data/pull/12794))
+  - `api.PerformanceFrameTiming` ([#12718](https://github.com/mdn/browser-compat-data/pull/12718))
+  - `api.PositionOptions` ([#12770](https://github.com/mdn/browser-compat-data/pull/12770))
+  - `api.SourceBuffer.trackDefaults` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
+  - `api.StorageEstimate` ([#12772](https://github.com/mdn/browser-compat-data/pull/12772))
+  - `api.TrackDefault` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
+  - `api.Window.location.window_location_origin` ([#12638](https://github.com/mdn/browser-compat-data/pull/12638))
+  - `api.Window.mozAnimationStartTime` ([#12632](https://github.com/mdn/browser-compat-data/pull/12632))
+  - `api.Window.pkcs11` ([#12639](https://github.com/mdn/browser-compat-data/pull/12639))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 19 contributors have changed 104 files with 3,615 additions and 4,534 deletions in 84 commits ([`v4.0.5...v4.0.6`](https://github.com/mdn/browser-compat-data/compare/v4.0.5...v4.0.6))
+- 13,389 total features
+- 810 total contributors
+- 3,611 total stargazers
+
 ## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
 
 September 23, 2021
