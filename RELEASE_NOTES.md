@@ -23,6 +23,7 @@ October 12, 2021
   - `api.PerformanceFrameTiming` ([#12718](https://github.com/mdn/browser-compat-data/pull/12718))
   - `api.PositionOptions` ([#12770](https://github.com/mdn/browser-compat-data/pull/12770))
   - `api.SourceBuffer.trackDefaults` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
+  - `api.StorageEstimate` ([#12772](https://github.com/mdn/browser-compat-data/pull/12772))
   - `api.TrackDefault` ([#12703](https://github.com/mdn/browser-compat-data/pull/12703))
   - `api.Window.location.window_location_origin` ([#12638](https://github.com/mdn/browser-compat-data/pull/12638))
   - `api.Window.mozAnimationStartTime` ([#12632](https://github.com/mdn/browser-compat-data/pull/12632))
