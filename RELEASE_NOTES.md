@@ -16,6 +16,7 @@ October 12, 2021
 
   - `api.BasicCardRequest` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
   - `api.BasicCardResponse` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
+  - `api.CanvasRenderingContext2D.drawImage.smoothing_downscaling` ([#12796](https://github.com/mdn/browser-compat-data/pull/12796))
   - `api.HTMLMediaElement.onmozinterruptbegin` ([#12094](https://github.com/mdn/browser-compat-data/pull/)12094)
   - `api.HTMLMediaElement.onmozinterruptend` ([#12094](https://github.com/mdn/browser-compat-data/pull/12094))
   - `api.MouseWheelEvent` ([#12565](https://github.com/mdn/browser-compat-data/pull/12565))
