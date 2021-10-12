@@ -2,7 +2,14 @@
 
 ## [v4.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.6)
 
-RELEASE DATE TK
+October 12, 2021
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.HTMLMediaElement.onmozinterruptbegin` [#12094](https://github.com/mdn/browser-compat-data/pull/12094)
+  - `api.HTMLMediaElement.onmozinterruptend` [#12094](https://github.com/mdn/browser-compat-data/pull/12094)
 
 ## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
 
