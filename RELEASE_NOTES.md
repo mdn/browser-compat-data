@@ -10,6 +10,8 @@ October 12, 2021
 
 - To no longer expose global mixins, `api.Window.performance` has been moved to `api.performance`. ([#12462](https://github.com/mdn/browser-compat-data/pull/12462))
 
+- To correct capitalization, the features `api.TextTrackList.addTrack_event` and `api.TextTrackList.removeTrack_event` were renamed to `api.TextTrackList.addtrack_event` and `api.TextTrackList.removetrack_event` respectively. ([#12723](https://github.com/mdn/browser-compat-data/pull/12723))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.BasicCardRequest` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
