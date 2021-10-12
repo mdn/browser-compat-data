@@ -35,6 +35,17 @@ October 12, 2021
   - `api.Window.mozAnimationStartTime` ([#12632](https://github.com/mdn/browser-compat-data/pull/12632))
   - `api.Window.pkcs11` ([#12639](https://github.com/mdn/browser-compat-data/pull/12639))
 
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 19 contributors have changed 104 files with 3,615 additions and 4,534 deletions in 84 commits ([`v4.0.5...v4.0.6`](https://github.com/mdn/browser-compat-data/compare/v4.0.5...v4.0.6))
+- 13,389 total features
+- 810 total contributors
+- 3,611 total stargazers
+
 ## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
 
 September 23, 2021
