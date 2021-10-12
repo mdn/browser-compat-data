@@ -8,7 +8,7 @@ October 12, 2021
 
 - The dictionary `api.ScrollToOptions` has been removed and replaced by parameter features on methods that consume the dictionary. ([#12490](https://github.com/mdn/browser-compat-data/pull/12490))
 
-- To no longer expose global mixins, `api.Window.performance` has been moved to `api.performance` ([#12462](https://github.com/mdn/browser-compat-data/pull/12462)).
+- To no longer expose global mixins, `api.Window.performance` has been moved to `api.performance`. ([#12462](https://github.com/mdn/browser-compat-data/pull/12462))
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
@@ -16,6 +16,7 @@ October 12, 2021
   - `api.BasicCardResponse` ([#12367](https://github.com/mdn/browser-compat-data/pull/12367))
   - `api.HTMLMediaElement.onmozinterruptbegin` ([#12094](https://github.com/mdn/browser-compat-data/pull/)12094)
   - `api.HTMLMediaElement.onmozinterruptend` ([#12094](https://github.com/mdn/browser-compat-data/pull/12094))
+  - `api.MouseWheelEvent` ([#12565](https://github.com/mdn/browser-compat-data/pull/12565))
 
 ## [v4.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.5)
 
