@@ -313,7 +313,7 @@ When attributes and methods are moved between interfaces in specifications and i
 
 **When members are moved up the prototype chain**
 
-For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported prior to the move, then use `partial_implementation` and notes.
+For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported before the move, then use `partial_implementation` and notes.
 
 For interfaces, use the version when the interface itself is first supported. If there are members supported earlier than the interface itself was introduced, then use `partial_implementation` and notes for that range of versions.
 
