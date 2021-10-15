@@ -178,13 +178,12 @@ This decision was made in [#3953, under the expectation that most users are like
 
 Some browsers have backport releases, where a feature is added or removed in two or more versions at once. If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Release lines](#release-lines) guideline). In some cases, however, you must set the the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
-Known backport releases include the following:
-
-- Safari
-  - 4.1 is a backport of 5.0
-  - 6.1 is a backport of 7.0
-  - 6.2 is a backport of 8.0
-  - 7.1 is a backport of 8.0
+| If the browser and its version is... | then set the version to... |
+| ------------------------------------ | -------------------------- |
+| Safari 4.1                           | Safari 5.0                 |
+| Safari 6.1                           | Safari 7.0                 |
+| Safari 6.2                           | Safari 8.0                 |
+| Safari 7.1                           | Safari 8.0                 |
 
 This decision was made in [#4679](https://github.com/mdn/browser-compat-data/issues/4679) and [#9423](https://github.com/mdn/browser-compat-data/issues/9423).
 
