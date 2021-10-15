@@ -176,7 +176,7 @@ This decision was made in [#3953, under the expectation that most users are like
 
 ## Backported releases
 
-Some browsers have created backport releases to include all or most of the features in a new major version, targeted for older operating systems. If a feature is found to be supported in one of these backport releases, set the verion number to the following major version. For example, if a new feature was added in Safari 7.0 and it is present in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+Some browsers have backport releases, where a feature is added or removed in two or more versions at once. If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Release lines](#release-lines) guideline). In some cases, however, you must set the the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
 Known backport releases include the following:
 
