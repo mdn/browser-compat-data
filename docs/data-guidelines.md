@@ -239,7 +239,7 @@ This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-dat
 
 ## Mixins
 
-[Interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
+[Interface mixins](https://webidl.spec.whatwg.org/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
 
 For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
 
@@ -305,7 +305,7 @@ This guideline was proposed and adopted in [#10509](https://github.com/mdn/brows
 
 ## APIs moved on the prototype chain
 
-[Web IDL interfaces](https://heycam.github.io/webidl/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
+[Web IDL interfaces](https://webidl.spec.whatwg.org/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
 
 Some of these interfaces are [abstract](https://en.wikipedia.org/wiki/Abstract_type) and never have instances, while most are concrete and can be instantiated. For example, `BaseAudioContext` and `Node` are abstract, while `AudioContext` and `Element` are concrete.
 
@@ -313,7 +313,7 @@ When attributes and methods are moved between interfaces in specifications and i
 
 **When members are moved up the prototype chain**
 
-For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported prior to the move, then use `partial_implementation` and notes.
+For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported before the move, then use `partial_implementation` and notes.
 
 For interfaces, use the version when the interface itself is first supported. If there are members supported earlier than the interface itself was introduced, then use `partial_implementation` and notes for that range of versions.
 
@@ -337,3 +337,46 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
 This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+
+## Choosing `"preview"` values
+
+Prefer `"preview"` values for `version_added` and `version_removed` when the future stable version number is unknown or uncertain. Use `"preview"` when:
+
+- You can't be sure a feature will progress (informally, "ride the train") to a numbered stable release.
+
+  For example, use `"preview"` when a feature is explicitly limited to Chrome Canary builds, is supported in the current version of Canary, and is not supported in the same numbered beta and stable versions.
+
+- The next version number is unknown to BCD.
+
+  For example, a feature is supported in Safari Technology Preview only and is expected in the next release of Safari, but Apple has not announced the version number for the next release of Safari.
+
+Do not use `"preview"` for planned but not yet implemented support changes. In other words, if you can't test or use a feature in the current development version of the browser, then use `false` not `"preview"`.
+
+This guideline was adopted to protect the quality of stable data in the face of schedule uncertainty. To learn more about the adoption of `"preview"` values, see [#12344](https://github.com/mdn/browser-compat-data/issues/12344) and [#10334](https://github.com/mdn/browser-compat-data/pull/10334).
+
+## Methods returning promises (`returns_promise`)
+
+When a method returns a promise in some (but not all) browser releases, use a subfeature named `returns_promise` with description text `Returns a <code>Promise</code>` to record when the method returns a promise.
+
+For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded like this:
+
+```json
+{
+  "api": {
+    "HTMLMediaElement": {
+      "__compat": {},
+      "play": {
+        "__compat": {},
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a <code>Promise</code>",
+            "support": {}
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline is based on discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
