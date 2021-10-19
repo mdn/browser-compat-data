@@ -11,6 +11,7 @@ October 19, 2021
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.HTMLMediaElement.onerror` ([#12824](https://github.com/mdn/browser-compat-data/pull/12824))
+  - `api.MediaCapabilitiesInfo` ([#12836](https://github.com/mdn/browser-compat-data/pull/12836))
   - `api.RTCRtpTransceiverInit` ([#12832](https://github.com/mdn/browser-compat-data/pull/12832))
   - `api.VRLayerInit` ([#12818](https://github.com/mdn/browser-compat-data/pull/12818))
 
