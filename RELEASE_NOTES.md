@@ -6,6 +6,8 @@ October 19, 2021
 
 ### Notable changes
 
+- We've adopted a new data guideline to record data for historic Safari backport releases in a more consistent way. Some Safari releases have been omitted to avoid unexplained discontinuities in support. ([#11909](https://github.com/mdn/browser-compat-data/pull/11909))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.HTMLMediaElement.onerror` ([#12824](https://github.com/mdn/browser-compat-data/pull/12824))
