@@ -126,11 +126,6 @@ function processData(data, logger, path = '') {
       }
     }
     if (spec_url && spec_url.length !== 0) {
-      if (deprecated) {
-        logger.error(
-          chalk`{red → {bold ${path}} is marked as {bold deprecated}, but has a {bold spec_url}}`,
-        );
-      }
       if (!standard_track) {
         logger.error(
           chalk`{red → {bold ${path}} is marked as {bold non-standard}, but has a {bold spec_url}}`,
