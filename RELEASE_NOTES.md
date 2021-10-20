@@ -1,5 +1,31 @@
 # Release notes
 
+## [v4.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.7)
+
+October 19, 2021
+
+### Notable changes
+
+- We've adopted [a new data guideline to record data for historic Safari backport releases](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#backported-releases) in a more consistent way. Some Safari releases have been omitted to avoid unexplained discontinuities in support. ([#11909](https://github.com/mdn/browser-compat-data/pull/11909))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.HTMLMediaElement.onerror` ([#12824](https://github.com/mdn/browser-compat-data/pull/12824))
+  - `api.MediaCapabilitiesInfo` ([#12836](https://github.com/mdn/browser-compat-data/pull/12836))
+  - `api.RTCRtpTransceiverInit` ([#12832](https://github.com/mdn/browser-compat-data/pull/12832))
+  - `api.VRLayerInit` ([#12818](https://github.com/mdn/browser-compat-data/pull/12818))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 10 contributors have changed 122 files with 1,176 additions and 1,224 deletions in 47 commits ([`v4.0.6...4.0.7`](https://github.com/mdn/browser-compat-data/compare/v4.0.6...4.0.7))
+- 13,389 total features
+- 812 total contributors
+- 3,620 total stargazers
+
 ## [v4.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.6)
 
 October 12, 2021
