@@ -36,7 +36,9 @@
           },
           "nodejs": {
             "version_added": "15.0.0",
-            "notes": "Exported from the <code>crypto</code> module as <code>webcrypto</code> but not globally available."
+            "alternative_name": "crypto.webcrypto",
+            "partial_implementation": true,
+            "notes": "<code>Crypto</code> is not a concrete interface, but calling <code>require('crypto').webcrypto</code> returns an instance of the <code>Crypto</code> class."
           },
           "opera": {
             "version_added": "15"
@@ -150,7 +152,7 @@
               "version_added": "16.7.0"
             },
             "opera": {
-              "version_added": false
+              "version_added": "78"
             },
             "opera_android": {
               "version_added": false
