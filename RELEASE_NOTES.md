@@ -1,5 +1,34 @@
 # Release notes
 
+## [v4.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.8)
+
+October 26, 2021
+
+### Notable changes
+
+- Several features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features):
+
+  - `api.BaseAudioContext.createPeriodicWave.disableNormalisation_supported` was renamed to `api.BaseAudioContext.createPeriodicWave.constraints_disableNormalization_parameter` ([#12934](https://github.com/mdn/browser-compat-data/pull/12934))
+  - `api.History.pushState.title` was renamed to `api.History.pushState.title_parameter` ([#12951](https://github.com/mdn/browser-compat-data/pull/12951))
+  - `api.History.replaceState.title` was renamed to `api.History.replaceState.title_parameter` ([#12951](https://github.com/mdn/browser-compat-data/pull/12951))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Element.overflow_event` ([#12975](https://github.com/mdn/browser-compat-data/pull/12975))
+  - `api.Element.underflow_event` ([#12975](https://github.com/mdn/browser-compat-data/pull/12975))
+  - `api.WindowEventHandlers.onbeforeunload.custom_text_support` ([#13085](https://github.com/mdn/browser-compat-data/pull/13085))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 10 contributors have changed 111 files with 1,162 additions and 946 deletions in 60 commits ([`v4.0.7...v4.0.8`](https://github.com/mdn/browser-compat-data/compare/v4.0.7...v4.0.8))
+- 13,390 total features
+- 815 total contributors
+- 3,631 total stargazers
+
 ## [v4.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.7)
 
 October 19, 2021
