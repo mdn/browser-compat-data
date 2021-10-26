@@ -8,6 +8,10 @@ October 26, 2021
 
 - `api.BaseAudioContext.createPeriodicWave.disableNormalisation_supported` was renamed to `api.BaseAudioContext.createPeriodicWave.constraints_disableNormalization_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#12934](https://github.com/mdn/browser-compat-data/pull/12934))
 
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.WindowEventHandlers.onbeforeunload.custom_text_support` ([#13085](https://github.com/mdn/browser-compat-data/pull/13085))
+
 ## [v4.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.7)
 
 October 19, 2021
