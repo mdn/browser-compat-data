@@ -2,7 +2,11 @@
 
 ## [v4.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.8)
 
-RELEASE DATE TK
+October 26, 2021
+
+### Notable changes
+
+- `api.BaseAudioContext.createPeriodicWave.disableNormalisation_supported` was renamed to `api.BaseAudioContext.createPeriodicWave.constraints_disableNormalization_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#12934](https://github.com/mdn/browser-compat-data/pull/12934))
 
 ## [v4.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.7)
 
