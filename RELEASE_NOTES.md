@@ -6,7 +6,11 @@ October 26, 2021
 
 ### Notable changes
 
-- `api.BaseAudioContext.createPeriodicWave.disableNormalisation_supported` was renamed to `api.BaseAudioContext.createPeriodicWave.constraints_disableNormalization_parameter` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features). ([#12934](https://github.com/mdn/browser-compat-data/pull/12934))
+- Several features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features):
+
+  - `api.BaseAudioContext.createPeriodicWave.disableNormalisation_supported` was renamed to `api.BaseAudioContext.createPeriodicWave.constraints_disableNormalization_parameter` ([#12934](https://github.com/mdn/browser-compat-data/pull/12934))
+  - `api.History.pushState.title` was renamed to `api.History.pushState.title_parameter` ([#12951](https://github.com/mdn/browser-compat-data/pull/12951))
+  - `api.History.replaceState.title` was renamed to `api.History.replaceState.title_parameter` ([#12951](https://github.com/mdn/browser-compat-data/pull/12951))
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
