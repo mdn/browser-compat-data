@@ -10,6 +10,8 @@ October 26, 2021
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.Element.overflow_event` ([#12975](https://github.com/mdn/browser-compat-data/pull/12975))
+  - `api.Element.underflow_event` ([#12975](https://github.com/mdn/browser-compat-data/pull/12975))
   - `api.WindowEventHandlers.onbeforeunload.custom_text_support` ([#13085](https://github.com/mdn/browser-compat-data/pull/13085))
 
 ## [v4.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.7)
