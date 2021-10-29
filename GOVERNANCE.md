@@ -54,13 +54,15 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 #### List of current peers
 
-- Rachel Andrew (@rachelandrew)
-- Vinyl Da.i'gyu (@queengooborg)
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
-- Ryan Johnson (@escattone), Mozilla
+- Jean-Yves Perrier (@teoli2003), Open Web Docs
 - Joe Medley (@jpmedley), Google
+- Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
+- Rachel Andrew (@rachelandrew)
+- Ryan Johnson (@escattone), Mozilla
+- Vinyl Da.i'gyu (@queengooborg)
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
@@ -138,7 +140,7 @@ Any community member or Peer can ask that something be added to the next meeting
 
 The intention of the agenda is not to approve or review all patches. That should happen continuously on GitHub and be handled by the larger group of Peers. The exception to this is when defining how the schema should look (or when proposing an update), or when a PR discussion has stalled due to disagreement or inaction, and progress needs to be unblocked.
 
-Prior to each project meeting, the moderator will share the agenda with the owners. Owners can add any items they like to the agenda at the beginning of each meeting. The moderator and the owners cannot veto or remove items.
+Before each project meeting, the moderator will share the agenda with the owners. Owners can add any items they like to the agenda at the beginning of each meeting. The moderator and the owners cannot veto or remove items.
 
 The Owners may invite persons or representatives from certain projects to participate in a non-voting capacity.
 
@@ -164,12 +166,11 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
-- Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
-- Jean-Yves Perrier (@teoli2003) (Former project lead, schema design co-author)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
-- Kadir Topal (@atopal) (BCD co-owner until September 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
+- Kadir Topal (@atopal) (BCD co-owner until September 2020)
+- Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
 
 ## Credits
 
