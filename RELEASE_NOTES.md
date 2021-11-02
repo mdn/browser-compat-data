@@ -10,6 +10,8 @@ November 2, 2021
 
 - `api.IDBIndex.name.renaming_with_name_setter` was renamed to `api.IDBIndex.name.renaming_through_name_setter` to reflect the convention set by `api.IDBObjectStore.name.renaming_through_name_setter`. ([#13216](https://github.com/mdn/browser-compat-data/pull/13216))
 
+- `css.properties.break-inside.multicol_context.column` and `css.properties.break-inside.paged_context.page` were renamed to `css.properties.break-inside.multicol_context.avoid-column` and `css.properties.break-inside.paged_context.avoid-page` to reflect the actual names of the values they describe. ([#11924](https://github.com/mdn/browser-compat-data/pull/11924))
+
 - Several features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features):
 
   - `api.Response.Response.body_param_null` was renamed to `api.Response.Response.body_parameter_optional` ([#13076](https://github.com/mdn/browser-compat-data/pull/13076))
