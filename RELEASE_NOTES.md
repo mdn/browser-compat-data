@@ -12,9 +12,7 @@ November 2, 2021
 
 - `css.properties.break-inside.multicol_context.column` and `css.properties.break-inside.paged_context.page` were renamed to `css.properties.break-inside.multicol_context.avoid-column` and `css.properties.break-inside.paged_context.avoid-page` to reflect the actual names of the values they describe. ([#11924](https://github.com/mdn/browser-compat-data/pull/11924))
 
-- Several features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features):
-
-  - `api.Response.Response.body_param_null` was renamed to `api.Response.Response.body_parameter_optional` ([#13076](https://github.com/mdn/browser-compat-data/pull/13076))
+- `api.Response.Response.body_param_null` was renamed to `api.Response.Response.body_parameter_optional` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features).
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
