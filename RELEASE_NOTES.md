@@ -18,6 +18,7 @@ November 2, 2021
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.EventTarget.removeEventListener.type_listener_parameters_optional` ([#13143](https://github.com/mdn/browser-compat-data/pull/13143))
   - `api.HTMLImageElement.error_event` ([#13006](https://github.com/mdn/browser-compat-data/pull/13006))
   - `api.MutationObserverInit` ([#12795](https://github.com/mdn/browser-compat-data/pull/12795))
 
