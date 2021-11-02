@@ -8,6 +8,10 @@ November 2, 2021
 
 - `api.MessageEvent.origin.USVString_type` was removed, since it recorded data about browser internals that are not observable to web developers. ([#13136](https://github.com/mdn/browser-compat-data/pull/13136))
 
+- Several features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features):
+
+  - `api.Response.Response.body_param_null` was renamed to `api.Response.Response.body_parameter_optional` ([#13076](https://github.com/mdn/browser-compat-data/pull/13076))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.HTMLImageElement.error_event` ([#13006](https://github.com/mdn/browser-compat-data/pull/13006))
