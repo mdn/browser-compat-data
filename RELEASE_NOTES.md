@@ -6,6 +6,8 @@ November 2, 2021
 
 ## Notable changes
 
+- `api.MessageEvent.origin.USVString_type` was removed, since it recorded data about browser internals that are not observable to web developers. ([#13136](https://github.com/mdn/browser-compat-data/pull/13136))
+
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
   - `api.HTMLImageElement.error_event` ([#13006](https://github.com/mdn/browser-compat-data/pull/13006))
