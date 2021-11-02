@@ -1,5 +1,36 @@
 # Release notes
 
+## [v4.0.9](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.9)
+
+November 2, 2021
+
+## Notable changes
+
+- `api.MessageEvent.origin.USVString_type` was removed, since it recorded data about browser internals that are not observable to web developers. ([#13136](https://github.com/mdn/browser-compat-data/pull/13136))
+
+- `api.IDBIndex.name.renaming_with_name_setter` was renamed to `api.IDBIndex.name.renaming_through_name_setter` to reflect the convention set by `api.IDBObjectStore.name.renaming_through_name_setter`. ([#13216](https://github.com/mdn/browser-compat-data/pull/13216))
+
+- `css.properties.break-inside.multicol_context.column` and `css.properties.break-inside.paged_context.page` were renamed to `css.properties.break-inside.multicol_context.avoid-column` and `css.properties.break-inside.paged_context.avoid-page` to reflect the actual names of the values they describe. ([#11924](https://github.com/mdn/browser-compat-data/pull/11924))
+
+- `api.Response.Response.body_param_null` was renamed to `api.Response.Response.body_parameter_optional` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features).
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.EventTarget.removeEventListener.type_listener_parameters_optional` ([#13143](https://github.com/mdn/browser-compat-data/pull/13143))
+  - `api.HTMLImageElement.error_event` ([#13006](https://github.com/mdn/browser-compat-data/pull/13006))
+  - `api.MutationObserverInit` ([#12795](https://github.com/mdn/browser-compat-data/pull/12795))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 11 contributors have changed 89 files with 1,314 additions and 1,880 deletions in 142 commits ([`v4.0.8...v4.0.9`](https://github.com/mdn/browser-compat-data/compare/v4.0.8...v4.0.9))
+- 13,378 total features
+- 819 total contributors
+- 3,642 total stargazers
+
 ## [v4.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.8)
 
 October 26, 2021
