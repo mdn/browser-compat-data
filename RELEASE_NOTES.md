@@ -4,6 +4,12 @@
 
 November 2, 2021
 
+## Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.MutationObserverInit` ([#12795](https://github.com/mdn/browser-compat-data/pull/12795))
+
 ## [v4.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.8)
 
 October 26, 2021
