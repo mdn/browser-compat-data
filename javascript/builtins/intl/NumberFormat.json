@@ -13,6 +13,9 @@
               "chrome_android": {
                 "version_added": "25"
               },
+              "deno": {
+                "version_added": "1.8"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -66,6 +69,9 @@
                 "chrome_android": {
                   "version_added": "25"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "12"
                 },
@@ -85,7 +91,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>NumberFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available for versions prior to 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>NumberFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
                   }
                 ],
                 "opera": {
@@ -113,15 +119,18 @@
                 "deprecated": false
               }
             },
-            "compactDisplay": {
+            "options_compactDisplay_parameter": {
               "__compat": {
-                "description": "<code>compactDisplay</code> option",
+                "description": "<code>options.compactDisplay</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "77"
                   },
                   "chrome_android": {
                     "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "79"
@@ -145,10 +154,10 @@
                     "version_added": "55"
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "14.1"
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "14.5"
                   },
                   "samsunginternet_android": {
                     "version_added": "12.0"
@@ -164,15 +173,88 @@
                 }
               }
             },
-            "currencySign": {
+            "options_currencyDisplay_parameter": {
               "__compat": {
-                "description": "<code>currencySign</code> option",
+                "description": "<code>options.currencyDisplay</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "77"
                   },
                   "chrome_android": {
                     "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "79"
+                  },
+                  "firefox": {
+                    "version_added": "78"
+                  },
+                  "firefox_android": {
+                    "version_added": "79"
+                  },
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "12.11.0"
+                  },
+                  "opera": {
+                    "version_added": "64"
+                  },
+                  "opera_android": {
+                    "version_added": "55"
+                  },
+                  "safari": [
+                    {
+                      "version_added": "14.1"
+                    },
+                    {
+                      "version_added": "10",
+                      "version_removed": "14.1",
+                      "partial_implementation": true,
+                      "notes": "Doesn't support <code>currencyDisplay: 'narrowSymbol'</code>."
+                    }
+                  ],
+                  "safari_ios": [
+                    {
+                      "version_added": "14.5"
+                    },
+                    {
+                      "version_added": "10",
+                      "version_removed": "14.5",
+                      "partial_implementation": true,
+                      "notes": "Doesn't support <code>currencyDisplay: 'narrowSymbol'</code>."
+                    }
+                  ],
+                  "samsunginternet_android": {
+                    "version_added": "12.0"
+                  },
+                  "webview_android": {
+                    "version_added": "77"
+                  }
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_currencySign_parameter": {
+              "__compat": {
+                "description": "<code>options.currencySign</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "77"
+                  },
+                  "chrome_android": {
+                    "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "79"
@@ -196,10 +278,10 @@
                     "version_added": "55"
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "14.1"
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "14.5"
                   },
                   "samsunginternet_android": {
                     "version_added": "12.0"
@@ -215,15 +297,18 @@
                 }
               }
             },
-            "notation": {
+            "options_notation_parameter": {
               "__compat": {
-                "description": "<code>notation</code> option",
+                "description": "<code>options.notation</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "77"
                   },
                   "chrome_android": {
                     "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "79"
@@ -247,10 +332,10 @@
                     "version_added": "55"
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "14.1"
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "14.5"
                   },
                   "samsunginternet_android": {
                     "version_added": "12.0"
@@ -266,15 +351,18 @@
                 }
               }
             },
-            "signDisplay": {
+            "options_signDisplay_parameter": {
               "__compat": {
-                "description": "<code>signDisplay</code> option",
+                "description": "<code>options.signDisplay</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "77"
                   },
                   "chrome_android": {
                     "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "79"
@@ -298,10 +386,10 @@
                     "version_added": "55"
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "14.1"
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "14.5"
                   },
                   "samsunginternet_android": {
                     "version_added": "12.0"
@@ -317,15 +405,18 @@
                 }
               }
             },
-            "unit": {
+            "options_unit_parameter": {
               "__compat": {
-                "description": "<code>unit</code> option",
+                "description": "<code>options.unit</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "77"
                   },
                   "chrome_android": {
                     "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "79"
@@ -349,10 +440,10 @@
                     "version_added": "55"
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "14.1"
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "14.5"
                   },
                   "samsunginternet_android": {
                     "version_added": "12.0"
@@ -368,15 +459,18 @@
                 }
               }
             },
-            "unitDisplay": {
+            "options_unitDisplay_parameter": {
               "__compat": {
-                "description": "<code>unitDisplay</code> option",
+                "description": "<code>options.unitDisplay</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "77"
                   },
                   "chrome_android": {
                     "version_added": "77"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "79"
@@ -400,10 +494,10 @@
                     "version_added": "55"
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "14.1"
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "14.5"
                   },
                   "samsunginternet_android": {
                     "version_added": "12.0"
@@ -430,6 +524,9 @@
                 },
                 "chrome_android": {
                   "version_added": "25"
+                },
+                "deno": {
+                  "version_added": "1.8"
                 },
                 "edge": {
                   "version_added": "12",
@@ -486,6 +583,9 @@
                 "chrome_android": {
                   "version_added": "64"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "12"
                 },
@@ -538,6 +638,9 @@
                 },
                 "chrome_android": {
                   "version_added": "25"
+                },
+                "deno": {
+                  "version_added": "1.8"
                 },
                 "edge": {
                   "version_added": "12"
@@ -592,6 +695,9 @@
                 "chrome_android": {
                   "version_added": "25"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "12"
                 },
@@ -611,7 +717,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. To make full ICU (locale) data available for versions prior to 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
                   }
                 ],
                 "opera": {

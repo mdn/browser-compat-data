@@ -165,34 +165,17 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": [
-                {
-                  "version_added": "55",
-                  "notes": [
-                    "The user will be prompted again for permissions that have been previously granted and then removed.",
-                    "It's not possible to request permissions from a popup or a sidebar document."
-                  ]
-                },
-                {
-                  "version_added": "56",
-                  "version_removed": "61",
-                  "notes": "It's not possible to request permissions from an options page that's embedded in about:addons. To request permissions from an options page, set the <code>open_in_tab</code> property in the <code>options_ui</code> manifest key, so the options page opens in its own tab."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "55",
-                  "notes": [
-                    "The user will be prompted again for permissions that have been previously granted and then removed.",
-                    "It's not possible to request permissions from a popup or a sidebar document."
-                  ]
-                },
-                {
-                  "version_added": "56",
-                  "version_removed": "61",
-                  "notes": "It's not possible to request permissions from an options page that's embedded in about:addons. To request permissions from an options page, set the <code>open_in_tab</code> property in the <code>options_ui</code> manifest key, so the options page opens in its own tab."
-                }
-              ],
+              "firefox": {
+                "version_added": "55",
+                "notes": [
+                  "It's not possible to request permissions from a sidebar document (<a href='https://bugzil.la/1493396'>bug 1493396</a>).",
+                  "Before version 75, permissions cannot be requested from popup panels (see <a href='https://bugzil.la/1432083'>bug 1432083</a>).",
+                  "Before version 61, permissions cannot be requested from options pages embedded in <code>about:addons</code> (see <a href='https://bugzil.la/1382953'>bug 1382953</a>)."
+                ]
+              },
+              "firefox_android": {
+                "version_added": true
+              },
               "opera": {
                 "version_added": true
               },

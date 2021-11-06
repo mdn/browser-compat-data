@@ -3,6 +3,7 @@
     "SharedWorker": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker",
+        "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworker-interface",
         "support": {
           "chrome": {
             "version_added": "4"
@@ -31,10 +32,10 @@
           },
           "safari": {
             "version_added": "5",
-            "version_removed": "6.1"
+            "version_removed": "7"
           },
           "safari_ios": {
-            "version_added": "5.1",
+            "version_added": "5",
             "version_removed": "7"
           },
           "samsunginternet_android": {
@@ -54,6 +55,7 @@
       "SharedWorker": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker",
+          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworker-dev",
           "description": "<code>SharedWorker()</code> constructor",
           "support": {
             "chrome": {
@@ -83,10 +85,10 @@
             },
             "safari": {
               "version_added": "5",
-              "version_removed": "6.1"
+              "version_removed": "7"
             },
             "safari_ios": {
-              "version_added": "5.1",
+              "version_added": "5",
               "version_removed": "7"
             },
             "samsunginternet_android": {
@@ -108,13 +110,16 @@
             "description": "Strict MIME type checks for shared worker scripts",
             "support": {
               "chrome": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
               "edge": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
               "firefox": {
                 "version_added": "81"
@@ -126,10 +131,12 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
               "opera_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
               "safari": {
                 "version_added": false
@@ -138,10 +145,12 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
               "webview_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               }
             },
             "status": {
@@ -151,18 +160,18 @@
             }
           }
         },
-        "name_option": {
+        "options_name_parameter": {
           "__compat": {
-            "description": "<code>name</code> option",
+            "description": "<code>options.name</code> parameter",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "70"
               },
               "chrome_android": {
                 "version_added": false
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "55"
@@ -174,7 +183,7 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": "57"
               },
               "opera_android": {
                 "version_added": false
@@ -186,8 +195,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": "4.0",
-                "version_removed": "5.0"
+                "version_added": false
               },
               "webview_android": {
                 "version_added": false
@@ -201,9 +209,10 @@
           }
         }
       },
-      "port": {
+      "onerror": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker/port",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker/onerror",
+          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-abstractworker-onerror",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -232,10 +241,63 @@
             },
             "safari": {
               "version_added": "5",
-              "version_removed": "6.1"
+              "version_removed": "7"
             },
             "safari_ios": {
-              "version_added": "5.1",
+              "version_added": "5",
+              "version_removed": "7"
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0",
+              "version_removed": "5.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "port": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker/port",
+          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworker-port-dev",
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "29"
+            },
+            "firefox_android": {
+              "version_added": "33"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "10.6"
+            },
+            "opera_android": {
+              "version_added": "11",
+              "version_removed": "14"
+            },
+            "safari": {
+              "version_added": "5",
+              "version_removed": "7"
+            },
+            "safari_ios": {
+              "version_added": "5",
               "version_removed": "7"
             },
             "samsunginternet_android": {

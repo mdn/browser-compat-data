@@ -3,12 +3,16 @@
     "MessagePort": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort",
+        "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#message-ports",
         "support": {
           "chrome": {
             "version_added": "4"
           },
           "chrome_android": {
             "version_added": "18"
+          },
+          "deno": {
+            "version_added": "1.12"
           },
           "edge": {
             "version_added": "12"
@@ -36,7 +40,7 @@
             "version_added": "5"
           },
           "safari_ios": {
-            "version_added": "5.1"
+            "version_added": "4.2"
           },
           "samsunginternet_android": {
             "version_added": "1.0"
@@ -54,12 +58,16 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/close",
+          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-messageport-close-dev",
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.12"
             },
             "edge": {
               "version_added": "12"
@@ -86,7 +94,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -106,6 +114,7 @@
         "__compat": {
           "description": "<code>message</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/message_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -113,14 +122,17 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.12"
+            },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "41"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "41"
             },
             "ie": {
               "version_added": "10"
@@ -140,7 +152,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -160,12 +172,16 @@
         "__compat": {
           "description": "<code>messageerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
           "support": {
             "chrome": {
               "version_added": "60"
             },
             "chrome_android": {
               "version_added": "60"
+            },
+            "deno": {
+              "version_added": "1.12"
             },
             "edge": {
               "version_added": "18"
@@ -177,7 +193,7 @@
               "version_added": "57"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "nodejs": {
               "version_added": "14.5.0",
@@ -191,10 +207,12 @@
               "version_added": "47"
             },
             "safari": {
-              "version_added": null
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -213,12 +231,16 @@
       "onmessage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/onmessage",
+          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-messageport-onmessage",
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.12"
             },
             "edge": {
               "version_added": "12"
@@ -245,7 +267,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -264,12 +286,16 @@
       "onmessageerror": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/onmessageerror",
+          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-messageport-onmessageerror",
           "support": {
             "chrome": {
               "version_added": "60"
             },
             "chrome_android": {
               "version_added": "60"
+            },
+            "deno": {
+              "version_added": "1.12"
             },
             "edge": {
               "version_added": "18"
@@ -293,10 +319,12 @@
               "version_added": "44"
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -315,6 +343,7 @@
       "postMessage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage",
+          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-messageport-postmessage-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -322,6 +351,21 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": [
+              {
+                "version_added": "1.14",
+                "notes": "The <code>message</code> parameter does not support cloning <code>Blob</code> values."
+              },
+              {
+                "version_added": "1.12",
+                "version_removed": "1.14",
+                "partial_implementation": true,
+                "notes": [
+                  "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
+                  "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+                ]
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -347,7 +391,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -366,12 +410,16 @@
       "start": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/start",
+          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-messageport-start-dev",
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.12"
             },
             "edge": {
               "version_added": "12"
@@ -398,7 +446,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -419,10 +467,13 @@
           "description": "Available in workers",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.12"
             },
             "edge": {
               "version_added": "12"
@@ -434,28 +485,28 @@
               "version_added": "41"
             },
             "ie": {
-              "version_added": true
+              "version_added": "10"
             },
             "nodejs": {
               "version_added": true
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {

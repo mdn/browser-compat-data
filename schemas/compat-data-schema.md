@@ -10,27 +10,23 @@ Compatibility data is organized in top-level directories for each broad area cov
 `javascript`, and `webextensions`. Inside each of these directories is one or more
 JSON files containing the compatibility data.
 
-- [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
+- [api/](../api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
-- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
+- [css/](../css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.
 
-- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
+- [html/](../html) contains data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.
 
-- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
+- [http/](../http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.
 
-- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
+- [javascript/](../javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
 
-- [mathml/](https://github.com/mdn/browser-compat-data/tree/master/mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
+- [mathml/](../mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
 
-- [svg/](https://github.com/mdn/browser-compat-data/tree/master/svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
+- [svg/](../svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
 
-- [webdriver/](https://github.com/mdn/browser-compat-data/tree/master/webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
+- [webdriver/](../webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
 
-- [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
-
-- [xpath/](https://github.com/mdn/browser-compat-data/tree/master/xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
-
-- [xslt/](https://github.com/mdn/browser-compat-data/tree/master/xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
+- [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
 ### File and folder breakdown
 
@@ -107,7 +103,7 @@ The `__compat` object consists of the following:
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
+- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
 
 ### The `support` object
 
@@ -120,6 +116,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
+- `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
@@ -217,14 +214,14 @@ entirely unknown. Examples:
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was
-removed in. It may also be a Boolean value of (`true` or `false`), or the
-`null` value.
+Contains a string with the version number the sub-feature was removed in.
+It may also be `true`, meaning that it is unknown in which version support
+was removed.
 
 Default values:
 
 - If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
-- if `version_added` is set to `null`, the default value of `version_removed` is also `null`.
+- If `version_added` is set to `null`, the default value of `version_removed` is also `null`.
 
 Examples:
 
@@ -237,12 +234,12 @@ Examples:
 }
 ```
 
-- Not removed (default if `version_added` is not `null`):
+- Removed in some version after 3.5:
 
 ```json
 {
   "version_added": "3.5",
-  "version_removed": false
+  "version_removed": true
 }
 ```
 
@@ -271,24 +268,25 @@ The following table indicates initial versions for browsers in BCD. These are th
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
 - Edge
-  - "≤18" (supported in some version of EdgeHTML-based Edge)
-  - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+  - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
+  - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
 - Internet Explorer
-  - "≤6" (earliest IE version supported in BrowserStack)
+  - "≤6" (the earliest IE version testable in BrowserStack and possibly earlier)
+  - "≤11" (the last IE version and possibly earlier)
 - Opera
-  - "≤12.1" (supported in some version of Presto-based Opera)
-  - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera and possibly earlier)
+  - "≤15" (the first Chromium-based Opera and possibly in Presto-based Opera)
 - Opera Android
-  - "≤12.1" (supported in some version of Presto-based Opera)
-  - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera and possibly earlier)
+  - "≤14" (the first Chromium-based Opera and possibly in Presto-based Opera)
 - Safari
-  - "≤4" (earliest Safari version supported in BrowserStack)
+  - "≤4" (the earliest Safari version testable in BrowserStack and possibly earlier)
 - Safari iOS
-  - "≤3" (earliest Safari iOS version supported in BrowserStack)
+  - "≤3" (the earliest Safari iOS version testable in BrowserStack and possibly earlier)
 - WebView Android
-  - "≤37" (supported in former Android versions prior to Chrome-based WebView)
+  - "≤37" (the first Chrome-based WebView and possibly previous Android versions)
 
-For example, the statement below means, "supported in at least version 37 and probably in earlier versions as well".
+For example, the statement below means, "supported in at least version 37 and possibly in earlier versions as well".
 
 ```json
 {
@@ -447,14 +445,19 @@ A `matches` object contains hints to help automatically detect whether source co
 The mandatory status property contains information about stability of the feature. It is
 an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value that indicates this functionality is
-  intended to be an addition to the Web platform. Some features are added to
-  conduct tests. Set to `false`, it means the functionality is mature, and no
-  significant incompatible changes are expected in the future.
-- `standard_track`: a `boolean` value indicating if the feature is part of an
-  active specification or specification process.
-- `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
-  It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+- `experimental`: a `boolean` value.
+
+  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+
+  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+
+- `standard_track`: a `boolean` value.
+
+  If `standard_track` is `true`, then the feature is part of an active specification or specification process.
+
+- `deprecated`: a `boolean` value.
+
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
 ```json
 "__compat": {

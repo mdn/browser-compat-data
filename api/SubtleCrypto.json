@@ -3,6 +3,7 @@
     "SubtleCrypto": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto",
+        "spec_url": "https://w3c.github.io/webcrypto/#subtlecrypto-interface",
         "support": {
           "chrome": {
             "version_added": "37"
@@ -10,45 +11,20 @@
           "chrome_android": {
             "version_added": "37"
           },
-          "edge": {
-            "version_added": "12",
-            "partial_implementation": true
+          "deno": {
+            "version_added": "1.11"
           },
-          "firefox": [
-            {
-              "version_added": "34"
-            },
-            {
-              "version_added": "32",
-              "version_removed": "34",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcrypto.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "34"
-            },
-            {
-              "version_added": "32",
-              "version_removed": "34",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcrypto.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "edge": {
+            "version_added": "12"
+          },
+          "firefox": {
+            "version_added": "34"
+          },
+          "firefox_android": {
+            "version_added": "34"
+          },
           "ie": {
-            "version_added": "11",
-            "partial_implementation": true
+            "version_added": "11"
           },
           "nodejs": {
             "version_added": "15.0.0"
@@ -61,19 +37,21 @@
           },
           "safari": [
             {
-              "version_added": "10.1"
+              "version_added": "11"
             },
             {
               "version_added": "7",
+              "version_removed": "11.1",
               "prefix": "WebKit"
             }
           ],
           "safari_ios": [
             {
-              "version_added": "10.3"
+              "version_added": "11"
             },
             {
               "version_added": "7",
+              "version_removed": "11.3",
               "prefix": "WebKit"
             }
           ],
@@ -93,6 +71,7 @@
       "decrypt": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-decrypt",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -100,43 +79,36 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
+            "deno": [
+              {
+                "version_added": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-GCM."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-CBC, AES-GCM."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -174,6 +146,7 @@
       "deriveBits": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveBits",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -181,46 +154,37 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: ECDH.",
-                "Not supported: HKDF, PBKDF2."
-              ]
+            "deno": [
+              {
+                "version_added": "1.15"
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDH."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: ECDH.",
+                  "Not supported: HKDF, PBKDF2."
+                ]
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": false
             },
@@ -260,6 +224,7 @@
       "deriveKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -267,46 +232,29 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: ECDH.",
-                "Not supported: HKDF, PBKDF2."
-              ]
+            "deno": {
+              "version_added": "1.15"
             },
-            "firefox": [
+            "edge": [
               {
-                "version_added": "34"
+                "version_added": "79"
               },
               {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: ECDH.",
+                  "Not supported: HKDF, PBKDF2."
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "34"
+            },
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": false
             },
@@ -346,6 +294,7 @@
       "digest": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-digest",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -353,43 +302,26 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: SHA-1."
+            "deno": {
+              "version_added": "1.11"
             },
-            "firefox": [
+            "edge": [
               {
-                "version_added": "34"
+                "version_added": "79"
               },
               {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: SHA-1."
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "34"
+            },
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -427,6 +359,7 @@
       "encrypt": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-encrypt",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -434,43 +367,36 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
+            "deno": [
+              {
+                "version_added": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-GCM."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-CBC, AES-GCM."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -508,6 +434,7 @@
       "exportKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-exportKey",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -515,46 +442,39 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: RSA-PSS, ECDSA, ECDH.",
-                "Not supported: AES-CTR."
-              ]
+            "deno": [
+              {
+                "version_added": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, ECDH."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: RSA-PSS, ECDSA, ECDH.",
+                  "Not supported: AES-CTR."
+                ]
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -597,6 +517,7 @@
       "generateKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-generateKey",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -604,46 +525,39 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: RSA-PSS, ECDSA, ECDH.",
-                "Not supported: AES-CTR."
-              ]
+            "deno": [
+              {
+                "version_added": "1.14",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA P-521, ECDH P-521."
+              },
+              {
+                "version_added": "1.12",
+                "version_removed": "1.14",
+                "partial_implementation": true,
+                "notes": "Not supported: RSA-OAEP, ECDSA P-521, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: RSA-PSS, ECDSA, ECDH.",
+                  "Not supported: AES-CTR."
+                ]
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -685,6 +599,7 @@
       "importKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-importKey",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -692,46 +607,39 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: RSA-PSS, ECDSA, ECDH.",
-                "Not supported: AES-CTR, HKDF, PBKDF2."
-              ]
+            "deno": [
+              {
+                "version_added": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDH."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: RSA-PSS, ECDSA, ECDH.",
+                  "Not supported: AES-CTR, HKDF, PBKDF2."
+                ]
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -781,6 +689,9 @@
             "chrome_android": {
               "version_added": "60"
             },
+            "deno": {
+              "version_added": false
+            },
             "edge": {
               "version_added": "79"
             },
@@ -825,6 +736,7 @@
       "sign": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-sign",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -832,43 +744,28 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
+            "deno": {
+              "version_added": "1.12",
               "partial_implementation": true,
-              "notes": "Not supported: RSA-PSS, ECDSA."
+              "notes": "Not supported: ECDSA P-521."
             },
-            "firefox": [
+            "edge": [
               {
-                "version_added": "34"
+                "version_added": "79"
               },
               {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: RSA-PSS, ECDSA."
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "34"
+            },
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -907,6 +804,7 @@
       "unwrapKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-unwrapKey",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -914,43 +812,26 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
+            "deno": {
+              "version_added": false
             },
-            "firefox": [
+            "edge": [
               {
-                "version_added": "34"
+                "version_added": "79"
               },
               {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "34"
+            },
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -977,6 +858,9 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -989,6 +873,7 @@
       "verify": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-verify",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -996,43 +881,34 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: RSA-PSS, ECDSA."
+            "deno": [
+              {
+                "version_added": "1.14"
+              },
+              {
+                "version_removed": "1.14",
+                "version_added": "1.12",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, HMAC."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: RSA-PSS, ECDSA."
+              }
+            ],
+            "firefox": {
+              "version_added": "34"
             },
-            "firefox": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
@@ -1073,25 +949,46 @@
           "description": "Available in workers",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "37"
+            },
+            "chrome_android": {
+              "version_added": "37"
+            },
+            "deno": {
+              "version_added": "1.11"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "48"
             },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "nodejs": {
               "version_added": null
             },
             "opera": {
-              "version_added": null
+              "version_added": "24"
+            },
+            "opera_android": {
+              "version_added": "24"
             },
             "safari": {
-              "version_added": null
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -1104,6 +1001,7 @@
       "wrapKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey",
+          "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-wrapKey",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -1111,43 +1009,26 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
+            "deno": {
+              "version_added": "1.15"
             },
-            "firefox": [
+            "edge": [
               {
-                "version_added": "34"
+                "version_added": "79"
               },
               {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "34"
-              },
-              {
-                "version_added": "32",
-                "version_removed": "34",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcrypto.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "34"
+            },
+            "firefox_android": {
+              "version_added": "34"
+            },
             "ie": {
               "version_added": "11",
               "partial_implementation": true,

@@ -5,7 +5,7 @@
         "__compat": {
           "description": "&lt;color&gt;",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value",
-          "spec_url": "https://drafts.csswg.org/css-color/#typedef-color",
+          "spec_url": "https://drafts.csswg.org/css-color/#color-syntax",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -52,7 +52,8 @@
         },
         "alpha": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#rgba()",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/rgba()",
+            "spec_url": "https://drafts.csswg.org/css-color/#rgb-functions",
             "description": "Alpha color values (<code>rgba()</code>, <code>hsla()</code>)",
             "support": {
               "chrome": {
@@ -106,34 +107,12 @@
               "regex_token": "^#[0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})?$"
             },
             "support": {
-              "chrome": [
-                {
-                  "version_added": "62"
-                },
-                {
-                  "version_added": "52",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "chrome_android": [
-                {
-                  "version_added": "62"
-                },
-                {
-                  "version_added": "52",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
+              "chrome": {
+                "version_added": "62"
+              },
+              "chrome_android": {
+                "version_added": "62"
+              },
               "edge": {
                 "version_added": "79"
               },
@@ -146,34 +125,12 @@
               "ie": {
                 "version_added": false
               },
-              "opera": [
-                {
-                  "version_added": "49"
-                },
-                {
-                  "version_added": "39",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
-              "opera_android": [
-                {
-                  "version_added": "47"
-                },
-                {
-                  "version_added": "41",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
-                }
-              ],
+              "opera": {
+                "version_added": "49"
+              },
+              "opera_android": {
+                "version_added": "47"
+              },
               "safari": {
                 "version_added": "9.1"
               },
@@ -189,6 +146,210 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "color": {
+          "__compat": {
+            "description": "Profiled color values (<code>color()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color()",
+            "spec_url": "https://drafts.csswg.org/css-color/#color-function",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": [
+                {
+                  "version_added": "15"
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "15",
+                  "partial_implementation": true,
+                  "notes": "Only supports <code>display-p3</code> and <code>srgb</code> predefined color profiles."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15"
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "15",
+                  "partial_implementation": true,
+                  "notes": "Only supports <code>display-p3</code> and <code>srgb</code> predefined color profiles."
+                }
+              ],
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "color-contrast": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast()",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#colorcontrast",
+            "description": "<code>color-contrast()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-contrast()"
+                  }
+                ]
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-contrast()"
+                  }
+                ]
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "color-mix": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix()",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#color-mix",
+            "description": "<code>color-mix()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "88",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.color-mix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": "88",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.color-mix.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-mix()"
+                  }
+                ]
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-mix()"
+                  }
+                ]
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -293,7 +454,8 @@
         },
         "hsl": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#hsl()",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hsl()",
+            "spec_url": "https://drafts.csswg.org/css-color/#the-hsl-notation",
             "description": "HSL color values (<code>hsl()</code>)",
             "support": {
               "chrome": {
@@ -388,6 +550,56 @@
             }
           }
         },
+        "hwb": {
+          "__compat": {
+            "description": "HWB color values (<code>hwb()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hwb()",
+            "spec_url": "https://drafts.csswg.org/css-color/#the-hwb-notation",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "keyword_color_values": {
           "__compat": {
             "description": "Keyword color values",
@@ -433,6 +645,106 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "lab": {
+          "__compat": {
+            "description": "Lab color values (<code>lab()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lab()",
+            "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "lch": {
+          "__compat": {
+            "description": "LCH color values (<code>lch()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lch()",
+            "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -536,7 +848,8 @@
         },
         "rgb_functional_notation": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#rgb()",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/rgb()",
+            "spec_url": "https://drafts.csswg.org/css-color/#rgb-functions",
             "description": "RGB functional notation (<code>rgb()</code>)",
             "support": {
               "chrome": {

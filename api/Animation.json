@@ -3,6 +3,7 @@
     "Animation": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation",
+        "spec_url": "https://drafts.csswg.org/web-animations/#the-animation-interface",
         "support": {
           "chrome": [
             {
@@ -27,38 +28,12 @@
           "edge": {
             "version_added": "79"
           },
-          "firefox": [
-            {
-              "version_added": "48"
-            },
-            {
-              "version_added": "46",
-              "version_removed": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "48"
-            },
-            {
-              "version_added": "46",
-              "version_removed": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.core.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "48"
+          },
+          "firefox_android": {
+            "version_added": "48"
+          },
           "ie": {
             "version_added": false
           },
@@ -89,7 +64,7 @@
           ]
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -97,6 +72,7 @@
       "Animation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/Animation",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-animation",
           "description": "<code>Animation()</code> constructor",
           "support": {
             "chrome": {
@@ -108,38 +84,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -163,7 +113,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -172,6 +122,7 @@
       "cancel": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/cancel",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-cancel",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -182,38 +133,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -237,7 +162,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -246,50 +171,47 @@
       "commitStyles": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/commitStyles",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-commitstyles",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": "13.4",
-              "partial_implementation": true,
-              "notes": "Passes 13/27 <a href='https://wpt.fyi/results/web-animations/interfaces/Animation/commitStyles.html?label=master&label=stable&product=safari'>web platform tests</a>."
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -298,6 +220,7 @@
       "currentTime": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/currentTime",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-currenttime",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -308,38 +231,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -363,7 +260,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -372,6 +269,7 @@
       "effect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/effect",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-effect",
           "support": {
             "chrome": {
               "version_added": "75"
@@ -382,38 +280,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 51."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 51."
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -437,7 +309,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -446,6 +318,7 @@
       "finish": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/finish",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-finish",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -456,38 +329,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -511,7 +358,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -520,54 +367,31 @@
       "finished": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/finished",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-finished",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "46",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "46",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1"
@@ -576,14 +400,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -592,6 +416,7 @@
       "id": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/id",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-id",
           "support": {
             "chrome": {
               "version_added": "50"
@@ -602,38 +427,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -657,7 +456,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -666,6 +465,7 @@
       "oncancel": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/oncancel",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-oncancel",
           "support": {
             "chrome": {
               "version_added": "50"
@@ -676,38 +476,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -731,7 +505,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -740,6 +514,7 @@
       "onfinish": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/onfinish",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-onfinish",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -750,38 +525,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -805,7 +554,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -814,32 +563,31 @@
       "onremove": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/onremove",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-onremove",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1"
@@ -848,14 +596,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -864,6 +612,7 @@
       "pause": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/pause",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-pause",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -874,38 +623,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -929,7 +652,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -938,32 +661,33 @@
       "pending": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/pending",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-pending",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "76"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "76"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "59",
-              "notes": "Prior to version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href='https://developer.mozilla.org/docs/Web/API/Animation/playState'><code>Animation.playState</code></a>."
+              "notes": "Before version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href='https://developer.mozilla.org/docs/Web/API/Animation/playState'><code>Animation.playState</code></a>."
             },
             "firefox_android": {
               "version_added": "59",
-              "notes": "Prior to version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href='https://developer.mozilla.org/docs/Web/API/Animation/playState'><code>Animation.playState</code></a>."
+              "notes": "Before version 59, the pending status was reported by a <code><strong>\"pending\"</strong></code> value returned from <a href='https://developer.mozilla.org/docs/Web/API/Animation/playState'><code>Animation.playState</code></a>."
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "63"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "54"
             },
             "safari": {
               "version_added": "13.1"
@@ -972,14 +696,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "76"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -988,32 +712,31 @@
       "persist": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/persist",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-persist",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1"
@@ -1022,14 +745,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1038,6 +761,7 @@
       "play": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/play",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-play",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -1048,38 +772,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -1103,7 +801,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1112,6 +810,7 @@
       "playbackRate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/playbackRate",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-playbackrate",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -1122,38 +821,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -1177,7 +850,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1186,6 +859,7 @@
       "playState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/playState",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-playstate",
           "support": {
             "chrome": {
               "version_added": "39",
@@ -1198,40 +872,14 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48",
-                "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='https://developer.mozilla.org/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48",
-                "notes": "Prior to Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='https://developer.mozilla.org/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48",
+              "notes": "Before Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='https://developer.mozilla.org/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
+            },
+            "firefox_android": {
+              "version_added": "48",
+              "notes": "Before Firefox 59, this property returned <code>pending</code> for Animations with incomplete asynchronous operations but as of Firefox 59 this is indicated by the separate <a href='https://developer.mozilla.org/docs/Web/API/Animation/pending'><code>Animation.pending</code></a> property. This reflects recent changes to the specification."
+            },
             "ie": {
               "version_added": false
             },
@@ -1259,7 +907,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1268,54 +916,31 @@
       "ready": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/ready",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-ready",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "46",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "46",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1"
@@ -1324,14 +949,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1357,7 +982,7 @@
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -1382,7 +1007,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1391,32 +1016,31 @@
       "replaceState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/replaceState",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-replacestate",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1"
@@ -1425,14 +1049,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1441,6 +1065,7 @@
       "reverse": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/reverse",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-reverse",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -1451,38 +1076,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -1506,7 +1105,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1515,6 +1114,7 @@
       "startTime": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/startTime",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-starttime",
           "support": {
             "chrome": {
               "version_added": "39"
@@ -1525,38 +1125,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "version_added": "46",
-                "version_removed": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
             "ie": {
               "version_added": false
             },
@@ -1580,7 +1154,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1589,78 +1163,33 @@
       "timeline": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/timeline",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-timeline",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Currently Chrome Canary only"
+              "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
-            "firefox": [
-              {
-                "version_added": "75",
-                "notes": "Currently only the getter is supported"
-              },
-              {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.timelines.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "48",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 49."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.timelines.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "48",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.core.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "This property is supported in Firefox 48 but is read-only. It became writable in Firefox 49."
-              }
-            ],
+            "firefox": {
+              "version_added": "75",
+              "notes": "Currently only the getter is supported"
+            },
+            "firefox_android": {
+              "version_added": "79",
+              "notes": "Currently only the getter is supported"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": "13.1",
@@ -1671,14 +1200,14 @@
               "notes": "Currently only the getter is supported"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1687,15 +1216,16 @@
       "updatePlaybackRate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate",
+          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animation-updateplaybackrate",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "76"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "76"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "60"
@@ -1707,10 +1237,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "63"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "54"
             },
             "safari": {
               "version_added": "13.1"
@@ -1719,14 +1249,14 @@
               "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "76"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

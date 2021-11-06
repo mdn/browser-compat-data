@@ -3,6 +3,7 @@
     "HTMLCanvasElement": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement",
+        "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#htmlcanvaselement",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -23,15 +24,13 @@
             "version_added": "9"
           },
           "opera": {
-            "version_added": "9",
-            "notes": "Opera Mini 5.0 and later has partial support."
+            "version_added": "9"
           },
           "opera_android": {
-            "version_added": "10.1",
-            "notes": "Opera Mini 5.0 and later has partial support."
+            "version_added": "10.1"
           },
           "safari": {
-            "version_added": "3"
+            "version_added": "2"
           },
           "safari_ios": {
             "version_added": "1"
@@ -52,6 +51,7 @@
       "captureStream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream",
+          "spec_url": "https://w3c.github.io/mediacapture-fromelement/#dom-htmlcanvaselement-capturestream",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -100,6 +100,7 @@
       "getContext": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-getcontext-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -126,7 +127,7 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
               "version_added": "1"
@@ -146,7 +147,7 @@
         },
         "bitmaprenderer_context": {
           "__compat": {
-            "description": "bitmaprenderer context",
+            "description": "<code>bitmaprenderer</code> context",
             "support": {
               "chrome": {
                 "version_added": "56"
@@ -182,7 +183,7 @@
                 "version_added": "6.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "56"
               }
             },
             "status": {
@@ -190,163 +191,54 @@
               "standard_track": true,
               "deprecated": false
             }
-          }
-        },
-        "desynchronized": {
-          "__compat": {
-            "description": "<code>desynchronized</code> attribute",
-            "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
-            "support": {
-              "chrome": [
-                {
-                  "version_added": "81",
-                  "notes": "ChromeOS and Windows"
+          },
+          "options_alpha_parameter": {
+            "__compat": {
+              "description": "<code>options.alpha</code> parameter",
+              "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagebitmaprenderingcontextsettings-alpha",
+              "support": {
+                "chrome": {
+                  "version_added": "56"
                 },
-                {
-                  "version_added": "75",
-                  "notes": "ChromeOS only"
+                "chrome_android": {
+                  "version_added": "56"
                 },
-                {
-                  "version_added": "71",
-                  "alternative_name": "lowLatency"
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": "46"
+                },
+                "firefox_android": {
+                  "version_added": "46"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "43"
+                },
+                "opera_android": {
+                  "version_added": "43"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "56"
                 }
-              ],
-              "chrome_android": {
-                "version_added": false
               },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
               }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "failIfMajorPerformanceCaveat": {
-          "__compat": {
-            "description": "failIfMajorPerformanceCaveat attribute",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "41"
-              },
-              "firefox_android": {
-                "version_added": "41"
-              },
-              "ie": {
-                "version_added": true
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "powerPreference": {
-          "__compat": {
-            "description": "<code>powerPreference</code> attribute",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "63",
-                "partial_implementation": true,
-                "notes": "Firefox respects the GPU hint on macOS only."
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
             }
           }
         },
@@ -390,10 +282,15 @@
                   "alternative_name": "experimental-webgl"
                 }
               ],
-              "firefox_android": {
-                "version_added": true,
-                "alternative_name": "experimental-webgl"
-              },
+              "firefox_android": [
+                {
+                  "version_added": "24"
+                },
+                {
+                  "version_added": "4",
+                  "alternative_name": "experimental-webgl"
+                }
+              ],
               "ie": {
                 "version_added": "11",
                 "alternative_name": "experimental-webgl"
@@ -416,13 +313,24 @@
                   "alternative_name": "experimental-webgl"
                 }
               ],
-              "safari": {
-                "version_added": "5.1",
-                "alternative_name": "experimental-webgl"
-              },
-              "safari_ios": {
-                "version_added": null
-              },
+              "safari": [
+                {
+                  "version_added": "8"
+                },
+                {
+                  "version_added": "5.1",
+                  "alternative_name": "experimental-webgl"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "8"
+                },
+                {
+                  "version_added": "8",
+                  "alternative_name": "experimental-webgl"
+                }
+              ],
               "samsunginternet_android": [
                 {
                   "version_added": "2.0"
@@ -447,6 +355,212 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "options_alpha_parameter": {
+            "__compat": {
+              "description": "<code>options.alpha</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": {
+                  "version_added": "32"
+                },
+                "chrome_android": {
+                  "version_added": "32"
+                },
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "30"
+                },
+                "firefox_android": {
+                  "version_added": "30"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "19"
+                },
+                "opera_android": {
+                  "version_added": "19"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "2.0"
+                },
+                "webview_android": {
+                  "version_added": "37"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_desynchronized_parameter": {
+            "__compat": {
+              "description": "<code>options.desynchronized</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "81",
+                    "notes": "ChromeOS and Windows"
+                  },
+                  {
+                    "version_added": "75",
+                    "partial_implementation": true,
+                    "notes": "ChromeOS only"
+                  }
+                ],
+                "chrome_android": {
+                  "version_added": "75"
+                },
+                "edge": {
+                  "version_added": "81"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "68"
+                },
+                "opera_android": {
+                  "version_added": "54"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "11.0"
+                },
+                "webview_android": {
+                  "version_added": "75"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_failIfMajorPerformanceCaveat_parameter": {
+            "__compat": {
+              "description": "<code>options.failIfMajorPerformanceCaveat</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": {
+                  "version_added": "33"
+                },
+                "chrome_android": {
+                  "version_added": "33"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "41"
+                },
+                "firefox_android": {
+                  "version_added": "41"
+                },
+                "ie": {
+                  "version_added": "11"
+                },
+                "opera": {
+                  "version_added": "20"
+                },
+                "opera_android": {
+                  "version_added": "20"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "2.0"
+                },
+                "webview_android": {
+                  "version_added": "37"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_powerPreference_parameter": {
+            "__compat": {
+              "description": "<code>options.powerPreference</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63",
+                  "partial_implementation": true,
+                  "notes": "Firefox respects the GPU hint on macOS only."
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "webgl2_context": {
@@ -457,7 +571,7 @@
                 "version_added": "56"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "56"
               },
               "edge": {
                 "version_added": "79"
@@ -471,26 +585,32 @@
                   "alternative_name": "experimental-webgl2"
                 }
               ],
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox_android": [
+                {
+                  "version_added": "51"
+                },
+                {
+                  "version_added": "25",
+                  "alternative_name": "experimental-webgl2"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "43"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "43"
               },
               "safari": {
-                "version_added": false
+                "version_added": "15"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "15"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "6.0"
               },
               "webview_android": {
                 "version_added": "56"
@@ -501,47 +621,253 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "options_alpha_parameter": {
+            "__compat": {
+              "description": "<code>options.alpha</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": {
+                  "version_added": "56"
+                },
+                "chrome_android": {
+                  "version_added": "56"
+                },
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "30"
+                },
+                "firefox_android": {
+                  "version_added": "30"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "43"
+                },
+                "opera_android": {
+                  "version_added": "43"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "56"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_desynchronized_parameter": {
+            "__compat": {
+              "description": "<code>options.desynchronized</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "81",
+                    "notes": "ChromeOS and Windows"
+                  },
+                  {
+                    "version_added": "75",
+                    "partial_implementation": true,
+                    "notes": "ChromeOS only"
+                  }
+                ],
+                "chrome_android": {
+                  "version_added": "75"
+                },
+                "edge": {
+                  "version_added": "81"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "68"
+                },
+                "opera_android": {
+                  "version_added": "54"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "11.0"
+                },
+                "webview_android": {
+                  "version_added": "75"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_failIfMajorPerformanceCaveat_parameter": {
+            "__compat": {
+              "description": "<code>options.failIfMajorPerformanceCaveat</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": {
+                  "version_added": "56"
+                },
+                "chrome_android": {
+                  "version_added": "56"
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": "41"
+                },
+                "firefox_android": {
+                  "version_added": "41"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "43"
+                },
+                "opera_android": {
+                  "version_added": "43"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "6.0"
+                },
+                "webview_android": {
+                  "version_added": "56"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_powerPreference_parameter": {
+            "__compat": {
+              "description": "<code>options.powerPreference</code> parameter",
+              "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "63",
+                  "partial_implementation": true,
+                  "notes": "Firefox respects the GPU hint on macOS only."
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": false
+                },
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
-        "2d_alpha_context": {
+        "2d_context": {
           "__compat": {
-            "description": "2d alpha context attribute",
+            "description": "<code>2d</code> context",
             "support": {
               "chrome": {
-                "version_added": "32"
+                "version_added": "1"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "18"
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "12"
               },
               "firefox": {
-                "version_added": "30"
+                "version_added": "1.5"
               },
               "firefox_android": {
-                "version_added": "30"
+                "version_added": "4"
               },
               "ie": {
-                "version_added": false
+                "version_added": "9"
               },
               "opera": {
-                "version_added": true
+                "version_added": "9"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "10.1"
               },
               "safari": {
-                "version_added": false
+                "version_added": "2"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "1"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "1.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "1"
               }
             },
             "status": {
@@ -549,12 +875,119 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "options_alpha_parameter": {
+            "__compat": {
+              "description": "<code>options.alpha</code> parameter",
+              "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvasrenderingcontext2dsettings-alpha",
+              "support": {
+                "chrome": {
+                  "version_added": "32"
+                },
+                "chrome_android": {
+                  "version_added": "32"
+                },
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "30"
+                },
+                "firefox_android": {
+                  "version_added": "30"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "19"
+                },
+                "opera_android": {
+                  "version_added": "19"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "2.0"
+                },
+                "webview_android": {
+                  "version_added": "4.4.3"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_desynchronized_parameter": {
+            "__compat": {
+              "description": "<code>options.desynchronized</code> parameter",
+              "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvasrenderingcontext2dsettings-desynchronized",
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "81",
+                    "notes": "ChromeOS and Windows"
+                  },
+                  {
+                    "version_added": "75",
+                    "partial_implementation": true,
+                    "notes": "ChromeOS only"
+                  }
+                ],
+                "chrome_android": {
+                  "version_added": "75"
+                },
+                "edge": {
+                  "version_added": "81"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "68"
+                },
+                "opera_android": {
+                  "version_added": "54"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "11.0"
+                },
+                "webview_android": {
+                  "version_added": "75"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         }
       },
       "height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-height",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -751,6 +1184,7 @@
       "toBlob": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-toblob-dev",
           "support": {
             "chrome": {
               "version_added": "50"
@@ -803,9 +1237,9 @@
             "deprecated": false
           }
         },
-        "Image_quality": {
+        "quality_parameter": {
           "__compat": {
-            "description": "Image quality parameter",
+            "description": "<code>quality</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -855,6 +1289,7 @@
       "toDataURL": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-todataurl-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -890,7 +1325,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -903,6 +1338,7 @@
       "transferControlToOffscreen": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-transfercontroltooffscreen-dev",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -964,6 +1400,7 @@
         "__compat": {
           "description": "<code>webglcontextcreationerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextcreationerror_event",
+          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.4",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1013,6 +1450,7 @@
         "__compat": {
           "description": "<code>webglcontextlost</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextlost_event",
+          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1062,6 +1500,7 @@
         "__compat": {
           "description": "<code>webglcontextrestored</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextrestored_event",
+          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1110,6 +1549,7 @@
       "width": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-height",
           "support": {
             "chrome": {
               "version_added": "1"

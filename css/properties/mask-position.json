@@ -4,6 +4,7 @@
       "mask-position": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/mask-position",
+          "spec_url": "https://drafts.fxtf.org/css-masking/#the-mask-position",
           "support": {
             "chrome": {
               "prefix": "-webkit-",
@@ -13,41 +14,22 @@
               "prefix": "-webkit-",
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "18"
+            "edge": [
+              {
+                "prefix": "-webkit-",
+                "version_added": "79"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "79"
+              }
+            ],
+            "firefox": {
+              "version_added": "53"
             },
-            "firefox": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "20",
-                "version_removed": "53",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.masking.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "20",
-                "version_removed": "53",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.masking.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "53"
+            },
             "ie": {
               "version_added": false
             },
@@ -61,11 +43,11 @@
             },
             "safari": {
               "prefix": "-webkit-",
-              "version_added": "3.2"
+              "version_added": "3.1"
             },
             "safari_ios": {
               "prefix": "-webkit-",
-              "version_added": "3.2"
+              "version_added": "2"
             },
             "samsunginternet_android": {
               "prefix": "-webkit-",
@@ -100,39 +82,14 @@
                 "version_added": "18",
                 "version_removed": "79"
               },
-              "firefox": [
-                {
-                  "version_added": "53",
-                  "version_removed": "70"
-                },
-                {
-                  "version_added": "20",
-                  "version_removed": "53",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.masking.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "53"
-                },
-                {
-                  "version_added": "20",
-                  "version_removed": "53",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.masking.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "53",
+                "version_removed": "70"
+              },
+              "firefox_android": {
+                "version_added": "53",
+                "version_removed": "79"
+              },
               "ie": {
                 "version_added": false
               },
@@ -148,11 +105,11 @@
               },
               "safari": {
                 "prefix": "-webkit-",
-                "version_added": "3.2"
+                "version_added": "3.1"
               },
               "safari_ios": {
                 "prefix": "-webkit-",
-                "version_added": "3.2"
+                "version_added": "2"
               },
               "samsunginternet_android": {
                 "prefix": "-webkit-",

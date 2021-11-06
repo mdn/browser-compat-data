@@ -3,6 +3,7 @@
     "HTMLTrackElement": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement",
+        "spec_url": "https://html.spec.whatwg.org/multipage/media.html#htmltrackelement",
         "support": {
           "chrome": {
             "version_added": "23"
@@ -13,40 +14,14 @@
           "edge": {
             "version_added": "12"
           },
-          "firefox": [
-            {
-              "version_added": "31",
-              "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-            },
-            {
-              "version_added": "24",
-              "version_removed": "30",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webvtt.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "31",
-              "notes": "Prior to Firefox 50, text tracks would only load if the <track> element is in a document."
-            },
-            {
-              "version_added": "24",
-              "version_removed": "30",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webvtt.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "31",
+            "notes": "Before Firefox 50, text tracks would only load if the <track> element is in a document."
+          },
+          "firefox_android": {
+            "version_added": "31",
+            "notes": "Before Firefox 50, text tracks would only load if the <track> element is in a document."
+          },
           "ie": {
             "version_added": "10"
           },
@@ -78,13 +53,14 @@
       "cuechange_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/cuechange_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/media.html#event-media-cuechange",
           "description": "<code>cuechange</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "23"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "≤79"
@@ -99,22 +75,22 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -137,38 +113,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -211,38 +161,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -285,38 +209,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -359,38 +257,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -423,6 +295,7 @@
       "src": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src",
+          "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-track-src",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -433,40 +306,14 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31",
-                "notes": "Setting the <code>src</code> property did not work properly in versions prior to 50."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31",
-                "notes": "Setting the <code>src</code> property did not work properly in versions prior to 50."
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31",
+              "notes": "Before Firefox 50, setting the <code>src</code> property did not work properly."
+            },
+            "firefox_android": {
+              "version_added": "31",
+              "notes": "Before Firefox 50, setting the <code>src</code> property did not work properly."
+            },
             "ie": {
               "version_added": "10"
             },
@@ -509,38 +356,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -583,38 +404,12 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "31"
-              },
-              {
-                "version_added": "24",
-                "version_removed": "30",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webvtt.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
             "ie": {
               "version_added": "10"
             },

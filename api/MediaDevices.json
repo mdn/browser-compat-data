@@ -3,6 +3,7 @@
     "MediaDevices": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices",
+        "spec_url": "https://w3c.github.io/mediacapture-main/#mediadevices",
         "support": {
           "chrome": {
             "version_added": "47"
@@ -51,6 +52,7 @@
         "__compat": {
           "description": "<code>devicechange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event",
+          "spec_url": "https://w3c.github.io/mediacapture-main/#event-mediadevices-devicechange",
           "support": {
             "chrome": {
               "version_added": "57"
@@ -99,6 +101,7 @@
       "enumerateDevices": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
+          "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediadevices-enumeratedevices",
           "support": {
             "chrome": {
               "version_added": "47"
@@ -111,6 +114,9 @@
             },
             "firefox": [
               {
+                "version_added": "39"
+              },
+              {
                 "version_added": "63",
                 "flags": [
                   {
@@ -119,14 +125,14 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Prior to Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
-              },
-              {
-                "version_added": "39"
+                "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
               }
             ],
             "firefox_android": [
               {
+                "version_added": "39"
+              },
+              {
                 "version_added": "63",
                 "flags": [
                   {
@@ -135,10 +141,7 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Prior to Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
-              },
-              {
-                "version_added": "39"
+                "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
               }
             ],
             "ie": {
@@ -173,25 +176,12 @@
       "getDisplayMedia": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia",
+          "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-mediadevices-getdisplaymedia",
           "description": "<code>getDisplayMedia()</code>",
           "support": {
-            "chrome": [
-              {
-                "version_added": "72"
-              },
-              {
-                "version_added": "70",
-                "version_removed": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Available as a member of <code>Navigator</code> instead of <code>MediaDevices</code> in Chrome 70 and 71."
-              }
-            ],
+            "chrome": {
+              "version_added": "72"
+            },
             "chrome_android": {
               "version_added": false
             },
@@ -211,7 +201,7 @@
               {
                 "version_added": "33",
                 "version_removed": "66",
-                "notes": "Since Firefox 33 you can capture screen data using <code><a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>getUserMedia()</a></code>, with a <code>video</code> constraint called <code>mediaSource</code>. Prior to 52 it relied on a client-configurable list of allowed sites."
+                "notes": "Since Firefox 33 you can capture screen data using <code><a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>getUserMedia()</a></code>, with a <code>video</code> constraint called <code>mediaSource</code>. Before 52 it relied on a client-configurable list of allowed sites."
               }
             ],
             "firefox_android": {
@@ -221,23 +211,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "57",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Available as a member of <code>Navigator</code> instead of <code>MediaDevices</code> in Opera 57 and 58."
-              }
-            ],
+            "opera": {
+              "version_added": "60"
+            },
             "opera_android": {
               "version_added": false
             },
@@ -316,6 +292,7 @@
       "getSupportedConstraints": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints",
+          "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediadevices-getsupportedconstraints",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -364,6 +341,7 @@
       "getUserMedia": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia",
+          "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediadevices-getusermedia",
           "support": {
             "chrome": {
               "version_added": "53",
@@ -453,10 +431,10 @@
                 "version_added": "41"
               },
               "safari": {
-                "version_added": null
+                "version_added": "11"
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": "11"
               },
               "samsunginternet_android": {
                 "version_added": "6.0"
@@ -476,6 +454,7 @@
       "ondevicechange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/ondevicechange",
+          "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediadevices-ondevicechange",
           "support": {
             "chrome": {
               "version_added": "57"
@@ -486,23 +465,9 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "52"
-              },
-              {
-                "version_added": "51",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.ondevicechange.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "<code>MediaDevices.ondevicechange</code> is supported only on macOS."
-              }
-            ],
+            "firefox": {
+              "version_added": "52"
+            },
             "firefox_android": {
               "version_added": true
             },
@@ -535,21 +500,29 @@
           }
         }
       },
-      "stereo_audio_capture": {
+      "selectAudioOutput": {
         "__compat": {
-          "description": "Stereo audio capture",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/selectAudioOutput",
+          "spec_url": "https://w3c.github.io/mediacapture-output/#dom-mediadevices-selectaudiooutput",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": null
+              "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": {
-              "version_added": "55"
+              "version_added": "88",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.setsinkid.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -558,10 +531,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -570,14 +543,14 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": null
+              "version_added": false
             },
             "webview_android": {
-              "version_added": null
+              "version_added": false
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

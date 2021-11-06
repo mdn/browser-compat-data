@@ -4,6 +4,7 @@
       "appearance": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/appearance",
+          "spec_url": "https://drafts.csswg.org/css-ui/#appearance-switching",
           "support": {
             "chrome": [
               {
@@ -48,18 +49,6 @@
                 "version_added": "64",
                 "partial_implementation": true,
                 "prefix": "-webkit-"
-              },
-              {
-                "version_added": "62",
-                "partial_implementation": true,
-                "prefix": "-webkit-",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.webkit-appearance.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
               }
             ],
             "firefox_android": [
@@ -75,18 +64,6 @@
                 "version_added": "64",
                 "partial_implementation": true,
                 "prefix": "-webkit-"
-              },
-              {
-                "version_added": "62",
-                "partial_implementation": true,
-                "prefix": "-webkit-",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.webkit-appearance.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
               }
             ],
             "ie": {
@@ -122,11 +99,16 @@
               "partial_implementation": true,
               "prefix": "-webkit-"
             },
-            "samsunginternet_android": {
-              "version_added": "1.0",
-              "partial_implementation": true,
-              "prefix": "-webkit-"
-            },
+            "samsunginternet_android": [
+              {
+                "version_added": "14.0"
+              },
+              {
+                "version_added": "1.0",
+                "partial_implementation": true,
+                "prefix": "-webkit-"
+              }
+            ],
             "webview_android": [
               {
                 "version_added": "84"
@@ -370,10 +352,15 @@
                 "version_added": "1",
                 "partial_implementation": true
               },
-              "samsunginternet_android": {
-                "version_added": "1.0",
-                "partial_implementation": true
-              },
+              "samsunginternet_android": [
+                {
+                  "version_added": "13.0"
+                },
+                {
+                  "version_added": "1.0",
+                  "partial_implementation": true
+                }
+              ],
               "webview_android": [
                 {
                   "version_added": "83"
@@ -529,10 +516,15 @@
                 "version_added": "1",
                 "partial_implementation": true
               },
-              "samsunginternet_android": {
-                "version_added": "1.0",
-                "partial_implementation": true
-              },
+              "samsunginternet_android": [
+                {
+                  "version_added": "13.0"
+                },
+                {
+                  "version_added": "1.0",
+                  "partial_implementation": true
+                }
+              ],
               "webview_android": [
                 {
                   "version_added": "83"

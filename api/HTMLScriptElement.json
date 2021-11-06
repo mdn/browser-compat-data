@@ -3,6 +3,7 @@
     "HTMLScriptElement": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement",
+        "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#htmlscriptelement",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -178,7 +179,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -208,7 +209,7 @@
             },
             "ie": {
               "version_added": "10",
-              "notes": "In versions prior to Internet Explorer 10, it implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
+              "notes": "Before Internet Explorer 10, it implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
             },
             "opera": {
               "version_added": "≤12.1"
@@ -389,38 +390,12 @@
             "edge": {
               "version_added": "16"
             },
-            "firefox": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "55",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.moduleScripts.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "55",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.moduleScripts.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "60"
+            },
+            "firefox_android": {
+              "version_added": "60"
+            },
             "ie": {
               "version_added": false
             },
@@ -453,6 +428,7 @@
       "referrerPolicy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/referrerPolicy",
+          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-referrerpolicy",
           "support": {
             "chrome": {
               "version_added": "70"
@@ -540,6 +516,55 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "supports": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/supports",
+          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-supports",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "94"
+            },
+            "firefox_android": {
+              "version_added": "94"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

@@ -3,6 +3,7 @@
     "DragEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DragEvent",
+        "spec_url": "https://html.spec.whatwg.org/multipage/dnd.html#the-dragevent-interface",
         "support": {
           "chrome": {
             "version_added": "3"
@@ -20,7 +21,8 @@
             "version_added": "4"
           },
           "ie": {
-            "version_added": "10"
+            "version_added": "9",
+            "notes": "Before Internet Explorer 10, <code>DragEvent</code> is exposed in standards mode but not quirks mode."
           },
           "opera": {
             "version_added": "12"
@@ -50,6 +52,7 @@
       "DragEvent": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DragEvent/DragEvent",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dnd.html#the-dragevent-interface",
           "description": "<code>DragEvent()</code> constructor",
           "support": {
             "chrome": {
@@ -68,7 +71,7 @@
               "version_added": true
             },
             "ie": {
-              "version_added": "10"
+              "version_added": false
             },
             "opera": {
               "version_added": "12"
@@ -99,6 +102,7 @@
       "dataTransfer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dnd.html#dom-dragevent-datatransfer-dev",
           "support": {
             "chrome": {
               "version_added": "46"
@@ -116,7 +120,9 @@
               "version_added": true
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The value is always <code>null</code>."
             },
             "opera": {
               "version_added": true

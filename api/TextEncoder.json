@@ -3,6 +3,7 @@
     "TextEncoder": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder",
+        "spec_url": "https://encoding.spec.whatwg.org/#interface-textencoder",
         "support": {
           "chrome": {
             "version_added": "38"
@@ -10,27 +11,18 @@
           "chrome_android": {
             "version_added": "38"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
             "version_added": "79"
           },
-          "firefox": [
-            {
-              "version_added": "19"
-            },
-            {
-              "version_added": "18",
-              "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "19"
-            },
-            {
-              "version_added": "18",
-              "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-            }
-          ],
+          "firefox": {
+            "version_added": "18"
+          },
+          "firefox_android": {
+            "version_added": "18"
+          },
           "ie": {
             "version_added": false
           },
@@ -64,7 +56,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -72,66 +64,27 @@
       "TextEncoder": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/TextEncoder",
+          "spec_url": "https://encoding.spec.whatwg.org/#ref-for-dom-textencoder①",
           "description": "<code>TextEncoder()</code> constructor",
           "support": {
-            "chrome": [
-              {
-                "version_added": "53",
-                "notes": "Does not accept parameters. Supports only <code>utf-8</code> encoding."
-              },
-              {
-                "version_added": "38",
-                "version_removed": "53",
-                "notes": "Throws <code>RangeError</code> exception for unknown encoding types."
-              }
-            ],
+            "chrome": {
+              "version_added": "38"
+            },
             "chrome_android": {
               "version_added": "38"
             },
-            "edge": {
-              "version_added": "79",
-              "notes": "Does not accept parameters. Supports only <code>utf-8</code> encoding."
+            "deno": {
+              "version_added": "1.0"
             },
-            "firefox": [
-              {
-                "version_added": "48",
-                "notes": "The constructor accepts an encoding type label argument, but the value is ignored. Only <code>utf-8</code> encoding is supported."
-              },
-              {
-                "version_added": "38",
-                "version_removed": "48",
-                "notes": "If the encoding type label argument is invalid, then a <code>RangeError</code> exception is thrown."
-              },
-              {
-                "version_added": "19",
-                "version_removed": "38",
-                "notes": "If the encoding type label argument is invalid, then a <code>TypeError</code> exception is thrown."
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48",
-                "notes": "The constructor accepts an encoding type label argument, but the value is ignored. Only <code>utf-8</code> encoding is supported."
-              },
-              {
-                "version_added": "38",
-                "version_removed": "48",
-                "notes": "If the encoding type label argument is invalid, then a <code>RangeError</code> exception is thrown."
-              },
-              {
-                "version_added": "19",
-                "version_removed": "38",
-                "notes": "If the encoding type label argument is invalid, then a <code>TypeError</code> exception is thrown."
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "18"
+            },
+            "firefox_android": {
+              "version_added": "18"
+            },
             "ie": {
               "version_added": false
             },
@@ -164,7 +117,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -173,6 +126,7 @@
       "encode": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encode",
+          "spec_url": "https://encoding.spec.whatwg.org/#ref-for-dom-textencoder-encode①",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -180,27 +134,18 @@
             "chrome_android": {
               "version_added": "38"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
+            "firefox": {
+              "version_added": "18"
+            },
+            "firefox_android": {
+              "version_added": "18"
+            },
             "ie": {
               "version_added": false
             },
@@ -227,7 +172,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -236,12 +181,16 @@
       "encodeInto": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encodeInto",
+          "spec_url": "https://encoding.spec.whatwg.org/#ref-for-dom-textencoder-encodeinto①",
           "support": {
             "chrome": {
               "version_added": "74"
             },
             "chrome_android": {
               "version_added": "74"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "79"
@@ -265,10 +214,10 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -278,7 +227,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -287,6 +236,7 @@
       "encoding": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextEncoder/encoding",
+          "spec_url": "https://encoding.spec.whatwg.org/#dom-textencoder-encoding",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -294,27 +244,18 @@
             "chrome_android": {
               "version_added": "38"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Firefox 18 implemented an earlier and slightly different version of the specification."
-              }
-            ],
+            "firefox": {
+              "version_added": "18"
+            },
+            "firefox_android": {
+              "version_added": "18"
+            },
             "ie": {
               "version_added": false
             },
@@ -341,7 +282,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -356,6 +297,9 @@
             },
             "chrome_android": {
               "version_added": "38"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "79"
@@ -392,7 +336,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

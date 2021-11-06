@@ -3,6 +3,7 @@
     "TransitionEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent",
+        "spec_url": "https://drafts.csswg.org/css-transitions/#interface-transitionevent",
         "support": {
           "chrome": [
             {
@@ -37,17 +38,29 @@
             "version_added": "10"
           },
           "opera": {
-            "version_added": true
+            "version_added": "≤12.1"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "≤12.1"
           },
-          "safari": {
-            "version_added": true
-          },
-          "safari_ios": {
-            "version_added": true
-          },
+          "safari": [
+            {
+              "version_added": "7"
+            },
+            {
+              "prefix": "WebKit",
+              "version_added": "≤4"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "7"
+            },
+            {
+              "prefix": "WebKit",
+              "version_added": "≤3"
+            }
+          ],
           "samsunginternet_android": [
             {
               "version_added": "2.0"
@@ -78,6 +91,7 @@
       "TransitionEvent": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/TransitionEvent",
+          "spec_url": "https://drafts.csswg.org/css-transitions/#dom-transitionevent-transitionevent",
           "description": "<code>TransitionEvent()</code> constructor",
           "support": {
             "chrome": {
@@ -99,10 +113,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -124,58 +138,10 @@
           }
         }
       },
-      "animationName": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/animationName",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "12",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "4"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "elapsedTime": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime",
+          "spec_url": "https://drafts.csswg.org/css-transitions/#Events-TransitionEvent-elapsedTime",
           "support": {
             "chrome": {
               "version_added": "2"
@@ -196,16 +162,16 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -226,12 +192,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/initTransitionEvent",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Removal version unknown."
+              "version_added": "2",
+              "version_removed": "18",
+              "alternative_name": "initWebKitTransitionEvent"
             },
             "chrome_android": {
-              "version_added": false,
-              "notes": "Removal version unknown."
+              "version_added": false
             },
             "edge": {
               "version_added": "12",
@@ -249,26 +215,28 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": false,
-              "notes": "Removal version unknown."
+              "version_added": "≤12.1",
+              "version_removed": "15"
             },
             "opera_android": {
-              "version_added": false,
-              "notes": "Removal version unknown."
+              "version_added": "≤12.1",
+              "version_removed": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "≤4",
+              "version_removed": "6",
+              "alternative_name": "initWebKitTransitionEvent"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "≤3",
+              "version_removed": "6",
+              "alternative_name": "initWebKitTransitionEvent"
             },
             "samsunginternet_android": {
-              "version_added": false,
-              "notes": "Removal version unknown."
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false,
-              "notes": "Removal version unknown."
+              "version_added": false
             }
           },
           "status": {
@@ -281,6 +249,7 @@
       "propertyName": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/propertyName",
+          "spec_url": "https://drafts.csswg.org/css-transitions/#Events-TransitionEvent-propertyName",
           "support": {
             "chrome": {
               "version_added": "2"
@@ -292,25 +261,25 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "4"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -329,6 +298,7 @@
       "pseudoElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement",
+          "spec_url": "https://drafts.csswg.org/css-transitions/#Events-TransitionEvent-pseudoElement",
           "support": {
             "chrome": {
               "version_added": "2"
@@ -349,16 +319,16 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
