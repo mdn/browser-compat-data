@@ -4,6 +4,8 @@
 
 November 9, 2021
 
+**Do you read these release notes?** We're considering making changes to them and want to hear from you before we do that. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
 ### Notable changes
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
