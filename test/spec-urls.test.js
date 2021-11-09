@@ -52,7 +52,7 @@ describe('spec_url data', () => {
 
       // Remove if https://github.com/w3c/mathml/issues/216 is resolved
       'https://w3c.github.io/mathml/',
-      
+
       // Discussed in https://github.com/w3c/browser-specs/pull/421
       // This is a private spec so can't go in w3c
       'https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-ntht/',
