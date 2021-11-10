@@ -221,18 +221,15 @@ const combineStatements = (...data) => {
         // Ignore statements with version_added being false
         continue;
       } else if (typeof newVA === 'string') {
-        if (typeof currentVA === 'string') {
-          if (
-            compareVersions.compare(
-              currentVA.replace('≤', ''),
-              newVA.replace('≤', ''),
-              '>',
-            )
-          ) {
-            currentStatement.version_added = newVA;
-          }
-        } else {
-          currentStatement.version_added = currentVA || newVA;
+        if (
+          typeof currentVA !== 'string' ||
+          compareVersions.compare(
+            currentVA.replace('≤', ''),
+            newVA.replace('≤', ''),
+            '>',
+          )
+        ) {
+          currentStatement.version_added = newVA;
         }
       }
 
