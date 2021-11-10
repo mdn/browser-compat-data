@@ -688,11 +688,19 @@
                 "partial_implementation": true,
                 "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               },
-              "edge": {
-                "version_added": "79",
-                "partial_implementation": true,
-                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
-              },
+              "edge": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "Only <code>clientX</code>, <code>clientY</code>, <code>pageX</code> and <code>pageY</code> are fractional."
+                }
+              ],
               "firefox": {
                 "version_added": false,
                 "notes": "See <a href='https://bugzil.la/1680669'>bug 1680669</a>."
@@ -702,7 +710,9 @@
                 "notes": "See <a href='https://bugzil.la/1680669'>bug 1680669</a>."
               },
               "ie": {
-                "version_added": false
+                "version_added": "11",
+                "partial_implementation": true,
+                "notes": "Only <code>clientX</code>, <code>clientY</code>, <code>pageX</code> and <code>pageY</code> are fractional."
               },
               "opera": {
                 "version_added": "51",
