@@ -242,10 +242,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "51"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "51"
             },
             "ie": {
               "version_added": "10"
@@ -607,10 +607,10 @@
           "description": "<code>beforeinput</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "60"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "60"
             },
             "edge": {
               "version_added": "79"
@@ -651,22 +651,22 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "44"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "8.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "60"
             }
           },
           "status": {
@@ -1540,16 +1540,22 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "77",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.forms.inputmode",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "95"
+              },
+              {
+                "version_added": "77",
+                "version_removed": "95",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.forms.inputmode",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "79"
             },
@@ -3464,7 +3470,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -3473,7 +3479,7 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "62"
@@ -3557,11 +3563,11 @@
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "12"
               },
               {
                 "alternative_name": "webkitTransitionEnd",
-                "version_added": "≤79"
+                "version_added": "79"
               }
             ],
             "firefox": {
@@ -3658,7 +3664,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -3667,7 +3673,7 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "62"
@@ -3738,7 +3744,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "53"
@@ -3747,7 +3753,7 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
               "version_added": "62"

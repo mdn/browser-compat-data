@@ -1059,7 +1059,7 @@
               "version_added": "23"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "17",
@@ -1083,7 +1083,7 @@
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "12"
             },
             "safari": {
               "version_added": "5.1",
@@ -1094,7 +1094,7 @@
               "version_removed": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": "≤37"
@@ -1611,7 +1611,7 @@
               "notes": "Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
             },
             "chrome_android": {
-              "version_added": true,
+              "version_added": "79",
               "version_removed": "80",
               "notes": "Currently supported only by Google Daydream."
             },
@@ -1648,7 +1648,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true,
+              "version_added": "12.0",
               "version_removed": "13.0",
               "notes": "Currently supported only by Google Daydream."
             },
@@ -2450,7 +2450,8 @@
             },
             "webview_android": {
               "version_added": "≤37",
-              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
+              "partial_implementation": true,
+              "notes": "Can incorrectly return true, see <a href='https://crbug.com/811122'>bug 811122</a>."
             }
           },
           "status": {
@@ -2846,7 +2847,7 @@
               "notes": [
                 "Allowed schemes include <code>mailto</code>, <code>mms</code>, <code>nntp</code>, <code>rtsp</code>, and <code>webcal</code>. Custom protocols must be prefixed with <code>web+</code>.",
                 "From Chrome 77, the URL parameter only accepts <code>http</code> or <code>https</code> URLs.",
-                "The obsolete <code>title</code> argument is required."
+                "The obsolete <code>title</code> parameter is required."
               ]
             },
             "chrome_android": {
@@ -2856,7 +2857,7 @@
               "version_added": "79",
               "notes": [
                 "Allowed schemes include <code>mailto</code>, <code>mms</code>, <code>nntp</code>, <code>rtsp</code>, and <code>webcal</code>. Custom protocols must be prefixed with <code>web+</code>.",
-                "The obsolete <code>title</code> argument is required."
+                "The obsolete <code>title</code> parameter is required."
               ]
             },
             "firefox": {
@@ -2870,7 +2871,7 @@
             },
             "opera": {
               "version_added": "11.6",
-              "notes": "The obsolete <code>title</code> argument is required."
+              "notes": "The obsolete <code>title</code> parameter is required."
             },
             "opera_android": {
               "version_added": false
