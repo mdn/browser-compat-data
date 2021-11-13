@@ -321,7 +321,10 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
   let chromeNull = sourceData.version_added === null;
 
   if (chromeFalse) {
-    if (compareVersions.compare(sourceData.version_removed, '79', '<=')) {
+    if (
+      typeof sourceData.version_removed === 'string' &&
+      compareVersions.compare(sourceData.version_removed, '79', '<=')
+    ) {
       // If this feature was removed before Chrome 79, ignore
       return {};
     }
