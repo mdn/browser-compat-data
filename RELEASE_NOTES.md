@@ -12,6 +12,7 @@ November 16, 2021
 
   - `api.PhotoCapabilities` ([#13479](https://github.com/mdn/browser-compat-data/pull/13479))
   - `api.Range.insertNode.collapsed_ranges` ([#13424](https://github.com/mdn/browser-compat-data/pull/13424))
+  - `css.types.calc.color_values` ([#13486](https://github.com/mdn/browser-compat-data/pull/13486))
 
 ## [v4.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.10)
 
