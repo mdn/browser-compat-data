@@ -4,6 +4,8 @@
 
 November 16, 2021
 
+**Last call: do you read these release notes?** We're considering making changes to them and want to hear from you before we do that. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
 ### Notable changes
 
 - `api.XMLHttpRequest.readyState.constants` has been removed because it's a constant, which, [by convention](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#constants), are not recorded. ([#12879](https://github.com/mdn/browser-compat-data/pull/12879))
@@ -14,6 +16,10 @@ November 16, 2021
   - `api.PhotoCapabilities` ([#13479](https://github.com/mdn/browser-compat-data/pull/13479))
   - `api.Range.insertNode.collapsed_ranges` ([#13424](https://github.com/mdn/browser-compat-data/pull/13424))
   - `css.types.calc.color_values` ([#13486](https://github.com/mdn/browser-compat-data/pull/13486))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
 
 ## [v4.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.10)
 
