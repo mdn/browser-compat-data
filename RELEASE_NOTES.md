@@ -8,6 +8,10 @@ November 16, 2021
 
 - `api.XMLHttpRequest.readyState.constants` has been removed because it's a constant, which, [by convention](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#constants), are not recorded. ([#12879](https://github.com/mdn/browser-compat-data/pull/12879))
 
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Range.insertNode.collapsed_ranges` ([#13424](https://github.com/mdn/browser-compat-data/pull/13424))
+
 ## [v4.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.10)
 
 November 9, 2021
