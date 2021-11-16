@@ -10,6 +10,7 @@ November 16, 2021
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
+  - `api.PhotoCapabilities` ([#13479](https://github.com/mdn/browser-compat-data/pull/13479))
   - `api.Range.insertNode.collapsed_ranges` ([#13424](https://github.com/mdn/browser-compat-data/pull/13424))
 
 ## [v4.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.10)
