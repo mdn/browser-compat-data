@@ -8,7 +8,7 @@ November 16, 2021
 
 ### Notable changes
 
-- `api.XMLHttpRequest.readyState.constants` has been removed because it's a constant, which, [by convention](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#constants), are not recorded. ([#12879](https://github.com/mdn/browser-compat-data/pull/12879))
+- `api.XMLHttpRequest.readyState.constants` has been removed because constants, [by convention](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#constants), are not recorded. ([#12879](https://github.com/mdn/browser-compat-data/pull/12879))
 
 - The following non-existent, long-removed, or otherwise irrelevant features have been removed:
 
