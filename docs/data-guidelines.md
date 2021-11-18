@@ -56,13 +56,15 @@ For example, the feature for a `focus` event targeting the `Element` interface w
 }
 ```
 
-This rule applies to the event features themselves, not the features for the event handlers. For example, `focus_event` and `onfocus` are two separate features.
+The event handler `onfocus` is included in the `focus_event` entry. If an implementation doesn't support the event handler property, use `partial_implementation`.
+If a specification has two sections (the event handler property and the event name), add both specification links.
 
 This practice emerged through several discussions:
 
 - [#935](https://github.com/mdn/browser-compat-data/issues/935#issuecomment-464691417)
 - [#3420](https://github.com/mdn/browser-compat-data/pull/3420)
 - [#3469](https://github.com/mdn/browser-compat-data/pull/3469)
+- [mdn/content#9098](https://github.com/mdn/content/discussions/9098)
 
 ## Secure context required (`secure_context_required`)
 
