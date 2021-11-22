@@ -143,9 +143,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "10.0.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "notes": "Has to be imported from the URL module."
+              }
+            ],
             "opera": {
               "version_added": "15"
             },
@@ -206,7 +212,7 @@
               "notes": "If the underlying object does not have a content type set, using this URL as the <code>src</code> of an <code>img</code> tag fails intermittently with error DOM7009."
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "16.7.0"
             },
             "opera": {
               "version_added": "15"
@@ -326,7 +332,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -381,7 +387,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -436,7 +442,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -448,7 +454,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -491,7 +497,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -503,7 +509,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -560,7 +566,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -572,7 +578,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -615,7 +621,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -627,7 +633,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -672,7 +678,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -684,7 +690,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -727,7 +733,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -739,7 +745,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -782,7 +788,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -794,7 +800,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -839,7 +845,7 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "16.7.0"
             },
             "opera": {
               "version_added": "15"
@@ -896,7 +902,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -908,7 +914,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -950,9 +956,17 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.5.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "version_removed": "7.5.0",
+                "partial_implementation": true,
+                "notes": "An object matching the <code>URLSearchParams</code> interface is returned, but it contains no data."
+              }
+            ],
             "opera": {
               "version_added": "38"
             },
@@ -1006,7 +1020,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.7.0"
             },
             "opera": {
               "version_added": "58"
@@ -1059,6 +1073,9 @@
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "15"
@@ -1113,7 +1130,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
               "version_added": "19"
@@ -1125,7 +1142,7 @@
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
