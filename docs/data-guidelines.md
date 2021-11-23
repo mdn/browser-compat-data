@@ -56,7 +56,8 @@ For example, the feature for a `focus` event targeting the `Element` interface w
 }
 ```
 
-The event handler `onfocus` is included in the `focus_event` entry. If an implementation doesn't support the event handler property, use `partial_implementation`.
+The event handler `onfocus` is included in the `focus_event` entry. If an implementation doesn't support the event handler property, use `partial_implementation` with the note `"The <code>onfocus</code> event handler property is not supported."`. If an implementation doesn't support the event name, use `partial_implementation` with the note `"The <code>focus</code> event name is not supported."`.
+
 If a specification has two sections (the event handler property and the event name), add both specification links.
 
 This practice emerged through several discussions:
