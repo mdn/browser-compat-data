@@ -383,15 +383,9 @@ This guideline is based on discussion in [#11630](https://github.com/mdn/browser
 
 ## Global APIs
 
-An API is considered global when it is available in at least two global scopes. Such APIs are recorded in the `api/_globals/` folder.
+An API is considered global when it is available for both [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) and [`WorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope). Such APIs are recorded in the `api/_globals/` folder.
 
-These are the web's global scopes at the time of writing:
-
-- [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window)
-- [Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API): [`DedicatedWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope), [`SharedWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope), [`ServiceWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope) (these inherit from the abstract [`WorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope))
-- [Worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet): `AnimationWorkletGlobalScope`, [`AudioWorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope), `LayoutWorkletGlobalScope`, `PaintWorkletGlobalScope` (these inherit from the abstract `WorkletGlobalScope`)
-
-For example, the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) method is global because it is available in `Window` and `WorkerGlobalScope`, recorded like this in `api/_globals/fetch.json`:
+For example, the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) method is global, recorded like this in `api/_globals/fetch.json`:
 
 ```json
 {
@@ -409,21 +403,11 @@ For example, the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fe
 }
 ```
 
-Note that all APIs defined on the [`WindowOrWorkerGlobalScope`](https://html.spec.whatwg.org/multipage/webappapis.html#windoworworkerglobalscope-mixin) mixin are considered global.
+All APIs defined on the [`WindowOrWorkerGlobalScope`](https://html.spec.whatwg.org/multipage/webappapis.html#windoworworkerglobalscope-mixin) mixin are considered global.
 
-These APIs are also considered global although they're not available in _all_ workers:
+Note that APIs available on only _some_ types of workers are not considered global. For example:
 
 - The `cookieStore` property, available in `Window` and `ServiceWorkerGlobalScope`.
 - The `requestAnimationFrame()` function, available in `Window` and `DedicatedWorkerGlobalScope`.
-
-TODO: should we really still use "worker_support" here, which makes it look like these are available in all workers?
-
-However, these APIs are _not_ considered global:
-
-- `close()` methods are available in `Window`, `DedicatedWorkerGlobalScope` and `SharedWorkerGlobalScope` but with different meanings. For `Window` it closes the user-visible window and in workers it stops the worker. This isn't considered one global function despite sharing the name and being available in three global scopes.
-
-TODO: This exception doesn't follow from the rule as written. Some tweak is needed.
-
-Currently no APIs that are considered global due to being available in worklets, but this may happen in the future.
 
 This guideline is based on discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
