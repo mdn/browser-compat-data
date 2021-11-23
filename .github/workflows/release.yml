@@ -5,6 +5,7 @@ on:
     types: [published]
 
 jobs:
+  name: Publish release
   build:
     runs-on: ubuntu-latest
 
@@ -20,3 +21,7 @@ jobs:
     - run: npm publish build/ --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Add JSON as a release asset
+    - run: gh release upload $GITHUB_REF build/data.json
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
