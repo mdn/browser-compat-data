@@ -3023,16 +3023,23 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "deno": {
-              "version_added": "1.10",
-              "flags": [
-                {
-                  "type": "runtime_flag",
-                  "name": "--location",
-                  "value_to_set": "<desired origin>"
-                }
-              ]
-            },
+            "deno": [
+              {
+                "version_added": "1.16",
+                "notes": "The key used for the Web Storage bucket is based on various factors. See <a href='https://deno.land/manual/runtime/web_storage_api'>the Deno manual</a>."
+              },
+              {
+                "version_added": "1.10",
+                "version_removed": "1.16",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--location",
+                    "value_to_set": "<desired origin>"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
