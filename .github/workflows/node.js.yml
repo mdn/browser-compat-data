@@ -23,7 +23,12 @@ jobs:
       env:
         FORCE_COLOR: 3
     - run: node ./scripts/enumerate-features.js features.json
+    - run: node ./scripts/diff-features.js --format=json > features.diff.json
     - uses: actions/upload-artifact@v2
       with:
-        name: features
+        name: enumerate-features
         path: features.json
+    - uses: actions/upload-artifact@v2
+      with:
+        name: diff-features
+        path: features.diff.json
