@@ -22,3 +22,8 @@ jobs:
     - run: npm test
       env:
         FORCE_COLOR: 3
+    - run: node ./scripts/enumerate-features.js features.json
+    - uses: actions/upload-artifact@v2
+      with:
+        name: features
+        path: features.json
