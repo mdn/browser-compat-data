@@ -5,6 +5,7 @@ on:
     types: [published]
 
 jobs:
+  name: Publish release
   build:
     runs-on: ubuntu-latest
 
@@ -20,3 +21,42 @@ jobs:
     - run: npm publish build/ --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Add JSON as a release asset
+    - run: gh release upload $GITHUB_REF build/data.json
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  upload_to_s3:
+    name: Upload compat data release to developer.mozilla.org
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      DATA_FILE: data.json
+      STAGE_AND_DEV_AWS_S3_URI: s3://mdn-content-stage/main/browser-compat-data.latest.json
+      PROD_AWS_S3_URI: s3://mdn-content-prod/main/browser-compat-data.latest.json
+
+    steps:
+    - name: Get JSON release asset
+      run: gh release download $GITHUB_REF --pattern $DATA_FILE
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Configure staging and dev S3 credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.STAGE_AND_DEV_AWS_S3_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.STAGE_AND_DEV_AWS_S3_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+
+    - name: Upload to staging
+      run: aws s3 cp --content-type 'application/json' --cache-control 's-maxage=43200' $DATA_FILE $STAGE_AND_DEV_AWS_S3_URI
+
+    - name: Configure production S3 credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.PROD_AWS_S3_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.PROD_AWS_S3_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+
+    - name: Upload to production
+      run: aws s3 cp --content-type 'application/json' --cache-control 's-maxage=43200' $DATA_FILE $PROD_AWS_S3_URI
