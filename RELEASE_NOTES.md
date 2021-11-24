@@ -2,7 +2,70 @@
 
 ## [v4.0.12](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.12)
 
-RELEASE DATE TK
+November 24, 2021
+
+**We've changed the format of these release notes!** We're experimenting with new release notes. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+## Removals
+
+- Removed `api.EffectTiming` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.delay` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.direction` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.duration` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.easing` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.easing.jump` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.endDelay` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.fill` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.iterations` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.iterationStart` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.isSecureContext.considers_window_opener` ([#13127](https://github.com/mdn/browser-compat-data/pull/13127))
+- Removed `api.MessageEvent.source.MessageEventSource_type` ([#13178](https://github.com/mdn/browser-compat-data/pull/13178))
+- Removed `api.PaymentItem` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PaymentItem.amount` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PaymentItem.label` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PaymentItem.pending` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PublicKeyCredentialCreationOptions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.attestation` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.authenticatorSelection` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.challenge` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.excludeCredentials` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.extensions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.pubKeyCredParams` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.rp` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.timeout` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.user` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.allowCredentials` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.challenge` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.extensions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.rpId` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.timeout` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.userVerification` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.RTCAnswerOptions` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferAnswerOptions` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferAnswerOptions.voiceActivityDetection` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferOptions` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferOptions.iceRestart` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCRtpTransceiverDirection` ([#13550](https://github.com/mdn/browser-compat-data/pull/13550))
+- Removed `api.RTCTrackEventInit` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.receiver` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.streams` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.track` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.transceiver` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.ServiceWorkerGlobalScope.caches` ([#13487](https://github.com/mdn/browser-compat-data/pull/13487))
+- Removed `api.Window.requestAnimationFrame.return_value` ([#13694](https://github.com/mdn/browser-compat-data/pull/13694))
+
+## Additions
+
+- Added `api.Window.requestAnimationFrame.return_value` ([#13695](https://github.com/mdn/browser-compat-data/pull/13695))
+- Added `html.elements.template.shadowroot` ([#13230](https://github.com/mdn/browser-compat-data/pull/13230))
+
+### Statistics
+
+- 17 contributors have changed 119 files with 2,782 additions and 3,034 deletions in 121 commits ([`v4.0.11...v4.0.12`](https://github.com/mdn/browser-compat-data/compare/v4.0.11...v4.0.12))
+- 13,374 total features
+- 828 total contributors
+- 3,677 total stargazers
 
 ## [v4.0.11](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.11)
 
