@@ -25,6 +25,14 @@ jobs:
       run: gh release upload ${GITHUB_REF#refs/*/} build/data.json
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish stats for API data (#6369)
+      run: npm run --silent stats api | gh issue comment https://github.com/mdn/browser-compat-data/issues/6369 --body-file -
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish stats for all data (#3555)
+      run: npm run --silent stats | gh issue comment https://github.com/mdn/browser-compat-data/issues/3555 --body-file -
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   upload_to_s3:
     name: Upload compat data release to developer.mozilla.org
