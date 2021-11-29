@@ -56,7 +56,7 @@ For example, the feature for a `focus` event targeting the `Element` interface w
 }
 ```
 
-The event handler `onfocus` is included in the `focus_event` entry. If an implementation doesn't support the event handler property, use `partial_implementation` with the note `"The <code>onfocus</code> event handler property is not supported."`. If an implementation doesn't support the event name, use `partial_implementation` with the note `"The <code>focus</code> event name is not supported."`.
+The event handler `onfocus` is represented by the `focus_event` entry. Don't create features for `on` event handler properties. If an implementation doesn't support the event handler property, use `partial_implementation` with the note `"The <code>onfocus</code> event handler property is not supported."`. If only the `on` event handler property is supported and not the event name, use `"version_added": false`.
 
 If a specification has two sections (the event handler property and the event name), add both specification links.
 
@@ -66,6 +66,7 @@ This practice emerged through several discussions:
 - [#3420](https://github.com/mdn/browser-compat-data/pull/3420)
 - [#3469](https://github.com/mdn/browser-compat-data/pull/3469)
 - [mdn/content#9098](https://github.com/mdn/content/discussions/9098)
+- [#13595](https://github.com/mdn/browser-compat-data/pull/13595)
 
 ## Secure context required (`secure_context_required`)
 
