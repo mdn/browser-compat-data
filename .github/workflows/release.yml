@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
 
+env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   build:
     name: Publish release
@@ -23,8 +26,10 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Add JSON as a release asset
       run: gh release upload ${GITHUB_REF#refs/*/} build/data.json
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish stats for API data (#6369)
+      run: npm run --silent stats api | gh issue comment https://github.com/mdn/browser-compat-data/issues/6369 --body-file -
+    - name: Publish stats for all data (#3555)
+      run: npm run --silent stats | gh issue comment https://github.com/mdn/browser-compat-data/issues/3555 --body-file -
 
   upload_to_s3:
     name: Upload compat data release to developer.mozilla.org
@@ -38,8 +43,6 @@ jobs:
     steps:
     - name: Get JSON release asset
       run: gh release download $GITHUB_REF --pattern $DATA_FILE
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Configure staging and dev S3 credentials
       uses: aws-actions/configure-aws-credentials@v1
