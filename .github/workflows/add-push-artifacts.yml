@@ -16,7 +16,7 @@ jobs:
         node-version: 14.x
     - run: npm install
     - run: node ./scripts/enumerate-features.js features.json
-    - run: node ./scripts/diff-features.js --format=json > features.diff.json
+    - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
     - uses: actions/upload-artifact@v2
       with:
         name: enumerate-features
