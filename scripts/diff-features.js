@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const yargs = require('yargs');
 
-function main({ ref1, ref2, format }) {
+function main({ ref1, ref2, format, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -20,8 +20,8 @@ function main({ ref1, ref2, format }) {
     refB = `${ref1}`;
   }
 
-  let aSide = enumerate(refA);
-  let bSide = enumerate(refB);
+  let aSide = enumerate(refA, github === false);
+  let bSide = enumerate(refB, github === false);
 
   const results = {
     added: [...bSide].filter(feature => !aSide.has(feature)),
@@ -35,13 +35,16 @@ function main({ ref1, ref2, format }) {
   }
 }
 
-function enumerate(ref) {
-  try {
-    return new Set(getEnumerationFromGithub(ref));
-  } catch {
-    console.error('Fetching artifact from GitHub failed. Using fallback.');
-    return new Set(enumerateFeatures(ref));
+function enumerate(ref, skipGitHub) {
+  if (!skipGitHub) {
+    try {
+      return new Set(getEnumerationFromGithub(ref));
+    } catch {
+      console.error('Fetching artifact from GitHub failed. Using fallback.');
+    }
   }
+
+  return new Set(enumerateFeatures(ref));
 }
 
 function getEnumerationFromGithub(ref) {
@@ -143,6 +146,10 @@ const { argv } = yargs.command(
         choices: ['json', 'markdown'],
         demand: 'a named format is required',
         default: 'markdown',
+      })
+      .option('no-github', {
+        type: 'boolean',
+        description: "Don't fetch artifacts from GitHub.",
       })
       .example('$0', 'compare HEAD to parent commmit')
       .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
