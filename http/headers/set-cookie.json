@@ -322,13 +322,28 @@
             "__compat": {
               "description": "<code>SameSite=None</code>",
               "support": {
-                "chrome": {
-                  "version_added": "67",
-                  "notes": "Between versions 51 and 66, Chrome will reject websites with <code>SameSite=None</code> set."
-                },
-                "chrome_android": {
-                  "version_added": "51"
-                },
+                "chrome": [
+                  {
+                    "version_added": "67"
+                  },
+                  {
+                    "version_added": "51",
+                    "version_removed": "67",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
+                "chrome_android": [
+                  {
+                      "version_added": "67"
+                  },
+                  {
+                      "version_added": "51",
+                      "version_removed": "67",
+                      "partial_implementation": true,
+                      "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
                 "edge": {
                   "version_added": "16"
                 },
@@ -341,12 +356,28 @@
                 "ie": {
                   "version_added": false
                 },
-                "opera": {
-                  "version_added": "39"
-                },
-                "opera_android": {
-                  "version_added": "41"
-                },
+                "opera": [
+                  {
+                      "version_added": "67"
+                  },
+                  {
+                      "version_added": "51",
+                      "version_removed": "67",
+                      "partial_implementation": true,
+                      "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
+                "opera_android": [
+                  {
+                      "version_added": "67"
+                  },
+                  {
+                      "version_added": "41",
+                      "version_removed": "67",
+                      "partial_implementation": true,
+                      "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
                 "safari": {
                   "version_added": "13",
                   "notes": "Not supported prior to macOS before version 10.15 (Catalina)."
@@ -354,12 +385,28 @@
                 "safari_ios": {
                   "version_added": "13"
                 },
-                "samsunginternet_android": {
-                  "version_added": "5.0"
-                },
-                "webview_android": {
-                  "version_added": "51"
-                }
+                "samsunginternet_android": [
+                  {
+                      "version_added": "67"
+                  },
+                  {
+                      "version_added": "5.4",
+                      "version_removed": "67",
+                      "partial_implementation": true,
+                      "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
+                "webview_android": [
+                  {
+                      "version_added": "67"
+                  },
+                  {
+                      "version_added": "51",
+                      "version_removed": "67",
+                      "partial_implementation": true,
+                      "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
               },
               "status": {
                 "experimental": false,
