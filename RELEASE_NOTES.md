@@ -2,7 +2,52 @@
 
 ## [v4.0.13](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.13)
 
-RELEASE DATE TK
+December 1, 2021
+
+**We've changed the format of these release notes!** We're experimenting with new release notes. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+## Removals
+
+- `api.HTMLMediaElement.mozChannels` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.HTMLMediaElement.mozFrameBufferLength` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.HTMLMediaElement.mozLoadFrom` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.HTMLMediaElement.mozSampleRate` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.IDBVersionChangeEvent.version` ([#13814](https://github.com/mdn/browser-compat-data/pull/13814))
+- `api.MediaStreamConstraints` ([#12397](https://github.com/mdn/browser-compat-data/pull/12397))
+- `api.MediaStreamConstraints.audio` ([#12397](https://github.com/mdn/browser-compat-data/pull/12397))
+- `api.MediaStreamConstraints.video` ([#12397](https://github.com/mdn/browser-compat-data/pull/12397))
+- `api.WindowEventHandlers.onmessageerror.worker_support` ([#13796](https://github.com/mdn/browser-compat-data/pull/13796))
+
+## Additions
+
+- `api.BarProp.visible.returns_popup` ([#13322](https://github.com/mdn/browser-compat-data/pull/13322))
+- `api.Performance.measure.returns_undefined` ([#13478](https://github.com/mdn/browser-compat-data/pull/13478))
+- `api.Window.beforeinstallprompt_event` ([#12856](https://github.com/mdn/browser-compat-data/pull/12856))
+- `api.Window.open.features_parameter_popup` ([#13322](https://github.com/mdn/browser-compat-data/pull/13322))
+- `http.headers.Authorization` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Basic` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest.md5` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest.SHA-256` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest.SHA-512` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Negotiate` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.NTLM` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Basic` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest.md5` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest.SHA-256` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest.SHA-512` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Negotiate` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.NTLM` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `javascript.builtins.Intl.Locale.calendars` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.collations` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.hourCycles` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.numberingSystems` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.textInfo` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.timeZones` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.weekInfo` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `webextensions.api.commands.Command.name` ([#12512](https://github.com/mdn/browser-compat-data/pull/12512))
+- `webextensions.api.commands.Command.tab` ([#12512](https://github.com/mdn/browser-compat-data/pull/12512))
 
 ## [v4.0.12](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.12)
 
