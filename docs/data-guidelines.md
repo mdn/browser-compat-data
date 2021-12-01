@@ -336,7 +336,7 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
-This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+This guideline is based on a discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
 
 ## Choosing `"preview"` values
 
@@ -379,7 +379,7 @@ For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded li
 }
 ```
 
-This guideline is based on discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
+This guideline is based on a discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
 
 ## Global APIs
 
@@ -410,4 +410,4 @@ Note that APIs available on only _some_ types of workers are not considered glob
 - The `cookieStore` property, available in `Window` and `ServiceWorkerGlobalScope`.
 - The `requestAnimationFrame()` function, available in `Window` and `DedicatedWorkerGlobalScope`.
 
-This guideline is based on discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
+This guideline is based on a discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
