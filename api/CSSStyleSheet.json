@@ -51,6 +51,8 @@
       "CSSStyleSheet": {
         "__compat": {
           "description": "<code>CSSStyleSheet()</code> constructor",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/CSSStyleSheet",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-cssstylesheet-cssstylesheet",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -62,7 +64,15 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "73",
+              "notes": "See <a href='https://bugzil.la/1520690'>bug 1520690</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.constructable-stylesheets.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -90,8 +100,8 @@
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -294,9 +304,9 @@
             "deprecated": false
           }
         },
-        "optional_index": {
+        "index_parameter_optional": {
           "__compat": {
-            "description": "<code>index</code> is optional",
+            "description": "<code>index</code> parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -305,22 +315,22 @@
                 "version_added": "18"
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "12"
               },
               "firefox": {
                 "version_added": "55"
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "55"
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": "≤15"
+                "version_added": "15"
               },
               "opera_android": {
-                "version_added": "≤14"
+                "version_added": "14"
               },
               "safari": {
                 "version_added": "1"
@@ -444,6 +454,8 @@
       },
       "replace": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-cssstylesheet-replace",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -455,7 +467,15 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "75",
+              "notes": "See <a href='https://bugzil.la/1613746'>bug 1613746</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.constructable-stylesheets.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -483,14 +503,16 @@
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "replaceSync": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-cssstylesheet-replacesync",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -502,7 +524,15 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "75",
+              "notes": "See <a href='https://bugzil.la/1613746'>bug 1613746</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.constructable-stylesheets.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -530,8 +560,8 @@
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }

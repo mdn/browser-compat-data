@@ -16,9 +16,16 @@
               "version_added": "18",
               "notes": "From version 8, Chrome added support for gradient values. Initially, Chrome supported only <code>-webkit-</code> prefixed values for gradients (such as <code>-webkit-linear-gradient()</code>). Later, support for unprefixed values was added."
             },
-            "edge": {
-              "version_added": "16"
-            },
+            "edge": [
+              {
+                "prefix": "-webkit-",
+                "version_added": "79"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": "53"
             },

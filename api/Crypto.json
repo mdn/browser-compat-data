@@ -11,6 +11,17 @@
           "chrome_android": {
             "version_added": "18"
           },
+          "deno": [
+            {
+              "version_added": "1.11"
+            },
+            {
+              "version_added": "1.0",
+              "version_removed": "1.11",
+              "partial_implementation": true,
+              "notes": "<code>Crypto</code> is not a concrete interface, but its methods are available on <code>Window.crypto</code>."
+            }
+          ],
           "edge": {
             "version_added": "12"
           },
@@ -25,7 +36,9 @@
           },
           "nodejs": {
             "version_added": "15.0.0",
-            "notes": "Exported from the <code>crypto</code> module as <code>webcrypto</code> but not globally available."
+            "alternative_name": "crypto.webcrypto",
+            "partial_implementation": true,
+            "notes": "<code>Crypto</code> is not a concrete interface, but calling <code>require('crypto').webcrypto</code> returns an instance of the <code>Crypto</code> class."
           },
           "opera": {
             "version_added": "15"
@@ -34,10 +47,10 @@
             "version_added": "14"
           },
           "safari": {
-            "version_added": "6.1"
+            "version_added": "5"
           },
           "safari_ios": {
-            "version_added": "6.1"
+            "version_added": "5"
           },
           "samsunginternet_android": {
             "version_added": "1.0"
@@ -64,6 +77,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -86,16 +102,73 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "6.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
               "version_added": "≤37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "randomUUID": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Crypto/randomUUID",
+          "spec_url": "https://wicg.github.io/uuid/#extensions-to-the-crypto-interface",
+          "description": "<code>randomUUID()</code>",
+          "support": {
+            "chrome": {
+              "version_added": "92"
+            },
+            "chrome_android": {
+              "version_added": "92"
+            },
+            "deno": {
+              "version_added": "1.11"
+            },
+            "edge": {
+              "version_added": "92"
+            },
+            "firefox": {
+              "version_added": "95"
+            },
+            "firefox_android": {
+              "version_added": "95"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.7.0",
+              "notes": "From version 14.17.0, a similar method is available as <a href='https://nodejs.org/docs/latest-v14.x/api/crypto.html#crypto_crypto'><code>crypto.randomUUID()</code></a>."
+            },
+            "opera": {
+              "version_added": "78"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": "preview"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "16.0"
+            },
+            "webview_android": {
+              "version_added": "92"
             }
           },
           "status": {
@@ -116,6 +189,9 @@
             "chrome_android": {
               "version_added": "37"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -126,8 +202,7 @@
               "version_added": "34"
             },
             "ie": {
-              "version_added": "11",
-              "partial_implementation": true
+              "version_added": "11"
             },
             "nodejs": {
               "version_added": "15.0.0"
@@ -140,19 +215,21 @@
             },
             "safari": [
               {
-                "version_added": "10.1"
+                "version_added": "11"
               },
               {
                 "version_added": "7",
+                "version_removed": "11.1",
                 "prefix": "webkit"
               }
             ],
             "safari_ios": [
               {
-                "version_added": "10.3"
+                "version_added": "11"
               },
               {
                 "version_added": "7",
+                "version_removed": "11.3",
                 "prefix": "webkit"
               }
             ],
@@ -178,6 +255,9 @@
               },
               "chrome_android": {
                 "version_added": "60"
+              },
+              "deno": {
+                "version_added": false
               },
               "edge": {
                 "version_added": "79"

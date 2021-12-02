@@ -16,11 +16,11 @@
           },
           "firefox": {
             "version_added": "25",
-            "notes": "Prior to Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
+            "notes": "Before Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
           },
           "firefox_android": {
             "version_added": "25",
-            "notes": "Prior to Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
+            "notes": "Before Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
           },
           "ie": {
             "version_added": false
@@ -99,9 +99,9 @@
             "deprecated": false
           }
         },
-        "options": {
+        "options_parameter": {
           "__compat": {
-            "description": "<code>options</code> object",
+            "description": "<code>options</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -145,6 +145,54 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "audioBitrateMode": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-audiobitratemode",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": "89"
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "75"
+            },
+            "opera_android": {
+              "version_added": "63"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "15.0"
+            },
+            "webview_android": {
+              "version_added": "89"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -363,7 +411,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "chrome_android": [
@@ -374,7 +422,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "edge": {
@@ -413,7 +461,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ]
           },
@@ -976,7 +1024,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "chrome_android": [
@@ -987,7 +1035,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "edge": {
@@ -1025,7 +1073,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ]
           },
@@ -1098,7 +1146,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "chrome_android": [
@@ -1109,7 +1157,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "edge": {

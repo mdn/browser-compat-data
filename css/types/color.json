@@ -132,7 +132,7 @@
                 "version_added": "47"
               },
               "safari": {
-                "version_added": "9.1"
+                "version_added": "10"
               },
               "safari_ios": {
                 "version_added": "9.3"
@@ -146,6 +146,134 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "color": {
+          "__compat": {
+            "description": "Profiled color values (<code>color()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color()",
+            "spec_url": "https://drafts.csswg.org/css-color/#color-function",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": [
+                {
+                  "version_added": "15"
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "15",
+                  "partial_implementation": true,
+                  "notes": "Only supports <code>display-p3</code> and <code>srgb</code> predefined color profiles."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15"
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "15",
+                  "partial_implementation": true,
+                  "notes": "Only supports <code>display-p3</code> and <code>srgb</code> predefined color profiles."
+                }
+              ],
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "color-contrast": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast()",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#colorcontrast",
+            "description": "<code>color-contrast()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-contrast()"
+                  }
+                ]
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-contrast()"
+                  }
+                ]
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -196,10 +324,22 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-mix()"
+                  }
+                ]
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "15",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS color-mix()"
+                  }
+                ]
               },
               "samsunginternet_android": {
                 "version_added": false
@@ -410,6 +550,56 @@
             }
           }
         },
+        "hwb": {
+          "__compat": {
+            "description": "HWB color values (<code>hwb()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hwb()",
+            "spec_url": "https://drafts.csswg.org/css-color/#the-hwb-notation",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "keyword_color_values": {
           "__compat": {
             "description": "Keyword color values",
@@ -455,6 +645,106 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "lab": {
+          "__compat": {
+            "description": "Lab color values (<code>lab()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lab()",
+            "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "lch": {
+          "__compat": {
+            "description": "LCH color values (<code>lch()</code>)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lch()",
+            "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

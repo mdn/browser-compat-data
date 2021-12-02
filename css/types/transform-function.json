@@ -5,7 +5,10 @@
         "__compat": {
           "description": "<code>&lt;transform-function&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function",
-          "spec_url": "https://drafts.csswg.org/css-transforms/#transform-functions",
+          "spec_url": [
+            "https://drafts.csswg.org/css-transforms/#transform-functions",
+            "https://drafts.csswg.org/css-transforms-2/#transform-functions"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -17,11 +20,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "3.5",
-              "notes": [
-                "Firefox 14 removed experimental support for <a href='https://developer.mozilla.org/docs/Web/CSS/transform-function/skew'><code>skew()</code></a>, but it was reintroduced in Firefox 15.",
-                "Before Firefox 16, the translation values of <code>matrix()</code> and <code>matrix3d()</code> could be <a href='https://developer.mozilla.org/docs/Web/CSS/length'><code>&lt;length&gt;</code></a>s, in addition to the standard <a href='https://developer.mozilla.org/docs/Web/CSS/number'><code>&lt;number&gt;</code></a>."
-              ]
+              "version_added": "3.5"
             },
             "firefox_android": {
               "version_added": "4"
@@ -55,9 +54,1014 @@
             "deprecated": false
           }
         },
-        "3d": {
+        "matrix": {
           "__compat": {
-            "description": "3D support",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/matrix()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-matrix",
+            "description": "<code>matrix()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5",
+                "notes": "Before Firefox 16, the translation values of <code>matrix()</code> could be <a href='https://developer.mozilla.org/docs/Web/CSS/length'><code>&lt;length&gt;</code></a>s, in addition to the standard <a href='https://developer.mozilla.org/docs/Web/CSS/number'><code>&lt;number&gt;</code></a>."
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "matrix3d": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/matrix3d()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-matrix3d",
+            "description": "<code>matrix3d()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10",
+                "notes": "Before Firefox 16, the translation values of <code>matrix3d()</code> could be <a href='https://developer.mozilla.org/docs/Web/CSS/length'><code>&lt;length&gt;</code></a>s, in addition to the standard <a href='https://developer.mozilla.org/docs/Web/CSS/number'><code>&lt;number&gt;</code></a>."
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "perspective": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/perspective()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-perspective",
+            "description": "<code>perspective()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rotate": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-rotate",
+            "description": "<code>rotate()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rotate3d": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate3d()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotate3d",
+            "description": "<code>rotate3d()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rotateX": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/rotateX()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotatex",
+            "description": "<code>rotateX()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rotateY": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/rotateY()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotatey",
+            "description": "<code>rotateY()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rotateZ": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/rotateZ()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-rotatez",
+            "description": "<code>rotateZ()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "scale": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/scale()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-scale",
+            "description": "<code>scale()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "scale3d": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/scale3d()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-scale3d",
+            "description": "<code>scale3d()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "scaleX": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleX()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-scalex",
+            "description": "<code>scaleX()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "scaleY": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleY()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-scaley",
+            "description": "<code>scaleY()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "scaleZ": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleZ()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-scalez",
+            "description": "<code>scaleZ()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "skew": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/skew()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-skew",
+            "description": "<code>skew()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5",
+                "notes": "Firefox 14 removed experimental support for <code>skew()</code></a>, but it was reintroduced in Firefox 15."
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "skewX": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/skewX()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-skewx",
+            "description": "<code>skewX()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "skewY": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/skewY()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-skewy",
+            "description": "<code>skewY()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "translate": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/translate()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-translate",
+            "description": "<code>translate()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "translate3d": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/translate3d()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-translate3d",
+            "description": "<code>translate3d()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "10"
+              },
+              "firefox_android": {
+                "version_added": "10"
+              },
+              "ie": {
+                "version_added": "10"
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "3"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "translateX": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/translateX()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-translatex",
+            "description": "<code>translateX()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "translateY": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/translateY()",
+            "spec_url": "https://drafts.csswg.org/css-transforms/#funcdef-transform-translatey",
+            "description": "<code>translateY()</code>",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "3.5"
+              },
+              "firefox_android": {
+                "version_added": "4"
+              },
+              "ie": {
+                "version_added": "9"
+              },
+              "opera": {
+                "version_added": "10.5"
+              },
+              "opera_android": {
+                "version_added": "11"
+              },
+              "safari": {
+                "version_added": "3.1"
+              },
+              "safari_ios": {
+                "version_added": "3.2"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "2"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "translateZ": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function/translateZ()",
+            "spec_url": "https://drafts.csswg.org/css-transforms-2/#funcdef-translatez",
+            "description": "<code>rotateZ()</code>",
             "support": {
               "chrome": {
                 "version_added": "12"

@@ -83,7 +83,7 @@
                 "version_removed": "25"
               },
               "safari": {
-                "version_added": "3.2"
+                "version_added": "3.1"
               },
               "safari_ios": {
                 "version_added": "3"
@@ -381,7 +381,7 @@
                 "version_added": "3.1"
               },
               "safari_ios": {
-                "version_added": "3.1"
+                "version_added": "2"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -768,24 +768,30 @@
               "edge": {
                 "version_added": "92"
               },
-              "firefox": {
-                "version_added": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.size-adjust.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "92"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "92",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.size-adjust.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
-                "version_added": false
+                "version_added": "92"
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "78"
               },
               "opera_android": {
                 "version_added": false
@@ -797,14 +803,14 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "16.0"
               },
               "webview_android": {
                 "version_added": "92"
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -843,7 +849,7 @@
                 "version_added": "3.1"
               },
               "safari_ios": {
-                "version_added": "3.1"
+                "version_added": "2"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -937,7 +943,7 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "3.2"
+                "version_added": "3.1"
               },
               "safari_ios": {
                 "version_added": "3"

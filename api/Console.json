@@ -1,8 +1,8 @@
 {
   "api": {
-    "Console": {
+    "console": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/console",
         "spec_url": "https://console.spec.whatwg.org/#console-namespace",
         "support": {
           "chrome": {
@@ -10,6 +10,9 @@
           },
           "chrome_android": {
             "version_added": "18"
+          },
+          "deno": {
+            "version_added": "1.0"
           },
           "edge": {
             "version_added": "12"
@@ -54,7 +57,7 @@
       },
       "assert": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/assert",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/assert",
           "spec_url": "https://console.spec.whatwg.org/#assert",
           "support": {
             "chrome": {
@@ -62,6 +65,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -113,7 +119,7 @@
       },
       "clear": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/clear",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/clear",
           "spec_url": "https://console.spec.whatwg.org/#clear",
           "support": {
             "chrome": {
@@ -121,6 +127,9 @@
             },
             "chrome_android": {
               "version_added": "25"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -144,7 +153,7 @@
               "version_added": "12"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -165,7 +174,7 @@
       },
       "count": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/count",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/count",
           "spec_url": "https://console.spec.whatwg.org/#count",
           "support": {
             "chrome": {
@@ -173,6 +182,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -217,7 +229,7 @@
       },
       "countReset": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/countReset",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/countReset",
           "spec_url": "https://console.spec.whatwg.org/#countreset",
           "support": {
             "chrome": {
@@ -225,6 +237,9 @@
             },
             "chrome_android": {
               "version_added": "68"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "79"
@@ -269,7 +284,7 @@
       },
       "debug": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/debug",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/debug",
           "spec_url": "https://console.spec.whatwg.org/#debug",
           "support": {
             "chrome": {
@@ -277,6 +292,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -336,6 +354,13 @@
                 "version_added": "18",
                 "notes": "In version 28, if a negative value is passed to <code>%d</code>, it will be rounded down to the closest negative integer. For example, -0.1 becomes -1."
               },
+              "deno": {
+                "version_added": "1.0",
+                "notes": [
+                  "Before Deno 1.4, <code>%c</code> is not supported.",
+                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                ]
+              },
               "edge": {
                 "version_added": "12",
                 "notes": [
@@ -390,7 +415,7 @@
       },
       "dir": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/dir",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/dir",
           "spec_url": "https://console.spec.whatwg.org/#dir",
           "support": {
             "chrome": {
@@ -398,6 +423,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -442,7 +470,7 @@
       },
       "dirxml": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/dirxml",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/dirxml",
           "spec_url": "https://console.spec.whatwg.org/#dirxml",
           "support": {
             "chrome": {
@@ -450,6 +478,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -501,7 +532,7 @@
       },
       "error": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/error",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/error",
           "spec_url": "https://console.spec.whatwg.org/#error",
           "support": {
             "chrome": {
@@ -509,6 +540,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -559,6 +593,13 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0",
+                "notes": [
+                  "Before Deno 1.4, <code>%c</code> is not supported.",
+                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                ]
               },
               "edge": {
                 "version_added": "12",
@@ -612,13 +653,15 @@
       },
       "exception": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/exception",
           "description": "<code>exception</code> (an alias for <code>error</code>)",
           "support": {
             "chrome": {
               "version_added": false
             },
             "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
               "version_added": false
             },
             "edge": {
@@ -669,6 +712,9 @@
               "chrome_android": {
                 "version_added": false
               },
+              "deno": {
+                "version_added": false
+              },
               "edge": {
                 "version_added": "≤18",
                 "version_removed": "79"
@@ -711,7 +757,7 @@
       },
       "group": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/group",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/group",
           "spec_url": "https://console.spec.whatwg.org/#group",
           "support": {
             "chrome": {
@@ -719,6 +765,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -763,7 +812,7 @@
       },
       "groupCollapsed": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/groupCollapsed",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/groupCollapsed",
           "spec_url": "https://console.spec.whatwg.org/#groupcollapsed",
           "support": {
             "chrome": {
@@ -771,6 +820,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -798,7 +850,7 @@
               "version_added": "5.1"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -816,7 +868,7 @@
       },
       "groupEnd": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/groupEnd",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/groupEnd",
           "spec_url": "https://console.spec.whatwg.org/#groupend",
           "support": {
             "chrome": {
@@ -824,6 +876,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -868,7 +923,7 @@
       },
       "info": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/info",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/info",
           "spec_url": "https://console.spec.whatwg.org/#info",
           "support": {
             "chrome": {
@@ -876,6 +931,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -928,6 +986,13 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0",
+                "notes": [
+                  "Before Deno 1.4, <code>%c</code> is not supported.",
+                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                ]
+              },
               "edge": {
                 "version_added": "12",
                 "notes": [
@@ -949,7 +1014,7 @@
                 ]
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10.0"
               },
               "opera": {
                 "version_added": "15"
@@ -980,7 +1045,7 @@
       },
       "log": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/log",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/log",
           "spec_url": "https://console.spec.whatwg.org/#log",
           "support": {
             "chrome": {
@@ -988,6 +1053,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -1040,6 +1108,13 @@
               "chrome_android": {
                 "version_added": "18",
                 "notes": "In version 28, if a negative value is passed to %d, it will be rounded down to the closest negative integer, so -0.1 becomes -1."
+              },
+              "deno": {
+                "version_added": "1.0",
+                "notes": [
+                  "Before Deno 1.4, <code>%c</code> is not supported.",
+                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                ]
               },
               "edge": {
                 "version_added": "12",
@@ -1095,13 +1170,16 @@
       },
       "profile": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/profile",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/profile",
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "12"
@@ -1152,13 +1230,16 @@
       },
       "profileEnd": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/profileEnd",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/profileEnd",
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "12"
@@ -1209,7 +1290,7 @@
       },
       "table": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/table",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/table",
           "spec_url": "https://console.spec.whatwg.org/#table",
           "support": {
             "chrome": {
@@ -1217,6 +1298,9 @@
             },
             "chrome_android": {
               "version_added": "27"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -1240,7 +1324,7 @@
               "version_added": "11"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -1261,7 +1345,7 @@
       },
       "time": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/time",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/time",
           "spec_url": "https://console.spec.whatwg.org/#time",
           "support": {
             "chrome": {
@@ -1269,6 +1353,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -1313,7 +1400,7 @@
       },
       "timeEnd": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/timeEnd",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/timeEnd",
           "spec_url": "https://console.spec.whatwg.org/#timeend",
           "support": {
             "chrome": {
@@ -1321,6 +1408,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -1365,7 +1455,7 @@
       },
       "timeLog": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/timeLog",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/timeLog",
           "spec_url": "https://console.spec.whatwg.org/#timelog",
           "support": {
             "chrome": {
@@ -1373,6 +1463,9 @@
             },
             "chrome_android": {
               "version_added": "71"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "79"
@@ -1417,13 +1510,16 @@
       },
       "timeStamp": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/timeStamp",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/timeStamp",
           "support": {
             "chrome": {
               "version_added": "14"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "12"
@@ -1474,7 +1570,7 @@
       },
       "trace": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/trace",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/trace",
           "spec_url": "https://console.spec.whatwg.org/#trace",
           "support": {
             "chrome": {
@@ -1482,6 +1578,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -1526,7 +1625,7 @@
       },
       "warn": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Console/warn",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/warn",
           "spec_url": "https://console.spec.whatwg.org/#warn",
           "support": {
             "chrome": {
@@ -1534,6 +1633,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -1585,6 +1687,13 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0",
+                "notes": [
+                  "Before Deno 1.4, <code>%c</code> is not supported.",
+                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                ]
               },
               "edge": {
                 "version_added": "12",
@@ -1646,6 +1755,9 @@
             "chrome_android": {
               "version_added": "31"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -1668,7 +1780,7 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
