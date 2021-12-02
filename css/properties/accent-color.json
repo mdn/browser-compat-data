@@ -6,55 +6,79 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/accent-color",
           "spec_url": "https://drafts.csswg.org/css-ui/#widget-accent",
           "support": {
-            "chrome": {
-              "version_added": "91",
-              "flags": [
-                {
-                  "name": "#enable-experimental-web-platform-features",
-                  "type": "preference",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "91",
-              "flags": [
-                {
-                  "name": "#enable-experimental-web-platform-features",
-                  "type": "preference",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": "91",
-              "flags": [
-                {
-                  "name": "#enable-experimental-web-platform-features",
-                  "type": "preference",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "firefox": {
-              "version_added": "90",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.accent-color.enabled",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "Enabled by default in Firefox Nightly."
-            },
+            "chrome": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "91",
+                "version_removed": "93",
+                "flags": [
+                  {
+                    "name": "#enable-experimental-web-platform-features",
+                    "type": "preference",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "91",
+                "version_removed": "93",
+                "flags": [
+                  {
+                    "name": "#enable-experimental-web-platform-features",
+                    "type": "preference",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "91",
+                "version_removed": "93",
+                "flags": [
+                  {
+                    "name": "#enable-experimental-web-platform-features",
+                    "type": "preference",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "92"
+              },
+              {
+                "version_added": "90",
+                "version_removed": "92",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.accent-color.enabled",
+                    "value_to_set": "enabled"
+                  }
+                ],
+                "notes": "Enabled by default in Firefox Nightly."
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "92"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "79"
             },
             "opera_android": {
               "version_added": false
@@ -69,11 +93,11 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "93"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
