@@ -38,7 +38,7 @@ function orderFeatures(key, value) {
 }
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
 const fixFeatureOrder = filename => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

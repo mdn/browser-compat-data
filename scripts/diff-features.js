@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const yargs = require('yargs');
 
-function main({ ref1, ref2, format }) {
+function main({ ref1, ref2, format, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -20,8 +20,8 @@ function main({ ref1, ref2, format }) {
     refB = `${ref1}`;
   }
 
-  const aSide = new Set(enumerateFeatures(refA));
-  const bSide = new Set(enumerateFeatures(refB));
+  let aSide = enumerate(refA, github === false);
+  let bSide = enumerate(refB, github === false);
 
   const results = {
     added: [...bSide].filter(feature => !aSide.has(feature)),
@@ -32,6 +32,60 @@ function main({ ref1, ref2, format }) {
     printMarkdown(results);
   } else {
     console.log(JSON.stringify(results, undefined, 2));
+  }
+}
+
+function enumerate(ref, skipGitHub) {
+  if (!skipGitHub) {
+    try {
+      return new Set(getEnumerationFromGithub(ref));
+    } catch {
+      console.error('Fetching artifact from GitHub failed. Using fallback.');
+    }
+  }
+
+  return new Set(enumerateFeatures(ref));
+}
+
+function getEnumerationFromGithub(ref) {
+  const ENUMERATE_WORKFLOW = '15595228';
+  const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
+  const ENUMERATE_WORKFLOW_FILE = 'features.json';
+
+  const unlinkFile = () => {
+    try {
+      fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
+    } catch (err) {
+      if (err.code == 'ENOENT') {
+        return;
+      } else {
+        throw err;
+      }
+    }
+  };
+
+  const hash = execSync(`git rev-parse ${ref}`, {
+    encoding: 'utf-8',
+  }).trim();
+  const workflowRun = execSync(
+    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs --jq '.workflow_runs[] | select(.head_sha=="${hash}") | .id'`,
+    {
+      encoding: 'utf-8',
+    },
+  ).trim();
+
+  if (!workflowRun) throw Error('No workflow run found for commit.');
+
+  try {
+    unlinkFile();
+    execSync(
+      `gh run download ${workflowRun} -n ${ENUMERATE_WORKFLOW_ARTIFACT}`,
+    );
+    return JSON.parse(
+      fs.readFileSync(ENUMERATE_WORKFLOW_FILE, { encoding: 'utf-8' }),
+    );
+  } finally {
+    unlinkFile();
   }
 }
 
@@ -92,6 +146,10 @@ const { argv } = yargs.command(
         choices: ['json', 'markdown'],
         demand: 'a named format is required',
         default: 'markdown',
+      })
+      .option('no-github', {
+        type: 'boolean',
+        description: "Don't fetch artifacts from GitHub.",
       })
       .example('$0', 'compare HEAD to parent commmit')
       .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
