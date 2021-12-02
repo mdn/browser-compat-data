@@ -948,9 +948,17 @@
             "opera_android": {
               "version_added": "24"
             },
-            "safari": {
-              "version_added": "7"
-            },
+            "safari": [
+              {
+                "version_added": "15"
+              },
+              {
+                "version_added": "7",
+                "version_removed": "15",
+                "partial_implementation": true,
+                "notes": "Only supported the deprecated callback syntax."
+              }
+            ],
             "safari_ios": {
               "version_added": false
             },
@@ -1028,7 +1036,7 @@
               "version_added": "62"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "67"
