@@ -64,13 +64,4 @@ The package is now ready to be published.
 
 3. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly.
 
-The package is now published.
-
-## Wrap up
-
-After the release is published, update tracking issues:
-
-- [#6369](https://github.com/mdn/browser-compat-data/issues/6369) for every release, update with the results of `npm run stats api`
-- [#3555](https://github.com/mdn/browser-compat-data/issues/3555) when there's significant progress, update with the results of `npm run stats`
-
-You have finished releasing BCD! 🎉
+The package is now published and you have finished releasing BCD! 🎉
