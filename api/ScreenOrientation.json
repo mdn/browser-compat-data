@@ -103,20 +103,34 @@
           "spec_url": "https://w3c.github.io/screen-orientation/#dom-screenorientation-lock",
           "support": {
             "chrome": {
-              "version_added": "38"
+              "version_added": "38",
+              "partial_implementation": true,
+              "notes": "The method exists but always rejects with <code>NotSupportedError</code> on Windows, macOS and Linux version."
             },
             "chrome_android": {
               "version_added": "38"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "79",
+              "partial_implementation": true,
+              "notes": "The method exists but always rejects with <code>NotSupportedError</code>."
             },
             "firefox": {
-              "version_added": "43"
+              "version_added": "43",
+              "partial_implementation": true,
+              "notes": "The method exists but always rejects with <code>NotSupportedError</code>."
             },
-            "firefox_android": {
-              "version_added": "43"
-            },
+            "firefox_android": [
+              {
+                "version_added": "79",
+                "partial_implementation": true,
+                "notes": "The method exists but always rejects with <code>NS_ERROR_UNEXPECTED</code>."
+              },
+              {
+                "version_added": "43",
+                "version_removed": "79"
+              }
+            ],
             "ie": {
               "version_added": false
             },
