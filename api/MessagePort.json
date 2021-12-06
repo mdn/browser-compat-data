@@ -26,10 +26,16 @@
           "ie": {
             "version_added": "10"
           },
-          "nodejs": {
-            "version_added": "10.5.0",
-            "notes": "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>."
-          },
+          "nodejs": [
+            {
+              "version_added": "14.7.0"
+            },
+            {
+              "version_added": "10.5.0",
+              "version_removed": "14.7.0",
+              "notes": "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>."
+            }
+          ],
           "opera": {
             "version_added": "10.6"
           },
@@ -81,9 +87,17 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "14.7.0"
+              },
+              {
+                "version_added": "10.5.0",
+                "version_removed": "14.7.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -137,11 +151,17 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "partial_implementation": true,
-              "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
-            },
+            "nodejs": [
+              {
+                "version_added": "14.7.0"
+              },
+              {
+                "version_added": "10.5.0",
+                "version_removed": "14.7.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -195,11 +215,17 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "14.5.0",
-              "partial_implementation": true,
-              "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
-            },
+            "nodejs": [
+              {
+                "version_added": "14.7.0"
+              },
+              {
+                "version_added": "14.5.0",
+                "version_removed": "14.7.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              }
+            ],
             "opera": {
               "version_added": "47"
             },
@@ -488,7 +514,7 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "10.5.0"
             },
             "opera": {
               "version_added": "≤15"

@@ -1977,7 +1977,7 @@
               "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
               "version_added": "11"
@@ -2027,7 +2027,7 @@
               "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
               "version_added": "11"
@@ -2077,16 +2077,16 @@
               "version_added": "9"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "9"
             },
             "ie": {
               "version_added": "11"
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "14"
             },
             "safari": {
               "version_added": "5"
@@ -2221,7 +2221,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "22"
@@ -2230,7 +2230,8 @@
               "version_added": "22"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9",
+              "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>; however, the event handler is supported since IE 5.5. The event can be listened to via <code>element.oncopy</code>."
             },
             "opera": {
               "version_added": "15"
@@ -2367,7 +2368,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "22"
@@ -2376,7 +2377,8 @@
               "version_added": "22"
             },
             "ie": {
-              "version_added": true
+              "version_added": "9",
+              "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>; however, the event handler is supported since IE 5.5. The event can be listened to via <code>element.oncopy</code>."
             },
             "opera": {
               "version_added": "15"
@@ -3892,16 +3894,16 @@
                 "version_added": "6"
               },
               "opera": {
-                "version_added": true
+                "version_added": "≤15"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "≤14"
               },
               "safari": {
-                "version_added": "≤4"
+                "version_added": "1"
               },
               "safari_ios": {
-                "version_added": "≤3"
+                "version_added": "1"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -4002,16 +4004,16 @@
                 "version_added": "9"
               },
               "opera": {
-                "version_added": true
+                "version_added": "≤15"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "≤14"
               },
               "safari": {
-                "version_added": "≤4"
+                "version_added": "1"
               },
               "safari_ios": {
-                "version_added": "≤3"
+                "version_added": "1"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -4591,10 +4593,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "1.2"
@@ -4645,10 +4647,12 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1",
+              "notes": "Opera does not fire the <code>keypress</code> event for <a href='https://crbug.com/13891#c50'>known keyboard shortcuts</a>. Which keyboard shortcuts are known depends on the user's system. Use the <code>keydown</code> event to implement keyboard shortcuts."
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1",
+              "notes": "Opera does not fire the <code>keypress</code> event for <a href='https://crbug.com/13891#c50'>known keyboard shortcuts</a>. Which keyboard shortcuts are known depends on the user's system. Use the <code>keydown</code> event to implement keyboard shortcuts."
             },
             "safari": {
               "version_added": "1.3"
@@ -4697,10 +4701,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "1.2"
@@ -5139,16 +5143,16 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "≤4"
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": "≤3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -5885,8 +5889,11 @@
               "version_added": "22"
             },
             "ie": {
-              "version_added": "8",
-              "notes": "Before Internet Explorer 11, copying files does not trigger the <code>paste</code> event."
+              "version_added": "9",
+              "notes": [
+                "Before Internet Explorer 11, copying files does not trigger the <code>paste</code> event.",
+                "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>; however, the event handler is supported since IE 5.5. The event can be listened to via <code>element.oncopy</code>."
+              ]
             },
             "opera": {
               "version_added": "15"
@@ -6879,10 +6886,10 @@
               "version_added": "9"
             },
             "opera": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "1.3"
@@ -8599,7 +8606,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -8649,7 +8656,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -8699,7 +8706,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -8749,7 +8756,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
