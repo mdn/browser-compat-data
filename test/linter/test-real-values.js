@@ -28,7 +28,16 @@ const blockMany = [
 
 /** @type {Record<string, string[]>} */
 const blockList = {
-  api: [],
+  api: [
+    'chrome',
+    'chrome_android',
+    'edge',
+    'firefox',
+    'ie',
+    'safari',
+    'safari_ios',
+    'webview_android',
+  ],
   css: blockMany,
   html: [],
   http: [],
