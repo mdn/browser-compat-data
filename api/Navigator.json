@@ -560,10 +560,17 @@
               "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "firefox": {
-              "version_added": false
+              "version_added": "96",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -669,7 +676,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "96"
               },
               "firefox_android": {
                 "version_added": false
@@ -3457,8 +3464,8 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#dom.webshare.enabled",
-                  "value_to_set": "enabled"
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
                 }
               ]
             },
@@ -3568,7 +3575,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "71"
               },
               "firefox_android": {
                 "version_added": false
