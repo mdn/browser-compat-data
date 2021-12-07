@@ -57,6 +57,13 @@ Features added in this release:
 - `html.manifest.display_override` ([#13565](https://github.com/mdn/browser-compat-data/pull/13565))
 - `html.manifest.share_target` ([#13803](https://github.com/mdn/browser-compat-data/pull/13803))
 
+### Statistics
+
+- 13 contributors have changed 238 files with 3,330 additions and 2,873 deletions in 41 commits ([`v4.1.0...v4.1.1`](https://github.com/mdn/browser-compat-data/compare/v4.1.0...v4.1.1))
+- 13,377 total features
+- 832 total contributors
+- 3,693 total stargazers
+
 ## [v4.0.13](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.13)
 
 December 1, 2021
