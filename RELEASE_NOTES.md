@@ -64,7 +64,7 @@ Features added in this release:
 - 832 total contributors
 - 3,693 total stargazers
 
-## [v4.0.13](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.13)
+## [v4.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.0)
 
 December 1, 2021
 
