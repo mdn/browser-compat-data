@@ -36,6 +36,7 @@ const blockList = {
     'ie',
     'safari',
     'safari_ios',
+    'samsunginternet_android',
     'webview_android',
   ],
   css: blockMany,
