@@ -351,10 +351,22 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "54",
+              "flags": [
+                {
+                  "name": "WebAuth",
+                  "type": "preference"
+                }
+              ]
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "48",
+              "flags": [
+                {
+                  "name": "WebAuth",
+                  "type": "preference"
+                }
+              ]
             },
             "safari": {
               "version_added": false
@@ -497,17 +509,17 @@
                 "notes": "Returns a fixed timestamp as a privacy measure - <code>20181001000000</code>."
               },
               {
-                "version_added": true
+                "version_added": "4"
               }
             ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -548,10 +560,17 @@
               "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "firefox": {
-              "version_added": false
+              "version_added": "96",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -657,7 +676,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "96"
               },
               "firefox_android": {
                 "version_added": false
@@ -826,7 +845,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "48"
             },
             "opera_android": {
               "version_added": "37"
@@ -1178,10 +1197,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": "34"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "34"
               },
               "safari": {
                 "version_added": "10"
@@ -2032,11 +2051,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "96"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "96",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.weblocks.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -2122,10 +2154,10 @@
               }
             ],
             "opera": {
-              "version_added": true
+              "version_added": "22"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "safari": {
               "version_added": "13"
@@ -2632,10 +2664,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
               "version_added": false
@@ -3445,8 +3477,8 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#dom.webshare.enabled",
-                  "value_to_set": "enabled"
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
                 }
               ]
             },
@@ -3556,7 +3588,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "71"
               },
               "firefox_android": {
                 "version_added": false
@@ -4097,8 +4129,11 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Beginning in Opera 47, this method requires a user gesture. Otherwise it returns <code>false</code>."
+              "version_added": "19",
+              "notes": [
+                "Beginning in Opera 42, this is not supported in cross-origin iframes.",
+                "Beginning in Opera 47, this method requires a user gesture. Otherwise it returns <code>false</code>."
+              ]
             },
             "safari": {
               "version_added": false
@@ -4200,10 +4235,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "60"
             },
             "safari": {
               "version_added": false
