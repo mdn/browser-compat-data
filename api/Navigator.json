@@ -2051,11 +2051,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "96"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "96",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.weblocks.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -4105,7 +4118,7 @@
               },
               {
                 "version_added": "14",
-                "version_removed": true,
+                "version_removed": "16",
                 "prefix": "moz"
               }
             ],
