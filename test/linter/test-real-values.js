@@ -34,6 +34,8 @@ const blockList = {
     'edge',
     'firefox',
     'ie',
+    'opera',
+    'opera_android',
     'safari',
     'safari_ios',
     'samsunginternet_android',
