@@ -6,7 +6,7 @@ December 14, 2021
 
 ### General changes
 
-- Building on developments in [v4.1.1](https://github.com/mdn/browser-compat-data/blob/main/RELEASE_NOTES.md#v410), Web API data for Opera and Opera for Android now requires version number data. No `null` or `true` values remain and version numbers will be required for data added in future releases. ([#14003](https://github.com/mdn/browser-compat-data/pull/14003)).
+- Building on developments in [v4.1.1](https://github.com/mdn/browser-compat-data/blob/main/RELEASE_NOTES.md#v410), Web API data for Opera and Opera for Android now requires version number data. No `null` or `true` values remain and version numbers will be required for data added in future releases. ([#14003](https://github.com/mdn/browser-compat-data/pull/14003))
 
 ### Removals
 
