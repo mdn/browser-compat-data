@@ -67,7 +67,7 @@
               "version_added": "52"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "52"
             },
             "ie": {
               "version_added": false
@@ -125,7 +125,7 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Prior to Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
+                "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
               }
             ],
             "firefox_android": [
@@ -141,7 +141,7 @@
                     "value_to_set": "true"
                   }
                 ],
-                "notes": "Prior to Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
+                "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
               }
             ],
             "ie": {
@@ -201,7 +201,7 @@
               {
                 "version_added": "33",
                 "version_removed": "66",
-                "notes": "Since Firefox 33 you can capture screen data using <code><a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>getUserMedia()</a></code>, with a <code>video</code> constraint called <code>mediaSource</code>. Prior to 52 it relied on a client-configurable list of allowed sites."
+                "notes": "Since Firefox 33 you can capture screen data using <code><a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>getUserMedia()</a></code>, with a <code>video</code> constraint called <code>mediaSource</code>. Before 52 it relied on a client-configurable list of allowed sites."
               }
             ],
             "firefox_android": {
@@ -237,7 +237,7 @@
             "deprecated": false
           }
         },
-        "audio-capture-support": {
+        "audio_capture_support": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen_Capture_API/Using_Screen_Capture#Capturing_shared_audio",
             "description": "Audio capture support",
@@ -263,7 +263,8 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": "62",
+                "notes": "On Windows and Opera OS the entire system audio can be captured, but on Linux and Mac only the audio of a tab can be captured."
               },
               "opera_android": {
                 "version_added": false
@@ -469,7 +470,7 @@
               "version_added": "52"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "52"
             },
             "ie": {
               "version_added": false
@@ -495,6 +496,62 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "selectAudioOutput": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/selectAudioOutput",
+          "spec_url": "https://w3c.github.io/mediacapture-output/#dom-mediadevices-selectaudiooutput",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "88",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.setsinkid.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

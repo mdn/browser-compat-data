@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "4.0.0",
+  "version": "4.1.2",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -28,19 +28,19 @@
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
     "ajv": "~6.12.2",
-    "better-ajv-errors": "~0.7.0",
-    "browser-specs": "~2.7.0",
+    "better-ajv-errors": "~1.1.0",
+    "browser-specs": "~2.19.2",
     "chalk": "~4.1.0",
-    "compare-versions": "~3.6.0",
+    "compare-versions": "~4.1.1",
     "mdn-confluence": "~2.2.2",
     "mocha": "~9.1.0",
     "ora": "~5.4.0",
-    "prettier": "~2.3.0",
-    "yargs": "~17.1.0"
+    "prettier": "~2.5.0",
+    "yargs": "~17.2.0"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "mocha": "mocha \"*/**.test.js\"",
+    "mocha": "mocha \"**/*.test.js\"",
     "lint": "node test/lint",
     "fix": "node scripts/fix",
     "mirror": "node scripts/mirror",
