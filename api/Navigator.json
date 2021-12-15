@@ -351,10 +351,22 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "54",
+              "flags": [
+                {
+                  "name": "WebAuth",
+                  "type": "preference"
+                }
+              ]
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "48",
+              "flags": [
+                {
+                  "name": "WebAuth",
+                  "type": "preference"
+                }
+              ]
             },
             "safari": {
               "version_added": false
@@ -497,17 +509,17 @@
                 "notes": "Returns a fixed timestamp as a privacy measure - <code>20181001000000</code>."
               },
               {
-                "version_added": true
+                "version_added": "4"
               }
             ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -548,10 +560,17 @@
               "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "firefox": {
-              "version_added": false
+              "version_added": "96",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -657,7 +676,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "96"
               },
               "firefox_android": {
                 "version_added": false
@@ -826,7 +845,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "48"
             },
             "opera_android": {
               "version_added": "37"
@@ -916,11 +935,11 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
+              "notes": "Before Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "Prior to Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
+              "notes": "Before Firefox 8, <code>navigator.cookieEnabled</code> would report the wrong result if a site exception was in place for the page on which the check was performed. This has been fixed."
             },
             "ie": {
               "version_added": "4",
@@ -1059,19 +1078,19 @@
               "version_added": "23"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
               "version_added": "17",
-              "notes": "Edge prior to version 17 implemented <code>window.doNotTrack</code>."
+              "notes": "Before version 17, Edge implemented <code>window.doNotTrack</code>."
             },
             "firefox": {
               "version_added": "9",
-              "notes": "Prior to Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
+              "notes": "Before Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
             },
             "firefox_android": {
               "version_added": "9",
-              "notes": "Prior to Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
+              "notes": "Before Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
             },
             "ie": {
               "version_added": "9",
@@ -1083,7 +1102,7 @@
               "version_added": "12"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "12"
             },
             "safari": {
               "version_added": "5.1",
@@ -1094,7 +1113,7 @@
               "version_removed": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
               "version_added": "≤37"
@@ -1166,7 +1185,7 @@
                 "version_added": "47"
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "55"
@@ -1178,10 +1197,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": "34"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "34"
               },
               "safari": {
                 "version_added": "10"
@@ -1611,7 +1630,7 @@
               "notes": "Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when <code>Navigator.getVRDisplays()</code> is invoked)."
             },
             "chrome_android": {
-              "version_added": true,
+              "version_added": "79",
               "version_removed": "80",
               "notes": "Currently supported only by Google Daydream."
             },
@@ -1648,7 +1667,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true,
+              "version_added": "12.0",
               "version_removed": "13.0",
               "notes": "Currently supported only by Google Daydream."
             },
@@ -1757,6 +1776,54 @@
             },
             "webview_android": {
               "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ink": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/ink-enhancement/#navigator-interface-extensions",
+          "support": {
+            "chrome": {
+              "version_added": "94"
+            },
+            "chrome_android": {
+              "version_added": "94"
+            },
+            "edge": {
+              "version_added": "94"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "80"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "94"
             }
           },
           "status": {
@@ -1880,7 +1947,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Prior to Firefox 4, this property's value was also part of the user agent string, as reported by <code>navigator.userAgent</code>. Starting in Firefox 5, this property's value is based on the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
+              "notes": "Before Firefox 4, this property's value was also part of the user agent string, as reported by <code>navigator.userAgent</code>. Starting in Firefox 5, this property's value is based on the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
             },
             "firefox_android": {
               "version_added": "4"
@@ -1984,11 +2051,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "96"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "96",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.weblocks.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -2074,10 +2154,10 @@
               }
             ],
             "opera": {
-              "version_added": true
+              "version_added": "22"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "safari": {
               "version_added": "13"
@@ -2450,7 +2530,8 @@
             },
             "webview_android": {
               "version_added": "≤37",
-              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
+              "partial_implementation": true,
+              "notes": "Can incorrectly return true, see <a href='https://crbug.com/811122'>bug 811122</a>."
             }
           },
           "status": {
@@ -2511,6 +2592,54 @@
           }
         }
       },
+      "pdfViewerEnabled": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-pdfviewerenabled",
+          "support": {
+            "chrome": {
+              "version_added": "94"
+            },
+            "chrome_android": {
+              "version_added": "94"
+            },
+            "edge": {
+              "version_added": "94"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "80"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "94"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "permissions": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
@@ -2535,10 +2664,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
               "version_added": false
@@ -2578,7 +2707,7 @@
             "firefox": {
               "version_added": "1",
               "notes": [
-                "Prior to Firefox 69, <code>platform</code> would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system.",
+                "Before Firefox 69, <code>platform</code> would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system.",
                 "You can override the value returned by <code>platform</code> by setting the preference <code>general.platform.override</code> to the string you wish to be returned instead."
               ]
             },
@@ -2846,7 +2975,7 @@
               "notes": [
                 "Allowed schemes include <code>mailto</code>, <code>mms</code>, <code>nntp</code>, <code>rtsp</code>, and <code>webcal</code>. Custom protocols must be prefixed with <code>web+</code>.",
                 "From Chrome 77, the URL parameter only accepts <code>http</code> or <code>https</code> URLs.",
-                "The obsolete <code>title</code> argument is required."
+                "The obsolete <code>title</code> parameter is required."
               ]
             },
             "chrome_android": {
@@ -2856,7 +2985,7 @@
               "version_added": "79",
               "notes": [
                 "Allowed schemes include <code>mailto</code>, <code>mms</code>, <code>nntp</code>, <code>rtsp</code>, and <code>webcal</code>. Custom protocols must be prefixed with <code>web+</code>.",
-                "The obsolete <code>title</code> argument is required."
+                "The obsolete <code>title</code> parameter is required."
               ]
             },
             "firefox": {
@@ -2870,7 +2999,7 @@
             },
             "opera": {
               "version_added": "11.6",
-              "notes": "The obsolete <code>title</code> argument is required."
+              "notes": "The obsolete <code>title</code> parameter is required."
             },
             "opera_android": {
               "version_added": false
@@ -3199,7 +3328,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "75"
             },
             "opera_android": {
               "version_added": false
@@ -3348,8 +3477,8 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#dom.webshare.enabled",
-                  "value_to_set": "enabled"
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
                 }
               ]
             },
@@ -3459,7 +3588,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "71"
               },
               "firefox_android": {
                 "version_added": false
@@ -3526,10 +3655,10 @@
               "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -3989,7 +4118,7 @@
               },
               {
                 "version_added": "14",
-                "version_removed": true,
+                "version_removed": "16",
                 "prefix": "moz"
               }
             ],
@@ -4000,8 +4129,11 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true,
-              "notes": "Beginning in Opera 47, this method requires a user gesture. Otherwise it returns <code>false</code>."
+              "version_added": "19",
+              "notes": [
+                "Beginning in Opera 42, this is not supported in cross-origin iframes.",
+                "Beginning in Opera 47, this method requires a user gesture. Otherwise it returns <code>false</code>."
+              ]
             },
             "safari": {
               "version_added": false
@@ -4031,6 +4163,54 @@
           }
         }
       },
+      "virtualKeyboard": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/virtual-keyboard/#dom-navigator-virtualkeyboard",
+          "support": {
+            "chrome": {
+              "version_added": "94"
+            },
+            "chrome_android": {
+              "version_added": "94"
+            },
+            "edge": {
+              "version_added": "94"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "80"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "94"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "wakeLock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock",
@@ -4055,10 +4235,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "70"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "60"
             },
             "safari": {
               "version_added": false
@@ -4117,6 +4297,54 @@
             },
             "samsunginternet_android": {
               "version_added": "8.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "windowControlsOverlay": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/window-controls-overlay/#windowcontrolsoverlay-interface",
+          "support": {
+            "chrome": {
+              "version_added": "97"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "97"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
