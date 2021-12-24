@@ -3,6 +3,8 @@
 const fs = require('fs').promises;
 const path = require('path');
 
+const packageJson = require('../package.json');
+
 const directory = './build/';
 
 const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
@@ -10,6 +12,7 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 // Returns a string representing data ready for writing to JSON file
 function createDataBundle() {
   const bcd = require('../index.js');
+  bcd.__version = packageJson.version;
   const string = JSON.stringify(bcd);
   return string;
 }
@@ -37,7 +40,6 @@ async function copyFiles() {
 }
 
 function createManifest() {
-  const full = require('../package.json');
   const minimal = { main: 'index.js' };
 
   const minimalKeys = [
@@ -54,8 +56,8 @@ function createManifest() {
   ];
 
   for (const key of minimalKeys) {
-    if (key in full) {
-      minimal[key] = full[key];
+    if (key in packageJson) {
+      minimal[key] = packageJson[key];
     } else {
       throw `Could not create a complete manifest! ${key} is missing!`;
     }
