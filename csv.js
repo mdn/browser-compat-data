@@ -57,13 +57,34 @@ function main() {
       // Flatten even further to just boolean support
       return version ? '=TRUE' : '=FALSE';
     });
-    let crbug = links.find(href => href.startsWith('https://crbug.com/'));
-    if (crbug) {
-      crbug = `=HYPERLINK(${JSON.stringify(crbug)};${JSON.stringify(crbug.substr(8))})`;
-    } else {
-      crbug = '';
+
+    // Extract bug links. Reverse links so that the first one wins.
+    links.reverse();
+    let crbug = '';
+    let bzbug = '';
+    let wkbug = '';
+    for (const href of links) {
+      if (href.startsWith('https://crbug.com/')) {
+        crbug = href;
+      } else if (href.startsWith('https://bugzil.la/')) {
+        bzbug = href;
+      } else if (href.startsWith('https://webkit.org/b/')) {
+        wkbug = href;
+      }
     }
-    console.log([linkedPath, ...statuses, ...flatSupport, crbug].join(','));
+    // List entries with more than one bug:
+    // if (!!crbug + !!bzbug + !!wkbug > 1) {
+    //   console.log(path);
+    // }
+    // There can only be one link, so pick one (if any). Alternatively, we could
+    // have one bug column per engine.
+    let bug = crbug || bzbug || wkbug;
+    if (bug) {
+      crbug = `=HYPERLINK(${JSON.stringify(bug)};${JSON.stringify(bug.substr(8))})`;
+    } else {
+      bug = '';
+    }
+    console.log([linkedPath, ...statuses, ...flatSupport, bug].join(','));
   }
 }
 
