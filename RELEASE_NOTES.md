@@ -1,6 +1,104 @@
 # Release notes
 
-## [v4.0.13](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.13)
+## [v4.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.2)
+
+December 14, 2021
+
+### General changes
+
+- Building on developments in [v4.1.1](https://github.com/mdn/browser-compat-data/blob/main/RELEASE_NOTES.md#v410), Web API data for Opera and Opera for Android now requires version number data. No `null` or `true` values remain and version numbers will be required for data added in future releases. ([#14003](https://github.com/mdn/browser-compat-data/pull/14003))
+
+### Removals
+
+- `api.TaskSignal.onprioritychange` ([#13923](https://github.com/mdn/browser-compat-data/pull/13923))
+- `api.VirtualKeyboard.ongeometrychange` ([#13922](https://github.com/mdn/browser-compat-data/pull/13922))
+- `api.VisualViewport.onresize` ([#13884](https://github.com/mdn/browser-compat-data/pull/13884))
+- `api.VisualViewport.onscroll` ([#13884](https://github.com/mdn/browser-compat-data/pull/13884))
+- `css.types.length.mozmm` ([#13927](https://github.com/mdn/browser-compat-data/pull/13927))
+
+### Additions
+
+- `api.HTMLCanvasElement.toBlob.type_parameter_webp` ([#13897](https://github.com/mdn/browser-compat-data/pull/13897))
+- `api.HTMLCanvasElement.toDataURL.type_parameter_webp` ([#13897](https://github.com/mdn/browser-compat-data/pull/13897))
+- `api.OffscreenCanvas.convertToBlob.option_type_parameter_webp` ([#13897](https://github.com/mdn/browser-compat-data/pull/13897))
+- `api.TaskSignal.prioritychange_event` ([#13923](https://github.com/mdn/browser-compat-data/pull/13923))
+- `api.VirtualKeyboard.geometrychange_event` ([#13922](https://github.com/mdn/browser-compat-data/pull/13922))
+- `html.manifest.note_taking` ([#13899](https://github.com/mdn/browser-compat-data/pull/13899))
+- `html.manifest.note_taking.new_note_url` ([#13899](https://github.com/mdn/browser-compat-data/pull/13899))
+- `http.headers.Sec-CH-UA-Bitness` ([#13989](https://github.com/mdn/browser-compat-data/pull/13989))
+
+### Statistics
+
+- 14 contributors have changed 253 files with 2,174 additions and 1,422 deletions in 40 commits ([`v4.1.1...main`](https://github.com/mdn/browser-compat-data/compare/v4.1.1...main))
+- 13,380 total features
+- 833 total contributors
+- 3,700 total stargazers
+
+## [v4.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.1)
+
+December 7, 2021
+
+**We've changed the format of these release notes!** We're experimenting with new release notes. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+### General changes
+
+- Web API data for selected browsers now requires version number data ([#13845](https://github.com/mdn/browser-compat-data/pull/13845/)). For the following browsers, no `null` or `true` values remain and version numbers will be required for data added in future releases:
+
+  - Chrome
+  - Chrome for Android
+  - Edge
+  - Firefox
+  - Internet Explorer
+  - Safari
+  - Safari for iOS
+  - Webview Android
+
+- All entries using Safari 6.1, a backport release of Safari 7, have been changed to avoid unexplained discontinuities in support. Since it's no longer used in any support statements, the data for the Safari 6.1 release has been removed. See [the guideline for historic Safari backport releases](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#backported-releases) for more information on this change. ([#11156](https://github.com/mdn/browser-compat-data/pull/11156))
+
+### Removals
+
+Features removed in this release:
+
+- `api.MediaDevices.getDisplayMedia.audio-capture-support` ([#13837](https://github.com/mdn/browser-compat-data/pull/13837))
+- `api.PaymentDetailsUpdate` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.displayItems` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.error` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.modifiers` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.shippingAddressErrors` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.shippingOptions` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.total` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.WakeLockSentinel.onrelease` ([#13816](https://github.com/mdn/browser-compat-data/pull/13816))
+- `api.XRLightProbe.onreflectionchange` ([#13374](https://github.com/mdn/browser-compat-data/pull/13374))
+- `api.XRReferenceSpace.onreset` ([#13483](https://github.com/mdn/browser-compat-data/pull/13483))
+- `api.XRSession.onend` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.oninputsourceschange` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onselect` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onselectend` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onselectstart` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onsqueeze` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onsqueezeend` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onsqueezestart` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onvisibilitychange` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSystem.ondevicechange` ([#13484](https://github.com/mdn/browser-compat-data/pull/13484))
+
+### Additions
+
+Features added in this release:
+
+- `api.EyeDropper.secure_context_required` ([#13808](https://github.com/mdn/browser-compat-data/pull/13808))
+- `api.MediaDevices.getDisplayMedia.audio_capture_support` ([#13837](https://github.com/mdn/browser-compat-data/pull/13837))
+- `api.WakeLockSentinel.release_event` ([#13816](https://github.com/mdn/browser-compat-data/pull/13816))
+- `html.manifest.display_override` ([#13565](https://github.com/mdn/browser-compat-data/pull/13565))
+- `html.manifest.share_target` ([#13803](https://github.com/mdn/browser-compat-data/pull/13803))
+
+### Statistics
+
+- 13 contributors have changed 238 files with 3,330 additions and 2,873 deletions in 41 commits ([`v4.1.0...v4.1.1`](https://github.com/mdn/browser-compat-data/compare/v4.1.0...v4.1.1))
+- 13,377 total features
+- 832 total contributors
+- 3,693 total stargazers
+
+## [v4.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.0)
 
 December 1, 2021
 

@@ -1282,24 +1282,26 @@
               },
               {
                 "alternative_name": "charset",
-                "version_added": null
+                "version_added": "15",
+                "notes": "<code>charset</code> alias was made read-only in Opera 45."
               },
               {
                 "alternative_name": "inputEncoding",
-                "version_added": null
+                "version_added": "15"
               }
             ],
             "opera_android": [
               {
-                "version_added": true
+                "version_added": "≤12.1"
               },
               {
                 "alternative_name": "charset",
-                "version_added": null
+                "version_added": "14",
+                "notes": "<code>charset</code> alias was made read-only in Opera 45."
               },
               {
                 "alternative_name": "inputEncoding",
-                "version_added": null
+                "version_added": "14"
               }
             ],
             "safari": [
@@ -1748,7 +1750,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "6"
@@ -1757,7 +1759,7 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9"
             },
             "opera": {
               "version_added": "15"
@@ -2404,7 +2406,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -2441,7 +2443,7 @@
               "version_added": "9"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "3"
@@ -2502,7 +2504,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -2742,11 +2744,11 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true,
+              "version_added": "15",
               "version_removed": "56"
             },
             "opera_android": {
-              "version_added": true,
+              "version_added": "14",
               "version_removed": "48"
             },
             "safari": {
@@ -2849,7 +2851,7 @@
                 "version_removed": "15"
               },
               "opera_android": {
-                "version_added": true,
+                "version_added": "10.1",
                 "version_removed": "14"
               },
               "safari": {
@@ -2962,7 +2964,7 @@
               "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -2985,7 +2987,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "6"
@@ -2994,7 +2996,7 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9"
             },
             "opera": {
               "version_added": "15"
@@ -4042,7 +4044,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -4276,10 +4278,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": true
+                "version_added": false
               },
               "opera_android": {
-                "version_added": true
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -4547,10 +4549,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": "56"
               },
               "opera_android": {
-                "version_added": null
+                "version_added": "48"
               },
               "safari": {
                 "version_added": false
@@ -6206,7 +6208,7 @@
             "firefox": [
               {
                 "version_added": "18",
-                "notes": "Since Firefox 56 it also returns <code>true</code> on Mac when the window is completely hidden by another non-translucent application."
+                "notes": "Since Firefox 56 it also returns <code>true</code> on macOS when the window is completely hidden by another non-translucent application."
               },
               {
                 "version_added": "10",
@@ -6217,7 +6219,7 @@
             "firefox_android": [
               {
                 "version_added": "18",
-                "notes": "Since Firefox 56 it also returns <code>true</code> on Mac when the window is completely hidden by another non-translucent application."
+                "notes": "Since Firefox 56 it also returns <code>true</code> on macOS when the window is completely hidden by another non-translucent application."
               },
               {
                 "version_added": "10",
@@ -7764,7 +7766,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -8671,12 +8673,26 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "32"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "32",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "32"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "32",
+                "prefix": "webkit"
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
@@ -8763,12 +8779,26 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "32"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "32",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "32"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "32",
+                "prefix": "webkit"
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
@@ -10635,7 +10665,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -10685,7 +10715,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -10735,7 +10765,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -10785,7 +10815,7 @@
               "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -10832,10 +10862,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": [
               {
@@ -10913,10 +10943,10 @@
               "notes": "The <code>ontransitionend</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('transitionend', function() {});</code>."
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": "11"
@@ -10964,10 +10994,10 @@
               "notes": "The <code>ontransitionrun</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('transitionrun', function() {});</code>."
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": [
               {
@@ -11045,10 +11075,10 @@
               "notes": "The <code>ontransitionstart</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('transitionstart', function() {});</code>."
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": [
               {
