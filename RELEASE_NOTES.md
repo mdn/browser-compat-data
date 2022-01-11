@@ -1,5 +1,94 @@
 # Release notes
 
+## [v4.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.3)
+
+January 11, 2022
+
+### Removals
+
+- `api.DeviceMotionEventAcceleration.secure_context_required` ([#14445](https://github.com/mdn/browser-compat-data/pull/14445))
+- `api.DeviceMotionEventRotationRate.secure_context_required` ([#14445](https://github.com/mdn/browser-compat-data/pull/14445))
+- `api.FileSystemFlags` ([#12766](https://github.com/mdn/browser-compat-data/pull/12766))
+- `api.FileSystemFlags.create` ([#12766](https://github.com/mdn/browser-compat-data/pull/12766))
+- `api.FileSystemFlags.exclusive` ([#12766](https://github.com/mdn/browser-compat-data/pull/12766))
+- `api.MediaKeySystemConfiguration` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.audioCapabilities` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.distinctiveIdentifier` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.initDataTypes` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.persistentState` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.videoCapabilities` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaStreamTrackAudioSourceOptions` ([#14072](https://github.com/mdn/browser-compat-data/pull/14072))
+- `api.MediaStreamTrackAudioSourceOptions.mediaStreamTrack` ([#14072](https://github.com/mdn/browser-compat-data/pull/14072))
+- `api.USB.onconnect` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.USB.ondisconnect` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.WebSocket.onclose` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `api.WebSocket.onerror` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `api.WebSocket.onmessage` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `api.WebSocket.onopen` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `css.properties.justify-content.flex_context.baseline` ([#14477](https://github.com/mdn/browser-compat-data/pull/14477))
+- `css.properties.justify-content.flex_context.first_last_baseline` ([#14477](https://github.com/mdn/browser-compat-data/pull/14477))
+- `svg.elements.mesh` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.mesh.href` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.gradientUnits` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.href` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.type` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.x` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.y` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshpatch` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshrow` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+
+### Additions
+
+- `api.AbortSignal.throwIfAborted` ([#14050](https://github.com/mdn/browser-compat-data/pull/14050))
+- `api.ContactAddress.addressLine` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.city` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.country` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.dependentLocality` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.organization` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.phone` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.postalCode` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.recipient` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.region` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.sortingCode` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.toJSON` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.HTMLInputElement.showPicker` ([#14444](https://github.com/mdn/browser-compat-data/pull/14444))
+- `api.MediaStreamTrackGenerator` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackGenerator.MediaStreamTrackGenerator` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackGenerator.writable` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackProcessor` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackProcessor.MediaStreamTrackProcessor` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackProcessor.readable` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.Navigator.windowControlsOverlay` ([#13596](https://github.com/mdn/browser-compat-data/pull/13596))
+- `api.USB.connect_event` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.USB.disconnect_event` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.WorkerNavigator.fonts` ([#14090](https://github.com/mdn/browser-compat-data/pull/14090))
+- `css.at-rules.font-face.src.format_variations` ([#13828](https://github.com/mdn/browser-compat-data/pull/13828))
+- `css.properties.flex-basis.fit-content` ([#14447](https://github.com/mdn/browser-compat-data/pull/14447))
+- `css.properties.font-synthesis-small-caps` ([#12931](https://github.com/mdn/browser-compat-data/pull/12931))
+- `css.properties.font-synthesis-style` ([#12931](https://github.com/mdn/browser-compat-data/pull/12931))
+- `css.properties.font-synthesis-weight` ([#12931](https://github.com/mdn/browser-compat-data/pull/12931))
+- `html.manifest.protocol_handler` ([#13907](https://github.com/mdn/browser-compat-data/pull/13907))
+- `html.manifest.protocol_handler.protocol` ([#13907](https://github.com/mdn/browser-compat-data/pull/13907))
+- `html.manifest.protocol_handler.url` ([#13907](https://github.com/mdn/browser-compat-data/pull/13907))
+- `javascript.builtins.Intl.Segmenter` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.resolvedOptions` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.segment` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.Segmenter` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.supportedLocalesOf` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segments` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segments.@@iterator` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segments.containing` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Math` ([#13903](https://github.com/mdn/browser-compat-data/pull/13903))
+- `webextensions.api.contentScripts.register.cookieStoreId` ([#14058](https://github.com/mdn/browser-compat-data/pull/14058))
+
+### Statistics
+
+- 23 contributors have changed 331 files with 4,559 additions and 3,811 deletions in 245 commits ([`v4.1.2...v4.1.3`](https://github.com/mdn/browser-compat-data/compare/v4.1.2...v4.1.3))
+- 13,390 total features
+- 835 total contributors
+- 3,754 total stargazers
+
 ## [v4.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.2)
 
 December 14, 2021
