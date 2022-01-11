@@ -82,6 +82,13 @@ January 11, 2022
 - `javascript.builtins.Math` ([#13903](https://github.com/mdn/browser-compat-data/pull/13903))
 - `webextensions.api.contentScripts.register.cookieStoreId` ([#14058](https://github.com/mdn/browser-compat-data/pull/14058))
 
+### Statistics
+
+- 23 contributors have changed 331 files with 4,559 additions and 3,811 deletions in 245 commits ([`v4.1.2...v4.1.3`](https://github.com/mdn/browser-compat-data/compare/v4.1.2...v4.1.3))
+- 13,390 total features
+- 835 total contributors
+- 3,754 total stargazers
+
 ## [v4.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.2)
 
 December 14, 2021
