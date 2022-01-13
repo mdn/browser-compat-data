@@ -560,10 +560,17 @@
               "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "firefox": {
-              "version_added": false
+              "version_added": "96",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -669,7 +676,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "96"
               },
               "firefox_android": {
                 "version_added": false
@@ -712,15 +719,17 @@
           "spec_url": "https://w3c.github.io/badging/#clearappbadge-method",
           "support": {
             "chrome": {
-              "version_added": "83",
+              "version_added": "81",
               "partial_implementation": true,
-              "notes": "Windows and Mac only."
+              "notes": "Windows and macOS only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "81"
             },
             "edge": {
-              "version_added": "81"
+              "version_added": "81",
+              "partial_implementation": true,
+              "notes": "Windows and macOS only."
             },
             "firefox": {
               "version_added": false
@@ -747,7 +756,7 @@
               "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "81"
             }
           },
           "status": {
@@ -866,7 +875,7 @@
       "contacts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
-          "spec_url": "https://wicg.github.io/contact-api/spec/#dom-navigator-contacts",
+          "spec_url": "https://w3c.github.io/contact-api/spec/#dom-navigator-contacts",
           "support": {
             "chrome": {
               "version_added": false
@@ -1297,7 +1306,7 @@
               "version_added": "29"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "32"
             },
             "ie": {
               "version_added": false
@@ -1884,7 +1893,7 @@
               "version_added": "68"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "68"
             },
             "edge": {
               "version_added": "79"
@@ -1902,7 +1911,7 @@
               "version_added": "55"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "48"
             },
             "safari": {
               "version_added": false
@@ -1911,7 +1920,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "10.0"
             },
             "webview_android": {
               "version_added": "68"
@@ -2033,7 +2042,7 @@
       "locks": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/locks",
-          "spec_url": "https://wicg.github.io/web-locks/#dom-navigatorlocks-locks",
+          "spec_url": "https://w3c.github.io/web-locks/#dom-navigatorlocks-locks",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -2044,11 +2053,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "96"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "96",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.weblocks.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "96"
             },
             "ie": {
               "version_added": false
@@ -2060,7 +2082,7 @@
               "version_added": "48"
             },
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": {
               "version_added": false
@@ -2073,7 +2095,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2285,10 +2307,10 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "11"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "11"
               },
               "samsunginternet_android": {
                 "version_added": "11.0"
@@ -2341,10 +2363,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "60"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
               "version_added": "15"
@@ -2472,7 +2494,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, Mac: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>crbug.com/7469</a>."
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>crbug.com/7469</a>."
             },
             "chrome_android": {
               "version_added": "18"
@@ -2969,10 +2991,10 @@
               ]
             },
             "firefox": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "4"
             },
             "ie": {
               "version_added": false
@@ -3192,7 +3214,7 @@
               "version_added": "87"
             },
             "edge": {
-              "version_added": false
+              "version_added": "87"
             },
             "firefox": {
               "version_added": false
@@ -3204,10 +3226,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "74"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "62"
             },
             "safari": {
               "version_added": false
@@ -3389,17 +3411,17 @@
           "spec_url": "https://w3c.github.io/badging/#setappbadge-method",
           "support": {
             "chrome": {
-              "version_added": "83",
+              "version_added": "81",
               "partial_implementation": true,
-              "notes": "Windows and Mac only."
+              "notes": "Windows and macOS only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "81"
             },
             "edge": {
-              "version_added": "83",
+              "version_added": "81",
               "partial_implementation": true,
-              "notes": "Windows and Mac only."
+              "notes": "Windows and macOS only."
             },
             "firefox": {
               "version_added": false
@@ -3426,7 +3448,7 @@
               "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "81"
             }
           },
           "status": {
@@ -3450,15 +3472,17 @@
               "version_added": "61"
             },
             "edge": {
-              "version_added": "81"
+              "version_added": "81",
+              "partial_implementation": true,
+              "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "firefox": {
               "version_added": "71",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#dom.webshare.enabled",
-                  "value_to_set": "enabled"
+                  "name": "dom.webshare.enabled",
+                  "value_to_set": "true"
                 }
               ]
             },
@@ -3568,7 +3592,7 @@
                 "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
               },
               "firefox": {
-                "version_added": false
+                "version_added": "71"
               },
               "firefox_android": {
                 "version_added": false
@@ -3881,7 +3905,7 @@
               "version_added": "76"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "64"
             },
             "safari": {
               "version_added": false
@@ -3928,7 +3952,7 @@
                 "version_added": "76"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "64"
               },
               "safari": {
                 "version_added": false
@@ -4098,7 +4122,7 @@
               },
               {
                 "version_added": "14",
-                "version_removed": true,
+                "version_removed": "16",
                 "prefix": "moz"
               }
             ],
@@ -4106,7 +4130,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "19"
             },
             "opera_android": {
               "version_added": "19",
@@ -4279,6 +4303,54 @@
               "version_added": "8.0"
             },
             "webview_android": {
+              "version_added": "63"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "windowControlsOverlay": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/window-controls-overlay/#windowcontrolsoverlay-interface",
+          "support": {
+            "chrome": {
+              "version_added": "98"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "98"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "84"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -4313,10 +4385,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "66"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "safari": {
               "version_added": false
