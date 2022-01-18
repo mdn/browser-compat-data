@@ -30,6 +30,13 @@ January 18, 2022
 - `css.properties.custom-property.env.titlebar-area-y` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
 - `css.properties.grid-template-columns.masonry` ([#14562](https://github.com/mdn/browser-compat-data/pull/14562))
 
+### Statistics
+
+- 15 contributors have changed 24 files with 1,446 additions and 345 deletions in 20 commits ([`v4.1.3...v4.1.4`](https://github.com/mdn/browser-compat-data/compare/v4.1.3...v4.1.4))
+- 13,406 total features
+- 836 total contributors
+- 3,776 total stargazers
+
 ## [v4.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.3)
 
 January 11, 2022
