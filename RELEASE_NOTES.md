@@ -2,7 +2,33 @@
 
 ## [v4.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.4)
 
-RELEASE DATE TK
+January 18, 2022
+
+### Removals
+
+- `css.at-rules.media.speech_type` ([#14077](https://github.com/mdn/browser-compat-data/pull/14077))
+- `css.properties.masonry` ([#14562](https://github.com/mdn/browser-compat-data/pull/14562))
+
+### Additions
+
+- `api.WindowControlsOverlay` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlay.geometrychange_event` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlay.getTitlebarAreaRect` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlay.visible` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent.titlebarAreaRect` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent.visible` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent.WindowControlsOverlayGeometryChangeEvent` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `css.properties.counter-reset.reversed` ([#14093](https://github.com/mdn/browser-compat-data/pull/14093))
+- `css.properties.custom-property.env.safe-area-inset-bottom` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.safe-area-inset-left` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.safe-area-inset-right` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.safe-area-inset-top` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-height` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-width` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-x` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-y` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.grid-template-columns.masonry` ([#14562](https://github.com/mdn/browser-compat-data/pull/14562))
 
 ## [v4.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.3)
 
