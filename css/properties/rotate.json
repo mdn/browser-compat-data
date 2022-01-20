@@ -7,13 +7,16 @@
           "spec_url": "https://drafts.csswg.org/css-transforms-2/#individual-transforms",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             },
             "firefox": [
               {
@@ -31,24 +34,32 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "60",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.individual-transform.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "60",
+                "version_removed": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.individual-transform.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             },
             "safari": {
               "version_added": "14.1"
@@ -57,10 +68,12 @@
               "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/496550'>bug 496550</a>."
             }
           },
           "status": {

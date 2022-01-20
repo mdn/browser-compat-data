@@ -3,7 +3,7 @@
     "KeyframeEffect": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect",
-        "spec_url": "https://drafts.csswg.org/web-animations/#the-keyframeeffect-interface",
+        "spec_url": "https://drafts.csswg.org/web-animations-1/#the-keyframeeffect-interface",
         "support": {
           "chrome": {
             "version_added": "75"
@@ -43,7 +43,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -51,7 +51,7 @@
       "KeyframeEffect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/KeyframeEffect",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffect-keyframeeffect",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-keyframeeffect",
           "description": "<code>KeyframeEffect()</code> constructor",
           "support": {
             "chrome": {
@@ -92,7 +92,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -101,7 +101,7 @@
       "composite": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/composite",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffect-composite",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-composite",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -176,7 +176,7 @@
       "getKeyframes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/getKeyframes",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffect-getkeyframes",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-getkeyframes",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -225,7 +225,7 @@
       "iterationComposite": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/iterationComposite",
-          "spec_url": "https://drafts.csswg.org/web-animations-2/#dom-keyframeeffect-iterationcomposite",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-iterationcomposite",
           "support": {
             "chrome": {
               "version_added": false
@@ -329,15 +329,20 @@
                 ]
               }
             ],
-            "edge": {
-              "version_added": "81",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental Web Platform Features"
-                }
-              ]
-            },
+            "edge": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "81",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental Web Platform Features"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "75"
             },
@@ -378,7 +383,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -387,7 +392,7 @@
       "setKeyframes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/setKeyframes",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffect-setkeyframes",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-setkeyframes",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -396,7 +401,7 @@
               "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "63"
@@ -427,7 +432,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -436,7 +441,7 @@
       "target": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/target",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffect-target",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-target",
           "support": {
             "chrome": {
               "version_added": "75"

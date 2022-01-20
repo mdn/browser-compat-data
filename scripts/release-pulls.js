@@ -1,5 +1,3 @@
-const assert = require('assert').strict;
-
 const { getRefDate, releaseYargsBuilder } = require('./release-utils');
 
 const pullsBaseURL = new URL(
@@ -9,35 +7,79 @@ const releaseNotesLabel = 'label:"needs-release-note :newspaper:"';
 
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',
-  'Get a link to PRs that need release notes between two tags (or other commits)',
-  releaseYargsBuilder,
+  'Get a link to PRs included between two tags (or other commits)',
+  yargs => {
+    releaseYargsBuilder(yargs);
+    yargs.option('q', {
+      alias: 'quiet',
+      describe: 'Print the URL only',
+      type: 'boolean',
+    });
+    yargs.option('labeled', {
+      describe: 'Filter to needs-release-note labeled PRs only',
+      type: 'boolean',
+    });
+    yargs.option('query-only', {
+      describe: 'Print the query only (such as for piping to `gh`)',
+      type: 'boolean',
+    });
+    yargs.example(
+      '$0 --quiet --labeled --query-only',
+      'Get the query for piping to `gh`',
+    );
+  },
 );
 
-function needsReleaseNotePulls(startRef, endRef) {
+function queryToURL(query) {
   const searchUrl = new URL(pullsBaseURL);
+  searchUrl.search = `q=${query}`;
+  return searchUrl.href;
+}
 
+function buildQuery(endRef, startRef, urlSafe) {
   let merged;
-  if (endRef !== 'HEAD') {
-    merged = `merged:${getRefDate(startRef, true)}..${getRefDate(
+  if (!['HEAD', 'main'].includes(endRef)) {
+    merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
       endRef,
       true,
     )}`;
   } else {
-    merged = `merged:>=${getRefDate(startRef, true)}`;
+    merged = `merged:>=${getRefDate(startRef, urlSafe)}`;
   }
-  searchUrl.search = `q=is:pr ${merged} ${releaseNotesLabel}`;
 
-  return `${searchUrl.href}`;
+  return `is:pr ${merged}`;
+}
+
+function appendLabel(query) {
+  return `${query} ${releaseNotesLabel}`;
 }
 
 function main() {
-  const { startVersionTag: start, endVersionTag: end } = argv;
+  const {
+    startVersionTag: start,
+    endVersionTag: end,
+    quiet,
+    labeled,
+    queryOnly,
+  } = argv;
 
-  console.log(
-    `From ${start} (${getRefDate(start)}) to ${end} (${getRefDate(end)}):`,
-  );
-  console.log();
-  console.log(needsReleaseNotePulls(start, end));
+  let query = buildQuery(end, start, !queryOnly);
+  if (labeled) {
+    query = appendLabel(query);
+  }
+
+  if (!quiet) {
+    console.log(
+      `From ${start} (${getRefDate(start)}) to ${end} (${getRefDate(end)}):`,
+    );
+    console.log();
+  }
+
+  if (queryOnly) {
+    console.log(query);
+  } else {
+    console.log(queryToURL(query));
+  }
 }
 
 main();

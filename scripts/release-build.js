@@ -75,7 +75,7 @@ async function writeManifest() {
 async function main() {
   // Remove existing files, if there are any
   await fs
-    .rmdir(directory, {
+    .rm(directory, {
       force: true,
       recursive: true,
     })
