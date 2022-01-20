@@ -118,6 +118,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
+- `cloudflare_workers`, Cloudflare Workers runtime built on Chrome's V8 JavaScript engine
 - `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)

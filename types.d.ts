@@ -7,6 +7,7 @@
 export type BrowserNames =
   | 'chrome'
   | 'chrome_android'
+  | 'cloudflare_workers'
   | 'deno'
   | 'edge'
   | 'firefox'

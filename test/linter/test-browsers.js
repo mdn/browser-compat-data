@@ -18,7 +18,7 @@ const browsers = {
     'samsunginternet_android',
     'webview_android',
   ],
-  server: ['nodejs', 'deno'],
+  server: ['nodejs', 'deno', 'cloudflare_workers'],
   'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
   'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
@@ -126,6 +126,7 @@ function testBrowsers(filename) {
   if (category === 'api') {
     displayBrowsers.push('nodejs');
     displayBrowsers.push('deno');
+    displayBrowsers.push('cloudflare_workers');
   }
   if (category === 'javascript') {
     displayBrowsers.push(...browsers['server']);
