@@ -1,5 +1,64 @@
 # Release notes
 
+## [v4.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.5)
+
+January 26, 2022
+
+### Removals
+
+- `api.MediaSessionAction` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.nexttrack` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.pause` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.play` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.previoustrack` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.seekbackward` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.seekforward` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.seekto` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.skipad` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.stop` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.action` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.fastSeek` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.seekOffset` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.seekTime` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `html.manifest.protocol_handler` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handler.protocol` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handler.url` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `webextensions.api.browserAction.getBadgeBackgroundColor.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getBadgeText.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getPopup.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getTitle.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.isEnabled.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeBackgroundColor.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeText.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setIcon.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setPopup.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setTitle.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+
+### Additions
+
+- `css.at-rules.layer` ([#12489](https://github.com/mdn/browser-compat-data/pull/12489))
+- `html.manifest.protocol_handlers` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handlers.protocol` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handlers.url` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `webextensions.api.browserAction.getBadgeBackgroundColor.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getBadgeText.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getPopup.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getTitle.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.isEnabled.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeBackgroundColor.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeText.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setIcon.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setPopup.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setTitle.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+
+### Statistics
+
+- 14 contributors have changed 43 files with 581 additions and 1,374 deletions in 28 commits ([`v4.1.4...v4.1.5`](https://github.com/mdn/browser-compat-data/compare/v4.1.4...v4.1.5))
+- 13,392 total features
+- 839 total contributors
+- 3,804 total stargazers
+
 ## [v4.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.4)
 
 January 18, 2022
