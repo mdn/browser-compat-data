@@ -4,7 +4,7 @@
 
 January 26, 2022
 
-## Removals
+### Removals
 
 - `api.MediaSessionAction` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
 - `api.MediaSessionAction.nexttrack` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
@@ -35,7 +35,7 @@ January 26, 2022
 - `webextensions.api.browserAction.setPopup.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
 - `webextensions.api.browserAction.setTitle.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
 
-## Additions
+### Additions
 
 - `css.at-rules.layer` ([#12489](https://github.com/mdn/browser-compat-data/pull/12489))
 - `html.manifest.protocol_handlers` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
@@ -51,6 +51,13 @@ January 26, 2022
 - `webextensions.api.browserAction.setIcon.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
 - `webextensions.api.browserAction.setPopup.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
 - `webextensions.api.browserAction.setTitle.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+
+### Statistics
+
+- 14 contributors have changed 43 files with 581 additions and 1,374 deletions in 28 commits ([`v4.1.4...main`](https://github.com/mdn/browser-compat-data/compare/v4.1.4...main))
+- 13,392 total features
+- 839 total contributors
+- 3,804 total stargazers
 
 ## [v4.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.4)
 
