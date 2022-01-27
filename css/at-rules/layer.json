@@ -18,28 +18,40 @@
             "edge": {
               "version_added": false
             },
-            "firefox": {
-              "version_added": "94",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.cascade-layers.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "See Firefox <a href='https://bugzil.la/1699217'>bug 1699217</a>."
-            },
-            "firefox_android": {
-              "version_added": "94",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.cascade-layers.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "See Firefox <a href='https://bugzil.la/1699217'>bug 1699217</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "94",
+                "version_removed": "97",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.cascade-layers.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See Firefox <a href='https://bugzil.la/1699217'>bug 1699217</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "97",
+              },
+              {
+                "version_added": "94",
+                "version_removed": "97",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.cascade-layers.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "See Firefox <a href='https://bugzil.la/1699217'>bug 1699217</a>."
+              }
+            ],
             "ie": {
               "version_added": false
             },
