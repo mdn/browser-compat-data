@@ -1,17 +1,18 @@
 {
   "api": {
-    "NavigatorUAData": {
+    "WindowControlsOverlay": {
       "__compat": {
-        "spec_url": "https://wicg.github.io/ua-client-hints/#navigatoruadata",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowControlsOverlay",
+        "spec_url": "https://wicg.github.io/window-controls-overlay/#windowcontrolsoverlay-interface",
         "support": {
           "chrome": {
-            "version_added": "90"
+            "version_added": "98"
           },
           "chrome_android": {
-            "version_added": "90"
+            "version_added": false
           },
           "edge": {
-            "version_added": "90"
+            "version_added": "98"
           },
           "firefox": {
             "version_added": false
@@ -23,10 +24,10 @@
             "version_added": false
           },
           "opera": {
-            "version_added": "76"
+            "version_added": "84"
           },
           "opera_android": {
-            "version_added": "64"
+            "version_added": false
           },
           "safari": {
             "version_added": false
@@ -35,11 +36,10 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": "15.0"
+            "version_added": false
           },
           "webview_android": {
-            "version_added": false,
-            "notes": "See <a href='https://crbug.com/921655'>bug 921655</a>."
+            "version_added": false
           }
         },
         "status": {
@@ -48,18 +48,20 @@
           "deprecated": false
         }
       },
-      "brands": {
+      "geometrychange_event": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatoruadata-brands",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowControlsOverlay/geometrychange_event",
+          "spec_url": "https://wicg.github.io/window-controls-overlay/#the-ongeometrychange-attribute",
+          "description": "<code>geometrychange</code> event",
           "support": {
             "chrome": {
-              "version_added": "90"
+              "version_added": "98"
             },
             "chrome_android": {
-              "version_added": "90"
+              "version_added": false
             },
             "edge": {
-              "version_added": "90"
+              "version_added": "98"
             },
             "firefox": {
               "version_added": false
@@ -71,154 +73,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "76"
+              "version_added": "84"
             },
             "opera_android": {
-              "version_added": "64"
-            },
-            "safari": {
               "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "15.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getHighEntropyValues": {
-        "__compat": {
-          "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatoruadata-gethighentropyvalues",
-          "support": {
-            "chrome": {
-              "version_added": "90"
-            },
-            "chrome_android": {
-              "version_added": "90"
-            },
-            "edge": {
-              "version_added": "90"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "76"
-            },
-            "opera_android": {
-              "version_added": "64"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "15.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "mobile": {
-        "__compat": {
-          "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatoruadata-mobile",
-          "support": {
-            "chrome": {
-              "version_added": "90"
-            },
-            "chrome_android": {
-              "version_added": "90"
-            },
-            "edge": {
-              "version_added": "90"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "76"
-            },
-            "opera_android": {
-              "version_added": "64"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "15.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "platform": {
-        "__compat": {
-          "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatoruadata-platform",
-          "support": {
-            "chrome": {
-              "version_added": "93"
-            },
-            "chrome_android": {
-              "version_added": "93"
-            },
-            "edge": {
-              "version_added": "93"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "79"
-            },
-            "opera_android": {
-              "version_added": "66"
             },
             "safari": {
               "version_added": false
@@ -240,18 +98,19 @@
           }
         }
       },
-      "toJSON": {
+      "getTitlebarAreaRect": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatoruadata-tojson",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowControlsOverlay/getTitlebarAreaRect",
+          "spec_url": "https://wicg.github.io/window-controls-overlay/#the-gettitlebararearect-method",
           "support": {
             "chrome": {
-              "version_added": "93"
+              "version_added": "98"
             },
             "chrome_android": {
-              "version_added": "93"
+              "version_added": false
             },
             "edge": {
-              "version_added": "93"
+              "version_added": "98"
             },
             "firefox": {
               "version_added": false
@@ -263,10 +122,59 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "79"
+              "version_added": "84"
             },
             "opera_android": {
-              "version_added": "66"
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "visible": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WindowControlsOverlay/visible",
+          "spec_url": "https://wicg.github.io/window-controls-overlay/#the-visible-attribute",
+          "support": {
+            "chrome": {
+              "version_added": "98"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "98"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "84"
+            },
+            "opera_android": {
+              "version_added": false
             },
             "safari": {
               "version_added": false
