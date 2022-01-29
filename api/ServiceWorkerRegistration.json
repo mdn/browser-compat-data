@@ -175,7 +175,7 @@
               "version_added": "73"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "62"
             },
             "safari": {
               "version_added": false
@@ -451,35 +451,38 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/paymentManager",
           "support": {
-            "chrome": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#service-worker-payment-apps",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#service-worker-payment-apps",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
-              "version_added": "≤79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -490,11 +493,23 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": true
-            },
+            "opera": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "43",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#service-worker-payment-apps",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "opera_android": {
-              "version_added": true
+              "version_added": "49"
             },
             "safari": {
               "version_added": false
@@ -503,7 +518,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "10.0"
             },
             "webview_android": {
               "version_added": false
@@ -540,10 +555,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "67"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "safari": {
               "version_added": false
@@ -650,7 +665,7 @@
               "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -672,10 +687,10 @@
           "spec_url": "https://notifications.spec.whatwg.org/#dom-serviceworkerregistration-shownotification",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "edge": {
               "version_added": "17"
@@ -691,10 +706,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "27"
+              "version_added": "29"
             },
             "opera_android": {
-              "version_added": "27"
+              "version_added": "29"
             },
             "safari": {
               "version_added": false
@@ -707,7 +722,7 @@
             },
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>."
+              "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>."
             }
           },
           "status": {
@@ -1195,7 +1210,7 @@
               "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "4.0",
@@ -1243,10 +1258,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "55"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "48"
             },
             "safari": {
               "version_added": "11.1"
@@ -1302,7 +1317,7 @@
               "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
