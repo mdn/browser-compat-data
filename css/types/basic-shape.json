@@ -270,46 +270,24 @@
                 "partial_implementation": true,
                 "notes": "Only supported on the <code>offset-path</code> property."
               },
-              "firefox": [
-                {
-                  "version_added": "97",
-                  "partial_implementation": true,
-                  "notes": "It is supported on the <code>d</code> SVG presentation attribute, <code>clip-path</code> and <code>offset-path</code> properties."
-                },
-                {
-                  "version_added": "63",
-                  "version_removed": "97",
-                  "partial_implementation": true,
-                  "notes": "From version 91 it can be used on the <code>d</code> SVG presentation attribute. For earlier versions it is only supported on the <code>clip-path</code> and <code>offset-path</code> properties.",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.clip-path-path.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "97",
-                  "partial_implementation": true,
-                  "notes": "It is supported on the <code>d</code> SVG presentation attribute, <code>clip-path</code> and <code>offset-path</code> properties."
-                },
-                {
-                  "version_added": "63",
-                  "version_removed": "79",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>clip-path</code> and <code>offset-path</code> properties.",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.clip-path-path.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "63",
+                "partial_implementation": true,
+                "notes": [
+                  "From version 63 it is supported on the <code>offset-path</code> property.",
+                  "From version 71 it is supported on the <code>clip-path</code> property (from version 64 to 71 it is supported behind the preference <code>layout.css.clip-path-path.enabled</code>).",
+                  "From version 97 it can be used on the <code>d</code> SVG presentation attribute (from version 91 to 97 it is supported behind the preference <code>layout.css.d-property.enabled</code>)."
+                ]
+              },
+              "firefox_android": {
+                "version_added": "63",
+                "partial_implementation": true,
+                "notes": [
+                  "From version 63 it is supported on the <code>offset-path</code> property.",
+                  "From version 79 it is supported on the <code>clip-path</code> property (from version 64 to 79 it is supported behind the preference <code>layout.css.clip-path-path.enabled</code>).",
+                  "From version 97 it can be used on the <code>d</code> SVG presentation attribute."
+                ]
+              },
               "ie": {
                 "version_added": false
               },
