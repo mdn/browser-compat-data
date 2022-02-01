@@ -4,6 +4,14 @@
 
 February 1, 2022
 
+### Removals
+
+No features were removed in this release.
+
+### Additions
+
+- `api.MediaTrackConstraints.resizeMode` ([#12563](https://github.com/mdn/browser-compat-data/pull/12563))
+
 ## [v4.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.5)
 
 January 26, 2022
