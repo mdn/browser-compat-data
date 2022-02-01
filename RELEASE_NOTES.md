@@ -12,6 +12,13 @@ No features were removed in this release.
 
 - `api.MediaTrackConstraints.resizeMode` ([#12563](https://github.com/mdn/browser-compat-data/pull/12563))
 
+### Statistics
+
+- 15 contributors have changed 90 files with 871 additions and 564 deletions in 40 commits ([`v4.1.5...v4.1.6`](https://github.com/mdn/browser-compat-data/compare/v4.1.5...v4.1.6))
+- 13,393 total features
+- 844 total contributors
+- 3,816 total stargazers
+
 ## [v4.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.5)
 
 January 26, 2022
