@@ -1,5 +1,576 @@
 # Release notes
 
+## [v4.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.6)
+
+February 1, 2022
+
+### Removals
+
+No features were removed in this release.
+
+### Additions
+
+- `api.MediaTrackConstraints.resizeMode` ([#12563](https://github.com/mdn/browser-compat-data/pull/12563))
+
+### Statistics
+
+- 15 contributors have changed 90 files with 871 additions and 564 deletions in 40 commits ([`v4.1.5...v4.1.6`](https://github.com/mdn/browser-compat-data/compare/v4.1.5...v4.1.6))
+- 13,393 total features
+- 844 total contributors
+- 3,816 total stargazers
+
+## [v4.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.5)
+
+January 26, 2022
+
+### Removals
+
+- `api.MediaSessionAction` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.nexttrack` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.pause` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.play` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.previoustrack` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.seekbackward` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.seekforward` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.seekto` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.skipad` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionAction.stop` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.action` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.fastSeek` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.seekOffset` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `api.MediaSessionActionDetails.seekTime` ([#14071](https://github.com/mdn/browser-compat-data/pull/14071))
+- `html.manifest.protocol_handler` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handler.protocol` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handler.url` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `webextensions.api.browserAction.getBadgeBackgroundColor.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getBadgeText.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getPopup.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getTitle.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.isEnabled.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeBackgroundColor.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeText.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setIcon.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setPopup.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setTitle.details.windowId` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+
+### Additions
+
+- `css.at-rules.layer` ([#12489](https://github.com/mdn/browser-compat-data/pull/12489))
+- `html.manifest.protocol_handlers` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handlers.protocol` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `html.manifest.protocol_handlers.url` ([#14592](https://github.com/mdn/browser-compat-data/pull/14592))
+- `webextensions.api.browserAction.getBadgeBackgroundColor.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getBadgeText.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getPopup.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.getTitle.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.isEnabled.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeBackgroundColor.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setBadgeText.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setIcon.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setPopup.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+- `webextensions.api.browserAction.setTitle.details_windowId_parameter` ([#14143](https://github.com/mdn/browser-compat-data/pull/14143))
+
+### Statistics
+
+- 14 contributors have changed 43 files with 581 additions and 1,374 deletions in 28 commits ([`v4.1.4...v4.1.5`](https://github.com/mdn/browser-compat-data/compare/v4.1.4...v4.1.5))
+- 13,392 total features
+- 839 total contributors
+- 3,804 total stargazers
+
+## [v4.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.4)
+
+January 18, 2022
+
+### Removals
+
+- `css.at-rules.media.speech_type` ([#14077](https://github.com/mdn/browser-compat-data/pull/14077))
+- `css.properties.masonry` ([#14562](https://github.com/mdn/browser-compat-data/pull/14562))
+
+### Additions
+
+- `api.WindowControlsOverlay` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlay.geometrychange_event` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlay.getTitlebarAreaRect` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlay.visible` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent.titlebarAreaRect` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent.visible` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `api.WindowControlsOverlayGeometryChangeEvent.WindowControlsOverlayGeometryChangeEvent` ([#14095](https://github.com/mdn/browser-compat-data/pull/14095))
+- `css.properties.counter-reset.reversed` ([#14093](https://github.com/mdn/browser-compat-data/pull/14093))
+- `css.properties.custom-property.env.safe-area-inset-bottom` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.safe-area-inset-left` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.safe-area-inset-right` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.safe-area-inset-top` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-height` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-width` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-x` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.custom-property.env.titlebar-area-y` ([#14035](https://github.com/mdn/browser-compat-data/pull/14035))
+- `css.properties.grid-template-columns.masonry` ([#14562](https://github.com/mdn/browser-compat-data/pull/14562))
+
+### Statistics
+
+- 15 contributors have changed 24 files with 1,446 additions and 345 deletions in 20 commits ([`v4.1.3...v4.1.4`](https://github.com/mdn/browser-compat-data/compare/v4.1.3...v4.1.4))
+- 13,406 total features
+- 836 total contributors
+- 3,776 total stargazers
+
+## [v4.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.3)
+
+January 11, 2022
+
+### Removals
+
+- `api.DeviceMotionEventAcceleration.secure_context_required` ([#14445](https://github.com/mdn/browser-compat-data/pull/14445))
+- `api.DeviceMotionEventRotationRate.secure_context_required` ([#14445](https://github.com/mdn/browser-compat-data/pull/14445))
+- `api.FileSystemFlags` ([#12766](https://github.com/mdn/browser-compat-data/pull/12766))
+- `api.FileSystemFlags.create` ([#12766](https://github.com/mdn/browser-compat-data/pull/12766))
+- `api.FileSystemFlags.exclusive` ([#12766](https://github.com/mdn/browser-compat-data/pull/12766))
+- `api.MediaKeySystemConfiguration` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.audioCapabilities` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.distinctiveIdentifier` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.initDataTypes` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.persistentState` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaKeySystemConfiguration.videoCapabilities` ([#12840](https://github.com/mdn/browser-compat-data/pull/12840))
+- `api.MediaStreamTrackAudioSourceOptions` ([#14072](https://github.com/mdn/browser-compat-data/pull/14072))
+- `api.MediaStreamTrackAudioSourceOptions.mediaStreamTrack` ([#14072](https://github.com/mdn/browser-compat-data/pull/14072))
+- `api.USB.onconnect` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.USB.ondisconnect` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.WebSocket.onclose` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `api.WebSocket.onerror` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `api.WebSocket.onmessage` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `api.WebSocket.onopen` ([#13802](https://github.com/mdn/browser-compat-data/pull/13802))
+- `css.properties.justify-content.flex_context.baseline` ([#14477](https://github.com/mdn/browser-compat-data/pull/14477))
+- `css.properties.justify-content.flex_context.first_last_baseline` ([#14477](https://github.com/mdn/browser-compat-data/pull/14477))
+- `svg.elements.mesh` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.mesh.href` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.gradientUnits` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.href` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.type` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.x` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshgradient.y` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshpatch` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+- `svg.elements.meshrow` ([#14130](https://github.com/mdn/browser-compat-data/pull/14130))
+
+### Additions
+
+- `api.AbortSignal.throwIfAborted` ([#14050](https://github.com/mdn/browser-compat-data/pull/14050))
+- `api.ContactAddress.addressLine` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.city` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.country` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.dependentLocality` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.organization` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.phone` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.postalCode` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.recipient` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.region` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.sortingCode` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.ContactAddress.toJSON` ([#14088](https://github.com/mdn/browser-compat-data/pull/14088))
+- `api.HTMLInputElement.showPicker` ([#14444](https://github.com/mdn/browser-compat-data/pull/14444))
+- `api.MediaStreamTrackGenerator` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackGenerator.MediaStreamTrackGenerator` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackGenerator.writable` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackProcessor` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackProcessor.MediaStreamTrackProcessor` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.MediaStreamTrackProcessor.readable` ([#13126](https://github.com/mdn/browser-compat-data/pull/13126))
+- `api.Navigator.windowControlsOverlay` ([#13596](https://github.com/mdn/browser-compat-data/pull/13596))
+- `api.USB.connect_event` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.USB.disconnect_event` ([#13886](https://github.com/mdn/browser-compat-data/pull/13886))
+- `api.WorkerNavigator.fonts` ([#14090](https://github.com/mdn/browser-compat-data/pull/14090))
+- `css.at-rules.font-face.src.format_variations` ([#13828](https://github.com/mdn/browser-compat-data/pull/13828))
+- `css.properties.flex-basis.fit-content` ([#14447](https://github.com/mdn/browser-compat-data/pull/14447))
+- `css.properties.font-synthesis-small-caps` ([#12931](https://github.com/mdn/browser-compat-data/pull/12931))
+- `css.properties.font-synthesis-style` ([#12931](https://github.com/mdn/browser-compat-data/pull/12931))
+- `css.properties.font-synthesis-weight` ([#12931](https://github.com/mdn/browser-compat-data/pull/12931))
+- `html.manifest.protocol_handler` ([#13907](https://github.com/mdn/browser-compat-data/pull/13907))
+- `html.manifest.protocol_handler.protocol` ([#13907](https://github.com/mdn/browser-compat-data/pull/13907))
+- `html.manifest.protocol_handler.url` ([#13907](https://github.com/mdn/browser-compat-data/pull/13907))
+- `javascript.builtins.Intl.Segmenter` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.resolvedOptions` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.segment` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.Segmenter` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segmenter.supportedLocalesOf` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segments` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segments.@@iterator` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Intl.Segments.containing` ([#14428](https://github.com/mdn/browser-compat-data/pull/14428))
+- `javascript.builtins.Math` ([#13903](https://github.com/mdn/browser-compat-data/pull/13903))
+- `webextensions.api.contentScripts.register.cookieStoreId` ([#14058](https://github.com/mdn/browser-compat-data/pull/14058))
+
+### Statistics
+
+- 23 contributors have changed 331 files with 4,559 additions and 3,811 deletions in 245 commits ([`v4.1.2...v4.1.3`](https://github.com/mdn/browser-compat-data/compare/v4.1.2...v4.1.3))
+- 13,390 total features
+- 835 total contributors
+- 3,754 total stargazers
+
+## [v4.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.2)
+
+December 14, 2021
+
+### General changes
+
+- Building on developments in [v4.1.1](https://github.com/mdn/browser-compat-data/blob/main/RELEASE_NOTES.md#v410), Web API data for Opera and Opera for Android now requires version number data. No `null` or `true` values remain and version numbers will be required for data added in future releases. ([#14003](https://github.com/mdn/browser-compat-data/pull/14003))
+
+### Removals
+
+- `api.TaskSignal.onprioritychange` ([#13923](https://github.com/mdn/browser-compat-data/pull/13923))
+- `api.VirtualKeyboard.ongeometrychange` ([#13922](https://github.com/mdn/browser-compat-data/pull/13922))
+- `api.VisualViewport.onresize` ([#13884](https://github.com/mdn/browser-compat-data/pull/13884))
+- `api.VisualViewport.onscroll` ([#13884](https://github.com/mdn/browser-compat-data/pull/13884))
+- `css.types.length.mozmm` ([#13927](https://github.com/mdn/browser-compat-data/pull/13927))
+
+### Additions
+
+- `api.HTMLCanvasElement.toBlob.type_parameter_webp` ([#13897](https://github.com/mdn/browser-compat-data/pull/13897))
+- `api.HTMLCanvasElement.toDataURL.type_parameter_webp` ([#13897](https://github.com/mdn/browser-compat-data/pull/13897))
+- `api.OffscreenCanvas.convertToBlob.option_type_parameter_webp` ([#13897](https://github.com/mdn/browser-compat-data/pull/13897))
+- `api.TaskSignal.prioritychange_event` ([#13923](https://github.com/mdn/browser-compat-data/pull/13923))
+- `api.VirtualKeyboard.geometrychange_event` ([#13922](https://github.com/mdn/browser-compat-data/pull/13922))
+- `html.manifest.note_taking` ([#13899](https://github.com/mdn/browser-compat-data/pull/13899))
+- `html.manifest.note_taking.new_note_url` ([#13899](https://github.com/mdn/browser-compat-data/pull/13899))
+- `http.headers.Sec-CH-UA-Bitness` ([#13989](https://github.com/mdn/browser-compat-data/pull/13989))
+
+### Statistics
+
+- 14 contributors have changed 253 files with 2,174 additions and 1,422 deletions in 40 commits ([`v4.1.1...main`](https://github.com/mdn/browser-compat-data/compare/v4.1.1...main))
+- 13,380 total features
+- 833 total contributors
+- 3,700 total stargazers
+
+## [v4.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.1)
+
+December 7, 2021
+
+**We've changed the format of these release notes!** We're experimenting with new release notes. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+### General changes
+
+- Web API data for selected browsers now requires version number data ([#13845](https://github.com/mdn/browser-compat-data/pull/13845/)). For the following browsers, no `null` or `true` values remain and version numbers will be required for data added in future releases:
+
+  - Chrome
+  - Chrome for Android
+  - Edge
+  - Firefox
+  - Internet Explorer
+  - Safari
+  - Safari for iOS
+  - Webview Android
+
+- All entries using Safari 6.1, a backport release of Safari 7, have been changed to avoid unexplained discontinuities in support. Since it's no longer used in any support statements, the data for the Safari 6.1 release has been removed. See [the guideline for historic Safari backport releases](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#backported-releases) for more information on this change. ([#11156](https://github.com/mdn/browser-compat-data/pull/11156))
+
+### Removals
+
+Features removed in this release:
+
+- `api.MediaDevices.getDisplayMedia.audio-capture-support` ([#13837](https://github.com/mdn/browser-compat-data/pull/13837))
+- `api.PaymentDetailsUpdate` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.displayItems` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.error` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.modifiers` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.shippingAddressErrors` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.shippingOptions` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.PaymentDetailsUpdate.total` ([#12277](https://github.com/mdn/browser-compat-data/pull/12277))
+- `api.WakeLockSentinel.onrelease` ([#13816](https://github.com/mdn/browser-compat-data/pull/13816))
+- `api.XRLightProbe.onreflectionchange` ([#13374](https://github.com/mdn/browser-compat-data/pull/13374))
+- `api.XRReferenceSpace.onreset` ([#13483](https://github.com/mdn/browser-compat-data/pull/13483))
+- `api.XRSession.onend` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.oninputsourceschange` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onselect` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onselectend` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onselectstart` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onsqueeze` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onsqueezeend` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onsqueezestart` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSession.onvisibilitychange` ([#13597](https://github.com/mdn/browser-compat-data/pull/13597))
+- `api.XRSystem.ondevicechange` ([#13484](https://github.com/mdn/browser-compat-data/pull/13484))
+
+### Additions
+
+Features added in this release:
+
+- `api.EyeDropper.secure_context_required` ([#13808](https://github.com/mdn/browser-compat-data/pull/13808))
+- `api.MediaDevices.getDisplayMedia.audio_capture_support` ([#13837](https://github.com/mdn/browser-compat-data/pull/13837))
+- `api.WakeLockSentinel.release_event` ([#13816](https://github.com/mdn/browser-compat-data/pull/13816))
+- `html.manifest.display_override` ([#13565](https://github.com/mdn/browser-compat-data/pull/13565))
+- `html.manifest.share_target` ([#13803](https://github.com/mdn/browser-compat-data/pull/13803))
+
+### Statistics
+
+- 13 contributors have changed 238 files with 3,330 additions and 2,873 deletions in 41 commits ([`v4.1.0...v4.1.1`](https://github.com/mdn/browser-compat-data/compare/v4.1.0...v4.1.1))
+- 13,377 total features
+- 832 total contributors
+- 3,693 total stargazers
+
+## [v4.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.0)
+
+December 1, 2021
+
+**We've changed the format of these release notes!** We're experimenting with new release notes. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+### Data guideline changes
+
+A data guideline has been adopted to represent DOM events by a single `eventname_event` feature on each event's target interface, instead of separate features for the event name and `on`-handler properties. For example, `api.Element.focus_event` and `api.Element.onfocus` would be consolidated into `api.Element.focus_event` only. Read [the complete guideline](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#dom-events-eventname_event) for details.
+
+This consolidation will be completed over several `@mdn/browser-compat-data` releases. Review the release notes for a complete list of features added or removed. ([#13595](https://github.com/mdn/browser-compat-data/pull/13595))
+
+### Removals
+
+- `api.HTMLMediaElement.mozChannels` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.HTMLMediaElement.mozFrameBufferLength` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.HTMLMediaElement.mozLoadFrom` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.HTMLMediaElement.mozSampleRate` ([#13794](https://github.com/mdn/browser-compat-data/pull/13794))
+- `api.IDBVersionChangeEvent.version` ([#13814](https://github.com/mdn/browser-compat-data/pull/13814))
+- `api.MediaStreamConstraints` ([#12397](https://github.com/mdn/browser-compat-data/pull/12397))
+- `api.MediaStreamConstraints.audio` ([#12397](https://github.com/mdn/browser-compat-data/pull/12397))
+- `api.MediaStreamConstraints.video` ([#12397](https://github.com/mdn/browser-compat-data/pull/12397))
+- `api.WindowEventHandlers.onmessageerror.worker_support` ([#13796](https://github.com/mdn/browser-compat-data/pull/13796))
+
+### Additions
+
+- `api.BarProp.visible.returns_popup` ([#13322](https://github.com/mdn/browser-compat-data/pull/13322))
+- `api.Performance.measure.returns_undefined` ([#13478](https://github.com/mdn/browser-compat-data/pull/13478))
+- `api.Window.beforeinstallprompt_event` ([#12856](https://github.com/mdn/browser-compat-data/pull/12856))
+- `api.Window.open.features_parameter_popup` ([#13322](https://github.com/mdn/browser-compat-data/pull/13322))
+- `http.headers.Authorization` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Basic` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest.md5` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest.SHA-256` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Digest.SHA-512` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.Negotiate` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.Authorization.NTLM` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Basic` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest.md5` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest.SHA-256` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Digest.SHA-512` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.Negotiate` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `http.headers.WWW-Authenticate.NTLM` ([#12446](https://github.com/mdn/browser-compat-data/pull/12446))
+- `javascript.builtins.Intl.Locale.calendars` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.collations` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.hourCycles` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.numberingSystems` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.textInfo` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.timeZones` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `javascript.builtins.Intl.Locale.weekInfo` ([#12314](https://github.com/mdn/browser-compat-data/pull/12314))
+- `webextensions.api.commands.Command.name` ([#12512](https://github.com/mdn/browser-compat-data/pull/12512))
+- `webextensions.api.commands.Command.tab` ([#12512](https://github.com/mdn/browser-compat-data/pull/12512))
+
+### Statistics
+
+- 14 contributors have changed 64 files with 1,826 additions and 733 deletions in 61 commits ([`v4.0.12...v4.1.0`](https://github.com/mdn/browser-compat-data/compare/v4.0.12...v4.1.0))
+- 13,393 total features
+- 830 total contributors
+- 3,685 total stargazers
+
+## [v4.0.12](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.12)
+
+November 24, 2021
+
+**We've changed the format of these release notes!** We're experimenting with new release notes. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+### Removals
+
+- Removed `api.EffectTiming` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.delay` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.direction` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.duration` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.easing` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.easing.jump` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.endDelay` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.fill` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.iterations` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.EffectTiming.iterationStart` ([#12765](https://github.com/mdn/browser-compat-data/pull/12765))
+- Removed `api.isSecureContext.considers_window_opener` ([#13127](https://github.com/mdn/browser-compat-data/pull/13127))
+- Removed `api.MessageEvent.source.MessageEventSource_type` ([#13178](https://github.com/mdn/browser-compat-data/pull/13178))
+- Removed `api.PaymentItem` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PaymentItem.amount` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PaymentItem.label` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PaymentItem.pending` ([#12817](https://github.com/mdn/browser-compat-data/pull/12817))
+- Removed `api.PublicKeyCredentialCreationOptions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.attestation` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.authenticatorSelection` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.challenge` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.excludeCredentials` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.extensions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.pubKeyCredParams` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.rp` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.timeout` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialCreationOptions.user` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.allowCredentials` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.challenge` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.extensions` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.rpId` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.timeout` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.PublicKeyCredentialRequestOptions.userVerification` ([#12771](https://github.com/mdn/browser-compat-data/pull/12771))
+- Removed `api.RTCAnswerOptions` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferAnswerOptions` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferAnswerOptions.voiceActivityDetection` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferOptions` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCOfferOptions.iceRestart` ([#12819](https://github.com/mdn/browser-compat-data/pull/12819))
+- Removed `api.RTCRtpTransceiverDirection` ([#13550](https://github.com/mdn/browser-compat-data/pull/13550))
+- Removed `api.RTCTrackEventInit` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.receiver` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.streams` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.track` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.RTCTrackEventInit.transceiver` ([#12831](https://github.com/mdn/browser-compat-data/pull/12831))
+- Removed `api.ServiceWorkerGlobalScope.caches` ([#13487](https://github.com/mdn/browser-compat-data/pull/13487))
+- Removed `api.Window.requestAnimationFrame.return_value` ([#13694](https://github.com/mdn/browser-compat-data/pull/13694))
+
+### Additions
+
+- Added `api.Window.requestAnimationFrame.return_value` ([#13695](https://github.com/mdn/browser-compat-data/pull/13695))
+- Added `html.elements.template.shadowroot` ([#13230](https://github.com/mdn/browser-compat-data/pull/13230))
+
+### Statistics
+
+- 17 contributors have changed 119 files with 2,782 additions and 3,034 deletions in 121 commits ([`v4.0.11...v4.0.12`](https://github.com/mdn/browser-compat-data/compare/v4.0.11...v4.0.12))
+- 13,374 total features
+- 828 total contributors
+- 3,677 total stargazers
+
+## [v4.0.11](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.11)
+
+November 16, 2021
+
+**Last call: do you read these release notes?** We're considering making changes to them and want to hear from you before we do that. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+### Notable changes
+
+- `api.XMLHttpRequest.readyState.constants` has been removed because constants, [by convention](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#constants), are not recorded. ([#12879](https://github.com/mdn/browser-compat-data/pull/12879))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.MediaStreamAudioSourceOptions` ([#13523](https://github.com/mdn/browser-compat-data/pull/13523))
+  - `api.PhotoCapabilities` ([#13479](https://github.com/mdn/browser-compat-data/pull/13479))
+  - `api.Range.insertNode.collapsed_ranges` ([#13424](https://github.com/mdn/browser-compat-data/pull/13424))
+  - `css.types.calc.color_values` ([#13486](https://github.com/mdn/browser-compat-data/pull/13486))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 19 contributors have changed 117 files with 4,718 additions and 996 deletions in 114 commits ([`v4.0.10...v4.0.11`](https://github.com/mdn/browser-compat-data/compare/v4.0.10...v4.0.11))
+- 13,419 total features
+- 826 total contributors
+- 3,656 total stargazers
+
+## [v4.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.10)
+
+November 9, 2021
+
+**Do you read these release notes?** We're considering making changes to them and want to hear from you before we do that. See [this issue](https://github.com/mdn/browser-compat-data/issues/13229) for details and to [give your input](https://github.com/mdn/browser-compat-data/issues/13229).
+
+### Notable changes
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.MediaSettingsRange` ([#13373](https://github.com/mdn/browser-compat-data/pull/13373))
+  - `api.ProcessingInstruction.data` ([#13388](https://github.com/mdn/browser-compat-data/pull/13388))
+  - `http.headers.Feature-Policy.vibrate` ([#13278](https://github.com/mdn/browser-compat-data/pull/13278))
+  - `http.headers.Feature-Policy.vr` ([#13260](https://github.com/mdn/browser-compat-data/pull/13260))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 17 contributors have changed 134 files with 1,542 additions and 1,993 deletions in 52 commits ([`v4.0.9...v4.0.10`](https://github.com/mdn/browser-compat-data/compare/v4.0.9...v4.0.10))
+- 13,375 total features
+- 822 total contributors
+- 3,651 total stargazers
+
+## [v4.0.9](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.9)
+
+November 2, 2021
+
+## Notable changes
+
+- `api.MessageEvent.origin.USVString_type` was removed, since it recorded data about browser internals that are not observable to web developers. ([#13136](https://github.com/mdn/browser-compat-data/pull/13136))
+
+- `api.IDBIndex.name.renaming_with_name_setter` was renamed to `api.IDBIndex.name.renaming_through_name_setter` to reflect the convention set by `api.IDBObjectStore.name.renaming_through_name_setter`. ([#13216](https://github.com/mdn/browser-compat-data/pull/13216))
+
+- `css.properties.break-inside.multicol_context.column` and `css.properties.break-inside.paged_context.page` were renamed to `css.properties.break-inside.multicol_context.avoid-column` and `css.properties.break-inside.paged_context.avoid-page` to reflect the actual names of the values they describe. ([#11924](https://github.com/mdn/browser-compat-data/pull/11924))
+
+- `api.Response.Response.body_param_null` was renamed to `api.Response.Response.body_parameter_optional` to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features).
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.EventTarget.removeEventListener.type_listener_parameters_optional` ([#13143](https://github.com/mdn/browser-compat-data/pull/13143))
+  - `api.HTMLImageElement.error_event` ([#13006](https://github.com/mdn/browser-compat-data/pull/13006))
+  - `api.MutationObserverInit` ([#12795](https://github.com/mdn/browser-compat-data/pull/12795))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 11 contributors have changed 89 files with 1,314 additions and 1,880 deletions in 142 commits ([`v4.0.8...v4.0.9`](https://github.com/mdn/browser-compat-data/compare/v4.0.8...v4.0.9))
+- 13,378 total features
+- 819 total contributors
+- 3,642 total stargazers
+
+## [v4.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.8)
+
+October 26, 2021
+
+### Notable changes
+
+- Several features were renamed to follow [the guideline on parameter feature names](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#parameters-and-parameter-object-features):
+
+  - `api.BaseAudioContext.createPeriodicWave.disableNormalisation_supported` was renamed to `api.BaseAudioContext.createPeriodicWave.constraints_disableNormalization_parameter` ([#12934](https://github.com/mdn/browser-compat-data/pull/12934))
+  - `api.History.pushState.title` was renamed to `api.History.pushState.title_parameter` ([#12951](https://github.com/mdn/browser-compat-data/pull/12951))
+  - `api.History.replaceState.title` was renamed to `api.History.replaceState.title_parameter` ([#12951](https://github.com/mdn/browser-compat-data/pull/12951))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.Element.overflow_event` ([#12975](https://github.com/mdn/browser-compat-data/pull/12975))
+  - `api.Element.underflow_event` ([#12975](https://github.com/mdn/browser-compat-data/pull/12975))
+  - `api.WindowEventHandlers.onbeforeunload.custom_text_support` ([#13085](https://github.com/mdn/browser-compat-data/pull/13085))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 10 contributors have changed 111 files with 1,162 additions and 946 deletions in 60 commits ([`v4.0.7...v4.0.8`](https://github.com/mdn/browser-compat-data/compare/v4.0.7...v4.0.8))
+- 13,390 total features
+- 815 total contributors
+- 3,631 total stargazers
+
+## [v4.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.7)
+
+October 19, 2021
+
+### Notable changes
+
+- We've adopted [a new data guideline to record data for historic Safari backport releases](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#backported-releases) in a more consistent way. Some Safari releases have been omitted to avoid unexplained discontinuities in support. ([#11909](https://github.com/mdn/browser-compat-data/pull/11909))
+
+- The following non-existent, long-removed, or otherwise irrelevant features have been removed:
+
+  - `api.HTMLMediaElement.onerror` ([#12824](https://github.com/mdn/browser-compat-data/pull/12824))
+  - `api.MediaCapabilitiesInfo` ([#12836](https://github.com/mdn/browser-compat-data/pull/12836))
+  - `api.RTCRtpTransceiverInit` ([#12832](https://github.com/mdn/browser-compat-data/pull/12832))
+  - `api.VRLayerInit` ([#12818](https://github.com/mdn/browser-compat-data/pull/12818))
+
+### Known issues
+
+- In [v3.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v3.3.9), the structure of features for `css.properties.place-content`, `place-items`, and `place-self` changed ([#11214](https://github.com/mdn/browser-compat-data/pull/11214)). This is an incomplete fix to the problem of undocumented namespaces appearing in places where you might otherwise expect compatability data. The restructuring of the data is a work in progress and may change again in a future release. See [#6175](https://github.com/mdn/browser-compat-data/issues/6175) for more information.
+
+### Statistics
+
+- 10 contributors have changed 122 files with 1,176 additions and 1,224 deletions in 47 commits ([`v4.0.6...4.0.7`](https://github.com/mdn/browser-compat-data/compare/v4.0.6...4.0.7))
+- 13,389 total features
+- 812 total contributors
+- 3,620 total stargazers
+
 ## [v4.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.0.6)
 
 October 12, 2021
