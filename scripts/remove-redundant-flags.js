@@ -34,6 +34,11 @@ const getEarliestVersion = (...args) => {
   let earliestVersion = versions[0];
 
   for (const version of versions) {
+    if (version === 'preview') {
+      continue;
+    } else if (earliestVersion === 'preview') {
+      earliestVersion = version;
+    }
     if (compareVersions.compare(earliestVersion, version, '>'))
       earliestVersion = version;
   }
