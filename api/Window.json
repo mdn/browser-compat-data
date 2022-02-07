@@ -216,13 +216,19 @@
           "spec_url": "https://drafts.csswg.org/css-animations/#eventdef-animationevent-animationcancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "firefox": {
               "version_added": "54"
@@ -234,10 +240,14 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "69",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "59",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "safari": [
               {
@@ -276,10 +286,14 @@
               }
             ],
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "13.0",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             }
           },
           "status": {
@@ -569,6 +583,7 @@
         "__compat": {
           "description": "<code>appinstalled</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/appinstalled_event",
+          "spec_url": "https://wicg.github.io/manifest-incubations/#dom-window-onappinstalled",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -625,13 +640,15 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
       "beforeinstallprompt_event": {
         "__compat": {
           "description": "<code>beforeinstallprompt</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event",
+          "spec_url": "https://wicg.github.io/manifest-incubations/#onbeforeinstallprompt-attribute",
           "support": {
             "chrome": {
               "version_added": "44"
@@ -9462,13 +9479,13 @@
           "spec_url": "https://drafts.csswg.org/css-transitions/#transitioncancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "74"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "74"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -9480,10 +9497,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "62"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "53"
             },
             "safari": [
               {
@@ -9522,10 +9539,10 @@
               }
             ],
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "74"
             }
           },
           "status": {

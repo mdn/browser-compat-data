@@ -41,7 +41,7 @@ whichever comes first.
 
 When a release is imminent:
 
-1. Confirm that all pull requests labeled [needs-release-note 📰](https://github.com/mdn/browser-compat-data/pulls?q=is%3Apr+label%3A%22needs-release-note+%3Anewspaper%3A%22+) have been entered into the release notes. Run `npm run release-pulls` to get a link to all of the since the previous release to `HEAD`.
+1. Confirm that all pull requests labeled [needs-release-note 📰](https://github.com/mdn/browser-compat-data/pulls?q=is%3Apr+label%3A%22needs-release-note+%3Anewspaper%3A%22+) have been entered into the release notes. Run `npm run release-pulls` to get a link to all of the labeled pull requests since the previous release to `HEAD`.
 
 2. Add the release statistics to the release notes. Switch to the `main` branch, then run `npm run release-stats`. After completing the prompts, copy the output, switch back to the release branch, and add the statistics to `RELEASE_NOTES.md`.
 
