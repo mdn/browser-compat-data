@@ -23,6 +23,9 @@
               },
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -48,6 +51,9 @@
               },
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -74,6 +80,9 @@
               },
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -100,6 +109,9 @@
               },
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -125,6 +137,9 @@
               },
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -151,6 +166,10 @@
               "safari": {
                 "version_added": "14",
                 "notes": "Removing <code>&lt;all_urls&gt;</code> or <code>*://*/*</code> origins will remove previously granted permission to request specific origin patterns and will stop automatically prompting the user for access to any visited website via the extension's access popover in the toolbar."
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "notes": "Removing <code>&lt;all_urls&gt;</code> or <code>*://*/*</code> origins will remove previously granted permission to request specific origin patterns and will stop automatically prompting the user for access to any visited website via the extension's access popover in the toolbar."
               }
             }
           }
@@ -174,7 +193,12 @@
                 ]
               },
               "firefox_android": {
-                "version_added": true
+                "version_added": true,
+                "partial_implementation": true,
+                "notes": [
+                  "From version 79, the user interface to approve the permission request is missing (see <a href='https://bugzil.la/1601420'>bug 1601420</a>).",
+                  "<code>browserAction.onClicked</code> is not recognized as a user action (see <a href='https://github.com/mozilla-mobile/fenix/issues/22348'>mozilla-mobile/fenix#22348</a>)."
+                ]
               },
               "opera": {
                 "version_added": true
@@ -183,6 +207,14 @@
                 "version_added": "14",
                 "notes": [
                   "Requesting <code>&lt;all_urls&gt;</code> or <code>*://*/*</code> origins will grant permission to request specific origin patterns and automatically prompt the user for access to any visited website via the extension's access popover in the toolbar.",
+                  "The user will be prompted again for permissions that have been previously granted and then removed.",
+                  "Supported permissions will be granted without prompting the user. Only specific origin patterns will prompt the user."
+                ]
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "notes": [
+                  "Requesting <code>&lt;all_urls&gt;</code> or <code>*://*/*</code> origins will grant permission to request specific origin patterns and automatically prompt the user for access to any visited website via the extension's banner.",
                   "The user will be prompted again for permissions that have been previously granted and then removed.",
                   "Supported permissions will be granted without prompting the user. Only specific origin patterns will prompt the user."
                 ]
