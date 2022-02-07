@@ -120,7 +120,7 @@
               "version_added": "6"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "ie": {
               "version_added": "9"
@@ -216,13 +216,19 @@
           "spec_url": "https://drafts.csswg.org/css-animations/#eventdef-animationevent-animationcancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "firefox": {
               "version_added": "54"
@@ -234,10 +240,14 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "69",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "59",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "safari": [
               {
@@ -276,10 +286,14 @@
               }
             ],
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "13.0",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>window.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             }
           },
           "status": {
@@ -331,12 +345,24 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": "15",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": "14",
+                "prefix": "webkit"
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
@@ -411,12 +437,24 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": "15",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": "14",
+                "prefix": "webkit"
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
@@ -491,12 +529,24 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": "15",
+                "prefix": "webkit"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "30"
+              },
+              {
+                "version_added": "14",
+                "prefix": "webkit"
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
@@ -533,6 +583,7 @@
         "__compat": {
           "description": "<code>appinstalled</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/appinstalled_event",
+          "spec_url": "https://wicg.github.io/manifest-incubations/#dom-window-onappinstalled",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -589,13 +640,15 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
       "beforeinstallprompt_event": {
         "__compat": {
           "description": "<code>beforeinstallprompt</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event",
+          "spec_url": "https://wicg.github.io/manifest-incubations/#onbeforeinstallprompt-attribute",
           "support": {
             "chrome": {
               "version_added": "44"
@@ -660,7 +713,7 @@
               "version_added": "6"
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": "6"
             },
             "ie": {
               "version_added": "9"
@@ -763,10 +816,10 @@
                 "version_added": "9"
               },
               "opera": {
-                "version_added": null
+                "version_added": "17"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "18"
               },
               "safari": {
                 "version_added": "8"
@@ -854,7 +907,7 @@
                 "version_added": "1"
               },
               "firefox_android": {
-                "version_added": true
+                "version_added": "4"
               },
               "ie": {
                 "version_added": "9"
@@ -863,7 +916,7 @@
                 "version_added": "12"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "12"
               },
               "safari": {
                 "version_added": "3"
@@ -1060,7 +1113,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1094,10 +1147,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
               "version_added": false
@@ -1411,7 +1464,7 @@
               "version_added": "73"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "62"
             },
             "safari": {
               "version_added": false,
@@ -1448,7 +1501,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "6"
@@ -1457,7 +1510,7 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9"
             },
             "opera": {
               "version_added": "15"
@@ -1547,7 +1600,7 @@
               "version_added": "18"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "6"
@@ -1556,7 +1609,7 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9"
             },
             "opera": {
               "version_added": "15"
@@ -1609,10 +1662,10 @@
               "version_added": "11"
             },
             "opera": {
-              "version_added": true
+              "version_added": "18"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "18"
             },
             "safari": {
               "version_added": false
@@ -1624,7 +1677,7 @@
               "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "4.4"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1987,7 +2040,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -2341,7 +2394,7 @@
               }
             ],
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "10.1"
@@ -2405,7 +2458,7 @@
               }
             ],
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
               "version_added": "10.1"
@@ -3275,7 +3328,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -4133,7 +4186,7 @@
               "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "4.4"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -4182,7 +4235,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -4717,7 +4770,7 @@
               "version_added": false
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -4979,7 +5032,8 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true,
+              "version_added": "6.0",
+              "version_removed": "13.0",
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
@@ -5104,6 +5158,7 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0",
+              "version_removed": "13.0",
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
@@ -5320,6 +5375,7 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0",
+              "version_removed": "13.0",
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
@@ -5555,10 +5611,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -5647,7 +5703,7 @@
               "version_added": false
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -5899,10 +5955,10 @@
               "version_added": "11"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤14"
             },
             "safari": {
               "version_added": "5"
@@ -5949,10 +6005,10 @@
               "version_added": "11"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤14"
             },
             "safari": {
               "version_added": "5"
@@ -6743,7 +6799,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "≤37"
+                "version_added": "4.4"
               },
               {
                 "version_added": "≤37",
@@ -6771,7 +6827,7 @@
               "prefix": "webkit"
             },
             "edge": {
-              "version_added": "≤18",
+              "version_added": "79",
               "prefix": "webkit"
             },
             "firefox": {
@@ -7398,10 +7454,12 @@
                 "version_added": "45"
               },
               "safari": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Safari does not have support for the <code>smooth</code> scroll behavior."
               },
               "safari_ios": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Safari does not have support for the <code>smooth</code> scroll behavior."
               },
               "samsunginternet_android": {
                 "version_added": "8.0"
@@ -7640,10 +7698,12 @@
                 "version_added": "45"
               },
               "safari": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Safari does not have support for the <code>smooth</code> scroll behavior."
               },
               "safari_ios": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Safari does not have support for the <code>smooth</code> scroll behavior."
               },
               "samsunginternet_android": {
                 "version_added": "8.0"
@@ -7779,10 +7839,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7827,10 +7887,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7875,10 +7935,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -7923,10 +7983,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -8025,10 +8085,12 @@
                 "version_added": "45"
               },
               "safari": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Safari does not have support for the <code>smooth</code> scroll behavior."
               },
               "safari_ios": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Safari does not have support for the <code>smooth</code> scroll behavior."
               },
               "samsunginternet_android": {
                 "version_added": "8.0"
@@ -8593,10 +8655,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -8696,10 +8758,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -8943,10 +9005,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -8992,10 +9054,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -9035,13 +9097,13 @@
               "version_added": "49"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "49"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "20"
             },
             "opera_android": {
               "version_added": false
@@ -9417,13 +9479,13 @@
           "spec_url": "https://drafts.csswg.org/css-transitions/#transitioncancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "74"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "74"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -9435,10 +9497,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "62"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "53"
             },
             "safari": [
               {
@@ -9477,10 +9539,10 @@
               }
             ],
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "74"
             }
           },
           "status": {
@@ -9515,10 +9577,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": [
               {
@@ -9595,10 +9657,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": [
               {
@@ -9675,10 +9737,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": [
               {
@@ -9875,10 +9937,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -10130,7 +10192,8 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true,
+              "version_added": "6.0",
+              "version_removed": "13.0",
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
@@ -10256,6 +10319,7 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0",
+              "version_removed": "13.0",
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
@@ -10474,6 +10538,7 @@
             },
             "samsunginternet_android": {
               "version_added": "6.0",
+              "version_removed": "13.0",
               "notes": "Supported on Samsung Internet for GearVR."
             },
             "webview_android": {
