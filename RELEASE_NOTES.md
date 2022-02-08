@@ -1,5 +1,64 @@
 # Release notes
 
+## [v4.1.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.7)
+
+February 8, 2022
+
+### Removals
+
+- `api.RTCPeerConnection.setRemoteDescription.description_parameter_optional` ([#14698](https://github.com/mdn/browser-compat-data/pull/14698))
+- `api.Sensor.onactivate` ([#13926](https://github.com/mdn/browser-compat-data/pull/13926))
+- `api.Sensor.onerror` ([#13926](https://github.com/mdn/browser-compat-data/pull/13926))
+- `api.Sensor.onreading` ([#13926](https://github.com/mdn/browser-compat-data/pull/13926))
+- `api.Serial.onconnect` ([#13925](https://github.com/mdn/browser-compat-data/pull/13925))
+- `api.Serial.ondisconnect` ([#13925](https://github.com/mdn/browser-compat-data/pull/13925))
+- `api.SerialPort.onconnect` ([#13925](https://github.com/mdn/browser-compat-data/pull/13925))
+- `api.SerialPort.ondisconnect` ([#13925](https://github.com/mdn/browser-compat-data/pull/13925))
+- `api.SpeechRecognition.onaudioend` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onaudiostart` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onend` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onerror` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onnomatch` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onresult` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onsoundend` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onsoundstart` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onspeechend` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onspeechstart` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.onstart` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechRecognition.serviceURI` ([#14881](https://github.com/mdn/browser-compat-data/pull/14881))
+- `api.SpeechSynthesis.onvoiceschanged` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onboundary` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onend` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onerror` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onmark` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onpause` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onresume` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.SpeechSynthesisUtterance.onstart` ([#13890](https://github.com/mdn/browser-compat-data/pull/13890))
+- `api.VideoTrackList.onaddtrack` ([#13885](https://github.com/mdn/browser-compat-data/pull/13885))
+- `api.VideoTrackList.onchange` ([#13885](https://github.com/mdn/browser-compat-data/pull/13885))
+- `api.VideoTrackList.onremovetrack` ([#13885](https://github.com/mdn/browser-compat-data/pull/13885))
+
+### Additions
+
+- `api.Sensor.activate_event` ([#13926](https://github.com/mdn/browser-compat-data/pull/13926))
+- `api.Sensor.error_event` ([#13926](https://github.com/mdn/browser-compat-data/pull/13926))
+- `api.Sensor.reading_event` ([#13926](https://github.com/mdn/browser-compat-data/pull/13926))
+- `api.SerialPort.connect_event` ([#13925](https://github.com/mdn/browser-compat-data/pull/13925))
+- `api.SerialPort.disconnect_event` ([#13925](https://github.com/mdn/browser-compat-data/pull/13925))
+- `css.at-rules.scroll-timeline` ([#14662](https://github.com/mdn/browser-compat-data/pull/14662))
+- `css.at-rules.scroll-timeline.orientation` ([#14662](https://github.com/mdn/browser-compat-data/pull/14662))
+- `css.at-rules.scroll-timeline.scroll-offsets` ([#14662](https://github.com/mdn/browser-compat-data/pull/14662))
+- `css.at-rules.scroll-timeline.source` ([#14662](https://github.com/mdn/browser-compat-data/pull/14662))
+- `css.properties.hyphenate-character` ([#14488](https://github.com/mdn/browser-compat-data/pull/14488))
+- `http.headers.Sec-CH-UA-Full-Version-List` ([#14873](https://github.com/mdn/browser-compat-data/pull/14873))
+
+### Statistics
+
+- 12 contributors have changed 95 files with 1,151 additions and 2,042 deletions in 46 commits ([`v4.1.6...v4.1.7`](https://github.com/mdn/browser-compat-data/compare/v4.1.6...v4.1.7))
+- 13,373 total features
+- 844 total contributors
+- 3,841 total stargazers
+
 ## [v4.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.6)
 
 February 1, 2022
