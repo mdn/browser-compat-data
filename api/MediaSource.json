@@ -456,161 +456,6 @@
           }
         }
       },
-      "onsourceclose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/onsourceclose",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "chrome_android": {
-              "version_added": "33"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": false,
-              "notes": "This event handler attribute is not supported; however, the event itself is supported since Firefox 42. The event can be listened to via <code>mediaSource.addEventListener('sourceclose', function() {});</code>. See <a href='https://bugzil.la/1689222'>bug 1689222</a>."
-            },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "This event handler attribute is not supported; however, the event itself is supported since Firefox 42. The event can be listened to via <code>mediaSource.addEventListener('sourceclose', function() {});</code>. See <a href='https://bugzil.la/1689222'>bug 1689222</a>."
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "13",
-              "partial_implementation": true,
-              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onsourceended": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/onsourceended",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "chrome_android": {
-              "version_added": "33"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": "41"
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "13",
-              "partial_implementation": true,
-              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onsourceopen": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/onsourceopen",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "chrome_android": {
-              "version_added": "33"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": "41"
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "13",
-              "partial_implementation": true,
-              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "readyState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/readyState",
@@ -806,6 +651,179 @@
             },
             "samsunginternet_android": {
               "version_added": "1.5"
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sourceclose_event": {
+        "__compat": {
+          "description": "<code>sourceclose</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event",
+          "spec_url": "https://w3c.github.io/media-source/#dfn-sourceclose",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": [
+              {
+                "version_added": "87"
+              },
+              {
+                "version_added": "42",
+                "partial_implementation": true,
+                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "87"
+              },
+              {
+                "version_added": "42",
+                "partial_implementation": true,
+                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+              }
+            ],
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": {
+              "version_added": "2.0"
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sourceended_event": {
+        "__compat": {
+          "description": "<code>sourceended</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event",
+          "spec_url": "https://w3c.github.io/media-source/#dfn-sourceended",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "41"
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": {
+              "version_added": "2.0"
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sourceopen_event": {
+        "__compat": {
+          "description": "<code>sourceopen</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/onsourceopen",
+          "spec_url": "https://w3c.github.io/media-source/#dfn-sourceopen",
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "chrome_android": {
+              "version_added": "33"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "41"
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": {
+              "version_added": "2.0"
             },
             "webview_android": {
               "version_added": "4.4.3"
