@@ -1,5 +1,9 @@
 # Release notes
 
+## [v4.1.7](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.7)
+
+RELEASE DATE TK
+
 ## [v4.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.6)
 
 February 1, 2022
