@@ -127,6 +127,16 @@ const getStats = (folder, allBrowsers) => {
    */
   const browsers = allBrowsers
     ? Object.keys(bcd.browsers)
+    : folder === 'webextensions'
+    ? [
+        'chrome',
+        'edge',
+        'firefox',
+        'firefox_android',
+        'opera',
+        'safari',
+        'safari_ios',
+      ]
     : [
         'chrome',
         'chrome_android',
