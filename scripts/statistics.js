@@ -23,6 +23,12 @@ const { argv } = require('yargs').command(
         describe: 'Show statistics for all browsers within BCD',
         type: 'boolean',
         nargs: 0,
+      })
+      .option('asCount', {
+        alias: 'c',
+        describe: 'Show feature count rather than percentages',
+        type: 'boolean',
+        nargs: 0,
       });
   },
 );
@@ -163,13 +169,27 @@ const getStats = (folder, allBrowsers) => {
 };
 
 /**
+ * Get value as either percentage or number as requested
+ *
+ * @param {VersionStats} stats The stats object to get data from
+ * @param {string} type The type of statistic to obtain
+ * @param {boolean} asCount Whether to return the integer itself
+ * @returns {string} The percentage or count
+ */
+const getStat = (stats, type, asCount) => {
+  return asCount
+    ? stats[type]
+    : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
+};
+
+/**
  * Print statistics of BCD
  *
  * @param {object.<string, VersionStats>} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @returns {void}
  */
-const printStats = (stats, folder) => {
+const printStats = (stats, folder, asCount) => {
   if (!stats) {
     console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
     return;
@@ -194,12 +214,10 @@ const printStats = (stats, folder) => {
 
   Object.keys(stats).forEach(entry => {
     table += `| ${entry.replace('_', ' ')} | `;
-    table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(
-      2,
-    )}% | `;
-    table += `${((stats[entry].true / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].null / stats[entry].all) * 100).toFixed(2)}% |
+    table += `${getStat(stats[entry], 'real', asCount)} | `;
+    table += `${getStat(stats[entry], 'range', asCount)} | `;
+    table += `${getStat(stats[entry], 'true', asCount)} | `;
+    table += `${getStat(stats[entry], 'null', asCount)} |
 `;
   });
 
@@ -207,7 +225,7 @@ const printStats = (stats, folder) => {
 };
 
 if (require.main === module) {
-  printStats(getStats(argv.folder, argv.all), argv.folder);
+  printStats(getStats(argv.folder, argv.all), argv.folder, argv.asCount);
 }
 
 module.exports = getStats;
