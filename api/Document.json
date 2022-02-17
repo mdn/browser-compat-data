@@ -1733,9 +1733,16 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>oncopy</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "6"
             },
@@ -1743,19 +1750,21 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": "9"
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>oncopy</code> event handler property is not supported."
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2970,9 +2979,16 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>oncut</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "6"
             },
@@ -2980,19 +2996,21 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": "9"
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>oncut</code> event handler property is not supported."
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -7158,102 +7176,6 @@
           }
         }
       },
-      "oncopy": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/oncopy",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "6"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "oncut": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/oncut",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "6"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "onfreeze": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfreeze",
@@ -7298,54 +7220,6 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpaste": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onpaste",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "6"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
             "deprecated": false
           }
         }
@@ -7819,9 +7693,16 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>onpaste</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "6"
             },
@@ -7829,19 +7710,21 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": "11"
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>onpaste</code> event handler property is not supported."
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
