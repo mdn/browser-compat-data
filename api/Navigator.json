@@ -3183,6 +3183,8 @@
       },
       "requestMIDIAccess": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess",
+          "spec_url": "https://webaudio.github.io/web-midi-api/#dom-navigator-requestmidiaccess",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -3194,7 +3196,14 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "97",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webmidi.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
