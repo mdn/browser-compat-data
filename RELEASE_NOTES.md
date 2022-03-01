@@ -1,5 +1,61 @@
 # Release notes
 
+## [v4.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.10)
+
+March 1, 2022
+
+### Removals
+
+- `css.properties.-webkit-print-color-adjust` ([#14738](https://github.com/mdn/browser-compat-data/pull/14738))
+- `css.properties.color-adjust` ([#14738](https://github.com/mdn/browser-compat-data/pull/14738))
+
+### Additions
+
+- `api.Navigator.registerProtocolHandler.scheme_parameter_bitcoin` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_cabal` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_dat` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_did` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_dweb` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_etherium` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ftp` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ftps` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_geo` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_hyper` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_im` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ipfs` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ipns` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_irc` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ircs` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_magnet` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_mailto` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_matrix` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_mms` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_news` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_nntp` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_openpgp4fpr` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_sftp` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_sip` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_sms` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_smsto` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ssb` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_ssh` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_tel` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_urn` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_webcal` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_wtai` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.scheme_parameter_xmpp` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `api.Navigator.registerProtocolHandler.title_parameter_required` ([#14981](https://github.com/mdn/browser-compat-data/pull/14981))
+- `css.properties.print-color-adjust` ([#14738](https://github.com/mdn/browser-compat-data/pull/14738))
+- `svg.elements.path.d.path` ([#14498](https://github.com/mdn/browser-compat-data/pull/14498))
+- `webextensions.api.userScripts.cookieStoreId` ([#15098](https://github.com/mdn/browser-compat-data/pull/15098))
+
+### Statistics
+
+- 8 contributors have changed 37 files with 2,091 additions and 222 deletions in 10 commits ([`v4.1.9...main`](https://github.com/mdn/browser-compat-data/compare/v4.1.9...main))
+- 13,384 total features
+- 855 total contributors
+- 3,896 total stargazers
+
 ## [v4.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.9)
 
 February 22, 2022
