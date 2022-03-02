@@ -1607,10 +1607,91 @@
           }
         }
       },
+      "devicelight_event": {
+        "__compat": {
+          "description": "<code>devicelight</code> event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "13",
+              "version_removed": "79"
+            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "version_removed": "89",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.ambientLight.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "22",
+                "version_removed": "61",
+                "notes": "Not supported for MacBook with Touch Bar and Windows 7 (see <a href='https://bugzil.la/754199'>bug 754199</a>)."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "version_removed": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.ambientLight.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
       "devicemotion_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/devicemotion_event",
-          "spec_url": "https://w3c.github.io/deviceorientation/#devicemotion",
+          "spec_url": [
+            "https://w3c.github.io/deviceorientation/#devicemotion",
+            "https://w3c.github.io/deviceorientation/#ref-for-dom-window-ondevicemotion"
+          ],
           "description": "<code>devicemotion</code> event",
           "support": {
             "chrome": {
@@ -1660,7 +1741,10 @@
       "deviceorientation_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event",
-          "spec_url": "https://w3c.github.io/deviceorientation/#deviceorientation",
+          "spec_url": [
+            "https://w3c.github.io/deviceorientation/#deviceorientation",
+            "https://w3c.github.io/deviceorientation/#ref-for-dom-window-ondeviceorientation"
+          ],
           "description": "<code>deviceorientation</code> event",
           "support": {
             "chrome": {
@@ -1721,6 +1805,56 @@
           }
         }
       },
+      "deviceorientationabsolute_event": {
+        "__compat": {
+          "description": "<code>deviceorientationabsolute</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/deviceorientationabsolute_event",
+          "spec_url": "https://w3c.github.io/deviceorientation/#dom-window-ondeviceorientationabsolute",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "37"
+            },
+            "opera_android": {
+              "version_added": "37"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "50"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "devicePixelRatio": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio",
@@ -1767,6 +1901,83 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        }
+      },
+      "deviceproximity_event": {
+        "__compat": {
+          "description": "<code>deviceproximity</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/deviceproximity_event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "version_removed": "89",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "version_removed": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -4112,307 +4323,6 @@
             "experimental": false,
             "standard_track": false,
             "deprecated": false
-          }
-        }
-      },
-      "ondevicelight": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondevicelight",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "13",
-              "version_removed": "79"
-            },
-            "firefox": [
-              {
-                "version_added": "62",
-                "version_removed": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.ambientLight.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "22",
-                "version_removed": "61",
-                "notes": "Not supported for MacBook with Touch Bar and Windows 7 (see <a href='https://bugzil.la/754199'>bug 754199</a>)."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.ambientLight.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "ondevicemotion": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondevicemotion",
-          "spec_url": "https://w3c.github.io/deviceorientation/#ref-for-dom-window-ondevicemotion",
-          "support": {
-            "chrome": {
-              "version_added": "31"
-            },
-            "chrome_android": {
-              "version_added": "31"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": "11"
-            },
-            "opera": {
-              "version_added": "18"
-            },
-            "opera_android": {
-              "version_added": "18"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": "4.2"
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ondeviceorientation": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondeviceorientation",
-          "spec_url": "https://w3c.github.io/deviceorientation/#ref-for-dom-window-ondeviceorientation",
-          "support": {
-            "chrome": {
-              "version_added": "7"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": "11"
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": "4.2"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ondeviceorientationabsolute": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondeviceorientationabsolute",
-          "spec_url": "https://w3c.github.io/deviceorientation/#dom-window-ondeviceorientationabsolute",
-          "support": {
-            "chrome": {
-              "version_added": "50"
-            },
-            "chrome_android": {
-              "version_added": "50"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "37"
-            },
-            "opera_android": {
-              "version_added": "37"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "50"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ondeviceproximity": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondeviceproximity",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "62",
-                "version_removed": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
