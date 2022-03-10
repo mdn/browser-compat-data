@@ -2,7 +2,7 @@
 
 ## [v4.1.11](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.11)
 
-RELEASE DATE TK
+March 10, 2022
 
 ### Removals
 
@@ -63,6 +63,13 @@ RELEASE DATE TK
 - `api.SharedWorker.error_event` ([#15202](https://github.com/mdn/browser-compat-data/pull/15202))
 - `webextensions.api.runtime.getFrameId` ([#15088](https://github.com/mdn/browser-compat-data/pull/15088))
 
+### Statistics
+
+- 12 contributors have changed 51 files with 1,315 additions and 1,509 deletions in 38 commits ([`v4.1.10...v4.1.11`](https://github.com/mdn/browser-compat-data/compare/v4.1.10...v4.1.11))
+- 13,373 total features
+- 858 total contributors
+- 3,918 total stargazers
+
 ## [v4.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.10)
 
 March 1, 2022
@@ -114,7 +121,7 @@ March 1, 2022
 
 ### Statistics
 
-- 8 contributors have changed 37 files with 2,091 additions and 222 deletions in 10 commits ([`v4.1.9...main`](https://github.com/mdn/browser-compat-data/compare/v4.1.9...main))
+- 8 contributors have changed 37 files with 2,091 additions and 222 deletions in 10 commits ([`v4.1.9...v4.1.10`](https://github.com/mdn/browser-compat-data/compare/v4.1.9...v4.1.10))
 - 13,384 total features
 - 855 total contributors
 - 3,896 total stargazers
