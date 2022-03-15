@@ -28,10 +28,17 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": {
-                "version_added": "0.12.0",
-                "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>the <code>DateTimeFormat()</code> constructor</a> for more details."
-              },
+              "nodejs": [
+                {
+                  "version_added": "13.0.0"
+                },
+                {
+                  "version_added": "0.12.0",
+                  "version_removed": "13.0.0",
+                  "partial_implementation": true,
+                  "notes": "Only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>the <code>DateTimeFormat()</code> constructor</a> for more details."
+                }
+              ],
               "opera": {
                 "version_added": "15"
               },
