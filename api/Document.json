@@ -655,10 +655,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "firefox_android": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "ie": {
               "version_added": "10"
@@ -705,10 +705,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "firefox_android": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "ie": {
               "version_added": "10"
@@ -755,10 +755,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "firefox_android": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "ie": {
               "version_added": "10"
@@ -7226,130 +7226,6 @@
           }
         }
       },
-      "onpointerlockchange": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/pointerlock/#dom-document-onpointerlockchange",
-          "support": {
-            "chrome": {
-              "version_added": "36"
-            },
-            "chrome_android": {
-              "version_added": "36"
-            },
-            "edge": {
-              "version_added": "13"
-            },
-            "firefox": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockchange"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockchange"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "23"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpointerlockerror": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/pointerlock/#dom-document-onpointerlockerror",
-          "support": {
-            "chrome": {
-              "version_added": "36"
-            },
-            "chrome_android": {
-              "version_added": "36"
-            },
-            "edge": {
-              "version_added": "13"
-            },
-            "firefox": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockerror"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockerror"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "23"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "open": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/open",
@@ -8093,11 +7969,14 @@
         "__compat": {
           "description": "<code>pointerlockchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event",
-          "spec_url": "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+          "spec_url": [
+            "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+            "https://w3c.github.io/pointerlock/#dom-document-onpointerlockchange"
+          ],
           "support": {
             "chrome": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "22",
@@ -8107,7 +7986,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "25",
@@ -8143,7 +8022,7 @@
             },
             "opera": [
               {
-                "version_added": "32"
+                "version_added": "23"
               },
               {
                 "version_added": "15",
@@ -8153,7 +8032,7 @@
             ],
             "opera_android": [
               {
-                "version_added": "32"
+                "version_added": "24"
               },
               {
                 "version_added": "14",
@@ -8169,7 +8048,7 @@
             },
             "samsunginternet_android": [
               {
-                "version_added": "5.0"
+                "version_added": "3.0"
               },
               {
                 "prefix": "webkit",
@@ -8179,7 +8058,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "45"
+                "version_added": "37"
               },
               {
                 "version_added": "≤37",
@@ -8199,11 +8078,14 @@
         "__compat": {
           "description": "<code>pointerlockerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event",
-          "spec_url": "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+          "spec_url": [
+            "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+            "https://w3c.github.io/pointerlock/#dom-document-onpointerlockerror"
+          ],
           "support": {
             "chrome": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "22",
@@ -8213,7 +8095,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "25",
@@ -8249,7 +8131,7 @@
             },
             "opera": [
               {
-                "version_added": "32"
+                "version_added": "23"
               },
               {
                 "version_added": "15",
@@ -8259,7 +8141,7 @@
             ],
             "opera_android": [
               {
-                "version_added": "32"
+                "version_added": "24"
               },
               {
                 "version_added": "14",
@@ -8275,7 +8157,7 @@
             },
             "samsunginternet_android": [
               {
-                "version_added": "5.0"
+                "version_added": "3.0"
               },
               {
                 "prefix": "webkit",
@@ -8285,7 +8167,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "45"
+                "version_added": "37"
               },
               {
                 "version_added": "≤37",
