@@ -7226,85 +7226,6 @@
           }
         }
       },
-      "onvisibilitychange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onvisibilitychange",
-          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvisibilitychange",
-          "support": {
-            "chrome": {
-              "version_added": "62",
-              "notes": "Before Chrome 62, this event handler attribute is not supported; however, the event itself is supported since Chrome 33. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "chrome_android": {
-              "version_added": "62",
-              "notes": "Before Chrome 62, this event handler attribute is not supported; however, the event itself is supported since Chrome 33. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "edge": {
-              "version_added": "18",
-              "notes": "Before Edge 18, this event handler attribute was not supported; however, the event itself was supported since Edge 12. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "firefox": {
-              "version_added": "56"
-            },
-            "firefox_android": {
-              "version_added": "56"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "This event handler attribute is not supported; however, the event itself is supported since IE 10. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "opera": {
-              "version_added": "49",
-              "notes": "Before Opera 49, this event handler attribute is not supported; however, the event itself is supported since Opera 20. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "opera_android": {
-              "version_added": "46",
-              "notes": "Before Opera Android 46, this event handler attribute is not supported; however, the event itself is supported since Opera Android 20. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "safari": [
-              {
-                "version_added": "14.1"
-              },
-              {
-                "version_removed": "14.1",
-                "version_added": "10.1",
-                "partial_implementation": true,
-                "notes": [
-                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                  "Before Safari 10.1, this event handler attribute was not supported; however, the event itself was supported since Safari 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "14.5"
-              },
-              {
-                "version_removed": "14.5",
-                "version_added": "10.3",
-                "partial_implementation": true,
-                "notes": [
-                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                  "Before Safari 10.1, this event handler attribute was not supported; however, the event itself was supported since Safari 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-                ]
-              }
-            ],
-            "samsunginternet_android": {
-              "version_added": "8.0",
-              "notes": "Before Samsung Internet 8.0, this event handler attribute is not supported; however, the event itself is supported since Samsung Internet 2.0. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "webview_android": {
-              "version_added": "62",
-              "notes": "Before WebView 62, this event handler attribute is not supported; however, the event itself is supported since WebView 4.4.3. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "open": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/open",
@@ -10527,28 +10448,46 @@
           "support": {
             "chrome": [
               {
+                "version_added": "62"
+              },
+              {
                 "version_added": "33",
-                "notes": "Before Chrome 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Chrome, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "13",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "chrome_android": [
               {
+                "version_added": "62"
+              },
+              {
                 "version_added": "33",
-                "notes": "Before Chrome 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Chrome, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "18",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
-            "edge": {
-              "version_added": "12",
-              "notes": "Before Edge 18, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "56"
             },
@@ -10557,84 +10496,131 @@
             },
             "ie": {
               "version_added": "10",
-              "notes": "The <code>onvisibilitychange</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              "partial_implementation": true,
+              "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
             },
             "opera": [
               {
+                "version_added": "49"
+              },
+              {
                 "version_added": "20",
-                "notes": "Before Opera 49, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Opera, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "12.1",
-                "version_removed": "15"
+                "version_removed": "15",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "opera_android": [
               {
+                "version_added": "46"
+              },
+              {
                 "version_added": "20",
-                "notes": "Before Opera Android 46, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Opera Android, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "12.1",
-                "version_removed": "14"
+                "version_removed": "14",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "safari": [
               {
-                "version_added": "14.1"
+                "version_added": "14",
+                "partial_implementation": true,
+                "notes": "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>."
               },
               {
-                "version_removed": "14.1",
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not."
+                ]
+              },
+              {
                 "version_added": "7",
                 "partial_implementation": true,
                 "notes": [
                   "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                  "The event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
-                  "Before Safari 10.1, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Safari, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                  "The <code>onvisibilitychange</code> event handler property is not supported."
                 ]
               }
             ],
             "safari_ios": [
               {
-                "version_added": "14.5"
+                "version_added": "14",
+                "partial_implementation": true,
+                "notes": "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>."
               },
               {
-                "version_removed": "14.5",
+                "version_added": "10.3",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not."
+                ]
+              },
+              {
                 "version_added": "7",
                 "partial_implementation": true,
                 "notes": [
                   "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                  "Before Safari iOS 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
-                  "Before Safari iOS 10.3, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Safari iOS, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                  "The <code>onvisibilitychange</code> event handler property is not supported."
                 ]
               }
             ],
             "samsunginternet_android": [
               {
+                "version_added": "8.0"
+              },
+              {
                 "version_added": "2.0",
-                "notes": "Before Samsung Internet 8.0, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Samsung Internet, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "1.0",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "webview_android": [
               {
+                "version_added": "62"
+              },
+              {
                 "version_added": "4.4.3",
-                "notes": "Before WebView 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of WebView, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ]
           },
