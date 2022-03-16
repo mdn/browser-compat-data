@@ -1,10 +1,10 @@
 {
   "css": {
     "properties": {
-      "offset-anchor": {
+      "animation-timeline": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/offset-anchor",
-          "spec_url": "https://drafts.fxtf.org/motion/#offset-anchor-property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/animation-timeline",
+          "spec_url": "https://drafts.csswg.org/css-animations-2/#animation-timeline",
           "support": {
             "chrome": {
               "version_added": false
@@ -15,24 +15,18 @@
             "edge": {
               "version_added": false
             },
-            "firefox": [
-              {
-                "version_added": "72"
-              },
-              {
-                "version_added": "70",
-                "version_removed": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.motion-path.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "97",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.scroll-linked-animations.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "firefox_android": {
-              "version_added": "79"
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -57,7 +51,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
