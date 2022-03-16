@@ -1,5 +1,134 @@
 # Release notes
 
+## [v4.1.12](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.12)
+
+March 15, 2022
+
+### Removals
+
+- `api.Document.onpointerlockchange` ([#15230](https://github.com/mdn/browser-compat-data/pull/15230))
+- `api.Document.onpointerlockerror` ([#15230](https://github.com/mdn/browser-compat-data/pull/15230))
+- `api.Document.onvisibilitychange` ([#15084](https://github.com/mdn/browser-compat-data/pull/15084))
+- `api.EventSource.onerror` ([#15086](https://github.com/mdn/browser-compat-data/pull/15086))
+- `api.EventSource.onmessage` ([#15086](https://github.com/mdn/browser-compat-data/pull/15086))
+- `api.EventSource.onopen` ([#15086](https://github.com/mdn/browser-compat-data/pull/15086))
+- `api.HIDDevice.oninputreport` ([#15155](https://github.com/mdn/browser-compat-data/pull/15155))
+- `api.HTMLVideoElement.onenterpictureinpicture` ([#15162](https://github.com/mdn/browser-compat-data/pull/15162))
+- `api.HTMLVideoElement.onleavepictureinpicture` ([#15162](https://github.com/mdn/browser-compat-data/pull/15162))
+- `api.IdleDetector.onchange` ([#15164](https://github.com/mdn/browser-compat-data/pull/15164))
+- `api.MediaDevices.ondevicechange` ([#15165](https://github.com/mdn/browser-compat-data/pull/15165))
+- `api.MediaQueryList.onchange` ([#15168](https://github.com/mdn/browser-compat-data/pull/15168))
+- `api.MediaRecorder.ignoreMutedMedia` ([#15384](https://github.com/mdn/browser-compat-data/pull/15384))
+- `api.MediaRecorder.ondataavailable` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.onerror` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.onpause` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.onresume` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.onstart` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.onstop` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.onwarning` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.PaymentResponse.onpayerdetailchange` ([#15205](https://github.com/mdn/browser-compat-data/pull/15205))
+- `api.PresentationRequest.onconnectionavailable` ([#15187](https://github.com/mdn/browser-compat-data/pull/15187))
+- `api.Screen.onorientationchange` ([#15196](https://github.com/mdn/browser-compat-data/pull/15196))
+- `api.ScriptProcessorNode.onaudioprocess` ([#15198](https://github.com/mdn/browser-compat-data/pull/15198))
+- `api.SharedWorkerGlobalScope.onconnect` ([#15231](https://github.com/mdn/browser-compat-data/pull/15231))
+- `api.Window.onorientationchange` ([#15238](https://github.com/mdn/browser-compat-data/pull/15238))
+- `api.Window.onuserproximity` ([#15239](https://github.com/mdn/browser-compat-data/pull/15239))
+- `api.Worker.onerror` ([#15203](https://github.com/mdn/browser-compat-data/pull/15203))
+
+### Additions
+
+- `api.HIDDevice.inputreport_event` ([#15155](https://github.com/mdn/browser-compat-data/pull/15155))
+- `api.IdleDetector.change_event` ([#15164](https://github.com/mdn/browser-compat-data/pull/15164))
+- `api.MediaQueryList.change_event` ([#15168](https://github.com/mdn/browser-compat-data/pull/15168))
+- `api.MediaRecorder.dataavailable_event` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.pause_event` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.resume_event` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.start_event` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.MediaRecorder.stop_event` ([#15169](https://github.com/mdn/browser-compat-data/pull/15169))
+- `api.Navigator.mimeTypes.returns_plugin_type` ([#15292](https://github.com/mdn/browser-compat-data/pull/15292))
+- `api.Navigator.plugins.returns_plugins` ([#15292](https://github.com/mdn/browser-compat-data/pull/15292))
+- `api.PresentationRequest.connectionavailable_event` ([#15187](https://github.com/mdn/browser-compat-data/pull/15187))
+- `api.Screen.orientationchange_event` ([#15196](https://github.com/mdn/browser-compat-data/pull/15196))
+- `api.Window.userproximity_event` ([#15239](https://github.com/mdn/browser-compat-data/pull/15239))
+- `api.Worker.error_event` ([#15203](https://github.com/mdn/browser-compat-data/pull/15203))
+
+### Statistics
+
+- 8 contributors have changed 26 files with 645 additions and 1,311 deletions in 30 commits ([`v4.1.11...v4.1.12`](https://github.com/mdn/browser-compat-data/compare/v4.1.11...v4.1.12))
+- 13,359 total features
+- 857 total contributors
+- 3,925 total stargazers
+
+## [v4.1.11](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.11)
+
+March 10, 2022
+
+### Removals
+
+- `api.FileReader.onabort` ([#15131](https://github.com/mdn/browser-compat-data/pull/15131))
+- `api.FileReader.onerror` ([#15131](https://github.com/mdn/browser-compat-data/pull/15131))
+- `api.FileReader.onload` ([#15131](https://github.com/mdn/browser-compat-data/pull/15131))
+- `api.FileReader.onloadend` ([#15131](https://github.com/mdn/browser-compat-data/pull/15131))
+- `api.FileReader.onloadstart` ([#15131](https://github.com/mdn/browser-compat-data/pull/15131))
+- `api.FileReader.onprogress` ([#15131](https://github.com/mdn/browser-compat-data/pull/15131))
+- `api.FontFaceSet.onloading` ([#15132](https://github.com/mdn/browser-compat-data/pull/15132))
+- `api.FontFaceSet.onloadingdone` ([#15132](https://github.com/mdn/browser-compat-data/pull/15132))
+- `api.FontFaceSet.onloadingerror` ([#15132](https://github.com/mdn/browser-compat-data/pull/15132))
+- `api.HID.onconnect` ([#15154](https://github.com/mdn/browser-compat-data/pull/15154))
+- `api.HID.ondisconnect` ([#15154](https://github.com/mdn/browser-compat-data/pull/15154))
+- `api.History.pushState.title_parameter` ([#15149](https://github.com/mdn/browser-compat-data/pull/15149))
+- `api.History.replaceState.title_parameter` ([#15149](https://github.com/mdn/browser-compat-data/pull/15149))
+- `api.HTMLInputElement.onsearch` ([#15159](https://github.com/mdn/browser-compat-data/pull/15159))
+- `api.HTMLMarqueeElement.onbounce` ([#15160](https://github.com/mdn/browser-compat-data/pull/15160))
+- `api.HTMLMarqueeElement.onfinish` ([#15160](https://github.com/mdn/browser-compat-data/pull/15160))
+- `api.HTMLMarqueeElement.onstart` ([#15160](https://github.com/mdn/browser-compat-data/pull/15160))
+- `api.MIDIInput.onmidimessage` ([#15326](https://github.com/mdn/browser-compat-data/pull/15326))
+- `api.OfflineAudioContext.oncomplete` ([#15179](https://github.com/mdn/browser-compat-data/pull/15179))
+- `api.Performance.onresourcetimingbufferfull` ([#15206](https://github.com/mdn/browser-compat-data/pull/15206))
+- `api.PictureInPictureWindow.onresize` ([#15182](https://github.com/mdn/browser-compat-data/pull/15182))
+- `api.PresentationAvailability.onchange` ([#15183](https://github.com/mdn/browser-compat-data/pull/15183))
+- `api.PresentationConnection.onclose` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnection.onconnect` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnection.onmessage` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnection.onterminate` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnectionList.onconnectionavailable` ([#15186](https://github.com/mdn/browser-compat-data/pull/15186))
+- `api.RTCDtlsTransport.onerror` ([#15190](https://github.com/mdn/browser-compat-data/pull/15190))
+- `api.RTCDtlsTransport.onstatechange` ([#15190](https://github.com/mdn/browser-compat-data/pull/15190))
+- `api.RTCSctpTransport.onstatechange` ([#15193](https://github.com/mdn/browser-compat-data/pull/15193))
+- `api.SharedWorker.onerror` ([#15202](https://github.com/mdn/browser-compat-data/pull/15202))
+- `api.Window.onappinstalled` ([#15233](https://github.com/mdn/browser-compat-data/pull/15233))
+
+### Additions
+
+- `api.FontFaceSet.loading_event` ([#15132](https://github.com/mdn/browser-compat-data/pull/15132))
+- `api.FontFaceSet.loadingdone_event` ([#15132](https://github.com/mdn/browser-compat-data/pull/15132))
+- `api.FontFaceSet.loadingerror_event` ([#15132](https://github.com/mdn/browser-compat-data/pull/15132))
+- `api.HID.connect_event` ([#15154](https://github.com/mdn/browser-compat-data/pull/15154))
+- `api.HID.disconnect_event` ([#15154](https://github.com/mdn/browser-compat-data/pull/15154))
+- `api.History.pushState.unused_parameter` ([#15149](https://github.com/mdn/browser-compat-data/pull/15149))
+- `api.History.replaceState.unused_parameter` ([#15149](https://github.com/mdn/browser-compat-data/pull/15149))
+- `api.HTMLMarqueeElement.bounce_event` ([#15160](https://github.com/mdn/browser-compat-data/pull/15160))
+- `api.HTMLMarqueeElement.finish_event` ([#15160](https://github.com/mdn/browser-compat-data/pull/15160))
+- `api.HTMLMarqueeElement.start_event` ([#15160](https://github.com/mdn/browser-compat-data/pull/15160))
+- `api.Navigator.requestMIDIAccess.secure_context_required` ([#15256](https://github.com/mdn/browser-compat-data/pull/15256))
+- `api.PresentationAvailability.change_event` ([#15183](https://github.com/mdn/browser-compat-data/pull/15183))
+- `api.PresentationConnection.close_event` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnection.connect_event` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnection.message_event` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnection.terminate_event` ([#15185](https://github.com/mdn/browser-compat-data/pull/15185))
+- `api.PresentationConnectionList.connectionavailable_event` ([#15186](https://github.com/mdn/browser-compat-data/pull/15186))
+- `api.RTCDtlsTransport.error_event` ([#15190](https://github.com/mdn/browser-compat-data/pull/15190))
+- `api.RTCSctpTransport.statechange_event` ([#15193](https://github.com/mdn/browser-compat-data/pull/15193))
+- `api.SharedWorker.error_event` ([#15202](https://github.com/mdn/browser-compat-data/pull/15202))
+- `webextensions.api.runtime.getFrameId` ([#15088](https://github.com/mdn/browser-compat-data/pull/15088))
+
+### Statistics
+
+- 12 contributors have changed 51 files with 1,315 additions and 1,509 deletions in 38 commits ([`v4.1.10...v4.1.11`](https://github.com/mdn/browser-compat-data/compare/v4.1.10...v4.1.11))
+- 13,373 total features
+- 858 total contributors
+- 3,918 total stargazers
+
 ## [v4.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.10)
 
 March 1, 2022
@@ -51,7 +180,7 @@ March 1, 2022
 
 ### Statistics
 
-- 8 contributors have changed 37 files with 2,091 additions and 222 deletions in 10 commits ([`v4.1.9...main`](https://github.com/mdn/browser-compat-data/compare/v4.1.9...main))
+- 8 contributors have changed 37 files with 2,091 additions and 222 deletions in 10 commits ([`v4.1.9...v4.1.10`](https://github.com/mdn/browser-compat-data/compare/v4.1.9...v4.1.10))
 - 13,384 total features
 - 855 total contributors
 - 3,896 total stargazers
