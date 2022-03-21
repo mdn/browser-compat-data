@@ -2463,7 +2463,7 @@
         },
         "returns_plugin_type": {
           "__compat": {
-            "description": "Returns mime types from plugins rather than hard coded PDF values",
+            "description": "Returns MIME types from plugins rather than hard-coded PDF values",
             "support": {
               "chrome": {
                 "version_removed": "94",
@@ -2511,9 +2511,9 @@
               }
             },
             "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }
@@ -2877,7 +2877,7 @@
         },
         "returns_plugins": {
           "__compat": {
-            "description": "Returns plugins rather than hard coded PDF-plugin values",
+            "description": "Returns plugins rather than hard-coded PDF plugin values",
             "support": {
               "chrome": {
                 "version_removed": "94",
@@ -2925,9 +2925,9 @@
               }
             },
             "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }
@@ -4993,7 +4993,8 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": "99"
+                "version_added": "99",
+                "notes": "Permission must be granted through a <a href='https://extensionworkshop.com/documentation/publish/site-permission-add-on/'>site permission add-on</a>."
               },
               "firefox_android": {
                 "version_added": false
