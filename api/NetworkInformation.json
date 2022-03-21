@@ -262,63 +262,6 @@
           }
         }
       },
-      "ontypechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/ontypechange",
-          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-onchange",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "31",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.netinfo.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "31",
-              "version_removed": "99"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": "25"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "rtt": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/rtt",
@@ -499,10 +442,18 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "31",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.netinfo.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "31"
+              "version_added": "31",
+              "version_removed": "99"
             },
             "ie": {
               "version_added": false
