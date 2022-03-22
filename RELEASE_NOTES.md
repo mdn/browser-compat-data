@@ -1,5 +1,98 @@
 # Release notes
 
+## [v4.1.13](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.13)
+
+March 22, 2022
+
+### Removals
+
+- `api.DedicatedWorkerGlobalScope.onmessage` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.DedicatedWorkerGlobalScope.onmessageerror` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.HTMLMediaElement.onencrypted` ([#15161](https://github.com/mdn/browser-compat-data/pull/15161))
+- `api.HTMLMediaElement.onwaitingforkey` ([#15161](https://github.com/mdn/browser-compat-data/pull/15161))
+- `api.MediaStream.onactive` ([#15170](https://github.com/mdn/browser-compat-data/pull/15170))
+- `api.MediaStream.onaddtrack` ([#15170](https://github.com/mdn/browser-compat-data/pull/15170))
+- `api.MediaStream.oninactive` ([#15170](https://github.com/mdn/browser-compat-data/pull/15170))
+- `api.MediaStream.onremovetrack` ([#15170](https://github.com/mdn/browser-compat-data/pull/15170))
+- `api.MediaStreamTrack.onended` ([#15171](https://github.com/mdn/browser-compat-data/pull/15171))
+- `api.MediaStreamTrack.onmute` ([#15171](https://github.com/mdn/browser-compat-data/pull/15171))
+- `api.MediaStreamTrack.onoverconstrained` ([#15171](https://github.com/mdn/browser-compat-data/pull/15171))
+- `api.MediaStreamTrack.onunmute` ([#15171](https://github.com/mdn/browser-compat-data/pull/15171))
+- `api.MIDIAccess.onstatechange` ([#15426](https://github.com/mdn/browser-compat-data/pull/15426))
+- `api.MIDIPort.onstatechange` ([#15428](https://github.com/mdn/browser-compat-data/pull/15428))
+- `api.NetworkInformation.onchange` ([#15177](https://github.com/mdn/browser-compat-data/pull/15177))
+- `api.NetworkInformation.ontypechange` ([#15177](https://github.com/mdn/browser-compat-data/pull/15177))
+- `api.PaymentRequest.onmerchantvalidation` ([#15180](https://github.com/mdn/browser-compat-data/pull/15180))
+- `api.PaymentRequest.onpaymentmethodchange` ([#15180](https://github.com/mdn/browser-compat-data/pull/15180))
+- `api.PaymentRequest.onshippingaddresschange` ([#15180](https://github.com/mdn/browser-compat-data/pull/15180))
+- `api.PaymentRequest.onshippingoptionchange` ([#15180](https://github.com/mdn/browser-compat-data/pull/15180))
+- `api.PermissionStatus.onchange` ([#15181](https://github.com/mdn/browser-compat-data/pull/15181))
+- `api.RemotePlayback.onconnect` ([#15194](https://github.com/mdn/browser-compat-data/pull/15194))
+- `api.RemotePlayback.onconnecting` ([#15194](https://github.com/mdn/browser-compat-data/pull/15194))
+- `api.RemotePlayback.ondisconnect` ([#15194](https://github.com/mdn/browser-compat-data/pull/15194))
+- `api.RTCIceTransport.ongatheringstatechange` ([#15191](https://github.com/mdn/browser-compat-data/pull/15191))
+- `api.RTCIceTransport.onselectedcandidatepairchange` ([#15191](https://github.com/mdn/browser-compat-data/pull/15191))
+- `api.RTCIceTransport.onstatechange` ([#15191](https://github.com/mdn/browser-compat-data/pull/15191))
+- `api.RTCPeerConnection.onaddstream` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onconnectionstatechange` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.ondatachannel` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onicecandidate` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onicecandidateerror` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.oniceconnectionstatechange` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onicegatheringstatechange` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onnegotiationneeded` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onremovestream` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.onsignalingstatechange` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.RTCPeerConnection.ontrack` ([#15192](https://github.com/mdn/browser-compat-data/pull/15192))
+- `api.ScreenOrientation.onchange` ([#15197](https://github.com/mdn/browser-compat-data/pull/15197))
+- `api.ServiceWorker.onerror` ([#15199](https://github.com/mdn/browser-compat-data/pull/15199))
+- `api.ServiceWorker.onstatechange` ([#15199](https://github.com/mdn/browser-compat-data/pull/15199))
+- `api.ServiceWorkerContainer.onmessage` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.ServiceWorkerContainer.onmessageerror` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.SVGAnimationElement.onbegin` ([#15195](https://github.com/mdn/browser-compat-data/pull/15195))
+- `api.SVGAnimationElement.onend` ([#15195](https://github.com/mdn/browser-compat-data/pull/15195))
+- `api.SVGAnimationElement.onrepeat` ([#15195](https://github.com/mdn/browser-compat-data/pull/15195))
+- `api.Window.onvrdisplayactivate` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplayblur` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplayconnect` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplaydeactivate` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplaydisconnect` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplayfocus` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplaypointerrestricted` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplaypointerunrestricted` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.Window.onvrdisplaypresentchange` ([#15240](https://github.com/mdn/browser-compat-data/pull/15240))
+- `api.WindowEventHandlers.onmessage` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.WindowEventHandlers.onmessageerror` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.Worker.onmessage` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `api.Worker.onmessageerror` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `http.headers.Cookie2` ([#15405](https://github.com/mdn/browser-compat-data/pull/15405))
+- `http.headers.Set-Cookie2` ([#15405](https://github.com/mdn/browser-compat-data/pull/15405))
+
+### Additions
+
+- `api.HTMLMediaElement.encrypted_event` ([#15161](https://github.com/mdn/browser-compat-data/pull/15161))
+- `api.HTMLMediaElement.waitingforkey_event` ([#15161](https://github.com/mdn/browser-compat-data/pull/15161))
+- `api.MediaStreamTrack.overconstrained_event` ([#15171](https://github.com/mdn/browser-compat-data/pull/15171))
+- `api.NetworkInformation.change_event` ([#15177](https://github.com/mdn/browser-compat-data/pull/15177))
+- `api.NetworkInformation.typechange_event` ([#15177](https://github.com/mdn/browser-compat-data/pull/15177))
+- `api.PermissionStatus.change_event` ([#15181](https://github.com/mdn/browser-compat-data/pull/15181))
+- `api.RemotePlayback.connect_event` ([#15194](https://github.com/mdn/browser-compat-data/pull/15194))
+- `api.RemotePlayback.connecting_event` ([#15194](https://github.com/mdn/browser-compat-data/pull/15194))
+- `api.RemotePlayback.disconnect_event` ([#15194](https://github.com/mdn/browser-compat-data/pull/15194))
+- `api.ScreenOrientation.change_event` ([#15197](https://github.com/mdn/browser-compat-data/pull/15197))
+- `api.ServiceWorker.error_event` ([#15199](https://github.com/mdn/browser-compat-data/pull/15199))
+- `api.ServiceWorker.statechange_event` ([#15199](https://github.com/mdn/browser-compat-data/pull/15199))
+- `api.ServiceWorkerContainer.messageerror_event` ([#15046](https://github.com/mdn/browser-compat-data/pull/15046))
+- `http.headers.Service-Worker-Navigation-Preload` ([#15365](https://github.com/mdn/browser-compat-data/pull/15365))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_signDisplay_parameter.negative` ([#15099](https://github.com/mdn/browser-compat-data/pull/15099))
+
+### Statistics
+
+- 19 contributors have changed 44 files with 1,078 additions and 3,298 deletions in 38 commits ([`v4.1.12...v4.1.13`](https://github.com/mdn/browser-compat-data/compare/v4.1.12...v4.1.13))
+- 13,313 total features
+- 859 total contributors
+- 3,937 total stargazers
+
 ## [v4.1.12](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.12)
 
 March 15, 2022
