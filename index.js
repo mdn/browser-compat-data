@@ -43,7 +43,7 @@ function isPlainObject(v) {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
 }
 
-function extend(target, source) {
+function extend(target, source, feature = '') {
   if (!isPlainObject(target) || !isPlainObject(source)) {
     throw new Error('Both target and source must be plain objects');
   }
@@ -52,7 +52,13 @@ function extend(target, source) {
   for (const [key, value] of Object.entries(source)) {
     // recursively extend if target has the same key, otherwise just assign
     if (Object.prototype.hasOwnProperty.call(target, key)) {
-      extend(target[key], value);
+      if (key == '__compat') {
+        // If attempting to merge __compat, we have a double-entry
+        throw new Error(
+          `${feature} was found twice! Please remove duplicate entries.`,
+        );
+      }
+      extend(target[key], value, feature + `${feature ? '.' : ''}${key}`);
     } else {
       target[key] = value;
     }
