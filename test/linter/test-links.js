@@ -189,7 +189,7 @@ function processData(filename) {
     processLink(
       errors,
       actual,
-      String.raw`(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=*]*)`,
+      String.raw`(?<!"mdn_url": ")(https?):\/\/((www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=*]*)`,
       match => {
         if (match[2] != '127.0.0.1' && match[2] != 'localhost') {
           let res = request('GET', match[0]);
