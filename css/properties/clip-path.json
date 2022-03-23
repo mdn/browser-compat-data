@@ -65,7 +65,7 @@
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "6.1"
+                "version_added": "7"
               }
             ],
             "safari_ios": [
@@ -74,7 +74,7 @@
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "6.1"
+                "version_added": "7"
               }
             ],
             "samsunginternet_android": [
@@ -179,10 +179,10 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "safari_ios": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": "1.5"
@@ -277,10 +277,10 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "safari_ios": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": "1.5"
@@ -314,7 +314,8 @@
                   "version_added": "71"
                 },
                 {
-                  "version_added": "63",
+                  "version_added": "64",
+                  "version_removed": "71",
                   "flags": [
                     {
                       "type": "preference",
@@ -324,16 +325,22 @@
                   ]
                 }
               ],
-              "firefox_android": {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.clip-path-path.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox_android": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "64",
+                  "version_removed": "79",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.clip-path-path.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -404,10 +411,10 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "safari_ios": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": "1.5"
