@@ -620,12 +620,28 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event",
           "spec_url": "https://wicg.github.io/manifest-incubations/#onbeforeinstallprompt-attribute",
           "support": {
-            "chrome": {
-              "version_added": "44"
-            },
-            "chrome_android": {
-              "version_added": "44"
-            },
+            "chrome": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "44",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "The <code>onbeforeinstallprompt</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "44",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "The <code>onbeforeinstallprompt</code> event handler property is not supported."
+              }
+            ],
             "edge": {
               "version_added": "≤79"
             },
@@ -638,24 +654,56 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "31"
-            },
-            "opera_android": {
-              "version_added": "32"
-            },
+            "opera": [
+              {
+                "version_added": "48"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "48",
+                "partial_implementation": true,
+                "notes": "The <code>onbeforeinstallprompt</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "45"
+              },
+              {
+                "version_added": "32",
+                "version_removed": "45",
+                "partial_implementation": true,
+                "notes": "The <code>onbeforeinstallprompt</code> event handler property is not supported."
+              }
+            ],
             "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "44"
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "8.0"
+              },
+              {
+                "version_added": "5.0",
+                "version_removed": "8.0",
+                "partial_implementation": true,
+                "notes": "The <code>onbeforeinstallprompt</code> event handler property is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "44",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "The <code>onbeforeinstallprompt</code> event handler property is not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -3437,7 +3485,10 @@
         "__compat": {
           "description": "<code>message</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/message_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -3487,7 +3538,10 @@
         "__compat": {
           "description": "<code>messageerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/messageerror_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onmessageerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -4004,117 +4058,6 @@
           }
         }
       },
-      "onappinstalled": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onappinstalled",
-          "support": {
-            "chrome": {
-              "version_added": "64"
-            },
-            "chrome_android": {
-              "version_added": "57"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "49",
-              "version_removed": "76",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.manifest.onappinstall",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "49",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.manifest.onappinstall",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "7.0"
-            },
-            "webview_android": {
-              "version_added": "57"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onbeforeinstallprompt": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onbeforeinstallprompt",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "ondevicelight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/ondevicelight",
@@ -4463,701 +4406,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "onorientationchange": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": "≤14"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": "≤3"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "onuserproximity": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onuserproximity",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "62",
-                "version_removed": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplayactivate": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplayactivate",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": [
-              {
-                "version_added": "98",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.vr.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplayblur": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplayblur",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplayconnect": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplayconnect",
-          "support": {
-            "chrome": {
-              "version_added": false,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "WebVR",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": [
-              {
-                "version_added": "98",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.vr.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0",
-              "version_removed": "13.0",
-              "notes": "Supported on Samsung Internet for GearVR."
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplaydeactivate": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplaydeactivate",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": [
-              {
-                "version_added": "98",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.vr.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplaydisconnect": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplaydisconnect",
-          "support": {
-            "chrome": {
-              "version_added": false,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "WebVR",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "56",
-              "notes": [
-                "Chrome for Android 56 supports only Google Daydream View.",
-                "Chrome for Android 57 adds support for Google Cardboard."
-              ]
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": [
-              {
-                "version_added": "98",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.vr.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0",
-              "version_removed": "13.0",
-              "notes": "Supported on Samsung Internet for GearVR."
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplayfocus": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplayfocus",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplaypointerrestricted": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplaypointerrestricted",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplaypointerunrestricted": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplaypointerunrestricted",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onvrdisplaypresentchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/onvrdisplaypresentchange",
-          "support": {
-            "chrome": {
-              "version_removed": "80",
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "WebVR",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_removed": "80",
-              "version_added": "56",
-              "notes": [
-                "Chrome for Android 56 supports only Google Daydream View.",
-                "Chrome for Android 57 adds support for Google Cardboard."
-              ]
-            },
-            "edge": {
-              "version_added": "15"
-            },
-            "firefox": [
-              {
-                "version_added": "98",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.vr.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
-              },
-              {
-                "version_added": "64",
-                "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
-              }
-            ],
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0",
-              "version_removed": "13.0",
-              "notes": "Supported on Samsung Internet for GearVR."
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -9614,6 +8862,82 @@
           }
         }
       },
+      "userproximity_event": {
+        "__compat": {
+          "description": "<code>userproximity</code> event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": [
+              {
+                "version_added": "62",
+                "version_removed": "89",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "62",
+                "version_removed": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "device.sensors.proximity.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "15",
+                "version_removed": "61"
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
       "visualViewport": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/visualViewport",
@@ -9699,7 +9023,8 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
+              "version_added": "15",
+              "version_removed": "79"
             },
             "firefox": [
               {
@@ -9895,7 +9220,8 @@
               "version_added": false
             },
             "edge": {
-              "version_added": false
+              "version_added": "15",
+              "version_removed": "79"
             },
             "firefox": [
               {
@@ -10189,6 +9515,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/vrdisplaypresentchange_event",
           "support": {
             "chrome": {
+              "version_removed": "80",
               "version_added": "65",
               "flags": [
                 {
@@ -10199,6 +9526,7 @@
               ]
             },
             "chrome_android": {
+              "version_removed": "80",
               "version_added": "56",
               "notes": [
                 "Chrome for Android 56 supports only Google Daydream View.",
