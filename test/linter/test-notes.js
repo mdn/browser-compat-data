@@ -1,7 +1,10 @@
 'use strict';
 const chalk = require('chalk');
 const parser = require('node-html-parser');
+const { HtmlValidate } = require('html-validate');
 const { VALID_ELEMENTS } = require('../utils.js');
+
+const validator = new HtmlValidate();
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -74,8 +77,20 @@ const checkNotes = (notes, browser, relPath, errors) => {
       checkNotes(note, browser, relPath, errors);
     }
   } else {
-    let notesData = parser.parse(notes);
-    testNode(notesData, browser, relPath, errors);
+    const report = validator.validateString(notes);
+    if (report.valid) {
+      // If HTML is valid, ensure we're only using valid elements
+      let notesData = parser.parse(notes);
+      testNode(notesData, browser, relPath, errors);
+    } else {
+      errors.push({
+        type: 'invalid',
+        relPath: relPath,
+        browser: browser,
+        tag: null,
+      });
+    }
+
     if (notes.includes('  ')) {
       errors.push({
         type: 'doublespace',
@@ -139,26 +154,36 @@ const testNotes = filename => {
       }:}`,
     );
     for (const error of errors) {
-      if (error.type == 'disallowed') {
-        console.error(
-          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
-            error.browser
-          }} have a {bold disallowed HTML element} ({bold <${
-            error.tag
-          }>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}}`,
-        );
-      } else if (error.type == 'attrs') {
-        console.error(
-          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  Elements other than {bold <a>} may {bold not} have any attributes.`,
-        );
-      } else if (error.type == 'attrs_a') {
-        console.error(
-          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  {bold <a>} elements may only have an {bold href} attribute.}`,
-        );
-      } else if (error.type == 'doublespace') {
-        console.error(
-          chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have double-spaces.  Notes are required to have single spaces only.}`,
-        );
+      switch (error.type) {
+        case 'invalid':
+          console.error(
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have broken HTML.`,
+          );
+          break;
+        case 'disallowed':
+          console.error(
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
+              error.browser
+            }} have a {bold disallowed HTML element} ({bold <${
+              error.tag
+            }>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}}`,
+          );
+          break;
+        case 'attrs':
+          console.error(
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  Elements other than {bold <a>} may {bold not} have any attributes.`,
+          );
+          break;
+        case 'attrs_a':
+          console.error(
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  {bold <a>} elements may only have an {bold href} attribute.}`,
+          );
+          break;
+        case 'doublespace':
+          console.error(
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have double-spaces.  Notes are required to have single spaces only.}`,
+          );
+          break;
       }
     }
     return true;
