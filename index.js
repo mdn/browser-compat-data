@@ -2,6 +2,13 @@
 const fs = require('fs');
 const path = require('path');
 
+class DuplicateCompatError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'DuplicateCompatError';
+  }
+}
+
 function load() {
   // Recursively load one or more directories passed as arguments.
   let dir,
@@ -54,7 +61,7 @@ function extend(target, source, feature = '') {
     if (Object.prototype.hasOwnProperty.call(target, key)) {
       if (key == '__compat') {
         // If attempting to merge __compat, we have a double-entry
-        throw new Error(
+        throw new DuplicateCompatError(
           `${feature} was found twice! Please remove duplicate entries.`,
         );
       }
