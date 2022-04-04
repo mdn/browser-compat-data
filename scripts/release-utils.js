@@ -29,6 +29,20 @@ function getRefDate(ref, querySafe = false) {
   return rawDateString;
 }
 
+function buildQuery(endRef, startRef, urlSafe) {
+  let merged;
+  if (!['HEAD', 'main'].includes(endRef)) {
+    merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
+      endRef,
+      true,
+    )}`;
+  } else {
+    merged = `merged:>=${getRefDate(startRef, urlSafe)}`;
+  }
+
+  return `is:pr ${merged}`;
+}
+
 function releaseYargsBuilder(yargs) {
   yargs.positional('start-version-tag', {
     type: 'string',
@@ -42,9 +56,10 @@ function releaseYargsBuilder(yargs) {
 }
 
 module.exports = {
+  buildQuery,
   exec,
   getLatestTag,
   getRefDate,
-  requireGitHubCLI,
   releaseYargsBuilder,
+  requireGitHubCLI,
 };
