@@ -331,9 +331,27 @@
                 ]
               }
             ],
-            "opera_android": {
-              "version_added": "36"
-            },
+            "opera_android": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Experimental JavaScript",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
