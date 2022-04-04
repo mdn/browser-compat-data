@@ -4,6 +4,18 @@ function exec(command) {
   return execSync(command, { encoding: 'utf8' }).trim();
 }
 
+function requireGitHubCLI() {
+  const command = 'gh auth status';
+  try {
+    exec(commmand);
+  } catch (err) {
+    console.error(`Error: ${command} failed.`);
+    console.error('The GitHub CLI is required.');
+    console.error('See https://cli.github.com/ for installation instructions.');
+    process.exit(1);
+  }
+}
+
 function getLatestTag() {
   return exec('git describe --abbrev=0 --tags');
 }
@@ -33,5 +45,6 @@ module.exports = {
   exec,
   getLatestTag,
   getRefDate,
+  requireGitHubCLI,
   releaseYargsBuilder,
 };
