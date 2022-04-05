@@ -80,7 +80,6 @@ function preamble() {
       year: 'numeric',
     })} <!-- TODO: replace with final release date-->`,
     '',
-    '',
   ].join('\n');
 }
 
