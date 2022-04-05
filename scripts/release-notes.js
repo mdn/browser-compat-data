@@ -14,6 +14,9 @@ function main(argv) {
   const allAdds = [];
   const allRemoves = [];
 
+  console.error(
+    `Generating release notes from ${startVersionTag} to ${endVersionTag}`,
+  );
   for (const pull of pullsFromGitHub(startVersionTag, endVersionTag)) {
     process.stderr.write(`Diffing features for #${pull.number}`);
 
