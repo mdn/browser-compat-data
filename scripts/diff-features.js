@@ -4,6 +4,16 @@ const fs = require('fs');
 const yargs = require('yargs');
 
 function main({ ref1, ref2, format, github }) {
+  const results = diff({ ref1, ref2, github });
+
+  if (format === 'markdown') {
+    printMarkdown(results);
+  } else {
+    console.log(JSON.stringify(results, undefined, 2));
+  }
+}
+
+function diff({ ref1, ref2, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -28,11 +38,7 @@ function main({ ref1, ref2, format, github }) {
     removed: [...aSide].filter(feature => !bSide.has(feature)),
   };
 
-  if (format === 'markdown') {
-    printMarkdown(results);
-  } else {
-    console.log(JSON.stringify(results, undefined, 2));
-  }
+  return results;
 }
 
 function enumerate(ref, skipGitHub) {
@@ -160,3 +166,5 @@ const { argv } = yargs.command(
 if (require.main === module) {
   main(argv);
 }
+
+module.exports = diff;
