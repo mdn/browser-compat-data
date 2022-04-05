@@ -768,7 +768,7 @@
               "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": "81"
+              "version_added": false
             }
           },
           "status": {
@@ -853,6 +853,7 @@
             },
             "firefox_android": {
               "version_added": "14",
+              "version_removed": "99",
               "notes": "The Network API is enabled by default. Can be disabled using the <code>dom.netinfo.enabled</code> preference."
             },
             "ie": {
@@ -865,10 +866,12 @@
               "version_added": "37"
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -2822,7 +2825,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -4307,7 +4310,7 @@
         },
         "scheme_parameter_sms": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>news</code>",
+            "description": "<code>scheme</code> parameter supports <code>sms</code>",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -4499,7 +4502,7 @@
         },
         "scheme_parameter_tel": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>news</code>",
+            "description": "<code>scheme</code> parameter supports <code>tel</code>",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -4547,7 +4550,7 @@
         },
         "scheme_parameter_urn": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>news</code>",
+            "description": "<code>scheme</code> parameter supports <code>urn</code>",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -4933,11 +4936,11 @@
             },
             "firefox": [
               {
-                "version_added": "99"
+                "version_added": "100"
               },
               {
                 "version_added": "97",
-                "version_removed": "99",
+                "version_removed": "100",
                 "flags": [
                   {
                     "type": "preference",
@@ -4992,7 +4995,7 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": "99",
+                "version_added": "100",
                 "notes": "Permission must be granted through a <a href='https://extensionworkshop.com/documentation/publish/site-permission-add-on/'>site permission add-on</a>."
               },
               "firefox_android": {
@@ -5272,7 +5275,7 @@
               "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": "81"
+              "version_added": false
             }
           },
           "status": {
