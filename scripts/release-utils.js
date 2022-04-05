@@ -7,7 +7,10 @@ function exec(command) {
 function requireGitHubCLI() {
   const command = 'gh auth status';
   try {
-    exec(command);
+    execSync(command, {
+      encoding: 'utf8',
+      stdio: 'ignore',
+    });
   } catch (err) {
     console.trace(err);
     console.error(`Error: ${command} failed.`);
