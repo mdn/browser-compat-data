@@ -35,7 +35,7 @@ function buildQuery(endRef, startRef, urlSafe) {
   if (!['HEAD', 'main'].includes(endRef)) {
     merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
       endRef,
-      true,
+      urlSafe,
     )}`;
   } else {
     merged = `merged:>=${getRefDate(startRef, urlSafe)}`;
