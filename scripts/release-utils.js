@@ -7,7 +7,7 @@ function exec(command) {
 function requireGitHubCLI() {
   const command = 'gh auth status';
   try {
-    exec(commmand);
+    exec(command);
   } catch (err) {
     console.error(`Error: ${command} failed.`);
     console.error('The GitHub CLI is required.');
