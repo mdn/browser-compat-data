@@ -72,7 +72,7 @@ function preamble() {
   const upcomingVersion = require('../package.json').version;
 
   return [
-    `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/${upcomingVersion})`,
+    `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/v${upcomingVersion})`,
     '',
     `${new Date().toLocaleDateString('en-US', {
       month: 'long',
