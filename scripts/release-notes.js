@@ -51,7 +51,7 @@ function main(argv) {
 function pullsFromGitHub(start, end) {
   const searchDetails = {
     limit: 1000, // As many PRs as GitHub will allow
-    search: `${buildQuery(start, end, false)}`,
+    search: `${buildQuery(end, start, false)}`,
     json: `number,url,mergeCommit`,
     jq: '[.[] | { mergeCommit: .mergeCommit.oid, number: .number, url: .url }]', // Flatten the structure provided by GitHub
   };
