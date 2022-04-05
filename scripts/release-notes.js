@@ -6,13 +6,7 @@ const {
 } = require('./release-utils');
 const diffFeatures = require('./diff-features');
 
-const { argv } = require('yargs').command(
-  '$0 [start-version-tag [end-version-tag]]',
-  'Generate statistics for release notes',
-  releaseYargsBuilder,
-);
-
-function main() {
+function main(argv) {
   const { startVersionTag, endVersionTag } = argv;
 
   requireGitHubCLI();
@@ -94,4 +88,19 @@ function markdownify(removes, adds) {
   return notes.join('\n');
 }
 
-main();
+if (require.main === module) {
+  const { argv } = require('yargs').command(
+    '$0 [start-version-tag [end-version-tag]]',
+    'Generate release notes text',
+    yargs => {
+      releaseYargsBuilder(yargs);
+      yargs.example('$0', 'Generate the release notes for the next release');
+      yargs.example(
+        '$0 v4.1.14 v4.1.13',
+        'Generate the release notes for v4.1.14',
+      );
+    },
+  );
+
+  main(argv);
+}

@@ -133,37 +133,37 @@ function printMarkdown({ added, removed }) {
   }
 }
 
-const { argv } = yargs.command(
-  '$0 [ref1] [ref2]',
-  'Compare the set of features at refA and refB',
-  yargs => {
-    yargs
-      .positional('ref1', {
-        description: 'A Git ref (branch, tag, or commit)',
-        defaultDescription: 'ref1^',
-      })
-      .positional('ref2', {
-        description: 'A Git ref (branch, tag, or commit)',
-        defaultDescription: 'HEAD',
-      })
-      .option('format', {
-        type: 'string',
-        nargs: 1,
-        choices: ['json', 'markdown'],
-        demand: 'a named format is required',
-        default: 'markdown',
-      })
-      .option('no-github', {
-        type: 'boolean',
-        description: "Don't fetch artifacts from GitHub.",
-      })
-      .example('$0', 'compare HEAD to parent commmit')
-      .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
-      .example('$0 topic-branch main', 'compare a branch to main');
-  },
-);
-
 if (require.main === module) {
+  const { argv } = yargs.command(
+    '$0 [ref1] [ref2]',
+    'Compare the set of features at refA and refB',
+    yargs => {
+      yargs
+        .positional('ref1', {
+          description: 'A Git ref (branch, tag, or commit)',
+          defaultDescription: 'ref1^',
+        })
+        .positional('ref2', {
+          description: 'A Git ref (branch, tag, or commit)',
+          defaultDescription: 'HEAD',
+        })
+        .option('format', {
+          type: 'string',
+          nargs: 1,
+          choices: ['json', 'markdown'],
+          demand: 'a named format is required',
+          default: 'markdown',
+        })
+        .option('no-github', {
+          type: 'boolean',
+          description: "Don't fetch artifacts from GitHub.",
+        })
+        .example('$0', 'compare HEAD to parent commmit')
+        .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
+        .example('$0 topic-branch main', 'compare a branch to main');
+    },
+  );
+
   main(argv);
 }
 
