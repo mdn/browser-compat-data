@@ -9,6 +9,7 @@ function requireGitHubCLI() {
   try {
     exec(command);
   } catch (err) {
+    console.trace(err);
     console.error(`Error: ${command} failed.`);
     console.error('The GitHub CLI is required.');
     console.error('See https://cli.github.com/ for installation instructions.');
