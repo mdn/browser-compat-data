@@ -43,7 +43,7 @@ function main(argv) {
     }
   }
 
-  console.error();
+  console.error(); // White space for more convenient copying and pasting from a terminal
 
   allRemoves.sort((a, b) => a.feature.localeCompare(b.feature));
   allAdds.sort((a, b) => a.feature.localeCompare(b.feature));
