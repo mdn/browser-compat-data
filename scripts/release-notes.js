@@ -48,7 +48,9 @@ function main(argv) {
   allRemoves.sort((a, b) => a.feature.localeCompare(b.feature));
   allAdds.sort((a, b) => a.feature.localeCompare(b.feature));
 
-  console.log(markdownify(allRemoves, allAdds));
+  console.log(preamble());
+  console.log(markdownifyChanges(allRemoves, allAdds));
+  console.log('<!-- TODO: replace with `npm run release-stats` -->');
 }
 
 function pullsFromGitHub(start, end) {
@@ -66,7 +68,23 @@ function pullsFromGitHub(start, end) {
   return JSON.parse(exec(command));
 }
 
-function markdownify(removes, adds) {
+function preamble() {
+  const upcomingVersion = require('../package.json').version;
+
+  return [
+    `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/${upcomingVersion})`,
+    '',
+    `${new Date().toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    })} <!-- TODO: replace with final release date-->`,
+    '',
+    '',
+  ].join('\n');
+}
+
+function markdownifyChanges(removes, adds) {
   const notes = [];
 
   const featureBullet = obj =>
