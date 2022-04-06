@@ -61,6 +61,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
 - Vinyl Da.i'gyu (@queengooborg)
+- Will Bamberg (@wbamberg), Open Web Docs
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
@@ -102,7 +103,6 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 - Florian Scholz (@Elchi3), Open Web Docs
 - Daniel Beck (@ddbeck)
-- Will Bamberg (@wbamberg), Open Web Docs
 
 ## Additional paths to becoming a Peer or Owner
 
