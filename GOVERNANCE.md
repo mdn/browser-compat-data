@@ -60,6 +60,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
+- Richard Bloor (@rebloor)
 - Vinyl Da.i'gyu (@queengooborg)
 - Will Bamberg (@wbamberg), Open Web Docs
 
@@ -169,7 +170,6 @@ The `@mdn/browser-compat-data` project would like to thank the following former 
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
 - Rachel Andrew (@rachelandrew) (Peer)
-- Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
 - Ryan Johnson (@escattone) (Peer)
 
 ## Credits
