@@ -60,8 +60,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
 - Philip Jägenstedt (@foolip), Google
-- Rachel Andrew (@rachelandrew)
-- Ryan Johnson (@escattone), Mozilla
 - Vinyl Da.i'gyu (@queengooborg)
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
@@ -105,7 +103,6 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 - Florian Scholz (@Elchi3), Open Web Docs
 - Daniel Beck (@ddbeck)
 - Will Bamberg (@wbamberg), Open Web Docs
-- Chris David Mills (@chrisdavidmills), Mozilla
 
 ## Additional paths to becoming a Peer or Owner
 
@@ -166,11 +163,14 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
+- Chris David Mills (@chrisdavidmills), Mozilla
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
+- Rachel Andrew (@rachelandrew) (Peer)
 - Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
+- Ryan Johnson (@escattone) (Peer)
 
 ## Credits
 
