@@ -59,7 +59,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Joe Medley (@jpmedley), Google
 - Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
-- Philip Jägenstedt (@foolip), Google
 - Richard Bloor (@rebloor)
 - Will Bamberg (@wbamberg), Open Web Docs
 
@@ -103,6 +102,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 - Daniel Beck (@ddbeck)
 - Florian Scholz (@Elchi3), Open Web Docs
+- Philip Jägenstedt (@foolip), Google
 - Ruth John (@Rumyra), Mozilla
 - Vinyl Da.i'gyu (@queengooborg)
 
