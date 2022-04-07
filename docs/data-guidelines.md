@@ -429,7 +429,7 @@ This guideline is based on a discussion in [#11518](https://github.com/mdn/brows
 
 ## Setting `deprecated`
 
-Set `deprecated` to `true` to show that a feature has been formally discouraged from use.
+Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
 
 The `deprecated` status captures the many ways in which web platform features are identified as disfavored by standards organizations (and, for non-standard features, by vendors). This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
 
