@@ -15,15 +15,14 @@ function createDataBundle() {
 }
 
 // Returns a promise for writing the data to JSON file
-async function writeData() {
+async function writeData(data) {
   const dest = path.resolve(directory, 'data.json');
-  const data = createDataBundle();
   await fs.writeFile(dest, data);
 }
 
-async function writeIndex() {
+async function writeIndexESM(data) {
   const dest = path.resolve(directory, 'index.js');
-  const content = `module.exports = require("./data.json");\n`;
+  const content = `export default ${data};\n`;
   await fs.writeFile(dest, content);
 }
 
@@ -38,7 +37,11 @@ async function copyFiles() {
 
 function createManifest() {
   const full = require('../package.json');
-  const minimal = { main: 'index.js' };
+  const minimal = {
+    main: 'data.json',
+    exports: { import: './index.js', require: './data.json' },
+    type: 'module',
+  };
 
   const minimalKeys = [
     'name',
@@ -84,9 +87,11 @@ async function main() {
   // Crate a new directory
   await fs.mkdir(directory);
 
+  const data = createDataBundle();
+
   await writeManifest();
-  await writeData();
-  await writeIndex();
+  await writeData(data);
+  await writeIndexESM(data);
   await copyFiles();
 
   console.log('Data bundle is ready');
