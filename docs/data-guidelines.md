@@ -435,11 +435,11 @@ The `deprecated` status captures the many ways in which web platform features ar
 
 Evidence for setting `deprecated` to `true` includes:
 
-- Specification text that marks a feature with terminology such as _obsolete_, _legacy_, _deprecated_, or _end-of-life_
-- Specification text that advises developers against the use of a feature in new code
-- Removal of an existing feature from a specification
-- Discouragement statements from a relevant specification body that represents that body's formal position (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
-- For non-standard features, warnings in implementing browsers (for example, a console deprecation warning) or documentation from vendors
+- _Obsolete_, _legacy_, _deprecated_, _end-of-life_, or similar terminology in a specification
+- Removal of a feature from a specification
+- Specification text that cautions developers against new use of the feature
+- Formal discouragement statements from a relevant standards body (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
+- For non-standard features, notice from implementing browsers (for example, a console deprecation warning) or vendor documentation
 
 Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
 
