@@ -182,17 +182,17 @@ const testNotes = filename => {
           break;
         case 'attrs':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  Elements other than {bold <a>} may {bold not} have any attributes.}`,
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.}`,
           );
           break;
         case 'attrs_a':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  {bold <a>} elements may only have an {bold href} attribute.}`,
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
           );
           break;
         case 'doublespace':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have double-spaces.  Notes are required to have single spaces only.}`,
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
           );
           break;
       }
