@@ -33,28 +33,28 @@ const testNode = (node, browser, relPath, errors) => {
     if (tag && !VALID_ELEMENTS.includes(tag))
       errors.push({
         type: 'disallowed',
-        relPath: relPath,
-        browser: browser,
-        tag: node.tagName,
+        relPath,
+        browser,
+        tag,
       });
-    if (node.tagName !== 'a' && Object.entries(node.attributes).length !== 0) {
+    if (tag !== 'a' && Object.entries(node.attributes).length !== 0) {
       errors.push({
         type: 'attrs',
-        relPath: relPath,
-        browser: browser,
-        tag: node.tagName,
+        relPath,
+        browser,
+        tag,
       });
     }
     if (
-      node.tagName === 'a' &&
+      tag === 'a' &&
       (Object.entries(node.attributes).length !== 1 ||
         Object.entries(node.attributes)[0][0] !== 'href')
     ) {
       errors.push({
         type: 'attrs_a',
-        relPath: relPath,
-        browser: browser,
-        tag: node.tagName,
+        relPath,
+        browser,
+        tag,
       });
     }
   }
