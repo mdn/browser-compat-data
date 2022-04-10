@@ -9,13 +9,14 @@ const validator = new HtmlValidate();
 /**
  * @typedef {import('../../types').Identifier} Identifier
  *
- * @typedef {'disallowed' | 'attrs' | 'attrs_a'} ErrorType
+ * @typedef {'disallowed' | 'attrs' | 'attrs_a' | 'invalid' | 'doublespace'} HTMLErrorType
  *
- * @typedef {object} NotesError
- * @property {ErrorType} errortype The type of error
+ * @typedef {object} HTMLError
+ * @property {HTMLErrorType} errortype The type of error
  * @property {string} relPath The identifier of the feature
  * @property {string} browser The browser where the error was found
  * @property {string} tag The specific HTML tag
+ * @property {string[]} messages Messages to describe the error
  */
 
 /**
@@ -24,7 +25,7 @@ const validator = new HtmlValidate();
  * @param {object} node The HTML node to test
  * @param {string} browser The browser the notes belong to
  * @param {string} relPath The identifier of the feature
- * @param {NotesError[]} errors The array to push errors to
+ * @param {HTMLError[]} errors The array to push errors to
  * @returns {void}
  */
 const testNode = (node, browser, relPath, errors) => {
@@ -64,12 +65,52 @@ const testNode = (node, browser, relPath, errors) => {
 };
 
 /**
+ * Test a string for valid HTML
+ *
+ * @param {string} string The string to test
+ * @param {string} browser The browser the notes belong to
+ * @param {string} relPath The identifier of the feature
+ * @param {HTMLError[]} errors The array to push errors to
+ * @returns {void}
+ */
+const validateHTML = (string, browser, relPath, errors) => {
+  const report = validator.validateString(string, {
+    rules: {
+      'attr-quotes': 'off',
+    },
+  });
+  if (report.valid) {
+    // If HTML is valid, ensure we're only using valid elements
+    let data = parser.parse(string);
+    testNode(data, browser, relPath, errors);
+  } else {
+    errors.push({
+      type: 'invalid',
+      messages: report.results
+        .map(x => x.messages)
+        .flat()
+        .map(x => x.message),
+      relPath,
+      browser,
+    });
+  }
+
+  if (string.includes('  ')) {
+    errors.push({
+      type: 'doublespace',
+      relPath,
+      browser,
+    });
+  }
+};
+
+/**
  * Recursively check the notes in the data
  *
  * @param {string|string[]} notes The notes to test
  * @param {string} browser The browser the notes belong to
  * @param {string} relPath The identifier of the feature
- * @param {NotesError[]} errors The array to push errors to
+ * @param {HTMLError[]} errors The array to push errors to
  * @returns {void}
  */
 const checkNotes = (notes, browser, relPath, errors) => {
@@ -78,36 +119,7 @@ const checkNotes = (notes, browser, relPath, errors) => {
       checkNotes(note, browser, relPath, errors);
     }
   } else {
-    const report = validator.validateString(notes, {
-      rules: {
-        'attr-quotes': 'off',
-      },
-    });
-    if (report.valid) {
-      // If HTML is valid, ensure we're only using valid elements
-      let notesData = parser.parse(notes);
-      testNode(notesData, browser, relPath, errors);
-    } else {
-      errors.push({
-        type: 'invalid',
-        messages: report.results
-          .map(x => x.messages)
-          .flat()
-          .map(x => x.message),
-        relPath: relPath,
-        browser: browser,
-        tag: null,
-      });
-    }
-
-    if (notes.includes('  ')) {
-      errors.push({
-        type: 'doublespace',
-        relPath: relPath,
-        browser: browser,
-        tag: null,
-      });
-    }
+    validateHTML(notes, browser, relPath, errors);
   }
 };
 
@@ -115,7 +127,7 @@ const checkNotes = (notes, browser, relPath, errors) => {
  * Process the data for notes errors
  *
  * @param {Identifier} data The data to test
- * @param {NotesError[]} errors The array to push errors to
+ * @param {HTMLError[]} errors The array to push errors to
  * @param {string} [relPath] The identifier of the feature
  * @returns {void}
  */
@@ -151,7 +163,7 @@ const testNotes = filename => {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {NotesError[]} */
+  /** @type {HTMLError[]} */
   const errors = [];
 
   processData(data, errors);
