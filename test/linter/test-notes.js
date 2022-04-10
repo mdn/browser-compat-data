@@ -168,7 +168,7 @@ const testNotes = filename => {
           console.error(
             chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
               error.browser
-            }} have broken HTML: ${error.messages.join(',')}}`,
+            }} have broken HTML: ${error.messages.join(', ')}}`,
           );
           break;
         case 'disallowed':
