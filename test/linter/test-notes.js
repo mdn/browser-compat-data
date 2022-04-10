@@ -78,7 +78,11 @@ const checkNotes = (notes, browser, relPath, errors) => {
       checkNotes(note, browser, relPath, errors);
     }
   } else {
-    const report = validator.validateString(notes);
+    const report = validator.validateString(notes, {
+      rules: {
+        'attr-quotes': 'off',
+      },
+    });
     if (report.valid) {
       // If HTML is valid, ensure we're only using valid elements
       let notesData = parser.parse(notes);
@@ -86,6 +90,10 @@ const checkNotes = (notes, browser, relPath, errors) => {
     } else {
       errors.push({
         type: 'invalid',
+        messages: report.results
+          .map(x => x.messages)
+          .flat()
+          .map(x => x.message),
         relPath: relPath,
         browser: browser,
         tag: null,
@@ -158,7 +166,9 @@ const testNotes = filename => {
       switch (error.type) {
         case 'invalid':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have broken HTML.`,
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
+              error.browser
+            }} have broken HTML: ${error.messages.join(',')}}`,
           );
           break;
         case 'disallowed':
