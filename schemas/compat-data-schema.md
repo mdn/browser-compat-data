@@ -394,6 +394,19 @@ It defaults to `false` (no interoperability problems expected). If set to `true`
 recommended that you add a note explaining how it diverges from the standard (such as
 that it implements an old version of the standard, for example).
 
+#### `tracking_bug`
+
+A string containing a link to a tracking bug for the implementation of the feature in the browser. This may help for verifying compatibility data.
+
+Example:
+
+```json
+{
+  "version_added": "60",
+  "tracking_bug": "https://webkit.org/b/194095"
+}
+```
+
 #### `notes`
 
 A string or `array` of strings containing additional information. If there is only one
