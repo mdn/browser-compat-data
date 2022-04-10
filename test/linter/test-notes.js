@@ -29,7 +29,8 @@ const validator = new HtmlValidate();
  */
 const testNode = (node, browser, relPath, errors) => {
   if (node.nodeType == 1) {
-    if (node.tagName && !VALID_ELEMENTS.includes(node.tagName))
+    const tag = node.tagName?.toLowerCase();
+    if (tag && !VALID_ELEMENTS.includes(tag))
       errors.push({
         type: 'disallowed',
         relPath: relPath,
