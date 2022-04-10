@@ -25,8 +25,13 @@ npm install @mdn/browser-compat-data
 ## Usage
 
 ```js
+// Import BCD into your project
+import bcd from '@mdn/browser-compat-data';
+// ...or...
 const bcd = require('@mdn/browser-compat-data');
-bcd.css.properties.background;
+
+// Grab the desired support statement
+const support = bcd.css.properties.background;
 // returns a compat data object (see schema)
 ```
 
