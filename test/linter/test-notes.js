@@ -172,7 +172,7 @@ const testNotes = filename => {
           break;
         case 'attrs':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  Elements other than {bold <a>} may {bold not} have any attributes.`,
+            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}.  Elements other than {bold <a>} may {bold not} have any attributes.}`,
           );
           break;
         case 'attrs_a':
