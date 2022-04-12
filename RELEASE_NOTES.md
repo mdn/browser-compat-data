@@ -1,5 +1,30 @@
 # Release notes
 
+## [v4.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.16)
+
+April 12, 2022
+
+### Removals
+
+- `api.NodeIterator.expandEntityReferences` ([#15773](https://github.com/mdn/browser-compat-data/pull/15773))
+- `api.TreeWalker.expandEntityReferences` ([#15773](https://github.com/mdn/browser-compat-data/pull/15773))
+- `css.properties.align-content.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.align-items.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.align-self.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.display.xul_box_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_deck_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_grid_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_inline_grid_stack` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_popup_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_stack_value` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+
+### Statistics
+
+- 16 contributors have changed 83 files with 516 additions and 1,327 deletions in 24 commits ([`v4.1.15...v4.1.6`](https://github.com/mdn/browser-compat-data/compare/v4.1.15...v4.1.6))
+- 13,293 total features
+- 865 total contributors
+- 3,975 total stargazers
+
 ## [v4.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.15)
 
 April 5, 2022
