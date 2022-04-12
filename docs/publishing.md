@@ -13,6 +13,7 @@ The steps in this process assume:
 - `NPM_TOKEN` is set in the repository secrets. If the token is invalidated or unset, a member of the `@mdn` organization on npm must [create a new token](https://docs.npmjs.com/creating-and-viewing-authentication-tokens) and [add it to the repository's secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 - You have cloned the mdn/browser-compatibility-data repository and you have the latest `main` branch checked out.
 - You have [the `gh` CLI](https://cli.github.com/) installed.
+- You have [`jq`](https://stedolan.github.io/jq/) installed.
 
 ## Prepare for an upcoming release
 
@@ -30,23 +31,27 @@ When a release is immenent:
 
 3. Run `npm run release-notes` — this command will take several minutes to finish — and copy standard output to `RELEASE_NOTES.md`.
 
-4. Confirm that all pull requests labeled [needs-release-note 📰](https://github.com/mdn/browser-compat-data/pulls?q=is%3Apr+label%3A%22needs-release-note+%3Anewspaper%3A%22+) have been entered into the release notes (written manually, if necessary). Run `npm run release-pulls` to get a link to all of the labeled pull requests since the previous release.
+4. Run `npm run release-pulls` to get a link to all of the labeled pull requests since the previous release. Confirm that all pull requests labeled `needs-release-note 📰` have been entered into the release notes (written manually, if necessary). Remove the labels when release notes are complete.
 
 5. Add the release statistics to the release notes. Switch to the `main` branch, then run `npm run release-stats`. After completing the prompts, copy the output, switch back to the release branch, and add the statistics to `RELEASE_NOTES.md`.
 
 6. Confirm all `TODO` comments in the `RELEASE_NOTES.md` file are completed and removed.
 
-7. Open a pull request. Commit your changes, push the release branch to your remote, and open a pull request on GitHub.
+7. Commit your changes, push the release branch to your remote, and open a pull request on GitHub.
 
-8. Mark the pull request as ready for review. If applicable or desired, seek a review, then merge the pull request.
+8. Mark the pull request as ready for review.
 
-9. Start a [release on GitHub](https://github.com/mdn/browser-compat-data/releases).
+9. Confirm that CI passes before continuing.
 
-   - In the _Tag version_ and _Release title_ fields, enter `vX.Y.Z` where `X.Y.Z` in the version number in `package.json`.
-   - In the _Describe this release_ field, paste the release note text from `RELEASE_NOTES.md`.
+10. If applicable or desired, seek a review, then merge the pull request.
 
-10. Click **Publish release** to create the tag and trigger the workflow that publishes to npm. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
+11. Start a [release on GitHub](https://github.com/mdn/browser-compat-data/releases).
 
-11. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly.
+    - In the _Tag version_ and _Release title_ fields, enter `vX.Y.Z` where `X.Y.Z` in the version number in `package.json`.
+    - In the _Describe this release_ field, paste the release note text from `RELEASE_NOTES.md`.
+
+12. Click **Publish release** to create the tag and trigger the workflow that publishes to npm. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
+
+13. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly.
 
 The package is now published and you have finished releasing BCD! 🎉
