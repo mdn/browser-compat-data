@@ -103,29 +103,6 @@
       ]
     },
 
-    "matches_block": {
-      "type": "object",
-      "maxProperties": 1,
-      "minProperties": 1,
-      "properties": {
-        "keywords": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "type": "string"
-          }
-        },
-        "regex_token": {
-          "type": "string"
-        },
-        "regex_value": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
-
     "status_block": {
       "type": "object",
       "properties": {
@@ -205,7 +182,6 @@
           ],
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier."
         },
-        "matches": { "$ref": "#/definitions/matches_block" },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
