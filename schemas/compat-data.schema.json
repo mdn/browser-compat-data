@@ -261,7 +261,10 @@
       "patternProperties":{
         "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/identifier" }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "Feature names must contain only alphanumerical characters and the following symbols: _-$@"
+      }
     },
 
     "webextensions_identifier": {
@@ -272,7 +275,10 @@
       "patternProperties":{
         "^(?!__compat)[a-zA-Z_0-9-$@]*$" : { "$ref": "#/definitions/webextensions_identifier" }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "Feature names must contain only alphanumerical characters and the following symbols: _-$@"
+      }
     }
   },
 
@@ -282,6 +288,9 @@
     "^webextensions*$": { "$ref": "#/definitions/primary_webextensions_identifier" }
   },
   "additionalProperties": false,
+  "errorMessage": {
+    "additionalProperties": "Feature names must contain only alphanumerical characters and the following symbols: _-$@"
+  },
   "maxProperties": 1,
   "minProperties": 1
 }
