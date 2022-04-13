@@ -4,7 +4,7 @@ const path = require('path');
 
 class DuplicateCompatError extends Error {
   constructor(message) {
-    super(message);
+    super(`${feature} already exists! Remove duplicate entries.`);
     this.name = 'DuplicateCompatError';
   }
 }
@@ -61,9 +61,7 @@ function extend(target, source, feature = '') {
     if (Object.prototype.hasOwnProperty.call(target, key)) {
       if (key == '__compat') {
         // If attempting to merge __compat, we have a double-entry
-        throw new DuplicateCompatError(
-          `${feature} was found twice! Please remove duplicate entries.`,
-        );
+        throw new DuplicateCompatError(feature);
       }
       extend(target[key], value, feature + `${feature ? '.' : ''}${key}`);
     } else {
