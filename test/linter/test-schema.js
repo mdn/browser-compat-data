@@ -1,10 +1,12 @@
 'use strict';
 const Ajv = require('ajv');
+const ajvErrors = require('ajv-errors');
 const betterAjvErrors = require('better-ajv-errors').default;
 const path = require('path');
 const chalk = require('chalk');
 
 const ajv = new Ajv({ jsonPointers: true, allErrors: true });
+ajvErrors(ajv);
 
 /**
  * @param {string} dataFilename
