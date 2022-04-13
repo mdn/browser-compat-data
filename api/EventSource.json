@@ -42,7 +42,7 @@
             "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "4.4"
           }
         },
         "status": {
@@ -58,7 +58,7 @@
           "description": "<code>EventSource()</code> constructor",
           "support": {
             "chrome": {
-              "version_added": "9"
+              "version_added": "6"
             },
             "chrome_android": {
               "version_added": "18"
@@ -94,7 +94,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -182,7 +182,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -197,7 +197,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -211,7 +211,10 @@
         "__compat": {
           "description": "<code>error</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/error_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-error",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-error",
+            "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -235,7 +238,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -250,7 +253,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -264,7 +267,10 @@
         "__compat": {
           "description": "<code>message</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/message_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+            "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -288,7 +294,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -303,163 +309,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/onerror",
-          "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onerror",
-          "support": {
-            "chrome": {
-              "version_added": "6"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "deno": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "45"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": "5"
-            },
-            "safari_ios": {
-              "version_added": "5"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/onmessage",
-          "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onmessage",
-          "support": {
-            "chrome": {
-              "version_added": "6"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "deno": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "45"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": "5"
-            },
-            "safari_ios": {
-              "version_added": "5"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onopen": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/onopen",
-          "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onopen",
-          "support": {
-            "chrome": {
-              "version_added": "6"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "deno": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "45"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": "5"
-            },
-            "safari_ios": {
-              "version_added": "5"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -473,7 +323,10 @@
         "__compat": {
           "description": "<code>open</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/open_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-open",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-open",
+            "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onopen"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -497,7 +350,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -512,7 +365,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -549,7 +402,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -564,7 +417,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -601,7 +454,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -616,7 +469,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -653,7 +506,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12"
             },
             "opera_android": {
               "version_added": "12"
@@ -668,7 +521,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
