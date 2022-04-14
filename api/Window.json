@@ -2318,14 +2318,26 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "2",
-              "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "notes": "From Firefox for Android 79 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-            },
+            "firefox": [
+              {
+                "version_added": "2",
+                "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
+              },
+              {
+                "version_added": "1",
+                "alternative_name": "sidebar"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "4",
+                "notes": "From Firefox for Android 79 <code>AddSearchProvider()</code> does nothing, as the specification requires."
+              },
+              {
+                "version_added": "4",
+                "alternative_name": "sidebar"
+              }
+            ],
             "ie": {
               "version_added": "4"
             },
@@ -7884,55 +7896,6 @@
             "experimental": true,
             "standard_track": false,
             "deprecated": false
-          }
-        }
-      },
-      "sidebar": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sidebar",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "1",
-              "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
