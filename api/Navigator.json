@@ -938,7 +938,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5",
+              "flags": [
+                {
+                  "name": "Contact Picker API",
+                  "type": "preference"
+                }
+              ]
             },
             "samsunginternet_android": {
               "version_added": "13.0"
@@ -949,7 +955,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -978,7 +984,7 @@
             },
             "ie": {
               "version_added": "4",
-              "notes": "<code>navigator.cookieEnabled</code> returns <code>true</true> even if the browser is set to block cookies (for example, if the page is in the <em>Restricted sites</em> security zone)."
+              "notes": "<code>navigator.cookieEnabled</code> returns <code>true</code> even if the browser is set to block cookies (for example, if the page is in the <em>Restricted sites</em> security zone)."
             },
             "opera": {
               "version_added": "≤12.1"
@@ -4881,7 +4887,7 @@
               "version_added": "38",
               "notes": [
                 "Starting in Firefox 55, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in <code>supportedConfigurations</code>, a warning is output to the web console.",
-                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a </code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
+                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a <code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
                 "In the future, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in the <code>supportedConfigurations</code>, a <code>NotSupported</code> exception will be thrown."
               ]
             },
@@ -4889,7 +4895,7 @@
               "version_added": "38",
               "notes": [
                 "Starting in Firefox 55, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in <code>supportedConfigurations</code>, a warning is output to the web console.",
-                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a </code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
+                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a <code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
                 "In the future, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in the <code>supportedConfigurations</code>, a <code>NotSupported</code> exception will be thrown."
               ]
             },
