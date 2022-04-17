@@ -558,19 +558,31 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/canShare",
           "spec_url": "https://w3c.github.io/web-share/#canshare-data-method",
           "support": {
-            "chrome": {
-              "version_added": "89",
-              "partial_implementation": true,
-              "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "89",
+                "version_removed": "93",
+                "partial_implementation": true,
+                "notes": "Not supported on macOS."
+              }
+            ],
             "chrome_android": {
               "version_added": "75"
             },
-            "edge": {
-              "version_added": "89",
-              "partial_implementation": true,
-              "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-            },
+            "edge": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "89",
+                "version_removed": "93",
+                "partial_implementation": true,
+                "notes": "Not supported on macOS."
+              }
+            ],
             "firefox": {
               "version_added": "96",
               "flags": [
@@ -587,11 +599,17 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "75",
-              "partial_implementation": true,
-              "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-            },
+            "opera": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "75",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported on macOS."
+              }
+            ],
             "opera_android": {
               "version_added": "54"
             },
@@ -920,7 +938,13 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5",
+              "flags": [
+                {
+                  "name": "Contact Picker API",
+                  "type": "preference"
+                }
+              ]
             },
             "samsunginternet_android": {
               "version_added": "13.0"
@@ -931,7 +955,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -960,7 +984,7 @@
             },
             "ie": {
               "version_added": "4",
-              "notes": "<code>navigator.cookieEnabled</code> returns <code>true</true> even if the browser is set to block cookies (for example, if the page is in the <em>Restricted sites</em> security zone)."
+              "notes": "<code>navigator.cookieEnabled</code> returns <code>true</code> even if the browser is set to block cookies (for example, if the page is in the <em>Restricted sites</em> security zone)."
             },
             "opera": {
               "version_added": "≤12.1"
@@ -4863,7 +4887,7 @@
               "version_added": "38",
               "notes": [
                 "Starting in Firefox 55, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in <code>supportedConfigurations</code>, a warning is output to the web console.",
-                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a </code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
+                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a <code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
                 "In the future, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in the <code>supportedConfigurations</code>, a <code>NotSupported</code> exception will be thrown."
               ]
             },
@@ -4871,7 +4895,7 @@
               "version_added": "38",
               "notes": [
                 "Starting in Firefox 55, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in <code>supportedConfigurations</code>, a warning is output to the web console.",
-                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a </code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
+                "In addition, starting in Firefox 55, if in <code>supportedConfigurations</code>, either <code>audioCapabilities</code>'s or <code>videoCapabilities</code>'s <code>contentType</code> value doesn't specify a <code>\"codecs\"</code> substring to define allowed codecs within the media wrapper, a warning is output to the web console. See note below table for example and correction.",
                 "In the future, if neither <code>audioCapabilities</code> nor <code>videoCapabilities</code> is specified in the <code>supportedConfigurations</code>, a <code>NotSupported</code> exception will be thrown."
               ]
             },
@@ -5290,19 +5314,31 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/share",
           "spec_url": "https://w3c.github.io/web-share/#share-method",
           "support": {
-            "chrome": {
-              "version_added": "89",
-              "partial_implementation": true,
-              "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "89",
+                "version_removed": "93",
+                "partial_implementation": true,
+                "notes": "Not supported on macOS."
+              }
+            ],
             "chrome_android": {
               "version_added": "61"
             },
-            "edge": {
-              "version_added": "81",
-              "partial_implementation": true,
-              "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-            },
+            "edge": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "89",
+                "version_removed": "93",
+                "partial_implementation": true,
+                "notes": "Not supported on macOS."
+              }
+            ],
             "firefox": {
               "version_added": "71",
               "flags": [
@@ -5320,9 +5356,17 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "75"
-            },
+            "opera": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "75",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported on macOS."
+              }
+            ],
             "opera_android": {
               "version_added": "48"
             },
@@ -5350,19 +5394,31 @@
             "description": "<code>data.files</code> parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-files",
             "support": {
-              "chrome": {
-                "version_added": "89",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-              },
+              "chrome": [
+                {
+                  "version_added": "93"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "93",
+                  "partial_implementation": true,
+                  "notes": "Not supported on macOS."
+                }
+              ],
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": {
-                "version_added": "89",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-              },
+              "edge": [
+                {
+                  "version_added": "93"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "93",
+                  "partial_implementation": true,
+                  "notes": "Not supported on macOS."
+                }
+              ],
               "firefox": {
                 "version_added": false
               },
@@ -5372,11 +5428,17 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "75",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-              },
+              "opera": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "75",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "Not supported on macOS."
+                }
+              ],
               "opera_android": {
                 "version_added": "54"
               },
@@ -5405,19 +5467,31 @@
             "description": "<code>data.text</code> parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-text",
             "support": {
-              "chrome": {
-                "version_added": "89",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-              },
+              "chrome": [
+                {
+                  "version_added": "93"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "93",
+                  "partial_implementation": true,
+                  "notes": "Not supported on macOS."
+                }
+              ],
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": {
-                "version_added": "89",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-              },
+              "edge": [
+                {
+                  "version_added": "93"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "93",
+                  "partial_implementation": true,
+                  "notes": "Not supported on macOS."
+                }
+              ],
               "firefox": {
                 "version_added": "71"
               },
@@ -5427,11 +5501,17 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "75",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
-              },
+              "opera": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "75",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "Not supported on macOS."
+                }
+              ],
               "opera_android": {
                 "version_added": "54"
               },
