@@ -17,12 +17,6 @@ function processData(data, logger) {
   const browser = Object.keys(data.browsers)[0];
   const releases = data.browsers[browser].releases;
 
-  let releaseByStatus = {
-    current: null,
-    beta: null,
-    nightly: null,
-  };
-
   for (const status of ['current', 'beta', 'nightly']) {
     const releasesForStatus = Object.entries(releases)
       .filter(([version, data]) => data.status == status)
