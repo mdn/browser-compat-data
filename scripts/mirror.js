@@ -47,27 +47,41 @@ const { argv } = require('yargs').command(
 
 /**
  * @param {string} dest_browser
- * @param {ReleaseStatement} source_browser_release
+ * @param {ReleaseStatement} source_release
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
+const getMatchingBrowserVersion = (dest_browser, source_release) => {
   const browserData = browsers[dest_browser];
-  for (const r in browserData.releases) {
+  const releaseKeys = Object.keys(browserData.releases);
+  releaseKeys.sort(compareVersions);
+
+  for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      (release.engine == source_browser_release.engine &&
-        compareVersions.compare(
-          release.engine_version,
-          source_browser_release.engine_version,
-          '>=',
-        )) ||
-      (['opera', 'opera_android', 'samsunginternet_android'].includes(
+      ['opera', 'opera_android', 'samsunginternet_android'].includes(
         dest_browser,
       ) &&
-        release.engine == 'Blink' &&
-        source_browser_release.engine == 'WebKit')
+      release.engine == 'Blink' &&
+      source_release.engine == 'WebKit'
     ) {
       return r;
+    } else if (release.engine == source_release.engine) {
+      if (
+        ['beta', 'nightly'].includes(release.status) &&
+        release.status == source_release.status
+      ) {
+        return r;
+      } else if (
+        release.engine_version &&
+        source_release.engine_version &&
+        compareVersions.compare(
+          release.engine_version,
+          source_release.engine_version,
+          '>=',
+        )
+      ) {
+        return r;
+      }
     }
   }
 
