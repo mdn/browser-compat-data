@@ -4,6 +4,16 @@ const fs = require('fs');
 const yargs = require('yargs');
 
 function main({ ref1, ref2, format, github }) {
+  const results = diff({ ref1, ref2, github });
+
+  if (format === 'markdown') {
+    printMarkdown(results);
+  } else {
+    console.log(JSON.stringify(results, undefined, 2));
+  }
+}
+
+function diff({ ref1, ref2, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -28,11 +38,7 @@ function main({ ref1, ref2, format, github }) {
     removed: [...aSide].filter(feature => !bSide.has(feature)),
   };
 
-  if (format === 'markdown') {
-    printMarkdown(results);
-  } else {
-    console.log(JSON.stringify(results, undefined, 2));
-  }
+  return results;
 }
 
 function enumerate(ref, skipGitHub) {
@@ -68,7 +74,7 @@ function getEnumerationFromGithub(ref) {
     encoding: 'utf-8',
   }).trim();
   const workflowRun = execSync(
-    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs --jq '.workflow_runs[] | select(.head_sha=="${hash}") | .id'`,
+    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs?per_page=100 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
     {
       encoding: 'utf-8',
     },
@@ -127,36 +133,38 @@ function printMarkdown({ added, removed }) {
   }
 }
 
-const { argv } = yargs.command(
-  '$0 [ref1] [ref2]',
-  'Compare the set of features at refA and refB',
-  yargs => {
-    yargs
-      .positional('ref1', {
-        description: 'A Git ref (branch, tag, or commit)',
-        defaultDescription: 'ref1^',
-      })
-      .positional('ref2', {
-        description: 'A Git ref (branch, tag, or commit)',
-        defaultDescription: 'HEAD',
-      })
-      .option('format', {
-        type: 'string',
-        nargs: 1,
-        choices: ['json', 'markdown'],
-        demand: 'a named format is required',
-        default: 'markdown',
-      })
-      .option('no-github', {
-        type: 'boolean',
-        description: "Don't fetch artifacts from GitHub.",
-      })
-      .example('$0', 'compare HEAD to parent commmit')
-      .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
-      .example('$0 topic-branch main', 'compare a branch to main');
-  },
-);
-
 if (require.main === module) {
+  const { argv } = yargs.command(
+    '$0 [ref1] [ref2]',
+    'Compare the set of features at refA and refB',
+    yargs => {
+      yargs
+        .positional('ref1', {
+          description: 'A Git ref (branch, tag, or commit)',
+          defaultDescription: 'ref1^',
+        })
+        .positional('ref2', {
+          description: 'A Git ref (branch, tag, or commit)',
+          defaultDescription: 'HEAD',
+        })
+        .option('format', {
+          type: 'string',
+          nargs: 1,
+          choices: ['json', 'markdown'],
+          demand: 'a named format is required',
+          default: 'markdown',
+        })
+        .option('no-github', {
+          type: 'boolean',
+          description: "Don't fetch artifacts from GitHub.",
+        })
+        .example('$0', 'compare HEAD to parent commmit')
+        .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
+        .example('$0 topic-branch main', 'compare a branch to main');
+    },
+  );
+
   main(argv);
 }
+
+module.exports = diff;

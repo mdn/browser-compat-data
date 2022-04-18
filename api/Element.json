@@ -654,7 +654,7 @@
       "animate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animate",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animatable-animate",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-animatable-animate",
           "support": {
             "chrome": {
               "version_added": "36"
@@ -680,34 +680,12 @@
             "opera_android": {
               "version_added": "24"
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "11.1",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "11.3",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": "3.0"
             },
@@ -777,14 +755,14 @@
         "options_composite_parameter": {
           "__compat": {
             "description": "<code>options.composite</code> parameter",
-            "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffectoptions-composite",
+            "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffectoptions-composite",
             "support": {
               "chrome": {
                 "version_added": "79",
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -793,7 +771,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -802,7 +780,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -839,7 +817,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -869,7 +847,7 @@
         "options_id_parameter": {
           "__compat": {
             "description": "<code>options.id</code> parameter",
-            "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeanimationoptions-id",
+            "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeanimationoptions-id",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -986,7 +964,7 @@
         "options_pseudoElement_parameter": {
           "__compat": {
             "description": "<code>options.pseudoElement</code> parameter",
-            "spec_url": "https://drafts.csswg.org/web-animations/#dom-keyframeeffectoptions-pseudoelement",
+            "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffectoptions-pseudoelement",
             "support": {
               "chrome": {
                 "version_added": "81",
@@ -995,7 +973,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -1006,7 +984,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -1017,7 +995,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -1037,7 +1015,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               },
@@ -2160,7 +2138,7 @@
       "contextmenu_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-contextmenu",
+          "spec_url": "https://w3c.github.io/uievents/#event-type-contextmenu",
           "description": "<code>contextmenu</code> event",
           "support": {
             "chrome": {
@@ -2429,7 +2407,7 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": "11"
+              "version_added": "8"
             },
             "opera": {
               "version_added": "11.6"
@@ -3109,124 +3087,17 @@
       "getAnimations": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getAnimations",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-animatable-getanimations",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-animatable-getanimations",
           "support": {
-            "chrome": [
-              {
-                "version_added": "84"
-              },
-              {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "67",
-                "version_removed": "79",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "44",
-                "version_removed": "67",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "38",
-                "version_removed": "44",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "84"
-              },
-              {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "67",
-                "version_removed": "79",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "44",
-                "version_removed": "67",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "38",
-                "version_removed": "44",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "84"
-              },
-              {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "84"
+            },
+            "chrome_android": {
+              "version_added": "84"
+            },
+            "edge": {
+              "version_added": "84"
+            },
             "firefox": [
               {
                 "version_added": "75"
@@ -3260,140 +3131,18 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "70"
-              },
-              {
-                "version_added": "66",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "54",
-                "version_removed": "66",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "31",
-                "version_removed": "54",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "25",
-                "version_removed": "31",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "57",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "48",
-                "version_removed": "57",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "version_added": "32",
-                "version_removed": "48",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              },
-              {
-                "alternative_name": "getAnimationPlayers",
-                "version_added": "25",
-                "version_removed": "32",
-                "partial_implementation": true,
-                "notes": "Does not automatically flush pending style changes and does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "11.1",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "11.3",
-                "partial_implementation": true,
-                "notes": "Does not support the <code>subtree</code> option.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": "70"
+            },
+            "opera_android": {
+              "version_added": "60"
+            },
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": "14.0"
             },
@@ -5465,244 +5214,6 @@
           }
         }
       },
-      "onfullscreenchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onfullscreenchange",
-          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenchange",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "15",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "12",
-                "alternative_name": "onwebkitfullscreenchange"
-              },
-              {
-                "version_added": "12",
-                "version_removed": "14"
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenchange"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenchange"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "58"
-              },
-              {
-                "version_added": "15",
-                "alternative_name": "onwebkitfullscreenchange"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "15"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "alternative_name": "onwebkitfullscreenchange"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "14"
-              }
-            ],
-            "safari": {
-              "version_added": "5.1",
-              "alternative_name": "onwebkitfullscreenchange"
-            },
-            "safari_ios": {
-              "version_added": "12",
-              "alternative_name": "onwebkitfullscreenchange",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
-            "samsunginternet_android": [
-              {
-                "version_added": "10.0"
-              },
-              {
-                "version_added": "1.0",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "≤37",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ]
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onfullscreenerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/onfullscreenerror",
-          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenerror",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "12",
-                "alternative_name": "onwebkitfullscreenerror"
-              },
-              {
-                "version_added": "12",
-                "version_removed": "14"
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenerror"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenerror"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "58"
-              },
-              {
-                "version_added": "15",
-                "alternative_name": "onwebkitfullscreenerror"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "15"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "alternative_name": "onwebkitfullscreenerror"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "14"
-              }
-            ],
-            "safari": {
-              "version_added": "6",
-              "alternative_name": "onwebkitfullscreenerror"
-            },
-            "safari_ios": {
-              "version_added": "12",
-              "alternative_name": "onwebkitfullscreenerror",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
-            "samsunginternet_android": [
-              {
-                "version_added": "10.0"
-              },
-              {
-                "version_added": "1.0",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "≤37",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ]
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "openOrClosedShadowRoot": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/openOrClosedShadowRoot",
@@ -6571,7 +6082,7 @@
             "chrome": [
               {
                 "version_added": "37",
-                "notes": "Version 92 returns a promise instead of <code>undefined</code>. The behaviour reflects this proposed specification change: https://github.com/w3c/pointerlock/pull/49."
+                "notes": "From version 92, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
               },
               {
                 "version_added": "22",
@@ -6581,7 +6092,8 @@
             ],
             "chrome_android": [
               {
-                "version_added": "37"
+                "version_added": "37",
+                "notes": "From version 92, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
               },
               {
                 "version_added": "25",
@@ -6590,7 +6102,8 @@
               }
             ],
             "edge": {
-              "version_added": "13"
+              "version_added": "13",
+              "notes": "From version 92, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
             },
             "firefox": [
               {
@@ -6617,7 +6130,8 @@
             },
             "opera": [
               {
-                "version_added": "24"
+                "version_added": "24",
+                "notes": "From version 78, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
               },
               {
                 "version_added": "15",
@@ -6627,7 +6141,8 @@
             ],
             "opera_android": [
               {
-                "version_added": "24"
+                "version_added": "24",
+                "notes": "From version 65, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
               },
               {
                 "version_added": "14",
@@ -6643,7 +6158,8 @@
             },
             "samsunginternet_android": [
               {
-                "version_added": "3.0"
+                "version_added": "3.0",
+                "notes": "From version 16, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
               },
               {
                 "version_added": "1.5",
@@ -6653,7 +6169,8 @@
             ],
             "webview_android": [
               {
-                "version_added": "37"
+                "version_added": "37",
+                "notes": "From version 92, returns a promise instead of <code>undefined</code>. The behavior reflects <a href='https://github.com/w3c/pointerlock/pull/49'>a proposed specification change</a>."
               },
               {
                 "version_added": "≤37",
@@ -7224,11 +6741,17 @@
             },
             "safari": {
               "version_added": "3",
-              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
+              "notes": [
+                "No support for <code>center</code> option.",
+                "Before Safari 15.4, there was no support for the <code>smooth</code> behavior."
+              ]
             },
             "safari_ios": {
               "version_added": "1",
-              "notes": "No support for <code>smooth</code> behavior or <code>center</code> options."
+              "notes": [
+                "No support for <code>center</code> option.",
+                "Before iOS 15.4, there was no support for the <code>smooth</code> behavior."
+              ]
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -8387,22 +7910,10 @@
                 "version_removed": "85"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "85",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.menuitem.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "8",
-                "version_removed": "85"
-              }
-            ],
+            "firefox_android": {
+              "version_added": "8",
+              "version_removed": "85"
+            },
             "ie": {
               "version_added": false
             },

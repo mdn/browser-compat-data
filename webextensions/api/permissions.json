@@ -69,8 +69,7 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": "77",
-                "notes": "There is a <a href='https://github.com/bfred-it/chrome-permissions-events-polyfill'>polyfill</a> available for earlier versions."
+                "version_added": "77"
               },
               "firefox_android": {
                 "version_added": false
@@ -98,8 +97,7 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": "77",
-                "notes": "There is a <a href='https://github.com/bfred-it/chrome-permissions-events-polyfill'>polyfill</a> available for earlier versions."
+                "version_added": "77"
               },
               "firefox_android": {
                 "version_added": false
@@ -195,7 +193,10 @@
               "firefox_android": {
                 "version_added": true,
                 "partial_implementation": true,
-                "notes": "From version 79, the user interface to approve the permission request is missing. See <a href='https://bugzil.la/1601420'>bug 1601420</a>."
+                "notes": [
+                  "From version 79, the user interface to approve the permission request is missing (see <a href='https://bugzil.la/1601420'>bug 1601420</a>).",
+                  "<code>browserAction.onClicked</code> is not recognized as a user action (see <a href='https://github.com/mozilla-mobile/fenix/issues/22348'>mozilla-mobile/fenix#22348</a>)."
+                ]
               },
               "opera": {
                 "version_added": true
