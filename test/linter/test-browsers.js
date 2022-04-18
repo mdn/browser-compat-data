@@ -21,7 +21,7 @@ const browsers = {
   ],
   server: ['nodejs', 'deno'],
   'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
-  'webextensions-mobile': ['firefox_android'],
+  'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
 
 /**

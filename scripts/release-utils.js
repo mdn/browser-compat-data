@@ -9,6 +9,22 @@ function exec(command) {
   return execSync(command, { encoding: 'utf8' }).trim();
 }
 
+function requireGitHubCLI() {
+  const command = 'gh auth status';
+  try {
+    execSync(command, {
+      encoding: 'utf8',
+      stdio: 'ignore',
+    });
+  } catch (err) {
+    console.trace(err);
+    console.error(`Error: ${command} failed.`);
+    console.error('The GitHub CLI is required.');
+    console.error('See https://cli.github.com/ for installation instructions.');
+    process.exit(1);
+  }
+}
+
 function getLatestTag() {
   return exec('git describe --abbrev=0 --tags');
 }
@@ -20,6 +36,20 @@ function getRefDate(ref, querySafe = false) {
     return rawDateString.replace('+', '%2B');
   }
   return rawDateString;
+}
+
+function buildQuery(endRef, startRef, urlSafe) {
+  let merged;
+  if (!['HEAD', 'main'].includes(endRef)) {
+    merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
+      endRef,
+      urlSafe,
+    )}`;
+  } else {
+    merged = `merged:>=${getRefDate(startRef, urlSafe)}`;
+  }
+
+  return `is:pr ${merged}`;
 }
 
 function releaseYargsBuilder(yargs) {
@@ -35,8 +65,10 @@ function releaseYargsBuilder(yargs) {
 }
 
 module.exports = {
+  buildQuery,
   exec,
   getLatestTag,
   getRefDate,
   releaseYargsBuilder,
+  requireGitHubCLI,
 };

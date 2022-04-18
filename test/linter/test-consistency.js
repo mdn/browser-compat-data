@@ -276,35 +276,48 @@ class ConsistencyChecker {
   }
 
   /**
-   * @param {SupportStatement} compatData
+   * Return the earliest recorded version number from a support statement or null.
+   *
+   * @param {SupportStatement} supportStatement
    * @return {string | null}
    */
-  getVersionAdded(compatData) {
-    /** @type {string | null} */
-    var version_added = null;
+  getVersionAdded(supportStatement) {
+    // A convenience function to squash non-real values and previews into null
+    const resolveVersionAddedValue = statement =>
+      [true, false, 'preview', null].includes(statement.version_added)
+        ? null
+        : statement.version_added;
 
-    if (typeof compatData.version_added === 'string')
-      return compatData.version_added;
-
-    if (compatData.constructor === Array) {
-      for (var i = compatData.length - 1; i >= 0; i--) {
-        var va = compatData[i].version_added;
-        if (
-          typeof va === 'string' &&
-          (version_added == null ||
-            (typeof version_added === 'string' &&
-              compareVersions.compare(
-                version_added.replace('≤', ''),
-                va.replace('≤', ''),
-                '>',
-              )))
-        ) {
-          version_added = va;
-        }
-      }
+    // Handle simple support statements
+    if (!Array.isArray(supportStatement)) {
+      return resolveVersionAddedValue(supportStatement);
     }
 
-    return version_added;
+    // Handle array support statements
+    let selectedValue = null;
+    for (const statement of supportStatement) {
+      const resolvedValue = resolveVersionAddedValue(statement);
+
+      if (resolvedValue === null) {
+        // We're not going to get a more specific version, so bail out now
+        return null;
+      }
+
+      if (selectedValue !== null) {
+        // Earlier value takes precedence
+        const resolvedIsEarlier = compareVersions.compare(
+          resolvedValue.replace('≤', ''),
+          selectedValue.replace('≤', ''),
+          '<',
+        );
+        if (resolvedIsEarlier) {
+          selectedValue = resolvedValue;
+        }
+      } else {
+        selectedValue = resolvedValue;
+      }
+    }
+    return selectedValue;
   }
 
   /**
@@ -414,4 +427,4 @@ function testConsistency(filename) {
   return false;
 }
 
-module.exports = testConsistency;
+module.exports = { ConsistencyChecker, testConsistency };

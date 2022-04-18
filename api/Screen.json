@@ -357,8 +357,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
+              "version_added": false
             },
             "firefox": {
               "version_added": "1"
@@ -400,13 +399,14 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen/lockOrientation",
           "support": {
             "chrome": {
-              "version_added": "38"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "38"
+              "version_added": false
             },
             "edge": {
               "version_added": "12",
+              "version_removed": "79",
               "prefix": "ms"
             },
             "firefox": {
@@ -422,10 +422,10 @@
               "prefix": "ms"
             },
             "opera": {
-              "version_added": true
+              "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -434,10 +434,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": "38"
+              "version_added": false
             }
           },
           "status": {
@@ -471,14 +471,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "14",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.screenBrightnessProperty.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -533,14 +526,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "14",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.screenEnabledProperty.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -567,57 +553,6 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "onorientationchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen/onorientationchange",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "≤18",
-              "alternative_name": "onmsorientationchange",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": true,
-              "alternative_name": "onmozorientationchange"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
             "deprecated": true
           }
         }
@@ -670,7 +605,7 @@
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "26"
             },
             "safari": {
               "version_added": false
@@ -682,13 +617,66 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "39"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        }
+      },
+      "orientationchange_event": {
+        "__compat": {
+          "description": "<code>orientationchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen/orientationchange_event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "12",
+              "alternative_name": "msorientationchange",
+              "version_removed": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": "14",
+              "alternative_name": "mozorientationchange"
+            },
+            "ie": {
+              "version_added": "11",
+              "alternative_name": "msorientationchange"
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -756,8 +744,7 @@
               "version_added": false
             },
             "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
+              "version_added": false
             },
             "firefox": {
               "version_added": "1"
@@ -799,13 +786,14 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen/unlockOrientation",
           "support": {
             "chrome": {
-              "version_added": "38"
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "38"
+              "version_added": false
             },
             "edge": {
               "version_added": "12",
+              "version_removed": "79",
               "prefix": "ms"
             },
             "firefox": {
@@ -821,10 +809,10 @@
               "prefix": "ms"
             },
             "opera": {
-              "version_added": true
+              "version_added": false
             },
             "opera_android": {
-              "version_added": true
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -833,10 +821,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": "38"
+              "version_added": false
             }
           },
           "status": {
