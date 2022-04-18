@@ -17,7 +17,7 @@ const compareVersions = require('compare-versions');
 const browsers = require('..').browsers;
 
 const { argv } = require('yargs').command(
-  '$0 <browser> [feature_or_file]',
+  '$0 <browser> [feature_or_path..]',
   'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
   yargs => {
     yargs
@@ -25,10 +25,20 @@ const { argv } = require('yargs').command(
         describe: 'The destination browser',
         type: 'string',
       })
-      .positional('feature_or_file', {
-        describe: 'The feature, file, or folder to perform mirroring',
-        type: 'string',
-        default: '',
+      .positional('feature_or_path', {
+        describe: 'Features, files, or folders to perform mirroring for',
+        type: 'array',
+        default: [
+          'api',
+          'css',
+          'html',
+          'http',
+          'svg',
+          'javascript',
+          'mathml',
+          'webdriver',
+          'webextensions',
+        ],
       })
       .option('source', {
         describe: 'Use a specified source browser rather than the default',
@@ -751,12 +761,12 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
 
 /**
  * @param {string} browser
- * @param {string} feature_or_file
+ * @param {string[]} feature_or_path_array
  * @param {string} forced_source
  * @param {string} modify
  * @returns {boolean}
  */
-const mirrorData = (browser, feature_or_file, forced_source, modify) => {
+const mirrorData = (browser, feature_or_path_array, forced_source, modify) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
@@ -766,30 +776,16 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
 
   let source = getSource(browser, forced_source);
 
-  if (feature_or_file) {
+  for (const feature_or_path of feature_or_path_array) {
     let doMirror = mirrorDataByFeature;
     if (
-      fs.existsSync(feature_or_file) &&
-      (fs.statSync(feature_or_file).isFile() ||
-        fs.statSync(feature_or_file).isDirectory())
+      fs.existsSync(feature_or_path) &&
+      (fs.statSync(feature_or_path).isFile() ||
+        fs.statSync(feature_or_path).isDirectory())
     )
       doMirror = mirrorDataByFile;
 
-    doMirror(browser, feature_or_file, source, modify);
-  } else {
-    [
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    ].forEach(folder => {
-      mirrorDataByFile(browser, folder, source, modify);
-    });
+    doMirror(browser, feature_or_path, source, modify);
   }
 
   console.log(
@@ -800,7 +796,7 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
 };
 
 if (require.main === module) {
-  mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.modify);
+  mirrorData(argv.browser, argv.feature_or_path, argv.source, argv.modify);
 }
 
 module.exports = mirrorData;
