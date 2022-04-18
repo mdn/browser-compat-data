@@ -3,7 +3,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const chalk = require('chalk');
+const assert = require('assert').strict;
 
 const compareFeatures = require('../scripts/compare-features');
 
@@ -45,21 +45,6 @@ describe('compare-features script', () => {
       '43',
     ];
 
-    let errors = false;
-    for (let i = actual.length; i--; ) {
-      if (actual[i] !== expected[i]) {
-        errors = true;
-        break;
-      }
-    }
-
-    if (errors) {
-      console.error(chalk`{red compareFeatures() – {bold 1} error:}`);
-      console.error(chalk`{red   → Actual and expected orders do not match}`);
-      console.error(chalk`{yellow     Actual: {bold ${actual}}}`);
-      console.error(chalk`{green     Expected: {bold ${expected}}}`);
-      return true;
-    }
-    return false;
+    assert.deepStrictEqual(actual, expected);
   });
 });
