@@ -11,9 +11,11 @@
           "chrome_android": {
             "version_added": "37"
           },
+          "deno": {
+            "version_added": "1.11"
+          },
           "edge": {
-            "version_added": "12",
-            "partial_implementation": true
+            "version_added": "12"
           },
           "firefox": {
             "version_added": "34"
@@ -22,8 +24,7 @@
             "version_added": "34"
           },
           "ie": {
-            "version_added": "11",
-            "partial_implementation": true
+            "version_added": "11"
           },
           "nodejs": {
             "version_added": "15.0.0"
@@ -36,19 +37,21 @@
           },
           "safari": [
             {
-              "version_added": "10.1"
+              "version_added": "11"
             },
             {
               "version_added": "7",
+              "version_removed": "11.1",
               "prefix": "WebKit"
             }
           ],
           "safari_ios": [
             {
-              "version_added": "10.3"
+              "version_added": "11"
             },
             {
               "version_added": "7",
+              "version_removed": "11.3",
               "prefix": "WebKit"
             }
           ],
@@ -76,11 +79,34 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
-            },
+            "deno": [
+              {
+                "version_added": "1.18"
+              },
+              {
+                "version_added": "1.15",
+                "version_removed": "1.18",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-GCM."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-CBC, AES-GCM."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -132,14 +158,31 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: ECDH.",
-                "Not supported: HKDF, PBKDF2."
-              ]
-            },
+            "deno": [
+              {
+                "version_added": "1.15"
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDH."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: ECDH.",
+                  "Not supported: HKDF, PBKDF2."
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -193,14 +236,23 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: ECDH.",
-                "Not supported: HKDF, PBKDF2."
-              ]
+            "deno": {
+              "version_added": "1.15"
             },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: ECDH.",
+                  "Not supported: HKDF, PBKDF2."
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -254,11 +306,20 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: SHA-1."
+            "deno": {
+              "version_added": "1.11"
             },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: SHA-1."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -310,11 +371,34 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
-            },
+            "deno": [
+              {
+                "version_added": "1.18"
+              },
+              {
+                "version_added": "1.15",
+                "version_removed": "1.18",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-GCM."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR, AES-CBC, AES-GCM."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -366,14 +450,36 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: RSA-PSS, ECDSA, ECDH.",
-                "Not supported: AES-CTR."
-              ]
-            },
+            "deno": [
+              {
+                "version_added": "1.18"
+              },
+              {
+                "version_added": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, ECDH."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: RSA-PSS, ECDSA, ECDH.",
+                  "Not supported: AES-CTR."
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -430,14 +536,33 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: RSA-PSS, ECDSA, ECDH.",
-                "Not supported: AES-CTR."
-              ]
-            },
+            "deno": [
+              {
+                "version_added": "1.14",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA P-521, ECDH P-521."
+              },
+              {
+                "version_added": "1.12",
+                "version_removed": "1.14",
+                "partial_implementation": true,
+                "notes": "Not supported: RSA-OAEP, ECDSA P-521, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: RSA-PSS, ECDSA, ECDH.",
+                  "Not supported: AES-CTR."
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -493,14 +618,39 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": [
-                "Not supported: RSA-PSS, ECDSA, ECDH.",
-                "Not supported: AES-CTR, HKDF, PBKDF2."
-              ]
-            },
+            "deno": [
+              {
+                "version_added": "1.17",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA P-521, ECDH P-521."
+              },
+              {
+                "version_added": "1.15",
+                "version_removed": "1.17",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDH."
+              },
+              {
+                "version_added": "1.14",
+                "version_removed": "1.15",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": [
+                  "Not supported: RSA-PSS, ECDSA, ECDH.",
+                  "Not supported: AES-CTR, HKDF, PBKDF2."
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -556,6 +706,9 @@
             "chrome_android": {
               "version_added": "60"
             },
+            "deno": {
+              "version_added": false
+            },
             "edge": {
               "version_added": "79"
             },
@@ -569,7 +722,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "47"
@@ -608,11 +761,20 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: RSA-PSS, ECDSA."
+            "deno": {
+              "version_added": "1.12"
             },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: RSA-PSS, ECDSA."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -665,11 +827,20 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
+            "deno": {
+              "version_added": "1.17"
             },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -725,11 +896,28 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: RSA-PSS, ECDSA."
-            },
+            "deno": [
+              {
+                "version_added": "1.14"
+              },
+              {
+                "version_removed": "1.14",
+                "version_added": "1.12",
+                "partial_implementation": true,
+                "notes": "Not supported: ECDSA, HMAC."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: RSA-PSS, ECDSA."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },
@@ -776,25 +964,46 @@
           "description": "Available in workers",
           "support": {
             "chrome": {
-              "version_added": null
+              "version_added": "37"
+            },
+            "chrome_android": {
+              "version_added": "37"
+            },
+            "deno": {
+              "version_added": "1.11"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
               "version_added": "48"
             },
             "ie": {
               "version_added": false
             },
             "nodejs": {
-              "version_added": null
+              "version_added": "15.0.0"
             },
             "opera": {
-              "version_added": null
+              "version_added": "24"
+            },
+            "opera_android": {
+              "version_added": "24"
             },
             "safari": {
-              "version_added": null
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "37"
             }
           },
           "status": {
@@ -815,11 +1024,20 @@
             "chrome_android": {
               "version_added": "37"
             },
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Not supported: AES-CTR."
+            "deno": {
+              "version_added": "1.15"
             },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not supported: AES-CTR."
+              }
+            ],
             "firefox": {
               "version_added": "34"
             },

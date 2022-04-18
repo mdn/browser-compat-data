@@ -16,11 +16,11 @@
           },
           "firefox": {
             "version_added": "25",
-            "notes": "Prior to Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
+            "notes": "Before Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
           },
           "firefox_android": {
             "version_added": "25",
-            "notes": "Prior to Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
+            "notes": "Before Firefox 58, using <code>MediaStream.addTrack()</code> on a stream obtained using <code>getUserMedia()</code>, then attempting to record the resulting stream would result in only recording the original stream without the added tracks (severe bug)."
           },
           "ie": {
             "version_added": false
@@ -99,9 +99,9 @@
             "deprecated": false
           }
         },
-        "options": {
+        "options_parameter": {
           "__compat": {
-            "description": "<code>options</code> object",
+            "description": "<code>options</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -116,7 +116,7 @@
                 "version_added": "43"
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "43"
               },
               "ie": {
                 "version_added": false
@@ -145,6 +145,54 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "audioBitrateMode": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-audiobitratemode",
+          "support": {
+            "chrome": {
+              "version_added": "89"
+            },
+            "chrome_android": {
+              "version_added": "89"
+            },
+            "edge": {
+              "version_added": "89"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "75"
+            },
+            "opera_android": {
+              "version_added": "63"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "15.0"
+            },
+            "webview_android": {
+              "version_added": "89"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -191,17 +239,17 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "error_event": {
+      "dataavailable_event": {
         "__compat": {
-          "description": "<code>error</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#errorevent-section",
+          "description": "<code>dataavailable</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event",
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-ondataavailable",
           "support": {
             "chrome": {
               "version_added": "49"
@@ -247,57 +295,67 @@
           }
         }
       },
-      "ignoreMutedMedia": {
+      "error_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/ignoreMutedMedia",
+          "description": "<code>error</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event",
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onerror",
           "support": {
             "chrome": {
               "version_added": "49",
-              "version_removed": "57"
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             },
             "chrome_android": {
               "version_added": "49",
-              "version_removed": "57"
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             },
             "firefox": {
-              "version_added": false
+              "version_added": "25"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "25"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
               "version_added": "36",
-              "version_removed": "44"
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             },
             "opera_android": {
               "version_added": "36",
-              "version_removed": "44"
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             },
             "safari": {
-              "version_added": false
+              "version_added": "14"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14"
             },
             "samsunginternet_android": {
               "version_added": "5.0",
-              "version_removed": "7.0"
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             },
             "webview_android": {
               "version_added": "49",
-              "version_removed": "57"
+              "partial_implementation": true,
+              "notes": "The interface for this event is a plain <a href='https://developer.mozilla.org/docs/Web/API/Event'><code>Event</code></a>, not <a href='https://developer.mozilla.org/docs/Web/API/MediaRecorderErrorEvent'><code>MediaRecorderErrorEvent</code></a>. See <a href='https://crbug.com/1250432'>bug 1250432</a>."
             }
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -363,7 +421,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "chrome_android": [
@@ -374,7 +432,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "edge": {
@@ -413,7 +471,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ]
           },
@@ -421,349 +479,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "ondataavailable": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/ondataavailable",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-ondataavailable",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "25"
-            },
-            "firefox_android": {
-              "version_added": "25"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": "14"
-            },
-            "safari_ios": {
-              "version_added": "14"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onerror",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onerror",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "25"
-            },
-            "firefox_android": {
-              "version_added": "25"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": "14"
-            },
-            "safari_ios": {
-              "version_added": "14"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpause": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onpause",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onpause",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": {
-              "version_added": "65"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": "14.1"
-            },
-            "safari_ios": {
-              "version_added": "14.5"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onresume": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onresume",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onresume",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": {
-              "version_added": "65"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": "14.1"
-            },
-            "safari_ios": {
-              "version_added": "14.5"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onstart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onstart",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onstart",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "25"
-            },
-            "firefox_android": {
-              "version_added": "25"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": "14"
-            },
-            "safari_ios": {
-              "version_added": "14"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onstop": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onstop",
-          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onstop",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "25"
-            },
-            "firefox_android": {
-              "version_added": "25"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": "14"
-            },
-            "safari_ios": {
-              "version_added": "14"
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onwarning": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/onwarning",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "25",
-              "version_removed": "71"
-            },
-            "firefox_android": {
-              "version_added": "25"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": "36"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
@@ -786,6 +501,56 @@
             },
             "firefox_android": {
               "version_added": "25"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": "14.1"
+            },
+            "safari_ios": {
+              "version_added": "14.5"
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "49"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pause_event": {
+        "__compat": {
+          "description": "<code>pause</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event",
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onpause",
+          "support": {
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "65"
+            },
+            "firefox_android": {
+              "version_added": "65"
             },
             "ie": {
               "version_added": false
@@ -914,6 +679,56 @@
           }
         }
       },
+      "resume_event": {
+        "__compat": {
+          "description": "<code>resume</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event",
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onresume",
+          "support": {
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "65"
+            },
+            "firefox_android": {
+              "version_added": "65"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": "14.1"
+            },
+            "safari_ios": {
+              "version_added": "14.5"
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "49"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "start": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/start",
@@ -963,6 +778,56 @@
           }
         }
       },
+      "start_event": {
+        "__compat": {
+          "description": "<code>start</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event",
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onstart",
+          "support": {
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "14"
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "49"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "state": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/state",
@@ -976,7 +841,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "chrome_android": [
@@ -987,7 +852,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "edge": {
@@ -1025,7 +890,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ]
           },
@@ -1085,6 +950,56 @@
           }
         }
       },
+      "stop_event": {
+        "__compat": {
+          "description": "<code>stop</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event",
+          "spec_url": "https://w3c.github.io/mediacapture-record/#dom-mediarecorder-onstop",
+          "support": {
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": {
+              "version_added": "49"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "14"
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": "49"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "stream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream",
@@ -1098,7 +1013,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "chrome_android": [
@@ -1109,7 +1024,7 @@
                 "version_added": "47",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "Prior to Chrome 49, only video is supported, not audio."
+                "notes": "Before Chrome 49, only video is supported, not audio."
               }
             ],
             "edge": {
@@ -1193,7 +1108,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

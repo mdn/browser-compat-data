@@ -13,6 +13,9 @@
             "chrome_android": {
               "version_added": "55"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "15"
             },
@@ -77,6 +80,9 @@
             "chrome_android": {
               "version_added": "63"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -140,6 +146,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -191,6 +200,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -246,17 +258,6 @@
                 "version_removed": "49",
                 "version_added": "42",
                 "notes": "Strict mode is required."
-              },
-              {
-                "version_removed": "49",
-                "version_added": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript",
-                    "value_to_set": "Enabled"
-                  }
-                ]
               }
             ],
             "chrome_android": [
@@ -267,19 +268,11 @@
                 "version_removed": "49",
                 "version_added": "42",
                 "notes": "Strict mode is required."
-              },
-              {
-                "version_removed": "49",
-                "version_added": "42",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript",
-                    "value_to_set": "Enabled"
-                  }
-                ]
               }
             ],
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -303,17 +296,6 @@
                 "version_removed": "36",
                 "version_added": "29",
                 "notes": "Strict mode is required."
-              },
-              {
-                "version_removed": "36",
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript",
-                    "value_to_set": "Enabled"
-                  }
-                ]
               }
             ],
             "opera_android": [
@@ -324,17 +306,6 @@
                 "version_removed": "36",
                 "version_added": "29",
                 "notes": "Strict mode is required."
-              },
-              {
-                "version_removed": "36",
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental JavaScript",
-                    "value_to_set": "Enabled"
-                  }
-                ]
               }
             ],
             "safari": {
@@ -382,21 +353,24 @@
             "chrome_android": {
               "version_added": "25"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "36",
               "notes": [
-                "Prior to Firefox 13, <code>const</code> is implemented, but re-assignment is not failing.",
-                "Prior to Firefox 46, a <code>TypeError</code> was thrown on redeclaration instead of a <code>SyntaxError</code>."
+                "Before Firefox 13, <code>const</code> is implemented, but re-assignment is not failing.",
+                "Before Firefox 46, a <code>TypeError</code> was thrown on redeclaration instead of a <code>SyntaxError</code>."
               ]
             },
             "firefox_android": {
               "version_added": "36",
               "notes": [
-                "Prior to Firefox 13, <code>const</code> is implemented, but re-assignment is not failing.",
-                "Prior to Firefox 46, a <code>TypeError</code> was thrown on redeclaration instead of a <code>SyntaxError</code>."
+                "Before Firefox 13, <code>const</code> is implemented, but re-assignment is not failing.",
+                "Before Firefox 46, a <code>TypeError</code> was thrown on redeclaration instead of a <code>SyntaxError</code>."
               ]
             },
             "ie": {
@@ -441,6 +415,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -493,6 +470,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -547,6 +527,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -600,6 +583,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -652,50 +638,18 @@
             "chrome_android": {
               "version_added": "61"
             },
-            "edge": [
-              {
-                "version_added": "16"
-              },
-              {
-                "version_added": "15",
-                "flags": [
-                  {
-                    "name": "Experimental JavaScript Features",
-                    "type": "preference"
-                  }
-                ]
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "54",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "name": "dom.moduleScripts.enabled",
-                    "type": "preference"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "54",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "name": "dom.moduleScripts.enabled",
-                    "type": "preference"
-                  }
-                ]
-              }
-            ],
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "firefox": {
+              "version_added": "60"
+            },
+            "firefox_android": {
+              "version_added": "60"
+            },
             "ie": {
               "version_added": false
             },
@@ -753,7 +707,7 @@
         "default": {
           "__compat": {
             "description": "<code>default</code> keyword with <code>export</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/default",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export",
             "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-exports",
             "support": {
               "chrome": {
@@ -762,50 +716,18 @@
               "chrome_android": {
                 "version_added": "61"
               },
-              "edge": [
-                {
-                  "version_added": "16"
-                },
-                {
-                  "version_added": "15",
-                  "flags": [
-                    {
-                      "name": "Experimental JavaScript Features",
-                      "type": "preference"
-                    }
-                  ]
-                }
-              ],
-              "firefox": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "version_added": "54",
-                  "version_removed": "60",
-                  "flags": [
-                    {
-                      "name": "dom.moduleScripts.enabled",
-                      "type": "preference"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "version_added": "54",
-                  "version_removed": "60",
-                  "flags": [
-                    {
-                      "name": "dom.moduleScripts.enabled",
-                      "type": "preference"
-                    }
-                  ]
-                }
-              ],
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "firefox": {
+                "version_added": "60"
+              },
+              "firefox_android": {
+                "version_added": "60"
+              },
               "ie": {
                 "version_added": false
               },
@@ -873,6 +795,9 @@
               "chrome_android": {
                 "version_added": "72"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "79"
               },
@@ -895,10 +820,10 @@
                 "version_added": "51"
               },
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "14.5"
               },
               "samsunginternet_android": {
                 "version_added": "11.0"
@@ -925,6 +850,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -978,6 +906,9 @@
             },
             "chrome_android": {
               "version_added": "63"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "79"
@@ -1044,6 +975,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -1054,7 +988,7 @@
               "version_added": "4"
             },
             "ie": {
-              "version_added": "6"
+              "version_added": "3"
             },
             "nodejs": {
               "version_added": "0.10.0"
@@ -1097,16 +1031,19 @@
             "chrome_android": {
               "version_added": "38"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "13",
-              "notes": "Prior to Firefox 51, using the <code>for...of</code> loop construct with the <code>const</code> keyword threw a <code>SyntaxError</code> (\"missing = in const declaration\")."
+              "notes": "Before Firefox 51, using the <code>for...of</code> loop construct with the <code>const</code> keyword threw a <code>SyntaxError</code> (\"missing = in const declaration\")."
             },
             "firefox_android": {
               "version_added": "14",
-              "notes": "Prior to Firefox 51, using the <code>for...of</code> loop construct with the <code>const</code> keyword threw a <code>SyntaxError</code> (\"missing = in const declaration\")."
+              "notes": "Before Firefox 51, using the <code>for...of</code> loop construct with the <code>const</code> keyword threw a <code>SyntaxError</code> (\"missing = in const declaration\")."
             },
             "ie": {
               "version_added": false
@@ -1148,6 +1085,9 @@
               },
               "chrome_android": {
                 "version_added": "63"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -1199,6 +1139,9 @@
               },
               "chrome_android": {
                 "version_added": "51"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "14"
@@ -1254,6 +1197,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -1303,6 +1249,9 @@
               },
               "chrome_android": {
                 "version_added": "58"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "14"
@@ -1357,6 +1306,9 @@
             },
             "chrome_android": {
               "version_added": "39"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -1419,6 +1371,9 @@
               "chrome_android": {
                 "version_added": "49"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "13"
               },
@@ -1470,6 +1425,9 @@
               "chrome_android": {
                 "version_added": "50"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "13"
               },
@@ -1520,6 +1478,9 @@
               },
               "chrome_android": {
                 "version_added": "58"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "14"
@@ -1575,6 +1536,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -1627,50 +1591,18 @@
             "chrome_android": {
               "version_added": "61"
             },
-            "edge": [
-              {
-                "version_added": "16"
-              },
-              {
-                "version_added": "15",
-                "flags": [
-                  {
-                    "name": "Experimental JavaScript Features",
-                    "type": "preference"
-                  }
-                ]
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "54",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "name": "dom.moduleScripts.enabled",
-                    "type": "preference"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "54",
-                "version_removed": "60",
-                "flags": [
-                  {
-                    "name": "dom.moduleScripts.enabled",
-                    "type": "preference"
-                  }
-                ]
-              }
-            ],
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "firefox": {
+              "version_added": "60"
+            },
+            "firefox_android": {
+              "version_added": "60"
+            },
             "ie": {
               "version_added": false
             },
@@ -1736,6 +1668,9 @@
               },
               "chrome_android": {
                 "version_added": "63"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "79"
@@ -1830,7 +1765,7 @@
                   "flags": [
                     {
                       "type": "preference",
-                      "name": "Experimental Web Platform Features"
+                      "name": "#enable-experimental-web-platform-features"
                     }
                   ]
                 }
@@ -1844,11 +1779,14 @@
                   "flags": [
                     {
                       "type": "preference",
-                      "name": "Experimental Web Platform Features"
+                      "name": "#enable-experimental-web-platform-features"
                     }
                   ]
                 }
               ],
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": [
                 {
                   "version_added": "80"
@@ -1858,7 +1796,7 @@
                   "flags": [
                     {
                       "type": "preference",
-                      "name": "Experimental Web Platform Features"
+                      "name": "#enable-experimental-web-platform-features"
                     }
                   ]
                 }
@@ -1884,13 +1822,13 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "15"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "15"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "13.0"
               },
               "webview_android": {
                 "version_added": "80"
@@ -1918,6 +1856,9 @@
             },
             "chrome_android": {
               "version_added": "64"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "79"
@@ -1970,6 +1911,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -2061,6 +2005,9 @@
                 "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
               }
             ],
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": [
               {
                 "version_added": "14"
@@ -2075,16 +2022,16 @@
             "firefox": {
               "version_added": "44",
               "notes": [
-                "Prior to Firefox 44, <code>let</code> is only available to code blocks in HTML wrapped in a <code>&lt;script type=\"application/javascript;version=1.7\"&gt;</code> block (or higher version) and has different semantics (e.g. no temporal dead zone).",
-                "Prior to Firefox 46, a <code>TypeError</code> is thrown on redeclaration instead of a <code>SyntaxError</code>.",
+                "Before Firefox 44, <code>let</code> is only available to code blocks in HTML wrapped in a <code>&lt;script type=\"application/javascript;version=1.7\"&gt;</code> block (or higher version) and has different semantics (e.g. no temporal dead zone).",
+                "Before Firefox 46, a <code>TypeError</code> is thrown on redeclaration instead of a <code>SyntaxError</code>.",
                 "Firefox 54 adds support of <code>let</code> in workers."
               ]
             },
             "firefox_android": {
               "version_added": "44",
               "notes": [
-                "Prior to Firefox 44, <code>let</code> is only available to code blocks in HTML wrapped in a <code>&lt;script type=\"application/javascript;version=1.7\"&gt;</code> block (or higher version) and has different semantics (e.g. no temporal dead zone).",
-                "Prior to Firefox 46, a <code>TypeError</code> is thrown on redeclaration instead of a <code>SyntaxError</code>.",
+                "Before Firefox 44, <code>let</code> is only available to code blocks in HTML wrapped in a <code>&lt;script type=\"application/javascript;version=1.7\"&gt;</code> block (or higher version) and has different semantics (e.g. no temporal dead zone).",
+                "Before Firefox 46, a <code>TypeError</code> is thrown on redeclaration instead of a <code>SyntaxError</code>.",
                 "Firefox 54 adds support of <code>let</code> in workers."
               ]
             },
@@ -2149,6 +2096,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -2201,6 +2151,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -2252,6 +2205,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -2306,6 +2262,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -2355,6 +2314,9 @@
               },
               "chrome_android": {
                 "version_added": "66"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "79"
@@ -2409,6 +2371,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -2461,6 +2426,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -2512,6 +2480,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"

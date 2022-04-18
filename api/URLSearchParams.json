@@ -11,16 +11,19 @@
           "chrome_android": {
             "version_added": "49"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
             "version_added": "17"
           },
           "firefox": {
             "version_added": "29",
-            "notes": "Prior to version 57 single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>bug 1386683</a>)."
+            "notes": "Before version 57 single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>bug 1386683</a>)."
           },
           "firefox_android": {
             "version_added": "29",
-            "notes": "Prior to version 57 single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>bug 1386683</a>)."
+            "notes": "Before version 57 single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>bug 1386683</a>)."
           },
           "ie": {
             "version_added": false
@@ -71,6 +74,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -83,16 +89,9 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "7.10.0"
-              },
-              {
-                "version_added": "7.5.0",
-                "partial_implementation": true,
-                "notes": "Only string as <code>init</code> object supported."
-              }
-            ],
+            "nodejs": {
+              "version_added": "7.5.0"
+            },
             "opera": {
               "version_added": "36"
             },
@@ -127,6 +126,9 @@
               },
               "chrome_android": {
                 "version_added": "49"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "17"
@@ -179,6 +181,9 @@
               "chrome_android": {
                 "version_added": "61"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "17"
               },
@@ -229,6 +234,9 @@
               },
               "chrome_android": {
                 "version_added": "58"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "17"
@@ -283,6 +291,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -296,7 +307,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -335,6 +346,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -348,7 +362,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -356,16 +370,26 @@
             "opera_android": {
               "version_added": "36"
             },
-            "safari": {
-              "version_added": true,
-              "partial_implementation": true,
-              "notes": "Removing a non-existent query parameter doesn't remove <code>?</code> from the URL. See <a href='https://webkit.org/b/193022'>bug 193022</a>."
-            },
-            "safari_ios": {
-              "version_added": true,
-              "partial_implementation": true,
-              "notes": "Removing a non-existent query parameter doesn't remove <code>?</code> from the URL. See <a href='https://webkit.org/b/193022'>bug 193022</a>."
-            },
+            "safari": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Removing a non-existent query parameter doesn't remove <code>?</code> from the URL. See <a href='https://webkit.org/b/193022'>bug 193022</a>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.3",
+                "partial_implementation": true,
+                "notes": "Removing a non-existent query parameter doesn't remove <code>?</code> from the URL. See <a href='https://webkit.org/b/193022'>bug 193022</a>."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": "5.0"
             },
@@ -383,13 +407,15 @@
       "entries": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/entries",
-          "spec_url": "https://heycam.github.io/webidl/#idl-iterable",
           "support": {
             "chrome": {
               "version_added": "49"
             },
             "chrome_android": {
               "version_added": "49"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -404,7 +430,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -413,10 +439,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -435,13 +461,15 @@
       "forEach": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/forEach",
-          "spec_url": "https://heycam.github.io/webidl/#idl-iterable",
           "support": {
             "chrome": {
               "version_added": "49"
             },
             "chrome_android": {
               "version_added": "49"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -455,6 +483,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "7.5.0"
+            },
             "opera": {
               "version_added": "36"
             },
@@ -462,10 +493,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -492,6 +523,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -505,7 +539,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -514,10 +548,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -544,6 +578,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -557,7 +594,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -566,10 +603,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -596,6 +633,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -609,7 +649,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -618,10 +658,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -640,13 +680,15 @@
       "keys": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/keys",
-          "spec_url": "https://heycam.github.io/webidl/#idl-iterable",
           "support": {
             "chrome": {
               "version_added": "49"
             },
             "chrome_android": {
               "version_added": "49"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -661,7 +703,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -670,10 +712,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -700,6 +742,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -713,7 +758,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -722,10 +767,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -752,6 +797,9 @@
             "chrome_android": {
               "version_added": "61"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -774,10 +822,10 @@
               "version_added": "45"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -804,6 +852,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -817,7 +868,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -826,10 +877,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -848,13 +899,15 @@
       "values": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/values",
-          "spec_url": "https://heycam.github.io/webidl/#idl-iterable",
           "support": {
             "chrome": {
               "version_added": "49"
             },
             "chrome_android": {
               "version_added": "49"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -869,7 +922,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
@@ -878,10 +931,10 @@
               "version_added": "36"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -906,6 +959,9 @@
             "chrome_android": {
               "version_added": "49"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "17"
             },
@@ -917,6 +973,9 @@
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "7.5.0"
             },
             "opera": {
               "version_added": "36"
