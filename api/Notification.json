@@ -45,12 +45,19 @@
             "version_added": false
           },
           "opera": {
-            "version_added": "23"
+            "version_added": "23",
+            "notes": [
+              "Starting in Opera 36, notifications do not work in incognito mode.",
+              "Before Opera 29, service worker additions were not supported."
+            ]
           },
           "opera_android": {
             "version_added": "29",
             "partial_implementation": true,
-            "notes": "Notifications in Opera for Android are only available through service workers. Developers must use <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a> instead."
+            "notes": [
+              "Notifications in Opera for Android are only available through service workers. Developers must use <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a> instead.",
+              "Starting in Opera for Android 36, notifications do not work in incognito mode."
+            ]
           },
           "safari": {
             "version_added": "7"
@@ -61,7 +68,10 @@
           "samsunginternet_android": {
             "version_added": "4.0",
             "partial_implementation": true,
-            "notes": "Notifications in Samsung Internet are only available through service workers. Developers must use <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a> instead."
+            "notes": [
+              "Notifications in Samsung Internet are only available through service workers. Developers must use <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a> instead.",
+              "Starting in Samsung Internet 5.0, notifications do not work in incognito mode."
+            ]
           },
           "webview_android": {
             "version_added": false,
