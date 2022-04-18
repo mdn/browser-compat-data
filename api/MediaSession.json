@@ -3,6 +3,7 @@
     "MediaSession": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession",
+        "spec_url": "https://w3c.github.io/mediasession/#the-mediasession-interface",
         "support": {
           "chrome": {
             "version_added": "73"
@@ -11,28 +12,42 @@
             "version_added": "57"
           },
           "edge": {
-            "version_added": null
+            "version_added": "79"
           },
-          "firefox": {
-            "version_added": "71"
-          },
+          "firefox": [
+            {
+              "version_added": "82"
+            },
+            {
+              "version_added": "71",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.media.mediasession.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
-            "version_added": null
+            "version_added": "82",
+            "partial_implementation": true,
+            "notes": "Firefox exposes the API, but does not provide a corresponding user-facing media control interface."
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": false
+            "version_added": "60"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "43"
           },
           "safari": {
-            "version_added": null
+            "version_added": "15"
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": "15"
           },
           "samsunginternet_android": {
             "version_added": "7.0"
@@ -42,7 +57,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -50,6 +65,7 @@
       "metadata": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/metadata",
+          "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-metadata",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -58,28 +74,42 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": "71"
-            },
+            "firefox": [
+              {
+                "version_added": "82"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.mediasession.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": "82",
+              "partial_implementation": true,
+              "notes": "Firefox exposes the API, but does not provide a corresponding user-facing media control interface."
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "60"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "15"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -89,7 +119,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -98,6 +128,7 @@
       "playbackState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState",
+          "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-playbackstate",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -106,28 +137,42 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "82"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.mediasession.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": "82",
+              "partial_implementation": true,
+              "notes": "Firefox exposes the API, but does not provide a corresponding user-facing media control interface."
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "60"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "15"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -137,7 +182,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -146,6 +191,7 @@
       "setActionHandler": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler",
+          "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setactionhandler",
           "description": "<code>setActionHandler()</code>",
           "support": {
             "chrome": {
@@ -155,31 +201,141 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": "71"
-            },
+            "firefox": [
+              {
+                "version_added": "82"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.mediasession.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": "82",
+              "partial_implementation": true,
+              "notes": "Firefox exposes the API, but does not provide a corresponding user-facing media control interface."
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "60"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "15"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setCameraActive": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setcameraactive",
+          "support": {
+            "chrome": {
+              "version_added": "93"
+            },
+            "chrome_android": {
+              "version_added": "93"
+            },
+            "edge": {
+              "version_added": "93"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "79"
+            },
+            "opera_android": {
+              "version_added": "66"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "17.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setMicrophoneActive": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setmicrophoneactive",
+          "support": {
+            "chrome": {
+              "version_added": "93"
+            },
+            "chrome_android": {
+              "version_added": "93"
+            },
+            "edge": {
+              "version_added": "93"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "79"
+            },
+            "opera_android": {
+              "version_added": "66"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "17.0"
             },
             "webview_android": {
               "version_added": false
@@ -195,6 +351,7 @@
       "setPositionState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState",
+          "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setpositionstate",
           "description": "<code>setPositionState()</code>",
           "support": {
             "chrome": {
@@ -204,28 +361,42 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "82"
+              },
+              {
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.mediasession.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": "82",
+              "partial_implementation": true,
+              "notes": "Firefox exposes the API, but does not provide a corresponding user-facing media control interface."
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "60"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "15"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -235,7 +406,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

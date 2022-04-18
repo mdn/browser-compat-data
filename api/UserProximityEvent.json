@@ -11,42 +11,29 @@
             "version_added": false
           },
           "edge": {
-            "version_added": null
+            "version_added": false
           },
           "firefox": [
             {
               "version_added": "62",
+              "version_removed": "89",
               "flags": [
                 {
                   "type": "preference",
                   "name": "device.sensors.proximity.enabled",
                   "value_to_set": "true"
                 }
-              ],
-              "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+              ]
             },
             {
-              "version_added": true,
+              "version_added": "15",
               "version_removed": "61"
             }
           ],
-          "firefox_android": [
-            {
-              "version_added": "62",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "device.sensors.proximity.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
-            },
-            {
-              "version_added": true,
-              "version_removed": "61"
-            }
-          ],
+          "firefox_android": {
+            "version_added": "15",
+            "version_removed": "61"
+          },
           "ie": {
             "version_added": false
           },
@@ -72,12 +59,11 @@
         "status": {
           "experimental": true,
           "standard_track": false,
-          "deprecated": false
+          "deprecated": true
         }
       },
       "near": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/UserProximityEvent/near",
           "support": {
             "chrome": {
               "version_added": false
@@ -86,42 +72,29 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
             "firefox": [
               {
                 "version_added": "62",
+                "version_removed": "89",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "device.sensors.proximity.enabled",
                     "value_to_set": "true"
                   }
-                ],
-                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
-              },
-              {
-                "version_added": true,
-                "version_removed": "61"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "See <a href='https://bugzil.la/1462308'>bug 1462308</a>."
+                ]
               },
               {
                 "version_added": "15",
                 "version_removed": "61"
               }
             ],
+            "firefox_android": {
+              "version_added": "15",
+              "version_removed": "61"
+            },
             "ie": {
               "version_added": false
             },
@@ -147,7 +120,7 @@
           "status": {
             "experimental": true,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       }

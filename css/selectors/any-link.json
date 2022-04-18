@@ -5,6 +5,7 @@
         "__compat": {
           "description": "<code>:any-link</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:any-link",
+          "spec_url": "https://drafts.csswg.org/selectors/#the-any-link-pseudo",
           "support": {
             "chrome": [
               {
@@ -24,9 +25,15 @@
                 "version_added": "18"
               }
             ],
-            "edge": {
-              "version_added": false
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "79"
+              }
+            ],
             "firefox": [
               {
                 "version_added": "50"
@@ -114,6 +121,56 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "not_match_link": {
+          "__compat": {
+            "description": "<code>:any-link</code> privacy: selector does not match <code>&lt;link&gt;</code> elements",
+            "support": {
+              "chrome": {
+                "version_added": "65"
+              },
+              "chrome_android": {
+                "version_added": "65"
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "87"
+              },
+              "firefox_android": {
+                "version_added": "87"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "52"
+              },
+              "opera_android": {
+                "version_added": "47"
+              },
+              "safari": {
+                "version_added": false,
+                "notes": "Safari currently matches <code>&lt;link&gt;</code> elements with link pseudo-classes. See <a href='https://webkit.org/b/220740'>Bug: 220740</a>."
+              },
+              "safari_ios": {
+                "version_added": false,
+                "notes": "Safari currently matches <code>&lt;link&gt;</code> elements with link pseudo-classes. See <a href='https://webkit.org/b/220740'>Bug: 220740</a>."
+              },
+              "samsunginternet_android": {
+                "version_added": "9.0"
+              },
+              "webview_android": {
+                "version_added": "65"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }

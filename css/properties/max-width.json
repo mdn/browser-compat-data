@@ -4,6 +4,7 @@
       "max-width": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/max-width",
+          "spec_url": "https://drafts.csswg.org/css-sizing-4/#width-height-keywords",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -30,7 +31,7 @@
               "notes": "CSS 2.1 leaves the behavior of <code>max-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Opera supports applying <code>max-width</code> to <code>table</code> elements."
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "1"
@@ -67,9 +68,15 @@
               "chrome_android": {
                 "version_added": "46"
               },
-              "edge": {
-                "version_added": false
-              },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "79"
+                }
+              ],
               "firefox": {
                 "partial_implementation": true,
                 "prefix": "-moz-",
@@ -93,8 +100,11 @@
               },
               "safari": [
                 {
+                  "version_added": "11"
+                },
+                {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 },
                 {
                   "alternative_name": "intrinsic",
@@ -102,6 +112,9 @@
                 }
               ],
               "safari_ios": [
+                {
+                  "version_added": "11"
+                },
                 {
                   "prefix": "-webkit-",
                   "version_added": "7"
@@ -131,6 +144,60 @@
             }
           }
         },
+        "fit-content_function": {
+          "__compat": {
+            "description": "<code>fit-content()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "91",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.fit-content-function.enabled"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "max-content": {
           "__compat": {
             "description": "<code>max-content</code>",
@@ -147,9 +214,15 @@
               "chrome_android": {
                 "version_added": "46"
               },
-              "edge": {
-                "version_added": false
-              },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "79"
+                }
+              ],
               "firefox": [
                 {
                   "version_added": "66"
@@ -179,8 +252,11 @@
               },
               "safari": [
                 {
+                  "version_added": "11"
+                },
+                {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 },
                 {
                   "alternative_name": "intrinsic",
@@ -188,6 +264,9 @@
                 }
               ],
               "safari_ios": [
+                {
+                  "version_added": "11"
+                },
                 {
                   "prefix": "-webkit-",
                   "version_added": "7"
@@ -233,9 +312,15 @@
               "chrome_android": {
                 "version_added": "46"
               },
-              "edge": {
-                "version_added": false
-              },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "79"
+                }
+              ],
               "firefox": [
                 {
                   "version_added": "66"
@@ -265,8 +350,11 @@
               },
               "safari": [
                 {
+                  "version_added": "11"
+                },
+                {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 },
                 {
                   "alternative_name": "intrinsic",
@@ -274,6 +362,9 @@
                 }
               ],
               "safari_ios": [
+                {
+                  "version_added": "11"
+                },
                 {
                   "prefix": "-webkit-",
                   "version_added": "7"
@@ -310,7 +401,8 @@
                 "version_added": "25"
               },
               "edge": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false

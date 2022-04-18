@@ -3,15 +3,30 @@
     "classes": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes",
-        "spec_url": "https://tc39.es/ecma262/#sec-class-definitions",
+        "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-class-definitions",
         "support": {
-          "chrome": {
-            "version_added": "49",
-            "notes": "From Chrome 42 to 48, strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-          },
-          "chrome_android": {
-            "version_added": "49",
-            "notes": "From Chrome 42 to 48, strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
+          "chrome": [
+            {
+              "version_added": "49"
+            },
+            {
+              "version_removed": "49",
+              "version_added": "42",
+              "notes": "Strict mode is required."
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "49"
+            },
+            {
+              "version_removed": "49",
+              "version_added": "42",
+              "notes": "Strict mode is required."
+            }
+          ],
+          "deno": {
+            "version_added": "1.0"
           },
           "edge": {
             "version_added": "13"
@@ -48,28 +63,52 @@
               ]
             }
           ],
-          "opera": {
-            "version_added": "36",
-            "notes": "From Opera 29 to 35, strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-          },
-          "opera_android": {
-            "version_added": "36",
-            "notes": "From Opera 29 to 35, strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-          },
+          "opera": [
+            {
+              "version_added": "36"
+            },
+            {
+              "version_removed": "36",
+              "version_added": "29",
+              "notes": "Strict mode is required."
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "36"
+            },
+            {
+              "version_removed": "36",
+              "version_added": "29",
+              "notes": "Strict mode is required."
+            }
+          ],
           "safari": {
             "version_added": "9"
           },
           "safari_ios": {
             "version_added": "9"
           },
-          "samsunginternet_android": {
-            "version_added": "5.0",
-            "notes": "In Samsung Internet 4.0, strict mode is required."
-          },
-          "webview_android": {
-            "version_added": "49",
-            "notes": "From WebView 42 to 48, strict mode is required."
-          }
+          "samsunginternet_android": [
+            {
+              "version_added": "5.0"
+            },
+            {
+              "version_removed": "5.0",
+              "version_added": "4.0",
+              "notes": "Strict mode is required."
+            }
+          ],
+          "webview_android": [
+            {
+              "version_added": "49"
+            },
+            {
+              "version_removed": "49",
+              "version_added": "42",
+              "notes": "Strict mode is required."
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -80,15 +119,30 @@
       "constructor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/constructor",
-          "spec_url": "https://tc39.es/ecma262/#sec-static-semantics-constructormethod",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-static-semantics-constructormethod",
           "support": {
-            "chrome": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "chrome_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -125,25 +179,52 @@
                 ]
               }
             ],
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
             "safari_ios": {
               "version_added": "9"
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "5.0"
+              },
+              {
+                "version_removed": "5.0",
+                "version_added": "4.0",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -155,15 +236,30 @@
       "extends": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/extends",
-          "spec_url": "https://tc39.es/ecma262/#sec-class-definitions",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-class-definitions",
           "support": {
-            "chrome": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "chrome_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -200,25 +296,52 @@
                 ]
               }
             ],
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
             "safari_ios": {
               "version_added": "9"
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "5.0"
+              },
+              {
+                "version_removed": "5.0",
+                "version_added": "4.0",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -230,8 +353,8 @@
       "private_class_fields": {
         "__compat": {
           "description": "Private class fields",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Class_elements#Private_fields",
-          "spec_url": "https://tc39.es/proposal-class-fields/#prod-PrivateIdentifier",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_class_fields",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#prod-PrivateIdentifier",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -239,14 +362,17 @@
             "chrome_android": {
               "version_added": "74"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "90"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "90"
             },
             "ie": {
               "version_added": false
@@ -261,16 +387,128 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
               "version_added": "74"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "private_class_fields_in": {
+        "__compat": {
+          "description": "Private class fields 'in'",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_class_fields",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#prod-00OK517S",
+          "support": {
+            "chrome": {
+              "version_added": "91"
+            },
+            "chrome_android": {
+              "version_added": "91"
+            },
+            "deno": {
+              "version_added": "1.9"
+            },
+            "edge": {
+              "version_added": "91"
+            },
+            "firefox": {
+              "version_added": "90"
+            },
+            "firefox_android": {
+              "version_added": "90"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.4.0"
+            },
+            "opera": {
+              "version_added": "77"
+            },
+            "opera_android": {
+              "version_added": "64"
+            },
+            "safari": {
+              "version_added": "15"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            },
+            "samsunginternet_android": {
+              "version_added": "16.0"
+            },
+            "webview_android": {
+              "version_added": "91"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "private_class_methods": {
+        "__compat": {
+          "description": "Private class methods",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_class_fields",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#prod-PrivateIdentifier",
+          "support": {
+            "chrome": {
+              "version_added": "84"
+            },
+            "chrome_android": {
+              "version_added": "84"
+            },
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "84"
+            },
+            "firefox": {
+              "version_added": "90"
+            },
+            "firefox_android": {
+              "version_added": "90"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "14.6.0"
+            },
+            "opera": {
+              "version_added": "70"
+            },
+            "opera_android": {
+              "version_added": "60"
+            },
+            "safari": {
+              "version_added": "15"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "84"
             }
           },
           "status": {
@@ -284,7 +522,7 @@
         "__compat": {
           "description": "Public class fields",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Class_elements#Public_fields",
-          "spec_url": "https://tc39.es/proposal-class-fields/#prod-FieldDefinition",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-FieldDefinition",
           "support": {
             "chrome": {
               "version_added": "72"
@@ -292,14 +530,17 @@
             "chrome_android": {
               "version_added": "72"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "69"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -313,14 +554,30 @@
             "opera_android": {
               "version_added": "51"
             },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "14.1",
+                "partial_implementation": true,
+                "notes": "Doesn't support public static fields. See WebKit bug <a href='https://webkit.org/b/194095'>194095</a>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "14.5",
+                "partial_implementation": true,
+                "notes": "Doesn't support public static fields. See WebKit bug <a href='https://webkit.org/b/194095'>194095</a>."
+              }
+            ],
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
               "version_added": "72"
@@ -336,15 +593,30 @@
       "static": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/static",
-          "spec_url": "https://tc39.es/ecma262/#sec-class-definitions",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-class-definitions",
           "support": {
-            "chrome": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            },
-            "chrome_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
+            "chrome": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -381,25 +653,52 @@
                 ]
               }
             ],
-            "opera": {
-              "version_added": "36"
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_removed": "36",
+                "version_added": "29",
+                "notes": "Strict mode is required."
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
             "safari_ios": {
               "version_added": "9"
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "49",
-              "notes": "From Chrome 42 to 48 strict mode is required. Non-strict mode support can be enabled using the flag \"Enable Experimental JavaScript\"."
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "5.0"
+              },
+              {
+                "version_removed": "5.0",
+                "version_added": "4.0",
+                "notes": "Strict mode is required."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "49"
+              },
+              {
+                "version_removed": "49",
+                "version_added": "42",
+                "notes": "Strict mode is required."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -412,7 +711,7 @@
         "__compat": {
           "description": "Static class fields",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Class_fields",
-          "spec_url": "https://tc39.es/proposal-class-fields/#prod-FieldDefinition",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-FieldDefinition",
           "support": {
             "chrome": {
               "version_added": "72"
@@ -420,15 +719,17 @@
             "chrome_android": {
               "version_added": "72"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": false,
-              "notes": "Static fields aren't supported, see <a href='https://bugzil.la/1535804'>bug 1535804</a>."
+              "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -443,16 +744,72 @@
               "version_added": "51"
             },
             "safari": {
+              "version_added": "14.1"
+            },
+            "safari_ios": {
+              "version_added": "14.5"
+            },
+            "samsunginternet_android": {
+              "version_added": "11.0"
+            },
+            "webview_android": {
+              "version_added": "72"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "static_initialization_blocks": {
+        "__compat": {
+          "description": "Class static initialization blocks",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-ClassStaticBlock",
+          "support": {
+            "chrome": {
+              "version_added": "94"
+            },
+            "chrome_android": {
+              "version_added": "94"
+            },
+            "deno": {
+              "version_added": "1.14"
+            },
+            "edge": {
+              "version_added": "94"
+            },
+            "firefox": {
+              "version_added": "93"
+            },
+            "firefox_android": {
+              "version_added": "93"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.11.0"
+            },
+            "opera": {
+              "version_added": "80"
+            },
+            "opera_android": {
+              "version_added": "66"
+            },
+            "safari": {
               "version_added": false
             },
             "safari_ios": {
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "17.0"
             },
             "webview_android": {
-              "version_added": "72"
+              "version_added": "94"
             }
           },
           "status": {

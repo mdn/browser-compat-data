@@ -8,6 +8,7 @@
       "properties": {
         "chrome": { "$ref": "#/definitions/browser_statement" },
         "chrome_android": { "$ref": "#/definitions/browser_statement" },
+        "deno": { "$ref": "#/definitions/browser_statement" },
         "edge": { "$ref": "#/definitions/browser_statement" },
         "firefox": { "$ref": "#/definitions/browser_statement" },
         "firefox_android": { "$ref": "#/definitions/browser_statement" },
@@ -15,12 +16,9 @@
         "nodejs": { "$ref": "#/definitions/browser_statement" },
         "opera": { "$ref": "#/definitions/browser_statement" },
         "opera_android": { "$ref": "#/definitions/browser_statement" },
-        "qq_android": { "$ref": "#/definitions/browser_statement" },
         "safari": { "$ref": "#/definitions/browser_statement" },
         "safari_ios": { "$ref": "#/definitions/browser_statement" },
         "samsunginternet_android": { "$ref": "#/definitions/browser_statement" },
-        "uc_android": { "$ref": "#/definitions/browser_statement" },
-        "uc_chinese_android": { "$ref": "#/definitions/browser_statement" },
         "webview_android": { "$ref": "#/definitions/browser_statement" }
       },
       "additionalProperties": false
@@ -33,9 +31,17 @@
           "type": "string",
           "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
         },
+        "accepts_flags": {
+          "type": "boolean",
+          "description": "Whether the browser supports flags."
+        },
         "pref_url": {
           "type": "string",
           "description": "URL of the page where feature flags can be changed (e.g. 'about:config' or 'chrome://flags')."
+        },
+        "preview_name": {
+          "type": "string",
+          "description": "Preview name, avoid long-form names (use 'Nightly' instead of 'Firefox Nightly')."
         },
         "releases": {
           "type": "object",
@@ -58,6 +64,10 @@
           "type": "string",
           "format": "uri",
           "description": "A link to the release notes or changelog for a given release."
+        },
+        "accepts_flags": {
+          "type": "boolean",
+          "description": "Whether the release supports flags."
         },
         "engine": {
           "type": "string",

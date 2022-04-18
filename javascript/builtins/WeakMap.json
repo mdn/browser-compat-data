@@ -4,13 +4,16 @@
       "WeakMap": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-          "spec_url": "https://tc39.es/ecma262/#sec-weakmap-objects",
+          "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-objects",
           "support": {
             "chrome": {
               "version_added": "36"
             },
             "chrome_android": {
               "version_added": "36"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -26,10 +29,10 @@
             },
             "nodejs": [
               {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               {
-                "version_added": "0.10",
+                "version_added": "0.10.0",
                 "flags": [
                   {
                     "type": "runtime_flag",
@@ -67,13 +70,16 @@
           "__compat": {
             "description": "<code>WeakMap()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/WeakMap",
-            "spec_url": "https://tc39.es/ecma262/#sec-weakmap-constructor",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-constructor",
             "support": {
               "chrome": {
                 "version_added": "36"
               },
               "chrome_android": {
                 "version_added": "36"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -89,10 +95,10 @@
               },
               "nodejs": [
                 {
-                  "version_added": "0.12"
+                  "version_added": "0.12.0"
                 },
                 {
-                  "version_added": "0.10",
+                  "version_added": "0.10.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
@@ -125,6 +131,179 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "iterable_allowed": {
+            "__compat": {
+              "description": "<code>new WeakMap(iterable)</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "38"
+                },
+                "chrome_android": {
+                  "version_added": "38"
+                },
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": {
+                  "version_added": "36"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "0.12.0"
+                },
+                "opera": {
+                  "version_added": "25"
+                },
+                "opera_android": {
+                  "version_added": "25"
+                },
+                "safari": {
+                  "version_added": "9"
+                },
+                "safari_ios": {
+                  "version_added": "9"
+                },
+                "samsunginternet_android": {
+                  "version_added": "3.0"
+                },
+                "webview_android": {
+                  "version_added": "38"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "new_required": {
+            "__compat": {
+              "description": "<code>WeakMap()</code> without <code>new</code> throws",
+              "support": {
+                "chrome": {
+                  "version_added": "36"
+                },
+                "chrome_android": {
+                  "version_added": "36"
+                },
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "42"
+                },
+                "firefox_android": {
+                  "version_added": "42"
+                },
+                "ie": {
+                  "version_added": "11"
+                },
+                "nodejs": {
+                  "version_added": "0.12.0"
+                },
+                "opera": {
+                  "version_added": "23"
+                },
+                "opera_android": {
+                  "version_added": "24"
+                },
+                "safari": {
+                  "version_added": "9"
+                },
+                "safari_ios": {
+                  "version_added": "9"
+                },
+                "samsunginternet_android": {
+                  "version_added": "3.0"
+                },
+                "webview_android": {
+                  "version_added": "37"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "null_allowed": {
+            "__compat": {
+              "description": "<code>new WeakMap(null)</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "36"
+                },
+                "chrome_android": {
+                  "version_added": "36"
+                },
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "37"
+                },
+                "firefox_android": {
+                  "version_added": "37"
+                },
+                "ie": {
+                  "version_added": "11"
+                },
+                "nodejs": [
+                  {
+                    "version_added": "0.12.0"
+                  },
+                  {
+                    "version_added": "0.10.0",
+                    "flags": [
+                      {
+                        "type": "runtime_flag",
+                        "name": "--harmony"
+                      }
+                    ]
+                  }
+                ],
+                "opera": {
+                  "version_added": "23"
+                },
+                "opera_android": {
+                  "version_added": "24"
+                },
+                "safari": {
+                  "version_added": "8"
+                },
+                "safari_ios": {
+                  "version_added": "8"
+                },
+                "samsunginternet_android": {
+                  "version_added": "3.0"
+                },
+                "webview_android": {
+                  "version_added": "37"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "clear": {
@@ -138,6 +317,9 @@
               "chrome_android": {
                 "version_added": "36",
                 "version_removed": "43"
+              },
+              "deno": {
+                "version_added": false
               },
               "edge": {
                 "version_added": false
@@ -154,7 +336,8 @@
                 "version_added": "11"
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.12.0",
+                "version_removed": "4.0.0"
               },
               "opera": {
                 "version_added": "25",
@@ -191,7 +374,7 @@
         "delete": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/delete",
-            "spec_url": "https://tc39.es/ecma262/#sec-weakmap.prototype.delete",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.delete",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -199,26 +382,29 @@
               "chrome_android": {
                 "version_added": "36"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
               },
               "firefox_android": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
               },
               "ie": {
                 "version_added": "11"
               },
               "nodejs": [
                 {
-                  "version_added": "0.12"
+                  "version_added": "0.12.0"
                 },
                 {
-                  "version_added": "0.10",
+                  "version_added": "0.10.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
@@ -256,7 +442,7 @@
         "get": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/get",
-            "spec_url": "https://tc39.es/ecma262/#sec-weakmap.prototype.get",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.get",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -264,26 +450,29 @@
               "chrome_android": {
                 "version_added": "36"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
               },
               "firefox_android": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
               },
               "ie": {
                 "version_added": "11"
               },
               "nodejs": [
                 {
-                  "version_added": "0.12"
+                  "version_added": "0.12.0"
                 },
                 {
-                  "version_added": "0.10",
+                  "version_added": "0.10.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
@@ -321,7 +510,7 @@
         "has": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/has",
-            "spec_url": "https://tc39.es/ecma262/#sec-weakmap.prototype.has",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.has",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -329,26 +518,29 @@
               "chrome_android": {
                 "version_added": "36"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
               },
               "firefox_android": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
               },
               "ie": {
                 "version_added": "11"
               },
               "nodejs": [
                 {
-                  "version_added": "0.12"
+                  "version_added": "0.12.0"
                 },
                 {
-                  "version_added": "0.10",
+                  "version_added": "0.10.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
@@ -386,7 +578,7 @@
         "set": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/set",
-            "spec_url": "https://tc39.es/ecma262/#sec-weakmap.prototype.set",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.set",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -394,16 +586,19 @@
               "chrome_android": {
                 "version_added": "36"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
               },
               "firefox_android": {
                 "version_added": "6",
-                "notes": "Prior to Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
               },
               "ie": {
                 "version_added": "11",
@@ -412,10 +607,10 @@
               },
               "nodejs": [
                 {
-                  "version_added": "0.12"
+                  "version_added": "0.12.0"
                 },
                 {
-                  "version_added": "0.10",
+                  "version_added": "0.10.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
@@ -435,170 +630,6 @@
               },
               "safari_ios": {
                 "version_added": "8"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "weakmap_iterable": {
-          "__compat": {
-            "description": "<code>new WeakMap(iterable)</code>",
-            "support": {
-              "chrome": {
-                "version_added": "38"
-              },
-              "chrome_android": {
-                "version_added": "38"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "36"
-              },
-              "firefox_android": {
-                "version_added": "36"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": "25"
-              },
-              "opera_android": {
-                "version_added": "25"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "38"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "weakmap_null": {
-          "__compat": {
-            "description": "<code>new WeakMap(null)</code>",
-            "support": {
-              "chrome": {
-                "version_added": "36"
-              },
-              "chrome_android": {
-                "version_added": "36"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "37"
-              },
-              "firefox_android": {
-                "version_added": "37"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": [
-                {
-                  "version_added": "0.12"
-                },
-                {
-                  "version_added": "0.10",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "opera": {
-                "version_added": "23"
-              },
-              "opera_android": {
-                "version_added": "24"
-              },
-              "safari": {
-                "version_added": "8"
-              },
-              "safari_ios": {
-                "version_added": "8"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "weakmap_without_new_throws": {
-          "__compat": {
-            "description": "<code>WeakMap()</code> without <code>new</code> throws",
-            "support": {
-              "chrome": {
-                "version_added": "36"
-              },
-              "chrome_android": {
-                "version_added": "36"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "42"
-              },
-              "firefox_android": {
-                "version_added": "42"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": "23"
-              },
-              "opera_android": {
-                "version_added": "24"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
               },
               "samsunginternet_android": {
                 "version_added": "3.0"

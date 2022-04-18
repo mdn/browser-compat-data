@@ -1,6 +1,6 @@
 'use strict';
 const testBrowsers = require('./test-browsers.js');
-const testConsistency = require('./test-consistency.js');
+const { testConsistency } = require('./test-consistency.js');
 const testDescriptions = require('./test-descriptions.js');
 const testLinks = require('./test-links.js');
 const testPrefix = require('./test-prefix.js');

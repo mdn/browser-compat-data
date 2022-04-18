@@ -36,7 +36,7 @@ const orderSupportBlock = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
 const fixBrowserOrder = filename => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

@@ -4,6 +4,7 @@
       "animation-duration": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/animation-duration",
+          "spec_url": "https://drafts.csswg.org/css-animations/#animation-duration",
           "support": {
             "chrome": [
               {
@@ -41,17 +42,6 @@
                 "prefix": "-webkit-"
               },
               {
-                "version_added": "44",
-                "prefix": "-webkit-",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "prefix": "-moz-",
                 "version_added": "5"
               }
@@ -65,23 +55,14 @@
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "prefix": "-moz-",
                 "version_added": "5"
               }
             ],
             "ie": {
-              "version_added": "10"
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "Once the element has loaded, changing the value of this property has no effect."
             },
             "opera": [
               {

@@ -3,6 +3,7 @@
     "SpeechRecognition": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition",
+        "spec_url": "https://wicg.github.io/speech-api/#speechreco-section",
         "support": {
           "chrome": {
             "prefix": "webkit",
@@ -11,11 +12,13 @@
           },
           "chrome_android": {
             "prefix": "webkit",
-            "version_added": true,
+            "version_added": "33",
             "notes": "You'll need to serve your code through a web server for recognition to work."
           },
           "edge": {
-            "version_added": null
+            "prefix": "webkit",
+            "version_added": "79",
+            "notes": "You'll need to serve your code through a web server for recognition to work."
           },
           "firefox": {
             "version_added": false
@@ -33,24 +36,26 @@
             "version_added": false
           },
           "safari": {
-            "version_added": false
+            "prefix": "webkit",
+            "version_added": "14.1"
           },
           "safari_ios": {
-            "version_added": false
+            "prefix": "webkit",
+            "version_added": "14.5"
           },
           "samsunginternet_android": {
             "prefix": "webkit",
-            "version_added": true,
+            "version_added": "2.0",
             "notes": "You'll need to serve your code through a web server for recognition to work."
           },
           "webview_android": {
             "prefix": "webkit",
-            "version_added": true,
+            "version_added": "4.4.3",
             "notes": "You'll need to serve your code through a web server for recognition to work."
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -58,20 +63,20 @@
       "SpeechRecognition": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/SpeechRecognition",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-speechrecognition",
           "description": "<code>SpeechRecognition()</code> constructor",
           "support": {
             "chrome": {
               "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
               "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "prefix": "webkit",
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -89,24 +94,24 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "prefix": "webkit",
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "prefix": "webkit",
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
               "prefix": "webkit",
-              "version_added": "37",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "37"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -115,19 +120,16 @@
       "abort": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/abort",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-abort",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -145,24 +147,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -172,15 +170,19 @@
         "__compat": {
           "description": "<code>audioend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/audioend_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-audioend",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onaudioend"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -198,20 +200,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -221,15 +223,19 @@
         "__compat": {
           "description": "<code>audiostart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/audiostart_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-audiostart",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onaudiostart"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -247,20 +253,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -269,19 +275,16 @@
       "continuous": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/continuous",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-continuous",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -299,24 +302,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -326,15 +325,19 @@
         "__compat": {
           "description": "<code>end</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/end_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-end",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onend"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -352,20 +355,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -375,15 +378,19 @@
         "__compat": {
           "description": "<code>error</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/error_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-error",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -401,20 +408,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -423,19 +430,16 @@
       "grammars": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/grammars",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-grammars",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -459,18 +463,14 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -479,19 +479,16 @@
       "interimResults": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/interimResults",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-interimresults",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -509,24 +506,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -535,19 +528,16 @@
       "lang": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/lang",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-lang",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -565,24 +555,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -591,19 +577,16 @@
       "maxAlternatives": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/maxAlternatives",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-maxalternatives",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -621,24 +604,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -648,15 +627,19 @@
         "__compat": {
           "description": "<code>nomatch</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/nomatch_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-nomatch",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onnomatch"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -674,636 +657,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onaudioend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onaudioend",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onaudiostart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onaudiostart",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onend",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onerror",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onnomatch": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onnomatch",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onresult": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onresult",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onsoundend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onsoundend",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onsoundstart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onsoundstart",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onspeechend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onspeechend",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onspeechstart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onspeechstart",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onstart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/onstart",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1313,15 +680,19 @@
         "__compat": {
           "description": "<code>result</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/result_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-result",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onresult"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1339,78 +710,22 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "serviceURI": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/serviceURI",
-          "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            },
-            "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -1418,15 +733,19 @@
         "__compat": {
           "description": "<code>soundend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/soundend_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-soundend",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onsoundend"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1444,20 +763,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1467,15 +786,19 @@
         "__compat": {
           "description": "<code>soundstart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/soundstart_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-soundstart",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onsoundstart"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1493,20 +816,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1516,15 +839,19 @@
         "__compat": {
           "description": "<code>speechend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/speechend_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-speechend",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onspeechend"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1542,20 +869,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1565,15 +892,19 @@
         "__compat": {
           "description": "<code>speechstart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/speechstart_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-speechstart",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onspeechstart"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1591,20 +922,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1613,19 +944,16 @@
       "start": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/start",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-start",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1643,24 +971,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1670,15 +994,19 @@
         "__compat": {
           "description": "<code>start</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/start_event",
+          "spec_url": [
+            "https://wicg.github.io/speech-api/#eventdef-speechrecognition-start",
+            "https://wicg.github.io/speech-api/#dom-speechrecognition-onstart"
+          ],
           "support": {
             "chrome": {
               "version_added": "33"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "33"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1696,20 +1024,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1718,19 +1046,16 @@
       "stop": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/stop",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechrecognition-stop",
           "support": {
             "chrome": {
-              "prefix": "webkit",
-              "version_added": "33",
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "chrome_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "33"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1748,24 +1073,20 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "2.0"
             },
             "webview_android": {
-              "prefix": "webkit",
-              "version_added": true,
-              "notes": "You'll need to serve your code through a web server for recognition to work."
+              "version_added": "4.4.3"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

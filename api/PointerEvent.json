@@ -3,6 +3,7 @@
     "PointerEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent",
+        "spec_url": "https://w3c.github.io/pointerevents/#pointerevent-interface",
         "support": {
           "chrome": {
             "version_added": "55"
@@ -28,16 +29,21 @@
               ]
             }
           ],
-          "firefox_android": {
-            "version_added": "41",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.w3c_pointer_events.enabled",
-                "value_to_set": "true"
-              }
-            ]
-          },
+          "firefox_android": [
+            {
+              "version_added": "79"
+            },
+            {
+              "version_added": "41",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.w3c_pointer_events.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "ie": [
             {
               "version_added": "11"
@@ -78,6 +84,7 @@
         "__compat": {
           "description": "<code>PointerEvent()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/PointerEvent",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-constructor",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -103,16 +110,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -150,9 +162,106 @@
           }
         }
       },
+      "altitudeAngle": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-altitudeangle",
+          "support": {
+            "chrome": {
+              "version_added": "86"
+            },
+            "chrome_android": {
+              "version_added": "86"
+            },
+            "edge": {
+              "version_added": "86"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "72"
+            },
+            "opera_android": {
+              "version_added": "61"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "86"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "azimuthAngle": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-azimuthangle",
+          "support": {
+            "chrome": {
+              "version_added": "86"
+            },
+            "chrome_android": {
+              "version_added": "86"
+            },
+            "edge": {
+              "version_added": "86"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "72"
+            },
+            "opera_android": {
+              "version_added": "61"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "86"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "getCoalescedEvents": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-getcoalescedevents",
           "support": {
             "chrome": {
               "version_added": "58"
@@ -161,22 +270,28 @@
               "version_added": "58"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "59"
             },
-            "firefox_android": {
-              "version_added": "59",
-              "partial_implementation": true,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79",
+                "partial_implementation": true
+              },
+              {
+                "version_added": "59",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -206,9 +321,58 @@
           }
         }
       },
+      "getPredictedEvents": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-getpredictedevents",
+          "support": {
+            "chrome": {
+              "version_added": "77"
+            },
+            "chrome_android": {
+              "version_added": "77"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "89"
+            },
+            "firefox_android": {
+              "version_added": "89"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "64"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "12.0"
+            },
+            "webview_android": {
+              "version_added": "77"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/height",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-height",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -234,16 +398,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -283,6 +452,7 @@
       "isPrimary": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-isprimary",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -308,16 +478,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": "10"
             },
@@ -350,6 +525,7 @@
       "pointerId": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-pointerid",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -375,16 +551,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": "10"
             },
@@ -417,6 +598,7 @@
       "pointerType": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-pointertype",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -442,16 +624,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -492,40 +679,68 @@
             "description": "Fractional coordinates for <code>mouse</code>.",
             "support": {
               "chrome": {
-                "version_added": "64"
+                "version_added": "64",
+                "partial_implementation": true,
+                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               },
               "chrome_android": {
-                "version_added": "64"
+                "version_added": "64",
+                "partial_implementation": true,
+                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               },
-              "edge": {
-                "version_added": null
-              },
+              "edge": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "Only <code>clientX</code>, <code>clientY</code>, <code>pageX</code> and <code>pageY</code> are fractional."
+                }
+              ],
               "firefox": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1680669'>bug 1680669</a>."
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1680669'>bug 1680669</a>."
               },
               "ie": {
-                "version_added": null
+                "version_added": "11",
+                "partial_implementation": true,
+                "notes": "Only <code>clientX</code>, <code>clientY</code>, <code>pageX</code> and <code>pageY</code> are fractional."
               },
               "opera": {
-                "version_added": "51"
+                "version_added": "51",
+                "partial_implementation": true,
+                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               },
               "opera_android": {
-                "version_added": "47"
+                "version_added": "47",
+                "partial_implementation": true,
+                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               },
               "safari": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/133180'>bug 133180</a>."
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/133180'>bug 133180</a>."
               },
               "samsunginternet_android": {
-                "version_added": "9.0"
+                "version_added": "9.0",
+                "partial_implementation": true,
+                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               },
               "webview_android": {
-                "version_added": "64"
+                "version_added": "64",
+                "partial_implementation": true,
+                "notes": "<code>movementX</code> and <code>movementY</code> are not fractional, see <a href='https://crbug.com/802067'>Chromium bug 802067</a>."
               }
             },
             "status": {
@@ -539,6 +754,7 @@
       "pressure": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-pressure",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -564,16 +780,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"
@@ -613,15 +834,16 @@
       "tangentialPressure": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-tangentialpressure",
           "support": {
             "chrome": {
-              "version_added": "58"
+              "version_added": "57"
             },
             "chrome_android": {
-              "version_added": "58"
+              "version_added": "57"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": [
               {
@@ -638,21 +860,26 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "54",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "54",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "45"
+              "version_added": "44"
             },
             "opera_android": {
               "version_added": "43"
@@ -667,7 +894,7 @@
               "version_added": "7.0"
             },
             "webview_android": {
-              "version_added": "58"
+              "version_added": "57"
             }
           },
           "status": {
@@ -680,6 +907,7 @@
       "tiltX": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-tiltx",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -705,16 +933,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": "10"
             },
@@ -747,6 +980,7 @@
       "tiltY": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-tilty",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -772,16 +1006,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": "10"
             },
@@ -814,12 +1053,13 @@
       "twist": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/twist",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-twist",
           "support": {
             "chrome": {
-              "version_added": "58"
+              "version_added": "57"
             },
             "chrome_android": {
-              "version_added": "58"
+              "version_added": "57"
             },
             "edge": {
               "version_added": "18"
@@ -839,21 +1079,26 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "54",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "54",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "45"
+              "version_added": "44"
             },
             "opera_android": {
               "version_added": "43"
@@ -868,7 +1113,7 @@
               "version_added": "7.0"
             },
             "webview_android": {
-              "version_added": "58"
+              "version_added": "57"
             }
           },
           "status": {
@@ -881,6 +1126,7 @@
       "width": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PointerEvent/width",
+          "spec_url": "https://w3c.github.io/pointerevents/#dom-pointerevent-width",
           "support": {
             "chrome": {
               "version_added": "55"
@@ -906,16 +1152,21 @@
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "41",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.w3c_pointer_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "41",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.w3c_pointer_events.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": [
               {
                 "version_added": "11"

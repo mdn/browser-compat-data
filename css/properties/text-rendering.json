@@ -4,6 +4,7 @@
       "text-rendering": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-rendering",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#TextRenderingProperty",
           "support": {
             "chrome": {
               "version_added": "4",
@@ -20,7 +21,11 @@
               ]
             },
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "notes": [
+                "This property is only supported on Windows and Linux.",
+                "Initial versions had bugs on Windows and Linux that broke <a href='https://crbug.com/114719'>font substitition</a>, <a href='https://crbug.com/51973'>small-caps</a>, <a href='https://crbug.com/55458'>letter-spacing</a> or caused <a href='https://crbug.com/149548'>text to overlap</a>."
+              ]
             },
             "firefox": {
               "version_added": "1",
@@ -48,7 +53,7 @@
               "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": false,
+              "version_added": "1.0",
               "notes": "This property is only supported on Windows and Linux. Samsung Internet is not on Windows or Linux."
             },
             "webview_android": {
@@ -75,7 +80,8 @@
                 "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "edge": {
-                "version_added": false
+                "version_added": "79",
+                "notes": "Edge treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "firefox": {
                 "version_added": "1",
@@ -105,7 +111,8 @@
                 "notes": "Safari treats <code>auto</code> as <code>optimizeSpeed</code>. See <a href='https://webkit.org/b/41363'>WebKit bug 41363</a>."
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "1.0",
+                "notes": "Samsung Internet treats <code>auto</code> as <code>optimizeSpeed</code>."
               },
               "webview_android": {
                 "version_added": "≤37",
@@ -132,7 +139,8 @@
                 "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "edge": {
-                "version_added": false
+                "version_added": "79",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "firefox": {
                 "version_added": "1",
@@ -150,7 +158,8 @@
                 "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "opera_android": {
-                "version_added": null
+                "version_added": "14",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "safari": {
                 "version_added": "6"
@@ -159,7 +168,8 @@
                 "version_added": "6"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "1.0",
+                "notes": "Supports true geometric precision without rounding up or down to the nearest supported font size in the operating system."
               },
               "webview_android": {
                 "version_added": "37",

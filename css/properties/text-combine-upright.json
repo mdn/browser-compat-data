@@ -4,6 +4,7 @@
       "text-combine-upright": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-combine-upright",
+          "spec_url": "https://drafts.csswg.org/css-writing-modes/#text-combine-upright",
           "support": {
             "chrome": [
               {
@@ -27,88 +28,25 @@
                 "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>."
               }
             ],
-            "edge": {
-              "version_added": "12",
-              "alternative_name": "-ms-text-combine-horizontal"
+            "edge": [
+              {
+                "version_added": "15",
+                "version_removed": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "alternative_name": "-ms-text-combine-horizontal"
+              }
+            ],
+            "firefox": {
+              "version_added": "48",
+              "notes": "Before version 81, Firefox implemented the property as animatable. This was corrected to spec in 81."
             },
-            "firefox": [
-              {
-                "version_added": "48",
-                "notes": "Before version 48, Firefox did not implement layout support for tate-chū-yoko."
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.text-combine-upright.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "31",
-                "version_removed": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "26",
-                "version_removed": "31",
-                "alternative_name": "text-combine-horizontal",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "48",
-                "notes": "Before version 48, Firefox did not implement layout support for tate-chū-yoko."
-              },
-              {
-                "version_added": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.text-combine-upright.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "31",
-                "version_removed": "41",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "26",
-                "version_removed": "31",
-                "alternative_name": "text-combine-horizontal",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "48",
+              "notes": "Before version 81, Firefox implemented the property as animatable. This was corrected to spec in 81."
+            },
             "ie": {
               "version_added": "11",
               "alternative_name": "-ms-text-combine-horizontal"
@@ -121,7 +59,7 @@
                 "partial_implementation": true,
                 "alternative_name": "-webkit-text-combine",
                 "version_added": "15",
-                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
+                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>."
               }
             ],
             "opera_android": [
@@ -132,21 +70,26 @@
                 "partial_implementation": true,
                 "alternative_name": "-webkit-text-combine",
                 "version_added": "14",
-                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
+                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>."
               }
             ],
             "safari": {
               "partial_implementation": true,
               "alternative_name": "-webkit-text-combine",
               "version_added": "5.1",
-              "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
+              "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>."
             },
-            "safari_ios": {
-              "partial_implementation": true,
-              "alternative_name": "-webkit-text-combine",
-              "version_added": "5",
-              "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
-            },
+            "safari_ios": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "partial_implementation": true,
+                "alternative_name": "-webkit-text-combine",
+                "version_added": "5",
+                "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without <code>digits</code>."
+              }
+            ],
             "samsunginternet_android": [
               {
                 "version_added": "5.0"
@@ -186,33 +129,26 @@
               "chrome_android": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "12"
-              },
+              "edge": [
+                {
+                  "version_added": "15",
+                  "version_removed": "79"
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79",
+                  "alternative_name": "-ms-text-combine-horizontal"
+                }
+              ],
               "firefox": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.text-combine-upright-digits.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Firefox recognizes this value but does not yet implement layout support for tate-chū-yoko (see <a href='https://bugzil.la/1258635'>bug 1258635</a>)."
+                "version_added": false
               },
               "firefox_android": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.text-combine-upright-digits.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Firefox recognizes this value but does not yet implement layout support for tate-chū-yoko (see <a href='https://bugzil.la/1258635'>bug 1258635</a>)."
+                "version_added": false
               },
               "ie": {
-                "version_added": "11"
+                "version_added": "11",
+                "alternative_name": "-ms-text-combine-horizontal"
               },
               "opera": {
                 "version_added": false

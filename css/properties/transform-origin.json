@@ -4,6 +4,7 @@
       "transform-origin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-origin",
+          "spec_url": "https://drafts.csswg.org/css-transforms/#transform-origin-property",
           "support": {
             "chrome": [
               {
@@ -43,17 +44,6 @@
               {
                 "prefix": "-webkit-",
                 "version_added": "49"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
               }
             ],
             "firefox_android": [
@@ -67,17 +57,6 @@
               {
                 "prefix": "-webkit-",
                 "version_added": "49"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
               }
             ],
             "ie": [
@@ -103,7 +82,8 @@
               },
               {
                 "prefix": "-o-",
-                "version_added": "10.5"
+                "version_added": "10.5",
+                "version_removed": "15"
               }
             ],
             "opera_android": [
@@ -120,7 +100,8 @@
               },
               {
                 "prefix": "-o-",
-                "version_added": "11"
+                "version_added": "11",
+                "version_removed": "14"
               }
             ],
             "safari": [
@@ -152,7 +133,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "37"
+                "version_added": "4.4"
               },
               {
                 "prefix": "-webkit-",
@@ -179,42 +160,14 @@
               "edge": {
                 "version_added": "17"
               },
-              "firefox": [
-                {
-                  "version_added": "43",
-                  "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
-                },
-                {
-                  "version_added": "41",
-                  "version_removed": "43",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "svg.transform-origin.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "43",
-                  "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
-                },
-                {
-                  "version_added": "41",
-                  "version_removed": "43",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "svg.transform-origin.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
-                }
-              ],
+              "firefox": {
+                "version_added": "43",
+                "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
+              },
+              "firefox_android": {
+                "version_added": "43",
+                "notes": "Keywords and percentages refer to the canvas instead of the object itself. See <a href='https://bugzil.la/1209061'>bug 1209061</a>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -225,10 +178,12 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "6"
+                "version_added": "6",
+                "notes": "Only supported for transformations applied using the CSS <code>transform</code> property (e.g. <code>.className { transform: rotate(45deg); transform-origin: center; }</code>). It has no effect on transformations applied using the <code>transform</code> SVG attribute (e.g. <code>&lt;rect style=&quot;transform-origin: center;&quot; transform=&quot;rotate(45)&quot; /&gt;</code>)."
               },
               "safari_ios": {
-                "version_added": "6"
+                "version_added": "6",
+                "notes": "Only supported for transformations applied using the CSS <code>transform</code> property (e.g. <code>.className { transform: rotate(45deg); transform-origin: center; }</code>). It has no effect on transformations applied using the <code>transform</code> SVG attribute (e.g. <code>&lt;rect style=&quot;transform-origin: center;&quot; transform=&quot;rotate(45)&quot; /&gt;</code>)."
               },
               "samsunginternet_android": {
                 "version_added": "1.5"
@@ -276,7 +231,7 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "4.1"
+                "version_added": "5"
               },
               "safari_ios": {
                 "version_added": "3.2"

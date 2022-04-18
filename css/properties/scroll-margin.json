@@ -4,6 +4,7 @@
       "scroll-margin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin",
+          "spec_url": "https://drafts.csswg.org/css-scroll-snap/#scroll-margin",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -12,14 +13,30 @@
               "version_added": "69"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": "68"
-            },
-            "firefox_android": {
-              "version_added": "68"
-            },
+            "firefox": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "68",
+                "version_removed": "90",
+                "partial_implementation": true,
+                "notes": "The <code>scroll-margin</code> property can cause an element's visibility to be incorrectly calculated for <code>element.focus()</code>. See <a href='https://bugzil.la/1708303'>bug 1708303</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "68",
+                "version_removed": "90",
+                "partial_implementation": true,
+                "notes": "The <code>scroll-margin</code> property can cause an element's visibility to be incorrectly calculated for <code>element.focus()</code>. See <a href='https://bugzil.la/1708303'>bug 1708303</a>."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -29,12 +46,28 @@
             "opera_android": {
               "version_added": "48"
             },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "11",
+                "alternative_name": "scroll-snap-margin",
+                "partial_implementation": true,
+                "notes": "Before version 14.1, scroll margin is not applied for scrolls to fragment target or <code>scrollIntoView()</code>, see <a href='https://webkit.org/b/189265'>bug 189265</a>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "11",
+                "alternative_name": "scroll-snap-margin",
+                "partial_implementation": true,
+                "notes": "Before version 14.5, scroll margin is not applied for scrolls to fragment target or <code>scrollIntoView()</code>, see <a href='https://webkit.org/b/189265'>bug 189265</a>."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": "10.0"
             },

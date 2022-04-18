@@ -3,15 +3,17 @@
     "Bluetooth": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth",
+        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetooth",
         "support": {
           "chrome": [
             {
               "version_added": "56",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Before Chrome 70, this feature was only supported in macOS.  In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "56",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -19,18 +21,29 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "70",
-              "notes": "Windows 10."
             }
           ],
           "chrome_android": {
             "version_added": "56"
           },
-          "edge": {
-            "version_added": null
-          },
+          "edge": [
+            {
+              "version_added": "79",
+              "partial_implementation": true,
+              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
+            },
+            {
+              "version_added": "79",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
           "firefox": {
             "version_added": false
           },
@@ -43,11 +56,153 @@
           "opera": [
             {
               "version_added": "43",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Before Opera 57, this feature was only supported in macOS.  In Opera 57, support was added for Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "43",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
+          "opera_android": {
+            "version_added": "43"
+          },
+          "safari": {
+            "version_added": false
+          },
+          "safari_ios": {
+            "version_added": false
+          },
+          "samsunginternet_android": {
+            "version_added": "6.0"
+          },
+          "webview_android": {
+            "version_added": false,
+            "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
+          }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
+      },
+      "availabilitychanged_event": {
+        "__compat": {
+          "description": "<code>availabilitychanged</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/availabilitychanged_event",
+          "spec_url": [
+            "https://webbluetoothcg.github.io/web-bluetooth/#eventdef-bluetooth-availabilitychanged",
+            "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetooth-onavailabilitychanged"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "getAvailability": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/getAvailability",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetooth-getavailability",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "getDevices": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/getDevices",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetooth-getdevices",
+          "support": {
+            "chrome": {
+              "version_added": "85",
               "flags": [
                 {
                   "type": "preference",
@@ -56,63 +211,25 @@
                 }
               ]
             },
-            {
-              "version_added": "57",
-              "notes": "Windows 10."
-            }
-          ],
-          "opera_android": {
-            "version_added": "43"
-          },
-          "safari": {
-            "version_added": null
-          },
-          "safari_ios": {
-            "version_added": null
-          },
-          "samsunginternet_android": {
-            "version_added": "6.0"
-          },
-          "webview_android": {
-            "version_added": false
-          }
-        },
-        "status": {
-          "experimental": true,
-          "standard_track": true,
-          "deprecated": false
-        }
-      },
-      "getAvailability": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/getAvailability",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "85",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
             },
             "edge": {
-              "version_added": null
+              "version_added": "85",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
             },
             "firefox": {
               "version_added": false
@@ -123,38 +240,27 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "71",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -162,91 +268,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onavailabilitychanged": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/onavailabilitychanged",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
-            "chrome_android": {
-              "version_added": "56"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -254,33 +276,16 @@
       "referringDevice": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/referringDevice",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetooth-referringdevice",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -291,35 +296,17 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -330,7 +317,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -338,33 +325,16 @@
       "requestDevice": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/requestDevice",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetooth-requestdevice",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -375,35 +345,17 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -414,7 +366,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }

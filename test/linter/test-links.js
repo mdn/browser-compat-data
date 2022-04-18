@@ -1,15 +1,11 @@
 'use strict';
 const fs = require('fs');
+const url = require('url');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
 
 /**
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * @param {string} filename
- * @param {Logger} logger
  */
 function processData(filename) {
   let errors = [];
@@ -168,6 +164,21 @@ function processData(filename) {
         issue: 'Use non-localized Microsoft Developer URL',
         expected: `https://developer.microsoft.com/${match[2]}`,
       };
+    },
+  );
+
+  processLink(
+    errors,
+    actual,
+    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
+    match => {
+      if (url.parse(match[1]).hostname === null) {
+        return {
+          issue: 'Include hostname in URL',
+          actualLink: match[1],
+          expected: `https://developer.mozilla.org/${match[1]}`,
+        };
+      }
     },
   );
 

@@ -4,6 +4,7 @@
       "overflow-x": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow-x",
+          "spec_url": "https://drafts.csswg.org/css-overflow/#overflow-properties",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -33,7 +34,7 @@
               "version_added": "9.5"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "3"
@@ -59,25 +60,39 @@
             "description": "<code>clip</code> value",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "90"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "90"
               },
               "edge": {
-                "version_added": false
+                "version_added": "90"
               },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox": [
+                {
+                  "version_added": "81"
+                },
+                {
+                  "alternative_name": "-moz-hidden-unscrollable",
+                  "version_added": "3.5",
+                  "version_removed": "81"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "81"
+                },
+                {
+                  "alternative_name": "-moz-hidden-unscrollable",
+                  "version_added": "4",
+                  "version_removed": "81"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "76"
               },
               "opera_android": {
                 "version_added": false
@@ -89,14 +104,14 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "15.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "90"
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

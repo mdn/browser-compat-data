@@ -3,6 +3,7 @@
     "SpeechSynthesisVoice": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice",
+        "spec_url": "https://wicg.github.io/speech-api/#speechsynthesisvoice",
         "support": {
           "chrome": {
             "version_added": "33"
@@ -11,27 +12,14 @@
             "version_added": "33"
           },
           "edge": {
-            "version_added": true
+            "version_added": "14"
           },
           "firefox": {
             "version_added": "49"
           },
-          "firefox_android": [
-            {
-              "version_added": "62"
-            },
-            {
-              "version_added": "61",
-              "version_removed": "62",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.synth.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox_android": {
+            "version_added": "62"
+          },
           "ie": {
             "version_added": false
           },
@@ -51,11 +39,12 @@
             "version_added": "3.0"
           },
           "webview_android": {
-            "version_added": "4.4.3"
+            "version_added": false,
+            "notes": "See <a href='https://crbug.com/487255'>bug 487255</a>."
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -63,6 +52,7 @@
       "default": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/default",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesisvoice-default",
           "support": {
             "chrome": {
               "version_added": "33"
@@ -76,22 +66,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.synth.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -111,11 +88,11 @@
               "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -124,6 +101,7 @@
       "lang": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/lang",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesisvoice-lang",
           "support": {
             "chrome": {
               "version_added": "33"
@@ -137,22 +115,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.synth.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -172,11 +137,11 @@
               "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -185,6 +150,7 @@
       "localService": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/localService",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesisvoice-localservice",
           "support": {
             "chrome": {
               "version_added": "33"
@@ -198,22 +164,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.synth.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -233,11 +186,11 @@
               "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -246,6 +199,7 @@
       "name": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/name",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesisvoice-name",
           "support": {
             "chrome": {
               "version_added": "33"
@@ -259,22 +213,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.synth.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -294,11 +235,11 @@
               "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -307,6 +248,7 @@
       "voiceURI": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/voiceURI",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesisvoice-voiceuri",
           "support": {
             "chrome": {
               "version_added": "33"
@@ -320,22 +262,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.synth.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -355,11 +284,11 @@
               "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "4.4.3"
+              "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

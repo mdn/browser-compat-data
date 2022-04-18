@@ -4,7 +4,7 @@
       "Atomics": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics",
-          "spec_url": "https://tc39.es/ecma262/#sec-atomics-object",
+          "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics-object",
           "support": {
             "chrome": [
               {
@@ -21,12 +21,23 @@
               "version_removed": "63",
               "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
             },
-            "edge": {
-              "version_added": "16",
-              "version_removed": "17",
-              "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+            "deno": {
+              "version_added": "1.0"
             },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "17",
+                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              }
+            ],
             "firefox": [
+              {
+                "version_added": "78"
+              },
               {
                 "version_added": "57",
                 "flags": [
@@ -94,14 +105,26 @@
             "opera_android": {
               "version_added": false
             },
-            "safari": {
-              "version_added": "10.1",
-              "version_removed": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3",
-              "version_removed": "11.3"
-            },
+            "safari": [
+              {
+                "version_added": "15.2",
+                "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "11.1"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "15.2",
+                "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+              },
+              {
+                "version_added": "10.3",
+                "version_removed": "11.3"
+              }
+            ],
             "samsunginternet_android": {
               "version_added": false,
               "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -118,10 +141,64 @@
             "deprecated": false
           }
         },
+        "Atomic_operations_on_non-shared_buffers": {
+          "__compat": {
+            "description": "Atomic operations on non-shared <code>ArrayBuffer</code> objects",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "79"
+              },
+              "firefox_android": {
+                "version_added": "79"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "add": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/add",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.add",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.add",
             "support": {
               "chrome": [
                 {
@@ -138,12 +215,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -211,14 +299,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -239,7 +339,7 @@
         "and": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/and",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.and",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.and",
             "support": {
               "chrome": [
                 {
@@ -256,12 +356,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -329,14 +440,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -357,7 +480,7 @@
         "compareExchange": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.compareexchange",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.compareexchange",
             "support": {
               "chrome": [
                 {
@@ -374,12 +497,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -447,14 +581,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -475,7 +621,7 @@
         "exchange": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/exchange",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.exchange",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.exchange",
             "support": {
               "chrome": [
                 {
@@ -492,12 +638,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -565,14 +722,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -593,7 +762,7 @@
         "isLockFree": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/isLockFree",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.islockfree",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.islockfree",
             "support": {
               "chrome": [
                 {
@@ -610,12 +779,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -683,14 +863,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -711,7 +903,7 @@
         "load": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/load",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.load",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.load",
             "support": {
               "chrome": [
                 {
@@ -728,12 +920,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -801,14 +1004,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -829,7 +1044,7 @@
         "notify": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/notify",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.notify",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.notify",
             "support": {
               "chrome": [
                 {
@@ -848,12 +1063,16 @@
                 "alternative_name": "wake",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
-                "version_added": false,
-                "alternative_name": "wake",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                "version_added": "79"
               },
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "63",
                   "flags": [
@@ -972,19 +1191,29 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1",
-                "alternative_name": "wake"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1",
+                  "alternative_name": "wake"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
-                "version_added": false,
-                "alternative_name": "wake",
-                "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_added": false
               },
               "webview_android": {
                 "version_added": "60",
@@ -1003,7 +1232,7 @@
         "or": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/or",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.or",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.or",
             "support": {
               "chrome": [
                 {
@@ -1020,12 +1249,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -1093,14 +1333,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -1121,7 +1373,7 @@
         "store": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/store",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.store",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.store",
             "support": {
               "chrome": [
                 {
@@ -1138,12 +1390,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -1211,14 +1474,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -1239,7 +1514,7 @@
         "sub": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/sub",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.sub",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.sub",
             "support": {
               "chrome": [
                 {
@@ -1256,12 +1531,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -1329,14 +1615,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -1357,7 +1655,7 @@
         "wait": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.wait",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.wait",
             "support": {
               "chrome": [
                 {
@@ -1374,12 +1672,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -1473,14 +1782,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
@@ -1501,7 +1822,7 @@
         "xor": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics/xor",
-            "spec_url": "https://tc39.es/ecma262/#sec-atomics.xor",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-atomics.xor",
             "support": {
               "chrome": [
                 {
@@ -1518,12 +1839,23 @@
                 "version_removed": "63",
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
               },
-              "edge": {
-                "version_added": "16",
-                "version_removed": "17",
-                "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+              "deno": {
+                "version_added": "1.0"
               },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "17",
+                  "notes": "Support was removed to mitigate <a href='https://blogs.windows.com/msedgedev/2018/01/03/speculative-execution-mitigations-microsoft-edge-internet-explorer'>speculative execution side-channel attacks (Windows blog)</a>."
+                }
+              ],
               "firefox": [
+                {
+                  "version_added": "78"
+                },
                 {
                   "version_added": "57",
                   "flags": [
@@ -1591,14 +1923,26 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11.1"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11.3"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11.1"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "Like <code>SharedArrayBuffer</code>, <code>Atomics</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11.3"
+                }
+              ],
               "samsunginternet_android": {
                 "version_added": false,
                 "notes": "Chrome disabled <code>SharedArrayBuffer</code> on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."

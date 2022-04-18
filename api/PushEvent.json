@@ -3,6 +3,7 @@
     "PushEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PushEvent",
+        "spec_url": "https://w3c.github.io/push-api/#pushevent-interface",
         "support": {
           "chrome": {
             "version_added": "42"
@@ -10,26 +11,12 @@
           "chrome_android": {
             "version_added": "42"
           },
-          "edge": [
-            {
-              "version_added": "16",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable service workers"
-                }
-              ]
-            },
-            {
-              "version_added": "17"
-            }
-          ],
+          "edge": {
+            "version_added": "17"
+          },
           "firefox": {
             "version_added": "44",
-            "notes": [
-              "Service workers (and <a href='https://developer.mozilla.org/docs/Web/API/Push_API'>Push</a>) have been disabled in the <a href='https://www.mozilla.org/en-US/firefox/organizations/'>Firefox 45 and 52 Extended Support Releases</a> (ESR.)",
-              "Enabled only in Nightly, Developer Edition, and Beta channels."
-            ]
+            "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
           },
           "firefox_android": [
             {
@@ -59,7 +46,8 @@
             "version_added": "4.0"
           },
           "webview_android": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>."
           }
         },
         "status": {
@@ -72,6 +60,7 @@
         "__compat": {
           "description": "<code>PushEvent()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PushEvent/PushEvent",
+          "spec_url": "https://w3c.github.io/push-api/#dom-pushevent-constructor",
           "support": {
             "chrome": {
               "version_added": "42"
@@ -79,26 +68,12 @@
             "chrome_android": {
               "version_added": "42"
             },
-            "edge": [
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              },
-              {
-                "version_added": "17"
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": [
-                "Service workers (and <a href='https://developer.mozilla.org/docs/Web/API/Push_API'>Push</a>) have been disabled in the <a href='https://www.mozilla.org/en-US/firefox/organizations/'>Firefox 45 and 52 Extended Support Releases</a> (ESR.)",
-                "Enabled only in Nightly, Developer Edition, and Beta channels."
-              ]
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": [
               {
@@ -141,33 +116,20 @@
       "data": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PushEvent/data",
+          "spec_url": "https://w3c.github.io/push-api/#dom-pushevent-data",
           "support": {
             "chrome": {
-              "version_added": "57"
+              "version_added": "50"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "50"
             },
-            "edge": [
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              },
-              {
-                "version_added": "17"
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": [
-                "Service workers (and <a href='https://developer.mozilla.org/docs/Web/API/Push_API'>Push</a>) have been disabled in the <a href='https://www.mozilla.org/en-US/firefox/organizations/'>Firefox 45 and 52 Extended Support Releases</a> (ESR.)",
-                "Enabled only in Nightly, Developer Edition, and Beta channels."
-              ]
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": [
               {
@@ -182,10 +144,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "44"
+              "version_added": "37"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "37"
             },
             "safari": {
               "version_added": false
@@ -194,7 +156,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "5.0"
             },
             "webview_android": {
               "version_added": false

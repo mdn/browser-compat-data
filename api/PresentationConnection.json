@@ -3,18 +3,20 @@
     "PresentationConnection": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection",
+        "spec_url": "https://w3c.github.io/presentation-api/#interface-presentationconnection",
         "support": {
           "chrome": {
-            "version_added": "48"
+            "version_added": "47"
           },
           "chrome_android": {
-            "version_added": "48"
+            "version_added": "47"
           },
           "edge": {
-            "version_added": null
+            "version_added": "79"
           },
           "firefox": {
             "version_added": "51",
+            "version_removed": "88",
             "flags": [
               {
                 "type": "preference",
@@ -24,29 +26,22 @@
             ]
           },
           "firefox_android": {
-            "version_added": "51",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.presentation.enabled",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": false
           },
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": true
+            "version_added": "34"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "34"
           },
           "safari": {
-            "version_added": null
+            "version_added": false
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": false
           },
           "samsunginternet_android": {
             "version_added": "5.0"
@@ -64,18 +59,20 @@
       "binaryType": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/binaryType",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-binarytype",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -85,32 +82,25 @@
               ]
             },
             "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "5.0"
             },
             "webview_android": {
               "version_added": false
@@ -126,6 +116,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/close",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-close",
           "support": {
             "chrome": {
               "version_added": "49"
@@ -134,10 +125,11 @@
               "version_added": "49"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -147,7 +139,53 @@
               ]
             },
             "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "36"
+            },
+            "opera_android": {
+              "version_added": "36"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "close_event": {
+        "__compat": {
+          "description": "<code>close</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -156,20 +194,79 @@
                 }
               ]
             },
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "37"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "37"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "connect_event": {
+        "__compat": {
+          "description": "<code>connect</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "51",
+              "version_removed": "88",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.presentation.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "37"
+            },
+            "opera_android": {
+              "version_added": "37"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -188,18 +285,20 @@
       "id": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/id",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-id",
           "support": {
             "chrome": {
-              "version_added": "48"
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": "48"
+              "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -209,29 +308,22 @@
               ]
             },
             "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -247,21 +339,22 @@
           }
         }
       },
-      "onclose": {
+      "message_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/onclose",
+          "description": "<code>message</code> event",
           "support": {
             "chrome": {
-              "version_added": "50"
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": "50"
+              "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -271,215 +364,22 @@
               ]
             },
             "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
               "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onconnect": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/onconnect",
-          "support": {
-            "chrome": {
-              "version_added": "50"
-            },
-            "chrome_android": {
-              "version_added": "50"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/onmessage",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onterminate": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/onterminate",
-          "support": {
-            "chrome": {
-              "version_added": "50"
-            },
-            "chrome_android": {
-              "version_added": "50"
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -498,18 +398,20 @@
       "send": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/send",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-send",
           "support": {
             "chrome": {
-              "version_added": "48"
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": "48"
+              "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -519,29 +421,22 @@
               ]
             },
             "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -560,18 +455,20 @@
       "state": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/state",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-state",
           "support": {
             "chrome": {
-              "version_added": "48"
+              "version_added": "47"
             },
             "chrome_android": {
-              "version_added": "48"
+              "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -581,29 +478,22 @@
               ]
             },
             "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -622,18 +512,20 @@
       "terminate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/terminate",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-terminate",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "48"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "48"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -643,7 +535,53 @@
               ]
             },
             "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "35"
+            },
+            "opera_android": {
+              "version_added": "35"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "5.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "terminate_event": {
+        "__compat": {
+          "description": "<code>terminate</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": {
+              "version_added": "50"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -652,23 +590,26 @@
                 }
               ]
             },
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "37"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "37"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "5.0"
             },
             "webview_android": {
               "version_added": false
@@ -684,6 +625,7 @@
       "url": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PresentationConnection/url",
+          "spec_url": "https://w3c.github.io/presentation-api/#dom-presentationconnection-url",
           "support": {
             "chrome": {
               "version_added": "57"
@@ -692,10 +634,11 @@
               "version_added": "57"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "51",
+              "version_removed": "88",
               "flags": [
                 {
                   "type": "preference",
@@ -705,29 +648,22 @@
               ]
             },
             "firefox_android": {
-              "version_added": "51",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.presentation.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "44"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "7.0"

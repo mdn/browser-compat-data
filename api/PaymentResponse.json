@@ -3,32 +3,19 @@
     "PaymentResponse": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse",
+        "spec_url": "https://w3c.github.io/payment-request/#paymentresponse-interface",
         "support": {
           "chrome": {
+            "version_added": "60"
+          },
+          "chrome_android": {
             "version_added": "56"
           },
-          "chrome_android": [
-            {
-              "version_added": "56"
-            },
-            {
-              "version_added": "51",
-              "version_removed": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-payments",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            }
-          ],
           "edge": {
-            "version_added": true
+            "version_added": "15"
           },
           "firefox": {
             "version_added": "55",
-            "notes": "Available only in nightly builds.",
             "flags": [
               {
                 "type": "preference",
@@ -38,40 +25,27 @@
               {
                 "name": "dom.payments.request.supportedRegions",
                 "type": "preference",
-                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>."
+                "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
               }
             ]
           },
           "firefox_android": {
-            "version_added": "55",
-            "notes": "Available only in nightly builds.",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.payments.request.enabled",
-                "value_to_set": "true"
-              },
-              {
-                "name": "dom.payments.request.supportedRegions",
-                "type": "preference",
-                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>."
-              }
-            ]
+            "version_added": false
           },
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": false
+            "version_added": "47"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "43"
           },
           "safari": {
-            "version_added": true
+            "version_added": "11.1"
           },
           "safari_ios": {
-            "version_added": true
+            "version_added": "11.3"
           },
           "samsunginternet_android": {
             "version_added": "6.0"
@@ -89,66 +63,50 @@
       "complete": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentresponse-complete",
           "description": "<code>complete()</code>",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -167,65 +125,49 @@
       "details": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/details",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentresponse-details",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -244,118 +186,52 @@
       "methodName": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/methodName",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentresponse-methodname",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpayerdetailchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/onpayerdetailchange",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds."
-            },
-            "firefox_android": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -374,39 +250,49 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "78"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "78"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds."
+              "version_added": "55",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.payments.request.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds."
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "12.2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
               "version_added": false
@@ -414,8 +300,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -424,63 +310,46 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerEmail",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -491,8 +360,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -501,7 +370,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerName",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "58"
@@ -510,41 +379,37 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -555,8 +420,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -565,63 +430,46 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerPhone",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -632,17 +480,18 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "requestId": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/requestId",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentresponse-requestid",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "60"
@@ -651,41 +500,37 @@
               "version_added": "16"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -704,6 +549,7 @@
       "retry": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentresponse-retry",
           "support": {
             "chrome": {
               "version_added": "78"
@@ -712,30 +558,40 @@
               "version_added": "78"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds."
+              "version_added": "55",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.payments.request.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds."
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "10.0"
@@ -756,63 +612,46 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingAddress",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -823,8 +662,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -833,63 +672,46 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingOption",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
                   "name": "dom.payments.request.enabled",
                   "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
                 }
               ]
             },
             "firefox_android": {
-              "version_added": "56",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -900,8 +722,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -911,49 +733,46 @@
           "description": "<code>toJSON()</code>",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
-            "chrome_android": [
-              {
-                "version_added": "56"
-              },
-              {
-                "version_added": "55",
-                "version_removed": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#web-payments",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": {
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "62",
-              "notes": "Available only in nightly builds."
+              "version_added": "55",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.payments.request.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "name": "dom.payments.request.supportedRegions",
+                  "type": "preference",
+                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "62",
-              "notes": "Available only in nightly builds."
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "43"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "6.0"

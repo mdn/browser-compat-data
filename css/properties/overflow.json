@@ -4,6 +4,7 @@
       "overflow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow",
+          "spec_url": "https://drafts.csswg.org/css-overflow/#propdef-overflow",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -29,7 +30,7 @@
               "version_added": "7"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "1"
@@ -55,44 +56,64 @@
             "description": "<code>clip</code> value",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "90"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "90"
               },
               "edge": {
-                "version_added": false
+                "version_added": "90"
               },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox": [
+                {
+                  "version_added": "81"
+                },
+                {
+                  "alternative_name": "-moz-hidden-unscrollable",
+                  "version_added": "1.5",
+                  "version_removed": "81"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "81"
+                },
+                {
+                  "alternative_name": "-moz-hidden-unscrollable",
+                  "version_added": "4",
+                  "version_removed": "81"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "76"
               },
               "opera_android": {
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "CSS overflow: clip support"
+                  }
+                ]
               },
               "safari_ios": {
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "15.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "90"
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -109,7 +130,7 @@
                 "version_added": "68"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "61"

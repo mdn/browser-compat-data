@@ -4,15 +4,19 @@
       "rtt": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/rtt",
+          "spec_url": "https://wicg.github.io/netinfo/#rtt-request-header-field",
           "support": {
             "chrome": {
-              "version_added": "67"
+              "version_added": "67",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": {
-              "version_added": "67"
+              "version_added": "67",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "edge": {
-              "version_added": null
+              "version_added": "≤79",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "firefox": {
               "version_added": null
@@ -24,10 +28,12 @@
               "version_added": null
             },
             "opera": {
-              "version_added": "54"
+              "version_added": "54",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "opera_android": {
-              "version_added": "48"
+              "version_added": "48",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "safari": {
               "version_added": null
@@ -36,10 +42,12 @@
               "version_added": null
             },
             "samsunginternet_android": {
-              "version_added": "9.0"
+              "version_added": "9.0",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "webview_android": {
-              "version_added": "67"
+              "version_added": "67",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             }
           },
           "status": {

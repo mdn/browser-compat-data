@@ -4,6 +4,7 @@
       "style": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/style",
+          "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#the-style-element",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -265,7 +266,8 @@
                 "version_added": "12"
               },
               "firefox": {
-                "version_added": "1"
+                "version_added": "1",
+                "notes": "Before 75, Firefox accepted any CSS media (MIME) type, with optional parameters. Starting in 75, this has been restricted to the string 'text/css', per the spec."
               },
               "firefox_android": {
                 "version_added": "4"
@@ -295,7 +297,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         }

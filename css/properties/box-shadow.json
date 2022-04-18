@@ -4,6 +4,7 @@
       "box-shadow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/box-shadow",
+          "spec_url": "https://drafts.csswg.org/css-backgrounds/#box-shadow",
           "support": {
             "chrome": [
               {
@@ -41,17 +42,6 @@
               {
                 "prefix": "-webkit-",
                 "version_added": "49"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
               }
             ],
             "firefox_android": [
@@ -67,17 +57,6 @@
               {
                 "prefix": "-webkit-",
                 "version_added": "49"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
               }
             ],
             "ie": {
@@ -91,10 +70,16 @@
               "version_added": "10.5",
               "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
             },
-            "opera_android": {
-              "version_added": true,
-              "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
-            },
+            "opera_android": [
+              {
+                "version_added": "14",
+                "notes": "Shadows affect layout in this browser. For example, if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, then you'll see a scrollbar."
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "14"
+              }
+            ],
             "safari": [
               {
                 "version_added": "5.1",
@@ -198,9 +183,15 @@
               "opera": {
                 "version_added": "10.5"
               },
-              "opera_android": {
-                "version_added": true
-              },
+              "opera_android": [
+                {
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14"
+                }
+              ],
               "safari": [
                 {
                   "version_added": "5.1"
@@ -297,9 +288,15 @@
               "opera": {
                 "version_added": "10.5"
               },
-              "opera_android": {
-                "version_added": true
-              },
+              "opera_android": [
+                {
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14"
+                }
+              ],
               "safari": [
                 {
                   "version_added": "5.1"
@@ -396,9 +393,15 @@
               "opera": {
                 "version_added": "10.5"
               },
-              "opera_android": {
-                "version_added": true
-              },
+              "opera_android": [
+                {
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14"
+                }
+              ],
               "safari": [
                 {
                   "version_added": "5.1"

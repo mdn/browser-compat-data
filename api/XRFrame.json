@@ -3,6 +3,7 @@
     "XRFrame": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame",
+        "spec_url": "https://immersive-web.github.io/webxr/#xrframe-interface",
         "support": {
           "chrome": {
             "version_added": "79"
@@ -11,7 +12,7 @@
             "version_added": "79"
           },
           "edge": {
-            "version_added": false
+            "version_added": "79"
           },
           "firefox": {
             "version_added": false
@@ -35,7 +36,7 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": false
+            "version_added": "11.2"
           },
           "webview_android": {
             "version_added": false
@@ -47,19 +48,19 @@
           "deprecated": false
         }
       },
-      "getPose": {
+      "createAnchor": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getPose",
-          "description": "<code>getPose()</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/createAnchor",
+          "spec_url": "https://immersive-web.github.io/anchors/#dom-xrframe-createanchor",
           "support": {
             "chrome": {
-              "version_added": "79"
+              "version_added": "85"
             },
             "chrome_android": {
-              "version_added": "79"
+              "version_added": "85"
             },
             "edge": {
-              "version_added": false
+              "version_added": "85"
             },
             "firefox": {
               "version_added": false
@@ -83,7 +84,253 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
               "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getDepthInformation": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getDepthInformation",
+          "spec_url": "https://immersive-web.github.io/depth-sensing/#dom-xrframe-getdepthinformation",
+          "support": {
+            "chrome": {
+              "version_added": "90"
+            },
+            "chrome_android": {
+              "version_added": "90"
+            },
+            "edge": {
+              "version_added": "90"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "15.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getHitTestResults": {
+        "__compat": {
+          "spec_url": "https://immersive-web.github.io/hit-test/#dom-xrframe-gethittestresults",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getHitTestResults",
+          "support": {
+            "chrome": {
+              "version_added": "81"
+            },
+            "chrome_android": {
+              "version_added": "81"
+            },
+            "edge": {
+              "version_added": "81"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "13.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getHitTestResultsForTransientInput": {
+        "__compat": {
+          "spec_url": "https://immersive-web.github.io/hit-test/#dom-xrframe-gethittestresultsfortransientinput",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getHitTestResultsForTransientInput",
+          "support": {
+            "chrome": {
+              "version_added": "81"
+            },
+            "chrome_android": {
+              "version_added": "81"
+            },
+            "edge": {
+              "version_added": "81"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "13.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getLightEstimate": {
+        "__compat": {
+          "spec_url": "https://immersive-web.github.io/lighting-estimation/#dom-xrframe-getlightestimate",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getLightEstimate",
+          "support": {
+            "chrome": {
+              "version_added": "90"
+            },
+            "chrome_android": {
+              "version_added": "90"
+            },
+            "edge": {
+              "version_added": "90"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "15.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getPose": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getPose",
+          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrframe-getpose",
+          "description": "<code>getPose()</code>",
+          "support": {
+            "chrome": {
+              "version_added": "79"
+            },
+            "chrome_android": {
+              "version_added": "79"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "11.2"
             },
             "webview_android": {
               "version_added": false
@@ -99,6 +346,7 @@
       "getViewerPose": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/getViewerPose",
+          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrframe-getviewerpose",
           "description": "<code>getViewerPose()</code>",
           "support": {
             "chrome": {
@@ -108,7 +356,7 @@
               "version_added": "79"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -132,7 +380,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.2"
             },
             "webview_android": {
               "version_added": false
@@ -148,6 +396,7 @@
       "session": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/session",
+          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrframe-session",
           "support": {
             "chrome": {
               "version_added": "79"
@@ -156,7 +405,7 @@
               "version_added": "79"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -180,7 +429,56 @@
               "version_added": false
             },
             "samsunginternet_android": {
+              "version_added": "11.2"
+            },
+            "webview_android": {
               "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "trackedAnchors": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRFrame/trackedAnchors",
+          "spec_url": "https://immersive-web.github.io/anchors/#dom-xrframe-trackedanchors",
+          "support": {
+            "chrome": {
+              "version_added": "85"
+            },
+            "chrome_android": {
+              "version_added": "85"
+            },
+            "edge": {
+              "version_added": "85"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": false

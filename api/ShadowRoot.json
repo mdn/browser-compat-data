@@ -3,49 +3,23 @@
     "ShadowRoot": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot",
+        "spec_url": "https://dom.spec.whatwg.org/#interface-shadowroot",
         "support": {
           "chrome": {
-            "version_added": "57"
+            "version_added": "53"
           },
           "chrome_android": {
-            "version_added": "57"
+            "version_added": "53"
           },
           "edge": {
-            "version_added": false,
-            "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/?q=web%20components'>In Development</a>"
+            "version_added": "79"
           },
-          "firefox": [
-            {
-              "version_added": "63"
-            },
-            {
-              "version_added": "59",
-              "version_removed": "63",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.shadowdom.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "63"
-            },
-            {
-              "version_added": "59",
-              "version_removed": "63",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.shadowdom.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "63"
+          },
+          "firefox_android": {
+            "version_added": "63"
+          },
           "ie": {
             "version_added": false
           },
@@ -65,11 +39,11 @@
             "version_added": "6.0"
           },
           "webview_android": {
-            "version_added": "57"
+            "version_added": "53"
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -77,70 +51,22 @@
       "delegatesFocus": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/delegatesFocus",
+          "spec_url": "https://dom.spec.whatwg.org/#shadowroot-delegates-focus",
           "support": {
             "chrome": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": "94"
             },
             "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "7.0"
-            },
-            "webview_android": {
-              "version_added": "57"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "documentorshadowroot": {
-        "__compat": {
-          "description": "Features included from the <a href='https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot'><code>DocumentOrShadowRoot</code></a> mixin",
-          "support": {
-            "chrome": {
-              "version_added": "57"
-            },
-            "chrome_android": {
-              "version_added": "57"
-            },
-            "edge": {
-              "version_added": false,
-              "notes": "Features still implemented on the <a href='https://developer.mozilla.org/docs/Web/API/Document'>Document</a> interface"
-            },
-            "firefox": {
-              "version_added": "63"
-            },
-            "firefox_android": {
-              "version_added": "63"
+              "version_added": "94"
             },
             "ie": {
               "version_added": false
@@ -152,23 +78,68 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false,
-              "notes": "Features still implemented on the <a href='https://developer.mozilla.org/docs/Web/API/Document'>Document</a> interface"
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": false,
-              "notes": "Features still implemented on the <a href='https://developer.mozilla.org/docs/Web/API/Document'>Document</a> interface"
+              "version_added": "15"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
             },
             "webview_android": {
-              "version_added": "57"
+              "version_added": "53"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getSelection": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "53"
+            },
+            "chrome_android": {
+              "version_added": "53"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "40"
+            },
+            "opera_android": {
+              "version_added": "41"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "53"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -176,49 +147,23 @@
       "host": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/host",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-host",
           "support": {
             "chrome": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "edge": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>In Development</a>"
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -238,11 +183,11 @@
               "version_added": "6.0"
             },
             "webview_android": {
-              "version_added": "57"
+              "version_added": "53"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -251,49 +196,23 @@
       "innerHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/innerHTML",
+          "spec_url": "https://w3c.github.io/DOM-Parsing/#ref-for-dom-innerhtml-innerhtml-2",
           "support": {
             "chrome": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "edge": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>In Development</a>"
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -313,12 +232,12 @@
               "version_added": "6.0"
             },
             "webview_android": {
-              "version_added": "57"
+              "version_added": "53"
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -326,49 +245,23 @@
       "mode": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-mode",
           "support": {
             "chrome": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "chrome_android": {
-              "version_added": "57"
+              "version_added": "53"
             },
             "edge": {
-              "version_added": false,
-              "notes": "<a href='https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/'>In Development</a>"
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -388,11 +281,190 @@
               "version_added": "6.0"
             },
             "webview_android": {
-              "version_added": "57"
+              "version_added": "53"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "slotAssignment": {
+        "__compat": {
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-slotassignment",
+          "support": {
+            "chrome": {
+              "version_added": "86"
+            },
+            "chrome_android": {
+              "version_added": "86"
+            },
+            "edge": {
+              "version_added": "86"
+            },
+            "firefox": {
+              "version_added": "92"
+            },
+            "firefox_android": {
+              "version_added": "92"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "72"
+            },
+            "opera_android": {
+              "version_added": "61"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "86"
             }
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "slotchange_event": {
+        "__compat": {
+          "description": "<code>slotchange</code> event",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-onslotchange",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "63",
+                "version_removed": "93",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "83"
+              },
+              {
+                "version_added": "40",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "68"
+              },
+              {
+                "version_added": "41",
+                "version_removed": "68",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "14.1",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "10.3",
+                "version_removed": "14.5",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "samsunginternet_android": {
+              "version_added": "6.0",
+              "partial_implementation": true,
+              "notes": "The <code>onslotchange</code> event handler property is not supported."
+            },
+            "webview_android": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

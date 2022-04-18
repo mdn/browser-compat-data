@@ -3,6 +3,7 @@
     "MIDIAccess": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MIDIAccess",
+        "spec_url": "https://webaudio.github.io/web-midi-api/#midiaccess-interface",
         "support": {
           "chrome": {
             "version_added": "43"
@@ -11,22 +12,35 @@
             "version_added": "43"
           },
           "edge": {
-            "version_added": null
+            "version_added": "79"
           },
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "100"
+            },
+            {
+              "version_added": "97",
+              "version_removed": "100",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webmidi.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
-            "version_added": null
+            "version_added": false
           },
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": "33"
+            "version_added": "30"
           },
           "opera_android": {
-            "version_added": "33"
+            "version_added": "30"
           },
           "safari": {
             "version_added": false
@@ -42,7 +56,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -50,6 +64,7 @@
       "inputs": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MIDIAccess/inputs",
+          "spec_url": "https://webaudio.github.io/web-midi-api/#dom-midiaccess-inputs",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -58,22 +73,35 @@
               "version_added": "43"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webmidi.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
               "version_added": false
@@ -89,7 +117,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -98,6 +126,7 @@
       "outputs": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MIDIAccess/outputs",
+          "spec_url": "https://webaudio.github.io/web-midi-api/#dom-midiaccess-outputs",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -106,22 +135,35 @@
               "version_added": "43"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webmidi.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
               "version_added": false
@@ -137,7 +179,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -146,6 +188,7 @@
       "statechange_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event",
+          "spec_url": "https://webaudio.github.io/web-midi-api/#dom-midiaccess-onstatechange",
           "description": "<code>statechange</code> event",
           "support": {
             "chrome": {
@@ -155,22 +198,35 @@
               "version_added": "43"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webmidi.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "30"
             },
             "safari": {
               "version_added": false
@@ -186,7 +242,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -195,6 +251,7 @@
       "sysexEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MIDIAccess/sysexEnabled",
+          "spec_url": "https://webaudio.github.io/web-midi-api/#dom-midiaccess-sysexenabled",
           "support": {
             "chrome": {
               "version_added": "45"
@@ -203,22 +260,35 @@
               "version_added": "45"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webmidi.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "32"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "32"
             },
             "safari": {
               "version_added": false
@@ -234,7 +304,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
