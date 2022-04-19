@@ -137,7 +137,7 @@ if (require.main === module) {
   const { argv } = yargs.command(
     '$0 [ref1] [ref2]',
     'Compare the set of features at refA and refB',
-    yargs => {
+    (yargs) => {
       yargs
         .positional('ref1', {
           description: 'A Git ref (branch, tag, or commit)',

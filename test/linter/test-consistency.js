@@ -282,7 +282,7 @@ class ConsistencyChecker {
    */
   getVersionAdded(supportStatement) {
     // A convenience function to squash non-real values and previews into null
-    const resolveVersionAddedValue = statement =>
+    const resolveVersionAddedValue = (statement) =>
       [true, false, 'preview', null].includes(statement.version_added)
         ? null
         : statement.version_added;
