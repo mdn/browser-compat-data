@@ -8,21 +8,31 @@ const { Logger } = require('./utils.js');
 /**
  * @param {Identifier} data
  * @param {Logger} logger
+ * @param {string} path
  */
-function checkStatus(data, logger, path = []) {
-  const status = data.__compat?.status;
-  if (status && status.experimental && status.deprecated) {
-    logger.error(
-      chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
-        '.',
-      )}}`,
-    );
+function checkStatus(data, logger, path = '') {
+  const compat = data.__compat;
+  if (compat) {
+    const status = compat.status;
+    if (status) {
+      if (status.experimental && status.deprecated) {
+        logger.error(
+          chalk`{red → Unexpected simultaneous experimental and deprecated status in {bold ${path}}}`,
+        );
+      }
+    }
   }
+
+  // Check children
   for (const member in data) {
     if (member === '__compat') {
       continue;
     }
-    checkStatus(data[member], logger, [...path, member]);
+    checkStatus(
+      data[member],
+      logger,
+      path && path.length > 0 ? `${path}.${member}` : member,
+    );
   }
 }
 
@@ -34,7 +44,7 @@ function testStatus(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  const logger = new Logger('Flag consistency');
+  const logger = new Logger('Feature Status');
 
   checkStatus(data, logger);
 
