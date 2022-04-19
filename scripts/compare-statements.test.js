@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
-const compareStatements = require('../scripts/compare-statements');
+const compareStatements = require('./compare-statements');
 
 const tests = [
   {
