@@ -1,5 +1,70 @@
 # Release notes
 
+## [v4.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.16)
+
+April 12, 2022
+
+### Removals
+
+- `api.NodeIterator.expandEntityReferences` ([#15773](https://github.com/mdn/browser-compat-data/pull/15773))
+- `api.TreeWalker.expandEntityReferences` ([#15773](https://github.com/mdn/browser-compat-data/pull/15773))
+- `css.properties.align-content.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.align-items.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.align-self.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.display.xul_box_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_deck_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_grid_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_inline_grid_stack` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_popup_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_stack_value` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+
+### Statistics
+
+- 16 contributors have changed 83 files with 516 additions and 1,327 deletions in 24 commits ([`v4.1.15...v4.1.16`](https://github.com/mdn/browser-compat-data/compare/v4.1.15...v4.1.16))
+- 13,293 total features
+- 865 total contributors
+- 3,975 total stargazers
+
+## [v4.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.15)
+
+April 5, 2022
+
+### Removals
+
+- `api.ServiceWorkerMessageEvent` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerMessageEvent.data` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerMessageEvent.lastEventId` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerMessageEvent.origin` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerMessageEvent.ports` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerMessageEvent.ServiceWorkerMessageEvent` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerMessageEvent.source` ([#15590](https://github.com/mdn/browser-compat-data/pull/15590))
+- `api.ServiceWorkerRegistration.onupdatefound` ([#15549](https://github.com/mdn/browser-compat-data/pull/15549))
+- `api.ShadowRoot.onslotchange` ([#15201](https://github.com/mdn/browser-compat-data/pull/15201))
+
+### Additions
+
+- `api.AbortSignal.timeout` ([#15644](https://github.com/mdn/browser-compat-data/pull/15644))
+- `api.HIDDevice.forget` ([#15587](https://github.com/mdn/browser-compat-data/pull/15587))
+- `api.ServiceWorkerRegistration.updatefound_event` ([#15549](https://github.com/mdn/browser-compat-data/pull/15549))
+- `api.ShadowRoot.slotchange_event` ([#15201](https://github.com/mdn/browser-compat-data/pull/15201))
+- `api.USBDevice.forget` ([#15597](https://github.com/mdn/browser-compat-data/pull/15597))
+- `css.properties.mix-blend-mode.plus-lighter` ([#15585](https://github.com/mdn/browser-compat-data/pull/15585))
+- `javascript.builtins.WebAssembly.Exception` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `javascript.builtins.WebAssembly.Exception.Exception` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `javascript.builtins.WebAssembly.Exception.getArg` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `javascript.builtins.WebAssembly.Exception.is` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `javascript.builtins.WebAssembly.Tag` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `javascript.builtins.WebAssembly.Tag.Tag` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `javascript.builtins.WebAssembly.Tag.type` ([#14910](https://github.com/mdn/browser-compat-data/pull/14910))
+- `webextensions.api.menus.overrideContext` ([#15642](https://github.com/mdn/browser-compat-data/pull/15642))
+
+### Statistics
+
+- 11 contributors have changed 40 files with 1,521 additions and 841 deletions in 27 commits ([`v4.1.14...v4.1.15`](https://github.com/mdn/browser-compat-data/compare/v4.1.14...v4.1.15))
+- 13,304 total features
+- 860 total contributors
+- 3,958 total stargazers
+
 ## [v4.1.14](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.14)
 
 March 29, 2022
