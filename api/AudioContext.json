@@ -57,14 +57,26 @@
               "prefix": "webkit"
             }
           ],
-          "safari": {
-            "version_added": "6",
-            "prefix": "webkit"
-          },
-          "safari_ios": {
-            "version_added": "6",
-            "prefix": "webkit"
-          },
+          "safari": [
+            {
+              "version_added": "14.1"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.1",
+              "prefix": "webkit"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "14.5"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.5",
+              "prefix": "webkit"
+            }
+          ],
           "samsunginternet_android": [
             {
               "version_added": "3.0"
@@ -102,7 +114,7 @@
               {
                 "version_added": "35",
                 "notes": [
-                  "Prior to Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "Before Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                   "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
@@ -116,7 +128,7 @@
               {
                 "version_added": "35",
                 "notes": [
-                  "Prior to Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "Before Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                   "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
@@ -142,7 +154,7 @@
               {
                 "version_added": "22",
                 "notes": [
-                  "Prior to Opera 53, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "Before Opera 53, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                   "If <code>latencyHint</code> isn't valid, Opera throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
@@ -156,7 +168,7 @@
               {
                 "version_added": "22",
                 "notes": [
-                  "Prior to Opera Android 47, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "Before Opera Android 47, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                   "If <code>latencyHint</code> isn't valid, Opera throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
@@ -166,19 +178,29 @@
                 "prefix": "webkit"
               }
             ],
-            "safari": {
-              "version_added": "6.1",
-              "prefix": "webkit"
-            },
-            "safari_ios": {
-              "version_added": "6.1",
-              "prefix": "webkit"
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
             "samsunginternet_android": [
               {
                 "version_added": "3.0",
                 "notes": [
-                  "Prior to Samsung Internet 9.0, each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "Before Samsung Internet 9.0, each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                   "If <code>latencyHint</code> isn't valid, Samsung Internet throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
@@ -192,7 +214,7 @@
               {
                 "version_added": "37",
                 "notes": [
-                  "Prior to WebView 66, each tab is limited to 6 audio contexts in WebView; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "Before WebView 66, each tab is limited to 6 audio contexts in WebView; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
                   "If <code>latencyHint</code> isn't valid, WebView throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
@@ -209,9 +231,10 @@
             "deprecated": false
           }
         },
-        "latencyHint": {
+        "options_latencyHint_parameter": {
           "__compat": {
-            "description": "<code>latencyHint</code> option",
+            "description": "<code>options.latencyHint</code> parameter",
+            "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-latencyhint",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -223,10 +246,10 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "61"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "61"
               },
               "ie": {
                 "version_added": false
@@ -238,10 +261,12 @@
                 "version_added": "44"
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/214258'>bug 214258</a>."
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/214258'>bug 214258</a>."
               },
               "samsunginternet_android": {
                 "version_added": "8.0"
@@ -251,15 +276,16 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
           }
         },
-        "sampleRate": {
+        "options_sampleRate_parameter": {
           "__compat": {
-            "description": "<code>sampleRate</code> option",
+            "description": "<code>options.sampleRate</code> parameter",
+            "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-samplerate",
             "support": {
               "chrome": {
                 "version_added": "74"
@@ -271,25 +297,25 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "61"
               },
               "firefox_android": {
-                "version_added": null
+                "version_added": "61"
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "62"
               },
               "opera_android": {
-                "version_added": null
+                "version_added": "53"
               },
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "14.5"
               },
               "samsunginternet_android": {
                 "version_added": "11.0"
@@ -299,7 +325,7 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -324,7 +350,7 @@
               "version_added": "70"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -336,10 +362,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -379,10 +405,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "29"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
               "version_added": "9"
@@ -486,7 +512,7 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -535,7 +561,7 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -620,7 +646,7 @@
               "version_added": "70"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -632,10 +658,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -669,7 +695,7 @@
               "version_added": "70"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -718,16 +744,16 @@
               "version_added": "40"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "40"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "28"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "28"
             },
             "safari": {
               "version_added": "9"
@@ -773,10 +799,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "30"
             },
             "safari": {
               "version_added": "9"

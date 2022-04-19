@@ -17,8 +17,6 @@ describe('lowLevelWalk()', function () {
       'svg',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     ];
 
     const steps = Array.from(lowLevelWalk(undefined, undefined, 1));

@@ -3,6 +3,7 @@
     "ReadableByteStreamController": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController",
+        "spec_url": "https://streams.spec.whatwg.org/#rbs-controller-class",
         "support": {
           "chrome": {
             "version_added": "89"
@@ -10,11 +11,29 @@
           "chrome_android": {
             "version_added": "89"
           },
+          "deno": [
+            {
+              "version_added": "1.11"
+            },
+            {
+              "version_added": "1.0",
+              "version_removed": "1.11",
+              "partial_implementation": true,
+              "notes": "<code>ReadableByteStreamController</code> is not exposed on the global scope."
+            }
+          ],
           "edge": {
             "version_added": "89"
           },
           "firefox": {
-            "version_added": false
+            "version_added": "99",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.streams.byte_streams.enabled",
+                "value_to_set": "true"
+              }
+            ]
           },
           "firefox_android": {
             "version_added": false
@@ -22,11 +41,18 @@
           "ie": {
             "version_added": false
           },
+          "nodejs": {
+            "version_added": "16.5.0",
+            "notes": [
+              "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
+              "Experimental implementation."
+            ]
+          },
           "opera": {
             "version_added": "75"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "63"
           },
           "safari": {
             "version_added": false
@@ -35,7 +61,7 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": false
+            "version_added": "15.0"
           },
           "webview_android": {
             "version_added": "89"
@@ -50,6 +76,7 @@
       "byobRequest": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/byobRequest",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rbs-controller-byob-request②",
           "support": {
             "chrome": {
               "version_added": "89"
@@ -57,11 +84,21 @@
             "chrome_android": {
               "version_added": "89"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -69,11 +106,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
               "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -82,7 +122,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
               "version_added": "89"
@@ -98,6 +138,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/close",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rbs-controller-close①",
           "support": {
             "chrome": {
               "version_added": "89"
@@ -105,11 +146,21 @@
             "chrome_android": {
               "version_added": "89"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -117,11 +168,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
               "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -130,7 +184,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
               "version_added": "89"
@@ -146,6 +200,7 @@
       "desiredSize": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/desiredSize",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rbs-controller-desired-size②",
           "support": {
             "chrome": {
               "version_added": "89"
@@ -153,11 +208,21 @@
             "chrome_android": {
               "version_added": "89"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -165,11 +230,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
               "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -178,7 +246,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
               "version_added": "89"
@@ -194,6 +262,7 @@
       "enqueue": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/enqueue",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rbs-controller-enqueue①",
           "support": {
             "chrome": {
               "version_added": "89"
@@ -201,11 +270,21 @@
             "chrome_android": {
               "version_added": "89"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -213,11 +292,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
               "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -226,7 +308,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
               "version_added": "89"
@@ -242,6 +324,7 @@
       "error": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/error",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rbs-controller-error①",
           "support": {
             "chrome": {
               "version_added": "89"
@@ -249,11 +332,21 @@
             "chrome_android": {
               "version_added": "89"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -261,11 +354,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
               "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -274,7 +370,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
               "version_added": "89"

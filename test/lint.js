@@ -20,7 +20,6 @@ const {
   testVersions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testCompareFeatures = require('./test-compare-features');
 const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
 
@@ -28,8 +27,7 @@ const argv = yargs
   .alias('version', 'v')
   .usage('$0 [[--] files...]', false, yargs => {
     return yargs.positional('files...', {
-      description:
-        'The files to lint (leave blank to test everything, can also be "globals" to test only core features)',
+      description: 'The files to lint (leave blank to test everything)',
       type: 'string',
     });
   })
@@ -135,65 +133,9 @@ const load = (...files) => {
 };
 
 /**
- * Run a specified test function and return whether the function had any errors
- *
- * @param {string} testName The name of the test (for output purposes)
- * @param {Function} test The test function
- * @returns {boolean} Whether the test has errors
- */
-const testGlobal = (testName, test) => {
-  let globalHasErrors = false;
-
-  const console_error = console.error;
-  console.error = (...args) => {
-    if (!globalHasErrors) {
-      globalHasErrors = true;
-      spinner['stream'] = process.stderr;
-      spinner.fail(chalk.red.bold(`${testName}()`));
-    }
-    console_error(...args);
-  };
-
-  spinner.text = `${testName}()`;
-
-  if (!IS_CI) {
-    // Continuous integration environments don't allow overwriting
-    // previous lines using VT escape sequences, which is how
-    // the spinner animation is implemented.
-    spinner.start();
-  }
-
-  test();
-
-  if (globalHasErrors) {
-    filesWithErrors += 1;
-    spinner.fail();
-  } else {
-    spinner.succeed();
-  }
-
-  return globalHasErrors;
-};
-
-/**
- * Test for errors in any non-file ("global") tests
- *
- * @returns {boolean} Whether any globals had errors
- */
-const testGlobals = () => {
-  let hasErrors = false;
-
-  hasErrors = testGlobal('compare-features', testCompareFeatures) || hasErrors;
-  hasErrors = testGlobal('migrations', testMigrations) || hasErrors;
-  hasErrors = testGlobal('format', testFormat) || hasErrors;
-
-  return hasErrors;
-};
-
-/**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
  *
- * @param {?string} files The file(s) and/or folder(s) to test, or "globals" to test non-file tests.  Leave null for everything.
+ * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
  * @returns {boolean} Whether there were any errors
  */
 const main = files => {
@@ -201,9 +143,7 @@ const main = files => {
   var hasErrors = false;
 
   if (files) {
-    if (files != 'globals') {
-      hasErrors = load(...files);
-    }
+    hasErrors = load(...files);
   } else {
     hasErrors = load(
       'api',
@@ -216,13 +156,7 @@ const main = files => {
       'mathml',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     );
-  }
-
-  if (!files || files == 'globals') {
-    hasErrors = testGlobals() || hasErrors;
   }
 
   if (hasErrors) {

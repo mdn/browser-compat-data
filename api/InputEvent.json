@@ -3,6 +3,10 @@
     "InputEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent",
+        "spec_url": [
+          "https://w3c.github.io/input-events/#interface-InputEvent",
+          "https://w3c.github.io/uievents/#interface-inputevent"
+        ],
         "support": {
           "chrome": {
             "version_added": "60"
@@ -50,6 +54,7 @@
       "InputEvent": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent",
+          "spec_url": "https://w3c.github.io/uievents/#dom-inputevent-inputevent",
           "description": "<code>InputEvent()</code> constructor",
           "support": {
             "chrome": {
@@ -77,10 +82,14 @@
               "version_added": "44"
             },
             "safari": {
-              "version_added": "10.1"
+              "version_added": "10.1",
+              "partial_implementation": true,
+              "notes": "The <code>inputEventInit</code> parameter is not supported. See <a href='https://webkit.org/b/170416'>bug 170416</a>."
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": "10.3",
+              "partial_implementation": true,
+              "notes": "The <code>inputEventInit</code> parameter is not supported. See <a href='https://webkit.org/b/170416'>bug 170416</a>."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -99,6 +108,7 @@
       "data": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent/data",
+          "spec_url": "https://w3c.github.io/input-events/#dfn-data",
           "support": {
             "chrome": {
               "version_added": "60"
@@ -147,6 +157,7 @@
       "dataTransfer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent/dataTransfer",
+          "spec_url": "https://w3c.github.io/input-events/#dom-inputevent-datatransfer",
           "support": {
             "chrome": {
               "version_added": "60"
@@ -195,6 +206,7 @@
       "getTargetRanges": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent/getTargetRanges",
+          "spec_url": "https://w3c.github.io/input-events/#dom-inputevent-gettargetranges",
           "support": {
             "chrome": {
               "version_added": "60"
@@ -221,22 +233,9 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "87"
-              },
-              {
-                "version_added": "79",
-                "version_removed": "87",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.input_events.beforeinput.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "87"
+            },
             "ie": {
               "version_added": false
             },
@@ -269,6 +268,7 @@
       "inputType": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent/inputType",
+          "spec_url": "https://w3c.github.io/uievents/#dom-inputevent-inputtype",
           "support": {
             "chrome": {
               "version_added": "60"
@@ -342,10 +342,10 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
                 "version_added": false
@@ -365,6 +365,7 @@
       "isComposing": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/InputEvent/isComposing",
+          "spec_url": "https://w3c.github.io/uievents/#dom-inputevent-iscomposing",
           "support": {
             "chrome": {
               "version_added": "60"

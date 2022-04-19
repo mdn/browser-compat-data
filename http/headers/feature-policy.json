@@ -15,26 +15,40 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.featurePolicy.header.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.featurePolicy.header.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "74",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              },
+              {
+                "version_added": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.featurePolicy.header.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "79",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              },
+              {
+                "version_added": "65",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.featurePolicy.header.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -62,7 +76,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -70,37 +84,16 @@
         "accelerometer": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/accelerometer",
-            "spec_url": "https://w3c.github.io/permissions/#accelerometer",
+            "spec_url": "https://w3c.github.io/accelerometer/#ref-for-policy-controlled-feature",
             "support": {
               "chrome": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "chrome_android": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false
@@ -112,24 +105,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "54"
               },
               "opera_android": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "48"
               },
               "safari": {
                 "version_added": false
@@ -138,10 +117,10 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "9.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "67"
               }
             },
             "status": {
@@ -154,37 +133,16 @@
         "ambient-light-sensor": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/ambient-light-sensor",
-            "spec_url": "https://w3c.github.io/permissions/#ambient-light-sensor",
+            "spec_url": "https://w3c.github.io/ambient-light/#ref-for-policy-controlled-feature",
             "support": {
               "chrome": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "chrome_android": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false
@@ -196,24 +154,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "54"
               },
               "opera_android": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "48"
               },
               "safari": {
                 "version_added": false
@@ -222,10 +166,10 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "9.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "67"
               }
             },
             "status": {
@@ -238,6 +182,7 @@
         "autoplay": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/autoplay",
+            "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#autoplay-feature",
             "support": {
               "chrome": {
                 "version_added": "64"
@@ -352,7 +297,7 @@
         "camera": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/camera",
-            "spec_url": "https://w3c.github.io/permissions/#media-devices",
+            "spec_url": "https://w3c.github.io/mediacapture-main/#dfn-camera",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -363,26 +308,40 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "74",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -406,7 +365,7 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -415,51 +374,50 @@
         "display-capture": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/display-capture",
-            "spec_url": [
-              "https://w3c.github.io/mediacapture-screen-share/#permissions-policy-integration",
-              "https://w3c.github.io/permissions/#screen-capture"
-            ],
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#permissions-policy-integration",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "94"
               },
               "chrome_android": {
                 "version_added": false
               },
               "edge": {
-                "version_added": false
+                "version_added": "94"
               },
-              "firefox": {
-                "version_added": "67",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "74",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "67",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
-                "version_added": "67",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": false
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "80"
               },
               "opera_android": {
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "13",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
               },
               "safari_ios": {
                 "version_added": false
@@ -472,7 +430,7 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -481,7 +439,7 @@
         "document-domain": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/document-domain",
-            "spec_url": "https://html.spec.whatwg.org/multipage/#document-domain-feature",
+            "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#document-domain-feature",
             "support": {
               "chrome": {
                 "version_added": "77"
@@ -618,27 +576,48 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": {
-                "version_added": "65",
-                "notes": "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "74",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                    "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present."
+                  ]
+                },
+                {
+                  "version_added": "65",
+                  "notes": "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                    "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present."
+                  ]
+                },
+                {
+                  "version_added": "65",
+                  "notes": "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -662,6 +641,119 @@
               }
             },
             "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "gamepad": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/gamepad",
+            "spec_url": "https://w3c.github.io/gamepad/#permission-policy",
+            "support": {
+              "chrome": {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#restrict-gamepad-access",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#restrict-gamepad-access",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "edge": {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#restrict-gamepad-access",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "firefox": [
+                {
+                  "version_added": "91",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                    "The default allowlist is <code>*</code> instead of <code>self</code> (as required by the specification)."
+                  ]
+                },
+                {
+                  "version_added": "91",
+                  "notes": "The default allowlist is <code>*</code> instead of <code>self</code> (as required by the specification).",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "91",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                    "The default allowlist is <code>*</code> instead of <code>self</code> (as required by the specification)."
+                  ]
+                },
+                {
+                  "version_added": "91",
+                  "notes": "The default allowlist is <code>*</code> instead of <code>self</code> (as required by the specification).",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "72",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#restrict-gamepad-access",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
               "experimental": true,
               "standard_track": true,
               "deprecated": false
@@ -671,7 +763,7 @@
         "geolocation": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/geolocation",
-            "spec_url": "https://w3c.github.io/permissions/#geolocation",
+            "spec_url": "https://w3c.github.io/geolocation-api/#dfn-geolocation",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -682,26 +774,40 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "74",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -734,37 +840,16 @@
         "gyroscope": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/gyroscope",
-            "spec_url": "https://w3c.github.io/permissions/#gyroscope",
+            "spec_url": "https://w3c.github.io/gyroscope/#ref-for-policy-controlled-feature",
             "support": {
               "chrome": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "chrome_android": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false
@@ -776,24 +861,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "54"
               },
               "opera_android": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "48"
               },
               "safari": {
                 "version_added": false
@@ -802,10 +873,10 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "9.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "67"
               }
             },
             "status": {
@@ -858,7 +929,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -868,34 +939,13 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/legacy-image-formats",
             "support": {
               "chrome": {
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "firefox": {
                 "version_added": false
@@ -907,24 +957,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -941,7 +977,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -949,37 +985,16 @@
         "magnetometer": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/magnetometer",
-            "spec_url": "https://w3c.github.io/permissions/#magnetometer",
+            "spec_url": "https://w3c.github.io/magnetometer/#ref-for-policy-controlled-feature",
             "support": {
               "chrome": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "chrome_android": {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "67"
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false
@@ -991,24 +1006,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "54"
               },
               "opera_android": {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "48"
               },
               "safari": {
                 "version_added": false
@@ -1017,7 +1018,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "9.0"
               },
               "webview_android": {
                 "version_added": false
@@ -1033,7 +1034,7 @@
         "microphone": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/microphone",
-            "spec_url": "https://w3c.github.io/permissions/#media-devices",
+            "spec_url": "https://w3c.github.io/mediacapture-main/#dfn-microphone",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -1044,26 +1045,40 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "74",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "65",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -1087,7 +1102,7 @@
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1096,7 +1111,7 @@
         "midi": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi",
-            "spec_url": "https://w3c.github.io/permissions/#midi",
+            "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-policy-integration",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -1161,34 +1176,13 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/oversized-images",
             "support": {
               "chrome": {
-                "version_added": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "firefox": {
                 "version_added": false
@@ -1200,24 +1194,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "50",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -1234,7 +1214,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -1242,6 +1222,7 @@
         "payment": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/payment",
+            "spec_url": "https://w3c.github.io/payment-request/#permissions-policy",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -1304,6 +1285,7 @@
         "picture-in-picture": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/picture-in-picture",
+            "spec_url": "https://w3c.github.io/picture-in-picture/#feature-policy",
             "support": {
               "chrome": {
                 "version_added": "71"
@@ -1385,10 +1367,126 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "14.0"
               },
               "webview_android": {
                 "version_added": "84"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "screen-wake-lock": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/screen-wake-lock",
+            "spec_url": "https://w3c.github.io/screen-wake-lock/#policy-control",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "speaker-selection": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/speaker-selection",
+            "spec_url": "https://w3c.github.io/mediacapture-output/#permissions-policy-integration",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "92",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.setsinkid.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": "92",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.setsinkid.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
               }
             },
             "status": {
@@ -1451,34 +1549,13 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/unoptimized-images",
             "support": {
               "chrome": {
-                "version_added": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "firefox": {
                 "version_added": false
@@ -1490,24 +1567,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "60",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "50",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -1524,7 +1587,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -1534,34 +1597,13 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/unsized-media",
             "support": {
               "chrome": {
-                "version_added": "66",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": "66",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "firefox": {
                 "version_added": false
@@ -1573,24 +1615,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "53",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "47",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-productivity-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -1599,7 +1627,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": "9.0"
+                "version_added": false
               },
               "webview_android": {
                 "version_added": false
@@ -1607,7 +1635,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -1651,162 +1679,6 @@
                 "version_added": "8.0"
               },
               "webview_android": {
-                "version_added": "60"
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "vibrate": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vibrate",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
-        "vr": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/vr",
-            "support": {
-              "chrome": {
-                "version_added": "62",
-                "version_removed": "80",
-                "notes": "WebVR API was never enabled by default in any production builds and was replaced by WebXR Device API."
-              },
-              "chrome_android": {
-                "version_added": "62",
-                "version_removed": "80",
-                "notes": "WebVR API was never enabled by default in any production builds and was replaced by WebXR Device API."
-              },
-              "edge": {
-                "version_added": "79",
-                "version_removed": "80",
-                "notes": "WebVR API was never enabled by default in any production builds and was replaced by WebXR Device API."
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": "49",
-                "version_removed": "67",
-                "notes": "WebVR API was never enabled by default in any production builds and was replaced by WebXR Device API."
-              },
-              "opera_android": {
-                "version_added": "46",
-                "version_removed": true,
-                "notes": "WebVR API was never enabled by default in any production builds and was replaced by WebXR Device API."
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": "8.0",
-                "version_removed": true,
-                "notes": "WebVR API was never enabled by default in any production builds and was replaced by WebXR Device API."
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
-        "wake-lock": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/wake-lock",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
                 "version_added": false
               }
             },
@@ -1831,28 +1703,44 @@
               "edge": {
                 "version_added": false
               },
-              "firefox": {
-                "version_added": "81",
-                "notes": "Firefox recognizes the <code>web-share</code> permissions policy, but this has no effect in versions of Firefox that do not support the <a href='https://developer.mozilla.org/docs/Web/API/Navigator/share'><code>share()</code></a> method.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": "81",
-                "notes": "Firefox recognizes the <code>web-share</code> permissions policy, but this has no effect in versions of Firefox that do not support the <a href='https://developer.mozilla.org/docs/Web/API/Navigator/share'><code>share()</code></a> method.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "81",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                    "Firefox recognizes the <code>web-share</code> permissions policy, but this has no effect in versions of Firefox that do not support the <a href='https://developer.mozilla.org/docs/Web/API/Navigator/share'><code>share()</code></a> method."
+                  ]
+                },
+                {
+                  "version_added": "81",
+                  "notes": "Firefox recognizes the <code>web-share</code> permissions policy, but this has no effect in versions of Firefox that do not support the <a href='https://developer.mozilla.org/docs/Web/API/Navigator/share'><code>share()</code></a> method.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "81",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "81",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.security.featurePolicy.header.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -1918,7 +1806,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "12.0"
               },
               "webview_android": {
                 "version_added": false
