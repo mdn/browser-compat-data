@@ -16,7 +16,6 @@ const {
   testDescriptions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
 
 /** @type {Map<string, string>} */
@@ -155,7 +154,6 @@ var hasErrors = argv.files
       'webdriver',
       'webextensions',
     );
-hasErrors = testMigrations() || hasErrors;
 hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
