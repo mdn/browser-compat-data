@@ -41,8 +41,8 @@ const compareStatements = (a, b) => {
 
   if (typeof a.version_added == 'string' && typeof b.version_added == 'string')
     return compareVersions(
-      a.version_added.replace('≤', ''),
       b.version_added.replace('≤', ''),
+      a.version_added.replace('≤', ''),
     );
 
   return 1;
