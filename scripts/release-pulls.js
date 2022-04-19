@@ -1,4 +1,8 @@
-const { getRefDate, releaseYargsBuilder } = require('./release-utils');
+const {
+  buildQuery,
+  getRefDate,
+  releaseYargsBuilder,
+} = require('./release-utils');
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
@@ -34,20 +38,6 @@ function queryToURL(query) {
   const searchUrl = new URL(pullsBaseURL);
   searchUrl.search = `q=${query}`;
   return searchUrl.href;
-}
-
-function buildQuery(endRef, startRef, urlSafe) {
-  let merged;
-  if (!['HEAD', 'main'].includes(endRef)) {
-    merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
-      endRef,
-      true,
-    )}`;
-  } else {
-    merged = `merged:>=${getRefDate(startRef, urlSafe)}`;
-  }
-
-  return `is:pr ${merged}`;
 }
 
 function appendLabel(query) {
