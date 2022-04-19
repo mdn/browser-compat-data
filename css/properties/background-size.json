@@ -4,6 +4,7 @@
       "background-size": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/background-size",
+          "spec_url": "https://drafts.csswg.org/css-backgrounds/#the-background-size",
           "support": {
             "chrome": [
               {
@@ -25,9 +26,15 @@
                 "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
               }
             ],
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "12"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "12"
+              }
+            ],
             "firefox": [
               {
                 "version_added": "4"
@@ -118,7 +125,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "2.3"
+                "version_added": "2.2"
               },
               {
                 "version_added": "≤37",

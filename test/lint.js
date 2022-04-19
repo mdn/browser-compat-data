@@ -16,8 +16,6 @@ const {
   testDescriptions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testCompareFeatures = require('./test-compare-features');
-const testCompareStatements = require('./test-compare-statements');
 const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
 
@@ -156,11 +154,7 @@ var hasErrors = argv.files
       'mathml',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testCompareStatements() || hasErrors;
 hasErrors = testMigrations() || hasErrors;
 hasErrors = testFormat() || hasErrors;
 
