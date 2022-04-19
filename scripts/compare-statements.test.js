@@ -101,8 +101,8 @@ function orderStatements(key, value) {
   return value;
 }
 
-describe('compare-features script', () => {
-  it('`compareFeatures()` works correctly', () => {
+describe('compare-statements script', () => {
+  it('`compareStatements()` works correctly', () => {
     for (const test of tests) {
       let expected = test.output;
       let actual = JSON.parse(JSON.stringify(test.output), orderStatements);
