@@ -61,6 +61,6 @@ Now that you have created the PR and gotten the applicable review, you may now p
 
 3. Click **Publish release** to create the tag and trigger the workflow that publishes to npm. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
 
-4. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly.
+4. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly. Note that this may take a while.
 
 The package is now published and you have finished releasing BCD! 🎉
