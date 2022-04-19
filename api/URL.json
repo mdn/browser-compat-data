@@ -159,16 +159,26 @@
             "opera_android": {
               "version_added": "14"
             },
-            "safari": {
-              "version_added": "6",
-              "partial_implementation": true,
-              "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
-            },
-            "safari_ios": {
-              "version_added": "6",
-              "partial_implementation": true,
-              "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -235,7 +245,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -669,11 +679,11 @@
             },
             "firefox": {
               "version_added": "22",
-              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
             },
             "firefox_android": {
               "version_added": "22",
-              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
             },
             "ie": {
               "version_added": false
@@ -868,7 +878,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -893,11 +903,11 @@
             },
             "firefox": {
               "version_added": "22",
-              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
             },
             "firefox_android": {
               "version_added": "22",
-              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
             },
             "ie": {
               "version_added": false
