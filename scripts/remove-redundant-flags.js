@@ -74,7 +74,7 @@ const removeRedundantFlags = (key, value, limitBrowser) => {
           if (supportData[i].flags) {
             const versionToCheck = getEarliestVersion(
               supportData[i].version_removed ||
-                (simpleStatement && supportData[i].version_added),
+                (simpleStatement && simpleStatement.version_added),
               simpleStatement && simpleStatement.version_added,
             );
 

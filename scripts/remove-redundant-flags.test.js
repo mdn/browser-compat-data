@@ -374,6 +374,64 @@ const tests = [
       },
     },
   },
+  {
+    input: {
+      test8: {
+        __compat: {
+          support: {
+            chrome: [
+              {
+                version_added: '86',
+              },
+              {
+                version_added: '21',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: '#service-worker-payment-apps',
+                    value_to_set: 'Enabled',
+                  },
+                ],
+              },
+            ],
+          },
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+    output: {
+      test8: {
+        __compat: {
+          support: {
+            chrome: [
+              {
+                version_added: '86',
+              },
+              {
+                version_added: '21',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: '#service-worker-payment-apps',
+                    value_to_set: 'Enabled',
+                  },
+                ],
+              },
+            ],
+          },
+          status: {
+            experimental: true,
+            standard_track: false,
+            deprecated: false,
+          },
+        },
+      },
+    },
+  },
 ];
 
 describe('remove-redundant-flags', () => {
