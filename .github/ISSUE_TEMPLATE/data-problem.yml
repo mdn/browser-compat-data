@@ -1,10 +1,3 @@
-<!-- Tips: where applicable, specify browser name, browser version, and mobile operating system version -->
-
-#### What information was incorrect, unhelpful, or incomplete?
-#### What did you expect to see?
-#### Did you test this? If so, how?
-#### Can you link to any release notes, bugs, pull requests, or MDN pages related to this?
-
 name: "Data problem"
 title: "<NAME THE FEATURE> - <SUMMARIZE THE PROBLEM>"
 description: Report incorrect, incomplete, or missing data
@@ -39,10 +32,10 @@ body:
       label: What information was incorrect, unhelpful, or incomplete?
     validations:
       required: true
-  - type: dropdown
+  - type: checkboxes
     id: browsers
     attributes:
-      label: What browsers does this problem apply to
+      label: What browsers does this problem apply to, if applicable?
       multiple: true
       options:
         - Chromium (Chrome, Edge, Opera, Samsung Internet)
