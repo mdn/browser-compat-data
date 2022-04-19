@@ -3,6 +3,7 @@
     "SpeechSynthesisErrorEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent",
+        "spec_url": "https://wicg.github.io/speech-api/#speechsynthesiserrorevent",
         "support": {
           "chrome": {
             "version_added": "33"
@@ -16,22 +17,9 @@
           "firefox": {
             "version_added": "49"
           },
-          "firefox_android": [
-            {
-              "version_added": "62"
-            },
-            {
-              "version_added": "61",
-              "version_removed": "62",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.synth.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox_android": {
+            "version_added": "62"
+          },
           "ie": {
             "version_added": false
           },
@@ -52,18 +40,68 @@
           },
           "webview_android": {
             "version_added": false,
-            "notes": "See <a href='https://crbug.com/487255'>bug 487255</a>"
+            "notes": "See <a href='https://crbug.com/487255'>bug 487255</a>."
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "SpeechSynthesisErrorEvent": {
+        "__compat": {
+          "description": "<code>SpeechSynthesisErrorEvent()</code> constructor",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesiserrorevent-speechsynthesiserrorevent",
+          "support": {
+            "chrome": {
+              "version_added": "71"
+            },
+            "chrome_android": {
+              "version_added": "71"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "49"
+            },
+            "firefox_android": {
+              "version_added": "62"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "58"
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "error": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error",
+          "spec_url": "https://wicg.github.io/speech-api/#dom-speechsynthesiserrorevent-error",
           "support": {
             "chrome": {
               "version_added": "33"
@@ -77,22 +115,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "61",
-                "version_removed": "62",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.synth.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -116,7 +141,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

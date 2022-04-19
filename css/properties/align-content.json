@@ -6,6 +6,10 @@
           "__compat": {
             "description": "Supported in Flex Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/align-content",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#align-justify-content",
+              "https://drafts.csswg.org/css-flexbox/#align-content-property"
+            ],
             "support": {
               "chrome": [
                 {
@@ -41,17 +45,6 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "49"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "48",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    }
-                  ]
                 }
               ],
               "firefox_android": [
@@ -61,17 +54,6 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "49"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "48",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    }
-                  ]
                 }
               ],
               "ie": {
@@ -89,7 +71,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 }
               ],
               "safari_ios": [
@@ -222,65 +204,6 @@
               }
             }
           },
-          "left_right": {
-            "__compat": {
-              "description": "<code>left</code> and <code>right</code>",
-              "support": {
-                "chrome": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                },
-                "chrome_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                },
-                "edge": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                },
-                "firefox": {
-                  "version_added": "52",
-                  "version_removed": "60",
-                  "notes": "<code>align-content</code> no longer accepts the <code>left</code> and <code>right</code> values"
-                },
-                "firefox_android": {
-                  "version_added": "52",
-                  "version_removed": "60",
-                  "notes": "<code>align-content</code> no longer accepts the <code>left</code> and <code>right</code> values"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                },
-                "opera_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                },
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": {
-                  "version_added": false
-                },
-                "samsunginternet_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                },
-                "webview_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "safe_unsafe": {
             "__compat": {
               "description": "<code>safe</code> and <code>unsafe</code>",
@@ -391,16 +314,13 @@
               "description": "<code>start</code> and <code>end</code>",
               "support": {
                 "chrome": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "chrome_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "edge": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "firefox": {
                   "version_added": "45"
@@ -412,8 +332,8 @@
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "79",
+                  "notes": "Before version 79, this value is recognized, but has no effect."
                 },
                 "opera_android": {
                   "version_added": false,
@@ -426,12 +346,10 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "17.0"
                 },
                 "webview_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 }
               },
               "status": {
@@ -494,6 +412,10 @@
           "__compat": {
             "description": "Supported in Grid Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/align-content",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#align-justify-content",
+              "https://drafts.csswg.org/css-flexbox/#align-content-property"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57"

@@ -17,7 +17,7 @@ const compareVersions = require('compare-versions');
 const browsers = require('..').browsers;
 
 const { argv } = require('yargs').command(
-  '$0 <browser> [feature_or_file]',
+  '$0 <browser> [feature_or_path..]',
   'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
   yargs => {
     yargs
@@ -25,10 +25,20 @@ const { argv } = require('yargs').command(
         describe: 'The destination browser',
         type: 'string',
       })
-      .positional('feature_or_file', {
-        describe: 'The feature, file, or folder to perform mirroring',
-        type: 'string',
-        default: '',
+      .positional('feature_or_path', {
+        describe: 'Features, files, or folders to perform mirroring for',
+        type: 'array',
+        default: [
+          'api',
+          'css',
+          'html',
+          'http',
+          'svg',
+          'javascript',
+          'mathml',
+          'webdriver',
+          'webextensions',
+        ],
       })
       .option('source', {
         describe: 'Use a specified source browser rather than the default',
@@ -54,27 +64,41 @@ const { argv } = require('yargs').command(
 
 /**
  * @param {string} dest_browser
- * @param {ReleaseStatement} source_browser_release
+ * @param {ReleaseStatement} source_release
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
+const getMatchingBrowserVersion = (dest_browser, source_release) => {
   const browserData = browsers[dest_browser];
-  for (const r in browserData.releases) {
+  const releaseKeys = Object.keys(browserData.releases);
+  releaseKeys.sort(compareVersions);
+
+  for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      (release.engine == source_browser_release.engine &&
-        compareVersions.compare(
-          release.engine_version,
-          source_browser_release.engine_version,
-          '>=',
-        )) ||
-      (['opera', 'opera_android', 'samsunginternet_android'].includes(
+      ['opera', 'opera_android', 'samsunginternet_android'].includes(
         dest_browser,
       ) &&
-        release.engine == 'Blink' &&
-        source_browser_release.engine == 'WebKit')
+      release.engine == 'Blink' &&
+      source_release.engine == 'WebKit'
     ) {
       return r;
+    } else if (release.engine == source_release.engine) {
+      if (
+        ['beta', 'nightly'].includes(release.status) &&
+        release.status == source_release.status
+      ) {
+        return r;
+      } else if (
+        release.engine_version &&
+        source_release.engine_version &&
+        compareVersions.compare(
+          release.engine_version,
+          source_release.engine_version,
+          '>=',
+        )
+      ) {
+        return r;
+      }
     }
   }
 
@@ -854,7 +878,7 @@ const mirrorDataByFeature = (
 
 /**
  * @param {string} browser
- * @param {string} feature_or_file
+ * @param {string[]} feature_or_path_array
  * @param {string} forced_source
  * @param {string} modify
  * @param {string} target_version
@@ -862,7 +886,7 @@ const mirrorDataByFeature = (
  */
 const mirrorData = (
   browser,
-  feature_or_file,
+  feature_or_path_array,
   forced_source,
   modify,
   target_version,
@@ -876,30 +900,16 @@ const mirrorData = (
 
   let source = getSource(browser, forced_source);
 
-  if (feature_or_file) {
+  for (const feature_or_path of feature_or_path_array) {
     let doMirror = mirrorDataByFeature;
     if (
-      fs.existsSync(feature_or_file) &&
-      (fs.statSync(feature_or_file).isFile() ||
-        fs.statSync(feature_or_file).isDirectory())
+      fs.existsSync(feature_or_path) &&
+      (fs.statSync(feature_or_path).isFile() ||
+        fs.statSync(feature_or_path).isDirectory())
     )
       doMirror = mirrorDataByFile;
 
-    doMirror(browser, feature_or_file, source, modify, target_version);
-  } else {
-    [
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    ].forEach(folder => {
-      mirrorDataByFile(browser, folder, source, modify, target_version);
-    });
+    doMirror(browser, feature_or_path, source, modify, target_version);
   }
 
   console.log(
@@ -912,7 +922,7 @@ const mirrorData = (
 if (require.main === module) {
   mirrorData(
     argv.browser,
-    argv.feature_or_file,
+    argv.feature_or_path,
     argv.source,
     argv.modify,
     argv.target_version,

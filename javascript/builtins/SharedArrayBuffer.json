@@ -4,7 +4,7 @@
       "SharedArrayBuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer",
-          "spec_url": "https://tc39.es/ecma262/#sec-sharedarraybuffer-objects",
+          "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-sharedarraybuffer-objects",
           "support": {
             "chrome": [
               {
@@ -16,10 +16,19 @@
                 "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
               }
             ],
-            "chrome_android": {
-              "version_added": "60",
-              "version_removed": "63",
-              "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+            "chrome_android": [
+              {
+                "version_added": "89",
+                "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+              },
+              {
+                "version_added": "60",
+                "version_removed": "63",
+                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+              }
+            ],
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": [
               {
@@ -105,17 +114,29 @@
             "opera_android": {
               "version_added": false
             },
-            "safari": {
-              "version_added": "10.1",
-              "version_removed": "11"
-            },
-            "safari_ios": {
-              "version_added": "10.3",
-              "version_removed": "11"
-            },
+            "safari": [
+              {
+                "version_added": "15.2",
+                "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "11"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "15.2",
+                "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+              },
+              {
+                "version_added": "10.3",
+                "version_removed": "11"
+              }
+            ],
             "samsunginternet_android": {
-              "version_added": false,
-              "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+              "version_added": "15.0",
+              "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
             },
             "webview_android": {
               "version_added": "60",
@@ -133,7 +154,7 @@
           "__compat": {
             "description": "<code>SharedArrayBuffer()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/SharedArrayBuffer",
-            "spec_url": "https://tc39.es/ecma262/#sec-sharedarraybuffer-constructor",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-sharedarraybuffer-constructor",
             "support": {
               "chrome": [
                 {
@@ -145,10 +166,19 @@
                   "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
                 }
               ],
-              "chrome_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+              "chrome_android": [
+                {
+                  "version_added": "89",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "60",
+                  "version_removed": "63",
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                }
+              ],
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": [
                 {
@@ -234,17 +264,29 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11"
+                }
+              ],
               "samsunginternet_android": {
-                "version_added": false,
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_added": "15.0",
+                "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
               },
               "webview_android": {
                 "version_added": "60",
@@ -262,7 +304,7 @@
         "byteLength": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/byteLength",
-            "spec_url": "https://tc39.es/ecma262/#sec-get-sharedarraybuffer.prototype.bytelength",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-get-sharedarraybuffer.prototype.bytelength",
             "support": {
               "chrome": [
                 {
@@ -274,10 +316,19 @@
                   "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
                 }
               ],
-              "chrome_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+              "chrome_android": [
+                {
+                  "version_added": "89",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "60",
+                  "version_removed": "63",
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                }
+              ],
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": [
                 {
@@ -363,17 +414,29 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11"
+                }
+              ],
               "samsunginternet_android": {
-                "version_added": false,
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_added": "15.0",
+                "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
               },
               "webview_android": {
                 "version_added": "60",
@@ -391,7 +454,7 @@
         "slice": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/slice",
-            "spec_url": "https://tc39.es/ecma262/#sec-sharedarraybuffer.prototype.slice",
+            "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-sharedarraybuffer.prototype.slice",
             "support": {
               "chrome": [
                 {
@@ -403,10 +466,19 @@
                   "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This was a temporary removal while mitigations were put in place."
                 }
               ],
-              "chrome_android": {
-                "version_added": "60",
-                "version_removed": "63",
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+              "chrome_android": [
+                {
+                  "version_added": "89",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "60",
+                  "version_removed": "63",
+                  "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                }
+              ],
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": [
                 {
@@ -492,17 +564,29 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "10.1",
-                "version_removed": "11"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "version_removed": "11"
-              },
+              "safari": [
+                {
+                  "version_added": "15.2",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "11"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "15.2",
+                  "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+                },
+                {
+                  "version_added": "10.3",
+                  "version_removed": "11"
+                }
+              ],
               "samsunginternet_android": {
-                "version_added": false,
-                "notes": "Chrome disabled SharedArrayBuffer on January 5, 2018 to help reduce the efficacy of <a href='https://www.chromium.org/Home/chromium-security/ssca'>speculative side-channel attacks</a>. This is intended as a temporary measure until other mitigations are in place."
+                "version_added": "15.0",
+                "notes": "<code>SharedArrayBuffer</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
               },
               "webview_android": {
                 "version_added": "60",

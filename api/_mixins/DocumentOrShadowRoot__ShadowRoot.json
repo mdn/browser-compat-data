@@ -4,6 +4,7 @@
       "activeElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/activeElement",
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-documentorshadowroot-activeelement-dev",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -14,38 +15,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -78,6 +53,7 @@
       "adoptedStyleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/adoptedStyleSheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -123,57 +99,10 @@
           }
         }
       },
-      "caretPositionFromPoint": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/caretPositionFromPoint",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "63"
-            },
-            "firefox_android": {
-              "version_added": "63"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "elementFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/elementFromPoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-elementfrompoint",
           "support": {
             "chrome": {
               "version_added": "53",
@@ -228,6 +157,7 @@
       "elementsFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/elementsFromPoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-elementsfrompoint",
           "support": {
             "chrome": {
               "version_added": "53",
@@ -280,6 +210,7 @@
       "fullscreenElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/fullscreenElement",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#ref-for-dom-document-fullscreenelement②",
           "support": {
             "chrome": {
               "version_added": "71"
@@ -290,12 +221,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "64"
-            },
-            "firefox_android": {
-              "version_added": "64"
-            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "63",
+                "alternative_name": "mozFullScreenElement"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "63",
+                "alternative_name": "mozFullScreenElement"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -325,71 +268,151 @@
           }
         }
       },
-      "getSelection": {
+      "getAnimations": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/getSelection",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/getAnimations",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-documentorshadowroot-getanimations",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "75"
+              },
+              {
+                "version_added": "72",
+                "version_removed": "75",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.animations-api.getAnimations.enabled"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": "79"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "69",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "opera_android": {
+              "version_added": "60"
+            },
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "14"
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "84"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pictureInPictureElement": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/pictureInPictureElement",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-documentorshadowroot-pictureinpictureelement①⑤",
           "support": {
             "chrome": {
-              "version_added": "53"
+              "version_added": "69"
             },
             "chrome_android": {
-              "version_added": "53"
+              "version_added": false
             },
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "40"
+              "version_added": "56"
             },
             "opera_android": {
-              "version_added": "41"
+              "version_added": false
             },
             "safari": {
-              "version_added": "10.1"
+              "version_added": "13.1"
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": "13.4"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": "53"
+              "version_added": false
             }
           },
           "status": {
@@ -402,6 +425,7 @@
       "pointerLockElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/pointerLockElement",
+          "spec_url": "https://w3c.github.io/pointerlock/#dom-documentorshadowroot-pointerlockelement",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -412,38 +436,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
@@ -476,6 +474,7 @@
       "styleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/styleSheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-stylesheets",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -486,38 +485,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "59",
-                "version_removed": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webcomponents.shadowdom.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "63"
+            },
+            "firefox_android": {
+              "version_added": "63"
+            },
             "ie": {
               "version_added": false
             },
