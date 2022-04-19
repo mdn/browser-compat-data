@@ -40,7 +40,10 @@ const compareStatements = (a, b) => {
   if (!has.a.partial && has.b.partial) return -1;
 
   if (typeof a.version_added == 'string' && typeof b.version_added == 'string')
-    return compareVersions(a.version_added, b.version_added);
+    return compareVersions(
+      a.version_added.replace('≤', ''),
+      b.version_added.replace('≤', ''),
+    );
 
   return 1;
 };
