@@ -162,7 +162,7 @@ const main = (files_or_folders, browser) => {
     }
   }
 
-  load(files_or_folders);
+  load(...files_or_folders);
 };
 
 if (require.main === module) {
