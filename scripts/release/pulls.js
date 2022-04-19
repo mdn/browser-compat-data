@@ -1,8 +1,4 @@
-const {
-  buildQuery,
-  getRefDate,
-  releaseYargsBuilder,
-} = require('./utils');
+const { buildQuery, getRefDate, releaseYargsBuilder } = require('./utils');
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',

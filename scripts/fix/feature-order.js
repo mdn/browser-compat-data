@@ -23,7 +23,7 @@ const { platform } = require('os');
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
-const compareFeatures = require('../utils/compare-features');
+const compareFeatures = require('../compare-features');
 
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
