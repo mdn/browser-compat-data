@@ -66,18 +66,7 @@ function traverseFeatures(obj, depth, identifier) {
 let features = [];
 const folders =
   argv.folder == 'all'
-    ? [
-        'api',
-        'css',
-        'html',
-        'http',
-        'svg',
-        'javascript',
-        'mathml',
-        'webdriver',
-        'xpath',
-        'xslt',
-      ]
+    ? ['api', 'css', 'html', 'http', 'svg', 'javascript', 'mathml', 'webdriver']
     : argv.folder.split(',');
 const values = Array.isArray(argv.value)
   ? argv.value

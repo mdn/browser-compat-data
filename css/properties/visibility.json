@@ -4,6 +4,7 @@
       "visibility": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/visibility",
+          "spec_url": "https://drafts.csswg.org/css2/#visibility",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -24,6 +25,7 @@
               "version_added": "4",
               "notes": [
                 "Internet Explorer doesn't support <code>visibility: initial</code>.",
+                "Internet Explorer doesn't support <code>visibility: unset</code>.",
                 "Up to Internet Explorer 7, descendants of <code>hidden</code> elements will still be invisible even if they have <code>visibility</code> set to <code>visible</code>."
               ]
             },
@@ -75,11 +77,17 @@
               },
               "firefox": {
                 "version_added": "1",
-                "notes": "Firefox doesn't hide borders when hiding <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements if <code>border-collapse: collapse</code> is set."
+                "notes": [
+                  "Firefox doesn't hide borders when hiding <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements if <code>border-collapse: collapse</code> is set.",
+                  "Before Firefox 88, <code>collapse</code> is not supported on ruby annotations."
+                ]
               },
               "firefox_android": {
                 "version_added": "4",
-                "notes": "Firefox doesn't hide borders when hiding <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements if <code>border-collapse: collapse</code> is set."
+                "notes": [
+                  "Firefox doesn't hide borders when hiding <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements if <code>border-collapse: collapse</code> is set.",
+                  "Before Firefox 88, <code>collapse</code> is not supported on ruby annotations."
+                ]
               },
               "ie": {
                 "version_added": "10"

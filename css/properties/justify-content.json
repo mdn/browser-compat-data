@@ -6,6 +6,10 @@
           "__compat": {
             "description": "Supported in Flex Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-content",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#align-justify-content",
+              "https://drafts.csswg.org/css-flexbox/#justify-content-property"
+            ],
             "support": {
               "chrome": [
                 {
@@ -50,30 +54,8 @@
                   "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
                 },
                 {
-                  "version_added": "18",
-                  "version_removed": "20",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.flexbox.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                {
                   "prefix": "-webkit-",
                   "version_added": "49"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "48",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    }
-                  ]
                 }
               ],
               "firefox_android": [
@@ -82,30 +64,8 @@
                   "notes": "Before Firefox 27, Firefox supported only single-line flexbox."
                 },
                 {
-                  "version_added": "18",
-                  "version_removed": "20",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.flexbox.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                {
                   "prefix": "-webkit-",
                   "version_added": "49"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "48",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.prefixes.webkit",
-                      "value_to_set": "true"
-                    }
-                  ]
                 }
               ],
               "ie": {
@@ -123,7 +83,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 }
               ],
               "safari_ios": [
@@ -132,7 +92,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 }
               ],
               "samsunginternet_android": [
@@ -170,125 +130,18 @@
               "deprecated": false
             }
           },
-          "baseline": {
-            "__compat": {
-              "description": "<code>baseline</code>",
-              "support": {
-                "chrome": {
-                  "version_added": "57"
-                },
-                "chrome_android": {
-                  "version_added": "57"
-                },
-                "edge": {
-                  "version_added": "79"
-                },
-                "firefox": {
-                  "version_added": "45",
-                  "version_removed": "60",
-                  "notes": "<code>justify-content</code> no longer accepts baseline values"
-                },
-                "firefox_android": {
-                  "version_added": "45",
-                  "version_removed": "60",
-                  "notes": "<code>justify-content</code> no longer accepts baseline values"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": "44"
-                },
-                "opera_android": {
-                  "version_added": "43"
-                },
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": {
-                  "version_added": false
-                },
-                "samsunginternet_android": {
-                  "version_added": "7.0"
-                },
-                "webview_android": {
-                  "version_added": "57"
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "first_last_baseline": {
-            "__compat": {
-              "description": "<code>first baseline</code> and <code>last baseline</code>",
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "chrome_android": {
-                  "version_added": false
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": "52",
-                  "version_removed": "60",
-                  "notes": "<code>justify-content</code> no longer accepts baseline values"
-                },
-                "firefox_android": {
-                  "version_added": "52",
-                  "version_removed": "60",
-                  "notes": "<code>justify-content</code> no longer accepts baseline values"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false
-                },
-                "opera_android": {
-                  "version_added": false
-                },
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": {
-                  "version_added": false
-                },
-                "samsunginternet_android": {
-                  "version_added": false
-                },
-                "webview_android": {
-                  "version_added": false
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "left_right": {
             "__compat": {
               "description": "<code>left</code> and <code>right</code>",
               "support": {
                 "chrome": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "chrome_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "edge": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "firefox": {
                   "version_added": "52"
@@ -301,8 +154,7 @@
                   "notes": "This value is recognized, but has no effect."
                 },
                 "opera": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "79"
                 },
                 "opera_android": {
                   "version_added": false,
@@ -315,12 +167,10 @@
                   "version_added": "9"
                 },
                 "samsunginternet_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "17.0"
                 },
                 "webview_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 }
               },
               "status": {
@@ -440,16 +290,13 @@
               "description": "<code>start</code> and <code>end</code>",
               "support": {
                 "chrome": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "chrome_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "edge": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 },
                 "firefox": {
                   "version_added": "45"
@@ -461,26 +308,23 @@
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "79",
+                  "notes": "Before version 79, this value is recognized, but has no effect."
                 },
                 "opera_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": false
                 },
                 "safari": {
-                  "version_added": "9"
+                  "version_added": false
                 },
                 "safari_ios": {
-                  "version_added": "9"
+                  "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "17.0"
                 },
                 "webview_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "93"
                 }
               },
               "status": {
@@ -543,6 +387,10 @@
           "__compat": {
             "description": "Supported in Grid Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-content",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#align-justify-content",
+              "https://drafts.csswg.org/css-flexbox/#justify-content-property"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57"

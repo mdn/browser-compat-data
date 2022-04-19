@@ -27,7 +27,7 @@ The repository is made available under the terms the [Creative Commons CC0 Publi
 
 There are many ways you can help improve this repository! For example:
 
-- **Add new compat data**: familiarize yourself with the [schema](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json) and read the [schema docs](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md) and [data guidelines](data-guidelines.md) to add new files.
+- **Add new compat data**: familiarize yourself with the [schema](../schemas/compat-data.schema.json) and read the [schema docs](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines.md) to add new files.
 - **Fix existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
 - **Fix a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues),
   or maybe you found your own.
@@ -43,7 +43,7 @@ When adding data for a particular feature, you'll often need to find which versi
 It takes up to four weeks for BCD changes to be reflected in MDN's browser compatibility tables.
 The process is:
 
-1. A pull request is reviewed and merged to `master`.
+1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
    See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
 3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, to production.

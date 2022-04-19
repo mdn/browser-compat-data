@@ -14,11 +14,11 @@ A good migration starts with a clear description of the changes to be made, with
 
 Next, create a migration script and tests for that script.
 
-Put migration scripts in the [`/scripts/migrations/`](https://github.com/mdn/browser-compat-data/tree/master/scripts/migrations) directory. Name the scripts in the pattern `###-<description>.js` where `###` is the sequential number of the migration and `<description>` is a short name for the migration. For example, the first migration was `001-sort-features.js`.
+Put migration scripts in the [`/scripts/migrations/`](../scripts/migrations) directory. Name the scripts in the pattern `###-<description>.js` where `###` is the sequential number of the migration and `<description>` is a short name for the migration. For example, the first migration was `001-sort-features.js`.
 
 The script must be accompanied by one or more tests that demonstrate that the migration makes the changes described and doesn’t introduce other, unrelated changes. Typically, tests in the `/scripts/migrations/` directory are named in the form `###-<description>.test.js`.
 
-When the script and tests are ready, open a pull request. To be accepted, the PR must be reviewed and approved by at least one [project owner](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md#owners).
+When the script and tests are ready, open a pull request. To be accepted, the PR must be reviewed and approved by at least one [project owner](../GOVERNANCE.md#owners).
 
 ## Step 3: Migrate
 
