@@ -4,6 +4,8 @@
 
 'use strict';
 
+const compareVersions = require('compare-versions');
+
 /**
  *
  * Sort a list of compatibility statements based upon reverse-chronological order in the following order:
@@ -38,7 +40,7 @@ const compareStatements = (a, b) => {
   if (!has.a.partial && has.b.partial) return -1;
 
   if (typeof a.version_added == 'string' && typeof b.version_added == 'string')
-    return Number(a.version_added) < Number(b.version_added) ? 1 : -1;
+    return compareVersions(a.version_added, b.version_added);
 
   return 1;
 };
