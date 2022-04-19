@@ -171,6 +171,9 @@ const main = files => {
     }
   }
 
+  // XXX Temporary until migrated to new format
+  hasErrors = testFormat() || hasErrors;
+
   return hasErrors;
 };
 
