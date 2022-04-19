@@ -13,6 +13,9 @@
               "chrome_android": {
                 "version_added": "25"
               },
+              "deno": {
+                "version_added": "1.8"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -66,6 +69,9 @@
                 "chrome_android": {
                   "version_added": "25"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "12"
                 },
@@ -85,7 +91,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>DateTimeFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available for versions prior to 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>DateTimeFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
                   }
                 ],
                 "opera": {
@@ -113,159 +119,9 @@
                 "deprecated": false
               }
             },
-            "dateStyle": {
+            "locales_parameter": {
               "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": "76"
-                  },
-                  "chrome_android": {
-                    "version_added": "76"
-                  },
-                  "edge": {
-                    "version_added": "79"
-                  },
-                  "firefox": {
-                    "version_added": "79"
-                  },
-                  "firefox_android": {
-                    "version_added": "79"
-                  },
-                  "ie": {
-                    "version_added": false
-                  },
-                  "nodejs": {
-                    "version_added": "12.9.0"
-                  },
-                  "opera": {
-                    "version_added": "63"
-                  },
-                  "opera_android": {
-                    "version_added": "54"
-                  },
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": {
-                    "version_added": false
-                  },
-                  "samsunginternet_android": {
-                    "version_added": false
-                  },
-                  "webview_android": {
-                    "version_added": "76"
-                  }
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
-            },
-            "fractionalSecondDigits": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": "84"
-                  },
-                  "chrome_android": {
-                    "version_added": "84"
-                  },
-                  "edge": {
-                    "version_added": "84"
-                  },
-                  "firefox": {
-                    "version_added": "84"
-                  },
-                  "firefox_android": {
-                    "version_added": "84"
-                  },
-                  "ie": {
-                    "version_added": false
-                  },
-                  "nodejs": {
-                    "version_added": "14.6.0"
-                  },
-                  "opera": {
-                    "version_added": "70"
-                  },
-                  "opera_android": {
-                    "version_added": "60"
-                  },
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": {
-                    "version_added": false
-                  },
-                  "samsunginternet_android": {
-                    "version_added": false
-                  },
-                  "webview_android": {
-                    "version_added": "84"
-                  }
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
-            },
-            "hourCycle": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": "73"
-                  },
-                  "chrome_android": {
-                    "version_added": "73"
-                  },
-                  "edge": {
-                    "version_added": "18"
-                  },
-                  "firefox": {
-                    "version_added": "58"
-                  },
-                  "firefox_android": {
-                    "version_added": "58"
-                  },
-                  "ie": {
-                    "version_added": false
-                  },
-                  "nodejs": {
-                    "version_added": "12.0.0"
-                  },
-                  "opera": {
-                    "version_added": "60"
-                  },
-                  "opera_android": {
-                    "version_added": "52"
-                  },
-                  "safari": {
-                    "version_added": "13"
-                  },
-                  "safari_ios": {
-                    "version_added": "13"
-                  },
-                  "samsunginternet_android": {
-                    "version_added": false
-                  },
-                  "webview_android": {
-                    "version_added": "73"
-                  }
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
-            },
-            "iana_time_zone_names": {
-              "__compat": {
-                "description": "IANA time zone names in <code>timeZone</code> option",
+                "description": "<code>locales</code> parameter",
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -273,20 +129,84 @@
                   "chrome_android": {
                     "version_added": "25"
                   },
+                  "deno": {
+                    "version_added": "1.8"
+                  },
                   "edge": {
-                    "version_added": "14"
+                    "version_added": "12"
                   },
                   "firefox": {
-                    "version_added": "52"
+                    "version_added": "29"
                   },
                   "firefox_android": {
                     "version_added": "56"
                   },
                   "ie": {
-                    "version_added": false
+                    "version_added": "11"
+                  },
+                  "nodejs": [
+                    {
+                      "version_added": "13.0.0"
+                    },
+                    {
+                      "version_added": "0.12.0",
+                      "partial_implementation": true,
+                      "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>DateTimeFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    }
+                  ],
+                  "opera": {
+                    "version_added": "15"
+                  },
+                  "opera_android": {
+                    "version_added": "14"
+                  },
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": {
+                    "version_added": "10"
+                  },
+                  "samsunginternet_android": {
+                    "version_added": "1.5"
+                  },
+                  "webview_android": {
+                    "version_added": "4.4"
+                  }
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_parameter": {
+              "__compat": {
+                "description": "<code>options</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": {
+                    "version_added": "25"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
                   },
                   "nodejs": {
-                    "version_added": "4.0.0"
+                    "version_added": "0.12.0"
                   },
                   "opera": {
                     "version_added": "15"
@@ -304,7 +224,7 @@
                     "version_added": "1.5"
                   },
                   "webview_android": {
-                    "version_added": "37"
+                    "version_added": "4.4"
                   }
                 },
                 "status": {
@@ -312,55 +232,491 @@
                   "standard_track": true,
                   "deprecated": false
                 }
-              }
-            },
-            "timeStyle": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": "76"
+              },
+              "options_dateStyle_parameter": {
+                "__compat": {
+                  "description": "<code>options.dateStyle</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "76"
+                    },
+                    "chrome_android": {
+                      "version_added": "76"
+                    },
+                    "deno": {
+                      "version_added": "1.8"
+                    },
+                    "edge": {
+                      "version_added": "79"
+                    },
+                    "firefox": {
+                      "version_added": "79"
+                    },
+                    "firefox_android": {
+                      "version_added": "79"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": "12.9.0"
+                    },
+                    "opera": {
+                      "version_added": "63"
+                    },
+                    "opera_android": {
+                      "version_added": "54"
+                    },
+                    "safari": {
+                      "version_added": "14.1"
+                    },
+                    "safari_ios": {
+                      "version_added": "14.5"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "12.0"
+                    },
+                    "webview_android": {
+                      "version_added": "76"
+                    }
                   },
-                  "chrome_android": {
-                    "version_added": "76"
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
+                  }
+                }
+              },
+              "options_dayPeriod_parameter": {
+                "__compat": {
+                  "description": "<code>options.dayPeriod</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "92"
+                    },
+                    "chrome_android": {
+                      "version_added": "92"
+                    },
+                    "deno": {
+                      "version_added": "1.12"
+                    },
+                    "edge": {
+                      "version_added": "92"
+                    },
+                    "firefox": {
+                      "version_added": "90"
+                    },
+                    "firefox_android": {
+                      "version_added": "90"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": false
+                    },
+                    "opera": {
+                      "version_added": "78"
+                    },
+                    "opera_android": {
+                      "version_added": false
+                    },
+                    "safari": {
+                      "version_added": "14.1"
+                    },
+                    "safari_ios": {
+                      "version_added": "14.5"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "16.0"
+                    },
+                    "webview_android": {
+                      "version_added": "92"
+                    }
                   },
-                  "edge": {
-                    "version_added": "79"
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
+                  }
+                }
+              },
+              "options_fractionalSecondDigits_parameter": {
+                "__compat": {
+                  "description": "<code>options.fractionalSecondDigits</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "84"
+                    },
+                    "chrome_android": {
+                      "version_added": "84"
+                    },
+                    "deno": {
+                      "version_added": "1.8"
+                    },
+                    "edge": {
+                      "version_added": "84"
+                    },
+                    "firefox": {
+                      "version_added": "84"
+                    },
+                    "firefox_android": {
+                      "version_added": "84"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": "14.6.0"
+                    },
+                    "opera": {
+                      "version_added": "70"
+                    },
+                    "opera_android": {
+                      "version_added": "60"
+                    },
+                    "safari": {
+                      "version_added": "14.1"
+                    },
+                    "safari_ios": {
+                      "version_added": "14.5"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "14.0"
+                    },
+                    "webview_android": {
+                      "version_added": "84"
+                    }
                   },
-                  "firefox": {
-                    "version_added": "79"
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
+                  }
+                }
+              },
+              "options_hourCycle_parameter": {
+                "__compat": {
+                  "description": "<code>options.hourCycle</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "73"
+                    },
+                    "chrome_android": {
+                      "version_added": "73"
+                    },
+                    "deno": {
+                      "version_added": "1.8"
+                    },
+                    "edge": {
+                      "version_added": "18"
+                    },
+                    "firefox": {
+                      "version_added": "58"
+                    },
+                    "firefox_android": {
+                      "version_added": "58"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": "12.0.0"
+                    },
+                    "opera": {
+                      "version_added": "60"
+                    },
+                    "opera_android": {
+                      "version_added": "52"
+                    },
+                    "safari": {
+                      "version_added": "13"
+                    },
+                    "safari_ios": {
+                      "version_added": "13"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "11.0"
+                    },
+                    "webview_android": {
+                      "version_added": "73"
+                    }
                   },
-                  "firefox_android": {
-                    "version_added": "79"
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
+                  }
+                }
+              },
+              "options_timeStyle_parameter": {
+                "__compat": {
+                  "description": "<code>options.timeStyle</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "76"
+                    },
+                    "chrome_android": {
+                      "version_added": "76"
+                    },
+                    "deno": {
+                      "version_added": "1.8"
+                    },
+                    "edge": {
+                      "version_added": "79"
+                    },
+                    "firefox": {
+                      "version_added": "79"
+                    },
+                    "firefox_android": {
+                      "version_added": "79"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": "12.9.0"
+                    },
+                    "opera": {
+                      "version_added": "63"
+                    },
+                    "opera_android": {
+                      "version_added": "54"
+                    },
+                    "safari": {
+                      "version_added": "14.1"
+                    },
+                    "safari_ios": {
+                      "version_added": "14.5"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "12.0"
+                    },
+                    "webview_android": {
+                      "version_added": "76"
+                    }
                   },
-                  "ie": {
-                    "version_added": false
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
+                  }
+                }
+              },
+              "options_timeZone_parameter": {
+                "__compat": {
+                  "description": "<code>options.timeZone</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "24"
+                    },
+                    "chrome_android": {
+                      "version_added": "25"
+                    },
+                    "deno": {
+                      "version_added": "1.8"
+                    },
+                    "edge": {
+                      "version_added": "12"
+                    },
+                    "firefox": {
+                      "version_added": "29"
+                    },
+                    "firefox_android": {
+                      "version_added": "56"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": "0.12.0"
+                    },
+                    "opera": {
+                      "version_added": "15"
+                    },
+                    "opera_android": {
+                      "version_added": "14"
+                    },
+                    "safari": {
+                      "version_added": "10"
+                    },
+                    "safari_ios": {
+                      "version_added": "10"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "1.5"
+                    },
+                    "webview_android": {
+                      "version_added": "4.4"
+                    }
                   },
-                  "nodejs": {
-                    "version_added": "12.9.0"
-                  },
-                  "opera": {
-                    "version_added": "63"
-                  },
-                  "opera_android": {
-                    "version_added": "54"
-                  },
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": {
-                    "version_added": false
-                  },
-                  "samsunginternet_android": {
-                    "version_added": false
-                  },
-                  "webview_android": {
-                    "version_added": "76"
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
                   }
                 },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
+                "options_timeZone_parameter_iana": {
+                  "__compat": {
+                    "description": "IANA time zone names in <code>options.timeZone</code> option",
+                    "support": {
+                      "chrome": {
+                        "version_added": "24"
+                      },
+                      "chrome_android": {
+                        "version_added": "25"
+                      },
+                      "deno": {
+                        "version_added": "1.8"
+                      },
+                      "edge": {
+                        "version_added": "14"
+                      },
+                      "firefox": {
+                        "version_added": "52"
+                      },
+                      "firefox_android": {
+                        "version_added": "56"
+                      },
+                      "ie": {
+                        "version_added": false
+                      },
+                      "nodejs": {
+                        "version_added": "4.0.0"
+                      },
+                      "opera": {
+                        "version_added": "15"
+                      },
+                      "opera_android": {
+                        "version_added": "14"
+                      },
+                      "safari": {
+                        "version_added": "10"
+                      },
+                      "safari_ios": {
+                        "version_added": "10"
+                      },
+                      "samsunginternet_android": {
+                        "version_added": "1.5"
+                      },
+                      "webview_android": {
+                        "version_added": "37"
+                      }
+                    },
+                    "status": {
+                      "experimental": false,
+                      "standard_track": true,
+                      "deprecated": false
+                    }
+                  }
+                }
+              },
+              "options_timeZoneName_parameter": {
+                "__compat": {
+                  "description": "<code>options.timeZoneName</code> parameter",
+                  "support": {
+                    "chrome": {
+                      "version_added": "24"
+                    },
+                    "chrome_android": {
+                      "version_added": "25"
+                    },
+                    "deno": {
+                      "version_added": "1.8"
+                    },
+                    "edge": {
+                      "version_added": "12"
+                    },
+                    "firefox": {
+                      "version_added": "29"
+                    },
+                    "firefox_android": {
+                      "version_added": "56"
+                    },
+                    "ie": {
+                      "version_added": false
+                    },
+                    "nodejs": {
+                      "version_added": "0.12.0"
+                    },
+                    "opera": {
+                      "version_added": "15"
+                    },
+                    "opera_android": {
+                      "version_added": "14"
+                    },
+                    "safari": {
+                      "version_added": "10"
+                    },
+                    "safari_ios": {
+                      "version_added": "10"
+                    },
+                    "samsunginternet_android": {
+                      "version_added": "1.5"
+                    },
+                    "webview_android": {
+                      "version_added": "4.4"
+                    }
+                  },
+                  "status": {
+                    "experimental": false,
+                    "standard_track": true,
+                    "deprecated": false
+                  }
+                },
+                "options_timeZoneName_parameter_iana": {
+                  "__compat": {
+                    "description": "IANA time zone names in <code>options.timeZoneName</code> option",
+                    "support": {
+                      "chrome": {
+                        "version_added": false
+                      },
+                      "chrome_android": {
+                        "version_added": false
+                      },
+                      "deno": {
+                        "version_added": false
+                      },
+                      "edge": {
+                        "version_added": false
+                      },
+                      "firefox": {
+                        "version_added": "91"
+                      },
+                      "firefox_android": {
+                        "version_added": "91"
+                      },
+                      "ie": {
+                        "version_added": false
+                      },
+                      "nodejs": {
+                        "version_added": false
+                      },
+                      "opera": {
+                        "version_added": false
+                      },
+                      "opera_android": {
+                        "version_added": false
+                      },
+                      "safari": {
+                        "version_added": "15.4"
+                      },
+                      "safari_ios": {
+                        "version_added": "15.4"
+                      },
+                      "samsunginternet_android": {
+                        "version_added": false
+                      },
+                      "webview_android": {
+                        "version_added": false
+                      }
+                    },
+                    "status": {
+                      "experimental": false,
+                      "standard_track": true,
+                      "deprecated": false
+                    }
+                  }
                 }
               }
             }
@@ -375,6 +731,9 @@
                 },
                 "chrome_android": {
                   "version_added": "25"
+                },
+                "deno": {
+                  "version_added": "1.8"
                 },
                 "edge": {
                   "version_added": "12"
@@ -421,7 +780,7 @@
           "formatRange": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatRange",
-              "spec_url": "https://tc39.es/proposal-intl-DateTimeFormat-formatRange/#sec-intl.datetimeformat.prototype.formatRange",
+              "spec_url": "https://tc39.es/ecma402/#sec-intl.datetimeformat.prototype.formatRange",
               "support": {
                 "chrome": {
                   "version_added": "76"
@@ -429,14 +788,17 @@
                 "chrome_android": {
                   "version_added": "76"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "79"
                 },
                 "firefox": {
-                  "version_added": false
+                  "version_added": "91"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "91"
                 },
                 "ie": {
                   "version_added": false
@@ -446,19 +808,19 @@
                   "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>the <code>DateTimeFormat()</code> constructor</a> for more details."
                 },
                 "opera": {
-                  "version_added": false
+                  "version_added": "63"
                 },
                 "opera_android": {
                   "version_added": "54"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14.1"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "14.5"
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "12.0"
                 },
                 "webview_android": {
                   "version_added": "76"
@@ -474,7 +836,7 @@
           "formatRangeToParts": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatRangeToParts",
-              "spec_url": "https://tc39.es/proposal-intl-DateTimeFormat-formatRange/#sec-Intl.DateTimeFormat.prototype.formatRangeToParts",
+              "spec_url": "https://tc39.es/ecma402/#sec-Intl.DateTimeFormat.prototype.formatRangeToParts",
               "support": {
                 "chrome": {
                   "version_added": "76"
@@ -482,14 +844,17 @@
                 "chrome_android": {
                   "version_added": "76"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "79"
                 },
                 "firefox": {
-                  "version_added": false
+                  "version_added": "91"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": "91"
                 },
                 "ie": {
                   "version_added": false
@@ -499,19 +864,19 @@
                   "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>the <code>DateTimeFormat()</code> constructor</a> for more details."
                 },
                 "opera": {
-                  "version_added": false
+                  "version_added": "63"
                 },
                 "opera_android": {
                   "version_added": "54"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14.1"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "14.5"
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "12.0"
                 },
                 "webview_android": {
                   "version_added": "76"
@@ -536,6 +901,9 @@
                 "chrome_android": {
                   "version_added": "57",
                   "notes": "Before version 71, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 71 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>Chromium bug 865351</a>."
+                },
+                "deno": {
+                  "version_added": "1.8"
                 },
                 "edge": {
                   "version_added": "18"
@@ -597,6 +965,9 @@
                 "chrome_android": {
                   "version_added": "25"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "12"
                 },
@@ -647,6 +1018,9 @@
                   },
                   "chrome_android": {
                     "version_added": "35"
+                  },
+                  "deno": {
+                    "version_added": "1.8"
                   },
                   "edge": {
                     "version_added": "14"
@@ -701,6 +1075,9 @@
                 "chrome_android": {
                   "version_added": "25"
                 },
+                "deno": {
+                  "version_added": "1.8"
+                },
                 "edge": {
                   "version_added": "12"
                 },
@@ -720,7 +1097,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. To make full ICU (locale) data available for versions prior to 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
                   }
                 ],
                 "opera": {

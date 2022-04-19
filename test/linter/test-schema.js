@@ -1,6 +1,6 @@
 'use strict';
 const Ajv = require('ajv');
-const betterAjvErrors = require('better-ajv-errors');
+const betterAjvErrors = require('better-ajv-errors').default;
 const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('../utils.js');

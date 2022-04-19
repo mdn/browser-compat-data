@@ -13,6 +13,9 @@
               "chrome_android": {
                 "version_added": "57"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "16"
               },
@@ -67,6 +70,9 @@
                 "chrome_android": {
                   "version_added": "57"
                 },
+                "deno": {
+                  "version_added": "1.0"
+                },
                 "edge": {
                   "version_added": "16"
                 },
@@ -112,13 +118,16 @@
             "shared": {
               "__compat": {
                 "description": "<code>shared</code> flag",
-                "spec_url": "https://github.com/WebAssembly/threads/blob/master/proposals/threads/Overview.md#webassemblymemory-constructor",
+                "spec_url": "https://webassembly.github.io/threads/js-api/#dom-memorydescriptor-shared",
                 "support": {
                   "chrome": {
                     "version_added": "74"
                   },
                   "chrome_android": {
                     "version_added": false
+                  },
+                  "deno": {
+                    "version_added": "1.10"
                   },
                   "edge": {
                     "version_added": "79"
@@ -148,10 +157,12 @@
                     "version_added": false
                   },
                   "safari": {
-                    "version_added": false
+                    "version_added": "15.2",
+                    "notes": "Shared <code>WebAssembly.Memory</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
                   },
                   "safari_ios": {
-                    "version_added": false
+                    "version_added": "15.2",
+                    "notes": "Shared <code>WebAssembly.Memory</code> is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
                   },
                   "samsunginternet_android": {
                     "version_added": false
@@ -178,6 +189,9 @@
                 },
                 "chrome_android": {
                   "version_added": "57"
+                },
+                "deno": {
+                  "version_added": "1.0"
                 },
                 "edge": {
                   "version_added": "16"
@@ -232,6 +246,9 @@
                 },
                 "chrome_android": {
                   "version_added": "57"
+                },
+                "deno": {
+                  "version_added": "1.0"
                 },
                 "edge": {
                   "version_added": "16"
