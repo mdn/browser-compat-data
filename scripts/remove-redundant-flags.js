@@ -45,9 +45,11 @@ const getEarliestVersion = (...args) => {
   return earliestVersion;
 };
 
-const removeRedundantFlags = (key, value) => {
+const removeRedundantFlags = (key, value, limitBrowser) => {
   if (key === '__compat') {
     for (const [browser, supportData] of Object.entries(value.support)) {
+      if (limitBrowser && browser != limitBrowser) continue;
+
       if (supportData !== undefined && Array.isArray(supportData)) {
         const result = [];
 
@@ -111,10 +113,10 @@ const removeRedundantFlags = (key, value) => {
 /**
  * @param {Promise<void>} filename
  */
-const fixRedundantFlags = filename => {
+const fixRedundantFlags = (filename, limitBrowser) => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const expected = JSON.stringify(
-    JSON.parse(actual, removeRedundantFlags),
+    JSON.parse(actual, (k, v) => removeRedundantFlags(k, v, limitBrowser)),
     null,
     2,
   );
@@ -130,7 +132,7 @@ const fixRedundantFlags = filename => {
   }
 };
 
-if (require.main === module) {
+const main = (files_or_folders, browser) => {
   /**
    * @param {string[]} files
    */
@@ -146,7 +148,7 @@ if (require.main === module) {
 
       if (fs.statSync(file).isFile()) {
         if (path.extname(file) === '.json') {
-          fixRedundantFlags(file);
+          fixRedundantFlags(file, browser);
         }
 
         continue;
@@ -160,22 +162,40 @@ if (require.main === module) {
     }
   }
 
-  if (process.argv[2]) {
-    load(process.argv[2]);
-  } else {
-    load(
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'test',
-      'webdriver',
-      'webextensions',
-    );
-  }
+  load(files_or_folders);
+};
+
+if (require.main === module) {
+  const { argv } = require('yargs').command(
+    '$0 [file]',
+    'Remove data for flags that have been removed two years back or more',
+    yargs => {
+      yargs
+        .positional('file', {
+          describe: 'The file(s) and/or folder(s) to test',
+          type: 'array',
+          default: [
+            'api',
+            'css',
+            'html',
+            'http',
+            'svg',
+            'javascript',
+            'mathml',
+            'test',
+            'webdriver',
+            'webextensions',
+          ],
+        })
+        .option('browser', {
+          alias: 'b',
+          describe: 'The browser to test for',
+          type: 'string',
+        });
+    },
+  );
+
+  main(argv.file, argv.browser);
 }
 
 module.exports = { removeRedundantFlags, fixRedundantFlags };
