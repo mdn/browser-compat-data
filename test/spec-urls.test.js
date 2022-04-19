@@ -52,10 +52,6 @@ describe('spec_url data', () => {
 
       // Remove if https://github.com/w3c/mathml/issues/216 is resolved
       'https://w3c.github.io/mathml/',
-
-      // Remove when xpath/xslt data is removed in https://github.com/mdn/browser-compat-data/pull/9830
-      'https://www.w3.org/TR/xpath-31/',
-      'https://www.w3.org/TR/xslt-30/',
     ];
 
     const allowList = new Set([...specsFromBrowserSpecs, ...specsExceptions]);

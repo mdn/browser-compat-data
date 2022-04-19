@@ -6,42 +6,28 @@
         "spec_url": "https://w3c.github.io/webrtc-pc/#rtcdatachannel",
         "support": {
           "chrome": {
-            "version_added": true
+            "version_added": "24"
           },
           "chrome_android": {
-            "version_added": "29"
+            "version_added": "25"
           },
           "edge": {
             "version_added": "79"
           },
-          "firefox": [
-            {
-              "version_added": "24"
-            },
-            {
-              "alternative_name": "DataChannel",
-              "version_added": "18",
-              "version_removed": "60"
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "24"
-            },
-            {
-              "alternative_name": "DataChannel",
-              "version_added": "18",
-              "version_removed": "60"
-            }
-          ],
+          "firefox": {
+            "version_added": "22"
+          },
+          "firefox_android": {
+            "version_added": "22"
+          },
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": true
+            "version_added": "15"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "14"
           },
           "safari": {
             "version_added": "11"
@@ -50,10 +36,10 @@
             "version_added": "11"
           },
           "samsunginternet_android": {
-            "version_added": "2.0"
+            "version_added": "1.5"
           },
           "webview_android": {
-            "version_added": "4.4"
+            "version_added": "≤37"
           }
         },
         "status": {
@@ -68,28 +54,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-binarytype",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "29"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "18"
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": "18"
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "11"
@@ -98,10 +84,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "2.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "4.4"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -117,28 +103,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-bufferedamount",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "18"
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": "18"
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "11"
@@ -147,10 +133,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -163,51 +149,54 @@
       "bufferedamountlow_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#event-datachannel-bufferedamountlow",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-bufferedamountlow",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onbufferedamountlow"
+          ],
           "description": "<code>bufferedamountlow</code> event",
           "support": {
             "chrome": {
               "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "chrome_android": {
               "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "edge": {
-              "version_added": "≤79",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "version_added": "79",
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "firefox": {
-              "version_added": true
+              "version_added": "44"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
               "version_added": "44",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "opera_android": {
               "version_added": "43",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "safari": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "7.0",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             },
             "webview_android": {
               "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy<code> is <code>require<code>."
+              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
             }
           },
           "status": {
@@ -223,28 +212,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-bufferedamountlowthreshold",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "46"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "46"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "44"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "33"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "33"
             },
             "safari": {
               "version_added": "11"
@@ -253,10 +242,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "5.0"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "46"
             }
           },
           "status": {
@@ -272,28 +261,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-close",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "11"
@@ -302,10 +291,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -318,44 +307,47 @@
       "close_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#event-datachannel-close",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-close",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclose"
+          ],
           "description": "<code>close</code> event",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
-              "version_added": null
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -365,47 +357,103 @@
           }
         }
       },
-      "error_event": {
+      "closing_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#event-datachannel-error",
-          "description": "<code>error</code> event",
+          "description": "<code>closing</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-closing",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclosing"
+          ],
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "81"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "81"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "81"
             },
             "firefox": {
-              "version_added": true
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "68"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "58"
             },
             "safari": {
-              "version_added": null
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "81"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "error_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-error",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onerror"
+          ],
+          "description": "<code>error</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "24"
+            },
+            "chrome_android": {
+              "version_added": "25"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "22"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "15"
+            },
+            "opera_android": {
+              "version_added": "14"
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.5"
+            },
+            "webview_android": {
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -421,28 +469,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-id",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "17"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "18"
             },
             "safari": {
               "version_added": "11"
@@ -451,10 +499,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -470,28 +518,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-label",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "11"
@@ -500,10 +548,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -568,10 +616,10 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-maxretransmits",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "edge": {
               "version_added": "79"
@@ -586,10 +634,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "17"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "18"
             },
             "safari": {
               "version_added": "11"
@@ -598,10 +646,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -614,44 +662,47 @@
       "message_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#event-datachannel-message",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-message",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onmessage"
+          ],
           "description": "<code>message</code> event",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -667,10 +718,10 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-negotiated",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "edge": {
               "version_added": "79"
@@ -685,10 +736,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "17"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "18"
             },
             "safari": {
               "version_added": "11"
@@ -697,311 +748,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "56"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onbufferedamountlow": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onbufferedamountlow",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onbufferedamountlow",
-          "support": {
-            "chrome": {
-              "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            },
-            "chrome_android": {
-              "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            },
-            "edge": {
-              "version_added": "79",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "44",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            },
-            "opera_android": {
-              "version_added": "43",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "7.0",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            },
-            "webview_android": {
-              "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onclose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onclose",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclose",
-          "support": {
-            "chrome": {
-              "version_added": "56"
-            },
-            "chrome_android": {
-              "version_added": "56"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "56"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onclosing": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onclosing",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclosing",
-          "support": {
-            "chrome": {
-              "version_added": "81"
-            },
-            "chrome_android": {
-              "version_added": "81"
-            },
-            "edge": {
-              "version_added": "81"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "68"
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "13.0"
-            },
-            "webview_android": {
-              "version_added": "81"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onerror",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onerror",
-          "support": {
-            "chrome": {
-              "version_added": "56"
-            },
-            "chrome_android": {
-              "version_added": "56"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "56"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onmessage",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onmessage",
-          "support": {
-            "chrome": {
-              "version_added": "56"
-            },
-            "chrome_android": {
-              "version_added": "56"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "56"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onopen": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/onopen",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onopen",
-          "support": {
-            "chrome": {
-              "version_added": "56"
-            },
-            "chrome_android": {
-              "version_added": "56"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "43"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "56"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1014,44 +764,47 @@
       "open_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event",
-          "spec_url": "https://w3c.github.io/webrtc-pc/#event-datachannel-open",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-open",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onopen"
+          ],
           "description": "<code>open</code> event",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1067,28 +820,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-ordered",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "17"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "18"
             },
             "safari": {
               "version_added": "11"
@@ -1097,10 +850,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1133,10 +886,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": false
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
               "version_added": "15"
@@ -1164,28 +917,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-protocol",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "30"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "17"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "18"
             },
             "safari": {
               "version_added": "11"
@@ -1194,10 +947,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1213,28 +966,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-readystate",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "11"
@@ -1243,10 +996,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1261,28 +1014,28 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/reliable",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": false
@@ -1291,10 +1044,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1315,7 +1068,7 @@
               "version_added": "58"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "63"
@@ -1327,10 +1080,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "45"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -1358,28 +1111,28 @@
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-send",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "24"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "25"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "11"
@@ -1388,10 +1141,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "56"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1412,7 +1165,7 @@
               "version_added": "56"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false

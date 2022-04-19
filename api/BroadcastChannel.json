@@ -11,6 +11,15 @@
           "chrome_android": {
             "version_added": "54"
           },
+          "deno": {
+            "version_added": "1.11",
+            "flags": [
+              {
+                "type": "runtime_flag",
+                "name": "--unstable"
+              }
+            ]
+          },
           "edge": {
             "version_added": "79"
           },
@@ -23,6 +32,14 @@
           "ie": {
             "version_added": false
           },
+          "nodejs": {
+            "version_added": "15.4.0",
+            "alternative_name": "worker_threads.BroadcastChannel",
+            "notes": [
+              "Experimental implementation",
+              "Must be imported using either <code>require('worker_threads')</code> or <code>import * from 'worker_threads'</code>."
+            ]
+          },
           "opera": {
             "version_added": "41"
           },
@@ -30,10 +47,10 @@
             "version_added": "41"
           },
           "safari": {
-            "version_added": false
+            "version_added": "15.4"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "15.4"
           },
           "samsunginternet_android": {
             "version_added": "6.0"
@@ -60,6 +77,9 @@
             "chrome_android": {
               "version_added": "54"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -72,6 +92,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "15.4.0"
+            },
             "opera": {
               "version_added": "41"
             },
@@ -79,10 +102,10 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -109,6 +132,9 @@
             "chrome_android": {
               "version_added": "54"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -121,6 +147,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "15.4.0"
+            },
             "opera": {
               "version_added": "41"
             },
@@ -128,10 +157,10 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -151,7 +180,10 @@
         "__compat": {
           "description": "<code>message</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+            "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-broadcastchannel-onmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
@@ -159,8 +191,11 @@
             "chrome_android": {
               "version_added": "54"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "38"
@@ -171,6 +206,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "15.4.0"
+            },
             "opera": {
               "version_added": "41"
             },
@@ -178,10 +216,10 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -201,7 +239,10 @@
         "__compat": {
           "description": "<code>messageerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+            "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-broadcastchannel-onmessageerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -209,8 +250,11 @@
             "chrome_android": {
               "version_added": "60"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "57"
@@ -220,6 +264,9 @@
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "15.4.0"
             },
             "opera": {
               "version_added": "47"
@@ -260,6 +307,9 @@
             "chrome_android": {
               "version_added": "54"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -272,6 +322,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "15.4.0"
+            },
             "opera": {
               "version_added": "41"
             },
@@ -279,116 +332,16 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
             },
             "webview_android": {
               "version_added": "54"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/onmessage",
-          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-broadcastchannel-onmessage",
-          "support": {
-            "chrome": {
-              "version_added": "54"
-            },
-            "chrome_android": {
-              "version_added": "54"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "38"
-            },
-            "firefox_android": {
-              "version_added": "38"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "41"
-            },
-            "opera_android": {
-              "version_added": "41"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "54"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessageerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/onmessageerror",
-          "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-broadcastchannel-onmessageerror",
-          "support": {
-            "chrome": {
-              "version_added": "60"
-            },
-            "chrome_android": {
-              "version_added": "60"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "57"
-            },
-            "firefox_android": {
-              "version_added": "57"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "47"
-            },
-            "opera_android": {
-              "version_added": "44"
-            },
-            "safari": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
-            },
-            "safari_ios": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "60"
             }
           },
           "status": {
@@ -409,6 +362,9 @@
             "chrome_android": {
               "version_added": "54"
             },
+            "deno": {
+              "version_added": "1.11"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -421,6 +377,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "15.4.0"
+            },
             "opera": {
               "version_added": "41"
             },
@@ -428,10 +387,10 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
