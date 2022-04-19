@@ -176,13 +176,13 @@ function checkVersions(supportData, category, relPath, logger) {
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
             }
-            if ('flags' in statement) {
-              if (FLAGLESS_BROWSERS.includes(browser)) {
-                logger.error(
-                  chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
-                );
-              }
-            }
+          }
+        }
+        if ('flags' in statement) {
+          if (browsers[browser].accepts_flags === false) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
+            );
           }
         }
       }
