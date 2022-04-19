@@ -148,6 +148,10 @@
         "SameSite": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite",
+            "spec_url": [
+              "https://httpwg.org/specs/rfc6265.html#sane-set-cookie",
+              "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute"
+            ],
             "description": "<code>SameSite</code>",
             "support": {
               "chrome": {
@@ -166,7 +170,7 @@
                 "version_added": "60"
               },
               "ie": {
-                "version_added": false
+                "version_added": "11"
               },
               "opera": {
                 "version_added": "39"
@@ -228,7 +232,7 @@
                   "version_added": "60"
                 },
                 "ie": {
-                  "version_added": false
+                  "version_added": "11"
                 },
                 "opera": {
                   "version_added": "39"
@@ -280,14 +284,7 @@
                   ]
                 },
                 "firefox_android": {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.laxByDefault",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": false
                 },
                 "ie": {
                   "version_added": false
@@ -322,12 +319,28 @@
             "__compat": {
               "description": "<code>SameSite=None</code>",
               "support": {
-                "chrome": {
-                  "version_added": "51"
-                },
-                "chrome_android": {
-                  "version_added": "51"
-                },
+                "chrome": [
+                  {
+                    "version_added": "67"
+                  },
+                  {
+                    "version_added": "51",
+                    "version_removed": "67",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
+                "chrome_android": [
+                  {
+                    "version_added": "67"
+                  },
+                  {
+                    "version_added": "51",
+                    "version_removed": "67",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
                 "edge": {
                   "version_added": "16"
                 },
@@ -338,14 +351,30 @@
                   "version_added": "60"
                 },
                 "ie": {
-                  "version_added": false
+                  "version_added": "11"
                 },
-                "opera": {
-                  "version_added": "39"
-                },
-                "opera_android": {
-                  "version_added": "41"
-                },
+                "opera": [
+                  {
+                    "version_added": "54"
+                  },
+                  {
+                    "version_added": "51",
+                    "version_removed": "54",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
+                "opera_android": [
+                  {
+                    "version_added": "48"
+                  },
+                  {
+                    "version_added": "41",
+                    "version_removed": "48",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
                 "safari": {
                   "version_added": "13",
                   "notes": "Not supported before macOS version 10.15 (Catalina)."
@@ -353,12 +382,28 @@
                 "safari_ios": {
                   "version_added": "13"
                 },
-                "samsunginternet_android": {
-                  "version_added": "5.0"
-                },
-                "webview_android": {
-                  "version_added": "51"
-                }
+                "samsunginternet_android": [
+                  {
+                    "version_added": "9.4"
+                  },
+                  {
+                    "version_added": "5.4",
+                    "version_removed": "9.4",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ],
+                "webview_android": [
+                  {
+                    "version_added": "67"
+                  },
+                  {
+                    "version_added": "51",
+                    "version_removed": "67",
+                    "partial_implementation": true,
+                    "notes": "Rejects cookies with <code>SameSite=None</code>. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                  }
+                ]
               },
               "status": {
                 "experimental": false,
@@ -387,7 +432,7 @@
                   "version_added": "60"
                 },
                 "ie": {
-                  "version_added": false
+                  "version_added": "11"
                 },
                 "opera": {
                   "version_added": "39"
@@ -425,6 +470,7 @@
                   },
                   {
                     "version_added": "86",
+                    "version_removed": "89",
                     "flags": [
                       {
                         "type": "preference",
@@ -440,6 +486,7 @@
                   },
                   {
                     "version_added": "86",
+                    "version_removed": "89",
                     "flags": [
                       {
                         "type": "preference",
@@ -449,16 +496,22 @@
                     ]
                   }
                 ],
-                "edge": {
-                  "version_added": "86",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#schemeful-same-site",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                },
+                "edge": [
+                  {
+                    "version_added": "89"
+                  },
+                  {
+                    "version_added": "86",
+                    "version_removed": "89",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "#schemeful-same-site",
+                        "value_to_set": "Enabled"
+                      }
+                    ]
+                  }
+                ],
                 "firefox": {
                   "version_added": "79",
                   "flags": [
@@ -470,30 +523,29 @@
                   ]
                 },
                 "firefox_android": {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.schemeful",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": false
                 },
                 "ie": {
                   "version_added": false
                 },
-                "opera": {
-                  "version_added": "72",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#schemeful-same-site",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                },
+                "opera": [
+                  {
+                    "version_added": "75"
+                  },
+                  {
+                    "version_added": "72",
+                    "version_removed": "75",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "#schemeful-same-site",
+                        "value_to_set": "Enabled"
+                      }
+                    ]
+                  }
+                ],
                 "opera_android": {
-                  "version_added": false
+                  "version_added": "63"
                 },
                 "safari": {
                   "version_added": false
@@ -539,14 +591,7 @@
                   ]
                 },
                 "firefox_android": {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.noneRequiresSecure",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": false
                 },
                 "ie": {
                   "version_added": false
