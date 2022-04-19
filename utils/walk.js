@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const bcd = require('..');
 const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
 const query = require('./query');
