@@ -1,183 +1,126 @@
-const { execSync } = require('child_process');
-const http = require('https');
-const readline = require('readline');
-const chalk = require('chalk');
+const {
+  exec,
+  releaseYargsBuilder,
+  requireGitHubCLI,
+  buildQuery,
+} = require('./release-utils');
+const diffFeatures = require('./diff-features');
 
-const bcd = require('..');
+function main(argv) {
+  const { startVersionTag, endVersionTag } = argv;
 
-const { argv } = require('yargs').command(
-  '$0 <version-tag>',
-  'Initiate a release of this package on GitHub',
-  yargs => {
-    yargs.positional('version-tag', {
-      describe: 'the version tag to generate release notes for',
-      type: 'string',
-    });
-    yargs.option('p', {
-      alias: 'previous',
-      requiresArg: true,
-      describe: 'the previous version tag',
-      type: 'string',
-    });
-  },
-);
+  requireGitHubCLI();
 
-const getJSON = url =>
-  new Promise((resolve, reject) =>
-    http.get(
-      url,
-      { headers: { 'User-Agent': 'bcd-release-script' } },
-      response => {
-        let body = '';
-        response.on('data', data => {
-          body += data;
-        });
-        response.on('error', error => reject(error));
-        response.on('end', () => {
-          resolve(JSON.parse(body));
-        });
-      },
-    ),
+  const allAdds = [];
+  const allRemoves = [];
+
+  console.error(
+    `Generating release notes from ${startVersionTag} to ${endVersionTag}`,
   );
+  for (const pull of pullsFromGitHub(startVersionTag, endVersionTag)) {
+    process.stderr.write(`Diffing features for #${pull.number}`);
 
-const question = query => {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  return new Promise(resolve => rl.question(query, resolve)).then(response => {
-    rl.close();
-    return response;
-  });
-};
+    const diff = diffFeatures({ ref1: pull.mergeCommit });
 
-const confirm = str => !['n', 'no'].includes(str.toLowerCase());
+    console.error(
+      ` (${diff.added.length} added, ${diff.removed.length} removed)`,
+    );
 
-const prompt = async questions => {
-  const results = {};
-  for (const q of questions) {
-    const options = q.type === confirm ? '(Y/n) ' : '';
-    results[q.name] = await question(`${q.message} ${options}`).then(q.type);
-  }
-  return results;
-};
-
-const stargazers = () =>
-  getJSON('https://api.github.com/repos/mdn/browser-compat-data').then(
-    json => json.stargazers_count,
-  );
-
-const stats = (version, previousVersion) => {
-  // Get just the diff stats summary
-  const diff = execSync(
-    `git diff --shortstat ${previousVersion}...${version}`,
-    { encoding: 'utf8' },
-  ).trim();
-  // Extract the numbers from a line like this:
-  // 50 files changed, 1988 insertions(+), 2056 deletions(-)
-  const [, changed, insertions, deletions] = diff.match(
-    /(\d+) files* changed, (\d+) insertions*\(\+\), (\d+) deletions*/,
-  );
-
-  // Get the number of commits
-  const commits = execSync(
-    `git rev-list --count ${previousVersion}...${version}`,
-    { encoding: 'utf8' },
-  ).trim();
-
-  return {
-    commits,
-    changed,
-    insertions,
-    deletions,
-  };
-};
-
-const contributors = (version, previousVersion) =>
-  prompt([
-    {
-      name: 'releaseContributors',
-      type: Number,
-      message: `Find "contributors" at https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version}\nHow many people have contributed to this release?`,
-    },
-    {
-      name: 'totalContributors',
-      type: Number,
-      message:
-        'Find "contributors" at https://github.com/mdn/browser-compat-data/\nHow many people have contributed to browser-compat-data overall?',
-    },
-  ]);
-
-const notableChanges = previousReleaseDate => {
-  const searchUrl = new URL('https://github.com/mdn/browser-compat-data/pulls');
-  const querySafeDate = previousReleaseDate.replace('+', '%2B');
-  searchUrl.search = `q=is:pr merged:>=${querySafeDate} label:"needs-release-note :newspaper:"`;
-
-  return `SUMMARIZE THESE PRs: ${searchUrl.href}`;
-};
-
-const countFeatures = () => {
-  let count = 0;
-  JSON.parse(JSON.stringify(bcd), k => {
-    if (k === '__compat') {
-      count++;
+    for (const feature of diff.added) {
+      allAdds.push({
+        number: pull.number,
+        url: pull.url,
+        feature,
+      });
     }
-    return count;
-  });
-  return count;
-};
 
-const makeURL = (version, body) => {
-  const baseURL = 'https://github.com/mdn/browser-compat-data/releases/new';
+    for (const feature of diff.removed) {
+      allRemoves.push({
+        number: pull.number,
+        url: pull.url,
+        feature,
+      });
+    }
+  }
 
-  // Adhering to RFC 3986 makes the full link clickable in Terminal.app
-  const encodedBody = encodeURIComponent(body).replace(
-    /[!'()*]/g,
-    c => `%${c.charCodeAt(0).toString(16)}`,
-  );
+  console.error(); // White space for more convenient copying and pasting from a terminal
 
-  return `${baseURL}?title=${version}&tag=${version}&body=${encodedBody}`;
-};
+  allRemoves.sort((a, b) => a.feature.localeCompare(b.feature));
+  allAdds.sort((a, b) => a.feature.localeCompare(b.feature));
 
-const main = async () => {
-  const version = argv.versionTag;
-  const previousVersion =
-    argv.previous ||
-    execSync(`git describe --abbrev=0 ${version}^`, {
-      encoding: 'utf8',
-    }).trim();
-  const previousReleaseDate = execSync(
-    `git log -1 --format=%aI ${previousVersion}`,
-    {
-      encoding: 'utf8',
+  console.log(preamble());
+  console.log(markdownifyChanges(allRemoves, allAdds));
+  console.log('<!-- TODO: replace with `npm run release-stats` -->');
+}
+
+function pullsFromGitHub(start, end) {
+  const searchDetails = {
+    limit: 1000, // As many PRs as GitHub will allow
+    search: `${buildQuery(end, start, false)}`,
+    json: `number,url,mergeCommit`,
+    jq: '[.[] | { mergeCommit: .mergeCommit.oid, number: .number, url: .url }]', // Flatten the structure provided by GitHub
+  };
+  const args = Object.entries(searchDetails)
+    .map(([key, value]) => `--${key}='${value}'`)
+    .join(' ');
+  const command = `gh pr list ${args}`;
+
+  return JSON.parse(exec(command));
+}
+
+function preamble() {
+  const upcomingVersion = require('../package.json').version;
+
+  return [
+    `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/v${upcomingVersion})`,
+    '',
+    `${new Date().toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    })} <!-- TODO: replace with final release date-->`,
+    '',
+  ].join('\n');
+}
+
+function markdownifyChanges(removes, adds) {
+  const notes = [];
+
+  const featureBullet = obj =>
+    `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
+
+  if (removes.length) {
+    notes.push('### Removals', '');
+    for (const removal of removes) {
+      notes.push(featureBullet(removal));
+    }
+    notes.push('');
+  }
+
+  if (adds.length) {
+    notes.push('### Additions', '');
+    for (const added of adds) {
+      notes.push(featureBullet(added));
+    }
+    notes.push('');
+  }
+
+  return notes.join('\n');
+}
+
+if (require.main === module) {
+  const { argv } = require('yargs').command(
+    '$0 [start-version-tag [end-version-tag]]',
+    'Generate release notes text',
+    yargs => {
+      releaseYargsBuilder(yargs);
+      yargs.example('$0', 'Generate the release notes for the next release');
+      yargs.example(
+        '$0 v4.1.14 v4.1.13',
+        'Generate the release notes for v4.1.14',
+      );
     },
-  ).trim();
-
-  const { commits, changed, insertions, deletions } = stats(
-    version,
-    previousVersion,
   );
 
-  const { releaseContributors, totalContributors } = await contributors(
-    version,
-    previousVersion,
-  );
-  const changeMessage = notableChanges(previousReleaseDate);
-  const stars = await stargazers();
-  const features = countFeatures();
-
-  const body = `\
-**Notable changes**
-- ${changeMessage}
-
-**Statistics**
-- ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits (https://github.com/mdn/browser-compat-data/compare/${previousVersion}...${version})
-- ${features} total features
-- ${totalContributors} total contributors
-- ${stars} total stargazers`;
-
-  console.log(chalk.bold('\nOpen this URL in a browser:'));
-  console.log(makeURL(version, body));
-};
-
-main();
+  main(argv);
+}

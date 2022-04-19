@@ -6,50 +6,52 @@ Usually, this happens every Thursday (MDN never deploys to production on Fridays
 
 ## Before you begin
 
-Any project owner (or release designee) can complete the following steps to publish a new version, but please coordinate releases with [@ddbeck](https://github.com/ddbeck).
+Any project owner (or release designee) can complete the following steps to publish a new version.
 
 The steps in this process assume:
 
 - `NPM_TOKEN` is set in the repository secrets. If the token is invalidated or unset, a member of the `@mdn` organization on npm must [create a new token](https://docs.npmjs.com/creating-and-viewing-authentication-tokens) and [add it to the repository's secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository).
-- Your `origin` remote points to `mdn/browser-compat-data`. You may have to adjust the procedure to use a different remote name.
+- You have cloned the mdn/browser-compatibility-data repository and you have the latest `main` branch checked out.
+- You have [the `gh` CLI](https://cli.github.com/) installed.
+- You have [`jq`](https://stedolan.github.io/jq/) installed.
 
-## Prepare the release
+## Prepare for an upcoming release
 
-To create a new version of the package:
+Anticipate a release by keeping a running draft pull request to prepare documentation and metadata for the release. See [#9466](https://github.com/mdn/browser-compat-data/pull/9466) as an example.
 
-1. Figure out the new version number by looking at [past releases](https://github.com/mdn/browser-compat-data/releases). If the release is a non-breaking and data-only update, we're using patch versions. Lets assume that's the case and the next version should be `1.0.3`.
+When a release is immenent:
 
-2. On your updated and clean `master` branch, run `npm version patch -m "Patch release containing data or non-breaking updates only"`. Locally, this updates `package.json`, creates a new commit, and creates a new release tag (see also the docs for [npm version](https://docs.npmjs.com/cli/version)).
+1. Start a new branch for the upcoming release. For example, run `git switch -c release-YYYY-MM-DD`, where `YYYY-MM-DD` is the target release date.
 
-3. Push the commit to `master`: `git push origin master`.
+2. Increment the package version with `npm version --no-git-tag-version` and commit the change.
 
-4. Check if the commit passes our [GitHub Actions workflows](https://github.com/mdn/browser-compat-data/actions).
+   For example, to increment the version for a routine data update with no breaking changes or new features, run `npm version --no-git-tag-version patch`, then commit the changes to the package metadata files.
 
-5. If the commit passed, push the git tag as well: `git push origin v1.0.3`.
+   If needed, you can repeat this step on the same branch, using a `minor` or `major` argument (instead of `patch`), to increment the version for newly-introduced features or breaking changes (see [_Semantic versioning policy_](../README.md#semantic-versioning-policy)).
 
-6. Start a draft [release on GitHub](https://github.com/mdn/browser-compat-data/releases) by running `npm run release-notes -- v1.0.3` and completing the prompts.
+3. Run `npm run release-notes` — this command will take several minutes to finish — and copy standard output to `RELEASE_NOTES.md`.
 
-   _Note_: If you're not ready to publish to npm, click **Save draft** in GitHub and resume this process later.
+4. Run `npm run release-pulls` to get a link to all of the labeled pull requests since the previous release. Confirm that all pull requests labeled `needs-release-note 📰` have been entered into the release notes (written manually, if necessary). Remove the labels when release notes are complete.
 
-## Publish to npm
+5. Add the release statistics to the release notes. Switch to the `main` branch, then run `npm run release-stats`. After completing the prompts, copy the output, switch back to the release branch, and add the statistics to `RELEASE_NOTES.md`.
 
-To publish the package:
+6. Confirm all `TODO` comments in the `RELEASE_NOTES.md` file are completed and removed.
 
-7. Click **Publish release**. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
+7. Commit your changes, push the release branch to your remote, and open a pull request on GitHub.
 
-8. Check [mdn-browser-compat-data on npm](https://www.npmjs.com/package/mdn-browser-compat-data) to see if `1.0.3` shows up correctly.
+8. Mark the pull request as ready for review.
 
-The package is now published.
+9. Confirm that CI passes before continuing.
 
-## Finish up
+10. If applicable or desired, seek a review, then merge the pull request.
 
-After the package is published:
+11. Start a [release on GitHub](https://github.com/mdn/browser-compat-data/releases).
 
-9. Notify the `#mdn-dev` channel on Mozilla Slack about the new release.
+    - In the _Tag version_ and _Release title_ fields, enter `vX.Y.Z` where `X.Y.Z` in the version number in `package.json`.
+    - In the _Describe this release_ field, paste the release note text from `RELEASE_NOTES.md`.
 
-10. Update tracking issues:
+12. Click **Publish release** to create the tag and trigger the workflow that publishes to npm. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
 
-    - [#6369](https://github.com/mdn/browser-compat-data/issues/6369) for every release, update with the results of `npm run stats api`
-    - [#3555](https://github.com/mdn/browser-compat-data/issues/3555) when there's significant progress, update with the results of `npm run stats`
+13. Check [`@mdn/browser-compat-data` on npm](https://www.npmjs.com/package/@mdn/browser-compat-data) to see if the release shows up correctly.
 
-You have finished releasing BCD! 🎉
+The package is now published and you have finished releasing BCD! 🎉
