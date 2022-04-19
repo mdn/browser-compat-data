@@ -15,6 +15,11 @@ function checkStatus(data, logger, path = '') {
   if (compat) {
     const status = compat.status;
     if (status) {
+      if (compat.spec_url && status.standard_track === false) {
+        logger.error(
+          chalk`{red → {bold ${path}} is marked as {bold non-standard}, but has a {bold spec_url}}`,
+        );
+      }
       if (status.experimental && status.deprecated) {
         logger.error(
           chalk`{red → Unexpected simultaneous experimental and deprecated status in {bold ${path}}}`,
