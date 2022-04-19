@@ -28,23 +28,23 @@ When a release is immenent:
 
    A new `major` release (in other words, a release containing a breaking change) should only be released after extensive discussion. If a pull request containing a breaking change was seemingly merged without sufficient discussion and consensus, please confirm if the merge was intentional and has the majority of owner consensus before proceeding.
 
-2. Increment the package version with `npm version --no-git-tag-version [major | minor | patch]` and commit the change.
+3. Increment the package version with `npm version --no-git-tag-version [major | minor | patch]` and commit the change.
 
    For example, to increment the version for a routine data update with no breaking changes or new features, run `npm version --no-git-tag-version patch`, then commit the changes to the package metadata files.
 
-3. Run `npm run release-notes` — this command will take several minutes to finish — and copy standard output to `RELEASE_NOTES.md`.
+4. Run `npm run release-notes` — this command will take several minutes to finish — and copy standard output to `RELEASE_NOTES.md`.
 
-4. From the link provided in step 2, confirm that all pull requests labeled `needs-release-note 📰` have been entered into the release notes (written manually, if necessary).
+5. From the link provided in step 2, confirm that all pull requests labeled `needs-release-note 📰` have been entered into the release notes (written manually, if necessary).
 
-5. Add the release statistics to the release notes. Run `npm run release-stats` and complete the prompts, then copy the output and add it to `RELEASE_NOTES.md`.
+6. Add the release statistics to the release notes. Run `npm run release-stats` and complete the prompts, then copy the output and add it to `RELEASE_NOTES.md`.
 
-6. Confirm all `TODO` comments in the `RELEASE_NOTES.md` file are completed and removed.
+7. Confirm all `TODO` comments in the `RELEASE_NOTES.md` file are completed and removed.
 
-7. Commit your changes, push the release branch to your remote, and open a pull request on GitHub.
+8. Commit your changes, push the release branch to your remote, and open a pull request on GitHub.
 
-8. Confirm that CI passes before continuing.
+9. Confirm that CI passes before continuing.
 
-9. If applicable or desired, seek a review.
+10. If applicable or desired, seek a review.
 
 You are now ready to perform the actual release!
 
@@ -56,8 +56,8 @@ Now that you have created the PR and gotten the applicable review, you may now p
 
 2. Start a [release on GitHub](https://github.com/mdn/browser-compat-data/releases).
 
-    - In the _Tag version_ and _Release title_ fields, enter `vX.Y.Z` where `X.Y.Z` in the version number in `package.json`.
-    - In the _Describe this release_ field, paste the release note text from `RELEASE_NOTES.md`.
+   - In the _Tag version_ and _Release title_ fields, enter `vX.Y.Z` where `X.Y.Z` in the version number in `package.json`.
+   - In the _Describe this release_ field, paste the release note text from `RELEASE_NOTES.md`.
 
 3. Click **Publish release** to create the tag and trigger the workflow that publishes to npm. Wait for the release [GitHub Actions workflow](https://github.com/mdn/browser-compat-data/actions) to finish successfully.
 
