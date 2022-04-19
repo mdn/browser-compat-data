@@ -114,6 +114,9 @@ function formatStats(details) {
 
   return `\
 ### Statistics
+
+<!-- TODO: replace 'main' with the release version number -->
+
 - ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits ([\`${start}...${end}\`](https://github.com/mdn/browser-compat-data/compare/${start}...${end}))
 - ${features} total features
 - ${totalContributors} total contributors
