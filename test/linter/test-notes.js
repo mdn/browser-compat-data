@@ -20,9 +20,9 @@ const validator = new HtmlValidate();
  */
 
 /**
- * Test a specific HTML tag (node) in notes for issues
+ * Recursively test a DOM node for valid elements
  *
- * @param {object} node The HTML node to test
+ * @param {object} node The DOM node to test
  * @param {string} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {HTMLError[]} errors The array to push errors to
@@ -105,7 +105,7 @@ const validateHTML = (string, browser, feature, errors) => {
 };
 
 /**
- * Recursively check the notes in the data
+ * Check the notes in the data
  *
  * @param {string|string[]} notes The notes to test
  * @param {string} browser The browser the notes belong to
@@ -168,7 +168,9 @@ const testNotes = filename => {
 
   processData(data, errors);
 
-  if (errors.length) {
+  if (!errors.length) {
+    return false;
+  }
     console.error(
       chalk`{red   Notes – {bold ${errors.length}} ${
         errors.length === 1 ? 'error' : 'errors'
@@ -180,7 +182,7 @@ const testNotes = filename => {
           console.error(
             chalk`{red   Notes for {bold ${error.feature}} in {bold ${
               error.browser
-            }} have broken HTML: ${error.messages.join(', ')}}`,
+            }} have invalid HTML: ${error.messages.join(', ')}}`,
           );
           break;
         case 'disallowed':
