@@ -3,7 +3,7 @@
 
 'use strict';
 
-const assert = require('assert');
+const assert = require('assert').strict;
 const { execSync } = require('child_process');
 
 const prebuiltPath = '../build';

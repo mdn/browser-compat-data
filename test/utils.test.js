@@ -3,7 +3,7 @@
 
 'use strict';
 
-const assert = require('assert');
+const assert = require('assert').strict;
 const { escapeInvisibles } = require('./utils.js');
 
 describe('utils', () => {
@@ -53,7 +53,7 @@ describe('utils', () => {
       } else {
         [char, expected = char] = data;
       }
-      assert.strictEqual(escapeInvisibles(char), expected);
+      assert.equal(escapeInvisibles(char), expected);
     }
   });
 });
