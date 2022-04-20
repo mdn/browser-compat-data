@@ -39,10 +39,11 @@ const testNode = (node, browser, feature, errors) => {
         browser,
         tag,
       });
-    } else if (tag === 'a') {
+    }
+    if (tag === 'a') {
       if (
         Object.entries(node.attributes).length !== 1 ||
-        Object.entries(node.attributes)[0][0] !== 'href'
+        !('href' in node.attributes)
       ) {
         // Ensure 'a' nodes only contain an 'href'
         errors.push({
