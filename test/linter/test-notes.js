@@ -13,7 +13,7 @@ const validator = new HtmlValidate();
  *
  * @typedef {object} HTMLError
  * @property {HTMLErrorType} errortype The type of error
- * @property {string} relPath The identifier of the feature
+ * @property {string} feature The identifier of the feature
  * @property {string} browser The browser where the error was found
  * @property {string} tag The specific HTML tag
  * @property {string[]} messages Messages to describe the error
@@ -24,24 +24,24 @@ const validator = new HtmlValidate();
  *
  * @param {object} node The HTML node to test
  * @param {string} browser The browser the notes belong to
- * @param {string} relPath The identifier of the feature
+ * @param {string} feature The identifier of the feature
  * @param {HTMLError[]} errors The array to push errors to
  * @returns {void}
  */
-const testNode = (node, browser, relPath, errors) => {
+const testNode = (node, browser, feature, errors) => {
   if (node.nodeType == 1) {
     const tag = node.tagName?.toLowerCase();
     if (tag && !VALID_ELEMENTS.includes(tag))
       errors.push({
         type: 'disallowed',
-        relPath,
+        feature,
         browser,
         tag,
       });
     if (tag !== 'a' && Object.entries(node.attributes).length !== 0) {
       errors.push({
         type: 'attrs',
-        relPath,
+        feature,
         browser,
         tag,
       });
@@ -53,14 +53,14 @@ const testNode = (node, browser, relPath, errors) => {
     ) {
       errors.push({
         type: 'attrs_a',
-        relPath,
+        feature,
         browser,
         tag,
       });
     }
   }
   for (let childNode of node.childNodes) {
-    testNode(childNode, browser, relPath, errors);
+    testNode(childNode, browser, feature, errors);
   }
 };
 
@@ -69,11 +69,11 @@ const testNode = (node, browser, relPath, errors) => {
  *
  * @param {string} string The string to test
  * @param {string} browser The browser the notes belong to
- * @param {string} relPath The identifier of the feature
+ * @param {string} feature The identifier of the feature
  * @param {HTMLError[]} errors The array to push errors to
  * @returns {void}
  */
-const validateHTML = (string, browser, relPath, errors) => {
+const validateHTML = (string, browser, feature, errors) => {
   const report = validator.validateString(string, {
     rules: {
       'attr-quotes': 'off',
@@ -82,7 +82,7 @@ const validateHTML = (string, browser, relPath, errors) => {
   if (report.valid) {
     // If HTML is valid, ensure we're only using valid elements
     let data = parser.parse(string);
-    testNode(data, browser, relPath, errors);
+    testNode(data, browser, feature, errors);
   } else {
     errors.push({
       type: 'invalid',
@@ -90,7 +90,7 @@ const validateHTML = (string, browser, relPath, errors) => {
         .map(x => x.messages)
         .flat()
         .map(x => x.message),
-      relPath,
+      feature,
       browser,
     });
   }
@@ -98,7 +98,7 @@ const validateHTML = (string, browser, relPath, errors) => {
   if (string.includes('  ')) {
     errors.push({
       type: 'doublespace',
-      relPath,
+      feature,
       browser,
     });
   }
@@ -109,17 +109,17 @@ const validateHTML = (string, browser, relPath, errors) => {
  *
  * @param {string|string[]} notes The notes to test
  * @param {string} browser The browser the notes belong to
- * @param {string} relPath The identifier of the feature
+ * @param {string} feature The identifier of the feature
  * @param {HTMLError[]} errors The array to push errors to
  * @returns {void}
  */
-const checkNotes = (notes, browser, relPath, errors) => {
+const checkNotes = (notes, browser, feature, errors) => {
   if (Array.isArray(notes)) {
     for (let note of notes) {
-      checkNotes(note, browser, relPath, errors);
+      checkNotes(note, browser, feature, errors);
     }
   } else {
-    validateHTML(notes, browser, relPath, errors);
+    validateHTML(notes, browser, feature, errors);
   }
 };
 
@@ -128,27 +128,27 @@ const checkNotes = (notes, browser, relPath, errors) => {
  *
  * @param {Identifier} data The data to test
  * @param {HTMLError[]} errors The array to push errors to
- * @param {string} [relPath] The identifier of the feature
+ * @param {string} [feature] The identifier of the feature
  * @returns {void}
  */
-const processData = (data, errors, relPath) => {
+const processData = (data, errors, feature) => {
   for (const prop in data) {
     if (prop === '__compat' && data[prop].support) {
       let statement = data[prop].support;
       for (const browser in statement) {
         if (Array.isArray(statement[browser])) {
           for (let s in statement[browser]) {
-            if (s.notes) checkNotes(s.notes, browser, relPath, errors);
+            if (s.notes) checkNotes(s.notes, browser, feature, errors);
           }
         } else {
           if (statement[browser].notes)
-            checkNotes(statement[browser].notes, browser, relPath, errors);
+            checkNotes(statement[browser].notes, browser, feature, errors);
         }
       }
     }
     const sub = data[prop];
     if (typeof sub === 'object') {
-      processData(sub, errors, relPath ? `${relPath}.${prop}` : `${prop}`);
+      processData(sub, errors, feature ? `${feature}.${prop}` : `${prop}`);
     }
   }
 };
@@ -178,14 +178,14 @@ const testNotes = filename => {
       switch (error.type) {
         case 'invalid':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
+            chalk`{red   Notes for {bold ${error.feature}} in {bold ${
               error.browser
             }} have broken HTML: ${error.messages.join(', ')}}`,
           );
           break;
         case 'disallowed':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${
+            chalk`{red   Notes for {bold ${error.feature}} in {bold ${
               error.browser
             }} have a {bold disallowed HTML element} ({bold <${
               error.tag
@@ -194,17 +194,17 @@ const testNotes = filename => {
           break;
         case 'attrs':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.}`,
+            chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.}`,
           );
           break;
         case 'attrs_a':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
+            chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
           );
           break;
         case 'doublespace':
           console.error(
-            chalk`{red   Notes for {bold ${error.relPath}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
+            chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
           );
           break;
       }
