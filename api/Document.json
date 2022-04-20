@@ -252,6 +252,55 @@
           }
         }
       },
+      "afterscriptexecute_event": {
+        "__compat": {
+          "description": "<code>afterscriptexecute</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/afterscriptexecute_event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "9"
+            },
+            "firefox_android": {
+              "version_added": "9"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "alinkColor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/alinkColor",
@@ -533,13 +582,19 @@
           "spec_url": "https://drafts.csswg.org/css-animations/#eventdef-animationevent-animationcancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "firefox": {
               "version_added": "54"
@@ -551,52 +606,30 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "69",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "59",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "13.0",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             }
           },
           "status": {
@@ -622,10 +655,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "firefox_android": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "ie": {
               "version_added": "10"
@@ -672,10 +705,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "firefox_android": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "ie": {
               "version_added": "10"
@@ -722,10 +755,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "firefox_android": {
-              "version_added": "6"
+              "version_added": "5"
             },
             "ie": {
               "version_added": "10"
@@ -802,6 +835,55 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": true
+          }
+        }
+      },
+      "beforescriptexecute_event": {
+        "__compat": {
+          "description": "<code>beforescriptexecute</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/beforescriptexecute_event",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "9"
+            },
+            "firefox_android": {
+              "version_added": "9"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": false
           }
         }
       },
@@ -1749,9 +1831,16 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "≤18"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>oncopy</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "6"
             },
@@ -1759,19 +1848,21 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>oncopy</code> event handler property is not supported."
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -2406,7 +2497,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -2504,7 +2595,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -2821,61 +2912,6 @@
             "deprecated": false
           }
         },
-        "expandEntityReferences_parameter": {
-          "__compat": {
-            "description": "<code>expandEntityReferences</code> parameter",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": "12",
-                "version_removed": "79"
-              },
-              "firefox": {
-                "version_added": "2",
-                "version_removed": "12"
-              },
-              "firefox_android": {
-                "version_added": "4",
-                "version_removed": "14"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "opera": {
-                "version_added": "9",
-                "version_removed": "15"
-              },
-              "opera_android": {
-                "version_added": "10.1",
-                "version_removed": "14"
-              },
-              "safari": {
-                "version_added": "3",
-                "version_removed": "10.1"
-              },
-              "safari_ios": {
-                "version_added": "3",
-                "version_removed": "10.3"
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
         "whatToShow_filter_parameters_optional": {
           "__compat": {
             "description": "<code>whatToShow</code> and <code>filter</code> parameters are optional",
@@ -2964,7 +3000,7 @@
               "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -2986,9 +3022,16 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "≤18"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>oncut</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "6"
             },
@@ -2996,19 +3039,21 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>oncut</code> event handler property is not supported."
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -4044,7 +4089,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -4747,16 +4792,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "65",
-              "version_removed": "79",
-              "alternative_name": "policy",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.featurePolicy.webidl.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -5089,6 +5125,54 @@
           "status": {
             "experimental": true,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "freeze_event": {
+        "__compat": {
+          "description": "<code>freeze</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "48"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
+            "webview_android": {
+              "version_added": "68"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -6008,7 +6092,8 @@
                   "name": "#storage-access-api",
                   "value_to_set": "Enabled"
                 }
-              ]
+              ],
+              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
             },
             "chrome_android": {
               "version_added": "78",
@@ -6018,7 +6103,8 @@
                   "name": "#storage-access-api",
                   "value_to_set": "Enabled"
                 }
-              ]
+              ],
+              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
             },
             "edge": {
               "version_added": "85"
@@ -6027,14 +6113,7 @@
               "version_added": "65"
             },
             "firefox_android": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.storage_access.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -6066,7 +6145,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
             "deprecated": false
           }
@@ -6208,7 +6287,7 @@
             "firefox": [
               {
                 "version_added": "18",
-                "notes": "Since Firefox 56 it also returns <code>true</code> on Mac when the window is completely hidden by another non-translucent application."
+                "notes": "Since Firefox 56 it also returns <code>true</code> on macOS when the window is completely hidden by another non-translucent application."
               },
               {
                 "version_added": "10",
@@ -6219,7 +6298,7 @@
             "firefox_android": [
               {
                 "version_added": "18",
-                "notes": "Since Firefox 56 it also returns <code>true</code> on Mac when the window is completely hidden by another non-translucent application."
+                "notes": "Since Firefox 56 it also returns <code>true</code> on macOS when the window is completely hidden by another non-translucent application."
               },
               {
                 "version_added": "10",
@@ -7076,821 +7155,6 @@
           }
         }
       },
-      "onafterscriptexecute": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onafterscriptexecute",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "onbeforescriptexecute": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onbeforescriptexecute",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "oncopy": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/oncopy",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "6"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "oncut": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/oncut",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "6"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "onfreeze": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfreeze",
-          "support": {
-            "chrome": {
-              "version_added": "68"
-            },
-            "chrome_android": {
-              "version_added": "68"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "55"
-            },
-            "opera_android": {
-              "version_added": "48"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "68"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onfullscreenchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfullscreenchange",
-          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenchange",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "15",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "12",
-                "alternative_name": "onwebkitfullscreenchange"
-              },
-              {
-                "version_added": "12",
-                "version_removed": "14"
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenchange"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenchange"
-              }
-            ],
-            "ie": {
-              "version_added": "11",
-              "alternative_name": "onmsfullscreenchange"
-            },
-            "opera": [
-              {
-                "version_added": "58"
-              },
-              {
-                "version_added": "15",
-                "alternative_name": "onwebkitfullscreenchange"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "15"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "alternative_name": "onwebkitfullscreenchange"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "14"
-              }
-            ],
-            "safari": {
-              "version_added": "5.1",
-              "alternative_name": "onwebkitfullscreenchange"
-            },
-            "safari_ios": {
-              "version_added": "12",
-              "alternative_name": "onwebkitfullscreenchange",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
-            "samsunginternet_android": [
-              {
-                "version_added": "10.0"
-              },
-              {
-                "version_added": "1.0",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "≤37",
-                "alternative_name": "onwebkitfullscreenchange"
-              }
-            ]
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onfullscreenerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onfullscreenerror",
-          "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenerror",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "12",
-                "alternative_name": "onwebkitfullscreenerror"
-              },
-              {
-                "version_added": "12",
-                "version_removed": "14"
-              }
-            ],
-            "firefox": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenerror"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "10",
-                "alternative_name": "onmozfullscreenerror"
-              }
-            ],
-            "ie": {
-              "version_added": "11",
-              "alternative_name": "onmsfullscreenerror"
-            },
-            "opera": [
-              {
-                "version_added": "58"
-              },
-              {
-                "version_added": "15",
-                "alternative_name": "onwebkitfullscreenerror"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "15"
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "alternative_name": "onwebkitfullscreenerror"
-              },
-              {
-                "version_added": "12.1",
-                "version_removed": "14"
-              }
-            ],
-            "safari": {
-              "version_added": "6",
-              "alternative_name": "onwebkitfullscreenerror"
-            },
-            "safari_ios": {
-              "version_added": "12",
-              "alternative_name": "onwebkitfullscreenerror",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
-            "samsunginternet_android": [
-              {
-                "version_added": "10.0"
-              },
-              {
-                "version_added": "1.0",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "version_added": "≤37",
-                "alternative_name": "onwebkitfullscreenerror"
-              }
-            ]
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpaste": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onpaste",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": {
-              "version_added": "6"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "2"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "onpointerlockchange": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/pointerlock/#dom-document-onpointerlockchange",
-          "support": {
-            "chrome": {
-              "version_added": "36"
-            },
-            "chrome_android": {
-              "version_added": "36"
-            },
-            "edge": {
-              "version_added": "13"
-            },
-            "firefox": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockchange"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockchange"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "23"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpointerlockerror": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/pointerlock/#dom-document-onpointerlockerror",
-          "support": {
-            "chrome": {
-              "version_added": "36"
-            },
-            "chrome_android": {
-              "version_added": "36"
-            },
-            "edge": {
-              "version_added": "13"
-            },
-            "firefox": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockerror"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "50"
-              },
-              {
-                "version_added": "14",
-                "version_removed": "50",
-                "alternative_name": "onmozpointerlockerror"
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "23"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onreadystatechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onreadystatechange",
-          "support": {
-            "chrome": {
-              "version_added": "9"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": "4"
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "5.1"
-            },
-            "safari_ios": {
-              "version_added": "5"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onresume": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onresume",
-          "support": {
-            "chrome": {
-              "version_added": "68"
-            },
-            "chrome_android": {
-              "version_added": "68"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "55"
-            },
-            "opera_android": {
-              "version_added": "48"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "68"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onvisibilitychange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/onvisibilitychange",
-          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvisibilitychange",
-          "support": {
-            "chrome": {
-              "version_added": "62",
-              "notes": "Before Chrome 62, this event handler attribute is not supported; however, the event itself is supported since Chrome 33. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "chrome_android": {
-              "version_added": "62",
-              "notes": "Before Chrome 62, this event handler attribute is not supported; however, the event itself is supported since Chrome 33. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "edge": {
-              "version_added": "18",
-              "notes": "Before Edge 18, this event handler attribute was not supported; however, the event itself was supported since Edge 12. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "firefox": {
-              "version_added": "56"
-            },
-            "firefox_android": {
-              "version_added": "56"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "This event handler attribute is not supported; however, the event itself is supported since IE 10. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "opera": {
-              "version_added": "49",
-              "notes": "Before Opera 49, this event handler attribute is not supported; however, the event itself is supported since Opera 20. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "opera_android": {
-              "version_added": "46",
-              "notes": "Before Opera Android 46, this event handler attribute is not supported; however, the event itself is supported since Opera Android 20. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": [
-                "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                "Before Safari 10.1, this event handler attribute was not supported; however, the event itself was supported since Safari 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-              ]
-            },
-            "safari_ios": {
-              "version_added": "10.3",
-              "partial_implementation": true,
-              "notes": [
-                "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                "Before Safari iOS 10.3, this event handler attribute was not supported; however, the event itself was supported since Safari iOS 7. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-              ]
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0",
-              "notes": "Before Samsung Internet 8.0, this event handler attribute is not supported; however, the event itself is supported since Samsung Internet 2.0. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
-            "webview_android": {
-              "version_added": "62",
-              "notes": "Before WebView 62, this event handler attribute is not supported; however, the event itself is supported since WebView 4.4.3. The event can be listened to via <code>document.addEventListener('visibilitychange', function() {});</code>."
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "open": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/open",
@@ -8073,9 +7337,16 @@
             "chrome_android": {
               "version_added": "18"
             },
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>onpaste</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "6"
             },
@@ -8083,19 +7354,21 @@
               "version_added": "6"
             },
             "ie": {
-              "version_added": "11"
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>onpaste</code> event handler property is not supported."
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "2"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -8295,36 +7568,12 @@
                 "alternative_name": "mspointercancel"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8382,36 +7631,12 @@
                 "alternative_name": "mspointerdown"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8469,36 +7694,12 @@
                 "alternative_name": "mspointerenter"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8556,36 +7757,12 @@
                 "alternative_name": "mspointerleave"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8625,11 +7802,14 @@
         "__compat": {
           "description": "<code>pointerlockchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event",
-          "spec_url": "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+          "spec_url": [
+            "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+            "https://w3c.github.io/pointerlock/#dom-document-onpointerlockchange"
+          ],
           "support": {
             "chrome": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "22",
@@ -8639,7 +7819,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "25",
@@ -8675,7 +7855,7 @@
             },
             "opera": [
               {
-                "version_added": "32"
+                "version_added": "23"
               },
               {
                 "version_added": "15",
@@ -8685,7 +7865,7 @@
             ],
             "opera_android": [
               {
-                "version_added": "32"
+                "version_added": "24"
               },
               {
                 "version_added": "14",
@@ -8701,7 +7881,7 @@
             },
             "samsunginternet_android": [
               {
-                "version_added": "5.0"
+                "version_added": "3.0"
               },
               {
                 "prefix": "webkit",
@@ -8711,7 +7891,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "45"
+                "version_added": "37"
               },
               {
                 "version_added": "≤37",
@@ -8731,11 +7911,14 @@
         "__compat": {
           "description": "<code>pointerlockerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event",
-          "spec_url": "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+          "spec_url": [
+            "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
+            "https://w3c.github.io/pointerlock/#dom-document-onpointerlockerror"
+          ],
           "support": {
             "chrome": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "22",
@@ -8745,7 +7928,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "45"
+                "version_added": "36"
               },
               {
                 "version_added": "25",
@@ -8781,7 +7964,7 @@
             },
             "opera": [
               {
-                "version_added": "32"
+                "version_added": "23"
               },
               {
                 "version_added": "15",
@@ -8791,7 +7974,7 @@
             ],
             "opera_android": [
               {
-                "version_added": "32"
+                "version_added": "24"
               },
               {
                 "version_added": "14",
@@ -8807,7 +7990,7 @@
             },
             "samsunginternet_android": [
               {
-                "version_added": "5.0"
+                "version_added": "3.0"
               },
               {
                 "prefix": "webkit",
@@ -8817,7 +8000,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "45"
+                "version_added": "37"
               },
               {
                 "version_added": "≤37",
@@ -8855,36 +8038,12 @@
                 "alternative_name": "mspointermove"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8942,36 +8101,12 @@
                 "alternative_name": "mspointerout"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -9029,36 +8164,12 @@
                 "alternative_name": "mspointerover"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -9166,36 +8277,12 @@
                 "alternative_name": "mspointerup"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -9784,36 +8871,10 @@
               "version_removed": "80"
             },
             "firefox": {
-              "version_added": "31",
-              "version_removed": "59",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.customelements.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": "31",
-              "version_removed": "59",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.customelements.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -10020,7 +9081,8 @@
                   "name": "#storage-access-api",
                   "value_to_set": "Enabled"
                 }
-              ]
+              ],
+              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
             },
             "chrome_android": {
               "version_added": "78",
@@ -10030,7 +9092,8 @@
                   "name": "#storage-access-api",
                   "value_to_set": "Enabled"
                 }
-              ]
+              ],
+              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
             },
             "edge": {
               "version_added": "85"
@@ -10039,14 +9102,7 @@
               "version_added": "65"
             },
             "firefox_android": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.storage_access.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -10078,8 +9134,56 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "resume_event": {
+        "__compat": {
+          "description": "<code>resume</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "68"
+            },
+            "chrome_android": {
+              "version_added": "68"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "55"
+            },
+            "opera_android": {
+              "version_added": "48"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
+            "webview_android": {
+              "version_added": "68"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -10529,7 +9633,7 @@
       "timeline": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/timeline",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-document-timeline",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-document-timeline",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -10543,22 +9647,9 @@
             "firefox": {
               "version_added": "75"
             },
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "63",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.timelines.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": {
               "version_added": false
             },
@@ -10844,13 +9935,13 @@
           "spec_url": "https://drafts.csswg.org/css-transitions/#transitioncancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "74"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "74"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -10862,52 +9953,22 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "62"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "53"
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "11.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "74"
             }
           },
           "status": {
@@ -10999,42 +10060,12 @@
             "opera_android": {
               "version_added": false
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": false
             },
@@ -11080,42 +10111,12 @@
             "opera_android": {
               "version_added": false
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": false
             },
@@ -11138,28 +10139,46 @@
           "support": {
             "chrome": [
               {
+                "version_added": "62"
+              },
+              {
                 "version_added": "33",
-                "notes": "Before Chrome 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Chrome, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "13",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "chrome_android": [
               {
+                "version_added": "62"
+              },
+              {
                 "version_added": "33",
-                "notes": "Before Chrome 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Chrome, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "18",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
-            "edge": {
-              "version_added": "12",
-              "notes": "Before Edge 18, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Edge, use <code>document.addEventListener('visibilitychange', function() {});</code>."
-            },
+            "edge": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "56"
             },
@@ -11168,72 +10187,131 @@
             },
             "ie": {
               "version_added": "10",
-              "notes": "The <code>onvisibilitychange</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+              "partial_implementation": true,
+              "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
             },
             "opera": [
               {
+                "version_added": "49"
+              },
+              {
                 "version_added": "20",
-                "notes": "Before Opera 49, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Opera, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "12.1",
-                "version_removed": "15"
+                "version_removed": "15",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "opera_android": [
               {
+                "version_added": "46"
+              },
+              {
                 "version_added": "20",
-                "notes": "Before Opera Android 46, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Opera Android, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "12.1",
-                "version_removed": "14"
+                "version_removed": "14",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
-            "safari": {
-              "version_added": "7",
-              "partial_implementation": true,
-              "notes": [
-                "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
-                "Before Safari 10.1, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Safari, use <code>document.addEventListener('visibilitychange', function() {});</code>."
-              ]
-            },
-            "safari_ios": {
-              "version_added": "7",
-              "partial_implementation": true,
-              "notes": [
-                "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
-                "Before Safari iOS 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
-                "Before Safari iOS 10.3, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Safari iOS, use <code>document.addEventListener('visibilitychange', function() {});</code>."
-              ]
-            },
+            "safari": [
+              {
+                "version_added": "14",
+                "partial_implementation": true,
+                "notes": "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>."
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not."
+                ]
+              },
+              {
+                "version_added": "7",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                  "The <code>onvisibilitychange</code> event handler property is not supported."
+                ]
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14",
+                "partial_implementation": true,
+                "notes": "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>."
+              },
+              {
+                "version_added": "10.3",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not."
+                ]
+              },
+              {
+                "version_added": "7",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                  "The <code>onvisibilitychange</code> event handler property is not supported."
+                ]
+              }
+            ],
             "samsunginternet_android": [
               {
+                "version_added": "8.0"
+              },
+              {
                 "version_added": "2.0",
-                "notes": "Before Samsung Internet 8.0, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of Samsung Internet, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "1.0",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ],
             "webview_android": [
               {
+                "version_added": "62"
+              },
+              {
                 "version_added": "4.4.3",
-                "notes": "Before WebView 62, the <code>onvisibilitychange</code> attribute is not supported. To listen to this event in earlier versions of WebView, use <code>document.addEventListener('visibilitychange', function() {});</code>."
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
                 "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
             ]
           },
