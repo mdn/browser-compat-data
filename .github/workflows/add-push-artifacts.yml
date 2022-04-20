@@ -8,20 +8,20 @@ jobs:
     name: Enumerate and diff features
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0  # get the full repository checkout, not just the inciting commit
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 14.x
-    - run: npm install
-    - run: node ./scripts/enumerate-features.js features.json
-    - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
-    - uses: actions/upload-artifact@v2
-      with:
-        name: enumerate-features
-        path: features.json
-    - uses: actions/upload-artifact@v2
-      with:
-        name: diff-features
-        path: features.diff.json
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # get the full repository checkout, not just the inciting commit
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - run: npm install
+      - run: node ./scripts/enumerate-features.js features.json
+      - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
+      - uses: actions/upload-artifact@v2
+        with:
+          name: enumerate-features
+          path: features.json
+      - uses: actions/upload-artifact@v2
+        with:
+          name: diff-features
+          path: features.diff.json
