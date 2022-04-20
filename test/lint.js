@@ -20,7 +20,6 @@ const {
   testVersions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testMigrations = require('./test-migrations');
 const testFormat = require('./test-format');
 
 const argv = yargs
