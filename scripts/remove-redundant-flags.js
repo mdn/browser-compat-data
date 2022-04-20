@@ -20,9 +20,9 @@ if (
   process.env.npm_lifecycle_event.includes('mocha')
 ) {
   // When running test, use a specific time for consistent testing
-  twoYearsAgo = new Date('January 1, 2019 0:00:00');
+  twoYearsAgo = Date.parse('2019-01-01T00:00Z');
 } else {
-  twoYearsAgo = new Date(Date.now());
+  twoYearsAgo = new Date();
   twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
 }
 
