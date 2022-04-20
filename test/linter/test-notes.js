@@ -31,32 +31,37 @@ const validator = new HtmlValidate();
 const testNode = (node, browser, feature, errors) => {
   if (node.nodeType == 1) {
     const tag = node.tagName?.toLowerCase();
-    if (tag && !VALID_ELEMENTS.includes(tag))
+    if (tag && !VALID_ELEMENTS.includes(tag)) {
+      // Ensure we're only using select nodes
       errors.push({
         type: 'disallowed',
         feature,
         browser,
         tag,
       });
-    if (tag !== 'a' && Object.entries(node.attributes).length !== 0) {
-      errors.push({
-        type: 'attrs',
-        feature,
-        browser,
-        tag,
-      });
-    }
-    if (
-      tag === 'a' &&
-      (Object.entries(node.attributes).length !== 1 ||
-        Object.entries(node.attributes)[0][0] !== 'href')
-    ) {
-      errors.push({
-        type: 'attrs_a',
-        feature,
-        browser,
-        tag,
-      });
+    } else if (tag === 'a') {
+      if (
+        Object.entries(node.attributes).length !== 1 ||
+        Object.entries(node.attributes)[0][0] !== 'href'
+      ) {
+        // Ensure 'a' nodes only contain an 'href'
+        errors.push({
+          type: 'attrs_a',
+          feature,
+          browser,
+          tag,
+        });
+      }
+    } else {
+      if (Object.entries(node.attributes).length !== 0) {
+        // Ensure nodes (besides 'a') contain no attributes
+        errors.push({
+          type: 'attrs',
+          feature,
+          browser,
+          tag,
+        });
+      }
     }
   }
   for (let childNode of node.childNodes) {
