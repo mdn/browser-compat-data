@@ -2,7 +2,7 @@
 const chalk = require('chalk');
 const parser = require('node-html-parser');
 const { HtmlValidate } = require('html-validate');
-const { VALID_ELEMENTS } = require('../utils.js');
+const { VALID_ELEMENTS } = require('./utils.js');
 
 const validator = new HtmlValidate();
 
