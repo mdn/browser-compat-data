@@ -18,7 +18,7 @@ class DuplicateCompatError extends Error {
  * @param {string[]} files The files to test
  * @returns {object} All of the browser compatibility data
  */
-const load = (...files) => {
+function load(...files) {
   let dir,
     result = {};
 
@@ -50,7 +50,7 @@ const load = (...files) => {
   }
 
   return result;
-};
+}
 
 function isPlainObject(v) {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
