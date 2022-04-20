@@ -1,5 +1,5 @@
 'use strict';
-const assert = require('assert');
+const assert = require('assert').strict;
 const specData = require('browser-specs');
 const { walk } = require('../utils');
 
@@ -61,7 +61,7 @@ describe('spec_url data', () => {
       if (![...allowList].find(host => spec.startsWith(host)))
         rejectedSpecs.push(spec);
     }
-    assert.deepStrictEqual(
+    assert.deepEqual(
       rejectedSpecs,
       [],
       `Invalid specification host(s) found. Try a more current specification URL and/or
