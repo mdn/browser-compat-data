@@ -217,6 +217,10 @@ const testNotes = filename => {
           chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
         );
         break;
+      default:
+        throw new Error(
+          `${error.type} thrown for ${error.feature} which is unknown type.`,
+        );
     }
   }
   return true;
