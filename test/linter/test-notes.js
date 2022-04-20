@@ -92,6 +92,7 @@ const validateHTML = (string, browser, feature, errors) => {
   } else {
     errors.push({
       type: 'invalid',
+      // Parse messages from validator in readable format
       messages: report.results
         .map(x => x.messages)
         .flat()
