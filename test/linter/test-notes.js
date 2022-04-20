@@ -142,7 +142,7 @@ const processData = (data, errors, feature) => {
       let statement = data[prop].support;
       for (const browser in statement) {
         if (Array.isArray(statement[browser])) {
-          for (let s in statement[browser]) {
+          for (let s of statement[browser]) {
             if (s.notes) checkNotes(s.notes, browser, feature, errors);
           }
         } else {
