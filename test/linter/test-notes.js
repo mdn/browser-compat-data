@@ -171,49 +171,48 @@ const testNotes = filename => {
   if (!errors.length) {
     return false;
   }
-    console.error(
-      chalk`{red   Notes – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      switch (error.type) {
-        case 'invalid':
-          console.error(
-            chalk`{red   Notes for {bold ${error.feature}} in {bold ${
-              error.browser
-            }} have invalid HTML: ${error.messages.join(', ')}}`,
-          );
-          break;
-        case 'disallowed':
-          console.error(
-            chalk`{red   Notes for {bold ${error.feature}} in {bold ${
-              error.browser
-            }} have a {bold disallowed HTML element} ({bold <${
-              error.tag
-            }>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}}`,
-          );
-          break;
-        case 'attrs':
-          console.error(
-            chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.}`,
-          );
-          break;
-        case 'attrs_a':
-          console.error(
-            chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
-          );
-          break;
-        case 'doublespace':
-          console.error(
-            chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
-          );
-          break;
-      }
+
+  console.error(
+    chalk`{red   Notes – {bold ${errors.length}} ${
+      errors.length === 1 ? 'error' : 'errors'
+    }:}`,
+  );
+  for (const error of errors) {
+    switch (error.type) {
+      case 'invalid':
+        console.error(
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${
+            error.browser
+          }} have invalid HTML: ${error.messages.join(', ')}}`,
+        );
+        break;
+      case 'disallowed':
+        console.error(
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${
+            error.browser
+          }} have a {bold disallowed HTML element} ({bold <${
+            error.tag
+          }>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}}`,
+        );
+        break;
+      case 'attrs':
+        console.error(
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.}`,
+        );
+        break;
+      case 'attrs_a':
+        console.error(
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
+        );
+        break;
+      case 'doublespace':
+        console.error(
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
+        );
+        break;
     }
-    return true;
   }
-  return false;
+  return true;
 };
 
 module.exports = testNotes;
