@@ -5,6 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const { browsers } = require('../..');
 const { walk } = require('../../utils');
 
 /**
@@ -18,7 +19,7 @@ const fixExperimental = (bcd) => {
 
     // This entry is marked as experimental. Check which browsers support it.
 
-    const supportedIn = new Set();
+    const browserSupport = new Set();
 
     for (const [browser, support] of Object.entries(compat.support)) {
       // Consider only the first part of an array statement.
@@ -28,14 +29,30 @@ const fixExperimental = (bcd) => {
         continue;
       }
       if (statement.version_added && !statement.version_removed) {
-        supportedIn.add(browser);
+        browserSupport.add(browser);
       }
     }
 
-    const widelySupported = ['chrome', 'firefox', 'safari'].every((browser) =>
-      supportedIn.has(browser),
-    );
-    if (widelySupported) {
+    // Now check which of Blink, Gecko and WebKit support it.
+
+    const engineSupport = new Set();
+
+    for (const browser of browserSupport) {
+      const currentRelease = Object.values(browsers[browser].releases).find(
+        (r) => r.status === 'current',
+      );
+      const engine = currentRelease.engine;
+      engineSupport.add(engine);
+    }
+
+    let engineCount = 0;
+    for (const engine of ['Blink', 'Gecko', 'WebKit']) {
+      if (engineSupport.has(engine)) {
+        engineCount++;
+      }
+    }
+
+    if (engineCount > 1) {
       compat.status.experimental = false;
     }
   }
