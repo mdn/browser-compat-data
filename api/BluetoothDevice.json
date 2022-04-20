@@ -3,17 +3,47 @@
     "BluetoothDevice": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice",
-        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothdevice",
+        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothdevice-interface",
         "support": {
-          "chrome": {
-            "version_added": "74"
-          },
+          "chrome": [
+            {
+              "version_added": "56",
+              "partial_implementation": true,
+              "notes": "Before Chrome 70, this feature was only supported in macOS.  In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+            },
+            {
+              "version_added": "56",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
           "chrome_android": {
-            "version_added": "74"
+            "version_added": "56"
           },
-          "edge": {
-            "version_added": "79"
-          },
+          "edge": [
+            {
+              "version_added": "79",
+              "partial_implementation": true,
+              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
+            },
+            {
+              "version_added": "79",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
           "firefox": {
             "version_added": false
           },
@@ -23,11 +53,26 @@
           "ie": {
             "version_added": false
           },
-          "opera": {
-            "version_added": "62"
-          },
+          "opera": [
+            {
+              "version_added": "43",
+              "partial_implementation": true,
+              "notes": "Before Opera 57, this feature was only supported in macOS.  In Opera 57, support was added for Windows 10. Linux support is not enabled by default."
+            },
+            {
+              "version_added": "43",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
           "opera_android": {
-            "version_added": "53"
+            "version_added": "43"
           },
           "safari": {
             "version_added": false
@@ -36,10 +81,11 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": "11.0"
+            "version_added": "6.0"
           },
           "webview_android": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
           }
         },
         "status": {
@@ -54,10 +100,10 @@
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-gatt",
           "support": {
             "chrome": {
-              "version_added": "74"
+              "version_added": "56"
             },
             "chrome_android": {
-              "version_added": "74"
+              "version_added": "56"
             },
             "edge": {
               "version_added": "79"
@@ -72,10 +118,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "62"
+              "version_added": "43"
             },
             "opera_android": {
-              "version_added": "53"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -84,7 +130,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "11.0"
+              "version_added": "6.0"
             },
             "webview_android": {
               "version_added": false
@@ -97,16 +143,19 @@
           }
         }
       },
-      "id": {
+      "gattserverdisconnected_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice/id",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-id",
+          "description": "<code>gattserverdisconnected</code> event",
+          "spec_url": [
+            "https://webbluetoothcg.github.io/web-bluetooth/#eventdef-bluetoothdevice-gattserverdisconnected",
+            "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdeviceeventhandlers-ongattserverdisconnected"
+          ],
           "support": {
             "chrome": {
-              "version_added": "74"
+              "version_added": "56"
             },
             "chrome_android": {
-              "version_added": "74"
+              "version_added": "56"
             },
             "edge": {
               "version_added": "79"
@@ -121,10 +170,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "62"
+              "version_added": "43"
             },
             "opera_android": {
-              "version_added": "53"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -133,7 +182,56 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "11.0"
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "id": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice/id",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-id",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
             },
             "webview_android": {
               "version_added": false
@@ -152,10 +250,10 @@
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-name",
           "support": {
             "chrome": {
-              "version_added": "74"
+              "version_added": "56"
             },
             "chrome_android": {
-              "version_added": "74"
+              "version_added": "56"
             },
             "edge": {
               "version_added": "79"
@@ -170,10 +268,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "62"
+              "version_added": "43"
             },
             "opera_android": {
-              "version_added": "53"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -182,7 +280,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "11.0"
+              "version_added": "6.0"
             },
             "webview_android": {
               "version_added": false

@@ -32,7 +32,7 @@
             "version_added": "42"
           },
           "firefox_android": {
-            "version_added": false
+            "version_added": "42"
           },
           "ie": {
             "version_added": "11",
@@ -76,9 +76,16 @@
               "version_removed": "3.0"
             }
           ],
-          "webview_android": {
-            "version_added": "4.4.3"
-          }
+          "webview_android": [
+            {
+              "version_added": "4.4.3"
+            },
+            {
+              "version_added": "4.4",
+              "version_removed": "4.4.3",
+              "prefix": "WebKit"
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -104,7 +111,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -120,7 +127,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "2.0"
@@ -128,6 +137,126 @@
             "webview_android": {
               "version_added": "4.4.3"
             }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "abort_event": {
+        "__compat": {
+          "description": "<code>abort</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event",
+          "spec_url": [
+            "https://w3c.github.io/media-source/#dfn-abort",
+            "https://w3c.github.io/media-source/#dom-sourcebuffer-onabort"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "42"
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "8",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6.0"
+              },
+              {
+                "version_added": "2.0",
+                "version_removed": "6.0",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "4.4.3",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onabort</code> event handler property is not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -154,7 +283,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -170,7 +299,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -194,7 +325,7 @@
               "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": false
             },
             "edge": {
               "version_added": false
@@ -228,7 +359,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -248,6 +379,9 @@
             "chrome": {
               "version_added": false
             },
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
               "version_added": "12",
               "version_removed": "79"
@@ -259,15 +393,25 @@
               "version_added": false
             },
             "ie": {
-              "version_added": null
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
             },
             "opera": {
               "version_added": false
             },
+            "opera_android": {
+              "version_added": false
+            },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
               "version_added": false
             }
           },
@@ -296,7 +440,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -312,7 +456,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -346,7 +492,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -362,7 +508,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -489,7 +637,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -505,7 +653,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -538,22 +688,24 @@
               "version_added": "63"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "57"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "10.0"
@@ -565,6 +717,126 @@
           "status": {
             "experimental": false,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "error_event": {
+        "__compat": {
+          "description": "<code>error</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event",
+          "spec_url": [
+            "https://w3c.github.io/media-source/#dfn-error",
+            "https://w3c.github.io/media-source/#dom-sourcebuffer-onerror"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "42"
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "8",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6.0"
+              },
+              {
+                "version_added": "2.0",
+                "version_removed": "6.0",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "4.4.3",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onerror</code> event handler property is not supported."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -587,7 +859,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -603,225 +875,12 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onabort": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onabort",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onerror",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onupdate": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdate",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onupdateend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdateend",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onupdatestart": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/onupdatestart",
-          "support": {
-            "chrome": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "42"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": "11",
-              "notes": "Only works on Windows 8+."
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": {
-              "version_added": false
             },
             "webview_android": {
               "version_added": "4.4.3"
@@ -852,7 +911,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -868,7 +927,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -892,7 +953,7 @@
               "version_added": false
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": false
             },
             "edge": {
               "version_added": false
@@ -926,7 +987,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -1008,7 +1069,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -1024,7 +1085,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -1040,39 +1103,363 @@
           }
         }
       },
-      "trackDefaults": {
+      "update_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/trackDefaults",
+          "description": "<code>update</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event",
+          "spec_url": [
+            "https://w3c.github.io/media-source/#dfn-update",
+            "https://w3c.github.io/media-source/#dom-sourcebuffer-onupdate"
+          ],
           "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
+            "chrome": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
-              "version_added": false
+              "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
-              "version_added": null
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "8",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
             "safari_ios": {
-              "version_added": false
-            }
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6.0"
+              },
+              {
+                "version_added": "2.0",
+                "version_removed": "6.0",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "4.4.3",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdate</code> event handler property is not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updateend_event": {
+        "__compat": {
+          "description": "<code>updateend</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event",
+          "spec_url": [
+            "https://w3c.github.io/media-source/#dfn-updateend",
+            "https://w3c.github.io/media-source/#dom-sourcebuffer-onupdateend"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "42"
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "8",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6.0"
+              },
+              {
+                "version_added": "2.0",
+                "version_removed": "6.0",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "4.4.3",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdateend</code> event handler property is not supported."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updatestart_event": {
+        "__compat": {
+          "description": "<code>updatestart</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event",
+          "spec_url": [
+            "https://w3c.github.io/media-source/#dfn-updatestart",
+            "https://w3c.github.io/media-source/#dom-sourcebuffer-onupdatestart"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "firefox": {
+              "version_added": "42"
+            },
+            "firefox_android": {
+              "version_added": "42"
+            },
+            "ie": {
+              "version_added": "11",
+              "notes": "Only works on Windows 8+."
+            },
+            "opera": [
+              {
+                "version_added": "40"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "40",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "18",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "8",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "safari_ios": {
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "6.0"
+              },
+              {
+                "version_added": "2.0",
+                "version_removed": "6.0",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "4.4.3",
+                "version_removed": "53",
+                "partial_implementation": true,
+                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -1094,7 +1481,7 @@
               "version_added": "42"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "42"
             },
             "ie": {
               "version_added": "11",
@@ -1110,7 +1497,9 @@
               "version_added": "8"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "13",
+              "partial_implementation": true,
+              "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": {
               "version_added": "3.0"

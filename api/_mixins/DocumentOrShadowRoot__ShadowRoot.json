@@ -53,7 +53,7 @@
       "adoptedStyleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/adoptedStyleSheets",
-          "spec_url": "https://wicg.github.io/construct-stylesheets/#dom-documentorshadowroot-adoptedstylesheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -271,7 +271,7 @@
       "getAnimations": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/getAnimations",
-          "spec_url": "https://drafts.csswg.org/web-animations/#dom-documentorshadowroot-getanimations",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-documentorshadowroot-getanimations",
           "support": {
             "chrome": [
               {
@@ -315,21 +315,9 @@
                 ]
               }
             ],
-            "firefox": [
-              {
-                "version_added": "75"
-              },
-              {
-                "version_added": "72",
-                "version_removed": "75",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.getAnimations.enabled"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "75"
+            },
             "firefox_android": {
               "version_added": "79"
             },
