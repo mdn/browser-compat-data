@@ -84,57 +84,6 @@
           "deprecated": false
         }
       },
-      "abort_event": {
-        "__compat": {
-          "description": "<code>abort</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/abort_event",
-          "spec_url": "https://w3c.github.io/IndexedDB/#eventdef-transaction-abort",
-          "support": {
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "10"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
-            "ie": {
-              "version_added": "10",
-              "partial_implementation": true
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "8"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/close",
@@ -189,7 +138,10 @@
         "__compat": {
           "description": "<code>close</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event",
-          "spec_url": "https://w3c.github.io/IndexedDB/#closing-connection",
+          "spec_url": [
+            "https://w3c.github.io/IndexedDB/#closing-connection",
+            "https://w3c.github.io/IndexedDB/#dom-idbdatabase-onclose"
+          ],
           "support": {
             "chrome": {
               "version_added": "31"
@@ -335,57 +287,6 @@
           }
         }
       },
-      "error_event": {
-        "__compat": {
-          "description": "<code>error</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/error_event",
-          "spec_url": "https://w3c.github.io/IndexedDB/#eventdef-request-error",
-          "support": {
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "10"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
-            "ie": {
-              "version_added": "10",
-              "partial_implementation": true
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "8"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "name": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/name",
@@ -440,206 +341,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames",
           "spec_url": "https://w3c.github.io/IndexedDB/#ref-for-dom-idbdatabase-objectstorenames①",
-          "support": {
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "10"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
-            "ie": {
-              "version_added": "10",
-              "partial_implementation": true
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "8"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "4.4"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onabort": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onabort",
-          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbdatabase-onabort",
-          "support": {
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "10"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
-            "ie": {
-              "version_added": "10",
-              "partial_implementation": true
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "8"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "4.4"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onclose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onclose",
-          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbdatabase-onclose",
-          "support": {
-            "chrome": {
-              "version_added": "31",
-              "notes": "approx"
-            },
-            "chrome_android": {
-              "version_added": "31"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "50"
-            },
-            "firefox_android": {
-              "version_added": "50"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "18"
-            },
-            "opera_android": {
-              "version_added": "18"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onerror",
-          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbdatabase-onerror",
-          "support": {
-            "chrome": {
-              "version_added": "23"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "10"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
-            "ie": {
-              "version_added": "10",
-              "partial_implementation": true
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "8"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "4.4"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onversionchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/onversionchange",
-          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbdatabase-onversionchange",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -790,7 +491,10 @@
         "__compat": {
           "description": "<code>versionchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event",
-          "spec_url": "https://w3c.github.io/IndexedDB/#eventdef-connection-versionchange",
+          "spec_url": [
+            "https://w3c.github.io/IndexedDB/#eventdef-connection-versionchange",
+            "https://w3c.github.io/IndexedDB/#dom-idbdatabase-onversionchange"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"

@@ -222,14 +222,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "33",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.track.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": "10"
@@ -622,8 +615,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -1183,6 +1176,56 @@
           }
         }
       },
+      "encrypted_event": {
+        "__compat": {
+          "description": "<code>encrypted</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event",
+          "spec_url": "https://w3c.github.io/encrypted-media/#dom-htmlmediaelement-onencrypted",
+          "support": {
+            "chrome": {
+              "version_added": "42"
+            },
+            "chrome_android": {
+              "version_added": "42"
+            },
+            "edge": {
+              "version_added": "13"
+            },
+            "firefox": {
+              "version_added": "38"
+            },
+            "firefox_android": {
+              "version_added": "38"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "29"
+            },
+            "opera_android": {
+              "version_added": "29"
+            },
+            "safari": {
+              "version_added": "12.1"
+            },
+            "safari_ios": {
+              "version_added": "12.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "42"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "ended": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended",
@@ -1387,13 +1430,16 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-fastseek-dev",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             },
             "firefox": {
               "version_added": "31"
@@ -1405,10 +1451,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             },
             "safari": {
               "version_added": "8"
@@ -1417,10 +1465,12 @@
               "version_added": "8"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
             }
           },
           "status": {
@@ -1770,8 +1820,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -2105,104 +2155,6 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onencrypted": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/onencrypted",
-          "spec_url": "https://w3c.github.io/encrypted-media/#dom-htmlmediaelement-onencrypted",
-          "support": {
-            "chrome": {
-              "version_added": "42"
-            },
-            "chrome_android": {
-              "version_added": "42"
-            },
-            "edge": {
-              "version_added": "13"
-            },
-            "firefox": {
-              "version_added": "38"
-            },
-            "firefox_android": {
-              "version_added": "38"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "29"
-            },
-            "opera_android": {
-              "version_added": "29"
-            },
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": {
-              "version_added": "12.2"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "42"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onwaitingforkey": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/onwaitingforkey",
-          "spec_url": "https://w3c.github.io/encrypted-media/#dom-htmlmediaelement-onwaitingforkey",
-          "support": {
-            "chrome": {
-              "version_added": "55"
-            },
-            "chrome_android": {
-              "version_added": "55"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "52"
-            },
-            "firefox_android": {
-              "version_added": "52"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "42"
-            },
-            "opera_android": {
-              "version_added": "42"
-            },
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": {
-              "version_added": "12.2"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": "55"
             }
           },
           "status": {
@@ -2692,7 +2644,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -2705,6 +2657,7 @@
       "preservesPitch": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch",
+          "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-preservespitch-dev",
           "support": {
             "chrome": {
               "version_added": "86"
@@ -3278,14 +3231,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "64",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.setsinkid.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -3748,14 +3694,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "33",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.track.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -3940,6 +3879,56 @@
             },
             "webview_android": {
               "version_added": "≤37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "waitingforkey_event": {
+        "__compat": {
+          "description": "<code>waitingforkey</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event",
+          "spec_url": "https://w3c.github.io/encrypted-media/#dom-htmlmediaelement-onwaitingforkey",
+          "support": {
+            "chrome": {
+              "version_added": "55"
+            },
+            "chrome_android": {
+              "version_added": "55"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "52"
+            },
+            "firefox_android": {
+              "version_added": "52"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "42"
+            },
+            "opera_android": {
+              "version_added": "42"
+            },
+            "safari": {
+              "version_added": "12.1"
+            },
+            "safari_ios": {
+              "version_added": "12.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
             }
           },
           "status": {

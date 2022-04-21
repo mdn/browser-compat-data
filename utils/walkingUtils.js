@@ -17,7 +17,7 @@ function descendantKeys(data) {
 
   if (isFeature(data)) {
     return Object.keys(data).filter(
-      key => key !== '__compat' && key !== '__version',
+      (key) => key !== '__compat' && key !== '__version',
     );
   }
 
