@@ -30,7 +30,7 @@ function testSchema(
     );
     // Output messages by one since better-ajv-errors wrongly joins messages
     // (see https://github.com/atlassian/better-ajv-errors/pull/21)
-    ajv.errors.forEach(e => {
+    ajv.errors.forEach((e) => {
       console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
     });
     return true;
