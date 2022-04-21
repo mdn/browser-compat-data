@@ -6,14 +6,14 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const {
   testBrowsers,
+  testConsistency,
+  testDescriptions,
   testLinks,
   testPrefix,
   testRealValues,
-  testStyle,
   testSchema,
+  testStyle,
   testVersions,
-  testConsistency,
-  testDescriptions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
 const testFormat = require('./test-format');
