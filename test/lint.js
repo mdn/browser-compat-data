@@ -14,7 +14,7 @@ const {
   testVersions,
   testConsistency,
   testDescriptions,
-  testStatus,
+  testStatusInheritance,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
 const testFormat = require('./test-format');
@@ -63,7 +63,7 @@ function load(...files) {
           hasRealValueErrors = false,
           hasPrefixErrors = false,
           hasDescriptionsErrors = false,
-          hasStatusErrors = false;
+          hasStatusInheritanceErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -103,7 +103,7 @@ function load(...files) {
             hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
-            hasStatusErrors = testStatus(file);
+            hasStatusInheritanceErrors = testStatusInheritance(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -121,7 +121,7 @@ function load(...files) {
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
-          hasStatusErrors,
+          hasStatusInheritanceErrors,
         ].some(x => !!x);
 
         if (fileHasErrors) {
