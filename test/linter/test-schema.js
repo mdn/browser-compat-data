@@ -1,9 +1,13 @@
 'use strict';
-const Ajv = require('ajv');
+const Ajv = require('ajv').default;
+const addFormats = require('ajv-formats');
 const betterAjvErrors = require('better-ajv-errors').default;
 const chalk = require('chalk');
 
-const ajv = new Ajv({ jsonPointers: true, allErrors: true });
+const ajv = new Ajv({ allErrors: true });
+// We use 'fast' because as a side effect that makes the "uri" format more lax.
+// By default the "uri" format rejects ① and similar in URLs.
+addFormats(ajv, { mode: 'fast' });
 
 /**
  * @param {string} dataFilename
