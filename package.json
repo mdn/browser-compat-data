@@ -1,11 +1,11 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "4.1.15",
+  "version": "4.1.17",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=14.0.0"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
     "ajv": "~6.12.2",
-    "better-ajv-errors": "~1.1.0",
+    "better-ajv-errors": "~1.2.0",
     "browser-specs": "~3.6.0",
     "chalk": "~4.1.0",
     "compare-versions": "~4.1.1",
@@ -47,6 +47,7 @@
     "stats": "node scripts/statistics",
     "release-build": "node scripts/release-build",
     "release-pulls": "node scripts/release-pulls",
+    "release-notes": "node scripts/release-notes",
     "release-stats": "node scripts/release-stats",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run lint && npm run mocha",
