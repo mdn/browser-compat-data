@@ -26,7 +26,7 @@ function descendantKeys(data) {
     return [];
   }
 
-  return Object.keys(data).filter(key => key !== '__version');
+  return Object.keys(data).filter((key) => key !== '__version');
 }
 
 module.exports = {
