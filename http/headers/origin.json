@@ -24,15 +24,14 @@
                 "version_added": "70"
               },
               {
-                "version_added": "59",
-                "flags": [
-                  {
-                    "name": "network.http.sendOriginHeader",
-                    "type": "preference",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Sent with non-CORS requests since Fx59, unless they are <code>GET</code> or <code>HEAD</code>."
+                "version_added": true,
+                "partial_implementation": true,
+                "notes": "Not sent with <code>POST</code> requests until Firefox 58, see <a href='https://bugzil.la/446344'>bug 446344</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "79"
               },
               {
                 "version_added": true,
@@ -40,11 +39,6 @@
                 "notes": "Not sent with <code>POST</code> requests until Firefox 58, see <a href='https://bugzil.la/446344'>bug 446344</a>."
               }
             ],
-            "firefox_android": {
-              "version_added": true,
-              "partial_implementation": true,
-              "notes": "Not sent with <code>POST</code> requests until Firefox 58, see <a href='https://bugzil.la/446344'>bug 446344</a>."
-            },
             "ie": {
               "version_added": true
             },
