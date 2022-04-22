@@ -15,7 +15,7 @@ const testFormat = () => {
 
   try {
     execSync(
-      'npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md" --color',
+      'npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md" "**/*.json" --color',
     );
   } catch (err) {
     errorText += err.stdout.toString();
