@@ -15,7 +15,7 @@ const IS_WINDOWS = platform() === 'win32';
 /**
  * @param {Promise<void>} filename
  */
-const fixLinks = filename => {
+const fixLinks = (filename) => {
   let errors = processData(filename);
   let original = fs.readFileSync(filename, 'utf-8').trim();
   let data = original;
