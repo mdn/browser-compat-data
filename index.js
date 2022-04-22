@@ -14,12 +14,12 @@ class DuplicateCompatError extends Error {
 }
 
 /**
- * Recursively load one or more files and/or directories passed as arguments.
+ * Recursively load one or more directories passed as arguments.
  *
- * @param {string[]} files The files to test
+ * @param {string[]} dirs The directories to load
  * @returns {object} All of the browser compatibility data
  */
-function load(...files) {
+function load(...dirs) {
   let dir,
     result = {};
 
