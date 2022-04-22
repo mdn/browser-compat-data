@@ -87,8 +87,8 @@ const validateHTML = (string, browser, feature, errors) => {
   });
   if (report.valid) {
     // If HTML is valid, ensure we're only using valid elements
-    let data = parser.parse(string);
-    testNode(data, browser, feature, errors);
+    let root = parser.parse(string);
+    testNode(root, browser, feature, errors);
   } else {
     errors.push({
       type: 'invalid',
