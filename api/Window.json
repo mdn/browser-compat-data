@@ -565,25 +565,10 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "49",
-              "version_removed": "76",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.manifest.onappinstall",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": "49",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.manifest.onappinstall",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1687,23 +1672,10 @@
                 "notes": "Not supported for MacBook with Touch Bar and Windows 7 (see <a href='https://bugzil.la/754199'>bug 754199</a>)."
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.ambientLight.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
+            "firefox_android": {
+              "version_added": "15",
+              "version_removed": "61"
+            },
             "ie": {
               "version_added": false
             },
@@ -1983,23 +1955,10 @@
                 "version_removed": "61"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
+            "firefox_android": {
+              "version_added": "15",
+              "version_removed": "61"
+            },
             "ie": {
               "version_added": false
             },
@@ -2156,23 +2115,11 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "4",
-                "partial_implementation": true,
-                "notes": "By default, this method exists and can be called, but does nothing unless enabled in the browser's preferences."
-              },
-              {
-                "version_added": "4",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "browser.dom.window.dump.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "This method exists but has no effect."
+            },
             "ie": {
               "version_added": false
             },
@@ -2318,14 +2265,26 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "2",
-              "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "notes": "From Firefox for Android 79 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-            },
+            "firefox": [
+              {
+                "version_added": "2",
+                "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
+              },
+              {
+                "version_added": "1",
+                "alternative_name": "sidebar"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "4",
+                "notes": "From Firefox for Android 79 <code>AddSearchProvider()</code> does nothing, as the specification requires."
+              },
+              {
+                "version_added": "4",
+                "alternative_name": "sidebar"
+              }
+            ],
             "ie": {
               "version_added": "4"
             },
@@ -2835,7 +2794,7 @@
             "deprecated": false
           }
         },
-        "pseudo-element_support": {
+        "pseudo_element_support": {
           "__compat": {
             "description": "Pseudo-element support",
             "support": {
@@ -2931,7 +2890,7 @@
             "deprecated": false
           }
         },
-        "pseudo-element_support": {
+        "pseudo_element_support": {
           "__compat": {
             "description": "Pseudo-element support",
             "support": {
@@ -3149,26 +3108,14 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "4",
-                "version_removed": "24",
-                "notes": "This property was buggy and could give a wrong value before page load in certain circumstances, see <a href='https://bugzil.la/641188'>bug 641188</a>."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "4",
-                "version_removed": "24",
-                "notes": "This property was buggy and could give a wrong value before page load in certain circumstances, see <a href='https://bugzil.la/641188'>bug 641188</a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "1",
+              "notes": "From version 4 to 24, this property could give a wrong value before page load in certain circumstances (see <a href='https://bugzil.la/641188'>bug 641188</a>)."
+            },
+            "firefox_android": {
+              "version_added": "4",
+              "notes": "Before version 24, this property could give a wrong value before page load in certain circumstances (see <a href='https://bugzil.la/641188'>bug 641188</a>)."
+            },
             "ie": {
               "version_added": "9"
             },
@@ -3213,26 +3160,14 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "1"
-              },
-              {
-                "version_added": "4",
-                "version_removed": "24",
-                "notes": "This property was buggy and could give a wrong value before page load in certain circumstances, see <a href='https://bugzil.la/641188'>bug 641188</a>."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "4"
-              },
-              {
-                "version_added": "4",
-                "version_removed": "24",
-                "notes": "This property was buggy and could give a wrong value before page load in certain circumstances, see <a href='https://bugzil.la/641188'>bug 641188</a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "1",
+              "notes": "From version 4 to 24, this property could give a wrong value before page load in certain circumstances (see <a href='https://bugzil.la/641188'>bug 641188</a>)."
+            },
+            "firefox_android": {
+              "version_added": "4",
+              "notes": "Before version 24, this property could give a wrong value before page load in certain circumstances (see <a href='https://bugzil.la/641188'>bug 641188</a>)."
+            },
             "ie": {
               "version_added": "9"
             },
@@ -5523,30 +5458,11 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "69"
-              },
-              {
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.promise_rejection_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "69"
+            },
             "firefox_android": {
-              "version_added": "68",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.promise_rejection_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -7562,54 +7478,6 @@
           }
         }
       },
-      "setCursor": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/setCursor",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "setImmediate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/setImmediate",
@@ -7908,55 +7776,6 @@
             "experimental": true,
             "standard_track": false,
             "deprecated": false
-          }
-        }
-      },
-      "sidebar": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sidebar",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "1",
-              "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -8633,14 +8452,7 @@
               }
             ],
             "firefox_android": {
-              "version_added": "68",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.promise_rejection_events.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -8802,23 +8614,10 @@
                 "version_removed": "61"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "62",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              }
-            ],
+            "firefox_android": {
+              "version_added": "15",
+              "version_removed": "61"
+            },
             "ie": {
               "version_added": false
             },
@@ -8877,21 +8676,9 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "68"
-              },
-              {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.visualviewport.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "68"
+            },
             "ie": {
               "version_added": false
             },
