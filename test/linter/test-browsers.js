@@ -48,7 +48,7 @@ function processData(
     const support = data.__compat.support;
 
     const invalidEntries = Object.keys(support).filter(
-      value => !displayBrowsers.includes(value),
+      (value) => !displayBrowsers.includes(value),
     );
     if (invalidEntries.length > 0) {
       logger.error(
@@ -59,7 +59,7 @@ function processData(
     }
 
     const missingEntries = requiredBrowsers.filter(
-      value => !(value in support),
+      (value) => !(value in support),
     );
     if (missingEntries.length > 0) {
       logger.error(

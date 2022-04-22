@@ -8,7 +8,9 @@ const chalk = require('chalk');
 
 const testFormat = () => {
   try {
-    execSync('npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md"');
+    execSync(
+      'npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md" "**/*.json"',
+    );
   } catch (err) {
     let errorText = err.stdout.toString();
     console.error(chalk`{red   Prettier – formatting errors:}`);

@@ -91,7 +91,7 @@ function preamble() {
 function markdownifyChanges(removes, adds) {
   const notes = [];
 
-  const featureBullet = obj =>
+  const featureBullet = (obj) =>
     `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
   if (removes.length) {
@@ -117,7 +117,7 @@ if (require.main === module) {
   const { argv } = require('yargs').command(
     '$0 [start-version-tag [end-version-tag]]',
     'Generate release notes text',
-    yargs => {
+    (yargs) => {
       releaseYargsBuilder(yargs);
       yargs.example('$0', 'Generate the release notes for the next release');
       yargs.example(

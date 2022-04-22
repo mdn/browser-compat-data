@@ -17,7 +17,7 @@ const releaseNotesLabel = 'label:"needs-release-note :newspaper:"';
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',
   'Get a link to PRs included between two tags (or other commits)',
-  yargs => {
+  (yargs) => {
     releaseYargsBuilder(yargs);
     yargs.option('q', {
       alias: 'quiet',
