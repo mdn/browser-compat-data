@@ -13,7 +13,7 @@ jobs:
         fetch-depth: 0  # get the full repository checkout, not just the inciting commit
     - uses: actions/setup-node@v2
       with:
-        node-version: 14.x
+        node-version: 16.x
     - run: npm install
     - run: node ./scripts/enumerate-features.js features.json
     - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json

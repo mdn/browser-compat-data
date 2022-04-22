@@ -40,7 +40,7 @@ function orderFeatures(key, value) {
 /**
  * @param {string} filename
  */
-const fixFeatureOrder = filename => {
+const fixFeatureOrder = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
 
