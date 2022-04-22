@@ -94,9 +94,9 @@ const validateHTML = (string, browser, feature, errors) => {
       type: 'invalid',
       // Parse messages from validator in readable format
       messages: report.results
-        .map(x => x.messages)
+        .map((x) => x.messages)
         .flat()
-        .map(x => x.message),
+        .map((x) => x.message),
       feature,
       browser,
     });
@@ -166,7 +166,7 @@ const processData = (data, errors, feature) => {
  * @param {string} filename The file to test
  * @returns {boolean} Whether the file had any errors
  */
-const testNotes = filename => {
+const testNotes = (filename) => {
   /** @type {Identifier} */
   const data = require(filename);
 
