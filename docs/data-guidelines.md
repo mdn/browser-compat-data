@@ -56,13 +56,17 @@ For example, the feature for a `focus` event targeting the `Element` interface w
 }
 ```
 
-This rule applies to the event features themselves, not the features for the event handlers. For example, `focus_event` and `onfocus` are two separate features.
+The event handler `onfocus` is represented by the `focus_event` entry. Don't create features for `on` event handler properties. If an implementation doesn't support the event handler property, use `partial_implementation` with the note `"The <code>onfocus</code> event handler property is not supported."`. If only the `on` event handler property is supported and not the event itself, use `"version_added": false`.
+
+If a specification has two sections (the event handler property and the event name), add both specification links.
 
 This practice emerged through several discussions:
 
 - [#935](https://github.com/mdn/browser-compat-data/issues/935#issuecomment-464691417)
 - [#3420](https://github.com/mdn/browser-compat-data/pull/3420)
 - [#3469](https://github.com/mdn/browser-compat-data/pull/3469)
+- [mdn/content#9098](https://github.com/mdn/content/discussions/9098)
+- [#13595](https://github.com/mdn/browser-compat-data/pull/13595)
 
 ## Secure context required (`secure_context_required`)
 
@@ -166,15 +170,26 @@ For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_S
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
-## Release lines and backported features
+## Release lines
 
 Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers.
 
-Typically, BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature, even when that support change was backported to a previous release of the browser.
-
-For example, if the current release of browser X is version 10.2, but a new feature was backported to previous versions including a new 9.7.1 release, then the supported version is 9.7 (not 10.2 or 9.7.1).
+Typically, BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature. For example, if a feature was not added in Chrome 76.0.3700.43, but added in Chrome 76.0.3809.46, then the supported version is 76.
 
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
+
+## Backported releases
+
+Some browsers have backport releases, where a feature is added or removed in two or more versions at once. If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Release lines](#release-lines) guideline). In some cases, however, you must set the the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+
+| If the browser and its version is... | then set the version to... |
+| ------------------------------------ | -------------------------- |
+| Safari 4.1                           | Safari 5.0                 |
+| Safari 6.1                           | Safari 7.0                 |
+| Safari 6.2                           | Safari 8.0                 |
+| Safari 7.1                           | Safari 8.0                 |
+
+This decision was made in [#4679](https://github.com/mdn/browser-compat-data/issues/4679) and [#9423](https://github.com/mdn/browser-compat-data/issues/9423).
 
 ## Safari for iOS versioning
 
@@ -239,7 +254,7 @@ This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-dat
 
 ## Mixins
 
-[Interface mixins](https://heycam.github.io/webidl/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
+[Interface mixins](https://webidl.spec.whatwg.org/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers to avoid repeating API definitions. Don't add mixins to BCD where they do not already exist.
 
 For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
 
@@ -305,7 +320,7 @@ This guideline was proposed and adopted in [#10509](https://github.com/mdn/brows
 
 ## APIs moved on the prototype chain
 
-[Web IDL interfaces](https://heycam.github.io/webidl/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
+[Web IDL interfaces](https://webidl.spec.whatwg.org/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
 
 Some of these interfaces are [abstract](https://en.wikipedia.org/wiki/Abstract_type) and never have instances, while most are concrete and can be instantiated. For example, `BaseAudioContext` and `Node` are abstract, while `AudioContext` and `Element` are concrete.
 
@@ -313,7 +328,7 @@ When attributes and methods are moved between interfaces in specifications and i
 
 **When members are moved up the prototype chain**
 
-For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported prior to the move, then use `partial_implementation` and notes.
+For interface members, use the version when the member is first supported on any concrete interface, regardless of where in the prototype chain the member is, even if that is earlier than the existence of the current interface. If there are any concrete interfaces where the member wasn't supported before the move, then use `partial_implementation` and notes.
 
 For interfaces, use the version when the interface itself is first supported. If there are members supported earlier than the interface itself was introduced, then use `partial_implementation` and notes for that range of versions.
 
@@ -336,7 +351,7 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
-This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+This guideline is based on a discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
 
 ## Choosing `"preview"` values
 
@@ -379,4 +394,53 @@ For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded li
 }
 ```
 
-This guideline is based on discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
+This guideline is based on a discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
+
+## Global APIs
+
+An API is considered global when it is available for both [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) and [`WorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope). Such APIs are recorded in the `api/_globals/` folder.
+
+For example, the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) method is global, recorded like this in `api/_globals/fetch.json`:
+
+```json
+{
+  "api": {
+    "fetch": {
+      "__compat": {},
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+All APIs defined on the [`WindowOrWorkerGlobalScope`](https://html.spec.whatwg.org/multipage/webappapis.html#windoworworkerglobalscope-mixin) mixin are considered global.
+
+Note that APIs available on only _some_ types of workers are not considered global. For example:
+
+- The `cookieStore` property, available in `Window` and `ServiceWorkerGlobalScope`.
+- The `requestAnimationFrame()` function, available in `Window` and `DedicatedWorkerGlobalScope`.
+
+This guideline is based on a discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
+
+## Setting `deprecated`
+
+Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
+
+The `deprecated` status captures the many ways standards organizations (and, for non-standard features, vendors) mark features as disfavored. This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
+
+Evidence for setting `deprecated` to `true` includes:
+
+- _Obsolete_, _legacy_, _deprecated_, _end-of-life_, or similar terminology in a specification
+- Removal of a feature from a specification
+- Specification text that cautions developers against new use of the feature
+- Formal discouragement statements from a relevant standards body (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
+- For non-standard features, notice from implementing browsers (for example, a console deprecation warning) or vendor documentation
+
+Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
+
+This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-data/pull/15703). See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."

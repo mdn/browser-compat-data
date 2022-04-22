@@ -4,7 +4,7 @@ const bcd = require('..');
 const { argv } = require('yargs').command(
   '$0 [folder...]',
   'Print feature names in the folder (and optionally filter features to specific browser or version values)',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('folder', {
         describe: 'The folder(s) to traverse',

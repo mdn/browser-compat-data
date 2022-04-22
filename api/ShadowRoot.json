@@ -43,7 +43,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -51,7 +51,7 @@
       "delegatesFocus": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/delegatesFocus",
-          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-delegatesfocus",
+          "spec_url": "https://dom.spec.whatwg.org/#shadowroot-delegates-focus",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -63,12 +63,10 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1706275'>bug 1706275</a>."
+              "version_added": "94"
             },
             "firefox_android": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1706275'>bug 1706275</a>."
+              "version_added": "94"
             },
             "ie": {
               "version_added": false
@@ -189,7 +187,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -287,55 +285,7 @@
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onslotchange": {
-        "__compat": {
-          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-onslotchange",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": "14.1"
-            },
-            "safari_ios": {
-              "version_added": "14.5"
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -355,10 +305,10 @@
               "version_added": "86"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "92"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "92"
             },
             "ie": {
               "version_added": false
@@ -384,6 +334,137 @@
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "slotchange_event": {
+        "__compat": {
+          "description": "<code>slotchange</code> event",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-onslotchange",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "63",
+                "version_removed": "93",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "93"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "opera": [
+              {
+                "version_added": "83"
+              },
+              {
+                "version_added": "40",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "68"
+              },
+              {
+                "version_added": "41",
+                "version_removed": "68",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "14.1",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "10.3",
+                "version_removed": "14.5",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
+            "samsunginternet_android": {
+              "version_added": "6.0",
+              "partial_implementation": true,
+              "notes": "The <code>onslotchange</code> event handler property is not supported."
+            },
+            "webview_android": [
+              {
+                "version_added": "97"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
