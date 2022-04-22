@@ -25,7 +25,8 @@ function load(...dirs) {
 
   for (dir of dirs) {
     dir = path.resolve(__dirname, dir);
-    fs.readdirSync(dir).forEach((fn) => {
+    const files = fs.readdirSync(dir);
+    for (const fn of files) {
       const fp = path.join(dir, fn);
       let extra;
 
@@ -37,17 +38,17 @@ function load(...dirs) {
           extra = JSON.parse(fs.readFileSync(fp));
         } catch (e) {
           // Skip invalid JSON. Tests will flag the problem separately.
-          return;
+          continue;
         }
       } else {
         // Skip anything else, such as *~ backup files or similar.
-        return;
+        continue;
       }
 
       // The JSON data is independent of the actual file
       // hierarchy, so it is essential to extend "deeply".
       extend(result, extra);
-    });
+    }
   }
 
   return result;
