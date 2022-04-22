@@ -2,6 +2,8 @@
   "api": {
     "ElementInternals": {
       "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals",
+        "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#the-elementinternals-interface",
         "support": {
           "chrome": {
             "version_added": "77"
@@ -13,10 +15,10 @@
             "version_added": "79"
           },
           "firefox": {
-            "version_added": false
+            "version_added": "93"
           },
           "firefox_android": {
-            "version_added": false
+            "version_added": "93"
           },
           "ie": {
             "version_added": false
@@ -28,10 +30,12 @@
             "version_added": "55"
           },
           "safari": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://webkit.org/b/197960'>bug 197960</a>."
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://webkit.org/b/197960'>bug 197960</a>."
           },
           "samsunginternet_android": {
             "version_added": "12.0"
@@ -48,6 +52,8 @@
       },
       "checkValidity": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/checkValidity",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-elementinternals-checkvalidity",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -95,6 +101,8 @@
       },
       "form": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/form",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-elementinternals-form",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -105,11 +113,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "95",
+                "version_removed": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.formAssociatedCustomElement.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "98"
             },
             "ie": {
               "version_added": false
@@ -142,6 +163,8 @@
       },
       "labels": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/labels",
+          "spec_url": "https://html.spec.whatwg.org/multipage/forms.html#dom-elementinternals-labels",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -152,11 +175,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "95",
+                "version_removed": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.formAssociatedCustomElement.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "98"
             },
             "ie": {
               "version_added": false
@@ -189,6 +225,8 @@
       },
       "reportValidity": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/reportValidity",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-elementinternals-reportvalidity",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -236,6 +274,8 @@
       },
       "setFormValue": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue",
+          "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-elementinternals-setformvalue",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -246,11 +286,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "95",
+                "version_removed": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.formAssociatedCustomElement.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "98"
             },
             "ie": {
               "version_added": false
@@ -283,6 +336,8 @@
       },
       "setValidity": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/setValidity",
+          "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-elementinternals-setvalidity",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -328,8 +383,107 @@
           }
         }
       },
+      "shadowRoot": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/shadowRoot",
+          "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-elementinternals-shadowroot",
+          "support": {
+            "chrome": {
+              "version_added": "77"
+            },
+            "chrome_android": {
+              "version_added": "77"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "93"
+            },
+            "firefox_android": {
+              "version_added": "93"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "64"
+            },
+            "opera_android": {
+              "version_added": "55"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "12.0"
+            },
+            "webview_android": {
+              "version_added": "77"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "states": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/custom-state-pseudo-class/#dom-elementinternals-states",
+          "support": {
+            "chrome": {
+              "version_added": "90"
+            },
+            "chrome_android": {
+              "version_added": "90"
+            },
+            "edge": {
+              "version_added": "90"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "76"
+            },
+            "opera_android": {
+              "version_added": "64"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "15.0"
+            },
+            "webview_android": {
+              "version_added": "90"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "validationMessage": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage",
+          "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-elementinternals-validationmessage",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -377,6 +531,8 @@
       },
       "validity": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/validity",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-elementinternals-validity",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -424,6 +580,8 @@
       },
       "willValidate": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ElementInternals/willValidate",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-elementinternals-willvalidate",
           "support": {
             "chrome": {
               "version_added": "77"
@@ -434,11 +592,24 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "95",
+                "version_removed": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webcomponents.formAssociatedCustomElement.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "98"
             },
             "ie": {
               "version_added": false

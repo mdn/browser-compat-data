@@ -4,6 +4,7 @@
       "inline-size": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/inline-size",
+          "spec_url": "https://drafts.csswg.org/css-logical/#dimension-properties",
           "support": {
             "chrome": {
               "version_added": "57"
@@ -14,38 +15,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "41"
-              },
-              {
-                "version_added": "38",
-                "version_removed": "51",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "41"
-              },
-              {
-                "version_added": "38",
-                "version_removed": "51",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "41"
+            },
+            "firefox_android": {
+              "version_added": "41"
+            },
             "ie": {
               "version_added": false
             },
@@ -89,11 +64,11 @@
               },
               "firefox": {
                 "prefix": "-moz-",
-                "version_added": "38"
+                "version_added": "41"
               },
               "firefox_android": {
                 "prefix": "-moz-",
-                "version_added": "38"
+                "version_added": "41"
               },
               "ie": {
                 "version_added": false
@@ -120,6 +95,60 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "fit-content_function": {
+          "__compat": {
+            "description": "<code>fit-content()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "91",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.fit-content-function.enabled"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

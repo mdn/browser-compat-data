@@ -5,6 +5,7 @@
         "__compat": {
           "description": "<code>&lt;image&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image",
+          "spec_url": "https://drafts.csswg.org/css-images/#image-values",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -52,6 +53,7 @@
         "cross-fade": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade()",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#cross-fade-function",
             "description": "<code>cross-fade()</code>",
             "support": {
               "chrome": {
@@ -131,6 +133,7 @@
         "element": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element()",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
             "description": "<code>element()</code>",
             "support": {
               "chrome": {
@@ -213,6 +216,8 @@
         },
         "gradient": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
             "description": "<code>&lt;gradient&gt;</code>",
             "support": {
               "chrome": [
@@ -279,7 +284,7 @@
               ],
               "safari": [
                 {
-                  "version_added": "6.1"
+                  "version_added": "7"
                 },
                 {
                   "prefix": "-webkit-",
@@ -323,36 +328,15 @@
           "conic-gradient": {
             "__compat": {
               "description": "<code>conic-gradient()</code>",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/conic-gradient()",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/conic-gradient()",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
               "support": {
-                "chrome": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "chrome_android": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": {
+                  "version_added": "69"
+                },
                 "edge": {
                   "version_added": "79"
                 },
@@ -370,51 +354,18 @@
                     ]
                   }
                 ],
-                "firefox_android": [
-                  {
-                    "version_added": "83"
-                  },
-                  {
-                    "version_added": "79",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.conic-gradient.enabled"
-                      }
-                    ]
-                  }
-                ],
+                "firefox_android": {
+                  "version_added": "83"
+                },
                 "ie": {
                   "version_added": false
                 },
-                "opera": [
-                  {
-                    "version_added": "56"
-                  },
-                  {
-                    "version_added": "46",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "opera_android": [
-                  {
-                    "version_added": "48"
-                  },
-                  {
-                    "version_added": "43",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "opera": {
+                  "version_added": "56"
+                },
+                "opera_android": {
+                  "version_added": "48"
+                },
                 "safari": {
                   "version_added": "12.1"
                 },
@@ -486,7 +437,8 @@
           "linear-gradient": {
             "__compat": {
               "description": "<code>linear-gradient()</code>",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/linear-gradient()",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient()",
+              "spec_url": "https://drafts.csswg.org/css-images/#linear-gradients",
               "support": {
                 "chrome": [
                   {
@@ -525,17 +477,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "firefox_android": [
@@ -554,17 +495,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "ie": {
@@ -605,7 +535,7 @@
                 ],
                 "safari": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -618,7 +548,7 @@
                 ],
                 "safari_ios": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -731,10 +661,10 @@
                     "version_added": "27"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "4.0"
@@ -779,10 +709,10 @@
                     "version_added": "14"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "1.5"
@@ -841,10 +771,10 @@
                     "version_added": "14"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "1.5"
@@ -864,7 +794,8 @@
           "radial-gradient": {
             "__compat": {
               "description": "<code>radial-gradient()</code>",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/radial-gradient()",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/radial-gradient()",
+              "spec_url": "https://drafts.csswg.org/css-images/#radial-gradients",
               "support": {
                 "chrome": [
                   {
@@ -900,17 +831,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "firefox_android": [
@@ -926,17 +846,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "ie": {
@@ -973,7 +882,7 @@
                 ],
                 "safari": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -983,7 +892,7 @@
                 ],
                 "safari_ios": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -1042,17 +951,6 @@
                     {
                       "prefix": "-webkit-",
                       "version_added": "49"
-                    },
-                    {
-                      "prefix": "-webkit-",
-                      "version_added": "44",
-                      "flags": [
-                        {
-                          "type": "preference",
-                          "name": "layout.css.prefixes.webkit",
-                          "value_to_set": "true"
-                        }
-                      ]
                     }
                   ],
                   "firefox_android": [
@@ -1184,10 +1082,10 @@
                     "version_added": "27"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "4.0"
@@ -1207,36 +1105,15 @@
           "repeating-conic-gradient": {
             "__compat": {
               "description": "<code>repeating-conic-gradient()</code>",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeating-conic-gradient()",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-conic-gradient()",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#repeating-gradients",
               "support": {
-                "chrome": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "chrome_android": [
-                  {
-                    "version_added": "69"
-                  },
-                  {
-                    "version_added": "59",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": {
+                  "version_added": "69"
+                },
                 "edge": {
                   "version_added": "79"
                 },
@@ -1254,51 +1131,18 @@
                     ]
                   }
                 ],
-                "firefox_android": [
-                  {
-                    "version_added": "83"
-                  },
-                  {
-                    "version_added": "79",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.conic-gradient.enabled"
-                      }
-                    ]
-                  }
-                ],
+                "firefox_android": {
+                  "version_added": "83"
+                },
                 "ie": {
                   "version_added": false
                 },
-                "opera": [
-                  {
-                    "version_added": "56"
-                  },
-                  {
-                    "version_added": "46",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
-                "opera_android": [
-                  {
-                    "version_added": "48"
-                  },
-                  {
-                    "version_added": "43",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "Enable Experimental Web Platform Features"
-                      }
-                    ]
-                  }
-                ],
+                "opera": {
+                  "version_added": "56"
+                },
+                "opera_android": {
+                  "version_added": "48"
+                },
                 "safari": {
                   "version_added": "12.1"
                 },
@@ -1321,6 +1165,8 @@
           },
           "repeating-linear-gradient": {
             "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-linear-gradient()",
+              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
               "description": "<code>repeating-linear-gradient()</code>",
               "support": {
                 "chrome": [
@@ -1360,17 +1206,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "firefox_android": [
@@ -1389,17 +1224,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "ie": {
@@ -1440,7 +1264,7 @@
                 ],
                 "safari": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -1453,7 +1277,7 @@
                 ],
                 "safari_ios": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -1487,8 +1311,7 @@
                 "experimental": false,
                 "standard_track": true,
                 "deprecated": false
-              },
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeating-linear-gradient()"
+              }
             },
             "doubleposition": {
               "__compat": {
@@ -1567,10 +1390,10 @@
                     "version_added": "27"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "4.0"
@@ -1615,10 +1438,10 @@
                     "version_added": "14"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "1.5"
@@ -1677,10 +1500,10 @@
                     "version_added": "14"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "samsunginternet_android": {
                     "version_added": "1.5"
@@ -1700,7 +1523,8 @@
           "repeating-radial-gradient": {
             "__compat": {
               "description": "<code>repeating-radial-gradient()</code>",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeating-radial-gradient()",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-radial-gradient()",
+              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -1736,17 +1560,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "firefox_android": [
@@ -1762,17 +1575,6 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "49"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "44",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.prefixes.webkit",
-                        "value_to_set": "true"
-                      }
-                    ]
                   }
                 ],
                 "ie": {
@@ -1808,7 +1610,7 @@
                 ],
                 "safari": [
                   {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   {
                     "prefix": "-webkit-",
@@ -1877,17 +1679,6 @@
                     {
                       "prefix": "-webkit-",
                       "version_added": "49"
-                    },
-                    {
-                      "prefix": "-webkit-",
-                      "version_added": "44",
-                      "flags": [
-                        {
-                          "type": "preference",
-                          "name": "layout.css.prefixes.webkit",
-                          "value_to_set": "true"
-                        }
-                      ]
                     }
                   ],
                   "firefox_android": [
@@ -1903,17 +1694,6 @@
                     {
                       "prefix": "-webkit-",
                       "version_added": "49"
-                    },
-                    {
-                      "prefix": "-webkit-",
-                      "version_added": "44",
-                      "flags": [
-                        {
-                          "type": "preference",
-                          "name": "layout.css.prefixes.webkit",
-                          "value_to_set": "true"
-                        }
-                      ]
                     }
                   ],
                   "ie": {
@@ -2036,7 +1816,7 @@
                     "version_added": "27"
                   },
                   "safari": {
-                    "version_added": "6.1"
+                    "version_added": "7"
                   },
                   "safari_ios": {
                     "version_added": "7"
@@ -2059,7 +1839,8 @@
         },
         "image": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image()",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image()",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-notation",
             "description": "<code>image()</code>",
             "support": {
               "chrome": {
@@ -2073,7 +1854,10 @@
               },
               "firefox": {
                 "version_added": false,
-                "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect'><code>-moz-image-rect()</code></a> function supports fragments as of Firefox 4."
+                "notes": [
+                  "See <a href='https://bugzil.la/703217'>bug 703217</a>.",
+                  "The <a href='https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect'><code>-moz-image-rect()</code></a> function supports fragments as of Firefox 4."
+                ]
               },
               "firefox_android": {
                 "version_added": false,
@@ -2110,7 +1894,8 @@
         },
         "image-set": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set()",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set()",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
             "description": "<code>image-set()</code>",
             "support": {
               "chrome": {
@@ -2125,14 +1910,32 @@
                 "prefix": "-webkit-",
                 "version_added": "79"
               },
-              "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
-              },
-              "firefox_android": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
-              },
+              "firefox": [
+                {
+                  "version_added": "88",
+                  "notes": [
+                    "In <code>cursor</code> and <code>content</code> properties, gradients are not supported as arguments to <code>image-set()</code>. See <a href='https://bugzil.la/1696314'>bug 1696314</a>.",
+                    "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  ]
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "90"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "88",
+                  "notes": [
+                    "In <code>cursor</code> and <code>content</code> properties, gradients are not supported as arguments to <code>image-set()</code>. See <a href='https://bugzil.la/1696314'>bug 1696314</a>.",
+                    "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  ]
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "90"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -2174,7 +1977,8 @@
         },
         "paint": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/paint()",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/paint()",
+            "spec_url": "https://drafts.css-houdini.org/css-paint-api/#paint-notation",
             "description": "<code>paint()</code>",
             "support": {
               "chrome": {

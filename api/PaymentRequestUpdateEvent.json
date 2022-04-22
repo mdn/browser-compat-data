@@ -3,6 +3,7 @@
     "PaymentRequestUpdateEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent",
+        "spec_url": "https://w3c.github.io/payment-request/#paymentrequestupdateevent-interface",
         "support": {
           "chrome": {
             "version_added": "60"
@@ -14,12 +15,22 @@
             "version_added": "15"
           },
           "firefox": {
-            "version_added": false,
-            "notes": "Available only in nightly builds. Requires <code>dom.payments.request.enabled</code> to be set to <code>true</code> and the comma-delineated list in <code>dom.payments.request.supportedRegions</code> to contain one or more of the supported 2-character ISO locales, currently US and CA."
+            "version_added": "55",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.payments.request.enabled",
+                "value_to_set": "true"
+              },
+              {
+                "name": "dom.payments.request.supportedRegions",
+                "type": "preference",
+                "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
+              }
+            ]
           },
           "firefox_android": {
-            "version_added": false,
-            "notes": "Available only in nightly builds. Requires <code>dom.payments.request.enabled</code> to be set to <code>true</code> and the comma-delineated list in <code>dom.payments.request.supportedRegions</code> to contain one or more of the supported 2-character ISO locales, currently US and CA."
+            "version_added": false
           },
           "ie": {
             "version_added": false
@@ -53,6 +64,7 @@
         "__compat": {
           "description": "<code>PaymentRequestUpdateEvent()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/PaymentRequestUpdateEvent",
+          "spec_url": "https://w3c.github.io/payment-request/#constructor-0",
           "support": {
             "chrome": {
               "version_added": "60"
@@ -64,12 +76,17 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": false,
-              "notes": "Available only in nightly builds."
+              "version_added": "55",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.payments.request.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false,
-              "notes": "Available only in nightly builds."
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -103,6 +120,7 @@
       "updateWith": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequestupdateevent-updatewith",
           "description": "<code>updateWith()</code>",
           "support": {
             "chrome": {
@@ -115,12 +133,17 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": false,
-              "notes": "Available only in nightly builds."
+              "version_added": "55",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.payments.request.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": false,
-              "notes": "Available only in nightly builds."
+              "version_added": false
             },
             "ie": {
               "version_added": false
