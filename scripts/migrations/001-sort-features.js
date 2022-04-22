@@ -27,7 +27,7 @@ if (require.main === module) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map(subfile => {
+      const subFiles = fs.readdirSync(file).map((subfile) => {
         return path.join(file, subfile);
       });
 

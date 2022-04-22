@@ -69,7 +69,7 @@ function testToken(feature, matches, misses) {
 
 const testRegexes = () => {
   tests.forEach(({ features, matches, misses }) => {
-    features.forEach(feature => testToken(lookup(feature), matches, misses));
+    features.forEach((feature) => testToken(lookup(feature), matches, misses));
   });
 };
 

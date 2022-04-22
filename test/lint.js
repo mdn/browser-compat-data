@@ -143,7 +143,7 @@ function load(...files) {
   }, false);
 }
 
-const main = files => {
+const main = (files) => {
   /** @type {boolean} */
   var hasErrors = argv.files
     ? load.apply(undefined, argv.files)
