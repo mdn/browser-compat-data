@@ -123,7 +123,7 @@ const validateHTML = (string, browser, feature, errors) => {
 const checkNotes = (notes, browser, feature, errors) => {
   if (Array.isArray(notes)) {
     for (let note of notes) {
-      checkNotes(note, browser, feature, errors);
+      validateHTML(note, browser, feature, errors);
     }
   } else {
     validateHTML(notes, browser, feature, errors);
