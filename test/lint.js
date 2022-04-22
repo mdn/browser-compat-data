@@ -137,7 +137,7 @@ const load = (...files) => {
  * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
  * @returns {boolean} Whether there were any errors
  */
-const main = files => {
+const main = (files) => {
   /** @type {boolean} */
   var hasErrors = false;
 
