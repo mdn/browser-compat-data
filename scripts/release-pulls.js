@@ -7,7 +7,11 @@ const {
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
 );
-const releaseNotesLabel = 'label:"needs-release-note :newspaper:"';
+const releaseNotesLabels = [
+  'needs-release-note :newspaper:',
+  'semver-major-bump 🚨',
+  'semver-minor-bump ➕',
+];
 
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',
@@ -20,7 +24,7 @@ const { argv } = require('yargs').command(
       type: 'boolean',
     });
     yargs.option('labeled', {
-      describe: 'Filter to needs-release-note labeled PRs only',
+      describe: 'Filter to needs-release-note and semver-* labeled PRs only',
       type: 'boolean',
     });
     yargs.option('query-only', {
@@ -41,7 +45,7 @@ function queryToURL(query) {
 }
 
 function appendLabel(query) {
-  return `${query} ${releaseNotesLabel}`;
+  return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
 }
 
 function main() {
