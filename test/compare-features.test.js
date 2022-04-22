@@ -47,6 +47,6 @@ describe('compare-features script', () => {
       '43',
     ];
 
-    assert.deepStrictEqual(actual, expected);
+    assert.deepEqual(actual, expected);
   });
 });
