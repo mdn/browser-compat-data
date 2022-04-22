@@ -24,7 +24,7 @@ const testFormat = require('./test-format');
 
 const argv = yargs
   .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, yargs => {
+  .usage('$0 [[--] files...]', false, (yargs) => {
     return yargs.positional('files...', {
       description: 'The files to lint (leave blank to test everything)',
       type: 'string',
@@ -123,7 +123,7 @@ const load = (...files) => {
       return prevHasErrors || fileHasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
