@@ -7,7 +7,9 @@ const testFormat = () => {
   const logger = new Logger('Prettier');
 
   try {
-    execSync('npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md"');
+    execSync(
+      'npx prettier --list-different "**/*.js" "**/*.ts" "**/*.md" "**/*.json"',
+    );
   } catch (err) {
     let errorText = err.stdout.toString();
     logger.error(

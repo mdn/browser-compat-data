@@ -41,7 +41,7 @@ const pluralize = (word, quantifier) => {
 function escapeInvisibles(str) {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
-  return INVISIBLES_REGEXP[Symbol.replace](str, char => {
+  return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
     return INVISIBLES_MAP[char] || char;
   });
 }

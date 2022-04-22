@@ -3,7 +3,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const chalk = require('chalk');
+const assert = require('assert').strict;
 
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
@@ -131,25 +131,12 @@ const tests = [
   },
 ];
 
-const testFixWebViewFlags = (logger = console) => {
-  for (let i = 0; i < tests.length; i++) {
-    let expected = JSON.stringify(tests[i]['output'], null, 2);
-    let output = JSON.stringify(
-      JSON.parse(JSON.stringify(tests[i]['input']), removeWebViewFlags),
-      null,
-      2,
-    );
-
-    if (output !== expected) {
-      logger.error(chalk`WebView flags aren't removed properly!
-      {yellow Actual: {bold ${output}}}
-      {green Expected: {bold ${expected}}}`);
+describe('migration scripts', () => {
+  it('`removeWebViewFlags()` works correctly', () => {
+    for (const test of tests) {
+      const expected = test.output;
+      const output = JSON.parse(JSON.stringify(test.input), removeWebViewFlags);
+      assert.deepStrictEqual(output, expected);
     }
-  }
-};
-
-if (require.main === module) {
-  testFixWebViewFlags();
-}
-
-module.exports = testFixWebViewFlags;
+  });
+});

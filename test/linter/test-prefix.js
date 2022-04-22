@@ -23,7 +23,7 @@ function checkPrefix(data, category, prefix, logger, path = '') {
           category == 'api' && !data[key].startsWith(prefix),
           category == 'css' && !data[key].startsWith(`-${prefix}`),
         ];
-        if (rules.some(x => x === true)) {
+        if (rules.some((x) => x === true)) {
           logger.error(
             chalk`{bold ${prefix}} prefix is wrong for key: {bold ${path}}`,
           );
