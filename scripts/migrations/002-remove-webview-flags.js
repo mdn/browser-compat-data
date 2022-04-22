@@ -57,7 +57,7 @@ const removeWebViewFlags = (key, value) => {
  *
  * @param {string} filename The filename to perform migration upon
  */
-const fixWebViewFlags = filename => {
+const fixWebViewFlags = (filename) => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const expected = JSON.stringify(
     JSON.parse(actual, removeWebViewFlags),
@@ -101,7 +101,7 @@ if (require.main === module) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map(subfile => {
+      const subFiles = fs.readdirSync(file).map((subfile) => {
         return path.join(file, subfile);
       });
 

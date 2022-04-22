@@ -18,18 +18,28 @@ const compareVersions = require('compare-versions');
 const browsers = require('..').browsers;
 
 const { argv } = require('yargs').command(
-  '$0 <browser> [feature_or_file]',
+  '$0 <browser> [feature_or_path..]',
   'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('browser', {
         describe: 'The destination browser',
         type: 'string',
       })
-      .positional('feature_or_file', {
-        describe: 'The feature, file, or folder to perform mirroring',
-        type: 'string',
-        default: '',
+      .positional('feature_or_path', {
+        describe: 'Features, files, or folders to perform mirroring for',
+        type: 'array',
+        default: [
+          'api',
+          'css',
+          'html',
+          'http',
+          'svg',
+          'javascript',
+          'mathml',
+          'webdriver',
+          'webextensions',
+        ],
       })
       .option('source', {
         describe: 'Use a specified source browser rather than the default',
@@ -48,27 +58,41 @@ const { argv } = require('yargs').command(
 
 /**
  * @param {string} dest_browser
- * @param {ReleaseStatement} source_browser_release
+ * @param {ReleaseStatement} source_release
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
+const getMatchingBrowserVersion = (dest_browser, source_release) => {
   const browserData = browsers[dest_browser];
-  for (const r in browserData.releases) {
+  const releaseKeys = Object.keys(browserData.releases);
+  releaseKeys.sort(compareVersions);
+
+  for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      (release.engine == source_browser_release.engine &&
-        compareVersions.compare(
-          release.engine_version,
-          source_browser_release.engine_version,
-          '>=',
-        )) ||
-      (['opera', 'opera_android', 'samsunginternet_android'].includes(
+      ['opera', 'opera_android', 'samsunginternet_android'].includes(
         dest_browser,
       ) &&
-        release.engine == 'Blink' &&
-        source_browser_release.engine == 'WebKit')
+      release.engine == 'Blink' &&
+      source_release.engine == 'WebKit'
     ) {
       return r;
+    } else if (release.engine == source_release.engine) {
+      if (
+        ['beta', 'nightly'].includes(release.status) &&
+        release.status == source_release.status
+      ) {
+        return r;
+      } else if (
+        release.engine_version &&
+        source_release.engine_version &&
+        compareVersions.compare(
+          release.engine_version,
+          source_release.engine_version,
+          '>=',
+        )
+      ) {
+        return r;
+      }
     }
   }
 
@@ -179,7 +203,7 @@ const updateNotes = (notes, regex, replace) => {
  * @param {SupportStatement} data
  * @returns {SupportStatement}
  */
-const copyStatement = data => {
+const copyStatement = (data) => {
   let newData = {};
   for (let i in data) {
     newData[i] = data[i];
@@ -460,7 +484,7 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 const bumpWebView = (originalData, sourceData, source) => {
   let newData = copyStatement(sourceData);
 
-  const createWebViewRange = version => {
+  const createWebViewRange = (version) => {
     if (Number(version) <= 18) {
       return '1';
     } else if (Number(version) > 18 && Number(version) < 30) {
@@ -681,7 +705,7 @@ function mirrorDataByFile(browser, filepath, source, modify) {
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
   } else if (fs.statSync(file).isDirectory()) {
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
@@ -738,12 +762,12 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
 
 /**
  * @param {string} browser
- * @param {string} feature_or_file
+ * @param {string[]} feature_or_path_array
  * @param {string} forced_source
  * @param {string} modify
  * @returns {boolean}
  */
-const mirrorData = (browser, feature_or_file, forced_source, modify) => {
+const mirrorData = (browser, feature_or_path_array, forced_source, modify) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
@@ -753,30 +777,16 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
 
   let source = getSource(browser, forced_source);
 
-  if (feature_or_file) {
+  for (const feature_or_path of feature_or_path_array) {
     let doMirror = mirrorDataByFeature;
     if (
-      fs.existsSync(feature_or_file) &&
-      (fs.statSync(feature_or_file).isFile() ||
-        fs.statSync(feature_or_file).isDirectory())
+      fs.existsSync(feature_or_path) &&
+      (fs.statSync(feature_or_path).isFile() ||
+        fs.statSync(feature_or_path).isDirectory())
     )
       doMirror = mirrorDataByFile;
 
-    doMirror(browser, feature_or_file, source, modify);
-  } else {
-    [
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    ].forEach(folder => {
-      mirrorDataByFile(browser, folder, source, modify);
-    });
+    doMirror(browser, feature_or_path, source, modify);
   }
 
   console.log(
@@ -787,7 +797,7 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
 };
 
 if (require.main === module) {
-  mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.modify);
+  mirrorData(argv.browser, argv.feature_or_path, argv.source, argv.modify);
 }
 
 module.exports = mirrorData;

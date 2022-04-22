@@ -148,6 +148,10 @@
         "SameSite": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite",
+            "spec_url": [
+              "https://httpwg.org/specs/rfc6265.html#sane-set-cookie",
+              "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute"
+            ],
             "description": "<code>SameSite</code>",
             "support": {
               "chrome": {
@@ -166,7 +170,7 @@
                 "version_added": "60"
               },
               "ie": {
-                "version_added": false
+                "version_added": "11"
               },
               "opera": {
                 "version_added": "39"
@@ -228,7 +232,7 @@
                   "version_added": "60"
                 },
                 "ie": {
-                  "version_added": false
+                  "version_added": "11"
                 },
                 "opera": {
                   "version_added": "39"
@@ -280,14 +284,7 @@
                   ]
                 },
                 "firefox_android": {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.laxByDefault",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": false
                 },
                 "ie": {
                   "version_added": false
@@ -354,7 +351,7 @@
                   "version_added": "60"
                 },
                 "ie": {
-                  "version_added": false
+                  "version_added": "11"
                 },
                 "opera": [
                   {
@@ -435,7 +432,7 @@
                   "version_added": "60"
                 },
                 "ie": {
-                  "version_added": false
+                  "version_added": "11"
                 },
                 "opera": {
                   "version_added": "39"
@@ -473,6 +470,7 @@
                   },
                   {
                     "version_added": "86",
+                    "version_removed": "89",
                     "flags": [
                       {
                         "type": "preference",
@@ -488,6 +486,7 @@
                   },
                   {
                     "version_added": "86",
+                    "version_removed": "89",
                     "flags": [
                       {
                         "type": "preference",
@@ -497,16 +496,22 @@
                     ]
                   }
                 ],
-                "edge": {
-                  "version_added": "86",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#schemeful-same-site",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                },
+                "edge": [
+                  {
+                    "version_added": "89"
+                  },
+                  {
+                    "version_added": "86",
+                    "version_removed": "89",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "#schemeful-same-site",
+                        "value_to_set": "Enabled"
+                      }
+                    ]
+                  }
+                ],
                 "firefox": {
                   "version_added": "79",
                   "flags": [
@@ -518,30 +523,29 @@
                   ]
                 },
                 "firefox_android": {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.schemeful",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": false
                 },
                 "ie": {
                   "version_added": false
                 },
-                "opera": {
-                  "version_added": "72",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#schemeful-same-site",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                },
+                "opera": [
+                  {
+                    "version_added": "75"
+                  },
+                  {
+                    "version_added": "72",
+                    "version_removed": "75",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "#schemeful-same-site",
+                        "value_to_set": "Enabled"
+                      }
+                    ]
+                  }
+                ],
                 "opera_android": {
-                  "version_added": false
+                  "version_added": "63"
                 },
                 "safari": {
                   "version_added": false
@@ -587,14 +591,7 @@
                   ]
                 },
                 "firefox_android": {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.noneRequiresSecure",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": false
                 },
                 "ie": {
                   "version_added": false

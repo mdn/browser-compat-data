@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
-        node-version: 14.x
+        node-version: 16.x
         registry-url: "https://registry.npmjs.org/"
     - run: npm install
     - run: npm test
@@ -26,7 +26,5 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Add JSON as a release asset
       run: gh release upload ${GITHUB_REF#refs/*/} build/data.json
-    - name: Publish stats for API data (#6369)
-      run: npm run --silent stats api | gh issue comment https://github.com/mdn/browser-compat-data/issues/6369 --body-file -
     - name: Publish stats for all data (#3555)
       run: npm run --silent stats | gh issue comment https://github.com/mdn/browser-compat-data/issues/3555 --body-file -

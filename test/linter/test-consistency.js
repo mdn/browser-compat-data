@@ -1,5 +1,4 @@
 'use strict';
-const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 
@@ -70,8 +69,8 @@ class ConsistencyChecker {
     }
 
     // Check sub-features.
-    const keys = Object.keys(data).filter(key => key != '__compat');
-    keys.forEach(key => {
+    const keys = Object.keys(data).filter((key) => key != '__compat');
+    keys.forEach((key) => {
       allErrors = [
         ...allErrors,
         ...this.checkSubfeatures(data[key], [...path, key]),
@@ -91,7 +90,7 @@ class ConsistencyChecker {
     /** @type {FeatureError[]} */
     let errors = [];
 
-    const subfeatures = Object.keys(data).filter(key =>
+    const subfeatures = Object.keys(data).filter((key) =>
       this.isFeature(data[key]),
     );
 
@@ -101,16 +100,16 @@ class ConsistencyChecker {
     /** @type {Partial<Record<string, [string, VersionValue][]>>} */
     var inconsistentSubfeaturesByBrowser = {};
 
-    subfeatures.forEach(subfeature => {
+    subfeatures.forEach((subfeature) => {
       const unsupportedInChild = this.extractUnsupportedBrowsers(
         data[subfeature].__compat,
       );
 
       const browsers = unsupportedInParent.filter(
-        x => !unsupportedInChild.includes(x),
+        (x) => !unsupportedInChild.includes(x),
       );
 
-      browsers.forEach(browser => {
+      browsers.forEach((browser) => {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value =
@@ -123,7 +122,7 @@ class ConsistencyChecker {
     });
 
     // Add errors
-    Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'unsupported';
       const parent_value = data.__compat.support[browser].version_added;
@@ -143,16 +142,16 @@ class ConsistencyChecker {
     );
     inconsistentSubfeaturesByBrowser = {};
 
-    subfeatures.forEach(subfeature => {
+    subfeatures.forEach((subfeature) => {
       const supportUnknownInChild = this.extractSupportNotTrueBrowsers(
         data[subfeature].__compat,
       );
 
       const browsers = supportUnknownInParent.filter(
-        x => !supportUnknownInChild.includes(x),
+        (x) => !supportUnknownInChild.includes(x),
       );
 
-      browsers.forEach(browser => {
+      browsers.forEach((browser) => {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value =
@@ -165,7 +164,7 @@ class ConsistencyChecker {
     });
 
     // Add errors
-    Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'support_unknown';
       const parent_value = data.__compat.support[browser].version_added;
@@ -184,8 +183,8 @@ class ConsistencyChecker {
     );
     inconsistentSubfeaturesByBrowser = {};
 
-    subfeatures.forEach(subfeature => {
-      supportInParent.forEach(browser => {
+    subfeatures.forEach((subfeature) => {
+      supportInParent.forEach((browser) => {
         if (
           data[subfeature].__compat.support[browser] != undefined &&
           this.isVersionAddedGreater(
@@ -206,7 +205,7 @@ class ConsistencyChecker {
     });
 
     // Add errors
-    Object.keys(inconsistentSubfeaturesByBrowser).forEach(browser => {
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'subfeature_earlier_implementation';
       const parent_value = data.__compat.support[browser].version_added;
@@ -241,7 +240,7 @@ class ConsistencyChecker {
   extractUnsupportedBrowsers(compatData) {
     return this.extractBrowsers(
       compatData,
-      data =>
+      (data) =>
         data.version_added === false ||
         (typeof data.version_removed !== 'undefined' &&
           data.version_removed !== false),
@@ -257,7 +256,7 @@ class ConsistencyChecker {
   extractSupportUnknownBrowsers(compatData) {
     return this.extractBrowsers(
       compatData,
-      data => data.version_added === null,
+      (data) => data.version_added === null,
     );
   }
 
@@ -270,7 +269,7 @@ class ConsistencyChecker {
   extractSupportNotTrueBrowsers(compatData) {
     return this.extractBrowsers(
       compatData,
-      data =>
+      (data) =>
         data.version_added === false ||
         data.version_added === null ||
         (typeof data.version_removed !== 'undefined' &&
@@ -286,7 +285,7 @@ class ConsistencyChecker {
   extractSupportedBrowsersWithVersion(compatData) {
     return this.extractBrowsers(
       compatData,
-      data => typeof data.version_added === 'string',
+      (data) => typeof data.version_added === 'string',
     );
   }
 
@@ -298,7 +297,7 @@ class ConsistencyChecker {
    */
   getVersionAdded(supportStatement) {
     // A convenience function to squash non-real values and previews into null
-    const resolveVersionAddedValue = statement =>
+    const resolveVersionAddedValue = (statement) =>
       [true, false, 'preview', null].includes(statement.version_added)
         ? null
         : statement.version_added;
@@ -380,7 +379,7 @@ class ConsistencyChecker {
    * @returns {boolean} The response of the callback, or "false"
    */
   extractBrowsers(compatData, callback) {
-    return Object.keys(compatData.support).filter(browser => {
+    return Object.keys(compatData.support).filter((browser) => {
       const browserData = compatData.support[browser];
 
       if (Array.isArray(browserData)) {
@@ -434,7 +433,7 @@ function testConsistency(filename) {
           );
         }
 
-        subfeatures.forEach(subfeature => {
+        subfeatures.forEach((subfeature) => {
           console.error(
             chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${
               subfeature[1] === undefined ? '[Array]' : subfeature[1]

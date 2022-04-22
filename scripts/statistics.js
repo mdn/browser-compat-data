@@ -23,7 +23,7 @@ const { getRefDate } = require('./release-utils');
 const { argv } = require('yargs').command(
   '$0 [folder]',
   'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('folder', {
         describe: 'Limit the statistics to a specific folder',
@@ -52,7 +52,7 @@ const checkSupport = (supportData, type) => {
   }
   if (type == '≤') {
     return supportData.some(
-      item =>
+      (item) =>
         (typeof item.version_added == 'string' &&
           item.version_added.startsWith('≤')) ||
         (typeof item.version_removed == 'string' &&
@@ -60,7 +60,7 @@ const checkSupport = (supportData, type) => {
     );
   }
   return supportData.some(
-    item => item.version_added === type || item.version_removed === type,
+    (item) => item.version_added === type || item.version_removed === type,
   );
 };
 
@@ -74,7 +74,7 @@ const checkSupport = (supportData, type) => {
  */
 const processData = (data, browsers, stats) => {
   if (data.support) {
-    browsers.forEach(browser => {
+    browsers.forEach((browser) => {
       stats[browser].all++;
       stats.total.all++;
       if (!data.support[browser]) {
@@ -141,7 +141,7 @@ const getStats = (folder, allBrowsers) => {
 
   /** @type {object.<string, VersionStats>} */
   let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
-  browsers.forEach(browser => {
+  browsers.forEach((browser) => {
     stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
   });
 
@@ -193,7 +193,7 @@ const printStats = (stats, folder) => {
 | --- | --- | --- | --- | --- |
 `;
 
-  Object.keys(stats).forEach(entry => {
+  Object.keys(stats).forEach((entry) => {
     table += `| ${entry.replace('_', ' ')} | `;
     table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
     table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(
