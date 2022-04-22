@@ -10,9 +10,9 @@
  *  1. '__compat'
  *  2. Alphanumerical features starting with an uppercase letter (without symbols aside from - or _)
  *  3. 'secure_context_required'
- *  3. 'worker_support'
- *  4. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
- *  5. All other features
+ *  4. 'worker_support'
+ *  5. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
+ *  6. All other features
  *
  */
 
