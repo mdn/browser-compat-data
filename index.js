@@ -23,7 +23,7 @@ function load(...dirs) {
   let dir,
     result = {};
 
-  for (dir of files) {
+  for (dir of dirs) {
     dir = path.resolve(__dirname, dir);
     for (const fn of fs.readdirSync(dir)) {
       const fp = path.join(dir, fn);
