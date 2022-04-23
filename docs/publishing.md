@@ -12,7 +12,7 @@ The steps in this process assume:
 
 - `NPM_TOKEN` is set in the repository secrets. If the token is invalidated or unset, a member of the `@mdn` organization on npm must [create a new token](https://docs.npmjs.com/creating-and-viewing-authentication-tokens) and [add it to the repository's secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 - You have cloned the mdn/browser-compat-data repository and you have the latest `main` branch checked out.
-- You have permissions to run GitHub Actions on the repository.
+- You have permissions to merge pull requests and publish releases.
 - You have [the `gh` CLI](https://cli.github.com/) installed.
 - You have [`jq`](https://stedolan.github.io/jq/) installed.
 
