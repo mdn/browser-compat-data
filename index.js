@@ -24,8 +24,8 @@ function load(...dirs) {
     result = {};
 
   for (dir of dirs) {
-    const files = fs.readdirSync(dir);
-    for (const fn of files) {
+    const entries = fs.readdirSync(dir);
+    for (const entry of entries) {
       const abspath = path.resolve(__dirname, dir, entry);
       let extra;
 
