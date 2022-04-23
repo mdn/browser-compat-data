@@ -30,12 +30,12 @@ function load(...dirs) {
       const abspath = path.resolve(__dirname, dir, entry);
       let extra;
 
-      if (fs.statSync(fp).isDirectory()) {
+      if (fs.statSync(abspath).isDirectory()) {
         // If the given filename is a directory, recursively load it.
-        extra = load(fp);
-      } else if (path.extname(fp) === '.json') {
+        extra = load(abspath);
+      } else if (path.extname(abspath) === '.json') {
         try {
-          extra = JSON.parse(fs.readFileSync(fp));
+          extra = JSON.parse(fs.readFileSync(abspath));
         } catch (e) {
           // Skip invalid JSON. Tests will flag the problem separately.
           continue;
