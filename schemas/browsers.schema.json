@@ -4,25 +4,9 @@
   "definitions": {
     "browsers": {
       "type": "object",
-      "properties": {
-        "chrome": { "$ref": "#/definitions/browser_statement" },
-        "chrome_android": { "$ref": "#/definitions/browser_statement" },
-        "deno": { "$ref": "#/definitions/browser_statement" },
-        "edge": { "$ref": "#/definitions/browser_statement" },
-        "firefox": { "$ref": "#/definitions/browser_statement" },
-        "firefox_android": { "$ref": "#/definitions/browser_statement" },
-        "ie": { "$ref": "#/definitions/browser_statement" },
-        "nodejs": { "$ref": "#/definitions/browser_statement" },
-        "opera": { "$ref": "#/definitions/browser_statement" },
-        "opera_android": { "$ref": "#/definitions/browser_statement" },
-        "safari": { "$ref": "#/definitions/browser_statement" },
-        "safari_ios": { "$ref": "#/definitions/browser_statement" },
-        "samsunginternet_android": {
-          "$ref": "#/definitions/browser_statement"
-        },
-        "webview_android": { "$ref": "#/definitions/browser_statement" }
-      },
-      "additionalProperties": false
+      "additionalProperties": {
+        "$ref": "#/definitions/browser_statement"
+      }
     },
 
     "browser_statement": {
