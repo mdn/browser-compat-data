@@ -38,6 +38,17 @@ const { argv } = require('yargs').command(
  * @property {number} real The total number of real values for the browser.
  */
 
+/** @type {string[]} */
+const webextensionsBrowsers = [
+  'chrome',
+  'edge',
+  'firefox',
+  'opera',
+  'safari',
+  'firefox_android',
+  'safari_ios',
+];
+
 /**
  * Check whether a support statement is a specified type
  *
@@ -122,21 +133,9 @@ const iterateData = (data, browsers, stats) => {
  * @returns {object.<string, VersionStats>?}
  */
 const getStats = (folder, allBrowsers) => {
-  /**
-   * @constant {string[]}
-   */
+  /** @constant {string[]} */
   const browsers = allBrowsers
     ? Object.keys(bcd.browsers)
-    : folder === 'webextensions'
-    ? [
-        'chrome',
-        'edge',
-        'firefox',
-        'firefox_android',
-        'opera',
-        'safari',
-        'safari_ios',
-      ]
     : [
         'chrome',
         'chrome_android',
@@ -155,7 +154,13 @@ const getStats = (folder, allBrowsers) => {
   });
 
   if (folder) {
-    if (bcd[folder]) {
+    if (folder === 'webextensions') {
+      iterateData(
+        bcd[folder],
+        browsers.filter((b) => b in webextensionsBrowsers),
+        stats,
+      );
+    } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
       console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
@@ -163,7 +168,13 @@ const getStats = (folder, allBrowsers) => {
     }
   } else {
     for (const data in bcd) {
-      if (!(data === 'browsers' || data === 'webextensions')) {
+      if (data === 'webextensions') {
+        iterateData(
+          bcd[data],
+          browsers.filter((b) => b in webextensionsBrowsers),
+          stats,
+        );
+      } else if (data !== 'browsers') {
         iterateData(bcd[data], browsers, stats);
       }
     }
