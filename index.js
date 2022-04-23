@@ -27,7 +27,7 @@ function load(...dirs) {
     dir = path.isAbsolute(dir) ? dir : path.resolve(__dirname, dir);
     const files = fs.readdirSync(dir);
     for (const fn of files) {
-      const fp = path.join(dir, fn);
+      const abspath = path.resolve(__dirname, dir, entry);
       let extra;
 
       if (fs.statSync(fp).isDirectory()) {
