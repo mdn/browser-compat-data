@@ -1,9 +1,10 @@
 {
   "css": {
     "properties": {
-      "-moz-context-properties": {
+      "animation-timeline": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/-moz-context-properties",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/animation-timeline",
+          "spec_url": "https://drafts.csswg.org/css-animations-2/#animation-timeline",
           "support": {
             "chrome": {
               "version_added": false
@@ -15,26 +16,17 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": "55",
+              "version_added": "97",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "svg.context-properties.content.enabled",
+                  "name": "layout.css.scroll-linked-animations.enabled",
                   "value_to_set": "true"
                 }
-              ],
-              "notes": "With the preference set to <code>false</code>, the property still works with SVGs via <code>chrome://</code> or <code>resource://</code> URLs"
+              ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "svg.context-properties.content.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "With the preference set to <code>false</code>, the property still works with SVGs via <code>chrome://</code> or <code>resource://</code> URLs"
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -60,7 +52,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
