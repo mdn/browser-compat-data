@@ -24,7 +24,6 @@ function load(...dirs) {
     result = {};
 
   for (dir of dirs) {
-    dir = path.isAbsolute(dir) ? dir : path.resolve(__dirname, dir);
     const files = fs.readdirSync(dir);
     for (const fn of files) {
       const abspath = path.resolve(__dirname, dir, entry);
