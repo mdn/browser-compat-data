@@ -565,25 +565,10 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "49",
-              "version_removed": "76",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.manifest.onappinstall",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": "49",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.manifest.onappinstall",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -2130,23 +2115,11 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "4",
-                "partial_implementation": true,
-                "notes": "By default, this method exists and can be called, but does nothing unless enabled in the browser's preferences."
-              },
-              {
-                "version_added": "4",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "browser.dom.window.dump.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "This method exists but has no effect."
+            },
             "ie": {
               "version_added": false
             },
@@ -2821,7 +2794,7 @@
             "deprecated": false
           }
         },
-        "pseudo-element_support": {
+        "pseudo_element_support": {
           "__compat": {
             "description": "Pseudo-element support",
             "support": {
@@ -2917,7 +2890,7 @@
             "deprecated": false
           }
         },
-        "pseudo-element_support": {
+        "pseudo_element_support": {
           "__compat": {
             "description": "Pseudo-element support",
             "support": {
@@ -4052,6 +4025,54 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "navigation": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/navigation-api/#global",
+          "support": {
+            "chrome": {
+              "version_added": "102"
+            },
+            "chrome_android": {
+              "version_added": "102"
+            },
+            "edge": {
+              "version_added": "102"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "102"
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -5485,21 +5506,9 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "69"
-              },
-              {
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.promise_rejection_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "69"
+            },
             "firefox_android": {
               "version_added": "79"
             },
@@ -7664,7 +7673,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -7764,7 +7773,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -7813,7 +7822,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }

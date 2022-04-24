@@ -34,8 +34,8 @@ function diff({ ref1, ref2, github }) {
   let bSide = enumerate(refB, github === false);
 
   const results = {
-    added: [...bSide].filter(feature => !aSide.has(feature)),
-    removed: [...aSide].filter(feature => !bSide.has(feature)),
+    added: [...bSide].filter((feature) => !aSide.has(feature)),
+    removed: [...aSide].filter((feature) => !bSide.has(feature)),
   };
 
   return results;
@@ -120,7 +120,7 @@ function enumerateFeatures(ref = 'HEAD') {
 }
 
 function printMarkdown({ added, removed }) {
-  const fmtFeature = feat => `- \`${feat}\``;
+  const fmtFeature = (feat) => `- \`${feat}\``;
 
   if (removed.length) {
     console.log('## Removed\n');
@@ -137,7 +137,7 @@ if (require.main === module) {
   const { argv } = yargs.command(
     '$0 [ref1] [ref2]',
     'Compare the set of features at refA and refB',
-    yargs => {
+    (yargs) => {
       yargs
         .positional('ref1', {
           description: 'A Git ref (branch, tag, or commit)',
