@@ -43,7 +43,7 @@ The `name` string is a required property which should use the browser brand name
 
 ### `accepts_flags`
 
-An optional boolean indicating whether the browser supports flags. This is a hint to data contributors and tools. A `true` value does not mean that there exists any flag data for the browser and a `false` value does not guarantee a lack of flag data for the browser.
+An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
 
 ### `pref_url`
 
