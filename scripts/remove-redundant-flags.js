@@ -38,63 +38,61 @@ const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
       if (limitBrowser && browser != limitBrowser) continue;
 
-      if (rawSupportData !== undefined) {
-        const supportData = Array.isArray(rawSupportData)
-          ? rawSupportData
-          : [rawSupportData];
-        const result = [];
+      const supportData = Array.isArray(rawSupportData)
+        ? rawSupportData
+        : [rawSupportData];
+      const result = [];
 
-        const simpleStatement = supportData.find((statement) => {
-          const ignoreKeys = new Set([
-            'version_removed',
-            'notes',
-            'partial_implementation',
-          ]);
-          const keys = Object.keys(statement).filter(
-            (key) => !ignoreKeys.has(key),
+      const simpleStatement = supportData.find((statement) => {
+        const ignoreKeys = new Set([
+          'version_removed',
+          'notes',
+          'partial_implementation',
+        ]);
+        const keys = Object.keys(statement).filter(
+          (key) => !ignoreKeys.has(key),
+        );
+        return keys.length === 1;
+      });
+
+      for (let i = 0; i < supportData.length; i++) {
+        let addData = true;
+
+        if (supportData[i].flags) {
+          const versionToCheck = getEarliestVersion(
+            supportData[i].version_removed ||
+              (simpleStatement && simpleStatement.version_added),
+            simpleStatement && simpleStatement.version_added,
           );
-          return keys.length === 1;
-        });
 
-        for (let i = 0; i < supportData.length; i++) {
-          let addData = true;
-
-          if (supportData[i].flags) {
-            const versionToCheck = getEarliestVersion(
-              supportData[i].version_removed ||
-                (simpleStatement && simpleStatement.version_added),
-              simpleStatement && simpleStatement.version_added,
+          if (typeof versionToCheck === 'string') {
+            const releaseDate = new Date(
+              bcd.browsers[browser].releases[versionToCheck].release_date,
             );
 
-            if (typeof versionToCheck === 'string') {
-              const releaseDate = new Date(
-                bcd.browsers[browser].releases[versionToCheck].release_date,
-              );
-
-              if (
-                (!(simpleStatement && simpleStatement.version_removed) ||
-                  compareVersions.compare(
-                    supportData[i].version_added.replace('≤', ''),
-                    simpleStatement.version_removed.replace('≤', ''),
-                    '<',
-                  )) &&
-                releaseDate <= cutoffDate
-              ) {
-                addData = false;
-              }
+            if (
+              (!(simpleStatement && simpleStatement.version_removed) ||
+                compareVersions.compare(
+                  supportData[i].version_added.replace('≤', ''),
+                  simpleStatement.version_removed.replace('≤', ''),
+                  '<',
+                )) &&
+              releaseDate <= cutoffDate
+            ) {
+              addData = false;
             }
           }
-
-          if (addData) result.push(supportData[i]);
         }
 
-        if (result.length == 1) {
-          value.support[browser] = result[0];
-        } else if (result.length == 0) {
-          value.support[browser] = { version_added: false };
-        } else {
-          value.support[browser] = result;
-        }
+        if (addData) result.push(supportData[i]);
+      }
+
+      if (result.length == 1) {
+        value.support[browser] = result[0];
+      } else if (result.length == 0) {
+        value.support[browser] = { version_added: false };
+      } else {
+        value.support[browser] = result;
       }
     }
   }
