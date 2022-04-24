@@ -19,9 +19,9 @@ const IS_WINDOWS = platform() === 'win32';
  * @returns {*} The new value
  */
 const fixStatus = (key, value) => {
-  const status = value?.__compat?.status;
-  if (status && status.experimental && status.deprecated) {
-    status.experimental = false;
+  const compat = value?.__compat;
+  if (compat && compat.spec_url && compat.status.standard_track === false) {
+    compat.status.standard_track = true;
   }
   return value;
 };
