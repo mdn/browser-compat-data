@@ -145,7 +145,7 @@ function checkVersions(supportData, relPath, logger) {
         if (statement.version_added === false) {
           if (
             Object.keys(statement).filter(
-              k => !['version_added', 'notes'].includes(k),
+              (k) => !['version_added', 'notes'].includes(k),
             ).length
           ) {
             logger.error(
