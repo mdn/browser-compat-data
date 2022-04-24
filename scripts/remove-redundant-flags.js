@@ -68,9 +68,7 @@ const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
 
             if (typeof versionToCheck === 'string') {
               const releaseDate = new Date(
-                bcd.browsers[browser].releases[
-                  versionToCheck.replace('≤', '')
-                ].release_date,
+                bcd.browsers[browser].releases[versionToCheck].release_date,
               );
 
               if (
