@@ -26,7 +26,7 @@ const fixStatus = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
 const fixStatusFromFile = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
