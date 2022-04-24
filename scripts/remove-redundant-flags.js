@@ -43,14 +43,14 @@ const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
           : [rawSupportData];
         const result = [];
 
-        const simpleStatement = supportData.find(statement => {
+        const simpleStatement = supportData.find((statement) => {
           const ignoreKeys = new Set([
             'version_removed',
             'notes',
             'partial_implementation',
           ]);
           const keys = Object.keys(statement).filter(
-            key => !ignoreKeys.has(key),
+            (key) => !ignoreKeys.has(key),
           );
           return keys.length === 1;
         });
@@ -148,7 +148,7 @@ const main = (files_or_folders, browser, cutoffDate) => {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map(subfile => {
+      const subFiles = fs.readdirSync(file).map((subfile) => {
         return path.join(file, subfile);
       });
 
@@ -163,7 +163,7 @@ if (require.main === module) {
   const { argv } = require('yargs').command(
     '$0 [file]',
     'Remove data for flags that have been removed two years back or more',
-    yargs => {
+    (yargs) => {
       yargs
         .positional('file', {
           describe: 'The file(s) and/or folder(s) to test',
