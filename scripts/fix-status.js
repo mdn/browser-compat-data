@@ -7,8 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+const { IS_WINDOWS } = require('../test/utils.js');
 
 /**
  * Return a new feature object whose status properties have been adjusted according to a few predefined rules.
