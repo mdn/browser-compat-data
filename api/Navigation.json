@@ -1,49 +1,18 @@
 {
   "api": {
-    "BluetoothRemoteGATTCharacteristic": {
+    "Navigation": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic",
-        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothgattcharacteristic-interface",
+        "spec_url": "https://wicg.github.io/navigation-api/#global",
         "support": {
-          "chrome": [
-            {
-              "version_added": "56",
-              "partial_implementation": true,
-              "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "56",
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            }
-          ],
-          "chrome_android": {
-            "version_added": "56"
+          "chrome": {
+            "version_added": "102"
           },
-          "edge": [
-            {
-              "version_added": "79",
-              "partial_implementation": true,
-              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "79",
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            }
-          ],
+          "chrome_android": {
+            "version_added": "102"
+          },
+          "edge": {
+            "version_added": "102"
+          },
           "firefox": {
             "version_added": false
           },
@@ -53,26 +22,11 @@
           "ie": {
             "version_added": false
           },
-          "opera": [
-            {
-              "version_added": "43",
-              "partial_implementation": true,
-              "notes": "Before Opera 57, this feature was only supported in macOS. In Opera 57, support was added for Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "43",
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            }
-          ],
+          "opera": {
+            "version_added": false
+          },
           "opera_android": {
-            "version_added": "43"
+            "version_added": false
           },
           "safari": {
             "version_added": false
@@ -81,35 +35,30 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": "6.0"
+            "version_added": false
           },
           "webview_android": {
-            "version_added": false,
-            "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
+            "version_added": "102"
           }
         },
         "status": {
           "experimental": true,
-          "standard_track": false,
+          "standard_track": true,
           "deprecated": false
         }
       },
-      "characteristicvaluechanged_event": {
+      "back": {
         "__compat": {
-          "description": "<code>characteristicvaluechanged</code> event",
-          "spec_url": [
-            "https://webbluetoothcg.github.io/web-bluetooth/#eventdef-bluetoothremotegattcharacteristic-characteristicvaluechanged",
-            "https://webbluetoothcg.github.io/web-bluetooth/#dom-characteristiceventhandlers-oncharacteristicvaluechanged"
-          ],
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-back",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -121,10 +70,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -133,32 +82,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "getDescriptor": {
+      "canGoBack": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptor",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptor",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-cangoback",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -170,10 +118,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -182,32 +130,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "getDescriptors": {
+      "canGoForward": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptors",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-cangoforward",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -219,10 +166,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -231,32 +178,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "properties": {
+      "currentEntry": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-properties",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-currententry",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -268,10 +214,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -280,32 +226,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "readValue": {
+      "entries": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-readvalue",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-entries",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -317,10 +262,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -329,32 +274,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "service": {
+      "forward": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/service",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-service",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-forward",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -366,10 +310,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -378,32 +322,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "startNotifications": {
+      "navigate": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-startnotifications",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-navigate",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -415,10 +358,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -427,32 +370,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "stopNotifications": {
+      "oncurrententrychange": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-stopnotifications",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-oncurrententrychange",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -464,10 +406,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -476,32 +418,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "uuid": {
+      "onnavigate": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-uuid",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-onnavigate",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -513,10 +454,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -525,32 +466,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "value": {
+      "onnavigateerror": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/value",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-value",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-onnavigateerror",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -562,10 +502,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -574,32 +514,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "writeValue": {
+      "onnavigatesuccess": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevalue",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-onnavigatesuccess",
           "support": {
             "chrome": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "56"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -611,10 +550,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "43"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "43"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -623,81 +562,31 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "writeValueWithoutResponse": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithoutResponse",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevaluewithoutresponse",
-          "support": {
-            "chrome": {
-              "version_added": "85"
-            },
-            "chrome_android": {
-              "version_added": "85"
-            },
-            "edge": {
-              "version_added": "85"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "71"
-            },
-            "opera_android": {
-              "version_added": "60"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "14.0"
-            },
-            "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "writeValueWithResponse": {
+      "reload": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithResponse",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevaluewithresponse",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-reload",
           "support": {
             "chrome": {
-              "version_added": "85"
+              "version_added": "102"
             },
             "chrome_android": {
-              "version_added": "85"
+              "version_added": "102"
             },
             "edge": {
-              "version_added": "85"
+              "version_added": "102"
             },
             "firefox": {
               "version_added": false
@@ -709,10 +598,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "71"
+              "version_added": false
             },
             "opera_android": {
-              "version_added": "60"
+              "version_added": false
             },
             "safari": {
               "version_added": false
@@ -721,15 +610,159 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "14.0"
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "102"
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "transition": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-transition",
+          "support": {
+            "chrome": {
+              "version_added": "102"
+            },
+            "chrome_android": {
+              "version_added": "102"
+            },
+            "edge": {
+              "version_added": "102"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "102"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "traverseTo": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-traverseto",
+          "support": {
+            "chrome": {
+              "version_added": "102"
+            },
+            "chrome_android": {
+              "version_added": "102"
+            },
+            "edge": {
+              "version_added": "102"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "102"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updateCurrentEntry": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigation-updatecurrententry",
+          "support": {
+            "chrome": {
+              "version_added": "102"
+            },
+            "chrome_android": {
+              "version_added": "102"
+            },
+            "edge": {
+              "version_added": "102"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "102"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
