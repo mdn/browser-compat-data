@@ -16,7 +16,7 @@ const IS_WINDOWS = platform() === 'win32';
 
 const getEarliestVersion = (...args) => {
   const versions = args
-    .filter((version) => typeof version === 'string' && version !== 'preview')
+    .filter((version) => typeof version === 'string')
     .map((version) => version.replace('≤', ''));
 
   let earliestVersion = versions[0];
@@ -24,7 +24,8 @@ const getEarliestVersion = (...args) => {
   for (const version of versions) {
     if (
       earliestVersion === 'preview' ||
-      compareVersions.compare(earliestVersion, version, '>')
+      (version !== 'preview' &&
+        compareVersions.compare(earliestVersion, version, '>'))
     )
       earliestVersion = version;
   }
