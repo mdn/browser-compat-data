@@ -10,6 +10,8 @@ const assert = require('assert');
 
 const { removeRedundantFlags } = require('./remove-redundant-flags.js');
 
+const cutoffDate = Date.parse('2019-01-01T00:00Z');
+
 const tests = [
   {
     input: {
@@ -440,7 +442,9 @@ describe('remove-redundant-flags', () => {
     it(`Test #${i}`, () => {
       let expected = JSON.stringify(test['output'], null, 2);
       let output = JSON.stringify(
-        JSON.parse(JSON.stringify(test['input']), removeRedundantFlags),
+        JSON.parse(JSON.stringify(test['input']), (k, v) =>
+          removeRedundantFlags(k, v, null, cutoffDate),
+        ),
         null,
         2,
       );

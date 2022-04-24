@@ -14,18 +14,6 @@ const bcd = require('..');
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
-let twoYearsAgo;
-if (
-  process.env.npm_lifecycle_event &&
-  process.env.npm_lifecycle_event.includes('mocha')
-) {
-  // When running test, use a specific time for consistent testing
-  twoYearsAgo = Date.parse('2019-01-01T00:00Z');
-} else {
-  twoYearsAgo = new Date();
-  twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
-}
-
 const getEarliestVersion = (...args) => {
   const versions = args
     .filter(version => typeof version === 'string')
@@ -45,7 +33,7 @@ const getEarliestVersion = (...args) => {
   return earliestVersion;
 };
 
-const removeRedundantFlags = (key, value, limitBrowser) => {
+const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
       if (limitBrowser && browser != limitBrowser) continue;
@@ -92,7 +80,7 @@ const removeRedundantFlags = (key, value, limitBrowser) => {
                     simpleStatement.version_removed.replace('≤', ''),
                     '<',
                   )) &&
-                releaseDate <= twoYearsAgo
+                releaseDate <= cutoffDate
               ) {
                 addData = false;
               }
@@ -118,10 +106,12 @@ const removeRedundantFlags = (key, value, limitBrowser) => {
 /**
  * @param {Promise<void>} filename
  */
-const fixRedundantFlags = (filename, limitBrowser) => {
+const fixRedundantFlags = (filename, limitBrowser, cutoffDate) => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const expected = JSON.stringify(
-    JSON.parse(actual, (k, v) => removeRedundantFlags(k, v, limitBrowser)),
+    JSON.parse(actual, (k, v) =>
+      removeRedundantFlags(k, v, limitBrowser, cutoffDate),
+    ),
     null,
     2,
   );
@@ -137,7 +127,7 @@ const fixRedundantFlags = (filename, limitBrowser) => {
   }
 };
 
-const main = (files_or_folders, browser) => {
+const main = (files_or_folders, browser, cutoffDate) => {
   /**
    * @param {string[]} files
    */
@@ -153,7 +143,7 @@ const main = (files_or_folders, browser) => {
 
       if (fs.statSync(file).isFile()) {
         if (path.extname(file) === '.json') {
-          fixRedundantFlags(file, browser);
+          fixRedundantFlags(file, browser, cutoffDate);
         }
 
         continue;
@@ -200,7 +190,10 @@ if (require.main === module) {
     },
   );
 
-  main(argv.file, argv.browser);
+  let cutoffDate = new Date();
+  cutoffDate.setFullYear(cutoffDate.getFullYear() - 2);
+
+  main(argv.file, argv.browser, cutoffDate);
 }
 
 module.exports = { removeRedundantFlags, fixRedundantFlags };
