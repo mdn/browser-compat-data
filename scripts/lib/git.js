@@ -27,7 +27,7 @@ function getGitDiffStatuses(base, head) {
     .execSync(`git diff --name-status ${base} ${head}`, { encoding: 'utf-8' })
     .trim()
     .split('\n')
-    .map(line => line.split('\t'))
+    .map((line) => line.split('\t'))
     .map(parseFields);
 }
 
