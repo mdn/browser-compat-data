@@ -71,10 +71,6 @@ The release objects consist of the following properties:
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
-- An optional `accepts_flags` boolean property indicating whether the release supports flags.
-
-  This is a hint to data contributors and tools. A `true` value does not mean that there exists any flag data for the release and a `false` value does not guarantee a lack of flag data for the release.
-
 - An optional `engine` property which is the name of the browser's engine.
 
 - An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
