@@ -1,5 +1,105 @@
 # Release notes
 
+## [v4.1.17](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.17)
+
+April 19, 2022
+
+### Notable changes
+
+- The data for `css.types.color` has been reorganized for better clarity. ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+
+### Removals
+
+- `api.Document.createTreeWalker.expandEntityReferences_parameter` ([#15789](https://github.com/mdn/browser-compat-data/pull/15789))
+- `api.EventListener` ([#15785](https://github.com/mdn/browser-compat-data/pull/15785))
+- `api.EventListener.handleEvent` ([#15785](https://github.com/mdn/browser-compat-data/pull/15785))
+- `api.NodeFilter` ([#15783](https://github.com/mdn/browser-compat-data/pull/15783))
+- `api.NodeFilter.acceptNode` ([#15783](https://github.com/mdn/browser-compat-data/pull/15783))
+- `api.Window.setCursor` ([#15861](https://github.com/mdn/browser-compat-data/pull/15861))
+- `api.Window.sidebar` ([#15820](https://github.com/mdn/browser-compat-data/pull/15820))
+- `css.properties.-moz-context-properties` ([#15870](https://github.com/mdn/browser-compat-data/pull/15870))
+- `css.types.color.alpha` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.alpha_hexadecimal_notation` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.floats_in_rgb_rgba` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.hsl_function_accepts_alpha` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.keyword_color_values` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rebeccapurple` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb_function_accepts_alpha` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb_functional_notation` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.space_separated_functional_notation` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `html.elements.menu.button_menus` ([#6955](https://github.com/mdn/browser-compat-data/pull/6955))
+- `html.elements.menu.type.type_toolbar` ([#6955](https://github.com/mdn/browser-compat-data/pull/6955))
+- `html.elements.textarea.autocapitalize` ([#15851](https://github.com/mdn/browser-compat-data/pull/15851))
+- `http.headers.X-Forwarded-For` ([#15857](https://github.com/mdn/browser-compat-data/pull/15857))
+- `http.headers.X-Forwarded-Host` ([#15857](https://github.com/mdn/browser-compat-data/pull/15857))
+- `http.headers.X-Forwarded-Proto` ([#15857](https://github.com/mdn/browser-compat-data/pull/15857))
+- `svg.elements.animateColor` ([#15845](https://github.com/mdn/browser-compat-data/pull/15845))
+- `svg.elements.animateColor.by` ([#15845](https://github.com/mdn/browser-compat-data/pull/15845))
+- `svg.elements.animateColor.from` ([#15845](https://github.com/mdn/browser-compat-data/pull/15845))
+- `svg.elements.animateColor.to` ([#15845](https://github.com/mdn/browser-compat-data/pull/15845))
+- `svg.elements.hatch` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.hatchContentUnits` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.hatchUnits` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.href` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.pitch` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.rotate` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.transform` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.x` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatch.y` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatchpath` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatchpath.d` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+- `svg.elements.hatchpath.offset` ([#15856](https://github.com/mdn/browser-compat-data/pull/15856))
+
+### Additions
+
+- `css.properties.overflow.overlay` ([#15834](https://github.com/mdn/browser-compat-data/pull/15834))
+- `css.types.color.color_keywords` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.color_keywords.rebeccapurple` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.hsl.alpha_parameter` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.hsl.space_separated_parameters` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.hsla` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.hsla.space_separated_parameters` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb_hexadecimal_notation.alpha_hexadecimal_notation` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb.alpha_parameter` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb.float_values` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgb.space_separated_parameters` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgba` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgba.float_values` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+- `css.types.color.rgba.space_separated_parameters` ([#15762](https://github.com/mdn/browser-compat-data/pull/15762))
+
+### Statistics
+
+- 17 contributors have changed 165 files with 2,164 additions and 7,215 deletions in 82 commits ([`v4.1.16...v4.1.17`](https://github.com/mdn/browser-compat-data/compare/v4.1.16...v4.1.17))
+- 13,269 total features
+- 867 total contributors
+- 3,986 total stargazers
+
+## [v4.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.16)
+
+April 12, 2022
+
+### Removals
+
+- `api.NodeIterator.expandEntityReferences` ([#15773](https://github.com/mdn/browser-compat-data/pull/15773))
+- `api.TreeWalker.expandEntityReferences` ([#15773](https://github.com/mdn/browser-compat-data/pull/15773))
+- `css.properties.align-content.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.align-items.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.align-self.flex_context.left_right` ([#15475](https://github.com/mdn/browser-compat-data/pull/15475))
+- `css.properties.display.xul_box_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_deck_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_grid_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_inline_grid_stack` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_popup_values` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+- `css.properties.display.xul_stack_value` ([#15723](https://github.com/mdn/browser-compat-data/pull/15723))
+
+### Statistics
+
+- 16 contributors have changed 83 files with 516 additions and 1,327 deletions in 24 commits ([`v4.1.15...v4.1.16`](https://github.com/mdn/browser-compat-data/compare/v4.1.15...v4.1.16))
+- 13,293 total features
+- 865 total contributors
+- 3,975 total stargazers
+
 ## [v4.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v4.1.15)
 
 April 5, 2022

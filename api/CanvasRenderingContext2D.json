@@ -493,29 +493,36 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-createconicgradient-dev",
           "support": {
-            "chrome": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#new-canvas-2d-api"
-                }
-              ],
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
-            },
-            "chrome_android": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#new-canvas-2d-api"
-                }
-              ],
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "99"
+              },
+              {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#new-canvas-2d-api"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "99"
+              },
+              {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#new-canvas-2d-api"
+                  }
+                ]
+              }
+            ],
             "edge": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
+              "version_added": "99"
             },
             "firefox": [
               {
@@ -532,31 +539,17 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "90"
-              },
-              {
-                "version_added": "86",
-                "version_removed": "90",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "canvas.createConicGradient.enabled"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "90"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
+              "version_added": "85"
             },
             "opera_android": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
+              "version_added": "68"
             },
             "safari": {
               "version_added": "15"
@@ -565,12 +558,10 @@
               "version_added": "15"
             },
             "samsunginternet_android": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
+              "version_added": false
             },
             "webview_android": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/1284417'>bug 1284417</a>."
+              "version_added": "99"
             }
           },
           "status": {
@@ -773,138 +764,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "currentTransform": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/currentTransform",
-          "support": {
-            "chrome": {
-              "version_added": "32",
-              "version_removed": "68",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "32",
-              "version_removed": "68",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/928150'>bug 928150</a>. Firefox also supports the experimental and prefixed properties mozCurrentTransform and mozCurrentTransformInverse which set or get the current (inverse) transformation matrix."
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "19",
-              "version_removed": "55",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features"
-                }
-              ]
-            },
-            "opera_android": {
-              "version_added": "19",
-              "version_removed": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features"
-                }
-              ]
-            },
-            "safari": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/174278'>webkitbug(174278)</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        },
-        "DOMMatrix_return_value": {
-          "__compat": {
-            "description": "Returns a <code>DOMMatrix</code>",
-            "support": {
-              "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "chrome_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "edge": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/174278'>bug 174278</a>."
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "webview_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
