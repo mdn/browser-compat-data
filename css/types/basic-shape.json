@@ -272,13 +272,9 @@
               },
               "firefox": [
                 {
-                  "version_added": "63",
+                  "version_added": "97",
                   "partial_implementation": true,
-                  "notes": [
-                    "From version 97, the <code>d</code> SVG presentation attribute supports <code>path()</code>.",
-                    "From version 71, the <code>clip-path</code> property supports <code>path()</code>.",
-                    "Before version 71, only the <code>offset-path</code> property supports <code>path()</code>."
-                  ]
+                  "notes": "Only supported on the <code>d</code> SVG presentation attribute and the <code>clip-path</code> and <code>offset-path</code> CSS properties. Not supported on the <code>shape-outside</code> CSS property."
                 },
                 {
                   "version_added": "91",
@@ -294,41 +290,31 @@
                   "notes": "With the preference enabled, the <code>d</code> SVG presentation attribute, <code>clip-path</code> CSS property, and <code>offset-path</code> CSS property support <code>path()</code>."
                 },
                 {
-                  "version_added": "64",
-                  "version_removed": "71",
+                  "version_added": "71",
                   "partial_implementation": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.clip-path-path.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "With the preference enabled, the <code>clip-path</code> and <code>offset-path</code> properties support <code>path()</code>."
+                  "notes": "Only supported on the <code>clip-path</code> and <code>offset-path</code> properties."
+                },
+                {
+                  "version_added": "63",
+                  "partial_implementation": true,
+                  "notes": "Only supported on the <code>offset-path</code> property."
                 }
               ],
               "firefox_android": [
                 {
-                  "version_added": "63",
+                  "version_added": "97",
                   "partial_implementation": true,
-                  "notes": [
-                    "From version 97, the <code>d</code> SVG presentation attribute supports <code>path()</code>.",
-                    "From version 79, the <code>clip-path</code> property supports <code>path()</code>.",
-                    "Before version 79, only the <code>offset-path</code> property supports <code>path()</code>."
-                  ]
+                  "notes": "Only supported on the <code>d</code> SVG presentation attribute and the <code>clip-path</code> and <code>offset-path</code> CSS properties. Not supported on the <code>shape-outside</code> CSS property."
                 },
                 {
-                  "version_added": "64",
-                  "version_removed": "79",
+                  "version_added": "79",
                   "partial_implementation": true,
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.clip-path-path.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "With the preference enabled, the <code>clip-path</code> and <code>offset-path</code> properties support <code>path()</code>."
+                  "notes": "Only supported on the <code>clip-path</code> and <code>offset-path</code> properties."
+                },
+                {
+                  "version_added": "63",
+                  "partial_implementation": true,
+                  "notes": "Only supported on the <code>offset-path</code> property."
                 }
               ],
               "ie": {
