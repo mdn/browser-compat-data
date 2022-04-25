@@ -42,10 +42,10 @@
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "mocha": "mocha \"**/*.test.js\"",
-    "formatting": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
-    "formatting:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
+    "format": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
+    "format:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
-    "fix": "npm run formatting:fix && node scripts/fix",
+    "fix": "npm run format:fix && node scripts/fix",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-build": "node scripts/release-build",
@@ -53,7 +53,7 @@
     "release-notes": "node scripts/release-notes",
     "release-stats": "node scripts/release-stats",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run formatting && npm run lint && npm run mocha",
+    "test": "npm run format && npm run lint && npm run mocha",
     "traverse": "node scripts/traverse"
   }
 }
