@@ -1,3 +1,4 @@
+import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -75,4 +76,6 @@ function main() {
   }
 }
 
-main();
+if (esMain(import.meta)) {
+  main();
+}

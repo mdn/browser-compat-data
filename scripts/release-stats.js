@@ -1,5 +1,6 @@
 import http from 'node:https';
 import readline from 'readline';
+import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -141,4 +142,6 @@ async function main() {
   );
 }
 
-main();
+if (esMain(import.meta)) {
+  await main();
+}

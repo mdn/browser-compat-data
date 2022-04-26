@@ -1,6 +1,8 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 
+import esMain from 'es-main';
+
 const directory = './build/';
 
 const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
@@ -106,4 +108,6 @@ async function main() {
   console.log('Data bundle is ready');
 }
 
-await main();
+if (esMain(import.meta)) {
+  await main();
+}

@@ -33,23 +33,23 @@ function enumerateFeatures(dataFrom) {
   return feats;
 }
 
-const { argv } = yargs(hideBin(process.argv)).command(
-  '$0 [dest]',
-  'Write a JSON-formatted list of feature paths',
-  (yargs) => {
-    yargs
-      .positional('dest', {
-        default: '.features.json',
-        description: 'File destination',
-      })
-      .option('data-from', {
-        nargs: 1,
-        description: 'Require compat data from an alternate path',
-      });
-  },
-);
-
 if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [dest]',
+    'Write a JSON-formatted list of feature paths',
+    (yargs) => {
+      yargs
+        .positional('dest', {
+          default: '.features.json',
+          description: 'File destination',
+        })
+        .option('data-from', {
+          nargs: 1,
+          description: 'Require compat data from an alternate path',
+        });
+    },
+  );
+
   main(argv);
 }
 

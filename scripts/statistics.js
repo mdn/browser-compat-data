@@ -13,25 +13,6 @@ import bcd from '../index.js';
 
 import { getRefDate } from './release-utils.js';
 
-const { argv } = yargs(hideBin(process.argv)).command(
-  '$0 [folder]',
-  'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
-  (yargs) => {
-    yargs
-      .positional('folder', {
-        describe: 'Limit the statistics to a specific folder',
-        type: 'string',
-        default: '',
-      })
-      .option('all', {
-        alias: 'a',
-        describe: 'Show statistics for all browsers within BCD',
-        type: 'boolean',
-        nargs: 0,
-      });
-  },
-);
-
 /**
  * @typedef {import('../../types').Identifier} Identifier
  *
@@ -212,6 +193,25 @@ const printStats = (stats, folder) => {
 };
 
 if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [folder]',
+    'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
+    (yargs) => {
+      yargs
+        .positional('folder', {
+          describe: 'Limit the statistics to a specific folder',
+          type: 'string',
+          default: '',
+        })
+        .option('all', {
+          alias: 'a',
+          describe: 'Show statistics for all browsers within BCD',
+          type: 'boolean',
+          nargs: 0,
+        });
+    },
+  );
+
   printStats(getStats(argv.folder, argv.all), argv.folder);
 }
 
