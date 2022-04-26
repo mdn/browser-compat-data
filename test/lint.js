@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import ora from 'ora';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk';
 import {
   testBrowsers,
@@ -22,7 +23,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
-const argv = yargs()
+const { argv } = yargs(hideBin(process.argv))
   .alias('version', 'v')
   .usage('$0 [[--] files...]', false, (yargs) => {
     return yargs.positional('files...', {

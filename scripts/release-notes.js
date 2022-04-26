@@ -1,5 +1,6 @@
 import esMain from 'es-main';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import {
   exec,
@@ -121,7 +122,7 @@ function markdownifyChanges(removes, adds) {
 }
 
 if (esMain(import.meta)) {
-  const { argv } = yargs.command(
+  const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [start-version-tag [end-version-tag]]',
     'Generate release notes text',
     (yargs) => {

@@ -1,11 +1,12 @@
 import http from 'node:https';
 import readline from 'readline';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import { exec, releaseYargsBuilder } from './release-utils.js';
 import { walk } from '../utils/index.js';
 
-const { argv } = yargs().command(
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',
   'Generate statistics for release notes',
   releaseYargsBuilder,

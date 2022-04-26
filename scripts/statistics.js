@@ -7,12 +7,13 @@ import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
 import esMain from 'es-main';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import bcd from '../index.js';
 
 import { getRefDate } from './release-utils.js';
 
-const { argv } = yargs().command(
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [folder]',
   'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
   (yargs) => {

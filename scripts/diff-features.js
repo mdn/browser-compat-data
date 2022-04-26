@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 function main({ ref1, ref2, format, github }) {
   const results = diff({ ref1, ref2, github });
@@ -136,7 +137,7 @@ function printMarkdown({ added, removed }) {
 }
 
 if (esMain(import.meta)) {
-  const { argv } = yargs.command(
+  const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [ref1] [ref2]',
     'Compare the set of features at refA and refB',
     (yargs) => {

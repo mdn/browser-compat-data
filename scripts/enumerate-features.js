@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import { walk } from '../utils/index.js';
 
@@ -32,7 +33,7 @@ function enumerateFeatures(dataFrom) {
   return feats;
 }
 
-const { argv } = yargs().command(
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [dest]',
   'Write a JSON-formatted list of feature paths',
   (yargs) => {

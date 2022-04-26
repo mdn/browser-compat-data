@@ -1,8 +1,9 @@
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import bcd from '../index.js';
 
-const { argv } = yargs().command(
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 <browser> [folder] [value]',
   'Test for specified values in any specified browser',
   (yargs) => {

@@ -1,4 +1,5 @@
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import {
   buildQuery,
@@ -11,7 +12,7 @@ const pullsBaseURL = new URL(
 );
 const releaseNotesLabel = 'label:"needs-release-note :newspaper:"';
 
-const { argv } = yargs().command(
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',
   'Get a link to PRs included between two tags (or other commits)',
   (yargs) => {
