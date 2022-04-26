@@ -16,12 +16,7 @@ function enumerateFeatures(dataFrom) {
   const feats = [];
 
   const walker = dataFrom
-    ? walk(
-        undefined,
-        JSON.parse(
-          fs.readFileSync(path.join(process.cwd(), dataFrom), 'utf-8'),
-        ),
-      )
+    ? walk(undefined, import(path.join(process.cwd(), dataFrom, 'index.js')))
     : walk();
 
   for (const { path, compat } of walker) {
