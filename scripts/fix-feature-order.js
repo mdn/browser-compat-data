@@ -23,7 +23,7 @@ import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 
 import compareFeatures from './compare-features.js';
-import { IS_WINDOWS } from '../linter/utils.js';
+import { IS_WINDOWS } from '../test/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
