@@ -108,13 +108,16 @@ function enumerateFeatures(ref = 'HEAD') {
   const worktree = `__enumerating__${hash}`;
 
   console.error(`Enumerating features for ${ref} (${hash})`);
-  try {
-    execSync(`npm ci`, { cwd: worktree });
-  } catch (e) {
-    // If the clean install fails, proceed anyways
-  }
+
   try {
     execSync(`git worktree add ${worktree} ${hash}`);
+
+    try {
+      execSync(`npm ci`, { cwd: worktree });
+    } catch (e) {
+      // If the clean install fails, proceed anyways
+    }
+
     execSync(`node ./scripts/enumerate-features.js --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
