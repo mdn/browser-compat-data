@@ -1,5 +1,6 @@
 'use strict';
 
+import fs from 'node:fs';
 import compareVersions from 'compare-versions';
 import chalk from 'chalk';
 
