@@ -1,6 +1,6 @@
-const assert = require('assert').strict;
+import assert from 'node:assert/strict';
 
-const { ConsistencyChecker } = require('./test-consistency');
+import { ConsistencyChecker } from './test-consistency.js';
 
 const check = new ConsistencyChecker();
 

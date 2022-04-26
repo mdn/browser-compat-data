@@ -20,45 +20,6 @@ const { browsers } = bcd;
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const { argv } = require('yargs').command(
-  '$0 <browser> [feature_or_path..]',
-  'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
-  (yargs) => {
-    yargs
-      .positional('browser', {
-        describe: 'The destination browser',
-        type: 'string',
-      })
-      .positional('feature_or_path', {
-        describe: 'Features, files, or folders to perform mirroring for',
-        type: 'array',
-        default: [
-          'api',
-          'css',
-          'html',
-          'http',
-          'svg',
-          'javascript',
-          'mathml',
-          'webdriver',
-          'webextensions',
-        ],
-      })
-      .option('source', {
-        describe: 'Use a specified source browser rather than the default',
-        type: 'string',
-        default: undefined,
-      })
-      .option('modify', {
-        alias: 'm',
-        describe:
-          'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
-        type: 'string',
-        default: 'nonreal',
-      });
-  },
-);
-
 /**
  * @param {string} dest_browser
  * @param {ReleaseStatement} source_release
@@ -806,6 +767,45 @@ const mirrorData = (browser, feature_or_path_array, forced_source, modify) => {
 
 const self = fileURLToPath(import.meta.url);
 if (process.argv[1] === self) {
+  const { argv } = yargs.command(
+    '$0 <browser> [feature_or_path..]',
+    'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
+    (yargs) => {
+      yargs
+        .positional('browser', {
+          describe: 'The destination browser',
+          type: 'string',
+        })
+        .positional('feature_or_path', {
+          describe: 'Features, files, or folders to perform mirroring for',
+          type: 'array',
+          default: [
+            'api',
+            'css',
+            'html',
+            'http',
+            'svg',
+            'javascript',
+            'mathml',
+            'webdriver',
+            'webextensions',
+          ],
+        })
+        .option('source', {
+          describe: 'Use a specified source browser rather than the default',
+          type: 'string',
+          default: undefined,
+        })
+        .option('modify', {
+          alias: 'm',
+          describe:
+            'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
+          type: 'string',
+          default: 'nonreal',
+        });
+    },
+  );
+
   mirrorData(argv.browser, argv.feature_or_path, argv.source, argv.modify);
 }
 

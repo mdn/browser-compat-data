@@ -1,10 +1,12 @@
-const {
+import yargs from 'yargs';
+
+import {
   exec,
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} = require('./release-utils');
-const diffFeatures = require('./diff-features');
+} from './release-utils.js';
+import diffFeatures from './diff-features.js';
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;
@@ -117,8 +119,9 @@ function markdownifyChanges(removes, adds) {
   return notes.join('\n');
 }
 
-if (require.main === module) {
-  const { argv } = require('yargs').command(
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
+  const { argv } = yargs.command(
     '$0 [start-version-tag [end-version-tag]]',
     'Generate release notes text',
     (yargs) => {

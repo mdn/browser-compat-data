@@ -3,9 +3,10 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const assert = require('assert').strict;
 
-const compareFeatures = require('./compare-features');
+import assert from 'node:assert/strict';
+
+import compareFeatures from './compare-features.js';
 
 describe('compare-features script', () => {
   it('`compareFeatures()` works correctly', () => {
