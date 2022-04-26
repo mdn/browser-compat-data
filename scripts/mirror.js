@@ -13,6 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import compareVersions from 'compare-versions';
+import esMain from 'es-main';
 import yargs from 'yargs';
 
 import bcd from '../index.js';
@@ -765,8 +766,7 @@ const mirrorData = (browser, feature_or_path_array, forced_source, modify) => {
   return true;
 };
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   const { argv } = yargs.command(
     '$0 <browser> [feature_or_path..]',
     'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',

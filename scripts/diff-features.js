@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
+import esMain from 'es-main';
 import yargs from 'yargs';
 
 function main({ ref1, ref2, format, github }) {
@@ -134,8 +135,7 @@ function printMarkdown({ added, removed }) {
   }
 }
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   const { argv } = yargs.command(
     '$0 [ref1] [ref2]',
     'Compare the set of features at refA and refB',

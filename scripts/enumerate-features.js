@@ -1,8 +1,9 @@
-import yargs from 'yargs';
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import esMain from 'es-main';
+import yargs from 'yargs';
 
 import { walk } from '../utils/index.js';
 
@@ -47,8 +48,7 @@ const { argv } = yargs().command(
   },
 );
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   main(argv);
 }
 

@@ -5,6 +5,7 @@
 import { fileURLToPath } from 'node:url';
 
 import chalk from 'chalk';
+import esMain from 'es-main';
 import yargs from 'yargs';
 
 import bcd from '../index.js';
@@ -209,8 +210,7 @@ const printStats = (stats, folder) => {
   console.log(table);
 };
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   printStats(getStats(argv.folder, argv.all), argv.folder);
 }
 

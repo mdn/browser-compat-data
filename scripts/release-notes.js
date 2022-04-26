@@ -1,3 +1,4 @@
+import esMain from 'es-main';
 import yargs from 'yargs';
 
 import {
@@ -119,8 +120,7 @@ function markdownifyChanges(removes, adds) {
   return notes.join('\n');
 }
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   const { argv } = yargs.command(
     '$0 [start-version-tag [end-version-tag]]',
     'Generate release notes text',

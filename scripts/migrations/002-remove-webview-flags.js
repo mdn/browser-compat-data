@@ -7,10 +7,11 @@ import path from 'node:path';
 import { platform } from 'node:os';
 import { fileURLToPath } from 'node:url';
 
-const dirname = fileURLToPath(new URL('.', import.meta.url));
+import esMain from 'es-main';
 
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+import { IS_WINDOWS } from '../../linter/utils.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
@@ -60,8 +61,7 @@ const fixWebViewFlags = (filename) => {
   }
 };
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   /**
    * @param {string[]} files
    */

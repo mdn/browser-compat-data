@@ -20,12 +20,12 @@ import path from 'node:path';
 import { platform } from 'node:os';
 import { fileURLToPath } from 'node:url';
 
+import esMain from 'es-main';
+
 import compareFeatures from './compare-features.js';
+import { IS_WINDOWS } from '../linter/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
 
 function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
@@ -57,8 +57,7 @@ const fixFeatureOrder = (filename) => {
   }
 };
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   /**
    * @param {string[]} files
    */

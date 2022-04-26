@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import esMain from 'es-main';
 import fixBrowserOrder from './fix-browser-order.js';
 import fixFeatureOrder from './fix-feature-order.js';
 
@@ -38,8 +39,7 @@ function load(...files) {
   }
 }
 
-const self = fileURLToPath(import.meta.url);
-if (process.argv[1] === self) {
+if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
