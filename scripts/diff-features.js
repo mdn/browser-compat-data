@@ -6,8 +6,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-
-function diff({ ref1, ref2, github }) {
+export default function diff({ ref1, ref2, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -170,5 +169,3 @@ if (esMain(import.meta)) {
 
   main(argv);
 }
-
-module.exports = diff;
