@@ -26,9 +26,6 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
-/** @type string[] */
-const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
-
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
@@ -140,7 +137,7 @@ function checkVersions(supportData, relPath, logger) {
           }
         }
         if ('flags' in statement) {
-          if (FLAGLESS_BROWSERS.includes(browser)) {
+          if (browsers[browser].accepts_flags === false) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );

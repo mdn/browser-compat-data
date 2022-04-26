@@ -34,7 +34,7 @@ function enumerateFeatures(dataFrom) {
 const { argv } = yargs().command(
   '$0 [dest]',
   'Write a JSON-formatted list of feature paths',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('dest', {
         default: '.features.json',

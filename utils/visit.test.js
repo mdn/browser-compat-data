@@ -6,7 +6,7 @@ import { walk } from './walk.js';
 describe('visit()', function () {
   it('runs the function on all features if no other entry point is specified', function () {
     const walker = walk();
-    visit(visitorPath => {
+    visit((visitorPath) => {
       assert.equal(visitorPath, walker.next().value.path);
     });
   });
@@ -15,7 +15,7 @@ describe('visit()', function () {
     const hits = new Set();
     const misses = new Set();
     visit(
-      path => {
+      (path) => {
         hits.add(path);
       },
       {
@@ -36,7 +36,7 @@ describe('visit()', function () {
   });
 
   it('visitorFn can break iteration', function () {
-    visit(path => {
+    visit((path) => {
       if (path.startsWith('css')) {
         return visit.BREAK;
       }
@@ -49,7 +49,7 @@ describe('visit()', function () {
   });
 
   it('visitorFn can skip traversal of children', function () {
-    visit(path => {
+    visit((path) => {
       if (path === 'css.at-rules.counter-style') {
         return visit.CONTINUE;
       }

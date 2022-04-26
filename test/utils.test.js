@@ -1,4 +1,6 @@
-import assert from 'node:assert';
+'use strict';
+
+import assert from 'node:assert/strict';
 import { escapeInvisibles } from './utils.js';
 
 describe('utils', () => {
@@ -48,7 +50,7 @@ describe('utils', () => {
       } else {
         [char, expected = char] = data;
       }
-      assert.strictEqual(escapeInvisibles(char), expected);
+      assert.equal(escapeInvisibles(char), expected);
     }
   });
 });

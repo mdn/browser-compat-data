@@ -1,9 +1,9 @@
+'use strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import fixBrowserOrder from './fix-browser-order.js';
 import fixFeatureOrder from './fix-feature-order.js';
-import format from './fix-format.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -30,7 +30,7 @@ function load(...files) {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
@@ -38,21 +38,22 @@ function load(...files) {
   }
 }
 
-if (process.argv[2]) {
-  load(process.argv[2]);
-} else {
-  load(
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'test',
-    'webdriver',
-    'webextensions',
-  );
-
-  format();
+const self = fileURLToPath(import.meta.url);
+if (process.argv[1] === self) {
+  if (process.argv[2]) {
+    load(process.argv[2]);
+  } else {
+    load(
+      'api',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'test',
+      'webdriver',
+      'webextensions',
+    );
+  }
 }

@@ -5,7 +5,7 @@ import bcd from '../index.js';
 const { argv } = yargs().command(
   '$0 <browser> [folder] [value]',
   'Test for specified values in any specified browser',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('browser', {
         describe: 'The browser to test for',

@@ -4,6 +4,13 @@ import { fileURLToPath } from 'node:url';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+class DuplicateCompatError extends Error {
+  constructor(message) {
+    super(`${feature} already exists! Remove duplicate entries.`);
+    this.name = 'DuplicateCompatError';
+  }
+}
+
 function load() {
   // Recursively load one or more directories passed as arguments.
   let dir,
@@ -45,7 +52,7 @@ function isPlainObject(v) {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
 }
 
-function extend(target, source) {
+function extend(target, source, feature = '') {
   if (!isPlainObject(target) || !isPlainObject(source)) {
     throw new Error('Both target and source must be plain objects');
   }
@@ -54,7 +61,11 @@ function extend(target, source) {
   for (const [key, value] of Object.entries(source)) {
     // recursively extend if target has the same key, otherwise just assign
     if (Object.prototype.hasOwnProperty.call(target, key)) {
-      extend(target[key], value);
+      if (key == '__compat') {
+        // If attempting to merge __compat, we have a double-entry
+        throw new DuplicateCompatError(feature);
+      }
+      extend(target[key], value, feature + `${feature ? '.' : ''}${key}`);
     } else {
       target[key] = value;
     }

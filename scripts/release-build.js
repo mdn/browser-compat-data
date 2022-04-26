@@ -87,7 +87,7 @@ async function main() {
       force: true,
       recursive: true,
     })
-    .catch(e => {
+    .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
       if (e.code !== 'ENOENT') throw e;
     });

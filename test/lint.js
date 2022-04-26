@@ -6,19 +6,16 @@ import yargs from 'yargs';
 import chalk from 'chalk';
 import {
   testBrowsers,
+  testConsistency,
+  testDescriptions,
   testLinks,
   testPrefix,
   testRealValues,
-  testStyle,
   testSchema,
+  testStyle,
   testVersions,
-  testConsistency,
-  testDescriptions,
 } from './linter/index.js';
 import { IS_CI } from './utils.js';
-import testCompareFeatures from './test-compare-features.js';
-import testMigrations from './test-migrations.js';
-import testFormat from './test-format.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -27,7 +24,7 @@ const filesWithErrors = new Map();
 
 const argv = yargs()
   .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, yargs => {
+  .usage('$0 [[--] files...]', false, (yargs) => {
     return yargs.positional('files...', {
       description: 'The files to lint',
       type: 'string',
@@ -122,7 +119,7 @@ function load(...files) {
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
-        ].some(x => !!x);
+        ].some((x) => !!x);
 
         if (fileHasErrors) {
           filesWithErrors.set(relativeFilePath, file);
@@ -135,7 +132,7 @@ function load(...files) {
       return prevHasErrors || fileHasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
@@ -158,9 +155,6 @@ var hasErrors = argv.files
       'webdriver',
       'webextensions',
     );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
-hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
   console.warn('');

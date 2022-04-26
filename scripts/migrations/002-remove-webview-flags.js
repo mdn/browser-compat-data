@@ -39,9 +39,9 @@ const removeWebViewFlags = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
-const fixWebViewFlags = filename => {
+const fixWebViewFlags = (filename) => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const expected = JSON.stringify(
     JSON.parse(actual, removeWebViewFlags),
@@ -83,7 +83,7 @@ if (process.argv[1] === self) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map(subfile => {
+      const subFiles = fs.readdirSync(file).map((subfile) => {
         return path.join(file, subfile);
       });
 

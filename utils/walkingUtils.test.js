@@ -17,7 +17,7 @@ describe('joinPath()', function () {
 
 describe('isBrowser()', function () {
   it('returns true for browser-like objects', function () {
-    assert.ok(isBrowser(bcd.browsers.firefox));
+    assert.equal(isBrowser(bcd.browsers.firefox), true);
   });
 
   it('returns false for feature-like objects', function () {
@@ -31,6 +31,6 @@ describe('isFeature()', function () {
   });
 
   it('returns true for feature-like objects', function () {
-    assert.ok(isFeature(query('html.elements.a')));
+    assert.equal(isFeature(query('html.elements.a')), true);
   });
 });
