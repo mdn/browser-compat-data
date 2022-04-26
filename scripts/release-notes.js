@@ -20,8 +20,10 @@ function main(argv) {
   for (const pull of pullsFromGitHub(startVersionTag, endVersionTag)) {
     process.stderr.write(`Diffing features for #${pull.number}`);
 
+    let diff;
+
     try {
-      const diff = diffFeatures({ ref1: pull.mergeCommit });
+      diff = diffFeatures({ ref1: pull.mergeCommit });
     } catch (e) {
       console.error(
         `${e}\n (Failed to diff features for #${pull.number}, skipping)`,
