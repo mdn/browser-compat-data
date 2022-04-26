@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -82,7 +83,9 @@ function pullsFromGitHub(start, end) {
 }
 
 function preamble() {
-  const upcomingVersion = require('../package.json').version;
+  const upcomingVersion = JSON.parse(
+    fs.readFileSync(new URL('../package.json', import.meta.url)),
+  ).version;
 
   return [
     `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/v${upcomingVersion})`,
