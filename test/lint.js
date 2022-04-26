@@ -23,18 +23,12 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
-const { argv } = yargs(hideBin(process.argv))
-  .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, (yargs) => {
-    return yargs.positional('files...', {
-      description: 'The files to lint',
-      type: 'string',
-    });
-  })
-  .help()
-  .alias('help', 'h')
-  .alias('help', '?')
-  .parse(process.argv.slice(2));
+const { argv } = yargs(hideBin(process.argv)).command('$0 [files..]', (yargs) =>
+  yargs.positional('files...', {
+    description: 'The files to lint',
+    type: 'string',
+  }),
+);
 
 /**
  * @param {string[]} files
