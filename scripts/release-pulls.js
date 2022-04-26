@@ -1,6 +1,10 @@
 import yargs from 'yargs';
 
-import { buildQuery, getRefDate, releaseYargsBuilder } from './release-utils.js';
+import {
+  buildQuery,
+  getRefDate,
+  releaseYargsBuilder,
+} from './release-utils.js';
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
