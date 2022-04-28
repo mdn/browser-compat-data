@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
+const fixPropertyOrder = require('./fix-property-order');
 
 /**
  * @param {string[]} files
@@ -22,6 +23,7 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
+        fixPropertyOrder(file);
       }
 
       continue;
