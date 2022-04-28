@@ -103,13 +103,16 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-accesskeylabel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             },
             "firefox": {
               "version_added": "8"
@@ -121,10 +124,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             },
             "safari": {
               "version_added": "14"
@@ -133,10 +138,12 @@
               "version_added": "14"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
             }
           },
           "status": {
@@ -153,13 +160,19 @@
           "spec_url": "https://drafts.csswg.org/css-animations/#eventdef-animationevent-animationcancel",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "edge": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "firefox": {
               "version_added": "54"
@@ -171,52 +184,30 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "69",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "59",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "13.0",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>element.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             }
           },
           "status": {
@@ -242,10 +233,10 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "51"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "51"
             },
             "ie": {
               "version_added": "10"
@@ -406,10 +397,12 @@
               "version_added": "55"
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/197960'>bug 197960</a>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/197960'>bug 197960</a>."
             },
             "samsunginternet_android": {
               "version_added": "12.0"
@@ -449,14 +442,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "83",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.forms.autocapitalize",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -561,16 +547,26 @@
                 "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
               }
             ],
-            "safari": {
-              "version_added": "4",
-              "partial_implementation": true,
-              "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
-            },
-            "safari_ios": {
-              "version_added": "3.2",
-              "partial_implementation": true,
-              "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
-            },
+            "safari": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "version_added": "4",
+                "partial_implementation": true,
+                "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "version_added": "3.2",
+                "partial_implementation": true,
+                "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
             "samsunginternet_android": [
               {
                 "version_added": "12.0"
@@ -608,10 +604,10 @@
           "description": "<code>beforeinput</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "60"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "60"
             },
             "edge": {
               "version_added": "79"
@@ -632,46 +628,83 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "87"
-              },
-              {
-                "version_added": "79",
-                "version_removed": "87",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.input_events.beforeinput.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "87"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "44"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "8.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "60"
             }
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "beforematch_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/beforematch_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-beforematch",
+          "description": "<code>beforematch</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "102"
+            },
+            "chrome_android": {
+              "version_added": "102"
+            },
+            "edge": {
+              "version_added": "102"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "102"
+            }
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -777,7 +810,7 @@
               "notes": "Before Samsung Internet 1.5, <code>click()</code> is only defined on buttons and inputs."
             },
             "webview_android": {
-              "version_added": "≤37",
+              "version_added": "4.4",
               "notes": "Before Android WebView 4.4, <code>click()</code> is only defined on buttons and inputs."
             }
           },
@@ -850,8 +883,7 @@
               "version_removed": "61"
             },
             "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
+              "version_added": false
             },
             "firefox": [
               {
@@ -869,22 +901,10 @@
                 "version_removed": "85"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "85",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.menuitem.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "8",
-                "version_removed": "85"
-              }
-            ],
+            "firefox_android": {
+              "version_added": "8",
+              "version_removed": "85"
+            },
             "ie": {
               "version_added": false
             },
@@ -913,6 +933,120 @@
             "experimental": false,
             "standard_track": false,
             "deprecated": true
+          }
+        }
+      },
+      "copy_event": {
+        "__compat": {
+          "description": "<code>copy</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/copy_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "5.5",
+                "partial_implementation": true,
+                "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>."
+              }
+            ],
+            "opera": {
+              "version_added": "≤12.1"
+            },
+            "opera_android": {
+              "version_added": "≤12.1"
+            },
+            "safari": {
+              "version_added": "3"
+            },
+            "safari_ios": {
+              "version_added": "1"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "cut_event": {
+        "__compat": {
+          "description": "<code>cut</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/cut_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncut",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "9"
+            },
+            "firefox_android": {
+              "version_added": "9"
+            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "5.5",
+                "partial_implementation": true,
+                "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>."
+              }
+            ],
+            "opera": {
+              "version_added": "≤12.1"
+            },
+            "opera_android": {
+              "version_added": "≤12.1"
+            },
+            "safari": {
+              "version_added": "3"
+            },
+            "safari_ios": {
+              "version_added": "1"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": false
           }
         }
       },
@@ -955,7 +1089,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "4.4"
+              "version_added": "3"
             }
           },
           "status": {
@@ -1184,7 +1318,7 @@
                 "version_added": "64"
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "17"
               },
               "firefox": {
                 "version_added": "68"
@@ -1313,7 +1447,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -1326,6 +1460,7 @@
       "inert": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inert",
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inert",
           "support": {
             "chrome": {
               "version_added": "60",
@@ -1368,14 +1503,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "81",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "html5.inert.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -1401,7 +1529,7 @@
               ]
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.5"
             },
             "safari_ios": {
               "version_added": false
@@ -1542,16 +1670,22 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "77",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.forms.inputmode",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "95"
+              },
+              {
+                "version_added": "77",
+                "version_removed": "95",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.forms.inputmode",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": "79"
             },
@@ -2360,169 +2494,25 @@
           }
         }
       },
-      "oncopy": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/oncopy",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "3"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "5.5"
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "oncut": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/oncut",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": "5.5"
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "onpaste": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/onpaste",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "9"
-            },
-            "firefox_android": {
-              "version_added": "9"
-            },
-            "ie": {
-              "version_added": "5.5"
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "outerText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/outerText",
           "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-outertext",
           "support": {
             "chrome": {
-              "version_added": "43"
+              "version_added": "1"
             },
             "chrome_android": {
-              "version_added": "43"
+              "version_added": "18"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "98"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "98"
             },
             "ie": {
               "version_added": "5.5"
@@ -2540,10 +2530,67 @@
               "version_added": "1"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "43"
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "paste_event": {
+        "__compat": {
+          "description": "<code>paste</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/paste_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpaste",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "9"
+            },
+            "firefox_android": {
+              "version_added": "9"
+            },
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "version_added": "5.5",
+                "partial_implementation": true,
+                "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>."
+              }
+            ],
+            "opera": {
+              "version_added": "≤12.1"
+            },
+            "opera_android": {
+              "version_added": "≤12.1"
+            },
+            "safari": {
+              "version_added": "3"
+            },
+            "safari_ios": {
+              "version_added": "1"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "1"
             }
           },
           "status": {
@@ -2575,36 +2622,12 @@
                 "alternative_name": "mspointercancel"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -2662,36 +2685,12 @@
                 "alternative_name": "mspointerdown"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -2749,36 +2748,12 @@
                 "alternative_name": "mspointerenter"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -2836,36 +2811,12 @@
                 "alternative_name": "mspointerleave"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -2923,36 +2874,12 @@
                 "alternative_name": "mspointermove"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -3010,36 +2937,12 @@
                 "alternative_name": "mspointerout"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -3097,36 +3000,12 @@
                 "alternative_name": "mspointerover"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -3234,36 +3113,12 @@
                 "alternative_name": "mspointerup"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -3338,7 +3193,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -3468,7 +3323,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -3477,7 +3332,7 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "62"
@@ -3485,42 +3340,12 @@
             "opera_android": {
               "version_added": "53"
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": "11.0"
             },
@@ -3561,11 +3386,11 @@
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "12"
               },
               {
                 "alternative_name": "webkitTransitionEnd",
-                "version_added": "≤79"
+                "version_added": "79"
               }
             ],
             "firefox": {
@@ -3662,7 +3487,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "53"
@@ -3671,7 +3496,7 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "62"
@@ -3679,42 +3504,12 @@
             "opera_android": {
               "version_added": "53"
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": "11.0"
             },
@@ -3742,7 +3537,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "53"
@@ -3751,7 +3546,7 @@
               "version_added": "53"
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
               "version_added": "62"
@@ -3759,42 +3554,12 @@
             "opera_android": {
               "version_added": "53"
             },
-            "safari": [
-              {
-                "version_added": "13.1"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
-            "safari_ios": [
-              {
-                "version_added": "13.4"
-              },
-              {
-                "version_added": "12",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Web Animations"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "CSS Animations via Web Animations"
-                  }
-                ]
-              }
-            ],
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": {
+              "version_added": "13.4"
+            },
             "samsunginternet_android": {
               "version_added": "11.0"
             },

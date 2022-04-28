@@ -56,13 +56,17 @@ For example, the feature for a `focus` event targeting the `Element` interface w
 }
 ```
 
-This rule applies to the event features themselves, not the features for the event handlers. For example, `focus_event` and `onfocus` are two separate features.
+The event handler `onfocus` is represented by the `focus_event` entry. Don't create features for `on` event handler properties. If an implementation doesn't support the event handler property, use `partial_implementation` with the note `"The <code>onfocus</code> event handler property is not supported."`. If only the `on` event handler property is supported and not the event itself, use `"version_added": false`.
+
+If a specification has two sections (the event handler property and the event name), add both specification links.
 
 This practice emerged through several discussions:
 
 - [#935](https://github.com/mdn/browser-compat-data/issues/935#issuecomment-464691417)
 - [#3420](https://github.com/mdn/browser-compat-data/pull/3420)
 - [#3469](https://github.com/mdn/browser-compat-data/pull/3469)
+- [mdn/content#9098](https://github.com/mdn/content/discussions/9098)
+- [#13595](https://github.com/mdn/browser-compat-data/pull/13595)
 
 ## Secure context required (`secure_context_required`)
 
@@ -347,7 +351,7 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
-This guideline is based on discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+This guideline is based on a discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
 
 ## Choosing `"preview"` values
 
@@ -390,4 +394,53 @@ For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded li
 }
 ```
 
-This guideline is based on discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
+This guideline is based on a discussion in [#11630](https://github.com/mdn/browser-compat-data/pull/11630).
+
+## Global APIs
+
+An API is considered global when it is available for both [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) and [`WorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope). Such APIs are recorded in the `api/_globals/` folder.
+
+For example, the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) method is global, recorded like this in `api/_globals/fetch.json`:
+
+```json
+{
+  "api": {
+    "fetch": {
+      "__compat": {},
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+All APIs defined on the [`WindowOrWorkerGlobalScope`](https://html.spec.whatwg.org/multipage/webappapis.html#windoworworkerglobalscope-mixin) mixin are considered global.
+
+Note that APIs available on only _some_ types of workers are not considered global. For example:
+
+- The `cookieStore` property, available in `Window` and `ServiceWorkerGlobalScope`.
+- The `requestAnimationFrame()` function, available in `Window` and `DedicatedWorkerGlobalScope`.
+
+This guideline is based on a discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
+
+## Setting `deprecated`
+
+Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
+
+The `deprecated` status captures the many ways standards organizations (and, for non-standard features, vendors) mark features as disfavored. This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
+
+Evidence for setting `deprecated` to `true` includes:
+
+- _Obsolete_, _legacy_, _deprecated_, _end-of-life_, or similar terminology in a specification
+- Removal of a feature from a specification
+- Specification text that cautions developers against new use of the feature
+- Formal discouragement statements from a relevant standards body (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
+- For non-standard features, notice from implementing browsers (for example, a console deprecation warning) or vendor documentation
+
+Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
+
+This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-data/pull/15703). See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."

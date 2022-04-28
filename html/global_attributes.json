@@ -75,14 +75,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "83",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.forms.autocapitalize",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": null
@@ -123,14 +116,14 @@
                 "version_added": "66",
                 "notes": [
                   "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "Chrome does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               },
               {
                 "version_added": true,
                 "notes": [
                   "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "Chrome does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               }
             ],
@@ -139,14 +132,14 @@
                 "version_added": "66",
                 "notes": [
                   "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "Chrome does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               },
               {
                 "version_added": true,
                 "notes": [
                   "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "Chrome does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               }
             ],
@@ -179,14 +172,14 @@
                 "version_added": "9.0",
                 "notes": [
                   "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "Samsung Internet does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "Samsung Internet does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               },
               {
                 "version_added": true,
                 "notes": [
                   "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "Samsung Internet does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "Samsung Internet does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               }
             ],
@@ -195,14 +188,14 @@
                 "version_added": "66",
                 "notes": [
                   "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "WebView does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "WebView does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               },
               {
                 "version_added": true,
                 "notes": [
                   "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "WebView does not accept <code>off</code> as a value.  See <a href='https://crbug.com/587466'>bug 587466</a>."
+                  "WebView does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
                 ]
               }
             ]
@@ -1033,6 +1026,56 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "until-found_value": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/hidden",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute",
+            "description": "<code>until-found</code> value",
+            "support": {
+              "chrome": {
+                "version_added": "102"
+              },
+              "chrome_android": {
+                "version_added": "102"
+              },
+              "edge": {
+                "version_added": "102"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "102"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "id": {
@@ -1116,7 +1159,11 @@
             },
             "firefox": [
               {
+                "version_added": "95"
+              },
+              {
                 "version_added": "23",
+                "version_removed": "95",
                 "flags": [
                   {
                     "type": "preference",
@@ -1140,6 +1187,7 @@
               },
               {
                 "version_added": "68",
+                "version_removed": "79",
                 "flags": [
                   {
                     "type": "preference",

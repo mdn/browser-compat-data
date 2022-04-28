@@ -59,10 +59,8 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Joe Medley (@jpmedley), Google
 - Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
-- Philip Jägenstedt (@foolip), Google
-- Rachel Andrew (@rachelandrew)
-- Ryan Johnson (@escattone), Mozilla
-- Vinyl Da.i'gyu (@queengooborg)
+- Richard Bloor (@rebloor)
+- Will Bamberg (@wbamberg), Open Web Docs
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
@@ -90,6 +88,7 @@ Owners fulfill all requirements of Peers, and also:
 - Participate in the project discussions and meetings.
 - Manage and merge non-data pull requests such as schema, linter, or infrastructure changes.
 - May merge their own pull requests once they have collected the feedback they deem necessary. (No pull request should be merged without at least one peer or owner comment stating they’ve looked at the PR.)
+- May merge pull requests that result in a semver major or semver minor version bump only after seeking approval within the group of owners.
 - Release a new npm version of the project on a regular (weekly) basis.
 
 To become an Owner one must fulfill at least the following conditions and commit to being a part of the community for the long-term.
@@ -103,9 +102,9 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 #### List of current Owners
 
 - Florian Scholz (@Elchi3), Open Web Docs
-- Daniel Beck (@ddbeck)
-- Will Bamberg (@wbamberg), Open Web Docs
-- Chris David Mills (@chrisdavidmills), Mozilla
+- Philip Jägenstedt (@foolip), Google
+- Ruth John (@Rumyra), Mozilla
+- Vinyl Da.i'gyu (@queengooborg)
 
 ## Additional paths to becoming a Peer or Owner
 
@@ -166,11 +165,14 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
+- Chris David Mills (@chrisdavidmills), Mozilla
+- Daniel Beck (@ddbeck) (BCD co-owner until April 2022)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
-- Richard Bloor (@rebloor) (Peer for WebExtensions compat data)
+- Rachel Andrew (@rachelandrew) (Peer)
+- Ryan Johnson (@escattone) (Peer)
 
 ## Credits
 
