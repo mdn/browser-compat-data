@@ -7,3 +7,5 @@ on:
 jobs:
   idle:
     uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
