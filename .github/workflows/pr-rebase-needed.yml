@@ -5,12 +5,5 @@ on:
     types: [synchronize]
 
 jobs:
-  label-rebase-needed:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check for merge conflicts
-        uses: eps1lon/actions-label-merge-conflict@releases/2.x
-        with:
-          dirtyLabel: "rebase needed :construction:"
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          commentOnDirty: "This pull request has merge conflicts that must be resolved before we can merge this."
+  idle:
+    uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
