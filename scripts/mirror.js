@@ -394,9 +394,16 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
  * @param {SupportStatement} originalData
  * @param {SupportStatement} chromeData
  * @param {SupportStatement} ieData
+ * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpEdge = (originalData, chromeData, ieData) => {
+const bumpEdge = (originalData, chromeData, ieData, source) => {
+  if (!['chrome-ie', 'chrome', 'ie'].includes(source)) {
+    throw new Error(
+      `Source browser "${source}" is invalid for Edge. Valid options are: chrome, ie, chrome-ie`,
+    );
+  }
+
   if (Array.isArray(originalData)) {
     return combineStatements(
       ...originalData.map((d) => bumpEdge(d, chromeData, ieData)),
@@ -405,7 +412,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 
   let newData = [];
 
-  if (ieData && source !== 'chrome') {
+  if (ieData && source.includes('ie')) {
     if (Array.isArray(ieData)) {
       newData = newData.concat(ieData.map((d) => bumpEdgeFromIE(d)));
     } else {
@@ -413,7 +420,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
     }
   }
 
-  if (chromeData && source !== 'ie') {
+  if (chromeData && source.includes('chrome')) {
     if (Array.isArray(chromeData)) {
       newData = newData.concat(
         chromeData.map((d) => bumpEdgeFromChrome(d, originalData)),
@@ -692,7 +699,7 @@ const bumpVersion = (data, destination, source, originalData, compData) => {
     chrome_android: bumpChromeAndroid,
     firefox_android: bumpFirefoxAndroid,
     edge: (originalData, data, source) =>
-      bumpEdge(originalData, data, compData['ie']),
+      bumpEdge(originalData, compData['chrome'], compData['ie'], source),
     opera: bumpOpera,
     opera_android: bumpOperaAndroid,
     safari_ios: bumpSafariiOS,
