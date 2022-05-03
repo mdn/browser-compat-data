@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
-const format = require('./fix-format');
 const fixStatusFromFile = require('./fix-status');
 
 /**
@@ -53,6 +52,4 @@ if (process.argv[2]) {
     'webdriver',
     'webextensions',
   );
-
-  format();
 }
