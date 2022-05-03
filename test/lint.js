@@ -20,7 +20,6 @@ const {
   testVersions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testFormat = require('./test-format');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -158,7 +157,6 @@ var hasErrors = argv.files
       'webdriver',
       'webextensions',
     );
-hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
