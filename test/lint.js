@@ -20,7 +20,6 @@ const {
   testVersions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testFormat = require('./test-format');
 
 const argv = yargs
   .alias('version', 'v')
@@ -169,9 +168,6 @@ const main = (files) => {
       console.error(error);
     }
   }
-
-  // XXX Temporary until migrated to new format
-  hasErrors = testFormat() || hasErrors;
 
   return hasErrors;
 };
