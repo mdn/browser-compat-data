@@ -12,6 +12,9 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -62,6 +65,9 @@
               },
               "chrome_android": {
                 "version_added": "34"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -115,6 +121,9 @@
               "chrome_android": {
                 "version_added": "34"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -166,6 +175,9 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -219,6 +231,9 @@
               "chrome_android": {
                 "version_added": "34"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -270,6 +285,9 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -323,6 +341,9 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -374,6 +395,9 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -428,6 +452,9 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -479,6 +506,9 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -532,6 +562,9 @@
               "chrome_android": {
                 "version_added": "25"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -583,6 +616,9 @@
               },
               "chrome_android": {
                 "version_added": "34"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -636,6 +672,9 @@
               "chrome_android": {
                 "version_added": "25"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -687,6 +726,9 @@
               },
               "chrome_android": {
                 "version_added": "34"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -740,6 +782,9 @@
               "chrome_android": {
                 "version_added": "34"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -791,6 +836,9 @@
               },
               "chrome_android": {
                 "version_added": "34"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -844,6 +892,9 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -895,6 +946,9 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -951,6 +1005,9 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12",
                 "notes": "Before Edge 18, numbers are rounded to 15 decimal digits. For example, <code>(1000000000000005).toLocaleString('en-US')</code> returns <code>\"1,000,000,000,000,010\"</code>."
@@ -1002,6 +1059,17 @@
                 "chrome_android": {
                   "version_added": "26"
                 },
+                "deno": [
+                  {
+                    "version_added": "1.8"
+                  },
+                  {
+                    "version_added": "1.0",
+                    "version_removed": "1.8",
+                    "partial_implementation": true,
+                    "notes": "Only the locale data for <code>en-US</code> is available."
+                  }
+                ],
                 "edge": {
                   "version_added": "12"
                 },
@@ -1021,7 +1089,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the function silently falls back to <code>en-US</code>. To make full ICU (locale) data available for versions prior to 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the function silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
                   }
                 ],
                 "opera": {
@@ -1058,6 +1126,9 @@
                 },
                 "chrome_android": {
                   "version_added": "26"
+                },
+                "deno": {
+                  "version_added": "1.0"
                 },
                 "edge": {
                   "version_added": "12"
@@ -1112,6 +1183,9 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -1161,6 +1235,9 @@
                 "version_added": false
               },
               "chrome_android": {
+                "version_added": false
+              },
+              "deno": {
                 "version_added": false
               },
               "edge": {
@@ -1217,6 +1294,9 @@
               "chrome_android": {
                 "version_added": "18"
               },
+              "deno": {
+                "version_added": "1.0"
+              },
               "edge": {
                 "version_added": "12"
               },
@@ -1268,6 +1348,9 @@
               },
               "chrome_android": {
                 "version_added": "18"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"

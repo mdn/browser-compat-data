@@ -11,6 +11,9 @@
           "chrome_android": {
             "version_added": "42"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
             "version_added": "14"
           },
@@ -23,6 +26,29 @@
           "ie": {
             "version_added": false
           },
+          "nodejs": [
+            {
+              "version_added": "18.0.0"
+            },
+            {
+              "version_added": "17.5.0",
+              "flags": [
+                {
+                  "name": "--experimental-fetch",
+                  "type": "runtime_flag"
+                }
+              ]
+            },
+            {
+              "version_added": "16.15.0",
+              "flags": [
+                {
+                  "name": "--experimental-fetch",
+                  "type": "runtime_flag"
+                }
+              ]
+            }
+          ],
           "opera": {
             "version_added": "29"
           },
@@ -60,6 +86,9 @@
             "chrome_android": {
               "version_added": "42"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "14"
             },
@@ -67,7 +96,7 @@
               "version_added": "39"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -92,7 +121,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -109,6 +138,9 @@
             "chrome_android": {
               "version_added": "42"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "14"
             },
@@ -116,7 +148,7 @@
               "version_added": "39"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -141,7 +173,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -158,6 +190,9 @@
             "chrome_android": {
               "version_added": "42"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "14"
             },
@@ -165,7 +200,7 @@
               "version_added": "39"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -190,7 +225,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -201,10 +236,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/entries",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "45"
+              "version_added": "42"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "16"
@@ -219,10 +257,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "32"
+              "version_added": "29"
             },
             "opera_android": {
-              "version_added": "32"
+              "version_added": "29"
             },
             "safari": {
               "version_added": "10.1"
@@ -231,14 +269,14 @@
               "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "45"
+              "version_added": "42"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -252,6 +290,9 @@
             },
             "chrome_android": {
               "version_added": "42"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "14"
@@ -297,34 +338,37 @@
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-headers-get①",
           "support": {
             "chrome": {
-              "version_added": "42"
+              "version_added": "42",
+              "notes": "Before version 57, <code>get()</code> returns only the first value for the specified header."
             },
             "chrome_android": {
-              "version_added": "42"
+              "version_added": "42",
+              "notes": "Before version 57, <code>get()</code> returns only the first value for the specified header."
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "14"
             },
-            "firefox": [
-              {
-                "version_added": "52",
-                "notes": "Prior to Firefox 52, <code>get()</code> only returned the first value in the specified header, with <code>getAll()</code> returning all values. From 52 onwards, <code>get()</code> now returns all values and <code>getAll()</code> has been deleted."
-              },
-              {
-                "version_added": "39"
-              }
-            ],
+            "firefox": {
+              "version_added": "39",
+              "notes": "Before version 52, <code>get()</code> returns only the first value for the specified header."
+            },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44",
+              "notes": "Before version 52, <code>get()</code> returns only the first value for the specified header."
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "29"
+              "version_added": "29",
+              "notes": "Before version 44, <code>get()</code> returns only the first value for the specified header."
             },
             "opera_android": {
-              "version_added": "29"
+              "version_added": "29",
+              "notes": "Before version 43, <code>get()</code> returns only the first value for the specified header."
             },
             "safari": {
               "version_added": "10.1"
@@ -333,71 +377,18 @@
               "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "4.0",
+              "notes": "Before version 7.0, <code>get()</code> returns only the first value for the specified header."
             },
             "webview_android": {
-              "version_added": "42"
+              "version_added": "42",
+              "notes": "Before version 57, <code>get()</code> returns only the first value for the specified header."
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "getAll": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/getAll",
-          "support": {
-            "chrome": {
-              "version_added": "42",
-              "version_removed": "60"
-            },
-            "chrome_android": {
-              "version_added": "42",
-              "version_removed": "60"
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "39",
-              "version_removed": "52"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "29",
-              "version_removed": "47"
-            },
-            "opera_android": {
-              "version_added": "29",
-              "version_removed": "44"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "42",
-              "version_removed": "60"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -412,6 +403,9 @@
             "chrome_android": {
               "version_added": "42"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "14"
             },
@@ -419,7 +413,7 @@
               "version_added": "39"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -444,7 +438,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -455,10 +449,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/keys",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "45"
+              "version_added": "42"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "16"
@@ -473,10 +470,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "32"
+              "version_added": "29"
             },
             "opera_android": {
-              "version_added": "32"
+              "version_added": "29"
             },
             "safari": {
               "version_added": "10.1"
@@ -485,14 +482,14 @@
               "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "45"
+              "version_added": "42"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -508,6 +505,9 @@
             "chrome_android": {
               "version_added": "57"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "79"
             },
@@ -515,7 +515,7 @@
               "version_added": "44"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -557,6 +557,9 @@
             "chrome_android": {
               "version_added": "42"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "14"
             },
@@ -564,7 +567,7 @@
               "version_added": "39"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
@@ -589,7 +592,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -600,10 +603,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/values",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "45"
+              "version_added": "42"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "16"
@@ -618,10 +624,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "32"
+              "version_added": "29"
             },
             "opera_android": {
-              "version_added": "32"
+              "version_added": "29"
             },
             "safari": {
               "version_added": "10.1"
@@ -630,14 +636,14 @@
               "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "45"
+              "version_added": "42"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -651,6 +657,9 @@
             },
             "chrome_android": {
               "version_added": "42"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "16"

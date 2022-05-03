@@ -17,7 +17,7 @@ const validBrowserVersions = {};
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   edge: ['≤18', '≤79'],
-  ie: ['≤6'],
+  ie: ['≤6', '≤11'],
   opera: ['≤12.1', '≤15'],
   opera_android: ['≤12.1', '≤14'],
   safari: ['≤4'],
@@ -25,13 +25,13 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
-/** @type string[] */
-const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
-
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
     validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
+  if (browsers[browser].preview_name) {
+    validBrowserVersions[browser].push('preview');
   }
 }
 
@@ -61,6 +61,16 @@ function addedBeforeRemoved(statement) {
 
   if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
     return null;
+  }
+
+  if (added === 'preview' && removed === 'preview') {
+    return false;
+  }
+  if (added === 'preview' && removed !== 'preview') {
+    return false;
+  }
+  if (added !== 'preview' && removed === 'preview') {
+    return true;
   }
 
   return compareVersions.compare(added, removed, '<');
@@ -126,7 +136,7 @@ function checkVersions(supportData, relPath, logger) {
           }
         }
         if ('flags' in statement) {
-          if (FLAGLESS_BROWSERS.includes(browser)) {
+          if (browsers[browser].accepts_flags === false) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );

@@ -9,7 +9,10 @@
             "version_added": "4"
           },
           "chrome_android": {
-            "version_added": true
+            "version_added": "18"
+          },
+          "deno": {
+            "version_added": "1.8"
           },
           "edge": {
             "version_added": "12"
@@ -24,22 +27,22 @@
             "version_added": "10"
           },
           "opera": {
-            "version_added": true
+            "version_added": "≤12.1"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "≤12.1"
           },
           "safari": {
-            "version_added": true
+            "version_added": "4"
           },
           "safari_ios": {
-            "version_added": true
+            "version_added": "5"
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": true
+            "version_added": "4.4"
           }
         },
         "status": {
@@ -72,22 +75,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -121,22 +124,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -170,22 +173,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -206,6 +209,9 @@
             "chrome_android": {
               "version_added": "38"
             },
+            "deno": {
+              "version_added": false
+            },
             "edge": {
               "version_added": "79"
             },
@@ -219,16 +225,18 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "48"
             },
             "opera_android": {
               "version_added": "37"
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
             },
             "samsunginternet_android": {
               "version_added": "3.0"
@@ -253,6 +261,9 @@
             },
             "chrome_android": {
               "version_added": "65"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "79"
@@ -302,6 +313,9 @@
             },
             "chrome_android": {
               "version_added": "37"
+            },
+            "deno": {
+              "version_added": "1.13"
             },
             "edge": {
               "version_added": "15"
@@ -359,7 +373,7 @@
             },
             "firefox": {
               "version_added": "3.5",
-              "notes": "Prior to Firefox 4, this property's value was also part of the user agent string, as reported by <code>navigator.userAgent</code>. Starting in Firefox 5, this property's value is based on the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
+              "notes": "Before Firefox 4, this property's value was also part of the user agent string, as reported by <code>navigator.userAgent</code>. Starting in Firefox 5, this property's value is based on the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
             },
             "firefox_android": {
               "version_added": "4"
@@ -375,16 +389,16 @@
               "version_added": "10.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -451,13 +465,16 @@
       },
       "locks": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/web-locks/#dom-navigatorlocks-locks",
+          "spec_url": "https://w3c.github.io/web-locks/#dom-navigatorlocks-locks",
           "support": {
             "chrome": {
               "version_added": "69"
             },
             "chrome_android": {
               "version_added": "69"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "79"
@@ -478,10 +495,10 @@
               "version_added": "48"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "10.0"
@@ -526,10 +543,10 @@
               "version_added": "54"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "12.0"
@@ -587,8 +604,9 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37",
-              "notes": "Faulty in a WebView component, see Issue <a href='http://code.google.com/p/android/issues/detail?id=16760'>bug 16760</a>."
+              "version_added": "4.4",
+              "partial_implementation": true,
+              "notes": "Can incorrectly return true, see <a href='https://crbug.com/811122'>bug 811122</a>."
             }
           },
           "status": {
@@ -638,7 +656,7 @@
             },
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/490120'>bug 490120</a>"
+              "notes": "See <a href='https://crbug.com/490120'>bug 490120</a>."
             }
           },
           "status": {
@@ -665,7 +683,7 @@
             "firefox": {
               "version_added": "3.5",
               "notes": [
-                "Prior to Firefox 69, <code>platform</code> would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system.",
+                "Before Firefox 69, <code>platform</code> would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system.",
                 "You can override the value returned by <code>platform</code> by setting the preference <code>general.platform.override</code> to the string you wish to be returned instead."
               ]
             },
@@ -676,22 +694,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -731,16 +749,16 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -878,10 +896,10 @@
               "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -935,7 +953,8 @@
               "version_added": "10.0"
             },
             "webview_android": {
-              "version_added": "70"
+              "version_added": false,
+              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>Chromium bug 933055</a>."
             }
           },
           "status": {
@@ -969,22 +988,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "4"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1029,7 +1048,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
               "version_added": false,

@@ -72,11 +72,11 @@ async function writeManifest() {
 async function main() {
   // Remove existing files, if there are any
   await fs
-    .rmdir(directory, {
+    .rm(directory, {
       force: true,
       recursive: true,
     })
-    .catch(e => {
+    .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
       if (e.code !== 'ENOENT') throw e;
     });
@@ -94,7 +94,7 @@ async function main() {
 
 // This is needed because NodeJS does not support top-level await.
 // Also, make sure to log all errors and exit with failure code.
-main().catch(e => {
+main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
