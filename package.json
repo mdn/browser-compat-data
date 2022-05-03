@@ -48,8 +48,8 @@
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "mocha": "mocha \"**/*.test.js\"",
-    "format": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
-    "format:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
+    "format": "npx eslint --fix '**/*.js' && npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
+    "format:fix": "npx eslint --fix '**/*.js' && npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
     "fix": "npm run format:fix && node scripts/fix",
     "mirror": "node scripts/mirror",
