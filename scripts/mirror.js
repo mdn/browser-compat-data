@@ -410,7 +410,7 @@ const bumpEdge = (originalData, chromeData, ieData, source) => {
 
   if (Array.isArray(originalData)) {
     return combineStatements(
-      ...originalData.map((d) => bumpEdge(d, chromeData, ieData)),
+      ...originalData.map((d) => bumpEdge(d, chromeData, ieData, source)),
     );
   }
 
