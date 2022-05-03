@@ -128,6 +128,7 @@ const getSource = (browser, forced_source) => {
       break;
     case 'edge':
       source = 'chrome-ie';
+      break;
     default:
       throw Error(
         `${browser} is a base browser and a "source" browser must be specified.`,
