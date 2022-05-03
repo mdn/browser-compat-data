@@ -112,7 +112,6 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
-    case 'edge':
     case 'opera':
       source = 'chrome';
       break;
@@ -123,6 +122,9 @@ const getSource = (browser, forced_source) => {
       break;
     case 'firefox_android':
       source = 'firefox';
+      break;
+    case 'edge':
+      source = 'ie';
       break;
     case 'safari_ios':
       source = 'safari';
