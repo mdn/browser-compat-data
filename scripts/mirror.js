@@ -356,6 +356,14 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
       // If this feature was removed before Chrome 79, it's not present in Edge
       return { version_added: false };
     }
+    if (compareVersions.compare(sourceData.version_added, '79', '<=')) {
+      // If the feature was added before Chrome 79 but removed afterwards
+      if (typeof originalData.version_added == 'string') {
+        newData.version_added = originalData.version_added;
+      } else {
+        newData.version_added = '79';
+      }
+    }
     if (originalData.version_added && !originalData.version_removed) {
       newData.version_removed = '79';
     }
