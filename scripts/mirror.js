@@ -112,6 +112,7 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
+    case 'edge':
     case 'opera':
       source = 'chrome';
       break;

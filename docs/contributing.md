@@ -85,7 +85,7 @@ The <browser> argument is the destination browser that values will be copied to.
 | Destination      | Default Source             |
 | ---------------- | -------------------------- |
 | Chrome Android   | Chrome                     |
-| Edge             | Internet Explorer + Chrome |
+| Edge             | Chrome + Internet Explorer |
 | Firefox Android  | Firefox                    |
 | Opera            | Chrome                     |
 | Opera Android    | Chrome Android             |
