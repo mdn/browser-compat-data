@@ -220,7 +220,7 @@ const combineStatements = (...data) => {
 
   for (const d of flattenedData) {
     let key = Object.keys(d)
-      .filter(k => !ignored_keys.includes(k))
+      .filter((k) => !ignored_keys.includes(k))
       .join('');
     if (!(key in sections)) sections[key] = [];
     sections[key].push(d);
@@ -271,7 +271,7 @@ const combineStatements = (...data) => {
   // Remove duplicate statements and statements that are only version_added = false
   newData = newData
     .filter((item, pos) => newData.indexOf(item) == pos)
-    .filter(item => item.version_added);
+    .filter((item) => item.version_added);
 
   return newData.length === 1 ? newData[0] : newData;
 };
@@ -285,7 +285,7 @@ const combineStatements = (...data) => {
 const bumpChromeAndroid = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpChromeAndroid(originalData, d, source)),
+      ...sourceData.map((d) => bumpChromeAndroid(originalData, d, source)),
     );
   }
 
@@ -317,7 +317,7 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpEdgeFromIE = sourceData => {
+const bumpEdgeFromIE = (sourceData) => {
   let newData = copyStatement(sourceData);
 
   if (sourceData.version_removed || sourceData.version_added === false) {
@@ -384,7 +384,7 @@ const bumpEdgeFromChrome = (sourceData, originalData) => {
 const bumpEdge = (originalData, chromeData, ieData) => {
   if (Array.isArray(originalData)) {
     return combineStatements(
-      ...originalData.map(d => bumpEdge(d, chromeData, ieData)),
+      ...originalData.map((d) => bumpEdge(d, chromeData, ieData)),
     );
   }
 
@@ -392,7 +392,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 
   if (ieData) {
     if (Array.isArray(ieData)) {
-      newData = newData.concat(ieData.map(d => bumpEdgeFromIE(d)));
+      newData = newData.concat(ieData.map((d) => bumpEdgeFromIE(d)));
     } else {
       newData.push(bumpEdgeFromIE(ieData));
     }
@@ -401,7 +401,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
   if (chromeData) {
     if (Array.isArray(chromeData)) {
       newData = newData.concat(
-        chromeData.map(d => bumpEdgeFromChrome(d, originalData)),
+        chromeData.map((d) => bumpEdgeFromChrome(d, originalData)),
       );
     } else {
       newData.push(bumpEdgeFromChrome(chromeData, originalData));
@@ -420,7 +420,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 const bumpFirefoxAndroid = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpFirefoxAndroid(originalData, d, source)),
+      ...sourceData.map((d) => bumpFirefoxAndroid(originalData, d, source)),
     );
   }
 
@@ -455,7 +455,7 @@ const bumpFirefoxAndroid = (originalData, sourceData, source) => {
 const bumpOpera = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpOpera(originalData, d, source)),
+      ...sourceData.map((d) => bumpOpera(originalData, d, source)),
     );
   }
 
@@ -494,7 +494,7 @@ const bumpOpera = (originalData, sourceData, source) => {
 const bumpOperaAndroid = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpOperaAndroid(originalData, d, source)),
+      ...sourceData.map((d) => bumpOperaAndroid(originalData, d, source)),
     );
   }
 
@@ -533,7 +533,7 @@ const bumpOperaAndroid = (originalData, sourceData, source) => {
 const bumpSafariiOS = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpSafariiOS(originalData, d, source)),
+      ...sourceData.map((d) => bumpSafariiOS(originalData, d, source)),
     );
   }
 
@@ -568,7 +568,7 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
 const bumpSamsungInternet = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpSamsungInternet(originalData, d, source)),
+      ...sourceData.map((d) => bumpSamsungInternet(originalData, d, source)),
     );
   }
 
@@ -611,7 +611,7 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 const bumpWebView = (originalData, sourceData, source) => {
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map(d => bumpWebView(originalData, d, source)),
+      ...sourceData.map((d) => bumpWebView(originalData, d, source)),
     );
   }
 
