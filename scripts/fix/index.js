@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./browser-order');
 const fixFeatureOrder = require('./feature-order');
-const format = require('./format');
 
 /**
  * @param {string[]} files
@@ -51,6 +50,4 @@ if (process.argv[2]) {
     'webdriver',
     'webextensions',
   );
-
-  format();
 }
