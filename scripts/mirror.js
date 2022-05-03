@@ -273,7 +273,11 @@ const combineStatements = (...data) => {
     .filter((item, pos) => newData.indexOf(item) == pos)
     .filter((item) => item.version_added);
 
-  return newData.length === 1 ? newData[0] : newData;
+  return newData.length === 0
+    ? { version_added: false }
+    : newData.length === 1
+    ? newData[0]
+    : newData;
 };
 
 /**
