@@ -112,7 +112,6 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
-    case 'edge':
     case 'opera':
       source = 'chrome';
       break;
@@ -127,6 +126,8 @@ const getSource = (browser, forced_source) => {
     case 'safari_ios':
       source = 'safari';
       break;
+    case 'edge':
+      source = 'chrome-ie';
     default:
       throw Error(
         `${browser} is a base browser and a "source" browser must be specified.`,
@@ -402,7 +403,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
 
   let newData = [];
 
-  if (ieData) {
+  if (ieData && source !== 'chrome') {
     if (Array.isArray(ieData)) {
       newData = newData.concat(ieData.map((d) => bumpEdgeFromIE(d)));
     } else {
@@ -410,7 +411,7 @@ const bumpEdge = (originalData, chromeData, ieData) => {
     }
   }
 
-  if (chromeData) {
+  if (chromeData && source !== 'ie') {
     if (Array.isArray(chromeData)) {
       newData = newData.concat(
         chromeData.map((d) => bumpEdgeFromChrome(d, originalData)),
@@ -896,10 +897,6 @@ const mirrorData = (browser, feature_or_path_array, forced_source, modify) => {
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
     );
     return false;
-  }
-
-  if (browser === 'edge' && forced_source) {
-    console.warn('Warning: Edge does not support --source parameter.');
   }
 
   let source = getSource(browser, forced_source);
