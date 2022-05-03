@@ -3,19 +3,19 @@
     "PaymentRequest": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest",
+        "spec_url": "https://w3c.github.io/payment-request/#paymentrequest-interface",
         "support": {
           "chrome": {
-            "version_added": "61"
+            "version_added": "60"
           },
           "chrome_android": {
             "version_added": "53"
           },
           "edge": {
-            "version_added": true
+            "version_added": "15"
           },
           "firefox": {
             "version_added": "55",
-            "notes": "Available only in nightly builds.",
             "flags": [
               {
                 "type": "preference",
@@ -25,34 +25,21 @@
               {
                 "name": "dom.payments.request.supportedRegions",
                 "type": "preference",
-                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
+                "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
               }
             ]
           },
           "firefox_android": {
-            "version_added": "55",
-            "notes": "Available only in nightly builds.",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.payments.request.enabled",
-                "value_to_set": "true"
-              },
-              {
-                "name": "dom.payments.request.supportedRegions",
-                "type": "preference",
-                "value_to_set": "A comma-delineated list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-              }
-            ]
+            "version_added": false
           },
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": false
+            "version_added": "47"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "44"
           },
           "safari": {
             "version_added": "11.1"
@@ -77,19 +64,19 @@
         "__compat": {
           "description": "<code>PaymentRequest()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/PaymentRequest",
+          "spec_url": "https://w3c.github.io/payment-request/#constructor",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "53"
             },
             "edge": {
-              "version_added": true
+              "version_added": "15"
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -99,24 +86,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -141,10 +120,11 @@
       "abort": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequest-abort",
           "description": "<code>abort()</code>",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "53"
@@ -154,7 +134,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -164,24 +143,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -206,10 +177,11 @@
       "canMakePayment": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequest-canmakepayment",
           "description": "<code>canMakePayment()</code>",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "53"
@@ -219,7 +191,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -229,24 +200,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -271,9 +234,10 @@
       "id": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/id",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequest-id",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "60"
@@ -283,7 +247,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -293,24 +256,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -338,209 +293,16 @@
           "description": "<code>merchantvalidation</code> event",
           "support": {
             "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmerchantvalidation": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/onmerchantvalidation",
-          "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "64",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpaymentmethodchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/onpaymentmethodchange",
-          "support": {
-            "chrome": {
               "version_added": false
             },
             "chrome_android": {
               "version_added": false
             },
             "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": "63",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "63",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
               "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onshippingaddresschange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/onshippingaddresschange",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "15"
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -550,15 +312,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -576,7 +330,7 @@
               "version_added": "11.3"
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -585,157 +339,30 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onshippingoptionchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/onshippingoptionchange",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "15"
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "paymentAddress": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentAddress",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "53"
-            },
-            "edge": {
-              "version_added": "15"
-            },
-            "firefox": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "alternative_name": "shippingAddress",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "alternative_name": "shippingAddress",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
       "paymentmethodchange_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event",
+          "spec_url": [
+            "https://w3c.github.io/payment-request/#dfn-paymentmethodchange",
+            "https://w3c.github.io/payment-request/#onpaymentmethodchange-attribute"
+          ],
           "description": "<code>paymentmethodchange</code> event",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "76"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "76"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": "63",
-              "notes": "Available only in nightly builds.",
+              "version_added": "55",
               "flags": [
                 {
                   "type": "preference",
@@ -745,33 +372,25 @@
               ]
             },
             "firefox_android": {
-              "version_added": "63",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "12.2"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "12.0"
             },
             "webview_android": {
               "version_added": false
@@ -784,22 +403,21 @@
           }
         }
       },
-      "requestId": {
+      "shippingAddress": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/requestId",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingAddress",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "61"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "53"
             },
             "edge": {
-              "version_added": true
+              "version_added": "15"
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -809,33 +427,25 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "6.0"
             },
             "webview_android": {
               "version_added": false
@@ -843,8 +453,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -864,7 +474,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -874,24 +483,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -908,8 +509,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -918,7 +519,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingOption",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "53"
@@ -928,7 +529,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -938,24 +538,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -972,8 +564,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -993,7 +585,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -1003,24 +594,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -1037,8 +620,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -1047,7 +630,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingType",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "55"
@@ -1057,7 +640,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -1067,24 +649,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"
@@ -1101,17 +675,18 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "show": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/show",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequest-show",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "60"
             },
             "chrome_android": {
               "version_added": "53"
@@ -1121,7 +696,6 @@
             },
             "firefox": {
               "version_added": "55",
-              "notes": "Available only in nightly builds.",
               "flags": [
                 {
                   "type": "preference",
@@ -1131,24 +705,16 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "notes": "Available only in nightly builds.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "47"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "safari": {
               "version_added": "11.1"

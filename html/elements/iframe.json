@@ -4,6 +4,7 @@
       "iframe": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/iframe",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -101,6 +102,7 @@
         },
         "allow": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-allow",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -109,10 +111,10 @@
                 "version_added": "60"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
-                "version_added": "73"
+                "version_added": "74"
               },
               "firefox_android": {
                 "version_added": false
@@ -148,6 +150,7 @@
         },
         "allowfullscreen": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-allowfullscreen",
             "support": {
               "chrome": [
                 {
@@ -155,7 +158,8 @@
                 },
                 {
                   "prefix": "webkit",
-                  "version_added": "17"
+                  "version_added": "17",
+                  "version_removed": "38"
                 }
               ],
               "chrome_android": [
@@ -164,13 +168,20 @@
                 },
                 {
                   "prefix": "webkit",
-                  "version_added": "18"
+                  "version_added": "18",
+                  "version_removed": "38"
                 }
               ],
-              "edge": {
-                "prefix": "ms",
-                "version_added": "12"
-              },
+              "edge": [
+                {
+                  "version_added": "≤79"
+                },
+                {
+                  "prefix": "ms",
+                  "version_added": "12",
+                  "version_removed": "79"
+                }
+              ],
               "firefox": [
                 {
                   "version_added": "18"
@@ -193,12 +204,26 @@
                 "prefix": "ms",
                 "version_added": "11"
               },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
+              "opera": [
+                {
+                  "version_added": "≤15"
+                },
+                {
+                  "prefix": "webkit",
+                  "version_added": "15",
+                  "version_removed": "25"
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "≤14"
+                },
+                {
+                  "prefix": "webkit",
+                  "version_added": "14",
+                  "version_removed": "25"
+                }
+              ],
               "safari": [
                 {
                   "version_added": "7"
@@ -223,7 +248,8 @@
                 },
                 {
                   "prefix": "webkit",
-                  "version_added": "1.0"
+                  "version_added": "1.0",
+                  "version_removed": "3.0"
                 }
               ],
               "webview_android": [
@@ -232,7 +258,8 @@
                 },
                 {
                   "prefix": "webkit",
-                  "version_added": "37"
+                  "version_added": "37",
+                  "version_removed": "38"
                 }
               ]
             },
@@ -256,10 +283,12 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "version_added": "56",
+                "version_removed": "83"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "56",
+                "version_removed": "83"
               },
               "ie": {
                 "version_added": false
@@ -285,6 +314,67 @@
             },
             "status": {
               "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "aspect_ratio_computed_from_attributes": {
+          "__compat": {
+            "description": "Aspect ratio computed from <code>width</code> and <code>height</code> attributes",
+            "support": {
+              "chrome": {
+                "version_added": "79"
+              },
+              "chrome_android": {
+                "version_added": "79"
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": [
+                {
+                  "version_added": "71"
+                },
+                {
+                  "version_added": "69",
+                  "version_removed": "71",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.width-and-height-map-to-aspect-ratio.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": {
+                "version_added": "79"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "66"
+              },
+              "opera_android": {
+                "version_added": "57"
+              },
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "14"
+              },
+              "samsunginternet_android": {
+                "version_added": "12.0"
+              },
+              "webview_android": {
+                "version_added": "79"
+              }
+            },
+            "status": {
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -335,6 +425,54 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": true
+            }
+          }
+        },
+        "fetchpriority": {
+          "__compat": {
+            "spec_url": "https://wicg.github.io/priority-hints/#iframe",
+            "support": {
+              "chrome": {
+                "version_added": "101"
+              },
+              "chrome_android": {
+                "version_added": "101"
+              },
+              "edge": {
+                "version_added": "101"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "101"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         },
@@ -434,44 +572,47 @@
         },
         "loading": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-loading",
             "support": {
               "chrome": {
-                "version_added": "76"
+                "version_added": "77"
               },
               "chrome_android": {
-                "version_added": "76"
+                "version_added": "77"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1622090'>bug 1622090</a>."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1622090'>bug 1622090</a>."
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": "63"
+                "version_added": "64"
               },
               "opera_android": {
-                "version_added": "54"
+                "version_added": "55"
               },
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>"
+                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
               },
               "safari_ios": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>"
+                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "12.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "77"
               }
             },
             "status": {
@@ -622,64 +763,9 @@
             }
           }
         },
-        "mozbrowser": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Gecko/Chrome/API/Browser_API",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": false,
-                "notes": [
-                  "See <a href='https://bugzil.la/1318532'>bug 1318532</a>",
-                  "Available only to <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions'>WebExtensions</a>."
-                ]
-              },
-              "firefox_android": {
-                "version_added": false,
-                "notes": [
-                  "See <a href='https://bugzil.la/1318532'>bug 1318532</a>",
-                  "Available only to <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions'>WebExtensions</a>."
-                ]
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": false
-            }
-          }
-        },
         "name": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-name",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -727,6 +813,7 @@
         },
         "referrerpolicy": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-referrerpolicy",
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -735,7 +822,7 @@
                 "version_added": "51"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "50"
@@ -753,10 +840,10 @@
                 "version_added": "41"
               },
               "safari": {
-                "version_added": "11.1"
+                "version_added": "13"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "13"
               },
               "samsunginternet_android": {
                 "version_added": "7.2"
@@ -774,6 +861,7 @@
         },
         "sandbox": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -819,24 +907,24 @@
             }
           }
         },
-        "sandbox-allow-modals": {
+        "sandbox-allow-downloads": {
           "__compat": {
-            "description": "<code>sandbox=\"allow-modals\"</code>",
+            "description": "<code>sandbox=\"allow-downloads\"</code>",
             "support": {
               "chrome": {
-                "version_added": null
+                "version_added": "83"
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "83"
               },
               "edge": {
-                "version_added": false
+                "version_added": "83"
               },
               "firefox": {
-                "version_added": "49"
+                "version_added": "82"
               },
               "firefox_android": {
-                "version_added": "49"
+                "version_added": "82"
               },
               "ie": {
                 "version_added": false
@@ -848,16 +936,64 @@
                 "version_added": null
               },
               "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "13.0"
+              },
+              "webview_android": {
+                "version_added": "83"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "sandbox-allow-modals": {
+          "__compat": {
+            "description": "<code>sandbox=\"allow-modals\"</code>",
+            "support": {
+              "chrome": {
+                "version_added": "46"
+              },
+              "chrome_android": {
+                "version_added": "46"
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": {
+                "version_added": "49"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "33"
+              },
+              "opera_android": {
+                "version_added": "33"
+              },
+              "safari": {
                 "version_added": null
               },
               "safari_ios": {
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "46"
               }
             },
             "status": {
@@ -878,7 +1014,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true
+                "version_added": "≤18"
               },
               "firefox": {
                 "version_added": "28"
@@ -926,7 +1062,7 @@
                 "version_added": "46"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "49"
@@ -974,7 +1110,7 @@
                 "version_added": "53"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "50"
@@ -1011,6 +1147,56 @@
             }
           }
         },
+        "sandbox-allow-same-origin": {
+          "__compat": {
+            "description": "<code>sandbox=\"allow-same-origin\"</code>",
+            "support": {
+              "chrome": {
+                "version_added": true,
+                "notes": "Chrome 70 and earlier block script execution without <code>allow-scripts</code>, even if <code>allow-same-origin</code> is set. For example, any bound handlers for click events of nodes inside an iframe throw an error for blocked script execution."
+              },
+              "chrome_android": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": true
+              },
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": {
+                "version_added": true
+              },
+              "ie": {
+                "version_added": true
+              },
+              "opera": {
+                "version_added": true
+              },
+              "opera_android": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": true,
+                "notes": "Safari blocks script execution without <code>allow-scripts</code> even if <code>allow-same-origin</code> is set. For example, any bound handlers for click events of nodes inside an iframe throw an error for blocked script execution."
+              },
+              "safari_ios": {
+                "version_added": true
+              },
+              "samsunginternet_android": {
+                "version_added": true
+              },
+              "webview_android": {
+                "version_added": true
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "sandbox-allow-storage-access-by-user-activation": {
           "__compat": {
             "description": "<code>sandbox=\"allow-storage-access-by-user-activation\"</code>",
@@ -1035,14 +1221,7 @@
                 ]
               },
               "firefox_android": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.storage_access.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": false
               },
               "ie": {
                 "version_added": false
@@ -1084,13 +1263,13 @@
                 "version_added": "58"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "ie": {
                 "version_added": false
@@ -1171,6 +1350,7 @@
         },
         "src": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-src",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1218,6 +1398,7 @@
         },
         "srcdoc": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-srcdoc",
             "support": {
               "chrome": {
                 "version_added": "20"
@@ -1226,7 +1407,7 @@
                 "version_added": "25"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "25"

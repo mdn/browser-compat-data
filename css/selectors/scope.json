@@ -5,6 +5,7 @@
         "__compat": {
           "description": "<code>:scope</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:scope",
+          "spec_url": "https://drafts.csswg.org/selectors/#the-scope-pseudo",
           "support": {
             "chrome": {
               "version_added": "27"
@@ -13,41 +14,16 @@
               "version_added": "27"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "32",
-                "notes": "Firefox 55 removes support for <code>&lt;style scoped&gt;</code> but not for the <code>:scope</code> pseudo-class, which is still supported. <code>&lt;style scoped&gt;</code> made it possible to explicitly set up element scopes, but ongoing discussions about the design of this feature as well as lack of other implementations resulted in the decision to remove it."
-              },
-              {
-                "version_added": "20",
-                "version_removed": "32",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scope-pseudo.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "32",
-                "notes": "Firefox 55 removes support for <code>&lt;style scoped&gt;</code> but not for the <code>:scope</code> pseudo-class, which is still supported. <code>&lt;style scoped&gt;</code> made it possible to explicitly set up element scopes, but ongoing discussions about the design of this feature as well as lack of other implementations resulted in the decision to remove it."
-              },
-              {
-                "version_added": "20",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scope-pseudo.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "32",
+              "notes": "Firefox 55 removes support for <code>&lt;style scoped&gt;</code> but not for the <code>:scope</code> pseudo-class, which is still supported. <code>&lt;style scoped&gt;</code> made it possible to explicitly set up element scopes, but ongoing discussions about the design of this feature as well as lack of other implementations resulted in the decision to remove it."
+            },
+            "firefox_android": {
+              "version_added": "32",
+              "notes": "Firefox 55 removes support for <code>&lt;style scoped&gt;</code> but not for the <code>:scope</code> pseudo-class, which is still supported. <code>&lt;style scoped&gt;</code> made it possible to explicitly set up element scopes, but ongoing discussions about the design of this feature as well as lack of other implementations resulted in the decision to remove it."
+            },
             "ie": {
               "version_added": false
             },
@@ -87,7 +63,7 @@
                 "version_added": "27"
               },
               "edge": {
-                "version_added": false
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "32"

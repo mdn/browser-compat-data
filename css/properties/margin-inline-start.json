@@ -4,10 +4,22 @@
       "margin-inline-start": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/margin-inline-start",
+          "spec_url": "https://drafts.csswg.org/css-logical/#margin-properties",
           "support": {
             "chrome": [
               {
-                "version_added": "69"
+                "version_added": "87"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "87",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               {
                 "version_added": "2",
@@ -16,30 +28,47 @@
             ],
             "chrome_android": [
               {
-                "version_added": "69"
+                "version_added": "87"
+              },
+              {
+                "version_added": "69",
+                "version_removed": "87",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               {
                 "version_added": "18",
                 "alternative_name": "-webkit-margin-start"
               }
             ],
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
+            "edge": [
               {
-                "version_added": "41"
+                "version_added": "87"
               },
               {
-                "version_added": "38",
-                "version_removed": "51",
+                "version_added": "79",
+                "version_removed": "87",
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
                   }
                 ]
+              },
+              {
+                "version_added": "79",
+                "alternative_name": "-webkit-margin-start"
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "41"
               },
               {
                 "version_added": "3",
@@ -51,17 +80,6 @@
                 "version_added": "41"
               },
               {
-                "version_added": "38",
-                "version_removed": "51",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.vertical-text.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
                 "version_added": "4",
                 "alternative_name": "-moz-margin-start"
               }
@@ -71,7 +89,18 @@
             },
             "opera": [
               {
-                "version_added": "56"
+                "version_added": "73"
+              },
+              {
+                "version_added": "56",
+                "version_removed": "73",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               {
                 "version_added": "15",
@@ -80,7 +109,7 @@
             ],
             "opera_android": [
               {
-                "version_added": "48"
+                "version_added": "62"
               },
               {
                 "version_added": "14",
@@ -107,7 +136,7 @@
             ],
             "samsunginternet_android": [
               {
-                "version_added": "10.0"
+                "version_added": "14.0"
               },
               {
                 "alternative_name": "-webkit-margin-start",
@@ -116,7 +145,7 @@
             ],
             "webview_android": [
               {
-                "version_added": "69"
+                "version_added": "87"
               },
               {
                 "version_added": "2",

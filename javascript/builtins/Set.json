@@ -4,13 +4,16 @@
       "Set": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set",
-          "spec_url": "https://tc39.es/ecma262/#sec-set-objects",
+          "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set-objects",
           "support": {
             "chrome": {
               "version_added": "38"
             },
             "chrome_android": {
               "version_added": "38"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -26,10 +29,10 @@
             },
             "nodejs": [
               {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               {
-                "version_added": "0.10",
+                "version_added": "0.10.0",
                 "flags": [
                   {
                     "type": "runtime_flag",
@@ -67,13 +70,16 @@
           "__compat": {
             "description": "<code>Set()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/Set",
-            "spec_url": "https://tc39.es/ecma262/#sec-set-constructor",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set-constructor",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -87,9 +93,20 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": {
-                "version_added": true
-              },
+              "nodejs": [
+                {
+                  "version_added": "0.12.0"
+                },
+                {
+                  "version_added": "0.10.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": "25"
               },
@@ -114,18 +131,194 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "iterable_allowed": {
+            "__compat": {
+              "description": "<code>new Set(iterable)</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "38"
+                },
+                "chrome_android": {
+                  "version_added": "38"
+                },
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "13"
+                },
+                "firefox_android": {
+                  "version_added": "14"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "0.12.0"
+                },
+                "opera": {
+                  "version_added": "25"
+                },
+                "opera_android": {
+                  "version_added": "25"
+                },
+                "safari": {
+                  "version_added": "9"
+                },
+                "safari_ios": {
+                  "version_added": "9"
+                },
+                "samsunginternet_android": {
+                  "version_added": "3.0"
+                },
+                "webview_android": {
+                  "version_added": "38"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "new_required": {
+            "__compat": {
+              "description": "<code>Set()</code> without <code>new</code> throws",
+              "support": {
+                "chrome": {
+                  "version_added": "38"
+                },
+                "chrome_android": {
+                  "version_added": "38"
+                },
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "42"
+                },
+                "firefox_android": {
+                  "version_added": "42"
+                },
+                "ie": {
+                  "version_added": "11"
+                },
+                "nodejs": {
+                  "version_added": "0.12.0"
+                },
+                "opera": {
+                  "version_added": "25"
+                },
+                "opera_android": {
+                  "version_added": "25"
+                },
+                "safari": {
+                  "version_added": "9"
+                },
+                "safari_ios": {
+                  "version_added": "9"
+                },
+                "samsunginternet_android": {
+                  "version_added": "3.0"
+                },
+                "webview_android": {
+                  "version_added": "38"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "null_allowed": {
+            "__compat": {
+              "description": "<code>new Set(null)</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "38"
+                },
+                "chrome_android": {
+                  "version_added": "38"
+                },
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "37"
+                },
+                "firefox_android": {
+                  "version_added": "37"
+                },
+                "ie": {
+                  "version_added": "11"
+                },
+                "nodejs": [
+                  {
+                    "version_added": "0.12.0"
+                  },
+                  {
+                    "version_added": "0.10.0",
+                    "flags": [
+                      {
+                        "type": "runtime_flag",
+                        "name": "--harmony"
+                      }
+                    ]
+                  }
+                ],
+                "opera": {
+                  "version_added": "25"
+                },
+                "opera_android": {
+                  "version_added": "25"
+                },
+                "safari": {
+                  "version_added": "9"
+                },
+                "safari_ios": {
+                  "version_added": "9"
+                },
+                "samsunginternet_android": {
+                  "version_added": "3.0"
+                },
+                "webview_android": {
+                  "version_added": "38"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "add": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/add",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.add",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.add",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -141,9 +334,20 @@
                 "partial_implementation": true,
                 "notes": "Returns 'undefined' instead of the 'Set' object."
               },
-              "nodejs": {
-                "version_added": true
-              },
+              "nodejs": [
+                {
+                  "version_added": "0.12.0"
+                },
+                {
+                  "version_added": "0.10.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": "25"
               },
@@ -173,13 +377,16 @@
         "clear": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/clear",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.clear",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.clear",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -194,7 +401,7 @@
                 "version_added": "11"
               },
               "nodejs": {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               "opera": {
                 "version_added": "25"
@@ -225,13 +432,16 @@
         "delete": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/delete",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.delete",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.delete",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -247,10 +457,10 @@
               },
               "nodejs": [
                 {
-                  "version_added": "0.12"
+                  "version_added": "0.12.0"
                 },
                 {
-                  "version_added": "0.10",
+                  "version_added": "0.10.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
@@ -288,13 +498,16 @@
         "entries": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/entries",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.entries",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.entries",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -309,7 +522,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               "opera": {
                 "version_added": "25"
@@ -340,13 +553,16 @@
         "forEach": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.foreach",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.foreach",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -361,7 +577,7 @@
                 "version_added": "11"
               },
               "nodejs": {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               "opera": {
                 "version_added": "25"
@@ -392,13 +608,16 @@
         "has": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/has",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.has",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.has",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -412,9 +631,20 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": {
-                "version_added": true
-              },
+              "nodejs": [
+                {
+                  "version_added": "0.12.0"
+                },
+                {
+                  "version_added": "0.10.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony"
+                    }
+                  ]
+                }
+              ],
               "opera": {
                 "version_added": "25"
               },
@@ -450,6 +680,9 @@
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -492,180 +725,19 @@
             }
           }
         },
-        "set_iterable": {
-          "__compat": {
-            "description": "<code>new Set(iterable)</code>",
-            "support": {
-              "chrome": {
-                "version_added": "38"
-              },
-              "chrome_android": {
-                "version_added": "38"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "13"
-              },
-              "firefox_android": {
-                "version_added": "14"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": "25"
-              },
-              "opera_android": {
-                "version_added": "25"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "38"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "set_null": {
-          "__compat": {
-            "description": "<code>new Set(null)</code>",
-            "support": {
-              "chrome": {
-                "version_added": "38"
-              },
-              "chrome_android": {
-                "version_added": "38"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "37"
-              },
-              "firefox_android": {
-                "version_added": "37"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": [
-                {
-                  "version_added": "0.12"
-                },
-                {
-                  "version_added": "0.10",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "opera": {
-                "version_added": "25"
-              },
-              "opera_android": {
-                "version_added": "25"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "38"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "set_without_new_throws": {
-          "__compat": {
-            "description": "<code>Set()</code> without <code>new</code> throws",
-            "support": {
-              "chrome": {
-                "version_added": "38"
-              },
-              "chrome_android": {
-                "version_added": "38"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "42"
-              },
-              "firefox_android": {
-                "version_added": "42"
-              },
-              "ie": {
-                "version_added": "11"
-              },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": "25"
-              },
-              "opera_android": {
-                "version_added": "25"
-              },
-              "safari": {
-                "version_added": "9"
-              },
-              "safari_ios": {
-                "version_added": "9"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "38"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "size": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/size",
-            "spec_url": "https://tc39.es/ecma262/#sec-get-set.prototype.size",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-set.prototype.size",
             "support": {
               "chrome": {
                 "version_added": "38"
               },
               "chrome_android": {
                 "version_added": "38"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -682,7 +754,7 @@
                 "version_added": "11"
               },
               "nodejs": {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               "opera": {
                 "version_added": "25"
@@ -713,47 +785,128 @@
         "values": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/values",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype.values",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype.values",
             "support": {
-              "chrome": {
-                "version_added": "38"
-              },
-              "chrome_android": {
-                "version_added": "38"
-              },
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "24"
-              },
-              "firefox_android": {
-                "version_added": "24"
-              },
+              "chrome": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "38"
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "38"
+                }
+              ],
+              "deno": [
+                {
+                  "version_added": "1.0"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "1.0"
+                }
+              ],
+              "edge": [
+                {
+                  "version_added": "12"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "12"
+                }
+              ],
+              "firefox": [
+                {
+                  "version_added": "24"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "24"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "24"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "24"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "0.12"
-              },
-              "opera": {
-                "version_added": "25"
-              },
-              "opera_android": {
-                "version_added": "25"
-              },
-              "safari": {
-                "version_added": "8"
-              },
-              "safari_ios": {
-                "version_added": "8"
-              },
-              "samsunginternet_android": {
-                "version_added": "3.0"
-              },
-              "webview_android": {
-                "version_added": "38"
-              }
+              "nodejs": [
+                {
+                  "version_added": "0.12.0"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "0.12.0"
+                }
+              ],
+              "opera": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "25"
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "25"
+                }
+              ],
+              "safari": [
+                {
+                  "version_added": "8"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "8"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "8"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "8"
+                }
+              ],
+              "samsunginternet_android": [
+                {
+                  "version_added": "3.0"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "3.0"
+                }
+              ],
+              "webview_android": [
+                {
+                  "version_added": "38"
+                },
+                {
+                  "alternative_name": "keys",
+                  "version_added": "38"
+                }
+              ]
             },
             "status": {
               "experimental": false,
@@ -765,13 +918,16 @@
         "@@iterator": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/@@iterator",
-            "spec_url": "https://tc39.es/ecma262/#sec-set.prototype-@@iterator",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prototype-@@iterator",
             "support": {
               "chrome": {
                 "version_added": "43"
               },
               "chrome_android": {
                 "version_added": "43"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "12"
@@ -814,7 +970,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": "0.12"
+                "version_added": "0.12.0"
               },
               "opera": {
                 "version_added": "30"
@@ -845,13 +1001,16 @@
         "@@species": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/@@species",
-            "spec_url": "https://tc39.es/ecma262/#sec-get-set-@@species",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-set-@@species",
             "support": {
               "chrome": {
                 "version_added": "51"
               },
               "chrome_android": {
                 "version_added": "51"
+              },
+              "deno": {
+                "version_added": "1.0"
               },
               "edge": {
                 "version_added": "13"

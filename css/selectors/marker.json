@@ -5,28 +5,50 @@
         "__compat": {
           "description": "<code>::marker</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::marker",
+          "spec_url": "https://drafts.csswg.org/css-pseudo/#marker-pseudo",
           "support": {
-            "chrome": {
-              "version_added": "80",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable experimental Web Platform features"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "80",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable experimental Web Platform features"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "86"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "86"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "86"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "68"
             },
@@ -37,28 +59,118 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "72"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "61"
             },
-            "safari": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "11.1",
+                "partial_implementation": true,
+                "notes": "Safari support is limited to <code>color</code> and <code>font-size</code>. See <a href='https://webkit.org/b/204163'>bug 204163</a>."
+              },
+              {
+                "version_added": "preview"
+              }
+            ],
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3",
+              "partial_implementation": true,
+              "notes": "Safari support is limited to <code>color</code> and <code>font-size</code>. See <a href='https://webkit.org/b/204163'>bug 204163</a>."
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "86"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "animation_and_transition_support": {
+          "__compat": {
+            "description": "Animation and transition support",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "86"
+                },
+                {
+                  "version_added": "83",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "86"
+                },
+                {
+                  "version_added": "83",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
+              "edge": [
+                {
+                  "version_added": "86"
+                },
+                {
+                  "version_added": "83",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
+              "firefox": {
+                "version_added": "80"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "72"
+              },
+              "opera_android": {
+                "version_added": "61"
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "14.0"
+              },
+              "webview_android": {
+                "version_added": "86"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }

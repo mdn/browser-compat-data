@@ -3,60 +3,25 @@
     "BatteryManager": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager",
+        "spec_url": "https://w3c.github.io/battery/#the-batterymanager-interface",
         "support": {
           "chrome": {
             "version_added": "38"
           },
           "chrome_android": {
-            "version_added": "38",
-            "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+            "version_added": "38"
           },
           "edge": {
-            "version_added": false
+            "version_added": "79"
           },
-          "firefox": [
-            {
-              "version_added": "16",
-              "version_removed": "52"
-            },
-            {
-              "version_added": "10",
-              "version_removed": "16",
-              "prefix": "moz"
-            },
-            {
-              "version_added": "52",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.battery.enabled"
-                }
-              ],
-              "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-            },
-            {
-              "version_added": "72",
-              "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-            }
-          ],
-          "firefox_android": [
-            {
-              "version_added": "10",
-              "version_removed": "16",
-              "prefix": "moz"
-            },
-            {
-              "version_added": "16",
-              "version_removed": "52",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.battery.enabled"
-                }
-              ],
-              "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-            }
-          ],
+          "firefox": {
+            "version_added": "43",
+            "version_removed": "52"
+          },
+          "firefox_android": {
+            "version_added": "43",
+            "version_removed": "52"
+          },
           "ie": {
             "version_added": false
           },
@@ -70,80 +35,43 @@
             "version_added": false
           },
           "safari_ios": {
-            "version_added": true,
-            "version_removed": true
+            "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": "3.0",
-            "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+            "version_added": "3.0"
           },
           "webview_android": {
-            "version_added": "40"
+            "version_added": "38"
           }
         },
         "status": {
           "experimental": false,
           "standard_track": true,
-          "deprecated": true
+          "deprecated": false
         }
       },
       "charging": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/charging",
+          "spec_url": "https://w3c.github.io/battery/#dom-batterymanager-charging",
           "support": {
             "chrome": {
               "version_added": "38"
             },
             "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
             "ie": {
               "version_added": false
             },
@@ -157,81 +85,186 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true,
-              "version_removed": true
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "38"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
+          }
+        }
+      },
+      "chargingchange_event": {
+        "__compat": {
+          "description": "<code>chargingchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingchange_event",
+          "spec_url": [
+            "https://w3c.github.io/battery/#ref-for-dfn-chargingchange-1",
+            "https://w3c.github.io/battery/#dom-batterymanager-onchargingchange"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "38"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
       "chargingTime": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime",
+          "spec_url": "https://w3c.github.io/battery/#dom-batterymanager-chargingtime",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "38",
+                "version_removed": "42",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>0</code> or <code>Infinity</code>."
+              }
+            ],
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "29",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>0</code> or <code>Infinity</code>."
+              }
+            ],
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "4.0"
+              },
+              {
+                "version_added": "3.0",
+                "version_removed": "4.0",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>0</code> or <code>Infinity</code>."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "38",
+                "version_removed": "42",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>0</code> or <code>Infinity</code>."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "chargingtimechange_event": {
+        "__compat": {
+          "description": "<code>chargingtimechange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingtimechange_event",
+          "spec_url": [
+            "https://w3c.github.io/battery/#ref-for-dfn-chargingtimechange-1",
+            "https://w3c.github.io/battery/#dom-batterymanager-onchargingtimechange"
+          ],
           "support": {
             "chrome": {
               "version_added": "38"
             },
             "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
             "ie": {
               "version_added": false
             },
@@ -245,81 +278,131 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true,
-              "version_removed": true
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "38"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
       "dischargingTime": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime",
+          "spec_url": "https://w3c.github.io/battery/#dom-batterymanager-dischargingtime",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "38",
+                "version_removed": "42",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>Infinity</code>."
+              }
+            ],
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": [
+              {
+                "version_added": "29"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "29",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>Infinity</code>."
+              }
+            ],
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": [
+              {
+                "version_added": "4.0"
+              },
+              {
+                "version_added": "3.0",
+                "version_removed": "4.0",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>Infinity</code>."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "42"
+              },
+              {
+                "version_added": "38",
+                "version_removed": "42",
+                "partial_implementation": true,
+                "notes": "Always equal to <code>Infinity</code>."
+              }
+            ]
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "dischargingtimechange_event": {
+        "__compat": {
+          "description": "<code>dischargingtimechange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingtimechange_event",
+          "spec_url": [
+            "https://w3c.github.io/battery/#ref-for-dfn-dischargingtimechange-1",
+            "https://w3c.github.io/battery/#dom-batterymanager-ondischargingtimechange"
+          ],
           "support": {
             "chrome": {
               "version_added": "38"
             },
             "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
             "ie": {
               "version_added": false
             },
@@ -333,81 +416,44 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true,
-              "version_removed": true
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "38"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
       "level": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/level",
+          "spec_url": "https://w3c.github.io/battery/#dom-batterymanager-level",
           "support": {
             "chrome": {
               "version_added": "38"
             },
             "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
             "ie": {
               "version_added": false
             },
@@ -421,81 +467,48 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true,
-              "version_removed": true
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": "38"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
-      "onchargingchange": {
+      "levelchange_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/onchargingchange",
+          "description": "<code>levelchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/levelchange_event",
+          "spec_url": [
+            "https://w3c.github.io/battery/#ref-for-dfn-levelchange-1",
+            "https://w3c.github.io/battery/#dom-batterymanager-onlevelchange"
+          ],
           "support": {
             "chrome": {
               "version_added": "38"
             },
             "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
+            "firefox_android": {
+              "version_added": "43",
+              "version_removed": "52"
+            },
             "ie": {
               "version_added": false
             },
@@ -509,285 +522,19 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": true,
-              "version_removed": true
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "onchargingtimechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/onchargingtimechange",
-          "support": {
-            "chrome": {
               "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": "25"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": true,
-              "version_removed": true
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
-            },
-            "webview_android": {
-              "version_added": "40"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "ondischargingtimechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/ondischargingtimechange",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": "25"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": true,
-              "version_removed": true
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "onlevelchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BatteryManager/onlevelchange",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": [
-              {
-                "version_added": "16",
-                "version_removed": "52"
-              },
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Firefox 18. Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              },
-              {
-                "version_added": "72",
-                "notes": "From this version onwards, <code>BatteryManager</code> is only available in chrome/privileged code."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "10",
-                "version_removed": "16",
-                "prefix": "moz"
-              },
-              {
-                "version_added": "16",
-                "version_removed": "52",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.battery.enabled"
-                  }
-                ],
-                "notes": "Disabled by default in Firefox 10.0, but can be enabled setting the preference <code>dom.battery.enabled</code> to <code>true</code>. Starting with Firefox 11.0, <code>mozBattery</code> is enabled by default. The Battery API is currently supported on Android, Windows, and Linux with UPower installed. Support for MacOS is available starting with Gecko 18.0 (Firefox 18.0 / Thunderbird 18.0 / SeaMonkey 2.15). Firefox also provides support for the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/battery'><code>navigator.battery</code></a>."
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": "25"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": true,
-              "version_removed": true
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0",
-              "notes": "Values for <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/chargingTime'><code>BatteryManager.chargingTime</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/BatteryManager/dischargingTime'><code>BatteryManager.dischargingTime</code></a> are always equal to <code>Infinity</code>."
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       }

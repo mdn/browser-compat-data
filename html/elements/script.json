@@ -4,6 +4,7 @@
       "script": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/script",
+          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#the-script-element",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -106,7 +107,7 @@
                 "version_added": true
               },
               "edge": {
-                "version_added": true
+                "version_added": "≤18"
               },
               "firefox": {
                 "version_added": "13"
@@ -167,7 +168,7 @@
               },
               "ie": {
                 "version_added": "10",
-                "notes": "In versions prior to Internet Explorer 10, it implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
+                "notes": "Before version 10, Internet Explorer implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
               },
               "opera": {
                 "version_added": true,
@@ -199,6 +200,54 @@
             }
           }
         },
+        "fetchpriority": {
+          "__compat": {
+            "spec_url": "https://wicg.github.io/priority-hints/#script",
+            "support": {
+              "chrome": {
+                "version_added": "101"
+              },
+              "chrome_android": {
+                "version_added": "101"
+              },
+              "edge": {
+                "version_added": "101"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "101"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "integrity": {
           "__compat": {
             "support": {
@@ -209,8 +258,7 @@
                 "version_added": "45"
               },
               "edge": {
-                "version_added": "17",
-                "partial_implementation": true
+                "version_added": "17"
               },
               "firefox": {
                 "version_added": "43"
@@ -228,10 +276,10 @@
                 "version_added": null
               },
               "safari": {
-                "version_added": true
+                "version_added": "11.1"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "11.3"
               },
               "samsunginternet_android": {
                 "version_added": "5.0"
@@ -306,38 +354,12 @@
               "edge": {
                 "version_added": "16"
               },
-              "firefox": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "version_added": "55",
-                  "version_removed": "60",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.moduleScripts.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "version_added": "55",
-                  "version_removed": "60",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.moduleScripts.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "60"
+              },
+              "firefox_android": {
+                "version_added": "60"
+              },
               "ie": {
                 "version_added": false
               },
@@ -367,7 +389,7 @@
             }
           }
         },
-        "referrerPolicy": {
+        "referrerpolicy": {
           "__compat": {
             "support": {
               "chrome": {
@@ -377,7 +399,7 @@
                 "version_added": "70"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": "65"
@@ -395,10 +417,10 @@
                 "version_added": null
               },
               "safari": {
-                "version_added": false
+                "version_added": "13.1"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "13.4"
               },
               "samsunginternet_android": {
                 "version_added": "10.0"
@@ -558,121 +580,60 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "61"
+                  "version_added": "61",
+                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                 },
                 "chrome_android": {
-                  "version_added": "61"
+                  "version_added": "61",
+                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                 },
-                "edge": {
-                  "version_added": "16"
-                },
-                "firefox": [
+                "edge": [
                   {
-                    "version_added": "60"
+                    "version_added": "79",
+                    "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                   },
                   {
-                    "version_added": "54",
-                    "version_removed": "60",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "dom.moduleScripts.enabled",
-                        "value_to_set": "true"
-                      }
-                    ]
+                    "version_added": "16",
+                    "version_removed": "79"
                   }
                 ],
-                "firefox_android": [
-                  {
-                    "version_added": "60"
-                  },
-                  {
-                    "version_added": "54",
-                    "version_removed": "60",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "dom.moduleScripts.enabled",
-                        "value_to_set": "true"
-                      }
-                    ]
-                  }
-                ],
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": "60"
+                },
                 "ie": {
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                 },
                 "opera_android": {
-                  "version_added": "45"
+                  "version_added": "45",
+                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                 },
                 "safari": {
-                  "version_added": "10.1"
+                  "version_added": "10.1",
+                  "notes": "Module scripts do not load when the page is served as XHTML (<code>application/xhtml+xml</code>)."
                 },
                 "safari_ios": {
-                  "version_added": "10.3"
+                  "version_added": "10.3",
+                  "notes": "Module scripts do not load when the page is served as XHTML (<code>application/xhtml+xml</code>)."
                 },
                 "samsunginternet_android": {
-                  "version_added": "8.0"
+                  "version_added": "8.0",
+                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                 },
                 "webview_android": {
-                  "version_added": "61"
+                  "version_added": "61",
+                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
                 }
               },
               "status": {
                 "experimental": false,
                 "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "version_parameter": {
-            "__compat": {
-              "description": "The <code>version</code> parameter of the <code>type</code> attribute",
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "chrome_android": {
-                  "version_added": false
-                },
-                "edge": {
-                  "version_added": false
-                },
-                "firefox": {
-                  "version_added": true,
-                  "version_removed": "59"
-                },
-                "firefox_android": {
-                  "version_added": true,
-                  "version_removed": "59"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": false
-                },
-                "opera_android": {
-                  "version_added": false
-                },
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": {
-                  "version_added": false
-                },
-                "samsunginternet_android": {
-                  "version_added": false
-                },
-                "webview_android": {
-                  "version_added": false
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": false,
                 "deprecated": false
               }
             }

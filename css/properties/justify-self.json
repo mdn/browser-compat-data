@@ -6,6 +6,7 @@
           "__compat": {
             "description": "Supported in Flex Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-self",
+            "spec_url": "https://drafts.csswg.org/css-align/#justify-self-property",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -55,6 +56,7 @@
           "__compat": {
             "description": "Supported in Grid Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-self",
+            "spec_url": "https://drafts.csswg.org/css-align/#justify-self-property",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -72,7 +74,10 @@
                 "version_added": "45"
               },
               "ie": {
-                "version_added": false
+                "prefix": "-ms-",
+                "version_added": "10",
+                "partial_implementation": true,
+                "notes": "Internet Explorer 10 and 11 have the property <code>-ms-grid-column-align</code>, which acts in a similar way to <code>justify-self</code>."
               },
               "opera": {
                 "version_added": "44"

@@ -3,6 +3,7 @@
     "TransformStream": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransformStream",
+        "spec_url": "https://streams.spec.whatwg.org/#ts-class",
         "support": {
           "chrome": {
             "version_added": "67"
@@ -10,17 +11,39 @@
           "chrome_android": {
             "version_added": "67"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
-            "version_added": false
+            "version_added": "79"
           },
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "preview"
+            },
+            {
+              "version_added": "101",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.transform_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
             "version_added": false
           },
           "ie": {
             "version_added": false
+          },
+          "nodejs": {
+            "version_added": "16.5.0",
+            "notes": [
+              "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
+              "Experimental implementation."
+            ]
           },
           "opera": {
             "version_added": "54"
@@ -29,10 +52,10 @@
             "version_added": "48"
           },
           "safari": {
-            "version_added": false
+            "version_added": "14.1"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "14.5"
           },
           "samsunginternet_android": {
             "version_added": "9.0"
@@ -50,6 +73,7 @@
       "TransformStream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransformStream/TransformStream",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-ts-constructor④",
           "description": "<code>TransformStream()</code> constructor",
           "support": {
             "chrome": {
@@ -58,17 +82,35 @@
             "chrome_android": {
               "version_added": "67"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "101",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.transform_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "54"
@@ -77,10 +119,10 @@
               "version_added": "48"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "9.0"
@@ -99,6 +141,7 @@
       "readable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransformStream/readable",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-ts-readable②",
           "support": {
             "chrome": {
               "version_added": "67"
@@ -106,17 +149,35 @@
             "chrome_android": {
               "version_added": "67"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "101",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.transform_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "54"
@@ -125,10 +186,10 @@
               "version_added": "48"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "9.0"
@@ -147,6 +208,7 @@
       "writable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TransformStream/writable",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-ts-writable②",
           "support": {
             "chrome": {
               "version_added": "67"
@@ -154,17 +216,35 @@
             "chrome_android": {
               "version_added": "67"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "101",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.transform_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "54"
@@ -173,10 +253,10 @@
               "version_added": "48"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "9.0"

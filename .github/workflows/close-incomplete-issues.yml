@@ -1,0 +1,31 @@
+name: Close incomplete issue templates
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  close-issues-if-invalid:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ddbeck/invalid-issue-closer@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          labels: 'invalid :no_entry_sign:'
+          comment: |
+            This issue was automatically closed because it appears to be empty. The issue is not different from the issue template and no actionable information has been provided.
+
+            If this has been closed in error, edit the title and body, and post a follow-up comment.
+          normalize-newlines: true
+          title-contains: '<PUT TITLE HERE>'
+          body-contains: "<!-- Tips: where applicable, specify browser name, browser version, and mobile operating system version -->\n\n#### What information was incorrect, unhelpful, or incomplete?\n\n#### What did you expect to see?\n\n#### Did you test this? If so, how?\n\n"
+      - uses: ddbeck/invalid-issue-closer@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          labels: 'invalid :no_entry_sign:'
+          comment: |
+            This issue was automatically closed because it appears to be empty. The issue is not different from the issue template and no actionable information has been provided.
+
+            If this has been closed in error, edit the title and body, and post a follow-up comment.
+          normalize-newlines: true
+          title-contains: '<SUMMARIZE THE PROBLEM>'
+          body-contains: "<!-- Tips: where applicable, specify browser name, browser version, and mobile operating system version -->\n\n#### What information was incorrect, unhelpful, or incomplete?\n#### What did you expect to see?\n#### Did you test this? If so, how?\n"

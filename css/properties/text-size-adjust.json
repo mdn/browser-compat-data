@@ -4,6 +4,7 @@
       "text-size-adjust": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-size-adjust",
+          "spec_url": "https://drafts.csswg.org/css-size-adjust/#adjustment-control",
           "support": {
             "chrome": [
               {
@@ -18,32 +19,27 @@
             "chrome_android": {
               "version_added": "54"
             },
-            "edge": {
-              "prefix": "-webkit-",
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "12",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": false
             },
             "firefox_android": [
               {
-                "prefix": "-moz-",
-                "version_added": "14"
-              },
-              {
                 "prefix": "-webkit-",
                 "version_added": "49"
               },
               {
-                "prefix": "-webkit-",
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.prefixes.webkit",
-                    "value_to_set": "true"
-                  }
-                ]
+                "prefix": "-moz-",
+                "version_added": "14"
               }
             ],
             "ie": {

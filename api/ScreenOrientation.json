@@ -3,6 +3,7 @@
     "ScreenOrientation": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ScreenOrientation",
+        "spec_url": "https://w3c.github.io/screen-orientation/#screenorientation-interface",
         "support": {
           "chrome": {
             "version_added": "38"
@@ -11,7 +12,7 @@
             "version_added": "38"
           },
           "edge": {
-            "version_added": false
+            "version_added": "79"
           },
           "firefox": {
             "version_added": "43"
@@ -50,6 +51,7 @@
       "angle": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ScreenOrientation/angle",
+          "spec_url": "https://w3c.github.io/screen-orientation/#dom-screenorientation-angle",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -58,7 +60,56 @@
               "version_added": "38"
             },
             "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "43"
+            },
+            "firefox_android": {
+              "version_added": "43"
+            },
+            "ie": {
               "version_added": false
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "38"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "change_event": {
+        "__compat": {
+          "description": "<code>change</code> event",
+          "spec_url": "https://w3c.github.io/screen-orientation/#dom-screenorientation-onchange",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38"
+            },
+            "edge": {
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "43"
@@ -98,75 +149,45 @@
       "lock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock",
+          "spec_url": "https://w3c.github.io/screen-orientation/#dom-screenorientation-lock",
           "support": {
             "chrome": {
-              "version_added": "38"
+              "version_added": "38",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "chrome_android": {
               "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "firefox": {
-              "version_added": "43"
+              "version_added": "43",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
-            "firefox_android": {
-              "version_added": "43"
-            },
+            "firefox_android": [
+              {
+                "version_added": "79",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The API exists but returns <code>NS_ERROR_UNEXPECTED</code>."
+              },
+              {
+                "version_added": "43",
+                "version_removed": "79"
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": "25"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ScreenOrientation/onchange",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "43"
-            },
-            "firefox_android": {
-              "version_added": "43"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "25"
+              "version_added": "25",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "opera_android": {
               "version_added": "25"
@@ -194,6 +215,7 @@
       "type": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ScreenOrientation/type",
+          "spec_url": "https://w3c.github.io/screen-orientation/#dom-screenorientation-type",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -202,7 +224,7 @@
               "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "43"
@@ -242,18 +264,25 @@
       "unlock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock",
+          "spec_url": "https://w3c.github.io/screen-orientation/#dom-screenorientation-unlock",
           "support": {
             "chrome": {
-              "version_added": "38"
+              "version_added": "38",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "chrome_android": {
               "version_added": "38"
             },
             "edge": {
-              "version_added": false
+              "version_added": "79",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "firefox": {
-              "version_added": "43"
+              "version_added": "43",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "firefox_android": {
               "version_added": "43"
@@ -262,7 +291,9 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "25"
+              "version_added": "25",
+              "partial_implementation": true,
+              "notes": "Always throws <code>NotSupportedError</code>."
             },
             "opera_android": {
               "version_added": "25"

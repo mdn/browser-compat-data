@@ -3,6 +3,10 @@
     "ServiceWorkerRegistration": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration",
+        "spec_url": [
+          "https://w3c.github.io/ServiceWorker/#serviceworkerregistration-interface",
+          "https://w3c.github.io/push-api/#extensions-to-the-serviceworkerregistration-interface"
+        ],
         "support": {
           "chrome": {
             "version_added": "40"
@@ -10,23 +14,12 @@
           "chrome_android": {
             "version_added": "40"
           },
-          "edge": [
-            {
-              "version_added": "17"
-            },
-            {
-              "version_added": "16",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Enable service workers"
-                }
-              ]
-            }
-          ],
+          "edge": {
+            "version_added": "17"
+          },
           "firefox": {
             "version_added": "44",
-            "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+            "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
           },
           "firefox_android": {
             "version_added": "44"
@@ -62,6 +55,7 @@
       "active": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-service-worker-active",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -69,23 +63,12 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -119,9 +102,105 @@
           }
         }
       },
+      "backgroundFetch": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/backgroundFetch",
+          "support": {
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": {
+              "version_added": "74"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "62"
+            },
+            "opera_android": {
+              "version_added": "53"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "11.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "cookies": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "87"
+            },
+            "chrome_android": {
+              "version_added": "87"
+            },
+            "edge": {
+              "version_added": "87"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "73"
+            },
+            "opera_android": {
+              "version_added": "62"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "87"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "getNotifications": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications",
+          "spec_url": "https://notifications.spec.whatwg.org/#dom-serviceworkerregistration-getnotifications",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -129,23 +208,12 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "46",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "46"
@@ -160,16 +228,17 @@
               "version_added": "27"
             },
             "safari": {
-              "version_added": "11.1"
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": "11.3"
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>."
             }
           },
           "status": {
@@ -179,9 +248,59 @@
           }
         }
       },
+      "index": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/index",
+          "spec_url": "https://wicg.github.io/content-index/spec/#dom-serviceworkerregistration-index",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "84"
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": "60"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "14.0"
+            },
+            "webview_android": {
+              "version_added": "84"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "installing": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-service-worker-installing",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -189,23 +308,12 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -242,6 +350,7 @@
       "navigationPreload": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/navigationPreload",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-registration-navigationpreload",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -249,23 +358,12 @@
             "chrome_android": {
               "version_added": "59"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -280,10 +378,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": "11.1"
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": "11.3"
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -299,119 +397,45 @@
           }
         }
       },
-      "onupdatefound": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/onupdatefound",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
-            "firefox": {
-              "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "27"
-            },
-            "opera_android": {
-              "version_added": "27"
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "paymentManager": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/paymentManager",
           "support": {
             "chrome": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "chrome_android": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#service-worker-payment-apps",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "70"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "57"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "49"
             },
             "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
               "version_added": false
             },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
             "webview_android": {
-              "version_added": true
+              "version_added": false
             }
           },
           "status": {
@@ -424,15 +448,16 @@
       "periodicSync": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/periodicSync",
+          "spec_url": "https://wicg.github.io/periodic-background-sync/#dom-serviceworkerregistration-periodicsync",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "80"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "80"
             },
             "edge": {
-              "version_added": false
+              "version_added": "80"
             },
             "firefox": {
               "version_added": false
@@ -444,10 +469,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "67"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "57"
             },
             "safari": {
               "version_added": false
@@ -456,10 +481,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "13.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "80"
             }
           },
           "status": {
@@ -472,6 +497,7 @@
       "pushManager": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/pushManager",
+          "spec_url": "https://w3c.github.io/push-api/#dom-serviceworkerregistration-pushmanager",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -479,23 +505,63 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "27"
+            },
+            "opera_android": {
+              "version_added": "27"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>."
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "scope": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-registration-scope",
+          "support": {
+            "chrome": {
+              "version_added": "40"
+            },
+            "chrome_android": {
+              "version_added": "40"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "44",
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -514,66 +580,6 @@
             },
             "safari_ios": {
               "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "scope": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
-            "firefox": {
-              "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "27"
-            },
-            "opera_android": {
-              "version_added": "27"
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "4.0"
@@ -592,30 +598,20 @@
       "showNotification": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
+          "spec_url": "https://notifications.spec.whatwg.org/#dom-serviceworkerregistration-shownotification",
           "support": {
             "chrome": {
-              "version_added": "40"
+              "version_added": "42"
             },
             "chrome_android": {
-              "version_added": "40"
+              "version_added": "42"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "46",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "46"
@@ -624,10 +620,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "27"
+              "version_added": "29"
             },
             "opera_android": {
-              "version_added": "27"
+              "version_added": "29"
             },
             "safari": {
               "version_added": false
@@ -639,7 +635,8 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "40"
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>."
             }
           },
           "status": {
@@ -650,7 +647,6 @@
         },
         "actions": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "45"
@@ -659,7 +655,7 @@
                 "version_added": "45"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -686,7 +682,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "45"
+                "version_added": false
               }
             },
             "status": {
@@ -698,7 +694,6 @@
         },
         "badge": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "53"
@@ -707,7 +702,7 @@
                 "version_added": "53"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -734,7 +729,7 @@
                 "version_added": "6.0"
               },
               "webview_android": {
-                "version_added": "53"
+                "version_added": false
               }
             },
             "status": {
@@ -746,7 +741,6 @@
         },
         "data": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "44"
@@ -755,7 +749,7 @@
                 "version_added": "44"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -782,7 +776,7 @@
                 "version_added": "4.0"
               },
               "webview_android": {
-                "version_added": "44"
+                "version_added": false
               }
             },
             "status": {
@@ -794,7 +788,6 @@
         },
         "image": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "56"
@@ -803,7 +796,7 @@
                 "version_added": "56"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -830,7 +823,7 @@
                 "version_added": "6.0"
               },
               "webview_android": {
-                "version_added": "56"
+                "version_added": false
               }
             },
             "status": {
@@ -842,7 +835,6 @@
         },
         "renotify": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -851,7 +843,7 @@
                 "version_added": "50"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -878,7 +870,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "50"
+                "version_added": false
               }
             },
             "status": {
@@ -890,7 +882,6 @@
         },
         "requireInteraction": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "47"
@@ -899,7 +890,7 @@
                 "version_added": "47"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -926,7 +917,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "47"
+                "version_added": false
               }
             },
             "status": {
@@ -938,7 +929,6 @@
         },
         "vibrate": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification",
             "support": {
               "chrome": {
                 "version_added": "45"
@@ -947,7 +937,7 @@
                 "version_added": "45"
               },
               "edge": {
-                "version_added": null
+                "version_added": "≤79"
               },
               "firefox": {
                 "version_added": false
@@ -974,7 +964,7 @@
                 "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": "45"
+                "version_added": false
               }
             },
             "status": {
@@ -988,6 +978,7 @@
       "sync": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/sync",
+          "spec_url": "https://wicg.github.io/background-sync/spec/#dom-serviceworkerregistration-sync",
           "support": {
             "chrome": {
               "version_added": "49"
@@ -996,7 +987,7 @@
               "version_added": "49"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -1036,6 +1027,7 @@
       "unregister": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-service-worker-unregister",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -1043,23 +1035,12 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -1096,6 +1077,7 @@
       "update": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-registration-update",
           "support": {
             "chrome": {
               "version_added": "45",
@@ -1111,23 +1093,12 @@
                 "Before Chrome 48, this method always bypassed the browser cache. Starting with Chrome 48, it only bypasses the cache when the previous service worker check was more than twenty-four hours ago."
               ]
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -1153,7 +1124,7 @@
               "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "4.0",
@@ -1177,9 +1148,61 @@
           }
         }
       },
+      "updatefound_event": {
+        "__compat": {
+          "description": "<code>updatefound</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerregistration-onupdatefound",
+          "support": {
+            "chrome": {
+              "version_added": "40"
+            },
+            "chrome_android": {
+              "version_added": "40"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "44",
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "27"
+            },
+            "opera_android": {
+              "version_added": "27"
+            },
+            "safari": {
+              "version_added": "11.1"
+            },
+            "safari_ios": {
+              "version_added": "11.3"
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "40"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "updateViaCache": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updateViaCache",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-registration-updateviacache",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -1200,16 +1223,16 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "55"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "48"
             },
             "safari": {
               "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "10.0"
@@ -1228,6 +1251,7 @@
       "waiting": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#navigator-service-worker-waiting",
           "support": {
             "chrome": {
               "version_added": "40"
@@ -1235,23 +1259,12 @@
             "chrome_android": {
               "version_added": "40"
             },
-            "edge": [
-              {
-                "version_added": "17"
-              },
-              {
-                "version_added": "16",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Enable service workers"
-                  }
-                ]
-              }
-            ],
+            "edge": {
+              "version_added": "17"
+            },
             "firefox": {
               "version_added": "44",
-              "notes": "Service workers (and Push) have been disabled in the Firefox 45 and 52 Extended Support Releases (ESR)."
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
               "version_added": "44"
@@ -1269,7 +1282,7 @@
               "version_added": "11.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "11.3"
             },
             "samsunginternet_android": {
               "version_added": "4.0"

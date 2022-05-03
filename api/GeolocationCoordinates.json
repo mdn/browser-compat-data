@@ -3,6 +3,7 @@
     "GeolocationCoordinates": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates",
+        "spec_url": "https://w3c.github.io/geolocation-api/#coordinates_interface",
         "support": {
           "chrome": [
             {
@@ -24,10 +25,16 @@
               "alternative_name": "Coordinates"
             }
           ],
-          "edge": {
-            "alternative_name": "Coordinates",
-            "version_added": true
-          },
+          "edge": [
+            {
+              "version_added": "79"
+            },
+            {
+              "version_added": "12",
+              "version_removed": "79",
+              "alternative_name": "Coordinates"
+            }
+          ],
           "firefox": [
             {
               "version_added": "72"
@@ -38,10 +45,16 @@
               "alternative_name": "Coordinates"
             }
           ],
-          "firefox_android": {
-            "alternative_name": "Coordinates",
-            "version_added": "4"
-          },
+          "firefox_android": [
+            {
+              "version_added": "79"
+            },
+            {
+              "alternative_name": "Coordinates",
+              "version_added": "4",
+              "version_removed": "79"
+            }
+          ],
           "ie": {
             "alternative_name": "Coordinates",
             "version_added": "9"
@@ -65,14 +78,26 @@
               "version_removed": "14"
             }
           ],
-          "safari": {
-            "alternative_name": "Coordinates",
-            "version_added": "5"
-          },
-          "safari_ios": {
-            "alternative_name": "Coordinates",
-            "version_added": "4.2"
-          },
+          "safari": [
+            {
+              "version_added": "13.1"
+            },
+            {
+              "alternative_name": "Coordinates",
+              "version_added": "5",
+              "version_removed": "13.1"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "13.4"
+            },
+            {
+              "alternative_name": "Coordinates",
+              "version_added": "≤3",
+              "version_removed": "13.4"
+            }
+          ],
           "samsunginternet_android": {
             "alternative_name": "Coordinates",
             "version_added": "1.0"
@@ -82,7 +107,7 @@
               "version_added": "79"
             },
             {
-              "version_added": true,
+              "version_added": "≤37",
               "version_removed": "78",
               "alternative_name": "Coordinates"
             }
@@ -97,6 +122,7 @@
       "accuracy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/accuracy",
+          "spec_url": "https://w3c.github.io/geolocation-api/#latitude-longitude-and-accuracy-attributes",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -138,13 +164,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -157,6 +183,7 @@
       "altitude": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/altitude",
+          "spec_url": "https://w3c.github.io/geolocation-api/#altitude-and-altitudeaccuracy-attributes",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -198,13 +225,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -217,6 +244,7 @@
       "altitudeAccuracy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/altitudeAccuracy",
+          "spec_url": "https://w3c.github.io/geolocation-api/#altitude-and-altitudeaccuracy-attributes",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -258,13 +286,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -277,6 +305,7 @@
       "heading": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/heading",
+          "spec_url": "https://w3c.github.io/geolocation-api/#heading-attribute",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -318,13 +347,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -337,6 +366,7 @@
       "latitude": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/latitude",
+          "spec_url": "https://w3c.github.io/geolocation-api/#latitude-longitude-and-accuracy-attributes",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -378,13 +408,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -397,6 +427,7 @@
       "longitude": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/longitude",
+          "spec_url": "https://w3c.github.io/geolocation-api/#latitude-longitude-and-accuracy-attributes",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -438,13 +469,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -465,7 +496,7 @@
               "version_added": "47"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "55"
@@ -477,16 +508,16 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -505,6 +536,7 @@
       "speed": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/speed",
+          "spec_url": "https://w3c.github.io/geolocation-api/#speed-attribute",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -546,13 +578,13 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "≤3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "≤37"
             }
           },
           "status": {

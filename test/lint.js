@@ -10,26 +10,23 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const {
   testBrowsers,
+  testConsistency,
+  testDescriptions,
   testLinks,
   testPrefix,
   testRealValues,
-  testStyle,
   testSchema,
+  testStyle,
   testVersions,
-  testConsistency,
-  testDescriptions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testCompareFeatures = require('./test-compare-features');
-const testMigrations = require('./test-migrations');
-const testFormat = require('./test-format');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
 const argv = yargs
   .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, yargs => {
+  .usage('$0 [[--] files...]', false, (yargs) => {
     return yargs.positional('files...', {
       description: 'The files to lint',
       type: 'string',
@@ -124,7 +121,7 @@ function load(...files) {
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
-        ].some(x => !!x);
+        ].some((x) => !!x);
 
         if (fileHasErrors) {
           filesWithErrors.set(relativeFilePath, file);
@@ -137,7 +134,7 @@ function load(...files) {
       return prevHasErrors || fileHasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
@@ -159,12 +156,7 @@ var hasErrors = argv.files
       'mathml',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
-hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
   console.warn('');

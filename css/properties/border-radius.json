@@ -4,6 +4,7 @@
       "border-radius": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/border-radius",
+          "spec_url": "https://drafts.csswg.org/css-backgrounds/#border-radius",
           "support": {
             "chrome": [
               {
@@ -31,7 +32,7 @@
               {
                 "version_added": "4",
                 "notes": [
-                  "Prior to Firefox 50, border styles of rounded corners (with <code>border-radius</code>) were always rendered as if <code>border-style</code> was <code>solid</code>. This has been fixed in Firefox 50.",
+                  "Before Firefox 50, border styles of rounded corners (with <code>border-radius</code>) were always rendered as if <code>border-style</code> was <code>solid</code>. This has been fixed in Firefox 50.",
                   "To conform to the CSS3 standard, Firefox 4 changes the handling of <a href='https://developer.mozilla.org/docs/Web/CSS/percentage'><code>&lt;percentage&gt;</code></a> values to match the specification. You can specify an ellipse as a border on an arbitrary sized element with <code>border-radius: 50%;</code>. Firefox 4 also makes rounded corners clip content and images if <a href='https://developer.mozilla.org/docs/Web/CSS/overflow'><code>overflow</code></a><code>: visible</code> is not set."
                 ]
               },
@@ -44,7 +45,7 @@
             "firefox_android": [
               {
                 "version_added": "4",
-                "notes": "Prior to Firefox 50, border styles of rounded corners (with <code>border-radius</code>) were always rendered as if <code>border-style</code> was <code>solid</code>. This has been fixed in Firefox 50."
+                "notes": "Before Firefox 50, border styles of rounded corners (with <code>border-radius</code>) were always rendered as if <code>border-style</code> was <code>solid</code>. This has been fixed in Firefox 50."
               },
               {
                 "prefix": "-moz-",
@@ -85,10 +86,15 @@
             "samsunginternet_android": {
               "version_added": "1.0"
             },
-            "webview_android": {
-              "version_added": "2",
-              "prefix": "-webkit-"
-            }
+            "webview_android": [
+              {
+                "version_added": "≤37"
+              },
+              {
+                "version_added": "2",
+                "prefix": "-webkit-"
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -120,14 +126,14 @@
                 "version_added": "9"
               },
               "opera": {
-                "version_added": true
+                "version_added": "10.5"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "11"
               },
               "safari": {
                 "version_added": "3",
-                "notes": "Before Safari 4.1, the slash <code>/</code> notation is unsupported. If two values are specified, then an elliptical border is drawn on all four corners. <code>-webkit-border-radius: 40px 10px;</code> is equivalent to <code>border-radius: 40px / 10px;</code>."
+                "notes": "Before Safari 5, the slash <code>/</code> notation is unsupported. If two values are specified, then an elliptical border is drawn on all four corners. <code>-webkit-border-radius: 40px 10px;</code> is equivalent to <code>border-radius: 40px / 10px;</code>."
               },
               "safari_ios": {
                 "version_added": "4.2"
@@ -161,7 +167,7 @@
               },
               "firefox": {
                 "version_added": "4",
-                "notes": "<code>&lt;percentage&gt;</code> values are implemented in a non-standard way prior to Firefox 4. Both horizontal and vertical radii were relative to the width of the border box."
+                "notes": "Before Firefox 4, <code>&lt;percentage&gt;</code> values are implemented in a non-standard way. Both horizontal and vertical radii were relative to the width of the border box."
               },
               "firefox_android": {
                 "version_added": "4"
@@ -171,7 +177,7 @@
               },
               "opera": {
                 "version_added": "11.5",
-                "notes": "The implementation of <code>&lt;percentage&gt;</code> values was buggy in Opera prior to 11.50."
+                "notes": "Before Opera 11.5, the implementation of <code>&lt;percentage&gt;</code> values was buggy."
               },
               "opera_android": {
                 "version_added": "11.5"
@@ -219,13 +225,13 @@
                 "version_added": "9"
               },
               "opera": {
-                "version_added": true
+                "version_added": "10.5"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "11"
               },
               "safari": {
-                "version_added": "4.1"
+                "version_added": "5"
               },
               "safari_ios": {
                 "version_added": "4.2"

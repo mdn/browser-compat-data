@@ -3,7 +3,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 'use strict';
-const assert = require('assert');
+const assert = require('assert').strict;
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -37,10 +37,10 @@ function testToken(feature, matches, misses) {
     feature.__compat.matches.regex_value;
   const regexp = new RegExp(str);
 
-  matches.forEach(match =>
+  matches.forEach((match) =>
     assert.ok(regexp.test(match), `${regexp} did not match ${match}`),
   );
-  misses.forEach(miss =>
+  misses.forEach((miss) =>
     assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`),
   );
 }
@@ -68,5 +68,5 @@ const tests = [
 ];
 
 tests.forEach(({ features, matches, misses }) => {
-  features.forEach(feature => testToken(lookup(feature), matches, misses));
+  features.forEach((feature) => testToken(lookup(feature), matches, misses));
 });

@@ -3,67 +3,79 @@
     "AmbientLightSensor": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AmbientLightSensor",
+        "spec_url": "https://w3c.github.io/ambient-light/#ambient-light-sensor-interface",
         "support": {
-          "chrome": [
-            {
-              "version_added": "54"
-            },
-            {
-              "version_added": "69",
-              "notes": "Based on Generic Sensor API."
-            }
-          ],
-          "chrome_android": [
-            {
-              "version_added": "54"
-            },
-            {
-              "version_added": "69",
-              "notes": "Based on Generic Sensor API."
-            }
-          ],
+          "chrome": {
+            "version_added": "56",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "#enable-experimental-web-platform-features",
+                "value_to_set": "Enabled"
+              }
+            ]
+          },
+          "chrome_android": {
+            "version_added": "56",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "#enable-experimental-web-platform-features",
+                "value_to_set": "Enabled"
+              }
+            ]
+          },
           "edge": {
-            "version_added": null
+            "version_added": "79",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "#enable-experimental-web-platform-features",
+                "value_to_set": "Enabled"
+              }
+            ]
           },
           "firefox": {
-            "version_added": null
+            "version_added": false
           },
           "firefox_android": {
-            "version_added": null
+            "version_added": false
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": "56"
+            "version_added": "43",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "#enable-experimental-web-platform-features",
+                "value_to_set": "Enabled"
+              }
+            ]
           },
           "opera_android": {
-            "version_added": "48"
+            "version_added": "43",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "#enable-experimental-web-platform-features",
+                "value_to_set": "Enabled"
+              }
+            ]
           },
           "safari": {
-            "version_added": null
+            "version_added": false
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": false
           },
-          "samsunginternet_android": [
-            {
-              "version_added": "6.0"
-            },
-            {
-              "version_added": "10.0",
-              "notes": "Based on Generic Sensor API."
-            }
-          ],
-          "webview_android": [
-            {
-              "version_added": "54"
-            },
-            {
-              "version_added": "69",
-              "notes": "Based on Generic Sensor API."
-            }
-          ]
+          "samsunginternet_android": {
+            "version_added": false
+          },
+          "webview_android": {
+            "version_added": false
+          }
         },
         "status": {
           "experimental": false,
@@ -75,67 +87,44 @@
         "__compat": {
           "description": "<code>AmbientLightSensor()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AmbientLightSensor/AmbientLightSensor",
+          "spec_url": "https://w3c.github.io/ambient-light/#dom-ambientlightsensor-ambientlightsensor",
           "support": {
-            "chrome": [
-              {
-                "version_added": "54"
-              },
-              {
-                "version_added": "69",
-                "notes": "Based on Generic Sensor API."
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "54"
-              },
-              {
-                "version_added": "69",
-                "notes": "Based on Generic Sensor API."
-              }
-            ],
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
+            "chrome": {
               "version_added": "56"
             },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
-              "version_added": "48"
+              "version_added": "43"
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "version_added": "10.0",
-                "notes": "Based on Generic Sensor API."
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "54"
-              },
-              {
-                "version_added": "69",
-                "notes": "Based on Generic Sensor API."
-              }
-            ]
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -147,79 +136,48 @@
       "illuminance": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AmbientLightSensor/illuminance",
+          "spec_url": "https://w3c.github.io/ambient-light/#ambient-light-sensor-reading-attribute",
           "support": {
-            "chrome": [
-              {
-                "version_added": "54"
-              },
-              {
-                "version_added": "69",
-                "notes": "Based on Generic Sensor API."
-              },
-              {
-                "version_added": "79",
-                "notes": "Stopped returning floats and returned integers avoid fingerprinting."
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "54"
-              },
-              {
-                "version_added": "69",
-                "notes": "Based on Generic Sensor API."
-              },
-              {
-                "version_added": "79",
-                "notes": "Stopped returning floats and returned integers avoid fingerprinting."
-              }
-            ],
+            "chrome": {
+              "version_added": "56",
+              "notes": "In Chrome 79, this method stopped returning floats and returned integers to avoid fingerprinting."
+            },
+            "chrome_android": {
+              "version_added": "56",
+              "notes": "In Chrome for Android 79, this method stopped returning floats and returned integers to avoid fingerprinting."
+            },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": "56"
+              "version_added": "43",
+              "notes": "In Opera 66, this method stopped returning floats and returned integers to avoid fingerprinting."
             },
             "opera_android": {
-              "version_added": "48"
+              "version_added": "43",
+              "notes": "In Opera for Android 57, this method stopped returning floats and returned integers to avoid fingerprinting."
             },
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "version_added": "10.0",
-                "notes": "Based on Generic Sensor API."
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "54"
-              },
-              {
-                "version_added": "69",
-                "notes": "Based on Generic Sensor API."
-              },
-              {
-                "version_added": "79",
-                "notes": "Stopped returning floats and returned integers avoid fingerprinting."
-              }
-            ]
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,

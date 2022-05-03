@@ -1,6 +1,7 @@
 'use strict';
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -15,17 +16,22 @@ const validBrowserVersions = {};
 
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
-  webview_android: ['≤37'],
   edge: ['≤18', '≤79'],
+  ie: ['≤6', '≤11'],
+  opera: ['≤12.1', '≤15'],
+  opera_android: ['≤12.1', '≤14'],
+  safari: ['≤4'],
+  safari_ios: ['≤3'],
+  webview_android: ['≤37'],
 };
-
-/** @type string[] */
-const FLAGLESS_BROWSERS = ['webview_android'];
 
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
     validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
+  if (browsers[browser].preview_name) {
+    validBrowserVersions[browser].push('preview');
   }
 }
 
@@ -42,9 +48,38 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 /**
+ * @param {SimpleSupportStatement} statement
+ * @returns {boolean|null}
+ */
+function addedBeforeRemoved(statement) {
+  // In order to ensure that the versions could be displayed without the "≤"
+  // markers and still make sense, compare the versions without them. This
+  // means that combinations like version_added: "≤37" + version_removed: "37"
+  // are not allowed, even though this can be technically correct.
+  const added = statement.version_added.replace('≤', '');
+  const removed = statement.version_removed.replace('≤', '');
+
+  if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
+    return null;
+  }
+
+  if (added === 'preview' && removed === 'preview') {
+    return false;
+  }
+  if (added === 'preview' && removed !== 'preview') {
+    return false;
+  }
+  if (added !== 'preview' && removed === 'preview') {
+    return true;
+  }
+
+  return compareVersions.compare(added, removed, '<');
+}
+
+/**
  * @param {SupportBlock} supportData
  * @param {string} relPath
- * @param {import('../utils').Logger} logger
+ * @param {Logger} logger
  */
 function checkVersions(supportData, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
@@ -76,7 +111,12 @@ function checkVersions(supportData, relPath, logger) {
             chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
           );
         }
-        if ('version_removed' in statement && 'version_added' in statement) {
+        if ('version_added' in statement && 'version_removed' in statement) {
+          if (statement.version_added === statement.version_removed) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+            );
+          }
           if (
             typeof statement.version_added !== 'string' &&
             statement.version_added !== true
@@ -88,22 +128,7 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string'
           ) {
-            if (
-              (statement.version_added.startsWith('≤') &&
-                statement.version_removed.startsWith('≤') &&
-                compareVersions.compare(
-                  statement.version_added.replace('≤', ''),
-                  statement.version_removed.replace('≤', ''),
-                  '<',
-                )) ||
-              ((!statement.version_added.startsWith('≤') ||
-                !statement.version_removed.startsWith('≤')) &&
-                compareVersions.compare(
-                  statement.version_added.replace('≤', ''),
-                  statement.version_removed.replace('≤', ''),
-                  '>=',
-                ))
-            ) {
+            if (addedBeforeRemoved(statement) === false) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
@@ -111,7 +136,7 @@ function checkVersions(supportData, relPath, logger) {
           }
         }
         if ('flags' in statement) {
-          if (FLAGLESS_BROWSERS.includes(browser)) {
+          if (browsers[browser].accepts_flags === false) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );
@@ -129,14 +154,7 @@ function testVersions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Versions');
 
   /**
    * @param {Identifier} data
@@ -155,18 +173,8 @@ function testVersions(filename) {
   }
   findSupport(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Versions – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testVersions;

@@ -4,7 +4,8 @@
       "adjacent_sibling": {
         "__compat": {
           "description": "Adjacent sibling combinator (<code>A + B</code>)",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Adjacent_sibling_selectors",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Adjacent_sibling_combinator",
+          "spec_url": "https://drafts.csswg.org/selectors/#adjacent-sibling-combinators",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -24,15 +25,16 @@
             "ie": {
               "version_added": "7",
               "notes": [
+                "Before Internet Explorer 10, the combinator only works in standards mode.",
                 "Internet Explorer 7 doesn't update the style correctly when an element is dynamically placed before an element that matched the selector.",
                 "In Internet Explorer 8, if an element is inserted dynamically by clicking on a link the first-child style isn't applied until the link loses focus."
               ]
             },
             "opera": {
-              "version_added": true
+              "version_added": "3.5"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "1"

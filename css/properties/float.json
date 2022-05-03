@@ -4,6 +4,7 @@
       "float": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/float",
+          "spec_url": "https://drafts.csswg.org/css-logical/#float-clear",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -53,13 +54,34 @@
             "description": "Flow-relative values <code>inline-start</code> and <code>inline-end</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "70",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "70",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               "edge": {
-                "version_added": false
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               "firefox": {
                 "version_added": "55"
@@ -71,7 +93,14 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "57",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               "opera_android": {
                 "version_added": false

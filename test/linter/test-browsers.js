@@ -1,10 +1,10 @@
 'use strict';
 const path = require('path');
 const chalk = require('chalk');
+const { Logger } = require('./utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {Record<string, string[]>} */
@@ -14,16 +14,13 @@ const browsers = {
     'chrome_android',
     'firefox_android',
     'opera_android',
-    'qq_android',
     'safari_ios',
     'samsunginternet_android',
-    'uc_android',
-    'uc_chinese_android',
     'webview_android',
   ],
-  server: ['nodejs'],
-  'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera'],
-  'webextensions-mobile': ['firefox_android'],
+  server: ['nodejs', 'deno'],
+  'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
+  'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
 
 /**
@@ -46,7 +43,7 @@ function processData(
     const support = data.__compat.support;
 
     const invalidEntries = Object.keys(support).filter(
-      value => !displayBrowsers.includes(value),
+      (value) => !displayBrowsers.includes(value),
     );
     if (invalidEntries.length > 0) {
       logger.error(
@@ -57,7 +54,7 @@ function processData(
     }
 
     const missingEntries = requiredBrowsers.filter(
-      value => !(value in support),
+      (value) => !(value in support),
     );
     if (missingEntries.length > 0) {
       logger.error(
@@ -127,6 +124,7 @@ function testBrowsers(filename) {
   let requiredBrowsers = browsers['desktop'];
   if (category === 'api') {
     displayBrowsers.push('nodejs');
+    displayBrowsers.push('deno');
   }
   if (category === 'javascript') {
     displayBrowsers.push(...browsers['server']);
@@ -141,29 +139,12 @@ function testBrowsers(filename) {
   displayBrowsers.sort();
   requiredBrowsers.sort();
 
-  /** @type {string[]} */
-  const errors = [];
-  const logger = {
-    /** @param {...unknown} message */
-    error: (...message) => {
-      errors.push(message.join(' '));
-    },
-  };
+  const logger = new Logger('Browsers');
 
   processData(data, displayBrowsers, requiredBrowsers, category, logger);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Browsers – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    for (const error of errors) {
-      console.error(`  ${error}`);
-    }
-    return true;
-  }
-  return false;
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testBrowsers;

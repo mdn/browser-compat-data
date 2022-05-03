@@ -3,18 +3,29 @@
     "ReadableStreamBYOBRequest": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest",
+        "spec_url": "https://streams.spec.whatwg.org/#rs-byob-request-class",
         "support": {
           "chrome": {
-            "version_added": false
+            "version_added": "89"
           },
           "chrome_android": {
-            "version_added": false
+            "version_added": "89"
+          },
+          "deno": {
+            "version_added": "1.16"
           },
           "edge": {
-            "version_added": null
+            "version_added": "89"
           },
           "firefox": {
-            "version_added": false
+            "version_added": "99",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.streams.byte_streams.enabled",
+                "value_to_set": "true"
+              }
+            ]
           },
           "firefox_android": {
             "version_added": false
@@ -22,11 +33,18 @@
           "ie": {
             "version_added": false
           },
+          "nodejs": {
+            "version_added": "16.5.0",
+            "notes": [
+              "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
+              "Experimental implementation."
+            ]
+          },
           "opera": {
-            "version_added": false
+            "version_added": "75"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "63"
           },
           "safari": {
             "version_added": false
@@ -35,10 +53,10 @@
             "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": false
+            "version_added": "15.0"
           },
           "webview_android": {
-            "version_added": false
+            "version_added": "89"
           }
         },
         "status": {
@@ -47,70 +65,32 @@
           "deprecated": false
         }
       },
-      "ReadableStreamBYOBRequest": {
-        "__compat": {
-          "description": "<code>ReadableStreamBYOBRequest()</code> constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/ReadableStreamBYOBRequest",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "respond": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-byob-request-respond①",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "89"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "89"
+            },
+            "deno": {
+              "version_added": "1.16"
             },
             "edge": {
-              "version_added": null
+              "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -118,11 +98,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
-              "version_added": false
+              "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -131,10 +114,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "89"
             }
           },
           "status": {
@@ -147,18 +130,29 @@
       "respondWithNewView": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-byob-request-respond-with-new-view①",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "89"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "89"
+            },
+            "deno": {
+              "version_added": "1.16"
             },
             "edge": {
-              "version_added": null
+              "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -166,11 +160,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
-              "version_added": false
+              "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -179,10 +176,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "89"
             }
           },
           "status": {
@@ -195,18 +192,29 @@
       "view": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-byob-request-view①",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "89"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "89"
+            },
+            "deno": {
+              "version_added": "1.16"
             },
             "edge": {
-              "version_added": null
+              "version_added": "89"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.byte_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -214,11 +222,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "16.5.0"
+            },
             "opera": {
-              "version_added": false
+              "version_added": "75"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "63"
             },
             "safari": {
               "version_added": false
@@ -227,10 +238,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "15.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "89"
             }
           },
           "status": {

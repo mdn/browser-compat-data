@@ -4,6 +4,7 @@
       "background-image": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/background-image",
+          "spec_url": "https://drafts.csswg.org/css-backgrounds/#background-image",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -29,7 +30,7 @@
               "version_added": "3.5"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
               "version_added": "1"
@@ -52,6 +53,8 @@
         },
         "element": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element()",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
             "description": "<code>element()</code>",
             "support": {
               "chrome": {
@@ -103,6 +106,7 @@
         "gradients": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
             "description": "Gradients",
             "support": {
               "chrome": {
@@ -132,8 +136,8 @@
                 "notes": "Some versions support only experimental gradients prefixed with <code>-o</code>."
               },
               "opera_android": {
-                "version_added": true,
-                "notes": "Some versions support only experimental gradients prefixed with <code>-o</code>."
+                "version_added": "14",
+                "notes": "Some versions support only experimental gradients prefixed with <code>-webkit</code>."
               },
               "safari": {
                 "version_added": "4",
@@ -205,14 +209,15 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
         },
         "image-set": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set()",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
             "description": "<code>image-set()</code>",
             "support": {
               "chrome": {
@@ -224,7 +229,8 @@
                 "version_added": "25"
               },
               "edge": {
-                "version_added": false
+                "prefix": "-webkit-",
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": false,
@@ -296,10 +302,10 @@
                 "version_added": "9"
               },
               "opera": {
-                "version_added": true
+                "version_added": "10.5"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "14"
               },
               "safari": {
                 "version_added": "1.3"
@@ -347,7 +353,7 @@
                 "version_added": "9.5"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "14"
               },
               "safari": {
                 "version_added": "5",

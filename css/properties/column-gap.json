@@ -6,15 +6,20 @@
           "__compat": {
             "description": "Supported in Flex Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/column-gap",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#column-row-gap",
+              "https://drafts.csswg.org/css-grid/#gutters",
+              "https://drafts.csswg.org/css-multicol/#column-gap"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "84"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "84"
               },
               "edge": {
-                "version_added": false
+                "version_added": "84"
               },
               "firefox": {
                 "version_added": "63"
@@ -26,33 +31,22 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "70"
               },
               "opera_android": {
                 "version_added": false
               },
-              "qq_android": {
-                "version_added": null
-              },
               "safari": {
-                "version_added": "3",
-                "prefix": "-webkit-"
+                "version_added": "14.1"
               },
               "safari_ios": {
-                "version_added": "2",
-                "prefix": "-webkit-"
+                "version_added": "14.5"
               },
               "samsunginternet_android": {
-                "version_added": false
-              },
-              "uc_android": {
-                "version_added": false
-              },
-              "uc_chinese_android": {
-                "version_added": false
+                "version_added": "14.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "84"
               }
             },
             "status": {
@@ -66,6 +60,11 @@
           "__compat": {
             "description": "Supported in Grid Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/column-gap",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#column-row-gap",
+              "https://drafts.csswg.org/css-grid/#gutters",
+              "https://drafts.csswg.org/css-multicol/#column-gap"
+            ],
             "support": {
               "chrome": [
                 {
@@ -73,17 +72,7 @@
                 },
                 {
                   "version_added": "57",
-                  "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "29",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
+                  "alternative_name": "grid-column-gap"
                 }
               ],
               "chrome_android": [
@@ -92,17 +81,7 @@
                 },
                 {
                   "version_added": "57",
-                  "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "29",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
+                  "alternative_name": "grid-column-gap"
                 }
               ],
               "edge": [
@@ -111,7 +90,7 @@
                 },
                 {
                   "version_added": "16",
-                  "alternative_name": "grid-gap"
+                  "alternative_name": "grid-column-gap"
                 }
               ],
               "firefox": [
@@ -120,19 +99,7 @@
                 },
                 {
                   "version_added": "52",
-                  "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "40",
-                  "version_removed": "59",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.grid.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "alternative_name": "grid-column-gap"
                 }
               ],
               "firefox_android": [
@@ -141,19 +108,7 @@
                 },
                 {
                   "version_added": "52",
-                  "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "40",
-                  "version_removed": "59",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.grid.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "alternative_name": "grid-column-gap"
                 }
               ],
               "ie": {
@@ -165,17 +120,7 @@
                 },
                 {
                   "version_added": "44",
-                  "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "28",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
+                  "alternative_name": "grid-column-gap"
                 }
               ],
               "opera_android": [
@@ -184,52 +129,43 @@
                 },
                 {
                   "version_added": "43",
-                  "alternative_name": "grid-gap"
-                },
-                {
-                  "version_added": "28",
-                  "alternative_name": "grid-gap",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "Enable experimental Web Platform features"
-                    }
-                  ]
+                  "alternative_name": "grid-column-gap"
                 }
               ],
-              "qq_android": {
-                "version_added": null
-              },
-              "safari": {
-                "version_added": "10.1",
-                "alternative_name": "grid-gap"
-              },
-              "safari_ios": {
-                "version_added": "10.3",
-                "alternative_name": "grid-gap"
-              },
+              "safari": [
+                {
+                  "version_added": "12"
+                },
+                {
+                  "version_added": "10.1",
+                  "alternative_name": "grid-column-gap"
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "12"
+                },
+                {
+                  "version_added": "10.3",
+                  "alternative_name": "grid-column-gap"
+                }
+              ],
               "samsunginternet_android": [
                 {
                   "version_added": "9.0"
                 },
                 {
-                  "alternative_name": "grid-gap",
+                  "alternative_name": "grid-column-gap",
                   "version_added": "6.0"
                 }
               ],
-              "uc_android": {
-                "version_added": null
-              },
-              "uc_chinese_android": {
-                "version_added": null
-              },
               "webview_android": [
                 {
                   "version_added": "66"
                 },
                 {
                   "version_added": "57",
-                  "alternative_name": "grid-gap"
+                  "alternative_name": "grid-column-gap"
                 }
               ]
             },
@@ -244,6 +180,11 @@
           "__compat": {
             "description": "Supported in Multi-column Layout",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/column-gap",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#column-row-gap",
+              "https://drafts.csswg.org/css-grid/#gutters",
+              "https://drafts.csswg.org/css-multicol/#column-gap"
+            ],
             "support": {
               "chrome": [
                 {
@@ -279,6 +220,7 @@
                 {
                   "prefix": "-moz-",
                   "version_added": "1.5",
+                  "version_removed": "74",
                   "notes": "Before Firefox 3, the default value for the <code>normal</code> keyword was <code>0</code> and not <code>1em</code>."
                 }
               ],
@@ -320,9 +262,6 @@
                   "version_removed": "14"
                 }
               ],
-              "qq_android": {
-                "version_added": null
-              },
               "safari": [
                 {
                   "version_added": "10"
@@ -350,12 +289,6 @@
                   "version_added": "1.0"
                 }
               ],
-              "uc_android": {
-                "version_added": null
-              },
-              "uc_chinese_android": {
-                "version_added": null
-              },
               "webview_android": [
                 {
                   "version_added": "50"
@@ -400,9 +333,6 @@
                 "opera_android": {
                   "version_added": "47"
                 },
-                "qq_android": {
-                  "version_added": false
-                },
                 "safari": {
                   "version_added": false
                 },
@@ -411,12 +341,6 @@
                 },
                 "samsunginternet_android": {
                   "version_added": "9.0"
-                },
-                "uc_android": {
-                  "version_added": false
-                },
-                "uc_chinese_android": {
-                  "version_added": false
                 },
                 "webview_android": {
                   "version_added": "66"
@@ -457,9 +381,6 @@
                 "opera_android": {
                   "version_added": "47"
                 },
-                "qq_android": {
-                  "version_added": false
-                },
                 "safari": {
                   "version_added": false
                 },
@@ -468,12 +389,6 @@
                 },
                 "samsunginternet_android": {
                   "version_added": "9.0"
-                },
-                "uc_android": {
-                  "version_added": false
-                },
-                "uc_chinese_android": {
-                  "version_added": false
                 },
                 "webview_android": {
                   "version_added": "66"

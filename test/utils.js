@@ -5,11 +5,6 @@
 const { platform } = require('os');
 const chalk = require('chalk');
 
-/**
- * @typedef {object} Logger
- * @property {(...message: unknown[]) => void} error
- */
-
 /** @type {{readonly [char: string]: string}} */
 const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
@@ -38,7 +33,7 @@ const IS_WINDOWS = platform() === 'win32';
 function escapeInvisibles(str) {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
-  return INVISIBLES_REGEXP[Symbol.replace](str, char => {
+  return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
     return INVISIBLES_MAP[char] || char;
   });
 }

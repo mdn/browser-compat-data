@@ -3,6 +3,7 @@
     "MediaCapabilities": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities",
+        "spec_url": "https://w3c.github.io/media-capabilities/#media-capabilities-interface",
         "support": {
           "chrome": {
             "version_added": "66"
@@ -11,7 +12,7 @@
             "version_added": "66"
           },
           "edge": {
-            "version_added": null
+            "version_added": "79"
           },
           "firefox": {
             "version_added": "63"
@@ -20,19 +21,19 @@
             "version_added": "63"
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": "55"
+            "version_added": "53"
           },
           "opera_android": {
             "version_added": "48"
           },
           "safari": {
-            "version_added": null
+            "version_added": "13"
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": "13"
           },
           "samsunginternet_android": {
             "version_added": "9.0"
@@ -50,6 +51,7 @@
       "decodingInfo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo",
+          "spec_url": "https://w3c.github.io/media-capabilities/#ref-for-dom-mediacapabilities-decodinginfo",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -58,7 +60,7 @@
               "version_added": "66"
             },
             "edge": {
-              "version_added": null
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "63"
@@ -67,19 +69,19 @@
               "version_added": "63"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": "55"
+              "version_added": "53"
             },
             "opera_android": {
               "version_added": "48"
             },
             "safari": {
-              "version_added": null
+              "version_added": "13"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "13"
             },
             "samsunginternet_android": {
               "version_added": "9.0"
@@ -98,6 +100,7 @@
       "encodingInfo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo",
+          "spec_url": "https://w3c.github.io/media-capabilities/#ref-for-dom-mediacapabilities-encodinginfo",
           "support": {
             "chrome": {
               "version_added": "67",
@@ -120,7 +123,14 @@
               ]
             },
             "edge": {
-              "version_added": null
+              "version_added": "79",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "chrome://flags/#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
             },
             "firefox": {
               "version_added": "63"
@@ -129,19 +139,26 @@
               "version_added": "63"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "54",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "chrome://flags/#enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
             },
             "opera_android": {
-              "version_added": null
+              "version_added": false
             },
             "safari": {
-              "version_added": null
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": false
