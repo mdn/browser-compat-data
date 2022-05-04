@@ -2,6 +2,7 @@
 
 import fs from 'node:fs';
 import Ajv from 'ajv';
+import ajvErrors from 'ajv-errors';
 import ajvFormats from 'ajv-formats';
 import betterAjvErrors from 'better-ajv-errors';
 import chalk from 'chalk';
@@ -10,6 +11,8 @@ const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
 // By default the "uri" format rejects ① and similar in URLs.
 ajvFormats(ajv, { mode: 'fast' });
+// Allow for custom error messages to provide better directions for contributors
+ajvErrors(ajv);
 
 /**
  * @param {string} dataFilename
