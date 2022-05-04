@@ -1,7 +1,3 @@
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
-
-'use strict';
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
 
@@ -19,14 +15,14 @@ const { Logger } = require('./utils.js');
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-const checkError = (error_type, name, method, expected, logger) => {
+function checkError(error_type, name, method, expected, logger) {
   const actual = method.__compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${error_type} description for {bold ${name}}
       Actual: {yellow "${actual}"}
       Expected: {green "${expected}"}}`);
   }
-};
+}
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
@@ -36,7 +32,7 @@ const checkError = (error_type, name, method, expected, logger) => {
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-const processApiData = (apiData, apiName, logger) => {
+function processApiData(apiData, apiName, logger) {
   for (let methodName in apiData) {
     const method = apiData[methodName];
     if (methodName == apiName) {
@@ -81,7 +77,7 @@ const processApiData = (apiData, apiName, logger) => {
       );
     }
   }
-};
+}
 
 /**
  * Process data and check for any incorrect descriptions in said data, logging any errors
@@ -90,14 +86,14 @@ const processApiData = (apiData, apiName, logger) => {
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-const processData = (data, logger) => {
+function processData(data, logger) {
   if (data.api) {
     for (const apiName in data.api) {
       const apiData = data.api[apiName];
       processApiData(apiData, apiName, logger);
     }
   }
-};
+}
 
 /**
  * Test all of the descriptions through the data in a given filename.  This test only functions with files with API data; all other files are silently ignored
@@ -105,7 +101,7 @@ const processData = (data, logger) => {
  * @param {string} filename The file to test
  * @returns {boolean} Whether the file has errors
  */
-const testDescriptions = filename => {
+function testDescriptions(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -115,6 +111,6 @@ const testDescriptions = filename => {
 
   logger.emit();
   return logger.hasErrors();
-};
+}
 
 module.exports = testDescriptions;
