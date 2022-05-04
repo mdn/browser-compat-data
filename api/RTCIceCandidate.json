@@ -3,6 +3,7 @@
     "RTCIceCandidate": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate",
+        "spec_url": "https://w3c.github.io/webrtc-pc/#rtcicecandidate-interface",
         "support": {
           "chrome": {
             "version_added": "23"
@@ -11,14 +12,26 @@
             "version_added": "25"
           },
           "edge": {
-            "version_added": "≤18"
+            "version_added": "15"
           },
-          "firefox": {
-            "version_added": "22"
-          },
-          "firefox_android": {
-            "version_added": true
-          },
+          "firefox": [
+            {
+              "version_added": "44"
+            },
+            {
+              "prefix": "moz",
+              "version_added": "22"
+            }
+          ],
+          "firefox_android": [
+            {
+              "version_added": "44"
+            },
+            {
+              "prefix": "moz",
+              "version_added": "22"
+            }
+          ],
           "ie": {
             "version_added": false
           },
@@ -38,7 +51,7 @@
             "version_added": "1.5"
           },
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "4.4"
           }
         },
         "status": {
@@ -51,6 +64,7 @@
         "__compat": {
           "description": "<code>RTCIceCandidate()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/RTCIceCandidate",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-constructor",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -59,16 +73,30 @@
               "version_added": "25"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "15"
             },
-            "firefox": {
-              "version_added": "22",
-              "notes": "Before Firefox 68, the constructor's <code>options</code> parameter was required."
-            },
-            "firefox_android": {
-              "version_added": true,
-              "notes": "Before Firefox 68, the constructor's <code>options</code> parameter was required."
-            },
+            "firefox": [
+              {
+                "version_added": "44",
+                "notes": "Before Firefox 68, the constructor's <code>candidateInfo</code> parameter is required and the <code>candidateInfo</code> object must have a <code>candidate</code> property."
+              },
+              {
+                "prefix": "moz",
+                "version_added": "22",
+                "notes": "Before Firefox 68, the constructor's <code>candidateInfo</code> parameter is required and the <code>candidateInfo</code> object must have a <code>candidate</code> property."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "44",
+                "notes": "Before Firefox 68, the constructor's <code>candidateInfo</code> parameter is required and the <code>candidateInfo</code> object must have a <code>candidate</code> property."
+              },
+              {
+                "prefix": "moz",
+                "version_added": "22",
+                "notes": "Before Firefox 68, the constructor's <code>candidateInfo</code> parameter is required and the <code>candidateInfo</code> object must have a <code>candidate</code> property."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -88,7 +116,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -101,6 +129,7 @@
       "address": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/address",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-address",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -108,21 +137,14 @@
             "chrome_android": {
               "version_added": "74"
             },
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "≤18",
-                "version_removed": "79",
-                "alternative_name": "ip"
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -134,10 +156,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -156,6 +178,7 @@
       "candidate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/candidate",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-candidate",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -170,7 +193,7 @@
               "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
@@ -204,6 +227,7 @@
       "component": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/component",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-component",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -212,7 +236,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -230,10 +254,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -252,6 +276,7 @@
       "foundation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/foundation",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-foundation",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -260,13 +285,13 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -278,10 +303,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -300,6 +325,7 @@
       "port": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/port",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-port",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -308,7 +334,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -326,10 +352,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -348,6 +374,7 @@
       "priority": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/priority",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-priority",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -356,7 +383,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -374,10 +401,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -396,6 +423,7 @@
       "protocol": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/protocol",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-protocol",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -404,7 +432,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -422,10 +450,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -444,6 +472,7 @@
       "relatedAddress": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedAddress",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-relatedaddress",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -452,7 +481,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -470,10 +499,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -492,6 +521,7 @@
       "relatedPort": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedPort",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-relatedport",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -500,7 +530,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -518,10 +548,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -540,6 +570,7 @@
       "sdpMid": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMid",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-sdpmid",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -554,7 +585,7 @@
               "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
@@ -588,6 +619,7 @@
       "sdpMLineIndex": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMLineIndex",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-sdpmlineindex",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -602,7 +634,7 @@
               "version_added": "22"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "22"
             },
             "ie": {
               "version_added": false
@@ -636,6 +668,7 @@
       "tcpType": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/tcpType",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-tcptype",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -644,7 +677,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -662,10 +695,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -684,12 +717,13 @@
       "toJSON": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/toJSON",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-tojson",
           "support": {
             "chrome": {
-              "version_added": "45"
+              "version_added": "43"
             },
             "chrome_android": {
-              "version_added": "45"
+              "version_added": "43"
             },
             "edge": {
               "version_added": "15"
@@ -704,10 +738,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "32"
+              "version_added": "30"
             },
             "opera_android": {
-              "version_added": "32"
+              "version_added": "30"
             },
             "safari": {
               "version_added": "11"
@@ -716,10 +750,10 @@
               "version_added": "11"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "45"
+              "version_added": "43"
             }
           },
           "status": {
@@ -732,6 +766,7 @@
       "type": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/type",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-type",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -740,7 +775,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": false
@@ -758,10 +793,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -780,6 +815,7 @@
       "usernameFragment": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/usernameFragment",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcicecandidate-usernamefragment",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -788,7 +824,7 @@
               "version_added": "74"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "67"
@@ -806,10 +842,10 @@
               "version_added": "53"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "11.0"

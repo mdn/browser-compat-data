@@ -2,12 +2,12 @@
   "$schema": "http://json-schema.org/schema#",
 
   "definitions": {
-
     "browsers": {
       "type": "object",
       "properties": {
         "chrome": { "$ref": "#/definitions/browser_statement" },
         "chrome_android": { "$ref": "#/definitions/browser_statement" },
+        "deno": { "$ref": "#/definitions/browser_statement" },
         "edge": { "$ref": "#/definitions/browser_statement" },
         "firefox": { "$ref": "#/definitions/browser_statement" },
         "firefox_android": { "$ref": "#/definitions/browser_statement" },
@@ -17,7 +17,9 @@
         "opera_android": { "$ref": "#/definitions/browser_statement" },
         "safari": { "$ref": "#/definitions/browser_statement" },
         "safari_ios": { "$ref": "#/definitions/browser_statement" },
-        "samsunginternet_android": { "$ref": "#/definitions/browser_statement" },
+        "samsunginternet_android": {
+          "$ref": "#/definitions/browser_statement"
+        },
         "webview_android": { "$ref": "#/definitions/browser_statement" }
       },
       "additionalProperties": false
@@ -30,9 +32,17 @@
           "type": "string",
           "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
         },
+        "accepts_flags": {
+          "type": "boolean",
+          "description": "Whether the browser supports flags."
+        },
         "pref_url": {
           "type": "string",
           "description": "URL of the page where feature flags can be changed (e.g. 'about:config' or 'chrome://flags')."
+        },
+        "preview_name": {
+          "type": "string",
+          "description": "Preview name, avoid long-form names (use 'Nightly' instead of 'Firefox Nightly')."
         },
         "releases": {
           "type": "object",
@@ -54,11 +64,20 @@
         "release_notes": {
           "type": "string",
           "format": "uri",
+          "pattern": "^https://",
           "description": "A link to the release notes or changelog for a given release."
         },
         "engine": {
           "type": "string",
-          "enum": ["Blink", "EdgeHTML", "Gecko", "Presto", "Trident", "WebKit", "V8"],
+          "enum": [
+            "Blink",
+            "EdgeHTML",
+            "Gecko",
+            "Presto",
+            "Trident",
+            "WebKit",
+            "V8"
+          ],
           "description": "Name of the browser's underlying engine."
         },
         "engine_version": {
@@ -67,7 +86,15 @@
         },
         "status": {
           "type": "string",
-          "enum": ["retired", "current", "exclusive", "beta", "nightly", "esr", "planned"],
+          "enum": [
+            "retired",
+            "current",
+            "exclusive",
+            "beta",
+            "nightly",
+            "esr",
+            "planned"
+          ],
           "description": "The status of the given browser release (e.g. current, retired, beta, nightly)."
         }
       },
@@ -76,8 +103,8 @@
   },
 
   "type": "object",
-    "properties": {
-      "browsers": { "$ref": "#/definitions/browsers" }
-    },
-    "additionalProperties": false
+  "properties": {
+    "browsers": { "$ref": "#/definitions/browsers" }
+  },
+  "additionalProperties": false
 }

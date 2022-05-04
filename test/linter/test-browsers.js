@@ -18,9 +18,9 @@ const browsers = {
     'samsunginternet_android',
     'webview_android',
   ],
-  server: ['nodejs'],
+  server: ['nodejs', 'deno'],
   'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
-  'webextensions-mobile': ['firefox_android'],
+  'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
 
 /**
@@ -44,7 +44,7 @@ function processData(
     const support = data.__compat.support;
 
     const invalidEntries = Object.keys(support).filter(
-      value => !displayBrowsers.includes(value),
+      (value) => !displayBrowsers.includes(value),
     );
     if (invalidEntries.length > 0) {
       logger.error(
@@ -55,7 +55,7 @@ function processData(
     }
 
     const missingEntries = requiredBrowsers.filter(
-      value => !(value in support),
+      (value) => !(value in support),
     );
     if (missingEntries.length > 0) {
       logger.error(
@@ -125,6 +125,7 @@ function testBrowsers(filename) {
   let requiredBrowsers = browsers['desktop'];
   if (category === 'api') {
     displayBrowsers.push('nodejs');
+    displayBrowsers.push('deno');
   }
   if (category === 'javascript') {
     displayBrowsers.push(...browsers['server']);
