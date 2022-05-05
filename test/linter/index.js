@@ -1,4 +1,3 @@
-'use strict';
 import testBrowsers from './test-browsers.js';
 import testConsistency from './test-consistency.js';
 import testDescriptions from './test-descriptions.js';

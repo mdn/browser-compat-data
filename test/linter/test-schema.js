@@ -1,5 +1,3 @@
-'use strict';
-
 import fs from 'node:fs';
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';

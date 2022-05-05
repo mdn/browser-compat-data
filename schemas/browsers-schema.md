@@ -80,7 +80,12 @@ The release objects consist of the following properties:
 This structure is exported for consumers of `@mdn/browser-compat-data`:
 
 ```js
-> import bcd from '@mdn/browser-compat-data';
+import bcd from '@mdn/browser-compat-data';
+bcd.browsers.firefox.releases['1.5'].status; // "retired"
+```
+
+```js
+> const bcd = require('@mdn/browser-compat-data');
 > bcd.browsers.firefox.releases['1.5'].status;
 // "retired"
 ```
