@@ -8,7 +8,11 @@
         "$ref": "#/definitions/browser_statement"
       },
       "minProperties": 1,
-      "maxProperties": 1
+      "maxProperties": 1,
+      "errorMessage": {
+        "minProperties": "A browser must be described within the file.",
+        "maxProperties": "Each browser JSON file may only describe one browser."
+      }
     },
 
     "browser_statement": {
