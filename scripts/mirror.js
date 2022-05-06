@@ -288,7 +288,7 @@ const bumpEdge = (originalData, sourceData, source) => {
               newData.version_added = '≤79';
             }
           } else {
-            newData.version_added == sourceData.version_added;
+            newData.version_added = sourceData.version_added;
           }
         }
       } else if (chromeFalse) {

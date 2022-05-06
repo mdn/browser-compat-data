@@ -34,16 +34,18 @@ body:
       label: What information was incorrect, unhelpful, or incomplete?
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     id: browsers
     attributes:
       label: What browsers does this problem apply to, if applicable?
+      multiple: true
       options:
-        - label: Chromium (Chrome, Edge, Opera, Samsung Internet)
-        - label: Firefox
-        - label: Safari
-        - label: Node.js
-        - label: Deno
+        - Chromium (Chrome, Edge 79+, Opera, Samsung Internet)
+        - Firefox
+        - Internet Explorer/Legacy Edge (12-18)
+        - Safari
+        - Node.js
+        - Deno
   - type: textarea
     id: expected
     attributes:

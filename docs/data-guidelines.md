@@ -427,6 +427,16 @@ Note that APIs available on only _some_ types of workers are not considered glob
 
 This guideline is based on a discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
 
+## Callback interfaces and functions
+
+Don't add unexposed callbacks as features in `api`. If needed, represent callbacks as subfeatures of relevant methods or properties.
+
+Callback [functions](https://webidl.spec.whatwg.org/#idl-callback-functions) and [interfaces](https://webidl.spec.whatwg.org/#idl-callback-interfaces) (denoted by `callback` and `callback inferface` in Web IDL) are used in specifications to define Web APIs. Where defined without the `[Exposed]` attribute, they aren't observable directly to web developers.
+
+For example, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) is specified as taking an `EventListener` callback. Since `EventListener` is specified as an unexposed `callback interface EventListener`, it would be represented as a subfeature of `api.EventTarget.addEventListener`.
+
+This guideline is based on a discussion in [#3068](https://github.com/mdn/browser-compat-data/issues/3068) and was proposed in [#14302](https://github.com/mdn/browser-compat-data/pull/14302).
+
 ## Setting `deprecated`
 
 Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
