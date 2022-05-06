@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
-const format = require('./fix-format');
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
@@ -54,6 +53,4 @@ if (process.argv[2]) {
     'webdriver',
     'webextensions',
   );
-
-  format();
 }
