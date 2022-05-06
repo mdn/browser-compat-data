@@ -14,6 +14,8 @@ const { Logger } = require('./utils.js');
  * @returns {boolean}
  */
 function processData(data, logger) {
+  // We only need to grab the first browser in the data
+  // because each browser file only contains one browser
   const browser = Object.keys(data.browsers)[0];
   const releases = data.browsers[browser].releases;
 
