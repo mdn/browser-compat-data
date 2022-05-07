@@ -109,6 +109,14 @@ const validateHTML = (string, browser, feature, errors) => {
       browser,
     });
   }
+
+  if (string.includes('\n')) {
+    errors.push({
+      type: 'newline',
+      feature,
+      browser,
+    });
+  }
 };
 
 /**
@@ -215,6 +223,11 @@ const testNotes = (filename) => {
       case 'doublespace':
         console.error(
           chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
+        );
+        break;
+      case 'newline':
+        console.error(
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} may not contain newlines.}`,
         );
         break;
       default:
