@@ -5,7 +5,8 @@ const ora = require('ora');
 const yargs = require('yargs');
 const chalk = require('chalk');
 const {
-  testBrowsers,
+  testBrowsersData,
+  testBrowsersPresence,
   testConsistency,
   testDescriptions,
   testLinks,
@@ -15,7 +16,6 @@ const {
   testVersions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testFormat = require('./test-format');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -55,7 +55,8 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasLinkErrors = false,
-          hasBrowserErrors = false,
+          hasBrowserDataErrors = false,
+          hasBrowserPresenceErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
           hasPrefixErrors = false,
@@ -88,12 +89,13 @@ function load(...files) {
               file,
               './../../schemas/browsers.schema.json',
             );
+            hasBrowserDataErrors = testBrowsersData(file);
             hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
-            hasBrowserErrors = testBrowsers(file);
+            hasBrowserPresenceErrors = testBrowsersPresence(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
             hasPrefixErrors = testPrefix(file);
@@ -109,7 +111,8 @@ function load(...files) {
           hasSchemaErrors,
           hasStyleErrors,
           hasLinkErrors,
-          hasBrowserErrors,
+          hasBrowserDataErrors,
+          hasBrowserPresenceErrors,
           hasVersionErrors,
           hasConsistencyErrors,
           hasPrefixErrors,
@@ -150,7 +153,6 @@ var hasErrors = argv.files
       'webdriver',
       'webextensions',
     );
-hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
@@ -164,13 +166,14 @@ if (hasErrors) {
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../../schemas/browsers.schema.json');
+        testBrowsersData(file);
         testLinks(file);
       } else {
         testSchema(file);
         testStyle(file);
         testLinks(file);
         testVersions(file);
-        testBrowsers(file);
+        testBrowsersPresence(file);
         testConsistency(file);
         testPrefix(file);
         testDescriptions(file);
