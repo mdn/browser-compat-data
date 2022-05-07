@@ -14,7 +14,6 @@ const { browsers } = require('../../index.js');
  * @param {string} category
  * @param {Logger} logger
  * @param {string} [path]
- * @returns {boolean}
  */
 function processData(data, category, logger, path = '') {
   if (data.__compat && data.__compat.support) {
@@ -118,7 +117,7 @@ function processData(data, category, logger, path = '') {
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+function testBrowsersPresence(filename) {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -136,4 +135,4 @@ function testBrowsers(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testBrowsers;
+module.exports = testBrowsersPresence;
