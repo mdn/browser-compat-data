@@ -91,7 +91,7 @@ const load = (...files) => {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             testSchema(file, './../../schemas/browsers.schema.json');
             testLinks(file);
-            testBrowsersData(file0;
+            testBrowsersData(file);
           } else {
             testBrowsersPresence(file);
             testConsistency(file);
@@ -102,7 +102,6 @@ const load = (...files) => {
             testSchema(file);
             testStyle(file);
             testVersions(file);
-
           }
         } catch (e) {
           console.error(e);
