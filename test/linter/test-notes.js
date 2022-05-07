@@ -1,10 +1,9 @@
 'use strict';
 const chalk = require('chalk');
 const parser = require('node-html-parser');
-const { HtmlValidate } = require('html-validate');
+const HTMLParser = require('@desertnet/html-parser');
 const { VALID_ELEMENTS } = require('./utils.js');
 
-const validator = new HtmlValidate();
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -80,12 +79,9 @@ const testNode = (node, browser, feature, errors) => {
  * @returns {void}
  */
 const validateHTML = (string, browser, feature, errors) => {
-  const report = validator.validateString(string, {
-    rules: {
-      'attr-quotes': 'off',
-    },
-  });
-  if (report.valid) {
+  const htmlErrors = HTMLParser.validate(string);
+
+  if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
     let root = parser.parse(string);
     testNode(root, browser, feature, errors);
@@ -93,10 +89,7 @@ const validateHTML = (string, browser, feature, errors) => {
     errors.push({
       type: 'invalid',
       // Parse messages from validator in readable format
-      messages: report.results
-        .map((x) => x.messages)
-        .flat()
-        .map((x) => x.message),
+      messages: htmlErrors.map((x) => x._message).flat(),
       feature,
       browser,
     });
