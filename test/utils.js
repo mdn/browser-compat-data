@@ -22,6 +22,9 @@ const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
+/** @type {string[]} */
+const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+
 /**
  * Pluralizes a string
  *
@@ -158,6 +161,7 @@ module.exports = {
   INVISIBLES_MAP,
   IS_CI,
   IS_WINDOWS,
+  VALID_ELEMENTS,
   pluralize,
   escapeInvisibles,
   indexToPosRaw,
