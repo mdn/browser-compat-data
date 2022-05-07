@@ -5,7 +5,8 @@ const ora = require('ora');
 const yargs = require('yargs');
 const chalk = require('chalk');
 const {
-  testBrowsers,
+  testBrowsersData,
+  testBrowsersPresence,
   testConsistency,
   testDescriptions,
   testLinks,
@@ -90,8 +91,9 @@ const load = (...files) => {
           if (file.indexOf('browsers' + path.sep) !== -1) {
             testSchema(file, './../../schemas/browsers.schema.json');
             testLinks(file);
+            testBrowsersData(file0;
           } else {
-            testBrowsers(file);
+            testBrowsersPresence(file);
             testConsistency(file);
             testDescriptions(file);
             testLinks(file);
@@ -100,6 +102,7 @@ const load = (...files) => {
             testSchema(file);
             testStyle(file);
             testVersions(file);
+
           }
         } catch (e) {
           console.error(e);
