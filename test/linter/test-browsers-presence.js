@@ -117,7 +117,7 @@ function processData(
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+function testBrowsersPresence(filename) {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -159,4 +159,4 @@ function testBrowsers(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testBrowsers;
+module.exports = testBrowsersPresence;
