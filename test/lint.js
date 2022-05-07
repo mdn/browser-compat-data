@@ -10,6 +10,7 @@ const {
   testConsistency,
   testDescriptions,
   testLinks,
+  testNotes,
   testPrefix,
   testRealValues,
   testSchema,
@@ -102,6 +103,7 @@ const load = (...files) => {
             testSchema(file);
             testStyle(file);
             testVersions(file);
+            testNotes(file);
           }
         } catch (e) {
           console.error(e);
