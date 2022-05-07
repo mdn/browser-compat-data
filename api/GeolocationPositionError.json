@@ -3,6 +3,7 @@
     "GeolocationPositionError": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationPositionError",
+        "spec_url": "https://w3c.github.io/geolocation-api/#position_error_interface",
         "support": {
           "chrome": [
             {
@@ -44,10 +45,16 @@
               "alternative_name": "PositionError"
             }
           ],
-          "firefox_android": {
-            "alternative_name": "PositionError",
-            "version_added": "4"
-          },
+          "firefox_android": [
+            {
+              "version_added": "79"
+            },
+            {
+              "alternative_name": "PositionError",
+              "version_added": "4",
+              "version_removed": "79"
+            }
+          ],
           "ie": {
             "alternative_name": "PositionError",
             "version_added": "9"
@@ -66,7 +73,7 @@
           },
           "safari_ios": {
             "alternative_name": "PositionError",
-            "version_added": true
+            "version_added": "4.2"
           },
           "samsunginternet_android": [
             {
@@ -98,6 +105,7 @@
       "code": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code",
+          "spec_url": "https://w3c.github.io/geolocation-api/#code-attribute",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -127,7 +135,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -146,6 +154,7 @@
       "message": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/message",
+          "spec_url": "https://w3c.github.io/geolocation-api/#message-attribute",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -175,7 +184,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -214,16 +223,16 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "34"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "34"
             },
             "safari": {
-              "version_added": true
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "5.0"

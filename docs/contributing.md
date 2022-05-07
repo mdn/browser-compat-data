@@ -10,7 +10,8 @@ We're really happy to accept contributions to the mdn/browser-compat-data reposi
 4. [Updating compatibility tables on MDN](#updating-compatibility-tables-on-mdn)
 5. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
-   2. [Optional: Generating data using the mirroring script](#optional-generating-data-using-the-mirroring-script)
+   1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
+   1. [Optional: Generating data using the mirroring script](#optional-generating-data-using-the-mirroring-script)
 6. [Getting help](#getting-help)
 
 ## Before you begin
@@ -27,7 +28,7 @@ The repository is made available under the terms the [Creative Commons CC0 Publi
 
 There are many ways you can help improve this repository! For example:
 
-- **Add new compat data**: familiarize yourself with the [schema](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json) and read the [schema docs](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md) and [data guidelines](data-guidelines.md) to add new files.
+- **Add new compat data**: familiarize yourself with the [schema](../schemas/compat-data.schema.json) and read the [schema docs](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines.md) to add new files.
 - **Fix existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
 - **Fix a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues),
   or maybe you found your own.
@@ -43,7 +44,7 @@ When adding data for a particular feature, you'll often need to find which versi
 It takes up to four weeks for BCD changes to be reflected in MDN's browser compatibility tables.
 The process is:
 
-1. A pull request is reviewed and merged to `master`.
+1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
    See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
 3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, to production.
@@ -71,22 +72,26 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
+### Optional: Generating data using the Web API Confluence Dashboard
+
+If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+
 ### Optional: Generating data using the mirroring script
 
 Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically copy values.
 
 The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument.
 
-| Destination      | Default Source    |
-| ---------------- | ----------------- |
-| Chrome Android   | Chrome            |
-| Edge             | Internet Explorer |
-| Firefox Android  | Firefox           |
-| Opera            | Chrome            |
-| Opera Android    | Chrome Android    |
-| Safari iOS       | Safari            |
-| Samsung Internet | Chrome Android    |
-| WebView          | Chrome Android    |
+| Destination      | Default Source |
+| ---------------- | -------------- |
+| Chrome Android   | Chrome         |
+| Edge             | Chrome         |
+| Firefox Android  | Firefox        |
+| Opera            | Chrome         |
+| Opera Android    | Chrome Android |
+| Safari iOS       | Safari         |
+| Samsung Internet | Chrome Android |
+| WebView          | Chrome Android |
 
 The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
 

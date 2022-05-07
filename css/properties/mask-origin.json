@@ -4,6 +4,7 @@
       "mask-origin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/mask-origin",
+          "spec_url": "https://drafts.fxtf.org/css-masking/#the-mask-origin",
           "support": {
             "chrome": {
               "prefix": "-webkit-",
@@ -20,38 +21,12 @@
               "version_added": "79",
               "notes": "The <code>margin-box</code> value is unsupported."
             },
-            "firefox": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "20",
-                "version_removed": "53",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.masking.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "20",
-                "version_removed": "53",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.masking.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "53"
+            },
+            "firefox_android": {
+              "version_added": "53"
+            },
             "ie": {
               "version_added": false
             },
@@ -65,16 +40,26 @@
               "version_added": "14",
               "notes": "The <code>margin-box</code> value is unsupported."
             },
-            "safari": {
-              "prefix": "-webkit-",
-              "version_added": "4",
-              "notes": "The <code>margin-box</code> value is unsupported."
-            },
-            "safari_ios": {
-              "prefix": "-webkit-",
-              "version_added": "3.2",
-              "notes": "The <code>margin-box</code> value is unsupported."
-            },
+            "safari": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "4",
+                "notes": "The <code>margin-box</code> value is unsupported."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "3.2",
+                "notes": "The <code>margin-box</code> value is unsupported."
+              }
+            ],
             "samsunginternet_android": {
               "prefix": "-webkit-",
               "version_added": "1.0",
@@ -121,7 +106,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/137293'>bug 137293</a>."
               },
               "safari_ios": {
                 "version_added": false
@@ -134,7 +120,7 @@
               }
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -226,7 +212,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/137293'>bug 137293</a>."
               },
               "safari_ios": {
                 "version_added": false
@@ -239,7 +226,7 @@
               }
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -274,7 +261,8 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/137293'>bug 137293</a>."
               },
               "safari_ios": {
                 "version_added": false
@@ -287,7 +275,7 @@
               }
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

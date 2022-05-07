@@ -5,27 +5,25 @@ const ora = require('ora');
 const yargs = require('yargs');
 const chalk = require('chalk');
 const {
-  testBrowsers,
+  testBrowsersData,
+  testBrowsersPresence,
+  testConsistency,
+  testDescriptions,
   testLinks,
   testPrefix,
   testRealValues,
-  testStyle,
   testSchema,
+  testStyle,
   testVersions,
-  testConsistency,
-  testDescriptions,
 } = require('./linter/index.js');
 const { IS_CI } = require('./utils.js');
-const testCompareFeatures = require('./test-compare-features');
-const testMigrations = require('./test-migrations');
-const testFormat = require('./test-format');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
 
 const argv = yargs
   .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, yargs => {
+  .usage('$0 [[--] files...]', false, (yargs) => {
     return yargs.positional('files...', {
       description: 'The files to lint',
       type: 'string',
@@ -58,7 +56,8 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasLinkErrors = false,
-          hasBrowserErrors = false,
+          hasBrowserDataErrors = false,
+          hasBrowserPresenceErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
           hasRealValueErrors = false,
@@ -92,12 +91,13 @@ function load(...files) {
               file,
               './../../schemas/browsers.schema.json',
             );
+            hasBrowserDataErrors = testBrowsersData(file);
             hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
-            hasBrowserErrors = testBrowsers(file);
+            hasBrowserPresenceErrors = testBrowsersPresence(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
             hasRealValueErrors = testRealValues(file);
@@ -114,13 +114,14 @@ function load(...files) {
           hasSchemaErrors,
           hasStyleErrors,
           hasLinkErrors,
-          hasBrowserErrors,
+          hasBrowserDataErrors,
+          hasBrowserPresenceErrors,
           hasVersionErrors,
           hasConsistencyErrors,
           hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
-        ].some(x => !!x);
+        ].some((x) => !!x);
 
         if (fileHasErrors) {
           filesWithErrors.set(relativeFilePath, file);
@@ -133,7 +134,7 @@ function load(...files) {
       return prevHasErrors || fileHasErrors;
     }
 
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
@@ -155,12 +156,7 @@ var hasErrors = argv.files
       'mathml',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     );
-hasErrors = testCompareFeatures() || hasErrors;
-hasErrors = testMigrations() || hasErrors;
-hasErrors = testFormat() || hasErrors;
 
 if (hasErrors) {
   console.warn('');
@@ -174,6 +170,7 @@ if (hasErrors) {
     try {
       if (file.indexOf('browsers' + path.sep) !== -1) {
         testSchema(file, './../../schemas/browsers.schema.json');
+        testBrowsersData(file);
         testLinks(file);
       } else {
         testSchema(file);
@@ -181,7 +178,7 @@ if (hasErrors) {
         testLinks(file);
         testVersions(file);
         testRealValues(file);
-        testBrowsers(file);
+        testBrowsersPresence(file);
         testConsistency(file);
         testPrefix(file);
         testDescriptions(file);
