@@ -82,16 +82,16 @@ Many browsers within BCD can be derived from other browsers given they share the
 
 The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument.
 
-| Destination      | Default Source    |
-| ---------------- | ----------------- |
-| Chrome Android   | Chrome            |
-| Edge             | Internet Explorer |
-| Firefox Android  | Firefox           |
-| Opera            | Chrome            |
-| Opera Android    | Chrome Android    |
-| Safari iOS       | Safari            |
-| Samsung Internet | Chrome Android    |
-| WebView          | Chrome Android    |
+| Destination      | Default Source |
+| ---------------- | -------------- |
+| Chrome Android   | Chrome         |
+| Edge             | Chrome         |
+| Firefox Android  | Firefox        |
+| Opera            | Chrome         |
+| Opera Android    | Chrome Android |
+| Safari iOS       | Safari         |
+| Samsung Internet | Chrome Android |
+| WebView          | Chrome Android |
 
 The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
 
