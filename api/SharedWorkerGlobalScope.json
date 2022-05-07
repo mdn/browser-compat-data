@@ -3,12 +3,13 @@
     "SharedWorkerGlobalScope": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope",
+        "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworkerglobalscope-interface",
         "support": {
           "chrome": {
             "version_added": "4"
           },
           "chrome_android": {
-            "version_added": true
+            "version_added": "18"
           },
           "edge": {
             "version_added": "79"
@@ -17,7 +18,7 @@
             "version_added": "29"
           },
           "firefox_android": {
-            "version_added": "4"
+            "version_added": "29"
           },
           "ie": {
             "version_added": false
@@ -35,10 +36,10 @@
             "version_added": "7"
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": true
+            "version_added": "≤37"
           }
         },
         "status": {
@@ -55,7 +56,7 @@
               "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
             "edge": {
               "version_added": "79"
@@ -73,19 +74,19 @@
               "version_added": "10.6"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari": {
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -98,6 +99,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close",
+          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworkerglobalscope-close-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -118,7 +120,7 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "11.5"
+              "version_added": "10.6"
             },
             "opera_android": {
               "version_added": "11"
@@ -128,6 +130,61 @@
             },
             "safari_ios": {
               "version_added": "7"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "4.4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "connect_event": {
+        "__compat": {
+          "description": "<code>connect</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-workerglobalscope-connect",
+            "https://html.spec.whatwg.org/multipage/workers.html#handler-sharedworkerglobalscope-onconnect"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "29",
+              "notes": "Before version 65 the <code>data</code> property of the event object was <code>null</code>; it is now initialized to an empty string, as per spec."
+            },
+            "firefox_android": {
+              "version_added": "29",
+              "notes": "Before version 65 the <code>data</code> property of the event object was <code>null</code>; it is now initialized to an empty string, as per spec."
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "10.6"
+            },
+            "opera_android": {
+              "version_added": "11"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -143,108 +200,10 @@
           }
         }
       },
-      "connect_event": {
-        "__compat": {
-          "description": "<code>connect</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event",
-          "support": {
-            "chrome": {
-              "version_added": "4"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "29",
-              "notes": "Before version 65 the <code>data</code> property of the event object was <code>null</code>; it is now initialized to an empty string, as per spec."
-            },
-            "firefox_android": {
-              "version_added": "29",
-              "notes": "Before version 65 the <code>data</code> property of the event object was <code>null</code>; it is now initialized to an empty string, as per spec."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "10.6"
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "name": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/name",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "55"
-            },
-            "firefox_android": {
-              "version_added": "55"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "10.6"
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onconnect": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/onconnect",
+          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworkerglobalscope-name-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -268,19 +227,19 @@
               "version_added": "10.6"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari": {
               "version_added": false
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
