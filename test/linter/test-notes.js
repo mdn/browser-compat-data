@@ -1,9 +1,9 @@
 'use strict';
 const chalk = require('chalk');
-const parser = require('node-html-parser');
 const HTMLParser = require('@desertnet/html-parser');
 const { VALID_ELEMENTS } = require('./utils.js');
 
+const parser = new HTMLParser();
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -28,7 +28,7 @@ const { VALID_ELEMENTS } = require('./utils.js');
  * @returns {void}
  */
 const testNode = (node, browser, feature, errors) => {
-  if (node.nodeType == 1) {
+  if (node.type == 'TAG') {
     const tag = node.tagName?.toLowerCase();
     if (tag && !VALID_ELEMENTS.includes(tag)) {
       // Ensure we're only using select nodes
@@ -39,11 +39,11 @@ const testNode = (node, browser, feature, errors) => {
         tag,
       });
     }
+
+    // Ensure nodes only contain specific attributes
+    const attrs = node.attributes.map((x) => x._name);
     if (tag === 'a') {
-      if (
-        Object.entries(node.attributes).length !== 1 ||
-        !('href' in node.attributes)
-      ) {
+      if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
         errors.push({
           type: 'attrs_a',
@@ -53,7 +53,7 @@ const testNode = (node, browser, feature, errors) => {
         });
       }
     } else {
-      if (Object.entries(node.attributes).length !== 0) {
+      if (attrs.length > 0) {
         // Ensure nodes (besides 'a') contain no attributes
         errors.push({
           type: 'attrs',
@@ -64,7 +64,8 @@ const testNode = (node, browser, feature, errors) => {
       }
     }
   }
-  for (let childNode of node.childNodes) {
+
+  for (let childNode of node.children || []) {
     testNode(childNode, browser, feature, errors);
   }
 };
@@ -83,8 +84,7 @@ const validateHTML = (string, browser, feature, errors) => {
 
   if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
-    let root = parser.parse(string);
-    testNode(root, browser, feature, errors);
+    testNode(parser.parse(string), browser, feature, errors);
   } else {
     errors.push({
       type: 'invalid',
@@ -202,7 +202,7 @@ const testNotes = (filename) => {
         break;
       case 'attrs_a':
         console.error(
-          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
+          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes other than href}. {bold <a>} elements may only have an {bold href} attribute.}`,
         );
         break;
       case 'doublespace':
