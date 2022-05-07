@@ -112,6 +112,7 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
+    case 'edge':
     case 'opera':
       source = 'chrome';
       break;
@@ -122,9 +123,6 @@ const getSource = (browser, forced_source) => {
       break;
     case 'firefox_android':
       source = 'firefox';
-      break;
-    case 'edge':
-      source = 'ie';
       break;
     case 'safari_ios':
       source = 'safari';
@@ -290,7 +288,7 @@ const bumpEdge = (originalData, sourceData, source) => {
               newData.version_added = '≤79';
             }
           } else {
-            newData.version_added == sourceData.version_added;
+            newData.version_added = sourceData.version_added;
           }
         }
       } else if (chromeFalse) {
