@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const path = require('path');
 const url = require('url');
 const zlib = require('zlib');
@@ -13,7 +17,7 @@ const { Logger } = require('./utils.js');
  * @typedef {import('../../types').Identifier} Identifier
  */
 
-const downloadResource = resource_url => {
+const downloadResource = (resource_url) => {
   const options = {
     headers: { 'User-Agent': 'mdn-browser-compat-data' },
     gzip: true,
@@ -50,7 +54,7 @@ const getMDNURLs = () => {
   const loc_elements = doc.documentElement.querySelectorAll('loc');
 
   return Array.from(loc_elements).map(
-    el => 'https://developer.mozilla.org/' + el.textContent.substring(36),
+    (el) => 'https://developer.mozilla.org/' + el.textContent.substring(36),
   );
 };
 
@@ -61,7 +65,7 @@ const MDNURLS = getMDNURLs();
  * @param {string} mdnURL
  * @returns {boolean}
  */
-const needsSpecURL = mdnURL => {
+const needsSpecURL = (mdnURL) => {
   const exceptions = [
     'https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient',
     'https://developer.mozilla.org/docs/Web/API/Document/featurePolicy',
@@ -81,7 +85,7 @@ const needsSpecURL = mdnURL => {
     return false;
   }
   const slugSubstringsNotNeedingSpecURLs = [];
-  return !slugSubstringsNotNeedingSpecURLs.some(substring =>
+  return !slugSubstringsNotNeedingSpecURLs.some((substring) =>
     mdnURL.includes(substring),
   );
 };
