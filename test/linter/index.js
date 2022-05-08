@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const testBrowsersData = require('./test-browsers-data.js');
 const testBrowsersPresence = require('./test-browsers-presence.js');
 const { testConsistency } = require('./test-consistency.js');
