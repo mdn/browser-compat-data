@@ -5,6 +5,9 @@
 
 const chalk = require('chalk');
 
+/** @type {string[]} */
+const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+
 class Logger {
   /** @param {string} title */
   constructor(title) {
@@ -36,4 +39,4 @@ class Logger {
   }
 }
 
-module.exports = { Logger };
+module.exports = { VALID_ELEMENTS, Logger };
