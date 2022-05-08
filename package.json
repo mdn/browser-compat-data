@@ -46,7 +46,8 @@
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "mocha": "mocha \"**/*.test.js\"",
+    "unittest": "c8 mocha --recursive \"**/*.test.js\"",
+    "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
     "format": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
@@ -58,7 +59,7 @@
     "release-notes": "node scripts/release-notes",
     "release-stats": "node scripts/release-stats",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run format && npm run lint && npm run mocha",
+    "test": "npm run format && npm run lint && npm run unittest",
     "traverse": "node scripts/traverse"
   }
 }
