@@ -3,7 +3,7 @@
     "IDBVersionChangeEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent",
-        "spec_url": "https://w3c.github.io/IndexedDB/#idbversionchangeevent",
+        "spec_url": "https://w3c.github.io/IndexedDB/#events",
         "support": {
           "chrome": [
             {
@@ -14,9 +14,15 @@
               "prefix": "webkit"
             }
           ],
-          "chrome_android": {
-            "version_added": true
-          },
+          "chrome_android": [
+            {
+              "version_added": "25"
+            },
+            {
+              "version_added": "18",
+              "prefix": "webkit"
+            }
+          ],
           "edge": {
             "version_added": "12"
           },
@@ -37,24 +43,42 @@
             "version_added": "10",
             "partial_implementation": true
           },
-          "opera": {
-            "version_added": "15"
-          },
-          "opera_android": {
-            "version_added": true
-          },
+          "opera": [
+            {
+              "version_added": "15"
+            },
+            {
+              "version_added": "15",
+              "prefix": "webkit"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "14"
+            },
+            {
+              "version_added": "14",
+              "prefix": "webkit"
+            }
+          ],
           "safari": {
             "version_added": "7"
           },
           "safari_ios": {
-            "version_added": true
+            "version_added": "8"
           },
-          "samsunginternet_android": {
-            "version_added": true
-          },
+          "samsunginternet_android": [
+            {
+              "version_added": "1.5"
+            },
+            {
+              "version_added": "1.0",
+              "prefix": "webkit"
+            }
+          ],
           "webview_android": [
             {
-              "version_added": "≤37"
+              "version_added": "4.4"
             },
             {
               "version_added": "≤37",
@@ -66,6 +90,56 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "IDBVersionChangeEvent": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/IDBVersionChangeEvent",
+          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbversionchangeevent-idbversionchangeevent",
+          "description": "<code>IDBVersionChangeEvent()</code> constructor",
+          "support": {
+            "chrome": {
+              "version_added": "41"
+            },
+            "chrome_android": {
+              "version_added": "41"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "25"
+            },
+            "firefox_android": {
+              "version_added": "25"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "28"
+            },
+            "opera_android": {
+              "version_added": "28"
+            },
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": {
+              "version_added": "10"
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "41"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "newVersion": {
@@ -108,7 +182,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -158,7 +232,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -168,66 +242,18 @@
           }
         }
       },
-      "version": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/version",
-          "support": {
-            "chrome": {
-              "version_added": "12"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "≤18"
-            },
-            "firefox": {
-              "version_added": "10"
-            },
-            "firefox_android": {
-              "version_added": "22"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": "22"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "23"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "37"
@@ -236,25 +262,25 @@
               "version_added": "37"
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
-              "version_added": null
+              "version_added": "10"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {

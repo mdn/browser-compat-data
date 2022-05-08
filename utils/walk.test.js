@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const assert = require('assert').strict;
 
 const bcd = require('..');
@@ -17,24 +22,22 @@ describe('lowLevelWalk()', function () {
       'svg',
       'webdriver',
       'webextensions',
-      'xpath',
-      'xslt',
     ];
 
     const steps = Array.from(lowLevelWalk(undefined, undefined, 1));
-    const paths = steps.map(step => step.path);
+    const paths = steps.map((step) => step.path);
     assert.equal(steps.length, expectedPaths.length);
     assert.deepEqual(paths, expectedPaths);
   });
   it('visits every point in the tree', function () {
-    const paths = Array.from(lowLevelWalk()).map(step => step.path);
+    const paths = Array.from(lowLevelWalk()).map((step) => step.path);
     assert.ok(paths.length > 13000);
   });
 });
 
 describe('walk()', function () {
   it('should visit deeply nested features', function () {
-    let results = Array.from(walk('html')).map(feature => feature.path);
+    let results = Array.from(walk('html')).map((feature) => feature.path);
     assert.ok(results.includes('html.elements.a.href.href_top'));
   });
 
@@ -57,7 +60,7 @@ describe('walk()', function () {
   it('should yield every feature by default', function () {
     const featureCountFromString = JSON.stringify(bcd, undefined, 2)
       .split('\n')
-      .filter(line => line.includes('__compat')).length;
+      .filter((line) => line.includes('__compat')).length;
     const featureCountFromWalk = Array.from(walk()).length;
 
     assert.equal(featureCountFromString, featureCountFromWalk);

@@ -12,6 +12,7 @@
               },
               {
                 "version_added": "69",
+                "version_removed": "87",
                 "flags": [
                   {
                     "type": "preference",
@@ -27,6 +28,7 @@
               },
               {
                 "version_added": "69",
+                "version_removed": "87",
                 "flags": [
                   {
                     "type": "preference",
@@ -36,16 +38,22 @@
                 ]
               }
             ],
-            "edge": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "edge": [
+              {
+                "version_added": "87"
+              },
+              {
+                "version_added": "79",
+                "version_removed": "87",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "66"
             },
@@ -61,6 +69,7 @@
               },
               {
                 "version_added": "56",
+                "version_removed": "73",
                 "flags": [
                   {
                     "type": "preference",
@@ -71,14 +80,7 @@
               }
             ],
             "opera_android": {
-              "version_added": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
+              "version_added": "62"
             },
             "safari": {
               "version_added": "14.1"
@@ -87,7 +89,7 @@
               "version_added": "14.5"
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "87"

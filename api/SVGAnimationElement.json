@@ -30,7 +30,7 @@
             "version_added": "≤12.1"
           },
           "safari": {
-            "version_added": "1"
+            "version_added": "3"
           },
           "safari_ios": {
             "version_added": "1"
@@ -39,7 +39,7 @@
             "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": "1"
+            "version_added": "3"
           }
         },
         "status": {
@@ -70,10 +70,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -85,7 +85,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {
@@ -117,10 +117,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -132,7 +132,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {
@@ -148,42 +148,111 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/beginEvent_event",
           "spec_url": "https://svgwg.org/svg2-draft/interact.html#BeginEvent",
           "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome": [
+              {
+                "version_added": "35",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "31",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "31",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
             "edge": {
-              "version_added": "79"
+              "version_added": "79",
+              "notes": "The event handler is <code>onbegin</code> for this event."
             },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "93",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "93",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "22",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "22",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
             "safari": {
-              "version_added": true
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The event handler, <code>onbegin</code>, is not supported."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The event handler, <code>onbegin</code>, is not supported."
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "3.0",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "2.0",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "37",
+                "notes": "The event handler is <code>onbegin</code> for this event."
+              },
+              {
+                "version_added": "4.4.3",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onbegin</code>, is not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -214,10 +283,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -229,7 +298,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {
@@ -261,10 +330,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -276,7 +345,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {
@@ -292,42 +361,111 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/endEvent_event",
           "spec_url": "https://svgwg.org/svg2-draft/interact.html#EndEvent",
           "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome": [
+              {
+                "version_added": "35",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "31",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "31",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
             "edge": {
-              "version_added": "79"
+              "version_added": "79",
+              "notes": "The event handler is <code>onend</code> for this event."
             },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "93",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "93",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "22",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "22",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
             "safari": {
-              "version_added": true
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The event handler, <code>onend</code>, is not supported."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The event handler, <code>onend</code>, is not supported."
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "3.0",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "2.0",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "37",
+                "notes": "The event handler is <code>onend</code> for this event."
+              },
+              {
+                "version_added": "4.4.3",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onend</code>, is not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -358,10 +496,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -373,7 +511,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {
@@ -405,10 +543,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -420,7 +558,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {
@@ -452,10 +590,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "15"
+              "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "14"
+              "version_added": "≤12.1"
             },
             "safari": {
               "version_added": "4"
@@ -467,154 +605,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onbegin": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/onbegin",
-          "spec_url": "https://svgwg.org/specs/animations/#__svg__SVGAnimationElement__onbegin",
-          "support": {
-            "chrome": {
-              "version_added": "35"
-            },
-            "chrome_android": {
-              "version_added": "35"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "22"
-            },
-            "opera_android": {
-              "version_added": "22"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onend": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/onend",
-          "spec_url": "https://svgwg.org/specs/animations/#__svg__SVGAnimationElement__onend",
-          "support": {
-            "chrome": {
-              "version_added": "35"
-            },
-            "chrome_android": {
-              "version_added": "35"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "22"
-            },
-            "opera_android": {
-              "version_added": "22"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onrepeat": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/onrepeat",
-          "spec_url": "https://svgwg.org/specs/animations/#__svg__SVGAnimationElement__onrepeat",
-          "support": {
-            "chrome": {
-              "version_added": "35"
-            },
-            "chrome_android": {
-              "version_added": "35"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "22"
-            },
-            "opera_android": {
-              "version_added": "22"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -630,42 +621,111 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/repeatEvent_event",
           "spec_url": "https://svgwg.org/svg2-draft/interact.html#RepeatEvent",
           "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
+            "chrome": [
+              {
+                "version_added": "35",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "31",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "35",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "31",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
             "edge": {
-              "version_added": "79"
+              "version_added": "79",
+              "notes": "The event handler is <code>onrepeat</code> for this event."
             },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": null
-            },
+            "firefox": [
+              {
+                "version_added": "93",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "93",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": [
+              {
+                "version_added": "22",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "22",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
             "safari": {
-              "version_added": true
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The event handler, <code>onrepeat</code>, is not supported."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The event handler, <code>onrepeat</code>, is not supported."
             },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
+            "samsunginternet_android": [
+              {
+                "version_added": "3.0",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "2.0",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ],
+            "webview_android": [
+              {
+                "version_added": "37",
+                "notes": "The event handler is <code>onrepeat</code> for this event."
+              },
+              {
+                "version_added": "4.4.3",
+                "partial_implementation": true,
+                "notes": "The event handler, <code>onrepeat</code>, is not supported."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -713,7 +773,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "3"
             }
           },
           "status": {

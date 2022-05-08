@@ -6,62 +6,40 @@
         "spec_url": "https://storage.spec.whatwg.org/#storagemanager",
         "support": {
           "chrome": {
-            "version_added": "48"
+            "version_added": "55"
           },
           "chrome_android": {
-            "version_added": "48"
+            "version_added": "55"
           },
           "edge": {
             "version_added": "79"
           },
-          "firefox": [
-            {
-              "version_added": "57"
-            },
-            {
-              "version_added": "51",
-              "version_removed": "57",
-              "notes": "See <a href='https://bugzil.la/1304966'>bug 1304966</a> and <a href='https://bugzil.la/1399038'>bug 1399038</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.storageManager.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "57"
+          },
           "firefox_android": {
-            "version_added": "51",
-            "notes": "See <a href='https://bugzil.la/1304966'>bug 1304966</a> and <a href='https://bugzil.la/1399038'>bug 1399038</a>.",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.storageManager.enabled",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": "57"
           },
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": true
+            "version_added": "42"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "42"
           },
           "safari": {
-            "version_added": false
+            "version_added": "15.2"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "15.2"
           },
           "samsunginternet_android": {
-            "version_added": "5.0"
+            "version_added": "6.0"
           },
           "webview_android": {
-            "version_added": "48"
+            "version_added": "55"
           }
         },
         "status": {
@@ -76,28 +54,28 @@
           "spec_url": "https://storage.spec.whatwg.org/#ref-for-dom-storagemanager-estimate",
           "support": {
             "chrome": {
-              "version_added": "52"
+              "version_added": "61"
             },
             "chrome_android": {
-              "version_added": "52"
+              "version_added": "61"
             },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "51"
+              "version_added": "57"
             },
             "firefox_android": {
-              "version_added": "51"
+              "version_added": "57"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "48"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "45"
             },
             "safari": {
               "version_added": false
@@ -106,10 +84,10 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "6.0"
+              "version_added": "8.0"
             },
             "webview_android": {
-              "version_added": "52"
+              "version_added": "61"
             }
           },
           "status": {
@@ -117,10 +95,58 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "usageDetails": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "61"
+              },
+              "chrome_android": {
+                "version_added": "61"
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "48"
+              },
+              "opera_android": {
+                "version_added": "45"
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": "8.0"
+              },
+              "webview_android": {
+                "version_added": "61"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
         }
       },
       "getDirectory": {
         "__compat": {
+          "spec_url": "https://fs.spec.whatwg.org/#dom-storagemanager-getdirectory",
           "support": {
             "chrome": {
               "version_added": "86"
@@ -147,10 +173,10 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "samsunginternet_android": {
               "version_added": false
@@ -160,8 +186,8 @@
             }
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -171,70 +197,42 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/StorageManager/persist",
           "spec_url": "https://storage.spec.whatwg.org/#ref-for-dom-storagemanager-persist",
           "support": {
-            "chrome": [
-              {
-                "version_added": "52"
-              },
-              {
-                "alternative_name": "requestPersistent",
-                "version_added": "48",
-                "version_removed": "52"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "52"
-              },
-              {
-                "alternative_name": "requestPersistent",
-                "version_added": "48",
-                "version_removed": "52"
-              }
-            ],
+            "chrome": {
+              "version_added": "55"
+            },
+            "chrome_android": {
+              "version_added": "55"
+            },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "55"
+              "version_added": "57"
             },
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "57"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.2"
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "alternative_name": "requestPersistent",
-                "version_added": "5.0",
-                "version_removed": "6.0"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "52"
-              },
-              {
-                "alternative_name": "requestPersistent",
-                "version_added": "48",
-                "version_removed": "52"
-              }
-            ]
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
+            }
           },
           "status": {
             "experimental": false,
@@ -248,70 +246,42 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/StorageManager/persisted",
           "spec_url": "https://storage.spec.whatwg.org/#dom-storagemanager-persisted",
           "support": {
-            "chrome": [
-              {
-                "version_added": "52"
-              },
-              {
-                "alternative_name": "persistentPermission",
-                "version_added": "48",
-                "version_removed": "52"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "52"
-              },
-              {
-                "alternative_name": "persistentPermission",
-                "version_added": "48",
-                "version_removed": "52"
-              }
-            ],
+            "chrome": {
+              "version_added": "55"
+            },
+            "chrome_android": {
+              "version_added": "55"
+            },
             "edge": {
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "55"
+              "version_added": "57"
             },
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "57"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "42"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "42"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.2"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.2"
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "alternative_name": "persistentPermission",
-                "version_added": "5.0",
-                "version_removed": "6.0"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "52"
-              },
-              {
-                "alternative_name": "persistentPermission",
-                "version_added": "48",
-                "version_removed": "52"
-              }
-            ]
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": "55"
+            }
           },
           "status": {
             "experimental": false,

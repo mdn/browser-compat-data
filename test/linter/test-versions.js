@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
@@ -17,7 +21,7 @@ const validBrowserVersions = {};
 /** @type {Object<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   edge: ['≤18', '≤79'],
-  ie: ['≤6'],
+  ie: ['≤6', '≤11'],
   opera: ['≤12.1', '≤15'],
   opera_android: ['≤12.1', '≤14'],
   safari: ['≤4'],
@@ -25,13 +29,13 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
-/** @type string[] */
-const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
-
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
     validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
+  }
+  if (browsers[browser].preview_name) {
+    validBrowserVersions[browser].push('preview');
   }
 }
 
@@ -49,27 +53,31 @@ function isValidVersion(browserIdentifier, version) {
 
 /**
  * @param {SimpleSupportStatement} statement
- * @returns {boolean}
+ * @returns {boolean|null}
  */
-function removedAfterAdded(statement) {
-  const { version_added, version_removed } = statement;
+function addedBeforeRemoved(statement) {
+  // In order to ensure that the versions could be displayed without the "≤"
+  // markers and still make sense, compare the versions without them. This
+  // means that combinations like version_added: "≤37" + version_removed: "37"
+  // are not allowed, even though this can be technically correct.
+  const added = statement.version_added.replace('≤', '');
+  const removed = statement.version_removed.replace('≤', '');
 
-  if (
-    !(
-      compareVersions.validate(version_added.replace('≤', '')) &&
-      compareVersions.validate(version_removed.replace('≤', ''))
-    )
-  ) {
+  if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
     return null;
   }
 
-  return compareVersions.compare(
-    version_added.startsWith('≤')
-      ? '0' // 0 was chosen as it's a number lower than any possible browser version
-      : version_added,
-    version_removed.replace('≤', ''),
-    '>=',
-  );
+  if (added === 'preview' && removed === 'preview') {
+    return false;
+  }
+  if (added === 'preview' && removed !== 'preview') {
+    return false;
+  }
+  if (added !== 'preview' && removed === 'preview') {
+    return true;
+  }
+
+  return compareVersions.compare(added, removed, '<');
 }
 
 /**
@@ -124,7 +132,7 @@ function checkVersions(supportData, relPath, logger) {
             typeof statement.version_added === 'string' &&
             typeof statement.version_removed === 'string'
           ) {
-            if (removedAfterAdded(statement)) {
+            if (addedBeforeRemoved(statement) === false) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
               );
@@ -132,7 +140,7 @@ function checkVersions(supportData, relPath, logger) {
           }
         }
         if ('flags' in statement) {
-          if (FLAGLESS_BROWSERS.includes(browser)) {
+          if (browsers[browser].accepts_flags === false) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );

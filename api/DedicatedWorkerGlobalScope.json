@@ -11,6 +11,9 @@
           "chrome_android": {
             "version_added": "18"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
             "version_added": "12"
           },
@@ -33,19 +36,67 @@
             "version_added": "4"
           },
           "safari_ios": {
-            "version_added": "5.1"
+            "version_added": "5"
           },
           "samsunginternet_android": {
             "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "4.4"
           }
         },
         "status": {
           "experimental": false,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "cancelAnimationFrame": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#animationframeprovider-cancelanimationframe",
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": {
+              "version_added": "69"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "97"
+            },
+            "firefox_android": {
+              "version_added": "97"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "56"
+            },
+            "opera_android": {
+              "version_added": "48"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
+            "webview_android": {
+              "version_added": "67"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "close": {
@@ -58,6 +109,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -72,22 +126,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": "11.5"
+              "version_added": "10.6"
             },
             "opera_android": {
-              "version_added": "11.5"
+              "version_added": "11"
             },
             "safari": {
               "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -101,13 +155,19 @@
         "__compat": {
           "description": "<code>message</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+            "https://html.spec.whatwg.org/multipage/workers.html#handler-dedicatedworkerglobalscope-onmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -131,10 +191,10 @@
               "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
               "version_added": "≤37"
@@ -151,7 +211,10 @@
         "__compat": {
           "description": "<code>messageerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+            "https://html.spec.whatwg.org/multipage/workers.html#handler-dedicatedworkerglobalscope-onmessageerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -159,8 +222,11 @@
             "chrome_android": {
               "version_added": "60"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "18"
             },
             "firefox": {
               "version_added": "57"
@@ -169,7 +235,7 @@
               "version_added": "57"
             },
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "opera": {
               "version_added": "47"
@@ -178,10 +244,12 @@
               "version_added": "47"
             },
             "safari": {
-              "version_added": null
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -203,10 +271,13 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-dedicatedworkerglobalscope-name-dev",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "70"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "70"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "18"
@@ -221,10 +292,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": null
+              "version_added": "57"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "49"
             },
             "safari": {
               "version_added": "12.1"
@@ -233,108 +304,10 @@
               "version_added": "12.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "10.0"
             },
             "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/onmessage",
-          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-dedicatedworkerglobalscope-onmessage",
-          "support": {
-            "chrome": {
-              "version_added": "4"
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "3.5"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": "10.6"
-            },
-            "opera_android": {
-              "version_added": "11"
-            },
-            "safari": {
-              "version_added": "4"
-            },
-            "safari_ios": {
-              "version_added": "5.1"
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessageerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/onmessageerror",
-          "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-dedicatedworkerglobalscope-onmessageerror",
-          "support": {
-            "chrome": {
-              "version_added": "60"
-            },
-            "chrome_android": {
-              "version_added": "60"
-            },
-            "edge": {
-              "version_added": "18"
-            },
-            "firefox": {
-              "version_added": "57"
-            },
-            "firefox_android": {
-              "version_added": "57"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": "47"
-            },
-            "opera_android": {
-              "version_added": "44"
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "60"
+              "version_added": "70"
             }
           },
           "status": {
@@ -353,8 +326,41 @@
               "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
             },
+            "deno": [
+              {
+                "version_added": "1.14",
+                "notes": "The <code>message</code> parameter does not support cloning <code>Blob</code> values."
+              },
+              {
+                "version_added": "1.12",
+                "version_removed": "1.14",
+                "partial_implementation": true,
+                "notes": [
+                  "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
+                  "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+                ]
+              },
+              {
+                "version_added": "1.10",
+                "version_removed": "1.12",
+                "partial_implementation": true,
+                "notes": [
+                  "The <code>message</code> parameter does not support cloning <code>SharedArrayBuffer</code> or <code>Blob</code> values.",
+                  "The <code>transfer</code> parameter is ignored."
+                ]
+              },
+              {
+                "version_added": "1.0",
+                "version_removed": "1.10",
+                "partial_implementation": true,
+                "notes": [
+                  "Data passed in the <code>message</code> parameter is serialized with JSON, not the structured clone algorithm.",
+                  "The <code>transfer</code> parameter is ignored."
+                ]
+              }
+            ],
             "edge": {
               "version_added": "12"
             },
@@ -377,13 +383,61 @@
               "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "requestAnimationFrame": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#animationframeprovider-requestanimationframe",
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": {
+              "version_added": "69"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "97"
+            },
+            "firefox_android": {
+              "version_added": "97"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "56"
+            },
+            "opera_android": {
+              "version_added": "48"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "10.0"
+            },
+            "webview_android": {
+              "version_added": "67"
             }
           },
           "status": {

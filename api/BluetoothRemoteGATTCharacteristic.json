@@ -3,16 +3,17 @@
     "BluetoothRemoteGATTCharacteristic": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic",
-        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothremotegattcharacteristic",
+        "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothgattcharacteristic-interface",
         "support": {
           "chrome": [
             {
               "version_added": "56",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "56",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -20,10 +21,6 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "70",
-              "notes": "Windows 10."
             }
           ],
           "chrome_android": {
@@ -32,11 +29,12 @@
           "edge": [
             {
               "version_added": "79",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "79",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -44,10 +42,6 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "79",
-              "notes": "Windows 10."
             }
           ],
           "firefox": {
@@ -62,11 +56,12 @@
           "opera": [
             {
               "version_added": "43",
-              "notes": "macOS only."
+              "partial_implementation": true,
+              "notes": "Before Opera 57, this feature was only supported in macOS. In Opera 57, support was added for Windows 10. Linux support is not enabled by default."
             },
             {
               "version_added": "43",
-              "notes": "Linux and versions of Windows earlier than 10.",
+              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
               "flags": [
                 {
                   "type": "preference",
@@ -74,10 +69,6 @@
                   "value_to_set": "enabled"
                 }
               ]
-            },
-            {
-              "version_added": "57",
-              "notes": "Windows 10."
             }
           ],
           "opera_android": {
@@ -93,7 +84,8 @@
             "version_added": "6.0"
           },
           "webview_android": {
-            "version_added": "85"
+            "version_added": false,
+            "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
           }
         },
         "status": {
@@ -102,56 +94,23 @@
           "deprecated": false
         }
       },
-      "getDescriptor": {
+      "characteristicvaluechanged_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptor",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptor",
+          "description": "<code>characteristicvaluechanged</code> event",
+          "spec_url": [
+            "https://webbluetoothcg.github.io/web-bluetooth/#eventdef-bluetoothremotegattcharacteristic-characteristicvaluechanged",
+            "https://webbluetoothcg.github.io/web-bluetooth/#dom-characteristiceventhandlers-oncharacteristicvaluechanged"
+          ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -161,27 +120,58 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
+            "opera_android": {
+              "version_added": "43"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "6.0"
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getDescriptor": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptor",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptor",
+          "support": {
+            "chrome": {
+              "version_added": "56"
+            },
+            "chrome_android": {
+              "version_added": "56"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -210,51 +200,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptors",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -264,27 +218,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -313,51 +249,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-properties",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -367,27 +267,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -416,51 +298,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-readvalue",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -470,27 +316,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -519,51 +347,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/service",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-service",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -573,27 +365,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -622,51 +396,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-startnotifications",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -676,27 +414,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -725,51 +445,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-stopnotifications",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -779,27 +463,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -828,51 +494,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-uuid",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -882,27 +512,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -931,51 +543,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/value",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-value",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -985,27 +561,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -1034,51 +592,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevalue",
           "support": {
-            "chrome": [
-              {
-                "version_added": "56",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "56",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "70",
-                "notes": "Windows 10."
-              }
-            ],
+            "chrome": {
+              "version_added": "56"
+            },
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "79",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "79",
-                "notes": "Windows 10."
-              }
-            ],
+            "edge": {
+              "version_added": "79"
+            },
             "firefox": {
               "version_added": false
             },
@@ -1088,27 +610,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "macOS only."
-              },
-              {
-                "version_added": "43",
-                "notes": "Linux and versions of Windows earlier than 10.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "57",
-                "notes": "Windows 10."
-              }
-            ],
+            "opera": {
+              "version_added": "43"
+            },
             "opera_android": {
               "version_added": "43"
             },
@@ -1134,6 +638,8 @@
       },
       "writeValueWithoutResponse": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithoutResponse",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevaluewithoutresponse",
           "support": {
             "chrome": {
               "version_added": "85"
@@ -1169,7 +675,7 @@
               "version_added": "14.0"
             },
             "webview_android": {
-              "version_added": "85"
+              "version_added": false
             }
           },
           "status": {
@@ -1181,6 +687,8 @@
       },
       "writeValueWithResponse": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithResponse",
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevaluewithresponse",
           "support": {
             "chrome": {
               "version_added": "85"
@@ -1216,7 +724,7 @@
               "version_added": "14.0"
             },
             "webview_android": {
-              "version_added": "85"
+              "version_added": false
             }
           },
           "status": {

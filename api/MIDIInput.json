@@ -14,9 +14,21 @@
           "edge": {
             "version_added": "79"
           },
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "preview"
+            },
+            {
+              "version_added": "97",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webmidi.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
             "version_added": false
           },
@@ -43,7 +55,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -51,54 +63,8 @@
       "midimessage_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event",
+          "spec_url": "https://webaudio.github.io/web-midi-api/#dom-midiinput-onmidimessage",
           "description": "<code>midimessage</code> event",
-          "support": {
-            "chrome": {
-              "version_added": "43"
-            },
-            "chrome_android": {
-              "version_added": "43"
-            },
-            "edge": {
-              "version_added": "≤79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "30"
-            },
-            "opera_android": {
-              "version_added": "30"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmidimessage": {
-        "__compat": {
           "support": {
             "chrome": {
               "version_added": "43"
@@ -109,9 +75,21 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "97",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webmidi.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
@@ -134,7 +112,7 @@
               "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "43"
+              "version_added": false
             }
           },
           "status": {

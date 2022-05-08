@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 'use strict';
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const { platform } = require('os');
+
+const assert = require('assert').strict;
 
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
@@ -134,29 +131,12 @@ const tests = [
   },
 ];
 
-const testFixWebViewFlags = (logger = console) => {
-  let hasErrors = false;
-  for (let i = 0; i < tests.length; i++) {
-    let expected = JSON.stringify(tests[i]['output'], null, 2);
-    let output = JSON.stringify(
-      JSON.parse(JSON.stringify(tests[i]['input']), removeWebViewFlags),
-      null,
-      2,
-    );
-
-    if (output !== expected) {
-      logger.error(chalk`{red WebView flags aren't removed properly!}
-      {yellow Actual: {bold ${output}}}
-      {green Expected: {bold ${expected}}}`);
-      hasErrors = true;
+describe('migration scripts', () => {
+  it('`removeWebViewFlags()` works correctly', () => {
+    for (const test of tests) {
+      const expected = test.output;
+      const output = JSON.parse(JSON.stringify(test.input), removeWebViewFlags);
+      assert.deepStrictEqual(output, expected);
     }
-  }
-
-  return hasErrors;
-};
-
-if (require.main === module) {
-  testFixWebViewFlags();
-}
-
-module.exports = testFixWebViewFlags;
+  });
+});

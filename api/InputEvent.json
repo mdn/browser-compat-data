@@ -82,10 +82,14 @@
               "version_added": "44"
             },
             "safari": {
-              "version_added": "10.1"
+              "version_added": "10.1",
+              "partial_implementation": true,
+              "notes": "The <code>inputEventInit</code> parameter is not supported. See <a href='https://webkit.org/b/170416'>bug 170416</a>."
             },
             "safari_ios": {
-              "version_added": "10.3"
+              "version_added": "10.3",
+              "partial_implementation": true,
+              "notes": "The <code>inputEventInit</code> parameter is not supported. See <a href='https://webkit.org/b/170416'>bug 170416</a>."
             },
             "samsunginternet_android": {
               "version_added": "8.0"
@@ -229,22 +233,9 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "87"
-              },
-              {
-                "version_added": "79",
-                "version_removed": "87",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.input_events.beforeinput.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "87"
+            },
             "ie": {
               "version_added": false
             },
@@ -351,10 +342,10 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": null
+                "version_added": false
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false
               },
               "samsunginternet_android": {
                 "version_added": false

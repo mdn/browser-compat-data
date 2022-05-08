@@ -1,6 +1,7 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -15,7 +16,6 @@
  * @returns {*} The new value
  */
 
-'use strict';
 const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
@@ -36,9 +36,9 @@ const orderSupportBlock = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
-const fixBrowserOrder = filename => {
+const fixBrowserOrder = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderSupportBlock), null, 2);
 
@@ -75,7 +75,7 @@ if (require.main === module) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map(subfile => {
+      const subFiles = fs.readdirSync(file).map((subfile) => {
         return path.join(file, subfile);
       });
 

@@ -15,10 +15,18 @@
             "version_added": "79"
           },
           "firefox": {
-            "version_added": false
+            "version_added": "31",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.netinfo.enabled",
+                "value_to_set": "true"
+              }
+            ]
           },
           "firefox_android": {
-            "version_added": "31"
+            "version_added": "31",
+            "version_removed": "99"
           },
           "ie": {
             "version_added": false
@@ -27,13 +35,15 @@
             "version_added": "48"
           },
           "opera_android": {
-            "version_added": "45"
+            "version_added": "25"
           },
           "safari": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": false,
+            "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
           },
           "samsunginternet_android": {
             "version_added": "3.0"
@@ -48,10 +58,11 @@
           "deprecated": false
         }
       },
-      "downlink": {
+      "change_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/downlink",
-          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-downlink",
+          "description": "<code>change</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/change_event",
+          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-onchange",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -66,7 +77,8 @@
               "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false,
+              "notes": "On Firefox, the event handler property corresponding to the <code>change</code> event is <code>ontypechange</code>."
             },
             "ie": {
               "version_added": false
@@ -88,6 +100,62 @@
             },
             "webview_android": {
               "version_added": "50"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "downlink": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/downlink",
+          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-downlink",
+          "support": {
+            "chrome": {
+              "version_added": "61",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
+            "edge": {
+              "version_added": "79",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "48",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
+            "opera_android": {
+              "version_added": "25",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
+            "webview_android": {
+              "version_added": "50",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
             }
           },
           "status": {
@@ -165,7 +233,7 @@
               "version_added": false
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -193,105 +261,6 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "onchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/onchange",
-          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-onchange",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "On Firefox, the event handler property corresponding to the <code>change</code> event is <code>ontypechange</code>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "50"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ontypechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/ontypechange",
-          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-onchange",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -301,13 +270,16 @@
           "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-rtt",
           "support": {
             "chrome": {
-              "version_added": "61"
+              "version_added": "61",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": {
-              "version_added": "38"
+              "version_added": "38",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "edge": {
-              "version_added": "79"
+              "version_added": "79",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "firefox": {
               "version_added": false
@@ -319,10 +291,12 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "48"
+              "version_added": "48",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "opera_android": {
-              "version_added": "45"
+              "version_added": "25",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "safari": {
               "version_added": false
@@ -331,10 +305,12 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "3.0"
+              "version_added": "3.0",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "webview_android": {
-              "version_added": "50"
+              "version_added": "50",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             }
           },
           "status": {
@@ -362,16 +338,16 @@
               "version_added": false
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": false
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "52"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "47"
             },
             "safari": {
               "version_added": false
@@ -409,10 +385,18 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": false
+              "version_added": "31",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.netinfo.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "31"
+              "version_added": "31",
+              "version_removed": "99"
             },
             "ie": {
               "version_added": false
@@ -443,6 +427,67 @@
           }
         }
       },
+      "typechange_event": {
+        "__compat": {
+          "description": "<code>typechange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NetworkInformation/typechange_event",
+          "spec_url": "https://wicg.github.io/netinfo/#dom-networkinformation-onchange",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": {
+              "version_added": "38",
+              "notes": "Removal proposed in <a href='https://crbug.com/699892'>bug 699892</a>."
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": "31",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.netinfo.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": {
+              "version_added": "31",
+              "version_removed": "99"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": "25",
+              "notes": "Removal proposed in <a href='https://crbug.com/699892'>bug 699892</a>."
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0",
+              "notes": "Removal proposed in <a href='https://crbug.com/699892'>bug 699892</a>."
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": true
+          }
+        }
+      },
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
@@ -457,10 +502,18 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "31",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.netinfo.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": {
-              "version_added": "53"
+              "version_added": "53",
+              "version_removed": "99"
             },
             "ie": {
               "version_added": false

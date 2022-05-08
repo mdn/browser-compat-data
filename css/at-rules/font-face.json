@@ -83,7 +83,7 @@
                 "version_removed": "25"
               },
               "safari": {
-                "version_added": "3.2"
+                "version_added": "3.1"
               },
               "safari_ios": {
                 "version_added": "3"
@@ -204,7 +204,7 @@
         "ascent-override": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/ascent-override",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-ascent-override",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-metrics-override-desc",
             "support": {
               "chrome": {
                 "version_added": "87"
@@ -253,7 +253,7 @@
         "descent-override": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/descent-override",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-descent-override",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-metrics-override-desc",
             "support": {
               "chrome": {
                 "version_added": "87"
@@ -305,10 +305,10 @@
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-display-desc",
             "support": {
               "chrome": {
-                "version_added": "72"
+                "version_added": "60"
               },
               "chrome_android": {
-                "version_added": "72"
+                "version_added": "60"
               },
               "edge": {
                 "version_added": "79"
@@ -323,10 +323,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "60"
+                "version_added": "47"
               },
               "opera_android": {
-                "version_added": "51"
+                "version_added": "44"
               },
               "safari": {
                 "version_added": "11.1"
@@ -338,7 +338,7 @@
                 "version_added": "11.0"
               },
               "webview_android": {
-                "version_added": "72"
+                "version_added": "60"
               }
             },
             "status": {
@@ -381,7 +381,7 @@
                 "version_added": "3.1"
               },
               "safari_ios": {
-                "version_added": "3.1"
+                "version_added": "2"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -463,7 +463,7 @@
         "font-stretch": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-stretch",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-font-stretch",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-prop-desc",
             "support": {
               "chrome": {
                 "version_added": "62"
@@ -512,7 +512,7 @@
         "font-style": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-style",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-font-style",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-prop-desc",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -610,16 +610,16 @@
         "font-variation-settings": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-variation-settings",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-font-variation-settings",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-rend-desc",
             "support": {
               "chrome": {
-                "version_added": "62"
+                "version_added": false
               },
               "chrome_android": {
-                "version_added": "62"
+                "version_added": false
               },
               "edge": {
-                "version_added": "79"
+                "version_added": false
               },
               "firefox": {
                 "version_added": "62"
@@ -631,10 +631,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": "49"
+                "version_added": false
               },
               "opera_android": {
-                "version_added": "46"
+                "version_added": false
               },
               "safari": {
                 "version_added": false
@@ -643,10 +643,10 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": "8.0"
+                "version_added": false
               },
               "webview_android": {
-                "version_added": "62"
+                "version_added": false
               }
             },
             "status": {
@@ -659,7 +659,7 @@
         "font-weight": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-weight",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-font-weight",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-prop-desc",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -708,7 +708,7 @@
         "line-gap-override": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/line-gap-override",
-            "spec_url": "https://drafts.csswg.org/css-fonts/#descdef-font-face-line-gap-override",
+            "spec_url": "https://drafts.csswg.org/css-fonts/#font-metrics-override-desc",
             "support": {
               "chrome": {
                 "version_added": "87"
@@ -760,32 +760,38 @@
             "spec_url": "https://drafts.csswg.org/css-fonts-5/#size-adjust-desc",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "92"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "92"
               },
               "edge": {
-                "version_added": false
+                "version_added": "92"
               },
-              "firefox": {
-                "version_added": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.size-adjust.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "92"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "92",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.size-adjust.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": {
-                "version_added": false
+                "version_added": "92"
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "78"
               },
               "opera_android": {
                 "version_added": false
@@ -797,14 +803,14 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "16.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "92"
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -843,7 +849,7 @@
                 "version_added": "3.1"
               },
               "safari_ios": {
-                "version_added": "3.1"
+                "version_added": "2"
               },
               "samsunginternet_android": {
                 "version_added": "1.0"
@@ -860,7 +866,7 @@
           },
           "format_keyword": {
             "__compat": {
-              "description": "Support for <code>format</code> keywords",
+              "description": "<code>format(keyword)</code>",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -905,6 +911,54 @@
                 "deprecated": false
               }
             }
+          },
+          "format_variations": {
+            "__compat": {
+              "description": "<code>format('*-variations')</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "66"
+                },
+                "chrome_android": {
+                  "version_added": "66"
+                },
+                "edge": {
+                  "version_added": "17"
+                },
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": {
+                  "version_added": "62"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "53"
+                },
+                "opera_android": {
+                  "version_added": "47"
+                },
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": {
+                  "version_added": "11"
+                },
+                "samsunginternet_android": {
+                  "version_added": "9.0"
+                },
+                "webview_android": {
+                  "version_added": "66"
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
           }
         },
         "unicode-range": {
@@ -937,7 +991,7 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "3.2"
+                "version_added": "3.1"
               },
               "safari_ios": {
                 "version_added": "3"

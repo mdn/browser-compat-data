@@ -5,7 +5,7 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-columns",
           "spec_url": [
-            "https://drafts.csswg.org/css-grid/#propdef-grid-template-columns",
+            "https://drafts.csswg.org/css-grid/#track-sizing",
             "https://drafts.csswg.org/css-grid/#subgrids",
             "https://drafts.csswg.org/css-grid-3/#masonry-layout"
           ],
@@ -121,7 +121,7 @@
         "fit-content": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/fit-content",
-            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#sizing-values",
             "description": "<code>fit-content()</code>",
             "support": {
               "chrome": {
@@ -163,6 +163,62 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "masonry": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-3/#masonry-layout",
+            "description": "<code>masonry</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "77",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.grid-template-masonry-value.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -221,7 +277,7 @@
         "repeat": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeat()",
-            "spec_url": "https://drafts.csswg.org/css-grid/#funcdef-repeat",
+            "spec_url": "https://drafts.csswg.org/css-grid/#repeat-notation",
             "description": "<code>repeat()</code>",
             "support": {
               "chrome": {
@@ -366,62 +422,6 @@
               "standard_track": true,
               "deprecated": false
             }
-          }
-        }
-      },
-      "masonry": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry",
-          "description": "<code>masonry</code>",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "77",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.grid-template-masonry-value.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
           }
         }
       }

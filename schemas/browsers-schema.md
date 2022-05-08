@@ -17,6 +17,7 @@ The file `firefox.json` is structured like this:
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "preview_name": "Nightly",
       "pref_url": "about:config",
       "releases": {
         "1.5": {
@@ -40,9 +41,17 @@ Underneath, there is a `releases` object which will hold the various releases of
 
 The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
 
+### `accepts_flags`
+
+An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
+
 ### `pref_url`
 
 An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+
+### `preview_name`
+
+An optional string containing the name of the preview browser. For example, "Nightly" for Firefox, "Canary" for Chrome, and "TP" for Safari.
 
 ### Release objects
 
@@ -50,7 +59,7 @@ The release objects consist of the following properties:
 
 - A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
 
-  - `retired`: This release is no longer supported (EOL). For NodeJS, every minor/patch release aside from the latest within the major release is considered "retired".
+  - `retired`: This release is no longer supported (EOL). For NodeJS and Deno, every minor/patch release aside from the latest within the major release is considered "retired".
   - `current`: This release is the official latest release.
   - `exclusive`: This is an exclusive release (for example on a flagship device), not generally available.
   - `beta`: This release will the next official release.

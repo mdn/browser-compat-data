@@ -4,7 +4,7 @@
       "scroll-margin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin",
-          "spec_url": "https://drafts.csswg.org/css-scroll-snap/#propdef-scroll-margin",
+          "spec_url": "https://drafts.csswg.org/css-scroll-snap/#scroll-margin",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -15,12 +15,28 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "68"
-            },
-            "firefox_android": {
-              "version_added": "68"
-            },
+            "firefox": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "68",
+                "version_removed": "90",
+                "partial_implementation": true,
+                "notes": "The <code>scroll-margin</code> property can cause an element's visibility to be incorrectly calculated for <code>element.focus()</code>. See <a href='https://bugzil.la/1708303'>bug 1708303</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "68",
+                "version_removed": "90",
+                "partial_implementation": true,
+                "notes": "The <code>scroll-margin</code> property can cause an element's visibility to be incorrectly calculated for <code>element.focus()</code>. See <a href='https://bugzil.la/1708303'>bug 1708303</a>."
+              }
+            ],
             "ie": {
               "version_added": false
             },

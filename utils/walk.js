@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const bcd = require('..');
 const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
 const query = require('./query');
@@ -32,7 +37,7 @@ function* walk(entryPoints, data = bcd) {
   } else {
     entryPoints = Array.isArray(entryPoints) ? entryPoints : [entryPoints];
     walkers.push(
-      ...entryPoints.map(entryPoint =>
+      ...entryPoints.map((entryPoint) =>
         lowLevelWalk(query(entryPoint, data), entryPoint),
       ),
     );
