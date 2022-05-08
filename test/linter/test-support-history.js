@@ -43,7 +43,7 @@ function hasSupportHistory(data) {
  * @param {Identifier} data
  * @param {Logger} logger
  */
-function checkSupport(data, logger, path = []) {
+function check(data, logger, path = []) {
   if (data.__compat && !hasSupportHistory(data)) {
     logger.error(
       chalk`{red → No support and no tracking bug in ${path.join('.')}}`,
@@ -53,7 +53,7 @@ function checkSupport(data, logger, path = []) {
     if (member === '__compat') {
       continue;
     }
-    checkSupport(data[member], logger, [...path, member]);
+    check(data[member], logger, [...path, member]);
   }
 }
 
@@ -67,10 +67,13 @@ function testSupportHistory(filename) {
 
   const logger = new Logger('Support history');
 
-  checkSupport(data, logger);
+  check(data, logger);
 
   logger.emit();
   return logger.hasErrors();
 }
 
-module.exports = testSupportHistory;
+module.exports = {
+  hasSupportHistory,
+  testSupportHistory,
+};
