@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const fs = require('fs');
 const path = require('path');
 const ora = require('ora');
@@ -10,6 +14,7 @@ const {
   testConsistency,
   testDescriptions,
   testLinks,
+  testNotes,
   testPrefix,
   testSchema,
   testStyle,
@@ -60,7 +65,8 @@ function load(...files) {
           hasVersionErrors = false,
           hasConsistencyErrors = false,
           hasPrefixErrors = false,
-          hasDescriptionsErrors = false;
+          hasDescriptionsErrors = false,
+          hasNotesErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -100,6 +106,7 @@ function load(...files) {
             hasConsistencyErrors = testConsistency(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
+            hasNotesErrors = testNotes(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -117,6 +124,7 @@ function load(...files) {
           hasConsistencyErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
+          hasNotesErrors,
         ].some((x) => !!x);
 
         if (fileHasErrors) {
@@ -177,6 +185,7 @@ if (hasErrors) {
         testConsistency(file);
         testPrefix(file);
         testDescriptions(file);
+        testNotes(file);
       }
     } catch (e) {
       console.error(e);
