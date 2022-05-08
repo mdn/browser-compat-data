@@ -616,10 +616,10 @@
               "notes": "The <code>onanimationcancel</code> property is not supported. To listen to this event, use <code>document.addEventListener('animationcancel', function() {});</code>. See <a href='https://crbug.com/868224'>bug 868224</a>."
             },
             "safari": {
-              "version_added": "13.1"
+              "version_added": "12"
             },
             "safari_ios": {
-              "version_added": "13.4"
+              "version_added": "12"
             },
             "samsunginternet_android": {
               "version_added": "13.0",
@@ -1944,6 +1944,7 @@
       "createAttributeNS": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-document-createattributens",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2910,61 +2911,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "expandEntityReferences_parameter": {
-          "__compat": {
-            "description": "<code>expandEntityReferences</code> parameter",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": "12",
-                "version_removed": "79"
-              },
-              "firefox": {
-                "version_added": "2",
-                "version_removed": "12"
-              },
-              "firefox_android": {
-                "version_added": "4",
-                "version_removed": "14"
-              },
-              "ie": {
-                "version_added": "9"
-              },
-              "opera": {
-                "version_added": "9",
-                "version_removed": "15"
-              },
-              "opera_android": {
-                "version_added": "10.1",
-                "version_removed": "14"
-              },
-              "safari": {
-                "version_added": "3",
-                "version_removed": "10.1"
-              },
-              "safari_ios": {
-                "version_added": "3",
-                "version_removed": "10.3"
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
           }
         },
         "whatToShow_filter_parameters_optional": {
@@ -4847,16 +4793,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "65",
-              "version_removed": "79",
-              "alternative_name": "policy",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.featurePolicy.webidl.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -6177,14 +6114,7 @@
               "version_added": "65"
             },
             "firefox_android": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.storage_access.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -7639,36 +7569,12 @@
                 "alternative_name": "mspointercancel"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -7726,36 +7632,12 @@
                 "alternative_name": "mspointerdown"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -7813,36 +7695,12 @@
                 "alternative_name": "mspointerenter"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -7900,36 +7758,12 @@
                 "alternative_name": "mspointerleave"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8205,36 +8039,12 @@
                 "alternative_name": "mspointermove"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8292,36 +8102,12 @@
                 "alternative_name": "mspointerout"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8379,36 +8165,12 @@
                 "alternative_name": "mspointerover"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -8516,36 +8278,12 @@
                 "alternative_name": "mspointerup"
               }
             ],
-            "firefox": [
-              {
-                "version_added": "59"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "29",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.w3c_pointer_events.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": [
               {
                 "version_added": "11"
@@ -9134,36 +8872,10 @@
               "version_removed": "80"
             },
             "firefox": {
-              "version_added": "31",
-              "version_removed": "59",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.customelements.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "firefox_android": {
-              "version_added": "31",
-              "version_removed": "59",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "dom.webcomponents.customelements.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -9391,14 +9103,7 @@
               "version_added": "65"
             },
             "firefox_android": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.storage_access.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -9943,22 +9648,9 @@
             "firefox": {
               "version_added": "75"
             },
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "63",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.timelines.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": {
               "version_added": false
             },

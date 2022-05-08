@@ -1,6 +1,10 @@
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
+/// <reference path="./types.d.ts"/>
 import { CompatData } from './types';
 
-export default CompatData;
+// This is necessary to have intellisense in projects which
+// import data from this package.
+declare const compatData: CompatData;
+export = compatData;

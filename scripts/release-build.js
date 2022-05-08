@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
 
 const fs = require('fs').promises;
@@ -15,14 +18,15 @@ function createDataBundle() {
 }
 
 // Returns a promise for writing the data to JSON file
-async function writeData(data) {
+async function writeData() {
   const dest = path.resolve(directory, 'data.json');
+  const data = createDataBundle();
   await fs.writeFile(dest, data);
 }
 
-async function writeIndexESM(data) {
+async function writeIndex() {
   const dest = path.resolve(directory, 'index.js');
-  const content = `export default ${data};\n`;
+  const content = `module.exports = require("./data.json");\n`;
   await fs.writeFile(dest, content);
 }
 
@@ -37,11 +41,7 @@ async function copyFiles() {
 
 function createManifest() {
   const full = require('../package.json');
-  const minimal = {
-    main: 'data.json',
-    exports: { import: './index.js', require: './data.json' },
-    type: 'module',
-  };
+  const minimal = { main: 'index.js' };
 
   const minimalKeys = [
     'name',
@@ -79,7 +79,7 @@ async function main() {
       force: true,
       recursive: true,
     })
-    .catch(e => {
+    .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
       if (e.code !== 'ENOENT') throw e;
     });
@@ -87,11 +87,9 @@ async function main() {
   // Crate a new directory
   await fs.mkdir(directory);
 
-  const data = createDataBundle();
-
   await writeManifest();
-  await writeData(data);
-  await writeIndexESM(data);
+  await writeData();
+  await writeIndex();
   await copyFiles();
 
   console.log('Data bundle is ready');
@@ -99,7 +97,7 @@ async function main() {
 
 // This is needed because NodeJS does not support top-level await.
 // Also, make sure to log all errors and exit with failure code.
-main().catch(e => {
+main().catch((e) => {
   console.error(e);
   process.exit(1);
 });

@@ -1,11 +1,11 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "4.1.15",
+  "version": "4.1.19",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
@@ -27,13 +27,17 @@
   },
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
-    "ajv": "~6.12.2",
-    "better-ajv-errors": "~1.1.0",
-    "browser-specs": "~3.6.0",
+    "ajv": "~8.11.0",
+    "ajv-errors": "~3.0.0",
+    "ajv-formats": "~2.1.1",
+    "better-ajv-errors": "~1.2.0",
+    "browser-specs": "~3.10.0",
     "chalk": "~4.1.0",
     "compare-versions": "~4.1.1",
+    "html-validate": "~6.8.0",
     "mdn-confluence": "~2.2.2",
-    "mocha": "~9.2.0",
+    "mocha": "~10.0.0",
+    "node-html-parser": "~5.3.3",
     "ora": "~5.4.0",
     "prettier": "~2.6.1",
     "yargs": "~17.4.0"
@@ -41,15 +45,18 @@
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "mocha": "mocha \"**/*.test.js\"",
+    "format": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
+    "format:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
-    "fix": "node scripts/fix",
+    "fix": "npm run format:fix && node scripts/fix",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-build": "node scripts/release-build",
     "release-pulls": "node scripts/release-pulls",
+    "release-notes": "node scripts/release-notes",
     "release-stats": "node scripts/release-stats",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run lint && npm run mocha",
+    "test": "npm run format && npm run lint && npm run mocha",
     "traverse": "node scripts/traverse"
   }
 }

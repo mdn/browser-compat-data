@@ -131,47 +131,9 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "90",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.read",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-              },
-              {
-                "version_added": "87",
-                "version_removed": "90",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.clipboardItem",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-              },
-              {
-                "version_added": "63",
-                "version_removed": "87",
-                "partial_implementation": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.dataTransfer",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": [
-                  "This method returns a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
-                  "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
@@ -305,34 +267,9 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "87",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.clipboardItem",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
-              },
-              {
-                "version_added": "63",
-                "partial_implementation": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.dataTransfer",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": [
-                  "This method accepts a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
-                  "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
