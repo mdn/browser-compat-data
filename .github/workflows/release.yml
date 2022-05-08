@@ -4,15 +4,19 @@ on:
   release:
     types: [published]
 
+env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   build:
+    name: Publish release
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
-        node-version: 14.x
+        node-version: 16.x
         registry-url: "https://registry.npmjs.org/"
     - run: npm install
     - run: npm test
@@ -20,3 +24,7 @@ jobs:
     - run: npm publish build/ --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Add JSON as a release asset
+      run: gh release upload ${GITHUB_REF#refs/*/} build/data.json
+    - name: Publish stats for all data (#3555)
+      run: npm run --silent stats | gh issue comment https://github.com/mdn/browser-compat-data/issues/3555 --body-file -

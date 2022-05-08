@@ -14,7 +14,7 @@ function stringOrArrayIncludes(target, str) {
     return false;
   }
   if (Array.isArray(target)) {
-    return target.some(item => item.includes(str));
+    return target.some((item) => item.includes(str));
   }
   return target.includes(str);
 }
@@ -35,7 +35,7 @@ function includesTrackingBug(statement) {
  */
 function hasSupportHistory(data) {
   return Object.values(data.__compat.support).some(
-    c => Array.isArray(c) || !!c.version_added || includesTrackingBug(c),
+    (c) => Array.isArray(c) || !!c.version_added || includesTrackingBug(c),
   );
 }
 
