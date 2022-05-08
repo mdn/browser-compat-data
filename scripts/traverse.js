@@ -13,7 +13,7 @@ const { argv } = require('yargs').command(
       .positional('folder', {
         describe: 'The folder(s) to traverse',
         type: 'array',
-        default: Object.keys(bcd).filter(k => k !== 'browsers'),
+        default: Object.keys(bcd).filter((k) => k !== 'browsers'),
       })
       .option('browser', {
         alias: 'b',
