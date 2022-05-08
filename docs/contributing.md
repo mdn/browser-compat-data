@@ -72,7 +72,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
-### Optional: Generating data using the Web API Confluence Dashboard
+### Optional: Generating data using the mdn-bcd-collector project
 
 If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
 
