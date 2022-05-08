@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const Ajv = require('ajv').default;
 const ajvErrors = require('ajv-errors');
 const addFormats = require('ajv-formats');
