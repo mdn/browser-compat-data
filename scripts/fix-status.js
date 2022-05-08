@@ -34,7 +34,7 @@ const fixStatus = (key, value) => {
 /**
  * @param {Promise<void>} filename
  */
-const fixStatusFromFile = filename => {
+const fixStatusFromFile = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
 
@@ -71,7 +71,7 @@ if (require.main === module) {
         continue;
       }
 
-      const subFiles = fs.readdirSync(file).map(subfile => {
+      const subFiles = fs.readdirSync(file).map((subfile) => {
         return path.join(file, subfile);
       });
 
