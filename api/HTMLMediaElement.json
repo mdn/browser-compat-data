@@ -222,14 +222,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "33",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.track.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": "10"
@@ -622,8 +615,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -1827,8 +1820,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -2675,16 +2668,26 @@
             "edge": {
               "version_added": "86"
             },
-            "firefox": {
-              "prefix": "moz",
-              "version_added": "20",
-              "notes": "See <a href='https://bugzil.la/1652950'>bug 1652950</a>."
-            },
-            "firefox_android": {
-              "prefix": "moz",
-              "version_added": "20",
-              "notes": "See <a href='https://bugzil.la/1652950'>bug 1652950</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "101"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "20",
+                "notes": "May be removed in a future release, see <a href='https://bugzil.la/1765201'>bug 1765201</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "101"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "20",
+                "notes": "May be removed in a future release, see <a href='https://bugzil.la/1765201'>bug 1765201</a>."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -3238,14 +3241,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "64",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.setsinkid.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -3708,14 +3704,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "33",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.track.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false

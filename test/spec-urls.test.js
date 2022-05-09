@@ -1,5 +1,9 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
-const assert = require('assert');
+
+const assert = require('assert').strict;
 const specData = require('browser-specs');
 const { walk } = require('../utils');
 
@@ -14,9 +18,9 @@ describe('spec_url data', () => {
     }
 
     const specsFromBrowserSpecs = [
-      ...specData.map(spec => spec.url),
-      ...specData.map(spec => spec.nightly.url),
-      ...specData.map(spec => spec.series.nightlyUrl),
+      ...specData.map((spec) => spec.url),
+      ...specData.map((spec) => spec.nightly.url),
+      ...specData.map((spec) => spec.series.nightlyUrl),
     ];
 
     /*
@@ -58,10 +62,10 @@ describe('spec_url data', () => {
     const rejectedSpecs = [];
 
     for (const spec of specURLs) {
-      if (![...allowList].find(host => spec.startsWith(host)))
+      if (![...allowList].find((host) => spec.startsWith(host)))
         rejectedSpecs.push(spec);
     }
-    assert.deepStrictEqual(
+    assert.deepEqual(
       rejectedSpecs,
       [],
       `Invalid specification host(s) found. Try a more current specification URL and/or

@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
@@ -30,7 +34,6 @@ const browsers = {
  * @param {string} category
  * @param {Logger} logger
  * @param {string} [path]
- * @returns {boolean}
  */
 function processData(
   data,
@@ -44,7 +47,7 @@ function processData(
     const support = data.__compat.support;
 
     const invalidEntries = Object.keys(support).filter(
-      value => !displayBrowsers.includes(value),
+      (value) => !displayBrowsers.includes(value),
     );
     if (invalidEntries.length > 0) {
       logger.error(
@@ -55,7 +58,7 @@ function processData(
     }
 
     const missingEntries = requiredBrowsers.filter(
-      value => !(value in support),
+      (value) => !(value in support),
     );
     if (missingEntries.length > 0) {
       logger.error(
@@ -106,7 +109,7 @@ function processData(
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+function testBrowsersPresence(filename) {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -148,4 +151,4 @@ function testBrowsers(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testBrowsers;
+module.exports = testBrowsersPresence;

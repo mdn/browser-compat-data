@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
 
 const fs = require('fs').promises;
@@ -76,7 +79,7 @@ async function main() {
       force: true,
       recursive: true,
     })
-    .catch(e => {
+    .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
       if (e.code !== 'ENOENT') throw e;
     });
@@ -94,7 +97,7 @@ async function main() {
 
 // This is needed because NodeJS does not support top-level await.
 // Also, make sure to log all errors and exit with failure code.
-main().catch(e => {
+main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
