@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
@@ -105,7 +109,7 @@ function processData(
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testBrowsers(filename) {
+function testBrowsersPresence(filename) {
   const relativePath = path.relative(
     path.resolve(__dirname, '..', '..'),
     filename,
@@ -147,4 +151,4 @@ function testBrowsers(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testBrowsers;
+module.exports = testBrowsersPresence;
