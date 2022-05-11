@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const http = require('https');
 const readline = require('readline');
 const { exec, releaseYargsBuilder } = require('./release-utils');
@@ -9,17 +14,17 @@ const { argv } = require('yargs').command(
   releaseYargsBuilder,
 );
 
-const getJSON = url =>
+const getJSON = (url) =>
   new Promise((resolve, reject) =>
     http.get(
       url,
       { headers: { 'User-Agent': 'bcd-release-script' } },
-      response => {
+      (response) => {
         let body = '';
-        response.on('data', data => {
+        response.on('data', (data) => {
           body += data;
         });
-        response.on('error', error => reject(error));
+        response.on('error', (error) => reject(error));
         response.on('end', () => {
           resolve(JSON.parse(body));
         });
@@ -27,18 +32,18 @@ const getJSON = url =>
     ),
   );
 
-const question = async query => {
+const question = async (query) => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
-  const response = await new Promise(resolve => rl.question(query, resolve));
+  const response = await new Promise((resolve) => rl.question(query, resolve));
   rl.close();
   console.log();
   return response;
 };
 
-const prompt = async questions => {
+const prompt = async (questions) => {
   const results = {};
   for (const q of questions) {
     results[q.name] = await question(`${q.message} `).then(q.type);
@@ -48,7 +53,7 @@ const prompt = async questions => {
 
 const stargazers = () =>
   getJSON('https://api.github.com/repos/mdn/browser-compat-data').then(
-    json => json.stargazers_count,
+    (json) => json.stargazers_count,
   );
 
 function stats(start, end) {
