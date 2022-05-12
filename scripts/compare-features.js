@@ -6,10 +6,12 @@
 /**
  *
  * Sort a list of features based upon a specific order:
- *  1. __compat is always first
+ *  1. '__compat'
  *  2. Alphanumerical features starting with an uppercase letter (without symbols aside from - or _)
- *  3. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
- *  4. All other features
+ *  3. 'secure_context_required'
+ *  4. 'worker_support'
+ *  5. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
+ *  6. All other features
  *
  */
 
@@ -28,6 +30,13 @@ const compareFeatures = (a, b) => {
       if (capsWordA) return -1;
       if (capsWordB) return 1;
     }
+
+    if (a == 'secure_context_required') return -1;
+    if (b == 'secure_context_required') return 1;
+
+    if (a == 'worker_support') return -1;
+    if (b == 'worker_support') return 1;
+
     if (wordA && wordB) return a.localeCompare(b, 'en');
     if (wordA) return -1;
     return 1;
