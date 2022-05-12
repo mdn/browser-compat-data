@@ -24,7 +24,7 @@ const { argv } = require('yargs').command(
         type: 'boolean',
         nargs: 0,
       })
-      .option('asCount', {
+      .option('counts', {
         alias: 'c',
         describe: 'Show feature count rather than percentages',
         type: 'boolean',
