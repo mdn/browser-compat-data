@@ -33,7 +33,7 @@ function checkError(error_type, name, method, expected, logger) {
  * @returns {void}
  */
 function processApiData(apiData, apiName, logger) {
-  for (let methodName in apiData) {
+  for (const methodName in apiData) {
     const method = apiData[methodName];
     if (methodName == apiName) {
       checkError(
