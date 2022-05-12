@@ -8,17 +8,17 @@ const { Logger } = require('./utils.js');
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
  *
- * @param {string} error_type The name of the error
+ * @param {string} ruleName The name of the error
  * @param {string} name The name of the API method
  * @param {Identifier} method The method's compat data
  * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function checkError(error_type, name, method, expected, logger) {
+function checkDescription(ruleName, name, method, expected, logger) {
   const actual = method.__compat.description || '';
   if (actual != expected) {
-    logger.error(chalk`{red → Incorrect ${error_type} description for {bold ${name}}
+    logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
       Actual: {yellow "${actual}"}
       Expected: {green "${expected}"}}`);
   }
@@ -33,45 +33,45 @@ function checkError(error_type, name, method, expected, logger) {
  * @returns {void}
  */
 function processApiData(apiData, apiName, logger) {
-  for (const methodName in apiData) {
-    const method = apiData[methodName];
-    if (methodName == apiName) {
-      checkError(
+  for (const featureName in apiData) {
+    const feature = apiData[featureName];
+    if (featureName == apiName) {
+      checkDescription(
         'constructor',
         `${apiName}()`,
-        method,
+        feature,
         `<code>${apiName}()</code> constructor`,
         logger,
       );
-    } else if (methodName.endsWith('_event')) {
-      checkError(
+    } else if (featureName.endsWith('_event')) {
+      checkDescription(
         'event',
-        `${apiName}.${methodName}`,
-        method,
-        `<code>${methodName.replace('_event', '')}</code> event`,
+        `${apiName}.${featureName}`,
+        feature,
+        `<code>${featureName.replace('_event', '')}</code> event`,
         logger,
       );
-    } else if (methodName.endsWith('_permission')) {
-      checkError(
+    } else if (featureName.endsWith('_permission')) {
+      checkDescription(
         'permission',
-        `${apiName}.${methodName}`,
-        method,
-        `<code>${methodName.replace('_permission', '')}</code> permission`,
+        `${apiName}.${featureName}`,
+        feature,
+        `<code>${featureName.replace('_permission', '')}</code> permission`,
         logger,
       );
-    } else if (methodName == 'secure_context_required') {
-      checkError(
+    } else if (featureName == 'secure_context_required') {
+      checkDescription(
         'secure context required',
         `${apiName}()`,
-        method,
+        feature,
         'Secure context required',
         logger,
       );
-    } else if (methodName == 'worker_support') {
-      checkError(
+    } else if (featureName == 'worker_support') {
+      checkDescription(
         'worker',
         `${apiName}()`,
-        method,
+        feature,
         'Available in workers',
         logger,
       );
