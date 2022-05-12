@@ -1,6 +1,7 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -8,7 +9,6 @@
  * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
 
-'use strict';
 const fs = require('fs');
 const path = require('path');
 
@@ -19,7 +19,7 @@ const browsers = require('..').browsers;
 const { argv } = require('yargs').command(
   '$0 <browser> [feature_or_path..]',
   'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('browser', {
         describe: 'The destination browser',
@@ -119,6 +119,7 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
+    case 'edge':
     case 'opera':
       source = 'chrome';
       break;
@@ -129,9 +130,6 @@ const getSource = (browser, forced_source) => {
       break;
     case 'firefox_android':
       source = 'firefox';
-      break;
-    case 'edge':
-      source = 'ie';
       break;
     case 'safari_ios':
       source = 'safari';
@@ -249,7 +247,7 @@ const updateNotes = (notes, regex, replace) => {
  * @param {SupportStatement} data
  * @returns {SupportStatement}
  */
-const copyStatement = data => {
+const copyStatement = (data) => {
   let newData = {};
   for (let i in data) {
     newData[i] = data[i];
@@ -337,7 +335,7 @@ const bumpEdge = (originalData, sourceData, source) => {
               newData.version_added = '≤79';
             }
           } else {
-            newData.version_added == sourceData.version_added;
+            newData.version_added = sourceData.version_added;
           }
         }
       } else if (chromeFalse) {
@@ -530,7 +528,7 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 const bumpWebView = (originalData, sourceData, source) => {
   let newData = copyStatement(sourceData);
 
-  const createWebViewRange = version => {
+  const createWebViewRange = (version) => {
     if (Number(version) <= 18) {
       return '1';
     } else if (Number(version) > 18 && Number(version) < 30) {
@@ -807,7 +805,7 @@ function mirrorDataByFile(browser, filepath, source, modify, target_version) {
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
   } else if (fs.statSync(file).isDirectory()) {
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 

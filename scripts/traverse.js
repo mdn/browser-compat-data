@@ -1,10 +1,14 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
   '$0 <browser> [folder] [value]',
   'Test for specified values in any specified browser',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('browser', {
         describe: 'The browser to test for',

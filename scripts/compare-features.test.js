@@ -1,16 +1,12 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 'use strict';
+
 const assert = require('assert').strict;
 
-const compareFeatures = require('../scripts/compare-features');
+const compareFeatures = require('./compare-features');
 
-/**
- * A unit test for the compareFeatures() function, to ensure that features are sorted as expected.
- * @returns {boolean} If the sorter isn't functioning properly
- */
 describe('compare-features script', () => {
   it('`compareFeatures()` works correctly', () => {
     const input = [
@@ -45,6 +41,6 @@ describe('compare-features script', () => {
       '43',
     ];
 
-    assert.deepStrictEqual(actual, expected);
+    assert.deepEqual(actual, expected);
   });
 });
