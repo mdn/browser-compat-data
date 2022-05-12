@@ -411,7 +411,7 @@ function testConsistency(filename) {
           subfeature[0]
         }}: ${subfeature[1] === undefined ? '[Array]' : subfeature[1]}}`;
       }
-      
+
       logger.error(errorMessage);
     }
   }
