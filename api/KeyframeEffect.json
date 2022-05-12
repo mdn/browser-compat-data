@@ -3,6 +3,7 @@
     "KeyframeEffect": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect",
+        "spec_url": "https://drafts.csswg.org/web-animations-1/#the-keyframeeffect-interface",
         "support": {
           "chrome": {
             "version_added": "75"
@@ -42,7 +43,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -50,6 +51,7 @@
       "KeyframeEffect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/KeyframeEffect",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-keyframeeffect",
           "description": "<code>KeyframeEffect()</code> constructor",
           "support": {
             "chrome": {
@@ -90,7 +92,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -99,6 +101,7 @@
       "composite": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/composite",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-composite",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -107,34 +110,13 @@
               "version_added": "84"
             },
             "edge": {
-              "version_added": null
+              "version_added": "84"
             },
-            "firefox": [
-              {
-                "version_added": "80"
-              },
-              {
-                "version_added": "63",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.compositing.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "80"
+            },
             "firefox_android": {
-              "version_added": "63",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.compositing.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "80"
             },
             "ie": {
               "version_added": false
@@ -152,7 +134,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
@@ -168,6 +150,7 @@
       "getKeyframes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/getKeyframes",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-getkeyframes",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -176,7 +159,7 @@
               "version_added": "84"
             },
             "edge": {
-              "version_added": null
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "63"
@@ -200,7 +183,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
@@ -216,6 +199,7 @@
       "iterationComposite": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/iterationComposite",
+          "spec_url": "https://drafts.csswg.org/web-animations-2/#dom-keyframeeffect-iterationcomposite",
           "support": {
             "chrome": {
               "version_added": false
@@ -224,34 +208,13 @@
               "version_added": false
             },
             "edge": {
-              "version_added": null
+              "version_added": false
             },
-            "firefox": [
-              {
-                "version_added": "80"
-              },
-              {
-                "version_added": "63",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.compositing.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "80"
+            },
             "firefox_android": {
-              "version_added": "63",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.animations-api.compositing.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "80"
             },
             "ie": {
               "version_added": false
@@ -276,7 +239,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -295,7 +258,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               }
@@ -309,25 +272,30 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               }
             ],
-            "edge": {
-              "version_added": "81",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental Web Platform Features"
-                }
-              ]
-            },
+            "edge": [
+              {
+                "version_added": "84"
+              },
+              {
+                "version_added": "81",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "75"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -341,7 +309,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "Experimental Web Platform Features"
+                    "name": "#enable-experimental-web-platform-features"
                   }
                 ]
               }
@@ -356,14 +324,14 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -372,6 +340,7 @@
       "setKeyframes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/setKeyframes",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-setkeyframes",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -380,7 +349,7 @@
               "version_added": "84"
             },
             "edge": {
-              "version_added": false
+              "version_added": "84"
             },
             "firefox": {
               "version_added": "63"
@@ -404,14 +373,14 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -420,6 +389,7 @@
       "target": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect/target",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffect-target",
           "support": {
             "chrome": {
               "version_added": "75"

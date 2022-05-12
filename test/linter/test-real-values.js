@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
@@ -28,7 +32,7 @@ const blockMany = [
 
 /** @type {Record<string, string[]>} */
 const blockList = {
-  api: [],
+  api: blockMany,
   css: blockMany,
   html: [],
   http: [],
@@ -37,8 +41,6 @@ const blockList = {
   mathml: blockMany,
   webdriver: blockMany,
   webextensions: [],
-  xpath: [],
-  xslt: [],
 };
 
 /**
@@ -70,7 +72,7 @@ function checkRealValues(supportData, blockList, relPath, logger) {
         }
         if ([true, null].includes(statement.version_removed)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts} {bold ${statement.version_removed}} as a value}`,
+            chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_removed}} as a value}`,
           );
         }
       }
