@@ -47,7 +47,7 @@ The process is:
 1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
    See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
-3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, to production.
+3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/yari/tree/main/kumascript), which includes the BCD release, to production.
    This typically happens within a day of the release of the npm package.
 4. Tables are generated on MDN:
 
@@ -72,7 +72,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
-### Optional: Generating data using the Web API Confluence Dashboard
+### Optional: Generating data using the mdn-bcd-collector project
 
 If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
 
