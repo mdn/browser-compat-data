@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 class DuplicateCompatError extends Error {
-  constructor(message) {
+  constructor(feature) {
     super(`${feature} already exists! Remove duplicate entries.`);
     this.name = 'DuplicateCompatError';
   }
