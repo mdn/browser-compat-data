@@ -54,6 +54,9 @@ describe('spec_url data', () => {
       // Remove if it is in the main ECMA spec
       'https://tc39.es/proposal-hashbang/out.html',
 
+      // Remove if https://github.com/w3c/browser-specs/pull/605 is merged
+      'https://w3c.github.io/webrtc-extensions/',
+
       // Remove if https://github.com/w3c/mathml/issues/216 is resolved
       'https://w3c.github.io/mathml/',
     ];
