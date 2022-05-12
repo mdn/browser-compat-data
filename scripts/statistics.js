@@ -136,6 +136,8 @@ const getStats = (folder, allBrowsers) => {
   /** @constant {string[]} */
   const browsers = allBrowsers
     ? Object.keys(bcd.browsers)
+    : folder === 'webextensions'
+    ? webextensionsBrowsers
     : [
         'chrome',
         'chrome_android',
@@ -155,11 +157,7 @@ const getStats = (folder, allBrowsers) => {
 
   if (folder) {
     if (folder === 'webextensions') {
-      iterateData(
-        bcd[folder],
-        browsers.filter((b) => b in webextensionsBrowsers),
-        stats,
-      );
+      iterateData(bcd[folder], webextensionsBrowsers, stats);
     } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
