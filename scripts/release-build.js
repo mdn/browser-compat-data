@@ -16,7 +16,7 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 // Returns a string representing data ready for writing to JSON file
 function createDataBundle() {
   const bcd = require('../index.js');
-  bcd.__version = packageJson.version;
+  bcd.__meta = { version: packageJson.version };
   const string = stringify(bcd);
   return string;
 }

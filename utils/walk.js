@@ -8,7 +8,7 @@ const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
 const query = require('./query');
 
 function* lowLevelWalk(data = bcd, path, depth = Infinity) {
-  if (path !== undefined && path !== '__version') {
+  if (path !== undefined && path !== '__meta') {
     const next = {
       path,
       data,

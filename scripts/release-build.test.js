@@ -15,7 +15,7 @@ describe('release-build', () => {
     execSync('npm run release-build');
     const regular = require('..');
     const bundled = require(prebuiltPath);
-    regular.__version = version;
+    regular.__meta = { version };
     assert.deepEqual(regular, bundled);
   }).timeout(5000); // Timeout must be long enough for all the file I/O
 });
