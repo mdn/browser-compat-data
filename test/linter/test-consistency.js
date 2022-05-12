@@ -133,9 +133,9 @@ class ConsistencyChecker {
       browsers.forEach((browser) => {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
-        const subfeature_value =
-          query(subfeature, data).__compat.support[browser]?.version_added ||
-          'null';
+        const subfeature_value = this.getVersionAdded(
+          query(subfeature, data).__compat.support[browser],
+        );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
           subfeature_value,
@@ -147,7 +147,7 @@ class ConsistencyChecker {
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'unsupported';
-      const parent_value = data.__compat.support[browser].version_added;
+      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
 
       errors.push({
         errortype,
@@ -176,9 +176,9 @@ class ConsistencyChecker {
       browsers.forEach((browser) => {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
-        const subfeature_value = query(subfeature, data).__compat.support[
-          browser
-        ].version_added;
+        const subfeature_value = this.getVersionAdded(
+          query(subfeature, data).__compat.support[browser],
+        );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
           subfeature_value,
@@ -190,7 +190,7 @@ class ConsistencyChecker {
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'support_unknown';
-      const parent_value = data.__compat.support[browser].version_added;
+      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
 
       errors.push({
         errortype,
@@ -217,9 +217,9 @@ class ConsistencyChecker {
         ) {
           inconsistentSubfeaturesByBrowser[browser] =
             inconsistentSubfeaturesByBrowser[browser] || [];
-          const subfeature_value = query(subfeature, data).__compat.support[
-            browser
-          ].version_added;
+          const subfeature_value = this.getVersionAdded(
+            query(subfeature, data).__compat.support[browser],
+          );
           inconsistentSubfeaturesByBrowser[browser].push([
             subfeature,
             subfeature_value,
@@ -232,7 +232,7 @@ class ConsistencyChecker {
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'subfeature_earlier_implementation';
-      const parent_value = data.__compat.support[browser].version_added;
+      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
 
       errors.push({
         errortype,
@@ -444,7 +444,7 @@ function testConsistency(filename) {
         subfeatures.forEach((subfeature) => {
           console.error(
             chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${
-              subfeature[1] === undefined ? '[Array]' : subfeature[1]
+              subfeature[1]
             }}`,
           );
         });
