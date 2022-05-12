@@ -11,15 +11,12 @@ const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
 
-/**
- * Determines if the OS is Windows
- *
- * @constant {boolean}
- */
+/** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
 /**
- * Recursively load one or more files and/or directories passed as arguments and perform feature sorting.
+ * Check to see if the key is __compat and modify the value to remove
+ * flags from WebView Android.
  *
  * @param {string} key The key in the object
  * @param {Identifier} value The value of the key
@@ -52,7 +49,9 @@ const removeWebViewFlags = (key, value) => {
 };
 
 /**
- * Perform removal of flags within WebView data within all the data in a specified file.  The function will then automatically write any needed changes back into the file.
+ * Perform removal of flags within WebView data within all the datain a
+ * specified file. The function will then automatically write any needed
+ * changes back into the file.
  *
  * @param {string} filename The filename to perform migration upon
  */
@@ -77,7 +76,8 @@ const fixWebViewFlags = (filename) => {
 
 if (require.main === module) {
   /**
-   * Recursively load one or more files and/or directories passed as arguments and perform removal of flags from WebView support data.
+   * Recursively load one or more files and/or directories passed as arguments
+   * and perform removal of flags from WebView support data.
    *
    * @param {string[]} files The files to load and perform migration upon
    * @returns {void}

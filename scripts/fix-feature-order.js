@@ -40,7 +40,8 @@ function orderFeatures(key, value) {
 }
 
 /**
- * Perform a fix of feature order within all the data in a specified file.  The function will then automatically write any needed changes back into the file.
+ * Perform a fix of feature order within all the data in a specified file.
+ * The function will then automatically write any needed changes back into the file.
  *
  * @param {string} filename The filename to perform fix upon
  * @returns {void}

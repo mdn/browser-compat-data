@@ -57,8 +57,9 @@ function isValidVersion(browserIdentifier, version) {
 }
 
 /**
- * Checks if the version number of version_removed is greater than or equal to that of version_added,
- * assuming they are both version strings. If either one is not a valid version string, return null.
+ * Checks if the version number of version_removed is greater than or equal to
+ * that of version_added, assuming they are both version strings. If either one
+ * is not a valid version string, return null.
  *
  * @param {SimpleSupportStatement} statement
  * @returns {(boolean|null)}
