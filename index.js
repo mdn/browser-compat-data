@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { fdir } = require('fdir');
 
 class DuplicateCompatError extends Error {
   constructor(feature) {
@@ -20,33 +21,22 @@ class DuplicateCompatError extends Error {
  * @returns {object} All of the browser compatibility data
  */
 function load(...dirs) {
-  let dir,
-    result = {};
+  let result = {};
 
-  for (dir of dirs) {
-    const entries = fs.readdirSync(dir);
-    for (const entry of entries) {
-      const abspath = path.resolve(__dirname, dir, entry);
-      let extra;
+  for (const dir of dirs) {
+    const paths = new fdir()
+      .withBasePath()
+      .filter((fp) => fp.endsWith('.json'))
+      .crawl(dir)
+      .sync();
 
-      if (fs.statSync(abspath).isDirectory()) {
-        // If the given filename is a directory, recursively load it.
-        extra = load(abspath);
-      } else if (path.extname(abspath) === '.json') {
-        try {
-          extra = JSON.parse(fs.readFileSync(abspath));
-        } catch (e) {
-          // Skip invalid JSON. Tests will flag the problem separately.
-          continue;
-        }
-      } else {
-        // Skip anything else, such as *~ backup files or similar.
+    for (const fp of paths) {
+      try {
+        extend(result, JSON.parse(fs.readFileSync(fp)));
+      } catch (e) {
+        // Skip invalid JSON. Tests will flag the problem separately.
         continue;
       }
-
-      // The JSON data is independent of the actual file
-      // hierarchy, so it is essential to extend "deeply".
-      extend(result, extra);
     }
   }
 
