@@ -260,7 +260,10 @@
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
+      }
     },
 
     "webextensions_identifier": {
@@ -273,7 +276,10 @@
           "$ref": "#/definitions/webextensions_identifier"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
+      }
     }
   },
 
@@ -287,6 +293,9 @@
     }
   },
   "additionalProperties": false,
+  "errorMessage": {
+    "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
+  },
   "maxProperties": 1,
   "minProperties": 1
 }
