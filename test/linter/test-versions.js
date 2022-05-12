@@ -178,8 +178,7 @@ function testVersions(filename) {
    * Process the data for version errors
    *
    * @param {Identifier} data The data to test
-   * @param {Logger} logger The logger to ouptut errors to
-   * @param {string} [relPath] The path of the data
+   * @param {string} relPath The path of the data
    * @returns {void}
    */
   function findSupport(data, relPath) {

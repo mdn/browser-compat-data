@@ -281,7 +281,7 @@ class ConsistencyChecker {
     );
   }
   /**
-   * Get all of the browsers with a version number in a feature
+   * Get all of the browsers with a version number in a feature.
    *
    * @param {CompatStatement} compatData The compat data to process
    * @returns {string[]} The list of browsers with an exact version number
@@ -376,11 +376,11 @@ class ConsistencyChecker {
   }
 
   /**
-   * Get all of the browsers within the data and send the data to the callback
+   * Get all of the browsers within the data and pass the data to the callback.
    *
    * @param {CompatStatement} compatData The compat data to process
-   * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to send the data to
-   * @returns {boolean} The response of the callback, or "false"
+   * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to pass the data to
+   * @returns {boolean} The result of the invoked callback, or "false"
    */
   extractBrowsers(compatData, callback) {
     return Object.keys(compatData.support).filter((browser) => {

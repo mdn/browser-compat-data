@@ -3,8 +3,6 @@
 
 'use strict';
 
-'use strict';
-
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */

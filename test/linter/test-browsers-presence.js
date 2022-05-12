@@ -115,8 +115,7 @@ function processData(
 }
 
 /**
- * @param {string} filename
- * Test for issues within the browsers in the data within the specified file
+ * Test for issues within the browsers in the data within the specified file.
  *
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors

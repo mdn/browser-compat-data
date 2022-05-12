@@ -3,8 +3,6 @@
 
 'use strict';
 
-'use strict';
-
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
@@ -42,7 +40,7 @@ const orderSupportBlock = (key, value) => {
 /**
  * Perform a fix of the browser order of a __compat.support block within all the data in a specified file.  The function will then automatically write any needed changes back into the file.
  *
- * @param {string} filename The filename to perform fix upon
+ * @param {string} filename The path to the file to fix in-place
  * @returns {void}
  */
 const fixBrowserOrder = (filename) => {
