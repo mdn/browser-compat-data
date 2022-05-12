@@ -173,11 +173,11 @@ const getStats = (folder, allBrowsers) => {
  *
  * @param {VersionStats} stats The stats object to get data from
  * @param {string} type The type of statistic to obtain
- * @param {boolean} asCount Whether to return the integer itself
+ * @param {boolean} counts Whether to return the integer itself
  * @returns {string} The percentage or count
  */
-const getStat = (stats, type, asCount) => {
-  return asCount
+const getStat = (stats, type, counts) => {
+  return counts
     ? stats[type]
     : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
 };
@@ -189,7 +189,7 @@ const getStat = (stats, type, asCount) => {
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @returns {void}
  */
-const printStats = (stats, folder, asCount) => {
+const printStats = (stats, folder, counts) => {
   if (!stats) {
     console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
     return;
@@ -214,10 +214,10 @@ const printStats = (stats, folder, asCount) => {
 
   Object.keys(stats).forEach(entry => {
     table += `| ${entry.replace('_', ' ')} | `;
-    table += `${getStat(stats[entry], 'real', asCount)} | `;
-    table += `${getStat(stats[entry], 'range', asCount)} | `;
-    table += `${getStat(stats[entry], 'true', asCount)} | `;
-    table += `${getStat(stats[entry], 'null', asCount)} |
+    table += `${getStat(stats[entry], 'real', counts)} | `;
+    table += `${getStat(stats[entry], 'range', counts)} | `;
+    table += `${getStat(stats[entry], 'true', counts)} | `;
+    table += `${getStat(stats[entry], 'null', counts)} |
 `;
   });
 
@@ -225,7 +225,7 @@ const printStats = (stats, folder, asCount) => {
 };
 
 if (require.main === module) {
-  printStats(getStats(argv.folder, argv.all), argv.folder, argv.asCount);
+  printStats(getStats(argv.folder, argv.all), argv.folder, argv.counts);
 }
 
 module.exports = getStats;
