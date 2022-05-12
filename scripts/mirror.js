@@ -154,7 +154,7 @@ const isVersionAdded = (compatData, versionToCheck) => {
   if (typeof compatData.version_added === 'string')
     return compatData.version_added == versionToCheck;
 
-  if (compatData.constructor === Array) {
+  if (Array.isArray(compatData)) {
     for (var i = compatData.length - 1; i >= 0; i--) {
       if (compatData[i].version_added == versionToCheck) {
         return true;
@@ -585,7 +585,7 @@ const bumpVersion = (
   destination,
   source,
   originalData,
-  target_version,
+  targetVersion,
 ) => {
   let newData = null;
   if (data == null) {
