@@ -797,4 +797,4 @@ if (require.main === module) {
   mirrorData(argv.browser, argv.feature_or_path, argv.source, argv.modify);
 }
 
-module.exports = mirrorData;
+module.exports = { getMatchingBrowserVersion };
