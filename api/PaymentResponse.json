@@ -30,20 +30,7 @@
             ]
           },
           "firefox_android": {
-            "version_added": "55",
-            "version_removed": "79",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.payments.request.enabled",
-                "value_to_set": "true"
-              },
-              {
-                "name": "dom.payments.request.supportedRegions",
-                "type": "preference",
-                "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-              }
-            ]
+            "version_added": false
           },
           "ie": {
             "version_added": false
@@ -104,20 +91,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -178,20 +152,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -252,20 +213,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -296,9 +244,10 @@
           }
         }
       },
-      "onpayerdetailchange": {
+      "payerdetailchange_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/onpayerdetailchange",
+          "description": "<code>payerdetailchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event",
           "support": {
             "chrome": {
               "version_added": "78"
@@ -325,20 +274,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -357,80 +293,6 @@
             },
             "samsunginternet_android": {
               "version_added": "12.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
-      "payerdetailchange_event": {
-        "__compat": {
-          "description": "<code>payerdetailchange</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": "55",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
-            },
-            "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": {
-              "version_added": "12.2"
-            },
-            "samsunginternet_android": {
-              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -472,20 +334,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -545,20 +394,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -618,20 +454,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -692,20 +515,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -766,20 +576,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -839,20 +636,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -912,20 +696,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -986,20 +757,7 @@
               ]
             },
             "firefox_android": {
-              "version_added": "55",
-              "version_removed": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.payments.request.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "name": "dom.payments.request.supportedRegions",
-                  "type": "preference",
-                  "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
-                }
-              ]
+              "version_added": false
             },
             "ie": {
               "version_added": false

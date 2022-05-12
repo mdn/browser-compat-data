@@ -157,7 +157,10 @@
         "__compat": {
           "description": "<code>abort</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-abort",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-abort",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onabort"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -207,7 +210,10 @@
         "__compat": {
           "description": "<code>error</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/error_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-error",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-error",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -407,7 +413,10 @@
         "__compat": {
           "description": "<code>load</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/load_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-load",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-load",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onload"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -425,7 +434,7 @@
               "version_added": "4"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": "9"
             },
             "opera": {
               "version_added": "≤12.1"
@@ -457,7 +466,10 @@
         "__compat": {
           "description": "<code>loadend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/loadend_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-loadend",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-loadend",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onloadend"
+          ],
           "support": {
             "chrome": {
               "version_added": "18"
@@ -493,7 +505,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -507,7 +519,10 @@
         "__compat": {
           "description": "<code>loadstart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/loadstart_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-loadstart",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-loadstart",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onloadstart"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -535,55 +550,6 @@
             },
             "safari": {
               "version_added": "1.3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
-            "webview_android": {
-              "version_added": "1"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onreadystatechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/onreadystatechange",
-          "spec_url": "https://xhr.spec.whatwg.org/#handler-xhr-onreadystatechange",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": {
-              "version_added": "18"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "1"
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "5"
-            },
-            "opera": {
-              "version_added": "9"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "1.2"
             },
             "safari_ios": {
               "version_added": "1"
@@ -712,7 +678,10 @@
         "__compat": {
           "description": "<code>progress</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/progress_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-progress",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-progress",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onprogress"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -783,6 +752,59 @@
             },
             "opera": {
               "version_added": "8"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "1.2"
+            },
+            "safari_ios": {
+              "version_added": "1"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "1"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "readystatechange_event": {
+        "__compat": {
+          "description": "<code>readystatechange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-readystatechange",
+            "https://xhr.spec.whatwg.org/#handler-xhr-onreadystatechange"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "5"
+            },
+            "opera": {
+              "version_added": "9"
             },
             "opera_android": {
               "version_added": "10.1"
@@ -1831,7 +1853,10 @@
         "__compat": {
           "description": "<code>timeout</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout_event",
-          "spec_url": "https://xhr.spec.whatwg.org/#event-xhr-timeout",
+          "spec_url": [
+            "https://xhr.spec.whatwg.org/#event-xhr-timeout",
+            "https://xhr.spec.whatwg.org/#handler-xhr-ontimeout"
+          ],
           "support": {
             "chrome": {
               "version_added": "29"
@@ -1867,7 +1892,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {

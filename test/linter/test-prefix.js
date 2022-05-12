@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const path = require('path');
 const chalk = require('chalk');
 
@@ -22,7 +26,7 @@ function checkPrefix(data, category, errors, prefix, path = '') {
           category == 'api' && !data[key].startsWith(prefix),
           category == 'css' && !data[key].startsWith(`-${prefix}`),
         ];
-        if (rules.some(x => x === true)) {
+        if (rules.some((x) => x === true)) {
           errors.push(error);
         }
       }

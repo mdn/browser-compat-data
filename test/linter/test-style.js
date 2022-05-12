@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const fs = require('fs');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
