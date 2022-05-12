@@ -31,6 +31,7 @@ const compareFeatures = (a, b) => {
       if (capsWordA) return -1;
       if (capsWordB) return 1;
     }
+
     if (a == 'secure_context_required') return -1;
     if (b == 'secure_context_required') return 1;
 
