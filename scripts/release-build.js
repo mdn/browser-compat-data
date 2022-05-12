@@ -1,9 +1,13 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
 
 const fs = require('fs').promises;
 const path = require('path');
 
 const packageJson = require('../package.json');
+const stringify = require('fast-json-stable-stringify');
 
 const directory = './build/';
 
@@ -13,7 +17,7 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 function createDataBundle() {
   const bcd = require('../index.js');
   bcd.__version = packageJson.version;
-  const string = JSON.stringify(bcd);
+  const string = stringify(bcd);
   return string;
 }
 
