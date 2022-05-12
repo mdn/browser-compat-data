@@ -3,7 +3,6 @@
 
 'use strict';
 
-const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
 
@@ -25,8 +24,8 @@ function processData(data, logger) {
 
   for (const status of ['current', 'beta', 'nightly']) {
     const releasesForStatus = Object.entries(releases)
-      .filter(([version, data]) => data.status == status)
-      .map(([version, data]) => version);
+      .filter(([_, data]) => data.status == status)
+      .map(([version]) => version);
 
     if (releasesForStatus.length > 1) {
       logger.error(

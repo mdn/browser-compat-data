@@ -3,6 +3,8 @@
 
 'use strict';
 
+/* eslint no-control-regex: 0 */
+
 const { platform } = require('os');
 const chalk = require('chalk');
 
@@ -18,6 +20,7 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   }),
 );
+
 const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
@@ -64,6 +67,7 @@ function indexToPosRaw(str, index) {
     switch (char) {
       case '\n':
         if (prevChar === '\r') break;
+      // eslint-disable-next-line no-fallthrough
       case '\r':
         line++;
         col = 1;

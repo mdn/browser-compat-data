@@ -28,6 +28,15 @@ const browsers = {
 };
 
 /**
+ * @param {SimpleSupportStatement} statement
+ * @returns {boolean} Whether the statement only has `version_added`
+ */
+function hasVersionAddedOnly(statement) {
+  const keys = Object.keys(statement);
+  return keys.length === 1 && keys[0] === 'version_added';
+}
+
+/**
  * @param {Identifier} data
  * @param {string[]} displayBrowsers
  * @param {string[]} requiredBrowsers
@@ -72,10 +81,6 @@ function processData(
       const statementList = Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement];
-      function hasVersionAddedOnly(statement) {
-        const keys = Object.keys(statement);
-        return keys.length === 1 && keys[0] === 'version_added';
-      }
       let sawVersionAddedOnly = false;
       for (const statement of statementList) {
         if (hasVersionAddedOnly(statement)) {
