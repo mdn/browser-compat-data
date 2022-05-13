@@ -41,7 +41,7 @@ function describeByKind(diffItem) {
     case 'E':
       return `edited (${stringifyChange(diffItem.lhs, diffItem.rhs)})`;
   }
-  throw new Error(`Unexpected kind ${kind}.`);
+  throw new Error(`Unexpected kind ${diffItem.kind}.`);
 }
 
 /**

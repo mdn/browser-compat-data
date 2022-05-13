@@ -18,6 +18,8 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   }),
 );
+
+/* eslint-disable-next-line no-control-regex */
 const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
@@ -78,6 +80,7 @@ function indexToPosRaw(str, index) {
     switch (char) {
       case '\n':
         if (prevChar === '\r') break;
+      // fall through
       case '\r':
         line++;
         col = 1;
