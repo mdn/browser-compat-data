@@ -8,7 +8,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const { platform } = require('os');
 
 const compareFeatures = require('../compare-features');
