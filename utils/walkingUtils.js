@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 function joinPath() {
   return Array.from(arguments).filter(Boolean).join('.');
 }
@@ -11,7 +16,7 @@ function isBrowser(obj) {
 
 function descendantKeys(data) {
   if (isFeature(data)) {
-    return Object.keys(data).filter(key => key !== '__compat');
+    return Object.keys(data).filter((key) => key !== '__compat');
   }
 
   if (isBrowser(data)) {

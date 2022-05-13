@@ -6,8 +6,4 @@
 
 const { exec } = require('child_process');
 
-const format = () => {
-  exec('npx prettier --write "**/*.js" "**/*.ts" "**/*.md"');
-};
-
-module.exports = format;
+exec('node scripts/fix-feature-order.js');

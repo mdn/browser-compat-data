@@ -1,7 +1,12 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
 
 const fs = require('fs').promises;
 const path = require('path');
+
+const stringify = require('fast-json-stable-stringify');
 
 const directory = './build/';
 
@@ -9,8 +14,8 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
 function createDataBundle() {
-  const bcd = require('../index.js');
-  const string = JSON.stringify(bcd);
+  const bcd = require('../../index.js');
+  const string = stringify(bcd);
   return string;
 }
 
@@ -37,7 +42,7 @@ async function copyFiles() {
 }
 
 function createManifest() {
-  const full = require('../package.json');
+  const full = require('../../package.json');
   const minimal = { main: 'index.js' };
 
   const minimalKeys = [
@@ -76,7 +81,7 @@ async function main() {
       force: true,
       recursive: true,
     })
-    .catch(e => {
+    .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
       if (e.code !== 'ENOENT') throw e;
     });
@@ -94,7 +99,7 @@ async function main() {
 
 // This is needed because NodeJS does not support top-level await.
 // Also, make sure to log all errors and exit with failure code.
-main().catch(e => {
+main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
