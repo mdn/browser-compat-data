@@ -34,6 +34,7 @@
     "browser-specs": "~3.10.0",
     "chalk": "~4.1.0",
     "compare-versions": "~4.1.1",
+    "deep-diff": "~1.0.2",
     "fast-json-stable-stringify": "~2.1.0",
     "html-validate": "~7.0.0",
     "mdn-confluence": "~2.2.2",
@@ -41,10 +42,11 @@
     "node-html-parser": "~5.3.3",
     "ora": "~5.4.0",
     "prettier": "~2.6.1",
-    "yargs": "~17.4.0"
+    "yargs": "~17.5.0"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+    "diff": "node scripts/diff.js",
     "mocha": "mocha \"**/*.test.js\"",
     "format": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
