@@ -17,7 +17,7 @@
 const chalk = require('chalk');
 
 const bcd = require('..');
-const { getRefDate } = require('./release-utils');
+const { getRefDate } = require('./release/utils');
 
 const { argv } = require('yargs').command(
   '$0 [folder]',
