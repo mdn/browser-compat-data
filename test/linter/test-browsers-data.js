@@ -14,8 +14,8 @@ const { Logger } = require('../utils.js');
 
 /**
  * @param {Identifier} data
- * @param {Logger} logger
- * @returns {boolean}
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function processData(data, logger) {
   // We only need to grab the first browser in the data

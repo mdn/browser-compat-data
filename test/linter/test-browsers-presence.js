@@ -9,6 +9,7 @@ const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {object.<string, string[]>} */
