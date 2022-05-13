@@ -3,6 +3,6 @@
 
 'use strict';
 
-const fixFeatureOrder = require('./../fix-feature-order.js');
+const { exec } = require('child_process');
 
 exec('node scripts/fix/feature-order.js');
