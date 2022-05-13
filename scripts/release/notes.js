@@ -1,10 +1,15 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const {
   exec,
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} = require('./release-utils');
-const diffFeatures = require('./diff-features');
+} = require('./utils');
+const diffFeatures = require('../diff-features');
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;
