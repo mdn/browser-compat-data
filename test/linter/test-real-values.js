@@ -12,6 +12,7 @@ const { Logger } = require('../utils.js');
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {string[]} */

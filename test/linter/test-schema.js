@@ -10,6 +10,10 @@ const betterAjvErrors = require('better-ajv-errors').default;
 const chalk = require('chalk');
 const { Logger } = require('../utils.js');
 
+/**
+ * @typedef {import('../utils').Logger} Logger
+ */
+
 const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
 // By default the "uri" format rejects ① and similar in URLs.

@@ -3,15 +3,15 @@
 
 'use strict';
 
-/**
- * @typedef {import('../utils').Logger} Logger
- */
-
 const fs = require('fs');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
 const compareFeatures = require('../../scripts/compare-features');
 const { Logger } = require('../utils.js');
+
+/**
+ * @typedef {import('../utils').Logger} Logger
+ */
 
 /**
  * Return a new "support_block" object whose first-level properties
