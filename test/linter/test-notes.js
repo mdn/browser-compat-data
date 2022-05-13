@@ -51,7 +51,7 @@ const testNode = (node, browser, feature, logger) => {
   }
 
   for (let childNode of node.children || []) {
-    testNode(childNode, browser, feature, errors);
+    testNode(childNode, browser, feature, logger);
   }
 };
 
