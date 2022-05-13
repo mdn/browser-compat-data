@@ -8,8 +8,8 @@ const {
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} = require('./release-utils');
-const diffFeatures = require('./diff-features');
+} = require('./utils');
+const diffFeatures = require('../diff-features');
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;

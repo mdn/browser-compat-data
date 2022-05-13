@@ -3,46 +3,34 @@
 
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
+const { platform } = require('os');
+
+const { IS_WINDOWS } = require('../../test/utils.js');
+
 /**
- * Return a new feature object whose first-level properties have been
- * ordered according to Array.prototype.sort, and so will be
- * stringified in that order as well. This relies on guaranteed "own"
- * property ordering, which is insertion order for non-integer keys
- * (which is our case).
+ * Return a new feature object whose status properties have been adjusted according to a few predefined rules.
  *
  * @param {string} key The key in the object
  * @param {*} value The value of the key
  *
  * @returns {*} The new value
  */
-
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
-
-const compareFeatures = require('./compare-features');
-
-function orderFeatures(key, value) {
-  if (value instanceof Object && '__compat' in value) {
-    value = Object.keys(value)
-      .sort(compareFeatures)
-      .reduce((result, key) => {
-        result[key] = value[key];
-        return result;
-      }, {});
+const fixStatus = (key, value) => {
+  const compat = value?.__compat;
+  if (compat && compat.spec_url && compat.status.standard_track === false) {
+    compat.status.standard_track = true;
   }
   return value;
-}
+};
 
 /**
  * @param {string} filename
  */
-const fixFeatureOrder = (filename) => {
+const fixStatusFromFile = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
+  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows
@@ -71,7 +59,7 @@ if (require.main === module) {
 
       if (fs.statSync(file).isFile()) {
         if (path.extname(file) === '.json') {
-          fixFeatureOrder(file);
+          fixStatusFromFile(file);
         }
 
         continue;
@@ -103,4 +91,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = fixFeatureOrder;
+module.exports = fixStatusFromFile;
