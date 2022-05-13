@@ -12,12 +12,14 @@ const { Logger } = require('../utils.js');
  */
 
 /**
- * @param {Identifier} data
- * @param {string} category
- * @param {string} prefix
- * @param {Logger} logger
- * @param {string} [path]
- * @return {void}
+ * Check the prefix of a specific feature
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {string} prefix The browser-based prefix to test
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} [path] The path to the data
+ * @returns {string[]} Any errors found within the data
  */
 function checkPrefix(data, category, prefix, logger, path = '') {
   for (const key in data) {
@@ -43,10 +45,12 @@ function checkPrefix(data, category, prefix, logger, path = '') {
 }
 
 /**
- * @param {Identifier} data
- * @param {string} category
- * @param {Logger} logger
- * @return {void}
+ * Process the data for prefix errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function processData(data, category, logger) {
   let prefixes = [];
@@ -64,7 +68,10 @@ function processData(data, category, logger) {
 }
 
 /**
- * @param {string} filename
+ * Test for issues with feature's prefix
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testPrefix(filename) {
   const logger = new Logger('Prefix');
