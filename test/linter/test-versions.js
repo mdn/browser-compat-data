@@ -31,6 +31,14 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
+/** @type {Object<string, string>} */
+const browserTips = {
+  safari_ios:
+    'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number. Maybe you are trying to use the desktop version number?',
+  opera_android:
+    'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions. Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
+};
+
 for (const browser of Object.keys(browsers)) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
@@ -124,16 +132,20 @@ function checkVersions(supportData, relPath, logger) {
       let sawVersionAddedOnly = false;
 
       for (const statement of supportStatements) {
-        if (!isValidVersion(browser, statement.version_added)) {
-          logger.error(
-            chalk`{bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}`,
-          );
+        for (const property of ['version_added', 'version_removed']) {
+          if (!isValidVersion(browser, statement[property])) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
+                statement[property]
+              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
+                browserTips[browser]
+                  ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
+                  : ''
+              }`,
+            );
+          }
         }
-        if (!isValidVersion(browser, statement.version_removed)) {
-          logger.error(
-            chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}`,
-          );
-        }
+
         if ('version_added' in statement && 'version_removed' in statement) {
           if (statement.version_added === statement.version_removed) {
             logger.error(
