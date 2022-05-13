@@ -166,11 +166,20 @@ function checkVersions(supportData, relPath, logger) {
           }
         } else {
           for (const property of ['version_added', 'version_removed']) {
+            if (
+              property == 'version_removed' &&
+              statement.version_removed === undefined
+            ) {
+              // Undefined is allowed for version_removed
+              continue;
+            }
             if (!isValidVersion(browser, category, statement[property])) {
               logger.error(
                 chalk`{red → {bold ${relPath}} - {bold ${property}: "${
                   statement[property]
-                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
+                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
+                  browser
+                ].join(', ')}}${
                   browserTips[browser]
                     ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
                     : ''
@@ -186,21 +195,6 @@ function checkVersions(supportData, relPath, logger) {
               );
             }
             if (
-              'version_removed' in statement &&
-              !isValidVersion(browser, category, statement.version_removed)
-            ) {
-              logger.error(
-                chalk`{red → {bold ${relPath}} - {bold version_removed: "${
-                  statement.version_removed
-                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${
-                  blockList[category].includes(browser)
-                    ? `false, ${validBrowserVersions[browser].join(', ')}`
-                    : `true, false, null, ${validBrowserVersions[browser].join(
-                        ', ',
-                      )}`
-                }}`,
-              );
-            } else if (
               typeof statement.version_added === 'string' &&
               typeof statement.version_removed === 'string' &&
               addedBeforeRemoved(statement) === false
