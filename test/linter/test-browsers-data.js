@@ -24,7 +24,7 @@ function processData(data, logger) {
 
   for (const status of ['current', 'beta', 'nightly']) {
     const releasesForStatus = Object.entries(releases)
-      .filter(([_, data]) => data.status == status)
+      .filter(([, data]) => data.status == status)
       .map(([version]) => version);
 
     if (releasesForStatus.length > 1) {

@@ -91,25 +91,21 @@ function load(...files) {
       continue; // Ignore non-existent files
     }
 
-  if (!fs.existsSync(file)) {
-    continue; // Ignore non-existent files
-  }
+    if (fs.statSync(file).isFile()) {
+      if (path.extname(file) === '.json') {
+        fixWebViewFlags(file);
+      }
 
-  if (fs.statSync(file).isFile()) {
-    if (path.extname(file) === '.json') {
-      fixWebViewFlags(file);
+      continue;
     }
 
-    continue;
+    const subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
+
+    load(...subFiles);
   }
-
-  const subFiles = fs.readdirSync(file).map((subfile) => {
-    return path.join(file, subfile);
-  });
-
-  load(...subFiles);
 }
-
 
 if (require.main === module) {
   if (process.argv[2]) {
@@ -130,4 +126,7 @@ if (require.main === module) {
   }
 }
 
-module.exports = { removeWebViewFlags, fixWebViewFlags };
+module.exports = {
+  removeWebViewFlags,
+  fixWebViewFlags,
+};
