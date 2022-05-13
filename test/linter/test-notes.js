@@ -1,22 +1,17 @@
-'use strict';
-const chalk = require('chalk');
-const parser = require('node-html-parser');
-const { HtmlValidate } = require('html-validate');
-const { VALID_ELEMENTS } = require('./utils.js');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const validator = new HtmlValidate();
+'use strict';
+
+const chalk = require('chalk');
+const HTMLParser = require('@desertnet/html-parser');
+const { Logger, VALID_ELEMENTS } = require('../utils.js');
+
+const parser = new HTMLParser();
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {'disallowed' | 'attrs' | 'attrs_a' | 'invalid' | 'doublespace'} HTMLErrorType
- *
- * @typedef {object} HTMLError
- * @property {HTMLErrorType} errortype The type of error
- * @property {string} feature The identifier of the feature
- * @property {string} browser The browser where the error was found
- * @property {string} tag The specific HTML tag
- * @property {string[]} messages Messages to describe the error
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /**
@@ -25,48 +20,42 @@ const validator = new HtmlValidate();
  * @param {object} node The DOM node to test
  * @param {string} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
- * @param {HTMLError[]} errors The array to push errors to
+ * @param {logger} logger The logger to output errors to
  * @returns {void}
  */
-const testNode = (node, browser, feature, errors) => {
-  if (node.nodeType == 1) {
+const testNode = (node, browser, feature, logger) => {
+  if (node.type == 'TAG') {
     const tag = node.tagName?.toLowerCase();
     if (tag && !VALID_ELEMENTS.includes(tag)) {
       // Ensure we're only using select nodes
-      errors.push({
-        type: 'disallowed',
-        feature,
-        browser,
-        tag,
-      });
+      logger.error(
+        chalk`Notes for {bold ${feature}} in {bold ${browser}} have a {bold disallowed HTML element} ({bold <${tag}>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(
+          ', ',
+        )}`,
+      );
     }
+
+    // Ensure nodes only contain specific attributes
+    const attrs = node.attributes.map((x) => x._name);
     if (tag === 'a') {
-      if (
-        Object.entries(node.attributes).length !== 1 ||
-        !('href' in node.attributes)
-      ) {
+      if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
-        errors.push({
-          type: 'attrs_a',
-          feature,
-          browser,
-          tag,
-        });
+        logger.error(
+          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes other than href}. {bold <a>} elements may only have an {bold href} attribute.`,
+        );
       }
     } else {
-      if (Object.entries(node.attributes).length !== 0) {
+      if (attrs.length > 0) {
         // Ensure nodes (besides 'a') contain no attributes
-        errors.push({
-          type: 'attrs',
-          feature,
-          browser,
-          tag,
-        });
+        logger.error(
+          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.`,
+        );
       }
     }
   }
-  for (let childNode of node.childNodes) {
-    testNode(childNode, browser, feature, errors);
+
+  for (let childNode of node.children || []) {
+    testNode(childNode, browser, feature, logger);
   }
 };
 
@@ -76,38 +65,27 @@ const testNode = (node, browser, feature, errors) => {
  * @param {string} string The string to test
  * @param {string} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
- * @param {HTMLError[]} errors The array to push errors to
+ * @param {logger} logger The logger to output errors to
  * @returns {void}
  */
-const validateHTML = (string, browser, feature, errors) => {
-  const report = validator.validateString(string, {
-    rules: {
-      'attr-quotes': 'off',
-    },
-  });
-  if (report.valid) {
+const validateHTML = (string, browser, feature, logger) => {
+  const htmlErrors = HTMLParser.validate(string);
+
+  if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
-    let root = parser.parse(string);
-    testNode(root, browser, feature, errors);
+    testNode(parser.parse(string), browser, feature, logger);
   } else {
-    errors.push({
-      type: 'invalid',
-      // Parse messages from validator in readable format
-      messages: report.results
-        .map((x) => x.messages)
-        .flat()
-        .map((x) => x.message),
-      feature,
-      browser,
-    });
+    logger.error(
+      chalk`Notes for {bold ${feature}} in {bold ${browser}} have invalid HTML: ${htmlErrors
+        .map((x) => x._message)
+        .flat()}`,
+    );
   }
 
   if (string.includes('  ')) {
-    errors.push({
-      type: 'doublespace',
-      feature,
-      browser,
-    });
+    logger.error(
+      chalk`Notes for {bold ${feature}} in {bold ${browser}} have double-spaces. Notes are required to have single spaces only.`,
+    );
   }
 };
 
@@ -117,16 +95,16 @@ const validateHTML = (string, browser, feature, errors) => {
  * @param {string|string[]} notes The notes to test
  * @param {string} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
- * @param {HTMLError[]} errors The array to push errors to
+ * @param {logger} logger The logger to output errors to
  * @returns {void}
  */
-const checkNotes = (notes, browser, feature, errors) => {
+const checkNotes = (notes, browser, feature, logger) => {
   if (Array.isArray(notes)) {
     for (let note of notes) {
-      validateHTML(note, browser, feature, errors);
+      validateHTML(note, browser, feature, logger);
     }
   } else {
-    validateHTML(notes, browser, feature, errors);
+    validateHTML(notes, browser, feature, logger);
   }
 };
 
@@ -134,28 +112,28 @@ const checkNotes = (notes, browser, feature, errors) => {
  * Process the data for notes errors
  *
  * @param {Identifier} data The data to test
- * @param {HTMLError[]} errors The array to push errors to
+ * @param {logger} logger The logger to output errors to
  * @param {string} [feature] The identifier of the feature
  * @returns {void}
  */
-const processData = (data, errors, feature) => {
+const processData = (data, logger, feature) => {
   for (const prop in data) {
     if (prop === '__compat' && data[prop].support) {
       let statement = data[prop].support;
       for (const browser in statement) {
         if (Array.isArray(statement[browser])) {
           for (let s of statement[browser]) {
-            if (s.notes) checkNotes(s.notes, browser, feature, errors);
+            if (s.notes) checkNotes(s.notes, browser, feature, logger);
           }
         } else {
           if (statement[browser].notes)
-            checkNotes(statement[browser].notes, browser, feature, errors);
+            checkNotes(statement[browser].notes, browser, feature, logger);
         }
       }
     }
     const sub = data[prop];
     if (typeof sub === 'object') {
-      processData(sub, errors, feature ? `${feature}.${prop}` : `${prop}`);
+      processData(sub, logger, feature ? `${feature}.${prop}` : `${prop}`);
     }
   }
 };
@@ -169,61 +147,12 @@ const processData = (data, errors, feature) => {
 const testNotes = (filename) => {
   /** @type {Identifier} */
   const data = require(filename);
+  const logger = new Logger('Notes');
 
-  /** @type {HTMLError[]} */
-  const errors = [];
+  processData(data, logger);
 
-  processData(data, errors);
-
-  if (!errors.length) {
-    return false;
-  }
-
-  console.error(
-    chalk`{red   Notes – {bold ${errors.length}} ${
-      errors.length === 1 ? 'error' : 'errors'
-    }:}`,
-  );
-  for (const error of errors) {
-    switch (error.type) {
-      case 'invalid':
-        console.error(
-          chalk`{red   Notes for {bold ${error.feature}} in {bold ${
-            error.browser
-          }} have invalid HTML: ${error.messages.join(', ')}}`,
-        );
-        break;
-      case 'disallowed':
-        console.error(
-          chalk`{red   Notes for {bold ${error.feature}} in {bold ${
-            error.browser
-          }} have a {bold disallowed HTML element} ({bold <${
-            error.tag
-          }>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}}`,
-        );
-        break;
-      case 'attrs':
-        console.error(
-          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.}`,
-        );
-        break;
-      case 'attrs_a':
-        console.error(
-          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have an HTML element ({bold <${error.tag}>}) with {bold attributes}. {bold <a>} elements may only have an {bold href} attribute.}`,
-        );
-        break;
-      case 'doublespace':
-        console.error(
-          chalk`{red   Notes for {bold ${error.feature}} in {bold ${error.browser}} have double-spaces. Notes are required to have single spaces only.}`,
-        );
-        break;
-      default:
-        throw new Error(
-          `${error.type} thrown for ${error.feature} which is unknown type.`,
-        );
-    }
-  }
-  return true;
+  logger.emit();
+  return logger.hasErrors();
 };
 
 module.exports = testNotes;
