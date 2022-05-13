@@ -5,23 +5,15 @@
         "__compat": {
           "description": "<code>:is()</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:is",
+          "spec_url": "https://drafts.csswg.org/selectors/#matches-pseudo",
           "support": {
             "chrome": [
               {
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+                "version_added": "88"
               },
               {
-                "version_added": "66",
-                "version_removed": "71",
-                "alternative_name": ":matches()",
+                "version_removed": "88",
+                "version_added": "68",
                 "flags": [
                   {
                     "type": "preference",
@@ -39,17 +31,7 @@
             ],
             "chrome_android": [
               {
-                "version_added": "66",
-                "version_removed": "71",
-                "alternative_name": ":matches()",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+                "version_added": "88"
               },
               {
                 "version_added": "18",
@@ -59,6 +41,10 @@
             ],
             "edge": [
               {
+                "version_added": "88"
+              },
+              {
+                "version_removed": "88",
                 "version_added": "79",
                 "flags": [
                   {
@@ -95,37 +81,33 @@
                 "alternative_name": ":-moz-any()",
                 "notes": [
                   "Doesn't support combinators.",
-                  "See <a href='https://bugzil.la/906353'>bug 906353</a>"
+                  "See <a href='https://bugzil.la/906353'>bug 906353</a>."
                 ]
               }
             ],
-            "firefox_android": {
-              "version_added": "4",
-              "alternative_name": ":-moz-any()",
-              "notes": [
-                "Doesn't support combinators.",
-                "See <a href='https://bugzil.la/906353'>bug 906353</a>"
-              ]
-            },
+            "firefox_android": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "4",
+                "alternative_name": ":-moz-any()",
+                "notes": [
+                  "Doesn't support combinators.",
+                  "See <a href='https://bugzil.la/906353'>bug 906353</a>."
+                ]
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": [
               {
-                "version_added": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+                "version_added": "74"
               },
               {
-                "version_added": "53",
-                "version_removed": "58",
-                "alternative_name": ":matches()",
+                "version_removed": "74",
+                "version_added": "55",
                 "flags": [
                   {
                     "type": "preference",
@@ -143,28 +125,7 @@
             ],
             "opera_android": [
               {
-                "version_added": "48",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
-              },
-              {
-                "version_added": "47",
-                "version_removed": "50",
-                "alternative_name": ":matches()",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
+                "version_added": "63"
               },
               {
                 "version_added": "14",
@@ -202,6 +163,9 @@
             ],
             "samsunginternet_android": [
               {
+                "version_added": "15.0"
+              },
+              {
                 "alternative_name": ":matches()",
                 "version_added": "9.0",
                 "version_removed": "10.0"
@@ -211,11 +175,16 @@
                 "version_added": "1.0"
               }
             ],
-            "webview_android": {
-              "version_added": "≤37",
-              "alternative_name": ":-webkit-any()",
-              "notes": "Doesn't support combinators."
-            }
+            "webview_android": [
+              {
+                "version_added": "88"
+              },
+              {
+                "version_added": "≤37",
+                "alternative_name": ":-webkit-any()",
+                "notes": "Doesn't support combinators."
+              }
+            ]
           },
           "status": {
             "experimental": false,
@@ -226,16 +195,16 @@
         "forgiving_selector_list": {
           "__compat": {
             "description": "Support for forgiving selector list",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:where",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:is#Forgiving_Selector_Parsing",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "88"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "88"
               },
               "edge": {
-                "version_added": false
+                "version_added": "88"
               },
               "firefox": {
                 "version_added": "82"
@@ -247,22 +216,22 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "74"
               },
               "opera_android": {
-                "version_added": false
+                "version_added": "63"
               },
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "14"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "15.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "88"
               }
             },
             "status": {

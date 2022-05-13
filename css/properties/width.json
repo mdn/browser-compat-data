@@ -4,6 +4,7 @@
       "width": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/width",
+          "spec_url": "https://drafts.csswg.org/css-sizing-4/#width-height-keywords",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -77,10 +78,10 @@
                 "version_added": "14"
               },
               "safari": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "safari_ios": {
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": "1.5"
@@ -146,6 +147,7 @@
         },
         "fit-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content",
             "description": "<code>fit-content</code>",
             "support": {
               "chrome": [
@@ -230,7 +232,7 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "6.1"
+                  "version_added": "7"
                 },
                 {
                   "alternative_name": "intrinsic",
@@ -286,8 +288,63 @@
             }
           }
         },
+        "fit-content_function": {
+          "__compat": {
+            "description": "<code>fit-content()</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "91",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.fit-content-function.enabled"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "max-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-max-content",
             "description": "<code>max-content</code>",
             "support": {
               "chrome": [
@@ -372,6 +429,7 @@
         },
         "min-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-min-content",
             "description": "<code>min-content</code>",
             "support": {
               "chrome": [
@@ -521,11 +579,11 @@
               },
               "safari": {
                 "alternative_name": "-webkit-fill-available",
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "safari_ios": {
                 "alternative_name": "-webkit-fill-available",
-                "version_added": "6.1"
+                "version_added": "7"
               },
               "samsunginternet_android": {
                 "version_added": "5.0",

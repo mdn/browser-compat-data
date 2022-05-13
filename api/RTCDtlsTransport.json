@@ -3,6 +3,7 @@
     "RTCDtlsTransport": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport",
+        "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdtlstransport",
         "support": {
           "chrome": {
             "version_added": "72"
@@ -31,10 +32,10 @@
             "version_added": "50"
           },
           "safari": {
-            "version_added": false
+            "version_added": "15.4"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "15.4"
           },
           "samsunginternet_android": {
             "version_added": "11.0"
@@ -49,9 +50,9 @@
           "deprecated": false
         }
       },
-      "getRemoteCertificates": {
+      "error_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates",
+          "description": "<code>error</code> event",
           "support": {
             "chrome": {
               "version_added": "72"
@@ -80,10 +81,61 @@
               "version_added": "50"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
+              "version_added": "15.4"
+            },
+            "samsunginternet_android": {
+              "version_added": "11.0"
+            },
+            "webview_android": {
+              "version_added": "72"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getRemoteCertificates": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdtlstransport-getremotecertificates",
+          "support": {
+            "chrome": {
+              "version_added": "72"
+            },
+            "chrome_android": {
+              "version_added": "72"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1307996'>bug 1307996</a>."
+            },
+            "firefox_android": {
+              "version_added": false,
+              "notes": "See <a href='https://bugzil.la/1307996'>bug 1307996</a>."
+            },
+            "ie": {
               "version_added": false
+            },
+            "opera": {
+              "version_added": "60"
+            },
+            "opera_android": {
+              "version_added": "50"
+            },
+            "safari": {
+              "version_added": "15.4"
+            },
+            "safari_ios": {
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -102,6 +154,7 @@
       "iceTransport": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdtlstransport-icetransport",
           "support": {
             "chrome": {
               "version_added": "72"
@@ -131,111 +184,10 @@
               "version_added": "50"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": "72"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/onerror",
-          "support": {
-            "chrome": {
-              "version_added": "72"
-            },
-            "chrome_android": {
-              "version_added": "72"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1307996'>bug 1307996</a>."
-            },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1307996'>bug 1307996</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "60"
-            },
-            "opera_android": {
-              "version_added": "50"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": "72"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onstatechange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/onstatechange",
-          "support": {
-            "chrome": {
-              "version_added": "72"
-            },
-            "chrome_android": {
-              "version_added": "72"
-            },
-            "edge": {
-              "version_added": "12",
-              "alternative_name": "ondtlsstatechange"
-            },
-            "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1307996'>bug 1307996</a>."
-            },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1307996'>bug 1307996</a>."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "60"
-            },
-            "opera_android": {
-              "version_added": "50"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -254,6 +206,7 @@
       "state": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state",
+          "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdtlstransport-state",
           "support": {
             "chrome": {
               "version_added": "72"
@@ -282,10 +235,10 @@
               "version_added": "50"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "11.0"
@@ -334,10 +287,10 @@
               "version_added": "50"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15.4"
             },
             "samsunginternet_android": {
               "version_added": "11.0"

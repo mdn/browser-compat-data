@@ -3,8 +3,9 @@
     "types": {
       "calc": {
         "__compat": {
-          "description": "<code>&lt;calc()&gt;</code>",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/calc",
+          "description": "<code>calc()</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/calc()",
+          "spec_url": "https://drafts.csswg.org/css-values/#calc-func",
           "support": {
             "chrome": [
               {
@@ -25,6 +26,7 @@
               {
                 "version_added": "16",
                 "notes": [
+                  "Before Firefox 59 <code>calc()</code> is not supported in <code>rgb()</code> and other color functions.",
                   "Before Firefox 57 <code>calc(1*2*3)</code> is not parsed successfully.",
                   "Firefox 57 increased the number of places <code>calc()</code> could substitute another value. See <a href='https://bugzil.la/1350857'>bug 1350857</a>."
                 ]
@@ -39,6 +41,7 @@
               {
                 "version_added": "16",
                 "notes": [
+                  "Before Firefox 59 <code>calc()</code> is not supported in <code>rgb()</code> and other color functions.",
                   "Before Firefox 57 <code>calc(1*2*3)</code> is not parsed successfully.",
                   "Firefox 57 increased the number of places <code>calc()</code> could substitute another value. See <a href='https://bugzil.la/1350857'>bug 1350857</a>."
                 ]
@@ -93,54 +96,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "color_values": {
-          "__compat": {
-            "description": "<code>&lt;color&gt;</code> value support",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "59"
-              },
-              "firefox_android": {
-                "version_added": "59"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": "6"
-              },
-              "safari_ios": {
-                "version_added": "6"
-              },
-              "samsunginternet_android": {
-                "version_added": false
-              },
-              "webview_android": {
-                "version_added": false
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         },
         "gradient_color_stops": {

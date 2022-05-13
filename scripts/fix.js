@@ -1,9 +1,12 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
-const format = require('./fix-format');
 
 /**
  * @param {string[]} files
@@ -28,7 +31,7 @@ function load(...files) {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
@@ -51,6 +54,4 @@ if (process.argv[2]) {
     'webdriver',
     'webextensions',
   );
-
-  format();
 }

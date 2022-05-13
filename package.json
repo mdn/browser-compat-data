@@ -1,14 +1,11 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "2.0.6",
+  "version": "4.1.20",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
-  "dependencies": {
-    "extend": "3.0.2"
-  },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
@@ -30,26 +27,37 @@
   },
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
-    "ajv": "~6.12.2",
-    "better-ajv-errors": "~0.6.7",
+    "ajv": "~8.11.0",
+    "ajv-errors": "~3.0.0",
+    "ajv-formats": "~2.1.1",
+    "better-ajv-errors": "~1.2.0",
+    "browser-specs": "~3.10.0",
     "chalk": "~4.1.0",
-    "compare-versions": "~3.6.0",
-    "mdn-confluence": "~2.2.0",
-    "mocha": "~8.2.0",
-    "ora": "~5.1.0",
-    "prettier": "~2.1.2",
-    "yargs": "~16.1.0"
+    "compare-versions": "~4.1.1",
+    "fast-json-stable-stringify": "~2.1.0",
+    "html-validate": "~7.0.0",
+    "mdn-confluence": "~2.2.2",
+    "mocha": "~10.0.0",
+    "node-html-parser": "~5.3.3",
+    "ora": "~5.4.0",
+    "prettier": "~2.6.1",
+    "yargs": "~17.5.0"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "mocha": "mocha \"test/**.test.js\"",
+    "mocha": "mocha \"**/*.test.js\"",
+    "format": "npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
+    "format:fix": "npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
-    "fix": "node scripts/fix",
+    "fix": "npm run format:fix && node scripts/fix",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
+    "release-build": "node scripts/release-build",
+    "release-pulls": "node scripts/release-pulls",
     "release-notes": "node scripts/release-notes",
+    "release-stats": "node scripts/release-stats",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run mocha && npm run lint",
+    "test": "npm run format && npm run lint && npm run mocha",
     "traverse": "node scripts/traverse"
   }
 }

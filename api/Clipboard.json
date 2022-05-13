@@ -3,6 +3,7 @@
     "Clipboard": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard",
+        "spec_url": "https://w3c.github.io/clipboard-apis/#clipboard-interface",
         "support": {
           "chrome": {
             "version_added": "66"
@@ -50,8 +51,14 @@
       "read": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-read",
           "support": {
             "chrome": [
+              {
+                "version_added": "86",
+                "partial_implementation": true,
+                "notes": "From version 86, the <code>text/html</code> MIME type is supported."
+              },
               {
                 "version_added": "76",
                 "partial_implementation": true,
@@ -64,6 +71,11 @@
               }
             ],
             "chrome_android": [
+              {
+                "version_added": "86",
+                "partial_implementation": true,
+                "notes": "From version 86, the <code>text/html</code> MIME type is supported."
+              },
               {
                 "version_added": "84",
                 "partial_implementation": true,
@@ -78,27 +90,49 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "63",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.dataTransfer",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Currently works just like <code>readText()</code>; non-text content is not currently supported."
-            },
+            "firefox": [
+              {
+                "version_added": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.read",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              },
+              {
+                "version_added": "87",
+                "version_removed": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.clipboardItem",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              },
+              {
+                "version_added": "63",
+                "version_removed": "87",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.dataTransfer",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "This method returns a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
+                  "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": "63",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.dataTransfer",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Currently works just like <code>readText()</code>; non-text content is not currently supported."
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -141,6 +175,7 @@
       "readText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/readText",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-readtext",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -191,6 +226,7 @@
       "write": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/write",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-write",
           "support": {
             "chrome": {
               "version_added": "66",
@@ -203,27 +239,36 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": "63",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.dataTransfer",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Currently works exactly like <code>writeText()</code>, including the availability limitations currently imposed by Firefox."
-            },
+            "firefox": [
+              {
+                "version_added": "87",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.clipboardItem",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+              },
+              {
+                "version_added": "63",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.events.asyncClipboard.dataTransfer",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": [
+                  "This method accepts a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
+                  "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": "63",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.dataTransfer",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Currently works exactly like <code>writeText()</code>, including the availability limitations currently imposed by Firefox."
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -258,6 +303,7 @@
       "writeText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/writeText",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-writetext",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -286,10 +332,12 @@
               "version_added": "47"
             },
             "safari": {
-              "version_added": "13.1"
+              "version_added": "13.1",
+              "notes": "Must be called within user gesture event handlers such as <code>pointerdown</code> or <code>pointerup</code>."
             },
             "safari_ios": {
-              "version_added": "13.4"
+              "version_added": "13.4",
+              "notes": "Must be called within user gesture event handlers such as <code>pointerdown</code> or <code>pointerup</code>."
             },
             "samsunginternet_android": {
               "version_added": "9.0"

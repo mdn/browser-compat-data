@@ -4,6 +4,7 @@
       "area": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/area",
+          "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element",
           "support": {
             "chrome": {
               "version_added": true
@@ -335,13 +336,13 @@
             "description": "<code>target=\"_blank\"</code> implies <code>rel=\"noopener\"</code> behavior",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "88"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "88"
               },
               "edge": {
-                "version_added": false
+                "version_added": "88"
               },
               "firefox": {
                 "version_added": "79"
@@ -362,10 +363,10 @@
                 "version_added": "12.1"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "12.2"
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "15.0"
               },
               "webview_android": {
                 "version_added": false
@@ -374,7 +375,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": true
+              "deprecated": false
             }
           }
         },
@@ -519,6 +520,60 @@
             }
           }
         },
+        "ping": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "12"
+              },
+              "chrome_android": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "17"
+              },
+              "firefox": {
+                "version_added": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "browser.send_pings",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "15"
+              },
+              "opera_android": {
+                "version_added": "14"
+              },
+              "safari": {
+                "version_added": "6"
+              },
+              "safari_ios": {
+                "version_added": "6"
+              },
+              "samsunginternet_android": {
+                "version_added": "1.0"
+              },
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "referrerpolicy": {
           "__compat": {
             "support": {
@@ -615,6 +670,7 @@
           "noopener": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener",
+              "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-noopener",
               "support": {
                 "chrome": {
                   "version_added": "49"
@@ -627,11 +683,11 @@
                 },
                 "firefox": {
                   "version_added": "52",
-                  "notes": "Prior to Firefox 63, <code>rel=\"noopener\"</code> created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
+                  "notes": "Before Firefox 63, <code>rel=\"noopener\"</code> created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
                 },
                 "firefox_android": {
                   "version_added": "52",
-                  "notes": "Prior to Firefox 63, <code>rel=\"noopener\"</code> created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
+                  "notes": "Before Firefox 63, <code>rel=\"noopener\"</code> created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
                 },
                 "ie": {
                   "version_added": false
@@ -665,6 +721,7 @@
           "noreferrer": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Link_types/noreferrer",
+              "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer",
               "support": {
                 "chrome": {
                   "version_added": "16"
@@ -696,7 +753,7 @@
                   "version_added": "5"
                 },
                 "safari_ios": {
-                  "version_added": "4.3"
+                  "version_added": "4.2"
                 },
                 "samsunginternet_android": {
                   "version_added": "1.5"

@@ -3,6 +3,7 @@
     "URL": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL",
+        "spec_url": "https://url.spec.whatwg.org/#api",
         "support": {
           "chrome": [
             {
@@ -22,6 +23,9 @@
               "prefix": "webkit"
             }
           ],
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
             "version_added": "12"
           },
@@ -115,6 +119,7 @@
       "URL": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/URL",
+          "spec_url": "https://url.spec.whatwg.org/#constructors",
           "description": "<code>URL()</code> constructor",
           "support": {
             "chrome": {
@@ -123,8 +128,12 @@
             "chrome_android": {
               "version_added": "25"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "notes": "Before Edge 79, query arguments in the base URL argument are removed when calling the <code>URL</code> constructor."
             },
             "firefox": {
               "version_added": "26"
@@ -135,30 +144,46 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": true
-            },
+            "nodejs": [
+              {
+                "version_added": "10.0.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "notes": "Has to be imported from the URL module."
+              }
+            ],
             "opera": {
               "version_added": "15"
             },
             "opera_android": {
               "version_added": "14"
             },
-            "safari": {
-              "version_added": "6",
-              "partial_implementation": true,
-              "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
-            },
-            "safari_ios": {
-              "version_added": "6",
-              "partial_implementation": true,
-              "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "6",
+                "partial_implementation": true,
+                "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -171,12 +196,16 @@
       "createObjectURL": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/createObjectURL",
+          "spec_url": "https://w3c.github.io/FileAPI/#dfn-createObjectURL",
           "support": {
             "chrome": {
               "version_added": "19"
             },
             "chrome_android": {
               "version_added": "25"
+            },
+            "deno": {
+              "version_added": "1.9"
             },
             "edge": {
               "version_added": "12"
@@ -194,7 +223,7 @@
               "notes": "If the underlying object does not have a content type set, using this URL as the <code>src</code> of an <code>img</code> tag fails intermittently with error DOM7009."
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "16.7.0"
             },
             "opera": {
               "version_added": "15"
@@ -212,72 +241,77 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         },
-        "no_MediaStream_argument": {
+        "MediaStream_support": {
           "__compat": {
-            "description": "No longer accepts <code>MediaStream</code> object",
+            "description": "Support for <code>MediaStream</code> objects",
             "support": {
               "chrome": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "19",
+                "version_removed": "71"
               },
               "chrome_android": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "25",
+                "version_removed": "71"
+              },
+              "deno": {
+                "version_added": false
               },
               "edge": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "12",
+                "version_removed": "79"
               },
               "firefox": {
-                "version_added": "62"
+                "version_added": "19",
+                "version_removed": "62"
               },
               "firefox_android": {
-                "version_added": "62"
+                "version_added": "19",
+                "version_removed": "62"
               },
               "ie": {
-                "version_added": null
+                "version_added": "10"
               },
               "nodejs": {
                 "version_added": false
               },
               "opera": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "15",
+                "version_removed": "60"
               },
               "opera_android": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "14",
+                "version_removed": "50"
               },
               "safari": {
-                "version_added": null,
-                "notes": "See <a href='https://webkit.org/b/167518'>here</a> for progress on deprecation."
+                "version_added": "6",
+                "version_removed": "11"
               },
               "safari_ios": {
-                "version_added": null,
-                "notes": "See <a href='https://webkit.org/b/167518'>here</a> for progress on deprecation."
+                "version_added": "6",
+                "version_removed": "11"
               },
               "samsunginternet_android": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "1.5",
+                "version_removed": "10.0"
               },
               "webview_android": {
-                "version_added": null,
-                "notes": "See <a href='https://crbug.com/591719'>here</a> for progress on deprecation."
+                "version_added": "≤37",
+                "version_removed": "71"
               }
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
-              "deprecated": false
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }
@@ -285,12 +319,16 @@
       "hash": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/hash",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-hash",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -305,25 +343,25 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
-              "version_added": true
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -336,12 +374,16 @@
       "host": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/host",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-host",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -356,25 +398,25 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
-              "version_added": true
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -387,12 +429,16 @@
       "hostname": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/hostname",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-hostname",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -407,25 +453,25 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -438,12 +484,16 @@
       "href": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/href",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-href",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -458,25 +508,25 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -489,12 +539,16 @@
       "origin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/origin",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-origin",
           "support": {
             "chrome": {
               "version_added": "32"
             },
             "chrome_android": {
               "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -523,19 +577,19 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -554,12 +608,16 @@
       "password": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/password",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-password",
           "support": {
             "chrome": {
               "version_added": "32"
             },
             "chrome_android": {
               "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -574,19 +632,19 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -605,59 +663,51 @@
       "pathname": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/pathname",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-pathname",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
             },
-            "firefox": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "22",
-                "version_removed": "53",
-                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "22",
-                "version_removed": "53",
-                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
-              }
-            ],
+            "firefox": {
+              "version_added": "22",
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+            },
             "ie": {
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -670,12 +720,16 @@
       "port": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/port",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-port",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -690,25 +744,25 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -721,12 +775,16 @@
       "protocol": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/protocol",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-protocol",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
@@ -741,25 +799,25 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -772,12 +830,16 @@
       "revokeObjectURL": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/revokeObjectURL",
+          "spec_url": "https://w3c.github.io/FileAPI/#dfn-revokeObjectURL",
           "support": {
             "chrome": {
               "version_added": "19"
             },
             "chrome_android": {
               "version_added": "25"
+            },
+            "deno": {
+              "version_added": "1.9"
             },
             "edge": {
               "version_added": "12"
@@ -794,7 +856,7 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "16.7.0"
             },
             "opera": {
               "version_added": "15"
@@ -812,11 +874,11 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -825,59 +887,51 @@
       "search": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/search",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-search",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "32"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "13"
             },
-            "firefox": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "22",
-                "version_removed": "53",
-                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "22",
-                "version_removed": "53",
-                "notes": "<code>pathname</code> and <code>search</code> returned the wrong values so that for a URL of <code>http://z.com/x?a=true&b=false</code>, <code>pathname</code> would return \"/x?a=true&b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&b=false\" respectively."
-              }
-            ],
+            "firefox": {
+              "version_added": "22",
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+            },
+            "firefox_android": {
+              "version_added": "22",
+              "notes": "Before Firefox 53, <code>pathname</code> and <code>search</code> returned wrong values for custom protocols. Given <code>protocol:host/x?a=true&amp;b=false</code>, <code>pathname</code> would return \"/x?a=true&amp;b=false\" and <code>search</code> would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See <a href='https://bugzil.la/1310483'>bug 1310483</a>."
+            },
             "ie": {
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "2.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4.3"
             }
           },
           "status": {
@@ -890,12 +944,16 @@
       "searchParams": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/searchParams",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-searchparams",
           "support": {
             "chrome": {
               "version_added": "51"
             },
             "chrome_android": {
               "version_added": "51"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -909,9 +967,17 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.5.0"
+              },
+              {
+                "version_added": "7.0.0",
+                "version_removed": "7.5.0",
+                "partial_implementation": true,
+                "notes": "An object matching the <code>URLSearchParams</code> interface is returned, but it contains no data."
+              }
+            ],
             "opera": {
               "version_added": "38"
             },
@@ -941,12 +1007,16 @@
       "toJSON": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/toJSON",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-tojson",
           "support": {
             "chrome": {
               "version_added": "71"
             },
             "chrome_android": {
               "version_added": "71"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -961,19 +1031,19 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.7.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "58"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "50"
             },
             "safari": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "11"
             },
             "samsunginternet_android": {
               "version_added": "10.0"
@@ -992,12 +1062,16 @@
       "toString": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/toString",
+          "spec_url": "https://url.spec.whatwg.org/#URL-stringification-behavior",
           "support": {
             "chrome": {
               "version_added": "19"
             },
             "chrome_android": {
               "version_added": "25"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "17"
@@ -1011,17 +1085,20 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "7.0.0"
+            },
             "opera": {
-              "version_added": true
+              "version_added": "15"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "safari": {
-              "version_added": true
+              "version_added": "7"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "7"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -1040,12 +1117,16 @@
       "username": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/username",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-username",
           "support": {
             "chrome": {
               "version_added": "32"
             },
             "chrome_android": {
               "version_added": "32"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
               "version_added": "12"
@@ -1060,19 +1141,19 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": true
+              "version_added": "7.0.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "19"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "19"
             },
             "safari": {
               "version_added": "10"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "10"
             },
             "samsunginternet_android": {
               "version_added": "6.0"

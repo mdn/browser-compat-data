@@ -3,12 +3,16 @@
     "CustomEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomEvent",
+        "spec_url": "https://dom.spec.whatwg.org/#interface-customevent",
         "support": {
           "chrome": {
-            "version_added": "15"
+            "version_added": "5"
           },
           "chrome_android": {
             "version_added": "18"
+          },
+          "deno": {
+            "version_added": "1.0"
           },
           "edge": {
             "version_added": "12"
@@ -29,16 +33,16 @@
             "version_added": "11"
           },
           "safari": {
-            "version_added": "5.1"
+            "version_added": "5"
           },
           "safari_ios": {
-            "version_added": "6"
+            "version_added": "5"
           },
           "samsunginternet_android": {
             "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "3"
           }
         },
         "status": {
@@ -50,6 +54,7 @@
       "CustomEvent": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomEvent/CustomEvent",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-customevent-customevent",
           "description": "<code>CustomEvent()</code> constructor",
           "support": {
             "chrome": {
@@ -58,8 +63,11 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "11"
@@ -77,16 +85,67 @@
               "version_added": "12"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "6"
             },
             "safari_ios": {
-              "version_added": "6.1"
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": "43"
+            },
+            "chrome_android": {
+              "version_added": "43"
+            },
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "30"
+            },
+            "opera_android": {
+              "version_added": "30"
+            },
+            "safari": {
+              "version_added": "12"
+            },
+            "safari_ios": {
+              "version_added": "12"
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "43"
             }
           },
           "status": {
@@ -99,42 +158,46 @@
       "detail": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomEvent/detail",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-customevent-detail②",
           "support": {
             "chrome": {
-              "version_added": "15"
+              "version_added": "5"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
-              "version_added": "14"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "11"
+              "version_added": "6"
             },
             "firefox_android": {
-              "version_added": "14"
+              "version_added": "6"
             },
             "ie": {
-              "version_added": false
+              "version_added": "9"
             },
             "opera": {
               "version_added": "11.6"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "6.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "3"
             }
           },
           "status": {
@@ -147,27 +210,19 @@
       "initCustomEvent": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CustomEvent/initCustomEvent",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-customevent-initcustomevent",
           "support": {
-            "chrome": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": "59",
-                "notes": "<code>canBubble</code>, <code>cancelable</code>, and <code>detail</code> are optional parameters defaulting to <code>false</code>, <code>false</code>, and <code>null</code> respectively."
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": "59",
-                "notes": "<code>canBubble</code>, <code>cancelable</code>, and <code>detail</code> are optional parameters defaulting to <code>false</code>, <code>false</code>, and <code>null</code> respectively."
-              }
-            ],
+            "chrome": {
+              "version_added": "5"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
+            },
             "edge": {
-              "version_added": "14"
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "6"
@@ -182,85 +237,25 @@
               "version_added": "11"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "11"
             },
             "safari": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": "7.0",
-                "notes": "<code>canBubble</code>, <code>cancelable</code>, and <code>detail</code> are optional parameters defaulting to <code>false</code>, <code>false</code>, and <code>null</code> respectively."
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": true
-              },
-              {
-                "version_added": "59",
-                "notes": "<code>canBubble</code>, <code>cancelable</code>, and <code>detail</code> are optional parameters defaulting to <code>false</code>, <code>false</code>, and <code>null</code> respectively."
-              }
-            ]
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
-          }
-        }
-      },
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "48"
-            },
-            "firefox_android": {
-              "version_added": "48"
-            },
-            "ie": {
-              "version_added": true
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "7.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "3"
             }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       }

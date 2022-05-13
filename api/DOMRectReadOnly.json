@@ -3,55 +3,132 @@
     "DOMRectReadOnly": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly",
+        "spec_url": "https://drafts.fxtf.org/geometry/#DOMRect",
         "support": {
-          "chrome": {
-            "version_added": "61"
-          },
-          "chrome_android": {
-            "version_added": "61"
-          },
+          "chrome": [
+            {
+              "version_added": "61"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "2",
+              "version_removed": "61"
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "61"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "18",
+              "version_removed": "61"
+            }
+          ],
           "edge": [
             {
               "version_added": "79"
             },
             {
               "alternative_name": "ClientRect",
-              "version_added": "12"
+              "version_added": "12",
+              "version_removed": "79"
             }
           ],
-          "firefox": {
-            "version_added": "31"
-          },
-          "firefox_android": {
-            "version_added": "31"
-          },
-          "ie": [
+          "firefox": [
             {
-              "version_added": false
+              "version_added": "31"
+            },
+            {
+              "alternative_name": "DOMRect",
+              "version_added": "27",
+              "version_removed": "31"
             },
             {
               "alternative_name": "ClientRect",
-              "version_added": true
+              "version_added": "3",
+              "version_removed": "27"
             }
           ],
-          "opera": {
-            "version_added": "48"
+          "firefox_android": [
+            {
+              "version_added": "31"
+            },
+            {
+              "alternative_name": "DOMRect",
+              "version_added": "27",
+              "version_removed": "31"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "4",
+              "version_removed": "27"
+            }
+          ],
+          "ie": {
+            "alternative_name": "ClientRect",
+            "version_added": "4"
           },
-          "opera_android": {
-            "version_added": "45"
-          },
-          "safari": {
-            "version_added": "10.1"
-          },
-          "safari_ios": {
-            "version_added": "10.3"
-          },
-          "samsunginternet_android": {
-            "version_added": "8.0"
-          },
-          "webview_android": {
-            "version_added": "61"
-          }
+          "opera": [
+            {
+              "version_added": "48"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "9.5",
+              "version_removed": "48"
+            }
+          ],
+          "opera_android": [
+            {
+              "version_added": "45"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "10.1",
+              "version_removed": "45"
+            }
+          ],
+          "safari": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "4",
+              "version_removed": "11"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "10.3"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "3.2",
+              "version_removed": "11"
+            }
+          ],
+          "samsunginternet_android": [
+            {
+              "version_added": "8.0"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "1.0",
+              "version_removed": "8.0"
+            }
+          ],
+          "webview_android": [
+            {
+              "version_added": "61"
+            },
+            {
+              "alternative_name": "ClientRect",
+              "version_added": "2",
+              "version_removed": "61"
+            }
+          ]
         },
         "status": {
           "experimental": false,
@@ -62,6 +139,7 @@
       "DOMRectReadOnly": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/DOMRectReadOnly",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-domrectreadonly",
           "description": "<code>DOMRectReadOnly()</code> constructor",
           "support": {
             "chrome": {
@@ -81,349 +159,6 @@
             },
             "ie": {
               "version_added": false
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "bottom": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/bottom",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "31"
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "Implemented on the proprietary <code><a href='https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a></code> interface."
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "fromRect": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/fromRect",
-          "description": "<code>fromRect()</code> static function",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "69"
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "height": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/height",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "31"
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "Implemented on the proprietary <code><a href='https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a></code> interface."
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "left": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/left",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "31"
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "Implemented on the proprietary <code><a href='https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a></code> interface."
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "right": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/right",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "31"
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "Implemented on the proprietary <code><a href='https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a></code> interface."
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "top": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/top",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "31"
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "Implemented on the proprietary <code><a href='https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a></code> interface."
-            },
-            "opera": {
-              "version_added": "48"
-            },
-            "opera_android": {
-              "version_added": "45"
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "61"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "width": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/width",
-          "support": {
-            "chrome": {
-              "version_added": "61"
-            },
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "31"
-            },
-            "firefox_android": {
-              "version_added": "31"
-            },
-            "ie": {
-              "version_added": false,
-              "notes": "Implemented on the proprietary <code><a href='https://msdn.microsoft.com/en-us/library/hh826029(VS.85).aspx'>ClientRect</a></code> interface."
             },
             "opera": {
               "version_added": "48"
@@ -499,9 +234,402 @@
           }
         }
       },
+      "bottom": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/bottom",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-bottom",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "4"
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "2"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "fromRect": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/fromRect",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-fromrect",
+          "description": "<code>fromRect()</code> static method",
+          "support": {
+            "chrome": {
+              "version_added": "61"
+            },
+            "chrome_android": {
+              "version_added": "61"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "69"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "48"
+            },
+            "opera_android": {
+              "version_added": "45"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "10.3"
+            },
+            "samsunginternet_android": {
+              "version_added": "8.0"
+            },
+            "webview_android": {
+              "version_added": "61"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "height": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/height",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-height",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "4"
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "2"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "left": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/left",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-left",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "4"
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "2"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "right": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/right",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-right",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "4"
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "2"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "toJSON": {
+        "__compat": {
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-tojson",
+          "support": {
+            "chrome": {
+              "version_added": "61"
+            },
+            "chrome_android": {
+              "version_added": "61"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "62"
+            },
+            "firefox_android": {
+              "version_added": "62"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "48"
+            },
+            "opera_android": {
+              "version_added": "45"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "10.3"
+            },
+            "samsunginternet_android": {
+              "version_added": "8.0"
+            },
+            "webview_android": {
+              "version_added": "61"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "top": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/top",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-top",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "4"
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "2"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "width": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/width",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-width",
+          "support": {
+            "chrome": {
+              "version_added": "2"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3"
+            },
+            "firefox_android": {
+              "version_added": "4"
+            },
+            "ie": {
+              "version_added": "4"
+            },
+            "opera": {
+              "version_added": "9.5"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "4"
+            },
+            "safari_ios": {
+              "version_added": "3.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "2"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "x": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/x",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-x",
           "support": {
             "chrome": {
               "version_added": "61"
@@ -550,6 +678,7 @@
       "y": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/y",
+          "spec_url": "https://drafts.fxtf.org/geometry/#dom-domrectreadonly-y",
           "support": {
             "chrome": {
               "version_added": "61"

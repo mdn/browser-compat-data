@@ -3,6 +3,7 @@
     "IntersectionObserver": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver",
+        "spec_url": "https://w3c.github.io/IntersectionObserver/#intersection-observer-interface",
         "support": {
           "chrome": {
             "version_added": "51"
@@ -13,22 +14,12 @@
           "edge": {
             "version_added": "15"
           },
-          "firefox": [
-            {
-              "version_added": "55"
-            },
-            {
-              "version_added": "53",
-              "version_removed": "55",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.IntersectionObserver.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "55"
+          },
+          "firefox_android": {
+            "version_added": "55"
+          },
           "ie": {
             "version_added": false
           },
@@ -52,7 +43,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -60,6 +51,7 @@
       "IntersectionObserver": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/IntersectionObserver",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-intersectionobserver",
           "description": "<code>IntersectionObserver()</code> constructor",
           "support": {
             "chrome": {
@@ -71,27 +63,21 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55",
+              "notes": "Before version 96, the constructor throws a <code>DOMException</code> if the <code>options.rootMargin</code> option is passed an empty string (see <a href='https://bugzil.la/1738791'>bug 1738791</a>)."
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
               "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
               "version_added": "12.1"
@@ -107,14 +93,14 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         },
-        "document_as_root": {
+        "options_root_parameter_Document": {
           "__compat": {
-            "description": "<code>root</code> option can be a <code>Document</code>",
+            "description": "<code>options.root</code> parameter can be a <code>Document</code>",
             "support": {
               "chrome": {
                 "version_added": "81"
@@ -164,6 +150,7 @@
       "disconnect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/disconnect",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-disconnect",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -173,32 +160,28 @@
             },
             "edge": {
               "version_added": "15",
-              "notes": "Available since <a href='https://developer.microsoft.com/microsoft-edge/platform/status/intersectionobserver/'>Windows Insider Preview Build 14986</a>"
+              "notes": "Available since <a href='https://developer.microsoft.com/microsoft-edge/platform/status/intersectionobserver/'>Windows Insider Preview Build 14986</a>."
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
+            },
+            "safari_ios": {
+              "version_added": "12.2"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -208,7 +191,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -217,6 +200,7 @@
       "observe": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/observe",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-observe",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -227,27 +211,20 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
               "version_added": "12.1"
@@ -263,7 +240,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -272,6 +249,7 @@
       "root": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/root",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-root",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -282,27 +260,20 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
               "version_added": "12.1"
@@ -318,7 +289,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -327,6 +298,7 @@
       "rootMargin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/rootMargin",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-rootmargin",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -337,27 +309,20 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
               "version_added": "12.1",
@@ -375,7 +340,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -384,6 +349,7 @@
       "takeRecords": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/takeRecords",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-takerecords",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -393,32 +359,28 @@
             },
             "edge": {
               "version_added": "15",
-              "notes": "Available since <a href='https://developer.microsoft.com/microsoft-edge/platform/status/intersectionobserver/'>Windows Insider Preview Build 14986</a>"
+              "notes": "Available since <a href='https://developer.microsoft.com/microsoft-edge/platform/status/intersectionobserver/'>Windows Insider Preview Build 14986</a>."
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
+            },
+            "safari_ios": {
+              "version_added": "12.2"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
@@ -428,7 +390,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -437,6 +399,7 @@
       "thresholds": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/thresholds",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-thresholds",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -447,27 +410,20 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
               "version_added": "12.1"
@@ -483,7 +439,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -492,6 +448,7 @@
       "unobserve": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntersectionObserver/unobserve",
+          "spec_url": "https://w3c.github.io/IntersectionObserver/#dom-intersectionobserver-unobserve",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -501,29 +458,22 @@
             },
             "edge": {
               "version_added": "15",
-              "notes": "Available since <a href='https://developer.microsoft.com/microsoft-edge/platform/status/intersectionobserver/'>Windows Insider Preview Build 14986</a>"
+              "notes": "Available since <a href='https://developer.microsoft.com/microsoft-edge/platform/status/intersectionobserver/'>Windows Insider Preview Build 14986</a>."
             },
-            "firefox": [
-              {
-                "version_added": "55"
-              },
-              {
-                "version_added": "53",
-                "version_removed": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.IntersectionObserver.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": {
+              "version_added": "55"
+            },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "opera_android": {
+              "version_added": "41"
             },
             "safari": {
               "version_added": "12.1"
@@ -539,7 +489,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

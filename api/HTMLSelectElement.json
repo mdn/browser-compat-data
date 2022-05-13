@@ -3,6 +3,7 @@
     "HTMLSelectElement": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement",
+        "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#htmlselectelement",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -30,7 +31,7 @@
             "version_added": "10.1"
           },
           "safari": {
-            "version_added": "3"
+            "version_added": "1"
           },
           "safari_ios": {
             "version_added": "1"
@@ -51,6 +52,7 @@
       "add": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-add-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -100,40 +102,40 @@
             "description": "Index as <code>before</code> parameter",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "35"
               },
               "chrome_android": {
-                "version_added": true
+                "version_added": "35"
               },
               "edge": {
                 "version_added": "12"
               },
               "firefox": {
-                "version_added": "7"
+                "version_added": "8"
               },
               "firefox_android": {
-                "version_added": "7"
+                "version_added": "8"
               },
               "ie": {
-                "version_added": true
+                "version_added": "5.5"
               },
               "opera": {
-                "version_added": true
+                "version_added": "22"
               },
               "opera_android": {
-                "version_added": true
+                "version_added": "22"
               },
               "safari": {
-                "version_added": true
+                "version_added": "9"
               },
               "safari_ios": {
-                "version_added": true
+                "version_added": "9"
               },
               "samsunginternet_android": {
-                "version_added": true
+                "version_added": "3.0"
               },
               "webview_android": {
-                "version_added": true
+                "version_added": "37"
               }
             },
             "status": {
@@ -166,12 +168,24 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
+            "opera": [
+              {
+                "version_added": "53"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "47"
+              },
+              {
+                "version_added": "≤12.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
               "version_added": "9"
             },
@@ -192,105 +206,10 @@
           }
         }
       },
-      "autofocus": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autofocus",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": "4"
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "blur": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/blur",
-          "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": "≤4"
-            },
-            "safari_ios": {
-              "version_added": "≤3"
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "checkValidity": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/checkValidity",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-checkvalidity-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -320,7 +239,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "4.2"
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -339,6 +258,7 @@
       "disabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-fe-disabled",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -362,7 +282,7 @@
               "version_added": "9"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "3"
@@ -384,57 +304,10 @@
           }
         }
       },
-      "focus": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/focus",
-          "support": {
-            "chrome": {
-              "version_added": null
-            },
-            "chrome_android": {
-              "version_added": null
-            },
-            "edge": {
-              "version_added": null
-            },
-            "firefox": {
-              "version_added": null
-            },
-            "firefox_android": {
-              "version_added": null
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": "≤4"
-            },
-            "safari_ios": {
-              "version_added": "≤3"
-            },
-            "samsunginternet_android": {
-              "version_added": null
-            },
-            "webview_android": {
-              "version_added": null
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "form": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/form",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-fae-form-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -483,6 +356,7 @@
       "item": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/item",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-item-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -494,7 +368,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
@@ -531,6 +405,7 @@
       "labels": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels",
+          "spec_url": "https://html.spec.whatwg.org/multipage/forms.html#dom-lfe-labels-dev",
           "support": {
             "chrome": {
               "version_added": "6"
@@ -560,13 +435,13 @@
               "version_added": "5.1"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -723,6 +598,7 @@
       "namedItem": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/namedItem",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-nameditem-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -735,7 +611,7 @@
               "notes": "<code>namedItem</code> does not appear to take the <code>name</code> attribute into account (only the <code>id</code> attribute) on Internet Explorer and Edge. There is a <a href='https://connect.microsoft.com/IE/feedbackdetail/view/2414092/'>bug report</a> to Microsoft about this."
             },
             "firefox": {
-              "version_added": "4"
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
@@ -773,6 +649,7 @@
       "options": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/options",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-options-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -821,6 +698,7 @@
       "remove": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/remove",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-remove",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -946,7 +824,7 @@
               "version_added": "5.1"
             },
             "safari_ios": {
-              "version_added": "5.1"
+              "version_added": "5"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -965,6 +843,7 @@
       "selectedIndex": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedIndex",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-selectedindex-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1013,6 +892,7 @@
       "selectedOptions": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-selectedoptions-dev",
           "support": {
             "chrome": {
               "version_added": "19"
@@ -1048,7 +928,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1061,6 +941,7 @@
       "setCustomValidity": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/setCustomValidity",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-setcustomvalidity-dev",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -1090,7 +971,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5"
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -1157,6 +1038,7 @@
       "type": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/type",
+          "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#dom-select-type-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1168,7 +1050,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "2"
+              "version_added": "1"
             },
             "firefox_android": {
               "version_added": "4"
@@ -1234,7 +1116,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5"
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -1282,7 +1164,7 @@
               "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "5"
+              "version_added": "4"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
@@ -1378,13 +1260,13 @@
               "version_added": "4"
             },
             "safari_ios": {
-              "version_added": "3.2"
+              "version_added": "3"
             },
             "samsunginternet_android": {
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {

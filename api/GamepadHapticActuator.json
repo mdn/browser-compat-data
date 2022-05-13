@@ -3,6 +3,7 @@
     "GamepadHapticActuator": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator",
+        "spec_url": "https://w3c.github.io/gamepad/extensions.html#gamepadhapticactuator-interface",
         "support": {
           "chrome": {
             "version_added": "68"
@@ -14,18 +15,10 @@
             "version_added": "15"
           },
           "firefox": {
-            "version_added": true,
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.gamepad-extensions.enabled",
-                "value_to_set": "true"
-              }
-            ],
-            "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+            "version_added": "55"
           },
           "firefox_android": {
-            "version_added": false
+            "version_added": "55"
           },
           "ie": {
             "version_added": false
@@ -46,13 +39,89 @@
             "version_added": "10.0"
           },
           "webview_android": {
-            "version_added": false
+            "version_added": "68"
           }
         },
         "status": {
           "experimental": true,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "86",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": "86",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "edge": {
+              "version_added": "86",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "firefox": {
+              "version_added": "91"
+            },
+            "firefox_android": {
+              "version_added": "91"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "72",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "playEffect": {
@@ -105,6 +174,7 @@
       "pulse": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/pulse",
+          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuator-pulse",
           "support": {
             "chrome": {
               "version_added": false
@@ -117,18 +187,10 @@
               "version_removed": "79"
             },
             "firefox": {
-              "version_added": true,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.gamepad-extensions.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+              "version_added": "55"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "55"
             },
             "ie": {
               "version_added": false
@@ -209,6 +271,7 @@
       "type": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/type",
+          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuatortype",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -220,18 +283,10 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": true,
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.gamepad-extensions.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "The flag is enabled by default in Firefox Nightly and Beta, versions 55 and above."
+              "version_added": "55"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "55"
             },
             "ie": {
               "version_added": false
@@ -252,7 +307,7 @@
               "version_added": "10.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "68"
             }
           },
           "status": {

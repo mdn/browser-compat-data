@@ -3,15 +3,16 @@
     "Path2D": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Path2D",
+        "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#path2d-objects",
         "support": {
           "chrome": {
-            "version_added": true
+            "version_added": "36"
           },
           "chrome_android": {
-            "version_added": true
+            "version_added": "36"
           },
           "edge": {
-            "version_added": "≤18"
+            "version_added": "14"
           },
           "firefox": {
             "version_added": "31"
@@ -23,26 +24,26 @@
             "version_added": false
           },
           "opera": {
-            "version_added": true
+            "version_added": "23"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "24"
           },
           "safari": {
-            "version_added": "10"
+            "version_added": "8"
           },
           "safari_ios": {
-            "version_added": true
+            "version_added": "8"
           },
           "samsunginternet_android": {
-            "version_added": true
+            "version_added": "3.0"
           },
           "webview_android": {
-            "version_added": true
+            "version_added": "37"
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -51,16 +52,17 @@
         "__compat": {
           "description": "<code>Path2D()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Path2D/Path2D",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-path2d-dev",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "36"
             },
             "chrome_android": {
-              "version_added": "42"
+              "version_added": "36"
             },
             "edge": {
-              "version_added": "≤18",
-              "notes": "The constructor for <code>Path2D</code> objects in Edge does not support being invoked with a string consisting of SVG path data. See <a href='https://developer.microsoft.com/microsoft-edge/platform/issues/8438884/'>issue 8438884</a> for details."
+              "version_added": "14",
+              "notes": "Before Edge 79, the constructor for <code>Path2D</code> objects does not support invocation with a string consisting of SVG path data."
             },
             "firefox": {
               "version_added": "31"
@@ -72,26 +74,26 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "23"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "24"
             },
             "safari": {
-              "version_added": "10"
+              "version_added": "8"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "8"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "37"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -100,15 +102,16 @@
       "addPath": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Path2D/addPath",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-path2d-addpath-dev",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "68"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "68"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
               "version_added": "34"
@@ -120,26 +123,458 @@
               "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "55"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "48"
             },
             "safari": {
-              "version_added": true
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "10.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "68"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "arc": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-arc-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "arcTo": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-arcto-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "bezierCurveTo": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-beziercurveto-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "closePath": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-closepath-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ellipse": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-ellipse-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "lineTo": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-lineto-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "moveTo": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-moveto-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "quadraticCurveTo": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-quadraticcurveto-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "rect": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-rect-dev",
+          "support": {
+            "chrome": {
+              "version_added": "36"
+            },
+            "chrome_android": {
+              "version_added": "36"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "31"
+            },
+            "firefox_android": {
+              "version_added": "31"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "23"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": "8"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "37"
+            }
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

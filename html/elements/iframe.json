@@ -4,6 +4,7 @@
       "iframe": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/iframe",
+          "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -101,6 +102,7 @@
         },
         "allow": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-allow",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -148,6 +150,7 @@
         },
         "allowfullscreen": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-allowfullscreen",
             "support": {
               "chrome": [
                 {
@@ -280,10 +283,12 @@
                 "version_added": false
               },
               "firefox": {
-                "version_added": false
+                "version_added": "56",
+                "version_removed": "83"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "56",
+                "version_removed": "83"
               },
               "ie": {
                 "version_added": false
@@ -423,6 +428,54 @@
             }
           }
         },
+        "fetchpriority": {
+          "__compat": {
+            "spec_url": "https://wicg.github.io/priority-hints/#iframe",
+            "support": {
+              "chrome": {
+                "version_added": "101"
+              },
+              "chrome_android": {
+                "version_added": "101"
+              },
+              "edge": {
+                "version_added": "101"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": "101"
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "frameborder": {
           "__compat": {
             "support": {
@@ -519,44 +572,47 @@
         },
         "loading": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-loading",
             "support": {
               "chrome": {
-                "version_added": "76"
+                "version_added": "77"
               },
               "chrome_android": {
-                "version_added": "76"
+                "version_added": "77"
               },
               "edge": {
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1622090'>bug 1622090</a>."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1622090'>bug 1622090</a>."
               },
               "ie": {
                 "version_added": false
               },
               "opera": {
-                "version_added": "63"
+                "version_added": "64"
               },
               "opera_android": {
-                "version_added": "54"
+                "version_added": "55"
               },
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>"
+                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
               },
               "safari_ios": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>"
+                "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
               },
               "samsunginternet_android": {
-                "version_added": false
+                "version_added": "12.0"
               },
               "webview_android": {
-                "version_added": false
+                "version_added": "77"
               }
             },
             "status": {
@@ -709,6 +765,7 @@
         },
         "name": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-name",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -756,6 +813,7 @@
         },
         "referrerpolicy": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-referrerpolicy",
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -782,10 +840,10 @@
                 "version_added": "41"
               },
               "safari": {
-                "version_added": "11.1"
+                "version_added": "13"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "13"
               },
               "samsunginternet_android": {
                 "version_added": "7.2"
@@ -803,6 +861,7 @@
         },
         "sandbox": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -883,7 +942,7 @@
                 "version_added": false
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "13.0"
               },
               "webview_android": {
                 "version_added": "83"
@@ -901,13 +960,13 @@
             "description": "<code>sandbox=\"allow-modals\"</code>",
             "support": {
               "chrome": {
-                "version_added": null
+                "version_added": "46"
               },
               "chrome_android": {
-                "version_added": null
+                "version_added": "46"
               },
               "edge": {
-                "version_added": null
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "49"
@@ -919,10 +978,10 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": null
+                "version_added": "33"
               },
               "opera_android": {
-                "version_added": null
+                "version_added": "33"
               },
               "safari": {
                 "version_added": null
@@ -931,10 +990,10 @@
                 "version_added": null
               },
               "samsunginternet_android": {
-                "version_added": null
+                "version_added": "5.0"
               },
               "webview_android": {
-                "version_added": null
+                "version_added": "46"
               }
             },
             "status": {
@@ -1093,7 +1152,8 @@
             "description": "<code>sandbox=\"allow-same-origin\"</code>",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Chrome 70 and earlier block script execution without <code>allow-scripts</code>, even if <code>allow-same-origin</code> is set. For example, any bound handlers for click events of nodes inside an iframe throw an error for blocked script execution."
               },
               "chrome_android": {
                 "version_added": true
@@ -1161,14 +1221,7 @@
                 ]
               },
               "firefox_android": {
-                "version_added": "65",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.storage_access.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": false
               },
               "ie": {
                 "version_added": false
@@ -1297,6 +1350,7 @@
         },
         "src": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-src",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1344,6 +1398,7 @@
         },
         "srcdoc": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-srcdoc",
             "support": {
               "chrome": {
                 "version_added": "20"

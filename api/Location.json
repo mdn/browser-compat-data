@@ -3,12 +3,16 @@
     "Location": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location",
+        "spec_url": "https://html.spec.whatwg.org/multipage/history.html#the-location-interface",
         "support": {
           "chrome": {
             "version_added": "1"
           },
           "chrome_android": {
             "version_added": "18"
+          },
+          "deno": {
+            "version_added": "1.7"
           },
           "edge": {
             "version_added": "12"
@@ -50,12 +54,16 @@
       "ancestorOrigins": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/ancestorOrigins",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-ancestororigins-dev",
           "support": {
             "chrome": {
               "version_added": "20"
             },
             "chrome_android": {
               "version_added": "25"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "79"
@@ -98,12 +106,16 @@
       "assign": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/assign",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-assign-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "12"
@@ -146,12 +158,16 @@
       "hash": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/hash",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-hash-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -194,12 +210,16 @@
       "host": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/host",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-host-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -242,12 +262,16 @@
       "hostname": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/hostname",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-hostname-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -290,12 +314,16 @@
       "href": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/href",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-href-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -338,12 +366,16 @@
       "origin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/origin",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-origin-dev",
           "support": {
             "chrome": {
               "version_added": "8"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -376,7 +408,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -394,6 +426,9 @@
               "version_added": false
             },
             "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
               "version_added": false
             },
             "edge": {
@@ -439,6 +474,7 @@
       "pathname": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/pathname",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-pathname-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -446,16 +482,19 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.7"
+            },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 53, the <code>pathname</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&b=false, <code>pathname</code> would return \"/x?a=true&b=false\" rather than \"/x\"."
+              "notes": "Before Firefox 53, the <code>pathname</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&amp;b=false, <code>pathname</code> would return \"/x?a=true&amp;b=false\" rather than \"/x\"."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "Before Firefox 53, the <code>pathname</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&b=false, <code>pathname</code> would return \"/x?a=true&b=false\" rather than \"/x\"."
+              "notes": "Before Firefox 53, the <code>pathname</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&amp;b=false, <code>pathname</code> would return \"/x?a=true&amp;b=false\" rather than \"/x\"."
             },
             "ie": {
               "version_added": "3",
@@ -490,12 +529,16 @@
       "port": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/port",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-port-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -538,12 +581,16 @@
       "protocol": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/protocol",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-protocol-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -586,12 +633,16 @@
       "reload": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/reload",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-reload-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "12",
@@ -636,12 +687,16 @@
       "replace": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/replace",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-replace-dev",
           "support": {
             "chrome": {
               "version_added": "1"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": false
             },
             "edge": {
               "version_added": "12"
@@ -684,6 +739,7 @@
       "search": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/search",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-search-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -691,16 +747,19 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.7"
+            },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 53, the <code>search</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&b=false, <code>search</code> would return \"\", rather than \"?a=true&b=false\"."
+              "notes": "Before Firefox 53, the <code>search</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&amp;b=false, <code>search</code> would return \"\", rather than \"?a=true&amp;b=false\"."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "Before Firefox 53, the <code>search</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&b=false, <code>search</code> would return \"\", rather than \"?a=true&b=false\"."
+              "notes": "Before Firefox 53, the <code>search</code> property returned wrong parts of the URL. For example, for a URL of http://z.com/x?a=true&amp;b=false, <code>search</code> would return \"\", rather than \"?a=true&amp;b=false\"."
             },
             "ie": {
               "version_added": "3"
@@ -734,12 +793,16 @@
       "toString": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Location/toString",
+          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#dom-location-href-dev",
           "support": {
             "chrome": {
               "version_added": "52"
             },
             "chrome_android": {
               "version_added": "52"
+            },
+            "deno": {
+              "version_added": "1.7"
             },
             "edge": {
               "version_added": "12"
@@ -755,16 +818,16 @@
               "notes": "Intranet sites are set to Compatibility View, which will emulate IE7 and omit <code>window.location.toString</code>."
             },
             "opera": {
-              "version_added": null
+              "version_added": "39"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "41"
             },
             "safari": {
-              "version_added": null
+              "version_added": "1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "1"
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -788,6 +851,9 @@
               "version_added": false
             },
             "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
               "version_added": false
             },
             "edge": {

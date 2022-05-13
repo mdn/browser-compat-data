@@ -5,6 +5,7 @@
         "Content-Security-Policy": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy",
+            "spec_url": "https://w3c.github.io/webappsec-csp/#csp-header",
             "support": {
               "chrome": [
                 {
@@ -58,7 +59,7 @@
                   "version_added": "7"
                 },
                 {
-                  "version_added": "5.1",
+                  "version_added": "6",
                   "notes": "X-Webkit-CSP"
                 }
               ],
@@ -75,9 +76,58 @@
               "deprecated": false
             }
           },
+          "worker_support": {
+            "__compat": {
+              "description": "Worker support",
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "chrome_android": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "50"
+                },
+                "firefox_android": {
+                  "version_added": "50"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": null
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": {
+                  "version_added": "10"
+                },
+                "samsunginternet_android": {
+                  "version_added": true
+                },
+                "webview_android": {
+                  "version_added": true
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "base-uri": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/base-uri",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-base-uri",
               "support": {
                 "chrome": {
                   "version_added": "40"
@@ -167,13 +217,14 @@
               "status": {
                 "experimental": false,
                 "standard_track": true,
-                "deprecated": false
+                "deprecated": true
               }
             }
           },
           "child-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/child-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-child-src",
               "support": {
                 "chrome": {
                   "version_added": "40"
@@ -222,6 +273,7 @@
           "connect-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/connect-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-connect-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -234,7 +286,7 @@
                 },
                 "firefox": {
                   "version_added": "23",
-                  "notes": "Prior to Firefox 50, ping attributes of &lt;a&gt; elements weren't covered by connect-src."
+                  "notes": "Before Firefox 50, ping attributes of &lt;a&gt; elements weren't covered by connect-src."
                 },
                 "firefox_android": {
                   "version_added": "23"
@@ -271,6 +323,7 @@
           "default-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-default-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -319,6 +372,7 @@
           "font-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/font-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-font-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -367,6 +421,7 @@
           "form-action": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/form-action",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-form-action",
               "support": {
                 "chrome": {
                   "version_added": "40"
@@ -415,6 +470,7 @@
           "frame-ancestors": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-frame-ancestors",
               "support": {
                 "chrome": {
                   "version_added": "40"
@@ -465,6 +521,7 @@
           "frame-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-frame-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -513,6 +570,7 @@
           "img-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/img-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-img-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -561,6 +619,7 @@
           "manifest-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/manifest-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-manifest-src",
               "support": {
                 "chrome": {
                   "version_added": true
@@ -609,6 +668,7 @@
           "media-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/media-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-media-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -705,6 +765,7 @@
           "navigate-to": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/navigate-to",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-navigate-to",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -753,6 +814,7 @@
           "object-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/object-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-object-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -803,17 +865,19 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/plugin-types",
               "support": {
                 "chrome": {
-                  "version_added": "40"
+                  "version_added": "40",
+                  "version_removed": "90"
                 },
                 "chrome_android": {
-                  "version_added": true
+                  "version_added": true,
+                  "version_removed": "90"
                 },
                 "edge": {
-                  "version_added": "15"
+                  "version_added": "15",
+                  "version_removed": "90"
                 },
                 "firefox": {
-                  "version_added": false,
-                  "notes": "See <a href='https://bugzil.la/1045899'>bug 1045899</a>."
+                  "version_added": false
                 },
                 "firefox_android": {
                   "version_added": false
@@ -822,7 +886,8 @@
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": "27"
+                  "version_added": "27",
+                  "version_removed": "76"
                 },
                 "opera_android": {
                   "version_added": null
@@ -834,22 +899,25 @@
                   "version_added": "9.3"
                 },
                 "samsunginternet_android": {
-                  "version_added": true
+                  "version_added": true,
+                  "version_removed": "15.0"
                 },
                 "webview_android": {
-                  "version_added": true
+                  "version_added": true,
+                  "version_removed": "90"
                 }
               },
               "status": {
                 "experimental": false,
-                "standard_track": true,
-                "deprecated": false
+                "standard_track": false,
+                "deprecated": true
               }
             }
           },
           "prefetch-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/prefetch-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-prefetch-src",
               "support": {
                 "chrome": {
                   "version_added": false,
@@ -987,10 +1055,10 @@
                   "version_added": "43"
                 },
                 "safari": {
-                  "version_added": null
+                  "version_added": "15.4"
                 },
                 "safari_ios": {
-                  "version_added": null
+                  "version_added": "15.4"
                 },
                 "samsunginternet_android": {
                   "version_added": "7.0"
@@ -1009,6 +1077,7 @@
           "report-to": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-report-to",
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -1057,6 +1126,7 @@
           "report-uri": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-report-uri",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -1166,9 +1236,59 @@
               }
             }
           },
+          "require-trusted-types-for": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for",
+              "spec_url": "https://w3c.github.io/webappsec-trusted-types/dist/spec/#require-trusted-types-for-csp-directive",
+              "support": {
+                "chrome": {
+                  "version_added": "83"
+                },
+                "chrome_android": {
+                  "version_added": "83"
+                },
+                "edge": {
+                  "version_added": "83"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "69"
+                },
+                "opera_android": {
+                  "version_added": "59"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "13.0"
+                },
+                "webview_android": {
+                  "version_added": "83"
+                }
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "sandbox": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-sandbox",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -1217,6 +1337,7 @@
           "script-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/script-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-script-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -1313,6 +1434,7 @@
           "script-src-attr": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/script-src-attr",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-script-src-attr",
               "support": {
                 "chrome": {
                   "version_added": "75"
@@ -1341,13 +1463,13 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "11.0"
                 },
                 "webview_android": {
                   "version_added": "75"
@@ -1363,6 +1485,7 @@
           "script-src-elem": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/script-src-elem",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-script-src-elem",
               "support": {
                 "chrome": {
                   "version_added": "75"
@@ -1391,13 +1514,13 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "11.0"
                 },
                 "webview_android": {
                   "version_added": "75"
@@ -1439,10 +1562,10 @@
                   "version_added": "41"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "samsunginternet_android": {
                   "version_added": "6.0"
@@ -1461,6 +1584,7 @@
           "style-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/style-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-style-src",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -1509,6 +1633,7 @@
           "style-src-attr": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/style-src-attr",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-style-src-attr",
               "support": {
                 "chrome": {
                   "version_added": "75"
@@ -1537,13 +1662,13 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "11.0"
                 },
                 "webview_android": {
                   "version_added": "75"
@@ -1559,6 +1684,7 @@
           "style-src-elem": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/style-src-elem",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-style-src-elem",
               "support": {
                 "chrome": {
                   "version_added": "75"
@@ -1587,13 +1713,13 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "11.0"
                 },
                 "webview_android": {
                   "version_added": "75"
@@ -1609,6 +1735,7 @@
           "trusted-types": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types",
+              "spec_url": "https://w3c.github.io/webappsec-trusted-types/dist/spec/#trusted-types-csp-directive",
               "support": {
                 "chrome": [
                   {
@@ -1667,7 +1794,7 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "13.0"
                 },
                 "webview_android": {
                   "version_added": "83"
@@ -1710,13 +1837,13 @@
                   "version_added": "48"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "10.0"
                 },
                 "webview_android": {
                   "version_added": "69"
@@ -1732,6 +1859,7 @@
           "upgrade-insecure-requests": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/upgrade-insecure-requests",
+              "spec_url": "https://w3c.github.io/webappsec-upgrade-insecure-requests/#delivery",
               "support": {
                 "chrome": {
                   "version_added": "43"
@@ -1777,57 +1905,10 @@
               }
             }
           },
-          "worker_support": {
-            "__compat": {
-              "description": "Worker support",
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "chrome_android": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": "≤79"
-                },
-                "firefox": {
-                  "version_added": "50"
-                },
-                "firefox_android": {
-                  "version_added": "50"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": null
-                },
-                "opera_android": {
-                  "version_added": null
-                },
-                "safari": {
-                  "version_added": "10"
-                },
-                "safari_ios": {
-                  "version_added": "10"
-                },
-                "samsunginternet_android": {
-                  "version_added": true
-                },
-                "webview_android": {
-                  "version_added": true
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "worker-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/worker-src",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#directive-worker-src",
               "support": {
                 "chrome": {
                   "version_added": "59",
@@ -1856,10 +1937,10 @@
                   "version_added": "45"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.5"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "15.5"
                 },
                 "samsunginternet_android": {
                   "version_added": "7.0"
