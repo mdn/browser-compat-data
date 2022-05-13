@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const chalk = require('chalk');
 const HTMLParser = require('@desertnet/html-parser');
 const { Logger, VALID_ELEMENTS } = require('../utils.js');
