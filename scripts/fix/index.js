@@ -5,8 +5,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const fixBrowserOrder = require('./fix-browser-order');
-const fixFeatureOrder = require('./fix-feature-order');
+const fixBrowserOrder = require('./browser-order');
+const fixFeatureOrder = require('./feature-order');
+const fixLinks = require('./links');
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
@@ -17,7 +18,7 @@ const fixFeatureOrder = require('./fix-feature-order');
 function load(...files) {
   for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+      file = path.resolve(__dirname, '..', '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -29,6 +30,7 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
+        fixLinks(file);
       }
 
       continue;

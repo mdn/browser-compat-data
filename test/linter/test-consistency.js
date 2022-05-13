@@ -5,6 +5,7 @@
 
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').CompatStatement} CompatStatement
@@ -65,7 +66,6 @@ class ConsistencyChecker {
 
       if (errors.length) {
         allErrors.push({
-          feature,
           path,
           errors,
         });
@@ -410,48 +410,36 @@ function testConsistency(filename) {
   /** @type {Identifier} */
   let data = require(filename);
 
+  const logger = new Logger('Consistency');
+
   const checker = new ConsistencyChecker();
-  const errors = checker.check(data);
+  const allErrors = checker.check(data);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Consistency - {bold ${errors.length} }${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
-    );
-    errors.forEach(({ feature, path, errors }) => {
-      console.error(
-        chalk`{red   → {bold ${errors.length}} × {bold ${feature}} [${path.join(
-          '.',
-        )}]: }`,
-      );
-      errors.forEach(({ errortype, browser, parent_value, subfeatures }) => {
-        if (errortype == 'unsupported') {
-          console.error(
-            chalk`{red     → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`,
-          );
-        } else if (errortype == 'support_unknown') {
-          console.error(
-            chalk`{red     → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`,
-          );
-        } else if (errortype == 'subfeature_earlier_implementation') {
-          console.error(
-            chalk`{red     → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):}`,
-          );
-        }
+  for (const { path, errors } of allErrors) {
+    let errorMessage = chalk`{bold ${errors.length}} × ${path
+      .slice(0, 1)
+      .join('.')}.{bold ${path[path.length - 1]}}: `;
+    for (const { errortype, browser, parent_value, subfeatures } of errors) {
+      if (errortype == 'unsupported') {
+        errorMessage += chalk`\n{red       → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`;
+      } else if (errortype == 'support_unknown') {
+        errorMessage += chalk`\n{red       → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`;
+      } else if (errortype == 'subfeature_earlier_implementation') {
+        errorMessage += chalk`\n{red       → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):}`;
+      }
 
-        subfeatures.forEach((subfeature) => {
-          console.error(
-            chalk`{red       → {bold ${path.join('.')}.${subfeature[0]}}: ${
-              subfeature[1]
-            }}`,
-          );
-        });
-      });
-    });
-    return true;
+      for (const subfeature of subfeatures) {
+        errorMessage += chalk`\n{red         → {bold ${path.join('.')}.${
+          subfeature[0]
+        }}: ${subfeature[1] === undefined ? '[Array]' : subfeature[1]}}`;
+      }
+
+      logger.error(errorMessage);
+    }
   }
-  return false;
+
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = { ConsistencyChecker, testConsistency };
