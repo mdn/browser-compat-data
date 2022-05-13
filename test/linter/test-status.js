@@ -28,6 +28,48 @@ function checkStatus(data, logger, path = '') {
         chalk`{red → Unexpected simultaneous experimental and deprecated status in {bold ${path}}}`,
       );
     }
+    if (compat.status.experimental) {
+      // Check if experimental should be false (code copied from migration 007)
+
+      const browserSupport = new Set();
+
+      for (const [browser, support] of Object.entries(compat.support)) {
+        // Consider only the first part of an array statement.
+        const statement = Array.isArray(support) ? support[0] : support;
+        // Ignore anything behind flag, prefix or alternative name
+        if (statement.flags || statement.prefix || statement.alternative_name) {
+          continue;
+        }
+        if (statement.version_added && !statement.version_removed) {
+          browserSupport.add(browser);
+        }
+      }
+
+      // Now check which of Blink, Gecko and WebKit support it.
+
+      const engineSupport = new Set();
+
+      for (const browser of browserSupport) {
+        const currentRelease = Object.values(browsers[browser].releases).find(
+          (r) => r.status === 'current',
+        );
+        const engine = currentRelease.engine;
+        engineSupport.add(engine);
+      }
+
+      let engineCount = 0;
+      for (const engine of ['Blink', 'Gecko', 'WebKit']) {
+        if (engineSupport.has(engine)) {
+          engineCount++;
+        }
+      }
+
+      if (engineCount > 1) {
+        logger.error(
+          chalk`{red → Experimental should be set to {bold false} for {bold ${path}} as the feature is supported in multiple browser engines.}`,
+        );
+      }
+    }
   }
 
   // Check children
