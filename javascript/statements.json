@@ -676,7 +676,7 @@
                     "type": "runtime_flag"
                   }
                 ],
-                "notes": "Module filenames must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                "notes": "Module filenames must end with <code>.mjs</code>, not <code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
               }
             ],
             "opera": {
@@ -754,7 +754,7 @@
                       "type": "runtime_flag"
                     }
                   ],
-                  "notes": "Module filenames must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                  "notes": "Module filenames must end with <code>.mjs</code>, not <code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
                 }
               ],
               "opera": {
@@ -1631,7 +1631,7 @@
                     "type": "runtime_flag"
                   }
                 ],
-                "notes": "Module filenames must end with <code>.mjs</code>, not </code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                "notes": "Module filenames must end with <code>.mjs</code>, not <code>.js</code>. See Node's <a href='https://nodejs.org/docs/latest-v8.x/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
               }
             ],
             "opera": {
@@ -1657,6 +1657,95 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "67",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "67",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": [
+                {
+                  "version_added": "80"
+                },
+                {
+                  "version_added": "79",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1247687'>bug 1247687</a>."
+              },
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1247687'>bug 1247687</a>."
+              },
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              },
+              "samsunginternet_android": {
+                "version_added": "13.0"
+              },
+              "webview_android": {
+                "version_added": "80"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "dynamic_import": {
@@ -1743,95 +1832,6 @@
               },
               "webview_android": {
                 "version_added": "63"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "worker_support": {
-          "__compat": {
-            "description": "Available in workers",
-            "support": {
-              "chrome": [
-                {
-                  "version_added": "80"
-                },
-                {
-                  "version_added": "67",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features"
-                    }
-                  ]
-                }
-              ],
-              "chrome_android": [
-                {
-                  "version_added": "80"
-                },
-                {
-                  "version_added": "67",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features"
-                    }
-                  ]
-                }
-              ],
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": [
-                {
-                  "version_added": "80"
-                },
-                {
-                  "version_added": "79",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features"
-                    }
-                  ]
-                }
-              ],
-              "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1247687'>bug 1247687</a>."
-              },
-              "firefox_android": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1247687'>bug 1247687</a>."
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": "15"
-              },
-              "safari_ios": {
-                "version_added": "15"
-              },
-              "samsunginternet_android": {
-                "version_added": "13.0"
-              },
-              "webview_android": {
-                "version_added": "80"
               }
             },
             "status": {

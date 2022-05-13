@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const {
   exec,
   releaseYargsBuilder,
@@ -20,7 +25,16 @@ function main(argv) {
   for (const pull of pullsFromGitHub(startVersionTag, endVersionTag)) {
     process.stderr.write(`Diffing features for #${pull.number}`);
 
-    const diff = diffFeatures({ ref1: pull.mergeCommit });
+    let diff;
+
+    try {
+      diff = diffFeatures({ ref1: pull.mergeCommit });
+    } catch (e) {
+      console.error(
+        `${e}\n (Failed to diff features for #${pull.number}, skipping)`,
+      );
+      continue;
+    }
 
     console.error(
       ` (${diff.added.length} added, ${diff.removed.length} removed)`,
@@ -86,7 +100,7 @@ function preamble() {
 function markdownifyChanges(removes, adds) {
   const notes = [];
 
-  const featureBullet = obj =>
+  const featureBullet = (obj) =>
     `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
   if (removes.length) {
@@ -112,7 +126,7 @@ if (require.main === module) {
   const { argv } = require('yargs').command(
     '$0 [start-version-tag [end-version-tag]]',
     'Generate release notes text',
-    yargs => {
+    (yargs) => {
       releaseYargsBuilder(yargs);
       yargs.example('$0', 'Generate the release notes for the next release');
       yargs.example(

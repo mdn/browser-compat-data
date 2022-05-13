@@ -238,14 +238,7 @@
               ]
             },
             "opera_android": {
-              "version_added": "24",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
+              "version_added": false
             },
             "safari": {
               "version_added": "8"
@@ -2668,16 +2661,26 @@
             "edge": {
               "version_added": "86"
             },
-            "firefox": {
-              "prefix": "moz",
-              "version_added": "20",
-              "notes": "See <a href='https://bugzil.la/1652950'>bug 1652950</a>."
-            },
-            "firefox_android": {
-              "prefix": "moz",
-              "version_added": "20",
-              "notes": "See <a href='https://bugzil.la/1652950'>bug 1652950</a>."
-            },
+            "firefox": [
+              {
+                "version_added": "101"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "20",
+                "notes": "May be removed in a future release, see <a href='https://bugzil.la/1765201'>bug 1765201</a>."
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "101"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "20",
+                "notes": "May be removed in a future release, see <a href='https://bugzil.la/1765201'>bug 1765201</a>."
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -3710,14 +3713,7 @@
               ]
             },
             "opera_android": {
-              "version_added": "24",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
+              "version_added": false
             },
             "safari": {
               "version_added": "8"
