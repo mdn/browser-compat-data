@@ -3,7 +3,6 @@
 
 'use strict';
 
-const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 const { Logger } = require('../utils.js');
@@ -145,8 +144,10 @@ function addedBeforeRemoved(statement) {
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function checkVersions(supportData, category, relPath, logger) {
+function checkVersions(supportData, relPath, logger) {
+  const category = relPath.split('.')[0];
   const browsersToCheck = Object.keys(supportData);
+
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
       /** @type {SimpleSupportStatement[]} */
@@ -260,12 +261,6 @@ function findSupport(data, logger, relPath) {
  * @returns {boolean} If the file contains errors
  */
 function testVersions(filename) {
-  const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
-    filename,
-  );
-  const category =
-    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
   /** @type {Identifier} */
   const data = require(filename);
 
