@@ -1,13 +1,12 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 'use strict';
 
 const fs = require('fs');
 const { platform } = require('os');
 
-const { processData } = require('../test/linter/test-links.js');
+const { processData } = require('../../test/linter/test-links.js');
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';

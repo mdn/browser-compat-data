@@ -1,12 +1,23 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 'use strict';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ *
+ * @typedef {object} VersionStats
+ * @property {number} all - The total number of occurrences for the browser.
+ * @property {number} true - The total number of `true` values for the browser.
+ * @property {number} null - The total number of `null` values for the browser.
+ * @property {number} range - The total number of range values for the browser.
+ * @property {number} real - The total number of real values for the browser.
+ */
+
 const chalk = require('chalk');
 
 const bcd = require('..');
-const { getRefDate } = require('./release-utils');
+const { getRefDate } = require('./release/utils');
 
 const { argv } = require('yargs').command(
   '$0 [folder]',
@@ -26,17 +37,6 @@ const { argv } = require('yargs').command(
       });
   },
 );
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {object} VersionStats
- * @property {number} all The total number of occurrences for the browser.
- * @property {number} true The total number of `true` values for the browser.
- * @property {number} null The total number of `null` values for the browser.
- * @property {number} range The total number of range values for the browser.
- * @property {number} real The total number of real values for the browser.
- */
 
 /**
  * Check whether a support statement is a specified type

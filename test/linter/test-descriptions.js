@@ -1,5 +1,10 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -16,7 +21,7 @@ function hasValidConstrutorDescription(apiData, apiName, logger) {
     constructor &&
     constructor.__compat.description !== `<code>${apiName}()</code> constructor`
   ) {
-    logger.error(chalk`{red Incorrect constructor description for {bold ${apiName}()}}
+    logger.error(chalk`Incorrect constructor description for {bold ${apiName}()}
       {yellow Actual: {bold "${constructor.__compat.description || ''}"}}
       {green Expected: {bold "<code>${apiName}()</code> constructor"}}`);
   }
@@ -33,7 +38,7 @@ function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
       const event = apiData[methodName];
       const eventName = methodName.replace('_event', '');
       if (event.__compat.description !== `<code>${eventName}</code> event`) {
-        logger.error(chalk`{red Incorrect event description for {bold ${apiName}#${methodName}}}
+        logger.error(chalk`Incorrect event description for {bold ${apiName}#${methodName}}
       {yellow Actual: {bold "${event.__compat.description || ''}"}}
       {green Expected: {bold "<code>${eventName}</code> event"}}`);
       }
@@ -52,7 +57,7 @@ function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
     secureContext &&
     secureContext.__compat.description !== `Secure context required`
   ) {
-    logger.error(chalk`{red Incorrect secure context required description for {bold ${apiName}()}}
+    logger.error(chalk`Incorrect secure context required description for {bold ${apiName}()}
       {yellow Actual: {bold "${secureContext.__compat.description || ''}"}}
       {green Expected: {bold "Secure context required"}}`);
   }
@@ -69,7 +74,7 @@ function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
     workerSupport &&
     workerSupport.__compat.description !== `Available in workers`
   ) {
-    logger.error(chalk`{red Incorrect worker support description for {bold ${apiName}()}}
+    logger.error(chalk`Incorrect worker support description for {bold ${apiName}()}
       {yellow Actual: {bold "${workerSupport.__compat.description || ''}"}}
       {green Expected: {bold "Available in workers"}}`);
   }
@@ -92,7 +97,7 @@ function hasCorrectPermissionDescription(apiData, apiName, logger) {
     apiData.__compat &&
     apiData.__compat.description !== expectedDescrition
   ) {
-    logger.error(chalk`{red Incorrect permission description for {bold ${apiName}}}
+    logger.error(chalk`Incorrect permission description for {bold ${apiName}}
       {yellow Actual: {bold "${apiData.__compat.description || ''}"}}
       {green Expected: {bold "${expectedDescrition}"}}`);
   }
