@@ -28,11 +28,6 @@ const browsers = {
   'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
 
-function hasVersionAddedOnly(statement) {
-  const keys = Object.keys(statement);
-  return keys.length === 1 && keys[0] === 'version_added';
-}
-
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
  *
