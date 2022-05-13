@@ -10,7 +10,7 @@ const { Logger } = require('./utils.js');
  *
  * @param {string} ruleName The name of the error
  * @param {string} name The name of the API method
- * @param {Identifier} method The method's compat data
+ * @param {Identifier} feature - The feature's compat data.
  * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
